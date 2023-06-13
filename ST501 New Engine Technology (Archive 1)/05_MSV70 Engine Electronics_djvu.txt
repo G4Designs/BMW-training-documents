@@ -1,0 +1,5244 @@
+Table of Contents 
+
+MSV70 Engine Electronics 
+
+Subject Page 
+
+Introduction .4 
+
+Components.5 
+
+Control Module.5 
+
+Processor Power.5 
+
+MSV70 System Overview .6 
+
+Power Supply.8 
+
+Terminal 30 (KL30) Battery Voltage .8 
+
+Engine Fuses.8 
+
+Terminal 15 (KL15).8 
+
+Ground (KL31).8 
+
+Power Supply Schematic .9 
+
+Air Management.10 
+
+Electronic Throttle Valve (EDK).10 
+
+Throttle Plate Position.10 
+
+Accelerator Pedal Module .10 
+
+Hot Film Air Mass Meter (HFM).11 
+
+Air Temperature Sensor .11 
+
+Differential Pressure Sensor .11 
+
+Intake Air Measurement.12 
+
+Intake Manifold.14 
+
+DISA Operation.15 
+
+Crankcase Ventilation .16 
+
+Crankcase Ventilation Heating.17 
+
+Valvetronic II .18 
+
+Load Control .20 
+
+Function .21 
+
+Eccentric Shaft Sensor.24 
+
+VVT Motor and Relay.24 
+
+Phasing .25 
+
+MIN/MAX Stops .25 
+
+Fuel Supply and Management .26 
+
+Fuel Tank.26 
+
+Fuel Delivery Unit.28 
+
+Fuel Supply .28 
+
+Carbon Canister AKF.28 
+
+Electric Fuel Pump .29 
+
+
+Initial Print Date: 03/05 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Fuel Pump Control .30 
+
+Principle of Operation .32 
+
+Component Location.32 
+
+Emergency Operation .32 
+
+Coding and Programming.32 
+
+Fuel Injectors/Fuel Rail.33 
+
+Ignition Management .36 
+
+Ignition System Inputs .36 
+
+Ignition Coils.36 
+
+Spark Plugs.36 
+
+Knock Sensors.37 
+
+Crankshaft Position Sensor.37 
+
+Emissions Management.38 
+
+Emission Standard .38 
+
+Bosch LSU Oxygen Sensor .38 
+
+Post Catalyst Oxygen Sensor.38 
+
+Secondary Air System .39 
+
+On-Board Refueling Vapor Recovery (ORVR) .40 
+
+Ventilation During Engine Operation .41 
+
+Carbon Canister.42 
+
+Evaporative Emission Valve.42 
+
+Evaporative Leakage Detection (DM TL) .43 
+
+Performance Controls.44 
+
+VANOS .44 
+
+Solenoid Valves.45 
+
+Camshaft Sensors .45 
+
+Cruise Control .46 
+
+Exhaust Flap Control.48 
+
+Sport Switch (E85) .48 
+
+Alternator.49 
+
+Cooling System .50 
+
+Bleeding (Venting) Cooling System .51 
+
+Heat Management .52 
+
+Intelligent Heat Management .53 
+
+Cooling System Comparison (Belt Driven vs. Electric Coolant Pump).54 
+
+Cooling Fan.56 
+
+Map Controlled Thermostat .57 
+
+Electronic Oil Condition Monitoring.60 
+
+Function of the Oil Condition Sensor.61 
+
+Faults/Evaluation.61 
+
+Electronic Oil Level Indicator.62 
+
+Static Oil Level Measurement at Engine OFF .62 
+
+Dynamic oil level measurement during vehicle operation .64 
+
+Display Options .65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSV70 Engine Electronics 
+
+
+Model: All with N52 Engine 
+Production: All with N52 engine 
+
+■biictmis 
+
+After completion of this module you will be able to: 
+
+• Understand the MSV70 Engine Management System 
+
+• Understand the Heat Management System 
+
+• Understand the Changes to Valvetronic 
+
+• Understand EKP Operation 
+
+
+3 
+
+MSV70 Engine Electronics 
+
+
+Introduction 
+
+There are several new innovations introduced with the new MSV70 engine management 
+system. The most obvious innovation is the addition of Valvetronic II to the six-cylinder 
+engine line. This is the first use of Valvetronic on the BMW six-cylinder. 
+
+The MSV70 engine management system is responsible for the following tasks: 
+
+• Ignition control 
+
+• Injection control 
+
+• VALVETRONIC II control 
+
+• Control of “Weight Optimized” double VANOS 
+
+• Engine temperature control (characteristic map control of engine thermostat) 
+
+• Electric coolant pump control (Heat Management System) 
+
+• Knock control 
+
+• Lambda control 
+
+• Fuel tank ventilation control 
+
+• Load request to air conditioning control unit for A/C compressor 
+
+• Activation of 3-stage differentiated intake manifold (DISA) 
+
+• Electric fuel pump module control (EKP) 
+
+• Cruise control 
+
+• Alternator control 
+
+• Heated crankcase ventilation 
+
+• Electronic oil condition monitoring and oil level monitoring 
+
+• Energy management (IBS) 
+
+• Monitoring of input and output signals 
+
+• Calculation of substitute signals and failsafe functions 
+
+• Self-diagnosis 
+
+The engine management system on the N52 engine complies with OBD regulations and 
+meets the ULEV II requirements for 2006. 
+
+
+4 
+
+MSV70 Engine Electronics 
+
+
+
+
+Components 
+
+
+Control Module 
+
+The new MSV70 control module is manufactured by Siemens/VDO. The “MSV” desig¬ 
+nation indicates a Siemens control unit (Motor Control with Valvetronic). 
+
+The control module feature an all aluminum housing with a new modular connector 
+configuration. The control unit has two main connections, one with 4 modular connec¬ 
+tions and the other with 3 for a total of 7 “sub” connectors. This arrangement provides a 
+total of 146 possible pin connections. 
+
+Processor Power 
+
+The computing power has been increased to a clock frequency of 60 MHz to accommo¬ 
+date the extended functions. 
+
+
+
+i 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Connector X60004 to X60007 
+
+M4 
+
+Connector module 4 (6 pins) 
+
+2 
+
+Connector X60001 toX60003 
+
+M5 
+
+Connector module 5 (44 pins) 
+
+Ml 
+
+Connector module 1 (26 pins) 
+
+M6 
+
+Connector module 6(12 pins) 
+
+M2 
+
+Connector module 2 (26 pins) 
+
+M7 
+
+Connector module 7 (26 Pins) 
+
+M3 
+
+Connector module 3 (6 pins) 
+
+
+
+
+5 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSV70 System Overview 
+
+
+
+6 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DME (ECM) 
+
+38 
+
+Diagnosis connection 
+
+2 
+
+Integral ambient temperature sensor 
+
+39 
+
+Valvetronic relay 
+
+3 
+
+Integral ambient pressure sensor 
+
+40 
+
+Oxygen Sensor 
+
+4 
+
+DME (ECM) main relay 
+
+41 
+
+Oxygen Sensor 
+
+5 
+
+DM-TL 
+
+42 
+
+Oxygen Sensor 
+
+6 
+
+IHKA 
+
+43 
+
+Oxygen Sensor 
+
+7 
+
+Electric engine cooling fan 
+
+44 
+
+Valvetronic motor 
+
+8 
+
+E-Box fan 
+
+45 
+
+Knock sensor (cyl 1 -3) 
+
+9 
+
+Characteristic map thermostat 
+
+46 
+
+Knock sensor (cyl 4-6) 
+
+10 
+
+Crankcase ventilation heater 
+
+47 
+
+Eccentric shaft sensor 
+
+11 
+
+Crankcase ventilation heater relay 
+
+48 
+
+Hot-film air mass meter (HFM) 
+
+12 
+
+Secondary air pump 
+
+49 
+
+Exhaust camshaft sensor 
+
+13 
+
+Secondary air pump relay 
+
+50 
+
+Intake camshaft sensor 
+
+14 
+
+HFM for Secondary air 
+
+51 
+
+Crankshaft sensor 
+
+15 
+
+Fuel tank vent valve (TEV) 
+
+52 
+
+DISA actuator 
+
+16 
+
+VANOS solenoid valve (Intake cam) 
+
+53 
+
+DISA Actuator 
+
+17 
+
+VANOS solenoid valve (Exhaust cam) 
+
+54 
+
+Electric Throttle Valve (EDK) 
+
+18 
+
+Electro-magnet for airflap control (not for US) 
+
+55 
+
+Accelerator Pedal Module (FPM) 
+
+19-24 
+
+Fuel injectors 
+
+56 
+
+SPORT button 
+
+25 
+
+Fuel injector relay 
+
+57 
+
+Coolant temperature sensor (engine temp) 
+
+26-31 
+
+Ignition coils 
+
+58 
+
+Coolant temperature sensor (radiator outlet) 
+
+32 
+
+Electric coolant pump 
+
+59 
+
+DSC module 
+
+33 
+
+Intelligent Battery Sensor (IBS) 
+
+60 
+
+Brake Light Switch (BLS) 
+
+34 
+
+Alternator 
+
+61 
+
+Clutch switch 
+
+35 
+
+Oil Condition Sensor (OZS) 
+
+62 
+
+Car Access System (CAS) 
+
+36 
+
+Ground connection 
+
+63 
+
+Differential pressure sensor 
+
+37 
+
+PT-CAN 
+
+64 
+
+Oil pressure switch 
+
+
+7 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply 
+
+
+Terminal 30 (KL30) Battery Voltage 
+
+The B+ power supply to the ECM comes from a 60A fuse. On the 5 and 6 series 
+vehicles this power is supplied by fuse #8 located in the front power distribution box 
+which is located behind the glove box. 
+
+On the E90/E91, the KL30 (B+) power comes from fuse #54 which is located in the 
+junction box which is also located behind the glove box. 
+
+Engine Fuses 
+
+The engine electronics fuses are located in the e-box. These fuses are supplied by KL87 
+from the ECM main relay. This is a similar configuration to what has been used in past 
+models. 
+
+
+
+Terminal 15 (KL15) 
+
+As with previous vehicles eguipped with PT-CAN, the ECM receives a KL15w via the bus 
+network and a “hardwire” KL15 wake-up signal directly from the CAS. 
+
+When the ignition is switch “ON”, the ECM receives the wake-up signal via CAS, then it 
+will energize the ECM main relay to supply power to the engine electronics fuse carrier to 
+energize other engine related components and systems. 
+
+Ground (KL31) 
+
+There are multiple ground paths at connectorX60003 at pins 3, 4, 5 and 6. These 
+ground connections also supply the ground path for the VVT motor. 
+
+
+8 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply Schematic 
+
+
+
+9 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Management 
+
+
+Electronic Throttle Valve (EDK) 
+
+As with the N62 engine, the throttle is not needed for engine load control. This is carried 
+out by the Valvetronic function of the MSV70 engine management. 
+
+The throttle is however slightly closed to allow sufficient manifold vacuum for the 
+crankcase ventilation and canister purge systems. 
+
+The ECM provides the operating voltage and ground for the opening and closing of the 
+throttle plate. 
+
+
+
+Throttle Plate Position 
+
+The throttle position is determined by the ECM via two integral potentiometers providing 
+DC voltage feedback signals to the ECM. 
+
+Accelerator Pedal Module 
+
+The accelerator pedal module provides the input for the driver’s reguest. The accelerator 
+pedal module contains dual Hall sensors which the ECM monitors for plausibility. 
+
+The ECM provides an independent voltage and ground supply for each hall sensor. Each 
+Hall sensor is provided with 5 volts and ground. As the accelerator pedal is moved from 
+rest to full throttle, the sensors produce a variable voltage signal. 
+
+The Hall sensors are checked for plausibility. The voltage range of Hall sensor 1 is 
+approximately .5 to 4.5 volts. Hall sensor 2 ranges from approximately .5 to 2.5 volts. 
+
+
+10 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+Hot Film Air Mass Meter (HFM) 
+
+The HFM, which is carried over from MS45.1, is manufactured by Siemens. It is located 
+in the air filter housing and secured with 2 screws. This design allows the HFM to be 
+suspended freely in the intake tract. Due to the elimination of the grill, it is more compact 
+than its predecessor and therefore decreases pressure loss in the intake tract. 
+
+The HFM is powered by KL87 and ground via the ECM. It supplies the ECM with an 
+analog signal proportional to air mass. 
+
+Air Temperature Sensor 
+
+The intake air temperature sensor is integrated into the HFM. The sensor is an NTC 
+thermistor which receives a 5 volt reference and ground from the ECM. 
+
+
+1. Intake air temperature sensor 
+
+2. Hot film air mass sensor 
+
+3. O-Ring 
+
+
+
+Differential Pressure Sensor 
+
+The differential pressure sensor is located 
+at the rear of the intake manifold. 
+
+The sensor is piezo-electric and provides 
+the ECM with information about the pres¬ 
+sure in the intake manifold. 
+
+The piezo element converts pressure 
+pulses into electrical signals. The ECM 
+supplies the sensor with the power and 
+ground supply. 
+
+
+
+11 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+Intake Air Measurement 
+
+In the future, the N52 engine will not use a hot-film air mass meter (HFM) as used on 
+engines in the past. Air mass will be a calculated value which the ECM determines from 
+several inputs. The HFM housing is still used to accommodate the intake air temperature 
+sensor. 
+
+Omission of the hot-film air mass meter (HFM) has been made possible by calculating 
+the air mass with a new, highly accurate charge calculation (charge model) in the DME 
+and the near-engine arrangement of the wideband oxygen sensors (primary 02 sensors). 
+
+The near-engine measurement location of the oxygen sensors facilitates a faster lambda 
+control circuit compared to the oxygen sensors arranged further downstream in the 
+exhaust. 
+
+This new arrangement offers the following advantages: 
+
+• Exact calculation of the intake air mass with an intricate charge model without the 
+measuring tolerances of the HFM (± 6%). 
+
+• Reduction in components (HFM, wiring etc.) 
+
+
+
+Previous air mass measurement 
+using Hot Film (HFM) 
+
+
+VALVCTRQNIC 
+
+
+DME 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Measurement of intake air temperature and air 
+mass 
+
+5 
+
+Residual 02 content in exhaust gas 
+
+2 
+
+Throttle valve position 
+
+6 
+
+Intake manifold vacuum 
+
+3 
+
+Intake manifold 
+
+7 
+
+Engine speed 
+
+4 
+
+Intake valve lift (from WT) 
+
+8 
+
+Injection Timing 
+
+
+12 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This calculation makes use of the following signals: 
+
+• Valve lift of intake valve from VVT (load acguisition) 
+
+• VANOS setting (load acguisition) 
+
+• Throttle setting (throttling) 
+
+• Intake air temperature (air density correction) 
+
+• Engine temperature (air density correction) 
+
+• Engine speed (cylinder charge) 
+
+• Intake manifold pressure (throttling correction) 
+
+• Ambient pressure (air density, altitude correction) 
+
+The air mass calculated in this way is adjusted with the oxygen sensor signal (mixture 
+ratio) and of the injection time (fuel mass) and corrected if necessary. 
+
+A fault code is entered in the DME (air mass plausibility) in the event of the oxygen sensor 
+failing. The calculated air mass is not adjusted in this case. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Intake air temperature 
+
+6 
+
+Intake manifold vacuum 
+
+2 
+
+Throttle valve position 
+
+7 
+
+Engine speed 
+
+3 
+
+Intake manifold 
+
+8 
+
+ECM (DME) with characteristic map for air mass 
+calculation 
+
+4 
+
+Intake valve lift (from VVT) 
+
+9 
+
+Injection Timing 
+
+5 
+
+Residual 02 content in exhaust (02 sensor) 
+
+
+
+
+13 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intake Manifold 
+
+The intake manifold on the N52 uses a three stage differential intake air system (DISA). 
+The airflow through he intake manifold is controlled and re-directed by two DISA actuator 
+motors. 
+
+Each actuator motor is operated by an electric motor controlled by the MSV70 engine 
+control module via a PWM signal. The PWM signal is at a frequency of 200 Hz, the ECM 
+varies the duty cycle to control the position of the DISA flap. The actuator consists of a 
+flap and motor drive. There are only two positions possible - closed or opened. When 
+activated, the motor moves the flap to each end position. Both actuators are switched to 
+the closed position at idle. 
+
+
+
+DISA Actuator 2 DISA Actuator 1 
+
+
+
+The DISA motors are similar in design and operation, but they are not interchangeable. 
+Each actuator assembly has it’s own individual part number. 
+
+
+14 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+DISA Operation 
+
+1st stage - idling/lower engine speed range 
+
+At idle speed and in the lower engine speed range, actuators 1 and 2 are closed. The 
+intake airflows past the throttle valve into the resonance pipe. In the resonance pipe, the 
+intake air mass splits. The air is fed via the collector pipe and resonating pipes into the 
+individual cylinders. In this way, three cylinders are provided with a comparably high air 
+mass. 
+
+2nd stage - medium engine speed range 
+
+In the medium engine speed range, DISA actuator motor 2 is opened. In this case, it is 
+assumed that the inlet valves of the first cylinder are just closing. The gas motion creates 
+a pressure peak at the closing inlet valves. This pressure peak is passed on via the res¬ 
+onating and collector pipes to the in next cylinder in the firing order. This improves the 
+fresh gas filling of the next cylinder to be filled. 
+
+3rd stage - upper engine speed range 
+
+In the upper engine speed range, both DISA actuator motors are opened. In this case, it 
+is assumed that the inlet valves of the first cylinder are just closing. The gas motion cre¬ 
+ates a pressure peak in front of the closing inlet valves. The intake air mass is now fed via 
+the resonating, overshoot and collector pipes. 
+
+
+
+15 
+
+MSV70 Engine Electronics 
+
+
+IOOOOOOI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation 
+
+
+The crankcase ventilation system on the N52 engine has been redesigned as compared 
+to previous modules. The pressure control valve and cyclonic oil separator are combined 
+into one unit. The assembly is located under the intake manifold. 
+
+
+
+The pressure control valve varies the vacuum applied to the crankcase ventilation 
+depending on engine load. The valve is balanced between spring pressure and the 
+amount of manifold vacuum. 
+
+The oil vapors exit the separator labyrinth in the cylinder head cover. The oil vapors are 
+drawn into the cyclone type liguid/vapor separator and regulated by the pressure control 
+valve. 
+
+The oil vapors exit the pressure control valve into the intake manifold. The collected oil 
+will drain back into the oil pan. 
+
+The vapors exit the pressure control valve and are drawn into the intake manifold through 
+a centrally located port. The central location of the port in the intake manifold eliminates 
+the need for the distribution tube used on the previous six-cylinder designs such as the 
+M52TU and M54. 
+
+As the vapors exit the pressure control valve, they are drawn into the intake manifold. 
+
+At idle when the intake manifold vacuum is high, the vacuum reduces the valve opening 
+allowing a small amount of crankcase vapors to be drawn into the intake manifold. 
+
+At part to full load conditions when intake manifold vacuum is lower, the spring opens the 
+valve and additional crankcase vapors are drawn into the intake manifold. 
+
+
+16 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+Crankcase Ventilation Heating 
+
+Also integrated into the design of the crankcase ventilation is an electric heating system 
+designed to prevent moisture buildup. Moisture buildup can eventually lead to ice at low 
+ambient temperatures leading to malfunctions of the crankcase ventilation. 
+
+The crankcase vent valve and cyclonic separator are also insulated by a protective foam 
+covering to provide additional shelter from low ambient temperatures. 
+
+The PTC heating elements are integrated into the crankcase ventilation valve and hose 
+assemblies. There is a junction point on the intake manifold which provides a connection 
+point for the individual heating elements. 
+
+There is also a heating element located on the centrally located port on the intake mani¬ 
+fold. This port is also provided with a separate heating circuit controlled by a PTC 
+thermistor. 
+
+The ECM receives the ambient temperature information from the outside temperature 
+sensor. 
+
+
+Schematic on 5 Series showing crankcase ventilation heating circuit. 
+
+
+
+17 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Valvetronic II 
+
+
+With the introduction of the N52, the 6-cylinder engine is now also equipped with the 
+load control system based on the valve timing gear. The VALVETRONIC I system that 
+was used on the 8 and 12-cylinder engines already achieved a substantial increase in 
+efficiency. 
+
+
+
+BMW has further developed this concept with the VALVETRONIC II. 
+The results of this further development are: 
+
+• Increased engine dynamics 
+
+• Increased efficiency 
+
+• Improved emission values 
+
+
+18 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+These results underscore BMW-specific standards. The new N52 engine features the 
+following optimizations which further enhances the Ultimate Driving Machine. 
+
+• The top engine speed has been increased to 7,000 rpm 
+
+• The specific power output has been increased to 63.4 kW/l 
+
+• The specific engine torgue is 100 Nm/I over a broad engine speed range 
+
+• Distinctly increased valve acceleration values and friction-optimized transmission 
+elements result in an even more responsive engine 
+
+• CO emissions reduced 
+
+• The world's most stringent exhaust emission regulations are complied with 
+
+
+
+19 
+
+MSV70 Engine Electronics 
+
+
+
+Load Control 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+OT 
+
+Top dead center 
+
+4 
+
+Exhaust valve opens 
+
+UT 
+
+Bottom dead center 
+
+5 
+
+Firing point 
+
+1 
+
+Intake valve opens 
+
+A 
+
+Gain 
+
+2 
+
+Exhaust valve closes 
+
+B 
+
+Loss 
+
+3 
+
+Intake valve closes 
+
+P 
+
+Pressure 
+
+
+The illustration on the left shows the conventional method with the slightly higher loss. 
+The reduced loss can be clearly seen in the illustration on the right. The upper area 
+represents the power gained from the combustion process in the petrol engine. The 
+lower area illustrates the loss in this process. 
+
+The loss area can be eguated to the charge cycle, relating to the amount of energy that 
+must be applied in order to expel the combusted exhaust gasses from the cylinder and 
+then to draw the fresh gasses again into the cylinder. 
+
+
+20 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apart from the full load setting, the intake of fresh gasses in a throttle valve controlled 
+engine always takes place against the resistance offered by the throttle valve to the 
+inflowing gasses. The throttle valve is virtually always fully opened during intake on the 
+VALVETRONIC-controlled engine. The load is controlled by the closing timing of the 
+valve. 
+
+Compared to the conventional engine where the load is controlled by the throttle valve, 
+no vacuum occurs in the intake manifold. This means no energy is expended for the 
+purpose of producing the vacuum. The improved efficiency is achieved by the lower 
+power loss during the intake process. 
+
+A minimum vacuum in the intake system is reguired for the crankcase ventilation and 
+evaporative purge systems. The throttle valve is slightly adjusted for this purpose. 
+
+Function 
+
+The VALVETRONIC II consists of the fully variable valve lift control combined with the 
+variable camshaft control (double VANOS). The valve lift is controlled only on the intake 
+side while the camshaft (VANOS) is adjusted also on the exhaust side. 
+
+The throttle-free load control is implemented by: 
+
+• variable valve lift of the intake valve, 
+
+• variable valve opening timing of the intake valve and 
+
+• variable camshaft spread of the intake and exhaust camshaft. 
+
+System optimization includes modification of the valve gear kinematics, a modified actua¬ 
+tor motor and the adapted spread range of the VANOS units. 
+
+The main differences are: 
+
+• The plain bearing on the intermediate lever to the eccentric shaft has been replaced 
+by a roller bearing, thus reducing the friction in the valve timing gear. 
+
+• Guidance of the intermediate lever is more precise. Only one spring is now reguired 
+to guide and hold the intermediate lever. 
+
+• The moved mass of the valve timing gear has been reduced by 13%. 
+
+• The lift range of the intake valves has been improved. The maximum lift has been 
+increased to 9.9 mm but more importantly the minimum lift has been further 
+reduced to 0.18 mm. 
+
+The overall result is supported by further improvements in the intake manifold and 
+exhaust dynamics. 
+
+
+21 
+
+MSV70 Engine Electronics 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Actuator 
+
+9 
+
+Exhaust Valve 
+
+2 
+
+Worm Shaft 
+
+10 
+
+Roller Cam Follower 
+
+3 
+
+Return Spring 
+
+11 
+
+HVA, exhaust 
+
+4 
+
+Gate Block 
+
+12 
+
+Roller Cam Follower, Intake 
+
+5 
+
+Intake Camshaft 
+
+13 
+
+Intermediate Lever 
+
+6 
+
+Ramp 
+
+14 
+
+Eccentric Shaft 
+
+7 
+
+HVA, Intake 
+
+15 
+
+Worm Gear 
+
+8 
+
+Intake Valve 
+
+16 
+
+Exhaust Camshaft 
+
+
+22 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The fully variable valve lift control is realized with the aid of an actuator motor (1), an 
+eccentric shaft (14), an intermediate lever (13), the return spring (3), the intake camshaft 
+(5) and the roller cam follower (12). The actuator motor is installed in the cylinder head 
+above the camshafts. It serves the purpose of adjusting the eccentric shaft. The worm 
+shaft of the electric motor meshes with the worm gear mounted on the eccentric shaft. 
+Following adjustment, the eccentric shaft does not have to be locked in position as the 
+worm gear is sufficiently self-locking. The eccentric shaft adjusts the valve lift on the 
+intake side. 
+
+The intermediate lever varies the transmission ratio between the camshaft and the roller 
+cam follower. The valve lift (9.9 mm) and opening time are at a maximum in the full load 
+position. 
+
+The valve lift (0.18 mm) and opening time are set to minimum in the idling position. The 
+roller cam followers and the associated intermediate levers are divided into four classes. A 
+corresponding code number is punched on the components. They always have the 
+same class per pair. Assignment of the roller cam followers and the intermediate levers at 
+the production plant ensures that the cylinders are uniformly charged even at the 
+minimum valve lift of 0.18 mm. 
+
+
+Valvetronic II at minimum valve lift 
+
+
+
+Valvetronic II at maximum valve lift 
+
+
+
+23 
+
+MSV70 Engine Electronics 
+
+
+
+
+Eccentric Shaft Sensor 
+
+The eccentric shaft sensor (3) signals the position of the shaft back to the DME. 
+
+This sensor operates based on the magnetoresistive principle: A ferromagnetic conduc¬ 
+tor changes its resistance when the applied magnetic field changes its position. 
+
+
+
+For this purpose, a magnetic wheel (1) that contains a permanent magnet is mounted on 
+the eccentric shaft. As the shaft rotates, the magnetic field lines of the magnet intersect 
+the magnetically conductive material in the sensor. The resulting change in resistance is 
+used as a correcting variable for the signal for the engine control unit. 
+
+The magnetic wheel must be secured on the eccentric shaft by means of a non-magnet- 
+ic screw (2) otherwise the sensor will not function. 
+
+VVT Motor and Relay 
+
+The VVT motor is controlled directly by the ECM. The motor receives power from a relay 
+located in the E-Box. 
+
+
+
+24 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phasing 
+
+The new VALVETRONIC II, is a very fast and exact engine control system. So-called 
+phasing is implemented to assist adjustment in the lower valve lift range. The intake 
+valves of a cylinder are opened synchronously up to a lift of 0.2 mm. Valve 1 then begins 
+to lead (advance). Therefore, valve 2 opens with a slight delay behind valve 1 and catch¬ 
+es up to valve 1 again at a lift of approximately 6 mm. From here on they open synchro¬ 
+nously again. 
+
+This opening characteristic has a favorable effect on the inflow of gasses into the cylinder. 
+By keeping the opening cross section of the intake valves small this results in a distinctly 
+higher flow rate at a constant intake volume. In connection with the geometry in the 
+upper area of the combustion chamber, this higher flow rate is used to mix the air/fuel 
+mixture more effectively. 
+
+This phasing eliminates the need for the turbulence ports used on the previous genera¬ 
+tion six-cylinder engines. The phasing feature of the Valvetronic creates the necessary 
+turbulence (swirl) in the combustion chamber. 
+
+M IN/M AX Stops 
+
+A stop routine can be implemented between the mechanical stops in order to detect the 
+positions of the mechanical stops. For this purpose, the eccentric shaft is adjusted from 
+zero lift to full lift. The stop routine is executed only when the motor electronics deter¬ 
+mines implausible values during the engine start procedure. This routine can also be 
+initiated by the diagnosis systems. 
+
+
+Eccentric Shaft - MIN Stop Eccentric Shaft - MAX Stop 
+
+
+
+25 
+
+MSV70 Engine Electronics 
+
+
+
+Fuel Supply and Management 
+
+
+Fuel Tank 
+
+The fuel tank has a capacity of 60 liters including a 6 liter reserve. It is made from 6- layer 
+polyethylene plastic. The fuel tank is located ahead of the rear wheels above the drive 
+shaft and exhaust system. It is held by two tensioning straps and is additionally bolted to a 
+connected bracket. 
+
+The fuel level sensor, electric fuel pump and the fuel filter with pressure regulator are 
+accessible through the two service openings. 
+
+The fuel filler neck is secured with two hose clips on the right-hand side of the fuel tank. 
+
+It has an electrically conductive plastic inner layer (10 % conductive particles) for the 
+purpose of diverting electrostatic charge via the fuel filler neck. 
+
+
+
+26 
+
+MSV70 Engine Electronics 
+
+
+Fuel Supply System Overview 
+
+
+
+2 £ 
+
+
+T '® T 
+
+■* t>=] «=| 7., _ 
+
+
+: 
+
+
+L 1 -*J 
+
+
+3 3 3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Fuel Pump 
+
+13 
+
+Fuel Level Sensor 
+
+2 
+
+Feed Line 
+
+14 
+
+Refuelling Line Connection Piece 
+
+3 
+
+Check Valve 
+
+15 
+
+Refuelling Ventilation Line 
+
+4 
+
+Fuel Filter 
+
+16 
+
+Refuelling Ventilation 
+
+5 
+
+Feed Line to Engine 
+
+17 
+
+Left Operation Ventilation Valve 
+
+6 
+
+Fuel Injector 
+
+18 
+
+Right Operation Ventilation Valve 
+
+7 
+
+Pressure Regulator 
+
+19 
+
+Operation Ventilation Line 
+
+8 
+
+Check Valve 
+
+20 
+
+Diagnosis Module for Tank Leakage (DM-TL) 
+
+9 
+
+Left Suction Jet Pump 
+
+21 
+
+Atmosphere Line 
+
+10 
+
+Right Suction Jet Pump 
+
+22 
+
+Carbon Canister 
+
+11 
+
+Initial Filling Valve 
+
+23 
+
+Fuel Tank Vent Valve 
+
+12 
+
+Fuel Baffle 
+
+24 
+
+Digital Motor Electronics 
+
+
+27 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Delivery Unit 
+
+The fuel delivery unit is located inside the fuel tank. It consists of the following: 
+
+In the right half of the fuel tank 
+
+• Fuel baffle with electric fuel pump (EKP), right fuel level sensor and right suction jet 
+pump. 
+
+In the left half of the fuel tank: 
+
+• Fuel filter with pressure regulator, left fuel level sensor and left suction jet pump. 
+
+The components are firmly connected to the respective service cover. When replacing 
+the electric fuel pump, it can be removed from the fuel tank complete with the service 
+cover, fuel baffle, suction jet pump and fuel level sensor. 
+
+Fuel Supply 
+
+The fuel is delivered from the fuel tank to the engine in the following seguence: 
+
+• From the right half of the fuel tank 
+
+• through the initial filler valve (11), 
+
+• into the fuel baffle (12), 
+
+• from the electric fuel pump (1), 
+
+• via a T-piece, on the one side, through the check valve (3) into the fuel filter (4), 
+
+• through the feed line (5) in the left-hand service opening to the engine, 
+
+• and, on the other side, via the cold start valve (8) to the left-hand suction jet pump 
+(9) back into the fuel baffle, 
+
+• parallel from the electric fuel pump to the right-hand suction jet pump (10), 
+
+• and from the right half of the fuel tank into the fuel baffle. 
+
+The fuel filter (4) and pressure regulator (7) are located at the left-hand service opening. 
+The cold start valve (8) opens at a fuel pressure above 2.5 bar. It ensures the engine 
+receives sufficient fuel before the left suction jet pump cuts into the circuit. 
+
+On the N52 engine, the pressure regulator (7) routes the fuel back into the fuel baffle 
+(12). A 5 bar pressure regulator is used for vehicles with the N52 engine. 
+
+Carbon Canister AKF 
+
+The carbon canister AKF (with DMTL) is located in the rear right wheel arch. 
+
+
+28 
+
+MSV70 Engine Electronics 
+
+
+
+
+Electric Fuel Pump 
+
+The electric fuel pump delivers fuel simultaneously through two separate circuits into a 
+main channel and a secondary channel. 
+
+The main channel is used for conveying fuel to the fuel supply system. The secondary 
+channel supplies the right hand suction jet pump with fuel. 
+
+Channels are located above the pump wheel, in which a helical flow circulation is pro¬ 
+duced by the position of the delivery blades. 
+
+The fuel is thus conveyed from the intake side to the outlet side. An electric fuel pump 
+with increased output is used in connection with the N52 engine and has a delivery 
+capacity of 95 l/h at 5 bar. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Suction jet pump 
+
+6 
+
+Intake opening, secondary channel 
+
+2 
+
+Main channel in supply 
+
+7 
+
+Secondary channel to suction jet pump 
+
+3 
+
+Driveshaft from electric motor 
+
+8 
+
+Initial filling valve 
+
+4 
+
+Impeller 
+
+9 
+
+Fuel baffle 
+
+5 
+
+Intake opening, main channel 
+
+
+
+
+29 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Pump Control 
+
+In conventional systems, the electric fuel pump is operated continuously at maximum 
+speed using the highest on-board supply voltage available. The maximum amount of fuel 
+that may be reguired is made available regardless of the operating conditions. 
+
+In vehicles eguipped with the N52 engine, the fuel pump control is now managed by the 
+EKP module. The fuel pump is now a variable speed controlled pump. The EKP module 
+makes it possible to supply only the fuel needed for engine operation. 
+
+This eliminates excess fuel delivery. The fuel pump wear is reduced and the running 
+losses are kept to a minimum. 
+
+
+
+Note: In this case, EKP stands for the "Electronic fuel pump control" system. 
+The EKP abbreviation is often used to refer to the electric fuel pump 
+itself. The electronically controlled fuel pump system described here is 
+controlled by a control unit called the EKP control unit. The abbreviation 
+EKP is used here to refer to the system as a whole. 
+
+
+30 
+
+MSV70 Engine Electronics 
+
+
+The ECM (DME) is connected to the EKP module via the PT-CAN network. The electric 
+fuel pump in the EKP system is activated as required. The DME calculates the amount of 
+fuel required at the given point in time. The total volume required is transmitted as a 
+message to the EKP control unit via PT-CAN. 
+
+The EKP control unit controls the electric fuel pump on the basis of mappings so that the 
+electric fuel pump delivers the exact amount of fuel required. 
+
+The EKP control unit converts this message into an output voltage. This output voltage is 
+then used to control the speed of the electric fuel pump. This achieves a delivery which 
+corresponds with the requirements. 
+
+The electric fuel pump is capable of delivering up to 95 liters per hour at a pressure 
+of 5 bar. 
+
+The illustration shown below is from an E90. The EKP module on the E90 contains one 
+of the terminating resistors for the PT-CAN. 
+
+
+
+31 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+Fuel requirement mappings are stored in the EKP control unit. The fuel requirement 
+mappings are encoded for each specific engine and model. The EKP control unit uses 
+the mappings as the basis on which to calculate the total amount of fuel to be delivered 
+from the following reference variables: 
+
+• Amount of fuel required by the engine (request from the ECM) 
+
+This results in a pulse-width modulated output voltage from the EKP control unit. The 
+output voltage of the EKP control unit is the supply voltage for the electric fuel pump. 
+
+The EKP control unit controls the speed of the electric fuel pump via the supply voltage. 
+The EKP control unit controls the speed by comparing the actual speed with the 
+specification. 
+
+The current speed of the electric fuel pump is calculated as follows: 
+
+The EKP control unit sends the current supply to the fuel pump (pulse-width modulated). 
+This voltage is absorbed as a specific ripple due to the individual armature windings of 
+the rotating electric motor. The ripple corresponds with the number of segments in the 
+commutator which corresponds with the number of armature windings in the electric 
+motor. 
+
+The number of waves produced per revolution is equal to the number of existing commu¬ 
+tator segments. 
+
+This means that the EKP control unit can employ a patented procedure - "Ripple 
+Counter" as the basis for calculating the actual speed of the fuel pump using power 
+consumption ripple. 
+
+Component Location 
+
+The location of the EKP module is as follows: 
+
+• E60, E61 - in the luggage compartment on the right hand side next to the suspen¬ 
+sion strut dome 
+
+• E90 - in the vehicle interior on the right next to the rear-seat backrest 
+
+Emergency Operation 
+
+In the event that communication with the DME or DDE fails or is faulty, the EKP control 
+unit will switch to emergency operation. The electric fuel pump is fully activated. 
+
+Coding and Programming 
+
+The data for the electronically controlled fuel pump system is encoded as follows: 
+
+• In the ECM (DME), the engine and model-related characteristic curves for fuel 
+delivery according to requirements. 
+
+• In the EKP control unit: specific characteristic curves for the relevant fuel system 
+
+
+32 
+
+MSV70 Engine Electronics 
+
+
+
+Fuel Injectors/Fuel Rail 
+
+Due to the wider design of the cylinder head, 
+the fuel injectors are not located in the intake 
+manifold as on previous 6-cylinder engines. 
+
+The injectors are now mounted into machined 
+bore in the cylinder head. This design allows 
+the injectors to be closely mounted to the 
+intake valves. 
+
+The injectors are a compact design manufac¬ 
+tured by Deka with a resistance value of approx¬ 
+imately 12 ohms each. 
+
+Power supply for the fuel injectors is from 
+Terminal 87 of the fuel injector relay. 
+
+The fuel rail is a non-return design which 
+includes a service port for diagnosis. 
+
+
+
+
+33 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Fuel System 
+
+
+Using an instructor designated vehicle, perform a complete vehicle short test. 
+Access the EKP module using the control module function screen. Complete the 
+following table below using diagnosis requests. 
+
+
+
+Actual Fuel Pump 
+Speed 
+
+Fuel Pump Voltage 
+
+Fuel Pump Current 
+
+Terminal 15 ON 
+(Engine OFF) 
+
+
+
+
+Engine at idle 
+
+
+
+
+Engine at part load 
+(3500-4000 rpm) 
+
+
+
+
+
+Interrupt communication between the EKP module and the ECM by removing KL30 
+power from the ECM. (pull fuse). Record result below. 
+
+
+
+Actual Fuel Pump 
+Speed 
+
+Fuel Pump Voltage 
+
+Fuel Pump Current 
+
+Terminal 15 ON, power 
+removed from ECM 
+
+
+
+
+
+What is observed regarding fuel pump operation when the ECM and EKP cannot com¬ 
+municate? 
+
+
+Using the ETM, locate the schematic for the EKP module. Locate EKP module in 
+this vehicle. 
+
+Does the EKP module in this vehicle contain a terminating resistor for the PT-CAN? If not, 
+which vehicles have the terminating resistor in the EKP module? 
+
+
+If this vehicle has a terminating resistor, measure the resistance and record below: 
+
+
+What is the maximum fuel pressure in this system? 
+
+
+34 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - DISA 
+
+Using an instructor designated vehicle, connect a breakout box to the ECM. Locate 
+the signal lines for DISA actuators 1 and 2. Monitor the signals using the oscillo¬ 
+scope. 
+
+Complete the table below using the results obtained. 
+
+
+DISA Actuator 1 
+
+Frequency 
+
+Duty Cycle 
+
+Voltage 
+
+Engine OFF, Key in KL15 
+
+
+
+
+Engine running at idle 
+
+
+
+
+Engine at 3500 RPM 
+
+
+
+
+
+DISA Actuator 2 
+
+Frequency 
+
+Duty Cycle 
+
+Voltage 
+
+Engine OFF, Key in KL15 
+
+
+
+
+Engine running at idle 
+
+
+
+
+Engine at 3500 RPM 
+
+
+
+
+
+35 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition Management 
+
+
+Ignition System Inputs 
+
+The ignition system on the MSV70 engine management system uses several inputs to 
+control ignition functions. Proper ignition timing control is dependent upon inputs such 
+as RPM, throttle position, crankshaft position, air mass and temperature (coolant and 
+intake air). 
+
+
+
+Ignition Coils 
+
+The ignition coils are the familiar “pencil” type manufactured by Bosch. The secondary 
+ignition “boot” and resistor are integrated into the coil housing. 
+
+
+Spark Plugs 
+
+The new spark plugs used on the N52 are 
+a new design by NGK. The plugs use an 
+Iridium center electrode. The center elec¬ 
+trode is only .6 mm thick. The insulator is 
+also redesigned. The new spark plug 
+technology allows for longer service life 
+and improved cold starting. 
+
+Iridium is a precious metal that is 6 times 
+harder and 8 times stronger than platinum, 
+it has a 1,200° F higher melting point than 
+platinum and conducts electricity better. 
+
+
+
+36 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+Knock Sensors 
+
+
+The “dual” knock sensors are located 
+under the intake manifold. The sensors 
+can only be replaced as a pair, they are 
+connected at a single connector. Each 
+knock sensor is responsible for monitoring 
+3 cylinders (1 -3 and 4-6) respectively. 
+
+The knock sensors operate on the piezo 
+electric principle. Vibrations from com¬ 
+bustion events are converted into electri¬ 
+cal signals which are monitored by the 
+ECM. Excessive vibration indicates 
+engine knock which will cause the ECM 
+to retard the ignition timing to retard as 
+necessary. 
+
+Excessive knocking will cause the MIL to illuminate. 
+
+Note: When installing knock sensors, be sure to torque to specification. Under 
+or over-tightening the knock sensors can result is erroneous knock sen¬ 
+sor faults or poor engine performance. 
+
+Crankshaft Position Sensor 
+
+Located on the driver’s side of the engine block neat the starter, the crankshaft position 
+sensor provides the ECM with a 5 volt square wave signal. The ECM calculates engine 
+speed (RPM) and crankshaft position for ignition and injection system operation. 
+
+The sensor is supplied with 12 volts from the engine electronics fuses and ground from 
+the ECM. 
+
+The crankshaft position sensor is also monitored for variations in crankshaft speed to 
+determine misfires. 
+
+
+
+
+37 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+Emissions Management 
+
+
+Emission Standard 
+
+The Siemens MSV70 engine management system meets the ULEV II standard for 2006. 
+
+Bosch LSU Oxygen Sensor 
+
+The oxygen sensor used on the N52 is the new Bosch LSU 4.9 sensor. Compared with 
+the LSU 4.2 oxygen sensor previously used, the LSU sensor is twice as fast. Full opera¬ 
+tional readiness is achieved after 10 seconds (LSU 4.2 20 seconds). 
+
+This rapid starting capability is made possible by the use of a smaller ceramic element. 
+The outer dimensions of the sensor remain unchanged. 
+
+The previous opening for the supply of ambient air has been eliminated. The new sensor 
+differs from the LSU 4.2 in that a porous layer which is permeable by air is used instead 
+of a reference air channel. The ambient air is directed to the element via the connecting 
+cable. 
+
+
+
+Post Catalyst Oxygen Sensor 
+
+The post catalyst oxygen sensors are the Bosch LSF 4.2 type. They operate similarly to 
+the previous LSH 25 sensors. The voltage range is .10 to 1.0 volts. 
+
+The new planar 4.2 sensors offer: 
+
+• Fast light-off (ready for control < 10 s) 
+
+• Wide operating temperature range 
+
+• Stable control characteristic 
+
+• Improved exhaust gas values 
+
+
+38 
+
+MSV70 Engine Electronics 
+
+
+
+Secondary Air System 
+
+Injecting ambient air into the exhaust stream after a cold engine start reduces the warm 
+up time of the catalysts and reduces HC and CO emissions. The ECM controls and 
+monitors the Secondary Air Injection. 
+
+An Electric Secondary Air Pump and Air Injection Valve direct fresh air through an internal 
+channel in the cylinder head into the exhaust ports. 
+
+The Air Injection Valve is opened by air pressure (from the pump) and is closed by an 
+internal spring. 
+
+The relay for the secondary air pump is located in the E-box. 
+
+
+1. 
+
+2. 
+
+3. 
+
+4. 
+
+5. 
+
+
+
+Secondary air (injection) valve 
+Secondary air filter 
+Mini Hot film air mass sensor (HFM) 
+Intake hose 
+
+Secondary air pump (SLP) 
+
+
+The secondary air pump is eguipped with an additional intake hose (4) to accommodate 
+a secondary air filter with the mini HFM (3). The mini HFM is secured in the secondary 
+air cleaner with two screws. 
+
+
+Mini Hot Film Air Mass Sensor (HFM) 
+
+A compact mini hot film air mass sensor (HFM 
+manufactured by Siemens) is used in the sec¬ 
+ondary air system for the N52 in the E90 (US 
+market). 
+
+The mini HFM detects the air mass supplied by 
+the secondary-air pump. This function monitors 
+the secondary air system for OBD compliance. 
+
+When the mini HFM detects no air mass or insuf¬ 
+ficient air mass, a fault is stored in the ECM and 
+the Malfunction Indicator Light (MIL) is activated. 
+
+The mini HFM has a compact pipe shaped 
+design with O-ring connections. 
+
+
+
+39 
+
+MSV70 Engine Electronics 
+
+
+
+On-Board Refueling Vapor Recovery (ORVR) 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Fuel Pump 
+
+13 
+
+Fuel Level Sensor 
+
+2 
+
+Feed Line 
+
+14 
+
+Refuelling Line Connection Piece 
+
+3 
+
+Check Valve 
+
+15 
+
+Refuelling Ventilation Line 
+
+4 
+
+Fuel Filter 
+
+16 
+
+Refuelling Ventilation 
+
+5 
+
+Feed Line to Engine 
+
+17 
+
+Left Operation Ventilation Valve 
+
+6 
+
+Fuel Injector 
+
+18 
+
+Right Operation Ventilation Valve 
+
+7 
+
+Pressure Regulator 
+
+19 
+
+Operation Ventilation Line 
+
+8 
+
+Check Valve 
+
+20 
+
+Diagnosis Module for Tank Leakage (DM-TL) 
+
+9 
+
+Left Suction Jet Pump 
+
+21 
+
+Atmosphere Line 
+
+10 
+
+Right Suction Jet Pump 
+
+22 
+
+Carbon Canister 
+
+11 
+
+Initial Filling Valve 
+
+23 
+
+Fuel Tank Vent Valve 
+
+12 
+
+Fuel Baffle 
+
+24 
+
+Digital Motor Electronics 
+
+
+40 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ORVR system recovers and stores hydrocarbon fuel vapors during refuelling. When 
+refueling the E90, a downward open adapter (14) is located on the refuelling ventilation 
+line (15) in the fuel tank. During the refuelling procedure, the air can escape out of the 
+tank via the refuelling ventilation line (15) and the fuel filler neck. 
+
+When the fuel level rises up to the opening of the refuelling ventilation line, it is closed off 
+and the fuel level increases in the fuel filler neck up to the fuel station pump. The fuel 
+station pump then switches off automatically. 
+
+After the fuel station pump has switched off, an expansion volume (approx. 10 liters) 
+remains above the refuelling ventilation line. 
+
+Ventilation During Engine Operation 
+
+The fuel vapors produced in the fuel tank pass: 
+
+• through the operation ventilation valves (17 + 18) 
+
+• through the ventilation line (19), 
+
+• into the carbon canister AKF (20), 
+
+• through the purge air line and 
+
+• through the fuel tank vent valve TEV (22), 
+
+• to the engine intake manifold. 
+
+The two operation ventilation valves are located above the refuelling ventilation adapter 
+(14). They are connected by a line. The left operation ventilation valve (17) only has a 
+ventilation function while the right operation ventilation valve (18) additionally has a pres¬ 
+sure holding function (50 mbar). 
+
+The aim of the pressure holding function is to avoid the remaining air of the expansion 
+volume escaping via the carbon canister while refuelling (with refuelling ventilation line 
+closed). 
+
+
+41 
+
+MSV70 Engine Electronics 
+
+
+
+Carbon Canister 
+
+As the hydrocarbon vapors enter the canister, they will be absorbed by the active carbon. 
+The remaining air will be vented to the atmosphere through the end of the canister, DM 
+TL and filter, allowing the fuel tank to “breath”. 
+
+When the engine is running, the canister is "purged" using intake manifold vacuum to 
+draw air through the canister which extracts the HC vapors into the combustion chamber. 
+
+The Carbon Canister with DM TL and air filter are located at the right rear underside of 
+the vehicle, below the luggage compartment floor. 
+
+
+
+Evaporative Emission Valve 
+
+This ECM controlled solenoid valve regulates the purge flow from the Carbon Canister 
+into the intake manifold. The ECM Relay provides operating voltage, and the ECM con¬ 
+trols the valve by regulating the ground circuit. The valve is powered open and closed by 
+an internal spring. 
+
+If the Evaporative Emission Valve circuit is defective, a fault code will be set and the 
+“Malfunction Indicator Light” will illuminate when the OBD II criteria is achieved. 
+
+If the valve is “mechanically” defective, a driveability complaint could be encountered and 
+a mixture related fault code will be set. 
+
+
+42 
+
+MSV70 Engine Electronics 
+
+
+Evaporative Leakage Detection (DM TL) 
+
+This component ensures accurate fuel system leak detection for leaks as small as 0.5 
+mm by slightly pressurizing the fuel tank and evaporative components. The DM TL pump 
+contains an integral DC motor which is activated directly by the ECM. The ECM monitors 
+the pump motor operating current as the measurement for detecting leaks. 
+
+The pump also contains an ECM controlled change over valve that is energized closed 
+during a Leak Diagnosis test. The change over valve is open during all other periods of 
+operation allowing the fuel system to “breath” through the inlet filter. The DM TL is locat¬ 
+ed under the luggage compartment floor with the Carbon Canister. 
+
+To prevent condensation buildup in the DM-TL pump, a heating element is integrated 
+into the housing of the pump. The heating element is ground controlled by the ECM. 
+
+
+
+FLBJ-GBnef, ("flra 
+
+
+07 ? 
+
+R.TWS 
+
+
+
+
+n 
+
+* <; 
+
+t § 
+
+
+
+
+
+3- 
+
+i 
+
+2 
+
+SI ’*■* 
+
+
+S.IMV 
+
+s.mmp 
+
+5.WUH 
+
+
+07? 
+
+0T5 
+
+D 7 ? 
+
+
+BKvSl 
+
+flWGM 
+
+at^RT 
+
+4- 
+
+
+!■ 
+
+Xftal 
+
+
+3 CMTlm 
+
+S CWTlP 
+
+S DMTLH 
+
+
+07? 
+
+0T? 
+
+D.7? 
+
+
+wstie 
+
+
+vreraw 
+
+i? 
+
+
+17 
+
+XMMC 
+
+
+
+
+
+
+
+
+
+
+Will.-. 
+
+l-U In . I.K.^1 
+
+
+OWE oortcJ-TirtU'S 
+
+
+43 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Performance Controls 
+
+
+VANOS 
+
+Performance, torque, idle characteristics and exhaust emissions reduction are improved 
+by Variable Camshaft Timing. The VANOS system on the N52 is weight optimized and is 
+similar in design to the VANOS on the N62. 
+
+The Vanos units are mounted directly on the front of the camshafts and adjusts the 
+timing of the Intake and Exhaust camshafts throughout the entire spread range from 
+retarded to advanced. The ECM controls the operation of the VANOS solenoids which 
+regulates the oil pressure required to move the VANOS units. Engine Rpm, load and tem¬ 
+perature are used to determine VANOS activation. 
+
+
+
+The VANOS mechanical operation is dependent on engine oil pressure applied to 
+position the VANOS units. When oil pressure is applied to the units (via ports in the 
+camshafts regulated by the solenoids), the camshaft hubs are rotated in the drive sprock¬ 
+ets changing the position which advances/retards the intake/exhaust camshafts timing. 
+The VANOS system is “fully variable”. When the ECM detects that the camshafts are in 
+the optimum positions, the solenoids maintain oil pressure on the units to hold the 
+camshaft timing. 
+
+The operation of the VANOS solenoids are monitored in accordance with the OBD II 
+requirements for emission control. The ECM monitors the final stage output control and 
+the signals from the Camshaft Position Sensors for VANOS operation. 
+
+
+44 
+
+MSV70 Engine Electronics 
+
+
+Solenoid Valves 
+
+The VANOS solenoid valves are mounted through the front of the cylinder head. There 
+are two solenoids, one for the intake VANOS and one for the exhaust. The solenoids 
+control the oil flow to the camshaft ports for the intake and exhaust VANOS units. 
+
+The 4/3 way proportional solenoid valve is activated by the ECM to direct oil flow. The 
+solenoid valve is sealed to the head by a radial seal and secured by a retaining plate. 
+
+
+
+Camshaft Sensors 
+
+There are two camshaft sensors, one for the intake camshaft and one for the exhaust. 
+They are mounted at the front of the cylinder head and monitor the impulse wheels which 
+are bolted to the front of the VANOS units. 
+
+The sensors are supplied power via the engine electronics fuses. Ground is supplied via 
+the ECM. The sensors are hall effect and provide the ECM with a 5 volt sguare wave 
+signal. 
+
+
+
+45 
+
+MSV70 Engine Electronics 
+
+
+
+
+Cruise Control 
+
+In the new E90 the customer can choose between two cruise control systems. The 
+cruise control systems include - Dynamic Cruise Control (DCC) and Active Cruise 
+Control (ACC). 
+
+DCC is the “standard” cruise control system, while ACC remain an option. DCC operates 
+similarly to a standard cruise control system. However, the DCC is capable of brake inter¬ 
+vention on downhill gradients to maintain set speed. Also, the system will activate the 
+brake lights when braking intervention takes place. 
+
+DCC Switch Lever 
+
+
+
+Unlike conventional cruise control, the E90 DCC system also allows shifting and clutch 
+application on vehicles with a manual transmission. 
+
+In combination with ACC and DCC, there is an additional control module - the 
+Longitudinal Dynamic Management (LDM). 
+
+One of the responsibilities of the LDM is to forward driver input reguests from ACC/DCC 
+to the ECM (DME). Also the LDM is used to coordinate drivetrain and brake functions. 
+
+In previous BMW vehicles, acceleration control, such as "accelerating" or braking (nega¬ 
+tive acceleration), was calculated by different systems (DME/DDE, DSC, ACC etc.) in 
+order then to activate the corresponding actuators with the relevant control signals. 
+
+This created a problem in that there was a build-up of a whole host of variants (engine, 
+transmission and brake variants). In an E65, for example, there were 36 relevant 
+car/engin el transmission variants. 
+
+
+46 
+
+MSV70 Engine Electronics 
+
+
+
+In order to take control of the increasing complexity over the course of time and the 
+increase in variants, BMW has taken the decision to implement only one acceleration 
+controller in the E90 vehicle network. This controller records the requests on the input 
+side, calculates the corresponding setpoint variables and forwards them to the system 
+partners such as DME/DDE, EGS, DSC, etc. 
+
+
+ACC 
+
+DCC 
+
+A 
+
+
+
+
+DSC 
+
+
+© 
+
+
+
+
+
+
+□vie 
+
+LDM 
+
+
+-1 DDE 
+
+
+V 
+
+
+
+
+
+
+EGS 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel torque for braking 
+
+DME 
+
+Digital Motor Electronics (ECM) 
+
+2 
+
+Wheel torque for accelerating 
+
+DCC 
+
+Dynamic Cruise Control 
+
+3 
+
+Gearshift request 
+
+DSC 
+
+Dynamic Stability Control 
+
+A 
+
++/- a_ setpoint (cruise request) 
+
+EGS 
+
+Electronic Transmission Control 
+
+ACC 
+
+Active Cruise Control 
+
+LDM 
+
+Longitudinal Dynamics Management 
+
+
+Connected to a longitudinal-force controller, it coordinates and controls the actuators in 
+all the vehicle configurations. The Longitudinal Dynamics Management system (LDM) is 
+housed in an independent new control unit which is located in the E90 behind the light 
+module. 
+
+
+1. LDM Module 
+
+
+
+47 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABES 
+
+
+Exhaust Flap Control 
+
+The exhaust flap is designed to reduce noise 
+at idle, low RPM acceleration and while coast¬ 
+ing. The exhaust flap is controlled via vacuum 
+actuator. The vacuum actuator is supplied 
+vacuum via the engine driven vacuum pump. 
+
+The ECM controls the flap via a vacuum vent 
+valve located in the trunk on the left hand side. 
+
+As compared to previous vehicles, the system 
+no longer needs a vacuum reservoir. This is 
+due to the fact that the vacuum is not supplied 
+by the engine and not subject to variations in 
+intake manifold vacuum. 
+
+The exhaust flap is sprung open and closed 
+by vacuum. The ECM will de-activate the 
+vacuum vent valve in order to open the flap. 
+
+
+
+■1 A:.: 
+
+
+f .. r" wri r'ljn? 
+
+u kl?h'±*'l LA. 
+
+
+J.HR'G 
+
+HI.WS, 
+
+
+flM 
+
+b?JUkUH! 'Lrip 
+
+
+C E 
+
+aa.SR 
+
+
+
+
+
+The flap is opened above approximately 2500 
+RPM. Flap operation is also dependent upon 
+engine load. 
+
+Sport Switch (E85) 
+
+
+«E01 
+
+
+
+DMEeorireimceiila 
+
+
+The MSV70 ECM contains two different throttle progression functions (Sport and 
+Normal). The Dynamic Driving Control function is selected by pressing the “Sport” button 
+located in the center console. 
+
+
+The switch provides a ground signal (input) to the ECM when pressed. The MSV70 
+system activates the sport characteristics for the Electronic throttle control (EDK). This 
+provides an increase in throttle opening and response time over the non-sport position. 
+
+When this function is activated, the function indicator light in the Sport button is illuminat¬ 
+ed by the Electric Power Steering (EPS) Control Module. When the ignition is cycled, this 
+function resets back to the non-sport function (it must be re-selected by the driver). 
+
+The ECM additionally provides the reguest for the Dynamic Driving Control function over 
+the PT CAN bus to the following control modules: 
+
+• Electronic Power Steering 
+
+• Instrument Cluster 
+
+
+• EGS/SMG (if eguipped) 
+
+
+48 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alternator 
+
+The alternator is a 180 amp unit manufac¬ 
+tured by Valeo. The alternator pulley has 
+been modified with a one way clutch. 
+
+The alternator communicates with the 
+ECM via the BSD circuit. The bit-serial 
+data interface is a single-wire data bus with 
+a data transfer rate of 1.2 kBd. 
+
+The alternator with BSD interface can 
+actively communicate with the engine con¬ 
+trol module. The alternator is not linked to 
+the charge indicator lamp, only to the 
+engine 
+
+control module. The alternator can detect a 
+variety of faults. 
+
+Battery charge indicator lamp 
+
+The signal for the charge indicator lamp to light up is transferred across CAN to the 
+instrument cluster. The charge indicator lamp lights up if there is mechanical and/or an 
+electrical fault. 
+
+
+
+19] 
+
+
+I MS* 
+
+j Entry EHPam 
+
+
+r 
+
+
+1 A' SSES 
+
+
+U.E-EO 
+
+■3d 
+
+
+raso&i 
+
+
+i 
+
+i 
+
+! 
+
+I 
+
+
+15 
+
+
+
+
+D.KO 
+
+V 
+
+
+
+i.t: :j:: 
+
+EJiLllL DUKdltpiIYtp 
+
+
+"] A£> ]£ ij 
+
+| CME UtllDl ITrllljil 
+! 
+
+
+35 
+
+
+njoon 
+
+
+’i’lji!- 
+
+
+C-.BSO 
+0 i 
+hi 
+
+
+1 .’SHI 
+
+I 
+
+
+
+I 
+
+
+| OeKM 
+
+| .iii'-iii'- 
+I 
+
+
+
+raraas 
+
+
+D_&SO 
+
+
+l].« 
+
+
+
+1 
+
+^ X02S1D 
+
+1 
+
+1 
+
+1 
+
+1 
+
+m i 
+
+1 
+
+L 
+
+i 
+
+ji 
+
+
+Csd ujrilUhi «rui 
+
+
+49 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cooling System 
+
+One of the challenges in the cooling system on current engines is having a water pump 
+with an RPM dependent output. As RPM increases, so does the cooling system flow. 
+This is adequate for higher RPM operation, however the large volume of coolant flow is 
+not needed at low RPM. 
+
+To date, the delivery capacity of the coolant pump has been designed in line with the 
+greatest possible cooling requirement of the engine which, in the majority of cases, is not 
+required. 
+
+As a result, the surplus quantity of coolant circulates unused through the thermostat in a 
+small circuit. The cooling system is now also optimized in such a way as to avoid this 
+power loss situation. 
+
+In addition, the new system makes it possible to achieve temperature ranges that are 
+adapted to the engine load. 
+
+
+
+The coolant pump on the N52 is designed as an electrically driven centrifugal pump. 
+
+The output of the wet-rotor electric motor is controlled electronically by the electronic 
+module (EWPU) located under the connection cover of the motor. 
+
+The electronic module EWPU is connected via the bit-serial data interface to the ECM 
+(DME). The ECM determines the necessary cooling capacity from the engine load, oper¬ 
+ating mode and the data from the temperature sensor and sends the corresponding 
+instruction to the EWPU control unit. 
+
+
+50 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The coolant in the system flows through the motor of the coolant pump, thus cooling 
+both the motor as well as the electronic module. 
+
+The coolant lubricates the bearings of the electric coolant pump. 
+
+Particular care must be taken when performing servicing work to ensure that the pump 
+does not run dry. When the pump is removed, it should be stored filled with coolant. The 
+bearing points of the pump could seize if the pump were not filled with coolant. This 
+could jeopardize subseguent start-up of the pump thus rendering the entire heat man¬ 
+agement system inoperative (the pump not starting up could cause serious engine dam¬ 
+age). If the pump should ever run dry, the pump wheel should be turned by hand before 
+finally connecting the coolant hoses. The system should then be immediately filled with 
+coolant. 
+
+Particular care must be taken during assembly to ensure that the connector is clean and 
+dry and the connections are undamaged. Diagnosis should be performed only with the 
+approved adapter cables. The information provided in the repair instructions must be 
+observed. 
+
+Bleeding (Venting) Cooling System 
+
+After performing any service work which reguires draining of the coolant. The system 
+must be bled to ensure that there are no air pockets present. The system can be bled 
+using the DISplus/GT-1 or by following a special procedure. To bleed the system: 
+
+1. Fill system with coolant via the expansion tank (AGB). Top up coolant level to lower 
+edge of expansion tank. 
+
+2. Close expansion tank. 
+
+3. Switch on ignition. 
+
+4. Set heating to maximum (temperature), switch on blower (lowest stage). 
+
+5. Press accelerator pedal module to floor for at least 10 seconds. The engine must 
+NOT be started. 
+
+6. Bleeding via EWP takes approximately 12 minutes. Then check coolant level in 
+expansion tank, top up to MAX marking if necessary. 
+
+7. Check cooling circuit and drain plugs for leaks. 
+
+8. If the procedure needs to be repeated several times, allow DME to completely 
+de-energize (remove ignition key for app.. 3 minutes) and then repeat procedure 
+as from item 3. 
+
+Note: Connect battery charger if battery charge level is low. 
+
+
+51 
+
+MSV70 Engine Electronics 
+
+
+
+Heat Management 
+
+The engine control unit controls the coolant pump according to requirements: low output 
+in connection with low cooling requirements and low outside temperatures; high output 
+in connection with high cooling requirements and high outside temperatures. 
+
+The coolant pump may also be completely switched off under certain circumstances, e.g. 
+to allow the coolant to heat up rapidly during the warm-up phase. However, this only 
+occurs when no heating is required and the outside temperature is within the permitted 
+range. 
+
+The coolant pump also operates differently than conventional pumps when controlling 
+the engine temperature. To date, only the currently applied temperature could be 
+controlled by the thermostat. The software in the engine control unit now features a 
+calculation model that can take into account the development of the cylinder head 
+temperature based on load. 
+
+In addition to the characteristic map control of the thermostat, the heat management 
+system makes it possible to use various maps for the purpose of controlling the coolant 
+pump. For instance, the engine control unit can adapt the engine temperature to match 
+the current driving situation. This means that four different temperature ranges can be 
+implemented: 
+
+• 112°C Economy (ECO) mode 
+
+• 105°C Normal mode 
+
+• 95°C High mode 
+
+• 80°C High + mapped thermostat mode 
+
+The coolant control sets a higher cylinder head temperature (112°C) if the ECM 
+determines Economy mode based on the current operating conditions. 
+
+The engine is operated with relatively low fuel consumption in this temperature range as 
+the internal friction is reduced. 
+
+An increase in temperature therefore favors lower fuel consumption in the low load range. 
+In HIGH and mapped thermostat mode, the driver wishes to utilize the optimum power 
+development of the engine. The cylinder head temperature is therefore reduced to 80°C. 
+
+This results in improved volumetric efficiency, thus increasing the engine torque. The 
+engine control unit can therefore set a certain operating mode adapted to the respective 
+driving situation. Consequently, it is possible to influence fuel consumption and power 
+output by means of the cooling system. 
+
+
+52 
+
+MSV70 Engine Electronics 
+
+
+
+Intelligent Heat Management 
+
+The previous section dealt with the various operating modes in connection with heat 
+management. However, an electrically driven coolant pump makes available even further 
+options. For instance, it is now possible to warm up the engine without the recirculating 
+the coolant or to allow the pump to continue to operate after turning off the engine to 
+facilitate heat dissipation. 
+
+The advantages offered by this type of pump are listed in the following table: 
+
+
+Fuel Consumption 
+
+• Faster warm-up as coolant is not recirculated (stationary) 
+
+• Increased compression ratio through greater cooling capacity at full load 
+as compared to the predecessor engine 
+
+Emissions 
+
+• Faster engine warm-up by drastically reduced pump speed (n => 0) 
+and the resulting lower volumetric flow of coolant 
+
+• Reduced friction 
+
+• Reduced fuel consumption 
+
+• Reduced exhaust emissions 
+
+Power output 
+
+• Component cooling independent of engine speed 
+
+• Requirement-controlled coolant pump output 
+
+• Avoidance of power loss 
+
+Comfort 
+
+• Optimum volumetric flow 
+
+- FHeating capacity increased as required 
+
+- Residual heat with engine stationary 
+
+Component 
+
+Protection 
+
+• EWP after-running = more effective heat dissipation from the hot engine 
+
+
+53 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cooling System Comparison (Belt Driven vs. Electric Coolant Pump) 
+
+The belt driven coolant pump circulates the coolant as a function of engine speed. The 
+circulated coolant can only be influenced by the mapped thermostat for temperature 
+control purposes. 
+
+The system switches between the small and large circuit. In other words, between the 
+circuit which flows through the radiator (large circuit) and the circuit which flows only 
+between the engine block , coolant pump and thermostat. 
+
+This means that the cooling capacity is dependent upon engine speed. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radiator 
+
+5 
+
+Outlet temp sensor, cylinder head 
+
+2 
+
+Mapped Thermostat (KFT) 
+
+6 
+
+Engine oil to water heat exchanger 
+
+3 
+
+Belt driven coolant pump 
+
+7 
+
+Expansion tank 
+
+4 
+
+Heat exchanger for heating system 
+
+
+
+
+The advantages of the conventional cooling system are still utilized in the cooling system 
+with the electric coolant pump. However this system also provides further options. 
+
+
+54 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For instance, the cooling capacity of the system can now be adapted by means of freely 
+variable volumetric coolant flow. It is possible to deactivate the coolant pump while the 
+engine is warming up or to allow it to continue to operate when the engine has been 
+turned off. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radiator 
+
+5 
+
+Heat exchanger for heating system 
+
+2 
+
+Outlet temperature sensor, radiator 
+
+6 
+
+Outlet temp sensor, cylinder head 
+
+3 
+
+Mapped Thermostat (KFT) 
+
+7 
+
+Engine oil to water heat exchanger (MOWWT) 
+
+4 
+
+Electric coolant pump 
+
+
+Expansion tank 
+
+
+As shown in the graph to the right, this 
+results in the field in which the speed 
+related to the cooling capacity can be 
+controlled independently. This field is 
+limited by the MAX and MIN speed of 
+the coolant pump. 
+
+The graph shows that a system with an 
+electric coolant pump can deliver any 
+volume of coolant independently of 
+engine RPM. The “Qv” indicates 
+coolant delivery volume and “nMot” 
+refers to engine RPM. 
+
+
+
+55 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cooling Fan 
+
+The electric cooling fan is controlled by the ECM. The ECM uses a remote power output 
+final stage mounted on the fan housing. The output stage receives power from a 60 
+Amp fuse located in the power distribution box behind the glove box. 
+
+The electric fan is controlled via a PWM circuit from the ECM. The fan is activated based 
+on the ECM calculation of: 
+
+• Coolant outlet temperature 
+
+• Calculated catalyst temperature 
+
+• Vehicle speed 
+
+• Battery voltage 
+
+• Air conditioning inputs such as AC pressure. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Power steering cooler 
+
+4 
+
+Fan shroud with electric fan 
+
+2 
+
+AC Condenser 
+
+5 
+
+Automatic transmission fluid cooler 
+
+3 
+
+Radiator 
+
+
+
+
+56 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+Map Controlled Thermostat 
+
+
+The map controlled thermostat is activated 
+by the ECM and works in conjunction with 
+the heat management system on the N52 
+engine. 
+
+Due to the redesign of the cooling system, 
+the thermostat is located externally near 
+the electric coolant pump. 
+
+The thermostat is ground controlled by the 
+ECM. Power is supplied by a 30 amp fuse 
+which is part of the engine electronics 
+fuses in the E-box. 
+
+
+
+
+57 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Cooling System 
+
+
+Using an instructor designated vehicle, perform a complete vehicle short test. 
+Proceed with the cooling system bleeding procedure as outlined in the Group 17 
+repair instructions. 
+
+
+Note: Be sure to have battery charger connected while performing 
+this procedure! 
+
+Connect the appropriate breakout box the the ECM. Using the oscilloscope, monitor 
+the BSD interface between the ECM and the EWP. Initiate the bleeding procedure 
+and monitor the signals on the BSD interface. 
+
+Using the service functions menu, go to cooling system - “venting” and enter into 
+test plan. 
+
+Describe the proper steps to bleed the cooling system on an N52 engine: 
+
+
+What is the maximum/minimum delivery rate shown in the test module? 
+
+
+How does the ECM (DME) communicate the desired delivery rate to the EWPU? 
+
+
+Is it necessary to use the test plan in order to bleed the cooling system? 
+
+
+While waiting for the bleeding procedure to complete, observe the BSD signal on 
+the oscilloscope: 
+
+What is the observed voltage on the BSD line? 
+
+
+Does the EWPU control unit show up on the “control unit functions” menu? 
+
+
+Are there any status items in the DME diagnosis screens? 
+
+
+58 
+
+MSV70 Engine Electronics 
+
+
+
+
+Workshop Exercise - Cooling System 
+
+Using the breakout box on the ECM, locate the signal line to the electric fan. 
+Measure the signal using the oscilloscope and record results below. 
+
+
+
+Frequency 
+
+Duty Cycle 
+
+Voltage 
+
+Engine OFF, key at KL15 
+
+
+
+
+Engine running, fan not active 
+
+
+
+
+Fan Activated using component 
+activation. 
+
+
+
+
+Engine running at operating temperature 
+
+
+
+
+
+Using the ETM and vehicle, locate the following components and record information 
+and location in the table below: 
+
+
+Item/Description 
+
+ETM Component # 
+
+(and fuse rating) 
+
+Description of Location 
+
+Fuse for Electric Water Pump 
+
+
+
+Fuse for Engine Thermostat 
+
+
+
+Fuse for Engine Cooling Fan 
+
+
+
+Coolant outlet temperature 
+sensor 
+
+
+
+Engine Coolant Temperature 
+Sensor 
+
+
+
+Engine Cooling Fan Controller 
+
+
+
+Electric Coolant Pump 
+(EWPU) 
+
+
+
+
+59 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electronic Oil Condition Monitoring 
+
+There is no dipstick including the guide tube on the N52 engine. This represents a 
+convenience function for the customer while enabling more accurate recording of the 
+engine oil level. 
+
+The engine oil level is measured by an oil condition sensor (OZS) and indicated in the 
+central information display (CID). The engine oil temperature and the oil condition are 
+also registered or calculated by the oil condition sensor. The signal from the oil condition 
+sensor is evaluated in the ECM. The evaluated signal is then routed via the PT-CAN, 
+SGM and the K-CAN to the instrument cluster and to the CID. 
+
+Registering the engine oil level in this way ensures the engine oil level in the engine does 
+not reach critically low levels thus protecting the engine from the associated damage. By 
+registering the oil condition, it is also possible to determine when the next engine oil 
+change is due. Overfilling the engine with oil can cause leaks - a corresponding warning 
+is therefore given. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Housing 
+
+6 
+
+Oil Condition Sensor 
+
+2 
+
+Outer Metal Tube 
+
+7 
+
+Sensor Electronics 
+
+3 
+
+Inner Metal Tube 
+
+8 
+
+Oil Pan 
+
+4 
+
+Engine Oil 
+
+9 
+
+Temperature Sensor 
+
+5 
+
+Oil Level Sensor 
+
+
+
+
+60 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Function of the Oil Condition Sensor 
+
+The sensor consists of two cylindrical capacitors arranged one above the other. The oil 
+condition is determined by the lower, smaller capacitor (6). Two metal tubes (2 + 3), 
+arranged one in the other, serve as the capacitor electrodes. The dielectric is the engine 
+oil (4) between the electrodes. The electrical property of the engine oil changes as the 
+wear or ageing increases and the fuel additives break down. 
+
+The capacitance of the capacitor (oil condition sensor) changes in line with the change in 
+the electrical material properties of the engine oil (dielectric). This means that this capaci¬ 
+tance value is processed in the evaluation electronics (7) integrated in the sensor to form 
+a digital signal. 
+
+The digital sensor signal is transferred to the DME as an indication of the status of the 
+engine oil. This actual value is used in the DME to calculate the next oil change service 
+due. 
+
+The engine oil level is determined in the upper part of the sensor (5). This part of the 
+sensor is located at the same level as the oil in the oil pan. As the oil level drops (dielec¬ 
+tric), the capacitance of the capacitor changes accordingly. The electronic circuitry in the 
+sensor processes this capacitance value to form a digital signal and transfers the signal to 
+the DME. 
+
+A platinum temperature sensor (9) is installed at the base of the oil condition sensor for 
+the purpose of measuring the engine oil temperature. 
+
+
+The engine oil level, engine oil temperature and engine oil condition are registered 
+continuously as long as voltage is applied at terminal 15. The oil condition sensor is 
+powered via terminal 87. 
+
+
+
+Faults/Evaluation 
+
+The electronic circuitry in the oil condition sensor features a self-diagnosis function. A 
+corresponding error message is sent to the DME in the event of a fault in the oil condition 
+sensor. 
+
+
+61 
+
+MSV70 Engine Electronics 
+
+
+
+
+Electronic Oil Level Indicator 
+
+The oil level is measured in two stages: 
+
+• Static oil level measurement while the vehicle is stationary 
+
+• Dynamic oil level measurement during vehicle operation 
+
+Static Oil Level Measurement at Engine OFF 
+
+This is only a reference measurement as the oil condition sensor (OZS) is flooded when 
+the engine is turned off and can only detect the minimum oil level. The oil level is 
+measured correctly only when the engine is running (see Dynamic oil level measure¬ 
+ment). 
+
+After switching on the ignition, the static oil level measurement provides the driver with 
+the opportunity of checking whether there is sufficient engine oil for safely and reliably 
+starting the engine. 
+
+1. It is important that the vehicle is parked horizontally otherwise the oil level 
+measurement may be incorrect. 
+
+2. Select on-board computer function "Service" > "Oil level". 
+
+If there is sufficient engine oil for safe and reliable engine start, a graphic appears in the 
+CID in the form of an engine with a green oil sump. 
+
+
+Text fur Zustand: 
+Keine genaue 
+Messung moglich 
+Olstand in 
+Ordnung 
+
+
+62 
+
+MSV70 Engine Electronics 
+
+
+
+If the oil level is close to minimum, the 
+graphic appears with a yellow oil sump and 
+an oil dipstick that represents the low oil 
+level in yellow. 
+
+A top-up request+1 liter additionally 
+appears as a text message. The display 
+will not change if less than 1 liter of oil is 
+topped up. MAX is indicated only after 
+topping up a quantity of 1 liter. 
+
+If the oil level drops below minimum, the 
+graphic appears with a red oil sump and an 
+oil dipstick that represents the low oil level 
+in red. 
+
+A top-up request+1 liter will additionally 
+appear as a text message. 
+
+The display will not change if less than 1 
+liter of oil is topped up. MAX is indicated 
+only after topping up a quantity of 1 liter. 
+
+If the oil level is above maximum, the 
+graphic appears with a yellow oil sump and 
+an oil dipstick that represents the high oil 
+level in yellow. 
+
+A text message is also displayed for the 
+driver. 
+
+
+
+
+63 
+
+MSV70 Engine Electronics 
+
+
+
+
+Dynamic oil level measurement during vehicle operation 
+
+Always perform the dynamic oil level measurement (app.. 5minutes driving time) after an 
+oil change. The oil level could be misinterpreted as the oil level last stored is initially dis¬ 
+played after an oil change. 
+
+
+No oil level is initially stored after replacing or reprogramming the engine control unit. 
+
+"Oil level below min" is therefore displayed. The correct oil level is indicated after running 
+the engine for app.. 5 minutes. 
+
+
+1. Start engine. 
+
+2. Select on-board computer function - 
+“Check oil level". 
+
+3. The oil level is measured. A clock 
+symbol may appear while the level 
+measurement is running. The clock 
+symbol appears for up to 50 seconds 
+after starting the engine when there is 
+no measured value or the long-term 
+value last stored is not within the 
+tolerance range of the currently 
+measured oil level. 
+
+
+
+Dynamic oil level measurement begins 
+when following values are reached: 
+
+• Engine temperature > 60°C 
+
+• Engine speed > 1000 rpm 
+
+• Transverse and longitudinal acceleration < 4-5 m/s2 
+
+The transverse acceleration signal is supplied by the DSC. The longitudinal acceleration 
+is calculated from the speed and time factors. 
+
+• Increase < 5% after covering a distance of app.. 200 m. The increase value is 
+detected by the ambient pressure sensor in the DME. 
+
+On reaching this value, the oil level indicator is updated app.. 5 minutes after starting 
+vehicle operation. The oil level is then continuously measured. The indicator is updated at 
+20 minute intervals. The "Check oil level" menu in connection with the dynamic oil level 
+measurement is exited while driving (vehicle speed > 0) app.. 15 seconds after the oil 
+level is displayed. 
+
+
+64 
+
+MSV70 Engine Electronics 
+
+
+
+
+Display Options 
+
+
+Significance 
+
+
+Remark 
+
+
+Display 
+
+
+Oil OK with engine stationary 
+
+
+The oil level appears in the CID in the form 
+of a graphic together with the "OK" 
+message, indicating that the oil level is in 
+the safe operating range. 
+
+
+Tu?e rr r i .Hi 11 
+
+rtmni! 
+
+Ub, 1 , d in 
+tintyunn 
+
+
+Oil level OK at idle speed 
+
+
+The oil level appears in the CID in the form 
+of a graphic together with the "OK" 
+message, indicating that the oil level is in 
+the safe operating range. 
+
+
+| 
+
+max 
+
+
+A further graphic showing a dipstick 
+appears above the displayed graphic. It 
+shows the oil level in green. 
+
+
+mm 
+
+
+Oil level too low 
+
+
+The oil level appears in the CID in the form 
+of a graphic together with the request to 
+top up with 1 liter of oil. 
+
+If the oil is not topped up, this request is 
+repeatedly indicated until the minimum oil 
+level is exceeded. 
+
+
+mas 
+
+min 
+
+
+Oil level too 
+
+
+Service 
+
+
+high 
+
+
+The oil level appears in the CID in the form 
+of a graphic together with the indication 
+that the maximum oil level has been 
+exceeded. The excess engine oil must be 
+extracted in the workshop down to the 
+maximum limit. 
+
+If no oil is extracted, this request will be 
+repeated until the oil level drops below the 
+maximum limit. This represents an 
+advantage that extends beyond the user 
+friendliness of the monitoring system. 
+
+Over filling of the engine that can cause 
+leaks is indicated as a warning in the instru¬ 
+ment cluster. 
+
+
+
+There is a problem with the measurement 
+system if SERVICE appears in the display. 
+
+In this case, the oil level is forecast from the 
+oil consumption last measured and shown 
+in the display. It is not necessary to immedi¬ 
+ately visit a workshop. The remaining kilo¬ 
+meters are shown in the service menu. In 
+the event of the instrument cluster failing, 
+the oil level can also be read out with the 
+diagnosis tester. 
+
+
+65 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^ Classroom Exercise - Review Questions 
+
+1. Describe the connector configuration of the MSV70 control module: 
+
+
+2. Describe the “phasing” function of Valvetronic: 
+
+
+3. Describe the proper procedure for bleeding the cooling system on the N52 
+engine? 
+
+
+4. Where are the PT-CAN resistors located in the E90? 
+
+
+5. What components/systems communicate with the ECM via the BSD circuit? 
+
+
+66 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- j j i Classroom Exercise - Review Questions 
+
+6. What is different (new) about the crankcase ventilation system? 
+
+
+7. How are the DISA actuators controlled? 
+
+
+8. What is new regarding the fuel supply system? 
+
+
+9. What is the purpose of the LDM? 
+
+
+10. What components are connected to the ECM via BSD? 
+
+
+67 
+
+MSV70 Engine Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

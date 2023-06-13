@@ -1,0 +1,4178 @@
+Table of Contents 
+
+
+Ignition Management 
+
+Subject Page 
+
+Ignition Management .3 
+
+Principle of Operation.3 
+
+Ignition System Inputs .4 
+
+Ignition Coils.4 
+
+Spark Plugs.6 
+
+Knock Sensors.7 
+
+Superknocking.8 
+
+Multiple Ignition Pulses .9 
+
+Crankshaft Position/RPM Sensor (Hall Effect).10 
+
+Crankshaft Sensor (N55) .11 
+
+Service Information.13 
+
+Ignition Coils.17 
+
+Knock Control .18 
+
+Spark Plugs.20 
+
+Spark Plug Diagnosis (HPI engines).21 
+
+Engine Misfire Diagnosis.22 
+
+SI B 12 06 10N54- 
+
+Misfire Faults, Diagnosis with ISTA .25 
+
+SI B 12 11 10 N54, N54T, N55 - 
+
+Diagnosis for HDP High-pressure Faults .33 
+
+
+Initial Print Date: 03/11 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition Management 
+
+Model: All 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand how spark is formed and used in BMW engines 
+
+• Perform an ignition primary scope measurement 
+
+• Perform an ignition secondary scope measurement 
+
+• Interpret the spark measurements and relate them to diagnosis 
+
+• Understand optimized emission 
+
+• Describe how the ignition system is monitored 
+
+
+2 
+
+Ignition Management 
+
+
+
+
+Ignition Management 
+
+
+Example of IPO for an Ignition Management System 
+
+
+
+SIGNAL 
+
+I- 
+
+INTAKE 
+AIR TEMP 
+
+
+
+
+IGNITION COIL 
+CONTROL (6XL 
+
+
+
+One of the main purposes of the ECM is Ignition Management which includes the actu¬ 
+ation of several components. In the following pages you will find a generic explanation 
+on how this system works. For more detailed information please access BMW Training 
+Reference Manuals found on-line. 
+
+Principle of Operation 
+
+Ignition Management provides ignition to the combustion chambers with the required 
+voltage at the correct time. Based on the combination of inputs, the ECM calculates and 
+controls the ignition timing and secondary output voltage by regulating the activation 
+and dwell of the primary ignition circuits. The ECM controls and monitors the secondary 
+ignition output including Misfire Detection. 
+
+The ECM has a very “broad” range of ignition timing. This is possible by using a Direct 
+Ignition System, or sometimes referred to as “Static Ignition System” (RZV). Reliability is 
+also increased by having separate individual ignition circuits. 
+
+The Ignition Control is determined by the ECM (load dependent). The ECM will calcu¬ 
+late the engine “load” based on a combination of the following inputs: 
+
+• Battery Voltage; 
+
+• Accelerator Pedal Position; 
+
+• Air Flow Volume; 
+
+• Air Temperature; 
+
+• Engine Coolant Temperature; 
+
+• Crankshaft Position / RPM; 
+
+• Camshaft Positions (Cylinder ID); 
+
+• Knock Sensors; 
+
+• *ln a Turbocharged engine, Boost Pressure is also used. 
+
+
+3 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The dwell time will be regulated based on battery voltage. When cranking, the voltage is 
+low and the ECM will increase the dwell to compensate for saturation “lag time”. When 
+the engine is running and the battery voltage is higher, the ECM will decrease the dwell 
+due to faster saturation time. 
+
+The Crankshaft Position/RPM signals the ECM to start ignition in firing order as well 
+as providing information about the engine operation. This input is used in combination 
+with other inputs to determine engine load which advances/retards the ignition tim¬ 
+ing. Without this input, the ECM will not activate the ignition. 
+
+Cold start is determined by the ECM based on the engine coolant temperature and rpm 
+during start up. A cold engine will crank over slower than a warm engine, the ignition tim¬ 
+ing will range between top dead center to slightly retarded providing optimum starting. 
+
+When starting a warm engine, the rpm is higher which results in slightly advanced timing. 
+
+If the engine coolant and intake air temperature is hot, the ignition timing will not be 
+advanced reducing starter motor “load”. 
+
+Ignition System Inputs 
+
+The ignition system on the engine management system uses several inputs to control 
+ignition functions. Proper ignition timing control is dependent upon inputs such as RPM, 
+throttle position, crankshaft position, air mass and temperature (coolant and intake air) 
+and in our turbocharged engines, intake boost pressure. 
+
+Most of the ignition system components have remained the same for all NG6 engines. 
+There are some minor changes to the ignition coils that apply to all versions. The coils 
+have been optimized for more durability. 
+
+
+Ignition Coils 
+
+
+The high voltage supply required to ignite the mixture in the combustion chambers is 
+determined by the stored energy in the ignition coils. The stored energy contributes to 
+the ignition duration, ignition current and rate of high voltage increase. The Coil circuit 
+including primary and secondary components consists of: 
+
+
+The Coil Assembly contains two copper 
+windings insulated from each other. One 
+winding is the primary winding, formed by 
+a few turns of thick wire. The secondary 
+winding is formed by a great many turns 
+of thin wire. 
+
+
+
+4 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+The primary winding receives battery voltage 
+from the Ignition Coil Relay (in the IVM) which 
+is activated by the CAS Module. The ECM pro¬ 
+vides a ground path for the primary coil (Coil 
+Terminal 1) by activating a Final Stage transis¬ 
+tor. The length of time that current flows 
+through the primary winding is the “dwell” 
+which allows the coil to “saturate” or build up a 
+magnetic field. After this storage process, the 
+ECM will interrupt the primary circuit at the 
+point of ignition by deactivating the Final Stage 
+transistor. The magnetic field built up within the 
+primary winding collapses and induces the ignition 
+voltage in the secondary winding. 
+
+The high voltage generated in the secondary 
+winding is discharged through Coil Terminal 4 to 
+the spark plug (insulated by the boot connector). 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Coil Assembly 
+
+2 
+
+Insulator Boot 
+
+3 
+
+Spark Plug 
+
+4 
+
+ECM Final Stage Transistor 
+
+5 
+
+Secondary Coil Ground 
+
+
+The primary and secondary windings are un-cou- 
+pled, therefore, the secondary winding requires a 
+ground supply (Coil Terminal 4a). 
+
+The high voltage generated in the secondary wind¬ 
+ing is discharged through Coil Terminal 4 to the 
+spark plug (insulated by the boot connector). 
+
+The primary and secondary windings are un-cou- 
+pled, therefore, the secondary winding requires a 
+ground supply (Coil Terminal 4a). 
+
+
+
+Secondary 
+
+Winding 
+
+
+Insulator 
+
+Boot 
+
+
+} 
+
+
+
+The ECM uses “pencil type” ignition coils. The individual ignition coils are integrated with 
+the insulated connector (boot). 
+
+
+The coils are removed by lifting the swivel latch connector retainer to release the wiring 
+harness, apply a slight twist and lift the assembly upwards. The primary ignition cables 
+are routed on the top of the cylinder head covers. 
+
+
+5 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Spark Plugs 
+
+The spark plugs introduce the ignition energy into the combustion 
+chamber. The high voltage “arcs” across the air gap in the spark 
+plug from the positive electrode to the negative electrodes. This 
+creates a spark which ignites the combustible air/fuel mixture. 
+
+The spark plugs are located in the center of the combustion area 
+(on the top of the cylinder heads) which is the most suitable point 
+for igniting the compressed air/fuel mixture. 
+
+The spark plugs used on BMW Engines are designed by NGK. The plugs use an Iridium 
+center electrode. The center electrode is only 0.6 mm thick. The insulator is also 
+redesigned. The new spark plug technology allows for longer service life and improved 
+cold starting. The correct spark plug for each engine should be used. 
+
+The Ignition System is monitored by the ECM via the Crankshaft Position/RPM 
+Sensor. If a Misfire fault is present, the ECM will deactivate the corresponding fuel injec¬ 
+tor for that cylinder. Engine operation will still be possible. 
+
+The spark plugs for the N51 and N52KP remain the same as N52. However, the N54 
+uses a completely new spark plug from Bosch. The spark plug design consists of a 
+12mm thread which contrasts from the 14mm design on the N52 which prevents any 
+possibility of improper installation. The hex on the spark plug is also a 12 point design 
+which requires a special tool. The tool (socket) has a “thinwall” design to facilitate 
+access in the confined area of the N54 cylinder head. 
+
+
+
+
+
+Iridium is a precious metal that is 6 
+times harder and 8 times stronger 
+than platinum, it has a 1,200° F higher 
+melting point than platinum and con¬ 
+ducts electricity better. 
+
+
+6 
+
+Ignition Management 
+
+
+
+
+
+Knock Sensors 
+
+The knock sensor registers structure-borne vibrations 
+(knocking). Knocking combustion can damage the 
+engine. The data from the knock sensor make it possible 
+for the DME to implement countermeasures. Abnormal, 
+reverberating combustion processes can occur under 
+certain conditions in petrol engines. These abnormal 
+combustion processes curtail the earliest possible igni¬ 
+tion timing point and therefore limit the power output 
+and efficiency of the engine. 
+
+Such combustion processes are referred to as knocking and occur as the result of self 
+ignition of the fuel-air mixture not yet reached by the flame front. Normal combustion and 
+compression produced by the piston cause pressure and temperature to rise, resulting in 
+self-ignition of the fuel-air mixture not yet ignited. This produces flame velocities in 
+excess of 2000 m/s while the flame speed during normal combustion is approx. 30 m/s. 
+
+Conditions favoring knocking operation include: 
+
+• Increased compression ratio (e.g. deposits) 
+
+• High cylinder charge 
+
+• Poor fuel quality (RON/MON) 
+
+• High intake air and engine temperature 
+
+The knock sensors operate on the piezo electric principle. Vibrations from combustion 
+events are converted into electrical signals which are monitored by the ECM. Excessive 
+vibration indicates engine knock which will cause the ECM to retard the ignition timing to 
+retard as necessary. 
+
+The number of Knock sensors will vary depending on the engine; typically 6 cylinder 
+engines use two (2), V8’s four (4) and V12’s six (6). 
+
+Note: Excessive knocking will cause the MIL to illuminate. 
+
+When installing knock sensors, be sure to torque to specification. 
+Under or over-tightening the knock sensors can result is erroneous 
+knock sensor faults or poor engine performance. 
+
+If a fault is detected with the sensor(s), the ECM deactivates Knock 
+Control and it will set the ignition timing to a conservative basic set¬ 
+ting based on intake air temperature/pressure and a fault will be 
+stored. 
+
+
+
+
+7 
+
+Ignition Management 
+
+
+
+Superknocking 
+
+The term superknocking refers to irregular combustion that occurs in 
+turbocharged/supercharged engines. During this process, the maximum combustion 
+pressure increases from approx. 100 bar up to about 200 bar. This situation could be 
+caused by foreign bodies in the combustion chamber such as oil, residual gas or carbon 
+particles that trigger ignition of the fuel-air mixture before the actual firing point. 
+
+Superknocking cannot be eliminated by corresponding interventions in the ignition sys¬ 
+tem so to prevent engine damage, the ECM reduces the power output when it detects 
+superknocking. Temporary superknocking is caused by individual dirt particles. Fuel 
+injection into the affected cylinder is shut down in the short term (3 to 6 cycles) in 
+response to superknocking. A corresponding fault code is stored in the fault code 
+memory. 
+
+
+
+8 
+
+Ignition Management 
+
+
+Multiple Ignition Pulses 
+
+Multiple Ignition Pulses ensure good spark quality during engine start up. The ECM will 
+activate the ignition coils 9 times (voltage dependent) per 720° of crankshaft revolution. 
+
+The ignition timing will be progressively 
+advanced assisting the engine in coming 
+up to speed. As the engine speed 
+approaches idle rpm, the timing remains 
+slightly advanced to boost torque. When 
+the engine is at idle speed, minimum tim¬ 
+ing advance is required. This will allow 
+faster engine and catalyst warm up. 
+
+The multiple pulsing switches to single 
+pulse when: 
+
+• Engine Speed >1350 RPM (varied 
+with engine temperature) 
+
+The timing will be advanced when the ECM observes low engine rpm and increasing 
+throttle/air volume inputs (acceleration torque). As the throttle is opened, the ECM 
+advances the timing based on engine acceleration and at what rate. The ECM will fully 
+advance timing for the “full throttle” position indicating maximum acceleration (torque). 
+
+
+
+ECM 
+
+Relay 
+
+
+hdnrn^n^n™ |>- JS: 
+
+1 l£l 
+
+HI - |71 
+
+
+ES| 
+
+
+vn 
+
+
+•rjm 
+
+
+
+
+Cmllr 
+
+
+
+
+
+dll i 
+
+IJH * 
+
+1 ii^hl 
+
+4 
+
+0 
+
+
+0 
+
+
+£ 
+
+
+Multiple 
+ignition 
+: pulses from 
+each coil 
+
+
+ii 
+
+
+E 
+
+
+PI IM 
+
+FriF 
+
+-i r 
+
+V'A II" 
+
+'iff' flw 
+
+Otfm 
+
+i "TF1 
+
+E 
+
+
+T-EU* fatal 
+
+
+UrJh 
+
+nil', j AG | DC | 
+
+|fpU» ad | PD 
+
+**&.' P«i1p 
+
+
+
+
+LiiMUi'UMj 
+
+
+LhfliTwiltXJ 
+
+ihmn 
+
+
+9 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankshaft Position/RPM Sensor (Hall 
+Effect) 
+
+The crankshaft position sensor provides the ECM with a 
+5 volt square wave signal. The ECM calculates engine 
+speed (RPM) and crankshaft position for ignition and 
+injection system operation. 
+
+The sensor is supplied with 12 volts from the engine 
+electronics fuses and ground from the ECM. 
+
+An effective signal that can be evaluated is output as 
+from a speed of approx. 20 rpm. 
+
+The control unit detects the tooth gap in that the measured spacing of the gaps is more 
+than double as great as the previous or subsequent gaps. The tooth gap itself is 
+assigned to a defined crankshaft position of cylinder number 1. The DME synchronizes 
+the crankshaft position with respect to this timing point. With each subsequent low signal 
+it increments the crankshaft position by 6°. 
+
+Exact assignment is necessary for the DME to be able to adapt the ignition and fuel 
+injection to specific requirements. The time interval measured between two level 
+changes (e.g. High to Low) is therefore divided into smaller units of time. 
+
+
+
+
+Index 
+
+
+Explanation 
+
+
+Electrons 
+
+
+Hall Module 
+
+
+Lines of magnetic force 
+
+
+Permanent magnet 
+
+
+Power supply 
+
+
+Hall voltage 
+
+
+
+The crankshaft position sensor is also monitored for variations in 
+crankshaft speed to determine misfires. 
+
+
+10 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankshaft Sensor (N55) 
+
+The function of the new crankshaft sensor is identical to that of the crankshaft sensors 
+used for the automatic engine start-stop function (MSA). The engine reversal detection 
+is required for the MSA function. (MSA is not currently offered in the US.) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connector 
+
+2 
+
+Dust seal 
+
+3 
+
+Sensor 
+
+
+11 
+
+Ignition Management 
+
+
+
+
+
+
+
+12 
+
+Ignition Management 
+
+
+
+Service Information 
+
+
+A fault survey should first be performed using the IMIB to determine if there is a fault in 
+the primary ignition or secondary ignition. If there is a fault in the primary ignition, testing 
+should include: 
+
+• Power Supply at the coil (KL 15). 
+
+• Resistance of the harness and ignition coil primary winding using the Universal 
+Adapter with the ECM disconnected. 
+
+If there is a fault in the secondary ignition, testing should include: 
+
+• Primary Ignition. 
+
+• Evaluation of Secondary Oscilloscope Patterns. 
+
+
+
+
+
+The Following are Examples of 
+Secondary Oscilloscope Patterns 
+
+(consult Repair Instructions for ignition 
+pattern variations per coil manufacturer): 
+
+This is a normal pattern for one ignition circuit 
+with the engine at idle speed. 
+
+• Normal Combustion Period. 
+
+• Normal Ignition Voltage Peak. 
+
+
+
+13 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Multiple Ignition Pulses ensure good spark 
+quality during engine start up. The ECM will 
+activate the ignition coils 9 times per 720° of 
+crankshaft revolution. 
+
+This is a normal pattern for one ignition circuit 
+when: 
+
+1. Normal Combustion Period 
+
+2. Normal Ignition Voltage Peak 
+
+
+J, | 
+
+Tld**:* l«.#TLliU 
+
+■ ?! t ■ 
+
+
+
+
+
+
+
+
+
+
+
+Long Spark Period (1) with Low Ignition Volt¬ 
+age Peak (2). If Spark Period is Fluctuating: 
+
+• Indicates Low Compression 
+
+• Contamination on Spark Plug or Defective 
+Spark Plug 
+
+If instead you measured a Short Spark Period 
+(1) with High Ignition Voltage Peak (2): 
+
+• Defective Ignition Connector or Resistive 
+Adaptive Boot 
+
+
+
+1 1111 1 1111 p m | 1111 1 1111 1 h h 1 1 u i | m 1 1 1111 1 n n | 
+
+TOO SO BO 70 60 40 30 ZO 10 0 
+
+
+Evaluation of Ignition Voltage Peaks at Idle 
+Speed (Multiple Cylinders Displayed). 
+
+1. Normal Attenuation (Voltage Reduction) 
+Process 
+
+2. Shorten Attenuation Process (arrow)- 
+Defective Ignition Coil 
+
+3. Absence of Attenuation (arrow )-Defective 
+Ignition Coil 
+
+
+
+14 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No Sparking Voltage Line (Single Cylinder 
+Displayed) 
+
+• Defective Ignition Coil. 
+
+
+
+Evaluation of Ignition Voltage Peaks under 
+Sudden Loads (Multiple Cylinders Displayed). 
+
+• Defective Ignition Coil. 
+
+Decaying Process is considerably Higher than 
+Ignition Voltage Peak (2): 
+
+• Lean Mixture. 
+
+• Defective Fuel Injector. 
+
+• Low Compression. 
+
+
+
+
+Allow at least 3 minutes to elapse after the key was set to the “OFF” 
+position before disconnecting the ECM. This will allow sufficient time 
+to complete the DM-TL test. Voltage may be present (up to 3 min¬ 
+utes) causing damage to the ECM if it is disconnected during this 
+time period (arcing). 
+
+The Repair Instructions should be consulted for additional 
+Oscilloscope Patterns under various engine speeds. 
+
+
+15 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When Testing the Secondary Ignition System, use 
+Special Tool (Secondary Voltage Test Cable) 
+
+#90 88 6 127 050 / SWZ 12 7 050 This pro¬ 
+vides a clamping surface for the IMIB primary and 
+secondary ignition adapter clamps. 
+
+
+CAUTION!!! 
+
+
+Observe safety precau¬ 
+tions, high voltage is 
+present with the engine 
+running! 
+
+
+
+W127CSQ 
+
+
+
+The ignition current circuit is monitored based on the current in the primary coil. When 
+switching on, the current must be within certain values during defined time thresholds. 
+
+The following items are monitored: 
+
+• Primary current circuit of ignition coil. 
+
+• Ignition wiring harness. 
+
+• Secondary current circuit of ignition coil with spark plug. 
+
+• Spark duration. 
+
+The following defects are detected by the ignition circuit monitoring: 
+
+• Short-circuit on primary side of ignition coil. 
+
+• Spark plug. 
+
+• Line break in ignition wiring harness. 
+
+• Defective ignition output stages. 
+
+The following are not detected: 
+
+• Sporadic faults such as loose contacts in the ignition wiring harness. 
+
+• Sparkover in the high voltage circuit parallel to the spark gap without producing 
+an interturn fault. 
+
+
+16 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Summary, 
+
+If the Secondary Ignition Voltage is Too High (Excessive Resistance for Ignition): 
+
+• Spark Plug Gap is to Large (Worn or Burned). 
+
+• Incorrect Heat Range Spark Plug. 
+
+• Compression is too High (Carbon, etc.). 
+
+• Interruption in the Secondary Ignition Connector or Resistive Adapter Boot. 
+
+If the Secondary Ignition Voltage is Too Low (Low Resistance for Ignition): 
+
+• Spark Plug Gap is Too Small (Mishandled on Installation). 
+
+• Incorrect Heat Range Spark Plug. 
+
+• Compression is Too Low. 
+
+• Voltage Leak in the Secondary Ignition Connector or Resistive Boot to Ground. 
+
+Ignition Coils 
+
+The ignition coils of BMW enignes have been redesigned for better rigidity and durability. 
+Particular care must be taken when working on the fuel system to ensure that the igni¬ 
+tion coils are not wet with fuel. The resistance of the silicone material is greatly reduced 
+by contact with fuel. This could compromise the coils insulation and result in arcking at 
+the top of the spark plug causing a misfire. 
+
+• The ignition coils must be removed before working on the fuel system. 
+
+• When installing new solenoid valve fuel injectors utmost cleanliness must be 
+observed. 
+
+• After removing the ignition coils use a rag to prevent fuel from entering the spark 
+plug well. 
+
+• Ignition coils that have been saturated with fuel must be replaced. 
+
+
+17 
+
+Ignition Management 
+
+
+
+Knock Control 
+
+
+Knock Control allows the ECM to further 
+advance the ignition timing under load for 
+increased torque. Knock Control is only in 
+affect when the engine temperature is 
+greater than 35°C and there is a load on 
+the engine. This will disregard false signals 
+while idling or from a cold engine. 
+
+Based on the firing order, the ECM moni¬ 
+tors the Knock Sensors after each ignition 
+for a normal (low) signal. 
+
+
+
+KNOCK SEnSORS 
+MONSTER COMBUSTION 
+NO ■&£ 3JUILKR TO 
+
+A MIGR.DP'JIOME 
+
+
+_l— l—LJ 
+
+JlL 
+
+\ IT 1 
+
+A rl 
+
+n (\ jl 
+
+I' l i 
+
+v H k 
+
+rx r 
+
+J\ i* 
+
+A f 
+
+jy 
+
+
+Acceptable 
+
+Range 
+
+
+Not 
+
+Acceptable 
+■—. •. ': 
+
+
+
+If the signal value exceeds the threshold, 
+
+the ECM identifies the “knock” and retards the ignition timing (3°) for that cylinder the 
+next time it is fired. This process is repeated in 3° increments until the knock ceases. 
+
+
+The ignition timing will be advanced again in increments to just below the knock limit and 
+maintain the timing at that point. 
+
+If a fault is detected with the Knock Sensor(s) or circuits, the ECM deactivates Knock 
+Control. The ignition timing will be set to a conservative basic setting (to reduce the risk 
+of detonation) and a fault will be stored. The “Malfunction Indicator Light” will be illumi¬ 
+nated when the OBDII criteria is achieved. 
+
+
+The Knock Sensors should be tested using the IMIB for: 
+• Fault Codes 
+
+
+• Status Display - Knock Control (active / not active) 
+
+• Oscilloscope Display (Low AC Voltage -mV setting) 
+
+When installing Knock Sensors: 
+
+• Do not mix the locations! or Engine 
+Damage will result! The Knock Sensors 
+use a combined connection to the engine 
+harness. The Knock Sensor with the 
+shorter cable is for cylinders 4-6. 
+
+• Do not over tighten attaching bolt! - 
+
+Piezo ceramic will be cracked. Torque to 
+20 nm. 
+
+• Do not under tighten attaching bolt! 
+
+A lose sensor can vibrate producing a 
+similar signal to a knock. 
+
+
+
+18 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conditions favoring knocking operation include: 
+
+• Elevated compression ratio. 
+
+• High cylinder charge. 
+
+• Poor fuel quality (RON/MON). 
+
+• High intake air and engine temperature. 
+
+Self-diagnosis of the knock control system comprises the following checks: 
+
+• Check for signal error, e.g. line break or plug connection defective. 
+
+• Self-test of evaluator circuit. 
+
+• Check of noise level registered by the knock sensor for the engine. 
+
+Knock control is switched off if an error is determined in one of these checks. In this 
+case, an emergency program controls the ignition timing. At the same time, a corre¬ 
+sponding fault code is entered in the fault code memory. The emergency program 
+ensures safe, damage-free operation. The emergency program depends on the load, 
+engine speed and engine temperature. 
+
+
+19 
+
+Ignition Management 
+
+
+
+Spark Plugs 
+
+The Spark Plugs should be inspected for the 
+proper type, gap and replaced at the specified 
+intervals. 
+
+Refer to the Service Information Bulletins: 
+
+• SI B 12 01 05 High Performance Iridium 
+Spark Plug/Spark Plug Application Chart 
+
+• SI B 12 01 99 High Performance Platinum 
+Spark Plug/Spark Plug Application Chart 
+for the proper type and a visual of the 
+spark plug (showing effects of combus¬ 
+tion, fouling, etc.) 
+
+The Spark Plugs should be properly installed and torqued using the following Special 
+Tools: 
+
+• SWZ 12 1 200 Torque Limiter 
+
+• SWZ 12 1 171 Spark Plug Socket 
+
+
+
+
+Never use Air Tools for removal or installation. 
+
+
+20 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Spark Plug Diagnosis (HPI engines) 
+
+Due to the proximity of the spark plug to the fuel injector nozzle, any divergence in the 
+fuel spray may cause possible spark plug damage. This makes spark plug diagnosis an 
+important part of HPI engine service concerns. Information gained by the spark plug 
+diagnosis may indicate possible fuel injector faults. Spark plug replacement interval has 
+been reduced to 45,000 miles on this engines. The illustrations below can be used to 
+assist in spark plug diagnosis: 
+
+
+
+The spark plug above shows a normal wear pattern 
+with no excessive electrode wear or insulator 
+damage. 
+
+
+The spark plug above shows a normal wear pattern 
+for a spark plug with high mileage. Spark plug is 
+due for replacement. 
+
+
+
+The spark plug above shows erosion of the 
+electrode on one side which could be an indication 
+of fuel spray “diversion”. 
+
+
+
+The spark plug above shows erosion of the 
+electrode on one side and damage on the insulator 
+nose. This could also be an indication of fuel spray 
+“diversion”. 
+
+
+21 
+
+Ignition Management 
+
+
+Engine Misfire Diagnosis 
+
+Engine Misfire is the result of inefficient combustion in one or more cylinders. The caus¬ 
+es of Engine Misfire are extensive but can be grouped into the following sub-systems. 
+Consider the charts below as an additional diagnostic aid once ISTA is connected, the 
+correct fault symptom has been chosen and the fault memory has been interrogated. 
+Follow the Test Module as displayed by ISTA. 
+
+
+IGNITION SYSTEM 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+
+Spark Plug: • Incorrect spark plug installed 
+
+• Electrode gap closed or too small 
+
+• Electrode(s) missing 
+
+• Oil or fuel fouled spark plug 
+
+• Ceramic insulation cracked 
+
+
+Secondary • Verify correct spark plug 
+
+Ignition • Replace if necessary 
+
+• Swap with another cylinder 
+
+
+Secondary • Wet or moist due to water infiltration, 
+circuit: (wiring,* High resistance due to corrosion. 
+
+M73-cap, rotor) 
+
+
+• Check water ingress, repair, replace 
+
+• Check resistance value, replace 
+
+
+Ignition 
+
+Coil(s): 
+
+
+• Secondary/Primary Circuits open or shorted. Secondary 
+
+• Housing cracked, damaged. and Primary 
+
+
+• Inspect and replace if necessary 
+
+• Swap with another cylinder 
+
+
+Ignition Coil 
+& Engine 
+Harness 
+Connectors 
+
+
+• Power supply, Primary control and Primary • Look for open, loose connector, 
+
+ground (shunt signal) circuits impaired. Ignition & corrosion, crossed or backed out 
+
+Term 4A feed- pins (also consider ignition unloader or 
+back Preset ECM relay on MY97 and newer cars). 
+Measurements • Determine defective condition, 
+
+repair or replace. 
+
+
+• A secondary ignition oscilloscope display provides vital information 
+about the ignition system’s condition. 
+
+• Follow the precautions in REP 12 00 Instructions for working on 
+the ignition system. 
+
+• Use the following scope patterns as a guideline for ignition system 
+diagnosis. 
+
+
+J*V* ■.-! »*.n 
+
+s in 2* m m-w 
+
+
+
+m 
+
+nn T.TB1 Jk>y-|\Lh , JL l J IIU l-’i hMHrtvr.n-TiUi. 
+
+
+
+
+
+
+l£ ¥/ ... Vwf&rm 
+
+isriEJ1-F1 C-tSV v *-.->• sW H 
+
+!fir -9*i tHIHIffl aTiH Frirr Cril 1-1 M^| KrHUflftU'f II £ -JIM - r-h-ll 
+
+t -rJ; -Ji »4tu * d uAm id I n ■ rij-irWi tanh -nj i MMtmmad uv-iL 
+S-.LJP.J. t£i ki iiukr uM uiHp iryMhrv 
+hr.n iiiil. iiTBrrra stH iiama uirrf n -irni/ 
+wrmwr 
+
+l> rvrum..n -rr^ “+■?■■ qi b^pii UTy. mn i u ■- L^xi..^i 
+
+
+
+
+
+Evaluation of secondary signal amplitude at idle speed. 
+
+
+rl m UMwi'u r?i*i km I rwMirvA k nm m 
+
+m Vii «i> W< « pKT'IrllW. ivl^iK^WlirUi b-MCK i CHl 
+
+
+1. Normal Ignition Voltage Peak: 
+
+2. Low Ignition Voltage Peak: 
+
+3. High Ignition voltage peak: 
+
+
+Spark Plug is OK 
+Gap too small (defective) 
+Gap too large (defective) 
+
+
+|o © 
+
+© 
+
+■A* 
+
+Ji 
+
+hr 
+
+t. 
+
+
+
+22 
+
+
+Ignition Management 
+
+
+
+ONG COMBUSTION 
+- PERIOD (SMALL GAP) 
+
+win „j rf la. 
+
+
+
+
+
+HORT COMBUSTION 
+PERIOD (LARGE GAP) 
+
+4... . . 
+
+r 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENGINE MECHANICAL SYSTEMS 
+
+
+COMPONENT 
+
+POSSIBLE CONDITION 
+
+TEST CORRECTION 
+
+Pistons, 
+
+• Hole in piston crown, ring(s) broken, 
+
+• Idle Quality - Rough Run- • 
+
+Correct condition as 
+
+Rings, 
+
+valve(s) not seating, valve(s) bent, 
+
+ning Preset. 
+
+required. 
+
+Valves, 
+
+valve spring(s) broken, camshaft lobe 
+
+• Cylinder compression & 
+
+
+Camshaft: 
+
+cracked, etc. 
+
+leakdown tests. 
+
+
+Hydraulic 
+
+• HVA oil bore restricted or blocked. 
+
+• Idle Quality - Rough Run- • 
+
+Always consider 
+
+Valve 
+
+• Engine oil pressure builds up too slow. 
+
+ning Preset. 
+
+mechanical com- 
+
+Actuator 
+
+* Intermittent Misfire Fault - Not 
+
+• Listen to HVA 
+
+ponents when 
+
+(HVA): 
+
+Currently Present. 
+
+• Check Oil Pressure 
+
+diagnosing misfire. 
+
+
+• HVA binding/sticking in bore. 
+
+• Cylinder leakdown • 
+
+Inspect for scoring. 
+
+Vacuum 
+
+• Unmetered vacuum leaks causing a 
+
+• Idle Quality - Rough Run- • 
+
+Correct condition as 
+
+Leaks: 
+
+“lean” operating condition. Possible 
+
+“Excessive Mixture Deviation” 
+
+ning Preset. Test for vacuum 
+leaks per Repair Instr. and SI B 
+
+required. 
+
+
+fault codes. 
+
+on “Crankcase Ventilation”. 
+
+• Interpret Add. & Multiple adaptation values 
+
+
+FUEL QUALITY, DELIVERY, INJECTION & EVAPORATIVE SYSTEMS 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+Fuel (quality): • Contaminated fuel. • Clean fuel system, replace fuel. 
+
+(water, other non combustible). 
+
+
+Fuel Delivery: • Fuel pump deliver/ pressure low, 
+
+restriction in fuel line to fuel rail or 
+running loss valve. 
+
+• Fuel filter restricted (clogged). 
+
+• Low fuel in tank. 
+
+
+• Check fuel 
+pressure & 
+volume. 
+
+• Check fuel 
+pump power 
+and ground 
+
+
+• Determine restriction/flow reduction, 
+replace component as necessary. 
+
+• Interpret Additive and Multiplicative 
+adaptation values. 
+
+
+Running Loss • Valve stuck in “small circuit” position. 
+
+Valve: 
+
+
+• Check valve • Display “diagnosis requests” in DISplus 
+
+and test valve for proper function, repl¬ 
+ace valve as necessary. 
+
+
+Fuel Injectors: • Leaking fuel injector pintle seats cause 
+
+rich engine starts with hot ambient 
+temperatures. 
+
+• Blocked (dirty) injector(s). 
+
+
+• Ti Preset & • Check injectors for leakage, 
+
+status page. • Swap suspect injector with another 
+
+• Sec Ign scope cylinder, 
+pattern. 
+
+• Inspect injector, replace if necessary. 
+
+
+Fuel Pressure • Regulator defective, causes fluctuation 
+Regulator: in the injected quantity of fuel causing 
+
+mixture adaptation faults. 
+
+
+• Fuel pressure • Check nominal fuel pressure value with 
+
+engine operating under varied speeds. 
+
+
+Evaporative • Defective evaporative system vent 
+System: causing fuel tank collapse and fuel. 
+
+starvation. 
+
+
+• DISplus status, 
+Evap test 
+with press¬ 
+ure tool, 
+purge valve 
+func. test. 
+
+
+• Check the fuel tank condition and vent 
+line. 
+
+• Check Fresh Air Valve on TLEV E36 
+vehicles or LDP/DM TL and filter on 
+ORVR vehicles for proper system 
+“breathing”. 
+
+
+23 
+
+Ignition Management 
+
+
+
+
+
+
+
+IMPLAUSIBLE ECM CONTROL FUNCTION OR 
+
+SENSOR INPUT SIGNALS 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+
+Crankshaft 
+Position 
+Sensor or 
+Increment 
+Wheel: 
+
+
+• Implausible signal for misfire detection. • ISTA preset 
+
+• Increment wheel loose or damaged measurement, 
+(internal on M44, M52 and M54, 
+
+external on M62 & M73). 
+
+• Air gap between sensor and wheel. 
+
+• Noticeable at higher rpm. 
+
+
+• Determine defective sensor or 
+increment wheel and replace. 
+
+
+Catalyst • Excessive exhaust back pressure 
+Damaged: (bank specific fault present, more 
+
+noticeable under heavy load and 
+high rpm). 
+
+
+• ISTA preset • Determine catalyst condition, replace 
+measurement or repair as necessary. 
+
+of oxygen 
+sensor. 
+
+• Back pressure test per SI B with Special Tool. 
+
+
+Oxygen • Excessive mixture deviation, 
+
+Sensor: possible vacuum leaks. 
+
+
+• Monitor 
+oxygen 
+sensor 
+signal via 
+DIS preset. 
+
+
+• Swap sensor from other bank (if app¬ 
+licable) and see if fault transfers to 
+other bank. 
+
+
+Engine • Internal control module fault. 
+
+Control 
+
+Module • Misfire Reprogramming. 
+
+
+• Check fault • Highly unlikely but must be considered, 
+memory. 
+
+• Refer to SI B • Check Model/Prod range - reprogram 
+
+
+When diagnosing a Misfire fault code, Remember: 
+
+“Misfire” is caused by a defect in the internal combustion engine or a defect in 
+the control of the engine operation. 
+
+“Misfire” is the result of improper combustion (variation between cylinders) as 
+measured at the crankshaft due to: 
+
+- Engine mechanical defects; breakage, wear, leakage or improper tolerances. 
+
+- Excessive mixture deviation; air (vacuum leaks), fuel and all the components that deliver 
+air/fuel into the combustion chambers. 
+
+- Faulty ignition; primary, secondary including spark plugs. 
+
+- Faulty exhaust flow; affecting back pressure. 
+
+- Tolerance parameters; ECM programming. 
+
+A Misfire fault code(s) is the “symptom” of a faulty input for proper combustion. 
+When diagnosing a misfire, review the charts to assist you in finding the faulty 
+input. 
+
+
+24 
+
+Ignition Management 
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+CD 
+
+CO 
+
+CL 
+
+
+
+
+25 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+DFT - Leaking Injector 
+
+
+Page 2 
+
+
+r 
+
+
+Check Symptom 
+
+
+Is this really the symptom 
+
+
+described? 
+
+
+
+
+
+
+Let engine cool down below 40°C / 100°F 
+Disconnect low pressure side from high 
+pressure side 
+Check EKP function: 
+
+* p_fuel(LP) > 4.75bar while EKP is running; if 
+not: follow B1214_DI_KDR 
+
+* residual pres, of >3.75bar lOmin after EKP 
+was deactivated 
+
+
+Check okay 
+
+t 
+
+
+□ 
+
+
+Check 
+not okay 
+
+
+Follow 
+
+recommendations of 
+test plan" 
+
+
+Connect low pres, side and high pres. 
+
+side 
+
+* Activate EKP 
+
+* Check residual pressure in HP 
+system: read HP fuel sensor value; 
+>3.75bar lOmin after EKP 
+deactivated? If yes: injectors have 
+no leakage. 
+
+
+
+Swap ignition coil and 
+spark plug of misfiring 
+cyl. with OK cylinders; 
+
+
+
+^Submit TC case for injector replacement. 
+
+> If only one misfire occurs per bank -> Replace 
+just one injector 
+
+> If more than one misfire occurs in the same bank 
+-> Replace all 3 injectors of that bank; 
+
+> If three or more cylinders misfire -^Replace all 6 
+injectors 
+
+
+
+^Submit TC case for injector replacement. Determine the 
+cylinder affected by misfire (see misfire fault code) and 
+Environmental conditions 
+
+Note: 
+
+* If only one cylinder with misfire occurs per bank -> 
+Replace just one injector 
+
+* If more than one Cylinder with misfire occurs in the same 
+bank Check misfire frequencys (Environmental 
+Conditions) -> Replace the injector with the highest 
+frequency of misfires per bank 
+
+
+Replace ignition coil 
+
+and spark plug 
+accordingly 
+
+
+When replacing injectors, make sure that: 
+
+* Injector calibration is done (follow SIB 12 26 08) 
+
+* Clear all DME adaptations 
+
+T 
+
+In case of this leaking injector symptom, make sure 
+that: 
+
+* Check DME 1-Level go to No. 4 
+
+* Note: It needs elevated temperatures and high 
+engine loads to evaporate/burn fuel in exhaust 
+system 
+
+- 1 - 
+
+
+
+Injector Part 
+Number 
+
+
+Exit 
+
+Create and submit TC-Case, where applicable 
+
+Recheck fault memory after test drive; If clear, return car to customer 
+
+
+26 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults - Diagnosis with ISTA 
+
+
+Check fault memory 
+
+
+
+
+
+
+DFT- Fuel System N54 MSD80/81 E8x, E9x, E6x, E71 
+
+
+Page 3 
+
+
+EKP Module 
+
+
+
+Information: 
+
+CCC message „fuel pump defective 1 ' 
+or engine does not run at all 
+
+
+EKP function check according to 
+ISTA EKP test modules; ‘submit TC 
+case for EKP replacement if 
+necessary 
+
+
+DC EKPM 
+
+
+Yes 
+
+
+Add fuel, delete 
+
+
+fault memory 
+
+
+For Your Information 
+
+Definition of the Jong crank 11 
+complaint: 
+
+the engine is cranking up to about 
+3-4 seconds, before it starts quickly 
+
+LP = Low Pressure System 
+HP = High Pressure System 
+
+Where to find the HDP’s 
+
+Production and Serial Number 
+
+
+Yes 
+
+
+Yes 
+
+
+Replace LP sensor, 
+
+
+DC LPS 
+
+
+
+DME 
+Low Pressure 
+(LP) System 
+
+
+Check LP sensor (except E89): Actuation of the electric fuel pump (EKP) for 
+approx. 20 seconds via ISTA. Read the value from the LP sensor via ISTA 
+during EKP operation after approx. 15 seconds. If the value displayed is more 
+than 6.7 bar, the LP sensor is faulty and must be replaced; ‘submit TC case for 
+LP sensor replacement if necessary; Check low pressure sensor line: if 
+mounting bracket is welded onto pipe, replace with part number 7 545 725 
+
+riu' ,-^ 
+
+
+DC LPS 
+
+
+DME 
+High Pressure 
+(HP) System 
+
+
+HARNESS 
+
+
+
+
+Yes 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+If 1-Level < Exxx-10-03-504 
+
+
+Ignore fault entry, 
+delete fault memory 
+SI B12 11 10 
+
+
+No 
+
+
+0x2FBF 
+
+^fuel high pressure on release oC 
+injection, pressure too low AND 
+customer complaint is “long cranky 
+
+
+No 
+
+
+Check LP sensor (except E89): Actuation of the electric fuel pump (EKP) for 
+approx. 20 seconds via ISTA. Read the value from the LP sensor via ISTA 
+during EKP operation after approx. 15 seconds. If the value displayed is more 
+than 6.7 bar, the LP sensor is faulty and must be replaced; ‘submit TC case for 
+LP sensor replacement if necessary; Check low pressure sensor line: if 
+mounting bracket is welded onto pipe, replace with part number 7 545 725 
+
+always . I 
+
+EKP function check; follow ISTA test module; 
+
+‘submit TC case for EKP replacement if necessary 
+
+always 
+
+
+DC LPS 
+
+
+No trouble 
+found 
+
+
+"only Jong crank" complaint"" 
+
+without fault entry, 
+possibly with info entry 0x2FCA, 
+0x2FDA, OxFDB 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+-Yes- 
+
+
+Update 1-Level 
+
+With ISTA/P 37 or newer 
+If 1-Level < Exxx-10-03-502 
+
+
+Check battery voltage; 
+
+check starter; 
+check crank shaft and 
+camshaft sensors; 
+repair if needed 
+
+
+No 
+
+
+Check LP sensor (except E89): Actuation of the electric fuel pump (EKP) for 
+approx. 20 seconds via ISTA. Read the value from the LP sensor via ISTA 
+during EKP operation after approx. 15 seconds. If the value displayed is more 
+than 6.7 bar, the LP sensor is faulty and must be replaced; ‘submit TC case for 
+LP sensor replacement if necessary; Check low pressure sensor line: if 
+mounting bracket is welded onto pipe, replace with part number 7 545 725 
+
+
+DC LPS 
+
+
+always 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+always 
+
+
+DC OTHER LC 
+
+
+
+No 
+
+
+DC EKP 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+
+
+DC HDP 2FBF 
+
+
+-Repair was needed at battery, starter, crankshaft or camshaft sensors- 
+
+
+
+Yes- 
+
+
+Check HP sensor; make sure car was sitting more then 15min; 
+follow diagnostic request to compare LP to HP sensor values; the values must not differ more 
+the +/-3 bar; replace HP sensor if necessary 
+
+Important note: in case the HP sensor value is higher then 9bar, release the pressure by 
+slightly loosening the connection between the injector and the rail and repeat the above 
+check again; in case of repeated failure ‘submit TC case for HP sensor replacement 
+
+
+DC HPS 29F1 
+
+
+Create and Submit TC-Case 
+where applicable. Readapt 
+DME and perform test drive 
+on page 1. Recheck fault 
+memory after test drive, if 
+clear, return car to customer 
+
+
+OK 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+If 1-Level < Exxx-10-03-504 
+
+
+27 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+Check fault memory 
+
+
+DFT - Fuel System N54 MSD87 F01, F02 
+
+
+Page 4 
+
+
+EKP Module 
+
+
+
+Information: 
+
+CCC message „fuel pump defective" 
+or engine does not run at all 
+
+
+EKP function check according to 
+ISTA EKP test modules; ‘submit TC 
+case for EKP replacement if 
+necessary 
+
+
+DC EKPM 
+
+
+Yes 
+
+Add fuel, delete 
+
+
+fault memory 
+
+
+For Your Information 
+
+Definition of the Jong crank" 
+complaint: 
+
+the engine is cranking up to about 
+3-4 seconds, before it starts quickly 
+
+LP = Low Pressure System 
+HP = High Pressure System 
+
+Where to find the HDP’s 
+
+Production and Serial Number 
+
+
+Low Pressure 
+Sensor, 
+electric 
+
+
+Yes 
+
+
+Yes 
+
+
+Replace LP sensor, 
+
+
+DC LPS 
+
+
+DME 
+
+Low Pressure 
+(LP) System 
+
+
+DME 
+
+High Pressure 
+(HP) System 
+
+
+Yes- 
+
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 6.7 bar, 
+the LP sensor is faulty and must be replaced. 
+
+
+
+DC LPS 
+
+
+OKf 
+
+EKP function check; follow ISTA test module; 
+submit TC case for EKP replacement if necessary 
+
+
+DC EKP 
+
+
+Check for open electrical circuit between rail sensor and DME; ‘submit TC 
+case for rail sensor replacement if necessary; 
+
+Note: default value appears as 265bar, when sensor deffective / open circuit 
+
+
+DC HPS 29E2 
+
+
+-No- 
+
+
+
+Check for open electrical circuit between HDP and DME; 
+replace components if necessary 
+
+
+T 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Ignore fault entry, 
+delete fault memory 
+SI B12 11 10 
+
+
+DC HDP HARNESS 
+
+
+DC HDP VCV 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+1 
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 6.7 bar, 
+the LP sensor is faulty and must be replaced. 
+
+
+DC LPS 
+
+
+OK 
+
+EKP function check; follow ISTA test module; 
+submit TC case for EKP replacement if necessary 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+DC EKP 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+No trouble 
+found 
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 6.7 bar, 
+the LP sensor is faulty and must be replaced; 
+
+
+DC LPS 
+
+
+Check battery voltage; 
+
+check starter; 
+check crank shaft and 
+camshaft sensors; 
+repair if needed 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+DC EKP 
+
+
+DC OTHER LC 
+
+
+
+No 
+
+‘Submit TC case for HDP 
+
+
+replacement 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+
+
+DC HDP 2FBF 
+
+
+-Repair was needed at battery, starter, crankshaft or camshaft sensors- 
+
+
+Check HP sensor; make sure car was sitting more then 15min; 
+follow diagnostic request to compare LP to HP sensor values; the values must not differ more 
+the +/-3 bar; replace HP sensor if necessary 
+
+Important note: in case the HP sensor value is higher then 9bar, release the pressure by 
+slightly loosening the connection between the injector and the rail and repeat the above 
+check again; in case of repeated failure ‘submit TC case for HP sensor replacement 
+
+
+DC HPS 29F1 
+
+
+Create and Submit TC-Case 
+where applicable. Readapt 
+DME and perform test drive 
+on page 1. Recheck fault 
+memory after test drive, if 
+clear, return car to customer 
+
+
+OK 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Update 1-Level 
+
+With ISTA/P 37.2 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+28 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+DFT - Mixture Adaptation Fault 
+
+
+Page 5 
+
+
+r 
+
+
+Check Symptom 
+
+Is this really the symptom 
+described? 
+
+
+
+T 
+
+
+-Too Rich— 
+
+
+Check for possible rich conditions 
+
+* Visually check monoliths (borescope 
+if available), whether they are 
+mechanically deteriorated; check 
+fault memory for 29F4, 29F5 
+„catalyst conversion" 
+
+* Continue following DFT - Leaking 
+Injector on Page 2 DC M | X R | CH 
+
+
+Check environmental 
+conditions of fault code: 
+Is it too Rich or too Lean? 
+
+
+—Too Lean- 
+
+
+Check exhaust side on that bank 
+
+* Smoke the exhaust system; search 
+for cracks/leakages and replace part 
+if needed 
+
+* Are 02 sensors torqued correctly; 
+
+*Submit TC case for replacement, if 
+needed DC MIX EXH 
+
+
+* 
+
+* 
+
+* 
+
+
+Readaptation of the DME 
+Test Drive is needed! 
+
+Car must be at operating temperature / warm 
+
+Drive vehicle 50-60mph with 2000-2500rpm for at least 3min (use 
+
+manual shift, if needed) 
+
+Perform at least 2-3 drive cycles if possible 
+
+Let vehicle idle for about 5min 
+
+Recheck mixture adaptation values (short test GT1) 
+
+
+
+i 
+
+
+Check Fuel Quality 
+
+* Check alcohol content following SIB 
+
+13 04 06; In case >15% -> check fuel 
+lines and connections for corrosion 
+
+* Refuel the car with known good gas 
+
+* Clear DME adaptations (doublecheck 
+with short test GT1) D q M | X fuel 
+
+
+-No- 
+
+
+Yes 
+
+
+Check Fuel Supply 
+
+* Check crankcase ventilation pressure 
+
+* Check fault memory (history) for any 
+indications of lean conditions, 29F2, 
+29DC, 29F1, etc. 
+
+* Inspect the fuel tank for contamination 
+like sand, grit, cloudy fuel, etc.; if yes 
+drain the fuel system and *Submit TC 
+case for replacement, if needed 
+
+DC MIX SUP 
+
+
+Problem not fixed 
+
+
+Exit 
+
+Create and submit TC-Case, where applicable 
+
+Recheck fault memory after test drive; If clear, return car 
+
+to customer 
+
+
+
+29 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+
+30 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+DFT - Rough Running @ Cold Start 
+
+
+Page 7 
+
+
+\ 
+
+
+Check Symptom 
+
+
+Continue with page 6, 
+
+following DFT - rough 
+running @ warm engine 
+
+
+
+Check environmental 
+conditions of misfire faults: 
+Is there a misfire fault with 
+
+engine temperature >50°C? 
+
+
+In case of rough running @ cold make sure to: 
+
+* Check spark plugs; are they wet or excessively sooted? 
+
+* Check injector calibration values; follow SIB 12 26 08 
+
+* Update DME to latest 1-Level 
+
+
+Readaptation of the DME -> Test Drive is needed! 
+
+Car must be at operating temperature / warm 
+
+Drive vehicle 50-60mph with 2000-2500rpm for about 3min (use 
+
+manual shift, if needed) 
+
+Perform at least 2-3 drive cycles if possible 
+
+Let vehicle idle for about 5min 
+
+Let car sit over night and start the car cold!! 
+
+
+
+
+Yes 
+
+
+Exit 
+
+Create and submit TC-Case, where 
+applicable 
+
+Recheck Fault Memory after cold start; 
+If clear, return car to customer 
+
+
+31 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 06 10 N54 - Misfire Faults, Diagnosis with ISTA 
+
+
+
+32 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 11 10 N54, N54T, N55 - Diagnosis for HDP High-pressure Faults 
+
+^ " Page 1 
+
+
+DFT - Fuel System N55 E8x, E9x, E7x 
+
+
+EKP Module 
+
+
+Rail Pressure 
+Sensor 
+
+
+DME 
+High Pressure 
+(HP) System 
+
+
+
+Information: 
+
+CCC message „fuel pump defective" 
+or engine does not run at all 
+
+
+EKP function check according to 
+ISTA EKP test modules; *submit TC 
+case for EKP replacement if 
+necessary 
+
+
+DC EKPM 
+
+
+Yes 
+
+
+Add fuel, delete 
+
+
+fault memory 
+
+
+N55 E8x, E9x, E7x has no low pressure sensor 
+
+
+For Your Information 
+
+Definition of the Jong crank" 
+complaint: 
+
+the engine is cranking up to about 
+3-4 seconds, before it starts quickly 
+
+LP = Low Pressure System 
+HP = High Pressure System 
+
+Where to find the HDP’s 
+
+Production and Serial Number 
+
+
+
+Check for open electrical circuit between rail sensor and DME; ‘submit TC 
+case for rail sensor replacement if necessary; 
+
+Note: default value appears as 265bar, when sensor deffective / open circuit 
+
+
+DC HPS 29E2 
+
+
+-No- 
+
+
+
+Check for open electrical circuit between HDP and DME; 
+replace components if necessary 
+
+
+DC HDP HARNESS 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+Ignore fault entry, 
+delete fault memory 
+SI B12 11 10 
+
+
+DC HDP VCV 
+
+
+Yes- 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+DC EKP 
+
+
+Check battery voltage; 
+
+check starter; 
+check crank shaft and 
+camshaft sensors; 
+repair if needed 
+
+
+No trouble 
+found 
+
+-► 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+DC EKP 
+
+
+OK 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+DC HDP 2FBF 
+
+
+DC OTHER LC 
+
+
+No 
+
+
+-Repair was needed at battery, starter, crankshaft or camshaft sensors- 
+
+
+Rail Pressure 
+Sensor 
+Plausibility 
+
+
+
+Yes- 
+
+
+Check HP sensor; make sure car was sitting more then 15min; 
+follow diagnostic request to compare LP to HP sensor values; use manual fuel pressure 
+gauge for LP side. Values must not differ more the +/-3 bar; replace HP sensor if necessary 
+Important note: in case the HP sensor value is higher then 9bar, release the pressure by 
+slightly loosening the connection between the injector and the rail and repeat the above 
+check again; in case of repeated failure ‘submit TC case for HP sensor replacement 
+
+
+DC HPS 29F1 
+
+
+OK 
+
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Create and Submit TC-Case 
+where applicable. Readapt 
+DME and perform test drive 
+on page 1. Recheck fault 
+memory after test drive, if 
+clear, return car to customer 
+
+
+33 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SI B 12 11 10 N54, N54T, N55 - Diagnosis for HDP High-pressure Faults 
+
+
+Check fault memory 
+
+
+EKP Module 
+
+
+Low Pressure 
+Sensor 
+
+
+DME 
+
+Low Pressure 
+(LP) System 
+
+
+Low Pressure 
+Sensor 
+
+
+DME 
+
+High Pressure 
+(HP) System 
+
+
+No 
+
+
+DFT - Fuel System N55 F07, F10 
+
+
+Page 2 
+
+
+
+Information: 
+
+CCC message „fuel pump defective' 1 
+or engine does not run at all 
+
+
+EKP function check according to 
+ISTA EKP test modules; ‘submit TC 
+case for EKP replacement if 
+necessary 
+
+
+DC EKPM 
+
+
+Yes 
+
+Add fuel, delete 
+
+
+fault memory 
+
+
+For Your Information 
+
+Definition of the Jong crank" 
+complaint: 
+
+the engine is cranking up to about 
+3-4 seconds, before it starts quickly 
+
+LP = Low Pressure System 
+HP = High Pressure System 
+
+Where to find the HDP’s 
+
+Production and Serial Number 
+
+
+Replace LP sensor, 
+
+
+DC LPS 
+
+
+Yes 
+
+
+
+Yes 
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 7.7 bar, 
+the LP sensor is faulty and must be replaced. 
+
+
+OKj~ 
+
+
+J 
+
+
+
+DC LPS 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+DC EKP 
+
+
+Check for open electrical circuit between rail sensor and DME; ‘submit TC 
+case for rail sensor replacement if necessary; 
+
+Note: default value appears as 265bar, when sensor deffective / open circuit 
+
+
+DC HPS 29E2 
+
+
+-No- 
+
+
+
+Check for open electrical circuit between HDP and DME; 
+replace components if necessary 
+
+T 
+
+
+‘Submit TC case for HDP DC_HDP_VCV 
+replacement 
+
+
+DC HDP HARNESS 
+
+
+Update 1-Level 
+
+With ISTA/P 37 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+Yes- 
+
+
+-Yes- 
+
+
+Ignore fault entry, 
+delete fault memory 
+SI B12 11 10 
+
+
+1 
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 7.7 bar, 
+the LP sensor is faulty and must be replaced. 
+
+
+OK 
+
+
+J 
+
+
+DC LPS 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+"oi<~ 
+
+_I_ 
+
+‘Submit TC case for HDP 
+replacement 
+
+
+DC EKP 
+
+
+Update 1-Level 
+
+With ISTA/P 37 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+No trouble 
+found 
+
+
+,long crank" complaint 
+
+without fault entry, 
+possibly with info entry 0x11A401, 
+0x11B501,0x11B601 
+
+
+Yes- 
+
+
+Check LP sensor. Actuation of the electric fuel pump (EKP) for approx. 20 
+seconds via ISTA. Read the value from the LP sensor via ISTA during EKP 
+operation after approx. 15 seconds. If the value displayed is more than 7.7 bar, 
+the LP sensor is faulty and must be replaced. 
+
+
+OK f 
+
+
+J 
+
+
+DC LPS 
+
+
+Check battery voltage; 
+
+check starter; 
+check crank shaft and 
+camshaft sensors; 
+repair if needed 
+
+
+EKP function check; follow ISTA test module; 
+‘submit TC case for EKP replacement if necessary 
+
+
+DC EKP 
+
+
+OK 
+
+
+
+No 
+
+
+‘Submit TC case for HDP 
+
+
+replacement 
+
+
+No 
+
+
+DC OTHER LC 
+
+
+Update 1-Level 
+
+With ISTA/P 37 or newer 
+
+
+DC HDP 2FBF 
+
+
+-Repair was needed at battery, starter, crankshaft or camshaft sensors- 
+
+
+Rail Pressure 
+Sensor 
+plausibility 
+
+
+
+Yes- 
+
+
+Check HP sensor; make sure car was sitting more then 15min; 
+follow diagnostic request to compare LP to HP sensor values; the values must not differ more 
+the +/-3 bar; replace HP sensor if necessary 
+
+Important note: in case the HP sensor value is higher then 9bar, release the pressure by 
+slightly loosening the connection between the injector and the rail and repeat the above 
+check again; in case of repeated failure ‘submit TC case for HP sensor replacement 
+
+
+DC HPS 29F1 
+
+
+OK 
+
+‘Submit TC case for HDP 
+replacement 
+
+
+Update 1-Level 
+
+With ISTA/P 37 or newer 
+If 1-Level < Fxxx-10-03-502 
+
+
+Create and Submit TC-Case 
+where applicable. Readapt 
+DME and perform test drive 
+on page 1. Recheck fault 
+memory after test drive, if 
+clear, return car to customer 
+
+
+34 
+
+Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

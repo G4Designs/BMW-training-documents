@@ -1,0 +1,4397 @@
+Table of Contents 
+
+Longitudinal Dynamics Systems 
+
+Subject Page 
+
+Introduction .5 
+
+Cruise Control with Braking Function .5 
+
+Active Cruise Control with Stop & Go Function .5 
+
+Familiar ACC Function.5 
+
+New ACC Stop & Go Function .6 
+
+Adaptive Braking Assistance.7 
+
+System Overview .8 
+
+Component Locations .8 
+
+Electrical System Integration.9 
+
+Bus System Integration.9 
+
+Principles of Operation.12 
+
+Functional Integration.12 
+
+Cruise Control with Braking Function (DCC).15 
+
+Functions .15 
+
+Cruise Control.15 
+
+Accelerating and Decelerating Using the Control Lever.15 
+
+Cornering Speed Modulation.15 
+
+Prioritizing Required Settings.15 
+
+Estimating Contributory Forces.16 
+
+Control of Actuators.16 
+
+Operation and Display.17 
+
+Activation and Deactivation .17 
+
+Changing the Desired Speed.17 
+
+Monitoring Functions.19 
+
+Active Cruise Control with Stop & Go Function .20 
+
+Information from the Vehicle's External Environment .20 
+
+Detecting Objects .20 
+
+Pre-processing Object Data.20 
+
+Assessing Objects.21 
+
+Control Functions.22 
+
+Cruise Control.22 
+
+Distance Control.22 
+
+Cornering Speed Modulation.23 
+
+Prioritizing Required Settings.23 
+
+
+Initial Print Date: 04/07 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+Estimating Contributory Forces.24 
+
+Control of Actuators.24 
+
+Operation and Display.24 
+
+Activation and Deactivation .24 
+
+Activation when Moving .25 
+
+Activation when Stationary.26 
+
+Deactivation when Moving .27 
+
+Deactivation when Stationary.28 
+
+Changing the Desired Speed.29 
+
+Changing the Desired Gap.29 
+
+Stopping and Moving Off.29 
+
+Automatic Moving-off Sequence .31 
+
+Moving-off Sequence with Driver Acknowledgement .32 
+
+Response to Stationary Objects .34 
+
+Instruction to Take Over Control .36 
+
+Warning if Driver is About to Get Out.37 
+
+Monitoring Functions.40 
+
+Adaptive Braking Assistance (ABA).41 
+
+Information from the Vehicle's External Environment .42 
+
+Detecting Objects .42 
+
+Pre-processing Object Data.42 
+
+Assessing Objects.42 
+
+Identifying and Reacting to Emergency Braking Situations.42 
+
+Criteria for an Emergency Braking Situation.42 
+
+Priming the Braking System.43 
+
+Lowering the Threshold forthe Hydraulic Braking Assistance 
+
+Function.44 
+
+Monitoring Functions.46 
+
+System Components.47 
+
+Long-range RadarSensor.48 
+
+Physical Differences.48 
+
+Electrical Differences.48 
+
+M odified Range of Functions.49 
+
+Short-range RadarSensors.50 
+
+Principle of Operation .50 
+
+Fitting of Short-range RadarSensors.51 
+
+Functions of the Short-range RadarSensors 
+
+in the System Complex.52 
+
+Electrical Integration in the Vehicle.53 
+
+Self-diagnosis and Types of Fault.54 
+
+Dirty Short-range RadarSensors.54 
+
+External Interference Affecting Radar Signal Analysis.55 
+
+Temporary Faults .55 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Control Unit Faults .55 
+
+Sensor Out of Adjustment .55 
+
+Adjustment and Repair.56 
+
+Accident.56 
+
+LDM Control Unit .58 
+
+Design and Electrical Characteristics.58 
+
+Location .58 
+
+Functions within System Complex.59 
+
+Behavior in the Event of Faults .60 
+
+Sensor-CAN .60 
+
+DSC Control Unit and Hydraulic Unit.61 
+
+Driver's Seat Status Sensor.62 
+
+Service Information.63 
+
+Cruise Control with Braking Function .63 
+
+Active Cruise Control with Stop & Go Function .63 
+
+Adaptive Braking Assistance.64 
+
+Long-range RadarSensor.64 
+
+Short-range RadarSensor.64 
+
+LDM Control Unit .66 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Longitudinal Dynamics Systems 
+
+
+Model: E60& E61 
+
+Production: From 3/2007 Production 
+
+■MICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Identify the changes made to the E60/E61 Longitudinal Dynamics Systems 
+
+• Explain the operation of the ACC Stop & Go Function 
+
+• Identify the components used in the ACC Stop & Go Function and where they 
+are located 
+
+
+4 
+
+Longitudinal Dynamics Systems 
+
+
+Introduction 
+
+
+Cruise Control with Braking Function 
+
+The cruise control with braking function on the E60/E61 LCI is identical in function to 
+the system used on the E9x models. It is also referred to as "Dynamic Cruise Control" 
+(DCC). 
+
+It relieves the burden on the driver on quiet roads by maintaining a constant speed 
+regardless of the resistance to vehicle motion (gradient, payload). 
+
+It also offers the driverthe opportunity to adjust the desired speed in small or large incre¬ 
+ments, which is then set and maintained by the system by controlling power output and 
+braking. 
+
+Accordingly it incorporates the following features: 
+
+• Selection of desired speed in increments of 1 mph and 5 mph. 
+
+• Usable road-speed range of 20 mph to vehicle's maximum speed (max. 155 mph) 
+
+• Acceleration and deceleration of vehicle in two stages using the control lever 
+
+• Operation of brakes when travelling downhill and slowing down with DCC 
+
+• M odulation of longitudinal acceleration and road speed when cornering at high 
+lateral acceleration levels. 
+
+Active C ruise C ontrol with Stop & Go Function 
+
+FamiliarACC Function 
+
+The familiar Active Cruise Control (ACC) system keeps the carat a constant speed while 
+there is no vehicle directly in front. It switches automatically to maintaining a safe dis¬ 
+tance as soon as its sensors detect a slower vehicle ahead in the same lane. Thus it 
+relieves the burden on the driver not only on quiet roads but also in heavy traffic. ACC 
+takes overthe onerous task of repeated acceleration and braking in orderto precisely 
+control speed and distance from the vehicle in front. With ACC, this is only possible in 
+moving traffic. 
+
+The driver can set the desired speed to between 15 and 110 mph. There are four possi¬ 
+ble settings forthe desired distance. 
+
+
+
+5 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+New ACC Stop &Go Function 
+
+The new Active Cruise Control with Stop & Go function (ACC Stop & Go) extends the 
+usable range of ACC to low speeds right down to standstill. In other words, speed and 
+distance from the vehicle in front are automatically controlled at those speeds as well. 
+
+ACC Stop & Go will automatically stop the car if necessary and then indicate to the driver 
+as soon as it detects that it is possible to start moving again. To start moving again, the 
+driver has to acknowledge that indication by operating the control lever or accelerator 
+pedal. 
+
+Only if the car is stationary for a very short time does the ACC Stop & Go automatically 
+start the car moving again. 
+
+Thus, ACC Stop & Go provides optimum assistance forthe driver not only in moving traf¬ 
+fic but also in traffic jams such as are more and more frequently encountered on high¬ 
+ways. However, this system (in common with ACC) is not intended for use in urban areas 
+for negotiating junctions ortraffic lights. 
+
+
+
+The driver can setthe desired speed to between 15 and 110 mph as with other systems. 
+There are also four desired distance settings as with ACC. 
+
+Technically, the following challenges had to be overcome in orderto implement ACC 
+Stop & Go. 
+
+1. Detection of external environment directly in front of vehicle across full vehicle width. 
+This is necessary in orderto be able to reliably detect all road users at close proximi¬ 
+ty that are likely to be encountered at low speeds. 
+
+Therefore, in addition to the familiar ACC sensor (long-range sensor), new sensors 
+(close-range sensors) were developed. 
+
+2. Optimization of and development of new sensordata processing and control algo¬ 
+rithms. At low speeds, other road users and you yourself use higher acceleration and 
+deceleration rates. 
+
+Accordingly, the system had to be designed so as to be able to cope with such 
+dynamic traffic situations. 
+
+
+6 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+Adaptive Braking Assistance 
+
+Whereas earlier driver assistance systems have only made use of information from the 
+vehicle's external environment for convenience functions, Adaptive Braking Assistance 
+(ABA) is the first system to utilize that information for safety functions. 
+
+On the basis of the object data supplied by the radar sensors and data relating to the 
+vehicle's motion, an algorithm decides whether and to what degree one of the two con¬ 
+stituent functions is to be activated: 
+
+• Priming of the braking system and 
+
+• Lowering the threshold forthe Hydraulic Braking Assistance function. 
+
+Adaptive Braking Assistance works best in situations where the car is following another 
+vehicle that suddenly performs an emergency braking operation. Its effect is to give the 
+driver braking effect the moment the brake pedal is touched. In addition, the lowering of 
+the threshold means that the Hydraulic Braking Assistance is triggered more easily. 
+
+The consequence is a shorter braking distance which may enable an accidentto be 
+avoided altogether or at least the impact speed to be reduced as much as possible. 
+
+
+
+7 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+C omponent Locations 
+
+
+If a customer orders "Cruise control with braking function", no additional components 
+are fitted on the vehicle as the function is integrated in the DSC control unit software. 
+
+
+Therefore, only the new sensors and control units forthe option "Active Cruise Control 
+with Stop & Go function" are presented here.They also include the essential compo¬ 
+nents of the Adaptive Braking Assistance system. 
+
+
+
+Radarsensors for ACC Stop & Go, Front view 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Long-range radar (LRR) sensor 
+
+2 
+
+Short-range radar (SRR) sensor, right 
+
+3 
+
+Short-range radar (SRR) sensor, left 
+
+
+The two short-range sensors are identical components that have the same part number. 
+The view illustrated shows the front of the vehicle without the plastic bumpertrim. 
+
+Note: The short-range sensors are fitted behind the bumpertrim on the 
+
+bumper crossmember. Therefore, they are only visible in this view and 
+not with the bumpertrim in place. 
+
+The location of the long-range sensorforthe ACC Stop &Go is identical 
+to that of the sensorforthe familiar ACC system. 
+
+
+8 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Electrical System Integration 
+
+Bus System Integration 
+
+
+
+KGM 
+
+
+
+DSC 3 
+
+ccc 
+
+
+M-ASK 
+
+
+TTjKombi 
+
+
+
+SZL - 
+
+ACSM 
+
+SRR 
+
+HI CAS 
+
+LRR LDM 
+
+
+D-CAN ~ 
+
+MOST — 
+
+* IKWtlt .. 
+
+K-CAN “ 
+
+I F-CAN 
+
+UN-Bus 
+
+PT-CAN = 
+
+S-CAN 77" 
+
+BSD . 
+
+
+
+LoCAN 
+
+
+DME 
+
+DOE 
+
+
+EGS 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+KOMBI 
+
+Instrument cluster 
+
+CAS 
+
+Car Access System 
+
+LDM 
+
+Longitudinal Dynamics Management 
+
+CCC 
+
+CarCommunication Computer 
+
+LM 
+
+Lamp Module 
+
+DDE 
+
+Digital Diesel Electronics (ECU) 
+
+LRR 
+
+Long-range RadarSensor 
+
+DME 
+
+Digital Engine Electronics (ECU) 
+
+M-ASK 
+
+M ulti Audio System Controller 
+
+DSC 
+
+Dynamic Stability Control 
+
+SRR 
+
+Short-range RadarSensor 
+
+EGS 
+
+Electronic Transmission Management 
+
+SZL 
+
+Steering Column Switch Cluster 
+
+KGM 
+
+Body Gateway Module 
+
+
+
+
+The equipment option Active Cruise Control with Stop & Go function on the E60/E61 
+LCI brings with it the new Sensor CAN (abbreviated to S-CAN) bus system. 
+
+The S-CAN basically functions in the same way as the PT-C AN. 
+
+It has been introduced in orderto be able to transferthe large volumes of data from the 
+LRR and SRR radar sensors to the LDM control unit without affecting data communica¬ 
+tion between the other vehicle systems. 
+
+
+9 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram fro ACC Stop & Go 
+
+
+
+10 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+D 
+
+SRR, left 
+
+10 
+
+ACSM control unit 
+
+2 
+
+LRR 
+
+11 
+
+Fuse in boot (power supply for 
+
+LDM and radarsensors) 
+
+3 
+
+SRR, right 
+
+12 
+
+Belt buckle switch, driver's seat 
+
+D 
+
+DSC control unit 
+
+13 
+
+Seat occupancy detector, driver's seat 
+
+5 
+
+DM E control unit 
+
+14 
+
+Instrument cluster 
+
+6 
+
+LDM control unit 
+
+15 
+
+Light module 
+
+7 
+
+KGM control unit 
+
+16 
+
+Door switch, driver's door 
+
+8 
+
+CCC/M-ASK control unit (navigation system) 
+
+17 
+
+Steering column switch cluster 
+
+9 
+
+CAS control unit 
+
+18 
+
+EGS control unit 
+
+
+The new architecture for ACC Stop & Go illustrated here includes the LDM control unit, 
+Sensor CAN and the short-range radar sensors as new components. It is being used for 
+the first time on the E60/E61 LCI. 
+
+The characteristic feature of the previous architecture was that the ACC sensorwas con¬ 
+nected to the PT-CAN. That architecture remains in useforthe cruise control on the 
+E63/E64 forthe time being. 
+
+Forthe purposes of comparison, the previous ACC architecture is illustrated below in the 
+system circuit diagram. 
+
+
+11 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principles of Operation 
+
+
+Functional Integration 
+
+
+LRR 
+
+SRR 
+
+SRR 
+
+
+0 ^ ® 
+
+
+
+M 
+
+> 
+
+
+n 
+
+
+
+1 5 
+
+
+mm, 
+
+
+1 
+
+1 Q 
+
+1 t ; 
+
+J 
+
+pi?" 
+
+
+LDM 
+
+
+
+
+
+ACC Stop & Go is capable of performing gap modulation at speeds 
+down to standstill (car is stopped). The car starts moving again on 
+acknowledgement from the driver or automatically if only stationary 
+fora very short period. 
+
+The control functions are integrated in the LDM control unit. The 
+radar sensors provide information about the objects in front of the 
+vehicle. Adaptive Braking Assistance uses information from the 
+long-range radar sensorto detect emergency braking situations when following another 
+vehicle. It makes it easierforthe driverto obtain optimum braking effect by intervening in 
+DSC functions. 
+
+
+
+12 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Component 
+
+Functions 
+
+1 
+
+Long Range Radar Sensor 
+
+• Detecting objects at long range, pre-processing object data, 
+broadcasting list of objects on S-CAN (for ACC Stop & Go) 
+
+• Detecting objects, pre-processing object data, calculating 
+activation criteria and broadcasting request signals on S- 
+CAN (for Adaptive Braking Assistance) 
+
+2 
+
+Short Range Sensor, Left 
+
+• Detecting objects at short range, pre-processing object data, 
+broadcasting list of objects on S-CAN (for ACC Stop & Go) 
+
+3 
+
+Short Range Sensor, Right 
+
+• As short-range radar sensor, left 
+
+4 
+
+LDM control unit 
+
+• Analysis of objects and selection of relevant object (for ACC 
+Stop & Go) 
+
+• Interpretation of driver control signals and generation of dis¬ 
+play signals (for ACC Stop & Go) 
+
+• Cruise control, gap modulation, and cornering speed modu¬ 
+lation (forACC Stop & Go) 
+
+• Control of powertransmission and brake actuators by output 
+of required settings on PT-CAN (forACC Stop & Go) 
+
+• Gateway between S-CAN and PT-CAN (fordiagnosis and 
+flash-programming of long-range radar sensor) 
+
+• Gateway between S-CAN and PT-CAN (for Adaptive Braking 
+Assistance) 
+
+5 
+
+DC C/ACC control lever 
+
+• Generation of driver control signals (forDCC/ACC Stop & Go) 
+
+6 
+
+Instrument cluster 
+
+• Display of indications requested by LDM (forACC Stop &Go) 
+
+• Supply of signal for displayed speed (forACC Stop & Go) 
+
+7 
+
+Brakes (DSC) 
+
+• Execution of braking levels specified by LDM when car is in 
+motion and stationary (for ACC Stop & Go) 
+
+• Execution of Adaptive Braking Assistance functions on 
+instruction from LDM (priming of braking system and lower¬ 
+ing of threshold for Hydraulic Braking Assistance) 
+
+• Supply of signals relating to motion status of the car and 
+brake pressure 
+
+8 
+
+Powertransmission system consisting 
+of engine and gearbox (DM E and 
+
+EGS) 
+
+• Execution of power output levels specified by LDM when car 
+is in motion and stationary (for ACC Stop & Go) 
+
+• Supply of signals indicating powertransmission forces (for 
+
+ACC Stop & Go) 
+
+
+13 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In addition to the most important constituent parts of the system complex for ACC Stop & 
+Go and Adaptive Braking Assistance as listed above, there are otherfunctional groupings 
+that are summarized below. 
+
+
+Other Signals to/from LDM (PT-CAN) 
+
+In/Out 
+
+Information 
+
+Source/Recipient 
+
+Function 
+
+In 
+
+Road type, stretch of 
+road 
+
+CCC >KGM >LDM 
+
+Adaptation of LDM control parame¬ 
+ters according to navigation data 
+
+In 
+
+GPS location 
+
+CCC/M -ASK > KGM > LDM 
+
+Shutdown of short-range radarsen- 
+sors in the vicinity of astronomical 
+radio telescopes 
+
+In 
+
+Terminal status, engine 
+running 
+
+CAS > KGM > LDM, DM E > LDM 
+
+Activation condition for ACC/DCC 
+
+In 
+
+Automatic transmission 
+selector position 
+
+EGS >LDM 
+
+Activation condition for ACC/DCC 
+
+In 
+
+Steering angle 
+
+SZL >LDM 
+
+Extrapolation ofvehicle lane course 
+(when stationary) 
+
+In 
+
+Driver's door 
+open/closed 
+
+Doorswitch >KGM >LDM 
+
+Warning if driver is about to get out 
+
+In 
+
+Driver's seatbelt fas¬ 
+tened/unfastened 
+
+Belt buckle switch >ACSM > 
+
+KGM > LDM 
+
+Warning if driver is about to get out 
+
+In 
+
+Driver's seat 
+occupied/unoccupied 
+
+Seat occupancy detector > 
+
+ACSM > KGM > LDM 
+
+Warning if driver is about to get out 
+
+Out 
+
+Request for hazard 
+warning flashers 
+
+LDM > KGM > LM 
+
+Warning if driver is about to get out 
+
+Out 
+
+Request for horn 
+
+LDM > SZL 
+
+Warning if driver is about to get out 
+
+
+Note: ACC Stop &Go and Adaptive Braking Assistance are highly integrated 
+functions. 
+
+In the event of customer complaints, reports of failure or initially unex¬ 
+plained function behavior, the fault memories of the LDM and long-range 
+radar sensor should be checked first and the programmed testing 
+sequences followed if necessary. 
+
+If that does not identify the problem, all control units and sensors 
+involved in the system complex must be manually checked. 
+
+A precise examination of the PT-CAN, S-CAN and K-CAN bus systems is 
+particularly advisable in the event of signal or communication faults. 
+
+
+14 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+Cruise Control with Braking Function (DCC) 
+
+As this function was already familiarfrom the E9x models before being adopted on the 
+E60/E61 LC I, only the most important details and new features are presented here. 
+
+Functions 
+Cruise Control 
+
+The cruise control calculates a required acceleration rate on the basis of the desired 
+speed set by the driver and the vehicle's current actual speed. That acceleration rate may 
+be positive, if the desired speed is greaterthan the actual speed, or negative if the 
+reverse is the case. 
+
+Accelerating and Decelerating Using the Control Lever 
+
+The control lever allows the driverto do more than just setthe desired speed. It also pro¬ 
+vides the "Easy Dynamics" function. If the control lever is pressed and held forwards or 
+backwards, that is interpreted as a direct acceleration or deceleration command. The rate 
+of acceleration or deceleration is dependent on whetherthe driver pushes the leverto the 
+first or second position. 
+
+This mode takes precedence over cruise control. 
+
+Cornering Speed Modulation 
+
+Also known as "Lateral acceleration control", this function has the purpose of preventing 
+the lateral acceleration rate when cornering from exceeding a comfortable level when 
+cruise control is active. 
+
+The actual lateral acceleration is calculated from the road speed and the yaw rate.That 
+figure is then compared to a threshold level, which is speed-dependent, with the purpose 
+of achieving the following apparently contradictory aims: 
+
+• Avoiding irritating, over-restrictive intervention in situations where the driver would 
+corner at higher lateral acceleration rates. 
+
+Examples: at low speeds such as when on a mountain road or at high speeds on a 
+highway. 
+
+In those situations a higherthreshold is applied. 
+
+• Intervening effectively and accordingly bringing about a clearly perceptible reduction 
+in dynamic forces at typical trunk road speeds. That is when most drivers perceive 
+too high lateral acceleration as unpleasant, which is why a lowerthreshold is applied 
+for such situations. 
+
+The output variable from this function is also a required level for longitudinal acceleration. 
+
+Prioritizing Required Settings 
+
+From the required longitudinal acceleration rates calculated by the above control func¬ 
+tions, the required setting that has the highest priority is selected according to the situa¬ 
+tion. When doing so, abrupt jumps when switching from one required setting to another 
+are avoided by signal filtering. 
+
+
+15 
+
+Longitudinal Dynamics Systems 
+
+
+
+Estimating Contributory Forces 
+
+In orderto be able to put the prioritized longitudinal acceleration rate into effect by means 
+of the actuators, an acceleration or deceleration rate must be calculated. 
+
+Example: when driving uphill, the engine power required to bring about a specific longitu¬ 
+dinal acceleration rate is greater than would be required on the flat. If it is necessary to 
+decelerate when going uphill, less braking force is required than on the flat. 
+
+In orderto be able to correctly calculate the necessary forces, the precise figures would 
+be required not only forthe gradient but also forthe mass of the vehicle, the rolling resis¬ 
+tance, the wind resistance and a number of other accelerating or retarding forces. 
+
+Since there are no sensor systems for any of those contributory forces, an estimated fig¬ 
+ure is calculated by comparing the two following variables: 
+
+• the vehicle's actual motion variables and 
+
+• the vehicle's expected motion variables based on the powertransmission and brak¬ 
+ing forces currently in effect. 
+
+The figure forthe contributory force thus determined is included as an added quantity in 
+the calculation of the required longitudinal acceleration rate. 
+
+Control of Actuators 
+
+In orderto bring about the longitudinal acceleration calculated by the control functions 
+and compensate forthe contributory forces that are in effect, powertransmission and/or 
+braking forces must be initiated. 
+
+Accelerating the vehicle generally only involves specifying a required setting forthe power 
+transmission system consisting of engine and gearbox. (In the exceptional case of a steep 
+descent, it may also be necessary to operate the brake to bring about a specific positive 
+acceleration rate.) 
+
+If the vehicle is to be slowed down, the system first of all ascertains how great the possi¬ 
+ble retarding effect of the powertransmission system (braking effect of engine and gear¬ 
+box) is and signals it to the drivetrain control units (DME and EGS). 
+
+Only the remaining retarding force required is signalled as the required deceleration rate 
+to the braking system control unit (DSC). 
+
+Note: If the brakes are noticeably applied in orderto achieve the desired 
+vehicle deceleration rate, the vehicle's brake lights are also switched 
+on (legal requirement). 
+
+
+16 
+
+Longitudinal Dynamics Systems 
+
+
+
+Operation and Display 
+Activation and Deactivation 
+
+The preconditions for operation for the DCC function must be satisfied before operation 
+of the control lever by the driver can be acted upon as a request for activation. 
+
+Those preconditions for operation are: 
+
+• Vehicle's road speed must be within the permitted range (above 20 mph) 
+
+• Brake pedal must not be depressed 
+
+• A forward gear (manual gearbox) or Drive (automatic transmission) must be engaged 
+
+• Parking brake must not be on 
+
+• DSC must be switched on and no control intervention currently in progress 
+
+• There must be no system fault present 
+
+If any of those conditions is not met, activation is prevented despite any attempts by the 
+driver to activate the function. 
+
+Conversely, if the function is active when any of those conditions ceases to be met, the 
+function is deactivated. 
+
+Changing the Desired Speed 
+
+If the cruise control is already active, the driver can change the desired speed in incre¬ 
+ments of two different sizes by operating (pressing and immediately releasing) the control 
+lever. 
+
+• Pressing the leverto the first position increases or decreases the desired speed by 
+1 mph. 
+
+• Pressing the leverto the second position increases or decreases the desired speed 
+by 5 mph. 
+
+Pressing and holding the control lever sends a direct instruction for one of the two accel¬ 
+eration or deceleration rates (see the section "Control functions"). 
+
+While the lever is held, the vehicle's actual speed changes due to the acceleration or 
+deceleration rate applied. After operating the lever, the driver generally wants to continue 
+at the resulting speed. Therefore, while the vehicle is accelerating or decelerating, the 
+desired speed changes to match the actual speed. 
+
+The range of adjustmentforthe desired speed is between 20 and 155 mphforthe DCC 
+function. 
+
+
+17 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+The desired speed selected is permanently indicated by means of an illuminated mark on 
+the perimeter of the speedometer. 
+
+
+
+Indication of Desired Speed on Speedometer Perimeter 
+
+
+Index 
+
+Explanation 
+
+A 
+
+The mark is colored green when the system is active. It then indicates the desired speed to which 
+the system is working. 
+
+B 
+
+The mark shows orange when the system is inactive. It then indicates the desired speed last 
+selected, which can be reactivated by the driver. 
+
+C 
+
+The mark is not visible if the system is inactive and has not been used since the engine was last 
+started. In those circumstances, there is no stored desired speed that the driver could reactivate. 
+
+
+When the system is switched on orthe 
+desired speed changed, an additional indica¬ 
+tion is displayed: the new setting for the 
+desired speed is shown in figures on the vari¬ 
+able display panel of the instrument cluster. 
+
+
+This method of indication is also used if activation 
+is not possible because the preconditions for oper¬ 
+ation are not satisfied. In that case, three lines are 
+shown instead of the figures. 
+
+
+
+
+
+
+
+18 
+
+Longitudinal Dynamics Systems 
+
+
+km/h 
+
+
+
+
+
+
+
+
+
+
+Monitoring Functions 
+
+All monitoring functions serve the two purposes of preventing the function from operating 
+with incorrect input signals or parameters and also preventing critical dynamic handling 
+conditions arising from system faults. 
+
+Forthose reasons, all input signals, the 
+operational status of the associated systems 
+involved and the system's own control unit 
+hardware are monitored. If a fault is detected, 
+
+the control function is shut down or its activation prevented. In addition, an indication is 
+given on the instrument cluster by means of a check control message. 
+
+
+
+Symbol displayed on fault relat¬ 
+ed failure of cruise control with 
+braking function 
+
+
+The failure message referred to above should 
+not be confused with the message the driver 
+receives when the system is deactivated due 
+to the preconditions for operation ceasing to 
+be met. 
+
+
+
+Symbol displayed on deactiva¬ 
+tion of cruise control with brak¬ 
+ing function due to operation 
+reconditions ceasing to be met 
+
+
+19 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+Active Cruise Control with Stop & Go Function 
+
+Even with its distinctly wider operating range, Active Cruise Control with Stop & Go func¬ 
+tion (ACC Stop & Go) remains a system intended to relieve the burden on but not replace 
+the driver. The driver is and remains responsible for employing the system sensibly. The 
+fact that the driver must continue to pay careful attention to the road traffic conditions is 
+self-evident and is merely made easier by the system. Only in that way can the driver 
+intervene promptly and in a controlled manner when ACC Stop & Go reaches its limits. 
+
+Information from the Vehicle's External Environment 
+Detecting Objects 
+
+Detecting other road users in front of the vehicle represents one of the most important 
+functions of Active Cruise Control. With the introduction of the Stop & Go function, the 
+system has to be capable of doing so not only at long range but also at short range right 
+down to the area directly in front of the vehicle. 
+
+This is necessary because at low speeds, shorter gaps of only a few meters can be main¬ 
+tained (see the section "Gap modulation"). 
+
+Consequently, that task cannot be performed by one radar sensoron its own. The familiar 
+ACC sensor, now referred to as the long-range radar sensor, is supplemented by two 
+additional short-range sensors. 
+
+In addition to the simple detection of objects, those sensors ascertain the position of 
+objects on the xand y axes and their relative velocities in relation to the vehicle. From the 
+relative speed, the sensors also compute the relative acceleration of the objects in rela¬ 
+tion to the vehicle. That figure is required for gap modulation. 
+
+Pre-processing Object Data 
+
+Initial processing of the object data (position and motion variables) is performed by the 
+radar sensors themselves. They collate and track individual undefined objects overtime in 
+orderto bridge detection gaps. They also pre-filterthe object data. 
+
+The second processing stage takes place in the LDM control unit.The position data is 
+first of all standardized and adjusted by the offset of the radar sensors from the vehicle's 
+center axis (x axis). 
+
+The object data received from the different radar sensors then has to be merged because 
+parts of the sensors' detection zones overlap. 
+
+That overlap occurs in the close-range zone in particular where objects are frequently 
+detected by more than one sensor. 
+
+A furtherfiltering process is then performed on the merged object data to take account of 
+the special requirements of gap modulation. 
+
+
+20 
+
+Longitudinal Dynamics Systems 
+
+
+
+Assessing Objects 
+
+In orderto decide which object should used as the basis for gap modulation, an assess¬ 
+ment rating is calculated for each object. The following two essential criteria are taken 
+account of by the calculation: 
+
+1. The position and speed of the object relative to the vehicle. 
+
+The closerthe object is to the vehicle and/orthe faster it is approaching 
+the vehicle, the higher is its assessment rating. 
+
+2. Position of the object in the vehicle's lane. 
+
+The radar sensors cannot identify the actual lane orthe lane markings on the road. 
+And the data from the camera based system that is used for the "lane departure 
+warning" system is not available to the ACC at this stage. Forthat reason, the ACC 
+Stop & Go, like the familiar ACC system, calculates a probable lane course ahead of 
+the vehicle. 
+
+While the vehicle is moving, it is based on variables that define the motion of the 
+vehicle itself and the position of detected stationary objects. 
+
+When the vehicle is stationary, the calculation is based primarily on analysis of the 
+signal from the steering angle sensor. That means that steering wheel movements 
+while the vehicle is stationary change the lane course calculated by the ACC Stop 
+& Go and, consequently, the assessment of the objects detected. 
+
+The object with the highest assessment rating ultimately forms the basis on which gap 
+modulation is performed. 
+
+In this processing phase, objects are also classified on the basis of their motion status. 
+
+A distinction is made between moving and stationary objects. Special treatment is given 
+to objects classified as stationary (since they were first detected). 
+
+
+21 
+
+Longitudinal Dynamics Systems 
+
+
+
+Control Functions 
+Cruise Control 
+
+The cruise control function on the ACC system basically operates in precisely the same 
+way as on the DCC system. 
+
+
+Distance Control 
+
+Gap modulation is the core function of any ACC system. On the ACC Stop & Go system 
+it is integrated in the LDM control unit. (As distinct from ACC on the E9xon which gap 
+modulation is integrated in the ACC control unit.) 
+
+The driver can setthe desired gap to one of four choices by means of a rocker on the 
+control lever. On the basis of that desired gap setting, the ACC Stop & Go calculates the 
+required distance from the vehicle in front. 
+
+
+
+Calculation of required gapforgap 
+modulation by ACC Stop & Go 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Required gap d in meters 
+
+B 
+
+Road speed v in kph 
+
+1 
+
+Required gap, in-motion component, 
+proportional to road speed 
+
+2 
+
+Required gap, stationary component, 
+constant 
+
+3 
+
+Resulting required gap from in-motion 
+and stationary components 
+
+
+As with the familiar ACC system, the required gap when the vehicle is moving is propor¬ 
+tional to the road speed (1). 
+
+At low speeds and when stationary, a second component is given greater weight by the 
+ACC Stop & Go.This is afixed quantity in meters (2). If this component were nottaken 
+into account, the required gap when stationary would be zero meters. Instead, this sec¬ 
+ond component is used to setthe desired gap when stationary (approx. 5 m). 
+
+The resulting required gap is calculated from the two components.They are differently 
+weighted according to the vehicle's road speed. 
+
+
+22 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+The input data forthe gap modulation function is the pre-processed object data relating 
+to the object with the highest assessment rating. 
+
+In comparison with the previous ACC system, the new system had to meet additional 
+requirements: 
+
+1. The maximum acceleration and deceleration rates forthe ACC Stop & Go system 
+have been increased compared with the ACC.The change was introduced forthe 
+low-speed range (below approximately 50 kph) as drivers uses greater rates them¬ 
+selves at those speeds but still perceive them as comfortable. 
+
+Depending on the situation, the ACC Stop & Go accelerates at up to approximately 
+2 m/s 2 and decelerates at up to approximately 4 m/s 2 . 
+
+The increase was technically justifiable as, firstly, the additional short-range sensors 
+have increased the reliability with which vehicles in front can be identified. 
+
+And secondly, the projection of the lane course is also more reliable in the lower 
+speed range, which is also why selection of the object on which control is based has 
+also improved. 
+
+2. Traffic queue stability. In very heavy traffic moving at very slow speeds it is all the 
+more important that following vehicles do not make successively greater changes to 
+longitudinal dynamics (longitudinal acceleration) than the vehicle in front in each 
+case. If that were to happen, at some point further along the queue a vehicle would 
+be forced to make an emergency stop even though the first vehicle in the queue had 
+only braked very slightly. 
+
+The ACC Stop & Go gap modulation function is designed in such a way that it reacts as 
+soon as possible but not any more severely than the vehicle in front. 
+
+Cornering Speed Modulation 
+
+The cornering speed modulation function on the ACC Stop & Go is based on that 
+of the DCC. 
+
+It has been extended to take account of the lateral limits of the radar sensor detection 
+zones. If the bend being negotiated is so tight that objects can no longer be detected, 
+it intervenes and prevents the vehicle accelerating. 
+
+Prioritizing Required Settings 
+
+Prioritization of the required settings on the ACC Stop & Go system is basically the same 
+as on a DCC system.There is merely an additional specified control setting generated by 
+the gap modulation function. 
+
+
+23 
+
+Longitudinal Dynamics Systems 
+
+
+
+Estimating Contributory Forces 
+
+The estimation of contributory forces by the ACC Stop & Go is also based on the DCC 
+system. Nevertheless, the fine detail required numerous optimizations because at slow 
+speeds (under 20 mph) inaccuracies in the estimation of contributory forces are much 
+more noticeable than at high speeds. 
+
+Greater accuracy of estimation combined with simultaneously quicker adaptation to 
+changes in the contributory forces present was therefore necessary. 
+
+Control of Actuators 
+
+Apart from the situation when stationary, for which the data interface between the LDM 
+and DSC has been extended, the control of actuators by the ACC Stop & Go is effected 
+in the same way as by the DCC or ACC on the E9x. 
+
+Note: The brake lights are also switched on when the 
+ACC Stop & Go brings the car to a stop. 
+
+Operation and Display 
+Activation and Deactivation 
+
+When the car is moving, the same conditions have to be metforthe ACC Stop & Go 
+system to be activated as for the familiar Active Cruise Control: 
+
+• Brake pedal must not be depressed 
+
+• Automatic transmission must be in Drive 
+
+• Parking brake must not be on 
+
+• DSC must be switched on and no control intervention currently in progress 
+
+• Radar sensors must be operational and not dirty 
+
+• There must be no system fault present 
+
+
+24 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+Activation when Moving 
+
+In contrast with the previous ACC system, ACC Stop & Go can be activated at speeds 
+below 20 mph if a vehicle is detected ahead. 
+
+
+
+Activation of ACC Stop & Go when Moving 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver 
+
+1 
+
+ACC Stop & Go is inactive. 
+
+A desired speed has been stored from a previous activation (orange mark). 
+
+Object and gap indications are off. 
+
+2 
+
+ACC Stop & Go is switched on by means of the Resume button. 
+
+The desired speed mark changes colorto green. The vehicle accelerates so as to either reach the 
+desired speed or adjust the distance from the vehicle in front to the desired gap setting. 
+
+
+25 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activation when Stationary 
+
+If the driver wants to activate ACC Stop & Go when stationary, the same basic conditions 
+must be met as when the vehicle is moving. 
+
+
+The following additional conditions must also be satisfied: 
+
+• The driver must be pressing the brake pedal to keep the vehicle stationary. 
+
+• There must be another stationary vehicle in front of the car. 
+
+• The driver's door must be closed and the driver must have the seat belt on. 
+
+
+
+Activation of ACC Stop & Go when Stationary 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver 
+
+1 
+
+ACC Stop & Go is inactive. 
+
+A desired speed has been stored from a previous activation (orange mark). The object and gap 
+indications are off. The driver is pressing the brake pedal to keep the vehicle stationary. 
+
+2 
+
+The driver continues to press the brake pedal while also pressing the resume button. 
+
+This switches on the ACC Stop & Go. 
+
+Object and gap indications are also switched on.The desired speed mark stays orange. 
+
+3 
+
+The driver releases the brake pedal.The active ACC Stop & Go system continues to keep the 
+vehicle stationary by operating the brake. 
+
+The desired speed mark stays orange to indicate that the ACC Stop & Go will not automatically 
+move the car off (see the section "Stopping and moving off"). 
+
+
+26 
+
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deactivation when Moving 
+
+Deactivation of the ACC Stop & Go is effected by driver control operations that are more 
+or less the reverse of those for activation. 
+
+
+
+Activation of ACC Stop & Go when Stationary 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver 
+
+1 
+
+ACC Stop & Go is active. 
+
+Object and gap indications are on.The desired speed mark is showing green. 
+
+9 
+
+The driver pushes the control lever up or down or presses the brake pedal to switch off the 
+
+ACC Stop & Go. 
+
+
+The object and gap indications are switched off. The desired speed mark changes colorto orange 
+thereby indicating that the last desired speed setting can be resumed. 
+
+
+27 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deactivation when Stationary 
+
+
+
+Deactivation of ACC Stop &Go when Stationary 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver 
+
+1 
+
+ACC Stop & Go is active and holding the car stationary behind another stationary vehicle. 
+
+Object and gap indications are on.The desired speed mark is showing orange. 
+
+2 
+
+The driver operates the brake pedal. ACC Stop & Go remains active, waiting forfurther control 
+operations by the driver. If the driverwere next to release the brake pedal, the ACC Stop & Go 
+would remain active and keep the car stationary by operating the brakes. 
+
+The indications would not change as a result of the brakes being operated. 
+
+•3 
+
+As well as operating the brake pedal, the driver pushes the control lever up or down to switch off 
+the ACC Stop & Go. 
+
+
+The object and gap indications are switched off. The desired speed mark shows orange thereby 
+indicating that the last desired speed setting can be resumed. 
+
+
+28 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Changing the Desired Speed 
+
+The driver can change the desired speed forthe ACC Stop & Go when the system is 
+switched on in the same way as with the DCC. 
+
+The adjustment range forthe desired speed setting is from 15 to 110 mph, as with the 
+familiar ACC system. 
+
+Changing the Desired Gap 
+
+As with the familiar ACC system, the desired gap can be changed when the system is 
+switched on by pressing and releasing the rocker on the control lever. The usual choice of 
+four gap settings is offered and the selected setting is indicated by the bars below the 
+object indication on the instrument cluster. 
+
+Changing the desired gap when the vehicle is moving produces an immediate percepti¬ 
+ble vehicle response. It accelerates or slows down slightly to adjust the gap to the new 
+setting. 
+
+Note: When the vehicle is stationary, changing the desired setting will not 
+cause the vehicle to move off - it will neither move forwards to reduce 
+the gap nor backwards to increase the gap. 
+
+Stopping and Moving Off 
+
+Although the "gap modulation" function basically operates at speeds down to zero 
+(standstill), there are additional software functions that control the stopping and moving 
+off sequences. 
+
+Their job is to operate the powertransmission system and the brakes in such a way that 
+the perception of the vehicle's Behavior by the driver and passengers is as comfortable 
+as possible. In addition, the vehicle must not be allowed to roll backwards in the course of 
+those operations. 
+
+M aximum driver assistance and relief would be offered by a Stop & Go function that auto¬ 
+matically performed all operations from stopping to moving off again. 
+
+The function actually technically achieved is one that automatically stops the car but only 
+automatically moves it off again if the car is only briefly stationary. 
+
+If the stationary period lasts longerthan a few seconds, the ACC Stop & Go does not 
+automatically move the vehicle off again. 
+
+Instead, the ACC Stop & Go signals to the driver on the instrument clusterthat it has 
+detected a situation in which the vehicle can move forwards and only moves the vehicle 
+off when the driver acknowledges that signal by a control operation. 
+
+Note: Requiring acknowledgement ensures that the driveris paying attention 
+to the traffic situation again after an extended stationary period. Because 
+even though the Active Cruise Control has been extended by the Stop & 
+Go function, the driver remains responsible for driving the vehicle and 
+making appropriate use of the assistance functions available. 
+
+29 
+
+Longitudinal Dynamics Systems 
+
+
+
+For extended standstill phases, the ACC Stop & Go makes use of a Dynamic Stability 
+Control function known as standstill management. 
+
+That function firstly ensures that the braking force necessary to stop the vehicle moving is 
+increased as circumstances demand if the vehicle starts rolling when it shouldn't (longitu¬ 
+dinal motion detection). In addition, standstill management observes whetherthere are 
+interventions from the ABS system during the stopping sequence. If that is the case, skid 
+detection, which reduces the braking force at each of the wheels in turn, is activated 
+when the vehicle is "stationary". If any of the wheels starts rotating, the standstill manage¬ 
+ment identifies that the vehicle is skidding. As a consequence, the ACC Stop & Go is 
+switched off, the brakes are released on all wheels and the driver is informed by a check 
+control message. Releasing the brakes makes the skidding vehicle steerable again. Of 
+course, the driver still has the option of stopping the car again by operating the brakes if 
+the road conditions allow. 
+
+
+30 
+
+Longitudinal Dynamics Systems 
+
+
+
+Automatic Moving-off Sequence 
+
+l A J B ) 
+
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver (no control operations are required in this situation) 
+
+1 
+
+The vehicle with ACC Stop & Go is following another vehicle at a slow speed. 
+
+Due to the short-range radarsensors, reliable detection remains possible at the 
+resulting short distance between the vehicles. 
+
+2 
+
+The vehicle in front stops. 
+
+The ACC Stop & Go vehicle automatically slows down by carefully controlled 
+application of the brakes. 
+
+3 
+
+The ACC Stop & Go vehicle automatically comes to a halt. Once the vehicle is stationary, the 
+brakes are applied in such a way that there is a certain amount of surplus braking force so as to 
+ensure there is no undesirable movement of the vehicle. 
+
+In the situation illustrated, the period of standstill is very short.The first vehicle in the queue has 
+already started moving again. 
+
+4 
+
+The ACC Stop & Go detects that the vehicle in front has started moving again after a very short 
+time and automatically starts the moving-off sequence. To do so, it gradually releases the brakes at 
+the same time as increasing the transmission of power. As a result, the ACC Stop & Go smoothly 
+starts the vehicle moving. 
+
+
+31 
+
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Moving-off Sequence with Driver Acknowledgement 
+
+
+
+Stopping and Moving-off with Driver Acknowledgement 
+
+
+32 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Road traffic situation 
+
+B 
+
+ACC indications on the instrument cluster 
+
+C 
+
+Control operations by driver 
+
+1 
+
+The vehicle with ACC Stop & Go is following another vehicle at a slow speed. 
+
+Due to the short-range radar sensors, reliable detection remains possible at the resulting 
+short distance between the vehicles. 
+
+2 
+
+The vehicle in front stops. 
+
+The ACC Stop & Go vehicle automatically slows down by carefully controlled 
+application ofthe brakes. 
+
+3 
+
+The ACC Stop & Go vehicle automatically comes to a halt. Once the vehicle is stationary, 
+the brakes are applied in such a way that there is a certain amount of surplus braking force 
+so as to ensure there is no undesirable movement ofthe vehicle. 
+
+4 
+
+In the situation illustrated, the traffic congestion increases and the standstill period is longer. 
+
+The ACC Stop & Go and the DSC standstill management function make sure that the vehicle 
+continues to be kept stationary. 
+
+To signal to the driverthat ACC Stop & Go will not automatically start the car moving, the desired 
+speed mark changes colorfrom green to orange. Object and gap indications remain on. 
+
+5 
+
+The traffic starts moving and the vehicles directly in front move off again. 
+
+The ACC Stop & Go signals to the driver by means of rolling gap bars that it has detected a 
+situation in which the vehicle can move off. But as long as the driver does not acknowledge 
+the signal, the ACC Stop & Go continues to keep the vehicle stationary. 
+
+6 
+
+The driver acknowledges the moving-off signal from the ACC Stop & Go either by pressing 
+the Resume button on the control lever or pressing the accelerator. The ACC Stop & Go then 
+resumes the control function and follows the vehicle in front. 
+
+
+33 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Response to Stationary Objects 
+
+Special treatment is given to stationary objects that have not been detected as moving 
+(velocity equal to zero) since they were first identified. 
+
+
+
+Road Traffic Scenarios Involving Stationary Objects 
+
+
+34 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Real road traffic scenario 
+
+The vehicle with ACC Stop & Go approaches a stationary vehicle that has not been identified as 
+moving at any point up to then. 
+
+In this scenario, the driver wants the ACC Stop & Go to slow the carto a stop in response to the 
+stationary object in front. 
+
+2 
+
+Real road traffic scenario 
+
+From a straight section of road, the vehicle with ACC Stop & Go approaches a bend at the begin¬ 
+ning of which there is a warning sign.That warning sign is similarly identified by the ACC Stop & 
+
+Go as a stationary object. 
+
+In this scenario, the driver does not expect the ACC Stop & Go to slow the car down in response 
+to the stationary warning sign. 
+
+3 
+
+Road traffic scenario as seen by ACC Stop &Go 
+
+The real road traffic scenarios (1) and (2) are indistinguishable to the ACC Stop & Go as the radar 
+sensors merely provide information about the position and motion status of the objects detected. 
+They do not provide any details of the type of object, which is why in both cases the ACC Stop & 
+
+Go responds as in scenario (3). 
+
+
+A distinction can only be made between actual road users and other objects such as 
+road signs or buildings if we assume that a road user must have been moving at some 
+time. 
+
+That is precisely the assumption that cannot be made of stationary objects so that no reli¬ 
+able conclusion about their significance with regard to ACC response can be drawn 
+either. 
+
+Note: To preventthe car slowing down inappropriately, for instance for road 
+signs, ACC and ACC Stop & Go never respond to stationary objects. In 
+other words, it does not even slow the vehicle down if it is approaching 
+the end of a stationary queue of traffic at high speed. 
+
+However, the driver can activate the ACC Stop & Go function when the vehicle is station¬ 
+ary behind another stationary object. In that situation it is assumed that the driver would 
+only activate the function when stationary behind another road user. 
+
+
+35 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+Instruction to Take Over Control 
+
+As with the familiar ACC, the ACC Stop & Go also has procedures for instructing the 
+driverto take over control. A new algorithm has been developed to take account of the 
+substantially more diverse and dynamic situations in the lower speed range and shorter 
+distance zone. Development of a new algorithm also made it possible to improve the 
+instruction to take over control in the higher speed range. 
+
+Now, ratherthan the ACC Stop & Go not informing the driver until it has reached the 
+self-imposed limit for maximum deceleration when it can, therefore, no longer control 
+the situation, the instruction to take over control is initiated if the motion data from the 
+system's own vehicle and the vehicle in front demand a quick response from the driver 
+(before the ACC Stop & Go has achieved the maximum deceleration). Reduction of the 
+gap to below a minimum distance for an extended period has also been integrated as a 
+third trigger criterion. 
+
+A feature that remains the same compared with the previous ACC is that the instruction 
+to take over control is only issued when the ACC is switched on. The method of indica¬ 
+tion is also unchanged. It consists of a visual signal in the form of the red flashing object 
+symbol and a two-tone audible beep signal. 
+
+Red flashing object symbol as to take over control 
+
+
+36 
+
+Longitudinal Dynamics Systems 
+
+
+
+Warning if Driver is About to Get Out 
+
+ACC Stop & Go uses the DSC hydraulics to reliably slow the vehicle to a halt and keep it 
+stationary. However, the following general parameters and differences from other systems 
+must be made clear: 
+
+• When the vehicle comes to a standstill in the course of ACC Stop & Go operation, 
+this constitutes a transitional phase before the vehicle moves off again. ACC Stop & 
+Go is, therefore, by no means a system for permanently parking the vehicle. 
+
+• Without a supply of electricity, the DSC hydraulics are unable to indefinitely maintain 
+the braking force necessary to keep the vehicle stationary. The valves require a con¬ 
+stant supply of electricity and the hydraulic pump also has to be brought into action if 
+the pressure in a brake circuit threatens to drop. Under extreme circumstances, the 
+DSC hydraulics may even become overheated. In such conditions, the standstill 
+function has to be cancelled in orderto protect the components from permanent 
+damage. 
+
+• The only technical device on the vehicle designed to secure it against rolling away is 
+the parking brake. Some BMW vehicles now have an electromechanical parking 
+brake. It can be electronically operated if needed so as to automatically secure the 
+vehicle against rolling away. 
+
+The E60/E61 LCI, however, continues to befitted with a conventional hand operated 
+parking brake. 
+
+Note: The driver is responsible for securing the vehicle against rolling away and 
+remains so even with ACC Stop & Go fitted on the E60/E61 LCI. 
+
+This can be done by engaging Park on the automatic transmission but the parking brake 
+should be applied as well. 
+
+As the use of the ACC Stop & Go driver assistance function may result in drivers becom¬ 
+ing unaware of that responsibility, a multi-stage warning concept has been developed. It is 
+designed to prevent sudden and unexpected cessation of the standstill function on the 
+one hand while also insistently reminding the driverto carry out that responsibility. 
+
+
+37 
+
+Longitudinal Dynamics Systems 
+
+
+
+Typical Warning Sequence if Driver is Aboutto GetOut 
+
+
+
+38 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index Explanation 
+
+A Actions by driverthattrigger warning stages 
+
+B ACC indications on the instrument cluster 
+
+
+C Road traffic situation or perceptible response of vehicle with ACC Stop & Go 
+
+No warning stage active 
+
+0 ACC Stop & Go is switched on and automatically holding the car stationary behind 
+
+anothervehicle.That vehicle moves away afteran extended standstill period. 
+
+Warning stage one is active 
+
+The driver undoes the seatbelt or opens the driver's door. The belt buckle switch and the door 
+switch generate signals when that happens. The driver may be intending to get out of the car. 
+
+]_ ACC Stop & Go remains active and continues to keep the vehicle stationary. The yellow warning 
+
+symbol on the instrument cluster is accompanied by a single audible signal. In addition, a check 
+control message warning that the vehicle could roll away is displayed. 
+
+If the driverfastens the seat belt again and closes the driver's door, the warning is cancelled and 
+the ACC Stop & Go continues to hold the vehicle stationary as before. 
+
+Warning stage two is active 
+
+The driver has undone the seatbelt and opened the driver's door. The driver's intention to get out 
+of the car is more definite. 
+
+ACC Stop & Go switches itself off and releases the brakes. The vehicle starts to move. This alone 
+
+2 raises the barrier to the driver getting out of the vehicle completely. 
+
+The red warning symbol on the instrument cluster is accompanied by a repetitive audible signal. 
+The check control message that is also displayed insistently informs the driverthatthe vehicle is 
+now moving and it must be secured against rolling away. 
+
+Even if the driverfastens the seat belt again and closes the driver's door, the ACC Stop & Go 
+remains switched off. It can subsequently be reactivated by the driver. 
+
+Warning stage three is active 
+
+As well as having undone the seat belt and opened the driver's door, the driver gets out. This is 
+detected by the fact that the driver's seat is no longer occupied. 
+
+3 The vehicle continues to move. 
+
+In addition to the alerts inside the vehicle, the light module switches on the hazard warning flash¬ 
+ers and the SZL sounds the horn repeatedly. Those alerts perceptible from outside the vehicle are 
+intended to persuade the driver to get back in the car and secure it against rolling away. 
+
+In addition to the typical sequence described above, there are a number of other possible 
+combinations of events that can triggerthe individual warning stages. 
+
+Example: the driver undoes the seat belt and raises himself/herself from the seat. The dri¬ 
+ver's door is still closed. 
+
+Warning stage 2 is triggered. In this case too the vehicle will start to move because the 
+ACC Stop & Go switches itself off! 
+
+
+39 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monitoring Functions 
+
+As is familiarfrom the Active Cruise Control on the E9x models, the LDM monitors the 
+system complex to check that all constituent systems are operational, all input signals 
+required forthe function are present and correct and the control unit's own hardware is 
+functioning properly. 
+
+That same concept has basically been adopted forthe ACC Stop & Go system. 
+
+The new constituent systems have been incorporated into the monitoring concept. 
+
+
+Note: When troubleshooting it is important to include not only individual 
+
+components but all systems involved in the extended system complex. 
+
+
+If a fault occurs, the function is completely shut down as with previous ACC systems. In 
+addition, the driver is informed of the failure by an indication on the instrument cluster and 
+a check control message. Reactivation is not possible until the fault has been eliminated. 
+
+
+
+Symbol displayed on fault related failure of 
+Active Cruise Control with Stop & Go function 
+
+
+The failure message referred to above should not be confused with the message the 
+driver receives when the system is deactivated due to the preconditions for operation 
+ceasing to be met. Reactivation is possible once the preconditions for operation are 
+satisfied again. 
+
+
+
+Symbol displayed on deactivation of ACC Stop &Go 
+due to preconditions for operation ceasing to be met 
+
+
+In orderto be able to offerthe driver as wide a range of functions as possible for as long 
+as possible, the following cases are given special treatment. Appropriate symbols and 
+information in the check control message explain the circumstances to the driver in each 
+case. 
+
+• If only the short-range radar sensors are sporadically non-operational, the ACC func¬ 
+tion is not shut down until the vehicle's speed drops below a threshold of approxi¬ 
+mately 20 mph. It is only at speeds below that threshold that the short-range radar 
+sensors are indispensable for overall system function with the result that shutdown 
+can be delayed until that point. 
+
+• If one or more radar sensors are sporadically unavailable, the ACC function is shut 
+down but the driver can still switch to DCC mode so as to at least benefit from the 
+assistance of that function. 
+
+This is option is particularly useful if the radar sensors are dirty orthe vehicle is close to 
+an astronomical radio telescope. This option is also possible if the radar sensors tem¬ 
+porarily signal a fault status. 
+
+
+40 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+Adaptive Braking Assistance (ABA) 
+
+Adaptive Braking Assistance offers the greatest benefit in situations where the vehicle is 
+following another vehicle. If the vehicle in front brakes hard, it is detected by the long- 
+range radar sensor. The two sub-functions of: 
+
+• priming the braking system and 
+
+• lowering the threshold forthe Hydraulic Braking Assistance function 
+
+assist the driver to perform the braking operation to best effect and thus in the best case 
+to avoid a rear-end collision with the vehicle in front. 
+
+However, the Adaptive Braking Assistance technology also has limits and cannot react 
+fast enough in situations such as other road users cutting in right in front of the vehicle. 
+
+Driving with care and anticipation remains the fundamental imperative even with Adaptive 
+Braking Assistance! 
+
+All sensor-related and processing functions of Adaptive Braking Assistance are computed 
+in the long-range radar sensor. However, the computed output variables have to be trans¬ 
+mitted to the DSC control unit because that is where they are put into action. 
+
+Therefore, the LDM control unitacts as a gateway for that purpose from the S-CAN to 
+thePT-CAN. 
+
+Note: Adaptive B raking Assistance is always active and does not have to be 
+switched on separately by the driver. 
+
+
+41 
+
+Longitudinal Dynamics Systems 
+
+
+
+Information from the Vehicle's External Environment 
+Detecting Objects 
+
+Adaptive Braking Assistance only takes account of objects detected bythe long-range 
+radar sensor. The short-range sensors would only increase the usable number of relevant 
+objects by a very small margin. The reason forthat is that Adaptive Braking Assistance is 
+an anticipatory function that must be followed by a response on the part of the driver. The 
+time thus required necessitates detection of an emergency braking situation as early as 
+possible and, therefore, focussing primarily on objects that are relatively distant. 
+
+Pre-processing Object Data 
+
+The long-range radar sensor pre-processes the position and motion data of the objects 
+detected more or less as it does forthe ACC Stop & Go function. However, different para¬ 
+meters are used forfiltering, for instance, in orderto take account of the more dynamic 
+nature of emergency braking situations. 
+
+Assessing Objects 
+
+Different assessment criteria are applied to the objects forthe two constituent functions: 
+
+• For brake-system priming, only objects in the same lane as the vehicle are treated 
+as relevant. 
+
+• For lowering the Hydraulic Braking Assistance threshold, objects in the same lane as 
+the vehicle are treated as highly relevant but objects in adjacent lanes are also taken 
+into account. Ultimately that means that the system is able to react more quickly if an 
+object switches lanes from an adjacent lane to the same lane as the vehicle and in 
+so doing precipitates an emergency braking situation. 
+
+In comparison with the ACC, there is a slightly longer confirmation period forthe object 
+situation with Adaptive Braking Assistance functions. The purpose of that is to reduce 
+inappropriate reactions to detection errors. 
+
+Identifying and Reacting to Emergency Braking S ituations 
+
+Criteria for an Emergency Braking Situation 
+
+Based on the motion data of the vehicle itself and the objects detected in the vehicle's 
+external environment, a deceleration rate is calculated at which the driver would have to 
+brake to avoid a collision (avoidance deceleration). That deceleration rate is compared 
+with threshold levels that are stored in the memory of the long-range radar sensor, e.g. 
+
+3 m/s^, 6m/s^ and 8 m/s^. If the computed deceleration rate is greater than one of those 
+threshold levels, an output signal is sent to the Dynamic Stability Control to prime the 
+braking system and/or lowerthe Hydraulic Braking Assistance response threshold. 
+
+
+42 
+
+Longitudinal Dynamics Systems 
+
+
+
+Priming the Braking System 
+
+When the braking system is not primed, there is a small gap between the brake pads 
+and the disc. This is intended and useful in uncritical situations for preventing noise 
+and friction. 
+
+However, that gap means that when the brakes are applied, the pads have to complete 
+a certain amount of free travel before they come onto contact with the discs. Only at the 
+point where they come into contact with the discs does any retarding force come into 
+play. 
+
+While that response characteristic is acceptable for normal braking operations, in an 
+emergency braking situation it means losing valuable time/braking distance. 
+
+Note: When the braking system is primed, the brake pads are already in direct 
+contact with the discs. Thus any degree of brake application results in an 
+immediate braking effect. 
+
+DSC also attempts to detect situations in which brake priming is helpful. If the driver 
+backs off the accelerator very abruptly, the DSC automatically activates the brake priming 
+function. 
+
+However, this does have the disadvantage that no information about the road traffic 
+situation in the vehicle's immediate environment goes into the decision to activate the 
+function. 
+
+By incorporating the data supplied by the long-range radar sensor about the objects in 
+front of the vehicle, brake system priming can be adapted much more effectively to the 
+actual traffic situation. The result is that it can be activated much earlier on the basis of 
+the radar sensor data, i.e. regardless of when and how quickly the drivertakes his/her 
+foot off the accelerator. 
+
+Brake system priming can only be switched on or off by the long-range radar sensor; 
+other parameters (e.g. relating to the degree of priming) are controlled by the Dynamic 
+Stability Control itself. 
+
+Priming is only maintained fora limited period from the point of activation. If the driver 
+does not apply the brakes in that period, it is assumed the danger has passed and the 
+braking system does not need to remain primed. 
+
+Even if brake priming were to be erroneously activated, there is no inconvenience to the 
+driver whatsoever because the function does not produce any perceptible degree of 
+deceleration. 
+
+Although the long-range radar sensor may request brake system priming by the DSC, it 
+is the DSC that ultimately decides whetherto implementthe action. 
+
+
+43 
+
+Longitudinal Dynamics Systems 
+
+
+
+Lowering the Threshold forthe Hydraulic Braking Assistance Function 
+
+The Hydraulic Braking Assistance (HBA) function integrated in the DSC operates accord¬ 
+ing to two basic response criteria. The driver must apply the brakes in such away as to 
+produce: 
+
+• a minimum brake system pressure and 
+
+• a minimum rate of brake system pressure increase. 
+
+The parameters are chosen so that, on the one hand, the HBA responds reliably in 
+genuine emergency braking situations, but on the other, that inappropriate response 
+is avoided. 
+
+Note: The new threshold lowering function only affects the second response 
+criterion, the minimum rate of increase of brake system pressure. 
+
+If an emergency braking situation is detected, the response threshold is lowered in stages 
+according to the calculated avoidance deceleration rate. The result is that the driver can 
+triggerthe HBA more easily, i.e. with a lower rate of brake system pressure increase. 
+
+
+
+Comparison of Response Thresholds forHydraulic Braking Assistance (HBA) 
+
+44 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Brake system pressure curves without threshold lowering 
+
+B 
+
+Brake system pressure curves with threshold lowering 
+
+1 
+
+Brake system pressure 
+
+2 
+
+Time 
+
+3 
+
+Standard threshold level (rate of increase of brake system pressure) above which 
+the H BA is activated 
+
+4 
+
+Brake system pressure curve fora normal driver without HBA who brakes soon 
+enough but not hard enough 
+
+5 
+
+Brake system pressure curve fora normal driver with HBA. 
+
+Based on the rate of brake system pressure increase, the HBA detects that the driver intends to 
+perform an emergency stop and with the aid ofthe DSC hydraulic pump increases the brake sys¬ 
+tem pressure to a level that produces maximum braking effect 
+
+6 
+
+Brake system pressure curve for an experienced driver who brakes soon enough and hard 
+enough in an emergency braking situation 
+
+7 
+
+Lowered threshold level (rate of increase of brake system pressure) above which 
+the H BA is activated 
+
+8 
+
+Brake system pressure curve fora hesitantly braking driver who does not exceed the 
+standard threshold for H BA activation. 
+
+The HBA therefore does not respond even though the situation might be such that there is a 
+risk of a collision. Thus valuable braking distance is lost because neither is the reaction fast 
+enough nor is sufficient braking force developed. 
+
+9 
+
+Brake system pressure curve fora hesitantly braking driver. 
+
+Even though the rate of brake system pressure increase is below the standard threshold, 
+the HBA is still activated.The threshold level has been lowered because a potential collision 
+situation has been detected on the basis ofthe data from the long-range radar sensor. As a 
+result, even a hesitantly braking driver can triggerthe HBA in an appropriate situation. 
+
+
+Whereas hesitantly braking drivers could not previously triggerthe HBA,this function 
+gives them the possibility of avoiding or at least reducing the severity of an accident in a 
+potential collision situation with the aid ofthe HBA. 
+
+As threshold lowering only takes place if the long-range radar sensor actually detects a 
+potential collision situation and, at the same time, the threshold forthe minimum brake 
+system pressure remains unchanged, inappropriate activation is avoided. If a driver should 
+nevertheless inadvertently activate the HBA, the braking severity can be reduced by 
+means ofthe familiar graduated response function. To do so, the driver merely has to 
+reduce the amount of brake pedal travel. 
+
+HBA threshold lowering can not only be switched on or off by the long-range radar sen¬ 
+sor, it can also be activated in degrees. Threshold lowering is only maintained for a certain 
+period from the point of activation. If the driver does not apply the brakes in that period, it 
+is assumed the danger has passed and the threshold can revert to normal. 
+
+Even though the long-range radar sensor may request threshold lowering, the DSC 
+retains ultimate control overthe decision to triggerthe HBA. 
+
+
+45 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monitoring Functions 
+
+The monitoring concept for Adaptive Braking Assistance is shared between the following 
+three areas. 
+
+1. Fault statuses in object detection and on the long-range sensor hardware are moni¬ 
+tored by the sensor itself. 
+
+2. Communication faults on the S-CAN or PT-CAN are primarily monitored by the LDM 
+control unit. 
+
+3. Faults on the DSC hydraulics or DSC electronic circuitry are monitored by the DSC 
+itself. 
+
+Regardless of where a fault status is detected, the brake system priming and threshold 
+lowering functions are not then carried out. 
+
+The fault status is recorded in the fault memory of the control unit that detects it. 
+
+Note: A message to the driver indicating failure of Adaptive Braking Assistance 
+is not issued. The next time the car is taken for a service, the fault can be 
+diagnosed and rectified by reading the fault memory. 
+
+Some faults result not only in the Adaptive Braking Assistance functions being unavail¬ 
+able but also the ACC Stop & Go function, for instance. A typical example of such a case 
+is an electronic fault on the long-range radar sensor orthe LDM control unit. In such cir¬ 
+cumstances the driver would be informed indirectly of the fault status byway of the ACC 
+Stop & Go failure message. 
+
+
+46 
+
+Longitudinal Dynamics Systems 
+
+
+
+System Components 
+
+
+Only the components that are either entirely new orthe design and function of which 
+has changed since previous applications are described at this point. 
+
+Those system components are: 
+
+• Long-range radar sensor 
+
+• Short-range radar sensors 
+
+• LDM control unit 
+
+• Sensor-CAN 
+
+• DSC control unit and hydraulic unit 
+
+• Sensorsystems fordetecting ifthe driver is about to getoutofthe car 
+
+Of course there are also changes to other system components such as the drivetrain or 
+the instrument cluster in orderto be able to implement the new longitudinal dynamics 
+systems. However, they are not dealt with in this document. 
+
+
+47 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+Long-range RadarSensor 
+
+
+Physical Differences 
+
+The long-range radar (LRR) sensor is outwardly identical with the familiar ACC II device 
+supplied by Bosch. The ACC II device used previously on the E60 and other vehicles can 
+be distinguished from the new ACC Stop & Go unit by means of the part number. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Position of screw for vertical adjustment 
+
+2 
+
+Position offixed mounting 
+
+3 
+
+Position of screw for horizontal adjustment 
+
+
+Compared with the sensor previously used on the E60/E61, the positions of the adjusting 
+screws and the fixed mounting screw have changed, see illustration. 
+
+Note: The adjustment procedure forthe long-range radarsensoris unchanged. 
+The diagnosis system takes account of the factthatthe positions of the 
+screws have changed and gives the correct instructions. 
+
+As the fixed mounting screw remains inaccessible from the outside as with the previous 
+unit, the possibility of adjustment errors can be virtually excluded. 
+
+Electrical Differences 
+
+The long-range radarsensoron the E60/E61 LCI is no longer connected to the PT-CAN. 
+Instead it is now connected to the new Sensor-CAN. Nevertheless, it can still be 
+accessed via the diagnosis system as before because the LDM control unit relays diag¬ 
+nosis communication to and from the long-range radar sensor. 
+
+The power supply and connection to the wake-up lead are unchanged from the familiar 
+arrangement. 
+
+Note: A terminal resistor for the S-CAN is accommodated in the long-range 
+radar sensor. 
+
+LRR sensorand LDM control unitare supplied by the CAS control unit 
+using a separate wake-up lead that is electrically isolated from the nor¬ 
+mal wake-up lead. This arrangement was chosen because the long-range 
+radarsensoris fitted in an accident prone area (front end of vehicle). 
+
+48 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+If the wake-up lead of the LRR sensorwere damaged in an accident (e.g. causing a short 
+to earth), this arrangement limits the consequences for other control units. 
+
+See also system circuit diagram in the System overview section. 
+
+An additional wiring harness which carries the power supply and the Sensor-CAN both 
+the to the long-range radar sensor and the short-range radar sensors has been added 
+between the vehicle wiring harness and the long-range radar sensor. 
+
+If no short-range radar sensors are fitted (e.g. inj apan due to lack of radio transmissions 
+approval), the additional wiring harness is missing and the long-range radar sensor is con¬ 
+nected directly to the vehicle wiring harness. Even where in such cases the Stop & Go 
+function is not available and the familiar Active Cruise Control is used instead, the archi¬ 
+tecture using long-range radar sensor and LDM control unit remains the same. 
+
+Modified Range of Functions 
+
+The ACC II units used up to now on BMW vehicles perform both sensor and control 
+functions. In the ACC Stop & Go system complex by contrast, the long-range radar sen¬ 
+sor now primarily performs only sensorfunctions, i.e. it detects vehicles ahead, measures 
+their distance and motion variables and pre-processes that data. Subsequent processing 
+and control functions are performed by the LDM control unit. 
+
+Accordingly, the data interface between the long-range radar sensor and the LDM control 
+unit consists of a list of the objects detected and the associated data relating to their 
+position and motion status. 
+
+New functions that have been added are the assessment of objects and computation of 
+the activation criteria for the Adaptive Braking Assistance functions. The long-range radar 
+sensor issues request signals to the LDM control unit. They are transmitted via the SCAN 
+and indicate whether brake system priming and/or HBA threshold lowering are to be acti¬ 
+vated. 
+
+The algorithm integrated in the long-range radar sensorfor detecting maladjustment has 
+been optimized to the extent that it continues to be computed even if the maladjustment 
+cut-off threshold has been exceeded. Thus if the algorithm has at any time erroneously 
+initiated a shutdown (e.g. due to the lens being partially obscured), it can still "relearn" the 
+correct setting afterwards. 
+
+
+49 
+
+Longitudinal Dynamics Systems 
+
+
+
+Short-range Radar Sensors 
+
+
+Principle of Operation 
+
+The fundamental measurement method of the short-range radarsensors is significantly 
+different from that of the long-range radar sensor, as the table below illustrates. 
+
+
+Characteristic 
+
+Long-range RadarSensor 
+
+Short-range RadarSensors 
+
+M odulation method 
+
+FMCW - (frequency modulated 
+continuous wave) 
+
+PD - (pulse doubler) 
+
+M id-range transmission 
+frequency 
+
+76.5 GHz 
+
+24 GHz 
+
+Distance measurement 
+
+Based on frequency deviation 
+
+Based on pulse propagation time 
+
+M easurement of relative 
+speed 
+
+Based on frequency shift - (Doppler 
+effect) 
+
+Based on phase difference measurement 
+(Doppler effect) 
+
+Angle measurement 
+
+Ratio calculation based on ampli¬ 
+tudes of the radar lobes 
+
+Ratio calculation based on two measured 
+variables (sum and differential signals) 
+
+Transmission power 
+
+< 5 mW (average) 10 mW - 
+(maximum) 
+
+approximately 0.08 mW (average) 
+approximately 100 mW (single pulse) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connector 
+
+2 
+
+Plastic bracket 
+
+3 
+
+Plastic sensor casing 
+
+4 
+
+Aerial cover 
+
+
+Short-range Radar SensorforACC Stop &Go 
+
+Note: If short-range radarsensors are replaced, it is important to ensure that 
+the connectorfaces towards the vehicle. 
+
+
+50 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fitting of Short-range RadarSensors 
+
+Two identical short-range radar sensors are fitted forthe ACC Stop & Go function. They 
+are mounted on the front bumper crossmember by means of an additional plastic bracket. 
+
+
+
+Fitted Location of Radar Sensors for ACC Stop & Go, RearOverhead View 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Center axis of left short-range radar sensor 
+
+2 
+
+Vehicle x-axis 
+
+3 
+
+Center axis of long-range radar sensor 
+
+4 
+
+Center axis of right short-range radar sensor 
+
+5 
+
+Long-range radar sensor and bracket 
+
+6 
+
+Right short-range radar sensor with bracket 
+
+7 
+
+Bumper cross-member 
+
+8 
+
+Left short-range radar sensor with bracket 
+
+
+The center axes of the short-range radar sensors (1 and 4) are angled outwards relative 
+to the vehicle's x-axis (2). 
+
+Two different versions of the front bumpertrim are fitted depending on whether or notthe 
+vehicle has the M aerodynamics package. This affects the fitting location of the short- 
+range radar sensors and the angle at which their center axis points outwards. 
+
+
+51 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+That means that a vehicle cannot simply converted to the M aerodynamics package (or 
+vice versa) without additional adjustments. 
+
+The following additional operations are required and are described in detail in the Repair 
+Instructions: 
+
+• Replacement of black impact absorbers, which have a special cut-out forthe short- 
+range radar sensors (to match new bumper trim) 
+
+• Replacement of brackets for short-range radar sensors (different fitting location 
+requires different bracket design) 
+
+• Coding the vehicle, and specifically the LDM control unit, to take account of the new 
+equipment configuration with/without M aerodynamics package 
+
+• Commissioning the LDM control unit and short-range radar sensors using the diag¬ 
+nosis system. In the process, the new fitted position is recorded in the memory. 
+
+In contrast with the long-range radar sensor, the aerials and lenses of the short-range 
+radar sensors are flat. 
+
+Functions of the Short-range Radar Sensors in the System Complex 
+
+Like the long-range radar sensor, the primary function of the short-range radar sensors is 
+to detect objects in front of the vehicle and compute their position and motion data. 
+
+The object data from the short-range radar sensors is used only forthe ACC Stop & Go 
+function and notforthe Adaptive Braking Assistance functions. 
+
+The short-range radar sensors have a significantly different detection range than the 
+long-range radar sensor. 
+
+
+C haracteristic 
+
+Explanation 
+
+Short Range Radar 
+
+Range 
+
+At least 120 m, up to 150 m 
+
+At least 10 m, up to 20 m 
+
+Horizontal angular width of beam 
+
++/-8 0 
+
+47-40° 
+
+Vertical angular width of beam 
+
+Approximately 4° 
+
+Approximately 20° 
+
+
+The figures quoted for range vary according to the type of object being detected. A 
+pedestrian, for instance, can not be detected as far away as a car. They reflect the radar 
+beam to differing degrees. 
+
+The illustration below shows clearly why the large horizontal beam width is required by 
+the short-range radar sensors. In the area directly in front of the vehicle, the detection 
+range of the long-range radar sensor is a long way short of covering the width of the car 
+let alone the width of the lane. However, precisely that is what is required in orderto be 
+able to stop reliably behind cars driving off-center or motorcycles. 
+
+
+52 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+Scale drawing of detection ranges ofthe radarsensors used for ACC Stop & Go 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Detection range of short-range radarsensors 
+
+2 
+
+Detection range of long-range radar sensor 
+
+3 
+
+Distance from which short-range radarsensors detect objects across full width of three lanes 
+(approximately 4.5 m) 
+
+4 
+
+Range of short-range radarsensors (here assumed to be 15 m) 
+
+5 
+
+Distance from which long-range radar sensor detects objects across full width of three lanes 
+(approximately 40 m) 
+
+6 
+
+Range of long-range radar sensor (here assumed to be 120 m) 
+
+
+Electrical Integration in the Vehicle 
+
+The short-range radarsensors are supplied with powerfrom Terminal 30g.They are not 
+connected to the wake-up line. Instead, they are woken by the LDM control unit by 
+means of appropriate messages on the S-CAN.The two short-range radarsensors also 
+use the S-C AN to each supply a list of object data to the LDM control unit. 
+
+In the wiring loom, pin no. 5 is applied to earth forthe left sensor and pin no. 6 forthe 
+right sensor. The other pin in each case is left unconnected. In that way the identical right 
+and left sensors can identify which side ofthe vehicle they are fitted on and take it into 
+account when computing the object data. 
+
+Note: The short-range radarsensors are intelligent sensors which monitor 
+their own operational capability. They record any fault statuses that 
+may arise, although they cannot be accessed directly by the diagnosis 
+system for diagnosis/programming. Instead, the LDM control unit copies 
+the details of faults reported by the short-range radarsensors to its own 
+fault memory. 
+
+
+53 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Self-diagnosis and Types of Fault 
+
+In the cases listed below, short-range radar sensor monitoring functions respond because 
+reliable function is no longer possible. This results in shutdown of the ACC Stop & Go 
+function. 
+
+As the problems in such cases are not always genuine faults that necessitate repair 
+action, they are described briefly at this point. 
+
+Dirty Short-range RadarSensors 
+
+The short-range radar sensors cannot reliably detect objects if there is a layer of snow, 
+slush or ice overtheir aerials. Neithertheir aerial covers northe bumpertrim are heated. 
+
+Therefore, there are situations in which the heated lens of the long-range radar sensor is 
+clear but the areas around the short-range radar sensors are covered in snow. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Area of bumpertrim in front of the short-range radar sensors completely covered in snow 
+
+2 
+
+Lens of long-range radar sensor only partially snow-covered due to heating 
+
+
+In orderto maintain the greatest possible availability of the ACC Stop & Go function, 
+detection of dirt on the short-range radar sensors does not necessarily immediately result 
+in shutdown. Only if the vehicle is travelling at a low speed (slower than approximately 30 
+kph) at that point is shutdown immediate. 
+
+At substantially higher road speeds, the function is maintained on the basis of the data 
+from the long-range radar sensor. 
+
+Shutdown due to dirty short-range radar sensors is indicated to the driver by a notification 
+in the check control message issued at the same time. 
+
+Note: No fault memory entry is recorded for dirty short-range radarsensors. 
+
+
+54 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+External Interference Affecting Radar Signal Analysis 
+
+Other automobile manufacturers also use radar sensors for driver assistance functions. 
+
+The radar signals emitted by those sensors can interfere with the signal analysis by the 
+short-range radar sensors. 
+
+If such a problem is detected, the ACC Stop & Go is deactivated. It can be switched on 
+again by the driver as soon as the vehicle is far enough away from the vehicle causing the 
+interference. 
+
+Note: Such instances of interference are recorded in the fault memory that can 
+be read from the LDM control unit by the diagnosis system. However, 
+there is no repair action thatcan be taken. Instead, the customershould 
+be informed of the cause of the fault (external interference). 
+
+Temporary Faults 
+
+The following events can cause temporary faults on the short-range radar sensors that 
+are summarized under a single fault memory entry: 
+
+• Communication fault on S-CAN 
+
+• Power supply voltage too high ortoo low 
+
+• Temperature of short-range radar sensors too high 
+
+The procedure according to the diagnosis system testing sequence should be followed. 
+
+When doing so, the connectors on the short-range radar sensors and the wiring loom 
+should be checked in particular. 
+
+Control Unit Faults 
+
+If there is a control unit fault on one of the short-range radar sensors, it can be rectified by 
+replacing the defective sensor. 
+
+Afterfitting the new short-range radar sensor, the commissioning sequence as specified 
+by the diagnosis system must be completed. 
+
+This resets some adapted settings in the LDM control unit memory that apply to the sen- 
+sorthathas been replaced. 
+
+S ensor Out of Adjustment 
+
+As with the long-range radar sensor, the short-range radar sensors in conjunction with the 
+LDM control unit can detect maladjustment resulting from an accident. If the calculated 
+degree of maladjustment exceeds a certain limit, the ACC Stop & Go function is shut 
+down. 
+
+An entry in the fault memory indicates the cause of the fault. To rectify the fault, the pro¬ 
+cedure described in the next section must be followed. 
+
+
+55 
+
+Longitudinal Dynamics Systems 
+
+
+
+Adjustment and Repair 
+
+Adjustment of the short-range radar sensors during production or in the course of servic¬ 
+ing is not provided for. It can be dispensed with forthe following reasons: 
+
+• The horizontal fitting tolerance forthe short-range radar sensors is considerably 
+greater than forthe long-range radar sensor. It is +/- 2 ° (compared with 0.25° forthe 
+long-range radar sensor). 
+
+• The accuracy of fit of the bumper crossmember is sufficient for the sensors to be 
+within the required fitting tolerance. 
+
+• The short-range radar sensors and LDM control unit have a correction algorithm that 
+detects maladjustment of the sensors and compensates appropriately. Due to the 
+wide horizontal detection range of the short-range radar sensors, there is a greater 
+possible degree of compensation for imprecise adjustment than with the long-range 
+radar sensor. 
+
+Accident 
+
+If a vehicle with ACC Stop & Go suffers accident damage to the front end, it is entirely 
+possible that the permissible fitting tolerance will be exceeded. The scenarios and associ¬ 
+ated repair actions set out below should be distinguished. 
+
+1. Scenario: there is no visible damage, the customer makes no mention of an 
+accident. 
+
+Possible cause is that on the production line or in the course of previous repairs, 
+the commissioning sequence was not correctly carried out. 
+
+Action: carry out the commissioning sequence forthe short-range radar sensors 
+again using the diagnosis system. In the process, the correct fitted position is 
+recorded in the memory and the maladjustment figure reset. 
+
+2. Scenario: bumpertrim is scratched and/or marginally misshapen (visible dent). 
+
+Action: The area of the trim in front of the short-range radar sensors must not be 
+painted more than twice. 
+
+Nor must dents be repaired by applying additional plastic material in that area. 
+Instead, the trim must be removed and the short-range radar sensors behind it 
+checked for damage. 
+
+If the dent is directly in front of the short-range radarsensor, impairment of function 
+must be expected. If the customer complains of problems, the bumpertrim should 
+be replaced. 
+
+
+56 
+
+Longitudinal Dynamics Systems 
+
+
+
+3. Scenario: bumpertrim or entire vehicle front end is clearly out of shape. 
+
+Action: the bumpertrim must be removed and replaced if there is visible damage 
+directly in front of the short-range radar sensors. 
+
+In addition, the bumper cross-member should be checked for damage. If it is more 
+than approx. 5 mm out of position, the bumper cross-member must also be 
+replaced. In that case, it is advisable to check the engine sub-frame members for 
+damage as well. Repair of the engine sub-frame may then also be necessary. Only in 
+that way can the correct position of the bumper cross-member and, therefore, of the 
+short-range radar sensors be reinstated. 
+
+The repair measures have only been briefly summarized at this point and are described in 
+detail in the Repair Instructions. 
+
+After any of the work described here that may involve the alignment of the short-range 
+radar sensors, the commissioning sequence must be carried out using the diagnosis sys¬ 
+tem. 
+
+Note: Care must be taken in the course of any repair work that the bumpertrim 
+is refitted correctly. No force should be applied as otherwise the intend¬ 
+ed design clearance between trim and short-range radar sensor casings 
+will not be guaranteed. 
+
+If the vehicle concerned is fitted with P DC, the electrical wiring to the 
+ultrasonic sensors must be refitted correctly. On no account mustthe 
+wires be left hanging loose in front of the aerial cover of a short-range 
+radar sensor because otherwise the sensor function could be severely 
+impaired. 
+
+
+57 
+
+Longitudinal Dynamics Systems 
+
+
+
+LDM Control Unit 
+
+
+Design and Electrical C haracteristics 
+
+Like the radar sensors, the LDM control unit is only fitted on the vehicle if it is ordered 
+with the option Active Cruise Control with Stop & Go function. 
+
+An LDM control unit was previously introduced on E9x models. The same basic concept 
+has been adopted forthe ACC Stop & Go function. As before, it contains two micro¬ 
+processors with different primary tasks: 
+
+• functional tasks 
+
+• safety monitoring functions. 
+
+The processing and memory capacity of the processors has been increased in orderto 
+be able to implement the more extensive functionality. 
+
+As on E9x models, the new LDM control unit forthe E60/E61 LCI contains only control 
+electronics and no sensors or power electronics. All input signals from sensors are 
+received via the PT-CAN and S-CAN bus systems. The LDM controls all actuators via 
+thePT-CAN. 
+
+Note: The LDM control unit contains one of the terminal resistors forthe 
+S-CAN. 
+
+
+Location 
+
+The LDM control unit is on the equipment mounting bracket nearto the glove box. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Glove box equipment 
+mounting bracket 
+
+2 
+
+LDM control unit 
+
+
+Location of LDM Control Uniton E60/E61 LCI 
+
+
+
+58 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Functions within System Complex 
+
+The LDM control unit represents the central processing unitforthe ACC Stop & Go 
+function and performs the following constituent functions: 
+
+• M erging of object data supplied by the radar sensors 
+
+• Assessment of objects detected and selection of the relevant object 
+for gap modulation 
+
+• Analysis of driver control signals and generation of display signals 
+
+• Control of speed and distance from the vehicle in front 
+
+• Generation and output of the required settings to the powertransmission 
+and braking system actuators via the PT-CAN 
+
+• M onitoring of all input signals, its own control unit hardware and vehicle 
+behaviorforfaults or implausible conditions 
+
+Forthe Adaptive Braking Assistance functions, the LDM control unit acts primarily 
+as a gateway. 
+
+• The signals from the long-range radar sensor are transferred from the S-CAN to 
+the PT-CAN. Those are the signals that the long-range radar sensor produces in 
+orderto activate the brake system priming and HBA threshold lowering functions. 
+
+• The DSC indicates by means of signals on the PT-CAN that it is operational and 
+supplies signals that describe the motion status of the vehicle. The LDM control 
+unit transfers those signals from the PT-CAN to the S-CAN so that they can be 
+received from there by the long-range radar sensor. 
+
+Note: The gateway function on the part of the LDM control unit is also required 
+to be able to access the long-range radar sensor using the diagnosis sys¬ 
+tem. 
+
+
+59 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+Behavior in the Event of Faults 
+
+The LDM control unit responds differently according to the type of monitoring function 
+triggered by the fault. This also has consequences in terms of the fault memory entries 
+and troubleshooting, which is why a brief description is given here. 
+
+• Short-range radar sensorfaults are recorded in the LDM control unit memory 
+because the short-range radar sensors are not accessible by the diagnosis system. 
+
+• Long-range radar sensorfaults are stored in the sensor's own fault memory. The 
+LDM control unit records a fault that refers to the long-range radar sensor. 
+
+• The LDM always records fault memory entries referring to other control units if the 
+LDM itself is not the cause of the fault. An implausible input signal or another control 
+unit not being operational are possible causes of that type offault memory entry. 
+
+In such cases, the testing sequences applicable to the fault memory entries on the 
+control units to which the LDM refers should be followed. 
+
+Replacing the LDM control unit will by no means cure a fault of this type. 
+
+• Most monitoring functions on the LDM operate in such a way that the function and 
+system complex are shut down normally in the event of a fault. The associated fault 
+cause is then also recorded in the LDM control unit's fault memory. 
+
+• There is an exceptional case in which normal shutdown can not be carried out: if the 
+microprocessorthat performs the safety monitoring functions has to disconnect the 
+LDM control unit from the PT-CAN.This only happens if no other shutdown action is 
+effective and at the same time an irregular LDM output is detected on the PT-CAN. 
+
+In that case, all of the LDM's associated control units (e.g. DM E, DSC and instru¬ 
+ment cluster) register a communication fault with the LDM. 
+
+Troubleshooting should always proceed according to the diagnosis-system testing 
+sequences. If the LDM control unit has to be replaced, the replacement unit fitted 
+must be: 
+
+• coded 
+
+• commissioned 
+
+This allows for such tasks as entering the fitted positions of the short-range radar sensors 
+in the memory and resetting the adaptation settings to their initial values. 
+
+Sensor-CAN 
+
+The new Sensor-CAN (S-CAN forshort) connects: 
+
+• the LDM control unit 
+
+• the long-range radar sensor 
+
+• and the short-range radar sensors. 
+
+The introduction of this new bus system was necessary in orderto be able to transmit the 
+large volumes of data from the radar sensors to the LDM control unit. The volume of data 
+is so great because the radar sensors send extensive lists of data about the objects 
+detected to the LDM control unit. That amount of data would have exceeded the available 
+capacity on the existing bus systems. 
+
+60 
+
+Longitudinal Dynamics Systems 
+
+
+
+The electrical characteristics are largely the same as the PT-CAN and feature: 
+
+• Data transmission rate of 500 kB it/s 
+
+• Two-core cable 
+
+• Two terminal resistors of 120 Q each (in long-range radar sensor and LDM control unit) 
+
+• Separate wake-up line for long-range radar sensor and LDM control unit (electrically 
+isolated from wake-up line used forthe other control units). 
+
+DSC Control Unit and Hydraulic Unit 
+
+On vehicles with ACC Stop &Go, the DSC unit performs the function of: 
+
+• an actuator (execution of braking requests from LDM and Adaptive Braking 
+Assistance) and 
+
+• a signal supplier (supplying information about the motion status of the vehicle). 
+
+On vehicles with DCC, the DSC control unit also performs the task of computing the 
+DCC control algorithms. 
+
+On the E60/E61 LCI, the DSC unit technology has been taken overfrom the E70.That 
+technology was the fundamental prerequisite forthe ability to implement the ACC Stop 
+& Go function at all. It is only with that technology that it is possible to: 
+
+• very sensitively, 
+
+• dynamically and 
+
+• quietly increase brake system pressure as is required for ACC Stop & Go. 
+
+The DSC unit is located in the engine compartment on the right at the front between the 
+right headlight and the coolant expansion tank - see illustration below. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electrically operated 
+hydraulic pump 
+
+2 
+
+Valve block 
+
+3 
+
+DSC control unit 
+
+
+DSC uniton E60/E61 LCI 
+
+
+61 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+Driver's Seat Status Sensor 
+
+
+In orderthat ACC Stop & Go can issue a warning 
+if the driver is about to get out of the car, the follow¬ 
+ing sensor signals are used: 
+
+• Door switch, driver's door 
+
+• Belt buckle switch, driver's seat 
+
+• Seat occupancy detector, driver's seat 
+
+They are made available to the LDM control unit 
+on the PT-CAN.The transmitting control units are: 
+
+• Body Gateway M odule (KGM) forthe door 
+switch signal 
+
+• Crash Safety Module (ACSM)forthe belt 
+buckle switch and seat occupancy detector 
+signals. These signals have to be transferred 
+from the K-CAN to the PT-CAN by the KGM. 
+
+The door-switch and belt-buckle switch signals were already available on the vehicle 
+before the introduction of ACC Stop & Go. 
+
+The seat occupancy detector in the driver's seat was introduced on the E60/E61 LCI for 
+ACC Stop & Go. 
+
+These three signals have thus been used firstly to be able to warn the driver as soon as 
+possible, and secondly to increase the reliability of the warning. None ofthe signals on 
+their own would have been able to provide the reliability demanded. 
+
+
+
+62 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Important! 
+
+
+Points for Servicing and Repairs 
+
+
+Cruise Control with Braking Function 
+
+• Vehicles with the option "Cruise control with braking function" do not have an LDM 
+control unit. The function is integrated entirely in the DSC control unit. 
+
+Active C ruise C ontrol with Stop & Go Function 
+
+• ACC Stop & Go and Adaptive Braking Assistance are highly integrated functions. In 
+the event of customer complaints, reports of failure or initially unexplained function 
+Behavior, the fault memories of the LDM and long-range radar sensor should be 
+checked first and the programmed testing sequences followed if necessary. 
+
+If that does not identify the problem, all control units and sensors involved in the 
+system complex must be manually checked. A precise examination of the PT-CAN, 
+S-CAN and K-CAN bus systems is particularly advisable in the event of signal or 
+communication faults. 
+
+• If the brakes are noticeably applied in orderto achieve the desired vehicle decelera¬ 
+tion rate, the vehicle's brake lights are also switched on (legal requirement).The 
+brake lights are also switched on when the ACC Stop & Go brings the carto a stop. 
+
+• The driver can also set the desired speed and desired gap while the vehicle is being 
+held stationary by the ACC Stop & Go. However, the new settings do not take effect 
+until the vehicle is moving. 
+
+• In order that stopping and moving off are performed smoothly and without the vehi¬ 
+cle rolling backwards, the power and brakes are applied gradually and simultaneous¬ 
+ly. Such system Behavior is intended absolutely comparable with that of the driver 
+when performing a hill start using the hand brake and the accelerator. 
+
+• Requiring acknowledgement ensures that the driver is paying attention to the traffic 
+situation again after an extended stationary period. Because even though the Active 
+Cruise Control has been extended by the Stop & Go function, the driver remains 
+responsible for driving the vehicle and making appropriate use of the assistance 
+functions available. 
+
+• To prevent the car slowing down inappropriately, for instance for road signs, ACC 
+and ACC Stop & Go never respond to stationary objects. In other words, it does not 
+even slow the vehicle down if it is approaching the end of a stationary queue of traf¬ 
+fic at high speed. 
+
+• When the ACC Stop & Go is operating in DCC mode there is no gap modulation 
+function whatsoever and no instruction to take over control is issued! 
+
+
+63 
+
+Longitudinal Dynamics Systems 
+
+
+
+
+• ACC Stop & Go is not a system for permanently stopping or parking the car. The dri¬ 
+ver is responsible for securing the vehicle against rolling away before leaving it. The 
+parking brake and the automatic transmission Park setting are the means provided 
+for that purpose. 
+
+Adaptive Braking Assistance 
+
+• Adaptive Braking Assistance is always active and does not have to be switched on 
+separately by the driver. 
+
+• Adaptive Braking Assistance never initiates an emergency stop of its own accord. 
+With the aid of information from the long-range radar sensor it detects situations in 
+which emergency braking is necessary. In such cases, it then assists the driver when 
+he/she applies the brakes. 
+
+• A message to the driver indicating failure of Adaptive Braking Assistance is not 
+issued. 
+
+The next time the car is taken fora service, the fault can be diagnosed and rectified 
+by reading the fault memory. 
+
+Long-range RadarSensor 
+
+• The location of the long-range sensorforthe ACC Stop & Go is identical to that of 
+the sensorforthe familiar ACC system. 
+
+• A terminal resistor for the S-CAN is accommodated in the long-range radar sensor. 
+
+• The adjustment procedure forthe long-range radar sensor is unchanged. The diag¬ 
+nosis system takes account of the fact that the positions of the screws have changed 
+and gives the correct instructions. 
+
+Short-range RadarSensor 
+
+• The short-range sensors are fitted behind the front bumpertrim on the bumper 
+crossmember. Therefore, they are not visible from the outside unless the bumper 
+trim is removed. 
+
+• If short-range radar sensors are replaced, it is important to ensure that the connector 
+faces towards the vehicle. 
+
+• The short-range radar sensors are intelligent sensors which monitortheirown opera¬ 
+tional capability. They record any fault statuses that may arise, although they cannot 
+be accessed directly by the diagnosis system. Instead, the LDM control unit copies 
+the details of faults reported by the short-range radar sensors to its own fault memo¬ 
+ry. 
+
+• The short-range radar sensors cannot be programmed either. 
+
+• No fault memory entry is recorded for dirty short-range radar sensors. 
+
+64 
+
+Longitudinal Dynamics Systems 
+
+
+
+Interference from radar sensors on other cars affecting the short-range radar sensors 
+is recorded as a fault in the fault memory. 
+
+However, there is no repair action that can be taken. Instead, the customer should be 
+informed of the cause of the fault (external interference). 
+
+If a vehicle with ACC Stop & Go suffers accident damage to the front end, it is 
+entirely possible that the permissible fitting tolerance will be exceeded. The scenar¬ 
+ios and associated repair actions set out below should be distinguished. 
+
+- Scenario: there is no visible damage, the customer makes no mention of an 
+accident. Possible cause is that on the production line or in the course of previ¬ 
+ous repairs, the commissioning sequence was not correctly carried out. 
+
+Action: carry out the commissioning sequence forthe short-range radar sensors 
+again using the diagnosis system. In the process, the correct fitted position is 
+recorded in the memory and the maladjustment figure reset. 
+
+- Scenario: bumpertrim is scratched and/or marginally misshapen (visible dent). 
+Action: The area of the trim in front of the short-range radar sensors must not 
+be painted more than twice. Nor must dents be repaired by applying additional 
+plastic material in that area. Instead, the trim must be removed and the short- 
+range radar sensors behind it checked for damage. 
+
+If the dent is directly in front of the short-range radar sensor, impairment of func¬ 
+tion must be expected. If the customer complains of problems, the bumpertrim 
+should be replaced. 
+
+- Scenario: bumpertrim or entire vehicle front end is clearly out of shape. 
+
+Action: the bumpertrim must be removed and replaced if there is visible dam¬ 
+age directly in front of the short-range radar sensors. In addition, the bumper 
+cross-member should be checked for damage. If it is more than approx. 5 mm 
+out of position, the bumper cross-member must also be replaced. In that case, it 
+is advisable to check the engine sub-frame members for damage as well. Repair 
+of the engine sub-frame may then also be necessary. Only in that way can the 
+correct position of the bumper cross-member and, therefore, of the short-range 
+radar sensors be reinstated. 
+
+Care must be taken in the course of any repair work that the bumpertrim is refitted 
+correctly. No force should be applied as otherwise the intended design clearance 
+between trim and short-range radar sensor casings will not be guaranteed. 
+
+If the vehicle concerned is fitted with PDC, the electrical wiring to the ultrasonic sen¬ 
+sors must be refitted correctly. On no account must the wires be left hanging loose 
+in front of the aerial cover of a short-range radar sensor because otherwise the sen- 
+sorfunction could be severely impaired. 
+
+
+65 
+
+Longitudinal Dynamics Systems 
+
+
+
+LDM Control Unit 
+
+The LDM control unit contains one of the terminal resistors forthe S-CAN. 
+
+The gateway function on the part of the LDM control unit is also required to be able 
+to access the long-range radar sensor using the diagnosis system. 
+
+
+66 
+
+Longitudinal Dynamics Systems 
+
+
+

@@ -1,0 +1,4003 @@
+Table of Contents 
+
+CODING AND PROGRAMMING 
+
+Subject Page 
+
+What is the Purpose of Coding and Programming.3 
+
+Where is the Data Stored in a Control Module.4 
+
+What is the Difference Between Coding and Programming.5 
+
+Central Coding Key (ZCS) .7 
+
+ZCS Structure.8 
+
+ZCS Electronic Storage Locations.10 
+
+Central Coding Code Labels.10 
+
+ZCS Coding Procedures.11 
+
+Other Coding Software Tools.21 
+
+DME Variant Code .23 
+
+Variant Code Structure.24 
+
+Variant Code Identification and Display.25 
+
+Variant Encoding Procedure.27 
+
+DME Variant Codes.32 
+
+DME Control Module Programming .33 
+
+EPROM Replacement and Programming.34 
+
+Control module Identification.35 
+
+Programming Procedure.36 
+
+Programming Procedures for “Customer Service Measures”.39 
+
+Programming Procedures for “Exchange EPROM”.43 
+
+Flash Programming .46 
+
+Procedure for Flash Programming a Control Unit.47 
+
+Review Questions.51 
+
+
+Initial Print Date:3-19-01 
+
+
+Revision Date:3-19-01 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CODING AND PROGRAMMING 
+Model: All 
+
+Production Date: All 
+
+
+Objectives 
+
+After completing this module you should be able to: 
+
+• Recognize the differences between Coding and Programming. 
+
+• Understand how the ZCS is stored in the instrument cluster. 
+
+• Describe the procedure and software used for ZCS coding control modules. 
+
+• Explain what occurs during DME Variant Coding. 
+
+• Describe how to identify the Variant Code of a DME control module. 
+
+• Describe the procedure to re-program a DME with a removable EPROM. 
+
+• Know how to read a DME identification label. 
+
+• Review the various tools available in the Coding and Programming software. 
+
+
+2 
+
+Coding and Programming 
+
+
+
+
+
+What is the Purpose of Coding and Programming? 
+
+
+Coding and programming allows a reduction in the number of control module hardware ver¬ 
+sions by providing a means of electronically writing the operating instructions to a blank or 
+base control module. As a manufacturer of vehicles for world-wide distribution, BMW must 
+produce several variations of control module versions to satisfy various requirements due 
+to: 
+
+
+• Country specific regulations 
+
+• Equipment level 
+
+• Powertrain configurations 
+
+Before workshop coding and programming was available this process was only performed 
+by the factory. Factory programming equipment loaded a basic set of operating instruc¬ 
+tions into a blank control module. The base system was common for all vehicle markets. 
+Additional specific data was then added to the basic system producing country and vehi¬ 
+cle specific variants of the control module. 
+
+As the number of control modules in a vehicle increased, so did the number of control mod¬ 
+ule variations necessary for spare parts sales. This produced bulging inventories of similar 
+hardware that only differed in the way that they were coded. 
+
+Coding and programming is the solution to this problem of expanding parts inventory and 
+costs. Advantages to workshop coding and programming are: 
+
+• Fewer control unit hardware versions. 
+
+• Lower parts and inventory costs. 
+
+• Updating of software changes possible (Re-coding and Service Measures). 
+
+• Addition of special equipment features to existing control units (e.g. DWA). 
+
+• Customization of vehicle operation (e.g. Conversion and VKM). 
+
+There are several different methods used to provide operating instructions to a control 
+module. The methods are determined by the vehicle, model year and type of control mod¬ 
+ule. 
+
+BMW uses the following methods of control module encoding: 
+
+• Central Coding Key coding (ZCS). 
+
+• Vehicle and Key Memory coding (Refered to as Car and Key memory in coding 
+software. Car and Key Memory is explained in the Technical Systems course). 
+
+• DME Variant Coding. 
+
+• DME Eprom Programming. 
+
+• Flash Programming. 
+
+
+3 
+
+Coding and Programming 
+
+
+
+Where is the Data Stored in a Control Module ? 
+
+
+One of the differences between a personal computer and a vehicle control module is where 
+the data is stored. The computer uses a hard drive, while a vehicle control module uses 
+either an EPROM or an EEPROM depending on the system. 
+
+EPROM (Electrically Programmable Read Only Memory) 
+
+
+An EPROM is a removable 
+chip with multiple connector 
+pins which plug into the print¬ 
+ed circuit of the control mod¬ 
+ule. 
+
+When re-programming this type 
+of control module, the EPROM 
+
+
+
+•INJECTION TIME, ‘IGNITION TIMING, 
+•PURGE VALVE CONTROL MAP, 
+
+•A/C COMPRESSOR CONTROL, 
+
+• FUEL PUMP RELAY CONTROL, 
+
+• CAN COMMUNICATION LOGIC, 
+
+• ETC, ETC... 
+
+
+must be removed and a new “blank” EPROM installed prior to programming. 
+
+
+EEPROM (Electrically Erasable Programmable Read Only Memory) 
+
+
+An EEPROM is a soldered in chip which is not 
+removable from the control module. As their name 
+implies, EEPROMS can be electrically erased and 
+reprogrammed without opening the control mod¬ 
+ule. This is known as “Flash Programming". 
+
+In either case, the E or EE PROM stores the loaded 
+program data including: 
+
+• Characteristic maps for; 
+
+Ignition, Injection, Purge control, etc... 
+
+• Characteristic curves 
+
+• Control constants 
+
+
+Soldered in EEPROM 
+
+
+
+4 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is the Difference Between Coding and Programming? 
+
+Coding 
+
+Coding selects a set of instructions that are already present in a control module. When a 
+codable module is ordered from the parts department it contains all of the programs nec¬ 
+essary for any applicable vehicle version. 
+
+The programs are stored in an EPROM as “Resident Data”. During the coding process one 
+set of instructions (e.g. USA version, equipped with board monitor, high cluster, etc.) is acti¬ 
+vated in the control module. Coding is used for most control modules in the vehicle except 
+for powertrain control modules. 
+
+The various types of coding methods are: 
+
+• ZCS Coding. 
+
+• Coding Code (no longer supported). 
+
+• Variant Coding (DME). 
+
+• Vehicle and Key Memory Coding. 
+
+
+BEFORE ENCODING 
+
+
+AFTER ENCODING 
+
+
+fuel type octane 0 2 sensor'" 
+
+0® HOD 00 
+
+' market transmission 
+
+UeCe| |usa| |jAp| |etc| |man| |auto| | egs| ' 
+
+vehicle traction control 
+
+[e37| [e32] [eta] [V] [N] 
+
+EML evap control etc... 
+
+00 00 00 
+
+
+EXAMPLE: VARIANT CODE 
+ENTERED TO ACTIVATE 
+CONTROL FUNCTIONS 
+OF A SPECIFIC MOTRONIC 
+CONTROL MODULE 
+
+
+
+5 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+Programming 
+
+Programming is entirely different than coding. New programmable control modules contain 
+information about the identity of the module but do not have any pre-written instructions. 
+
+During the programming operation, the appropriate specific data maps (e.g. ignition maps, 
+fuel delivery maps, shift points, etc.) are written electronically into the EPROM of the “basic 
+control unit”. The programming data is commonly referred to as the “part number for a pro¬ 
+grammed control unit”. This part number corresponds to a very specific data set. 
+
+There are two types of basic control modules: Programmable and Flash Programmable. 
+
+Programmable control modules may have instructions written to the EPROM only once. If 
+the data set needs to be changed the EPROM must be removed from the module and 
+replaced with a new blank one. 
+
+The EEPROMs of flash programmable control modules are soldered in and are not remov¬ 
+able; however, they can be electronically erased and written to multiple times (14). 
+
+
+BEFORE PROGRAMMING 
+
+
+AFTER PROGRAMMING 
+
+
+
+6 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Central Coding Key (ZCS) 
+
+
+The Central Coding Key is a unique 37 digit code (originally 48) that contains all model and 
+equipment information of the vehicle that is relevant to coding. The ZCS code for a partic¬ 
+ular vehicle is created by the factory, based on the individual equipment and country ver¬ 
+sion of the vehicle. The encoding equipment at the factory duplicates the ZCS and 
+encodes the installed control modules in the vehicle after assembly. 
+
+The ZCS code is stored in one or two modules (vehicle dependent). This code is retrieved 
+by the coding software of the DISplus or MoDiC whenever coding of other control modules 
+is necessary. 
+
+The coding process for modules that are encoded by the ZCS occurs by selecting or acti¬ 
+vating data maps already contained in the control module. The control modules have an 
+EPROM that is pre-programmed with “resident data”. There is more information (data) than 
+is necessary to operate the control module. This data is ready to be activated as soon as 
+the Key is made available to “unlock” the program. ZCS is called a key be cause it unlocks 
+a specific set of instructions of a new control module or recodes a used control module. 
+
+Prior to coding a control module, the coding software checks whether the stored ZCS 
+code, the coding data and the version of the control module agree. If these deviate from 
+each other the coding program will determine a new “Central Code”. 
+
+
+PATROLMqq 
+
+
+
+Pded and encode with zcs I 
+
+
+THE ZCS IS RESIDENT 
+A SPECIFIC CONTROL 
+MODULE IN THE VEHICLE 
+
+
+
+Use of the Central Coding Key began with the introduction of the E31 in 1990. 
+A ZCS codable control module may be coded an infinite number of times. 
+
+
+7 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZCS Structure 
+
+
+The Central Coding Key is 37 digits and is divided into 3 segments. The segments repre¬ 
+sent specific information about the vehicle. 
+
+Each segment ends with a “check digit”. A check digit is a number or letter used by the 
+coding software to detect unacceptable or implausible codes. 
+
+
+The segments of the ZCS are: 
+
+GM = Basic Features 
+
+
+
+GM 
+
+5E3300006 
+
+The 9 digits of the GM describes: 
+
+• Type of vehicle (E38, E46 etc.) 
+
+• Body style 
+
+SA 
+
+2020049006864414W 
+
+• Body equipment 
+
+• Country version 
+
+• Basic language 
+
+VN 
+
+1010000082Z 
+
+SA = Special Equipment 
+
+The 17 digits of the SA describes: 
+
+
+
+
+• Vehicle equipment - Power windows 
+
+- Sunroof 
+
+- DWA 
+
+- FZV 
+
+- Xenon lights 
+
+- Headlight washers 
+
+- DSC, etc. 
+
+VN = Version Number 
+
+The 11 digits of the VN describes: 
+
+• All data relevant for coding which are not Basic Features or Special Equipment. (E.g 
+model year dependent data, software and hardware versions, coding instructions, etc.) 
+
+
+Originally the ZCS code also contained a fourth line called AM = Drive Management. 
+This 11 digit code was supposed to contain information specific to powertrain control mod¬ 
+ules. The AM was never used and was deleted from the central coding label early on. 
+
+
+8 
+
+Coding and Programming 
+
+
+
+
+FOUR DIGIT PORTION REPRESENTS VEHICLE BODY AND SPECIFIC BODY EQUIPMENT 
+(COUPE, SEDAN, ROADSTER, SUNROOF, ETC,) 
+
+There are 4096 possible combinations of digits per model. 
+
+
+GM 
+
+
+w. 
+
+
+
+
+\ CHECK 
+J DIGIT 
+
+
+
+VEHICLE TYPE COUNTRY SPECIFIC CODING ID 
+
+
+LANGUAGE VARIANT 
+
+
+SPECIAL EQUIPMENT THAT 
+DIRECTLY AFFECTS BODY 
+
+
+SA I 
+
+v v 7 V 
+
+The SA segment is configured to provide a total of 64 possible number CHECK 
+
+combinations for all series vehicles worldwide. The number combinations DIGIT 
+
+are special equipment option packages. 
+
+
+VN II 
+
+V V 7 v Y y 
+
+The VN is displayed as 40 possible CHECK 
+
+combinations of digits. DIGIT 
+
+
+9 
+
+Coding and Programming 
+
+
+
+
+
+
+ZCS Electronic Storage Locations 
+
+
+A master copy of the ZCS is stored in the 
+vehicle electronically to provide the coding 
+software a source for retrieval. The ZCS 
+code is stored in the Instrument cluster or 
+EKM and redundantly in the EWS module on 
+vehicles produced from 1/95. 
+
+On vehicles that did not have a diagnostic 
+link to the cluster (E36/5 and E36/7 up to 
+9/98) the ZCS was only stored in the EWS. 
+
+The ZCS code may be read out and printed 
+using the DISplus/MoDiC coding software. 
+
+
+| Change |'j | End j'j | | Services |~ 
+
+
+BMW Control Unit Code SELECTION 
+
+
+Coding code: 
+
+GM 16430000P 
+SA 0000422005009CC0U 
+VN 000001E116K 
+
+Chassis number: 
+FM04885 
+
+Coding code and 
+chassis number 
+are stored 
+in the KOMBI 
+
+
+A 
+
+
+
+Central Coding Code Labels 
+
+A label printed with the ZCS code was used as a back-up to the electronic version stored 
+in the control modules. This back-up was necessary particularly on vehicles which had the 
+ZCS stored in only one control module. 
+
+The ZCS label was eliminated from all vehicles except the 318ti and Z3 starting with late 
+3/98 production. The 318ti and Z3 had the labels eliminated as of 9/98 once the instru¬ 
+ment clusters were linked to diagnosis. 
+
+The storage locations of the labels are as follows: 
+
+• E31/E32/E34: inside the fuse box cover. 
+
+• E36: up to 9/93 under the rear sear in the center. After 9/93 on the cover for the left 
+
+side fuel sending unit. 
+
+• E38: inside the E-box cover. 
+
+• E39: in the right side of the trunk next to the battery. 
+
+
+
+ZCS label 
+
+
+10 
+
+Coding and Programming 
+
+
+
+
+
+ZCS Coding Procedures 
+
+
+The ZCS coding procedure is done using the Coding and Programming application of the 
+DISplus or MoDiC. There are two methods of coding replacement control modules: 
+
+• Automatic coding (ZCS code is automatically retrieved) 
+
+• Manual input of ZCS 
+
+Automatic ZCS Retrieval and Coding of Control Modules 
+
+Control units which store the ZCS code( Instrument cluster, EWS) require that the data be 
+transferred out of the faulty module to the coding software first before automatic coding can 
+continue. If the defective control module cannot communicate with the coding software 
+then coding would have to continue manually. 
+
+After installing a replacement module the software searches for all ZCS codable modules 
+according to the stored ZCS code. 
+
+
+
+The ZCS is copied by the coding software and stored in memory. The program extracts 
+
+the necessary information from the copied 
+ZCS and generates coding data for the 
+exchanged module. The coding software 
+automatically sends the data to the con¬ 
+trol module which codes it for a particular 
+vehicle version 
+
+
+1 .MoDiC ( or DIS) 
+COPIES ZCS FROM 
+STORED LOCATION 
+IT AND STORES 
+IT IN MEMORY 
+
+
+2. MoDiC (OR DIS) GENERATES 
+CODING DATA BASED ON ZCS 
+AND INSTALLED SOFTWARE. 
+
+3. THE CODING DATA IS 
+
+
+Vehicles that have Vehicle and Key 
+Memory capabilities modify the ZCS code 
+sent to the selected in a particular module to enable certain 
+
+CONTROL MODULE. f ea t U reS. 
+
+
+To prevent from returning a vehicle to a 
+customer without the VKM selections, 
+always use the “Print List” option of the 
+Vehicle/Key memory menu. 
+
+Verify from the list that any changes made 
+are restored to the vehicle. 
+
+
+When recoding or replacing a module the 
+ZCS will be restored to the basic settings 
+and individual changes to the code will be 
+lost, as well as the modified functionality. 
+
+
+11 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Coding Procedure 
+
+
+Always have a battery charger connected when 
+
+using diagnosis or coding equipment. Voltage 
+
+should be stable at 12.5 V. 
+
+Example used is coding an E39 instrument cluster. 
+
+1. With the old control module still installed, 
+connect the DIS/MoDiC to the diagnostic 
+socket. Turn the ignition switch on. 
+
+2. Select Coding and Programming from the 
+DIS/MoDiC start screen or “Change” drop 
+down menu. 
+
+3. Select “3 ZCS CODING” and press the 
+continue arrow (right arrow button). 
+
+4. The Version ID page is displayed. Verify 
+that the latest coding software is being 
+used. Press the continue arrow. 
+
+5. Note the warning about Car/Key Memory 
+and select the appropriate series. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. The following screen provides a list of all 
+ZCS codable modules according to the 
+stored ZCS code. 
+
+Select the module to be replaced or 
+recoded and press the continue arrow. 
+
+Confirm that the correct module has been 
+selected by pressing the “yes” button and 
+then the continue arrow. 
+
+
+
+8. Select the correct procedure to be 
+performed. If the module is going to be 
+replaced select “replace control unit”. If the 
+coding is to take place on the existing 
+control unit select “recode control unit”. 
+
+For the example “Replace control unit” is 
+chosen. 
+
+
+
+9. The following step requires that the faulty 
+control unit still be installed in the vehicle. 
+The coding software reads the ZCS data 
+out of the module and saves it in memory. 
+
+
+
+
+13 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+10. After the data is read from the faulty 
+
+control unit the software will store the data 
+and request that the new component be 
+installed. 
+
+Before coding the new part, confirm the 
+vehicle identity by entering the chassis 
+number. This entry recalls the data stored 
+in the DIS/MoDiC from the faulty control 
+unit. 
+
+
+
+
+11. Select “Transfer data to new control unit and 
+code control unit”. 
+
+The following screen will then request that 
+the control unit be installed and the key be 
+turned on. 
+
+
+
+12. Note the warning that some displays or 
+operation may change from what is normal 
+for that country or vehicle version (e.g. dis 
+play in Celsius or Fahrenheit). If changes 
+need to be made they may be done after 
+coding by using Conversion. 
+
+
+
+14 
+
+Coding and Programming 
+
+
+□□□mmmnn 
+
+□□□Unnmmn 
+
+□□□□□□□□□□a 
+
+□□□□□□□□□□a 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13. When coding the instrument cluster ,EKM 
+or LCM/LSZ the coding software will ask if 
+the component should be rigidly 
+assigned to the vehicle. Assigning the 
+component permanently writes the VIN to 
+that component. 
+
+If the part is only being used for testing 
+purposes select “no”. 
+
+
+
+14. Verify that the chassis number and ZCS 
+code are correct. If any changes need to 
+be made select “yes” and a keypad will 
+appear on the right side for manual entry. 
+
+If the information is correct chose no and 
+continue with the right arrow. 
+
+Start automatic coding by selecting “yes”. 
+
+
+
+
+15.The final screen will acknowledge that 
+coding was successful and if the ZCS code 
+was changed. Changes in the code are 
+made if the coding software and control 
+module software and hardware are 
+modified from the original combination. On 
+vehicles that utilize a label a replacement 
+label should be made and placed next to 
+the original and the original crossed out. 
+
+
+
+15 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manual Input of ZCS Code 
+
+
+Currently when replacing control modules that store the ZCS code (IKE/KOMBI and EWS) 
+the code is read out from the faulty module and stored for later coding. When replacing 
+modules that store the ZCS on earlier vehicles, it requires that the code be read from the 
+vehicle ZCS label and entered manually. 
+
+The control modules that require manual input are: 
+
+• IKE (E38 up to 1/95) 
+
+• EKM (E31) 
+
+• Instrument cluster (E32/E34 after 9/91 and E36) 
+
+• EWS II (E36/5 and E36/7 up to 9/98) 
+
+For later vehicles, as long as the defective module can communicate automatic coding is 
+possible. If the data can not be read (module cannot communicate) then the ZCS code will 
+be retrieved from the redundant location. 
+
+1.ZCS IS MANUALLY 
+
+
+
+16 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manual ZCS Coding Procedure 
+
+
+Always have a battery charger connected when 
+
+using diagnosis or coding equipment. Voltage 
+
+should be stable at 12.5 V. 
+
+1. With the new control module installed, 
+connect the DIS/MoDiC and turn on the 
+ignition switch. 
+
+2. Select Coding and Programming from the 
+DIS/MoDiC start screen or “Change” drop 
+down menu. 
+
+3. Select “3 ZCS CODING” and press the 
+continue arrow (right arrow button). 
+
+4. The Version ID page is displayed. Verify 
+that the latest coding software is being 
+used. Press the continue arrow. 
+
+5. Note the warning about Car/Key Memory 
+and select the appropriate series. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. The next screen lists the connected ZCS 
+codable control modules installed in the 
+vehicle. 
+
+Select IKE/KOMBI or EWS which are the 
+only ones that require manual entry. 
+
+
+
+8. The next screen then responds by asking if 
+the selection is correct. Press the “Yes” but¬ 
+ton and continue. 
+
+
+9. The next screen displays the last 7 digits of 
+the chassis number in the cluster. Since 
+this is a new replacement control module it 
+is displaying the basic information 
+(FFFFFFF) which does not have a specific 
+VIN assigned to it yet. 
+
+Enter the last 7 digits of the vehicle identifi¬ 
+cation number using the keypad. When fin¬ 
+ished double check the display and confirm 
+the input by pressing “Yes”. 
+
+
+
+10. With the last 7 digits of the VIN entered, the 
+present ZCS code is displayed on the 
+screen. All positions of the ZCS are “F” 
+which indicates the control module is still in 
+the basic state. 
+
+The display requests a YES or NO response 
+to change the displayed ZCS. Press the 
+YES button to continue. 
+
+
+
+18 
+
+Coding and Programming 
+
+
+□□□□□□□□□□a 
+
+□□□□□□□□□□a 
+
+nn rfTTT nnnD 
+
+□□□□□□□man 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12.The next screen displays an expanded key¬ 
+pad for complete entry of the GM segment. 
+This is read from the label of the vehicle. 
+
+Carefully enter the complete GM segment, 
+double check all digits as displayed and 
+press the “Yes” button when complete. 
+
+
+
+13.The next two screens are for entry of the SA 
+and and VN segments. 
+
+Enter these numbers in the same manner 
+they were entered for the GM segment. 
+
+Double check all digits and Press the “YES” 
+button and continue. 
+
+
+
+
+19 
+
+Coding and Programming 
+
+
+
+
+
+
+14.The next screen indicates that the ZCS has 
+been entered into the DIS/MoDiC and auto¬ 
+matic coding is ready to start. 
+
+Press the “Yes” button and then continue. 
+
+
+
+15.The screen indicates that Automatic Coding 
+is Active. 
+
+
+
+16.The next screen displays the encoded ZCS. 
+
+As noted on the screen the ZCS has 
+changed from the basic uncoded state. 
+Changes to the original ZCS code occur 
+because either the coding software or hard¬ 
+ware version of the control module is differ¬ 
+ent. 
+
+
+
+17.The next screen displays “coding key stored 
+for printout. If necessary write out a new 
+ZCS label and affix it into the vehicle specif¬ 
+ic location. 
+
+Coding is completed, Switch off the ignition 
+and wait for 10 seconds. Switch on ignition 
+and check for proper system operation. 
+
+
+
+20 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+Other Coding Software Tools 
+
+Retrofit 
+
+Retrofitting allows options or equipment to be 
+added after the vehicle has been produced or 
+sold. 
+
+Retrofit changes the existing ZCS SA to 
+include the upgrade or complete system that 
+has been added to the vehicle. 
+
+e.g. The DWA system for E46 vehicles may be 
+purchased from a BMW center parts depart¬ 
+ment as an equipment upgrade. Retrofit is 
+used to modify the ZCS so that the GM V will 
+properly operate with the newly installed com¬ 
+ponents. 
+
+
+Display of ZCS for Printout 
+
+This selection from the ZCS coding menu dis¬ 
+plays the coding code as well as the stored 
+chassis number of the vehicle. 
+
+
+The information is displayed so that a print out 
+can be made of the original code. Having the 
+original code is useful if the vehicle needs to be 
+returned to the original state when retrofitted 
+items are removed or just to view what the 
+code is to verify status. 
+
+
+
+21 
+
+Coding and Programming 
+
+
+
+
+
+Conversion 
+
+Conversion allows specific functions of a con¬ 
+trol module operation to be changed much the 
+same way Car and Key Memory is used to cus¬ 
+tomize a vehicle. 
+
+The coding software will compose a list of 
+modules with conversion possibilities based on 
+the model variant. 
+
+Conversion changes the code only in the mod¬ 
+ule that is responsible for the changed function. 
+
+The stored ZCS code is not affected and 
+recoding that particular module again will return 
+the module to basic status and reverse the 
+effects of the conversion process. 
+
+
+Service Measures 
+
+Service Measures are software solutions for 
+vehicle problems that have been identified in 
+the field. 
+
+The coding software compares the ZCS code 
+of the vehicle to a data base for specific system 
+versions (e.g. module hardware and software 
+versions) that qualify for the update. 
+
+The determination is done automatically and 
+the DIS/MoDiC communicates to the 
+Technician whether a Service Measure is 
+necessary or not. 
+
+
+| BMW Coding/programming E39 SERIES 
+
+1 Recoding 
+
+2 Retrofit 
+
+3 Display coding 
+code and code 
+for printout 
+
+5 Service 
+measures 
+
+
+BMW Coding/programming E39 SERIES 
+
+
+GM III 
+
+Activating burglar 
+alarm system: 
+
+1 By means of 
+
+remote control or 
+door lock 
+
+
+2 By means of 
+remote control 
+
+
+BMW Coding/programming E39 SERIES 
+
+
+Recording 
+Retrofit 
+Display coding 
+code and code 
+for printout 
+Conversion 
+
+
+5 Service 
+measures 
+
+
+
+22 
+
+Coding and Programming 
+
+
+
+
+
+DME Variant Code 
+
+
+The variant code is a 4 digit hexadecimal (alpha-numeric) code. Like the ZCS, the variant 
+code activates the specific market required functions of the control module. The variant 
+code is stored in the control module once it is encoded. 
+
+Variant coding through the DIS/MoDiC applies to all M1.X (e.g. Ml.3, Ml.7, Ml.7.2 etc.) 
+DME control modules. Ml.x DME control modules are the only DME control 
+modules that are variant encodable. 
+
+
+Using the DIS/MoDiC with the DME Programming software allows the technician to: 
+
+• code a new, uncoded control module. 
+
+• recode a previously coded control module. 
+
+
+The variant code is entered into the control 
+module either by: 
+
+• Adopting the existing code from the 
+defective DME control module (if 
+diagnostic communication is possible). 
+
+• Manually entering the variant code. 
+
+The code generates the coding data in the 
+DIS/MoDiC and is downloaded to the DME 
+control module. The specific vehicle 
+information relevant to that particular 
+engine group is activated and the control 
+module is ready for use. 
+
+
+
+Ml .X DME control modules can be coded up to eight (8) times. The DIS/MoDiC displays 
+the remaining number of times the control module can be recoded. 
+
+
+The DME variant code should be checked and verified as correct when troubleshooting 
+driveability complaints. An incorrectly coded DME will create unusual and difficult to 
+diagnose problems. 
+
+
+23 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Variant Code Structure 
+
+
+The four digit structure of the variant code is a two word hex code. Each hex character 
+provides specific control module encoding information 
+
+
+VARIANT CODE 
+
+
+FUEL TYPE 
+FUEL OCTANE 
+X REGULATION 
+
+
+EVAPORITIVE CONTROL 
+EML REGULATION 
+ASC CONTROL 
+STANDARD/VARIANT 
+
+
+MARKET 
+
+TRANSMISSION 
+
+
+VEHICLE TYPE 
+BLANK CHOICE 
+
+
+Each hex digit has a binary equivalent that provides four Is or Os. This provides a total of 
+16 bits of information (or choices). 
+
+
+The control module assigns specific functions, characteristic maps and control module 
+program constants based on the individual Is and Os. 
+
+
+VARIANT CODE 
+
+
+
+Intentionally miscoding a DME will not create any performance advantages and quite 
+possibly could lead to engine damage. 
+
+
+24 
+
+Coding and Programming 
+
+
+
+
+Variant Code Identification and Display 
+
+The variant code for a DME Ml .X control module can be displayed in three places. 
+
+• Electronically displayed 
+
+- Control module Identification page of the DIS or MoDiC diagnosis software. 
+
+- Programming software display with MoDiC. In the “adopt code” function, 
+installed variant code is displayed. 
+
+• DME control module variant code label. 
+
+• Service Information Bulletin 13 02 90. 
+
+The control module ID page of the DIS is the quickest method of viewing the installed 
+variant code. Electronic display is also the most accurate (code determination by the label 
+could be a incorrectly written or accidentally placed on the wrong control module.) 
+
+
+
+BMW Diagnosis DME IDENTIFICATION 
+
+
+Troubleshooting by means of 
+
+n 
+
+perciptible symptoms: 
+Version: DME Ml.7.2 
+
+
+
+E30/E36 
+
+M42B18 
+
+
+with oxygen-sensor control 
+
+
+EH unledaded, 
+
+Premium 
+
+
+ECE/EG/S/CH/A/*'"y 
+Code 82le -411^ 
+
+
+
+Bosch Hardware Number: 
+
+0261203282 
+
+
+Bosch Software Number: 
+
+1267357626 
+
+
+BMW Hardware Number: 
+
+1247228 
+
+
+BMW Software Number: 
+
+Production code: 
+
+467 
+
+001 
+
+□ 
+
+
+[# 
+
+
+
+
+
+◄ 
+
+
+Function 
+
+
+Document 
+
+
+Test Schedule 
+
+
+— 
+
+
+TIS 
+
+
+Measuring 
+
+
+Control Unit 
+
+
+E> 
+
+
+Selection 
+
+
+
+
+
+
+
+
+
+
+System 
+
+
+Functions 
+
+
+
+Cross reference the BMW and Bosch part numbers in the display with the installed 
+variant code. The correct variant code installed in the wrong control module, or an 
+incorrect variant code installed in the correct control module, will undoubtedly cause 
+control module malfunction. 
+
+
+25 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Variant Encoding Procedure 
+
+If a DME Ml .X control module replacement is required, determine which method of variant 
+encoding you can use. 
+
+• Adopting variant code from existing control module 
+
+• Manual input of variant code from control module label 
+
+
+Adopting the code is the preferred method since it prevents any error when manually 
+entering the code. If the control module cannot communicate on the diagnostic link the 
+manual input method will be necessary. 
+
+
+MODIC COPIES THE VARIANT 
+CODE AND STORES IN MEMORY 
+
+
+WHEN REPLACEMENT 
+CONTROL MODULE 
+IS CONNECTED TO 
+VEHICLE MoDiC INSTALLES 
+VARIANT CODE 
+
+
+
+EXISTING 
+
+CONTROL 
+
+MODULE 
+
+
+26 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Procedure for Adopting Existing Variant Code 
+
+Turn off all loads and always have a BMW battery charger connected during the coding process to 
+
+maintain proper voltage (12.5V). 
+
+1. Connect the DIS/MoDiC to the vehicle’s 20 pin diagnostic connector and turn the 
+ignition switch ON. Select Coding and Programming from the DIS/MoDiC start screen 
+or drop down menu. 
+
+2. Select “4 Programming” and press the right 
+continue arrow. 
+
+
+3. From the Coding/Programming selection 
+menu, highlight “2 DME variant Code” and 
+press the continue arrow. 
+
+
+4. Select “1 Exchange Control Module” and 
+
+press the continue button. 
+
+
+
+
+27 
+
+Coding and Programming 
+
+
+
+
+
+5. Select the installed engine group of the 
+vehicle, e.g. M20, M30 etc. 
+
+
+BMW Coding/programming SELECTION 
+
+
+1 M20 
+
+2 M30 
+
+3 S38 
+
+4 M40/42/43 
+
+5 M/s70 1..6 
+
+6 M/s70 7..12 
+
+
+Select engine type 
+
+
+6. Select “1 New Coding” and continue. 
+
+
+7. Select “1 Adopt code from old control 
+module”. 
+
+
+8. Press the “Yes” button to read out code from 
+existing control module. 
+
+
+
+BMW Coding/programming ADOPTCODE 
+
+
+Read out and store 
+code? 
+
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. The installed variant code will be transferred 
+to the DIS/MoDiC for display and storage. 
+
+Do not disconnect the MoDiC from the 
+vehicle diagnostic connector. The 
+stored variant code will be deleted. 
+
+10. Turn off the ignition switch and remove the 
+old control module. After double checking 
+the part number of the replacement control 
+module, connect it to the vehicle harness. 
+Turn the ignition switch back on and press 
+the continue arrow. 
+
+11. The DIS/MoDiC will display the code for 
+transfer and indicate how many more times 
+the control module can be encoded. Press 
+the “Yes” button to transfer the code. 
+
+
+
+12. The last screen will indicate that the coding 
+procedure is complete. 
+
+NOTE: If the code FF01 is displayed the 
+control module was not properly coded and 
+coding procedure must be repeated (FF01 is 
+a basic control module resident code). 
+
+13. Complete a new DME variant code label and 
+place it on the control module. 
+
+For vehicles equipped with DME Ml.7.2 control 
+modules after 1/95 production, the ISN of a 
+replacement control module must be aligned 
+with the EWS II control module. 
+
+This procedure copies the ISN from the new 
+DME control module and installs it into the EWS 
+II control module. If this procedure is not carried 
+out the engine will crank, but will not start. 
+
+
+
+29 
+
+Coding and Programming 
+
+
+
+
+
+Manually Entering the Variant Code 
+
+
+This method is required if the control module is defective and can not communicate with 
+the DIS/MoDiC over the diagnostic link. The variant code is determined reading the label 
+on the defective control module and double checking it with the published variant codes in 
+SI Bulletin 13 02 90 or in the table on page 32. 
+
+
+Follow steps 1 through 6 and continue below. 
+
+
+7. Select “2 Enter Code Manually “ and 
+
+press the enter button. 
+
+
+8. Turn the ignition off and remove the old 
+control module. Install the new control 
+module and turn the ignition back on. 
+
+9. Determine the variant code. 
+
+
+10. Carefully enter the code using the on¬ 
+screen keypad. 
+
+When the code is correctly displayed on 
+screen, press the “Yes” button to confirm 
+the entry. 
+
+
+
+BMW Coding/programming RECODING 
+
+
+1 Adopt code 
+from old 
+control unit 
+
+
+2 Enter code 
+manually 
+
+
+
+
+
+30 
+
+Coding and Programming 
+
+
+
+11.The DIS/MoDiC will display the remaining 
+number of times the control module can 
+be encoded. Press the “Yes” button to 
+transfer the code. 
+
+
+12. Coding is complete. The DIS/MoDiC 
+displays the installed variant code. If the 
+code is displayed as FF01 (basic control 
+module code) the coding procedure must 
+be repeated. 
+
+13. Complete a new DME variant code label 
+and place it on the control module. 
+
+The coding procedure is complete! 
+
+
+
+Recoding 
+
+The recoding function only applies to vehicles 
+requiring a catalytic converter retrofit. All US 
+vehicles are already equipped with catalytic 
+converters. This function is not required in our 
+market. 
+
+
+
+31 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+DME Variant Codes 
+
+
+The following table provides a list of all the DME Variant Codes for U.S. Vehicles. 
+
+
+Model and 
+Engine Family 
+
+DME 
+
+Series 
+
+Transmission 
+
+Variant 
+
+Code 
+
+318i/is (E30) 
+
+M42B18 
+
+Ml.7 
+
+Manual 
+
+801E 
+
+318i/is/ (E36) 
+
+M42B18 DISA 
+
+Ml.7 
+
+Manual 
+
+801E 
+
+Automatic 
+
+821E 
+
+325 (E30) 
+
+M20B27 
+
+Ml .1 
+
+Manual 
+
+C81E 
+
+Automatic 
+
+CA1E 
+
+325i MY87 (E30) 
+M20B25 
+
+Ml .1 or 
+Ml.3 
+
+Manual 
+
+C81E 
+
+Automatic 
+
+CA1E 
+
+325i MY 88 (E30) 
+M20B25 
+
+Ml .1 or 
+
+Ml.3 
+
+Manual 
+
+C85E 
+
+Automatic 
+
+CA5E 
+
+325iX (E30) 
+
+M20B25 
+
+Ml .1 or 
+
+Ml.3 
+
+Manual 
+
+C83E 
+
+Automatic 
+
+CA3E 
+
+528e (E28) 
+
+M20B27 
+
+Ml .1 
+
+Manual 
+
+C87E 
+
+Automatic 
+
+CA7E 
+
+525i (E34) 
+
+M20B25 
+
+Ml.3 
+
+Manual 
+
+C89E 
+
+Automatic 
+
+CA9E 
+
+535i (E34) 
+
+M30B35 
+
+Ml.3 
+
+Manual 
+
+C83E 
+
+Automatic 
+
+CB3E 
+
+535i w/ASC (E34) 
+M30B35 
+
+Ml.3 
+
+Manual 
+
+C83A 
+
+Automatic 
+
+CB3A 
+
+M5 (E34) 
+
+S38B36 
+
+Ml.2 
+
+Manual 
+
+881E 
+
+635Csi (E24) 
+
+M30B35 
+
+Ml .1 
+
+Manual 
+
+C85E 
+
+Automatic 
+
+CB5E 
+
+635Csi (E24) 
+
+M30B35 
+
+Ml.3 
+
+Manual 
+
+C87E 
+
+Automatic 
+
+CB7E 
+
+735i/iL (E32) 
+
+M30B35 
+
+Ml .1 
+
+Manual 
+
+C85E 
+
+Automatic 
+
+CB5E 
+
+735i/iL (E32) 
+
+M30B35 
+
+Ml.3 
+
+Manual 
+
+C85E 
+
+Automatic 
+
+CB5E 
+
+735i/iL w/ASC (E32) 
+M30B35 
+
+Ml.3 
+
+Automatic 
+
+CB5A 
+
+750iL (E32) 
+
+M70B50 
+
+Ml.2 
+
+Automatic 
+
+C31A 
+
+750iL (E32) 
+
+M70B50 
+
+Ml.7 
+
+Automatic 
+
+C312 
+
+850i (E31) 
+
+M70B50 
+
+Ml.7 
+
+Manual 
+
+C052 
+
+Automatic 
+
+C352 
+
+
+32 
+
+Coding and Programming 
+
+
+
+
+DME Control Module Programming 
+
+DME programming is used to change a “basic control unit” into a “programed control unit” 
+by writing operating instructions onto a blank EPROM. Programming is also used to 
+update an existing DME program by writing additional instructions that compliment the 
+existing software. Programming is used on DME M3.X variants. 
+
+
+Storage of Programming Data 
+
+
+In it’s unprogrammed basic 
+state, the EPROM only 
+contains “resident data”. The 
+resident data provides 
+control module/ EPROM 
+identification to the 
+programming software prior 
+to programming. 
+
+
+RESIDENT 
+
+DATA 
+
+
+Tinnnnnnnnnnnn^ 
+
+
+010 
+
+
+
+
+
+
+r - 
+
+r— 
+
+r"\ 
+
+110 
+
+
+
+
+
+
+
+
+T 
+
+{ 
+
+\ 
+
+
+
+
+
+
+
+
+/ 
+
+/ 
+
+
+
+
+
+
+
+
+
+r~ 
+
+
+
+
+
+
+
+
+\ 
+
+V 
+
+
+- 'V- 
+
+
+
+
+— ^ 
+
+
+
+
+UUUUUUUUliUUUUU 
+
+^19 
+
+
+BASIC STATE 
+
+
+RESIDENT 
+
+DATA 
+
+
+& ALL REQUIRED PROGRAMS 
+
+
+
+
+010 
+
+
+
+
+
+
+
+— 
+
+r\ ’ 
+
+110 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+010'" 
+
+\000 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+101/ 
+
+/no 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+010\ 
+
+ta) 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+10l\ 
+
+
+
+_ 
+
+
+—\ 
+
+
+
+
+J 
+
+
+Siuuuumiuummm r 
+
+
+PROGRAMMED 
+
+
+When programmed, the EPROM is filled with the required characteristic maps (ignition 
+timing, injection etc), control module constants, Identification data, etc. 
+
+
+When is programming necessary? 
+
+
+Programming an engine control module is necessary when: 
+
+
+• Installing a replacement basic control module 
+
+• Recall or Service Action campaign: This falls into one of the following catagories: 
+
+- Program update to existing program 
+
+- Complete programming procedure after EPROM replacement. 
+
+
+Programming a replacement basic control module 
+
+Control modules are received from the parts department in the basic state (EPROM loaded 
+only with resident data). These control modules require programming using the DIS/MoDiC 
+and the latest programming software. 
+
+
+Programming Update 
+
+Updates are refered to as 
+“Customer Service Measures” 
+in the programming software. 
+The existing program in the 
+control module is amended 
+with an updated program. This 
+new data changes various 
+
+
+
+
+
+
+
+
+
+
+
+
+
+110 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+010 
+
+000 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+101/ 
+
+/l 10 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+010. 
+
+000 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+10*1 
+
+
+
+.... RESERVED FOR UPDATES/^ 
+
+
+iyy yyuuyuyyy u u 
+
+
+BEFORE UPDATE 
+
+
+THE UPDATE CANCELS THE OLD FUNCTIONS 
+CHARACTERISTICS AND ADDS THE 
+UPDATED FUNCTION TO THE EPROM 
+
+
+flnfmnflfiflflflfmftfl 
+
+110 
+
+HokjMO 
+
+11 011 
+
+111 1 
+
+DO 101 
+
+010 
+
+000 
+
+110 
+
+ioi |la 
+
+• i fr 
+
+11 011 
+
+^1 
+
+0 001 
+
+101 - 
+oid 
+
+000 
+
+101100 11 
+
+0 110 
+
+110 1 
+101 
+
+ioioc 
+
+101 ■ 
+
+101 
+
+yyyyyyyyyyyyuy 
+
+
+AFTER UPDATE 
+
+
+33 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+operations of the existing control programming. Program updates write the new data in a 
+reserved section of the EPROM. The location of the old data is overwritten with instructions 
+for the DME to search the reserved section in the EPROM when the function is required. 
+
+Because of limited space on the EPROM, program updating can only be done one time. 
+
+The DIS/MoDiC will display the message “Measure not applicable to the control module 
+version” if update has already been done or the DME is factory updated. 
+
+
+EPROM Replacement and Programming 
+
+Larger updates have too many changes to fit in the update portion of the EPROM. An 
+update with this many changes requires an EPROM replacement and reprogramming 
+procedure. 
+
+The EPROM is removed and replaced with a new basic state EPROM. The latest software 
+is programmed into the new EPROM providing a data set that has the latest available 
+software. 
+
+
+
+BEFORE REPROGRAMMING 
+
+34 
+
+Coding and Programming 
+
+
+REPROGRAMMING 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Module Identification 
+
+It is important to know how to properly identity DME control modules prior to programming. 
+The control modules are identified by: 
+
+• BMW Part number 
+
+• BMW Hardware number 
+
+• Bosch Hardware number 
+
+These numbers are displayed in the following locations: 
+
+• Control module ID label. 
+
+• Control module ID display using the Diagnostic program. 
+
+
+BOSCH HARDWARE NUMBER 
+
+
+P/N FOR 
+BASIC 
+CONTROL 
+MODULE 
+
+
+P/N FOR 
+PROGRAMMED 
+CONTROL MODULE 
+
+
+
+VIN 
+
+
+
+Part Number Basic Control Module 
+
+This number refers to the part number of the control unit without any data status. 
+
+Part Number Programmed Control Module 
+
+This number refers to the part number of a factory programmed module that includes the 
+data status. 
+
+
+35 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Programming Procedure 
+
+Determination Process 
+
+
+Programming software uses a feature known as the “Determination Process”. It is 
+necessary to perform the determination process correctly and follow all prompted 
+instructions. 
+
+
+DME Programming required as a direct result of a service action or recall will be covered in 
+the specific SI Bulletin. Each bulletin could have different procedures due to the specific 
+DME being reprogrammed. The differences can cause unique messages to display in the 
+DIS/MoDiC. Always read the SI Bulletin thoroughly and become familiar with the possible 
+unexpected display messages before attempting any programming. 
+
+
+Prior to programming, a Technician should review the vehicle history file to see if any 
+previous programming was performed. There may be a program added to the current 
+EPROM that will not be recognized by the determination process or the new programming 
+will not include the previous addition. Only after performing all specific dealership 
+procedures should the BMW Technical Hotline be contacted. 
+
+
+The determination process is used in all programming procedures: 
+• Customer Service Measures. 
+
+
+• Exchange control 
+unit. 
+
+• Exchange EPROM. 
+
+With the DIS/MoDiC connected to 
+the old control module through the 
+diagnostic link, the software 
+interrogates the old control module 
+for proper identification. 
+
+It also recognizes any updates that 
+have been added previously to the 
+old EPROM. 
+
+
+
+36 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the determination information is stored in the DIS/MoDiC memory, the programming 
+software: 
+
+• Suggests updates for the connected control module (Customer service Measure) 
+
+• Provides the part number for the replacement - Basic Control Module 
+
+- EPROM 
+
+• Reuses the data when the replacement control module or EPROM is programmed 
+as long as the DIS/MoDiC is not used for another purpose after the determination 
+process. 
+
+There are two determination methods: automatic and manual. 
+
+Automatic: The software performs this automatically. During the automatic determination 
+the VIN is displayed. 
+
+
+If the VIN matches the connected vehicle press the 
+“Yes” button. 
+
+If the VIN does not match the connected vehicle 
+the installed control module may have been 
+previously replaced. Press the”No” button. 
+Manually enter the correct VIN from the vehicle and 
+press “Yes”. 
+
+
+The software compares the electronic part number 
+of the installed EPROM with a list of replacements. 
+
+This is a part number for a replacement basic 
+control module or an EPROM depending on the 
+procedure being performed. 
+
+There are two columns of part numbers in the 
+display. The left column is new basic control 
+modules and the right column is remanufactured 
+basic control modules. Always order using the part 
+number from the right column. Proceed with the 
+reprogramming procedure covered further on. 
+
+If the MoDiC displays the message “No Substitute found” continue on to a manual 
+determination. 
+
+Manual determination is performed by pressing “No” to the displayed question, “Is the faulty 
+control module still in the car”. 
+
+
+BMW Coding/programming DETERMINATION 
+
+
+Part numbers, 
+basic control unit: 
+1744698 / 1427006 
+/ 
+
+/ 
+
+Part number 
+Scope of EPROM 
+delivery: 
+
+1707984 
+
+
+| BMW Coding/programming DETERMINATION 
+
+Chassis number:: 
+WBACB3317NFE07492 
+Do numbers correspond? 
+
+
+
+37 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+Manual: A manual determination must be performed if: 
+
+• The control module cannot communicate with the DIS/MoDiC. 
+
+• The software does not recognize the DME identification data. 
+
+• The DIS/MoDiC cannot find a replacement number stored in memory during an 
+automatic determination. 
+
+Manual determination is carried out by entering: 
+
+
+• Part number of the basic 
+
+i i D ”| r- D T T 1 k 1 i"" i"" fi "7 .-1 Ci “» 
+
+programmable control module. 
+
+!...= i" i S...- !...* J. ! iii !.... «...« 1 t 
+
+• VIN of the vehicle. 
+
+0FFE4422139 
+
+• Part number of the factory 
+
+1739295 
+
+programmed control module. 
+
+1743401 
+
+These numbers are found on the 
+
+Q 174S238 
+
+
+I.D. label of the DME control 
+module. 
+
+
+VIN 
+
+
+P/N FOR BASIC CONTROL 
+MODULE 
+
+P/N FOR PROGRAMMED 
+CONTROL MODULE 
+
+
+The DIS/MoDiC will display the part numbers for 
+the replacement part. Order the component using 
+the MoDiC supplied part number (only use number 
+in right column) and proceed with the 
+reprogramming procedure. 
+
+If the display states: “No Programming data 
+available for this SG version.” , or “Incorrect 
+part number for programmed control unit?” 
+
+Double check the control module label for an 
+incorrect VIN. This control module could have 
+been incorrectly programmed in a previous 
+programming campaign or control module 
+replacement. 
+
+If after both the automatic and manual 
+determinations have been performed and the 
+message “No Substitute found” is still displayed 
+the following maybe the cause: 
+
+
+
+
+• A part number supersession has occurred 
+
+since the programming software was issued (thoroughly review the Service 
+Information bulletin for alternative part numbers to be entered). 
+
+• The currently installed control module was incorrectly programmed in a previous 
+programming procedure. 
+
+
+38 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+Programming Procedures for “Customer Service Measures” 
+
+Prior to any type of programming, make sure the DME fault memory is cleared and vehicle 
+battery is connected to a BMW battery charger with stabalized 12.5V! 
+
+This procedure is for special program updates only. The software contains the update 
+information that is added to the existing control module EPROM. 
+
+
+1. Connect the DIS/MoDiC to the diagnostic connector. Turn the ignition switch ON. 
+
+
+2. Select Coding and Programming from the 
+DIS/MoDiC start screen or “Change” drop 
+down menu. 
+
+3. Select “3 DME Programming” and press 
+continue. 
+
+
+4. Select “1 Determine Customer Service 
+Measures” and press the continue arrow. 
+
+
+5. “Engine off, Ignition On”. 
+
+
+6. Press the “Yes” button to start automatic 
+determination. 
+
+7. The VIN is displayed. If the displayed VIN 
+matches the vehicle press the “Yes” button. 
+Press the “No” button if it does not match 
+and enter the VIN manually then press the 
+“Yes” button. 
+
+
+
+8. If there are no service measures available for the control module the message “No 
+
+customer service measures available for this control module” will be displayed. 
+
+
+39 
+
+Coding and Programming 
+
+
+
+
+
+
+
+If the software contains a service measure, select the number and press the enter button. 
+
+9. The message service measure was selected” will display. Press the “Yes” 
+button to start the update. 
+
+10. When the update is complete the DIS/MoDiC will display “Service Measure update 
+complete”. 
+
+
+Programming Procedures for “Exchange Control Unit”. 
+
+Select this to program a replacement Basic DME control module. 
+
+Prior to any type of programming, make sure the DME fault memory is cleared and vehicle 
+battery is connected to a BMW battery charger with stabalized 12.5V! 
+
+1. From the Programming selection menu select 
+
+“2 Exchange Control unit” and press 
+continue. 
+
+
+
+2. Press “1 Determine Basic Control Module” and continue. 
+
+
+
+40 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+3. Press “Yes” to confirm control module is still 
+in the vehicle. 
+
+
+4. Turn on the ignition and press the “Yes” 
+button to start the automatic determination. 
+
+
+5. If the chassis numbers are correct press the 
+“Yes” button. If they are different press the 
+“No” button and enter it manually. 
+
+
+6. The programming software provides the 
+replacement control module part numbers in 
+the display. The part number on the left is 
+for a new control module. The number on 
+the right is for a remanufactured control 
+module. 
+
+Always order the remanufactured 
+number. 
+
+
+
+41 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7 Obtain the exchange control module and 
+install it in the car. The vehicle data will 
+remain stored in the DIS/MoDiC as long as it 
+is not used for any other purpose. Press the 
+back arrow to return to the selection menu. 
+
+
+
+9. Select “2 Program control module” and 
+
+press continue. 
+
+
+10. Enter the last 7 digits of the VIN and press 
+the “YES” button. 
+
+
+11. Press the “YES” button to start automatic 
+programming. 
+
+The screen will indicate when the 
+programming is complete. 
+
+12. Carry out DME-EWS alignment if necessary 
+and clear any faults stored in the DME that 
+may have occured during the programming 
+proccess. 
+
+
+
+42 
+
+Coding and Programming 
+
+
+□□□□□□□□□□a 
+
+□□□Unmmm 
+
+□□□□□□□□□□a 
+
+□□□□□□□□□□a 
+
+
+
+
+
+
+
+
+
+
+
+
+Programming Procedures for “Exchange EPROM” 
+
+
+Select this to program a replacement control module EPROM. 
+
+Prior to any type ot programming, make sure the DME fault memory is cleared and vehicle 
+battery is connected to a BMW battery charger with stabalized 12.5V! 
+
+
+1. From the Programming selection menu 
+select “3 Exchange EPROM” and press 
+continue. 
+
+
+2. Press “1 Determine EPROM” and press 
+the enter button. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. If chassis numbers are correct press the 
+“Yes” button. 
+
+If they are different press the “No” button 
+and enter the VIN manually, then press the 
+“Yes” button. 
+
+
+
+6. The DIS/MoDiC provides the replacement 
+EPROM part numbers in the display. 
+
+7. Obtain the EPROM and follow Service 
+Bulletin covering specific details pertaining 
+to the EPROM replacement procedure. 
+
+
+The vehicle data will remain stored in the 
+MoDiC as long as it is not used for any other 
+purpose. Press the up arrow to return to the 
+selection menu. 
+
+8. Select “Program EPROM” and press the 
+enter button. 
+
+
+
+44 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. Enter the last 7 digits of the VIN and press 
+the “Yes” button. 
+
+
+10. Press the “Yes” button to start automatic 
+programming. 
+
+
+The screen will indicate when the 
+programming is complete. 
+
+
+Alignment of DME-EWS 
+
+For vehicles equipped with DME control 
+modules after 1/95 production, the ISN of a 
+replacement control module must be aligned 
+with the EWS control module. 
+
+This procedure copies the ISN from the new 
+DME control module and installs it into the EWS 
+control module. If this procedure is not carried 
+out the engine will crank, but will not start. 
+
+Interrogate the DME fault memory and clear any 
+faults stored during the programming process. 
+
+
+
+45 
+
+Coding and Programming 
+
+
+□□□□□□□□□□a 
+
+□□□UnmmnQ 
+
+□□□□□□□□□□a 
+
+□□□□□□□□□□a 
+
+
+
+
+
+Flash Programming 
+
+The procedure to program Flash Programmable control modules follows all of the 
+preceding steps describing “Exchange control unit”. EPROMs are not exchanged for Flash 
+programmable control modules, they have a soldered in, non removable EEPROM. 
+
+When connected to the diagnostic connector, the DIS/MoDiC utilize the loaded 
+programming software to communicate with the engine or transmission control module to 
+establish an “authorized unlocked link” with the control module. This link is known as the 
+“seed/key relationship” and is used for the purpose of programming only. The relationship 
+is established as follows: 
+
+• The DIS/MoDiC initiates the relationship by requesting the “seed” data from the control 
+module. 
+
+• The control module responds by sending the seed to the DIS/MoDiC. 
+
+• Based on the received seed, the DIS/MoDiC generates the “key” data and sends it back 
+to the control module. 
+
+• The control module then compares the received “key” data with a previously stored 
+value. If they are identical the control module will “unlock” in preparation of 
+programming and send an acknowledgement to the DIS/MoDiC for continuation. If the 
+“key” data is not correct, the control module will discontinue the relationship preventing 
+an “unauthorized unlocking” as a security measure. 
+
+
+
+CONTROL MODULE: 
+
+2. SENDS SEED 
+
+4. COMPARES - UNLOCKS - ACKNOWLEDGES 
+COMPARES - STAYS LOCKED - ABORTS 
+
+
+MoDiC: 
+
+1. REQUESTS SEED 
+3. GENERATES KEY 
+5. PROCEEDS WITH 
+PROGRAMMING 
+
+
+
+• The control module then allows the DIS/MoDiC to erase certain areas of the EEPROM 
+to provide space for new data when an update is being performed or program all of the 
+data for when a new basic module is being installed into a vehicle. 
+
+
+46 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+47 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Text that Is In quotation mark8 within each 
+box is as it appears on the MODIC or DIS 
+screen. 
+
+
+SI 2 97 U13 
+
+
+48 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49 
+
+Coding and Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+Additional Steps to be Taken into Consideration 
+
+Follow the additional information listed below when flash programming an engine or 
+
+transmission control module. 
+
+• Sufficient battery voltage is critical when flash programming a control module. If 
+the battery voltage drops below a certain level during programming, the session will 
+terminate prior to completion. If the vehicle has been in the workshop for diagnosis with 
+the ignition key on for long periods of time, the battery voltage is most likely deficient. 
+
+Verify the battery voltage prior to programming, if necessary connect a battery charger 
+to the vehicle prior to starting flash programming. Do not connect the charger during 
+the actual procedure. This could cause a voltage spike to occur which will also abort 
+the programming procedure. 
+
+Connect the charger before you start programming! 
+
+• Flash Programmable control modules can be programmed up to 13 times. The 
+remaining programming sessions is displayed during the programming procedure. 
+
+• The program will automatically realign the EWS & DME. This function can also be 
+found either in the Engine control module programming software or ZCS coding of the 
+EWS. 
+
+• Depending on the level of programming data, the procedure can take between 2 and 
+15 minutes. 
+
+• After programming, clear the control module’s adaptation values. The 
+
+programming software will automatically provide instructions. Clearing the adaptation 
+values can also be found in the Service Functions menu of the diagnostic software in 
+the DIS. The control module will quickly re-adapt to the system storing new values 
+during a test drive. 
+
+• After programming, clear all vehicle control modules that interface with the 
+newly programmed control module. The programming procedure can cause other 
+interfacing control modules (AGS, ASC, etc) to store erroneous faults. When 
+programming is completed, perform a quick test with the DIS to determine if any faults 
+have been stored. Clear all vehicle control module fault memories to prevent any 
+unnecessary future diagnosis. 
+
+
+50 
+
+Coding and Programming 
+
+
+
+Review Questions 
+
+
+1. What was the principle factor in the reason for workshop coding and programming? 
+
+List the available coding and 
+
+
+programming software. 
+
+
+2. What does “Flash Programming” mean and how do earlier DME control units differ? 
+
+
+3. Where is the ZCS stored in the vehicle? How can it be retrieved? 
+
+
+4. Which control modules may require that the ZCS be entered manually when coding a 
+replacement part? 
+
+
+5. What is the purpose of the “Conversion” path in the ZCS coding software? 
+
+
+6. Under what circumstance is it acceptable to enter a variant code in a DME that is not 
+for the particular vehicle type? 
+
+How many times may a DME be variant coded? 
+
+7. Why does the re-programming of a M3.X DME require the EPROM be replaced? 
+
+
+8. Explain the difference between the “part number for a basic control module” and the 
+“part number for a programmed control module” Where can these numbers be found? 
+
+
+51 
+
+Coding and Programming 
+
+
+

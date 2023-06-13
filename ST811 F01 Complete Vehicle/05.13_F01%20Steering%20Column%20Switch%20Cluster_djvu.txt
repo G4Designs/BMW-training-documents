@@ -1,0 +1,2732 @@
+Table of Contents 
+
+
+F01 Steering Column Switch Cluster 
+
+Subject Page 
+
+Introduction .5 
+
+The Steering Column Switch Cluster - An Interface .5 
+
+System Overview.6 
+
+Input/output Diagram, Steering Column Switch Cluster .6 
+
+System Circuit Diagram, Steering Column Switch Cluster .8 
+
+Functions .10 
+
+Signal Detection .10 
+
+Detecting the Switching Signals of the 
+
+Steering-column Switches .10 
+
+Steering column stalk for turn-indicator / high-beam switch . .11 
+
+Steering column stalk wiper switch .13 
+
+Rain-light-solar-condensation sensor .14 
+
+Detecting the Controls .15 
+
+Steering wheel .15 
+
+Resetting the Turn Indicator .16 
+
+Steering-wheel-rotation information .16 
+
+Receiving and Transmitting Signals .16 
+
+Vibration actuator.16 
+
+Priming caps for the driver’s airbag .16 
+
+Redundant signal .17 
+
+Optical Steering-angle Sensor .17 
+
+Detecting Steering Angle and Steering-Angle Speed .18 
+
+Relative steering angle (± 640°) .20 
+
+Absolute steering angle .20 
+
+Steering-angle speed .20 
+
+System Components.22 
+
+The Steering Column Switch Cluster as Standard Eguipment.22 
+
+RearView of the Steering Column Switch Cluster .23 
+
+Optical Steering-angle Sensor .24 
+
+Optical sensor .25 
+
+LED and light-conducting element .25 
+
+Photo-transistors .25 
+
+
+Initial Print Date: 01/09 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Operating Principle of Optical Steering Angle Detection .26 
+
+Steering angle detection .26 
+
+Block diagram of steering angle detection .26 
+
+Steering Wheel.28 
+
+Steering Wheel Structure .28 
+
+Steering Wheel Button Block .29 
+
+Button block for driving functions .29 
+
+Button block for telephone / radio .30 
+
+Electrical Steering Column Adjustment .32 
+
+System Circuit Diagram for Electrical Steering 
+
+Column Adjustment.32 
+
+Steering Column Adjustment and Steering Wheel 
+
+Heating Button .34 
+
+Service Information.36 
+
+Replacing the Steering Column Switch Cluster .36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Steering Column Switch Cluster 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+
+
+• Understand the operation of the SZL in the F01/F02 
+
+
+4 
+
+F01 Steering Column Switch Cluster 
+
+
+Introduction 
+
+
+The Steering Column Switch Cluster - An Interface 
+
+The steering column switch cluster is a “mechanical and electrical interface” from the 
+steering wheel to the vehicle; it is firmly connected mechanically to the steering column. 
+On top of this purely mechanical connection, the steering column switch cluster is 
+connected electrically via bus systems or directly to components. 
+
+In the F01/F02, the steering column switch cluster has a steering column stalk on either 
+side of the steering column. The right-hand steering column stalk is for activating/ deac¬ 
+tivating the wiper/washer system functions. The left-hand steering column stalk is for 
+activating/deactivating the high-beam headlight or turn indicators and for operating the 
+on-board computer functions. 
+
+A steering column switch cluster with optical steering-angle sensor is built into the F01/ 
+F02. The steering-angle sensor uses a non-contact optical measuring system for steer¬ 
+ing-angle detection. 
+
+The steering column switch cluster receives the button signal of the steering wheel 
+directly or across the LIN bus. These signals are forwarded from the steering column 
+switch cluster to the respective control units. 
+
+Signals such as the buttons for controlling the volume of the radio are transmitted by the 
+steering column switch cluster across the FlexRay. The steering column switch cluster 
+receives e.g. the signal to activate the vibration actuator across the FlexRay. 
+
+The steering column switch cluster forwards the trigger signal of the driver’s airbag 
+directly to the priming caps of the airbag. 
+
+For the electrical steering column adjustment, the switch cluster evaluates the button 
+and transmits reguests across the FlexRay. 
+
+The steering column switch cluster also evaluate the button for the steering wheel heat¬ 
+ing. The steering column switch cluster forwards this signal across the LIN bus to the 
+steering wheel electronics. 
+
+
+5 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+System Overview 
+
+
+Input/output Diagram, Steering Column Switch Cluster 
+
+©I 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column stalk for turn-indicator/ 
+high-beam switch 
+
+9 
+
+Coil-spring assembly 
+
+2 
+
+Steering column switch cluster (SZL) 
+
+10 
+
+Steering wheel heating / steering wheel 
+adjustment buttons 
+
+3 
+
+Steering column stalk wiper switch 
+
+11 
+
+Crash Safety Module (ACSM) 
+
+4 
+
+Footwell module (FRM) 
+
+12 
+
+Control unit (KAFAS) 
+
+5 
+
+Central gateway module (ZGM) 
+
+FlexRay 
+
+FlexRay 
+
+6 
+
+Junction box electronics (JB) 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+7 
+
+Instrument cluster (KOMBI) 
+
+LWS 
+
+Steering-angle sensor 
+
+8 
+
+Multifunction steering wheel 
+
+
+
+
+6 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The signals which are triggered by the turn-indicator / high-beam switch steering column 
+stalk (1) or wiper switch (3) are made available to the footwell module (4) or the junction 
+box electronics (6). 
+
+The button signals at the multifunction steering wheel (8) are directed through the coil¬ 
+spring assembly (9) to the steering column switch cluster (2), where they are evaluated 
+and then transmitted across the FlexRay. 
+
+
+7 
+
+F01 Steering Column Switch Cluster 
+
+
+
+System Circuit Diagram, Steering Column Switch Cluster 
+
+
+
+® 
+
+
+Kl 3CF 
+
+K1 1SN 
+
+® 
+
+
+8 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central gateway module (ZGM) 
+
+2 
+
+Footwell module (FRM) 
+
+3 
+
+Dynamic Stability Control (DSC) 
+
+4 
+
+Car Access System (CAS) 
+
+5 
+
+Instrument cluster (KOMBI) 
+
+6 
+
+Crash Safety Module (ACSM) 
+
+7 
+
+Junction box electronics (JB) 
+
+8 
+
+Front distribution box 
+
+9 
+
+Fanfare-horn button 
+
+10 
+
+Steering column stalk wiper switch 
+
+11 
+
+Automatic wiping LED 
+
+12 
+
+Wiper switch 
+
+13 
+
+Knurled wheel for intensity of the rain-light-solar-condensation sensor 
+
+14 
+
+Automatic wiping button 
+
+15 
+
+Steering column switch cluster coil spring 
+
+16 
+
+Steering column switch cluster (SZL) 
+
+17 
+
+Button combination steering wheel heating / electrical steering column adjustment 
+
+18 
+
+Electrical steering column adjustment button 
+
+19 
+
+Steering wheel heating button 
+
+20 
+
+Steering wheel heating button LED 
+
+21 
+
+Fligh-beam assistant button 
+
+22 
+
+On-board computer button 
+
+23 
+
+Turn-indicator / high-beam switch 
+
+24 
+
+Steering column stalk for turn-indicator / high-beam switch 
+
+25 
+
+Driver's airbag priming caps 
+
+26 
+
+Steering wheel electronics 
+
+27 
+
+Vibration actuator 
+
+28 
+
+Steering wheel heating 
+
+29 
+
+Button block for cruise control system in the multifunction steering wheel 
+
+30 
+
+Button block for radio / telephone etc. in the multifunction steering wheel 
+
+FlexRay 
+
+FlexRay 
+
+KI.30 
+
+Terminal 30 
+
+Kl. 30B 
+
+Terminal 30 base operation 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+LWS 
+
+Steering-angle sensor 
+
+
+Note: A three-stage driver’s airbag is installed in the US version. 
+
+
+9 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+Functions 
+
+
+Signal Detection 
+
+
+The functions of the steering column switch cluster are: 
+
+• Detecting the switching signals of the steering-column switches 
+
+• Detecting the controls in the multifunction steering wheel 
+
+• Resetting the turn indicator 
+
+• Transmitting and receiving information. 
+
+
+Detecting the Switching Signals of the Steering-column Switches 
+
+The switching signals of the F01/F02 steering-column switches are triggered by the 
+steering column stalks. The relevant switches are located on the printed-circuit board of 
+the steering column switch cluster. The steering column stalks do not have detent 
+notches. Therefore, each time the steering column stalks are operated, they return auto¬ 
+matically to their starting position. 
+
+The resistance to movement of the steering column stalks is increased at the end stops 
+and in the individual switching positions. This provides the customer with noticeable 
+feedback on the respective lever position. 
+
+
+The toggle switch is designed as locking. Three stop positions are available. 
+
+
+Steering column switch cluster F01/F02 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column stalk for turn-indicator/ 
+high-beam switch 
+
+5 
+
+Connection to horn button, multifunction buttons 
+and steering wheel electronics 
+
+2 
+
+Connection to the priming caps of the airbag 
+
+6 
+
+Power supply connection for vibration actuator 
+
+3 
+
+Retaining pin for steering column switch cluster 
+
+7 
+
+Steering column stalk wiper switch 
+
+4 
+
+Steering wheel driver 
+
+
+
+
+10 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering column stalk for turn-indicator / high-beam switch 
+
+The steering column switch cluster generates the switching signals depending on the 
+respective position of the steering column stalk. The switching signals are made available 
+by the steering column switch cluster across the FlexRay. 
+
+The footwell module receives the reguests from the turn-indicator / high-beam switch as 
+well as for the high-beam assistant. 
+
+Pressing the on-board computer button in the axial direction initiates the reguests for the 
+onboard computer. The steering column switch cluster sends the requests for display of 
+the on-board computer functions across the FlexRay. 
+
+Note: In the case of vehicle equipment without the high-beam assistant, the 
+button on the steering column stalk for turn-indicator / high-beam 
+switch is not required. Instead, a large button is used. 
+
+
+Directions of movement of the steering column 
+stalk F01/F02 
+
+
+
+n 
+
+'V' 
+
+
+s 
+
+
+Index 
+
+Explanation 
+
+1 
+
+High-beam assistant button 
+
+2 
+
+On-board computer button 
+
+3 
+
+High-beam headlights 
+
+4 
+
+Triple turn signal for turn indicator, 
+passenger's side 
+
+5 
+
+Continuous flashing for turn indicator, 
+passenger's side 
+
+6 
+
+Headlight flasher 
+
+7 
+
+Triple turn signal for turn indicator, 
+driver's side 
+
+8 
+
+Continuous flashing for turn indicator, 
+driver's side 
+
+
+11 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+Function matrix for turn-indicator / high-beam switch 
+
+
+Operation 
+
+Initial state 
+
+Function 
+
+Configuration 
+
+One-touch operation in 
+upward direction 
+
+OFF 
+
+One-touch indicating 
+
+Setting with no detent notch 
+
+
+Continuous indicating, right 
+
+OFF 
+
+Setting with no detent notch 
+
+
+Continuous indicating, left 
+
+OFF 
+
+Setting with no detent notch 
+
+One-touch operation in 
+downward direction 
+
+OFF 
+
+One-touch indicating 
+
+Setting with no detent notch 
+
+
+Continuous indicating, right 
+
+OFF 
+
+Setting with no detent notch 
+
+
+Continuous indicating, left 
+
+OFF 
+
+Setting with no detent notch 
+
+Overpressing in upward 
+direction 
+
+OFF 
+
+Continuous indicating, right 
+
+Setting with no detent notch 
+
+
+Continuous indicating, right 
+
+Continuous indicating, right 
+
+Setting with no detent notch 
+
+
+Continuous indicating, left 
+
+Continuous indicating, right 
+
+Setting with no detent notch 
+
+Overpressing in down¬ 
+ward direction 
+
+OFF 
+
+Continuous indicating, left 
+
+Setting with no detent notch 
+
+
+Continuous indicating, right 
+
+Continuous indicating, left 
+
+Setting with no detent notch 
+
+
+Continuous indicating, left 
+
+Continuous indicating, left 
+
+Setting with no detent notch 
+
+One-touch operation 
+against direction of trav¬ 
+el (pulling) 
+
+OFF 
+
+Headlight flasher 
+
+Setting with no detent notch 
+
+
+High-beam headlights ON 
+
+High-beam headlights OFF 
+
+Setting with no detent notch 
+
+One-touch operation in 
+direction of travel 
+(pressing) 
+
+Dipped-beam headlights 
+
+High-beam headlights ON 
+
+Setting with no detent notch 
+
+One-touch in axial direc¬ 
+tion, on-board computer 
+button (pressing) 
+
+On-board computer function 
+switched off 
+
+On-board computer ON 
+
+Setting with no detent notch 
+
+
+On-board computer function 
+switched on 
+
+On-board computer OFF 
+
+Setting with no detent notch 
+
+One-touch in axial direc¬ 
+tion, high-beam assis¬ 
+tant button 
+
+High-beam assistant 
+switched on 
+
+Deactivate hiqh-beam assis¬ 
+tant 
+
+Setting with no detent notch 
+
+
+High-beam assistant 
+switched off 
+
+Activate high-beam assis¬ 
+tant 
+
+Setting with no detent notch 
+
+Overpressing in down¬ 
+ward direction 
+
+Terminal 30, light switch in 
+"0" position 
+
+Parking light, left 
+
+Setting with no detent notch 
+
+Overpressing in upward 
+direction 
+
+Terminal 30, light switch in 
+"0" position 
+
+Parking light, right 
+
+Setting with no detent notch 
+
+
+12 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering column stalk wiper switch 
+
+This steering column stalk is designed exclusively for the front wiper/washer system. All 
+reguests for the wiper/washer system are detected in the steering column switch cluster. 
+The steering column switch cluster sends the reguests across the FlexRay to the junction 
+box electronics. The junction box electronics execute the reguests. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column stalk wiper switch 
+
+2 
+
+Intensity of rain-light-solar-condensation sensor 
+
+3 
+
+Function indicator, automatic wiping activated 
+
+4 
+
+Rain-light-solar-condensation sensor button 
+
+
+Function matrix, steering column stalk wiper switch 
+
+
+Operation 
+
+Initial state 
+
+Function 
+
+Configuration 
+
+One-touch operation in 
+upward direction 
+
+OFF 
+
+Wiper stage 1 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+Overpressing in upward 
+direction 
+
+OFF 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+One-touch operation in 
+downward direction 
+
+OFF 
+
+Flick wipe 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+OFF 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 1 
+
+Setting with no detent notch 
+
+One-touch operation 
+against direction of travel 
+(pulling) 
+
+OFF 
+
+Windscreen wash 
+
+Setting with no detent notch 
+
+
+13 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rain-light-solar-condensation sensor 
+
+If the vehicle is in the automatic mode via rain-light-solar-condensation sensor, the func¬ 
+tion matrix of the steering column stalk is altered. Please refer to the following function 
+matrix for the functions. 
+
+
+Function matrix, steering column stalk for wiper/washer system 
+
+
+Operation 
+
+Initial state 
+
+Function 
+
+Configuration 
+
+One-touch operation in 
+upward direction 
+
+OFF 
+
+Wiper stage 1 
+
+Setting with no detent notch 
+
+
+Automatic operation 
+
+Wiper stage 1 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+Overpressing in upward 
+direction 
+
+OFF 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Automatic operation 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 2 
+
+Setting with no detent notch 
+
+One-touch operation in 
+downward direction 
+
+OFF 
+
+Flick wipe 
+
+Setting with no detent notch 
+
+
+Automatic operation 
+
+Flick wiping* 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 1 
+
+Intermittent wipe 
+
+Setting with no detent notch 
+
+
+Continuous wipe, Stage 2 
+
+Wiper stage 1 
+
+Setting with no detent notch 
+
+One-touch operation 
+against direction of travel 
+(pulling) 
+
+OFF 
+
+Windscreen wash 
+
+Setting with no detent notch 
+
+One-touch in axial direc¬ 
+tion, automatic wiping 
+button (pressing) 
+
+Automatic wiping switched 
+off 
+
+Automatic wiping ON 
+
+Setting with no detent notch 
+
+
+Automatic wiping switched 
+on 
+
+Automatic wiping OFF 
+
+Setting with no detent notch 
+
+Turning the knurled wheel 
+upwards/d ownwards 
+
+Sensitivity of rain-light- 
+solar-condensation sensor 
+
+Sensitivity of automatic 
+wiping or 
+
+Setting with detent notch 
+
+
+(automatic mode is retained) 
+
+
+14 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detecting the Controls 
+
+The multifunction steering wheel has additional buttons. The buttons increase in-car 
+comfort and convenience by providing for comfort and convenience functions. 
+
+The steering column switch cluster reads in the signals from the steering-wheel buttons. 
+The steering column switch cluster transmits these signals across the FlexRay. The asso¬ 
+ciated ECU executes the request. 
+
+Steering wheel 
+
+The steering wheel is equipped with the following components: 
+
+• Fanfare-horn button 
+
+• Priming caps for the driver’s airbag 
+
+• Driver’s airbag 
+
+• Buttons for radio operation 
+
+• Buttons for telephone operation 
+
+• Cruise control system buttons 
+
+• Steering wheel electronics 
+
+• Steering wheel heating 
+
+• Vibration actuator. 
+
+The fanfare-horn button is connected directly to the steering column switch cluster. The 
+junction box electronics requests the button status of the fanfare-horn button in cycles. 
+
+The steering column switch cluster evaluates the button status and sends this across the 
+FlexRay to the junction box electronics. 
+
+The buttons for the radio, telephone and cruise control system are connected via the LIN 
+bus. The applies to the steering wheel electronics. The central control unit for this equip¬ 
+ment attached to the LIN bus is the steering column switch cluster. 
+
+The right-hand button block contains the master function for the left-hand button block 
+and has an electronic evaluation unit. The electronic evaluation unit picks up the button 
+status of the individual buttons. The electronic evaluation unit implements the button sta¬ 
+tus on the LIN bus. The steering column switch cluster requests the button status in 
+cycles and thus finds out whether a button was operated or not. The steering column 
+switch cluster transmits the button status across the FlexRay. In this way, the information 
+reaches the other control units in the vehicle network. 
+
+Note: The signal sent from the steering column switch cluster across the 
+FlexRay must be implemented in the central gateway module on the 
+K-CAN2, PT-CAN or MOST. This enables the footwell module, the 
+junction box electronics etc. to execute the desired requests. 
+
+
+15 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+Resetting the Turn Indicator 
+
+The footwell module the information regarding the steering-wheel turn reguires to reset 
+the turn indicator lights. 
+
+The steering column switch cluster determines this steering-wheel turn and makes it 
+available across the FlexRay. The central gateway module implements the signal on the 
+K-CAN2, thus providing the footwell module with the information. Depending on the 
+steering-wheel position, the footwell module decides whether the turn indicator has to be 
+deactivated or not. 
+
+Steering-wheel-rotation information 
+
+The optical steering-angle sensor detects the neutral position within 360° of the optical 
+steering-angle sensor. With a steering wheel turn of more than 360°, the information 
+regarding the steering-wheel turn is also included in the steering angle calculation. 
+
+Receiving and Transmitting Signals 
+
+The detected and calculated data from the steering column switch cluster are forwarded 
+across the FlexRay to the corresponding control units. 
+
+The steering column switch cluster can be diagnosed via the central gateway module 
+with the BMW diagnosis system. The diagnosis information can be called up via the 
+FlexRay. 
+
+Vibration actuator 
+
+The KAFAS control unit, for example, reguests activation of the vibration actuator via the 
+PT-CAN. The central gateway module implements the signal on the FlexRay. This means 
+the Integrated Chassis Management receives the reguest for activation. The Integrated 
+Chassis Management co-ordinates activation of the vibration actuator. 
+
+Note: Coordination is necessary, as the lane departure warning and lane 
+
+change warning can be fitted in the vehicle. Depending on the request 
+from the two assistance systems, the Integrated Chassis Management 
+forwards this to the vibration actuator. 
+
+The steering wheel electronics evaluate the reguest, activate the vibration actuator and 
+monitor its function. In the event of a defect in the vibration actuator or steering wheel 
+electronics, the steering column switch cluster indicates this via the FlexRay. 
+
+Priming caps for the driver’s airbag 
+
+The priming caps of the driver’s airbag are connected directly via the coil spring to the 
+Crash Safety Module, ACSM. Triggering the airbag is the responsibility of the Crash 
+Safety Module. 
+
+
+16 
+
+F01 Steering Column Switch Cluster 
+
+
+
+Redundant signal 
+
+The signals from the steering column stalk for turn-indicator / high-beam switch for turn 
+indicator lights as well as headlight flasher are transferred across the FlexRay. To increase 
+the availability, the steering column switch cluster is connected directly by a cable to the 
+footwell module. The signals e.g. for the headlight flasher or turn indicator lights are trans¬ 
+ferred redundantly across this cable. 
+
+Optical Steering-angle Sensor 
+
+All systems that influence driving dynamics are reguired alongside other data for the 
+steering angle and steering-angle speed as the basis for calculation. 
+
+The steering angle as well as steering-angle speed are picked up by a non-contact opti¬ 
+cal measuring system, the optical steering-angle sensor. 
+
+The data of the optical steering-angle sensor are processed by the electronics in the 
+steering column switch cluster and sent across the FlexRay to the Integrated Chassis 
+Management. 
+
+Information such as the absolute steering angle or the steering-wheel-turn is calculated. 
+The optical steering-angle sensor picks up a steering angle of -640° / +640°. 
+
+
+Structural principle of the optical steering- 
+angle sensor F01/F02 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+LED 
+
+2 
+
+Light-conducting element 
+
+3 
+
+Code disc 
+
+4 
+
+Steering column 
+
+5 
+
+Photo-transistors 
+
+6 
+
+Output: Conversion into electrical signals 
+
+7 
+
+Printed-circuit board 
+
+
+17 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detecting Steering Angle and Steering-Angle Speed 
+
+To pick up the steering angle, a code disc is illuminated from above by an LED and a 
+light-conducting element. Due to the pattern in the code disc, the light from above only 
+reaches down to certain areas. There, the light encounters photo-transistors. 
+
+The pattern of the code disc corresponds to the digital code of the steering angle. 
+
+The photo-transistors convert the light signals into electrical signals. As the signals are 
+not yet sufficiently unambiguous, they are processed by downstream electronics. 
+
+Thereafter, the signals are digitized and have the signal states 1 or 0. 
+
+The steering column switch cluster receives the current value of the steering angle, the 
+digital code, and forwards this across the FlexRay. 
+
+A section of the code disc and the optical sensor are shown below. 
+
+
+Section on the code disc 
+
+
+Optical sensor 
+
+
+
+
+The code disc (1) rotates depending on 
+the steering-wheel position. The pattern of 
+the digital code (2) on the code disc 
+changes in 0.5° steps. The light of the 
+light-conducting element (3) penetrates 
+the pattern of the digital code of the code 
+disc. 
+
+
+The light beams encounter the photo-tran¬ 
+sistors in accordance with the pattern of 
+the digital code. The photo-transistors 
+convert the light beams into electrical sig¬ 
+nals. The downstream electronics ensure 
+that the electrical signals have the signal 
+states 1 or 0. This means that the steering 
+angle is available to the steering column 
+switch cluster as a digital code. 
+
+
+18 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Section on the code disc 
+
+
+
+If the code disc (1) continues to rotate, the 
+pattern (2) on the code disc changes. The 
+light of the light-conducting element (3) 
+penetrates the code disc in other areas. 
+
+
+Optical sensor 
+
+
+
+A new digital code is generated in accor¬ 
+dance with the changed pattern of the dig¬ 
+ital code. This means that the new steering 
+angle is available to the steering column 
+switch cluster as a digital code. 
+
+
+19 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+Relative steering angle (± 640°) 
+
+The relative steering angle specifies the angle position of the steering wheel. The infor¬ 
+mation regarding the relative steering angle is always retained, even if the power to the 
+control unit is switched off. A renewed zero-point adjustment is only necessary if the 
+steering column switch cluster has been replaced. This also applies if the dynamic stabili¬ 
+ty control system is replaced or repairs become necessary on the steering / steering col¬ 
+umn. 
+
+Absolute steering angle 
+
+The absolute steering angle is a calculation based on the relative steering angle and the 
+information regarding steering-wheel turn. The absolute and relative steering angles are 
+defined during the zero-point adjustment of the steering column switch cluster. The 
+steering column switch cluster knows every position of the steering wheel across the 
+entire range of steering rotation. 
+
+A precondition before every zero-point adjustment is the straight-ahead setting of the 
+wheels and of the steering wheel. 
+
+Steering-angle speed 
+
+The steering-angle speed is the product of the change in the individual steering-angle 
+data during steering wheel turn. 
+
+The steering column switch cluster calculates the value and forwards it across the 
+FlexRay to the vehicle network. 
+
+
+20 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+21 
+
+F01 Steering Column Switch Cluster 
+
+
+
+System Components 
+
+
+The Steering Column Switch Cluster as Standard Equipment 
+
+The steering column switch cluster (SZL) consists of, among other things, the following 
+components: 
+
+• Electronic steering column switch cluster module 
+
+• Coil-spring assembly 
+
+• Steering-column switch for turn indicators 
+
+• Steering column switch for wipers 
+
+• Optical steering-angle sensor. 
+
+The steering column switch cluster (SZL) can only be replaced as a complete unit. The 
+individual components such as the coil-spring assembly or steering column stalk can 
+not be removed or replaced. 
+
+The design and the components of the steering column switch cluster are explained in 
+brief in the following. 
+
+Installation location of the steering column switch cluster F01/F02 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column switch cluster 
+
+
+22 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+RearView of the Steering Column Switch Cluster 
+
+
+
+© ® ® 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection, vehicle wiring harness 
+
+2 
+
+Connection for wiring harness in the vehicle (airbag signals) 
+
+3 
+
+Connection for steering wheel heating / electrical steering column adjustment button block 
+
+
+23 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Optical Steering-angle Sensor 
+
+The steering column switch cluster contains the optical steering-angle sensor as well as 
+the associated electronics. A second processor on the underside of the board backs up 
+the information regarding the steering angle and steering-angle speed. This is why the 
+steering angle and steering-angle speed are evaluated and calculated in the second 
+processor in addition to the main processor of the steering column switch cluster. 
+
+The steering-angle sensor is designed as a non-contact optical angle measurement sys¬ 
+tem. The system consists of a code disc and an optical sensor. The code disc is con¬ 
+nected directly to the steering wheel via a driver. If the steering wheel is moved, the code 
+disc rotates within the optical sensor. 
+
+The code disc has a pattern of holes. The pattern of holes is arranged in such a way that 
+four circular tracks are formed. The four tracks represent the digital range of the sensor. 
+The digital code changes when the steering is turned every 0.5°. 
+
+
+Code disc and optical sensor F01/F02 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Optical sensor 
+
+2 
+
+Code disc 
+
+3 
+
+Hole pattern tracks 
+
+
+24 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Optical sensor 
+
+The optical sensor is located on a circuit board soldered onto the board of the steering 
+column switch cluster. The major components of the measuring system are: 
+
+• LED 
+
+• Light-conducting element 
+
+• Code disc 
+
+• Photo-transistors. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Code disc 
+
+2 
+
+Light-conducting element 
+
+3 
+
+LED 
+
+4 
+
+Photo-transistors 
+
+
+LED and light-conducting element 
+
+The LED - in conjunction with the light-conducting element - has the task of projecting 
+light from above onto the code disc. The LED is directly soldered onto the sensor circuit 
+board. The light-conducting element is clipped onto the board of the steering column 
+switch cluster. 
+
+
+The light-conducting element is split three ways at the light exit. The light is projected in 
+such a way that a light field is formed at each light exit and beamed downwards onto the 
+code disc. Depending on the pattern on the code disc, light is allowed through or not. 
+
+
+Photo-transistors 
+
+There are four photo-transistors below the light exits on the circuit board of the optical 
+sensor of the steering column switch cluster. The photo-transistors detect the optical sig¬ 
+nals that penetrate the code disc. The photo-transistors convert the optical signals into 
+electrical signals. 
+
+
+25 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating Principle of Optical Steering Angle Detection 
+Steering angle detection 
+
+The code disc enables a 4-digit digital code to be generated for each light field. The 12- 
+digit digital code is formed by lining up the 4-digit digital codes. The steering-angle 
+speed can be ascertained from the changes to the individual digital codes. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Code disc 
+
+4 
+
+Digital code for light field 3 
+
+2 
+
+Digital code for light field 1 
+
+5 
+
+12-digit digital code 
+
+3 
+
+Digital code for light field 2 
+
+
+
+
+Block diagram of steering angle detection 
+
+The following block diagram shows the steering angle detection in simplified form. 
+
+
+
+26 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Sliding register 
+
+5 
+
+Light-conducting element 
+
+2 
+
+Schmitt trigger 
+
+6 
+
+LED (infrared) 
+
+3 
+
+Photo-transistor 
+
+7 
+
+Sensor circuit board 
+
+4 
+
+Code disc 
+
+8 
+
+Activation of LED 
+
+
+The LED (8) is supplied with pulse-width modulated voltage, thus also supplying the 
+light-conducting element (5) with infrared light. The light-conducting element projects the 
+light onto the code disc (4). The photo-transistors (3) pick up the light signals. 
+
+The signals of the photo-transistors are processed in the downstream electronics (2) into 
+the signals “1 ” or “0”. The signals of the 12 photo-transistors are put together to form the 
+digital code. 
+
+The sliding register (1) picks up the digital code and forwards it to the electronics of the 
+steering column switch cluster. 
+
+
+27 
+
+F01 Steering Column Switch Cluster 
+
+
+
+Steering Wheel 
+
+Depending on the vehicle equipment, the following components are located in the steer¬ 
+ing wheel: 
+
+• Button block for telephone / radio 
+
+• Button block for cruise control system / Active Cruise Control 
+
+• Airbag with associated priming caps 
+
+• Horn button 
+
+• Vibration actuator for lane departure warning 
+
+• Steering wheel electronics 
+
+• Steering wheel heating. 
+
+Steering Wheel Structure 
+
+Important components in the steering wheel F01/ F02 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering wheel heating 
+
+4 
+
+Vibration actuator for lane departure warning 
+
+2 
+
+Button block for cruise control 
+
+5 
+
+Steering wheel electronics system 
+
+3 
+
+Airbag unit 
+
+6 
+
+Button block for telephone / radio 
+
+
+28 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+The button blocks as well as the steering wheel electronics are linked across the LIN bus 
+to the electronics in the steering column switch cluster. 
+
+With the corresponding reguest, the steering wheel electronics control and monitor the 
+function of the vibration actuator and steering wheel heating. 
+
+The priming caps of the airbags are connected directly and are activated by the Crash 
+Safety Module, ACSM. 
+
+The fanfare-horn button is evaluated by the electronics of the steering column switch 
+cluster. 
+
+
+Steering Wheel Button Block 
+
+
+Button block for driving functions 
+
+The steering wheel contains a button block for the Dynamic Cruise Control (DCC) or 
+Active Cruise Control (ACC) Stop & Go functions. The button block is located on the left- 
+hand side of the steering wheel. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Set button 
+
+2 
+
+Reduce distance button (ACC)* 
+
+3 
+
+Toggle switch 
+
+4 
+
+Increase distance button (ACC)* 
+
+5 
+
+Switching DCC/ACC to standby 
+or switching off 
+
+6 
+
+Resume / call-up stored speed button 
+
+
+* Buttons 2 and 4 are only present on vehicles with 
+the option Active Cruise Control Stop & Go. 
+
+
+The SET button can be used to set the 
+desired driving speed. 
+
+The toggle switch be moved upwards or 
+downwards and is not designed as lock¬ 
+ing. Each time the toggle switch is oper¬ 
+ated, it returns to its home position. Each 
+direction of the toggle switch has two 
+stages. See table. 
+
+The I/O button can be used to switch the 
+Dynamic Cruise Control (DCC) and 
+Active Cruise Control (ACC) Stop & Go function to standby or to switch it off. 
+
+Pressing the RES button (resume) calls up and activates the last stored driving speed 
+value. 
+
+
+Position 
+
+Explanation 
+
++2 
+
+Increase driving speed in steps of 10 kph (6 mph) 
+
++ 1 
+
+Increase driving speed in steps of 1 kph (,5mph) 
+
+±0 
+
+Toggle switch in home position 
+
+-1 
+
+Reduce driving speed in steps of 1 kph (.5 mph) 
+
+-2 
+
+Reduce driving speed in steps of 10 kph (6 mph) 
+
+
+29 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Button block for telephone / radio 
+
+The button block is located on the right-hand side of the steering wheel. The buttons can 
+be used to operate functions for the radio or telephone. 
+
+The MODE button can be used e.g. to switch between the individual audio sources. 
+
+Operating the toggle switch + or -changes the radio volume, for example. 
+
+The knurled wheel is designed as locking. Operating the knurled wheel (turning upwards 
+or downwards) selects individual radio stations, for example. 
+
+Pressing the knurled wheel memorizes the selection of the radio station, for example. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+MODE button 
+
+2 
+
+Toggle switch + 
+
+3 
+
+Toggle switch - 
+
+4 
+
+Hands-free button 
+
+5 
+
+Telephone button 
+
+6 
+
+Knurled wheel 
+
+
+30 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31 
+
+F01 Steering Column Switch Cluster 
+
+
+
+Electrical Steering Column Adjustment 
+
+System Circuit Diagram for Electrical Steering Column Adjustment 
+
+
+
+32 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Central gateway module ZGM 
+
+7 
+
+Motor for electrical steering column adjustment, height 
+
+2 
+
+Front distribution box 
+
+8 
+
+Motor for electrical steering column adjustment, vertical 
+
+3 
+
+Distribution box in luggage compartment 
+
+K-CAN2 
+
+Body CAN2 
+
+4 
+
+Steering column switch cluster 
+
+FlexRay 
+
+FlexRay 
+
+5 
+
+Steering column adjustment button 
+
+Kl. 30F 
+
+Terminal 30 incorrectly switched 
+
+6 
+
+Footwell module 
+
+
+
+
+33 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+Steering Column Adjustment and Steering Wheel Heating Button 
+
+The button for the steering column adjustment can be moved in four directions. It can be 
+used to adjust the steering column upwards and downwards; the distance to the driver 
+can also be adjusted. 
+
+The steering column switch cluster evaluates the button status and forwards it to the 
+footwell module. The signal must go across the FlexRay to the central gateway module. 
+From there, the signal is sent on the K-CAN2 to the footwell module. Accordingly, the 
+footwell module activates the motors for steering column adjustment. 
+
+The footwell module monitors activation and function. 
+
+Note: The footwell module is the central control unit for the electrical steering 
+column adjustment. The position of the steering column can be called 
+up or stored in the footwell module for the memory function. 
+
+The button for the steering wheel heating is evaluated by the electronics of the steering 
+column switch cluster. The electronics in the steering column switch cluster send a 
+reguest across the LIN bus to the steering wheel electronics to switch the steering wheel 
+heating on / off. 
+
+The steering wheel electronics switch the steering wheel heating on and monitor its 
+function. The steering wheel heating has an NTC resistor. This resistor is reguired for 
+temperature control of the steering wheel heating. 
+
+
+Signal path forthe steering wheel heating F01/f02 
+
+
+
+34 
+
+F01 Steering Column Switch Cluster 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering wheel heating button 
+
+6 
+
+Steering wheel heating 
+
+2 
+
+Steering wheel heating function indicator 
+
+7 
+
+Electronics of the steering column switch cluster 
+
+3 
+
+Steering column switch cluster (SZL) 
+
+Kl. 15N 
+
+Terminal 15 after-run 
+
+4 
+
+Steering wheel electronics 
+
+Kl. 30F 
+
+Terminal 30 incorrectly switched 
+
+5 
+
+NTC resistor 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+
+35 
+
+F01 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Replacing the Steering Column Switch Cluster 
+
+Particular care must be taken when replacing the steering column switch cluster or work¬ 
+ing on the steering column. Comply with the repair instructions. 
+
+The coil spring is a very sensitive component of the steering column switch cluster. If 
+sufficient care is not taken when replacing the steering column switch cluster, the coil 
+spring or another component can be destroyed. A conseguence of this can be that the 
+steering column switch cluster only works in part or does not work at all. 
+
+Note: If e.g. communication with the steering column switch cluster across 
+the FlexRay is disrupted, the junction box electronics switch the wind¬ 
+screen wipers to the emergency mode. 
+
+The steering column switch cluster can only be ordered as a complete exchange part. 
+After replacement, the new steering column switch cluster must be adapted to the car. 
+
+This involves among other things: 
+
+• Initialization of the steering column switch cluster 
+
+• Zero-point adjustment of the steering-angle sensor 
+
+• Front wheels in the straight-ahead position 
+
+• Function test. 
+
+For further information, refer to the repair instructions and the BMW diagnosis system. 
+
+Note: The transportation lock of the steering column switch cluster is only to 
+be removed after replacement, shortly before fitting the steering wheel. 
+
+
+36 
+
+F01 Steering Column Switch Cluster 
+
+
+
+

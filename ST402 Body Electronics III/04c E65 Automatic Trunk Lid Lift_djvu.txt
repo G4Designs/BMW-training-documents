@@ -1,0 +1,687 @@
+Table of Contents 
+E65 Trunk Lid Lift 
+
+Subject Page 
+
+Introduction .3 
+
+System Overview.3 
+
+Components.4 
+
+HKL Control Unit.4 
+
+Hydraulic Assembly.5 
+
+Trunk Lid Angle Sensor .6 
+
+Trunk Lid Button S237 (inside of the trunk lid) .6 
+
+Principle of Operation .7 
+
+Sequence of Opening Operation .7 
+
+Sequence of Closing Operation .8 
+
+Anti-Trap.8 
+
+Timed Arrest.8 
+
+Emergency Mode .8 
+
+
+Initial Print Date: 12/04 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E65 Trunk Lid Lift (HKL) 
+
+
+Model: E65/E66 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand the operation of HKL 
+
+
+• Locate and identify HKL components 
+
+
+2 
+
+E65 Trunk Lid Lift 
+
+
+
+Introduction 
+
+The Automatic Trunk Lid Lift (HKL) is equipped on E65s ordered with the optional con¬ 
+venience package. It controls automatic opening and closing of the trunk lid using a 
+hydraulic pump and piston. The HKL control unit operates closely in conjunction with 
+the Power Module and the CAS. 
+
+Operation of the automatic trunk lid lift is only active while the vehicle is stationary. 
+
+System Overview 
+
+
+CAS 
+
+
+
+
+
+SMFA 
+
+
+
+SMBF 
+
+
+
+TMFAT 
+
+
+
+TMBFT 
+
+
+
+TM 
+
+FATH 
+
+
+
+TM 
+
+BFTH 
+
+
+
+SMFAH 
+
+
+
+SMBFH 
+
+
+
+HKL 
+
+
+
+PM 
+
+
+AHM 
+
+
+PDC 
+
+
+RDC 
+
+
+CIM 
+
+
+LM 
+
+
+DWA 
+
+
+CON 
+
+
+BZM 
+
+
+RLS 
+
+
+SHD 
+
+
+SH 
+
+
+BZMF 
+
+
+WIM 
+
+
+J 
+
+CD 
+
+1 
+
+
+
+1 
+
+Kombi 
+
+
+CDC 
+
+T 
+
+
+t 
+
+ASK 
+
+
+AVT 
+
+1 
+
+
+1 
+
+TEL 
+
+
+LOGIC 7 
+
+1 
+
+
+1 
+
+VM 
+
+
+svs 
+
+
+t- NAV ^ 
+
+
+D-BUS 
+
+
+
+SZL 
+
+
+SFZ 
+
+
+SASL 
+
+
+SASR 
+
+
+ARS 
+
+
+EMF 
+
+
+STVL 
+
+
+SSFA 
+
+
+SIM 
+
+
+STVR 
+
+
+DME GRS 
+
+
+SSBF 
+
+
+EGS 
+
+
+DSC 
+
+
+SBSl 
+
+
+SBSR 
+
+
+EDC-K 
+
+
+SSH 
+
+
+PT-CAN 
+
+
+3 
+
+E65 Trunk Lid Lift 
+
+
+K-CAN P 
+
+
+K-CAN S 
+
+
+MOST 
+
+
+byteflight 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The HKL system consists of the following components: 
+
+• HKL control unit 
+
+• Hydraulic assembly (Pump, pressure valve, lines and piston) 
+
+• Trunk lid angle sensor 
+
+• Trunk lid button S237 TOEHKK (inside the trunk lid) 
+
+The components and principle of operation of the trunk locking system remain 
+unchanged from a conventional trunk . 
+
+HKL Control Unit 
+
+The HKL control unit controls the automatic opening and closing of the trunk lid. 
+
+It operates in conjunction with the CAS and the PM (Power Module) and is networked in 
+the K-CAN P-Bus. 
+
+The HKL is located in the right rear corner of the luggage compartment. 
+
+
+
+The Power Module controls the operation of the trunk lid lock and the soft close assem¬ 
+bly as well as signalling (over the K-CAN P) the reguests for opening and closing the 
+trunk from the external trunk button. 
+
+The CAS provides the HKL with the reguest for opening the trunk from the Remote 
+Control system as well as the passenger compartment trunk button. 
+
+
+4 
+
+E65 Trunk Lid Lift 
+
+
+
+
+Hydraulic Assembly 
+
+The hydraulic pump (radial piston) of the trunk lid lift is driven by an electric motor 
+which operates in two directions of travel. 
+
+The pump is located near the mount for the right rear strut. 
+
+
+
+It is controlled via a PWM signal from the HKL control unit. The signal is varied depend¬ 
+ing on the opening angle of the trunk lid to maintain an even closing speed over the 
+entire range. 
+
+An electro-mechanical hydraulic pressure valve is integrated into the hydraulic pump. 
+The pressure valve is controlled by a PWM signal from the HKL control unit. The valve 
+is normally open. 
+
+
+The hydraulic pressure increases as the valve is 
+powered closed. The hydraulic pressure, controlled 
+by the PWM signal affects the trunk lid opening/clos¬ 
+ing force. 
+
+The maximum pressure produced by the hydraulic 
+assembly is 10Obar. 
+
+The hydraulic piston is attached to the left side trunk 
+hinge. 
+
+There is no initialization necessary when exchanging 
+hydraulic components. 
+
+The trunk should be operated several times to 
+displace any air that may be in the system. 
+
+
+
+1. Hydraulic piston 
+
+
+2. Hydraulic lines 
+
+3. Pump assembly 
+
+
+
+
+
+3 
+
+
+
+
+
+
+
+p 
+
+
+
+
+5 
+
+E65 Trunk Lid Lift 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trunk Lid Angle Sensor 
+
+To detect the position, opening angle and speed of the trunk lid, an angle Hall sensor 
+similar to those used on the E46 convertible is used. A voltage value is output depending 
+on the opening angle of the trunk lid. 
+
+
+The angle sensor is attached to the right side trunk hinge. 
+
+
+
+The lid opening angle is divided into 9 segments. 
+
+
+These segments are used to determine the reguired system pressure to maintain 
+a steady opening/closing speed. 
+
+
+Trunk Lid Button S237 (inside of the trunk lid) 
+
+This button can only be accessed after the trunk lid is opened. It is a primarily used to 
+signal the HKL to close the trunk, however it can signal both an open or close reguest. 
+
+Input to the HKL control unit from this switch is a momentary ground signal. The ground 
+is provided by the position contact inside of the trunk lock actuator (ZV) only when the 
+trunk is “open”. 
+
+An illuminated switch indicates that there is a ground available. 
+
+
+
+6 
+
+E65 Trunk Lid Lift 
+
+
+Principle of Operation 
+
+
+Sequence of Opening Operation 
+
+When the "Open" request is sent by radio-control key or by a trunk button 
+(TOEHK S117orTOEHKI S8), the PM operates the trunk lid lock actuator (ZV). 
+
+The operating command is transferred by the K-CAN P to the HKL which activates the 
+pump in the "Open" direction. The pressure valve is still not activated, so the pressure in 
+the hydraulic system is minimal. When the trunk lid lock is fully open, the contact inside of 
+the ZV signals the PM. 
+
+This information is also transferred by bus to the HKL. Simultaneously as the SCA motor 
+is being operated by the PM the HKL activates the opening operation. The pressure 
+valve is closed and pressure is built up. The lid is now opened fully. 
+
+The HKL module detects the position of the trunk lid using the angle sensor. 
+
+
+
+Shortly before reaching the end stop "lid open" (transition from segment 7 to segment 8), 
+trunk speed is reduced and the lid slowly moves to its end position. 
+
+If one of the control buttons is pressed again during the opening sequence, the operation 
+is interrupted. Pressing the button once more resumes the sequence. 
+
+Operation of the automatic trunk lift is not allowed if the outside temperature 
+(K-CAN P signal originated by the Kombi) is below -30°C (-22°F). 
+
+
+7 
+
+E65 Trunk Lid Lift 
+
+
+
+Sequence of Closing Operation 
+
+When the "Close" command is sent by pressing the control button (TOEHK S117 or 
+TOEHKKS237 ), the HKL activates the closing operation. 
+
+The pump motor is activated in the "closing" direction by reversing polarity in the HKL 
+control unit. Shortly before the trunk lid reaches the closed position, the speed of the lid 
+is reduced to provide a smooth run-down into the lock assembly. 
+
+Once the contact switch in the trunk lock ZV opens, the SCA runs to bring in the trunk lid 
+to the final closed position. 
+
+Anti-Trap 
+
+The trunk lid speed is reported to the HKL control unit by the angle sensor. The speed is 
+compared with the time curve stored in the module. If this speed is slower then the 
+stored value the trunk lid is stopped. 
+
+Timed Arrest 
+
+An timed arrest function prevents the pump motor from overheating: 
+
+• If the pump is in continuous operation for 2 minutes it is shut-off for 6 minutes to 
+allow it to cool. 
+
+• The pump cannot be operated before the 6 minutes have elapsed. 
+
+Emergency Mode 
+
+If the automatic control malfunctions, the trunk lid can be opened and closed in the same 
+way as a conventional, manually operated lid, i.e. without the need for additional mea¬ 
+sures. 
+
+Slightly more effort is reguired to open the trunk than for a gas-spring assisted lid. 
+
+After manually opening the trunk lid, it should be opened and closed twice hydraulically. 
+This process vents the hydraulic system again. 
+
+
+8 
+
+E65 Trunk Lid Lift 
+
+
+
+- j j i Classroom Exercise - Review Questions 
+
+1. How does the HKL control unit control the speed of the trunk lid to provide a 
+smooth rundown at the end positions (Fully open/closed)? 
+
+
+2. At what outside temperature is the HKL no longer operational? Where does this 
+signal come from? 
+
+
+Notes: 
+
+
+9 
+
+E65 Trunk Lid Lift 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,814 @@
+Table of Contents 
+
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+Subject Page 
+
+Advanced C rash Safety Module 
+
+Front Airbag, Driver. 
+
+Front Airbag, Passenger. 
+
+Curtain Airbag . 
+
+Side Airbag. 
+
+Crash Safety Module . 
+
+Rollover Monitoring System .. 
+
+Seat Position Detection . 
+
+Seat-position Recognition . 
+
+Calibration of Driver Seat .. 
+
+
+Initial Print Date: 12/06 
+
+
+Revision Date: 
+
+
+rnmniruoNMnoora 
+
+
+
+
+
+
+
+
+
+
+
+
+2 
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+Advanced Crash Safety Module (ACSM) 
+
+Model: E70 
+
+Production: From Start of Production 
+
+■BIECIIMB 
+
+After completion of this module you will be able to: 
+
+• Demonstrate the function of the ACSM system 
+
+• Identify the different types of air bags used on the E70 
+
+
+• Demonstrate the Driver Seat Calibration on the E70 
+
+
+
+
+Advanced Crash Safety Module 
+
+
+The safety system (ACSM) is used in the E70.The task of ACSM 
+is to detect accident situations critical forthe vehicle occupants 
+and to activate the necessary restraint systems selectively corre¬ 
+sponding to the crash severity. 
+
+The crash safety module performs internal diagnosis and monitors 
+all inputs and outputs. Any faults that may occur are stored non¬ 
+volatile in the crash safety module and indicated to the driver by 
+way of the airbag indicator lamp in the instrument cluster. 
+
+Communication with other control modules in the vehicle's system 
+network takes place via the K-CAN and the F-CAN. 
+
+
+
+In the event of a crash, a K-bus telegram is transmitted (provided a 
+telephone is installed) via an additional separate data line to the 
+Telematics Control Unit (TCU) and the emergency call triggered. 
+
+It is possible to encode the crash safety module via the K-CAN. 
+Diagnosis of the crash safety module takes place via the diagnosis 
+CAN to the gateway that is located in the) unction-box ECU on 
+the E70. 
+
+Front Airbag, Driver 
+
+In conjunction with the seat belt, the driver's front airbag is 
+designed to reduce the risk of serious injury to the driver's head or 
+thorax during a head-on collision. The front airbag forthe driver's 
+side is located in the hub cushion of the steering wheel. The driver 
+front airbag is equipped with a 2-stage inflator assembly. 
+
+The two stages of the airbag are triggered with a time delay 
+depending on the crash severity and use of seat belt. The two 
+stages of the inflator assembly facilitate a restraint function adapted 
+to the crash severity and consequently reduce additional stress on 
+the occupants during the development phase. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of firing pellet, first stage 
+
+2 
+
+Connection offiring pellet, second stage 
+
+
+Front Airbag, Passenger 
+
+Together with the seat belt, the task of the front airbag on the pas¬ 
+senger's side is to reduce the risk of serious injury to the front pas¬ 
+senger during a frontal crash. The 2-stage front airbag on the pas¬ 
+senger's side is located underthe instrument panel. 
+
+Deployment of the front passenger airbag breaks the instrument 
+panel at defined points and opens a flap, which is connected to 
+the instrument panel by means of a fabric strap. The passenger 
+airbag opens in the direction of the windshield. The passenger 
+airbag emerges in an upward direction and is supported on the 
+windshield and on the instrument panel. 
+
+
+E70 Advanced Crash Safety Module Workbook 
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+«)x—1| -1- 
+
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+(s © tstul 
+
+
+
+5 © ts Q 
+
+
+
+
+ACSM Circuit Diagram 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5 
+
+
+ACSM Circuit Diagram Legend 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6 
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+Curtain Airbag 
+
+The well-proven curtain airbag is used as the head protection sys¬ 
+tem in connection with the ACSM on the E70. 
+
+The curtain airbag extends from the A-pillar up to the C-pillarand 
+covers the entire side section at head level. The curtain airbag 
+inflates between the occupants and side windows or side trim pan¬ 
+els. 
+
+
+
+In connection with the side airbag in the front seat, it provides opti¬ 
+mum protection for the occupants in the event of side impact. 
+
+The curtain airbag reduces the movement of the head and other 
+extremities towards the outside during a side crash. This results in 
+lower neck shearforces as well as bending moments in the cervical 
+vertebrae. In addition, it also prevents direct head contact with the 
+side structure of the vehicle. 
+
+The inflator assembly (gas generator) mounted between the B-pil- 
+larand C-pillar is triggered in the event of a side crash. The gas 
+flows out of the pressure vessel through the two gas lances into 
+the curtain airbag. 
+
+
+Simultaneously filling the curtain airbag at the front and rear 
+ensures the air cushion is filled uniformly. 
+
+The head airbag is brought into position because of the way the 
+curtain airbag is mounted on the A-pillar and the C-pillar. The cur¬ 
+tain airbag extends between the side window and side trim panel 
+and the occupants. 
+
+The closed system retains the structural strength and stability of 
+the curtain airbag for several seconds 
+
+Side Airbag 
+
+For many years now, the side airbag has been used by BMW as an 
+important integral part in occupants safety and protection systems. 
+The task of the side air bags is to minimize the risk of injury to the 
+driver/front passenger in the trunk/torso area in the event of a side 
+impact. 
+
+The side air bags are mounted in the 
+backrest of the front seats with the aim of 
+achieving optimum interiorfunctionality 
+and appealing design in the E70 while 
+also satisfying the demanding safety 
+requirements. The task of the side air 
+bags is to minimize the risk of injury to 
+the driver/front passenger in the pelvic 
+and trunk/torso area in the event of a side 
+impact. 
+
+The side airbag is triggered in response to a sufficiently strong 
+impact from the side. The side airbag emerges through the tear 
+seam in the backrest of the seats and inflates between the door 
+and occupant. The air cushion between the door and occupant 
+provides controlled damping and therefore reduces load/strain on 
+the occupant. 
+
+
+
+
+
+
+Crash Safety Module 
+
+
+The advanced crash safety module essentially comprises the fol¬ 
+lowing components: 
+
+• Crash safety module 
+
+• Sensors and switches 
+
+• Actuators 
+
+The crash safety module consists of a die cast housing with inte¬ 
+grated plug cover. 
+
+The crash safety module contains various sensors: 
+
+• Rollover sensor 
+
+• Low-g sensors 
+
+• Longitudinal and transverse acceleration sensors 
+
+
+
+The advanced crash safety module has a comprehensive sensor 
+system.Transverse acceleration sensors in the B-pillarand door 
+pressure sensors are used forthe purpose of side crash detection. 
+The B-pillarsatellites also have longitudinal acceleration sensors 
+for front and rear-end crash detection. 
+
+Note: The crash safety module is located on the transmis¬ 
+sion tunnel behind the hand brake. Various sensors 
+(rollover, Low-g as well as longitudinal and transverse 
+acceleration sensors) are integrated in the crash 
+safety module and the crash safety module is inte¬ 
+grated in the K-CAN. 
+
+Rollover Monitoring System 
+
+The rollover protection system is an important instrument for 
+improving occupant protection in the event of the vehicle rolling 
+over. The seat belt pre-tensioners and the curtain air bags are trig¬ 
+gered in response to corresponding crash severity. The crucial fac¬ 
+tors which determine whetherthe car overturns are not just the 
+angle but also the angular velocity at which the car is set into the 
+roll. All these vehicle movements can also occur after a front-end, 
+side-on or rear-end crash. 
+
+
+Note: The front passenger air bags are not deployed when 
+the front seat is not occupied. However, this is not 
+indicated by the PassengerAirbag OFF light. 
+
+
+E70 Advanced Crash Safety Module Workbook 
+
+7 
+
+
+8 
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+Seat Position Detection 
+
+In accordance with US legislation a system for recognizing the size 
+of occupants must be provided forthe driver's seat. This size 
+recognition function is based on the adjustment range of the for¬ 
+ward/backward seat adjustment. On the E70, the exact position is 
+determined by the actuator motor in the driver's seat. 
+
+Seat-position Recognition 
+
+Seat-position recognition indicates where longitudinally the seat is 
+situated (distance to the steering wheel). In this way, the distance 
+between the driver and the steering wheel can be detected. 
+
+The ACSM requires this information so that it can fire the airbag 
+under defined conditions. 
+
+Seat-position recognition is calibrated at the factory.The positions 
+in the front and rear longitudinal seat direction are known to the 
+seat module. A maximum distance is available for longitudinal seat 
+adjustment. 
+
+This stretches from the mechanical front stop to the mechanical 
+rear stop. The motorfor adjustment in the longitudinal direction 
+generates Hall pulses overthis distance.The seat modules uses 
+these Hall pulses to identify the current (absolute) seat position. 
+
+An area for example in which a person would sit is defined in the 
+longitudinal direction. The absolute seat position can be lost due to 
+specific causes. The seat must therefore be calibrated. 
+
+
+Calibration of Driver Seat 
+
+The position of the driver seat in the longitudinal direction can 
+become implausible in the course of that seat's life. This can be 
+caused by repeatedly moving the seat forward and back. 
+
+These movements can give rise to an unauthorized position delta 
+which no longer provides fora determination of the seat position. 
+
+
+The seat must therefore be recalibrated. Calibration is easy and can 
+be performed by the customer him/herself following the steps in 
+the Owner's manual. 
+
+Note: These steps should turn off the Check Control 
+Message, if not, repeat the process and if this 
+doesn't work the system must be checked. 
+
+If the seat is unable to reach the mechanical front stop, the calibra¬ 
+tion must be performed in the service workshop. 
+
+This situation can come about if, a coin is stuck in the seat-adjust¬ 
+ment rail and blocks the adjustment travel. 
+
+When repairs are made to the seat, the seat must always be cali¬ 
+brated. This is necessary to guarantee seat-position recognition, or 
+more precisely to increase the safe and reliable function of seat- 
+position recognition. 
+
+Switching the seat module fortest purposes for example with one 
+from another vehicle is possible. The seat calibration will be lost 
+however. Because the possibility of the calibration being in order 
+when the old seat module is reinstalled cannot be ruled out, it is 
+necessary to calibrate the seat. 
+
+
+Note: For further details please referto BMW Service 
+Information. 
+
+
+
+Check Control Message 
+
+
+Meaning 
+
+
+Information in Central 
+Information Display 
+
+
+
+
+
+
+Seat must be recalibrated. 
+
+
+Seat calibration necessary. 
+
+
+Seat-position recognition mal¬ 
+functioning! 
+
+
+Seat-position recognition mal¬ 
+functioning! Have the system 
+checked by BMW Service at the 
+next available opportunity. 
+
+
+
+Rear seat not locked! 
+
+
+Rear seat/Backrest 
+
+Left or right rear seat not locked. 
+
+Increased risk of injury in the 
+event of an impact because seat 
+belt is ineffective! 
+
+
+The ACSM outputs a check control message via the K-CAN to the instrument cluster. 
+
+The seat module can also triggerthe check control message. This is possible if for instance the Hall sensor of the longitudinal drive motor 
+is defective.The seat must be calibrated after the repair. 
+
+Note: The ACSM receives a message from the seat module via the K-CAN once a second as to whether calibration of the 
+seat is necessary. 
+
+
+E70 Advanced Crash Safety Module Workbook 
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10 
+
+E70 Advanced Crash Safety Module Workbook 
+
+
+
+Workshop Exercise - Seat Detection 
+
+
+Using an E70 shop vehicle perform the "Driver Seat Calibration" 
+
+How do we know that the Driverseat is out of calibration? What procedure is to be followed if the Check Control Message 
+
+does not go out? 
+
+
+STEP 1 
+
+Move the driverseat forward until it comes to a complete stop. 
+
+
+STEP 2 
+
+Move the driverseat forward once again (note a small amount of 
+additional movement.) 
+
+
+STEP 3 
+
+Set the driverseat to the desired adjustment position. 
+
+
+
+

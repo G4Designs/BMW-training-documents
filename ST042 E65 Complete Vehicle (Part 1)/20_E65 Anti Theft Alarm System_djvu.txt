@@ -1,0 +1,914 @@
+Table of Contents 
+
+
+ANTI-THEFT ALARM SYSTEM (DWA) 
+
+Subject Page 
+
+Purpose of the System.3 
+
+System Overview.3 
+
+Components.4 
+
+Interior Protection Sensor with Integrated DWA Control Unit.5 
+
+Emergency Siren with Integrated Tilt Sensor..6 
+
+DWA LED.7 
+
+DWA K-Bus.7 
+
+Principle of Operation 
+
+Arming the DWA.8 
+
+Disarming the DWA.10 
+
+Unlocking the Luggage Compartment.10 
+
+Forced Disarming.10 
+
+Hotel Setting.10 
+
+Alarm Triggers.11 
+
+DWA Alarm.13 
+
+Diagnosis.15 
+
+Review Questions.15 
+
+
+Initial Print Date: 10/01 
+
+
+Revision Date: 11/01 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ANTI-THEFT ALARM SYSTEM (DWA) 
+
+Model: E65 - 745i 
+
+Production Date: 11/2001 - Start of Production 
+
+Objectives: 
+
+After completing this module you should be able to: 
+
+• Know what components that are used in the DWA system. 
+
+• Understand how the DWA communicates with the siren and the rest of the vehicle 
+electronic system. 
+
+• Explain the effect that the hotel switch has on the DWA. 
+
+
+2 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+Purpose of the System 
+
+
+The anti-theft alarm system (DWA) has the purpose of indicating attempts to break into the 
+vehicle, or to tamper with it. Acoustic and visual alarms are used to draw attention to the 
+vehicle and frighten off any would be car thief or vandals. 
+
+A distinction must be made between the DWA and the Electronic Immobilizer System 
+(EWS). The purpose of the anti-theft alarm system is to deter a thief from entering the vehi¬ 
+cle. The purpose of the EWS system is to prevent a thief from driving the vehicle off under 
+it’s own power. 
+
+
+System Overview 
+
+
+
+kt-9324 
+
+
+Index 
+
+Description 
+
+Index 
+
+Description 
+
+MHK 
+
+Hood switch 
+
+DWA 
+
+Anti-theft Alarm 
+
+CAS 
+
+Car Access System 
+
+DWA-K-BUS 
+
+Local data bus for DWA 
+
+LM 
+
+Light Module 
+
+SINE 
+
+Emergency siren with integrated 
+tilt sensor 
+
+K-CAN-S 
+
+K-CAN-System 
+
+
+
+
+3 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The DWA control unit with integrated interior sensor (1) is located in the rear lights roof con¬ 
+sole housing in the center of the headliner. This central location allows the entire vehicle 
+interior to be monitored very effectively. 
+
+The emergency siren with integrated tilt sensor (2) is installed in the left rear wheel arch 
+where good protection is provided against tampering with the emergency siren or DWA K 
+bus. 
+
+
+1 2 
+
+
+
+Components 
+
+The new DWA system of the E65 consists of the following components: 
+
+• Interior protection sensor with integrated DWA logic (DWA control unit). 
+
+• Emergency siren with integrated tilt sensor (SINE). 
+
+• DWA LED under the rear view mirror. 
+
+• Integration with vehicle electronics (e.g. hood or door contacts). 
+
+The interior sensor with integrated DWA logic and the emergency siren with integrated tilt 
+sensor are new developments combining the functions of the previous systems. 
+
+Both components now have diagnostic capability. The interior sensor is connected direct¬ 
+ly to the K-CAN system. The tilt sensor (with emergency siren) is connected to the interior 
+sensor via a sub-bus line (local data bus). 
+
+
+4 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interior Protection Sensor with Integrated DWA 
+Control Unit 
+
+The interior protection sensor is an ultrasound-based 
+(USIS) motion detector which detects all movements 
+inside the vehicle interior and evaluates them using the 
+DWA logic. 
+
+The DWA generates an alarm if the interior sensor 
+detects a movement which meets the triggering criteria, 
+or if alarm triggers are indicated via the K-CAN SYSTEM 
+or DWA K bus. 
+
+420310 
+
+The DWA control unit is supplied voltage by the Power Module (KL 30). 
+
+An electronic fuse for the DWA is inside the Power Module. 
+
+For reasons of safety, KL 30 is not disconnected for the DWA by the Power Module when 
+consumer cutoffs are performed. 
+
+If the DWA detects a drop in the battery voltage below a certain value, then line monitoring 
+of the DWA K bus is deactivated in order to avoid a false alarm. This limit value is set to 
+8.5 V . 
+
+Arming of the DWA is not possible at KL R or KL 15. 
+
+
+
+5 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emergency Siren with Integrated Tilt Sensor (SINE) 
+
+The emergency siren communicates with the DWA over a bi-directional line (DWA K bus). 
+The emergency siren is flashable and has diagnostic capability. 
+
+If the alarm is triggered, the emergency siren issues an acoustic signal. A short acoustic 
+signal is also triggered when locking/unlocking. 
+
+Detected alarm triggers are communicated to 
+the DWA control unit, which then activates the 
+alarm. 
+
+The emergency siren has an independent 
+voltage supply and additionally monitors the 
+voltage supplied of the vehicle battery. It also 
+monitors tampering with any of its own con¬ 
+nector leads. 
+
+The independent voltage supply allows the 
+emergency siren to generate an alarm when 
+the vehicle voltage supply is disconnected. 
+
+The independent voltage supply is provided by rechargeable lithium cells. 
+
+The emergency siren can detect: 
+
+• A voltage drop in the vehicle battery due to a break in the wiring 
+
+• A voltage higher than 16 V 
+
+• A voltage drop from a value of 7.5 V to 6.5 V in less than 40 minutes 
+
+
+
+6 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+When armed, the emergency siren monitors the vehicle voltage over the range 6.5 V < +U 
+b < 16 V. If the actual voltage value drops below or exceeds these values, the independent 
+alarm is generated immediately. 
+
+The emergency siren monitors the connecting lines +U b , GND (ground) and DWA K bus. 
+If these line are cut, the independent alarm is sounded immediately. 
+
+The tilt sensor monitors the horizontal position of the vehicle and also has the task of 
+detecting tire and wheel theft as well as attempts to tow away the whole vehicle. 
+
+The present parked position of the vehicle is stored together with the components "longi¬ 
+tudinal angle" and "transverse angle". If a defined change of angle is exceeded in the lon¬ 
+gitudinal direction and/or the transverse direction, an alarm telegram is sent to the DWA 
+interior sensor. 
+
+After the initial alarm is generated, the alarm sensitivity is raised, the result is that a second 
+alarm is triggered with less movement. 
+
+
+DWA LED 
+
+The DWA LED is activated directly by the DWA control 
+unit. 
+
+
+
+AH Vi 
+
+
+CO*'] 
+
+
+
+
+PPC 
+
+
+BZM 
+
+
+DWA K bus 
+
+The DWA K-bus is a local Sub-bus. 
+Communication uses K bus specifications. 
+
+
+HPC 
+
+
+
+
+citf 
+
+
+KLS 
+
+
+The DWA communicates with the emergency 
+siren or the tilt sensor over the DWA bus. 
+
+
+K-BuS. 
+
+s 
+
+
+3lNt 
+
+
+
+□WA 
+
+
+5HC 
+
+
+£H 
+
+
+IHkA 
+
+
+
+
+kt-7325 
+
+
+K-CiJN S 
+
+
+7 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+Monitoring 
+
+The DWA monitors the following signals: 
+
+• Door and lid signals (trunk lid and hood contact) 
+
+• Vehicle interior (USIS) 
+
+• Vehicle inclination tilt 
+
+• DWA bus line leading to emergency siren (SINE) 
+
+• Voltage supply for vehicle electrical system (SINE) 
+
+• Voltage level at the emergency siren (SINE) 
+
+• Battery distribution switch 
+
+The DWA continues to evaluate the following vehicle operating states so that it can adapt 
+its sensitivity to increase safety against false alarms. 
+
+• Status of independent ventilation (parked car ventilation) 
+
+• Position of windows 
+
+• Position of sunroof 
+
+Open windows, for example, lower the sensitivity of the operating threshold. 
+
+Arming the DWA 
+
+The DWA is armed from the driver's door or by the Remote Control when the vehicle is dou¬ 
+ble-locked. The DWA is armed as soon as the locked status sent by the CAS over the K- 
+CAN-S is confirmed. The following phases are involved: 
+
+Immediately after arming: 
+
+• The emergency siren is armed and monitors its voltage supply. 
+
+• The DWA commences line monitoring on the local DWA K bus. 
+
+
+8 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+3 Seconds after arming: 
+
+• Each of the door and lid contacts to be monitored is included in the alarm table after 
+having been in the rest position for 3 seconds. 
+
+• Faulty contacts are evaluated as closed, but are not included in the alarm table. 
+
+3 seconds after double-locking the vehicle or after locking the last door or lid: 
+
+• The referencing phase of the tilt sensor and interior sensor starts. 
+
+• The sensitivity level is set depending on the window and sunroof position. 
+
+• If the trunk lid is opened during the referencing phase, the referencing phase is 
+interrupted and re-started after the trunk lid is locked. 
+
+20 seconds after locking the last door or lid: 
+
+• The interior sensor is included in the alarm table when its referencing period is 
+completed. 
+
+30 seconds after locking the last door or lid: 
+
+• The tilt sensor is included in the alarm table when its referencing period is completed. 
+
+• If no acknowledgement telegram is received from the tilt sensor within 60 s of arming, 
+this signal is deleted. 
+
+• If at least one input signal is not in idle state or if a sensor is defective, this is signalled 
+by the flashing LED. 
+
+
+Deactivation of the Tilt Sensor and Interior Sensor 
+
+The interior sensor and the tilt sensor can be deactivated to prevent the alarm from being 
+triggered by the tilt sensor during transportation by ship or train when the anti-theft alarm 
+system is armed. 
+
+It also helps to prevent animals left in the vehicle from triggering the alarm via the interior 
+sensor. This can be done by again double-locking the vehicle within 10 seconds of arming 
+the vehicle. 
+
+The LED comes on for 1 s to acknowledge the deactivation. It is possible to deactivate the 
+tilt sensor and the interior sensor using VKM. 
+
+
+9 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+Disarming the DWA 
+
+
+The DWA is disarmed when the central locking system (CAS master) telegrams: "locked" 
+and "selectively unlocked." 
+
+The emergency siren with tilt sensor is disarmed. If an alarm situation occurs during the 
+period in which the DWA was armed, this is acknowledged via a flashing DWA LED. 
+
+Unlocking the Luggage Compartment 
+
+If the luggage compartment in an armed vehicle is opened using the Remote Control, the 
+tilt sensor and the interior sensor are deleted from the alarm table (the tilt sensor is deacti¬ 
+vated via the DWA K bus by telegram). 
+
+If the luggage compartment is unlocked and opened during the referencing phase of the 
+interior sensor and the tilt sensor, the referencing phase is aborted, since loading the vehi¬ 
+cle can produce new vehicle operating states. The referencing phase for the interior sen¬ 
+sor and the tilt sensor is restarted 3 seconds after locking the trunk lid. 
+
+Unlocking the luggage compartment using the emergency lock cylinder does not disarm 
+DWA. 
+
+Forced Disarming 
+
+The DWA is automatically disarmed if a person located in the vehicle double-locks the vehi¬ 
+cle and then inserts the key into the ignition. The CAS evaluates this action and sends a 
+"locked" telegram. The DWA is then disarmed. 
+
+Hotel Setting 
+
+The vehicle can be armed in "hotel setting active" status. This is done by moving the hotel 
+slide switch to the locked position and then locking the center console storage area with 
+the mechanical key. 
+
+If the vehicle is unlocked with "hotel setting active" status, the DWA is not disarmed com¬ 
+pletely. The trunk lid, hood contact and line monitoring triggers for the emergency siren are 
+still monitored. 
+
+Since the DWA is not disarmed completely, no acoustic acknowledgement is given. 
+
+To disarm the hotel setting, the hotel switch must be moved to the un-locked position and 
+the vehicle must be locked and then unlocked so that the DWA will receive the change in 
+status message from the CAS. Otherwise the alarm will sound when the trunk or hood is 
+opened. 
+
+
+10 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+DWA LED 
+
+
+The DWA LED indicates the state of the DWA to the vehicle user. 
+
+
+DWA state 
+
+DWA LED 
+
+Disarmed 
+
+OFF 
+
+Armed 
+
+ON 
+
+Armed, input is not in rest position 
+
+Flashes rapidly for max. 10 s and then remains on. 
+
+Interior sensor/tilt sensor OFF 
+
+Lights up for 1 s and then remains on. 
+
+Alarm triggered 
+
+Flashes rapidly for 5 min and then remains on. 
+
+Disarm 
+
+Goes off. 
+
+Disarm after alarm 
+
+Flashes for 5 min. 
+
+
+Alarm Triggers 
+Door Contact Signals 
+
+The status of the door contacts is evaluated by the CAS and transmitted by K-CAN-S 
+telegram. The status of the individual door contacts is included in the alarm table 3 s after 
+the status signal "door closed" is generated. 
+
+It is possible to trigger an alarm via a closed door even if another door contact is still open. 
+In the case of faulty or implausible lid signals, the CAS assumes that the contact is closed. 
+
+Trunk Lid 
+
+The status of the trunk lid contact is evaluated by the CAS (from the PM) and transmitted 
+to the DWA by telegram. 
+
+If the trunk lid is unlocked when the DWA is armed, then signals from the trunk lid contact, 
+interior sensor and tilt sensor are deleted from the alarm table. 
+
+Three seconds after the trunk lid is locked, the trunk contact is re-included in the alarm 
+table and the referencing period of the interior sensor and tilt sensor commences (provid¬ 
+ed no other door or lids are opened). 
+
+Hood 
+
+The status of the hood contact is evaluated by the CAS and transmitted by telegram. The 
+status of the hood contact is included in the alarm table 3 s after the status signal "hood 
+closed" is generated. 
+
+
+11 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+
+Interior Sensor 
+
+The interior sensor monitors movements in the passenger compartment of the vehicle. The 
+referencing phase of the interior sensor begins 3 seconds after locking the last doors and 
+lids. 
+
+The interior sensor is ready 20 seconds after the referencing period begins. The trigger is 
+included in the alarm table. 
+
+
+Tilt Sensor 
+
+The referencing phase of the tilt sensor is started by a telegram from the DWA 3 seconds 
+after locking the last doors and lids. The tilt sensor is ready 30 seconds after commence¬ 
+ment of the referencing period and indicates this to the DWA. The trigger is now included 
+in the alarm table. 
+
+If no acknowledgement telegram is sent from the siren/tilt sensor, this is registered in the 
+memory of the DWA and the tilt sensor is not included in the alarm table. 
+
+If the ready tilt sensor detects an alarm trigger situation, it informs the DWA using a DWA 
+K-bus telegram. The DWA decides whether to generate the alarm or not based on the pre¬ 
+defined criteria. 
+
+The tilt sensor alarm is stored in the DWA interior sensor. To prevent a false alarm from trig¬ 
+gering caused by a rocking motion of the vehicle, the angular data for the longitudinal arm 
+and control arm are detected every 90 ms. An alarm is only triggered if the vehicle remains 
+at a certain inclination for a sustained period of time (approx. 1.5 s). 
+
+Battery Switch 
+
+If the DWA receives the "Storage mode" telegram from the Power Module (change of sig¬ 
+nal edge from inactive to active) in the armed state, an alarm is triggered. 
+
+If the DWA receives the "Storage mode" telegram in the disarmed state, the DWA can be 
+armed as usual. The tilt sensor and interior sensor remain active. 
+
+
+12 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+Self-Monitoring of Siren 
+
+The self-monitoring function is implemented in the siren. The siren triggers an independent 
+alarm under the following conditions: 
+
+• An independent alarm may be triggered only once for each arming cycle. 
+
+• The self-monitoring of the emergency siren is started as soon as the DWA is armed. 
+The emergency siren monitors its own power supply and identifies under-voltage, over 
+voltage and open circuits. 
+
+• If the emergency siren recognizes an attempted manipulation, it indicates this to the 
+DWA by telegram regardless of whether the DWA K bus is affected. 
+
+Monitoring of the DWA K Bus 
+
+The DWA communicates with the emergency siren and the tilt sensor over the DWA K bus. 
+Monitoring is started as soon as the DWA is armed. 
+
+The DWA sends the telegram to the Monitoring device cyclically (every 2 s) and expects a 
+reply telegram from the emergency siren within a max. permissible reply time of 100 ms. 
+
+If the reply telegram is not received within this period of time, the telegram is sent to the 
+monitoring device another two times. If the reply telegram is still not received after this, the 
+DWA triggers an alarm using the Light Module and the vehicle horn. 
+
+DWA K-bus monitoring is deactivated when the DWA measures a vehicle voltage of 8.5 V. 
+
+
+DWA Alarm 
+
+If a triggering criterion is met when the DWA is armed, the alarm is generated both acousti¬ 
+cally and visually. 
+
+Acoustic Alarm 
+
+After a triggering criteria is met, the DWA sends the telegram to the DWA K bus. The emer¬ 
+gency siren acknowledges the alarm telegram. 
+
+If the DWA receives no confirmation from the SINE (siren), it repeats the alarm telegram up 
+to 8 times. If it still receives no reply, the emergency operation horn (vehicle horn) is acti¬ 
+vated. 
+
+When the DWA is disarmed, the acoustic alarm is cancelled immediately and without 
+acknowledgement. 
+
+
+13 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+Visual Alarm 
+
+The visual alarm is triggered at the same time as the acoustic alarm for a period of 5 min¬ 
+utes. The visual alarm is indicated by the hazard-warning lights flashing with the high 
+beams. 
+
+This alarm cannot be extended by another trigger during the alarm cycle. 
+
+When the DWA is disarmed, the visual alarm is cancelled immediately and without acknowl¬ 
+edgement. 
+
+Independent Alarm 
+
+If an attempt to manipulate one of the emergency siren wires is detected, an independent 
+alarm is triggered by the siren. 
+
+If the DWA K bus is also disconnected, the interior sensor identifies this by the failure of the 
+siren to reply and triggers a visual alarm. 
+
+Panic Alarm 
+
+The panic alarm allows the vehicle user to draw attention to a threat outside the vehicle or 
+to an accident by generating an alarm. 
+
+The panic alarm can be activated by pressing the special panic function button on the 
+Remote Control regardless of the state the DWA (armed/disarmed). 
+
+The alarm is not terminated by a time-out but 
+can be stopped by pressing any button on the 
+remote control. The alarm is not stored in the 
+counter. 
+
+The DWA sends the alarm telegram every 33.5 
+s. When the panic alarm begins, the siren line 
+monitoring function is started. 
+
+Monitoring takes place during the entire dura¬ 
+tion of the panic alarm. If a break in the wiring 
+or a defect signal from the emergency siren is 
+detected, the horn emergency operation func¬ 
+tion is activated. 
+
+The state of the DWA (armed/disarmed) is unaffected by the activation or the termination of 
+the panic alarm. If a panic alarm is requested while a normal alarm is generated, the DWA 
+immediately changes over to panic alarm mode. If an alarm trigger is detected while a 
+panic alarm is generated, the panic alarm continues. 
+
+
+
+14 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+Vehicle Horn Emergency Operation Function 
+
+If the siren indicates a defect while an alarm is generated or if the DWA is unable to check 
+the wiring to the siren, then the vehicle horn is activated. 
+
+A telegram is sent to the Steering Column Switch Center (SZL) every 500 ms. The time 
+sequence of the alarm corresponds to the pulsing of the horn alarm. 
+
+On account of the time conditions which apply during line monitoring, a time delay of up to 
+2.3 s can occur. 
+
+Alarm Abort 
+
+An alarm activated for test purposes or by accident can be terminated by disarming the 
+DWA or by generating the telegram "status_key_inserted". The alarm is aborted immedi¬ 
+ately. The abort is not acknowledged acoustically or visually. 
+
+
+Diagnosis 
+
+The alarm memory of the USIS stores all alarms except the independent alarm. The alarm 
+memory contains information on initial triggers, as well as subsequent triggers, date, time 
+and environment related conditions (ambient temperature, window and sliding/tilt sunroof 
+position, heating system etc.). 
+
+The alarm termination mode (alarm abort by disarm or expiration) is also registered. The 
+lastIO alarms are stored in a register. The alarm memory is designed to provide sufficient 
+information on alarm trigger mode, time and vehicle condition so that the sources of false 
+alarms can be detected and corrected. 
+
+The alarm memory in the emergency siren stores only the data of the independent alarms. 
+The last 5 alarms are stored. 
+
+
+15 
+
+Anti-Theft Alarm System (DWA) 
+
+
+
+Review Questions 
+
+
+1. Which component contains the master functions (logic) for the DWA system? 
+
+
+2. How does the DWA receive the request for arming and how does it receive the status 
+of the alarm triggers? How is the emergency siren informed that the system is armed? 
+
+
+3. What is the effect that placing the hotel switch to “lock” has on the DWA? 
+
+
+4. What does the DWA do, if communication is no longer possible with the emergency 
+siren? 
+
+
+16 
+
+Anti-Theft Alarm System (DWA) 
+
+
+

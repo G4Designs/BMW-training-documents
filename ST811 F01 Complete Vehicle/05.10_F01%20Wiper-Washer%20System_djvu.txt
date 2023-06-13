@@ -1,0 +1,1628 @@
+Table of Contents 
+
+F01 Wiper/Washer System 
+
+Subject Page 
+
+Introduction .5 
+
+Windscreen Wipers .5 
+
+Rain/lights/solar/condensation Sensor.6 
+
+System Overview.7 
+
+System Circuit Diagram for the Wiper/washer System .8 
+
+Functions .11 
+
+Wiping .11 
+
+Wiper Switch .11 
+
+Directions of movement .11 
+
+Windscreen Wipe Function .12 
+
+Intermittent wipe .12 
+
+Automatic wipe .12 
+
+Continuous wipe, stage 1 .12 
+
+Continuous wipe, stage 2 .13 
+
+Flick wipe .14 
+
+Windscreen Wiper Anti-blocking Function .14 
+
+Wash Functions .14 
+
+Wash windscreen .14 
+
+Washer fluid level sensor .14 
+
+Terminal 50 .15 
+
+FHeadlight Washer System .15 
+
+BMW Night Vision .15 
+
+System Components.16 
+
+Involved Components .16 
+
+Control Units .16 
+
+Steering column switch cluster .16 
+
+Junction box electronics .16 
+
+Dynamic stability control .16 
+
+Rain/lights/solar/condensation sensor .17 
+
+Wiper Switch on the Steering Column Stalk.18 
+
+Wiper Motor .21 
+
+Washer Fluid Pump .22 
+
+Pump for Headlight Washer.22 
+
+Heated Washer Jets .22 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Service Information.23 
+
+Wiper/washer System Emergency Operating Functions .23 
+
+Emergency Operation in the Event of the Ssteering 
+
+Column Switch Cluster Failing .23 
+
+Emergency Operation if the Rain/lights/solar/condensation 
+
+Sensor Fails .23 
+
+Replacement of the Rain/lights/solar/condensation Sensor .23 
+
+Replacement of the Wiper Motor .23 
+
+Replacing the Wiper Blades .24 
+
+Activating the service position .24 
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Wiper/Washer System 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+BBIICTIMIS 
+
+After completion of this module you will be able to: 
+
+• Understand the operation and functions of the wiper/washer system 
+
+• Locate and identify wiper/washer system components 
+
+
+4 
+
+F01 Wiper/Washer System 
+
+
+Introduction 
+
+
+Windscreen Wipers 
+
+The F01/F02 has a wiper/washer system for the windscreen as standard. 
+Windscreen wiping has the following functions: 
+
+• Continuous wipe in stage 1 
+
+• Continuous wipe in stage 2 
+
+• Flick wipe. 
+
+The following systems are also available: 
+
+• Headlight washer system 
+
+• Water jet heater 
+
+• Automatic mode using the rain/light/solar/condensation sensor. 
+
+The wiper motor for the wiper/washer system is connected via a LIN bus. 
+
+
+
+5 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+Rain/lights/solar/condensation Sensor 
+
+The rain/lights/solar/condensation sensor is the same as the rain/driving lights/solar sen¬ 
+sor, but has been enhanced with the condensation sensor function. The functionality of 
+the rain sensor, the driving lights sensor and the solar sensor have been retained in full. 
+This means, for example, that the driver is still assisted by the rain sensor automatically 
+initiating the procedure for switching on the windscreen wipers. 
+
+The automatic wiping does not relieve the customer from the responsibility of wiping the 
+windscreen. For this reason, the customer can override the automatic wiping function at 
+any time by moving the wiper switch on the steering column stalk up or down or pulling it 
+towards him. 
+
+The driving lights sensor supplies the on and off signal for the automatic driving lights 
+control function. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rain/light/solar sensor (not F01) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rain/light/solar sensor 
+
+2 
+
+Sensor for HUD 
+
+3 
+
+Condensation sensor 
+
+
+Under unfavorable light conditions such twilight or when driving through a tunnel, the ON 
+signal ensures the driving lights are switched on automatically. 
+
+
+The solar sensor makes sure the automatic climate control system provides optimum air 
+conditioning distribution in the vehicle. 
+
+
+The condensation sensor allows the integrated automatic heating/air-conditioning system 
+to detect when condensation is forming on the windscreen in good time, even before the 
+driver is aware of it. Countermeasures can be taken automatically at an early stage, with¬ 
+out the need for driver intervention. 
+
+
+6 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front wiper motor with wiper 
+
+7 
+
+Wiper switch on the steering column stalk 
+
+2 
+
+Outside temperature sensor 
+
+8 
+
+Rain/lights/solar/condensationsensor 
+
+3 
+
+Fleated washer jet 3x * 
+
+9 
+
+Lights operating unit 
+
+4 
+
+FHeadlight washer system motor 
+
+10 
+
+Dynamic stability control 
+
+5 
+
+Washer fluid pump motor 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+6 
+
+Washer fluid level sensor 
+
+JB 
+
+Junction box electronics 
+
+
+* Heated washer jets on the driver's side, in the center and on the front-passenger side 
+
+When the wiper switch on the steering column stalk (7) is operated, the wiper motor (1) is 
+switched on or off. The junction box electronics execute the functions of the wiper/ wash¬ 
+er system. The motor for the washer fluid pump (5) or for the headlight cleaning system 
+(4) is switched on or off by the junction box electronics. 
+
+On vehicles with automatic driving lights control, the junction box electronics receive the 
+information about switching the wiper/ washer system on/off from the rain/lights/solar/ 
+condensation sensor (8). 
+
+The Dynamic Stability Control (10) provides information about the vehicle speed. 
+
+
+7 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram for the Wiper/washer System 
+
+
+
+8 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+ZGM central gateway module 
+
+12 
+
+Wiper switch on the steering column stalk 
+
+2 
+
+Wiper motor 
+
+13 
+
+Steering column switch cluster (SZL) 
+
+3 
+
+Heated washer jet on the driver's side 
+
+14 
+
+Instrument cluster 
+
+D 
+
+Heated washer jet in the center of the vehicle 
+
+15 
+
+Rain/lights/solar/condensation sensor 
+
+5 
+
+Heated washer jet on the front-passenger side 
+
+16 
+
+Roof functions center (FZD) 
+
+6 
+
+Outside temperature sensor 
+
+Kl. 30 
+
+Terminal 30 
+
+7 
+
+Washer fluid level sensor 
+
+Kl. 30B 
+
+Terminal 30 basic operation 
+
+8 
+
+Washer fluid pump motor 
+
+K-CAN2 
+
+Body CAN2 
+
+9 
+
+Motor, headlight washer 
+
+PT-CAN 
+
+Powertrain CAN 
+
+10 
+
+Front distribution box 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+11 
+
+Junction box electronics (JB) 
+
+
+
+
+The signal produced when the wiper switch on the steering column stalk (12) is operated 
+is sent from the SZL steering column switch cluster (13) via the FlexRay to the central 
+gateway module (1). The central gateway module transmits the signal on the K-CAN2. 
+The junction box electronics (11) switch the wiper motor (2) on, for example and monitor 
+its function. 
+
+The washer fluid pump (8) is switched on or off by the junction box electronics. 
+
+On vehicles with automatic driving lights control, the rain/lights/solar/condensation sensor 
+(15) sends the reguest to switch on the wiper motor, for instance, via the LIN bus. The 
+junction box electronics receives the reguest and implements it. 
+
+The roof function center (16) supplies the voltage for the rain/lights/solar/condensation 
+sensor. 
+
+
+9 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-CAN2 signals to the junction box electronics 
+
+
+
+In/Out 
+
+Information 
+
+Source/Recipient 
+
+Function 
+
+In 
+
+Vehicle speed 
+
+Wheel speed sensor > Dynamic 
+Stability Control 
+
+Wiper speed setting depending 
+on vehicle speed 
+
+Out 
+
+Wiper status 
+
+Wiper motor > Junction box 
+electronics 
+
+Information for driver assistance 
+systems that involve a video 
+camera at the base of the rear 
+view mirror 
+
+
+10 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Wiping 
+
+The wiper/washer system is switched on and off with the wiper switch. The wiper switch 
+is an integral part of the steering column switch cluster SZL. 
+
+Wiper Switch 
+
+The wiper switch on the steering column stalk does not lock in position. It always returns 
+to its start position after every operation. The button for the rain/lights/solar/condensation 
+sensor also returns to its starting position after every operation. The wiper-stage switch 
+does lock in position. 
+
+The following functions are switched on with the wiper switch on the steering column 
+stalk: 
+
+• Automatic wipe with rain/lights/solar/ condensation sensor 
+
+• Continuous wipe, stage 1 
+
+• Continuous wipe, stage 2 
+
+• Flick wipe 
+
+• Wash windscreen 
+
+The signals from the wiper switch on the steering column stalk are sent from the steer¬ 
+ing column switch cluster via the FlexRay to the central gateway module. From the cen¬ 
+tral gateway module, the signal is transmitted to the junction box electronics via the K- 
+CAN2. The junction box electronics evaluates the signals and actuates the wiper motor 
+via the LIN bus. The junction box electronics also monitor the wipe function via the LIN 
+bus. To do so, the junction box electronics cyclically request the status of the wiper 
+motor. 
+
+
+Directions of movement 
+
+
+Index 
+
+Explanation 
+
+0 
+
+Steering column stalk/start position 
+of wiper-stage switch 
+
+1 
+
+Wiper stage 1 
+
+2 
+
+Wiper stage 2 
+
+3 
+
+Wiping while steering column stalk operated 
+
+4 
+
+Activates/deactivates the rain/lights/ 
+solar/condensation sensor 
+
+5 
+
+Washer fluid and windscreen wiper at same time 
+
+6 
+
+Increases the sensitivity of the rain/ 
+lights/solar/condensation sensor 
+
+7 
+
+Reduces the sensitivity of the rain/ 
+lights/solar/condensation sensor 
+
+
+
+11 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windscreen Wipe Function 
+
+The following functions are available for wiping the windscreen: 
+
+• Intermittent wipe in stages 
+
+• Automatic wipe 
+
+• Continuous wipe, stage 1 
+
+• Continuous wipe, stage 2 
+
+• Flick wipe. 
+
+Intermittent wipe 
+
+The interval can be set with the multi-stage switch. Four intermittent wipe stages are 
+available. The time intervals depend on the set intermittent wipe stage and the vehicle 
+speed. The junction box electronics calculate the time intervals and actuate the wiper 
+motor accordingly. 
+
+Automatic wipe 
+
+The automatic wipe function can be activated by pressing the axial button from status 
+“terminal R ON”. The LED on the wiper switch indicates that the function is active. A 
+one-off wipe function (acknowledgement wipe) is additionally started. The acknowledge¬ 
+ment wipe is also initiated when the wipe interval is increased by means of the wiper- 
+stage switch but not when the wipe interval is decreased. 
+
+The rain/lights/solar/condensation sensor initiates wipe reguests according to the heavi¬ 
+ness of the rain. The junction box electronics analyze the signal from the rain/ 
+lights/solar/condensation sensor every 20 ms. For this, the junction box electronics 
+reguest the relevant signal values and execute the windscreen wipe according to the wipe 
+reguest. 
+
+With the automatic wipe function, the wipe speed depends on the information from the 
+rain/lights/solar/condensation sensor, i.e. continuous wipe stage 1 or stage 2 may be initi¬ 
+ated depending on the rain intensity. 
+
+Continuous wipe, stage 1 
+
+The wiper motor runs at normal speed when stage 1 is switched on with the wiper switch 
+on the steering column stalk. The wiper motor switches from continuous wipe in stage 1 
+to intermittent wipe if the vehicle speed is reduced down to standstill. 
+
+The continuous wipe function in stage 1 resumes as soon as the vehicle speed is higher 
+than 2.5 mph (4 km/h). 
+
+The reset (switch-back) of the wiper stage when the vehicle is stationary can be decoded. 
+In this case, the wiper blades operate in continuous wipe stage 1 mode also when the 
+vehicle is stationary. 
+
+
+12 
+
+F01 Wiper/Washer System 
+
+
+
+Continuous wipe, stage 1 
+
+
+
+0 4 v 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Intermittent wipe 
+
+2 
+
+Continuous wipe, stage 1 
+
+V 
+
+Vehicle speed in km/h 
+
+
+Continuous wipe, stage 2 
+
+The wiper blades are moved at double the speed in continuous wipe stage 2. When the 
+vehicle is stationary, continuous wipe stage 2 automatically switched back to continuous 
+wipe stage 1. The wiper blades then move at normal speed. Stage 2 is resumed again at 
+a speed in excess of 2.5 mph (4 km/h). 
+
+
+The wipe function switches back to stage 1 at a speed in excess of 130 mph (210 km/h). 
+Stage 2 is switched on again at a speed below 127 mph (205 km/h). 
+
+Decreasing wiper stage (continuous wipe stage 2) 
+
+
+
+13 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reset of the wiper stages when the vehicle is stationary can be decoded. In this case, 
+continuous wipe stage 2 is retained also when the vehicle is stationary. 
+
+Flick wipe 
+
+Pressing the wiper switch on the steering column stalk triggers the flick wipe function for 
+as long as the switch is pressed. When the wiper switch on the steering column stalk is 
+released, the wiper movement is completed until the wiper blades reach the rest position. 
+
+Windscreen Wiper Anti-blocking Function 
+
+The windscreen wiper anti-blocking function is integrated into the electronics of the 
+wiper motor. If the wiper motor is obstructed, the electronics cease the actuation of the 
+motor. The electronics communicate this via the LIN bus the next time the junction box 
+electronics guery the status. 
+
+A further attempt can be made to switch on the wiper. If the wiper blocks again, it will no 
+longer be operative for approximately 3 minutes. 
+
+The wiper interlock is cancelled when the status is switched from "terminal R ON" to 
+"terminal R OFF". The wiper must then be switched on again. 
+
+Wash Functions 
+Wash windscreen 
+
+When the wiper switch on the steering column stalk is pulled, the washer fluid pump is 
+first switched on, followed by the windscreen wiper. The washer fluid pump remains 
+switched on for as long as the wiper switch on the steering column stalk is pulled. 
+
+The signal is routed from the steering column switch cluster via the FlexRay to the central 
+gateway module. It is then transmitted from the central gateway module via the K-CAN2 
+to the junction box electronics. The junction box electronics actuate the washer fluid 
+pump directly. 
+
+After the pump is switched off, the wipers continue to operate for several wipe cycles in 
+order to wipe the windscreen dry. 
+
+The wipe function set before the windscreen wash cycle is continued after the wind¬ 
+screen has been washed. 
+
+The junction box electronics will no longer actuate the washer fluid pump if the fluid level 
+in the washer fluid reservoir is too low. The junction box electronics receive the informa¬ 
+tion necessary for this purpose from the washer fluid level sensor. 
+
+Washer fluid level sensor 
+
+The junction box electronics monitor the washer fluid level sensor from terminal status 
+“terminal R ON”. The washer fluid sensor is integrated in the washer fluid reservoir and is 
+switched to ground. 
+
+The junction box electronics receive a low signal when the washer fluid reservoir is full. 
+The switch opens when the fluid level in the washer fluid reservoir drops below a certain 
+
+
+14 
+
+F01 Wiper/Washer System 
+
+
+
+level. The low signal changes to a high signal. The junction box electronics consequently 
+generate a message indicating the low level in the washer fluid reservoir. 
+
+Terminal 50 
+
+The washer function is interrupted or not at all started while the vehicle is started. 
+
+If the windscreen washer function was interrupted, the started function is continued after 
+the vehicle start procedure has been completed. 
+
+Headlight Washer System 
+
+The headlight washer system is switched on during the first wash cycle after terminal sta¬ 
+tus “terminal R ON” and “lights ON”. Activation is then suppressed for 7 min. The head¬ 
+light washer system is activated if the windscreen washer system is operated 5 times 
+within the 7 minutes. 
+
+In response to the request from the junction box electronics, the headlight washer system 
+is switched on by means of a relay in the distribution box. 
+
+The headlight washer system is no longer activated if the washer fluid level in the washer 
+fluid reservoir is too low. The junction box electronics receive the signal from the washer 
+fluid sensor. 
+
+The headlight washer system is not actuated either if obstruction of the wipers is detect¬ 
+ed. 
+
+BMW Night Vision 
+
+If the vehicle is equipped with BMW Night Vision with person recognition, the Night 
+Vision Camera lens is cleaned at the same time as the headlights. The pump in the head¬ 
+light washer system supplies water to all the washer jets for the headlights and the Night 
+Vision Camera. 
+
+
+15 
+
+F01 Wiper/Washer System 
+
+
+
+System Components 
+
+Involved Components 
+
+The following components are involved in the wiper/washer system: 
+
+• Control units 
+
+- Steering column switch cluster 
+
+- Central gateway module 
+
+- Junction box electronics 
+
+- Instrument cluster 
+
+- Dynamic stability control 
+
+• Rain/lights/solar/condensation sensor 
+
+• Wiper switch on the steering column stalk 
+
+• Relay for headlight washer system 
+
+• Wiper motor 
+
+• Washer fluid pump 
+
+• Pump for headlight washer system 
+
+• Heated washer jets 
+
+Control Units 
+
+Steering column switch cluster 
+
+The steering column switch cluster evaluates the status of the wiper switch on the 
+steering column stalk. The respective status is issued by the steering column switch 
+cluster on the FlexRay. 
+
+Junction box electronics 
+
+The junction box electronics is the central control unit for all wipe and wash functions. 
+
+The junction box electronics communicate the current wipe requirement via the LIN bus. 
+This request is received by the electronics in the wiper motor and the relevant wiper 
+stage is initiated. 
+
+A separate relay is fitted in the front distribution box for the headlight washer system. 
+
+Dynamic stability control 
+
+The Dynamic Stability Control provides the road speed signal. 
+
+
+16 
+
+F01 Wiper/Washer System 
+
+
+
+
+Rain/lights/solar/condensation sensor 
+
+The rain/lights/solar/condensation sensor consists of four sensors. The rain sensor is 
+used for the wiper/washer system. 
+
+Condensation sensor 
+
+The condensation sensor consists of a sensor element with integrated processor on a 
+flexibly mounted circuit board. The condensation sensor records the relative air humidity 
+and the temperature on the inside of the windscreen. 
+
+The rain/lights/solar/condensation sensor is integrated in the base of the mirror and is 
+held in place by a spring on a retaining plate. The retaining plate is securely bonded to 
+the inside of the windscreen. 
+
+The visual connection between the rain/lights/solar/condensation sensor and the wind¬ 
+screen is formed by a silicone gel layer on the optical element. The condensation sensor 
+is mounted directly on a “flexible” circuit board. 
+
+Due to the specified installation location, the flexible circuit board with the condensation 
+sensor is pushed against the windscreen. This ensures a good thermal connection with 
+the windscreen. A permeable membrane made from Teflon protects the condensation 
+sensor from becoming dirty. 
+
+Fault code memory entries for the function of the rain/lights/solar/condensation sensor are 
+stored in the junction box electronics. 
+
+If the condensation sensor fails, the junction box electronics transmits this via the K- 
+CAN2. The central gateway module transmits the information on the K-CAN. The inte¬ 
+grated automatic heating/air-conditioning system thus receives the information and deac¬ 
+tivates the program to prevent condensation from forming on the windscreen. 
+
+Note: Replacing the rain/lights/solar/ condensation sensor: 
+
+It is permissible to replace a rain/lights/solar/ condensation sensor as 
+long as no bubbles occur in the silicone gel layer (adhesive layer) when 
+you do so. Please remember to initialize the sensor. Refer to the Repair 
+Instructions for more information. 
+
+
+17 
+
+F01 Wiper/Washer System 
+
+
+
+Wiper Switch on the Steering Column Stalk 
+
+The wiper switch on the steering column stalk with the following functions is located in 
+the steering column switch cluster: 
+
+• Intermittent wipe 
+
+• Wipe in stages 1 and 2 
+
+• Windscreen washer 
+
+• Headlight washer 
+
+• Switch for the rain/lights/solar/condensation sensor 
+
+• Indicator for activated rain/lights/solar/ condensation sensor. 
+
+The wiper switch has sliding contacts that are located on the circuit board for the steering 
+column switch cluster. The switch functions are realized by means of these sliding con¬ 
+tacts. 
+
+The interval switch is a four-stage switch. Each stage produces different input values in 
+the steering column switch cluster. The input values are evaluated for setting the sensitiv¬ 
+ity of the rain/lights/solar/condensation sensor or the intermittent wipe stage. 
+
+The button for the rain/lights/solar/ condensation sensor is designed as an ground¬ 
+switching button. It is reguired for switching on the rain/lights/solar/condensation sensor. 
+The LED is illuminated when the rain/lights/solar/ condensation sensor is activated. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wiper switch on the steering column stalk 
+
+2 
+
+Wiper-stage switch for sensitivity of the rain 
+sensor/intermittent wipe stage 
+
+3 
+
+Rain/lights/solar/condensation sensor LED 
+
+4 
+
+Rain/lights/solar/condensation sensor button 
+
+
+
+18 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+Function matrix for the wiper/washer system steering column stalk 
+
+
+Operation 
+
+Initial state 
+
+Function 
+
+Design 
+
+Push upwards briefly 
+
+OFF 
+
+Wipe 1 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 1 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 2 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+Push upwards 
+
+OFF 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 1 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 2 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+Push downwards briefly 
+
+OFF 
+
+Flick wipe 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 1 
+
+Intermittent wipe 
+
+Returns to initial position 
+
+
+Continuous wipe, stage 2 
+
+Wiper stage 1 
+
+Returns to initial position 
+
+Pull briefly towards the 
+driver 
+
+OFF 
+
+Windscreen wash 
+
+Returns to initial position 
+
+Turn the knurled wheel 
+up/down 
+
+Sensitivity of the rain/ 
+lights/solar/ condensation 
+sensor Intermittent wipe 
+stage 
+
+Sets the sensitivity of the 
+automatic wiping or inter¬ 
+mittent wiping 
+
+Engages in position 
+
+
+19 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+Function matrix of the steering column stalk for the wiper/washer system with automatic wip¬ 
+ing by the rain/lights/solar/condensation sensor 
+
+
+Operation 
+
+Initial state 
+
+Function 
+
+Design 
+
+Push upwards briefly 
+
+OFF 
+
+Wiper stage 1 
+
+Returns to initial position 
+
+
+Automatic mode 
+
+Wiper stage 1 
+
+Returns to initial position 
+
+
+Continuous wipe, 
+
+Wiper stage 2 
+
+Returns to initial stage 1 
+position 
+
+
+Continuous wipe, 
+
+Wiper stage 2 
+
+Returns to initial stage 2 
+position 
+
+Push upwards 
+
+OFF 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+
+Automatic mode 
+
+Wiper stage 2 
+
+Returns to initial position 
+
+
+Continuous wipe, 
+
+Wiper stage 2 
+
+Returns to initial stage 1 
+position 
+
+
+Continuous wipe, 
+
+Wiper stage 2 
+
+Returns to initial stage 2 
+position 
+
+Push downwards briefly 
+
+OFF 
+
+Flick wipe 
+
+Returns to initial position 
+
+
+Automatic mode 
+
+Flick wipe* 
+
+Returns to initial position 
+
+
+Continuous wipe, 
+
+Intermittent wipe 
+
+Returns to initial stage 1 
+position 
+
+
+Continuous wipe, 
+
+Wiper stage 1 
+
+Returns to initial stage 2 
+position 
+
+Pull briefly towards the 
+driver 
+
+OFF 
+
+Windscreen wash 
+
+Returns to initial position 
+
+Briefly push the auto¬ 
+matic wipe button in an 
+axial direction 
+
+Automatic wipe switched 
+off 
+
+Automatic wipe ON 
+
+Returns to initial position 
+
+
+Automatic wipe switched 
+on 
+
+Automatic wipe OFF 
+
+Returns to initial position 
+
+Turn the knurled wheel 
+up/down 
+
+Sensitivity of the 
+rain/lights/solar/ condensa¬ 
+tion sensor 
+
+Sets the sensitivity of the 
+automatic wiping or 
+
+Engages in position 
+
+
+20 
+
+F01 Wiper/Washer System 
+
+
+
+
+Wiper Motor 
+
+The front wiper motor is a little smaller than the wiper motor in the E65. 
+
+Advantages of the wiper motor: 
+
+• Lighter 
+
+• Less noise 
+
+• Reversing wiper motor 
+
+• Stable wiper speed 
+
+• Reduced tendency of the wiper blades to judder 
+
+• Alternating rest position of the wiper blades. 
+
+The wiper motor has two speed settings for wiping the windscreen. 
+
+The wiper motor receives information about the wiper stage via the LIN bus. 
+
+The LIN-bus messages are evaluated by electronics in the wiper motor. 
+
+A constant speed is generated by the electronics, enabling consistent wiping by 
+the windscreen wipers. 
+
+The wiper motor stores the wiper arms, and therefore also the wiper blades, outside the 
+field of vision, as in the E65. In addition, they are stored on alternate sides. This prevents 
+unnecessary wear on the wiper blades and they will remain pliant for longer. 
+
+Storage position 2 of the wiper 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Storage position 1 of the wiper blade 
+
+2 
+
+Storage position 2 of the wiper blade 
+
+
+21 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+Washer Fluid Pump 
+
+A washer fluid pump is located in the washer fluid reservoir for cleaning the windscreen. 
+The pump is actuated directly by the junction box electronics. 
+
+Pump for Headlight Washer 
+
+A high pressure pump is used for the headlight washer system. The pump is activated via 
+a relay in the front power distribution box. 
+
+
+Heated Washer Jets 
+
+Three heated water jets are used for the windscreen washer. The washer jets have a PTC 
+resistor that automatically limits the power consumption. 
+
+
+Characteristic of a PTC resistor 
+
+
+R 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Characteristic of a resistor 
+
+R 
+
+Resistance 
+
+t 
+
+Time 
+
+
+22 
+
+F01 Wiper/Washer System 
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Wiper/washer System Emergency Operating Functions 
+
+Emergency Operation in the Event of the Ssteering Column Switch Cluster 
+Failing 
+
+The wipers can no longer be operated in the event of the steering column switch cluster 
+failing or a break in the bus connection. 
+
+The junction box electronics switch to emergency operating mode and the windscreen 
+wipers are switched on in stage 1. 
+
+Emergency Operation if the Rain/lights/solar/condensation Sensor Fails 
+
+If there is a fault in the rain/lights/solar/condensation sensor or it fails completely, the 
+junction box electronics take over control of the wiper/washer system and switch to 
+emergency operating mode. Emergency operating mode is an intermittent wipe 
+function that is dependent on the vehicle speed. 
+
+Note: The same applies if the rain/driving lights/solar sensor fails. 
+
+Replacement of the Rain/lights/solar/condensation Sensor 
+
+The following steps are necessary after replacing the sensor: 
+
+• Code the rain/lights/solar/condensation sensor 
+
+• Clear fault code memory 
+
+• Initialize the rain/lights/solar/condensation sensor. 
+
+Please refer to the Repair Instructions. 
+
+Note: The same applies to the replacement of the 
+rain/driving lights/solar sensor. 
+
+Replacement of the Wiper Motor 
+
+The wiper motor is connected to the LIN bus and this must be taken into consideration 
+during the service. 
+
+Note: The Repair Instructions must be observed when the wiper motor is 
+
+replaced. If the LIN bus fails, the wiper will go into emergency operation. 
+
+
+23 
+
+F01 Wiper/Washer System 
+
+
+
+
+Replacing the Wiper Blades 
+
+The wiper arms can be moved to a service position in order to replace the wiper blades. 
+This makes the wiper blades easily accessible and allows them to be replaced. 
+
+Activating the service position 
+
+• Switch on the ignition with the START/STOP button 
+
+• Switch off the ignition with the START/STOP button 
+
+• Operate the wiper switch on the steering column stalk (push it upwards and hold it 
+there for more than three seconds). 
+
+The wiper arms now move into the service position (the upper reversal position of the 
+wiper blades) and the wiper blades can be replaced. 
+
+
+24 
+
+F01 Wiper/Washer System 
+
+
+

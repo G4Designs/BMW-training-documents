@@ -1,0 +1,3173 @@
+Table of Contents 
+
+E90 Dynamic Driving Systems 
+
+Subject Page 
+
+Dynamic Stability Control System.5 
+
+Fading Support.7 
+
+Braking Readiness.7 
+
+Brake Disk Drying.8 
+
+Soft Stop .8 
+
+Start Assist .9 
+
+Electronic Control Brake (ECB) Actuation Interface .9 
+
+Yaw Moment Compensation.9 
+
+System Components .10 
+
+Inlet & Distribution Valves.10 
+
+Wheel-Speed Sensors .10 
+
+DSC Sensor.10 
+
+DSC Module .11 
+
+Steering-Angle Sensor .11 
+
+DTC Button .11 
+
+Brake Fluid Level Switch.11 
+
+Brake Light Switch.11 
+
+Parking Brake Warning Switch.11 
+
+Sensor Information .13 
+
+General Overview .14 
+
+Anti-lock Braking System(ABS).15 
+
+Electronic Brake Force Distribution (EBV).15 
+
+Cornering Brake Control (CBC).15 
+
+Automatic Stability Control (ASC).15 
+
+Dynamic Traction Control (DTC) .16 
+
+Engine Drag Torque Control (MSR) .16 
+
+Dynamic Brake Control (DBC).16 
+
+RPA: Tire Defect Indicator.17 
+
+CBS: Condition Based Service .17 
+
+Longitudinal Dynamics Management.20 
+
+Functions Implemented by LDM .21 
+
+Operator Interface.22 
+
+Display Interface .22 
+
+Status Control.22 
+
+Vehicle Speed Controller .22 
+
+
+Initial Print Date: 03/05 
+
+
+Revision Date: 06/05 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Lateral-Acceleration Controller .22 
+
+Prioritizer .22 
+
+Interference Factor Estimator.22 
+
+Acceleration Controller .22 
+
+Drive/Brake Coordination .23 
+
+Monitoring .23 
+
+Diagnosis/Service Information.23 
+
+LDM Overview.24 
+
+Dynamic Cruise Control (DCC).28 
+
+Function.28 
+
+Advantages.29 
+
+Components Involved with DCC Function.30 
+
+Cruise Control System Steering-Column Stalk .32 
+
+LDM Control Module (LDM) .32 
+
+Instrument Cluster .32 
+
+DSC: Dynamic Stability Control.32 
+
+Digital Engine Electronics (DME/ECM) .32 
+
+Junction Box Electronics (JBE).33 
+
+Accelerator Pedal Module.33 
+
+Brake Light Switch.33 
+
+Clutch Module (manual transmission only) .33 
+
+Steering-Column Switch (SZL) Cluster.33 
+
+Footwell Module (FRM).33 
+
+Car Access System (CAS) .33 
+
+Car Communication Computer (CCC) & 
+
+Central Information Display (CID) .33 
+
+Electronic Transmission Control (EGS) orSMG.33 
+
+System Deactivation.34 
+
+Active Cruise Control (ACC).36 
+
+Difference between 2nd Gen. and 1st Gen ACC .37 
+
+Functions of ACC .37 
+
+Monitor Object Ahead.38 
+
+Cruise Control.41 
+
+System Activation.41 
+
+System Deactivation .42 
+
+Lens Heating.42 
+
+Low-Voltage Cutout and High-Voltage Protection .43 
+
+Self-Diagnosis and Compensation .44 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Active Front Steering (AFS).46 
+
+Benefits of AFS .47 
+
+Enhanced Agility.47 
+
+Enhanced Comfort.47 
+
+Enhanced Safety .47 
+
+Functions .48 
+
+Standard Functions of AFS .48 
+
+Variable Steering Ratio .48 
+
+Linked with Servotronic.48 
+
+Linked with DSC.48 
+
+New Functions with E90.48 
+
+Variable Steering Coding.48 
+
+Additional Yaw Rate Sensor.48 
+
+DTC Switch .48 
+
+Yaw Moment Compensation .49 
+
+Components of AFS System .50 
+
+Motor-Position Sensor.50 
+
+Total Steering-Angle Sensor and Steering Angle Sensor .50 
+
+DSC Sensor.51 
+
+Active Front Steering (AFS) Control Module .51 
+
+Junction Box Electronics (JBE).51 
+
+Dynamic Stability Control (DSC) .51 
+
+Digital Engine Electronics (DME/ECM) .51 
+
+Car Access System .52 
+
+Planetary Gearbox.52 
+
+Hydraulic Steering with Servotronic Valve.52 
+
+ECO Valve in the Power-Steering Pump.52 
+
+Warning Light and Check Control.52 
+
+System Activation.53 
+
+General System Information.53 
+
+Track Setting .53 
+
+Power Supply.53 
+
+Calibrating the Steering Angle Sensors.54 
+
+Radio-Reception Interference .54 
+
+Servotronic Valve .54 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dynamic Driving Systems 
+
+
+Model: E90 
+
+Production: From Start of Production 
+
+IBIICTI1BS 
+
+After completion of this module you will be able to: 
+
+• Establish an understanding of the changes in the DSC system 
+
+• Understand the importance of the LDM 
+
+• Explain the operation of DCC 
+
+• Explain the operation of ACC 
+
+• Identify the changes in AFS 
+
+
+4 
+
+E90 Dynamic Driving Systems 
+
+
+Dynamic Stability Control System 
+
+
+The E90 in the U.S. is equipped with a new Dynamic Stability Control System (DSC) 
+referred to as MK60E5, manufactured by Continental Teves, which builds upon the sys¬ 
+tems used in other BMW models. With this system several new functions are intro¬ 
+duced that result in significantly improved comfort during brake intervention (due to uti¬ 
+lization of a PWM signal on the input control valves) and more precise wheel braking. 
+
+New functions introduced with MK60E5: 
+
+• Fading Support 
+
+• Braking Readiness 
+
+• Brake Disk drying 
+
+• Soft Stop 
+
+• Start Assist 
+
+• Electronic Control Brake Actuation (ECBA) 
+
+• Yaw Moment Compensation with AFS 
+
+These new functions contribute to increased directional stability, optimized comfort, 
+enhanced system availability/response plus reduce the minimum braking distance. 
+
+In the MK60E5 the designation "E5" represents the 5 pressure sensors which are inte¬ 
+grated into the hydraulic control unit: 
+
+• A combined pressure sensor on the inlet side which monitors the plausibility of the 
+pressures of the tandem brake master cylinder (THZ) 
+
+• Four further sensors on the outlet side which measure the braking pressure of the 
+assigned wheel brake 
+
+Note: That the labeling of the DSC button has been changed to DTC and the 
+MK60E5 system will also be used on the New M5. 
+
+
+5 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+The new functions available on the MK60E5 DSC system are a result of the following 
+additional components: 
+
+• Solenoid valves with variable map for flow rate - utilizes a PWM signal 
+
+• 5 brake pressure sensors integrated in the new DSC module 
+
+• 4 active wheel-speed sensors with direction of rotation detection 
+
+• 1 longitudinal-acceleration sensor on the circuit board of the DSC control module 
+
+• DSC sensor taken with redundant signals on vehicles with Active Steering (2x rate of 
+yaw, 2x lateral acceleration) 
+
+
+
+6 
+
+E90 Dynamic Driving Systems 
+
+
+
+Fading Support 
+
+
+High temperatures (>550°C) can occur at the brake discs when brakes are applied over a 
+long period (i.e. brakes applied while traveling downhill) or as a result of multiple 
+“extreme” brake applications (i.e. applied pressure >80 bar). As the temperature of the 
+brake disc increases, the level of friction that can be generated when the brake pads are 
+applied is decreased (coefficient of friction is reduced as brake disc temperature increas¬ 
+es), which can result in a diminishing brake effect (fading). 
+
+In order to reduce the brake “fading” effect the DSC system (MK60E5) calculates the 
+temperature of the brake discs, based on: 
+
+• Applied brake pressure 
+
+• Duration of brake application 
+
+• Rate of vehicle deceleration 
+
+In the event the DSC system detects fading, brake pressure is increased in line with the 
+calculated temperature model in order to maintain a constant ratio of brake pedal force to 
+vehicle deceleration (if necessary, pedal travel is increased to compensate for the fading 
+effect). 
+
+The DSC system detects fading as follows: 
+
+• DSC compares the current vehicle deceleration with a nominal value based on the 
+current brake pressure. 
+
+• DSC increases brake pressure until the nominal deceleration is achieved or until all 
+wheels are subject to ABS control. 
+
+• Process is ended when the brake pedal is released. 
+
+Note: The increase in brake pressure depends on road speed (under 100 km/h). 
+
+At the time this function is activated, a Check-Control message (brake warning light) 
+appears in the LCD display in the instrument cluster (warning threshold 1). If the brake- 
+disc temperature increases further, the legally stipulated brake warning lamp is also acti¬ 
+vated (warning threshold 2). 
+
+Braking Readiness 
+
+If the DSC system notices that the accelerator pedal is released guickly, the brakes are 
+immediately pretensioned, to shorten the brake apply response time. To accomplish this 
+task the DSC system generates a low braking pressure by applying a PWM signal to the 
+solenoid valves, without creating any measurable deceleration of the vehicle. By applying 
+a small amount of brake pressure the working clearance between the brake pads and 
+brake disc is reduced. If the brakes are not applied within a certain time, the brake pres¬ 
+sure that was applied is reduced. 
+
+The pre-tensioning of the brakes depends on the vehicle's speed (above 70 km/h). 
+
+
+7 
+
+E90 Dynamic Driving Systems 
+
+
+
+The Brake Readiness function is activated under the following conditions: 
+
+• Vehicle speed > 70 km/h 
+
+• Minimum time between rapid accelerator pedal release and brake application < 8 
+sec. (DME provides the signal regarding rapid release of accelerator pedal to DSC 
+via PT-CAN) 
+
+Brake Disk Drying 
+
+Brake disk drying removes moisture that gathers on the brake disks while traveling on wet 
+roads or in the rain. 
+
+In order to dry the brakes while the vehicle is traveling down the road, the DSC module 
+generates a low brake pressure which ‘lightly” applies the brakes disks and “wipes down” 
+the disks without creating a measurable deceleration of the vehicle. 
+
+The application of the low brake pressure signal is done on a cyclical (regular) basis and 
+is dependent on: 
+
+• Road speed (greater than 70 km/h 
+
+• Signal from rain sensor indicating continuous wiper operation (e.g. stage 1 or 2) 
+
+The drying action cycle is performed approximately every: 
+
+• 200 sec during stage 1 operation 
+
+• 120 sec during stage 2 operation 
+
+Note: The cycle is altered if the brakes are applied by the driver during these 
+times. 
+
+This function results in a shorter response time if the brakes are applied during the cycli¬ 
+cal low brake pressure application. 
+
+Soft Stop 
+
+Soft stop prevents a “jerky” stop causing the occupants to "lurch" forward, when braking 
+the vehicle to a standstill. 
+
+Activation of function: 
+
+• Light brake application (<25 bar) under constant pressure 
+
+• Road speed (under 5 km/h) 
+
+The soft stop function reduces the braking pressure at the rear axle just prior to the vehi¬ 
+cle reaching a complete stop in order to reduce “jerking/jolt” effect normally encountered 
+when reaching a standstill. The DSC system calculates the moment that standstill can be 
+expected based on the current road speed plus rate of deceleration and reduces braking 
+pressure accordingly. 
+
+
+8 
+
+E90 Dynamic Driving Systems 
+
+
+
+Start Assist 
+
+
+The start-off assistant prevents the vehicle from moving unexpectedly, based on the 
+degree of incline, as the driver releases the brake pedal and moves to the accelerator 
+pedal (ie. when pulling away on a hill). 
+
+The “start assist” function is accomplished as follows: 
+
+• Gradient (degree of incline) is determined by the longitudinal-acceleration sensor 
+located in the DSC control module. 
+
+• Based on the degree of incline, the necessary braking torgue or engine torgue is cal¬ 
+culated by the DSC module. 
+
+• Brake pressure needed to hold the vehicle is momentarily maintained (approx 2 sec). 
+
+• Brake pressure is reduced as soon as the available engine torgue is sufficient to 
+move the vehicle or accelerator is not depressed within approx. 2 sec. 
+
+The function can be activated when driving forward or backwards and is deactivated 
+when the parking brake is applied and can not be activated if the transmission is in neu¬ 
+tral. 
+
+Note: If no move is made to pull away within approx. 2 seconds of the brake 
+pedal being released, the start-off assistant will be deactivated. 
+
+Electronic Control Brake (ECB) Actuation Interface 
+
+The interface between Dynamic Stability Control (DSC) and Active Cruise Control (ACC) 
+has been improved with the introduction of the Longitudinal Dynamic Management 
+(LDM) system, which is responsible for the transmission of the signals associated with 
+ACC/cruise control operation. 
+
+The software in the DSC control module has been enhanced and allows the demands of 
+the ACC to be evaluated more guickly thereby allowing pressure at the brakes to be built 
+up or reduced more efficiently with regard to vehicle deceleration and comfort. 
+
+Yaw Moment Compensation 
+
+With conventional systems, the driver has to actively steer the vehicle in a straight line 
+if the brakes are applied on a road surface with non-uniform traction levels ("split |i"). 
+
+In this situation counter steering keeps the vehicle in its track and helps to achieve 
+acceptable braking distances. 
+
+On the E90, if the vehicle is eguipped with the Active Front Steering (AFS) option and 
+brakes are applied on a road surface with non-uniform traction levels ("split jx"), DSC in 
+conjunction with AFS, initiates the active steering actions in order to stabilize the vehicle 
+and shorten the braking distance. The function is accomplished by having the DSC con¬ 
+trol module calculate the yaw rate plus interpret information from the front steering angle 
+sensor and transmit the information to the AFS control module, which establishes the 
+yaw-moment compensation correction angle needed for stabilization/counter steering. 
+
+
+9 
+
+E90 Dynamic Driving Systems 
+
+
+
+System Components 
+
+The DSC system consists of the following: 
+
+Inlet & Distribution Valves 
+
+These solenoid valves used to be digitally actuated: either OPEN or CLOSED. 
+
+On this system the inlet valves for the wheel brakes and distribution valves are actuated in 
+such a way that the flow rate is variably controlled via a PWM signal. 
+
+Wheel-Speed Sensors 
+
+Four active wheel-speed sensors measure the speed of the individual wheels. This type 
+of sensor is also able to recognize the direction of wheel rotation. 
+
+DSC Sensor 
+
+The DSC sensor on vehicles equipped with active steering utilizes 2 yaw rate sensor ele¬ 
+ments to transmit redundant signals capturing the rate of yaw (rotation about the vertical 
+axis) and lateral acceleration to the AFS module via the chassis CAN (F-CAN) 
+
+
+
+10 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+DSC Module 
+
+The DSC module consists of the hydraulic module and the DSC control electronics. 
+
+All 5 brake pressure sensors are integrated into the valve block of the DSC module. 
+
+Note: The circuit board of the DSC control module also contains an integrated 
+longitudinal-acceleration sensor which is used for the start assist func¬ 
+tion. 
+
+Steering-Angle Sensor 
+
+The steering angle sensor is located in the steering column switch cluster (SZL) and 
+optically measures the angle of rotation of the steering wheel. 
+
+Signal path to the DSC control module: Steering column switch cluster -> F-CAN 
+(looped through JBE) -> DSC control module 
+
+DTC Button 
+
+The DTC button is located in the center console between the central air vents and has 
+three operating modes: 
+
+1. DSC operational (standard setting) 
+
+2. DTC operational (If DTC button is depressed once DSC switches Off) 
+
+3. DSC and DTC completely deactivated (If DTC button is depressed for extended period) 
+Signal path to the DSC control module: DTC button -> JBE -> PT-CAN -> DSC module 
+The instrument cluster receives the signal through the K-CAN. 
+
+Brake Fluid Level Switch 
+
+If the brake fluid level is too low, this will be detected (via a reed contact in the expansion 
+tank) and an appropriate message is sent to the DSC control module. 
+
+DSC is deactivated if there is insufficient brake fluid. 
+
+Signal path to the instrument cluster: DSC module -> PT-CAN -> JBE -> K-CAN -> 
+Instrument cluster 
+
+Brake Light Switch 
+
+Together with the signals from the brake pressure sensors, braking actions are recog¬ 
+nized. 
+
+Parking Brake Warning Switch 
+
+DSC will recognize skidding that has been deliberately initiated by the driver and regula¬ 
+tion will not take place, since a handbrake turn should remain technically possible. 
+
+
+11 
+
+E90 Dynamic Driving Systems 
+
+
+
+E90 - DSC Hydraulic Circuit 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Brake Fluid Expansion Tank 
+
+12 
+
+Inlet Valve (Analog), Right Front 
+with Switching Orifice 
+
+2 
+
+Rear-axle Brake Circuit 
+
+13 
+
+Inlet Valve (Analog), Right Rear 
+
+3 
+
+Front-axle Brake Circuit 
+
+14 
+
+Inlet Valve (Analog), Left Rear 
+
+4 
+
+Pressure Sensor, Push Rod Circuit 
+
+15 
+
+Outlet Valve, Left Rear 
+
+5 
+
+Pulsation Damper 
+
+16 
+
+Outlet Valve, Right Rear 
+
+6 
+
+Isolating Valve 
+
+17 
+
+Outlet Valve, Left Front 
+
+7 
+
+Electric Changeover Valve 
+
+18 
+
+Outlet Valve, Right Front 
+
+8 
+
+Self-Priming Return Pump 
+
+19 
+
+Wheel Brake, Right Front 
+
+9 
+
+Damper Chamber 
+
+20 
+
+Wheel Brake, Left Front 
+
+10 
+
+Accumulator Chamber 
+
+21 
+
+Wheel Brake, Right Rear 
+
+11 
+
+Inlet Valve (Analog), Left Front 
+with Switching Orifice 
+
+22 
+
+Wheel Brake, Left Rear 
+
+
+12 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor Information 
+
+
+Sensor 
+
+Functional principal 
+
+Manufacturer 
+
+Active wheel-speed sensors* 
+
+Magneto-resistive principle 
+
+Teves 
+
+Steering angle sensor (LWS) in steering column 
+switch cluster (SZL) 
+
+Optoelectronic 
+
+
+Yaw rate sensor 
+
+Twin tuning fork principle 
+
+Teves 
+
+Lateral-acceleration sensor 
+
+Capacitive principle 
+
+Teves 
+
+Longitudinal-acceleration sensor** 
+
+Integrated in DSC control module 
+
+
+5 pressure sensors 
+
+Integrated in hydraulic block 
+
+
+Brake light switch 
+
+Hall principle 
+
+
+Brake-fluid level switch 
+
+Reed contact switch 
+
+
+
+* Wheel-speed sensors with grey shield = MK60E5 with direction-of rotation detection 
+(the braking response when traveling in reverse is different then it is for vehicle traveling 
+forwards, output to navigation system, EGS etc.) 
+
+* Wheel-speed sensors with black shield = MK60psi (Used on E87 Non U.S. Model) 
+does not have direction of rotation capability 
+
+** For the start assist function 
+
+
+13 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Overview 
+
+
+The DSC system is a Driving Stabilization System and offers the following advantages: 
+
+• DSC optimizes driving stability when pulling away, accelerating, braking and coast¬ 
+ing. 
+
+• DSC recognizes and reduces unstable driving conditions such as understeering or 
+oversteering. 
+
+• DSC improves traction, especially with Dynamic Traction Control (DTC) 
+
+Within the limitations of the laws of physics, DSC helps to keep the vehicle on a safe 
+course. 
+
+To do this, DSC must know the following parameters regarding the vehicles driving 
+dynamics: 
+
+• Yaw rate as a measure of rotary movement of the vehicle around the vertical axis 
+
+• Lateral acceleration 
+
+• Road speed 
+
+• Longitudinal acceleration 
+
+In addition, the driver's intentions are recognized via input from: 
+
+• Steering angle sensor 
+
+• Brake pressure sensor 
+
+• Throttle setting/ accelerator pedal position 
+
+The values are used to establish the actual condition in which the vehicle is currently 
+moving and to compare these values with those calculated by the DSC control module. If 
+the actual values differ from the calculated values, DSC is activated and initiates brake 
+actions or engine control functions. 
+
+Advantages: 
+
+The DSC system counters all dynamically unstable driving conditions within the physical 
+limitations dictated by the laws of physics, to enhance driving comfort and safety. 
+
+
+14 
+
+E90 Dynamic Driving Systems 
+
+
+
+Anti-lock Braking System(ABS) 
+
+ABS prevents the wheels from locking when the brakes are applied. 
+
+Advantage: Optimum utilization of road surface friction - the vehicle remains stable and 
+steerable. 
+
+Brake pressure is regulated at all wheels to ensure that each wheel runs with optimum 
+slip. When this happens, slip is controlled so that the maximum possible braking and lat¬ 
+eral stability forces can be transmitted. 
+
+Electronic Brake Force Distribution (EBV) 
+
+EBV is a component of ABS and controls the brake force distribution between the front 
+and rear wheels. 
+
+Advantage: Regardless of the vehicles load state, the best possible braking distance is 
+achieved while maintaining driving stability. 
+
+Modern vehicles have relatively large brakes on the rear axle to shorten braking distances. 
+To prevent the rear wheels from being overbraked in certain driving situations, EBV per¬ 
+manently monitors wheel slip and controls rear axle slip independent of the front axle. 
+
+Cornering Brake Control (CBC) 
+
+CBC is an extension of ABS. CBC enhances driving stability if the brakes are applied 
+when cornering. 
+
+Advantage: If the brakes are applied in a corner, optimum brake force distribution ensures 
+tracking stability. 
+
+When cornering, even very light braking can shift the axle-load distribution to the left or 
+right so that driving stability is impaired. If required, CBC generates a stabilizing load 
+moment when the brakes are applied lightly outside the ABS intervention range. 
+
+Automatic Stability Control (ASC) 
+
+ASC prevents the wheels from spinning when the vehicle is accelerating. 
+
+Advantage: Improved traction and vehicle stability. 
+
+If one of the wheels of the drive axle is on a high-grip surface and the other is on a slip¬ 
+pery surface, the wheel tending to skid is braked. 
+
+ASC also intervenes in the engine control (to reduce the ignition angle, injection quantity, 
+throttle valve setting) in order to reduce/inhibit vehicle acceleration in the event of wheel 
+slip. 
+
+
+15 
+
+E90 Dynamic Driving Systems 
+
+
+
+Dynamic Traction Control (DTC) 
+
+The functions of the DTC correspond to those of DSC with a slightly modified regulating 
+characteristics. DTC is activated by deactivating DSC (DTC button depressed). DTC 
+intervenes in the braking actions to imitate the function of a conventional differential lock. 
+
+Advantage: DTC allows better traction. 
+
+Vehicle stabilization intervention (e.g. reduced power output) is delayed slightly, compared 
+to DSC, which enhances traction with a slight loss of driving stability. 
+
+This function offers a compromise between driving stability and traction, especially when 
+accelerating and/or driving uphill on a loose surface or snow-covered road surface (sur¬ 
+face friction requiring more slip). 
+
+DSC provides a high degree of driving stability with adequate traction, however DTC 
+offers better traction with a slight reduction in stability. Therefore, the deactivation of 
+DSC should be reserved for emergencies (driving in deep snow, for example). 
+
+Engine Drag Torque Control (MSR) 
+
+If the vehicle is operated in low gear while coasting downhill or if is the vehicle is suddenly 
+shifted into a lower gear, the drive wheel may be slowed down by the engine braking 
+effect to rapidly which can result in an unstable operating condition, resulting in the drive 
+wheels locking up. 
+
+Engine Drag Torque Control (MSR) provides protection against locking of the drive 
+wheels. 
+
+
+Advantage: The drive wheels retain their lateral stability in overrun mode. 
+
+The wheel speed sensors tell MSR as soon as the wheels are about to lock. MSR then 
+briefly reduces the engine's drag torque by opening the throttle slightly. 
+
+Dynamic Brake Control (DBC) 
+
+DBC supports the driver in emergency braking situations. It does this by automatically 
+increasing braking pressure if the brake pedal is not depressed with sufficient force. 
+
+Advantage: Shortest possible braking distances in emergency braking situations by 
+achieving ABS regulation on all four wheels. 
+
+The brake pedal is frequently not depressed strongly enough in emergency braking situa¬ 
+tions. The ABS feedback control range is not reached (or not on all 4 wheels). 
+
+
+16 
+
+E90 Dynamic Driving Systems 
+
+
+
+RPA: Tire Defect Indicator 
+
+RPA is not a driving dynamic function. 
+
+DSC uses the Run Flat Indicator (RPA) to monitor the tire pressure throughout the jour¬ 
+ney. 
+
+The RPA records the wheel speeds using the wheel-speed sensors of the Dynamic 
+Stability Control (DSC). The RPA compares the speeds of the individual wheels with the 
+average speed. In this way the RPA is able to detect a loss of tire pressure. 
+
+The RPA detects a drop in pressure below about 30% ± 10% of the initial value. The 
+RPA indicator and warning light indicates a drop in tire pressure. 
+
+The RPA will indicate this after just a short distance, as a rule after a few minutes, from a 
+certain minimum speed (e.g. 25 km/h) up to the permissible top speed. 
+
+Initialization is started manually. Then (after a journey has started), initialization runs auto¬ 
+matically. In other words, the circumference of individual tires are recorded and evaluated. 
+
+The initialization phase lasts approx. 5 to 15 minutes for the individual speed ranges. 
+
+CBS: Condition Based Service 
+
+CBS is not a driving dynamic function. 
+
+Condition Based Service, as the name suggests, is a means of ensuring that the car is 
+serviced as and when necessary. CBS comprises various maintenance operations, e.g. 
+engine oil, spark plugs and brake pads. 
+
+The remaining distance for the front and back brake pads are calculated separately in the 
+DSC control module. 
+
+When making the calculation, the condition of the brake pad wear sensors is taken into 
+account (reference point at 6 mm and 4 mm). 
+
+
+Important!!! 
+
+
+Refer to ST056 Chassis Dynamics for more detailed informa¬ 
+tion regarding the operation of the DSC System Functions. 
+
+
+17 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Workshop Exercise - Dynamic Stability Control 
+
+
+Check procedure for initialization of steering angle sensor using diagnostic eguip- 
+ment (DISplus/G Tl). 
+
+
+18 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. What new function are introduced with the MK60E5 system and what do they do? 
+
+
+2. On what other vehicle will MK60E5 be used? 
+
+
+3. What is the purpose of the 5 pressure sensors? 
+
+
+4. What is Yaw Moment Compensation? What option must the vehicle have 
+installed? 
+
+
+5. What is different with the DSC button?? 
+
+
+6. What is different with the wheel speed sensors used on the E90? 
+
+
+19 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Longitudinal Dynamics Management 
+
+
+In previous BMW vehicles acceleration control was calculated by different modules 
+(DME, DSC, ACC etc.) in order to activate the corresponding actuators with the relevant 
+control signals. To take control of the increasing system complexity and reduce the 
+number of possible variants that can exist, a new Longitudinal Dynamics Management 
+(LDM) system is installed in the E90 which serves as the primary controller for DCC or 
+ACC operation. 
+
+The LDM module records/monitors the requests/inputs received, calculates the corre¬ 
+sponding setpoint/threshold values and forwards the information to the various control 
+systems (i.e. DME, EGS, AFS, ACC, DSC, etc.). 
+
+The Longitudinal Dynamics Management (LDM) 
+
+system is an independent control module (1) that 
+
+is located behind the light switch in the E90. SBB- 
+
+
+20 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Functions Implemented by LDM 
+
+The Longitudinal Dynamics Management (LDM) control module evaluates all relevant 
+data for cruise control (i.e. ACC sensor sends the monitored vehicle information to the 
+LDM control module for evaluation) and transmits information via PT-CAN to the other 
+control modules (DME, EGS, DSC, ACCII, etc.). 
+
+
+
+WUP 
+
+D-Bus K-Bus 
+
+K-CAN K-Bus (protocol) * 
+
+PT-CAN LIN-Bus 
+
+MOST BSD 
+
+F-CAN 
+
+
+21 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following functions are implemented within the LDM module: 
+
+Operator Interface 
+
+Receives data from the steering column stalk, such as acceleration, deceleration, activa¬ 
+tion or deactivation reguest. 
+
+Display Interface 
+
+Controls the output of information to the driver (ie. display of desired speed, desired dis¬ 
+tance, driver takeover reguest). 
+
+Status Control 
+
+Evaluates the drivers specifications (speed (v), setpoint/actual and yaw rate) and assigns 
+each to one of the three responsible processing modules. 
+
+Vehicle Speed Controller 
+
+Calculates the acceleration/deceleration setpoint variable on the basis of the desired 
+speed and the actual speed. 
+
+Lateral-Acceleration Controller 
+
+Reduces the lateral acceleration in the bend/curve to an appropriate value and if neces¬ 
+sary initiates an intervention when cornering. The actual lateral acceleration is calculated 
+from the actual speed and a fault-corrected yaw rate. 
+
+Prioritizer 
+
+Decides which acceleration setpoint value is used by the cruise control and if necessary 
+adaptive cruise control plus identifies how the Acceleration Controller can best 
+alter/adjust vehicle acceleration or deceleration. 
+
+Interference Factor Estimator 
+
+Estimates the acceleration interference factors (e.g. uphill/downhill gradient, rolling resis¬ 
+tance) from the actual wheel drive torgue and the changes to the vehicle mass due to the 
+additional mass of a trailer and calculates an acceleration/deceleration interference cor¬ 
+rection variable. 
+
+Acceleration Controller 
+
+Converts the selected setpoint acceleration into an overall manipulated variable (total 
+wheel torgue) for drive and brake. The acceleration controller has to ensure that the spec¬ 
+ified setpoint acceleration of the vehicle (drive) is also achieved with the presence of 
+external interference factors, such as e.g. uphill/downhill gradient. The acceleration con¬ 
+troller ensures comfort typical for drive assist systems, such as e.g. jolt-free performance. 
+
+
+22 
+
+E90 Dynamic Driving Systems 
+
+
+
+Drive/Brake Coordination 
+
+Coordinates and controls the system partners DME, EGS and DSC, by outputting a set- 
+point wheel braking torque and a brake release signal to the DSC and a setpoint wheel 
+drive torque with drive release to the DME. 
+
+Monitoring 
+
+Monitors all the signal variables coming into the LDM. The programmed 
+safety measures are also implemented here. 
+
+The in the E90 LDM has the following interface parameters: 
+
+• Steering column switch cluster (SZL) 
+
+• Instrument cluster (KOMBI) 
+
+• Brake (DSC) 
+
+• Drive (DME and EGS) 
+
+• Active Cruise Control (ACC sensor; optional extra) 
+
+- Driver's footwell module (FRM; direction indicator) 
+
+- Anticipatory Action for the overtaking assist function (direction indicator) 
+
+Only with ACC! 
+
+• Car Access System (CAS; terminal status) 
+
+Diagnosis/Service Information 
+
+The LDM is: 
+
+• Codable 
+
+• Programmable 
+
+• Capable of self-diagnosis 
+
+An LDM failure is not signalled directly to the driver but is visible in the form of DSC/ACC/ 
+DCC indications in the instrument cluster. 
+
+
+23 
+
+E90 Dynamic Driving Systems 
+
+
+
+LDM Overview 
+
+The LDM is a control module that is used for drivetrain and brake coordination purposes , 
+plus provides significant improvement with regard to automatic cruise control (ACC or 
+DCC) with a general control function capability ranging from reguesting acceleration to 
+reguesting braking (integrated function). 
+
+Interface: PT-CAN 
+
+The LDM serves two primary functions: 
+
+• Variant handling - LDM functions are configuration dependent (coding-relevant func¬ 
+tion) 
+
+• LDM safety functions are ensured by a central monitoring and redundancy check. 
+
+
+
+ACC 
+
+DCC 
+
+
+
+
+DSC 
+
+DME 
+
+EGS 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel Torque for Braking 
+
+DME 
+
+Digital Motor Electronics/Digital 
+
+2 
+
+Wheel Torque for Accelerating 
+
+DCC 
+
+Dynamic Cruise Control 
+
+3 
+
+Gearshift Request 
+
+DSC 
+
+Dynamic Stability Control 
+
+4 
+
+SZL Switch Inputs 
+
+EGS 
+
+Electronic Transmission Control 
+
+A 
+
++/- setpoints / F-CAN 
+
+LDM 
+
+Longitudinal Dynamics Management 
+
+ACC 
+
+Active Cruise Control 
+
+
+
+
+24 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Longitudinal Dynamics Management - Input/Output 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+ACC sensor (if equipped) 
+
+2 
+
+LDM Module 
+
+3 
+
+DSC Module 
+
+4 
+
+DME/ECM Module 
+
+5 
+
+Kombi 
+
+6 
+
+Cruise Control with Braking Function (Integrated in LDM) 
+
+7 
+
+Cruise Control Stalk with DCC 
+
+8 
+
+Cruise Control Stalk with ACC 
+
+
+25 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. Where is the LDM located? 
+
+
+2. What function is integrated into the LDM module? 
+
+
+3. With what modules does the LDM interface? 
+
+
+26 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27 
+
+E90 Dynamic Driving Systems 
+
+
+
+Dynamic Cruise Control (DCC) 
+
+
+For the U.S. market, the new E90 provides the customer with the ability to choose 
+between two cruise control systems (DCC or ACC) which are available for the 6 cylinder 
+engine variant. 
+
+Option 544: Dynamic Cruise Control (DCC) with braking function 
+
+
+
+Function 
+
+The new Dynamic Cruise Control (DCC) with brake function maintains the set speed at a 
+constant level even on downhill gradients. 
+
+• Accelerating to the set speed - Engine intervention via the DME (acceleration of 
+approx. +1.2 m/s 2 ) 
+
+• Decelerating to the set speed - Independent brake intervention via the DSC (DCC 
+achieves a maximum deceleration of -2.5 m/s 2 ) 
+
+• Lateral acceleration is restricted to max. 4.0 m/s 2 
+
+In order to realize these functions the system requires the use of the Longitudinal 
+Dynamics Management (LDM), which is used to supply data/driver request signals to 
+the DME. 
+
+
+Important!!! 
+
+
+Cruise control does not relieve the driver of his personal 
+responsibility. Cruise control is a comfort system. 
+Adjustments by the driver will always have a higher priority 
+than cruise control. 
+
+
+The driver should decide whether (and how) the system is 
+used based on road and traffic conditions and visibility. 
+
+
+28 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+When the cruise control is active, the brake lights are actuated during automatic braking 
+(required by law). If automatic braking is actuated, a signal is sent from the DSC to the 
+Footwell Module (FRM). 
+
+Advantages 
+
+The advantage of the Dynamic Cruise Control with the brake function compared to a 
+Cruise Control system without a braking function are: 
+
+• Constant road speed, even downhill is maintained as a result of brake intervention via 
+the DSC 
+
+• Lateral acceleration in bends is restricted to a comfortable level 
+
+• Indicator disc in the instrument cluster shows the set speed 
+
+• Brief display in the LCD display of the instrument cluster when a speed is selected 
+or previous setting is changed 
+
+
+29 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for Components Involved with DCC Function 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Longitudinal Dynamics Module (LDM) 
+
+14 
+
+Brake Light Switch 
+
+2 
+
+Central Information Display (CID) 
+
+15 
+
+Cruise Control functions on SZL 
+
+3 
+
+Car Communication Computer (CCC) 
+
+16 
+
+Steering Column Stalk (SZL) 
+
+D 
+
+Controller (CON) 
+
+17 
+
+Junction Box Electronics (JBE) 
+
+5 
+
+Instrument Cluster 
+
+18 
+
+Accelerator Pedal Module (FPM) 
+
+6 
+
+Footwell Module (FRM) 
+
+19 
+
+Digital Engine Electronics (DME/ECM) 
+
+D 
+
+Car Access System(CAS) 
+
+Kl. 15 
+WUP 
+
+Activation wire from CAS (Terminal 15 
+wake-up) 
+
+8 
+
+Clutch Module 
+
+KL.30g 
+
+Terminal 30g active 
+
+9 
+
+To Digital Engine Electronics (DME/ECM) 
+
+F-CAN 
+
+Chassis CAN 
+
+10 
+
+Electronic Transmission Control (EGS) 
+
+K-CAN 
+
+Body CAN 
+
+11 
+
+N/A 
+
+LVDS 
+
+LVDS 
+
+(Low Voltage Differential Signalling) data line 
+
+12 
+
+Dynamic Stability Control (DSC) 
+
+PT- 
+
+CAN 
+
+Powertrain CAN 
+
+13 
+
+To Footwell Module (FRM) 
+
+
+
+
+31 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cruise Control System Steering-Column Stalk 
+
+Cruise control is set and called up using the cruise control system steering-column stalk. 
+
+LDM Control Module (LDM) 
+
+The LDM is the interface to the engine and to the brake system. 
+
+In the LDM, the driver's entries regarding the cruise control system are monitored and 
+evaluated. The Dynamic Cruise Control with brake function is integrated in the LDM. 
+
+If the Active Cruise Control option is installed, the LDM evaluates the data sent from the 
+ACC sensor. 
+
+Instrument Cluster 
+
+The instrument cluster shows all displays for cruise control. 
+
+• Indicator disc in the round instrument shows the set speed. 
+
+• LCD display briefly shows the newly selected set speed (for approx. 6 seconds). 
+
+• LCD display also shows a Check-Control message. 
+
+DSC: Dynamic Stability Control 
+
+The current status of the vehicle is determined by the DSC by evaluating the following 
+sensor signals: 
+
+• Yaw rate (measure of movement of the car about its vertical axis) 
+
+• Steering angle 
+
+• Brake pressure 
+
+• Wheel speeds (measure of the car's Road speed) 
+
+The DSC transmits data regarding the current vehicle status to the LDM, such as: 
+
+• Function reguest for current deceleration 
+
+With automatic braking, the brake lights are activated depending on the deceleration 
+values (legally prescribed). 
+
+Example: The DSC is notified of a function request from the LDM via the PT-CAN to 
+reduce the road speed. To fulfill this request, DSC intervenes in the brake 
+system (goal: comfortable brake deceleration. No DSC intervention with 
+regard to enhanced operating stability.) 
+
+Digital Engine Electronics (DME/ECM) 
+
+The DME controls engine intervention (for example, reduction in engine output to reduce 
+Road speed): 
+
+• Current torgue reguest data is transmitted by the LDM to the DME 
+
+• Driver's command (signals from accelerator pedal module) data is transmitted to the 
+LDM from the DME 
+
+
+32 
+
+E90 Dynamic Driving Systems 
+
+
+
+Junction Box Electronics (JBE) 
+
+The JBE is the data interface/gateway between the K-CAN and the PT-CAN. 
+
+Accelerator Pedal Module 
+
+The accelerator pedal module signals the driver's command. This signal is reguired to 
+check the respective driving status and is evaluated via the DME. 
+
+By pressing the accelerator pedal, the speed setpoint of the cruise control can be overrid¬ 
+den at anytime. 
+
+Brake Light Switch 
+
+With the signals from the brake pressure sensors, braking actions are recognized. Cruise 
+control is deactivated if braking actions are necessary. 
+
+Clutch Module (manual transmission only) 
+
+Clutch engagement/disengagement is recognized by a signal from the clutch module. 
+During the clutch engagement/disengagement process, the engine speed is maintained 
+at an optimal speed range by the DME. After the clutch has been reengaged, the DME 
+will adjust back to the current torgue reguest from the cruise control. 
+
+If the engine speed is too low or too high, the driver will be reguested to change gear. 
+
+This reguest is issued in the form of an acoustic signal and a Check-Control message. 
+
+Steering-Column Switch (SZL) Cluster 
+
+The SZL processes all data from the cruise control system steering-column stalk. The 
+evaluated switch signals are transmitted onto the F-CAN as a CAN message. 
+
+Signal path: Cruise control inputs via stalk -> SZL -> F-CAN -> DSC ->PT-CAN -> LDM 
+
+Footwell Module (FRM) 
+
+When cruise control is in operation, the brake lights are actuated during automatic brak¬ 
+ing (legal reguirement). To do this, a signal must be sent from the DSC to the footwell 
+module via the PT-CAN. 
+
+Car Access System (CAS) 
+
+The CAS provides input signals relating to terminal status (e.g. terminal 15 ON). 
+
+Car Communication Computer (CCC) & Central Information Display (CID) 
+
+The CCC serves as the interface to the CID. The CID displays detailed information about 
+the Check-Control messages. To back up the Check-Control message, CCC emits an 
+acoustic warnings through the loudspeakers. The instrument cluster controls these 
+warnings by means of the K-CAN. 
+
+Electronic Transmission Control (EGS) or SMG 
+
+The evaluated cruise control data is sent from the LDM to the DME. The EGS evaluates 
+the data from the DME. The adaptive transmission control (component of the electronic 
+transmission control) adjusts the shift characteristics of the driving program to the driver's 
+commands and the driving situation. 
+
+
+33 
+
+E90 Dynamic Driving Systems 
+
+
+
+System Deactivation 
+
+DCC can be activated from 30 km/h (settable up to max. 250 km/h ) and is deactivat¬ 
+ed in the same manner as conventional/previous cruise control systems: 
+
+• Brake pedal actuation • Active DSC intervention 
+
+• Deactivation of DSC • Deactivation by the driver 
+
+• Activation of DTC • Speed is reduced below 20 km/h 
+
+• In automatic transmissions: selection of "N" 
+
+• For manual gearboxes the system remains activated during a gearshift: 
+
+Only if the clutch is deactivated for more than approx. 4 to 6 seconds, does the 
+cruise control shut down. (If no gearshift or change in engine speed is made 
+within 5 seconds of such a signal, cruise control will be deactivated.) 
+
+In the event of an operational/system error, the following Check Control (CC) message 
+will appear: 
+
+
+
+Automatic Deactivation System Malfunctions 
+
+Note: Unlike conventional cruise control, the driver with a manual gearbox can 
+actuate the clutch and perform gearshifts without the system being 
+deactivated. If however the driver does not pay attention to the gearshift 
+request, the DCC is deactivated during slower driving at very high or very 
+low engine speeds. 
+
+
+34 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+1 . 
+
+
+
+Classroom Exercise - Review Questions 
+
+
+What is DCC ? 
+
+
+2. What is the advantage of DCC over previous conventional cruise control systems? 
+
+
+3. What function does the Junction Box Electronic Control Module serve with the 
+DCC system? 
+
+
+4. What is the purpose of the Footwell Module (FRM) in the DCC system? 
+
+
+35 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Cruise Control (ACC) 
+
+
+The 2nd generation ACC system was introduced on the E63/E64 (6 Series), with some 
+minor modification this further developed ACC is offered in the E90. 
+
+
+
+The Active Cruise Control (ACC) option provides cruise control function plus is able to 
+maintain comfortable spacing from the vehicle a head. 
+
+The distance from the vehicle ahead can be selected from 4 fixed timed separations. As 
+speed changes, so does the distance to the vehicle ahead. The legally prescribed mini¬ 
+mum distance is not undershot in the adjusted status. 
+
+Differences between the Active Cruise Control option in the E90 and the Active Cruise 
+Control option in the E63/E64: 
+
+• In the E90, the data for the Longitudinal Dynamics Management is evaluated in the 
+LDM control module. 
+
+• In the E63/E64, the data for the Longitudinal Dynamics Management is evaluated in 
+the ACC control module. 
+
+
+Important!!! 
+
+
+Cruise control does not relieve the driver of his personal 
+responsibility. Cruise control is a comfort system. 
+Adjustments by the driver will always have a higher priority 
+than cruise control. The driver should decide whether (and 
+how) the system is used based on road and traffic conditions 
+and visibility. 
+
+
+36 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+Difference between 2nd Gen. and 1st Gen ACC 
+
+
+
+• ACC sensor (control unit) is 60 % smaller than previously 
+
+• 4 instead of 3 radar beams 
+
+• Horizontal opening angle of the radar sensor now ±8 instead of ±4 
+
+• Also new signal processing due to the higher data density (opening angle, 4 beams) 
+
+• Anticipatory acceleration action by ACC in the event of an imminent lane change 
+through setting of the direction indicator by the driver. 
+
+Functions of ACC 
+
+The Active Cruse Control (ACC) option contains several differences when compared to a 
+conventional system such as: 
+
+• Monitor object ahead 
+
+• Cruise control 
+
+• Lens heating 
+
+• Low-voltage cutout and high-voltage protection for ACC sensor 
+
+• Self-diagnosis and compensation for minor horizontal adjustments 
+
+
+37 
+
+E90 Dynamic Driving Systems 
+
+
+TF04-6260 
+
+
+
+
+
+
+
+Monitor Object Ahead 
+
+The ACC systems views any vehicle traveling in the same lane as the subject vehicle, as 
+an object. The operating limits of the system are as follows: 
+
+• Object Detection 
+
+The range of the ACC sensor is limited (approx. 120 meters). 
+
+• Vehicle Deceleration 
+
+The LDM is only able to effect limited deceleration (max. 2.5 m/s 2 ) via the Dynamic 
+Stability Control (DSC). This means that the LDM is only able to compensate for a 
+limited relative speed. 
+
+If the limit of the functional range is reached, the driver is requested to act, as follows: 
+Display for the monitored vehicle flashes red and an acoustic signal sounds. 
+
+• Lateral Monitoring Range 
+
+The lateral monitoring range of the ACC sensor is limited, meaning that a monitored 
+vehicle ahead could be lost due to a tight bend. 
+
+In such cases, cruise control will not accelerate to the set speed for approx. 2 sec¬ 
+onds. This will prevent the vehicle from accelerating too close to the vehicle ahead, 
+which may only momentarily not be monitored. 
+
+When driving straight ahead, this can cause a delayed reaction to another vehicle 
+which may closely cut in front of the subject vehicle. The vehicle cutting in will not 
+be monitored by the ACC system until it is clearly in the same lane as the subject 
+vehicle. 
+
+• Lateral Acceleration 
+
+The LDM limits the lateral acceleration up to approx. 4.0 m/s2 in favor of driving 
+comfort. The LDM is unable to work in an anticipatory manner when the vehicle is 
+cornering. It is only able to react to existing lateral acceleration when it is already on 
+the bend. For this reason, the driver is responsible for ensuring that an appropriate 
+speed is being driven as the vehicle enters the bend. 
+
+
+38 
+
+E90 Dynamic Driving Systems 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Distance between Vehicles Constant 
+
+B 
+
+Distance between Vehicles Increasing 
+
+C 
+
+Distance between Vehicles Decreasing 
+
+1 
+
+Object being Monitored 
+
+2 
+
+Radar Wave from ACC Sensor 
+
+3 
+
+Reflected Radar Wave from Monitored Object 
+
+4 
+
+Vehicle with ACC option (Subject Vehicle) 
+
+
+The radar waves received cannot distinguish between animals, vehicles and traffic signs. 
+Traffic signs and parked vehicles standing next to the vehicle's lane could incorrectly be 
+assigned to the lane. In order to prevent incorrect reactions, stationary objects and traffic 
+in the other direction is ignored in the distance control. 
+
+
+39 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+Vehicles that are operating/traveling in other lanes are of generally of no interest for the 
+ACC system. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1-4 
+
+Radar Beam 
+
+A 
+
+Signal Amplitude 
+
+5 
+
+Strength of Reflected Signal 
+
+F 
+
+Frequency 
+
+
+If an object is in the monitoring range, the reflected radar waves are received depending 
+on the angle between the wheel axis and the object 
+
+4 antennas receive different amplitudes, depending on the amplitude of the signal 
+received the system will react accordingly. 
+
+The ACC uses the turn signal indicator signal from the Footwell Module (FRM) for quick¬ 
+er recognition when changing lanes. In other words, if the turn signal indicator is activat¬ 
+ed prior to overtaking/passing, the vehicle being overtaken is ignored more quickly. On 
+the other hand, in the event of a change to the previous lane, a vehicle driving there is 
+monitored more quickly. 
+
+
+40 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+Cruise Control 
+
+The Active Cruise Control option differentiates between 2 driving conditions: 
+
+• Cruise control with specified set speed - A selected set speed (range 20 mph - 
+
+1 lOmph) is automatically maintained on open roads without vehicles driving ahead. 
+
+• Cruise control with speed adapted to that of vehicle driving ahead - If a slower vehi¬ 
+cle is detected on the vehicle's own lane, the vehicle's own speed will be adapted to 
+that of the vehicle driving ahead. 
+
+At the same time, a driver selected preset following distance for the vehicle is estab¬ 
+lished (4 fixed, timed separations can be selected). The timed separation from a 
+vehicle driving ahead is no less than 1.5 seconds under normal driving conditions. 
+
+In certain conditions (e.g. when a vehicle cuts in a short distance ahead), this timed 
+separation may briefly be less than 1.5 seconds. 
+
+System Activation 
+
+• Cruise control operation is only possible in speed range 30 km/h to 180 km/h 
+
+• The LDM limits the acceleration (approx. + 1.2 m/s 2 ) & deceleration (max. -2.5 m/s 2 ). 
+Note: Acceleration when cornering is limited. 
+
+• The LDM can only conditionally compensate for high speed situations. (Safety con¬ 
+cept, i.e. interference from the next lane or fast approach to a truck) 
+
+If the deceleration induced by the cruise control is not sufficient, the driver will have 
+to intervene directly. 
+
+• The timed separation from a vehicle driving ahead is no less than 1.5 second. In 
+certain conditions (e.g. when a vehicle cuts in a short distance ahead), this timed 
+separation may briefly be less than 1.5 second. 
+
+If the deceleration induced by the cruise control is not sufficient, the driver will have 
+to intervene directly. 
+
+• If the ACC sensor is blinded, the Active Cruise Control option shuts down. 
+
+(Blinding, e.g. due to extremely heavy snowfall, through a layer of ice on the sensor 
+or through dirt) 
+
+Cruise control can be reactivated after the ACC sensor has been cleaned. 
+
+• System remains activated during a gearshift. 
+
+Only if the clutch is deactivated for more than approx. 4 to 6 seconds, does the 
+cruise control shut down. (If no gearshift or change in engine speed is made 
+within 5 seconds of such a signal, cruise control will be deactivated.) 
+
+
+41 
+
+E90 Dynamic Driving Systems 
+
+
+
+System Deactivation 
+
+System is deactivated in the same manner as conventional/previous cruise control sys¬ 
+tems: 
+
+• Brake pedal actuation • Active DSC intervention 
+
+• Deactivation of DSC • Deactivation by the driver 
+
+• Activation of DTC • Speed is reduced below 20 km/h 
+
+• In automatic transmissions: selection of "N" 
+
+• In manual gearboxes: excessively long clutching operation (approx. 4 sec) 
+
+Display for monitored vehicle does not light up, the vehicle remains below the set 
+speed and does not accelerate further 
+
+Causes: 
+
+- On sharp bends, the vehicle's speed will be controlled in such a way that lateral 
+acceleration is no more than 4.0 m/s 2 to maintain driving comfort. 
+
+- Rain, snow and fog absorb radar waves. 
+
+This will significantly reduce the range of the ACC sensor. 
+
+Lens Heating 
+
+The lens of the ACC sensor is made of plastic. The built-in lens heating ensures better 
+availability of the Active Cruise Control option in winter weather conditions. 
+
+The lens heating is activated by the ACC sensor. The heating is controlled via a pulse 
+width modulated signal (PWM signal). The heating coil is integrated into the lens of the 
+ACC sensor. 
+
+The lens heating is only activated within a certain ambient temperature range (approx. 
++5°C to -5°C). This is because: Only at temperatures around zero is snow wet or moist. 
+
+At temperatures well below this, snow will be dry. To prevent snow from thawing on the 
+lens and creating an artificial coating, the heating is switched off below a certain ambient 
+temperature. The current ambient temperature value is transmitted by the instrument 
+cluster. 
+
+Conditions for activation: 
+
+• Engine ON 
+
+• ACC ON 
+
+• Ambient temperature between -5°C and +5°C 
+
+
+42 
+
+E90 Dynamic Driving Systems 
+
+
+
+Safety Cutout: 
+
+• Temperature in ACC sensor over 50°C (measured by interior temperature sensor in 
+ACC sensor control module) 
+
+• Voltage greater than 16 volts 
+
+The safety cutout shuts down the lens heating. The Active Cruise Control option 
+remains activated (No fault memory entry). 
+
+Monitoring: 
+
+• The lens heating is monitored for open and short circuits in the heating coil. 
+
+• If the monitoring reports a fault, the Active Cruise Control option will be shut down. 
+(Fault memory entry) 
+
+• Display for monitored vehicle does not light up, the vehicle remains below the set 
+speed and does not accelerate further. 
+
+Causes: 
+
+On sharp bends, the vehicle's speed will be controlled in such a way that lateral 
+acceleration is no more than 4.0 m/s 2 to maintain driving comfort. 
+
+Rain, snow and fog absorb radar waves. 
+
+This will significantly reduce the range of the ACC sensor. 
+
+Low-Voltage Cutout and High-Voltage Protection 
+
+The ACC sensor works with an operating voltage of 9 to 16 volts. 
+
+Low-Voltage Cutout: 
+
+If the on-board supply voltage drops below about 6.5 volts, the ACC sensor will per¬ 
+form a low voltage cutout and a fault memory entry will be stored. 
+
+A function block will be made when the on-board supply voltage drops below 9 
+volts. 
+
+The ACC sensor will be reactivated when the on-board supply voltage exceeds 9.8 
+volts again. 
+
+
+43 
+
+E90 Dynamic Driving Systems 
+
+
+
+Self-Diagnosis and Compensation 
+
+External forces may change the alignment of the ACC sensor. A horizontal change leads 
+to function limitations. (Function limitations encountered are, e.g.: Reaction to vehicles in 
+the next lane or late reaction to vehicles in the same lane). 
+
+Self-diagnosis allows the ACC sensor to compensate for minor horizontal adjustments of 
+up to 1°. 
+
+If a horizontal adjustment of more than 1 ° is detected, the Active Cruise Control option 
+will be deactivated and a fault will be stored in the fault memory. A Check-Control mes¬ 
+sage will be issued. 
+
+
+44 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. What is ACC and what function does it provide? 
+
+
+2. On what vehicles is ACC available? 
+
+
+3. What is the difference between 1st and 2nd generation ACC systems? 
+
+
+4. What is the range of the ACC sensor? 
+
+
+5. When changing lanes with turn signal active how does ACC react? 
+
+
+45 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Front Steering (AFS) 
+
+
+The Active Front Steering (AFS) system varies the steering gear ratio from direct to indi¬ 
+rect and vice versa as a function of the vehicle's speed. Active Steering offers the fol¬ 
+lowing advantages: 
+
+• Direct steering (reduced gear ratio) with no more than minimal movements of the 
+steering wheel at the low end of the speed range. 
+
+• More indirect steering (increased gear ratio) at higher speeds in conjunction with 
+enhanced driving 
+
+stability. 
+
+It would not be possible to provide the benefits offered by AFS with a conventional 
+steering system, as there would inevitably be a need to compromise: 
+
+• Steering cannot be too direct as otherwise it would be overly sensitive when the 
+vehicle is travelling at high speed, however direct steering is significantly more 
+desirable for low speeds or when parking. 
+
+With AFS there is no need to compromise since the steering directness varies with 
+speed, which results in three major benefits/enhancements: 
+
+• Agility 
+
+• Comfort 
+
+• Safety 
+
+With the introduction of the E90, Active Front Steering (AFS) becomes available as an 
+option for the 3 Series. 
+
+
+
+46 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+Benefits of AFS 
+
+
+Enhanced Agility 
+
+Up to about midway through the speed range (approx. 100 km/h), the directness of the 
+steering means that the driver perceives the vehicle as more agile and easier to handle, 
+plus there is no loss in feedback from the road surface right through the steering wheel. 
+
+Example: A driver who has to avoid an unexpected obstacle has much better control, 
+plus significantly enhanced steering precision and reguires less work at the 
+steering wheel. 
+
+Enhanced Comfort 
+
+Current BMW models without AFS need more than three full turns of the steering wheel 
+in order for the wheels to complete the arc from full lock in one direction to full lock in the 
+other. 
+
+When the vehicle is travelling at low speed, AFS reduces this to less than two full turns of 
+the steering wheel in order to go from lock to lock.The advantage with AFS: 
+
+The driver's task is easier when turning corners in city traffic or when maneuvering into 
+parking slots where space is at a premium. On twisty roads such as mountain passes, 
+the reduced steering angle means that the driver's hands remain in the ideal position on 
+the wheel. There is no longer any need for the driver to feed the wheel through his or her 
+hands, or to cross hands in a tight bend. The multifunction buttons on the steering 
+wheel and the paddles for the seguential manual transmission (SMG) are always perfectly 
+positioned relative to the driver's hands, regardless of the driving situation. 
+
+Enhanced Safety 
+
+A completely different set of conditions apply when the vehicle is travelling at high speed: 
+
+With the assistance of indirect steering there is increased stability when travelling straight 
+ahead at high speeds (such as on highways) compared with conventional steering. At 
+the same time, the yaw-rate control is in the position to stabilize the vehicle by correcting 
+the steering angle when the vehicle is oversteering. 
+
+This supports the Dynamic Stability Control (DSC) function. 
+
+Like conventional systems, BMW's Active Steering features a steering column with a per¬ 
+manent connection from the steering wheel to the front wheels . The mechanical link 
+ensures the operability of the steering system at all times, even in the event of disruption 
+to or the complete failure of the system. The mechanical steering linkage, is essential in 
+sustaining the authentic "feeling of steering" as perceived by the driver. True steer-by¬ 
+wire systems are intrinsically unable to simulate the realism of this feedback from the road 
+to the driver. 
+
+
+47 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Functions 
+
+
+The AFS system available on the E90 is similar to the system available on the E60, E63 
+& E64, with some additional functions. 
+
+Standard Functions of AFS 
+Variable Steering Ratio 
+
+The steering ratio is dependent on the steering wheel angle and the vehicle speed 
+
+• More maneuverability and agility at lower and mid-range speeds 
+
+• Improved comfort when maneuvering in and out of parking spaces and other 
+maneuvering (less gripping) 
+
+• Increased monitoring and safety during dynamic steering maneuvers (hands firmly 
+on the steering wheel) 
+
+• Stable straightline stability at high speeds 
+
+Linked with Servotronic 
+
+AFS linked with Servotronic and an ECO valve for hydraulic delivery 
+
+Linked with DSC 
+
+Guaranteed vehicle stability in every road situation, also restricted intervention via the 
+steering intervention. 
+
+• Stabilization intervention dependent on the driver's steering action 
+
+Optimum support of the driver while maintaining steering "accuracy" 
+
+• Stabilization on all road surface traction levels (coefficients of friction) 
+
+• Early stabilization due to "more comfortable" steering intervention 
+
+Reduction and postponement of DSC brake interventions 
+
+New Functions with E90 
+Variable Steering Coding 
+
+Two different "variable steering tuning" curves for standard and sport suspensions in the 
+E90 (coded at the factory model/option specific) 
+
+Additional Yaw Rate Sensor 
+
+Two yaw rate sensors in one housing- utilization of a DSC sensor with 2 yaw rate and 2 
+lateral acceleration sensors (redundancy) 
+
+DTC Switch 
+
+When DSC is switched off, the driving stabilization function (yaw-rate control and yaw 
+moment compensation) is also deactivated. The variable steering-gear ratio always 
+remains active. 
+
+
+48 
+
+E90 Dynamic Driving Systems 
+
+
+
+Yaw Moment Compensation 
+
+With conventional systems, the driver has to actively steer the vehicle in a straight line if 
+the brakes are applied on a road surface with non-uniform traction levels ("1-split"). In this 
+situation countersteering keeps the vehicle in its track and shorten the braking distances. 
+
+
+On the E90, equipped with the Active Front Steering (AFS) option and brakes are applied 
+on a road surface with non-uniform traction levels ("1-split"), which results in the build-up 
+of a moment/rotation about the vertical axis (yaw moment) rendering the vehicle unstable. 
+
+
+
+In this situation DSC in conjunction with AFS actuates active steering actions in order 
+stabilize the vehicle and shorten the braking distance, by building up a counter 
+moment/rotation (by counter steering) in the opposite direction which cancels the previ¬ 
+ously created yaw moment. 
+
+
+
+The function is accomplished by allowing the DSC control module to calculate the yaw 
+rate plus interpret information from the front steering angle sensor. The DSC control 
+module transmits the information to the AFS control module which establishes the yaw- 
+moment compensation correction angle needed for stabilization, counter steering. 
+
+The braking distance is shortened because higher braking pressure differences at the 
+rear axle are possible with yaw rate compensation via the steering. ABS on its own would 
+set significantly lower pressure than is actually possible at wheels on a high coefficient of 
+friction ("select low") and thus create a longer braking distance in this situation. 
+
+
+49 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components of AFS System 
+
+
+
+
+The sensors utilized by the Active Front Steering system are: 
+
+Motor-Position Sensor 
+
+The motor-position sensor registers the rotor position of the electric servomotor (angle of 
+rotation). The motor position is communicated to the AFS control module. 
+
+Total Steering-Angle Sensor and Steering Angle Sensor 
+
+The total steering angle sensor captures the steering angle that the Active Front Steering 
+produces at the steering box (total steering angle- angle at steering pinion). As far as its 
+function is concerned, the total steering angle sensor corresponds to the steering angle 
+sensor in a conventional steering system. 
+
+The steering angle sensor in the steering column switch cluster(SZL) captures the angle 
+to which the driver turns the steering wheel. Both signals are needed by the AFS control 
+module. 
+
+• The steering angle sensor is an optical sensor on the E90. 
+
+Both sensors are connected to the F-CAN in order to transmit data to the AFS and DSC 
+modules. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+DSC Module 
+
+2 
+
+AFS Module 
+
+3 
+
+Steering Angle Sensor 
+in SZL 
+
+4 
+
+Total Steering Angle 
+Sensor (LWS) 
+
+5 
+
+DSC Sensor 
+
+
+50 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+DSC Sensor 
+
+The DSC sensor on vehicles equipped with active steering utilizes 2 yaw rate sensor ele¬ 
+ments to transmit redundant signals capturing the rate of yaw (rotation about the vertical 
+axis) and lateral acceleration to the AFS module via the chassis CAN (F-CAN). 
+
+
+
+The control modules involved with the AFS system are: 
+
+Active Front Steering (AFS) Control Module 
+
+The AFS control unit computes the nominal values for the electric servomotor of the 
+planetary gearbox with override function. 
+
+Junction Box Electronics (JBE) 
+
+The Junction Box Electronics (JBE) forms the interface between the PT-CAN and the 
+K-CAN (signals for instrument cluster) and provides a pass through for F-CAN. 
+
+Moreover, the AFS control module receives its power supply from the electrical distribu¬ 
+tion center in the junction box. 
+
+Dynamic Stability Control (DSC) 
+
+The DSC control module and the AFS control module are interconnected by the F-CAN 
+(chassis CAN). The signals supplied by the DSC control module include the Road speed 
+signal. 
+
+Digital Engine Electronics (DME/ECM) 
+
+The engine control module sends the signal indicating that the engine is running to the 
+AFS control unit via the PT-CAN bus. The AFS control unit notifies the engine control of 
+the approximate drive torque of the power-steering pump. 
+
+
+51 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Car Access System 
+
+The vehicle is authenticated by the AFS control unit and the CAS control unit via the K- 
+CAN / PT-CAN (vehicle identification numbers compared). Moreover, the CAS control 
+unit transmits the wake-up signal for the PT-CAN. 
+
+The actuators driven by the Active Steering system are as follows: 
+
+Planetary Gearbox 
+
+The planetary gearbox with override function uses the electric servomotor to generate the 
+resulting total steering angle at the front wheels. 
+
+Hydraulic Steering with Servotronic Valve 
+
+The conventional hydraulic steering provides the power-steering assistance. 
+
+"Servotronic" (= speed dependent power-assisted steering) is part of the Active Steering 
+option. 
+
+ECO Valve in the Power-Steering Pump 
+
+A vehicle fitted with the "Active Steering" option has a controlled-output power-steering 
+pump controlled by AFS. 
+
+Warning Light and Check Control 
+
+The dedicated-function warning light in the instrument cluster lights up to indicate a fault 
+in the Active Steering. 
+
+At the same time a Check-Control message is shown in the LCD display. The text for the 
+Check-Control message can be called up in the Central Information Display (CID). 
+
+
+52 
+
+E90 Dynamic Driving Systems 
+
+
+
+System Activation 
+
+Preconditions for activation for Active Front Steering are: 
+
+• Terminal 15 ON 
+
+• The engine must be running 
+
+Steering-wheel position and the position of the steered wheels are synchronized as soon 
+as the engine is running. This ensures that the positions of the steering wheel and the 
+road wheels match if, for example, the steering wheel was moved while the vehicle was at 
+a standstill with the ignition switched OFF. 
+
+Note: The synchronization procedure can cause the steering-wheel or the vehi¬ 
+cle's front wheels to move. Movements of the steering wheel or the vehi¬ 
+cle's front wheels might be perceptible while synchronization is in 
+progress. 
+
+Synchronization also occurs while the vehicle is on the move, but the 
+process is extremely slow and virtually imperceptible. 
+
+General System Information 
+Track Setting 
+
+Track has to be reset after work on the steering. The procedure for adjusting track on a 
+vehicle with Active Front Steering (total steering angle sensor) is not the same as that for 
+a vehicle with a conventional power-assisted steering system. 
+
+Important: It is essential to follow the instructions in the Repair Instructions. 
+
+Power Supply 
+
+The Active Steering must be initialized again after the battery has been disconnected. To 
+do this, proceed as follows: 
+
+• Start the engine (the "Active Steering inactive" Check-Control message appears) 
+
+• First turn the steering wheel as far as it will go counter clockwise and then as far as it 
+will go clockwise 
+
+or 
+
+• Alternatively the vehicle can be driven at about 30 to 40 km/h 
+
+• Turn off the engine and switch off terminal 15 
+
+• Start the engine and the Active Front Steering and all its functions are operational 
+
+• Clear the Fault Memory of the AFS module 
+
+
+53 
+
+E90 Dynamic Driving Systems 
+
+
+
+Calibrating the Steering Angle Sensors 
+
+If the steering column switch cluster (SZL) is exchanged or reprogrammed, or if the steer¬ 
+ing box is exchanged: The steering-angle sensors must be recalibrated (offset). The 
+motor-position sensor (angle) in the AFS control unit is initialized. 
+
+The total steering angle sensor on the steering box is calibrated relative to the center 
+position of the steering rack by the manufacturer. 
+
+Radio-Reception Interference 
+
+Note: Be sure to secure the shield of the electric servomotor. Failure to connect 
+the shield (3 phases of the electric servomotor) to the protective housing 
+of the AFS module, will almost certainly impair radio reception as a result 
+of interference. 
+
+Servotronic Valve 
+
+If a fault occurs (when de-energized, for example) the Servotronic valve switches to the 
+characteristic for high speeds. Steering assistance is reduced accordingly. 
+
+
+54 
+
+E90 Dynamic Driving Systems 
+
+
+
+1 . 
+
+
+
+Classroom Exercise - Review Questions 
+
+
+What is AFS? 
+
+
+2. What advantages/benefits does AFS provide? 
+
+
+3. Where is the AFS module located? 
+
+
+4. What is different with AFS regarding the E90? 
+
+
+5. What function does the Junction Box provide for AFS? 
+
+
+6. What is special about the DSC sensor and where is it located? 
+
+
+55 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

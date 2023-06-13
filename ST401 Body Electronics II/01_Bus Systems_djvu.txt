@@ -1,0 +1,6211 @@
+Table of Contents 
+
+
+Bus Systems 
+
+Subject Page 
+
+Introduction .5 
+
+Advantages of Bus Systems .6 
+
+Types of Transmission.6 
+
+Analog Transmission .6 
+
+Analog Signal.7 
+
+Digital Transmission .7 
+
+Binary Transmission .8 
+
+Signal Level.9 
+
+Coded Representation.9 
+
+Bit and Byte .10 
+
+Larger Units of Bytes.10 
+
+Overview of Bus Systems.11 
+
+Main Bus Systems .11 
+
+Sub-bus Systems .11 
+
+Main Bus Systems .13 
+
+K-CAN.13 
+
+Advantages of CAN .14 
+
+Terminating Resistor .15 
+
+K-CAN 2 .18 
+
+PT-CAN.20 
+
+PT-CAN2 .21 
+
+ICM-CAN.22 
+
+FlexRay .24 
+
+FlexRayin E7x Vehicles.26 
+
+Wake-up and Sleep Characteristics .28 
+
+Measurements on the FlexRay .30 
+
+FlexRay - Application in FOx Vehicles.31 
+
+Properties of FlexRay.32 
+
+Bus Topology .32 
+
+FlexRay Bus Topology on FOx Vehicles .35 
+
+Bus Termination .36 
+
+Transmission Medium - Signal Properties.38 
+
+Deterministic Data Transmission.40 
+
+Bus Protocol .41 
+
+High Bandwidth .41 
+
+Synchronization .41 
+
+
+Initial Print Date: 07/10 
+
+
+Revision Date: 09/11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Ethernet - Faster Programming Access .42 
+
+Ethernet in FOx Vehicles.42 
+
+Application .42 
+
+Security .42 
+
+Features of Ethernet .43 
+
+Functions of Ethernet .43 
+
+Fiber Optic Bus Networks.44 
+
+Design.45 
+
+Principle of Optical Transmission.45 
+
+Principle of Light Transmission .46 
+
+Light Attenuation .47 
+
+Causes of Excessive Attenuation .47 
+
+Service Considerations .49 
+
+Cable Repair .50 
+
+Fiber Optic Connectors.50 
+
+MOST .51 
+
+MOST Design .52 
+
+Ring Structure.53 
+
+Connection of Control Units.55 
+
+Fiber Optic Connector.56 
+
+MOST Control Units and Light Direction.57 
+
+Light Direction.57 
+
+Registration of control units in the MOST.58 
+
+Bandwidths .59 
+
+MOST Bus Diagnosis .60 
+
+Optical Wave Guide Communication Fault.60 
+
+Control Module Does Not Switch Off Light .61 
+
+Network Wakeup Unsuccessful.62 
+
+Ring Break Diagnosis .62 
+
+Light Output Reduction.63 
+
+Ring Break Test.63 
+
+Status Wakeup .65 
+
+Sub-bus Systems.66 
+
+K-Bus.66 
+
+LIN-Bus.67 
+
+LIN V2.0 (or V2.1).69 
+
+D-Bus.71 
+
+D-CAN.71 
+
+Bit-serial Data Interface .73 
+
+Local-CAN .73 
+
+Gateways .74 
+
+Gateway Rules Based on the Example of a Train Station .75 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Bus Systems 
+
+
+Model: All 
+Production: All 
+
+IBIICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Describe the operation of a basic bus system. 
+
+• Understand how signals and sensor information are shared between 
+control units in a bus system. 
+
+• Identify the different bus systems currently used in BMW Group vehicles. 
+
+• Understand how bus networking technology is applied in BMW vehicles. 
+
+• Understand diagnostic technigues. 
+
+
+4 
+
+Bus Systems 
+
+
+Introduction 
+
+
+Today's vehicles contain a wide variety of electronic devices and components. The total 
+number of electronic components in motor vehicles is sure to increase substantially in 
+the foreseeable future. Legislation as well as customers demand this continued develop¬ 
+ment. Legislation is interested in improving the guality of exhaust emissions and reduc¬ 
+ing fuel consumption. Customer reguirements are focussed on improving driving com¬ 
+fort and safety. 
+
+Control units that meet these reguirements have long been utilized. Examples include 
+control units employed in the area of the digital motor electronics and airbag systems. 
+
+The complexity of the realized functions calls for data exchange between the control 
+units. Conventionally, the data is transmitted via signal lines. However, in view of the 
+increase in complexity of the control unit functions, this type of data exchange can now 
+be realized only with evergrowing expenditure. 
+
+Originally autonomous processes of individual control units are being coupled to an ever 
+increasing extent via bus systems. This means that the processes are distributed, imple¬ 
+mented throughout the vehicle systems network and interact in co-ordinated functions. 
+
+The data exchange within the systems network is therefore constantly increasing. This 
+data exchange also enables many new functions, which benefit increased road safety 
+and enhanced driving comfort. 
+
+These reguirements can no longer be realized with the previous vehicle electrical 
+systems and networks. 
+
+The increasing use of electrical and electronic components in motor vehicles is limited 
+by various factors: 
+
+• Increasing scope of wiring/cabling 
+
+• Higher production costs 
+
+• Increased space reguirement in the vehicle 
+
+• Component configurations that are difficult to manage 
+
+• Reduced reliability of overall system 
+
+Networks are used in the vehicle electrical system with the aim of minimizing these dis¬ 
+advantages. These networks are referred to as bus systems. 
+
+Bus systems enable networking of the individual control units in the vehicle via "serial 
+interfaces". This provides various advantages that facilitate the use of the systems in 
+motor vehicles. 
+
+
+5 
+
+Bus Systems 
+
+
+
+
+Advantages of Bus Systems 
+
+• Higher reliability of overall system 
+
+• Reduced extent of wiring/cabling 
+
+• Reduction in the number of individual cables 
+
+• Reduced cross sections of wiring harnesses 
+
+• Flexible installation of cables 
+
+• Multiple use of sensors 
+
+• Transmission of complex data possible 
+
+• Higher flexibility for system modifications 
+
+• Expansion of scope of data possible at any time 
+
+• Implementation of new functions for the customer 
+
+• Efficient diagnosis 
+
+• Lower hardware costs 
+
+Types of Transmission 
+
+
+Analog Transmission 
+
+The term analog comes from the Greek (analogos) and means corresponding to, analo¬ 
+gous to. 
+
+
+Analog representation of data (= information) is based on representation by a continuous¬ 
+ly changing physical variable that is directly proportional to the data. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Maximum 
+
+U 
+
+Voltage 
+
+t 
+
+Time 
+
+
+6 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analog Signal 
+
+A characteristic of an analog signal is that it can assume any value between 0% and 
+100%. The signal is therefore infinitely variable. 
+
+Examples: Pointer measuring instruments, mercury thermometer, hands of a watch. 
+
+When listening to music, for example, the ear receives the analog signals (constantly 
+changing sound waves). This sound is represented in the same way in electrical devices 
+(audio system, radio, telephone etc.) by means of continuously changing voltages. 
+
+However, when such an electrical signal is transferred from one device to another, the 
+information arriving at the receiver is no longer exactly the same as what was sent by 
+the transmitter. 
+
+This is due to interference factors such as: 
+
+• Cable length 
+
+• Line resistance of the cable 
+
+• Radio waves 
+
+• Mobile radio signals 
+
+The analog transmission of information in vehicle applications is not feasible for safety 
+and reliability reasons. In addition, the changes in voltages would be much too small so 
+that reliable values could not be represented (ABS, airbag, engine management etc.). 
+
+Digital Transmission 
+
+The term digital originates from the Latin world digitus and means finger or toe. 
+
+Digital is therefore everything that can be counted on a few fingers or put more accurately 
+everything that can be divided into discrete steps. 
+
+
+
+Index 
+
+Explanation 
+
+U 
+
+Voltage 
+
+t 
+
+Time 
+
+
+7 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+Digital representation involves the representation of constantly changing variables in 
+numerical form. Particularly in computers, all data are represented as a sequence of 
+zeros and ones (binary). Digital is therefore the opposite of analog. 
+
+Examples: Digital multimeter, digital clock, CD, DVD. 
+
+Binary Transmission 
+
+The word bi comes from the Greek and means two. 
+
+Binary Signal 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+High 
+
+U 
+
+Voltage 
+
+2 
+
+Low 
+
+t 
+
+Time 
+
+
+A binary signal therefore has only two possible states: 0 and 1 or High and Low. 
+Examples: 
+
+• Lamp lights - lamp does not light 
+
+• Relay has dropped out - relay has picked up 
+
+• Voltage is applied - voltage is not applied 
+
+All symbols, images or even sounds consist of a certain series of binary characters such 
+as 10010110. With this binary code, the computer or the control unit can process infor¬ 
+mation or send the information to other control units. 
+
+
+8 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Signal Level 
+
+In order to be able to clearly distinguish between the two states High and Low in 
+motor vehicle applications, a clearly defined range is assigned to each state: 
+
+• The High range is between 6 V and 12 V 
+
+• The Low range is between 0 V and 2 V 
+
+The range between 2 V and 6 V is the so called prohibited range that is used for fault 
+detection purposes. 
+
+Coded Representation 
+Signal level 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+High range 
+
+U 
+
+Voltage 
+
+2 
+
+Prohibited range 
+
+t 
+
+Time 
+
+3 
+
+Low range 
+
+
+
+
+A code is a distinct set of rules for depicting a character set in another character set. 
+
+An example of a code is the Morse alphabet. Each letter of the alphabet and the numbers 
+are encrypted by signals of different lengths. 
+
+
+9 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Morse code, the well-known distress signal SOS (save our souls) is: 
+
+
+short short short 
+
+long long long 
+
+short short short 
+
+S 
+
+O 
+
+S 
+
+
+The code is used to convert information that is represented in encrypted form into anoth¬ 
+er form of representation where the information content is not changed. 
+
+Important codes in computer engineering are ASCII and hexadecimal code. 
+
+For example, a person using a computer presses the D key on the keyboard. The letter D 
+is then represented (coded) as a binary sequence 0100 0100. This character sequence 
+is then sent in the form of an electrical signal from the keyboard via the cable to the com¬ 
+puter. The computer interprets (decodes) this character sequence correctly as the letter D. 
+
+The character sequence and its electrical signal are known as coded information. 
+
+Bit and Byte 
+
+All information in computers is stored as bits (binary digit = smallest information unit). 
+
+All data (letters, numbers, sounds, images etc.) must therefore be converted into a binary 
+code for processing in the computer. 
+
+The most commonly used systems and codes use eight bits for the purpose of repre¬ 
+senting a character. 
+
+Eight bits are combined to form one byte, allowing 256 characters to be coded. 
+
+Larger Units of Bytes 
+
+The conversion does not correspond exactly to the factor 1000 but rather the factor 
+1024. 
+
+• 1 Kilobyte (KB) — 210 bytes, i.e. 1024 bytes 
+
+• 1 Megabyte (MB) = 220 bytes, i.e. 1024 KB (1.048.576 bytes) 
+
+• 1 Gigabyte (GB) = 230 bytes, i.e. 1024 MB (1.073.741.824 bytes) 
+
+
+10 
+
+Bus Systems 
+
+
+
+
+Overview of Bus Systems 
+
+In principle, a distinction is made between two groups of bus systems: 
+
+• Main bus systems 
+
+• Sub-bus systems 
+
+Main bus systems are responsible for cross system data exchange. Sub-bus systems 
+exchange data within the specific system. These systems are used to exchange relatively 
+small quantities of data in specific systems. 
+
+Main Bus Systems 
+
+The following busses are used as main bus systems: 
+
+
+Main bus system 
+
+Data rate 
+
+Bus structure 
+
+K-Bus* 
+
+9.6 kbits/s 
+
+Linear -one-wire 
+
+D-Bus 
+
+10.5 -115 kbits/s 
+
+Linear - one-wire parallel 
+
+CAN 
+
+100 kbits/s 
+
+Linear - two-wire parallel 
+
+D-CAN 
+
+500 kbits/s 
+
+Linear - two-wire parallel 
+
+K-CAN 
+
+100 kbits/s 
+
+Linear - two-wire parallel 
+
+K-CAN 2 
+
+500 kbits/s 
+
+Linear - two-wire parallel 
+
+F-CAN 
+
+500 kbits/s 
+
+Linear - two-wire parallel 
+
+PT-CAN 
+
+500 kbits/s 
+
+Linear - two-wire parallel 
+
+PT-CAN 2 
+
+500 kbits/s 
+
+Linear - two-wire parallel 
+
+byteflight 
+
+10 M Bits/s 
+
+Star structure - fiber optics conductor 
+
+MOST 
+
+22.5 MBits/s 
+
+Ring structure - fiber optics conductor 
+
+FlexRay 
+
+10 MBits/s 
+
+Star- two wire 
+
+
+* Also known to as 1-Bus in earlier models 
+
+
+Sub-bus Systems 
+
+The following busses are used as sub-bus systems: 
+
+
+Main bus system 
+
+Data rate 
+
+Bus structure 
+
+K-Bus protocol 
+
+9.6 kbits/s 
+
+Linear - one-wire 
+
+BSD 
+
+9.6 kbits/s 
+
+Linear - one-wire 
+
+DWA-Bus 
+
+9.6 kbits/s 
+
+Linear - one-wire 
+
+LIN-Bus 
+
+9.6-19.2 kbits/s 
+
+Linear - one-wire 
+
+
+11 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+E70 Bus Overview 
+
+
+2 
+
+*. si 
+
+2 * 
+
+
+e 
+
+
+I 
+
+
+
+•ol 
+
+
+* P 
+
+
+iiiii 
+
+
+e * 
+
+
+I 
+
+
+:;ri 
+
+
+i 
+
+
+■ 
+
+
+
+
+jo 
+
+
+I 1 
+
+
+§ 2 
+
+
+t := 
+
+
+0i 
+
+
+5* 
+
+
+
+12 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-CAN on the E90 
+
+
+Main Bus Systems 
+
+K-CAN 
+
+
+K-CAN stands for Karosserie (body) Controller 
+Area Network. CAN was developed by Robert 
+Bosch GmbH as the bus system for motor vehi¬ 
+cles. 
+
+The task of the K-CAN is to transmit information 
+in the area of the vehicle body. 
+
+As a twisted two-wire copper line, the K-CAN 
+operates at a transmission rate of 100 kbits/s. 
+
+A further bus in the CAN family is the F-CAN. 
+
+F-CAN stands for Fahrwerk (chassis) Controller 
+Area Network. This bus is structured and func¬ 
+tions in exactly the same way as the K-CAN. 
+However, the F-CAN is used exclusively for data 
+transmission of the chassis/suspension compo¬ 
+nents such as the dynamic stability control for 
+example. 
+
+F-CAN on the E90 
+
+
+
+
+
+JB 
+
+
+
+Kombi CON 
+
+
+USIS 
+
+
+SMFA 
+
+
+• —• 
+
+• FZD MRS5 
+
+
+PDC 
+
+
+CAS2 \~Z 
+
+
+IHKA CA 
+
+IHKR 
+
+
+SZL 
+
+
+ILWS 
+
+
+DSC-SEN 
+
+
+13 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advantages of CAN 
+
+The advantages of the CAN-Bus are: 
+
+• Higher data transmission speed compared to conventional wiring 
+
+• Improved electromagnetic compatibility (EMC) 
+
+• Improved emergency operation characteristics 
+
+The body controller area network, abbreviated K-CAN, is used in BMW vehicles to inter¬ 
+link components of the comfort and body electronics such as lamp control, seat adjust¬ 
+ment and air conditioning. 
+
+The transmission rate is 100 kbits/s. 
+
+K-CAN is based on linear topology, i.e. it conforms to a bus structure. 
+
+Each terminal unit (node, control unit) in a network with a bus structure is connected with 
+a common line. 
+
+
+
+The K-CAN is a multi-master bus. Each control unit that is connected to the bus can 
+send messages. 
+
+The control units communicate event controlled. The control unit wishing to send data 
+sends a message when the bus is free. If the bus is not free, the message with the high¬ 
+est priority is sent. 
+
+Since there are no receive addresses, each control unit receives every sent message. 
+Consequently, further receiver stations can be easily added to the system during opera¬ 
+tion. Neither the software nor the hardware needs to be changed. 
+
+Two-wire copper lines are currently used for data transmission. However, solutions based 
+on glass fiber or plastic fiber optics conductors are also possible. Fiber optics conductors 
+are sensitive to high temperatures as occur in the engine compartment. Both lines are 
+twisted to minimize interference. 
+
+
+14 
+
+Bus Systems 
+
+
+
+
+
+The advantage of using two-wire lines is that it is possible to fall back on a one-wire line 
+in the event of a fault. 
+
+Advantages: 
+
+• Easy to install 
+
+• Easy to expand 
+
+• Short lines 
+
+• Emergency operation on one line 
+Disadvantages: 
+
+• Network expansion limited 
+
+• Intricate access methods 
+
+Terminating Resistor 
+
+From an electrical point of view, a current carrying conductor always has an ohmic, induc¬ 
+tive and capacitive resistance. When transmitting data from point "A" to point "B", the 
+total sum of these resistances has an effect on data transmission. The higher the trans¬ 
+mission freguency, the more effective the inductive and capacitive resistance. Ultimately, 
+it is possible that a signal, which is no longer identifiable, is received at the end of the 
+transmission line. For this reason, the line is "adapted" by terminating resistors, ensuring 
+the original signal is retained. 
+
+Inductive resistance occurs, for example, as the result of the coil effect in the line. 
+Capacitive resistance occurs, for example, by installing the line parallel to the vehicle body. 
+
+The terminating resistors used in a bus system vary. 
+
+They generally depend on the following parameters: 
+
+• Freguency of data transmission on the bus system 
+
+• Inductive or capacitive load on the transmission path 
+
+• Cable length for data transmission 
+
+The longer the line, the greater the inductive component of the line. 
+
+The control units are divided into basic control units that are always installed (e.g. instru¬ 
+ment cluster in the E9x vehicles) and the remaining control units. The resistance value 
+determines this division. 
+
+Terminating resistors are used to ensure exact signal progression in the bus systems. 
+These terminating resistors are located in the control units of the bus systems. 
+
+If the voltage level changes due to a defective terminating resistor. This change in voltage 
+affects the CAN system. Communication between the bus users no longer operates cor¬ 
+rectly. 
+
+15 
+
+Bus Systems 
+
+
+
+Voltage level on the K-CAN: 
+
+• Logic 0 is when the voltage level changes 
+back to low. 
+
+• Logic 1 state is assumed when the voltage 
+level of the CAN-High switches from low to 
+high. 
+
+The voltage difference between the CAN-H and 
+CAN-L lines is 3 V when a dominant bit is trans¬ 
+mitted on the K-CAN. 
+
+
+
+► 
+
+t 
+
+
+In order to obtain a clear idea of whether the CAN-Bus is functioning properly, you must 
+be able to observe activity on the bus. You do not need to analyze the individual bits; you 
+simply need to observe whether or not the CAN-Bus is working. The oscilloscope test 
+can state that, ’’the CAN-Bus is probably operating without faults”. 
+
+
+
+CHI: Probe tip 1, range 2 V/Div; 
+DC coupling 
+
+CH2: Probe tip 2, Range 2 V/Div; 
+DC coupling 
+
+Time: 100 ps/Div 
+
+
+When you measure the voltage between the K-CAN Low line (or K-CAN High line) 
+and the ground, you receive a rectangle-like signal in the following voltage ranges: 
+
+Voltage measurement at the K-CAN are: 
+
+K-CAN Low to ground: V min = 1 volts and V max = 5 volts 
+K-CAN High to ground: V min = 0 volts and V max = 4 volts 
+
+
+
+No defined resistance test can be carried out on the K-CAN data bus 
+as the resistance varies generally > 720Kft depending on the internal 
+switching logic of the control units. 
+
+
+16 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The K-CAN is operated as a one-wire bus if: 
+
+• There is a break in a CAN data line (core) 
+
+• There is a short to ground on a CAN data line (core) 
+
+• There is a short to the supply voltage UB+ on a CAN data line (core) 
+
+The bus systems used to date are also used in the F01/F02. The K-CAN is responsible 
+for communication of the components with a low data transfer rate. The K-CAN is also 
+connected to the other bus systems via the central gateway module. 
+
+The K-CAN is set up as line topology. Some control units in the K-CAN have a LIN-Bus 
+as sub-bus. The K-CAN has a data transfer rate of 100 kBit/s and is designed as a twist¬ 
+ed pair of wires. The K-CAN has the possibility to be operated as a single-wire bus in the 
+event of a fault. 
+
+The K-CAN control unit is wakened via the bus, without an additional wake-up line. 
+
+The following is an example of the control units which are fitted in the K-CAN of an 
+F01/F02: 
+
+• CID Central Information Display 
+
+• CON Controller 
+
+• EHC, Electronic Height Control 
+
+• FD Rear Display 
+
+• FD2 Rear Display 2 
+
+• FKA, rear heater / air-conditioning system 
+
+• HiFi, hi-fi amplifier 
+
+• HKL, luggage compartment lid lift 
+
+• FIUD, Head-Up Display 
+
+• IHKA, integrated heater/air conditioning system* 
+
+• SMBF passenger seat module* 
+
+• SMBFH rear passenger seat module* 
+
+• SMFA driver seat module* 
+
+• SMBFH rear module on driver' seat side* 
+
+• TPMS, Tire Pressure Monitoring System 
+
+• TRSVC panoramic camera* 
+
+• VSW, video switch 
+
+• ZGM, central gateway module 
+
+
+17 
+
+Bus Systems 
+
+
+
+
+K-CAN 2 
+
+
+First introduced with BN2020 in the F01, the K-CAN 2 is responsible for communication 
+of the control units with a high data transfer rate. The K-CAN 2 is also connected to the 
+other bus systems via the central gateway module (ZGM). A LIN-Bus as a sub-bus is 
+connected to all control units in the K-CAN 2. 
+
+The K-CAN 2 can be wakened via any of these sub busses, without an additional (hard¬ 
+wire) wake-up line. This is represented by the “wake authorized” symbol next to all of the 
+control units of K-CAN 2 on the Bus Overview. (See bus chart below). 
+
+To provide a rapid start enable, the CAS has an additional redundant bus connection to 
+the DME. On this CAS-Bus, the data are transferred per K-Bus protocol. 
+
+The K-CAN 2 is similar to PT-CAN in that it has a data transfer rate of 500 kBit/s, it is 
+designed as a twisted pair with a measured a resistance of 60 Q . 
+
+The following control units are fitted in the KCAN 2: 
+
+• CAS Car Access System 
+
+• FRM, footwell module 
+
+• FZD, roof functions center 
+
+• JBE, junction box electronics 
+
+• PDC, Park Distance Control (integrated in JBE) 
+
+• ZGM, central gateway module 
+
+The terminal resistors in the K-CAN 2 are located in the following control units: 
+
+• Central gateway module 
+
+• Junction box electronics 
+
+
+Q 
+
+m 
+
+
+
+18 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you measure the voltage between the K-CAN 2 Low line (or K-CAN 2 High line) 
+and the ground, you receive a rectangle-like signal in the following voltage ranges: 
+
+CAN Low to ground: V min = 1.5 volts and V max = 2.5 volts 
+
+CAN High to ground: V min = 2.5 volts and V max = 3.5 volts 
+
+
+
+CHI: Test probe 1, range 1 V/Div; 
+DC coupling 
+
+CH2: Test probe 2, range 1 V/Div; 
+DC coupling 
+
+Time: 10 ps/Div 
+
+
+Values of the terminating resistors on the K-CAN: 
+
+• 2 X 120 Q resistors which equal a to measured resistance between wires of 60 Q . 
+
+
+Inspection procedure for resistance test on any CAN-Bus: 
+
+• The CAN-Bus must be de-energized. 
+
+• No other testing equipment must be in use (connected in parallel). 
+
+• The measurement is taken between the CAN Low and CAN High lines. 
+
+• The actual values may differ from the setpoint values by a few Q. 
+
+In order to prevent signal reflection, 2 CAN-Bus users (at the extremities of the powertrain 
+CAN network) with 120 Q each are terminated. The two terminal resistors are connected 
+in parallel and form an equivalent resistance of 60 Q. When the supply voltage is switched 
+off, this equivalent resistance can be measured between the data lines. In addition, the 
+individual resistors can be tested independently of one another. 
+
+
+Information on the measurement with 60 Q: Disconnect an easily accessible control unit 
+from the bus. Then measure the resistance on the connector between the CAN Low and 
+CAN High lines. 
+
+
+
+When measuring K-CAN 2 voltage, the Oscilloscope (IMIB) settings 
+should be the same as for the PT-CAN, or any “high” speed CAN. 
+
+
+19 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PT-CAN 
+
+
+E90 PT-CAN 
+
+
+PT-CAN stands for Powertrain Controller Area Network. 
+CAN was developed by Robert Bosch GmbH as the bus 
+system for motor vehicles. 
+
+The PT-CAN has a transmission rate of 500 kbit/s and 
+prior to the FlexRay was the fastest (hard wire) CAN-Bus 
+used in BMW vehicles. Most of the busses that were 
+introduced after it use similar design. 
+
+This bus connects all control units and modules belong¬ 
+ing to the drive train. All bus users are connected in par¬ 
+allel. 
+
+The special feature of this CAN-Bus is that, instead of 
+two lines, it is equipped with three lines. 
+
+The third line is used as a wake-up line and has nothing 
+to do with actual operation of the CAN-Bus. 
+
+
+DME 
+
+DDE 
+
+
+AFS 
+
+
+EKP 
+
+
+DSC EGS 
+
+
+LDM - 
+
+
+ACC II 
+
+
+
+T*oir4:*l Apf4tc*!wi 
+
+» 0 B R ■ 
+
+IS 
+
+f A 
+
+r 0 ohi CIMUD 
+
+V J'lFI l'TOO*V335U;M57iM/nrUI» .L'S010l» 
+
+
+
+
+
+
+
+Midiiwlir 
+
+flliwli 
+
+
+
+
+
+
+
+
+
+
+
+
+• • 
+
+i m fi 
+
+fin 
+
+JUL 
+
+1TU1AJ 
+
+! U 
+
+i_j ui 
+
+L_ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tftw*: Auw 
+
+
+DitfaU* 
+
+CM 1 CHI 
+
+
+Ditpjf 
+
+Lo* 
+
+
+eh 
+
+Swim 
+
+
+im n* 
+
+
+Tim 
+
+lilt- 1 PaIIiui 
+
+
+4 10m » 
+
+
+EH 
+
+■ Soac 
+
+
+Tmhqw 
+
+
+I l*v»l 
+
+
+‘II 
+
+
+Stap« 
+
+Wc.lo 
+
+
+r-.^lii »9 _ Mod*_ _ 
+
+FT 
+
+
+EiKlHItM* Eiwttllni 
+
+
+lMi I A- 
+
+
+CHI: Test probe 1, range 1 V/Div; 
+DC coupling 
+
+CH2: Test probe 2, range 1 V/Div; 
+DC coupling 
+
+Time: 10 ps/Div 
+
+
+When you measure the voltage between the PT-CAN Low line (or PT-CAN High line) 
+and the ground, you receive a rectangle-like signal in the following voltage ranges: 
+
+CAN Low to ground: V min = 1.5 volts and V max = 2.5 volts 
+
+CAN High to ground: V min = 2.5 volts and V max = 3.5 volts 
+
+
+
+These values are approximate values and can vary by a few hundred 
+mV depending on the bus load. 
+
+
+Note: For more information regarding CAN-Bus system diagnosis refer to: 
+
+- SI B61 03 03 CAN-Byteflight Bus Diagnosis 
+
+- FUB-DAA0701FB-656135001 Checking the CAN bus signal 
+
+
+20 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PT-CAN 2 
+
+
+Also introduced with BN2020 in the F01 the PT-CAN 2 forms a redundancy for the PT- 
+CAN in the area of the engine management system and also transfers signals to the fuel 
+pump control. PT-CAN 2 is similar to the PT-CAN in that it has a data transfer rate of 500 
+kBit/s and is designed as a twisted pair with an additional wake-up line. It also 
+incorporates 2 (120 Q) resistors which egual to a measured resistance between the wires 
+of 60 Q. 
+
+
+PT-CAN 2 (F01/F02) 
+
+
+
+ZGM 
+
+
+KOMBI 
+
+
+VM 
+
+
+SDARS 
+
+
+DVD 
+
+
+DME 
+
+
+E 
+
+
+DDE 
+
+
+ACSM 
+
+
+EMAU 
+
+
+EMARE 
+
+
+EGS 
+
+
+GWS 
+
+
+EKPS 
+
+
+Index 
+
+Explanation 
+
+DME 
+
+Digital Motor Electronics 
+
+EKPS 
+
+Electronic fuel pump control 
+
+EGS 
+
+Electronic transmission control 
+
+GWS 
+
+Gear selector lever 
+
+
+The terminal resistors in the PT-CAN 2 are located in the following control units: 
+
+• Digital Motor Electronics 
+
+• Control unit for electric fuel pump 
+
+As with PT-CAN, when you measure the voltage between the PT-CAN2 Low line (or PT- 
+CAN 2 High line) and the ground, you receive a rectangle-like signal in the following volt¬ 
+age ranges: 
+
+CAN Low to ground: V min = 1.5 volts and V max = 2.5 volts 
+CAN High to ground: V min = 2.5 volts and V max = 3.5 volts 
+
+
+
+When measuring PT-CAN 2 voltage, the Oscilloscope (IMIB) 
+settings should be the same as for the PT-CAN and K-CAN 2 
+(refer to these for an sample of the PT-CAN 2 scope pattern). 
+
+
+21 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ICM-CAN 
+
+One of the differences between the E71 and the E70 is the introduction of a new control 
+unit known as Integrated Chassis Management (ICM). The ICM coordinates 
+longitudinal and lateral dynamic control functions, which include the familiar Active 
+Steering and the Dynamic Performance Control [with QMVH] Currently available in the 
+E71 and E70M and E71M. 
+
+Despite the fact that the PT-CAN and F-CAN work at a high bit rate of 500 kBps, they 
+would have been overloaded by the signals from the ICM and QMVH control units. For 
+this reason,the ICM-CAN sub-bus was introduced. 
+
+The ICM-CAN was integrated into the BN2000 network as a new bus system especially 
+designed for the ICM control unit functions. It connects the ICM, AL and QMVH control 
+units. 
+
+The diagram shows the control units and bus systems that are related for the dynamic 
+driving systems. 
+
+
+E71 bus chart with ICM-CAN highlighted 
+
+
+
+JB 
+
+
+O-CAN 
+
+
+PT-CAN - 
+
+K-8trt . 
+
+K-CAN 
+
+— 
+
+T-CAN 
+
+LIN-Bvi 
+
+■so ••••• 
+
+ICM-CAN !!! 
+
+LA 
+
+
+MvxHj r, 
+
+
+
+FF 
+
+
+=.i 
+
+
+Note: In BN2020 vehicles the ICM control unit is connected to an expanded 
+version of the FlexRay eliminating the need of the ICM-CAN. 
+
+
+22 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ICM-CAN is a two-wire bus on which data is transmitted at 500 kBps. The two ter¬ 
+minating resistors, each with 120 Q, are located in the ICM and QMVH control units. 
+
+The ICM-CAN cabling in the vehicle varies considerably between the two variants 
+with/without Active Steering. 
+
+If Active Steering is fitted, the ICM-CAN is routed from the ICM control unit to the AL 
+control unit. The ICM-CAN is picked up in the AL control unit and forwarded to the 
+QMVH control unit. 
+
+If Active Steering is not fitted, the ICM-CAN line is routed directly from the ICM control 
+unit to the QMVH control unit. 
+
+These control units use the ICM-CAN to exchange setpoint values and actual values, 
+as well as status signals. These signals are only reguired locally for implementing the 
+Dynamic Performance Control and Active Steering functions. 
+
+In contrast, signals that the dynamic driving systems exchange with other control units 
+are still transmitted via the PT-CAN. The PT-CAN is also the bus system via which the 
+ICM, AL and QMVH control units communicate with the diagnostic system. 
+
+The ICM control unit does not therefore perform the function of a diagnostics gateway. 
+
+As with PT-CAN and K-CAN2, when you measure the voltage between the ICM-CAN 
+Low line (or ICM-CAN High line) and the ground, you receive a rectangle-like signal in 
+the following voltage ranges: 
+
+CAN Low to ground: V min = 1.5 volts and V max = 2.5 volts 
+CAN High to ground: V min = 2.5 volts and V max = 3.5 volts 
+
+
+
+When measuring ICM-CAN voltage, the Oscilloscope (IMIB) 
+settings should be the same as for the PT-CAN and K-CAN 2 
+(refer to these for an sample of the ICM-CAN scope pattern). 
+
+
+23 
+
+Bus Systems 
+
+
+
+FlexRay 
+
+
+In the future, driving dynamics control systems, driver assistance systems and their innov¬ 
+ative interconnection will be evermore important for the differentiation of the BMW 
+badge. Since today's networking systems using the CAN-Bus have already reached their 
+limit, it is necessary to find a suitable alternative for CAN. 
+
+In co-operation with Daimler Chrysler AG and the semiconductor manufacturers 
+Freescale (formerly Motorola) and Philips, BMW AG founded the FlexRay consortium 
+in 1999 for the purpose of developing innovative communication technology. 
+
+
+The consortium was soon joined by further partners, including Bosch and General 
+Motors and to date, the Ford Motor Company, Mazda, Elmos and Siemens VDO have 
+also decided to join. In the meantime, almost all significant car makers and suppliers 
+throughout the world have joined the FlexRay consortium. 
+
+
+
+
+V*/ 
+
+
+jOJ 
+
+LIN-Bus 
+
+K-Ous 
+
+L B-.ii 
+
+
+Floflai 
+
+
+bytofight 
+
+IACGT 
+
+
+P7-WN 
+
+
+F-CAN 
+
+
+KBit 
+
+
+10 
+
+
+100 
+
+
+500 
+
+
+10000-20000 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Real time capabilities, deterministic (strictly defined) and redundant 
+
+2 
+
+Conditional real time capabilities - sufficient for control systems 
+
+3 
+
+No real time capabilities 
+
+
+FlexRay is a new communication system which aims at providing reliable and efficient 
+data transmission with real-time capabilities between the electrical and mechatronic 
+components for the purpose of interconnecting innovative functions in motor vehicles, 
+both today and in the future. 
+
+
+24 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Development of the new FlexRay communication system was prompted by the ever 
+growing technological reguirements placed on a communication system for interconnect¬ 
+ing control units in motor vehicles and the realization that an open and standardized solu¬ 
+tion was needed for infrastructure systems. 
+
+FlexRay provides an efficient protocol for real-time data transmission in distributed sys¬ 
+tems as used in motor vehicles. 
+
+With a data transmission rate of 10 Mbits/s, the FlexRay is distinctly faster than the data 
+buses used in the area of the chassis, drive train and suspension of today's motor 
+vehicles. 
+
+In addition to the higher bandwidth, FlexRay supports deterministic data transmission and 
+can be configured such that reliable continued operation of remaining communication 
+systems is enabled even in the event of individual components failing. 
+
+What are the advantages of FlexRay? 
+
+• High bandwidth (10 Mbits/s compared to 0.5 Mbits/s of the CAN) 
+
+• Deterministic (= real-time capabilities) data transmission 
+
+• Reliable data communication 
+
+• Supports system integration 
+
+• Standard in automotive industry 
+
+The FlexRay bus system is an industrial standard and is therefore supported 
+and further developed by many manufacturers. 
+
+
+C SafeMi.larf immtiIi Qi 
+
+
+Development Members 
+Associate Members 
+
+
+9ie >'“ mteS0Cia,e ^V 
+
+Cote Members 
+
+
+HYVNDAV 
+KIA MOTORS 
+
+
+
+
+BMW Group 
+
+Etoctnxwc* 
+
+Corporation 
+
+Volkswagen 
+
+Toyota 
+
+
+DaimlerChrysler 
+
+
+Delphi 
+
+Corporation 
+
+
+
+
+ur.l » - 
+
+
+General Motors 
+
+
+Honda 
+Motor Co. 
+
+
+NISSAN 
+
+motor Freejcale Semiconductor Contm=r.v 
+
+CO. Ltd. Tl'ves *0 4 Co 
+
+Tyco Electronic* Ford Motor Company 
+
+PSA Peogoot Cilroott 
+
+
+ICDtilpicU 
+
+■.asr 
+
+
+II141 
+
+
+
+25 
+
+Bus Systems 
+
+
+
+
+
+
+
+FlexRay in E7x Vehicles 
+
+With the launch of the E70, the FlexRay bus system will be used for the first time 
+worldwide in a standard production vehicle. The FlexRay bus system establishes the 
+connection between the VDM control unit (vertical dynamics management) and the EDC 
+satellites at the shock absorbers. A detailed functional description of the overall system 
+can be found in the reference information - “Vertical Dynamics Systems”. 
+
+
+E7x FlexRay Bus System Overview 
+
+
+
+26 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for E7x FlexRay Bus System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Junction box control unit 
+
+2 
+
+Vertical Dynamics management (VDM) 
+
+3 
+
+Diagnosis connector 
+
+4 
+
+Ride height sensors, front 
+
+5 
+
+EDC satellites with vertical acceleration sensors and solenoid valves 
+
+6 
+
+Ride height sensors, rear 
+
+D-CAN 
+
+Diagnosis CAN 
+
+F-CAN 
+
+Chassis CAN 
+
+PT-CAN 
+
+Powertrain CAN 
+
+FlexRay 
+
+FlexRay bus system 
+
+KL 30 g 
+
+Terminal 30g 
+
+
+27 
+
+Bus Systems 
+
+
+
+
+
+The FlexRay bus system is designed as a two-wire, single-channel bus 
+system. Acting as the gateway, the VDM control unit establishes the connection 
+between the PT-CAN and FlexRay bus systems. 
+
+Data communication between the EDC satellites on the FlexRay and the other control 
+units installed in the E70 takes place via the VDM control unit. 
+
+Wake-up and Sleep Characteristics 
+
+
+
+The control units are activated by means of an additional wake-up line. The wake-up line 
+has the same function as the previous wake-up line (15WUP) in the PT-CAN. The signal 
+curve corresponds to the signal curve of the PT-CAN. 
+
+As soon as the bus system is woken, the VDM receives a High level on the PT-CAN and 
+transfers this signal to the wake-up line of the FlexRay, thus also waking the satellites. 
+
+
+
+28 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The "wake-up voltage curve" graphic shows the typical behavior of the voltage curve in 
+response to unlocking and starting the vehicle. 
+
+Phase 1: 
+
+Driver unlocks the car, the CAS control unit activates the K-CAN and the PT-CAN, the 
+voltage level in the PT-CAN briefly goes to High, the VDM copies the signal and transfers 
+it to the wake-up line on the FlexRay. 
+
+Phase 2: 
+
+Car is opened, terminal R is still OFF, the voltage levels in the bus systems drop again. 
+
+Phase 3: 
+
+Car is started, terminal 15 is ON, the voltages remain at the set levels until terminal 15 is 
+turned off again. 
+
+Phase 4: 
+
+The complete vehicle network must assume sleep mode at terminal R OFF in order to 
+avoid unnecessary power consumption. Each control unit in the network signs off to 
+ensure that all control units "are sleeping". Only when all EDC satellites have signed off 
+at the VDM control unit can this control unit pass on this information to the PT-CAN and 
+therefore to the complete network. An error message is stored if this is not the case. 
+
+This error message is then evaluated as part of the energy diagnosis procedure. 
+
+Wiring 
+
+The wiring of the FlexRay bus in E7x vehicles is executed as a sheathed, two-core, twist¬ 
+ed cable. The sheathing protects the wires from mechanical damage. The terminating 
+resistors are located in the EDC satellites. Each satellite has one terminating resistor. 
+Since the surge impedance (impedance of high-freguency lines) of the lines depends on 
+external influencing factors, the terminating resistors are precisely matched to the 
+required resistance. 
+
+The four sections of line to the satellites can be checked relatively easily by means of a 
+resistance measuring instrument (ohmmeter, multimeter). The resistance should be 
+measured from the VDM control unit. See BMW diagnostic system for pin assignments. 
+
+The following conclusions can be made: 
+
+RBP-BM: <or=10Q -There is a short circuit in this section of line. 
+
+RBP-BM: 10-90Q - This section of line is damaged 
+
+(e.g. moisture in connector, line pinched) 
+
+RBP-BM: 90-110 Q - This section of line is OK and the satellite is connected 
+
+(Note: Impedance errors are not recognized) 
+
+RBP-BM: > 110 Q - There is a break in the line or the satellite is not connected 
+
+or there is a break in the connection to the satellites. 
+
+RBP Resistance Bus Plus 
+BM Bus Minus 
+
+29 
+
+Bus Systems 
+
+
+
+Plug Connections 
+
+The two plug connections contain the power supply of 
+the control units, the wake-up line and the bus connec¬ 
+tion with wake-up line. The connection to the satellites 
+in the wheel arch is made with waterproof plugs. Two 
+plugs are used: 
+
+
+Measurements on the FlexRay 
+
+For resistance measurement in the FlexRay, 
+be sure to observe the vehicle wiring diagram! 
+
+The various termination options mean that misinterpretations of the measurement results 
+can occur. Measuring the resistance of the FlexRay lines cannot provide a 100% deduc¬ 
+tion in terms of the system wiring. In the case of damage such as pinching or connector 
+corrosion, the resistance value may be within the tolerance when the system is static. 
+
+In dynamic mode, however, electrical influences can cause increased surge resistance, 
+resulting in data transmission problems. 
+
+It is possible to repair the FlexRay bus. If damaged, the cables can be connected using 
+conventional cable connectors. Special reguirements, however, must be observed when 
+reinstalling the system. 
+
+The wiring of the FlexRay system consists of twisted lines. Where possible, this twisting 
+should not be altered during repairs. Repaired areas with stripped insulation must be 
+sealed again with shrink-fit tubing. Moisture can affect the surge resistance and there 
+fore the efficiency of the bus system. 
+
+
+Plug 1, black 
+
+Terminal 30g 
+
+Terminal 31 
+
+Wake-up line 
+
+Plug 1, blue 
+
+FlexRay (green wire) 
+FlexRay (pink wire) 
+
+
+30 
+
+Bus Systems 
+
+
+
+
+FlexRay - Application in FOx Vehicles 
+
+In the F01/F02, the FlexRay bus system was used for the first time across systems to 
+network dynamic driving control systems and the engine management system in a series 
+vehicle. The central gateway module sets up the link between the various bus systems 
+and the FlexRay. 
+
+
+FlexRay - simplified view 
+
+
+
+31 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Properties of FlexRay 
+
+The most important properties of the FlexRay bus system are outlined in the following: 
+
+• Bus topology 
+
+• Transmission medium - signal properties 
+
+• Deterministic data transmission 
+
+• Bus protocol 
+
+
+Bus Topology 
+
+The FlexRay bus system can be integrated in various 
+topologies and versions in the vehicle. 
+
+The following topologies can be used: 
+
+• Line-based bus topology 
+
+• Point-to-point bus topology 
+
+• Mixed bus topology 
+
+
+Line-based Bus Topology 
+
+All control units (SG1...SG3) in line-based 
+topology are connected by means of a two- 
+wire bus, consisting of two twisted copper 
+cores. This type of connection is also used 
+on the CAN-Bus. The same information 
+but with different voltage level is sent on 
+both lines. 
+
+The transmitted differential signal is 
+immune to interference. The line-based 
+topology is suitable only for electrical data 
+transmission. 
+
+Point-to-point Bus Topology 
+
+The satellites (control units SG2...SG5) in 
+point-to-point bus topology are each 
+connected by a separate line to the central 
+master control unit (SGI). Point-to-point 
+topology is suitable for both electrical as 
+well as optical data transmission. 
+
+
+
+Line-based bus topology 
+
+
+
+Point to point bus topology 
+
+
+32 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mixed Bus Topology 
+
+Mixed bus topology caters for the use of different topologies in one bus system. Parts of 
+the bus system are line-based while other parts are point-to-point. 
+
+Redundant Data Transmission 
+
+Fault-tolerant systems must ensure continued reliable data transmission even after failure 
+of a bus line. This requirement is realized by way of redundant data transmission on a 
+second data channel. 
+
+
+SGI SG2 SG3 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Channel 1 
+
+B 
+
+Channel 2 
+
+
+A bus system with redundant data transmission uses two independent channels. 
+
+Each channel consists of a two-wire connection. In the event of one channel failing, the 
+information of the defective channel can be transmitted on the intact channel. FlexRay 
+enables the use of mixed topologies also in connection with redundant data transmission. 
+
+Bus Topology of FlexRay in E7x Vehicles 
+
+The physical configuration of the FlexRay bus system in E7x vehicles is point-to-point. 
+
+All EDC satellites are individually connected via plug connections to the VDM control unit. 
+
+Internally, however, the left and right EDC satellites are connected to form a line-based 
+topology. The two lines are connected by means of a double point-to-point connection 
+consisting of two bus drivers. Every item of information that is sent from one of the EDC 
+satellites or from the central VDM control unit reaches all connected control units. 
+
+
+33 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VDM System Schematic on E7x Vehicles 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Vertical Dynamics Management (VDM) 
+
+6 
+
+Bus driver 
+
+2 
+
+EDS satellites, front left 
+
+7 
+
+Terminating resistor 
+
+3 
+
+EDS satellites, front right 
+
+8 
+
+Microprocessor 
+
+4 
+
+EDS satellites, rear right 
+
+FlexRay 
+
+FlexRay bus system 
+
+5 
+
+EDS satellites, rear left 
+
+
+
+
+34 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlexRay Bus Topology on FOx Vehicles 
+
+Physical structure of FlexRay FOx (topology) 
+
+
+EDCSVL 
+
+□ 
+
+
+EDCSVR 
+
+a 
+
+
+
+35 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for Physical structure of FlexRay FOx (topology) 
+
+
+Index 
+
+Explanation 
+
+AL 
+
+Active steering system 
+
+BD 
+
+Bus driver 
+
+DM 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+EDCSH 
+
+Electronic damper control, rear left satellite 
+
+EDCSHR 
+
+Electronic damper control, rear right satellite 
+
+EDCSVL 
+
+Electronic damper control, front left satellite 
+
+EDCSVR 
+
+Electronic damper control, front right satellite 
+
+HSR 
+
+Rear-axle drift angle control 
+
+ICM 
+
+Integrated Chassis Management 
+
+SZL 
+
+Steering column switch cluster 
+
+VDM 
+
+Vertical dynamics management 
+
+ZGM 
+
+Central gateway module 
+
+
+FlexRay Bus Topology on the F01 
+
+The FlexRay is always shown in a simplified form in the overview of the bus systems. The 
+actual topology of the FlexRay as used in FOx vehicles is shown in the preceding graphic. 
+
+Depending on the level of eguipment of the vehicle, the ZGM contains one or two so- 
+called star couplers, each with four bus drivers. The bus drivers forward the data of the 
+control units via the communication controller to the central gateway module (ZGM). 
+Depending on the type of termination the FlexRay control units have, they are connected 
+to these bus drivers in two different ways. 
+
+Note: For further information regarding the FlexRay refer to the F01 training 
+information available on TIS and ICR 
+
+Bus Termination 
+
+In the same way as most bus systems, resistors for termination (as bus termination) are 
+also used at both ends of the data lines on the FlexRay to prevent reflections on the lines. 
+
+
+36 
+
+Bus Systems 
+
+
+
+
+
+
+The value of these terminal resistors is determined from the data transfer rate and cable 
+lengths. The terminal resistors are located in the control units. 
+
+If only one control unit is connected to a bus driver (e.g. SZL to the bus driver BDO), the 
+connections on the bus driver and on the control unit are fitted with a terminal resistor. 
+
+Terminal resistor 
+
+
+
+This type of connection at the central gateway module is called "end node termination". 
+
+If the connection at the control unit is not the physical finish node (e.g. DSC, ICM and 
+DME at the bus driver BD2), it is referred to as a FlexRay transmission and forwarding 
+line. In this case, both components must be terminated at the ends of each bus path 
+with terminal resistors. 
+
+Through-looped FlexRay 
+
+
+
+This connection option exists for the central gateway module and a number of control 
+units. However, the control unit with a transmission and forwarding line has a 'non-end 
+node termination' for data pickup. This type of termination cannot be tested using mea¬ 
+surement systems at the control unit connector due to its resistor / capacitor circuit. 
+
+To measure the (current-free) FlexRay bus to determine the line or terminating resistance, 
+please be sure to use the vehicle wiring diagram. 
+
+
+37 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transmission Medium - Signal Properties 
+
+The bus signal of the FlexRay must be within defined limits. A good and bad image of 
+the bus signal is depicted below. The electrical signal must not enter the inner area 
+neither on the time axis nor on the voltage axis. The FlexRay bus system is a bus system 
+with a high data transmission rate and therefore with rapid changes in the voltage level. 
+
+The voltage level as well as the rise and drop of the voltage (edge steepness) are 
+precisely defined and must be within certain values. There must be no infringements of 
+the marked "fields" (green and red hexagon). 
+
+Electrical faults resulting from incorrect cable installation, contact resistance etc. can 
+cause data transmission problems. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Good image 
+
+B 
+
+Bad image 
+
+
+The images shown above can be depicted only with very fast oscilloscopes. 
+
+The oscilloscope in the BMW diagnostic system is not suitable for representing such 
+images. 
+
+
+38 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The voltage ranges of the FlexRay bus system are: 
+
+• System ON - no bus communication 2.5 V 
+
+• High signal - 3.1 V (voltage signal rises by 600 mV) 
+
+• Low signal -1.9 V (voltage signal falls by 600 mV) 
+The voltage values are measured with respect to ground. 
+
+
+Integrated Service 
+Technical Application 
+
+VIN: 
+
+
+Measuring devices 
+
+
+Multimeter 
+
+
+Ref Cur 2 5182 V 
+Odf Cor 2 9035 V 
+A Cur 0 4673 V 
+
+
+CAR: 
+
+
+0 111 \£ 
+
+
+m 
+
+1 
+
+m 
+
+m i 
+
+M 
+
+
+
+t 9 56 |ii 
+1 /» 104 64 kH? 
+
+in 38.36 % 
+
+At 0 03 me 
+
+
+Save settings 
+
+
+Load/detefte 
+
+setting 
+
+
+Cursor 
+
+CH 1 
+
+CH 7 
+
+Cuuplvd 
+
+Display 
+
+1 ng 
+
+linen rd 
+
+Compress 
+
+Hold 
+
+
+
+CH 1 
+
+
+CM 7 | 
+
+Source 
+
+[ Source 
+
+Proba 1 
+
+- 
+
+
+Refcrenc Differ one 
+
+
+Offset % 
+
+
+Offset % 
+
+
+1 0 ~ 0 * n% ~ 
+
+
+Trigger. Singleshot 
+
+
+EE 
+
+
+Coupling 
+
+OND j ac 
+
+
+WA Div 
+
+
+Coupling 
+
+
+6ND 
+
+
+AC 
+
+
+4 
+
+0 < 
+
+
+Time 
+
+Position 
+
+4 
+
+0.00 
+
+0 
+
+Time/Div ms 
+
+« 
+
+1 SM8 
+
+0 
+
+Trigger 
+
+Source 
+
+Probe 1 
+
+▲ 
+
+
+
+Position % 
+
+
+- 
+
+
+1 - 
+
+Level * 
+
+- 
+
+♦ 70* 
+
+0 
+
+Slope 
+
+
+D0 
+
+
+Mode 
+
+
+Auto || Norm 
+
+
+
+Quit measuring 
+devices 
+
+
+Scope settings to test the FlexRay: 
+
+CHI: Test probe 1, range 1 V/Div; DC coupling 
+CH2: Test probe 2, range 1 V/Div; DC coupling 
+Time: 5 pS/div 
+
+Workshop Hint 
+
+As of ISTA v2.24.2 the RECORD button becomes 
+unavailable if the Time/Div is < 2ms, however if you 
+press the HOLD button and then press it again, the 
+RECORD button becomes available for a short period 
+of time. 
+
+
+39 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deterministic Data Transmission 
+
+The CAN-Bus system is an event-controlled bus system. Data are transmitted when an 
+event occurs. In the event of an accumulation of events, delays may occur before further 
+information can be sent. If an item of information cannot be sent successfully and free of 
+errors, this information is continually sent until the communication partner confirms its 
+receipt. 
+
+If faults occur in the bus system, this “event controlled” information can back up causing 
+the bus system to overload, i.e. there is a significant delay in the transmission of individual 
+signals. This can result in poor control characteristics of individual systems. 
+
+The FlexRay bus system is a time-controlled bus system that additionally provides the 
+option of transmitting sections of the data transmission event-controlled. In the time 
+controlled part, time slots are assigned to certain items of information. One time slot is 
+a defined period of time that is kept free for a specific item of information (e.g. engine 
+speed). 
+
+Conseguently, important periodic information is transmitted at a fixed time interval 
+in the FlexRay bus system so that the system cannot be overloaded. 
+
+Other less time-critical messages are transmitted in the event-controlled part. 
+
+An example of deterministic data transmission is outlined in the following. 
+
+
+Cl) 
+
+
+® n 
+
+
+
+
+
+
+
+n 
+
+
+<° 
+
+
+t° 
+
+
+V 
+
+xyz... 
+
+
+abc... 
+
+:! iuiruri 
+
+
+IJlilAJl 
+
+jumru 
+
+rujinm 
+
+' JlilLfUUt 
+
+
+
+
+
+
+
+
+
+
+
+40 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Time-controlled part of cyclic data transmission 
+
+2 
+
+Event-controlled part of cyclic data transmission 
+
+3 
+
+Cycle (5 ms total cycle length of which 3 ms static 
+(= time-controlled) and 2 ms dynamic (= event-controlled) 
+
+n 
+
+Engine speed 
+
+< 
+
+Angle 
+
+t 
+
+Temperature 
+
+V 
+
+Road speed 
+
+xyz..abc.. 
+
+Event-controlled information 
+
+t 
+
+Time 
+
+
+Bus Protocol 
+
+Deterministic data transmission ensures that each message in the time-controlled part is 
+transmitted in real time. Real time means that the transmission takes place within a 
+defined time. 
+
+Therefore, important bus messages are not sent too late due to overloading of the bus 
+system. If lost due to a temporary problem in the bus system (e.g. EMC problem) a 
+message cannot be sent again. A current value is sent in the next assigned time slot. 
+
+High Bandwidth 
+
+The FlexRay bus system operates with a data transmission rate of 10 Mbits/s. 
+
+This speed corresponds to 20 times the data transmission rate of the PT-CAN. 
+
+Synchronization 
+
+A common time base is necessary in order to ensure synchronous execution of individual 
+functions in interconnected control units. Time matching must take place via the bus 
+system as all control units operate with their own clock generator. 
+
+The control units measure the time of certain synchronization bits, calculate the mean 
+value and adapt their bus clock to this value. This system ensures that even minimal time 
+differences do not cause transmission errors in the long term. 
+
+
+41 
+
+Bus Systems 
+
+
+
+
+
+
+Ethernet - Faster Programming Access 
+
+Ethernet in FOx Vehicles 
+
+Ethernet is a manufacturer-neutral, cable-bound network technology. Most computer 
+networks nowadays are based on this data transfer technology. 
+
+The so-called Ethernet was developed more than 30 years ago. Since then, the data 
+transfer rates have multiplied. The IEEE 802.3u specification with 100 MBit/s data trans¬ 
+fer rate is used in FOx vehicles. The IEEE 802.3xx is a standard for cable-bound net¬ 
+works of the Institute of Electrical and Electronic Engineers. This specification is also 
+known as "Fast Ethernet". 
+
+The transfer protocols are the protocols TCP/IP (Transmission Control Protocol/ Internet 
+Protocol) and UDP (User Datagram Protocol). 
+
+Application 
+
+The Ethernet in the diagnosis socket is only enabled when the BMW programming 
+system (ICOM A) is connected. There is an activation bridge in the programming 
+connector, between pins 8 and 16. This switches the power supply for the Ethernet 
+controller in the central gateway module. 
+
+This means that Ethernet access to the central gateway module is disabled while the 
+vehicle is being driven by the customer. The Ethernet connection between the informa¬ 
+tion and communications systems is permanently enabled in the diagnosis socket inde¬ 
+pendently of the activation bridge. 
+
+Security 
+
+Each participant in an Ethernet has an individually assigned identification number, an 
+MAC address (Media Access Control). This address and the VIN (Vehicle Identification 
+Number) identifies the vehicle to the BMW programming system on connection setup. 
+This prevents changes to the data records and stored values by third parties. 
+
+In the same way as in a computer network in the office, each device in a network must 
+receive unigue identification. This is why the central gateway module is assigned a so- 
+called IP address by the programming system after connection setup. 
+
+The function of an IP address in a network corresponds to that of a telephone number in 
+the telephone network. This IP address is assigned per DHCP (Dynamic Host 
+Configuration Protocol). This is a method of automatic allocation for IP addresses to user 
+devices in a network. 
+
+
+42 
+
+Bus Systems 
+
+
+
+Features of Ethernet 
+
+• Very high data rate of 100 MBit/s. 
+
+• System start time with connection setup and address 
+assignment under three seconds, sleeping under one second. 
+
+• System access only via BMW programming systems. 
+
+Functions of Ethernet 
+
+• Faster programming of the vehicle in Service. 
+
+Ethernet Ethernet 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ZGM 
+
+Central gateway module 
+
+OBD2 
+
+Diagnosis socket 
+
+CIC 
+
+Central information computer 
+
+
+
+
+The wiring between the diagnosis socket and ZGM is with two pairs of wires without 
+additional shielding. There is also an activating line that supplies the Ethernet controllers 
+in the control units with voltage. 
+
+There is a Cat5 cable between the diagnosis connector and the BMW programming sys¬ 
+tem. These Cat5 cables are network cables with four twisted, unshielded pairs of wires 
+that are approved for signal transfers at up to 100 MHz operating frequency. However, 
+two pairs of wires are sufficient for the transfer capacity required in the F01/F02. 
+
+
+43 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fiber Optic Bus Networks 
+
+The ever-increasing level of features available in today’s automobiles require a corre¬ 
+sponding increase in vehicle electronic systems. The transmission of data, voice and 
+images require an efficient method to move data. 
+
+Copper wire bus networks offer many advantages. However high data transmission rates 
+in copper wires can cause electro-magnetic interference with other vehicle systems. 
+
+Compared with copper wires, fiberoptic lines require less space and are lighter in weight 
+for the same transmission band width. In contrast with copper wires, which carry digital or 
+analog voltage signals as the means of transmitting data, fiber optic busses transmit light 
+pulses. 
+
+Fiber Optic technology has been in use in the telecommunications industry for many 
+years. However, this type of fiber-optic cable is not practical for automotive use. These 
+cable utilize glass based fibers which are not practical for automotive use. They are sub¬ 
+ject to fracture from vibration and do not hold up to “tight radius” installations. 
+
+POF (polymer optical fibers) were developed for the automotive industry. These fibers 
+were developed and manufactured by Dow-Corning. 
+
+The most commonly used fiber optics conductors are: 
+
+• Plastic fiber optics conductors 
+
+• Glass fiber optics conductors 
+
+Only plastic fiber optics conductors are used in BMW vehicles. 
+
+There are significant advantage to using POF fiber optic cables: 
+
+• There is a low sensitivity to dust. Small amounts of contamination do not adversely 
+affect communication. 
+
+• They are easy to work with. These fibers can be bent to a radius of approximately 
+50mm. This allows for practical installation within the vehicle. 
+
+• Processing is practical, these fibers can be cut and modified which makes the pro¬ 
+duction of wiring looms easy. Service repairs are also made simple. 
+
+• These fibers are inexpensive to manufacture and do not require expensive connec¬ 
+tions or housings. 
+
+• Fiber optic cables are imperious to EMF (Electromotive Interference). 
+
+
+44 
+
+Bus Systems 
+
+
+
+Design 
+
+A fiber optics conductor is a thin cylindrical fiber made of plastic which is enclosed by a 
+thin sheathing or jacketing. The actual fiber optics conductor is embedded in the sheath¬ 
+ing material that serves the purpose of protecting the actual fibers. 
+
+Structure of a fiber optics conductor 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fiber Core 
+
+2 
+
+Sheathing 
+
+3 
+
+Padding 
+
+
+Principle of Optical Transmission 
+
+In principle, any system that transmits electrical signals with the aid of light beams (lumi¬ 
+nous radiation) consists of the components shown in the following illustration. The signal 
+controls a light (radiation) source such that the radiation intensity of this source is propor¬ 
+tional to the time fluctuations of the signals. 
+
+Parallels can be drawn when comparing an optical message system with a modem trans¬ 
+mission system (computer - internet): 
+
+
+
+v!J 
+
+
+
+& 
+
+
+
+
+
+
+o 
+
+
+MOST 
+
+-| -4h 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 
+
+
+O 
+
+
+
+© 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Optical transmission 
+
+4 
+
+Photodiode 
+
+(Receiver) 
+
+B 
+
+Electrical transmission 
+
+5 
+
+Receiver 
+
+1 
+
+Source 
+
+6 
+
+Demodulator 
+(Receiver in modem) 
+
+2 
+
+Light-emitting diode 
+(Transmit diode) 
+
+7 
+
+Cable 
+
+3 
+
+Pleadrest guide 
+
+8 
+
+Modulator 
+
+(Transmitter in modem) 
+
+
+45 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The fiber optics conductor assumes the function of the transmission channel. The fiber 
+optics conductor is particularly insensitive to external electromagnetic influences. 
+
+Comparison of an optical message transmission system with a conventional message 
+system. 
+
+Modem transmission: 
+
+As part of modem transmission, the modulator, the transmit part of the modem, converts 
+the digital signals into analog signals. The analog signals are transmitted via the tele¬ 
+phone network to the next computer. 
+
+The demodulator, the receive part of the modem, at this computer converts the analog 
+signals back to digital signals. 
+
+Optical transmission: 
+
+With optical message transmission, on the other hand, the digital signals are converted 
+into optical signals by means of a light emitting diode (LED). 
+
+The optical signals are transmitted via fiber optics conductors to the next control unit. 
+
+The photodiode at this control unit converts the optical signals back to digital signals. 
+
+Principle of Light Transmission 
+
+The electrical signal generated by the control unit is converted to an optical signal by an 
+internal transmitter module and sent along the fiber optic bus. The fiber core carries the 
+light beam to a receiver module which converts the light signal back to a useable electri¬ 
+cal signal. 
+
+The light therefore passes through the fiber optics conductor. The light is then converted 
+back to an electrical signal with the aid of a receiver component. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmit diode 
+
+2 
+
+Sheathing 
+
+3 
+
+Fiber core 
+
+4 
+
+Receive diode 
+
+
+Principle of data transmission with light 
+
+
+46 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Light Attenuation 
+
+Attenuation refers to the reduction in strength of a signal. Light transmitted along the 
+optical fiber becomes weaker the further it has to travel.This effect is known as attenua¬ 
+tion. This attenuation is comparable to the electrical resistance of a copper wire. 
+Attenuation is usually measured in decibel units (dB). In fiberoptic cables, attenuation is 
+measured in terms of the number of decibels per unit of length (foot/meter etc). The less 
+attenuation per unit distance, the more efficient the cable. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmit diode 
+
+2 
+
+Sheathing 
+
+3 
+
+Fiber core 
+
+4 
+
+Receive diode 
+
+
+Attenuation of the light within a fiber optics conductor 
+
+In comparison with an electrical circuit, think of attenuation as “light resistance”. The 
+more attenuation in the fiber optic cable, the less light output to the receiver module. 
+
+The average attenuation for fiber optic bus lines is .5 decibels (dB) for each connector 
+and .3 dB for each meter of cable. 
+
+Causes of Excessive Attenuation 
+
+Excessive attenuation can be caused by the following reasons: 
+
+• Bends in the fiber optic cable with a radius of less than 50mm. 
+
+• Kinks in the fiber optic cable 
+
+• Squashed or compressed fiber optic cable 
+
+• Damaged insulation on fiber optic cable 
+
+• Stretched fiber optic cable 
+
+• Dirt or grease on the exposed cable ends 
+
+• Scratches on the exposed cable ends 
+
+• Overheated fiber optic cable 
+
+
+
+47 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here are some examples of various fiber optic cable failures: 
+
+
+
+Bending Radius 
+
+
+
+Kinking 
+
+
+The plastic fiber optic cable should not be bent to a 
+radius of less than 50mm. 
+
+That is roughly equivalent to the diameter of a soft- 
+drink can. Bending the cable any tighter can impair 
+its function or irreparably damage the cable. 
+
+Light can escape at points where the cable is bent 
+too tightly. This is caused by the fact that the light 
+beam strikes the interface between the core and 
+cladding at too steep an angle and is not reflected. 
+
+
+Fiber optic cables must not under any circum¬ 
+stances be kinked when fitted because this dam¬ 
+ages the cladding and the fiber core. The light is 
+partially dispersed at the point where the fiber is 
+kinked and transmission loss results. 
+
+Even just kinking the cable once very briefly is 
+enough to cause permanent damage. 
+
+
+
+Compression Points 
+
+
+
+Stretching 
+
+
+Compression points must also be avoided because 
+they can permanently deform the light conducting 
+cross section of the optical fiber. This would cause 
+a loss of light. 
+
+
+Overstretching of the fiber optic cables, caused by 
+pulling for example, can destroy them. 
+
+Stretching reduces the cross-sectional area of the 
+fiber core. Restricted passage of light is the end 
+result. 
+
+
+48 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+Abrasion Points 
+
+In comparison with copper wires, abrasion of fiber 
+optic cables does not cause a short circuit. 
+
+Instead, loss of external light occurs. 
+
+The system then suffers interference or fails com¬ 
+pletely. 
+
+
+
+Dirty or Scratched Fiber Optic Cable Ends 
+
+Another potential source of problems is dirty or 
+scratched cable ends. Although the ends of the 
+cables are protected against accidental contact, 
+damage can still occur by incorrect handling. 
+
+Dirt on the end of an optical fiber will prevent light 
+from exiting/entering. The dirt absorbs the light and 
+increases attenuation. 
+
+
+Service Considerations 
+
+Two optical bus systems for data transmission have been developed for BMW vehicles: 
+MOST and byteflight. 
+
+The light length is 650 nm (red light). 
+
+Three different colors are used to differentiate between the fiber optics conductors for 
+the different bus systems: 
+
+• Yellow: byteflight 
+
+• Green: MOST 
+
+• Orange: Service repair line 
+
+During repair work, there are some things that need to be taken into account when work¬ 
+ing with fiber optic cables. Any paintwork which requires the use of drying by heat, the 
+temperature should not exceed 85°C. This could case deformation of the fiber optic 
+cable resulting in excessive attenuation. 
+
+Extreme care should be taken around fiber optic cables. Any wiring harness that contain 
+fiber optic cables should not be subjecting to stretching, pulling or any undue stress. 
+
+
+49 
+
+Bus Systems 
+
+
+
+
+
+Cable Repair 
+
+Repair cable are available for the fiber optics. The MOST bus which is normally green in 
+the vehicle is repair using a black or orange cable. The MOST bus allows for up to one 
+splice between control units. 
+
+Special crimping pliers are used to fit the sleeves correctly on the fiber optics conductors. 
+
+The exact procedure is described in the operating instructions for the crimping pliers. 
+
+The byteflight which is a safety critical network does not allow for any splices or repairs 
+between control units. The entire defective optical cable must be replaced. 
+
+Replacement cables are orange or black. 
+
+
+
+The fiber optics conductors in the byteflight system can NOT be 
+repaired. In contrast to the MOST bus which alows one (1) splice 
+between controllers (when using the proper part #) a defective 
+byteflight cable between controllers MUST be completely replaced. 
+
+
+Fiber Optic Connectors 
+
+There are slight differences between the connectors on the MOST and byteflight bus. 
+The transmitter/receiver module on the MOST bus are set back into the control unit 
+housing. This setup allows for the protection of the delicate fiber ends of the cable. Also, 
+MOST cable connectors are marked 1 and 2. 1 is assigned to the incoming optical fiber 
+and 2 is assigned to the outgoing optical fiber (see connection of control units for more 
+information). 
+
+Note: Refer to the MOST Bus Diagnosis section in this training material for 
+more information. 
+
+
+50 
+
+Bus Systems 
+
+
+
+MOST 
+
+MOST is a communications technology for multimedia applications that was specially 
+developed for use in motor vehicles. 
+
+MOST stands for Media Oriented System Transport. The MOST bus is designed 
+as an optical ring and uses light pulses for transmitting data. 
+
+MOST technology satisfies two important reguirements: 
+
+1. The MOST bus can transfer control, audio and navigation data. 
+
+2. The MOST technology makes available a logic frame model for 
+controlling the great variety and complexity of the data. 
+
+Multimedia components such as: 
+
+• Telephone 
+
+• Radio 
+
+• Television 
+
+• Navigation system 
+
+• CD changer 
+
+• Amplifier 
+
+• Multi-information display/on-board monitor 
+
+The new logic interconnection and networking of the 
+components gives rise to an enormous increase in 
+system complexity. Since this new dimension of sys¬ 
+tem complexity can no longer be managed with the 
+familiar bus systems, a new bus technology is 
+reguired: MOST. 
+
+The MOST bus is designed as a ring structure and 
+uses light pulses for transmitting data. Data transmis¬ 
+sion takes place only in one direction. Fiber optics 
+conductors are used as the data transmission medium. 
+
+
+E90 MOST 
+
+RAD2 
+
+MASK 
+
+CDC CCC 
+
+TOP-HIFI 
+
+VM 
+
+TCU 
+
+ULF 
+
+
+FS 
+
+
+51 
+
+Bus Systems 
+
+
+
+
+
+
+
+MOST Design 
+
+The MOST bus is designed as a ring structure and uses light pulses for transmitting data. 
+Data transmission takes place only in one direction. 
+
+MOST combines the individual components to form one central unit. 
+
+As a result, the components interact to a greater extent. The plug&play principle enables 
+simple system expansion with individual components. 
+
+MOST is capable of controlling function that are distributed in the vehicle and to manage 
+them dynamically. 
+
+An important feature of a multimedia network is that it not only transports control data 
+and sensor data. 
+
+Features 
+
+• High data rates: 22.5 MBits/s 
+
+• Synchronous/asynchronous data transmission 
+
+• MOST assigns the control units nodes in the bus 
+
+• Fiber optics conductors as data transmission medium 
+
+• Ring structure 
+
+The MOST not only represents a network in the conventional sense but it also provides 
+integrated technology for multimedia and network control. 
+
+Ring structure of a network 
+
+
+
+Index 
+
+Explanation 
+
+T 
+
+Transmitter (Pin 1) 
+
+R 
+
+Receiver (Pin 2) 
+
+
+52 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Ring Structure 
+
+Each terminal device (node, control unit) in a network with a ring structure is connected 
+by means of a cable ring. 
+
+A message indicating that transmission is possible circulates on the ring. This message is 
+read and passed on by each node (control unit). 
+
+When a node wishes to send data, it changes the ready-to-send message to an "occu¬ 
+pied" message. It then adds the address of the receiver, an error handling code and the 
+data. 
+
+To ensure the signal strength is retained, the node, through which the data package 
+passes through, generates the data once again (repeater). 
+
+The node that is addressed as the receiver copies the data and forwards them in the cir¬ 
+cuit. If the data reach the transmitter again, it removes the data from the ring and resets 
+the ready-to-transmit message. 
+
+Specifically: The physical light direction runs from the master control unit (e.g. multi-audio 
+system controller) to the fiber optics conductor connector and from here to the control 
+units (e.g. CD-changer in the luggage compartment). The light then returns from the last 
+control unit back via the flash connector to the master. 
+
+Advantages: 
+
+• Distributed control 
+
+• Large network expansion 
+Disadvantages: 
+
+• Intricate troubleshooting 
+
+• Malfunctions cause network failure 
+
+• Intricate and extensive wiring 
+
+Each MOST control unit can send data on the MOST bus. Only the master control unit 
+can initiate data exchange between the MOST bus and other bus systems. 
+
+In order to meet the various reguirements of the different data transmission applications, 
+each MOST message is divided into 3 parts: 
+
+• Control data: e.g. light intensity (luminosity) control 
+
+• Asynchronous data: e.g. navigation system, vector representation 
+
+• Synchronous data: e.g. audio and video signals 
+
+
+53 
+
+Bus Systems 
+
+
+
+The MOST bus has a ring structure. The various channels (synchronous channel, asyn¬ 
+chronous channel and control channel) are transmitted synchronously on a medium. The 
+data are available in the entire ring, i.e. the data are read non-destructively (copied) and 
+can therefore be used by the various components. 
+
+The structure of the MOST bus enables easy expansion of the system with further com¬ 
+ponents. The installation location of the components in the ring depends on the specific 
+function. There is no need to operate a reserve for future systems (e.g. double coil speak¬ 
+ers). 
+
+
+The receiver and transmitter are connected with each other in the event of a component 
+failing. The ring therefore remains operative. The receiver and transmitter are separated 
+only if one control unit is supplied with power. These two units are completely operative 
+together with the transmit and receive system. 
+
+NetService disassembles the data packages in individual parts and reassembles them. 
+
+
+The receiver and transmitter are a BMW development in co-operation with Infineon and 
+Oasis. The information is transmitted by light pulses with a wave length of 650 nm (visible 
+red light). No laser but rather an LED is used to generate the light. The bus can be woken 
+optically, i.e. an additional wake-up line is not reguired. The power intake in sleep mode is 
+very low. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Synchronous data 
+
+2 
+
+Asynchronous data 
+
+3 
+
+Control data 
+
+
+Data transmission on the MOST-bus 
+
+
+54 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+Connection of Control Units 
+
+The connection between the individual control units is provided by a ring bus that trans¬ 
+ports the data only in one direction. This means that a control unit always has two fiber 
+optics conductors, i.e. one for the transmitter and one for the receiver. 
+
+A pure fiber coupling is used in MOST control units. In this way, together with the fibers in 
+the control unit, the transmit and receive diodes can be positioned at any point in the 
+control unit. As a result, the fiber areas can be set back in the wiring harness connector, 
+thus rendering additional protection for the sensitive end faces unnecessary. 
+
+The 2-pole fiber optics conductor module is identical for all types of connector. The parts 
+family and contact parts have been declared as the standard within the MOST coopera¬ 
+tion. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fiber optic connector 
+
+2 
+
+Control unit socket 
+
+3 
+
+Fiber optic jumper 
+
+4 
+
+Receiver module with diode 
+
+
+
+Connector for fiber optics conductor 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Pin 2 
+
+2 
+
+Pin 1 
+
+
+
+Pin 1 is always designated for the incoming fiber optics conductor 
+and pin 2 for the transfer fiber optics conductor. 
+
+
+55 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fiber Optic Connector 
+
+The use of the fiber optic connector provides the advantage of being able to easily retrofit 
+control units in the area of the luggage compartment. 
+
+Fiber optic cable connector, rear left in the luggage compartment 
+
+
+
+The fiber optic cable connector is located in the luggage compartment of the F01/F02, to 
+the left behind the side wall trim. The fiber optic cable connector is arranged in the 
+MOST bus system between the front area of the vehicle (head unit, DVD changer) and 
+the rear area of the vehicle (TCU, VM etc.). 
+
+One or two fiber optic connectors are installed corresponding to the eguipment configu¬ 
+ration. One fiber optic connector is responsible for the factory-installed control units. The 
+other fiber optic connector is used for the preparations for options. 
+
+The ends of the fiber optic cables, for additional options, are always grouped together on 
+the same row in the fiber optic connector to avoid damage to the ends of the fiber optic 
+cables. 
+
+As soon as the retrofit is installed, the fiber optic connectors are reconnected according 
+to instructions and integrated in the MOST bus. Within the framework of programming, 
+the control unit seguence is reloaded into the master control unit. 
+
+
+56 
+
+Bus Systems 
+
+
+
+MOST Control Units and Light Direction 
+
+In FOx vehicles the MOST bus is used for the components in information/communication 
+systems. The Car Information Computer (CIC) is used as the master control unit. Other 
+bus users may be: 
+
+• DVD changer 
+
+• Instrument cluster 
+
+• Top-HiFi amplifier 
+
+• Satellite tuner SDARS (on early CIC cars) 
+
+• TCU/Combox 
+
+• Rear Seat Entertainment 
+
+• ULF-SBX high 
+
+
+
+The MOST programming access used in BN2000 models is no longer 
+required for BN2020 FOx vehicles. The programming on these vehicles 
+is done via the Ethernet access point. 
+
+
+Light Direction 
+
+Data are always sent in one direction on the MOST bus. Each control unit can send data 
+on the MOST bus. 
+
+The physical light direction runs from the master control unit (Car Information Computer) 
+to the DVD changer, to the instrument cluster, to the central gateway module and from 
+there to the fiber optic cable distributor. All the control units fitted in the rear end are con¬ 
+nected at the fiber optic cable distributor. From the last control unit, the light returns to 
+the master control unit. 
+
+
+57 
+
+Bus Systems 
+
+
+
+MOST ring intheF01/F02 
+
+
+KOMBI 
+
+
+DVDC 
+
+
+
+CIC 
+
+
+□ 
+
+□ 
+
+
+SDARS 
+
+
+RSE 
+
+
+□ 
+
+
+TCU 
+
+
+I-1 ULFSBX 
+
+
+□□ 
+
+
+TOP HIFI 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+TOP HIFI 
+
+Top-HiFi Amplifier 
+
+KOMBI 
+
+Instrument Cluster 
+
+DVDC 
+
+DVD Changer 
+
+SDARS 
+
+Satellite Tuner 
+
+RSE 
+
+Rear Seat Entertainment 
+
+ULF-SBX 
+
+Interface Box 
+
+TCU 
+
+Telematics Control Unit 
+
+ZGM 
+
+Central Gateway Module 
+
+CIC 
+
+Car Information Computer 
+
+
+
+
+Registration of control units in the MOST 
+
+Precisely in the same way as on the E6x models, the control units installed on the MOST 
+bus are stored in a registration file in the master control unit. The corresponding data are 
+stored during the production process and, in connection with control unit retrofits, after 
+programming the respective control unit. 
+
+The control units and their order on the MOST bus are stored in this registration file. With 
+the fiber optic cable connector, it is possible to connect control units in the rear area of 
+the vehicle ex factory or after a repair in different order. With the aid of the registration file, 
+the BMW diagnosis system can determine the installed control units and their order. 
+
+In addition, this registration file is also stored in the central gateway module so that there 
+is still access to the control unit registration in the event of a fault in the MOST frame¬ 
+work. This means that the diagnosis can be used to call up the last functional status from 
+the central gateway module. 
+
+Although the master control unit of the MOST, the CIC, is connected to the K-CAN, it 
+does not carry out the function of a gateway control unit. If communication on the MOST 
+is no longer possible, the necessary data can only be read out via the central gateway 
+module. 
+
+
+58 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bandwidths 
+
+The bandwidth indicates the capacity of the network, i.e. how many data items can be 
+transmitted simultaneously. 
+
+The bandwidth differs considerably in the various applications. 
+
+The aim is that all vehicle occupants will be able to call up different services simultane¬ 
+ously, e.g. 
+
+• The driver calls up navigation information 
+
+• The front passenger listens to the radio 
+
+• A rear passenger listens to a CD 
+
+• The other rear passenger watches a DVD 
+
+
+Application 
+
+Bandwidth 
+
+Data format 
+
+AM-FM 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+MC 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+CD 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+MD 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+Telephone 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+SBS 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+VCD 
+
+1.4 Mbit/s 
+
+Synchronous 
+
+DVD 
+
+2.8 -11 Mbit/s 
+
+Synchronous/asynchronous 
+
+Navigation 
+
+250 kbits/s 
+
+Asynchronous 
+
+Telematics service 
+
+Various 
+
+Synchronous 
+
+
+The data transmission rate of 1.4 Mbits/s for audio data is derived from a scanning fre¬ 
+quency of 44.1 kHz per channel (two channels for stereo) and a resolution of 16 bit. 
+
+The bandwidth of the MOST of 22.5 MBits/s is used in time multiplex by synchronous 
+channels, asynchronous channels and control channels. The division in synchronous and 
+asynchronous channels takes place to suit requirements. 
+
+Channels for control information have a smaller bandwidth of 700 kbits/s. This corre¬ 
+sponds to approximately 2700 telegrams per second. At present there is no device that 
+can accept and process even a third of this number of telegrams per second. 
+
+In future, the MOST will be equipped with a data transmission rate of 50-150 MBits/s. 
+
+
+59 
+
+Bus Systems 
+
+
+
+
+MOST Bus Diagnosis 
+
+Due to the differences in the configuration of the MOST bus, diagnosis methods will dif¬ 
+fer between models. However, there are many similarities and there are some basic rules 
+which apply to all MOST eguipped vehicles. 
+
+It is important to remember that on the MOST network, messages can only be transmit¬ 
+ted provided the bus ring is complete and fully functional. If there is a ring fault in the 
+MOST network, the diagnostic system only communicates with the instrument cluster 
+and the Control Display because both of these modules are directly connected to the 
+K-CAN System Bus. 
+
+The fiber optic signals on the MOST network always travel in one direction and only in 
+one direction. Signals always originate at the Control Display or the CIO (depending on 
+the model) and travel in and out of all the modules in the ring and back to the Control 
+Display or CIO. 
+
+The MOST bus allows intersystem fault memory entries in the individual control modules. 
+A feature of the system faults is that faults may be entered in a control module although 
+the control module is OK. Conclusions may be drawn about the cause of the fault, using 
+the fault information stored in all the control modules. 
+
+The possible system faults are: 
+
+• Optical wave guide communication fault 
+
+• A Control Module does not switch a light off (All MOST Control Modules) 
+
+• Network wake-up unsuccessful 
+
+• Ring fault diagnosis run 
+
+Optical Wave Guide Communication Fault 
+
+This fault indicates a problem with optical transmission. Insufficient light is being received 
+by one of the modules in the ring. The loss of light may be caused by: 
+
+• Defective optical wave guide, Harness twisted too tightly (Min. bend radius 50mm.) 
+
+• Light output or reception sensitivity of a diode is too low 
+
+• Connector not installed correctly 
+
+• Voltage fluctuation while powering up a control module 
+
+If the fault is stored, the system triggers a reset and starts up again. The music is 
+switched off briefly and the display screen of the Control Display continues to operate. 
+
+To find the module responsible for the fault, the fault memory of the modules must be 
+read in MOST ring order. 
+
+
+60 
+
+Bus Systems 
+
+
+
+Fault lies between the module with the fault code (B) and the preceding module (A). 
+
+If the voltage has dipped below 9v, the fault may be incorrectly stored. If the voltage is low 
+perform the following test after connecting a battery charger. 
+
+1. Clear the fault memory in control module B. 
+
+2. Lower the light output in control module A. 
+
+3. Read out the fault memory in the MOST ring in order. 
+
+4. If control module B is again the first to store the fault, it can be assumed the fault lies 
+between control modules A and B. 
+
+Then, check control modules A and B for loose connections and check the optical wave 
+guide for kinks. If the visual inspection is OK, the fault can be located using the OPPS 
+tester on older vehicles or optionally performing the following tests. 
+
+• Remove the input optical wave guide from control module B and confirm the pres¬ 
+ence of light. If light is present, install by-pass optical wave guide in place of control 
+module A, clear fault codes in module B and perform ring break test. If MOST net¬ 
+work operates properly, then control module A is at fault and must be replaced. If 
+MOST network still has a fault, put module A back in the network and by-pass mod¬ 
+ule B. Clear faults and again perform ring break test. If MOST network operates now 
+problem is with control module B and it must be replaced. 
+
+• If light is not present at input of module B, perform by-pass of module A as above. 
+The possible fault scenarios are: 
+
+• Transmit diode in module A defective 
+
+• Receive diode in module B defective 
+
+• Optical wave guide fault between modules A and B 
+
+• Software error or fault in module A or B 
+
+
+Control Module Does Not Switch Off Light 
+
+When the MOST network is requested to sleep, the Control Display switches off the light 
+in the MOST ring. The lack of light input is a signal to the individual control modules to 
+switch off their light output and enter sleep mode. 
+
+If a control module does not switch off its light, all down stream control modules register 
+the fault “A Control Module is not switching light off.” 
+
+
+61 
+
+Bus Systems 
+
+
+
+Failure of a control module to turn its light off, will cause the MOST 
+r j network NOT to enter sleep mode. If the MOST network fails to sleep, 
+
+\ the rest of the car will not be able to enter sleep mode. This will lead to 
+battery discharge. 
+
+To diagnose, read out fault memory in MOST ring order. 
+
+The fault lies in the control module that precedes the module where the fault is first 
+stored. 
+
+Always confirm the problem by first clearing the fault and performing the diagnosis a sec¬ 
+ond time. If the same results occur, replace the defective control module. 
+
+Network Wakeup Unsuccessful 
+
+This fault indicates a problem with the optical transmission. An insufficient volume of light 
+is coming through one position of the ring and may be caused by: 
+
+• Control Module is receiving no voltage 
+
+• Optical Wave Guide harness defective 
+
+• Optical Element in a control module defective (transmit or receive) 
+
+• Connector not installed correctly 
+
+A distinction must be made as to whether the fault is currently present or sporadic. 
+
+For faults currently present, run the Ring Break Diagnosis Test Plan. 
+
+For sporadic faults perform the Luminous Power Reduction Test Plan. 
+
+Ring Break Diagnosis 
+
+Reading out the fault memory of the Control Display (Gateway) after performing the Ring 
+Fault Diagnostic, results in a fault of Ring Fault Diagnosis Carried Out being stored. 
+
+This fault memory is not a true fault memory entry, but only an output of additional infor¬ 
+mation for relative node position. 
+
+
+62 
+
+Bus Systems 
+
+
+
+Light Output Reduction 
+
+Reducing the light output of individual control modules is a convenient method of 
+determining the area of a defect. 
+
+• Switch on the radio. 
+
+• In Control Module functions, begin to activate luminous power reduction in the indi¬ 
+vidual control module (In this test the light output of the selected control module is 
+reduced for 5 seconds and then automatically reset to normal output). 
+
+• If the optical transmission for control module A to the next control module in the ring 
+(control module B) is OK, a slight noise may occur when the light output is reduced, 
+however the radio will continue to play. 
+
+• If the radio goes off and comes back on again(radio volume may be reduced) in 5 to 
+10 seconds, the optical transmission between control modules A and B is defective. 
+If the visual inspection is OK, the fault can be located using the OPPS tester or 
+optionally performing the following tests. 
+
+• Remove the input optical wave guide from control module B and confirm the pres¬ 
+ence of light. 
+
+• If light is present, install by-pass optical wave guide in place of control module A, 
+clear fault codes in module B. If MOST network operates properly, then control mod¬ 
+ule A is at fault and must be replaced. 
+
+• If MOST network still has a fault, put module A back in the network and by-pass 
+module B. Clear faults. 
+
+• If MOST network operates now problem is with control module B and it must be 
+replaced. 
+
+• If light is not present at input of module B, perform ring break diagnostics. 
+
+Ring Break Test 
+
+If there is a break in the ring (a defect between two control modules) the following fault 
+patterns may occur: 
+
+• Transmit diode of the transmitting control module defective 
+
+• Power supply of the transmitting control module defective 
+
+• Internal control module fault of the transmitting control module 
+
+• Receiver diode of the receiving control module defective 
+
+• Power supply of the receiving control module defective 
+
+• Internal control module fault of the receiving control module 
+
+• Optical wave guide between transmitting and receiving control module defective 
+
+
+63 
+
+Bus Systems 
+
+
+
+These faults may occur alone or in combination. To diagnose a ring break, the first step is 
+to locate the two control modules between which the transmission failure has occurred. 
+
+This is accomplished with the ring break diagnostic function. Once the two control mod¬ 
+ules have been identified and the diagnostics have been performed, remember to check 
+the power supply and ground circuit of both modules before condemning a module. 
+
+Perform Ring Break Test 
+
+The ring break test mode is entered automatically when the power to all the modules in 
+the MOST network is switched off and then switched back on. The most effective 
+method of switching the power off and on is to disconnect the battery negative terminal 
+for 45 seconds. This time will allow the capacitors of all the control modules to dissipate. 
+
+When the battery is reconnected the control modules wake up and in MOST network 
+order transmit a light signal to the next module. Each module checks to see if it has 
+received a light signal from the previous module. If the control module does NOT receive 
+a light input signal it still transmits a signal to the next module. A relative node number of 
+0 is stored in the control module that did not receive a signal but that transmitted one. 
+
+The MOST master control unit receives the light signal back and identifies which mod¬ 
+ules responded. 
+
+Go to “Control Unit Functions” Control Display Gateway and read fault memory. 
+
+The MOST master control unit will display a relative node number. This number will indi¬ 
+cate how many modules communicated after the module which set the relative node 
+number of 0. 
+
+To find the control module with the relative node number of 0, count from the input side 
+of the MOST master(counting the MOST master as 0) towards the control modules. 
+
+When arriving at the control module with the number as displayed as the relative node 
+number, the last known communicating module has been found. 
+
+Example: 
+
+While performing the ring break diagnostics on an E65 the Control Display has set a rela¬ 
+tive node number of 2. Count the Control Display a 0, the Kombi will be 1 and the ASK 
+will be 2. 
+
+The ring break occurs between the ASK and the module which precedes it, the tele¬ 
+phone module. 
+
+i When counting control modules, the multimedia changer (if equipped) 
+i • and the Nav system must be counted as two control modules. 
+
+Note: More details on the ring fault diagnosis can be found in the functional 
+description MOST bus: ring fault diagnosis complete vehicle -> Body -> 
+Bus functions -> MOST functions -> Ring fault diagnosis. 
+
+
+64 
+
+Bus Systems 
+
+
+
+Status Wakeup 
+
+MOST control modules require high current during standby operation and must be dis¬ 
+connected or put in sleep mode to prevent the vehicle battery from being discharged. In 
+case of a fault on the MOST network that continuously wakes up, the entire MOST bus 
+will be woken up. The Control Display will wake up the CAN Bus and all the vehicle 
+busses will be woken up. This will lead to battery discharge. 
+
+It is of great benefit to know which module initiated the wake up call. In order to find out 
+which MOST node woke up the MOST bus, the following procedure is performed - In 
+Control Unit Functions, press “STATUSWAKEUP” 
+
+Three different response are possible: 
+
+• Control Module woke up 
+
+• Control Module woken up 
+
+• Control Module not initialized 
+
+The Control Module with the status “Control Module woke up” is the module that woke 
+up the rest of the MOST bus. 
+
+This diagnosis only informs which control module woke, not the reason for the wake up, 
+diagnostic testing should be performed on the control module and related equipment. 
+
+
+
+For more information refer to the following FUBs: 
+
+
+• FUB-FPA-CHA1003FP-656582005 Fault profiles, MOST 
+
+• FUB-DAA0302FB-656582004 MOST bus: Ring fault diagnosis 
+
+• FUB-BLB0704FB-657761055 MOST bus: Ring fault diagnosis 
+
+• FUB-DAA0701FB-656582003 MOST bus 
+
+• FUB-DAA0302FB-656582005 MOST bus: status wake-up 
+
+
+65 
+
+Bus Systems 
+
+
+
+Sub-bus Systems 
+
+Sub-busses are also used in addition to the main bus systems. Sub-bus systems are 
+subordinate serial bus systems. 
+
+The most important sub-bus systems are outlined below: 
+
+• K-Bus 
+
+• LIN-Bus (Local Interconnect Network Bus) 
+
+• BSD (Bit-Serial Data Interface) 
+
+
+Data rates 
+
+
+Main bus system 
+
+Data rate 
+
+Bus structure 
+
+K-Bus 
+
+9.6 kbits/s 
+
+Linear - one-wire 
+
+BSD 
+
+9.6 kbits/s 
+
+Linear - one-wire 
+
+LIN-Bus 
+
+9.6-19.2 kbits/s 
+
+Linear - one-wire 
+
+LoCAN 
+
+500 kBits/s 
+
+Linear, two wire 
+
+
+K-Bus 
+
+The K-Bus is a bidirectional one-wire interface. This means the K-Bus has only one sin¬ 
+gle line for data transmission. Bi-directional means that the data are transmitted in both 
+directions. 
+
+The term "K-Bus (protocol)" is used for a series of sub-bus systems in the bus overview. 
+These sub-bus systems are used for various purposes. The K-Bus protocol used here is 
+a common component already used in predecessor models. The protocol is used in FOx 
+vehicles, e.g. on the following systems: 
+
+• Connection between ACSM and TCU 
+
+• Comfort Access 
+
+• CAS-Bus 
+
+Conseguently, it is possible to only transmit or receive at any one time. The data trans¬ 
+mission rate of the K-Bus is 9.6 kbits/s. 
+
+The voltage level is between 0 V and 12 V when a message is sent on the K-Bus. 
+
+The voltage level changing from 0 V to 12 V corresponds to logic 1. 
+
+Logic 0 is when the voltage changes from 12 V to 0 V. 
+
+
+66 
+
+Bus Systems 
+
+
+
+
+K-Bus in the E90 
+
+
+
+Kombi 1T CON 
+
+
+USIS AHM 
+
+WmTTm 
+
+
+
+The K-Bus is used as a main bus or sub-bus system depending on the vehicle model. 
+
+
+LIN-Bus 
+
+
+The LIN-Bus was developed to provide a standard network for the automobile industry. 
+
+
+The LIN-Bus has been used as early as the 
+E60 and was also used to control the outside 
+mirrors on the E46. Mainly, the versions V2.0 
+or higher are used in FOx vehicles. 
+
+Standardization saves costs in: 
+
+• Development 
+
+• Production 
+
+• Vehicle servicing 
+
+The LIN-Bus system comprises the following 
+components: 
+
+• Higher-ranking control unit (master) 
+
+• Lower-ranking control units (secondary 
+control units) 
+
+• One-wire line 
+
+
+LIN-Bus in the E90 
+
+ASP 
+
+2x 
+
+SBFA FRM 
+
+SMC 
+
+2x 
+
+
+A bidirectional one-wire bus line serves as the transmission medium for the LIN-Bus. The 
+bus protocol is divided strictly hierarchically in master and secondary control units. A max¬ 
+imum of one master is permitted for a LIN-Bus system. 
+
+
+67 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The data transmission rate of the LIN-Bus can be up to 19.2 kbits/s. 
+
+The following transmission speeds are possible: 
+
+• 2.4 kbits/s 
+
+• 9.6 kbits/s 
+
+• 19.2 kbits/s 
+
+The LIN-Bus is currently installed in the following systems: 
+
+• Air conditioning (9.6 kbits/s) 
+
+• Between the driver's door module and driver's door switch cluster (19.2 kbits/s) 
+
+• Tire pressure control (9.6 kbits/s) 
+
+The LIN-Bus master forwards the reguests of the control unit to the secondary control 
+units (lower-ranking or subordinate control units) in its system. 
+
+The LIN-Bus master controls and monitors the message traffic on the bus line. 
+
+The current messages are transmitted cyclically by the LIN-Bus master. 
+
+LIN-Bus secondary control units of the air conditioning system are: 
+
+• Actuator motors for the air distribution flaps 
+
+• Blower regulator 
+
+• Electric auxiliary heater 
+
+The LIN-Bus secondary control units wait for commands from the LIN-Bus master and 
+communicate with it only on reguest. 
+
+A LIN-Bus secondary control units can send the wake-up seguence of its own accord 
+order to end sleep mode. 
+
+The LIN-Bus secondary control units are installed in the users of the LIN-Bus system 
+(e.g. stepper motors for fan flap adjustment). 
+
+Due to the lower data rate on the LIN-Bus, terminal resistors are not used. 
+
+In FOx vehicles, the following control units still correspond to the VI .x specification: 
+
+• Belt hand-over 
+
+• Outside mirror 
+
+• Blower output stages 
+
+• Intelligent Battery Sensor 
+
+
+68 
+
+Bus Systems 
+
+
+
+LINV2.0 (orV2.1) 
+
+LIN components that correspond to the specification of data protocol LIN V2.0 or higher 
+have extended functions. 
+
+• The LIN components for V2.x are delivered with a device ID and a base configura¬ 
+tion. The final (dynamic) configuration and the allocation of the ID number take place 
+on commissioning by the master control unit. 
+
+If one of these components is replaced, this operation must be initiated manually by 
+means of the BMW diagnosis system. 
+
+• The data protocol has become more variable, permitting, if required, periodic along¬ 
+side sporadic messages as of specification V2.0. These "sporadic frames" are only 
+sent if the master control unit requires data from the secondary control units or out¬ 
+puts data. Without such a request, the time slots in the messages remain empty. 
+
+• The master control units can send so-called multiple requests to secondary control 
+unit groups. To reduce the bus load, the contacted secondary control units only 
+respond in the case of changed values (e.g. door contact). All master control units of 
+the LIN V2.x specification are downwardly compatible to (secondary control units) 
+components of previous specifications. 
+
+However, all V2.0 secondary control units also require a V2.x master controller. 
+
+A number of the connected components are only diagnosis-capable to a limited degree, 
+for example the rain-light-solar-condensation sensor. 
+
+In this case, the master control unit serves as the gateway to the remaining bus system. 
+The diagnosis requests from the ZGM or BMW diagnosis system are inserted in the spo¬ 
+radic section of a LIN frame. 
+
+A special feature introduced with BN2020 in the F01 /F02 is that the data communication 
+between the Comfort Access and diversity antenna is implemented with 20.0 kBit/s due 
+to the large number of small data packages. 
+
+The slightly higher transfer rate means that the time slots in the data protocol can be bet¬ 
+ter exploited. The master control unit sends the "sleep command" to place the LIN in the 
+idle state. 
+
+The "sleep command" can also be sent with terminal R "On", e.g. for mirror adjustment. 
+The "wake-up command" can also be sent by a secondary control unit. 
+
+The LIN messages in the data protocol are divided into four sections: 
+
+• Synchronization 
+
+• Identifier 
+
+• Data 
+
+• Checksum 
+
+
+69 
+
+Bus Systems 
+
+
+
+SBSTFAH SBSTBFM 
+
+
+FOx vehicle LIN Bus overview 
+
+
+3 I 
+
+
+
+
+70 
+
+Bus Systems 
+
+
+SMFAH SMBFH sbsbfh 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D-Bus 
+
+
+The diagnosis bus or D-Bus represents a 
+physically separate access facility to the out¬ 
+side. Interacting with the gateway (junction 
+box), it enables access to all data busses. 
+
+When a diagnosis unit is connected, on 
+reguest of the gateway, specific system infor¬ 
+mation relating to the vehicle are made avail¬ 
+able via the diagnosis bus. A complete list of 
+control units installed in the vehicle is trans¬ 
+ferred together with the self-diagnosis infor¬ 
+mation. The data transmission rate of the 
+D-Bus is 10.5 - 115 kbits/s. 
+
+D-Bus in an early E90 
+
+
+JB 
+
+
+D-CAN 
+
+
+In order for BMW to meet the reguirements of standard ISO 15765 (Diagnostics on CAN 
+with KWP 2000 [Keyword Protocol 2000] or UDS [Unified Diagnostic Service]) D-CAN 
+(Diagnostics on Controller Area Network) replaced the D-Bus diagnostics interface world¬ 
+wide. 
+
+
+This legal reguirement in the USA mandates that all vehi¬ 
+cles be eguipped with the D-CAN as from model year 
+2008. BMW began the transitional phase in September 
+2006. The E70 was one of the first new vehicles eguipped 
+with D-CAN and then the modification was phased-in on 
+all other BMW models. 
+
+The D-CAN data-signalling rate is 500 kbit/s. 
+
+The measured resistance between the wires should be 
+60 Q. 
+
+
+
+D-CAN as from E70 
+
+
+An OBD-tool or BMW diagnostics system is automatically detected and distinguished 
+during data output. The second TXD interface (pin 8) is not necessary. 
+
+The ICOM A provides the interfaces for connection to the vehicle OBD II female diagnos¬ 
+tic interface connector. A powerful computer core enables it to work as a protocol con¬ 
+verter to assume the data interchange between the tester and the vehicle control units as 
+well as the signal processing for connection of the measurement system (IMIB). 
+
+
+71 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+Power is supplied by way of KL 30 across the vehicle interface. ICOM A is rated for a 
+minimum voltage of 8 V. Stable operation is only ensured if the power supply is above the 
+minimum voltage limit. 
+
+ICOM A can be connected to the workshop network by a 
+Ethernet LAN cable (wireless connection by WLAN will 
+be available in the near future). The maximum data rate is 
+100 Mbit/s. Or directly to the ISID on offline mode. 
+
+The communication with the MOST Bus (for program¬ 
+ming) is supplied by ICOM B on BN2000 vehicles. For 
+this purpose ICOM B (2) is to be connected with the 
+ICOM A (1) by way of a supplied USB cable (3). The host 
+communication is thru either a workshop network LAN 
+connection (4) or WLAN. 
+
+Note: With BN2020 vehicles (FOx) diagnosis and 
+programming is done through ISID with 
+ICOM A only (programming done through 
+ethernet connection). 
+
+OBD II access in all vehicles remains unchanged; The diag¬ 
+nosis socket is located under the dashboard on the driver's 
+side. 
+
+The pin assignments at the OBD II connector are as follows: 
+
+• 3, 11, 12, 13 = Ethernet connections. (FOx vehicles) 
+
+• 16 = Terminal 30 
+
+• 5 = Terminal 31 
+
+• 14 + 6- Communication connections 
+
+• 8 = Activation of Ethernet 
+
+The diagnosis socket is located under the dashboard on the driver's side. 
+
+
+
+
+Kl. 30 
+
+
+KI.31 
+
+
+D-CAN Low 
+D-CAN High 
+
+
+
+72 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Bit-serial Data Interface 
+
+
+The bit-serial data interface is used to connect the alternator and the intelligent battery 
+sensor to the digital motor electronics. 
+
+
+Overview of bit-serial data interface 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Bit-serial data interface 
+
+3 
+
+Digital motor electronics 
+
+4 
+
+Intelligent battery sensor 
+
+
+Scope voltage when 
+binary 0 is ~12v 
+
+Scope voltage when 
+binary 1 is ~900mv 
+
+
+Local-CAN 
+
+
+The Local-CAN serves to transfer the high data volumes of the Short-range and long 
+range radar sensors to the ICM in FOx vehicles with. 
+
+The Local-CAN has a data transfer rate of 500 kBit/s and is designed as a twisted pair of 
+wires. The 2 (120 Q) terminal resistors in the Local-CAN are located in the ICM and the 
+long range radar sensor which equal to a measured resistance between the wires of 60 Q. 
+
+
+
+L .-.1 
+
+
+ICM 
+
+
+
+LRR 
+
+
+1 
+
+
+
+
+CAN Low to ground: V min = 1.5 volts 
+
+and V max = 2.5 volts SRR- 
+
+CAN High to ground: V min = 2.5 volts 
+and V max = 3.5 volts 
+
+srr-r 
+
+The Local-CAN is also used in Night Vision 2 (FOx) system for diagnosis, programming 
+and camera control. 
+
+
+The camera is programmed through the NVE control unit. The control unit receives the 
+programming data for the camera through PT-CAN. The control unit forwards this data to 
+the camera through the Local-CAN. 
+
+
+
+When measuring Local-CAN voltage, the Oscilloscope (IMIB) settings 
+should be the same as for the PT-CAN and K-CAN 2 (refer to these for 
+an sample of the Local-CAN scope pattern). 
+
+
+73 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gateways 
+
+
+Data exchange between the bus systems Gateways serve the purpose of coupling dif¬ 
+ferent types of bus systems, i.e. gateways connect bus systems with different logic and 
+physical properties. 
+
+They therefore ensure data exchange despite the different transmission rates of the indi¬ 
+vidual bus systems. 
+
+Example of a gateway connection 
+
+
+
+
+®f 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Linear bus system (e.g. KCAN) 
+
+3 
+
+Ring-structure bus system (e.g. MOST) 
+
+2 
+
+Gateway (e.g. M-ASK) 
+
+
+
+
+A gateway performs a dual function: 
+
+• To collect information from various different networks. 
+
+• To send information to the correct network. 
+
+Transmission rates, data volume and priority stages of the individual messages are fil¬ 
+tered in the gateway and buffered if necessary. 
+
+The gateway converts the messages to suit the respective bus system based on gate¬ 
+way rules and conversion tables. 
+
+The respective bus system is now served and the messages reach their target address. 
+If necessary, messages that are not so important remain in the gateway memory. These 
+remaining messages are then sent later. 
+
+
+74 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gateway Rules Based on the Example of a Train Station 
+
+
+
+
+GW-R 
+
+
+1h 
+
+< 
+
+5 min 
+
+m 
+
+
+
+0“ (r. 
+
+==^ 
+
+
+
+GW-T 
+
+
+
+
+A^B 
+
+
+® 
+
+
+B->A 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+GW-R 
+
+Gateway rules 
+
+Bus 2 
+
+Slow bus 
+
+GW-T 
+
+Gateway table 
+
+A -> B 
+
+Table example: Message from A to B 
+
+1 
+
+Train 1 with yellow message 
+
+B -> A 
+
+Table example: Message from B to A 
+
+2 
+
+Train 2 with red message 
+
+5 min 
+
+5-minute intervals 
+
+3 
+
+Gateway 
+
+1 h 
+
+1-hour interval 
+
+Bus 1 
+
+Fast bus 
+
+
+
+
+The express train 1 arrives at the station in 5- minute intervals. This train has a message 
+(yellow) for the train with the steam locomotive. The message is transferred to the first 
+wagon of the train with the steam locomotive. 
+
+In the meantime, an express train 2 arrives with a message (red) for the train with the 
+steam locomotive. Since the steam locomotive has not yet departed, the second mes¬ 
+sage is also transferred to the steam locomotive and attached after the first wagon. This 
+procedure is repeated until the train with the steam locomotive leaves the station after 
+one hour. 
+
+The messages are parked in the station when the train with the steam locomotive is fully 
+loaded. When available, a new train with a steam locomotive is loaded with these mes¬ 
+sages. 
+
+
+75 
+
+Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

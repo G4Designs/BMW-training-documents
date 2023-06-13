@@ -1,0 +1,1094 @@
+Table of Contents 
+
+E70 PowerWindows 
+
+Subject Page 
+
+Introduction .3 
+
+System Overview .4 
+
+System Circuit Diagram .5 
+
+Examples of the Window Switch Signal Path .6 
+
+Driver's Door .6 
+
+Front Passenger's Door.6 
+
+Rear Doors .6 
+
+System Components.7 
+
+Control Elements.8 
+
+Driver's Door Switch Cluster.8 
+
+Window Switch Signal Evaluation .8 
+
+Control Units.9 
+
+Car Access System 3.9 
+
+Footwell Module .9 
+
+J unction Box Control Unit.9 
+
+Remote Control.9 
+
+Power Window Motors .9 
+
+Principles of Operation.10 
+
+Opening and Closing .10 
+
+Toll Function .10 
+
+Comfort Opening and Closing .12 
+
+With Remote Control.12 
+
+Via the Driver's Door Lock Barrel.12 
+
+With Comfort Access.12 
+
+Anti-Trap M echanism .13 
+
+Panic M ode.13 
+
+Load Shut-Down,Terminal 50 .14 
+
+Thermal Protection .14 
+
+Service Information.15 
+
+Initialization .15 
+
+Via Window Switches .15 
+
+Via the BMW Diagnosis Equipment.15 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Windows 
+
+
+Model: E70 
+
+Production: From Start of Production 
+
+■MICIWIS 
+
+After completion of this module you will be able to: 
+
+• Understand and explain the power window system used in the E70 X5 
+
+
+2 
+
+E70 PowerWindows 
+
+
+Introduction 
+
+
+The E70 has been fitted with electric power windows since the start of series produc¬ 
+tion. 
+
+
+All power windows are equipped with an indirect anti-trap mechanism through the use of 
+hall sensors mounted inside each motor assembly. The electric power windows have the 
+following functions: 
+
+
+• Opening and closing 
+
+• One-touch /Toll opening and closing 
+
+• Comfort opening and closing 
+
+
+
+3 
+
+E70 PowerWindows 
+
+
+
+
+
+
+System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module 
+
+8 
+
+ID transmitter 
+
+2 
+
+Power window motor, front doors 
+
+9 
+
+Car Access System 3 CAS 3 
+
+3 
+
+Power window motor, rear doors 
+
+10 
+
+Driver's door switch cluster 
+
+4 
+
+J unction box control unit 
+
+11 
+
+Lock with door contact 
+
+5 
+
+Power window switch, driver's side rear/pas¬ 
+senger side front and rear 
+
+12 
+
+Lock cylinder, driver's door 
+
+6 
+
+Outside doorhandle for Comfort Access 
+
+K-CAN 
+
+Body CAN 
+
+7 
+
+Comfort Access 
+
+Bus-LIN 
+
+Local interconnected network bus 
+
+
+4 
+
+E70 PowerWindows 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Driver's door power window motor 
+
+11 
+
+Car Access System 3 CAS 3 
+
+2 
+
+Indirect anti-trap mechanism, 
+driver's door power window 
+
+12 
+
+Power window switch, 
+driver's side rear 
+
+3 
+
+FRM footwell module 
+
+13 
+
+Power window motor, driver's side rear 
+
+4 
+
+Indirect anti-trap mechanism, 
+passenger side front power window 
+
+14 
+
+Indirect anti-trap mechanism, 
+driver's side rear power window 
+
+5 
+
+Power window motor, passenger side front 
+
+15 
+
+SBFA driver's doorswitch cluster 
+
+6 
+
+Power window switch, 
+passenger side front 
+
+K-CAN 
+
+Body CAN 
+
+7 
+
+Indirect anti-trap mechanism, 
+passenger side rear 
+
+KL. 30g 
+
+Terminal 30 switched 
+
+8 
+
+Power window motor, 
+passenger side rear 
+
+KL. 58g 
+
+Terminal 58 switched 
+
+9 
+
+Power window switch, 
+passenger side rear 
+
+LIN-Bus 
+
+Local interconnected network bus 
+
+10 
+
+J B junction box control unit 
+
+
+
+
+5 
+
+E70 PowerWindows 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-CAN Signals on Roof Function Center 
+
+In/Out 
+
+Information 
+
+Source/sink 
+
+Function 
+
+In 
+
+Status of terminal 50 
+
+Car Access System 3 >FZD 
+
+Interruption in adjustment procedure for 
+powerwindow 
+
+In 
+
+Outside temperature 
+
+Outside temperature sensor 
+
+Value used to determine the thermal 
+protection of the powerwindow motors 
+
+In 
+
+Comfort Closing 
+
+Outside door handle > 
+Comfort access 
+
+Comfort closing of the powerwindows 
+
+Out 
+
+Anti-trap mechanism 
+deactivated 
+
+Roof function center > 
+Instrument cluster 
+
+CC message display 
+
+Out 
+
+Anti-trap mechanism 
+deactivated 
+
+J unction box control unit > 
+Instrument cluster 
+
+CC message display 
+
+
+The Car Access System 3 (11) issues the enable to actuate the powerwindow motors 
+(1, 5, 8 and 13). 
+
+If a powerwindow switch is then activated, the footwell module (3) (front powerwindow 
+motor) orthe junction box control unit (10) (rear powerwindow motor) executes the 
+desired request. 
+
+Examples of the Window Switch Signal Path 
+
+The following examples of a signal path show the path taken by the signal before the 
+powerwindow motoropens orcloses the window. A requirement is that the Car Access 
+System 3 has issued the enable for operation of the power windows. 
+
+Driver's Door 
+
+When the powerwindow switch forthe window in the driver's doororfront passenger's 
+door is operated, the signal is routed via the LIN bus to the footwell module. The footwell 
+module drives the corresponding powerwindow motor. 
+
+The signal is routed from the driver's door switch cluster via the LIN bus to the footwell 
+module when the powerwindow switches forthe windows in the rear doors are operated. 
+
+The footwell module sends the signal via the K-CAN to the junction box control unit. The 
+junction box receives the signal and activates the corresponding powerwindow motor. 
+
+Front Passenger's Door 
+
+The signal is routed to the junction box control unit when the powerwindow switch in the 
+front passenger's door is operated. 
+
+The junction box control unit sends the signal via the K-CAN to the footwell module. 
+
+The footwell module controls the powerwindow motor. 
+
+Rear Doors 
+
+When the powerwindow switches in the rear doors are operated, the signal is routed to 
+the junction box control unit. The junction box control unit drives the powerwindow 
+motor. 
+
+6 
+
+E70 PowerWindows 
+
+
+
+
+System Components 
+
+
+The following graphic shows all the components of the power window system together 
+with the respective control units and control elements. 
+
+The following components are described: 
+
+• Control elements 
+
+• Control units 
+
+- Car Access System 3 
+
+- Footwell module 
+
+- J unction box control unit 
+
+• Powerwindow motor 
+
+
+
+
+a * r-TII 
+
+
+\L> 
+
+
+
+
+si) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Car Access System 3 
+
+3 
+
+J unction box control unit 
+
+2 
+
+Footwell module 
+
+
+
+
+7 
+
+E70 PowerWindows 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Elements 
+
+
+Driver's Door Switch Cluster 
+
+The driver's door switch cluster is connected via the LIN 
+bus to the footwell module. 
+
+For opening or closing, the power window switch has two 
+notch positions. The first notch position is used forthe 
+manual powerwindow function.The second notch posi¬ 
+tion (press) is used forthe toll function of the powerwin- 
+dows. 
+
+The powerwindow switches are resistance coded and 
+switched to earth. The following graphic shows the princi¬ 
+ple of a resistance coded switch. 
+
+Window Switch Signal Evaluation 
+
+The signals of the powerwindow switch in the driver's door switch console are 
+evaluated directly by the driver's door switch cluster and transferred to the footwell 
+module via the LIN bus. 
+
+The signals from the powerwindow switches in the front passenger's door as well as the 
+powerwindow switches of the both rear doors are evaluated by the junction box control 
+unit. 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Illumination of powerwindow switch 
+
+2 
+
+Resistance-coded switch 
+
+
+8 
+
+E70 PowerWindows 
+
+
+
+
+
+
+
+
+
+
+
+Control Units 
+
+
+Car Access System 3 
+
+The Car Access System 3 is the central control unit for opening and closing the windows. 
+Therefore, it issues the enable to operate the power windows During the engine start 
+phase, it is not possible to move the power windows. This means more energy from the 
+battery is available forthe starter during engine start-up. 
+
+Footwell Module 
+
+The relays forthe power window motors forthe front doors are installed in the footwell 
+module. 
+
+The footwell module provides information on the status of the door contacts and the dri¬ 
+ver's door lock cylinder. 
+
+The footwell module also provides the power window switch and the driver's door switch 
+console with information on the "Terminal 58g ON" status. 
+
+J unction Box Control Unit 
+
+The relays forthe powerwindow motors forthe rear doors are installed in the junction box 
+control unit. 
+
+Remote Control 
+
+The remote control can initiate the comfort opening/comfort closing procedure forthe 
+power windows. 
+
+Note: The ID transmitter can also perform the functions of the remote control. 
+The comfort opening and closing function with the ID transmitter is 
+therefore the same as with the remote control. 
+
+PowerWindow Motors 
+
+The powerwindow motors are equipped with Hall sensors that generate signals during 
+motor operation. These signals serve the purpose of monitoring motor operation and are 
+evaluated forthe anti-trap mechanism. 
+
+The signals are evaluated in the footwell module and the junction box control unit. 
+
+
+9 
+
+E70 PowerWindows 
+
+
+
+Principles of Operation 
+
+
+The functions of the powerwindows on the E70 are: 
+
+• Opening and closing 
+
+• Opening and closing with toll function 
+
+• Comfort opening and closing 
+
+• Indirect anti-trap mechanism 
+
+• Panic mode 
+
+• Load shut-down at terminal 50 
+
+• Thermal protection of power window motors 
+Opening and closing 
+
+The Car Access System 3 has the central control function forelectric opening and 
+closing ofthe powerwindows. 
+
+This means that the Car Access System 3 issues the enable to open and close the 
+powerwindows. The footwell module and the junction box control unit actuate the 
+powerwindow motors and monitorthe motorspeed ofthe respective powerwindow 
+motor. This means the footwell module orthe junction box control unit can respond to 
+the following operating situations: 
+
+• Trapping 
+
+• Overheating ofthe powerwindow motor 
+
+• Seizing of the power window motor. 
+
+Opening and Closing 
+
+The corresponding powerwindow motor is activated in OPEN or CLOSE direction by 
+pressing or pulling the powerwindow switches to the first notch position.The power 
+window motor remains active until the corresponding powerwindow switch is released. 
+
+To ensure the powerwindow is closed securely, the powerwindow motor is briefly dri¬ 
+ven to block status at the limit stop. 
+
+Toll Function 
+
+The toll function is implemented forall powerwindows.The corresponding powerwin¬ 
+dow motor is driven in the OPEN orCLOSE direction by pressing or pulling a powerwin¬ 
+dow switch beyond the limit stop. 
+
+The powerwindow motor moves the window automatically until it is completely open or 
+closed. Powerwindow operation is stopped when the powerwindow switch is pressed 
+or pulled again. 
+
+
+10 
+
+E70 Powerwindows 
+
+
+
+
+
+Byway of example, the opening and closing procedure for one of the rear windows is 
+illustrated bythe signal path in the following graphic.The opening orclosing function is 
+initiated from the driver's door switch cluster. 
+
+
+
+Inde 
+
+X 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+SBFA powerwindow switch 
+in driver's door switch cluster 
+
+LIN-bus 
+
+LIN bus 
+
+2 
+
+FRM footwell module 
+
+K-CAN 
+
+BodyCAN 
+
+3 
+
+Car Access System 3 CAS 3 
+
+KL. 30g 
+
+Terminal 30g 
+
+4 
+
+J B junction box control unit 
+
+KL. 58g 
+
+Terminal 58g 
+
+5 
+
+Powerwindow motor 
+
+
+
+
+11 
+
+E70 PowerWindows 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Comfort Opening and Closing 
+
+Comfort opening or closing can be performed with the remote control/ID transmitter via 
+the door lock in the driver's doororthe outside driver's/passenger's doorhandle. 
+
+Comfort opening with remote control The comfort opening function is initiated by unlock¬ 
+ing the vehicle with the remote control and keeping the button pressed forlongerthan 5 
+seconds. 
+
+Initially, the front windows are opened, followed after a short time delay by the rear win¬ 
+dows and the panorama glass roof. 
+
+The signal from the remote control is picked up by the Car Access System 3 via the 
+remote control receiver. 
+
+The Car Access System 3 issues the enable to operate the powerwindows and initiates 
+the comfort opening function. The footwell module and the junction box control unit cor¬ 
+respondingly activate the powerwindow motors. 
+
+With Remote Control 
+
+The comfort closing function is initiated after locking the vehicle with the remote control 
+and keeping the button pressed forlongerthan 5 seconds. Initially, the panorama glass 
+roof is closed followed after a short time delay by the rear/front windows. 
+
+If the folding exterior mirrors option is installed, the mirrors are folded in simultaneously as 
+the rear windows are closed. 
+
+Via the Driver's Door Lock Barrel 
+
+There are two Hall sensors installed in the door lock forthe purpose of opening and clos¬ 
+ing the vehicle. The Hall sensors enable the footwell module to detect the position of the 
+mechanical key or of the spare key in the lock barrel. 
+
+The key must be turned to the open or close position to initiate the comfort opening and 
+closing function. The comfort opening or closing function is initiated when the key is held 
+in this position. 
+
+The footwell module sends the request via the K-CAN. On conclusion ofthe correspond¬ 
+ing check, the Car Access System 3 initiates the comfort opening or closing procedure. 
+
+With Comfort Ac cess 
+
+In connection with Comfort Access, the comfort closing function is triggered via the dri¬ 
+ver's/passenger's outside doorhandle. 
+
+It is sufficient to touch the sensitive area ofthe outside door handle in orderto trigger the 
+comfort closing function via the door handle. 
+
+Comfort closing is triggered if the sensitive area is touched forlongerthan 5 seconds. 
+The ID transmitter must be within an approximately 2 m radius ofthe vehicle. 
+
+
+12 
+
+E70 PowerWindows 
+
+
+
+Anti-Trap Mechanism 
+
+Essentially, the indirect anti-trap mechanism does not prevent an object being trapped 
+but rather it limits the trapping force to maximum 80 N.The power window motor is 
+reversed on exceeding this trapping force. 
+
+Thefootwell module and the junction box control unit monitor the activated power win¬ 
+dow motors. The indirect anti-trap mechanism forthe front windows is activated by the 
+footwell module.The indirect anti-trap mechanism forthe rear windows is activated by 
+the junction box control unit. 
+
+The indirect anti-trap mechanism in the E90 is based on the evaluation of the Hall pulses 
+from the power window motors. The speed is derived from the Hall pulses of the power 
+window motors. Speed fluctuations within certain ranges triggerthe indirect anti-trap 
+mechanism so that the windows are opened. 
+
+Operation of the power window switches is ineffective while the windows are in the 
+process of opening. 
+
+If no operable anti-trap mechanism is detected as the result of defective Hall sensors, the 
+window can only be operated in jolts. The power window is in emergency mode and 
+must be reinitialized. A Check Control message will be displayed. 
+
+Panic Mode 
+
+Panic mode is triggered by overpulling - releasing- overpulling (overpulling = pulling 
+beyond limit stop) the power window switches. 
+
+It is necessary to release and overpull the switch again as the anti-trap mechanism is still 
+active the first time the switch is overpulled. 
+
+Overpulling the power window switch the second time within 4 seconds closes the win¬ 
+dow with maximum force. 
+
+Note: The indirect anti-trap mechanism is no longer active in this case. The 
+window closes at the maximum closing force and does not reverse. 
+
+
+13 
+
+E70 PowerWindows 
+
+
+
+Load Shut-Down,Terminal 50 
+
+
+To protect the battery, operation of the power windows is interrupted during the vehicle 
+start procedure. 
+
+The Car Access System 3 revokes the enable for power window operation in orderto 
+interrupt current operation of the power windows. The signal is received by the footwell 
+module and junction box control unit via the K-CAN. 
+
+The power window switches must be pressed again following an interruption in opera¬ 
+tion. The corresponding function is not executed if the power windows are operated dur¬ 
+ing the start procedure. 
+
+The enable for operation of the power windows is not issued until the start procedure has 
+been completed. 
+
+Thermal Protection 
+
+The footwell module and the junction box control unit monitor the motor temperature. 
+
+The motor temperature is determined based on the outside temperature, motor running 
+time and the time the motor is stationary (not operative). 
+
+Each motor can be switched off individually to prevent the power window motors over¬ 
+heating during operation of the power windows). The motoris then deactivated fora 
+defined period of time. The thermal protection facility does not prevent the windows 
+being opened in the case of trapping. Once started, a powerwindow function is not inter¬ 
+rupted by the thermal protection facility. 
+
+In panic mode the window can still be closed even when the thermal protection function 
+is active. 
+
+
+14 
+
+E70 PowerWindows 
+
+
+
+Service Information 
+
+
+Initialization 
+
+The front and rear power windows can be initialized via the power window switches or 
+the BMW diagnosis system. 
+
+Via Window Switches 
+
+The following procedure must be performed to initialize the system: 
+
+• Completely close window by pulling the power window switch beyond the limit 
+stop. 
+
+• Briefly interrupt pulling the power window switch and then pull the switch upwards 
+again for approximately. 1 second. 
+
+Via the BMW Diagnosis Equipment 
+
+The powerwindows can be initialized as part of an initialization job using the diagnosis 
+system. A detailed description of the initialization procedure is provided in the BMW 
+diagnosis system. 
+
+Note: The powerwindows can only be moved in jolts if not initialized. 
+
+
+15 
+
+E70 Powerwindows 
+
+
+
+

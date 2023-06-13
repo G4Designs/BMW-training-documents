@@ -1,0 +1,6982 @@
+Table of Contents 
+
+
+Subject Page 
+
+M5.2.1 .2 
+
+Objectives of the Module .2 
+
+Purpose of the System.3 
+
+System Components.5 
+
+Ignition Coil Power Supply .8 
+
+Shrouded Fuel Injector Air Control .9 
+
+Battery Charge Logic.11 
+
+Evaporative System Pressure Leak Diagnosis. 12 
+
+On-board Refueling Vapor Recovery. 18 
+
+EWS III (3.3). 19 
+
+CAN Bus .22 
+
+M5.2.1 for 1999 MY M73TU .24 
+
+Auxiliary Fan Control.27 
+
+Secondary Air Injection System.28 
+
+Electrically Heated Thermostat .30 
+
+Exhaust System.28 
+
+Electric Catalytic Converter Assemblies.33 
+
+Review Questions .38 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5.2.1 
+
+Models: E38 with M73/M73TU Engine 
+
+E38/E39 with M62 Engine 
+
+Production Date: E38 with M62 Engine 5/97 Through 98 MY 
+
+E39 with M62 Engine 9/97 Through 98 MY 
+E38 with M73 Engine 5/97 Through 98 MY 
+E38 with M73TU Engine 99 MY to Present 
+
+Manufacturer: Bosch 
+
+Pin Connector: 134 Pins - 5 Modular Connectors (2 ECMs on M73) 
+
+Objectives of the Module 
+
+After completing this module, you will be able to: 
+
+• Explain How the Power is Supplied to the Ignition Coils 
+
+• Describe the Air Shrouded Injector Control on the M73 
+
+• Understand Why the Idle Speed is Influenced by Battery Charge Logic 
+
+• Explain the Electrically Heated Thermostat Operation 
+
+• Understand the Elecrtic Catalytic Converter Function 
+
+• Describe What “ISN” Means 
+
+• Name the Location of Evaporative Components 
+
+• List the Differences of the 99MY M73TU 
+
+
+2 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+M5.2.1 (1998 MY M73 & M62 equipped vehicles) 
+
+Purpose of the System 
+
+
+The M5.2.1 engine control system is manufac¬ 
+tured by Bosch to BMW specifications. In addi¬ 
+tion to quality improvement modifications, 
+emphasis was placed on enhancing functions 
+for OBD II and Tier 1 compliance. 
+
+
+
+M5.2.1 control modules utilize the 
+SKE (standard shell construction 
+housing). The SKE utilizes a modu¬ 
+lar connector configuration. There 
+are a total of 5 connectors provid¬ 
+ing a combined total of 134 pins. 
+
+
+
+(9 pins) (24 pins) (52 pins) (40 pins) (9 pins) 
+
+
+The modular harness connectors are color 
+coded by cylinder bank on the M73. When 
+removing control modules from the E-Box, note 
+the color of the plugs and mark each module to 
+prevent incorrect replacement. This step is 
+important to prevent EWS III (3.3) ISN incom¬ 
+patibility. 
+
+
+
+The correct Universal Adapter for the M5.2.1 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+
+SKE BREAKOUT BOX SET 
+P/N 90 88 6 121 300 
+
+
+ENGINE CONTROL 
+MODULE HARNESS 
+
+
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+© 0 ®©© 
+
+©©©©© 
+
+© 0 ®®© 
+
+©©©©© 
+
+©©©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+3 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FEATURES OF M5.2.1 
+
+The M5.2.1 system has the following functions or capabilities: 
+
+• Separate power supply relay for ignition coils. 
+
+• Leak Diagnosis Pump control and feedback monitoring for evaporative system leak 
+testing. Integration of this system also brought forth modifications to the total fuel evap¬ 
+orative system providing ORVR (On-board Refueling Vapor Recovery) compliancy. 
+
+• Shrouded Fuel Injector Air control (M73 Engine Only). 
+
+• Battery charge logic (idle speed varied with the battery state of charge). 
+
+• CAN communications with the instrument cluster. 
+
+• “Rolling Code” ISN interface with EWS III (3.3). 
+
+• Knock Sensors are more sensitive in determining ignition knock. 
+
+• Pulse width modulated IHKA Status Signal (S-KO). 
+
+• Running Loss 3/2 Fuel Rail Valve 
+
+
+4 
+
+
+ST055 M5.2.1 
+
+
+
+
+System Components: Inputs - Processing - Outputs 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components: Inputs - Processing - Outputs 
+
+
+
+6 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components: Inputs - Processing - Outputs 
+
+
+
+7 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IGNITION COIL POWER SUPPLY (Unloader) RELAY 
+
+
+The power supply for the ignition coils is provided by a relay. This relay is identified as an 
+“unloader relay” in the ETM and component listing displays. 
+
+The unloader relay was integrated into all vehicles starting with the 1997 model year. The 
+purpose of this relay is to isolate the voltage supply as well as relieving the ignition switch 
+of the additional current draw needed by the ignition coils. 
+
+When KL15 is switched on, the relay control circuit is provided power to close the relay pro¬ 
+viding operating voltage to ignition coils. 
+
+
+
+
+— + 
+
+
+
+rrrrrri 
+
+
+— 
+
+
+
+POWER DISTRIBUTION 
+
+
+
+
+IGNITION 
+
+SWITCH 
+
+DISTRIBUTION 
+
+
+© 
+
+
+1 
+
+
+
+
+ONE TOUCH START 
+
+
+KL 15 "Wake Up Call" 
+
+
+
+
+IGNITION COIL 
+POWER RELAY 
+(Unloader Relay) 
+
+
+
+© 
+
+
+„© 
+
+
+© 
+
+
+M73 = 2 COILS 
+
+(Actual Component Is One Piece) M44 = 4 COILS 
+
+
+M52 = 6 COILS 
+
+
+M62 = 8 COILS 
+
+
+8 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SHROUDED FUEL INJECTOR AIR CONTROL (M73 Equipped Vehicles only) 
+
+
+In compliance with emission regulations, air shrouded injectors are used on the M73 with 
+M5.2.1. This system allows additional metered air to be drawn into the combustion cham¬ 
+ber thus lowering CO/HC emissions. 
+
+With the air routing through the 
+injector, it also creates additional 
+turbulence to help atomize the 
+fuel mixture. 
+
+
+The system is ECM controlled 
+and uses the following compo¬ 
+nents: 
+
+
+• 2 Air Containment solenoids for 
+air inlet to the fuel injectors. 
+
+AIR MIXED WITH FUEL AT THE 
+
+PINTLE OPENING TO IMPROVE ATOMIZATION. 
+
+• Vacuum “balancing” bleeds to 
+the intake manifolds. 
+
+OPERATION 
+
+
+
+METERED AIR 
+INTRODUCED 
+INTO INJECTOR 
+SHROUD 
+
+
+Operation of the system begins on cold engine 
+start up. The ECMs provide a ground path to 
+open the valves allowing additional metered air 
+to be drawn into the fuel injectors to the mani¬ 
+fold. 
+
+If the vehicle is stationary and idling, this process 
+continues until the engine coolant temperature 
+reaches 75°C. If the vehicle is started and driven, 
+the additional air is injected through the warm up 
+phase of the engine. The ECM then releases the 
+ground path so the valves spring closed. 
+
+
+
+NOTE: Air injection will be interrupted during idle at engine operating temperature, if the idle 
+speed becomes too high! 
+
+
+Similar to the M62, a brake booster is linked into the system by the vacuum amplifier. On 
+the M73 this requires an equal “balance” of vacuum bleed on the opposite bank allowing 
+equal DK motor synchronization. This system has fault recognition and is diagnosible using 
+the DIS. 
+
+
+9 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AIR CONTAINMENT 
+VALVE (BANK II) 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BATTERY CHARGE LOGIC 
+
+
+The 5.2.1 ECM (ECM 1 on the M73) monitors the “system voltage” from voltage supply 
+inputs. 
+
+
+The following situations will occur upon engine start up: 
+
+• If the charging system output is sufficient, the engine rpm will be normal. 
+
+• If the charging system output is lower than normal, the engine idle will increase to pro¬ 
+vide a higher charge capability of the alternator. 
+
+M62: The ECM opens the idle control valve slightly. 
+
+M73: ECM I will request via “CAN bus” that the EML control module increase the 
+engine rpm. 
+
+
+Engine idle speed will be raised to 900 RPM until the generator output is sufficient, 
+
+
+
+IDLE SPEED 
+CONTROL VALVE 
+IS OPENED SLIGHTLY 
+
+
+11 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EVAPORATIVE FUEL SYSTEM PRESSURE LEAK DIAGNOSIS 
+
+
+To meet Tier 1 (emission stage) 
+compliancy, a Leak Diagnosis 
+Pump (LDP) is installed for fuel sys¬ 
+tem evaporative leak testing. 
+
+This system with the LDP is capa¬ 
+ble of detecting a leak as small as 
+0.5 mm. 
+
+The LDP is located in the left rear 
+(driver’s side) fender well. The 
+LDP is a unitized component that 
+contains the following: 
+
+• Vacuum chamber 
+
+• Pneumatic pump chamber 
+
+• DME activated vacuum sole¬ 
+noid 
+
+• Reed switch providing a 
+switched voltage feedback 
+signal to the DME. 
+
+
+
+PURGE CANISTER 
+
+
+1 
+
+
+
+
+
+
+
+
+
+
+
+. l 3MrF ' .*■ 
+
+
+AHhT ■ 
+
+A 
+
+T^rT*- 
+
+\ 1 
+
+
+i 
+
+- JJM 
+
+
+FILTER 
+
+
+LIQUID VAPOR 
+SEPARATOR 
+
+
+LEAK DIAGNOSIS 
+PUMP (LDP) 
+
+
+
+PORT TO AIR INLET FILTER 
+(PURGE FUNCTION) 
+
+
+UUM 
+SOLENOID 
+
+
+REED SWITCH 
+(Internal) 
+
+
+PORT TO PURGE CANISTER 
+(NOT SHOWN) 
+
+
+The vacuum supply line is in the 
+wiring harness from the engine 
+compartment and runs down the 
+driver’s side of the vehicle. 
+
+
+HARNESS CONNECTOR 
+
+
+VACUUM 
+
+PORT 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+LDP-PURGE SYSTEM INTEGRATION 
+
+
+• The function of the LDP is to pressurize the fuel tank and the evaporative emission sys¬ 
+tem (approx. 25mb.) for the purpose of detecting leaks. 
+
+• The canister vent valve is integrated into the LDP which is electrically controlled by the 
+ECM. The canister vent valve is sprung open to provide fresh air entry into the fuel sys¬ 
+tem during purge operation. 
+
+
+• Purge operation characteristics are: 
+
+
+Off Idle through Full Throttle: Purge Valve(s) opened by pulse width modulated con¬ 
+trol of the ECM(s). Duty cycle varied by engine operating conditions. 
+
+Warm Idle: Purge valve(s) open slightly 
+
+Cold Idle/Decel: Engine temp < 67°C, Purge valve(s) closed. 
+
+
+
+j 
+
+
+
+
+PURGE 
+
+VALVE 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS TO PURGE VALVE 
+
+
+| ENGINE VACUUM 
+
+LDP 
+
+
+PURGE VAPORS TO INTAKE 
+
+
+FUEL FILLER 
+NECK 
+
+
+FILTER 
+
+
+
+• During diagnostic testing of the evaporative emission system, the vent valve is closed 
+and will block atmospheric venting. The purge valves are also sprung closed to seal the 
+system. 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LDP OPERATION 
+
+
+During every engine cold start, the following occurs: 
+
+
+• The LDP solenoid is energized by the ECM 
+
+
+Engine manifold vacuum enters the upper chamber of the LDP to lift up the spring 
+loaded diaphragm pulling ambient air through the filter and into the lower chamber of 
+the LDP through the one way valve. 
+
+
+M5.2.1 
+
+ENGINE 
+
+CONTROL 
+
+
+
+
+REED CONTACT -i 
+INPUT SIGNAL 
+
+
+ENGINE 
+
+VACUUM 
+
+
+TO PURGE 
+CANISTER 
+
+
+
+BALANCE 
+
+TUBE 
+
+
+FILTERED 
+AIR INLET 
+
+
+• The solenoid is then de-energized, spring pressure closes the vacuum port blocking the 
+engine vacuum and simultaneously opens the vent port to the balance tube which 
+releases the captive vacuum in the upper chamber. 
+
+
+• This allows the compressed spring to push the diaphragm down, starting the “limited 
+down stroke”. 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+• The air that was drawn into the lower chamber of the LDP during the upstroke is forced 
+out of the lower chamber and into the evaporative system. 
+
+
+• This electrically controlled repetitive up/down stroke is cycled repeatedly building up a 
+total pressure of approximately +25mb in the evaporative system. 
+
+
+• After sufficient pressure has built up (LDP and its cycling is calibrated to the vehicle), the 
+leak diagnosis begins and lasts about 100 seconds. 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+M5.2.1 
+
+ENGINE 
+
+CONTROL 
+
+MODULE 
+
+
+
+REED CONTACT n 
+INPUT SIGNAL 
+
+SOLENOIDx-^r- 
+
+OUTPUT 4-T ) 
+
+STAGE Ty 7 
+
+
+
+
+ENGINE 
+
+VACUUM 
+
+
+TO PURGE 
+CANISTER 
+
+
+
+
+
+BALANCE 
+
+TUBE 
+
+
+FILTERED 
+AIR INLET 
+
+
+• The upper chamber contains an integrated reed switch that produces a switched high- 
+low voltage signal that is monitored by the ECM. The switch is opened by the magnetic 
+interruption of the metal rod connected to the diaphragm when in the diaphragm is in 
+the top dead center position. 
+
+• The repetitive up/down stroke is confirmation to the ECM that the valve is functioning. 
+
+15 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM also monitors the length of time it takes for the reed switch to open, which is 
+opposed by pressure under the diaphragm in the lower chamber. The LDP is still cycled, 
+but at a frequency that depends upon the rate of pressure loss in the lower chamber. 
+
+
+If the pumping frequency is below parameters, there is no leak present. 
+
+
+If the pumping frequency is above parameters, this indicates sufficient pressure can not 
+build up in the lower chamber and evaporative system, indicating a leak. 
+
+M5.2.1 
+ENGINE 
+CONTROL 
+
+
+ENGINE 
+
+VACUUM 
+
+VACUUM 
+
+CHAMBER 
+
+
+PRESSURE 
+
+CHAMBER 
+
+
+TO PURGE 
+CANISTER 
+
+
+
+
+
+BALANCE 
+
+TUBE 
+
+
+~ 
+
+
+VALVE OPEN TO 
+COMPENSATE PURGE 
+VACUUM 
+
+
+
+Za // // // S/./ 
+
+u 
+
+
+
+77" 77 // 
+
+, ^ 
+
+// // 
+y 
+
+\1 
+
+To 
+
+w o 
+
+o 
+
+
+L*LJ 
+
+
+
+
+rV // // // /s /V /V 
+
+
+O 
+
+
+FILTERED 
+AIR INLET 
+
+
+A fault code can be recorded by each ECM indicating an evaporative system leak. Upon 
+test completion, the ECM releases the ground path to the LDP and the internal spring push¬ 
+es the diaphragm for the “full down stroke”. 
+
+
+At bottom dead center, the diaphragm rod opens the canister vent valve. This allows for 
+fresh air intake from the filter for normal purge system operation. The LDP is diagnosible 
+with the DIS including a service function activation test. 
+
+16 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The chart represents the diagnostic leak testing time frame in seconds. When the ignition 
+is switched on, the ECM performs a “static check” of circuit integrity to the LDP pump 
+including the reed switch. 
+
+
+
+0 10 20 30 40 50 60 70 80 90 100 
+
+TIME (seconds) 
+
+
+• On cold engine start up, the pump is activated for the first 27 seconds at approximate¬ 
+ly 166-200 Hz. This rapid pumping phase is required to pressurize the evaporative 
+components. 
+
+• Once pressurized, the build up phase then continues from 27-38 seconds. The ECM 
+monitors the system through the reed switch to verify that pressure has stabilized. 
+
+• The measuring phase for leak diagnosis lasts from 38-63 seconds. The pump is acti¬ 
+vated but due to the pressure build up under the diaphragm, the pump moves slower. 
+If the pump moves quickly, this indicates a lack of pressure or a leak. This registers as 
+a fault in the ECM’s. 
+
+• From 63-100 seconds the pump is deactivated, allowing full down stroke of the 
+diaphragm and rod. At the extreme bottom of rod travel, the canister vent valve is 
+pushed open relieving pressure and allowing normal purge operation when needed. 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ORVR FUNCTION (On-board Refueling Vapor Recovery) 
+
+
+Any vehicle fitted with the LDP is also ORVR compliant. The ORVR system addresses 
+recovering fuel vapor which is released during refueling. Previously, fuel vapors were vent¬ 
+ed from the tank venting line back to the filler neck and in many states reclaimed by a vac¬ 
+uum receiver on the filling station’s fuel pump nozzle. 
+
+ORVR provides a means to “capture” these hydrocarbon vapors resulting from the rush of 
+fuel into the tank during fuel filling. The following changes were installed to achieve this: 
+
+• Re-routing the previous tank vent hose from the filler neck to the liquid/vapor separator. 
+This hose was also enlarged to accommodate the increased “vapor flow” being intro¬ 
+duced into the liquid vapor separator. 
+
+• Enlarging the rollover valve and the hose from the liquid/vapor separator to the charcoal 
+canister. 
+
+• Modified filler neck which allows a higher flow rate. 
+
+• Modifications to the fuel tank to form a liquid seal during refueling - forcing vapors to the 
+liquid/vapor separator. 
+
+
+When refueling, the pressure of the fuel entering the tank will force the hydrocarbon vapors 
+through the tank vent line to the liquid/vapor separator, through the rollover valve and into 
+the charcoal canister. The hydrocarbons are stored in the charcoal canister, and the system 
+can then “breathe” through the LDP pump and the air filter. 
+
+
+The small hose at the fuel filler neck is still required to check for leaks at the filler cap. 
+
+
+RE-ROUTED, 
+ENLARGED 
+DIAMETER, 
+TANK VENT 
+LINE 
+
+
+VAPORS TO A 
+PURGE VALVE T 
+
+
+| ENGINE VACUUM 
+LDP 
+
+
+
+FILTER 
+
+
+18 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EWS III (3.3) 
+
+The EWS III is modified for compatibility with the M5.2.1 engine control system and is des¬ 
+ignated as EWS 3.3. 
+
+EWS 3.3 is installed in the 1998 MY E38 (from 5/97 production) and 1998 MY E39 (from 
+9/97 production). The system inputs remain unchanged compared with the 3.2 system, 
+however, the ISN signal is now a “Rolling Code ISN”. 
+
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ROLLING CODE OPERATION 
+
+
+The “rolling code” is a one way signal from the EWS 3.3 to the ECM. The “Rolling Code” 
+provides a higher level of sophistication than the ISN of previous EWS systems. Similar to 
+the data exchange between the EWS control module and the transponder chip in each key, 
+the “rolling code” is different every time the engine is started. 
+
+The rolling code system requires that each vehicle receive a unique “Rolling Code Table”. 
+The rolling code table is assigned and installed by the factory into both the EWS 3.3 and 
+M5.2.1 control modules. The code tables are “burned” into the control modules and can 
+not be overwritten by ZCS encoding software, ECM programming software or the 
+EWS/ECM Alignment Procedure of the Service Function section in the DIS for each system. 
+
+ENGINE STARTING PROCEDURE 
+
+• All EWS 3.3 input requirements are met: 
+
+- System power and grounds provided 
+
+- Positive data exchange between the key and EWS control module (key accepted). 
+
+- BC code function is not active. 
+
+- Range selector in P or N (E38s and 540iA), or Clutch pedal depressed (540i Sport). 
+
+• EWS 3.3 control module closes the internal relay contacts providing the KL50 Start sig¬ 
+nal to the starter solenoid. Simultaneously, it calculates a stored code from the rolling 
+code table and sends the calculated results to the ECM. 
+
+• On receipt of EWS’s calculated results, ECM calculates it’s own stored code and com¬ 
+pares it’s results with the received results from EWS. 
+
+- Results Identical: Engine Starts! 
+
+- Results not identical: ECM “rolls forward” to the next code in the rolling code table 
+and calculates it. It continues to “roll forward” until it finds a match. If no match is 
+found: Engine cranks but does not start! 
+
+The “forward roll” occurs up to a maximum of 200 times. This is necessary for the fol¬ 
+lowing reason. Example scenario: ECM is temporarily disconnected for service rea¬ 
+sons. The ignition key is inadvertently switched on. When switched back off, the EWS 
+is advanced one “rolling code” ahead of the ECM because the ECM was not connect¬ 
+ed. Once reconnected and the ignition key is turned to start, the ECM advances until a 
+match is found. The rolling codes in each module are once again synchronized. 
+
+• When the ignition is switched off and no engine RPM signal is present in either the ECM 
+and EWS, each module will automatically “roll forward” to the next pre-determined code 
+(based on the code table.) This code is used for the next start sequence. 
+
+20 
+
+
+ST055 M5.2.1 
+
+
+
+UNIQUE ROLLING CODE 
+TABLE ASSIGNED TO A 
+MATED PAIR (EWS-DME) 
+DURING FACTORY CODING 
+
+
+EWS III 
+
+wm 
+
+
+
+PROCEDURE 
+ie: TABLE # XYZ 
+
+
+• STATUS - NEW/USED 
+
+
+TABLE XYZ 
+
+1 
+
+101000100100101 
+
+2 
+
+011010010100101 
+
+3 
+
+000101010001010 
+
+4 
+
+001001010111010 
+
+ETC. 
+
+011101110110101 
+
+
+START PROCEDURE: 
+
+• CALCULATE STORED 
+CODE FROM LAST KEY OFF 
+CONDITION AND SEND 
+ANSWER TO DME 
+
+
+
+
+DME M5.2.1 
+
+• STATUS: 
+NEW/USED 
+
+
+TABLE XYZ 
+
+i 
+
+101000100100101 
+
+2 
+
+011010010100101 
+
+3 
+
+000101010001010 
+
+4 
+
+001001010111010 
+
+ETC. 
+
+011101110110101 
+
+
+START PROCEDURE 
+
+• RECEIVE CALCULATED 
+CODE FROM EWS 
+
+• CALCULATE STORED 
+CODE FROM LAST KEY 
+OFF CONDITION AND 
+COMPARE WITH EWS 
+RECEIVED CODE 
+
+• START IF SAME 
+
+• NO START IF DIFFERENT 
+Roll to next code until a 
+match is found (up to 200 
+forward rolls). 
+
+
+
+_iLn_im_ > . Y 
+
+"ROLLING CODE" ISN 
+
+
+SERVICE INFORMATION 
+
+
+• Rolling code tables are rigidly assigned. For this reason, ECM control modules can not 
+be swapped from another vehicle and re-aligned for troubleshooting purposes. 
+
+• Replacement EWS 3.3 control modules are ordered VIN specifically. They are received 
+with the same rolling code table as the original module. Once ZCS encoded, the DIS 
+software “resets” the current rolling code in the DME back to rolling code #1, providing 
+synchronization in both modules. 
+
+• Replacement ECM control modules are “off the shelf parts” and are “blank”. After ECM 
+programming, the DIS software informs the EWS control module that a new ECM has 
+been installed. With this information the EWS will send the entire rolling code table to 
+the ECM on the next key on condition. It also resets itself to rolling code #1. The DIS 
+software then informs the ECM that the first code it receives from the EWS is actually 
+the rolling code table. When it’s received ECM automatically “burns” it into it’s memory. 
+
+• The alignment procedure is still available in the SERVICE FUNCTIONS menus of EWS 
+or ECM. This procedure only “resets” the rolling codes back to #1 in each module. It 
+does not change the coding tables. The ignition key must be switched off for 10 sec¬ 
+onds after the adjustment is completed. 
+
+• Final note: Once a DME control module Is programmed it can not be used in any 
+other vehicle!! 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IKE MODIFICATION - CAN BUS ADDITIONS 
+
+
+The external IKE control module was been incorporat¬ 
+ed into the Instrument Cluster for the 1998 model year. 
+If IKE replacement is necessary, a complete “Cluster” 
+must be ordered and ZCS encoded at time of replace¬ 
+ment. 
+
+The CAN bus has also been linked to the Instrument 
+Cluster in the 98 model year. The cluster is an impor¬ 
+tant link in the system, and vital information is now 
+updated faster to the control modules. 
+
+The CAN bus connection to the instrument cluster is 
+found at pins 8, 9 and 10 of the blue 26 pin ELO con¬ 
+nector on the back. 
+
+The signals transmitted from M5.2.1 ECM over the 
+CAN bus to the instrument cluster include: 
+
+• Engine temperature 
+
+• Engine rpm 
+
+• Ti signal (MPG Gauge) 
+
+• “CHECK ENGINE” Light activation 
+
+
+
+A malfunction with the interface to the instrument cluster could cause the ASC and trans¬ 
+mission fail-safe indicators to appear. In addition, the instruments affected by the signals 
+listed above will be inoperative. 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The CAN bus users as of the 98 E38 and E39 vehicles are: 
+
+• ECM (750iL: ECM 1 8,2) 
+
+• AGS 
+
+• ABS/ASC-DSC 
+
+• EML Ills (750iL) 
+
+• Instrument Cluster 
+
+• Steering Angle Sensor (DSC III vehicles only, 9/97 production) 
+
+
+Note: The CAN Bus network of the 528i does not include the instrument cluster until 3/98 
+production. 
+
+
+
+
+
+
+
+
+
+
+STEERING 
+ANGLE 
+SENSOR 
+(DSC III Only!) 
+
+
+o 
+
+
+
+
+
+— 
+
+AGS d 
+
+
+
+
+
+] 
+
+
+[ 
+
+
+GETRIEBSTUERUNG 
+
+
+
+
+
+
+
+\ AST \ 
+
+
+
+1 SYSTEM J 
+
+°J to 
+
+
+] 
+
+(ASC V or DSC III) 
+
+f 4 
+
+[ 
+
+
+
+
+
+DME I 
+
+
+
+o 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5.2.1 FOR 1999 MY M73 TU 
+
+
+M5.2.1 continues to be used for the M73 TU 750iL. To meet LEV compliance there are 
+additional functions included in the 1999 model year variant. 
+
+M5.2.1 Engine Management System Changes: 
+
+• Minimum idle speed reduction (530 rpm). 
+
+• Long-life spark plugs. 
+
+• Input signal from Radiator Outlet Temperature sensor. 
+
+• E-CAT control program function responsibility of ECM. 
+
+• CAN bus configuration = twisted pair wiring. 
+
+• Electrically heated coolant system map thermostat. 
+
+• Two speed Secondary Air Injection system control as with previous engine. Expanded 
+pin assignments to improve comprehensive component monitoring. 
+
+• Variable IHKA auxiliary condenser fan speed control. 
+
+• ECM Relay Wiring Configuration. 
+
+• Air Shrouded Fuel Injectors with dual cone spray pattern. 
+
+
+M73 TU ECM Relays 
+
+The ECM Relays are now manufactured with an internal 
+control circuit power supply splice off of terminal 30. 
+Terminal 86 has been omitted. 
+
+
+PRE 99 M.Y. 
+MAIN RELAY 
+
+P/N 61 36 8 373 700 
+
+
+
+99 M.Y. 
+MAIN RELAY 
+
+
+61 36 8 364 581 
+
+
+
+
+M73 TU Air Shrouded Fuel Injectors 
+
+The air shrouded fuel injectors of the M73 TU incorporate a new 
+dual port injection spray plate in the injector tip that produces a 
+dual cone spray pattern. The dual cone spray pattern improves 
+atomization by separating the spray jets into two streams. 
+
+The injectors have an ohmic value of 15 ohms. 
+
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+FUSED B+ POWER - KL 30 
+
+
+1 - 
+
+a_ eq 
+
+— -+- 
+
+
+
+
+
+
+
+
+
+ECM 
+
+RELAY 
+
+#2 
+
+
+FUEL PUMP 
+
+RELAY 
+
+CONTROL 
+
+
+
+DSC 
+
+(5.7) 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i m 0 
+
+i - + 
+
+- c 
+
+riiim 
+
+
+
+
+
+
+FUSED MEMORY 
+B+ POWER 
+
+
+AUXKL31 ► 
+
+
+o 
+
+
+/ 
+
+T 
+
+DC 
+
+
+-± 
+
+
+ECM 
+RELAY 
+#2 
+
+
+MAIN KL 31 
+
+x- 
+
+BANK II CODING KL31 
+
+
+r 
+
+
+OPERATING POWER 
+
+
+I- POWER FOR DME COMPONENTS 
+KL 50 (ONE TOUCH START SIGNAL) 
+
+
+KL 15 "Wake Up Call" 
+
+
+
+
+IGNITION COIL 
+POWER RELAY 
+
+— (SEE OUTPUTS) 
+
+
+
+ENGINE SPEED 
+/ REF SIGNAL 
+
+
+
+CYL. ID 
+SIGNAL 
+
+
+L 
+
+
+IGNITION MONITOR 
+
+
+
+
+KNOCK 
+
+SENSORS 
+
+
+AIR TEMP _ 
+SIGNAL J 
+
+
+AIR MASS 
+
+
+
+► 
+
+
+PRE CAT CONV O SENSOR 
+
+
+
+POST CAT CONVO SENSOR 
+
+
+DECELFUEL CUTOFF 
+
+
+IPiM'UW 
+
+
+BRAKE 
+- LIGHT 
+
+
+
+EXTERNAL 
+
+
+PWG 4 SAFETY PATH 
+SWITCH SWITCH 
+
+
+
+
+DSC 
+
+
+ROAD SPEED SIGNAL 
+
+
+"ROLLING CODE" ISN 
+
+jmnum 
+
+
+1999 MY 
+E38-M73 
+
+DME 
+
+M5.2.1 
+
+(LEV) 
+
+Bank II 
+
+
+DUAL ECM 
+
+RELAY 
+
+CONTROL 
+
+
+
+DME II 
+INFO. 
+
+
+ECM 
+
+RELAY 
+
+#1 
+
+ECM 
+
+RELAY 
+
+#2 
+
+
+FUEL PUMP 
+
+RELAY 
+
+CONTROL 
+
+
+"ONE TOUCH" 
+
+STARTER 
+
+RELAY 
+
+
+<EH 
+
+
+SEC AIR INJECTION 
+STAGE II RELAY CONTROL 
+
+
+
+SHROUDED +. 
+FUEL INJECTOR 
+AIR CONTROL 
+
+
+“"IflQflflflJ 
+
+
+It 
+
+
+mrnui 
+
+
+
+O SENSOR HEATING 
+
+
+FULLY SEQUENTIAL 
+
+
+FUEL INJECTOR 
+CONTROL 
+
+
+& 
+
+
+0 
+
+
+< 
+
+O 
+
+LU 
+
+DC 
+
+CL 
+
+
+
+IGNITION COIL 
+CONTROL 
+
+
+
+IGNITION COIL 
+
+POWER 
+
+RELAY 
+
+
+PURGE + _c- 
+VALVE 
+CONTROL 
+
+-G 
+
+
+■'IQfififlQJ 
+
+
+It 
+
+
+mm 
+
+
+DME 1 
+
+'j 
+
+] 
+
+?—T 
+
+EM 
+
+L B u 
+
+nn i 
+
+10 i 
+
+L 1 Is li 
+
+u u J 
+
+UK 
+
+
+
+
+
+
+
+CAN BUS 
+
+
+DSC III STEERING 
+ANGLE SENSOR 
+
+
+
+TD (ENGINE SPEED) 
+
+
+D2 PROTOCOL (TXD II) 
+
+
+E-CAT MODULE 
+20 PIN PLUG 
+
+/ 
+
+
+ISO 9141 
+PROTOCOL 
+
+
+
+
+obd ii I 1 
+
+
+
+
+OBD II 
+CONNECTOR 
+
+
+
+26 
+
+
+ST055 M5.2.1 
+
+
+POST CAT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUXILIARY FAN CONTROL 
+
+
+The Auxiliary Fan motor incorporates an out¬ 
+put final stage that activates the fan motor at 
+variable speeds. 
+
+The auxiliary fan is controlled by M5.2.1 ECM. 
+
+The motor output stage receives power and 
+ground and activates the motor based on a 
+PWM signal (10 - 100 Hz) received from the 
+ECM. 
+
+The fan is activated based on the following 
+factors: 
+
+• Radiator outlet temperature sensor input exceeds a preset temperature. 
+
+• IHKA signalling via the K and CAN bus based on calculated refrigerant pressures. 
+
+• Vehicle speed 
+
+• Battery voltage level 
+
+When the over-temperature light in the instrument cluster is on (120°C) the fan is run in the 
+overrun function. This signal is provided to the ECM via the CAN bus. When this occurs the 
+fan is run at a frequency of 10 Hz. 
+
+
+
+N ER, GROUND & SIGNAL WIRES 
+
+
+
+RADIATOR 
+
+OUTLET 
+
+TEMPERATURE 
+
+SENSOR 
+
+
+AUX FAN 
+OUTPUT 
+STARE/MOTOR 
+
+
+IHKA SIGNALING VIA CAN BUS: 
+-Variable Speed Auxiliary Fan Control 
+
+- IHKA on 
+
+- Compressor Activation Status 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECONDARY AIR INJECTION SYSTEM 
+
+
+The purpose of the secondary air injection system is to provide fresh air to the catalytic con¬ 
+verters during the warm-up phase of operation immediately after cold start. This acceler¬ 
+ates oxidation of hydrocarbons and brings the catalytic converters to the point of light-off 
+earlier. 
+
+The M73 TU secondary air injection system continues to be a two speed system utilizing 
+two relays and a slow speed resistor. The introduction of the M5.2.1 ECMs allocated a ded¬ 
+icated control circuit for the vacuum vent valve improving comprehensive component mon¬ 
+itoring. This continues with the M73 TU M5.2.1 system. 
+
+However, the primary controller of the Secondary Air Injection System has switched for the 
+1999 model year (M73 TU - M5.2.1) 
+
+• ECM I activates the vacuum vent valve and Stage I relay simultaneously but separately 
+providing the open air ports through the non return valves and slow air pump speed. 
+
+• ECM II activates the resistor bypass circuit through activation of the stage II relay pro¬ 
+viding the fast air pump speed if necessary. 
+
+All parameters of operation are programmed in the M 5.2.1 control modules and varied by 
+monitored conditions: 
+
+
+• Engine Temp 
+
+• Engine Speed 
+
+• Engine Load 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AIR PUMP 
+
+
+NON-RETURN 
+
+VALVES 
+
+
+STAINLESS STEEL 
+AIR LINES TO 
+EXHAUST MANIFOLDS 
+
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ELECTRICALLY HEATED THERMOSTAT 
+
+
+Model specific variants of the electrically heated thermostat are now equipped on all LEV 
+compliant engines. The M73 TU thermostat housing has a quick connect coupling. 
+
+
+This thermostat allows the engine to run hotter than conventional thermostats improving 
+fuel economy. The ECM also electrically activates the thermostat to lower the engine 
+coolant temperatures based on monitored conditions. It is both a conventionally function¬ 
+ing and ECM controlled thermostat (two stage operation). ECM control adds heat to the 
+wax core causing the thermostat to open earlier than it’s mechanical temperature rating 
+providing increased coolant flow. 
+
+
+CONVENTIONAL FUNCTION: The 
+
+thermostat begins to open at 103°C. 
+This is at the inlet side of the water 
+pump and represents the temperature 
+of the coolant entering the engine. 
+Before the 103°C temperature is real¬ 
+ized, the coolant is circulated through 
+the engine block by the water pump. 
+
+After the temperature reaches 103°C it 
+is maintained as the inlet temperature 
+by the thermostat. The coolant tem¬ 
+perature at the water pump engine 
+outlet is approximately 110°C. The 
+additional 7°C is achieved after the 
+coolant has circulated through the 
+block. 
+
+
+The operating temperature of the 
+engine will remain within this range as 
+long as the engine is running at part 
+load conditions and the engine 
+coolant temperature does not exceed 
+113°C. 
+
+
+°c 
+
+115 
+
+110 
+
+105 
+
+100 
+
+95 
+
+90 
+
+85 
+
+80 
+
+
+▲ 
+
+110°C THERMOSTAT 
+
+_z_ 
+
+- part\ 
+
+FULL LOAD / PART 
+
+- LOAD \ 
+
+/ LOAD 
+
+
+L 85°C THERMOSTAT 
+
+
+-► TIME 
+
+
+COLD COOLANT 
+
+
+
+COLD COOLANT 
+
+
+
+HOT COOLANT 
+
+V RETURNED TO RADIATOR 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ECM CONTROL 
+
+
+Electric thermostat activation is based on the following parameters: 
+
+• Engine temperature > 113°C 
+
+• Radiator Coolant Outlet Temperature 
+
+• Load signal “ti” > 5.8 ms 
+
+• Intake air temp > 52°C 
+
+• Vehicle speed >110 MPH 
+
+When one or more of these monitored conditions is determined, the ECM activates 
+(switched ground) the thermostat circuit. The activated heating element causes the wax 
+core in the thermostat to heat up and open the thermostat increasing coolant circulation 
+through the radiator which brings the engine temperature down. 
+
+The temperature of the coolant at the inlet side of the water pump will drop to approximately 
+85°C and the temperature at the outlet side will drop to approximately 103°C when acti¬ 
+vated . 
+
+
+COLD COOLANT 
+
+
+
+
+^r= 
+
+
+_i 
+
+i 
+
+
+
+
+COOLANT = 103°C 
+
+' 
+
+
+
+SUPPLY COOLANT 
+= 85°C 
+
+THERMOSTAT 
+SAMPLING 
+RETURN COOLANT 
+
+RETURN 
+
+COOLANT 
+
+
+HOT COOLANT 
+RETURNED TO RADIATOR 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M73 TU EXHAUST SYSTEM 
+
+
+The 750iL exhaust system consists of the following: 
+
+
+Each cylinder bank has two double-walled down pipes which converge into a single 
+pipe for entry into the integrated electric catalytic converter assembly. 
+
+
+E-CAT HEATING 
+COIL WIRES 
+
+
+POST CAT OXYGEN 
+SENSOR (1 PER 
+
+
+
+1 - 
+2 - 
+
+3 - 
+
+4 - 
+
+
+HC ADSORBER CATALYTIC CONVERTER 
+E-CAT HEATING COIL 
+METALLIC BACK UP CATALYTIC CON¬ 
+VERTER 
+
+MAIN CATALYTIC CONVERTERS 
+
+
+INTEGRATED ELECTRIC CATALYTIC CONVERTER ASSEMBLY 
+
+
+• Integrated catalytic converter assembly including: 
+
+- Hydrocarbon (HC) adsorber in thin-wall ceramics (105.7 mm dia.) 
+
+- Electric catalytic converter heater and metallic backup converter (80 mm dia.) 
+
+- Main catalytic converters in thin-wall ceramics (105.7 mm dia.) 
+
+• Twelve liter volume Central muffler. 
+
+• Two rear mufflers with a volume of 18 liters each. 
+
+
+The location of the post oxygen sensor is just behind the HC adsorber and complies with 
+the ARB catalytic converter monitoring function following the same criteria with the familiar 
+post oxygen sensor signal. However, the metallic backup and two main converters are not 
+monitored. 
+
+
+The ARB allows this configuration since the adsorber catalytic converter is the critical ele¬ 
+ment in the assembly. The logic being, if the adsorber is detected as being defective the 
+entire assembly requires replacement. 
+
+32 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+ELECTRIC CATALYTIC CONVERTER (E-CAT) ASSEMBLIES 
+
+
+The name “Adsorber” identifies the first converter of each assembly as a unique critical 
+component. The Adsorber has the unique ability to attract and retain residual hydrocarbon 
+molecules as it cools. As it warms up it releases the residual HC allowing it to be convert¬ 
+ed as it passes through the heating coil, back-up metallic converter and twin main con¬ 
+verters. This feature is what makes this catalytic converter so unique providing cleaner cold 
+starts and LEV compliance. 
+
+The proportion of HC in the exhaust is very high just after a cold start. This is due to the 
+rich fuel/air mixture and incomplete combustion. When initially driving away and during an 
+increase in acceleration which follows, the HC proportion sharply increases again. 
+
+The electric catalytic converter's heating coil, which is installed 
+directly behind the adsorber, is energized for a maximum of 30 
+seconds immediately after the engine has started (engine 
+speed > 400 rpm). This ensures that the metallic back-up con¬ 
+verter and the main catalytic converters downstream attain 
+light-off much earlier. 
+
+The heating coils are provided operating current from an E-CAT control module located 
+under the passenger seat. The coils are connected to the E-Cat control module by high 
+amperage cables. The cables pass through a rubber grommet on the passenger side floor 
+to the E-CAT module location. 
+
+
+Special Tool Note: The cables must only be removed from the catalytic converters with 
+tool 90 88 6 180 050. This tool is designed to prevent damage to the ceramic insulation on 
+
+
+
+33 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+E-CAT CONTROL FUNCTION 
+
+
+The primary function of the E-CAT control module is to simultaneously control the heating 
+of both E-CAT heating coils through high amperage (120A each) power output switches. 
+ECM I signals the E-CAT module via the CAN bus requesting activation and deactivation of 
+the heating coils. Heating time is for a maximum of 30 seconds but can be shorter in dura¬ 
+tion depending on monitored conditions. 
+
+
+When on, the metallic back-up 
+converters which are located just 
+behind the heating coils, heat up 
+rapidly. As a result, catalytic con¬ 
+verter light-off starts almost 
+immediately reducing cold start 
+emissions in the warm-up phase. 
+
+
+The E-CAT module receives two 
+redundant starter battery tem¬ 
+perature signals for monitoring 
+the battery temperature. 
+
+
+The sensors are located in a 
+sealed housing connected 
+directly to the positive terminal of 
+the battery. 
+
+
+If the starter battery temperature 
+falls below 0°C, the E-CAT heat¬ 
+ing coils are not switched on. 
+
+
+
+RUBBER 
+
+GROMMET 
+
+
+GENERATOR 
+
+CABLE 
+
+
+STARTER 
+
+BATTERY 
+
+CABLE 
+
+
+E-CAT 
+
+MODULE 
+
+POWER 
+
+SPLICE 
+
+
+HIGH AMP 
+CABLES 
+
+
+. 
+
+
+E-CAT 
+
+CONTROL 
+
+MODULE 
+
+
+■D 
+
+Til 
+
+STARTER BATTERY 
+
+
+TEMPERATURE 
+
+
+fl 
+
+SENSORS 
+
+
+i Jj 
+
+
+♦ IP 
+
+JH 
+
+
+
+FOUR WIRE 
+CONNECTOR 
+TO E-CAT 
+MODULE 
+
+
+STARTER BATTERY I 
+SAFETY TERMINAL 
+(BST) 
+
+
+Once the E-CATs are activated, the control module simultaneously provides the output con¬ 
+trol signal to the dual battery isolation switch (signal KATON) requesting the switch which 
+opens the circuit between the starter battery and vehicle circuit battery. This ensures the 
+E-Cat’s operating power is supplied only from the starter battery (detailed description of two 
+battery system further on). 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ADDITIONAL B+ TERMINAL 
+(FOR WORKSHOP CHARGING) 
+
+
+
+
+FRONT FUSED POWER DISTRIBUTION CENTER 
+
+
+GENERATOR 
+
+*250 AMP FUSE WILL BE REPLACED 
+BY A BST ON THE 55 AMP BATTERY 
+WHEN MRS III IS INTRODUCED IN 
+3/99 PRODUCTION 
+
+
+250 AMP 
+FUSE IN 
+TRUNK* 
+
+
+BATTERY 
+
+ISOLATION 
+
+SWITCH 
+
+
+DME I 
+
+
+
+
+j 
+
+
+REAR FUSED POWER DISTRIBUTION CENTER 
+
+- E-CAT PROGRAMMING 
+
+- E-CAT ON TIME CONTROL 
+
+- DIAGNOSTIC INTERFACE WITH 
+E-CAT MODULE VIA CAN 
+
+
+20 PIN PLUG 
+
+j 
+
+
+TXD II 
+
+
+DIAGNOSIS 
+
+
+
+E-CAT HEATING 
+
+
+
+
+\ 
+
+l f 
+
+VW . 
+
+n 1 
+
+So J 
+
+m 
+
+
+VM 
+
+V 
+
+
+E-CAT 
+
+MODULE 
+
+
+- SWITCHES E-CATS ON/OFF 
+AS PER DME I INSTRUCTIONS 
+
+- MONITORS STARTER BATTERY TEMP 
+
+- SIGNALS BATTERY ISOLATION SWITCH 
+WHEN THE E-CATS ARE ON 
+
+
+
+
+FORWARD 
+B+ TERMINAL 
+
+
+STARTER 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CRITERIA FOR E-CAT HEATING COIL ACTIVATION 
+
+
+All conditions for switching the E-Cats on are monitored and activated by ECM I. 
+Maximum heating time is 30 seconds. The degree of “on” time (calculated amount of nec¬ 
+essary E-Cat heating) is dependent on the intake air and coolant temperatures as well as 
+the duration of time the engine has been off since the last trip. 
+
+Engine start recognition is determined by the ECM on the basis of various input signals 
+(mass air flow, engine speed etc.). All of the following criteria must be met for the coils to 
+be switched on: 
+
+• Engine coolant temperature > 0°C and < 90°C 
+
+• Starter battery temperature > 0°C and < 60°C 
+
+• Distance travelled since last engine start > 1 mile. 
+
+• Catalytic converter temperature < 300°C (programmed temperature map) 
+
+• >30 min since engine was previously switched off 
+
+• Vehicle road speed < 3 mph 
+
+• Engine starting time < 5 seconds 
+
+• Time after start recognition > 0.1 seconds 
+
+• Throttle pedal not at WOT 
+
+The E-CAT's are immediately switched off when one or more of the following faults occur 
+during an activation period: 
+
+• CAN bus fault — Instrument Cluster 
+
+• CAN bus fault — ECM and E-CAT module 
+
+• Fuel injector fault 
+
+• Misfire detection faults which might damage catalytic converter 
+
+• Fault in output stage of secondary air injection components 
+
+• Fault in engine temperature signal 
+
+• Fault in engine speed sensor 
+
+
+DIAGNOSIS 
+
+The E-CAT module communicates fault information to ECM I via the CAN bus. The ECM 
+relays the diagnostic communication to the DIS/MoDiC. A maximum of 14 E-CAT fault 
+codes can be retrieved through ECM I. 
+
+E-CAT specific faults with an illuminated "CHECK ENGINE" Light indicates there have been 
+two unsuccessful attempts to heat the catalytic converters. 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+ADDITIONAL B+ TERMINAL 
+(FOR WORKSHOP CHARGING) 
+
+
+
+FRONT FUSED POWER DISTRIBUTION CENTER 
+
+
+GENERATOR 
+
+*250 AMP FUSE WILL BE REPLACED 
+BY A BST ON THE 55 AMP BATTERY 
+WHEN MRS III IS INTRODUCED IN 
+3/99 PRODUCTION 
+
+
+K BUS 
+
+
+"QJ 
+
+
+
+55 Ah 
+
+
+
+BATTERY 
+
+ISOLATION 
+
+SWITCH 
+
+
+rrzm 
+
+
+r=: 
+
+
+DTT 
+
+
+
+110 Ah 
+
+
+
+250 AMP 
+FUSE IN 
+TRUNK* 
+
+
+
+TXD 
+
+
+ECATS 
+ON SIGNAL 
+
+
+
+
+
+
+DME I 
+
+
+REAR FUSED POWER DISTRIBUTION CENTER 
+
+- E-CAT PROGRAMMING 
+
+- E-CAT ON TIME CONTROL 
+
+- DIAGNOSTIC INTERFACE WITH 
+E-CAT MODULE VIA CAN 
+
+
+2 3 
+
+
+CAN 
+
+BUS 
+
+
+
+
+
+
+20 PIN PLUG 
+
+J 
+
+
+
+TXD II 
+
+
+c 
+
+
+DIAGNOSIS 
+
+
+C3- 
+
+
+
+E-CAT HEATING 
+
+
+
+/ 
+
+
+
+f ci 
+
+1 V 
+
+g| 
+
+1 1 
+
+Bar ^ 
+
+
+
+
+
+d 
+
+
+\ 
+
+1 1 
+
+4 
+
+J# 
+
+IV 1 
+
+\fj i 
+
+> 
+
+hi_ 
+
+w 
+
+
+E-CAT 
+
+MODULE 
+
+
+- SWITCHES E-CATS ON/OFF 
+AS PER DME I INSTRUCTIONS 
+
+- MONITORS STARTER BATTERY TEMP 
+
+- SIGNALS BATTERY ISOLATION SWITCH 
+WHEN THE E-CATS ARE ON 
+
+
+
+MRS II 
+
+
+■i 
+
+
+FORWARD 
+B+ TERMINAL 
+
+
+\ 
+
+
+
+
+STARTER 
+
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+
+1. How is the power supply for the ignition coils is provided? 
+
+
+2. Describe the Air Shrouded Injector Control on the M73: 
+
+
+
+3. If the engine idle speed is higher than normal on an M73, what does this indicate? 
+
+
+
+4. What will cause a complaint of “engine cranks but does not start”: 
+
+
+
+5. How many speeds will the Secondairy Air Injection Pump run at and what controls 
+
+this?_ _ 
+
+6. Explain what happens when the ECM activates the thermostat circuit:_ 
+
+
+
+7. Why is it necessary to use Special Tool # 90 88 6 180 050 when working on an elec 
+trically heated catalyst?_ 
+
+
+8. What will cause an E-CAT to be switched off? 
+
+
+
+9. Where is the E-CAT Module Power Splice located? 
+
+
+38 
+
+
+ST055 M5.2.1 
+
+
+
+
+
+
+
+

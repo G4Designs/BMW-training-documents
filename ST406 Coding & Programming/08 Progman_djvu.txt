@@ -1,0 +1,4893 @@
+Table of Contents 
+
+
+Progman 
+
+Subject Page 
+
+Progman Introduction.4 
+
+Progman .5 
+
+Administration.5 
+
+JETstream.6 
+
+Multiconsole/Multisession .6 
+
+CIP .7 
+
+What Will Progman Do For Me?.8 
+
+Before Progman (CIP 15.0) .8 
+
+With Progman (CIP15.0).8 
+
+Getting Started With Progman .9 
+
+Administration.9 
+
+Interfaces.10 
+
+Explanation of Status Indicators.10 
+
+Examples of Possible Combinations.11 
+
+Interface Name .11 
+
+Version .11 
+
+IP Address .11 
+
+External Interface .11 
+
+Overview.12 
+
+Configuration .12 
+
+Interface Name .12 
+
+IP Address .12 
+
+Gateway .13 
+
+IP Subnet Mask.13 
+
+Interface Update .14 
+
+Updating Interface after Initial Install.15 
+
+Self-Test.16 
+
+External Interface.16 
+
+Settings.16 
+
+Overview.17 
+
+Operating Status.18 
+
+Network .19 
+
+Installation .20 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+FASTA.21 
+
+Date and Time.21 
+
+Operating Times.21 
+
+Dealer Data .21 
+
+User Interface .21 
+
+Starting a Programming or Coding Session with Progman.23 
+
+Disconnecting From Interface to be Used by Progman.23 
+
+Starting a Session with Progman.25 
+
+Access CIP Functions For 
+
+E31E32/E34/E36/E38/E39/E46/E52/E53.26 
+
+Access CIP Functions For 
+
+E60/E62/E63/E64/E65/E83/E85.27 
+
+Return to Progman “Home” Screen .28 
+
+Progman “Home” Screen Session Status .29 
+
+Going from Progman to Diagnosis on GT1 .30 
+
+Going from Diagnosis to Progman on GT1 .31 
+
+Shutting Down the SSS .33 
+
+Review Questions.36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Progman 
+
+Model: All 
+
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Explain what Progman is 
+
+• Identify the advantages of Progman 
+
+• Check Setting and Configuration Information 
+
+• Verify that Interfaces are at latest firmware levels 
+
+• Start a Programming or Coding Session with Progman 
+
+
+3 
+
+Progman 
+
+
+
+
+Progman Introduction 
+
+With the release of CIP 15.0, BMW released a new software program known as Progman. 
+
+
+rT ' 
+
+Progman 
+
+
+
+
+Progman 
+
+
+
+
+Progman is a software package that operates with Windows XP Embedded to manage: 
+
+• Administration & assignment of OPPS/OPS/Diagnostic heads plus network configu¬ 
+ration/addressing. 
+
+• Installation/loading of new data updates via Jetstream. 
+
+• Activation of a Coding, Individualization or Programming request from a GT1 to an 
+SSS via a multiconsole/multisession feature. 
+
+• Coding, Individualization or Programming of older vehicles via the SGC/UNIX applica¬ 
+tion. 
+
+• Coding, Individualization & Programming functions of CIP 
+
+
+
+4 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Progman 
+
+The new prog ramming man agement tool utilizes a new operating system (Windows XP 
+Embedded) to manage the programming processes that can be initiated via the SSS. 
+
+Progman utilizes Windows XP Embedded which will serve as the basis for all further pro¬ 
+grams required for programming applications. No changes can be made to the operating 
+system of this Windows variant and it can be used only in connection with the corre¬ 
+sponding hardware (Software Service Station). 
+
+
+
+Progman incorporates all Coding, Individualization & Programming functions that were 
+previously part of the DIS CD for E31/32/34/36/38/39/46/52 & E53, which operates under 
+the old SGC/UNIX application, into the CIP application. 
+
+Since CIP is incorporated into Progman, it will now contain all Coding, Individualization & 
+Programming functions. CIP will be used to launch the SGC/UNIX application for the 
+older vehicles as well as launch the Windows XP based application for Coding and 
+Programming the newer vehicles. 
+
+In the future the E36/38/39/46/52/53 applications will be converted/integrated directly 
+into CIP and be based on Windows XP Embedded. The structure for the E31/32/34 will 
+not be changed and will remain SGC/UNIX based. 
+
+Administration 
+
+The administration tool provides the same setting options as before however, Progman 
+adds additional features/capabilities: 
+
+• Ability to view and select accessible “Interfaces” (Diagnostic Head, OPPS, OPS...) 
+
+• Configure interfaces 
+
+• Adjust SSS and network specific settings 
+
+• View available SSS units and select a specific unit 
+
+• Select language specific to each SSS 
+
+
+5 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JETstream 
+
+
+JETstream is the application that provides online data updates for Coding and 
+Programming data. The feature allows the SSS to be up to date on the current/new 
+vehicle data regarding coding and programming information prior to the release of an 
+update DVD. The application can be configured to automatically search for online 
+updates at a specific time (ex. after normal shop hours every night) and install any 
+updates found at a specific time/point in the systems operation cycle. 
+
+In order for this feature to work the SSS must: 
+
+• Be located on the workshop network 
+
+• Be connected to BMW via a network connection 
+
+• Have the correct network specific data entered in the “Network” mask 
+
+• Have the host/domain name and IP address of the BMW server entered in the 
+“Online Service” mask 
+
+• Have the “Automatic Online Update” feature active 
+
+Multiconsole/Multisession 
+
+Since the SSS is the primary Coding and Programming system, coding and programming 
+tasks can be “transferred” to the SSS from any GT1 located on the workshop network. 
+
+In order to monitor the tasks assigned to a specific SSS a menu of active jobs is dis¬ 
+played via Progman and can be accessed by any GT 1 or SSS on the network. 
+
+
+Multiconsole 
+
+The multiconsole function makes it possible to control programming procedures both via 
+the Software Service Station as well as via the BMW diagnosis systems GT 1. 
+
+Multisession 
+
+The multisession function makes it possible to program several vehicles simultaneously. 
+
+
+This function allows the GT 1 to be remote terminals for the SSS with respect to Coding 
+and Programming and once a task is transferred to an available SSS, the GT 1 can be 
+used to diagnose another vehicle and/or transfer another coding/programming task to an 
+SSS. 
+
+
+6 
+
+Progman 
+
+
+
+
+
+
+
+
+
+CIP 
+
+
+The Coding, Individualization and Programming application that has been used previously 
+since the introduction of the E65 continues to operate the same as before. The only 
+major change is that all of the Coding and Programming functions for the older vehicles 
+(E31/32/34/36/38/39/46/52 & E53) that was only available on the DIS CD for use on 
+DISplus and GT1 has been incorporated into CIP 
+
+
+
+ol ; 
+
+
+
+Coding/programming AUSWAHL 
+
+
+
+Prior to CIP15.0 SGC/Unix functions for 
+Coding, Individualization & Programming 
+were incorporated into DIS CD VXX.X. 
+
+
+CIP 
+
+
+>5 
+
+
+
+As of CIP 15.0 SGC/Unix functions for 
+Coding, Individualization & Programming are 
+incorporated into CIP 
+
+
+Car MtmTory 
+
+
+Kay M&m ary 
+
+
+CODIERUNG ZCSjEA 
+
+
+SERVICE MEASURES 
+
+
+PROGRAMME RUNG 
+
+
+A6GLEICH EWS-DME 
+
+
+ABGLEICH EWS-DDE 
+
+
+7 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What Will Progman Do For Me? 
+
+Progman allows the GT1 to be released from the task of Programming and Coding vehi¬ 
+cles. The GT1 will be capable of performing vehicle diagnosis while the SSS is used to 
+Program and Code a vehicle(s). 
+
+Example: Given a workshop with 10 active workstalls (CORA) and equipped with 2- 
+
+GTI’s, 1-DISplus, 1-SSS, 3-Diagnostic Heads, 1 OPPS Head, 2-OPS Heads 
+
+
+Before Progman (CIP 15.0) 
+
+
+Device 
+
+# of MOST-bus equipped 
+Vehicles able to be 
+Programmed at one time 
+
+# Vehicles able to be Diagnosed 
+while another is being Programmed 
+
+GT1 
+
+1 
+
+0 
+
+GT1 
+
+1 
+
+0 
+
+DISplus 
+
+0 
+
+1 
+
+SSS 
+
+1 
+
+0 
+
+TOTAL 
+
+3 
+
+1 
+
+
+With Progman (CIP15.0) 
+
+
+Device 
+
+# of MOST-bus equipped 
+Vehicles able to be 
+Programmed at one time 
+
+# Vehicles able to be Diagnosed 
+while another is being Programmed 
+
+GT1 
+
+0 
+
+1 
+
+GT1 
+
+0 
+
+1 
+
+DISplus 
+
+0 
+
+1 
+
+SSS 
+
+5 
+
+0 
+
+TOTAL 
+
+5* 
+
+3 
+
+
+*lf 2 additional OPS heads are purchased for the workshop (refer to SI B 07 02 04) 
+
+By installing CIP 15.0 on all of the GTI’s and SSS’s, Progman can be accessed via any 
+GT1 or SSS but is controlled/operated by the Software Service Station (SSS) only. Since 
+the SSS controls/runs Progman, it will be the only device able to code and program vehi¬ 
+cles, the GT1 will be viewed as a remote terminal for Progman. 
+
+With the introduction of Progman, parallel programming of up to five vehicles can be per¬ 
+formed. The vehicles to be programmed do not need to be the same model series nor 
+have the same data status or be connected at the same time. 
+
+
+8 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Getting Started With Progman 
+
+
+Progman is launched from the GT1 whenever the Coding/Programming function is 
+selected. On the SSS Progman is always active as this is the only program installed on 
+the system. 
+
+
+Progman 
+
+
+
+
+
+
+Progman 
+
+
+
+iTRvPfffiK 
+
+
+
+
+Acc. to stall! 5 
+
+
+From the main menu screen in Progman the administration features for system configura¬ 
+tion can be accessed or a new session can be started. By selecting “Help” a more 
+detailed document explaining Progman can be accessed. 
+
+
+Administration 
+
+
+AdminisL 
+
+
+
+Administration - Overview 
+
+
+The roltowlngi progman parls can be corvflgured: 
+
+- Interfaces 
+
+sellings. Interface updaie. self-lesl. external Interface 
+
+* Sellings 
+
+SSS network, individual SSS 
+
+* User Interface 
+Local language, printer 
+
+
+
+
+In order to insure initial system setup select¬ 
+ing ‘Administration” will bring up a new 
+screen which explains the menu selections 
+available on the right side. 
+
+At this point Interfaces, Settings or User 
+Interface can be selected. 
+
+
+9 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interfaces 
+
+
+
+Elalu-s 
+
+Interface name 
+
+Vernon 
+
+IP aOdteS* 
+
+Eternal 
+
+jraleifate 
+
+
+OP5_1 
+
+5.01 
+
+lS2J6S.16fl.244 
+
+
+<* 
+
+OP3J3 
+
+SOI 
+
+192.153.0,2: 
+
+
+
+OP5_3 
+
+SjOI 
+
+1S2-1E0JO.3- 
+
+
+rr 
+
+OPPSJ 
+
+5.01 
+
+152.155.0.5 
+
+
+** 
+
+OPPS_2 
+
+SjOI 
+
+152.155.0.6 
+
+
+
+ill 
+
+
+vUimi 
+
+
+
+
+_ 
+
+
+L 
+
+
+EQiffik 
+
+
+
+
+
+By selecting “Interfaces” an overview of all 
+available and/or connected interfaces is 
+obtained along with information pertaining to 
+the status of the interface, device name, soft¬ 
+ware level and IP address. 
+
+
+Explanation of Status Indicators 
+
+
+Symbol 
+
+
+
+Description 
+
+Green background - interface is free and can be selected 
+
+
+Grey background - interface not detected 
+
+- It is currently being shut down or started up 
+
+- It is unconfigured referred to the sub-network in which it is located 
+
+Red background - the interface is occupied and is not 
+available for a session 
+
+It is possible to query the configuration and the current session. 
+Black lettering - interface can be selected 
+
+
+Grey lettering - interface cannot be selected as it is not 
+available or cannot be reached 
+
+Black question mark- interface is unconfigured referred to 
+the sub-network in which it is located 
+
+Grey question mark - connection to interface is not 
+possible, the device cannot be reached 
+
+Black gearwheels - the interface is currently being used 
+exclusively. Only the configuration data can be queried. 
+
+Diagnostic Head 
+
+
+OPS 
+
+OPPS 
+
+
+10 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Examples of Possible Combinations 
+
+Symbol Description 
+
+
+
+OPS with grey background and grey question mark: 
+
+The OPS can not be detected as it is currently being started up or shut down or is 
+not correctly configured/connected for the current network 
+When devices are not connected, they are indicated as a grey question mark on a 
+grey background without the interface symbol. 
+
+
+
+OPPS with grey background and black question mark: 
+
+A black question mark means that the OPPS is not configured for the current net¬ 
+work. 
+
+
+
+Diagnostic head with red background and black gearwheels: 
+
+The diagnostic head is currently being used and is not available for a new session at 
+this time. Only the configuration of the diagnostic head can be queried. 
+
+
+Interface Name 
+
+An interface name can be freely assigned to each interface so as to simplify definition of 
+the interface in the workshop. The name used should be helpful in locating/identifying 
+the particular interface if necessary. 
+
+Example: Assign a name that uses the color band placed on the interface along with a 
+
+letter of the alphabet (i.e. Blue A), place a label on the interface to identify the 
+specific name that has been assigned and then modify a “service” hat by 
+assigning the name of the interface to it as well, so that it can be placed on 
+the vehicle to identify the interface being used on the vehicle. 
+
+
+Version 
+
+The firmware version indicates the software level currently installed on the selected inter¬ 
+face (OPPS/OPS/ diagnostic head). It is recommended that the version on the interface 
+be the same as that of the SSS it is being used with. 
+
+IP Address 
+
+The IP address (internet protocol address) is a unique and specifically assigned address 
+for each device in the workshop network. This address consists of a number block which 
+is normally structured as follows. 
+
+Example: 192.168.100.10 
+
+The IP addresses must be structured so that each device in the network is distinguished 
+from all the others and must be exclusive to that device and not shared among other 
+devices connected to the network. 
+
+External Interface 
+
+This column indicates whether the current interface is an external interface. External 
+interfaces are located in external subnetworks and can be used in connection with this 
+Software Service Station. 
+
+
+11 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview 
+
+
+Interfaces 
+
+
+
+
+Status 
+
+Interface name 
+
+Versten 
+
+IP address f j ,1 !J nal 
+
+Interface 
+
+mi 
+
+
+
+
+
+
+
+
+OP5J 
+
+5.01 
+
+192.165. J6&.244 
+
+
+. i . 
+
+
+OP£_2 
+
+5.01 
+
+I92-16B.0.2 
+
+— 
+
+
+
+Configuration 
+
+
+opsA 
+
+QPP5J 
+
+5.01 
+
+5.01 
+
+02.1^8.0.3. 
+
+192.165.0.5 
+
+'' —- 
+
+^ - 
+
+
+interface update 
+
+
+OPPS rT 2 
+
+5.01 
+
+192,168.0.6 
+
+
+Seif-rest 
+
+
+
+
+
+E 3 EE 
+
+
+
+If an interface is selected and items on the 
+right of the screen in the menu listing are 
+selectable (not grey) then additional informa¬ 
+tion can be accessed for that device. 
+
+In this example “Overview”,“Interface 
+update”, “Configuration” and “Self-test” are 
+available. 
+
+If a device is not correctly configured for the 
+network certain selections may not be avail¬ 
+able for that device. 
+
+
+Note: The Interface list does not automatically update as devices are utilized or freed up. 
+The only way to update the list is to select “Overview”. 
+
+
+Configuration 
+
+
+Interfaces 
+
+
+
+■MJj.l-.hI' 
+
+
+Interface configuration 
+
+
+■LflHLk 
+
+
+Equipment 
+
+type: 
+
+
+OPS 
+
+
+MAC address! ju.bs:cc:dd?02 
+
+
+
+
+JPS..2 
+
+
+Interface name; op 
+Gateway: 
+
+
+IP address: 
+
+
+1S2.1K3.JO .2 
+
+
+] IP subnet mask: jiS tataaua 
+
+
+1 I 2 
+
+
+Q I W I E I R 
+
+
+2 1 X I C I V I G I N 
+
+
+Continue 
+
+
+Configuration provides information for the 
+device selected pertaining to: 
+
+
+• Interface Name 
+
+• Gateway 
+
+
+• IP Address 
+
+• IP Subnet Mask 
+
+
+
+Interface Name 
+
+The specific name assigned to the device (Ex. Blue A). The name used should be help¬ 
+ful in locating/identifying the particular interface if necessary. 
+
+IP Address 
+
+A specific four segment number assigned exclusively to the device. The number repre¬ 
+sents the address of the device on the network and is necessary when communicating 
+with other devices located on the network. 
+
+Example: 192.168.100.10 
+
+
+12 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gateway 
+
+This information identifies the four segment address of the component located on the 
+network responsible for communicating from the current network to another network. If 
+the there is no address in this location then a connection to any devices outside of the 
+current network can not be established. 
+
+IP Subnet Mask 
+
+This information is used to define which segment of the four segment IP address specifi¬ 
+cally identifies the device and which identify the specific network. 
+
+Example:255.255.255.0 
+
+Indicates that the first three segments (255.255.255) identify the specific net¬ 
+work that the device is located on. The last segment (0) indicates that this is 
+the segment that will identify the specific device. 
+
+Note: The network and device address information must be entered exactly as 
+defined by the network administrator for your facility, otherwise the 
+devices can not be accessed. 
+
+After entering the necessary information and continue is selected, Progman will run a 
+check on the values/information entered and will indicate if the information is acceptable. 
+
+
+
+The iyni a .: li iitcatrec.1 litlhfr folk-.wrg 
+l*«»; 192. f 98.4.2999 
+
+
+Example- 
+
+Interface itjum: OPPS_l2 IP address 192.122. 1 1 1 ! It 
+
+Gateway; f92.l2S.Jl 1.1 IP subnet math;; 299.299.299.9 
+
+
+
+Intel face configuration 
+
+
+The configuration modifications were saved. 
+
+
+The Interface Is restarting (duration: approx. 40 seconds* and can not t>e used 
+during this time rtotensifor'e display of interface m the Interfaces over.tew* mask*. 
+
+
+Continue 
+
+
+
+13 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interface Update 
+
+Interface update can only be selected if the selected interface is not being used by 
+another device (interface symbol has a green background). 
+
+This function allows the firmware of the inter¬ 
+face to be checked against the version of the 
+SSS. 
+
+It is recommended that the version of the 
+SSS and the Interface be at the same level 
+to reduce susceptibility to errors and system 
+conflicts. 
+
+SSS; 
+
+interface: 1,80 
+
+FsiiiT.vjie adjuslment is necessary. 
+
+Press Continue lo update your flmhuare. 
+
+
+
+
+The SSS will check which firmware version is installed in the interface and then searches 
+for the newest available version on the SSS. Depending on the result of the search, 
+Progman will make a recommendation as to what action should be taken. 
+
+• If both versions are equal no action is required. 
+
+• If the version on the SSS is newer then Progman will suggest updating the version 
+on the interface. 
+
+• If the version on the SSS is older, Progman is able to change the version on the 
+interface to the older one. 
+
+
+Interfaces 
+
+
+
+
+Interface up dote 
+Interface name: QP5_2 
+
+Ctieehlngi and Installation ot nrmwwe was completed successfully. 
+Reslrnlcng Ihe interface lakes approximately 40 seconds. 
+
+
+
+
+
+
+
+
+
+Once the update is successfully completed a 
+corresponding message is displayed. 
+
+
+14 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Updating Interface after Initial Install 
+
+After the initial installation of Progman with CIP 15.0, the firmware installed on the inter¬ 
+faces that will be used with Progman must first be updated. If the firmware level of the 
+interface is not at a predefined level then it will not be recognized/identified within the 
+Progman application, thereby not allowing a connection to the interface. This update 
+only needs to be performed when an interface is used for the first time with Progman. 
+
+
+Prinf 
+
+
+H immjifi 
+
+
+pH 
+
+
+Strvicn 
+
+
+Administration Diagnostic head assignment 
+
+
+
+lUOQSWSB 170 34 12 
+
+
+Fr«e diagnostic head* 
+
+
+Ci>n imp cilng 
+
+
+tAiirw^hna 
+
+
+Connection via radio 
+
+
+□ 
+
+
+Connection via cable 
+
+
+Co n nectiQ n yi a docking station 
+
+
+Dl^npillc 
+heill Update 
+
+
+Using the GT1 update the firmware in the 
+interface. 
+
+Select the interface 
+
+
+
+Imnifi! 
+
+
+Administration Diagnostic head assignment 
+
+Free diagnostic head* 
+
+
+ill U 
+
+
+ZU00346B 170.34 2ZS.1Z 
+
+
+Connection via radio 
+
+
+Connection via cab e 
+
+
+Connection vm docking station 
+
+
+1 Mi 
+
+
+
+
+With a connection to the interface estab¬ 
+lished a message should be displayed indi¬ 
+cating that the firmware in the head needs to 
+be updated, perform the update by selecting 
+the “Diagnostic head Update” button. 
+
+After the update is complete select “Quit 
+connecting”. 
+
+Access Progman and verify that the interface 
+is recognized 
+
+
+From Progman the firmware level of the interface should also be checked and updated if 
+necessary. Progman does not automatically inform the user if the firmware of the inter¬ 
+face needs to be updated. 
+
+Updates to the interface are checked and performed by selecting the specific interface 
+from the list, located under “Administration” - “Interfaces”, then selecting “Interface 
+Update” (refer to previous page for additional information). 
+
+
+15 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Self-Test 
+
+
+Self-test can only be selected if the selected interface is not being used by another 
+device (interface symbol has a green background). 
+
+Depending on the interface selected a test loop must be attached to the interface. 
+
+• For opps use test loop 663124 and 663131 
+
+• For OPS use test loop 663124 
+
+• For Diagnostic Head , no test loop is needed 
+
+
+External Interface 
+
+
+
+Interfaces 
+
+
+
+
+
+
+
+External interface (IP address input) 
+
+
+Please enter I he IP address 
+
+
+V 
+
+IP address: | 
+
+
+8 
+
+
+8 
+
+
+8 
+
+
+6 
+
+
+
+3 
+
+2 
+
+□ 
+
+
+
+UiEU 
+
+
+
+
+a 
+
+
+
+
+Continue 
+
+
+An external interface is an interface that is 
+not automatically detected by Progman or is 
+not contained in the subnet of the workshop 
+network, such an interface can be added 
+manually to the list of available interfaces or 
+removed using this function. In order to add 
+an interface the I/P address of the interface 
+must be entered. 
+
+
+Example: The dealer has two separate service facilities each with its own network, an 
+
+external interface can be connected to a vehicle located within one network 
+and accessed by a GT1 or SSS located in the other network in order to 
+Code/Program the vehicle. 
+
+
+Settings 
+
+
+AdniJiilst. 
+
+
+
+Administration - Settings 
+The fallowing saltings can be made: 
+
+» Overview: displays all SSS wainin the netwoilt. 
+
+» Operating status: displays lha current ufillzallon of the SS5 
+
+■ Nelwoik: sellings your netwoih 
+
+■ instaflatloni: runs software updates 
+
+■ FASTA: sends FA5TA Gala 
+
+■ C^te I lima: for an SSS wttMn ihe network 
+
+- Operating times: labor lime tar your workshop 
+
+■ Online Service; network configutalion for online server 
+
+■ Dealer data: country, number, address, conlocl per sen 
+
+
+
+From the Administration screen the 
+“Settings” tap allows access to information 
+specific to a selected/specific SSS. 
+
+
+
+16 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview 
+
+
+Adminiti. ■ sss 
+
+
+
+SSS overview (lotah 2 ) 
+
+
+Operation 
+
+status 
+
+Sessions 
+
+tUfTHMTdM 
+
+Version 
+
+CP 
+
+SSS name 
+
+IP address 
+
+External 
+
+SSS 
+
+usable 
+
+1-/S 
+
+CIPJ.O 
+
+SSSNanne-1 
+
+192.1GS .0.4? 
+
+
+Malrtfenance 
+
+2/0 
+
+C1PJ.1 
+
+SSSName-2 
+
+127.0.0.1 
+
+
+
+
+The overview tap provides a listing of all 
+SSS’s that are located on the network. 
+
+
+
+The Overview screen provides information pertaining to: 
+
+• Operating status of a particular SSS 
+
+Ready (Green) = Usable 
+Full use of SSS is possible 
+
+Limited (Yellow) = Usable 
+
+The number of possible sessions is limited (Ex. a download of a new update 
+is in progress) 
+
+Not Ready (Red) = Maintenance 
+
+No new sessions are possible (Ex. an update is currently being installed) 
+
+• Number of active sessions on each SSS 
+
+• The CIP version installed on each SSS 
+
+
+AdminKt. ■ s ss 
+
+
+
+SSS overview {lotah 2 ) 
+
+
+Ojieralmg 
+
+slams 
+
+Sasslcms 
+
+tarawAA* 
+
+Version 
+
+CP 
+
+SSS name 
+
+IP address 
+
+External 
+
+sss 
+
+usable 
+
+1,1:8 
+
+CIPJ.O 
+
+SSSName-1 
+
+192.168.0.47 
+
+
+Maintenance 
+
+2/0 
+
+CIPJ.1 
+
+5SSName-2 
+
+127.0.0.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> *h rri ' 
+
+
+
+
+Brim m fi 11111 
+
+
+. |*| _ _ j. [ * • ■ J __ 
+
+
+
+
+
+Upon selecting a particular SSS additional 
+menu selections are possible. 
+
+The selected SSS is highlighted in a blue 
+frame and all items are possible for the 
+selected SSS are active in the menu. 
+
+
+17 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating Status 
+
+This menu item provides a more detailed status information for specific SSS then the 
+Overview table. 
+
+
+
+The name of the SSS is displayed with a colored background indicating the status of the 
+selected SSS. 
+
+Green = Ready Yellow = Limited Red = Maintenance 
+
+Additional status information is also displayed: 
+
+MAC address - Media Access Control address is an unchangeable and unique 
+
+address for identification of a network device. 
+
+Serial Number - Serial number of specific SSS 
+
+Operating Status - Provides detailed information about the current operation 
+
+of the SSS 
+
+Sessions - Indicates the number of currently active/started CIP sessions. 
+
+Interfaces - Indicates how many interfaces are connected to the specific SSS 
+
+Online Service - Indicates whether the online update is activated on the SSS 
+
+From this location it is also possible to change the operating status of the SSS, as long as 
+the selected SSS is currently in the “Ready” status, plus this is also the recommend¬ 
+ed location from which the SSS should be restarted or shutdown using the but¬ 
+tons at the bottom of the screen. 
+
+
+18 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Network 
+
+
+RdmlnlSL ■ 555 
+
+
+
+Network configuration 
+5SS narr>e|old|; s$$n™m 
+5SS turn* |new|: 
+
+
+WflC .nmreS'S: 
+IP jdditiss: 
+
+
+AfcCClBEiDDlFF.EE 
+
+
+m.iiaojur 
+
+
+Gateway: 
+
+
+
+
+
+
+
+
+
+
+
+
+The Network function allows network config¬ 
+uration information specific to the SSS to be 
+entered, these settings should have been set 
+during the initial installation of 
+Progman/CIP15.0. 
+
+Note: Maintain a copy of the system 
+configuration information, in the 
+event information gets disturbed, 
+printout a copy and keep in a 
+binder along with information for 
+DISplus, GT1 and the interfaces. 
+
+
+- 
+
+
+Continue 
+
+
+
+Information that can be entered is similar to the information needed to configure an inter¬ 
+face. The following information must be entered to correctly configure the SSS to the 
+network: 
+
+
+• Assign a name specific to the SSS 
+
+• Gateway Address 
+
+• IP Address specific to SSS 
+
+
+• Information pertaining to the IP subnet mask 
+
+
+Any changes that are made to the configuration are saved by selecting continue and 
+will go into effect once the SSS is restarted. 
+
+
+
+Continue 
+
+
+
+Note: 
+
+Restart immediately means that 
+Progman checks the current status of 
+any sessions that are still active and 
+once the sessions are complete the 
+system will restart. 
+
+
+Restart later indicates that Progman will 
+wait until the end of the day (specified 
+under “Operating Times”) to check and 
+restart the system. 
+
+
+19 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installation 
+
+The Installation tap is selected when updates need to be installed either by a way of a 
+new CIP DVD or checking for new online updates (Automatically or Manually). The 
+updates that can be installed pertain to the Progman application as well as updated vehi¬ 
+cle data files for utilization by CIP 
+
+
+AdminitL ■ 5 
+
+
+
+Inst illation 
+
+SSS name: SSSNmme-l 
+
+AulomnMt online updrfe 
+
+
+Switch off 
+
+
+Installed components 
+
+Version 
+
+□ate 
+
+CIPDVD 
+
+14.0.3 
+
+2004-19-0! 
+
+
+
+
+The table provides an overview of the soft¬ 
+ware program and version currently installed. 
+
+The selection/activation of Automatic online 
+updates via the BMW server is selected from 
+this screen. 
+
+“DVD update” can be selected whenever a 
+new CIP DVD needs to be installed. 
+
+“Online update” allows a manual check for 
+online updates to be initiated. 
+
+
+Note: It is recommended that the Automatic Online Update feature be activated 
+to insure that needed Program and Coding updates are received in a 
+timely manner. When new updates are made available they are down¬ 
+loaded and and installed after the normal operating times of the work¬ 
+shop as specified under “Operating Times”. 
+
+
+
+“Display status” provides information pertain¬ 
+ing to the installation of the latest update. 
+
+Information pertaining to an erroneous instal¬ 
+lation of an update is displayed in the mes¬ 
+sages section. 
+
+Note: If frequent error messages are 
+displayed contact your ser¬ 
+vice provider for assistance 
+and have available a copy of 
+the error messages that have 
+been received. 
+
+
+20 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FASTA 
+
+The FASTA function assures that vehicle operation and service data from the diagnostic 
+and programming devices are sent to BMW. With Progman if data is available it is trans¬ 
+mitted automatically every five minutes 
+
+
+
+FASTA 
+
+SS5 name: 
+
+
+Current 1 action: 
+Note: 
+
+
+
+sssNante-i 
+
+
+Vjft' until I-*35 A TTiVi'JiW 
+
+7 tr-Tr=j« nr^s ow reedy 
+
+
+Send data 
+
+
+ICTUS PV L i>..§4 1 i! ;, *1! 
+
+
+
+
+
+
+
+
+
+This function shows if any data is available 
+for transfer and when it will be sent. 
+
+By selecting “Send data” (manual send) 
+make sure that no sessions are currently 
+running on the SSS as this will lengthen 
+the data transmission process. 
+
+It is preferred that the automatic transfer 
+process be utilized. 
+
+
+Note: In order for FAST data transmission to be possible the correct BMW 
+server address must be entered in the “Online Service” menu. 
+
+Date and Time 
+
+In this function the current date and time must be entered. An automatic correction for 
+daylight savings time to standard is made automatically. 
+
+Operating Times 
+
+The normal operating time of the workshop/service facility is entered in this function. The 
+time is used to establish a maintenance period for the SSS. The end of normal operating 
+time signals Progman to start executing/installing any online updates that may be avail¬ 
+able. 
+
+Dealer Data 
+
+Information pertaining to country of operation, dealer number, dealer name, dealer 
+address, contact person Telephone number and Email address are entered in this selec¬ 
+tion. 
+
+User Interface 
+
+Under this menu language settings specific to the individual SSS and printer configura¬ 
+tion information can be set. 
+
+Example: If the language of the SSS is set to German then all information displayed on 
+
+the SSS will be in German, however it does not mean that the GT1 will also 
+display the text in German when accessing Progman and “connecting” to that 
+SSS. 
+
+
+21 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Configuration Check 
+
+7. Check/access network configuration information for: 
+
+• SSS 
+
+• DISplus 
+
+• GT1 
+
+• Interfaces (Opps, OPS & Diagnostic Head) 
+
+
+2. Check firmware level of interface’s via SSS. 
+
+
+22 
+
+Progman 
+
+
+
+
+Starting a Programming or Coding Session with Progman 
+
+In order to start a session in Progman the Diagnostic, OPPS or OPS head that will be 
+selected can not be connected to the DISplus or GT1. 
+
+
+Disconnecting From Interface to be Used by Progman 
+
+
+
+lvoqi&b 
+
+
+DME Motor Ekdr 
+
+
+ff VTG Trrwwler case 
+
+
+.|. 
+
+
+Diagnosis Vehicle identification 
+
+
+S«n«s 
+
+
+X5 ESS 
+
+
+Modal 
+
+
+X3 4 4i W62 OfFflD 
+
+
+Version 
+
+
+USA LHD 
+
+
+<=- t 
+
+
+Soity 
+
+H I 1 BM On- b-snrd manrtor 
+
+
+VID Video module 
+KOM InatfurncnT duster 
+
+
+IHKA In+tOrnliqd aijrgmnihfi hcitlirtofair CQutl 
+
+
+IKE Injlruinont-clu • rm electron*;* 
+
+
+1 LCM Light Cfttek Modulo IV 
+
+
+LCM Light Cheek Mediae 
+
+LRA Automatic heodliijht vcrticBf mm contra 
+
+MID Muth InforniatiDii Disolay 
+
+
+Model ye ar 
+
+
+LiOOS D9 
+
+
+
+
+Chn-F-sis 
+
+U DSC DyiiMibc Stability Central 
+
+
+|EHC2 Electronic ndc^lcvd control 
+
+Bi^.*fr775‘«: «a <:■ Hr:' i': •: 
+
+
+! MFL MuAb-fundbEHi ftamina wheel 
+
+
+RDC Tire pressure cheek 
+
+
+Vehicle idem number 
+
+
+' MAV Navigation computer 
+
+
+' RDC Pa?h Distance Control 
+
+
+RAD Radio 
+
+
+1 RLS RawLiqht Sensor 
+
+
+' DSP Dig Tal Sound Processor 
+
+
+StC Slidn*d'tiltim; svmooT 
+5ES Language-inpul system 
+
+
+! SZf.i Switchma center. center consc-lc 
+
+
+STN pflik homing 
+
+TEL Telephone irrterfncc 
+
+BIT Basis Interface Telephone 
+
+
+Adminislration Diagnostic head assignment 
+
+Frau diagnostic head* 
+
+
+
+
+uMMtB 
+
+
+17034J2A 1? 
+
+
+Adminislration Diagnostic head assignment 
+
+Fran diagnostic he ad s 
+
+
+
+
+UDD34ES 170.34 223 12 
+
+
+If the vehicle to be programmed was previously 
+being diagnosed using a diagnostic head with 
+the GT1, then the connection with the head 
+must be broken before that head will be recog¬ 
+nized by Progman. 
+
+Select “Service” 
+
+Select “Setting up a connection” 
+
+
+Select “Quit connecting” 
+
+
+The selected head is free/disconnected 
+
+
+23 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Imnipn 
+
+
+Administration Diagrf®**^ 
+
+Free diagnostic head* 
+
+
+OPSlyoilS 170.34.Zr 
+| zuG>0345S 170.34 2 
+
+
+i assignment 
+
+
+JCwuifJ^Uia 
+
+
+
+
+Vehicle itlent number 
+
+
+He* delete 
+
+
+transmission contml 
+JVc-ijrum, ;W5 Vehicle immobilizer 
+I 1 VTG Transfer case 
+
+
+Model 
+
+
+X5 A 4| N&2 OFFhL' - 
+
+
+Version 
+
+
+-Chassis 
+
+be DSC Dynamic Stability Control 
+
+
+EPL2 Electronic ride-level control 
+
+
+-HG Electronic Hei ght Control 
+
+
+LEW Steering-jingle sensor 
+
+
+MFL Mufti—function steerino wheel 
+
+
+Mod el year 
+
+
+2003 09 
+
+
+RDC T ! c pressure check 
+
+
+VID Video module 
+KOM Instrument cluster 
+
+
+1 IHKA Integieted Automatic hfiatingteir cond 
+
+
+I IKE I nstrmrierrt-c luster eteclromcs 
+
+
+LCM Light Check Module IV 
+
+
+LCM Lighl Check Module 
+
+LRA Automatic hciidlrght veil! cm t iiirrt centre 
+
+MID Multi Infomratimn Display 
+
+
+MRS Mull:etc Restraint System Ilh'IV 
+
+
+alien computer _ 
+
+
+POC Park Distance Control 
+
+
+RAD Radio 
+
+
+RL5 RoiruLight Sensor 
+
+
+□SR Digital Sound Processor 
+
+
+SHD Slidmg’tihirig sunroof 
+SES Language-input system 
+
+
+SMjSLM Se-iiftstec ring-column anento 
+
+
+SZM Switching center, center console 
+
+
+STF1 park heating 
+
+TEL Telephone interface 
+
+BIT Basis Interface Telephone 
+
+
+Select “Change” 
+
+Select “Coding/Program 
+
+
+
+SSS overview (total 1) 
+
+Please select from the following list nn SSS to which your terminal is to be connected 
+
+Mote: Programming sessions arc performed from the selected SSS. Select rf possible the SSS that shows the 
+lowest toad. 
+
+
+Operating status 
+
+Sessions 
+
+tllWUMl 
+
+Version 
+
+or 
+
+SSS rwmc 
+
+IP address 
+
+Eictcmal SSS 
+
+usable 
+
+dfS 
+
+14.0.6 
+
+ZU-A-24 Engnmg 
+
+17D.34.ZZ0.31 
+
+
+
+/ 
+
+
+Select available SSS 
+Select “Continue” 
+
+
+Continue 
+
+
+4'roc-e SSS oBiEctc-d 
+
+
+24 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Starting a Session with Progman 
+
+
+
+Select “New Session” 
+
+
+Progman 
+
+
+
+New session 
+
+
+
+Acc. to name 
+
+
+
+Interface 
+
+
+
+
+
+
+
+
+
+
+
+Status 
+
+Interface name 
+
+Version 
+
+IP address 
+
+External interface 
+
+<* 
+
+OPSLYONS 
+
+508 
+
+17034228 35 
+
+
+
+ZU00346B 
+
+388 
+
+170.34228 12 
+
+
+
+
+
+Select the desired interface 
+Select “Continue” 
+
+
+Under “Description” enter information that 
+will identify the vehicle to which the interface 
+is connected (Ex. VIN or Model type, Service 
+hat #, Vehicle color, Bay location, etc.) 
+
+
+Description of new session 
+
+IP address: 170 34.228 12 Interface name: ZU00346B Select “Continue” 
+
+
+Description: 
+
+
+
+
+
+
+
+
+
+
+Back 
+
+
+
+
+Continue 
+
+
+25 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Access CIP Functions For E31E32/E34/E36/E38/E39/E46/E52/E53 
+
+
+
+Select desired model series 
+
+For this example an E53 - X5 is being used, 
+therefore select “X” 
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP 
+
+
+X5 
+
+
+
+Model series SELECTION 
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+
+- 
+
+
+
+
+
+
+Select “E53” 
+
+
+The screen now displays the SGC/Unix 
+screen previously accessed via the 
+DISplus/GTI when coding and programming 
+was selected. 
+
+
+Car Memory 
+
+
+Key Memory 
+
+
+CODIERUNG ZCS/FA 
+
+
+SERVICE MEASURES 
+
+
+PROGRAMMIERUNG 
+
+
+ABGLEICH EWS-DME 
+
+
+ABGLEICH EWS-DDE 
+
+
+At this point select the desired function and 
+proceed as stated in the respective Service 
+Information Bulletin for the procedure being 
+performed. 
+
+
+26 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Access CIP Functions For E60/E62/E63/E64/E65/E83/E85 
+
+
+CIP 
+
+E60 BLACK 
+
+
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+Model series SELECTION 
+
+■ 
+
+
+
+
+► 
+
+
+■ 
+
+s-i 
+
+
+
+
+
+
+
+
+
+Select desired model series 
+
+For this examples an E60 is being used, 
+therefore “5 Series” is selected 
+
+
+CIP 
+
+E60 BLACK 
+
+
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+
+
+Select E60 
+
+
+
+CIP 
+
+
+E60 BLACK 
+
+
+The vehicle order (VO) ts being determmed. 
+
+
+
+CIP is determining the vehicle order for the 
+vehicle being accessed. 
+
+
+
+27 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From this screen select the desired function 
+and proceed as stated in the respective 
+Service Information Bulletin regarding CIP 
+procedures (Refer to SI B 09 05 01). 
+
+Program SELECTION: 
+
+1. Tcrmin. CIP 
+
+2. Load software 
+
+• Control modules coding/programming and 
+conversion/retrofit 
+
+3. Car & Key Memory (CKM): 
+
+• Vehicle individualization 
+
+4 Management 
+
+• Display/Print previous status reports, application data 
+and information on diagnosis 
+
+5 Vehicle: 
+
+• Display/adapt the vehicle order, read out vehicle 
+context again and complete coding 
+
+
+
+
+Return to Progman “Home” Screen 
+
+
+
+Control module SELECTION 
+
+
+Select “Minimize” 
+
+
+A measures plan has been created and accepted It bikes 40 minutes to cxccutr 
+
+this measures plan. 
+
+The measures plan is now earned out with Starr, the process is cancelled with 
+
+Caned 
+
+
+
+If cancelled, the entire process must be repeated! 
+
+
+
+Progman 
+
+
+E60 BLACK 
+
+00 £*101 tfri 
+
+
+The Progman “Home” screen is displayed, 
+from here a new session can be started or a 
+current session reviewed. 
+
+If using a GT1 a change to diagnostics can 
+also be made. 
+
+
+
+
+28 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Progman “Home” Screen Session Status 
+
+
+
+Acc. to name 
+
+
+Mew session 
+
+
+Progman 
+
+
+EGG BLACK 
+
+WIW01 Up 
+
+
+Progman 
+
+
+The Progman “Home” screen displays all 
+sessions that are running on a particular SSS 
+and allows any of the sessions to be 
+reviewed. 
+
+
+E60 BLACK 
+
+QQ Std 01 Min 
+
+E36 CONVRTBL 
+
+
+E64 SPT 2 
+
+
+
+Explanation of session status indicators: 
+
+1 - Black text with white background indi¬ 
+
+cates that session is running and does 
+not require any input, the status of the 
+session can be reviewed. 
+
+2 - Grey text indicates a session is active/in 
+
+progress and is currently being accessed 
+or reviewed by another user. This session 
+can not be accessed by an additional 
+user. 
+
+3 - Orange text indicates that input is 
+
+required before program can continue, 
+this session should be accessed and 
+reviewed to provide required input. 
+
+
+29 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Going from Progman to Diagnosis on GT1 
+
+
+
+Progman 
+
+
+
+
+If using a GT1 it is possible to switch from 
+Progman to a diagnostic function. 
+
+From the Progman home screen select 
+“Change” 
+
+
+
+
+_ 1 _ 1 _ 1 _ 1 
+
+
+
+i*™ ■ ■ 
+
+Diagnosis Start 
+
+Contents of diagnosis OVD 
+
+Series 
+
+
+Model year 
+
+
+D1S Programs V39.0:09,2004 
+
+
+Important note 
+
+Radio head problem 
+
+Power module disconnection with radio head 
+connected: terminal 0 and wort: breaks longer than 16 
+minutes (60 minutes with optional telephone) 
+
+Power module disconnection may give nse to 
+customer-related problems, e g in navigation 
+
+Remedy. 
+
+For longer wort: breaks, the radio head must be 
+disconnected. 
+
+Fault symptoms 
+
+The fault patterns entered in the diagnosis record serve 
+as important information in reporting on defective parts 
+
+If there is a customer complaint relating to a vehicle on 
+which diagnosis is being earned out. the corresponding 
+fault patterns must therefore be selected in each case 
+in the "Fault pattern selection* mask. 
+
+Status test module 
+
+A test module wdl only then be marked in the test plan 
+as ’processed” if it has been processed up to the 
+message *Tcst module completed. Continue in test 
+
+
+|1_E87 
+
+37Z1_E30 
+
+p7Z3_E36 
+
+h_E46 
+
+ls_E 28 
+
+|5_E34 
+
+5.E39 
+
+|5'_E60/E61 
+
+|6'~E24 
+
+|6_E63jE64 
+
+|7_E23 
+
+7_E32 
+
+7_E38 
+
+7_E65 
+
+8_E31 
+
+X3.E83 
+
+|X5_E53 
+
+|Z4~E8S 
+
+|Z8_E52 
+
+[mini 
+
+Im 60 engine test 
+
+
+The GT1 will switch to diagnostics and a 
+new diagnostic session can be started by 
+connecting to an available interface, if noth¬ 
+ing was previously active. 
+
+Or 
+
+If a diagnostic session was previously active 
+then the system will return to that point, prior 
+to having switched over to Progman. 
+
+
+30 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Going from Diagnosis to Progman on GT1 
+
+
+
+
+
+
+H 
+
+<=- 
+
+
+
+Diagnosis 
+
+
+Senes 
+
+
+xb en 
+
+
+’iGS transmission control 
+
+
+•WS Vehicle immobilizer 
+
+
+I' VTG Transfcr ease 
+
+
+Model 
+
+
+1X5 4.4i N62 OFFRD 
+
+
+Version 
+
+
+Model year 
+
+
+2003 09 
+
+
+EHC2 Electronic ride-level control 
+
+
+! EHC Electronic Height Control 
+
+
+! LEW Steering-angle sensor 
+
+
+! MFl Multi-function steering wheel 
+
+
+RDC Tire pressure check 
+
+
+Vehicle ident number 
+
+
+LV00188 
+
+
+— SfK 
+
+
+d monitor 
+
+
+VIO Video module 
+hi 
+
+KOM Instrument cluster 
+
+
+IHKA Integrated automatic hcaring/air cond 
+
+
+1 IKE Instrument-cluster electronics 
+
+
+Check Module IV 
+
+
+LCM Light Cheek Module 
+
+LRA Airtomatic headlight vertical aim contro 
+
+MIO Multi Information Display 
+
+
+1 MRS Multiple Restraint System lll/IV 
+
+
+NAV Navigation computer 
+
+
+1 PDC Park Distance Control 
+
+
+RAD Radio 
+
+
+1 RLS Rain/Light Sensor 
+
+
+' DSP Digital Sound Processor 
+
+
+SHD Sliding/tilting sunroof 
+SES Language-input system 
+
+
+Sf.VSLM Scat/stccnng-column menton 
+
+
+SZM Switching center, center console 
+
+
+STH park hearing 
+
+TEL Telephone interface 
+
+BIT Basis Interface Telephone 
+
+
+If using a GT1 it is possible to switch from a 
+diagnostic function to Progman to check the 
+status of an active session. 
+
+From the the diagnostic screen: 
+
+Select “Change” 
+
+Select “Coding/Program” 
+
+
+SSS selection 
+
+
+
+Select the SSS on which the session is 
+to be checked 
+
+
+SSS overview (total: 1) 
+
+Please select from the following bst an SSS to which your terminal is to be connected 
+
+Note: Programming sessions are performed from the selected SSS. Select if possible the SSS that shows Ihe 
+lowest load 
+
+
+Operating status 
+
+Sessions 
+
+omrnlin* 
+
+Version 
+
+c# 
+
+SSS name 
+
+IP address 
+
+External SSS 
+
+usable 
+
+0/5 
+
+14.0.6 
+
+ZU-A-24 Engnmg 
+
+170.34 228.31 
+
+
+
+Continue 
+
+
+
+Progman 
+
+
+
+
+The GT1 will switch to the Progman session. 
+Select the session to be checked. 
+
+
+Progman 
+
+
+E60 BLACK 
+
+00 SW0! Mr 
+
+
+
+Example: 
+
+The E64 SPT 2 session is highlighted in 
+orange, which indicates that a user input is 
+required. 
+
+Select “E64 SPT 2” 
+
+
+
+31 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Progman 
+
+
+E64 SPT 2 
+
+
+
+
+The status information for the selected ses¬ 
+sion states that it is “Waiting for user action” 
+
+Select “Continue” to view/access the session 
+
+
+Session stilus E60 BLACK 
+
+oo sum 
+
+Interface name: OPPSGRN 
+
+IP address 170.34.228 26 
+
+Vehicle ID number WBAEK73454B320042 
+Status: Waiting for user action 
+
+CIP version: V 14 00 
+
+SSS name: SSS_ZU-A-24 
+
+
+
+Continue 
+
+
+Acc to name I Acc. to status 
+
+
+
+
+
+Select “Start” to initiate/carryout the mea¬ 
+sures plan 
+
+Or 
+
+Select “Cancel” to end the process and 
+return to the previous module selection 
+screen of CIR 
+
+Or 
+
+Select “Minimize” to return to the home 
+screen of Progman. 
+
+
+32 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shutting Down the SSS 
+
+
+
+Administration - Overview 
+
+The foHowing progman parts can be configured: 
+
+■ interfaces 
+
+sellings, interface update, sett-lesl. ertemal interface 
+
+
+Interfaces 
+
+
+
+User interface 
+
+
+After selecting “Administ.” on the Progman 
+Home screen select “Settings”. 
+
+
+• Settings 
+
+SSS netwoiV. Individual SSS 
+
+
+i User Interface 
+
+Local lan aiiaie. pi Inter 
+
+
+‘irr^id'VfrfVs 
+
+
+
+Administration - Settings 
+The following settings can be mads: 
+
+- Overview: displays alt SSS wffiilnthe nelvwin. 
+
+■ operating status: displays the cur lent utilization or the sss 
+
+- Network: settings far your network 
+
+- installation: runs software updates 
+, PASTA: sends FAST A data 
+
+, Date I time; ki all SSS within the network 
+, Operating times: labor lime for your v/orkshop 
+, Online Service: network canfigurali:n far online server 
+» Dealer data: country, numbei. address, conlad peison 
+
+
+
+Select “Overview” 
+
+
+
+
+Select the specific SSS to be shutdown 
+
+
+33 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+After selecting the specific SSS, select 
+“Operating Status”. 
+
+
+SSS overview (total: 2) 
+
+
+Operating 
+
+slalus 
+
+Sessions 
+
+rurrantyrrift:. 
+
+Version 
+
+CJP 
+
+SSS name 
+
+IP address 
+
+External 
+
+SSS 
+
+usable 
+
+1 / 5 
+
+CF_1.D 
+
+ESSMame-1 
+
+I92.16S.047 
+
+
+Maintenance 
+
+2 ibJ 
+
+CIP_1.1 
+
+SSSNams-2 
+
+127.0.0.1 
+
+> 
+
+
+
+
+/ 
+
+
+
+
+
+
+
+AdmlnisL • SSS 
+
+
+
+SSS operating status 
+SSSNamt'l 
+
+MAC address: AA:CC:BB:DD:FF EE 
+Serial number: 123456789012 
+
+
+
+
+
+
+
+
+
+
+
+
+This is the only location from which the 
+SSS should be restarted or shutdown 
+using the buttons at the bottom of the 
+screen. 
+
+Selecting “Restart” will switch the SSS off and 
+then back on. 
+
+
+Selecting “Switch off” will turn the SSS off. 
+
+
+Operating 
+
+status; 
+
+Readiness. New sessions can be stored The SSS Is now 
+sending PASTA data. 
+
+Sessions: 
+
+2 of possible 5 
+
+Interfaces: 
+
+11n use 
+
+Online 
+
+Service: 
+
+Automatic online update swttched on. 
+
+
+Note: The on/off button located directly 
+on the computer should not be 
+
+used to turn OFF the SSS. 
+
+
+Restart 
+
+
+Switch off 
+
+
+
+34 
+
+Progman 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Access CIP & ZCS 
+
+1. Access CIP for an E60. 
+
+
+2. Access ZCS functions to obtain the central coding key on an E53 or Vehicle 
+order on an E46. 
+
+
+35 
+
+Progman 
+
+
+
+
+
+Review Questions 
+
+
+7 . What is Progman ? 
+
+
+2. Why do we need Progman? 
+
+
+3. What advantage(s) does Progman have over the older method (CIPxx.x and DIS xx.x)? 
+
+
+4. What is the purpose of an IP address, Gateway address and subnet mask? 
+
+
+5. How can the the firmware level in an interface be checked and updated? 
+
+
+6. Why is it important that the firmware in an SSS and the interface(s) being used 
+are the same? 
+
+
+7 . What steps must be followed in order to Code or Program an E38? 
+
+
+36 
+
+Progman 
+
+
+

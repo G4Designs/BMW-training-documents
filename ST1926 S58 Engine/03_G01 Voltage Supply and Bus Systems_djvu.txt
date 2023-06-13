@@ -1,0 +1,3324 @@
+Technical training. 
+
+Product information. 
+
+G01 Voltage Supply and Bus Systems 
+
+
+
+BMW Service 
+
+
+f \ 
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1701 9/1/2017 
+
+\ _ / 
+
+
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as the result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2017 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich. 
+
+The information contained in this document forms an integral part of the BMW Group Technical 
+Qualification and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: June 2017 
+
+Technical training. 
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+Contents 
+
+
+1. Introduction.1 
+
+2. Bus Systems.2 
+
+2.1. Bus overview.2 
+
+2.2. Main bus systems.4 
+
+2.2.1. K-CAN.4 
+
+2.2.2. PT-CAN.4 
+
+2.2.3. MOST.4 
+
+2.2.4. FI ex Ray.5 
+
+2.2.5. Ethernet.6 
+
+2.2.6. D-CAN.15 
+
+2.3. Sub-bus systems.15 
+
+2.3.1. LIN-Bus.15 
+
+2.3.2. Local CAN.25 
+
+2.3.3. USB.26 
+
+2.4. Diagnosis access OBD2.26 
+
+3. Control Units.27 
+
+3.1. Installation locations of control units.27 
+
+3.2. Gateway.29 
+
+3.2.1. Body Domain Controller (BDC).29 
+
+4. Voltage Supply.32 
+
+4.1. Overview of voltage supply.32 
+
+4.1.1. System wiring diagram.32 
+
+4.2. Components.34 
+
+4.2.1. Overview of luggage compartment.34 
+
+4.2.2. Overview of engine compartment.35 
+
+4.2.3. Battery.35 
+
+4.2.4. Intelligent battery sensor.36 
+
+4.2.5. Safety battery terminal.36 
+
+4.2.6. Alternator.36 
+
+4.2.7. Integrated supply module.37 
+
+4.2.8. Power distribution box, front right.37 
+
+4.2.9. Power distribution box, rear.38 
+
+4.2.10. Body Domain Controller.38 
+
+4.2.11. PCU with vehicle electrical system assistance measure.38 
+
+5. Terminal Control.40 
+
+5.1. Introduction.40 
+
+5.2. Vehicle conditions.40 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+Contents 
+
+
+5.3. Power supply terminals.44 
+
+5.4. Partial network operation.45 
+
+5.4.1. Partial network operation when driving.46 
+
+5.4.2. Prerequisites for partial network operation.46 
+
+5.4.3. Prerequisites of control units for partial network operation.46 
+
+5.4.4. Partial network operation when the vehicle is stationary and the 
+
+engine is switched off.46 
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+1. Introduction 
+
+In terms of technology, the new BMW X3 is based on the G12 and G30. 
+
+
+1 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.1. Bus overview 
+
+
+
+Bus overview 
+
+
+TE17-0037.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+ACC 
+
+Active Cruse Control 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AHM 
+
+Trailer module 
+
+AMPT 
+
+Top HiFi amplifier 
+
+ASD 
+
+Active Sound Design 
+
+BDC 
+
+Body Domain Controller 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+EGS 
+
+Electronic transmission control 
+
+ENS 
+
+Ethernet switch 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FBD 
+
+Remote control receiver 
+
+FLA 
+
+High-beam assistant 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector 
+
+HEADUNIT 
+
+Head unit 
+
+HKFM 
+
+Tailgate function module 
+
+IHKA 
+
+Integrated automatic heating / air conditioning 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KOMBI 
+
+Instrument panel 
+
+PCU 
+
+Power Control Unit 
+
+PMA 
+
+Parking Manoeuvring Assistant 
+
+RFK 
+
+Rear view camera 
+
+RSL 
+
+Radar Sensor, Left (avoidance assistant) 
+
+RSR 
+
+Radar Sensor, Right (avoidance assistant) 
+
+SAS 
+
+Optional equipment system 
+
+SMBF 
+
+Seat module, passenger 
+
+SMFA 
+
+Seat module, driver 
+
+SWW 
+
+Lane change warning (primary) 
+
+SWW2 
+
+Lane change warning (secondary) 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top Rear Side View Camera 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+VDP 
+
+Vertical Dynamic Platform 
+
+VTG 
+
+Transfer box 
+
+WCA 
+
+Wireless charging tray 
+
+ZGM 
+
+Central gateway module 
+
+1 
+
+Start-up node control units for starting and synchronizing 
+the FlexRay bus system 
+
+2 
+
+Control units with wake-up authorization 
+
+3 
+
+Control units also connected at terminal 15WUP 
+
+
+2.2. Main bus systems 
+
+
+2.2.1. K-CAN 
+
+In the G01 the following K-CAN’s are used: 
+
+• K-CAN2 
+
+• K-CAN3 
+
+• K-CAN4 
+
+• K-CAN5 
+
+The control units on the K-CAN5 are not displayed in the bus overview by the BMW diagnosis system 
+ISTA. Diagnosis is performed via the Body Domain Controller. 
+
+All K-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+2.2.2. PT-CAN 
+
+In the G01 the following PT-CAN are used: 
+
+• PT-CAN 
+
+• PT-CAN2 
+
+The gateway for the PT-CAN2 is located in the DME. 
+
+Both PT-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+2.2.3. MOST 
+
+On the G01 the MOST system known from other BMW models with a data transfer rate of 22.5 MBit/s 
+is used. The gateway for the MOST system is located in the HEAD UNIT. 
+
+
+4 
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.2.4. FlexRay 
+
+
+
+i 
+
+
+© 
+
+
+
+© 
+
+
+
+FlexRay 
+
+
+5 
+
+
+TEt 7-0039.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (DSC) 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Transfer box 
+
+4 
+
+Electronic Power Steering (electromechanical power steering) (EPS) 
+
+5 
+
+Body Domain Controller (BDC) 
+
+6 
+
+Vertical Dynamics Platform (VDP) 
+
+7 
+
+Advanced Crash Safety Module (ACSM) 
+
+8 
+
+Optional equipment system (SAS) 
+
+
+The FlexRay overview includes all engine versions and optional equipment. The terminating resistors 
+for line termination are located in the control units and in the Body Domain Controller. 
+
+The FlexRay has a data transfer rate of 10 MBit/s. 
+
+
+2.2.5. Ethernet 
+
+The G01 features the two-wire OABR Ethernet (OPEN Alliance BroadR-Reach) which is familiar from 
+the G12. 
+
+The Ethernet variant with 5 lines (4 data lines and 1 activation line) is still used on the G01 by the 
+OBD2 interface to the Body Domain Controller. 
+
+Use of the two-wire OABR Ethernet on the G01 
+
+The following control units are connected to the vehicle electrical system via two-wire OABR Ethernet 
+in the G01: 
+
+• Active Cruise Control (ACC) 
+
+• Camera-based driver support systems (KAFAS) 
+
+• Top Rear Side View Camera (TRSVC) 
+
+• Rear view camera (RFK). 
+
+The following control units are additionally connected via two-wire OABR Ethernet in the G01: 
+
+• Head unit 
+
+• Optional equipment system (SAS) 
+
+• Telematic Communication Box 
+
+Ethernet in the vehicle 
+
+The standard "Open Alliance BroadR-Reach" (OABR Ethernet) has been specially developed as a 
+new data transmission layer for use in vehicles. OABR Ethernet only requires an unshielded twisted 
+two-wire connection. OABR Ethernet supports bidirectional 100 MBit/s communication between 2 
+nodes. This means that both nodes can simultaneously send and receive at a data transfer rate of 
+
+
+6 
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+100 MBit/s. OABR Ethernet requires point-to-point networking. This means that the bus system is 
+not split up between multiple nodes, as is the case e.g. with CAN (Controller Area Network) systems. 
+Instead, Ethernet switches are used for the connection of further nodes. Today, Ethernet switches are 
+integrated in the following control units: 
+
+• Body Domain Controller (BDC) 
+
+• Optional equipment system (SAS) 
+
+• Top Rear Side View Camera (TRSVC). 
+
+An Ethernet switch (ENS) is used on the G01 depending on the vehicle equipment. In the event of 
+failure of an Ethernet switch, all bus users connected by it are disconnected from the rest of the 
+network and are no longer able to communicate via Ethernet. 
+
+Depending on the vehicle equipment, the control units are connected to the vehicle electrical 
+system in different ways. 
+
+On vehicles without navigation, the data transfer takes place from the Headunit Basic to the 
+instrument cluster via Ethernet. 
+
+On vehicles with Navigation, the data is transferred from the Headunit HIGH to the instrument cluster 
+via an APIX data cable. 
+
+Depending on the vehicle equipment an Ethernet switch may in some cases be required. 
+
+A wake-up line may be required for control units that are only connected to the Ethernet and 
+are not additionally connected to a body CAN. 
+
+Control units on the Ethernet cannot be woken up via the bus. Instead, the control units are activated 
+via the wake-up line or switched directly via terminal 15. As a result of the activation via a wake-up line, 
+so-called partial network operation is also possible. In partial network operation, individual control units 
+can switch to a rest state in different vehicle conditions. 
+
+The different versions of the Ethernet topology of the G01 are listed below: 
+
+Ethernet topology without Ethernet switch on vehicles with Headunit Basic 
+
+The wiring diagram shows the connection of the top rear side view camera (TRSVC) control unit and 
+rear view camera (RFK). In the vehicle, either TRSVC is installed for a vehicle with multiple cameras, or 
+RFK for a vehicle with a rear view camera (standalone). 
+
+
+7 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+
+Ethernet topology without Ethernet switch 
+
+
+8 
+
+
+TE160201 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Top Rear Side View Camera (TRSVC) 
+
+2 
+
+Instrument cluster (KOMBI) 
+
+3 
+
+Camera-based driver support systems (KAFAS) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+OBD2 interface (Ethernet with 5 lines) 
+
+6 
+
+Headunit (HEADUNIT) 
+
+7 
+
+Telematic Communication Box (TCB) 
+
+8 
+
+Rear view camera (RFK) 
+
+
+On vehicles without navigation, the data transfer takes place from the Headunit Basic to the 
+instrument cluster via Ethernet. 
+
+Ethernet topology with Ethernet switch on vehicles with Headunit Basic 
+
+The wiring diagram shows the connection of the top rear side view camera (TRSVC) control unit and 
+rear view camera (RFK). In the vehicle, either TRSVC is installed for a vehicle with multiple cameras, or 
+RFK for a vehicle with a rear view camera (standalone). 
+
+
+9 
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+
+Ethernet topology with Ethernet switch 
+
+
+10 
+
+
+TE16-0203 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Top Rear Side View Camera (TRSVC) 
+
+2 
+
+Ethernet switch (ENS) 
+
+3 
+
+Optional equipment system (SAS) 
+
+4 
+
+Active Cruise Control (ACC) 
+
+5 
+
+Body Domain Controller (BDC) 
+
+6 
+
+Camera-based driver support systems (KAFAS) 
+
+7 
+
+Instrument cluster (KOMBI) 
+
+8 
+
+OBD2 interface (Ethernet with 5 lines) 
+
+9 
+
+Headunit (HEADUNIT) 
+
+10 
+
+Telematic Communication Box (TCB) 
+
+11 
+
+Rear view camera (RFK) 
+
+
+On vehicles without navigation, the data transfer takes place from the Headunit Basic to the 
+instrument cluster via Ethernet. 
+
+Ethernet topology on vehicles with Headunit High 
+
+The wiring diagram shows the connection of the top rear side view camera (TRSVC) control unit and 
+rear view camera (RFK). In the vehicle, either TRSVC is installed for a vehicle with multiple cameras, or 
+RFK for a vehicle with a rear view camera (standalone). 
+
+On vehicles with the Headunit High, the Telematic Communication Box (TCB) is directly connected to 
+the headunit. The data is transferred from the Headunit High to the instrument cluster via APIX. The 
+instrument cluster does not require Ethernet. As a result, the Ethernet interfaces on the Body Domain 
+Controller are sufficient, and no Ethernet switch (ENS) is required. 
+
+
+11 
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+© 
+
+© 
+
+
+
+Ethernet topology on vehicles with Headunit High 
+
+
+12 
+
+
+TE17-0038 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Top Rear Side View Camera (TRSVC) 
+
+2 
+
+Optional equipment system (SAS) 
+
+3 
+
+Active Cruise Control (ACC) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Camera-based driver support systems (KAFAS) 
+
+6 
+
+OBD2 interface (Ethernet with 5 lines) 
+
+7 
+
+Instrument cluster (KOMBI) 
+
+8 
+
+APIX data line 
+
+9 
+
+Headunit (HEADUNIT) 
+
+10 
+
+Telematic Communication Box (TCB) 
+
+11 
+
+Rear view camera (RFK) 
+
+On vehicles with Navigation, the data is transferred from the Headunit High to the instrument cluster 
+via APIX. 
+
+Ethernet switch 
+
+
+
+Ethernet switch 
+
+
+The Ethernet switch is required for expansion of the Ethernet network. It connects the control units 
+and forwards their data packages accordingly. 
+
+The Ethernet switch is displayed as a control unit in the bus overview by the diagnosis system ISTA. 
+
+
+13 
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+Connections on the Ethernet switch 
+
+
+® ® @ 0 ® 
+
+
+
+Ethernet switch connections 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Labelling of ports 
+
+2 
+
+PortO 
+
+3 
+
+Port 1 
+
+4 
+
+Port 2 
+
+5 
+
+Port 3 
+
+6 
+
+Port 4 
+
+
+The Ethernet switch has a maximum of 5 ports. The Ethernet cable to the Body Domain Controller 
+(BDC) is connected to port 0. In addition, voltage for the Ethernet switch is supplied to port 0. The 
+other Ethernet control units are connected to ports 1 to 4. The connectors for ports 1 to 4 are 
+identical, so the other Ethernet control units can be connected as required. It does not matter which 
+control unit is connected to which port as this does not affect the function. However, for diagnosis and 
+troubleshooting, it is important to know which control unit is assigned to which port. If the Ethernet 
+switch is exchanged or the Ethernet cables in ports 1 to 4 have been connected in a different order, a 
+port configuration must be carried out with the diagnosis system ISTA. 
+
+A_ 
+
+Without a port configuration, Ethernet errors cannot be detected and errors can therefore not be 
+stored. 
+
+
+14 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.2.6. D-CAN 
+
+The D-CAN has a data transfer rate of 500 kBit/s. 
+
+2.3. Sub-bus systems 
+
+2.3.1. LIN-Bus 
+
+For a better overview, the LIN buses are divided up between several wiring diagrams for the G01. 
+
+
+15 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview in the door area 
+
+
+
+LN-a* 
+
+LM&m 
+
+Lfi-Bua 
+
+LNBm 
+
+in art 
+
+iM-a* 
+
+UN Bui 
+UN Bin 
+UN-toi 
+
+
+\SM 
+
+C< 
+
+
+
+® 
+
+m 
+
+
+
+© 
+
+
+
+LIN-Bus 
+
+
+
+16 
+
+
+90Z0-91H1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Exterior mirror, front passenger side 
+
+3 
+
+Memory seat, front passenger's side 
+
+4 
+
+Power window electronics, passenger's side front 
+
+5 
+
+Power window electronics, passenger’s side rear 
+
+6 
+
+Non-contact tailgate opening 
+
+7 
+
+Power window electronics, driver’s side rear 
+
+8 
+
+Power window electronics, driver's side front 
+
+9 
+
+Memory switch, driver’s side front 
+
+10 
+
+Switch block, driver's door 
+
+11 
+
+Exterior mirror, driver's side 
+
+
+17 
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for engine electrical system and voltage supply 
+
+ol® 
+
+
+
+® 
+
+
+1 n 
+
+& 
+
+
+ML? 
+
+
+
+
+® ® 
+
+
+LIN-Bus 
+
+
+18 
+
+
+TE17-0041 
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Active kidney grills 
+
+2 
+
+Electric fan 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Rear right power distribution box 
+
+5 
+
+Intelligent Battery Sensor (IBS) 
+
+6 
+
+Alternator 
+
+7 
+
+Digital Motor Electronics (DME) 
+
+
+19 
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for roof function center 
+
+
+
+© 
+
+
+□ 
+
+
+© 
+
+
+c« 
+
+
+©-&- 
+
+
+© 
+
+UN But 
+
+
+LIN-Bus 
+
+
+
+20 
+
+
+TE17-0043 
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+2 
+
+Inside mirror 
+
+3 
+
+Roof function center (FZD) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Interior lighting, rear 
+
+6 
+
+Siren with tilt alarm sensor (SINE) 
+
+
+21 
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for steering column switch cluster and operating units 
+
+
+
+LIN-Bus 
+
+
+22 
+
+
+TE17-0044 
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Operating unit, center console 
+
+3 
+
+Audio operating facility 
+
+4 
+
+HOD touch detection (Hands Off Detection) 
+
+5 
+
+Steering wheel module 
+
+6 
+
+Multifunction steering wheel buttons, right 
+
+7 
+
+Operating unit for light 
+
+8 
+
+Steering column switch cluster (SZL) 
+
+
+23 
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for integrated automatic heating/air conditioning system 
+
+
+
+© 
+
+
+
+
+
+
+IHKA l 
+
+
+
+© 
+
+□ 
+
+© 
+
+O 
+
+© 
+
+o 
+
+V, 
+
+<M>- 
+
+
+
+© 
+
+'• © 
+
+n -<«>- H(5> 
+
+
+© 
+
+© 
+
+
+
+< w > 
+
+
+
+® 
+
+
+
+LIN-Bus 
+
+
+24 
+
+
+TE17-0042.2 
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Blower motor 
+
+2 
+
+Operating unit, rear passenger compartment 
+
+3 
+
+Stepper motor for air distribution, rear passenger compartment 
+
+4 
+
+Stepper motor for air distribution, left 
+
+5 
+
+Stepper motor for stratification, left 
+
+6 
+
+Stepper motor for mixed air, left 
+
+7 
+
+Stepper motor for temperature, rear passenger compartment 
+
+8 
+
+Stepper motor for mixed air, right 
+
+9 
+
+Stepper motor for stratification, right 
+
+10 
+
+Stepper motor for air distribution, right 
+
+11 
+
+Stepper motor for defrost function 
+
+12 
+
+Stepper motor for fresh air/air recirculation function 
+
+13 
+
+Operating unit, air conditioning 
+
+14 
+
+Integrated automatic heating / air conditioning (IHKA) 
+
+
+2.3.2. Local CAN 
+
+In the G01 the following Local Controller Area Networks are available with the corresponding 
+equipment: 
+
+• Local CAN from the camera-based driver assistance system (KAFAS) to the Parking 
+Manoeuvring Assistant (PMA) 
+
+• Local CAN from the optional equipment system (SAS) to the radar sensor, front right (RSR) 
+
+• Local CAN from the optional equipment system (SAS) to the radar sensor, front left (RSL) and 
+lane change warning (secondary) (SWW2) 
+
+• Local CAN from the lane change warning (primary) (SWW) to the radar sensor, right (RSR), to 
+the radar sensor, left (RSL), and to the lane change warning (secondary) SWW2. 
+
+The control units on the local CAN are not displayed in the bus overview by the BMW diagnosis 
+system ISTA. Diagnosis takes place via the corresponding primary control unit. 
+
+The local CAN buses have a data transfer rate of 500 kBit/s. 
+
+
+25 
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.3.3. USB 
+
+The following USB interfaces are provided in the G01 depending on the vehicle equipment: 
+
+• USB interface in the center console (standard) 
+
+• USB interface in the center armrest 
+
+
+2.4. Diagnosis access OBD2 
+
+The vehicle diagnosis via D-CAN is effected using the OBD2 interface. The Ethernet access for the 
+vehicle programming is also located in the OBD2 interface. 
+
+
+26 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.1. Installation locations of control units 
+
+
+
+Installation locations of control units 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rear view camera (RFK) 
+
+2 
+
+Lane change warning (secondary) (SWW2) 
+
+3 
+
+Telematic Communication Box (TCB) 
+
+4 
+
+Top HiFi amplifier (AMPT) 
+
+5 
+
+Control unit for rear view camera and side view (TRSVC) 
+
+6 
+
+Remote control receiver (remote control service) 
+
+7 
+
+Active Sound Design (ASD) 
+
+8 
+
+Wireless Charging Station (WCA) (Location moved in front of cup holders in 
+center console, not under center arm rest) 
+
+9 
+
+Roof function center (FZD) 
+
+
+27 
+
+
+TE17-0045 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+Index 
+
+Explanation 
+
+10 
+
+Camera-based driver support systems (KAFAS) 
+
+11 
+
+High-beam assistant (FLA) 
+
+12 
+
+Instrument cluster (KOMBI) 
+
+13 
+
+Ethernet switch (ENS) 
+
+14 
+
+Optional equipment system (SAS) 
+
+15 
+
+Digital Motor Electronics (DME) 
+
+16 
+
+Dynamic Stability Control (DSC) 
+
+17 
+
+Frontal Light Electronics Right (FLER) 
+
+18 
+
+Radar Sensor Left (RSL) 
+
+19 
+
+Active Cruise Control (ACC) 
+
+20 
+
+Frontal Light Electronics Right (FLER) 
+
+21 
+
+Radar Sensor Right (RSR) 
+
+22 
+
+Electronic Power Steering (EPS) 
+
+23 
+
+Electronic transmission control (EGS) 
+
+24 
+
+Transfer box (VTG) 
+
+25 
+
+Headunit 
+
+26 
+
+Driver's seat module (SMFA) 
+
+27 
+
+Gear selector switch (GWS) 
+
+28 
+
+Integrated automatic heating / air conditioning (IHKA) 
+
+29 
+
+Body Domain Controller (BDC) 
+
+30 
+
+Controller (CON) 
+
+31 
+
+Front passenger seat module, (SMBF) 
+
+32 
+
+Advanced Crash Safety Module (ACSM) 
+
+33 
+
+Trailer module (AHM) 
+
+34 
+
+Power Control Unit (PCU) 
+
+35 
+
+Lane change warning (SWW) (primary) 
+
+36 
+
+Tailgate function module (HKFM) 
+
+37 
+
+Vertical Dynamic Platform (VDP) 
+
+38 
+
+Parking Manoeuvring Assistant (PMA) 
+
+
+28 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.2. Gateway 
+
+3.2.1. Body Domain Controller (BDC) 
+
+
+
+Body Domain Controller (BDC) 
+
+
+BDC functions 
+
+The Body Domain Controller (BDC) is responsible for the following functions: 
+
+• Gateway 
+
+• Electronic immobilizer 
+
+• Terminal control 
+
+• Central locking system 
+
+• Exterior lights 
+
+• Power windows 
+
+• Horn 
+
+• Interior light 
+
+• Wash/wipe system 
+
+• Vehicle data storage 
+
+• Data transfer for Condition Based Service (CBS). 
+
+Fuses in the BDC 
+
+The following components are protected by fuses in the BDC: 
+
+• Audio operating facility 
+
+• Operating facility for assist systems 
+
+• Operating unit for light 
+
+• Power windows 
+
+
+29 
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+• Heated rear window 
+
+• Tailgate function module 
+
+• Integrated automatic heating / air conditioning 
+
+• OBD2 interface 
+
+• Power Control Unit 
+
+• Rain-light-solar-condensation sensor 
+
+• Steering column switch cluster 
+
+• Telematic Communication Box 
+
+• Outside door handle electronics 
+
+• Vertical dynamics platform (electronics) 
+
+• Central locking system 
+
+• Wiper motor. 
+
+Relay in the BDC 
+
+The following relays are located in the BDC: 
+
+• Terminal 30F 
+
+• Power window regulator 
+
+• Central locking system 
+
+• Heated rear window 
+
+• Wiper motor 
+
+• Headlight cleaning system. 
+
+Gateway in the BDC 
+
+The central gateway module (ZGM) is integrated in the BDC. It is viewed as a control unit within a 
+control unit, in that the ZGM in the BDC. The task of the ZGM is to connect all the data bus systems 
+to each other. By connecting them in this way, it is possible to use information from the individual bus 
+systems on a generalized level. The central gateway module is able to implement different protocols 
+and speeds on other bus systems. The programming data for the control units is transmitted by 
+Ethernet to the vehicle via the ZGM. 
+
+LIN controller in the BDC 
+
+The BDC is the gateway for the following components at the local interconnect network bus: 
+
+• Exterior mirror, left and right 
+
+• Switch block, driver's door, front passenger door 
+
+• Steering column switch cluster 
+
+• Light switch 
+
+• Intelligent Safety button 
+
+
+30 
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+• Audio operating facility 
+
+• Inside mirror 
+
+• Rain-light-solar-condensation sensor 
+
+• Roof function center (interior lighting) 
+
+• Comfort seat, rear passenger compartment, left and right 
+
+• Operating unit, center console 
+
+• Power distribution box, rear. 
+
+The following control units are connected to the BDC via LIN, but the BDC has only a wake-up 
+function and not a gateway or primary function: 
+
+• Battery charging unit 
+
+• Intelligent battery sensor 
+
+• Electric fan 
+
+• Active air flap control 
+
+• Digital Motor Electronics. 
+
+
+31 
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.1. Overview of voltage supply 
+
+
+4.1.1. System wiring diagram 
+
+
+
+32 
+
+
+TE17-0047.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME) 
+
+2 
+
+Starter motor 
+
+3 
+
+Alternator 
+
+4 
+
+Power distribution box, engine compartment 
+
+5 
+
+Jump start terminal point 
+
+6 
+
+Auxiliary battery, engine compartment 
+
+7 
+
+Power distribution box, front right 
+
+8 
+
+Body Domain Controller (BDC) 
+
+9 
+
+Fuse in the Body Domain Controller 
+
+10 
+
+CAN terminator 
+
+11 
+
+Power distribution box, rear 
+
+12 
+
+Power Control Unit (PCU) 500 W 
+
+13 
+
+Battery power distribution box 
+
+14 
+
+Safety battery terminal 
+
+15 
+
+Battery 
+
+
+33 
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2. Components 
+
+4.2.1. Overview of luggage compartment 
+
+
+
+I 
+
+
+Battery 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution box, rear 
+
+2 
+
+Power Control Unit (PCU) 500 W 
+
+3 
+
+Power distribution box with safety battery terminal 
+
+4 
+
+Battery 
+
+
+The vehicle battery in the G01 is an AGM battery with 90 Ah. 
+
+
+34 
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.2. Overview of engine compartment 
+
+
+
+1 £ 
+
+Auxiliary battery, engine compartment 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution box, engine compartment 
+
+2 
+
+Auxiliary battery, engine compartment 
+
+3 
+
+Jump start terminal point 
+
+
+The auxiliary battery in the engine compartment of the G01 is an AGM battery with 50 Ah. 
+
+4.2.3. Battery 
+
+AGM batteries are used for the voltage supply in the G01. 
+
+There may be 1 or 2 batteries in the vehicle depending on the engine version and vehicle equipment. 
+
+• Starter battery in the luggage compartment with 90 Ah 
+
+• Auxiliary battery in the engine compartment with 50 Ah. 
+
+An auxiliary battery in the engine compartment is used to provide assistance for the vehicle electrical 
+system. 
+
+
+35 
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.4. Intelligent battery sensor 
+
+The IBS records the following data of the 12V battery: 
+
+• Voltage 
+
+• Current 
+
+• Pole temperature 
+
+The IBS performs the calculation and the evaluation of the information. The results are then forwarded 
+to the DME and BDC via LIN bus . 
+
+4.2.5. Safety battery terminal 
+
+
+
+Safety battery terminal 
+
+
+The safety battery terminal (SBK) is activated in the event of an accident of corresponding severity. 
+The voltage supply to the positive battery connection point in the engine compartment is interrupted 
+and the consumers connected to this are de-energized. The safety battery terminal is installed in the 
+power distribution box next to the battery. 
+
+4.2.6. Alternator 
+
+An alternator with increased efficiency is used in the G01. The increase in alternator efficiency is 
+achieved by reducing the losses in the rectifier. The loss-causing diodes are replaced by actively 
+activated MOSFET transistors. A reduction in fuel consumption is achieved by increasing the 
+efficiency. 
+
+Different alternators are used depending on the engine type and vehicle equipment. 
+
+
+36 
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.7. Integrated supply module 
+
+
+
+Integrated supply module 
+
+
+The engine control and its components are supplied with a 12 V voltage via the integrated supply 
+module. 
+
+4.2.8. Power distribution box, front right 
+
+
+
+Power distribution box, front right 
+
+
+A relay for terminal 30B is installed in the front right power distribution box. 
+
+Consumers are supplied with terminal 30 and terminal 30B and provided with corresponding fuse 
+protection by the front right power distribution box. 
+
+
+37 
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.9. Power distribution box, rear 
+
+
+£ 
+
+
+Q 
+
+
+Power distribution box, rear 
+
+The following relays are installed in the rear power distribution box: 
+
+• 2 Relay, terminal 30F 
+
+• 2 Relay, terminal 30B 
+
+• Relay, terminal 15N 
+
+• Relay for rear window heating. 
+
+All relays are bi-stable relays. The relays are activated by the Body Domain Controller via LIN. The 
+terminal 30B relay in the front right power distribution box is activated by the rear power distribution 
+box. 
+
+4.2.10. Body Domain Controller 
+
+The Body Domain Controller (BDC) is responsible for the terminal control. 
+
+A terminal 30F relay is installed in the BDC. 
+
+A number of consumers are supplied with terminal 30 and terminal 30F and provided with 
+corresponding fuse protection via the BDC. 
+
+4.2.11. PCU with vehicle electrical system assistance measure 
+
+BMW vehicles have a high energy consumption due to the many electrical consumers. As a result, 
+there is a high demand on the battery, particularly in phases in which the combustion engine is not 
+running and the alternator supplies no energy (e.g. engine start-stop phases). 
+
+In order to protect the vehicle battery, a DC/DC converter is installed in the Power Control Unit (PCU) 
+and an auxiliary battery in the engine compartment in the G01. 
+
+
+
+38 
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+The preconditions for the direction of the energy management are calculated from the use of the 
+vehicle. When the engine is running the auxiliary battery is charged from the conventional vehicle 
+electrical system. During the phases in which the combustion engine is not running, e.g. automatic 
+engine start-stop function, the energy is supplied from the auxiliary battery into the conventional 
+vehicle electrical system. 
+
+The Power Control Unit (PCU) contains a control unit which is connected to the PT-CAN2 and the 
+DC/DC converter with a power of 500 W. 
+
+
+39 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+5.1. Introduction 
+
+The terminal control in the G01 is identical to the terminal control of the G12. In the G01, the vehicle 
+is always in the right condition from the point of view of the customer. The terminals are controlled 
+via a customer-oriented condition management. The terminal control is dependent on the driving 
+conditions. 
+
+5.2. Vehicle conditions 
+
+The G01 vehicle may be in the following conditions: 
+
+• Parking 
+
+• Residing 
+
+• Driving 
+
+The different vehicle functions are possible depending on the relevant conditions. 
+
+Parking 
+
+• Customer not in the vehicle 
+
+• Vehicle secured or not used for a certain time 
+
+• Vehicle functions cannot be operated. 
+
+Residing 
+
+• Customer in the vehicle 
+
+• No driving readiness 
+
+• Functions that are relevant when the vehicle is stationary can be operated. 
+
+Driving 
+
+• Customer in the vehicle 
+
+• Driving readiness established 
+
+• All functions are available. 
+
+The driving conditions are changed by condition management, taking into account the customer 
+behavior. Additional information is also evaluated that may help to determine the vehicle condition, 
+e.g.: 
+
+• Door opening 
+
+• Door closing 
+
+• Operations in the vehicle. 
+
+
+40 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+The following diagram shows the changes between the vehicle conditions. 
+
+
+
+
+
+
+
+© ® ® ® 
+
+
+Vehicle conditions 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition PARKING 
+
+B 
+
+Transitional condition with stationary functions 
+
+C 
+
+Vehicle condition RESIDING 
+
+D 
+
+Transitional condition for establishing driving readiness, ending driving 
+readiness or Testing/Analysis/Diagnosis 
+
+E 
+
+Vehicle condition DRIVING 
+
+1 
+
+Unlock vehicle 
+
+2 
+
+Operation of start/stop button + brake pedal 
+
+3 
+
+Press START-STOP button 
+
+4 
+
+Locks vehicle 
+
+5 
+
+No activity of a vehicle user detected for 10 min 
+
+6 
+
+Extended press 
+
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Detailed overview of vehicle conditions. 
+
+
+
+Overview of vehicle conditions 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition DRIVING 
+
+B 
+
+Vehicle condition RESIDING 
+
+C 
+
+Vehicle condition PARKING 
+
+a 
+
+Transitional condition for ESTABLISHING/ENDING DRIVING READINESS, 
+CHECK/ANALYSIS/DIAGNOSIS 
+
+b 
+
+Transitional condition with STATIONARY FUNCTIONS 
+
+
+42 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Operation of start/stop button + brake pedal + valid remote control or valid ID 
+transmitter in the vehicle interior 
+
+2 
+
+Driving readiness established, terminal 15N (terminal 50) 
+
+3 
+
+Operation of start/stop button (three times within 0,8 s) + valid remote control 
+or valid ID transmitter in the vehicle interior 
+
+4 
+
+Terminal 15N 
+
+5 
+
+Operation of start/stop button + selector lever in Neutral 
+
+6 
+
+Undoing driver's seat belt (v < 0.1 km/h, driver's door opened, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+7 
+
+Door contact change (v < 0.1 km/h, driver's seat belt undone, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+8 
+
+Press start/stop button + vehicle is stationary or press start/stop button for at 
+least 1 s + driving speed >10 km/h (6 mph) or press start/stop button at least 
+three times within 4 s + driving speed >10 km/h (6 mph) 
+
+9 
+
+Press START-STOP button 
+
+10 
+
+Terminal 30B 
+
+11 
+
+Unlock vehicle 
+
+12 
+
+Residing interaction or stationary function interaction 
+
+13 
+
+Locks vehicle 
+
+14 
+
+No customer interaction for ten minutes 
+
+15 
+
+Extended press of headunit media button 
+
+16 
+
+Terminal 30F 
+
+
+43 
+
+
+
+
+
+
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Automatic switch-off 
+
+A 
+
+Doors/Key 
+
+i 1 15:17 
+
+
+Doors/Key 
+
+□ Relock automatically 
+
+Lock after pulling away 
+
+□ Unlock at end of journey 
+
+The vehicle is switched off after 
+
+the door is opened if no one is 
+
+left inside the vehicle. 
+
+
+
+
+| □ Switch off after door opening 
+
+
+
+□ Flash for lock/unlock 
+
+
+Automatic switch-off 
+
+
+Switch off after door opening: 
+
+In the menu "Doors/Keys", an immediate change from the vehicle condition RESIDING to the vehicle 
+condition PARKING can be activated. 
+
+If this option is activated, then the system will immediately change to the vehicle condition PARKING 
+when the driver's door is opened. The elimination of the after-running period in the residing vehicle 
+condition saves energy. 
+
+
+5.3. Power supply terminals 
+
+Control units in the vehicle must be supplied with power only when they are needed. The following 
+terminals are used in the G01: 
+
+• Terminal 15N 
+
+• Terminal 30B 
+
+• Terminal 30F 
+
+• Terminal 30 
+
+Terminal 15N supplies control units which are needed only when driving and which may be needed to 
+safely end a journey. After-run of 5 s starts at the transition from DRIVING to RESIDING. 
+
+Terminal 30B is used to supply control units that are needed in the stationary mode RESIDING and for 
+stationary functions where the customer is not in the vehicle. An after-run of 6 minutes starts at the 
+transition from RESIDING to PARKING, and terminal 30B is then switched off. 
+
+Terminal 30F is used to supply control units which must perform functions in PARKING condition. 
+Terminal 30F is normally switched on in PARKING condition, but may be switched off due to faults in 
+the vehicle electrical system. The terminal is switched off with an after-running period of 1 min if a fault 
+is detected. 
+
+
+44 
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Terminal 30 control units (e.g. alarm system) are always supplied with voltage and are also not 
+switched off in the event of a fault. 
+
+
+
+Terminal 30F 
+
+Terminal 30B 
+
+Terminal 15N 
+
+PARKING, vehicle 
+electrical system not 
+OK (fault in vehicle 
+electrical system) 
+
+off 
+
+off 
+
+off 
+
+PARKING, vehicle 
+electrical system OK 
+
+on 
+
+off 
+
+off 
+
+Stationary functions 
+(customer not in 
+vehicle) 
+
+on 
+
+on 
+
+off 
+
+RESIDING 
+
+on 
+
+on 
+
+off 
+
+DRIVING 
+
+on 
+
+on 
+
+on 
+
+
+Testing-analysis-diagnosis (PAD) mode 
+
+The vehicle condition testing-analysis-diagnosis is still present for diagnosis. All terminals are 
+switched on in this mode. This ensures that diagnosis can be performed with all control units. This 
+vehicle condition is displayed in the BMW diagnosis system ISTA. 
+
+Activation of the PAD mode: 
+
+• Operation of the start/stop button (three times within 0.8 s) + valid remote control or valid ID 
+transmitter in the vehicle interior 
+
+• By the BMW diagnosis system ISTA. 
+
+The PAD mode is exited by pressing the start/stop button or by closing the diagnosis with the 
+diagnosis system ISTA. 
+
+
+5.4. Partial network operation 
+
+Today's premium vehicles contain up to 70 control units with well over 100 microcontrollers which are 
+networked with each other. However, depending on the current vehicle condition or the vehicle user 
+requirement, not all convenience and assistance systems may always be needed. 
+
+It is possible to save energy, relieve the load on the battery and also prolong the battery life by targeted 
+deactivation and activation on control units which are not needed, so-called selective partial network 
+operation. 
+
+In vehicles with combustion engine, the electrical energy consumption is indirectly linked to the fuel 
+consumption via the alternator. As a result, selective deactivation of control units that are not currently 
+needed can contribute to reducing fuel consumption and thus also C0 2 emissions. 
+
+
+45 
+
+
+
+
+
+
+G01 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+5.4.1. Partial network operation when driving 
+
+If functions are not used or needed when driving, e.g.: 
+
+• Seat adjustment 
+
+• Trailer lighting (no trailer attached) 
+
+the corresponding control units can be switched off. 
+
+5.4.2. Prerequisites for partial network operation 
+
+The partial network primary in the Body Domain Controller calculates a partial network status on 
+the basis of the current vehicle condition and the required functions. The control units that are not 
+required are switched off by means of the corresponding bus messages. 
+
+5.4.3. Prerequisites of control units for partial network operation 
+
+Different transceivers are used in order to realize partial network operation in control units. These 
+transceivers are able to evaluate and interpret messages. This control unit remains switched off as 
+long as any bus communication takes place without a valid wake-up event for the corresponding 
+control unit being present. If a valid wake-up event for the corresponding control unit is sent on the 
+bus, the transceiver can activate the voltage regulator of the microcontroller and the control unit starts 
+up. The control unit is switched off by deactivation of the voltage regulator. 
+
+5.4.4. Partial network operation when the vehicle is stationary and the engine 
+is switched off 
+
+For example, if only the radio function is required when the engine is switched off, the bus systems 
+which are not required are switched off. If an operation is then carried out with the controller, for 
+example, the buses are woken up again. Once the operation has been carried out, the bus systems 
+which are not required are switched off again. Switching off the bus systems which are not required 
+along with the corresponding control units saves energy. The reduced energy consumption means, for 
+example, that it is possible to play the radio for significantly longer before it is switched off due to the 
+battery being too drained. 
+
+
+46 
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Handlerqualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

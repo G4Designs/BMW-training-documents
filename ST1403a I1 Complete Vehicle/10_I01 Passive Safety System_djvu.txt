@@ -1,0 +1,2221 @@
+Technical training. 
+
+Product information. 
+
+101 Passive Safety System 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST 1403a 2/1/2014 
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left-hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as the result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2013 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information contained in this document forms an integral part of the technical training of the 
+BMW Group and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: June 2013 
+
+BV-72/Technical Training 
+
+
+
+
+101 Passive Safety System 
+
+Contents 
+
+
+1. Introduction.1 
+
+1.1. The hidden protector.1 
+
+2. System Overview.2 
+
+2.1. System wiring diagrams.2 
+
+2.1.1. Bus overview.3 
+
+2.1.2. System wiring diagram.5 
+
+2.2. System overview.7 
+
+3. Functions.9 
+
+3.1. Functions of Advanced Crash Safety Module.9 
+
+3.2. Crash-relevant functions.9 
+
+3.2.1. Evaluating the sensor signals.10 
+
+3.2.2. Impact detection.10 
+
+3.2.3. Trigger time and trigger sequence.11 
+
+3.2.4. Activation of the ignition circuit output stages.11 
+
+3.2.5. Sending the crash message.12 
+
+3.2.6. Crash documentation.12 
+
+3.2.7. Emergency call function.12 
+
+3.3. System monitoring functions.13 
+
+3.3.1. System self test.13 
+
+3.3.2. Display of system operability.13 
+
+3.3.3. Cyclic monitoring.13 
+
+3.3.4. Fault display and fault storage.14 
+
+3.3.5. Output of faults (diagnosis).14 
+
+3.3.6. Acoustic and visual seat belt warning.14 
+
+3.3.7. Deactivating the airbag.15 
+
+4. System Components.16 
+
+4.1. Advanced Crash Safety Module.16 
+
+4.2. Sensors and switches.16 
+
+4.2.1. Lateral and longitudinal acceleration sensors, rear door.17 
+
+4.2.2. Door airbag sensor (pressure).17 
+
+4.2.3. Front sensor.18 
+
+4.2.4. Sensors in the ACSM.19 
+
+4.2.5. CIS mat.20 
+
+4.2.6. Seat belt buckle switch.20 
+
+4.2.7. Emergency call button.21 
+
+4.2.8. Seat-position sensors.21 
+
+4.3. Actuators.22 
+
+4.3.1. Overview.22 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+Contents 
+
+
+4.3.2. Driver's airbag.23 
+
+4.3.3. Front passenger airbag.24 
+
+4.3.4. Knee airbag.25 
+
+4.3.5. Head airbag.26 
+
+4.3.6. Side airbag.26 
+
+4.3.7. Automatic tensioner with adaptive force limiter.28 
+
+4.3.8. Safety battery terminal.28 
+
+4.3.9. Airbag indicator light.30 
+
+4.3.10. Seat belt warning light.30 
+
+4.3.11. Indicator lamp for front passenger airbag deactivation.31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+1. Introduction 
+
+1.1. The hidden protector 
+
+The passive safety system of the 101 is based on the objectives and characteristics of current BMW 
+models. The passive safety system fulfills all worldwide legislative requirements. 
+
+The restraint systems ensure that the risk of injury to the occupants of the vehicle involve in a collision 
+is reduced. 
+
+The 4th generation Advanced Crash Safety Module (ACSM) is used as the central airbag control unit 
+for the passive safety system in the 101. In comparison to other current series, with the passive safety 
+system of the 101 the central sensor system is integrated inside the ACSM control unit and not in the 
+Integrated Chassis Management (ICM). This is possible with the 101 as the ACSM is located in the 
+center of vehicle. 
+
+The ACSM 4 of the 101 is for the first time installed on the FlexRay bus instead of the PT-CAN as in 
+previous vehicles. The sensor data of the central sensor system which was previously provided by the 
+ICM can be transmitted directly by the ACSM via FlexRay to the DSC. The DSC processes the sensor 
+data and makes it available to other bus users. 
+
+
+
+1 
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+2.1. System wiring diagrams 
+
+The following bus overview shows an overview of the vehicle circuit structure of the 101 and 
+incorporation of the ACSM 4 in the FlexRay. 
+
+
+2 
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+2.1.1. Bus overview 
+
+
+is 
+
+
+ms 
+
+
+
+(SB0 
+
+llil 
+\ \ i 
+
+III II 
+IU 
+
+
+111 
+
+
+3 
+
+
+TE12*0776.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Control units with wake-up authorization 
+
+2 
+
+Start-up node control units for starting and synchronizing the FlexRay bus 
+system 
+
+3 
+
+Wake-up line 
+
+4 
+
+Power socket 
+
+ACSM 
+
+Advanced Crash Safety Module (ACSM 4) 
+
+AMP 
+
+Amplifier 
+
+BDC 
+
+Body Domain Controller 
+
+CON 
+
+Controller 
+
+CSM 
+
+Car Sharing Module 
+
+DSC 
+
+Dynamic Stability Control 
+
+EDME 
+
+Electrical Digital Motor Electronics 
+
+EME 
+
+Electric Motor Electronics 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FLER 
+
+Front Light Electronics Right 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector 
+
+Head unit 
+
+Headunit (Headunit Basis or Headunit High) 
+
+IHKA 
+
+Integrated automatic heating / air-conditioning 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KLE 
+
+Convenience charging electronics 
+
+KOMBI 
+
+Instrument panel 
+
+LIM 
+
+Charging interface module 
+
+PDC 
+
+Park Distance Control 
+
+PMA 
+
+Parking Maneuvering Assistant 
+
+RDME 
+
+Range Extender Digital Engine Electronics 
+
+REME 
+
+Range Extender Electrical Machine Electronics 
+
+SAS 
+
+Optional equipment system 
+
+SME 
+
+Battery management electronics 
+
+TBX 
+
+Touchbox 
+
+TCB 
+
+Telematic Communication Box 
+
+TFE 
+
+Hybrid pressure refuelling electronic control unit 
+
+TRSVC 
+
+Control unit for reversing camera, Top View and SideView 
+
+ZGM 
+
+Central Gateway Module 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+
+2.1.2. System wiring diagram 
+
+
+
+101 System wiring diagram for US version of vehicles 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, left 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Safety battery terminal 
+
+4 
+
+Airbag front sensor, right 
+
+5 
+
+Knee airbag, front passenger 
+
+6 
+
+Front passenger airbag, two-stage with active vent valve 
+
+7 
+
+Airbag sensor, door, right (pressure) 
+
+8 
+
+Indicator lamp for front passenger airbag deactivation in roof function center 
+
+9 
+
+Head airbag, front passenger 
+
+10 
+
+Side airbag, front passenger 
+
+11 
+
+Seat belt buckle contact, front passenger 
+
+12 
+
+Seat-position sensor, front passenger 
+
+13 
+
+CIS mat 
+
+14 
+
+Automatic tensioner, front passenger 
+
+15 
+
+Adaptive belt force limiter, front passenger 
+
+16 
+
+Acceleration sensor, right rear door 
+
+17 
+
+Telematic Communication Box (TCB) 
+
+18 
+
+Electric motor electronics (EME) 
+
+19 
+
+Range Extender Electrical Machine Electronics (REME) 
+
+20 
+
+Acceleration sensor, left rear door 
+
+21 
+
+Adaptive belt force limiter, driver's side 
+
+22 
+
+Automatic tensioner, driver 
+
+23 
+
+Seat-position sensor, driver 
+
+24 
+
+Seat belt buckle contact, driver 
+
+25 
+
+Side airbag, driver's side 
+
+26 
+
+Advanced Crash Safety Module (ACSM 4) 
+
+27 
+
+Head airbag, driver 
+
+28 
+
+Airbag sensor, door, left (pressure) 
+
+29 
+
+Driver's airbag, two-stage 
+
+30 
+
+Knee airbag, driver 
+
+31 
+
+Clock spring 
+
+32 
+
+Instrument panel (KOMBI) 
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+
+2.2. System overview 
+
+
+
+System overview for US market vehicles 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, right 
+
+2 
+
+Safety battery terminal 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Front passenger airbag, two-stage with active vent valve 
+
+5 
+
+Airbag sensor, door, right (pressure) 
+
+6 
+
+Seat-position sensor, front passenger 
+
+7 
+
+Acceleration sensor, right rear door 
+
+8 
+
+Adaptive belt force limiter, front passenger 
+
+9 
+
+Side airbag, front passenger 
+
+10 
+
+Indicator lamp for front passenger airbag deactivation in roof function center 
+
+
+7 
+
+
+1018 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+11 
+
+Head airbag, front passenger 
+
+12 
+
+Range Extender Electrical Machine Electronics (REME) 
+
+13 
+
+Head airbag, driver 
+
+14 
+
+Electric motor electronics (EME) 
+
+15 
+
+Telematic Communication Box (TCB) 
+
+16 
+
+Acceleration sensor, left rear door 
+
+17 
+
+Adaptive belt force limiter, driver's side 
+
+18 
+
+Side airbag, driver's side 
+
+19 
+
+Airbag sensor, door, left (pressure) 
+
+20 
+
+Seat belt buckle contact, front passenger 
+
+21 
+
+Seat belt buckle contact, driver 
+
+22 
+
+Advanced Crash Safety Module (ACSM 4) 
+
+23 
+
+Driver's airbag, two-stage 
+
+24 
+
+Clock spring in the steering column switch cluster 
+
+25 
+
+Seat-position sensor, driver 
+
+26 
+
+Instrument panel (KOMBI) 
+
+27 
+
+Knee airbag, driver 
+
+28 
+
+Knee airbag, front passenger 
+
+29 
+
+Airbag front sensor, left 
+
+
+8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+3.1. Functions of Advanced Crash Safety Module 
+
+The function of the Advanced Crash Safety Module is to permanently evaluate all sensor signals in 
+order to identify a crash situation. As a result of the sensor signals and their evaluation, the ACSM 
+identifies the direction of the crash and the severity of the impact. 
+
+The ACSM evaluates the information from the sensors then forwards corresponding measures for 
+selective activation of the necessary restraint systems. 
+
+The ACSM also monitors the system itself and indicates when it is ready for operation by switching off 
+the airbag indicator light. 
+
+If a fault occurs during operation this is stored in a fault memory and can be read out for diagnosis 
+purposes. 
+
+If a collision is detected, a crash message is sent to the other bus users in the data bus network 
+as notification. The relevant control units respond to this signal by executing their own activities 
+according to the severity of the crash. 
+
+The activities include: 
+
+• Unlocking of the door locks 
+
+• Activating the hazard warning flasher 
+
+• Switching on the interior light 
+
+• Making an emergency call 
+
+• Switching off the high-voltage system 
+
+• Switching off the electrical machine of the range extender. 
+
+An additional function of the ACSM is the acoustic seat belt warning that reminds the driver and 
+front passenger using visual and acoustic signals to fasten their seat belts. Seat belt buckle switches 
+are used to identify whether the driver and/or the front passenger have their seat belts fastened. 
+Information on occupancy of the front passenger seat is also included for the acoustic seat belt 
+warning. In US market vehicles, the position of the driver and the front passenger seat is also 
+monitored. 
+
+The functions of the ACSM generally belong to one of the following areas: 
+
+• Crash-relevant functions 
+
+• System monitoring functions 
+
+• Additional convenience functions. 
+
+3.2. Crash-relevant functions 
+
+The ACSM must fulfill the following crash-relevant functions: 
+
+• Evaluating the sensor signals 
+
+• Impact detection 
+
+• Determining actuators to be activated 
+
+
+9 
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+
+• Specifying the trigger time and trigger sequence 
+
+• Activation of the ignition circuit output stages 
+
+• Sending the crash message to all bus users 
+
+• Crash documentation 
+
+• Emergency call function. 
+
+3.2.1. Evaluating the sensor signals 
+
+The sensors serve to identify and verify front-end, side-on and rear-end crashes and also as roll-over 
+detection. 
+
+The sensors are either located inside the ACSM or are directly connected to the module where their 
+signals are evaluated and processed. 
+
+3.2.2. Impact detection 
+
+The vehicle is equipped with the following sensors: 
+
+• one lateral and one longitudinal acceleration sensor in the rear doors (green) 
+
+• one airbag sensor to monitor the pressure in each of the front doors (blue) 
+
+• one lateral and one longitudinal acceleration sensor in the ACSM (yellow) 
+
+• one yaw rate sensor in the ACSM (yellow) 
+
+• one vertical acceleration sensor in the ACSM (yellow) 
+
+• one airbag front sensor beside each headlight (red). 
+
+The airbag sensors in the car doors assist with the identification of a side-on crash. 
+
+The airbag front sensors assist with the identification of a head-on crash and the corresponding 
+severity. 
+
+
+10 
+
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+
+O*—i 
+
+
+O *— 1 
+
+
+101 Sensors in US version of vehicles 
+
+
+f 
+
+A 
+
+
+
+
+
+
+o 
+
+
+3.2.3. Trigger time and trigger sequence 
+
+The ACSM uses the values transmitted by the sensors to determine the direction and severity of the 
+crash. 
+
+In the case of a head-on crash, corresponding high acceleration values from the longitudinal 
+acceleration sensors in the rear doors and ACSM respectively must be detected for example. 
+
+An algorithm determines the severity and direction of the crash based on the accelerations. This 
+information is used to assist calculation of the trigger times and sequence in which the restraint 
+systems are activated. 
+
+A possible imminent rollover is also detected and the appropriate protection systems are energized. 
+
+3.2.4. Activation of the ignition circuit output stages 
+
+The ACSM is supplied in the BDC with terminal 30B. The ACSM is in offline mode with terminal 30B. 
+This means that it is active on the data bus and can perform all diagnostic functions. Triggering of the 
+ignition circuits is blocked and is only enabled as of terminal 15 once the system self-test is complete. 
+The ACSM is also ready for ignition, even with the logical terminal R. 
+
+The ignition capacitors are recharged via a switching controller. These ignition capacitors make the 
+firing energy available in the event of a crash. If the voltage supply is interrupted during a crash, the 
+ignition capacitors serve briefly as an energy reserve. 
+
+The ignition circuit output stages consist of a high-side and a low-side power switch. The high-side 
+power switch connects the ignition voltage, while the low-side power switch connects to the ground. 
+The ignition circuit output stages are controlled by a microcontroller. 
+
+
+The high-side and low-side power switches also serve to check the ignition circuits during the system 
+self-test. 
+
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+
+3.2.5. Sending the crash message 
+
+In the event of a collision involving activation of the restraint systems, the ACSM sends a crash 
+message to the bus users in the data bus network. 
+
+The activation of the Telematic Communication Box (TCB) is effected parallel via a direct single-wire 
+connection. 
+
+The activation of the range extender electrical machine electronics (REME) and the electrical machine 
+electronics (EME) is effected by an additional direct two-wire connection. 
+
+As a result, the respective control units perform the following functions depending on the crash 
+severity: 
+
+
+Function 
+
+Control unit 
+
+Unlock central locking system 
+
+Body Domain Controller 
+
+Switch on hazard warning flashers 
+
+Body Domain Controller 
+
+Switch on interior light 
+
+Body Domain Controller 
+
+Transmit emergency call 
+
+Telematic Communication Box 
+
+Switch off high-voltage system 
+
+Electric motor electronics 
+
+Switch off electrical machine of the range 
+extender 
+
+Range extender electrical machine electronics 
+
+
+3.2.6. Crash documentation 
+
+In the event of a collision where one or more actuators are activated, a crash entry is stored in a non¬ 
+erasable memory. After five crash entries, a non-erasable fault entry is stored in the fault code entry 
+together with the information that the five crash messages have been saved. The airbag indicator light 
+also lights up continuously. 
+
+A_ 
+
+The five crash entries could also be stored during the course of an accident. Each crash entry 
+is assigned a system time. The control unit remains ignitable even after five crash entries. The 
+crash entries cannot be erased and serve the purpose of subsequent device diagnosis. After 
+the fifth crash entree, the control unit must be replaced. 
+
+
+3.2.7. Emergency call function 
+
+The emergency call functions are available with ConnectedDrive Services. This means an appropriate 
+service provider with a call center must be available. A telephone network must also be available in 
+order to be able to make an emergency call. 
+
+Manual emergency call 
+
+Drivers who are not directly involved in the accident can use the manual emergency call to request 
+assistance. 
+
+The emergency call button is located in the roof function center and is connected to the TCB directly. 
+12 
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+
+Voice contact with the relevant service provider for the country is established by pressing the 
+emergency call button. The voice contact is indicated by a flashing LED in the switch. 
+
+Automatic emergency call 
+
+The ACSM sends a message to the TCB in the event of an accident with corresponding crash severity. 
+The TCB sends an emergency call, and also the location of the vehicle if available. 
+
+Attempts are made at the same time to establish a voice contact with the occupants of the vehicle 
+in order to obtain more detailed verbal information about the accident (e.g. condition of occupants). 
+Further rescue operations can be initiated accordingly. 
+
+
+3.3. System monitoring functions 
+
+The ACSM has the following system monitoring functions: 
+
+• System self-test (pre-drive check) 
+
+• Display of system operability 
+
+• Cyclic monitoring 
+
+• Fault display and fault storage 
+
+• Output of faults (diagnosis) 
+
+• Acoustic and visual seat belt warning 
+
+• Deactivation of the front passenger airbag and side airbag and knee airbag . 
+
+
+3.3.1. System self test 
+
+The ACSM performs a system self test from terminal 15. The airbag indicator light is energized for 
+roughly five seconds during the system self test. 
+
+Once the system self test is complete and no faults have been identified, the airbag indicator light 
+goes out and the system is ready to operate. 
+
+3.3.2. Display of system operability 
+
+The airbag indicator light in the instrument cluster goes out to indicate that the ACSM is ready for 
+operation. 
+
+3.3.3. Cyclic monitoring 
+
+Once the system self-test has been successfully concluded and the system is ready for operation, a 
+cyclic monitoring procedure is performed for fault monitoring purposes. This monitoring serves the 
+internal diagnosis of the control unit and overall airbag system. Monitoring takes place continuously 
+from terminal 15. It is also continued when the logical terminal R is reached. 
+
+
+13 
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+
+3.3.4. Fault display and fault storage 
+
+The ACSM has a non-volatile fault memory. The airbag indicator light lights up to indicate a fault entry. 
+Events, such as the activation of an airbag or automatic tensioner, are also stored in the fault memory. 
+
+A 
+
+if the fault memory contains the entry that the restraint system has been activated, this 
+only means the ignited restraint system is not available for further activation and not that it 
+malfunctioned during the crash. 
+
+
+3.3.5. Output of faults (diagnosis) 
+
+The fault memory can be read out via the diagnostic interface with the assistance of the Integrated 
+Service Technical Application (ISTA) in the BMW diagnosis system. After repairing the faults or after 
+renewing activated components, the fault memory can be cleared with the diagnosis command "Clear 
+fault memory". 
+
+3.3.6. Acoustic and visual seat belt warning 
+
+An acoustic and visual seat belt warning is a standard feature of all vehicles equipped with the ACSM. 
+The ACSM records whether or not the driver or front passenger have fastened their seat belts. If they 
+have not, an acoustic and visual warning is output to remind them to fasten their seat belts. Both seat 
+belt buckle switches are monitored separately. 
+
+
+14 
+
+
+
+
+101 Passive Safety System 
+
+3. Functions 
+
+3.3.7. Deactivating the airbag 
+
+CIS seat mat 
+
+The airbag is deactivated automatically in order to satisfy the regulations of the National Highway 
+Traffic Safety Administration (NHTSA). When the child seats listed in the regulation are occupied by a 
+child this must lead to deactivation of the airbag. 
+
+A seat occupancy mat is used on the front passenger seat for the purpose of occupancy detection and 
+classification of occupants in the front passenger seat. In the 101 a capacitive interior sensing floor mat 
+(CIS floor mat) is used. 
+
+The CIS mat is made up of two elements: A sensor wire, which runs parallel to the seat heating in 
+the seat cushion and an evaluation unit. The CIS mat measures the capacity and ohmic resistance 
+between the sensor wire (anode) and the vehicle ground (cathode) at a frequency of 120 kHz. The 
+CIS mat determines from the change in capacity and resistance whether the front passenger seat is 
+occupied by an adult or a child in a child seat. 
+
+The deactivation of the front passenger airbag, the side airbag and knee airbag on the front passenger 
+side is signalled by the indicator lamp for front passenger airbag deactivation. 
+
+The indicator lamp for front passenger airbag deactivation in the roof function center lights up if 
+a child seat with child for e.g. a child restraint system that has been tested in accordance with the 
+NHTSA regulations and is holding a small child was detected on the front passenger seat or if the front 
+passenger seat is unoccupied. 
+
+The display brightness is controlled by automatic regulation of the display illumination. 
+
+
+15 
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.1. Advanced Crash Safety Module 
+
+The ACSM is located in the center console. 
+
+
+
+101 ACSM location 
+
+
+Index 
+
+Explanation 
+
+1 
+
+ACSM control unit 
+
+
+Thanks to the central location of the ACSM the central sensor system which was previously housed in 
+the ICM was able to be integrated in the ACSM. 
+
+
+4.2. Sensors and switches 
+
+The following sensors and switches are installed: 
+
+• Lateral and longitudinal acceleration sensors in ACSM 
+
+• Yaw rate sensor in the ACSM 
+
+• Vertical acceleration sensor in the ACSM 
+
+• Sensors for lateral and longitudinal acceleration in the rear doors 
+
+• One airbag sensor in each of the front doors for pressure 
+
+• One upfront sensor beside both headlights 
+
+• CIS mat with occupant classification 
+
+• Seat belt buckle switch 
+
+• Seat-position sensor, driver's side 
+
+• Seat-position sensor, front passenger 
+
+• Emergency call button 
+
+
+16 
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.2.1. Lateral and longitudinal acceleration sensors, rear door 
+
+The lateral and longitudinal acceleration sensors in the rear doors assist with the identification of 
+head-on crashes, side-on crashes and rear-end crashes. 
+
+The rear door airbag sensor consists of a longitudinal acceleration sensor and a lateral acceleration 
+sensor. The acceleration sensors measure both the acceleration and the deceleration in the X and Y 
+directions. The resultant from the X and Y signals is decisive in identifying the direction of the crash. 
+The airbag sensors in the rear doors assist with the identification of head-on, side-on and rear-end 
+crashes. The rear door airbag sensors on the left and right are of identical design and are allocated by 
+way of mechanical coding during installation. 
+
+
+
+101 lateral and longitudinal acceleration sensors in the rear door 
+
+
+4.2.2. Door airbag sensor (pressure) 
+
+Pressure sensors are installed in the driver and front passenger doors. Side crashes are identified with 
+the assistance of the airbag sensors. In addition to the lateral acceleration values that are present, the 
+pressure in the door cavity also increases in the event of a side-on crash. 
+
+The airbag sensors in the doors serve to verify the plausibility of the acceleration signals from the rear 
+door airbag sensors and the ACSM when a side crash is detected. The airbag sensors are situated in 
+the inner panel of the doors and measure the increase in pressure in the event of a side collision. In the 
+event of a side collision with the door, the outer skin is pressed inward, thus reducing the door interior 
+and increasing the inner pressure. This pressure change is measured by the airbag sensors. The 
+
+
+17 
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+airbag sensor also includes electronics, in addition to the pressure sensor, that digitize the pressure 
+readings and transmit them to the ACSM. The data transfer is effected analogue to the airbag sensors 
+in the rear doors. The pressure readings are evaluated in the ACSM. 
+
+
+
+101 Door airbag sensor (pressure) 
+
+
+4.2.3. Front sensor 
+
+Two airbag front sensors are installed beside the headlights. The measured values are forwarded to 
+the ACSM where they are evaluated. 
+
+The airbag front sensors on the left and right assist with the identification of a head-on crash. 
+
+They deliver additional information to the ACSM on the characteristics and severity of the collision. 
+Each sensor contains an acceleration sensor for recording the deceleration, signal processing 
+technology and electronics for data transfer. The measured values are sent in the form of a message to 
+the ACSM and are used in the calculation of the algorithm. 
+
+
+18 
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+«r 
+
+
+
+101 Front sensor 
+
+
+4.2.4. Sensors in the ACSM 
+
+In the 101 the central sensor system in integrated in the ACSM control unit. The ACSM contains a 
+longitudinal and lateral acceleration sensor, a vertical acceleration sensor and a yaw rate sensor for 
+impact detection. The ACSM also includes a longitudinal and lateral acceleration sensor and a yaw 
+sensor for the driving dynamics control. 
+
+The sensor data for impact detection are evaluated in the ACSM and helps identify side-on, rear-end 
+or head-on crashes and assists with roll-over detection. The sensor data not yet evaluated for the 
+driving dynamics control is sent to the DSC control unit via FlexRay, where it is processed. 
+
+
+19 
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+101 ACSM 
+
+
+Index 
+
+Explanation 
+
+1 
+
+ACSM control unit 
+
+
+4.2.5. CIS mat 
+
+The capacitive interior sensing mat (CIS mat) is fitted in the front passenger seat instead of the seat 
+occupancy mat. The CIS mat can detect whether the front passenger seat is occupied by an adult or a 
+child in a child seat. The deactivation of the front passenger airbag and side airbag and knee airbag on 
+the front passenger side is signalled by the indicator lamp for front passenger airbag deactivation. 
+
+4.2.6. Seat belt buckle switch 
+
+The seat belt buckle switches are located in the seat belt buckles of the driver and front passenger 
+seat. 
+
+The seat belt buckle switch detects whether the seat belt buckle tongue is in the seat belt buckle. The 
+ACSM supplies power to the sensors and performs the evaluation. 
+
+From terminal 15, the seat belt buckle switch is permanently monitored and used for the visual and 
+acoustic seat belt warning and also to determine which restraint systems are triggered. 
+
+
+20 
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+101 Seat belt buckle switch 
+
+
+4.2.7. Emergency call button 
+
+The emergency call button is located in the roof function center. 
+
+
+
+101 Roof function center with emergency call button 
+
+4.2.8. Seat-position sensors 
+
+The job of the seat-position detector is to distinguish between a relatively small person and a person 
+of normal height within the lengthways adjustment range of the seat. This detection is another 
+technical feature aimed at increasing the safety of the occupants. The deployment of the three airbag 
+stages is then adjusted to the driver's/front passenger's seat position. 
+
+The seat-position detector takes the form of a 2-wire hall effect sensor and is supplied with power via 
+the ACSM control unit. The current level of the seat-position sensor changes depending on the seat 
+position. 
+
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.3. Actuators 
+
+4.3.1. Overview 
+
+The following actuators are installed in the 101: 
+
+• Two-stage driver's airbag 
+
+• Two-stage driver's airbag with active vent valve 
+
+• Knee airbag on front left and right 
+
+• Head airbag on left and right 
+
+• Side airbag on front left and right 
+
+• Automatic tensioner with adaptive force limiter 
+
+• Safety battery terminal. 
+
+In addition, the following indicator lights inform the vehicle occupants about the condition of the safety 
+systems: 
+
+• Airbag indicator light 
+
+• Seat belt warning light 
+
+• Indicator lamp for front passenger airbag deactivation. 
+
+The following graphic shows the airbags in the activated state. Depending on the type of crash, only 
+certain airbags are activated. 
+
+
+
+101 Airbags 
+
+The familiar three-point seat belts are used as the seat belt systems for all seats in the 101. 
+
+
+22 
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+101 Seat belt 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt buckle 
+
+2 
+
+Automatic tensioner 
+
+
+4.3.2. Driver's airbag 
+
+A two-stage generator is used to activate the stages at short or long time differences, depending on 
+the severity of the crash detected and taking into consideration the seat position. 
+
+
+23 
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+© © 
+
+
+
+101 Driver's airbag 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition circuit, stage 1 
+
+2 
+
+Ignition circuit, stage 2 
+
+
+4.3.3. Front passenger airbag 
+
+The purpose of the front passenger airbag is to reduce the risk of accident to the front passenger in 
+the event of a front-end crash. The front passenger airbag is located in the dashboard. When the front 
+passenger airbag expands, the dashboard tears open at defined points. The front passenger airbag of 
+the 101 is not supported at the windshield like in other BMW vehicles, but only at the dashboard. 
+
+A two-stage generator is used to activate the stages at short or long time differences, depending on 
+the severity of the crash detected and taking into consideration the seat position. 
+
+The front passenger airbag features an active vent valve. 
+
+
+24 
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+101 Front passenger airbag 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition circuit for active vent valve 
+
+2 
+
+Ignition circuit, stage 1 
+
+3 
+
+Ignition circuit, stage 2 
+
+
+4.3.4. Knee airbag 
+
+A knee airbag is also required on the driver's side and front passenger side to control the forwards 
+displacement of the occupant(s) in the event of a front-end crash. 
+
+
+
+101 Knee airbag 
+
+
+25 
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.3.5. Head airbag 
+
+Head airbags are installed in the 101 to protect the occupants' heads in the event of a side collision. 
+
+The head airbag extends from the A-pillar to the C-pillar and covers the entire area of the side 
+windows. It expands between the occupants and side structure. 
+
+System features: 
+
+• Extended covered area across all front and rear side windows 
+
+• Protection of occupants from glass splinters 
+
+• Covered area for different-sized occupants optimized. 
+
+
+
+101 Head airbag 
+
+
+4.3.6. Side airbag 
+
+As with all current models, the side airbag at the front ignites out of the front seat backrest. 
+
+The side airbags and gas generators are in a plastic housing, the airbag module. This is installed in the 
+front seat backrest and is concealed by the seat cover. 
+
+If activated, the side airbag emerges outwards from the backrest frame and spreads between the side 
+structure and occupant. 
+
+A_ 
+
+It is important to ensure that no additional seat covers are fitted as they would greatly impair the 
+function of the side airbag, or even immobilize it altogether. 
+
+
+26 
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+
+m 
+
+o 
+
+
+Xi 
+
+UJ 
+
+
+101 Seat with side airbag 
+
+
+
+Index 
+
+Explanation 
+
+
+1 
+
+Side airbag 
+
+
+
+27 
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.3.7. Automatic tensioner with adaptive force limiter 
+
+
+
+101 Automatic tensioner with adaptive force limiter 
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of ignition circuit, automatic tensioner 
+
+2 
+
+Connection of ignition circuit, adaptive force limiter 
+
+
+An automatic tensioner with adaptive force limiter for the driver and front passenger is used. The gas 
+generator-assisted automatic tensioner ensures that the seat belt strap is reeled in to reduce belt slack 
+prior to forwards displacement of the occupants. 
+
+The adaptive force limiter switches from a high level force to a low level force depending on the 
+position of the seat with the assistance of a gas generator in order to reduce the retaining force of the 
+seat belt during the crash depending on the size of the occupant. The further forward the seat is, the 
+earlier the changeover takes place. 
+
+When properly timed with the airbag, it ensures the kinetic energy acting on the occupants is more 
+evenly dissipated for the duration of the head-on collision. 
+
+4.3.8. Safety battery terminal 
+
+The safety battery terminal is triggered at different thresholds when the ACSM detects a front-end, 
+side-on or rear-end crash of sufficient severity. The following lines are separated pyrotechnically: 
+
+
+28 
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+• Battery positive wire for the electrical machine electronics (EME) 
+
+• Battery positive wire for the integrated supply module (in vehicles with range extender) 
+
+• Terminal 30C for battery management electronics (SME). 
+
+In the event of a missing signal from terminal 30C, the SME performs a quick shut-down of the high- 
+voltage system. 
+
+The safety battery terminal is located directly at the positive terminal of the battery. The safety battery 
+terminal is encased completely in plastic so that in the event of separation no sparks get outside the 
+case. 
+
+Even though the safety battery terminal has been disconnected, a voltage supply to all safety-relevant 
+consumers such as hazard warning flashers, interior light, airbag and telephone (including emergency 
+call) is ensured. 
+
+
+
+101 Safety battery terminal 
+
+
+29 
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+4.3.9. Airbag indicator light 
+
+The airbag indicator light is located on the instrument panel. The airbag indicator light lights up then 
+goes out during the pre-drive check to signal readiness of the ACSM and passive safety systems. The 
+airbag indicator light is controlled by a message on the FlexRay from the ACSM via the BDC to the 
+instrument cluster. The instrument panel receives a message cyclically. If the message remains off, the 
+airbag indicator light is activated. 
+
+
+
+© 
+
+101 Airbag indicator light 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag indicator light 
+
+
+4.3.10. Seat belt warning light 
+
+A visual and audible warning is issued if the seat belt is not fastened or is unbuckled during the 
+journey. 
+
+
+
+$105 
+
+10 5 
+
+016 
+
+
+
+ECO 
+
+107 km 
+
+eOK'^ 
+
+—1 1: 
+
+
+n 
+
+
+(b 
+
+101 Seat belt warning light 
+
+
+30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 Passive Safety System 
+
+4. System Components 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt warning light 
+
+
+4.3.11. Indicator lamp for front passenger airbag deactivation 
+
+The indicator lamp for front passenger airbag deactivation in the 101 is in the roof function center. The 
+indicator lamp for front passenger airbag deactivation is automatically activated if the CIS mat detects 
+a small child in a child seat or if the front passenger seat is unoccupied. 
+
+The brightness of the indicator lamp for front passenger airbag deactivation is controlled via the 
+automatic brightness control of the display illumination. 
+
+
+
+31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Qualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

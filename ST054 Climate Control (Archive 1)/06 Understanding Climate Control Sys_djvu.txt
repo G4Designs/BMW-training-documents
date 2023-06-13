@@ -1,0 +1,3591 @@
+TABLE OF CONTENTS 
+
+
+Subject Page 
+
+Introduction.2 
+
+Inputs, Processing, and Outputs .2 
+
+Temperature Sensor Monitoring .5 
+
+The “Y” Factor.6 
+
+Stepper Motor Operation.9 
+
+“Conventional” Stepper Motors.10 
+
+“Smart” Stepper Motors.11 
+
+Stepper Motor Location.16 
+
+
+Calibration Run 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+INTRODUCTION 
+
+
+Several general system operation concepts apply to both the IHKR and IHKA Climate 
+Control Systems. These concepts should be familiar to you before you begin to learn about 
+the specifics of the IHKR and IHKA systems. 
+
+The general system operation concepts are: 
+
+• Inputs, Processing, Outputs (IPO) 
+
+• Temperature Sensor Monitoring 
+
+• The “Y- Factor” 
+
+• Stepper Motor Operation 
+
+
+INPUTS, PROCESSING, OUTPUTS 
+
+
+All modern, microprocessor-controlled 
+systems use various sensors, switches, 
+voltage signal circuits, ground signal 
+circuits, etc. to provide information to a 
+system control module. These sensors, 
+switches, and other components are 
+known as the input devices; the 
+information or signals they provide are 
+known simply as the inputs. Typically, 
+each input has its own, dedicated 
+terminal or pin at the control module. 
+
+
+
+Some examples of inputs to the climate control system control module are: 
+
+• heater core temperatures (from the heater core temperature sensors) 
+
+• evaporator temperature (from the evaporator temperature sensor) 
+
+• refrigerant pressure (from the compound pressure switch on the receiver/dryer) 
+
+• stratified air thumbwheel position (from the thumbwheel potentiometer) 
+
+• vehicle speed (from the vehicle speed sensor) 
+
+• A/C compressor request (from the A/C compressor “snowflake” button) 
+
+• the start signal, Kl. 50 (from the ignition switch). 
+
+The system control module repetitively accepts all the inputs (many times each second) 
+and processes them. 
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engineers and researchers thought about how the module should respond 
+inputs, combinations of inputs, or even missing inputs, and then programmed 
+module microprocessor to perform in each case. 
+
+
+
+
+-'■'"S —1 
+
+—J 
+
+eXTER/Oft 
+
+
+
+
+[11 
+
+j 4 //? - 
+
+
+
+CONTROL MODULE 
+
+
+MICROPROCESSOR 
+
+
+
+
+STO 
+
+OPER 
+
+INSTRU 
+
+RED 
+
+ATING 
+
+CTIONS 
+
+
+
+
+to specific 
+the control 
+
+
+Each time the control module processes the inputs, it provides power or ground circuits 
+to operate solenoids, stepper motors, relays, lamps, etc., or it may send signals to other 
+control modules. The signals or power/ground circuits provided by the control module are 
+known as its outputs. The actual component operated (relay, solenoid, motor, etc.) is 
+referred to as the output device. 
+
+
+As an example, the IHKA climate module operates both the blower motor and the water 
+valves. 
+
+
+• The input used to request blower speed is the blower speed knob, which goes to 
+the processing area for blower speed control. If the input device is faulty, or the 
+circuit is broken, the blower control processing area does not receive all the 
+information necessary, and will operate the blower speed based on a substitute 
+value. 
+
+• The water valve control processing, however, which does not use the blower 
+speed knob input, will continue to function normally. 
+
+To perform diagnosis efficiently, it’s important to understand which inputs are 
+used to control a specific output. Or perhaps more importantly, which inputs will 
+not affect a specific output. 
+
+BMW uses Inputs, Processing, Outputs diagrams (IPOs) to provide a quick view of the 
+important features of microprocessor controlled systems. Typically (as shown in the 
+previous graphics), inputs are shown on the left side of the IPO, the processor (control 
+module) is shown in the middle, and the outputs are shown on the right. 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KL 31 
+
+
+KL 30 
+
+
+
+KL 15 
+
+
+
+©' 
+
+
+KL 50 
+
+
+INDEPENDENT LEFT & RIGHT 
+TEMPERATURE CONTROL 
+
+
+
+
+
+
+MAX DEFROST 
+
+
+
+A/C COMPRESSOR 
+
+
+RECIRCULATING AIR 
+
+
+REAR DEFROST 
+
+
+DEFROST OUTLETS 
+
+
+FACE VENT OUTLETS 
+
+
+FOOTWELL OUTLETS 
+
+
+AUTO 
+
+
+AUTOMATIC PROGRAM 
+
+
+
+FAN SPEED REQUEST 
+
+
+INTERIOR AIR TEMP. 
+
+
+PHOTO CELL 
+
+
+
+AMBIENT AIR TEMPERATURE 
+
+ROAD SPEED 
+
+
+
+
+EVAPORATOR 
+
+TEMPERATURE 
+
+
+HEATER CORE TEMPERATURES 
+
+
+
+u 
+
+p 
+
+m 
+
+a- 
+
+=8 
+
+
+0 
+
+
+
+ENGINE SPEED SIGNAL 
+
+
+MS 41.1 
+
+
+
+Oi 
+
+
+LIGHTS "ON" SIGNAL 
+
+
+E36 
+
+IHKA 
+
+CONTROL 
+
+PANEL/ 
+
+MODULE 
+
+
+
+
+LEFT HEATER 
+CORE WATER VALVE 
+
+
+
+RIGHT HEATER 
+CORE WATER VALVE 
+
+
+
++ 
+
+
+BLOWER SPEED 
+SIGNAL 
+
+
+FINAL 
+
+STAGE 
+
+UNIT 
+
+
+BLOWER 
+
+MOTOR 
+
+
+FRESH AIR FLAPS 
+STEPPER MOTOR 
+
+M-BUS 
+
+
+FOUR STEPPER 
+MOTORS 
+
+- FACE VENT FLAP 
+
+- DEFROST 
+
+- FOOTWELL 
+
+- RECIRCULATION 
+
+
+
+AUXILIARY FAN 
+_ SPEED 1 
+CONTROL 
++ + 
+
+
+COMPRESSOR 
+ON REQUEST 
+
+
+A/C ON 
+
+
+
+A/C 
+
+COMPRESSOR 
+
+RELAY 
+
+
+REAR 
+
+WINDOW 
+
+DEFROSTER 
+
+RELAY 
+
+
+
+INTERIOR TEMP. 
+SENSOR FAN 
+
+
++ 
+
+
+<gi-i 
+
+
+DIAGNOSIS AND CODING 
+
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMPERATURE SENSOR MONITORING 
+
+
+Several different temperature sensors provide inputs to the climate control module. These 
+Negative Temperature Coefficient (NTC) are resistors which are sensitive to changes in 
+temperature. 
+
+
+The NTC sensors used on the IHKR and IHKA Climate Control Systems have the property 
+that their resistance decreases with increasing temperature. 
+
+
+O 
+
+
+248 - 
+
+
+-120 
+
+230 - 
+
+
+-110 
+
+212 - 
+
+
+-100 
+
+194 - 
+
+
+-90 
+
+176 - 
+
+
+-80 
+
+158 - 
+
+
+-70 
+
+140 - 
+
+
+-60 
+
+122 - 
+
+
+-50 
+
+104 - 
+
+
+-40 
+
+86 - 
+
+
+-30 
+
+68 - 
+
+
+-20 
+
+50 - 
+
+
+-10 
+
+32 - 
+
+
+-0 
+
+14 - 
+
+
+--10 
+
+
+O 
+
+
+BMW Test system Multimeter 
+
+
+o 
+
+
+Measurement 
+
+function 
+
+
+Test connection 
+
+
+Type of 
+measurement 
+
+
+Measuring range 
+
+
++++++ kfi 
+
+
+JOT 
+
+
+
+Voltage 
+
+V 
+
+Resistance 
+
+Ohm 
+
+Capacilante 
+
+r 
+
+Inductance 
+
+1) 
+
+Temperature 
+
+
+
+
+
+Currant 
+
+?A 
+
+Current 
+
+50A 
+
+Current 
+
+500A 
+
+Diode It^l 
+
+l>l 
+
+Pre«ure 
+
+bar 
+
+
+
+
+
+
+MF-K 1 
+
+
+Cfij^ on pwshu 
+
+c d' -.a o:- 
+
+Toinp^atuic 
+
+
+
+
+
+
+— 
+
+
+F Ucctivi 1 valuf 
+
+|l!i<th 
+
+|:un:e,til:CU 
+
+
+
+
+System Ij-p 
+
+
+?isd 
+
+: H u il Lirp-iriC'i il 
+
+
+Externa) ?rejt 
+enable 
+
+
+o 
+
+
+248 - 
+
+
+-120 
+
+230 - 
+
+
+-110 
+
+212 - 
+
+
+-100 
+
+194 - 
+
+
+-90 
+
+176 - 
+
+
+-80 
+
+158 - 
+
+
+-70 
+
+140 - 
+
+
+-60 
+
+122 - 
+
+
+-50 
+
+104 - 
+
+
+-40 
+
+86 - 
+
+
+-30 
+
+68 - 
+
+
+-20 
+
+50 - 
+
+
+-10 
+
+32 - 
+
+
+-0 
+
+14 - 
+
+
+--10 
+
+
+- iu 
+
+'fQ'C 
+
+
+The resistance “curve” (a plot of temperature vs. resistance) for the heater core temperature 
+sensor is shown below. 
+
+
+Heater Core Temperature Sensor 
+
+
+
+5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The control module applies a reference voltage (approx. 5 
+volts DC) to each sensor circuit, as shown here, and monitors 
+the voltage present on the sensor signal circuit. In the 
+example shown, the sensor signal voltage is monitored by the 
+control module at point “A” in the circuit. 
+
+The resistor shown inside the control module has a “fixed” 
+resistance (its resistance does NOT change with temperature). 
+It is added to the temperature sensor circuit in order to drop 
+the supply voltage from battery down to a 5 volt reference that 
+will be influenced by sensor resistance. 
+
+The heater core example shown above can be redrawn as 
+a simple schematic, placing a volt meter at the point where 
+the control module would be measuring sensor voltage. 
+
+The control module is programmed to voltage values that 
+are reasonable for each signal circuit. If the module 
+receives a voltage signal that is much too high or much too 
+low for a particular sensor, it assumes that the sensor is 
+defective and disregards the signal. 
+
+
+CONTROL MODULE 
+
+
+
+SENSOR 
+
+
+~jj | Change |"j |End |j | Services |"| 
+
+
+BMW Diagnosis DIAGNOSIS REQUESTS 
+
+
+Inside sensor 
+Outside sensor 
+
+
+Evaporator sensor 
+
+
+26° C 
+28° C 
+
+
+Heat-exchanger sensor, left 
+
+22 °C 
+
+Heat-exchanger sensor, right 
+
+22 °C 
+
+
+
+The module will then store a fault code in memory and begin using a “substitute” value in 
+place of the actual sensor signal. This allows the climate control system to function until 
+the faulty component can be replaced. 
+
+
+THE “Y-FACTOR” 
+
+
+Y-Factor is the term used to describe how much heating 
+effort or cooling effort (expressed as a percentage) is 
+required by the microprocessor-controlled climate control 
+system (IHKR/IHKA) for it to achieve the desired passenger 
+compartment temperature. The terms “adjusting factor,” 
+“master controller,” and “guide control” are sometimes used 
+in place of Y-Factor. 
+
+The climate control system control module computes the Y- 
+Factor (actually two Y-Factors, one for the driver’s side of the 
+vehicle, Y L , and one for the passenger’s side, Y R ), using the 
+
+information it receives from some of the inputs. 
+
+
+
+Left Desired Temperature 
+Interior Temperature 
+Left Heater Core Temp. 
+
+
+Right Desired Temperature 
+Ambient Temperature 
+Right Heater Core Temp. 
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Y-Factors (left & right) computed from 
+these inputs have numerical values ranging 
+from -27.5% to +100% and can be displayed 
+on the DIS for diagnostic purposes. (Except 
+E46) 
+
+Values between -27.5% and 20% indicate that 
+the system is working to cool the interior; 
+values from about 20% to 100% indicate that 
+it is warming the interior. 
+
+
+
+
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Diagnosis DIAGNOSIS REQUESTS 
+
+
+Heating control: 
+
+Reference variable Y, left 26.5% 
+Reference variable Y, right 26.5 % 
+Coolant temperature (via IKE) 142 °F 
+Engine speed (via IKE) 0 rpm 
+
+
+A 
+
+
+V 
+
+
+Quick test 
+
+
+Note 
+
+# 
+
+
+< -'i 
+
+
+Function 
+
+
+Document 
+
+
+Test 
+
+
+
+
+System 
+
+
+
+
+selection 
+
+
+
+
+Schedule 
+
+
+
+
+
+
+
+► 
+
+
+The lower the Y-factor number, the harder the system is working to cool down the interior; 
+the higher the number, the harder the system is working to warm up the interior. In the 
+middle region, the system is working to maintain the existing interior temperature. 
+
+MAXIMUM MAXIMUM 
+
+COOLING HEATING 
+
+
+1 1 
+
+1 1 
+
+RADICAL CORRECTION ' 
+
+MODERAE 
+
+II 
+1 1 
+
+1 RADICAL CORRECTION ' 
+
+ZDNE-CCfOLING 
+
+CORRECTION 
+
+ZONE- HEA1NG 
+
+1 1 
+
+ZONE 
+
+II 
+
+COMPRESSOR 1 ADEQUAE ^ 
+
+O PER/TON | COOUNG| 
+
+REQUIRED FOR POWER 
+
+ADEQUAE 1 WITHOUT 1 
+
+COOLING COMPRESSOR 
+
+POWER l OPERA10N l 
+
+■ ■ 1 ■ I 
+
+i _i_i 
+
+ii 
+
+ii 
+
+J i i i i 
+
+
+-30 -20 -10 0 +10 20 30 40 50 60 70 80 90 100 
+
+Y-FACTOR 
+
+The desired temperatures (left and right) and interior temperature are the primary inputs 
+used to compute the Y-factor. (The control module monitors the temperatures that the 
+passengers want, monitors the existing interior temperature, and controls outputs to make 
+the two match.) The left desired temperature input has priority over the right, when the left 
+input is set to the minimum or maximum values. 
+
+For a given Y-Factor, the control module can perform the following actions to achieve the 
+desired interior temperatures: 
+
+• pulse a coolant flow control valve to regulate left heater core temperature 
+
+• pulse a coolant flow control valve to regulate right heater core temperature 
+
+• operate a relay to turn an electric coolant pump on and off (except E36 & E46) 
+
+• operate stepper motors to recirculate interior air, instead of using outside air 
+
+• operate stepper motors to control air discharge location (IHKA only) 
+
+• boost blower speed to decrease interior cool down or warm up time (IHKA only) 
+
+
+7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Some sample temperature readings with approximate Y-factor values appear below and on 
+the following page. 
+
+With the large difference between the desired and interior temperatures, Y-Factors of 100% 
+should be expected since the system will work as hard as possible to increase interior 
+temperature. 
+
+As the interior warms up, the Y-Factors drop steadily to avoid grossly “overshooting” the 
+desired temperatures. Coolant valves, initially held “wide open,” are pulsed more frequently 
+to reduce coolant flow (and heater core temperatures). Due to the extremely low ambient 
+temperature, the control module will “boost” (or in the case shown above, “create”) a 
+difference between interior and desired temperatures to offset rapid heat loss to the 
+atmosphere. 
+
+
+Despite the “match” 
+between interior and 
+desired temperatures, the 
+Y-Factors will still be 100% 
+due to the low heater core 
+temperature. The control 
+module initially keeps the 
+coolant valves wide open 
+to utilize all heat available 
+from the engine. As soon 
+as the heater cores begin 
+to warm up, though, the Y- 
+Factors will drop rapidly 
+since sufficient heat can 
+be obtained with very low 
+flow through the cores. 
+
+
+With the engine warmed- 
+up, the climate control 
+system expends very little 
+effort to maintain interior 
+temperature. The coolant 
+valves are seldom opened, 
+maintaining heater core 
+temperatures just above 
+the desired temperatures. 
+
+
+
+INTERIOR AIR TEMP. 
+
+
+PHOTO CELL 
+
+
+AMBIENT AIR TEMPERATURE 
+
+
+HEATER CORE TEMPERATURES 
+
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+
+BMW Diagnosis DIAGNOSIS REQUESTS 
+
+
+Heating control: 
+
+Reference variable Y, left 100% 
+Reference variable Y, right 100 % 
+Coolant temperature (via IKE) 129 °F 
+Engine speed (via IKE) 0 rpm 
+
+
+A 
+
+
+V 
+
+
+
+
+Function 
+
+
+Document 
+
+
+Test 
+
+
+
+AJ 
+
+
+selection 
+
+
+
+
+Schedule 
+
+
+
+
+System 
+
+
+IHKA 
+
+
+WATER VALVES 
+
+
+BLOWER MOTOR 
+
+
+"''<3 
+
+
+
+
+
+
+Note 
+
+# 
+
+
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+
+INTERIOR AIR TEMP 
+
+
+PHOTO CELL 
+
+
+AMBIENT AIR TEMPERATURE 
+
+
+HEATER CORE TEMPERATURES 
+
+
+
+BMW Diagnosis DIAGNOSIS REQUESTS 
+
+
+Heating control: 
+
+Reference variable Y, left 31 % 
+Reference variable Y, right 31 % 
+Coolant temperature (via IKE) 136 °F 
+Engine speed (via IKE) 0 rpm 
+
+
+A 
+
+
+V 
+
+
+Function 
+
+selection 
+
+
+Test 
+
+Schedule 
+
+
+System 
+
+
+IHKA 
+
+
+WATER VALVES 
+
+
+
+
+BLOWER MOTOR 
+
+
+V 
+
+
+COMPRESSOR CLUTCH 
+
+
+STEPPER MOTORS 
+
+
+
+Help 
+
+
+Quick test 
+
+
+
+Note 
+
+# 
+
+
+
+[> 
+
+
+8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+With such a large difference 
+between the interior and 
+desired temperatures, 
+maximum cooling power is 
+required. Heater core 
+temperatures will drop 
+rapidly since the coolant 
+valves will be kept closed. 
+The module will activate 
+recirculation. 
+
+Although the interior 
+temperature is approaching 
+stabilization, the system 
+must continue to work hard 
+due to the high ambient 
+temperature. 
+
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+
+INTERIOR AIR TEMP. 
+
+
+PHOTO CELL 
+
+
+AMBIENT AIR TEMPERATURE 
+
+
+HEATER CORE TEMPERATURES 
+
+
+
+0 
+
+
+
+
+BMW Diagnosis DIAGNOSIS REQUESTS 
+
+
+Heating control: 
+
+Reference variable Y, left -27.5% 
+Reference variable Y, right -27.5 % 
+Coolant temperature (via IKE) 136 °F 
+Engine speed (via IKE) 0 rpm 
+
+
+A 
+
+
+□ 
+
+
+Function Document Test < -'i 
+
+selection Schedule 
+
+
+System 
+
+
+IHKA 
+
+
+WATER VALVES 
+
+
+
+
+BLOWER MOTOR 
+
+
+J; 
+
+
+mm 
+
+
+COMPRESSOR CLUTCH 
+
+
+
+
+STEPPER MOTORS 
+
+
+
+Help 
+
+
+
+Note 
+
+# 
+
+
+The heater cores are now nearly at evaporator temperature since they are placed directly 
+in the flow of cold air and the coolant valves are kept closed. Once interior temperature 
+drops a few more degrees, recirc. mode will be discontinued and the system will draw in 
+only fresh air. 
+
+
+STEPPER MOTOR OPERATION 
+
+BMW IHKR and IHKA Climate Control Systems use 12 volt DC electric stepper motors to 
+operate many of the air inlet, air distribution and temperature mixing flaps. While different 
+types of stepper motors are used on different vehicles, they all share many desirable 
+characteristics: 
+
+• lower power consumption 
+
+• operate in both directions 
+
+• can be started and stopped in any position 
+
+• provide quick movement 
+
+• move in precise increments 
+
+• does not require feedback potentiometers to determine position 
+
+• remain in position when shut off 
+
+• have long service life 
+
+Unlike a “normal” 12 volt DC motor (for example, a blower motor) in which the rotor spins 
+through many revolutions per second when the motor receives power a stepper motor rotor 
+rotates through only a small angle when it receives power and then it stops. 
+
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+“CONVENTIONAL” STEPPER MOTOR 
+
+
+An extremely simple stepper motor circuit 
+is shown to the right; it consists of a bar 
+shaped permanent magnet which can 
+rotate about its center, a “C” shaped piece 
+of soft iron, a length of insulated copper 
+wire (wrapped around the piece of soft 
+iron), a switch, and a battery. 
+
+With the switch open, the bar magnet will 
+rotate to position itself with the soft iron as 
+shown and it will stay there. 
+
+
+
+E 
+
+1 
+
+
+
+f=d 
+
+— 
+
+< 
+
+< 
+
+” 
+
+s 
+
+Lq 
+
+— 
+
+
+
+
+=n 
+
+
+When the switch is closed, current flows 
+through the wire creating a magnetic field. 
+With the wire wrapped around the soft 
+iron in the direction shown here, the 
+magnetic field North pole will be located 
+at the top. 
+
+Since “like” poles repel and opposites 
+attract, the permanent magnet rotor will 
+turn 180 degrees to align itself with the 
+new magnetic field and then it will stop 
+there. 
+
+
++i 
+
+
+7 
+
+— 
+
+i 
+
+
+
+1 
+
+
+
+') 
+
+0 
+
+|N| 
+
+— 
+
+
+
+[H 
+
+— 
+
+
+
+0 
+
+114 n 
+
+LS 
+
+c 
+
+
+r 
+
+
+F] 
+
+
+
+
+— 
+
+
+=zJ 
+
+
+NOTE: In this simple motor, the rotor can 
+turn in either direction to reach its new 
+position. 
+
+
+Opening the switch will cause the 
+magnetic field to collapse, but the rotor 
+will remain in its new position. 
+
+By reversing battery polarity, though, and 
+closing the switch, a new magnetic field is 
+created. One that has its North pole 
+located at the bottom of the “C.” The 
+rotor moves again, this time back to its 
+original position. 
+
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using this information, we can again 
+redraw the parts of the circuit in a slightly 
+different way to get a stepper motor that 
+is closer to the ones found on BMW 
+vehicles. 
+
+All we’ve done is wrap two coils around 
+the soft iron core (one wound in each 
+direction to give opposite polarities), and 
+use two switches so each coil can be 
+energized independently. 
+
+Rearranging some parts of this circuit 
+just one more time puts the beginning of 
+both coils at the middle of the “C” (for 
+manufacturing reasons) so we have to 
+wind the top coil in the other direction to 
+have its polarity stay the same. 
+
+The bottom coil is unchanged. 
+
+
+
+
+Now, momentarily closing switch “B” 
+energizes the bottom coil, a magnetic 
+field forms with its North pole at the top, 
+and the rotor turns 180 degrees to align 
+with the field. 
+
+The rotor then stops there. 
+
+
+
+Momentarily closing switch “A” 
+energizes the top coil, a magnetic field 
+forms with its North pole at the bottom, 
+and the rotor turns 180 degrees again to 
+align with the new field. 
+
+Alternately closing switches “A” and “B” 
+toggles the magnetic field polarity, 
+causing the rotor to rotate in 180 degree 
+steps 
+
+
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compare our “generic” 90 ° stepper motor to a BMW climate control system stepper motor 
+as shown in an Electrical Troubleshooting Manual (ETM) and note the similarities. 
+
+
+
+I_I_I_I 
+
+
+
+They both: 
+
+
+1 +12 (Kl. 30 from IHKA) 
+
+X664 
+
+
+
+M35 
+
+DEFROSTER 
+
+FLAP 
+
+MOTOR 
+
+
+
+All 
+
+AUTOMATIC 
+HEATING AND 
+AIR CONDITIONING 
+CONTROL UNIT 
+(IHKA) 
+
+
+have 4 coils arranged around a permanent magnet rotor 
+
+have the 4 coils receiving power directly from the battery 
+
+energize the coils individually using ground switches (transistors inside the control 
+
+module for the ETM version) 
+
+
+Another important difference 
+for the actual BMW part is 
+that it is mounted on a high 
+reduction gearbox. In fact, 
+on the typical stepper motor, 
+the stepper motor rotor must 
+rotate about 300 revolutions 
+(that’s 7200 separate rotor 
+steps) for the gearbox output 
+shaft to rotate through just a 
+single revolution. 
+
+
+
+This high-reduction gear box allows a relatively low power motor to operate the flaps 
+against the substantial suction and pressure forces generated by the blower motor. 
+
+
+12 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Taking another look at an “actual” BMW stepper motor, notice that it requires 5 
+connections: 
+
+• power (to all 4 coils) 
+
+• ground (control) to coil “SI ” 
+
+• ground (control) to coil “S2” 
+
+• ground (control) to coil “S3” 
+
+• ground (control) to coil “S4” 
+
+
+These connections are important for diagnostic 
+purposes, since it is impractical to run a stepper 
+motor once it has been disconnected from the 
+control module. 
+
+One way to test for a faulty stepper motor is to 
+measure coil resistance. 
+
+
+
+On E31, E32, and E34 stepper motors except All Except Fresh Air Flap Motor 
+
+the fresh air flap motor, each of the motor’s 4 
+
+field coils has a resistance of about 85 ohms. 
+
+
+For the fresh air flap motor only on E31, E32, 
+and E34 vehicles, each of the 4 field coils has a 
+resistance of about 26 ohms. 
+
+The fresh air flap motor is designed to operate 
+faster in the “close flap” direction than in the 
+“open flap” direction, so it has different 
+characteristics. It’s easy to distinguish the fresh 
+air flap stepper motor from the other motors 
+because it has a different color identification 
+label; typically red or blue, depending on 
+production date. 
+
+
+
+Fresh Air Flap Motor Only 
+
+
+“SMART” STEPPER MOTORS 
+
+
+Until the E38 was introduced, the stepper motors used in IHKR and IHKA climate control 
+systems did not contain electronic components, and only 3 part numbers were needed to 
+service all the motor assemblies. As described earlier in this Handout, the motors 
+consisted of copper wire coils wrapped around iron cores (pole pieces), and permanent 
+magnet rotors, all attached to a high-reduction mechanical gearbox. The system electronic 
+control components were located inside the climate control module assembly. 
+
+
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Starting with the E38 climate control system, some of the control module electronics were 
+moved into the stepper motors, making the E38 motors (except the fresh air flaps motor) 
+substantially different from the “conventional” stepper motors we’ve already discussed. 
+
+
+The circuits feeding these new “smart” stepper motors also changed — for one thing, there 
+are only three circuits: 
+
+
+power 
+
+ground 
+
+signal 
+
+
+Also, all 9 smart stepper motors used on the E38 system share the same set of power, 
+ground, and signal circuits. (Left and right branches are connected inside the control 
+module.) The fresh air flaps “conventional” stepper motor has its own separate circuits. 
+
+
+
+These stepper motors have the same type gear box, permanent magnet rotor, and 4 field 
+coils as a “conventional” stepper motor. Plus, it still receives operating signals from the 
+system control module. 
+
+
+An E38/E39/E46 stepper motor constantly receives power and ground on two of the 
+terminals, and operating instructions on the third. 
+
+
+"SMART" STEPPER MOTOR 
+
+
+
+14 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The operating instructions are digital signals which “tell” the stepper motor whether to open 
+or close a flap. The microprocessor inside the stepper motor receives the instructions and 
+converts them into pulses to operate the permanent magnet rotor. 
+
+Notice that this 3-wire arrangement (referred to as the M-Bus) allows the control module to 
+operate the motor using only 1 signal circuit instead of the 4 control circuits used previously. 
+
+And, since all 9 smart stepper motors are connected to the same signal circuit, a total of 
+35 separate circuits between the control module and the motors can be eliminated. 
+
+But how can the system operate with just one signal circuit for all 9 motors? 
+
+• Each of the 9 stepper motors is different (and has its own part number). 
+
+• The control module identifies which motor it want to operate before it issues the 
+commands. 
+
+
+The part number is clearly marked on 
+every stepper motor, and every stepper 
+motor must be installed in the correct 
+location on the climate control housing. 
+
+The operating instructions issued to the smart stepper motors by the control module are 
+much more sophisticated than with conventional stepper motors. The sequence of events 
+appears below: 
+
+• The control module determines that a flap position must change 
+
+• It issues a “wake-up call” to alert the stepper motors that a command is coming 
+
+• It “names” the motor that is to respond to the command 
+
+• It issues the command signal, e.g. “move 15 steps clockwise” 
+
+• All the stepper motors “hear” the command 
+
+• Only the stepper motor that “hears its name” follows the command 
+
+• The “named” stepper motor then informs the control module that it has carried 
+out the command 
+
+
+
+15 
+
+
+
+
+
+STEPPER MOTOR LOCATIONS 
+
+Air distribution of the IHKA E38 (for example) is regulated using stepper motors. There are 
+10 stepper motors used for air distribution including: 
+
+
+FOOTWELL FLAP 
+
+
+
+DRIVER'S SIDE 
+
+
+DEFROST FLAP 
+FOOTWELL FLAP 
+
+
+
+SEAT FLAP 
+
+REAR VIEW 
+
+
+
+PASSENGER'S SIDE 
+
+
+
+TOP VIEW 
+
+Of these 10 stepper motors, the Fresh Air Flap stepper motor is operated as on previous 
+systems. It has four circuits that control the motor rotation with a 500 Hz signal at each 
+circuit as needed. 
+
+
+The remaining 9 stepper motors each contain a microprocessor that monitors operating 
+signals on the M-Bus. When a specific signal is “heard” on the M-Bus the motor is 
+activated by the microprocessor to carry out its function. Therefore, correct location by part 
+number is critical. 
+
+
+16 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALIBRATION RUN 
+
+
+If the battery is disconnected, IHKA control module memory is cleared and the module 
+loses its information about where the flaps are positioned. Therefore, when power is 
+restored, the control module performs a calibration run, whether the IHKA system is turned 
+“On” or “Off”. 
+
+The control module runs all the stepper motors at maximum speed to fully close the flaps, 
+and then continues to run the motors for a few seconds more than the normal endstop-to- 
+endstop time, in order to ensure the flaps are closed. 
+
+The calibration run takes about 40 seconds. During that time, soft “ticking” or “scratching” 
+noises can be heard, as the flaps reach their endstops but continue to be pulsed. 
+
+The control module also monitors system voltage. A sudden surge or dropout causes the 
+control module to automatically perform the calibration run. 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

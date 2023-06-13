@@ -1,0 +1,5556 @@
+Table of Contents 
+
+E6x 9/05 Model Updates 
+
+Subject Page 
+
+Introduction .5 
+
+System Overview .7 
+
+Gateway.7 
+
+Servotronic .8 
+
+ECO Valve .8 
+
+Modifications to the System Network .8 
+
+Functions .11 
+
+PowerSupply.11 
+
+Rear Power Distribution Box with RADSOK Contact.12 
+
+High Current Fuses .12 
+
+Relays in the Power Distribution Box .13 
+
+EnergyManagement .14 
+
+Energy Data M emory.15 
+
+Sleep Mode Preventers.15 
+
+Bus Wake-Up .16 
+
+Recording Data Records.16 
+
+Identification of Bus Wake-Ups .18 
+
+Micro-Power Module Integrated in KGM .18 
+
+Switch-On Conditions.19 
+
+Switch-Off Conditions.19 
+
+New M PM Functionality.20 
+
+Switch-Off ofTerminal 30g_f Relay .20 
+
+Time Controlled Terminal Shutdown .21 
+
+Control Units Connected to Terminal 30.22 
+
+Car Access System 2.23 
+
+ComfortAccess.26 
+
+Control Unit.26 
+
+Outer Door Handle .26 
+
+Capacitive Sensor 1.28 
+
+Capacitive Sensor 2.28 
+
+Antenna.29 
+
+Electric Steering Column Lock (ELV) .30 
+
+
+Initial Print Date: 09/05 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Unlocking Steering Column with Comfort Access .31 
+
+Examples of Unlocking the Steering: .31 
+
+Locking Steering Column with Comfort Access .31 
+
+Examples of Locking the Steering:.31 
+
+Replacement of the Steering Column .31 
+
+START/STOP Button .32 
+
+Slot.32 
+
+Car Access System 2 (CAS 2) .32 
+
+Central Locking.36 
+
+Body Gateway M odule (KGM).36 
+
+Relays for Central Locking .37 
+
+Body Basic M odule (KBM) .37 
+
+Interior Lighting .40 
+
+Doors .40 
+
+Door Exit Light.40 
+
+Courtesy Light .40 
+
+Sill Lighting E63.40 
+
+Driver's Door Switch Cluster.40 
+
+Backlighting (terminal 58g) .40 
+
+Power Windows.41 
+
+Front Windows.41 
+
+Body Gateway M odule (KGM) .41 
+
+Body Basic M odule (KBM).41 
+
+Convertible Top M odule (CVM) E64.41 
+
+Lowering the Side Window E63 .42 
+
+Outside Mirrors.43 
+
+Mirror Control.43 
+
+M irror Heating .44 
+
+M irror Folding Function.44 
+
+Electrochromic M irrors .44 
+
+Mirror Memory .44 
+
+Automatic Parking (curb viewer) Function.44 
+
+Safety Gateway Module .45 
+
+Functional Integration.45 
+
+Properties .48 
+
+Location.48 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Steering Column Switch Cluster.49 
+
+Component Overview.52 
+
+Electronic Steering Column Switch Cluster Module.53 
+
+F-CAN Link .53 
+
+PT-CAN Link.53 
+
+SZL PowerSupply.53 
+
+Steering Angle Sensor .54 
+
+Steering Column Switches.54 
+
+Coil Spring Assembly .54 
+
+Locking.54 
+
+Functions .55 
+
+Detecting Steering Angle .55 
+
+Relative Steering Angle.56 
+
+Absolute Steering Angle.57 
+
+Steering Wheel Rotation Information .57 
+
+Detecting the Controls of the M FL.57 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model Updates 
+
+Model: E60/61/63/64 
+
+
+Production: from 9/2005 
+
+IBIICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Familiarize yourself with the changes in production as of 9/2005 productio 
+
+
+4 
+
+E6x 9/05 Model Updates 
+
+
+Introduction 
+
+
+Several modifications will be implemented in the system network on the BM W5 Series 
+and BMW 6 Series as part of the model yearchange in September2005.The following 
+models are affected by the modifications: 
+
+• E60, 5 Series Saloon 
+
+• E61, 5 Series Touring 
+
+• E63, 6 Series Coupe 
+
+• E64, 6 Series Convertible 
+
+Overview of model year measures implemented on the BM W5 Series and BMW 6 
+Series models 
+
+
+System 
+
+Remark 
+
+System Network Modifications 
+
+No byteflight 
+
+New body-gateway module KGM 
+
+Door module functions transferred to the KGM 
+
+Energy management 
+
+No micro-power module, function integrated in the KGM 
+
+Comfort Access 
+
+New key-less access system 
+
+Car Access System 2 
+
+Start/Stop button, slot, electric steering column lock 
+
+Expanded Diagnostic Functions 
+
+M onitoring of control units that wake the bus unauthorized 
+
+Sleep mode preventer, control units that prevent the bus assuming 
+sleep mode 
+
+Steering Column Switch Cluster 
+
+New connection to PT-CAN 
+
+Passive Safety 
+
+Changeoverto advanced crash and safety management 
+
+Audio Systems 
+
+MP3 function in CCC 
+
+
+5 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All control units belonging to the safety system have been replaced due to the fact that 
+the Advanced Safety Electronics (ASE) and the optical bus system byteflight are no 
+longer installed. The previous functions have been adopted by new control units. 
+
+A central control unit, i.e. the Advanced Crash and Safety M anagement (ACSM) module 
+has been integrated in the K-CAN forfunctions of the passive safety system. 
+
+The safety and gateway module SGM has been replaced by the body-gateway module 
+KGM .The body-gateway module incorporates not only parts of the SGM but also the 
+door modules and the micro-power module M PM. 
+
+The installation location in the units carrier behind the glove compartment is the same. 
+
+Functions that have been adopted from the SGM in the KGM and have no changes are 
+briefly described in the following. 
+
+New or expanded functions are described in the "Functions" section. 
+
+
+6 
+
+E6x 9/05 Model Updates 
+
+
+
+System Overview 
+
+Gateway 
+
+The KGM contains the gateway function and provides the interface between following 
+busses: 
+
+• D-bus, diagnostic bus 
+
+• PT-CAN, powertrain CAN 
+
+• K-CAN, bodyCAN 
+
+• LIN-bus, local interconnect network 
+
+The task ofthe gateway is to interconnect the various bus systems. 
+
+The bus systems differ in terms of their data transmission rate or data telegram structure. 
+
+The data telegrams are buffered in the gateway and forwarded corresponding to their 
+priority. 
+
+In connection with the diagnostic bus, the KGM forms the interface to the BM W diag¬ 
+nostic units and forthe purpose of diagnosing or programming all control units connect¬ 
+ed to the bus system. 
+
+The KGM additionally features a link to the LIN-bus forthe purpose of reading informa¬ 
+tion from the driver's door switch cluster. 
+
+
+
+Control Unit Location (E64 shown) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access 
+
+2 
+
+Panoramic S unroof (M DS) 
+
+3 
+
+Body Basic Module (KBM) 
+
+4 
+
+Body Gateway Module (KGM) 
+
+5 
+
+CD Changer 
+
+
+7 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+Servotronic 
+
+
+The Servotronic controls the steering forces as a function of the driving speed. More 
+steering assistance is provided when the vehicle is stationary or when parking than when 
+driving at high speed on the motorway. 
+
+The Servotronic control function as well as the output stage for activating the Servotronic 
+valve is integrated in the KGM if the vehicle is not equipped with AFS. 
+
+If the vehicle is equipped with AFS, the functional control is performed by the AFS 
+control unit. 
+
+ECO Valve 
+
+An ECO valve (electrically controlled orifice) is installed in the hydraulic pump on vehicles 
+equipped with active steering. The KGM controls ECO valve operation in the hydraulic 
+pump forthe power steering. The ECO valve controls the volumetric flow of the hydraulic 
+pump corresponding to the power steering requirement, thus reducing fuel consumption. 
+
+Modifications to the System Network 
+
+Fundamental changes to the system network will be introduced on the BMW 5 Series 
+and BMW 6 Series as from model year 2006. 
+
+Changing the passive safety system ASE to the advanced crash and safety management 
+(AC S M) and the fact that the optical bus system byteflight is no longer installed result in 
+several changes to the bus overview. 
+
+Following control units have been replaced: 
+
+• Safety and gateway module (SGM) 
+
+• B-pillar satellite, left 
+
+• B-pillar satellite, right 
+
+• Driver's door module (TM FA) 
+
+• Passenger's doormoduleTMBF) 
+
+• Vehicle Center Satellite (SFZ) 
+
+• Micro-Power Module MPM) 
+
+The previous control unit functions have been integrated in new control units. 
+
+The steering column switch clusterthat was previously connected to the system network 
+via the byteflight is now connected to the PT-C AN. 
+
+The steering column switch cluster features extensive modifications and is therefore a 
+new component. 
+
+
+8 
+
+E6x 9/05 Model Updates 
+
+
+
+
+New systems and control units will also be introduced with the model year measures. 
+
+New control units: 
+
+• Body-gateway module 
+
+• Advanced crash and safety management 
+
+• Comfort access 
+
+• High beam assistant 
+
+• IBOC (terrestrial digital radio - 10/2005 E63/4 only) 
+
+The newly added or modified control units are highlighted in the following bus overview. 
+
+
+
+SINE 
+
+
+DWA 
+
+
+RLS 
+
+
+AHM 
+
+
+SMFA 
+
+
+EHC 
+
+
+CON 
+
+
+CAS2 
+
+
+H 
+
+
+VM SDARS* 
+
+XLWS 
+
+SMG 
+
+
+ALBVFA — 
+
+i 
+
+TCU TOP-HIFI 
+
+
+- ACC 
+
+_1 
+
+ULF 
+
+ALBVBF — 
+
+1 
+
+
+ARS 
+
+
+WUP 
+
+
+
+SMBF 
+
+ZH 
+
+(M)«|9| D-Bui — 
+
+bylcfhgtrt 
+
+K-Bus 
+
+
+
+
+K-CAN 
+
+MOST 
+
+UN Bus 
+
+■xl 
+
+
+0 
+
+
+F-CAN 
+
+
+
+IHKA 
+
+
+
+
+
+
+
+
+
+LoCAN 
+
+
+Bus Overview E60 up to 08/2005 
+
+
+9 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Newly added or modified control units are circled in the following bus overview: 
+
+
+SMC 
+
+
+SMC 
+
+
+SVFA 
+
+
+SINE 
+
+
+(Ml 
+
+e«(*D 
+
+
+LM 
+
+
+HKL 
+
+
+SH 
+
+
+CID 
+
+
+KBM 
+
+
+
+
+
+SZM 
+
+
+Kombi 
+
+SVBF 
+
+
+
+I 
+
+PDC 
+
+
+SHD 
+
+
+
+
+EHC 
+
+& 
+
+CVM 
+
+
+
+
+DWA 
+
+1 ' 
+
+' A 
+
+CON 
+
+
+OC3 
+
+
+] 
+
+
+
+
+
+DSC 
+
+DSC SEN 
+
+
+DXC 
+
+
+VGSG 
+
+
+CE>> 
+
+
+2.LWS 
+
+
+RLS 
+
+
+
+
+( ^ROC^ VM (^ JBOC^ 
+
+
+QLT 
+
+TONS 
+
+EWP 
+
+GSC 
+
+IBS 
+
+r c ;;i | 
+
+DME 
+
+DDE 
+
+
+TCU 
+
+
+TOP-HIFI 
+
+
+AFS 
+
+EKP WT1 
+
+ALBVFA ALBVBF 
+
+
+© 
+
+AHM ( CAS2 ) 
+
+ULF 
+
+ARS: H 
+
+- ACC 
+
+I “ 
+
+ZH 
+
+IHKA I") (^TAgO 
+
+WUP 
+
+
+EGS | 
+
+
+SMFA SMBF ( ^ELV ^ 
+
+
+SMG 
+
+
+Bus Overview of New Control Units 
+
+
+Index 
+
+Explanation 
+
+KGM 
+
+Body Gateway Module 
+
+ACSM 
+
+Advanced Crash and Safety Management 
+
+CA 
+
+Comfort Access 
+
+CAS2 
+
+Car Access System 2 
+
+CCC 
+
+CarCommunication Computer 
+
+ROC 
+
+Rollover Protection Controller 
+
+SZL 
+
+Steering Column Switch Cluster 
+
+ELV 
+
+Electric Steering Lock 
+
+TAGE 
+
+Electronic Outer Door Handle Module 
+
+IBOC 
+
+In-Band On-Channel (digital radio) 
+
+
+10 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Power Supply 
+
+There are a few modifications to the power supply system, i.e. battery, alternator, starter, 
+power distribution box, ignition lock. 
+
+The previous ignition lock with key-operated switch has been dropped and replaced by 
+a Start-Stop button with terminal control.The Start-Stop button is described in detail in 
+the section "Comfort access". 
+
+There are no changes to the battery, alternator and the starter. 
+
+The following changes have been made to the rear power distribution box: 
+
+• The mounting forthe battery cable supplying powerto the front power distribution 
+box has been changed to a RADSOK contact. 
+
+• The high-current fuses are locked in the housing and cannot be replaced separately. 
+No changes have been made to the power distribution box at the front. 
+
+
+
+New Rear Power Distribution Box with Integrated Main Current Fuses and Relays. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection for Battery Cable 
+
+2 
+
+Notfor US 
+
+3 
+
+Connection for common rail/Valvetronic 
+
+4 
+
+Connection for Front Power Distribution box (RADSOK) 
+
+
+11 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+The advantages of RADSOK contacts are in their 
+design. The contact surface of the connector is 
+equipped with spring elements. 
+
+The connection itself is not rigid but rather flexible. 
+
+The high currents and resulting increase in tempera¬ 
+ture caused by the spring elements and the move¬ 
+ment of the connector produce a self-cleaning effect 
+of the contact surface. This ensures very good and RADSOKConnectorwith 
+uniform powertransmission in connection with low spring Elements 
+contact resistance. 
+
+
+
+Rear Power Distribution Box with RADSOKContact 
+
+The rear power distribution box is equipped with a 
+RADSOK contact for connecting the battery cable 
+leading to the front power distribution box. RADSOK 
+contacts are known and have already been used on 
+the E65 power module. 
+
+
+High Current Fuses 
+
+The high-current fuses are located on the underside of the power distribution box. The 
+high-current fuses areforthe: 
+
+• Front power distribution box 
+
+• Common rail orValvetronic 
+
+• PTC auxiliary heater 
+
+The high-current fuses are connected directly to the battery. On the connector side, the 
+high-current fuses are crimped to the power distribution box and cannot be replaced indi¬ 
+vidually. The complete power distribution box must be replaced in the event of a defective 
+fuse. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+200 A for front power distribution box 
+
+2 
+
+100 A for common rail orValvetronic 
+
+3 
+
+Not for US 
+
+
+Rear of Power Distribution Box with High C urrent Fuses 
+
+
+12 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+Relays in the Power Distribution Box 
+
+Three soldered relays are mounted on the pc-board of the rear power distribution box. 
+The terminal 30g relay is plugged in. 
+
+
+
+& 
+
+
+
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+444 4 44444444444 
+
+
+i 
+
+
+t H '4.4 4 4'4' 4-4.4. 4 4 4 4 14 4 4 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 l 4 4 4 4 
+
+
+
+PC-Board of Rear Power Distribution Box 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Plug-in contacts for terminal 30g relay 
+
+2 
+
+Relay for headlight washer system 
+
+3 
+
+Relay for rear window heater 
+
+4 
+
+Relay for terminal 15 
+
+
+13 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Energy Management 
+
+Comprehensive measures have been introduced with the aim of further increasing cus¬ 
+tomer satisfaction and to solve the problem of flat batteries. A flat battery is an annoying 
+event for the customer. 
+
+There are various causes. Possible examples include: 
+
+• Unfavorable driving profile 
+
+- Predominantly short-distance driving with insufficient battery charging (especially 
+in winter) 
+
+• Increased closed-circuit current (> 80 mA) 
+
+- Control unit is awake internally, the battery discharges afterthe vehicle has been 
+parked several days. 
+
+• Sleep mode preventer (approximately 10 A) 
+
+- A control unit does not sign off and the entire bus system remain awake. The bat¬ 
+tery is discharged after a few hours. 
+
+• Bus wake-up event 
+
+- The bus system assumes sleep mode but is repeatedly woken by a control unit. 
+The battery is generally discharged within one day. 
+
+Extensive measures have been implemented in the area of the energy management in 
+orderto counteract these problems. The measures concern following changes: 
+
+• Time-controlled terminal shut-down (terminal 30g) 
+
+- All control units that need not necessarily be connected to terminal 30 are discon¬ 
+nected from the battery after a maximum of 60 minutes. 
+
+• Terminal shut-down in response to fault (terminal 30g_f) 
+
+- Electric loads must switch off on request. If they do not switch off they will be dis¬ 
+connected from the battery. 
+
+• Sleep mode preventers 
+
+- Control units that have not signed off and the sleep indicator bit is not set. 
+
+• Bus wake-up 
+
+- Control units that wake up the bus system unauthorized. 
+
+The micro-power module and the energy data memory have been integrated in the body 
+gateway module to facilitate these measures. 
+
+
+14 
+
+E6x 9/05 Model Updates 
+
+
+
+Energy Data Memory 
+
+The energy data memory is the expansion of the previous history memory as was used in 
+the SGM. An indicator as to what bus system woke the vehicle was stored in the history 
+memory. 
+
+The expanded function of the energy data memory determines: 
+
+• Which control unit prevents the bus system from assuming sleep mode 
+
+• How often a control unit wakes the bus system and therefore the entire vehicle 
+
+• Which control unit has woken the bus system and therefore the entire vehicle 
+
+The energy data memory is subdivided into three areas containing following information: 
+
+• Sleep mode preventer 
+
+• Numberof bus wake-ups 
+
+• ID of bus wake-ups 
+
+A further processor, the co-processor, is necessary for this purpose. Since the body gate¬ 
+way module (KGM) itself assumes sleep mode and the main processor is therefore 
+switched off, it would not at all notice a short bus wakeup event. It is therefore necessary 
+to permanently monitorthe bus sleep phase with a further processor. The identifier is 
+stored in response to a bus telegram. 
+
+Besides the ID of the CAN telegram, the km reading and the relative time are also stored. 
+Conclusions with regard to the driving profile and the stationary periods can be drawn 
+with the aid of these data. This facilitates more simple and accurate diagnosis of the con¬ 
+trol unit causing the problem. 
+
+Furthermore, the system is able to determine which control unit prevents the bus system 
+assuming sleep mode. 
+
+Sleep Mode Preventers 
+
+After terminal R OFF, control units must sign off from their network master (KGM, CCC, 
+MASK) and signal their readiness to assume sleep mode. 
+
+All control units that signal that they are ready to assume sleep mode by setting the sleep 
+indicator bit 20 minutes afterterminal R OFF are classified as sleep preventers. 
+
+The diagnostic address of the respective control unit is used forthe purpose of identify¬ 
+ing the cause. 
+
+The same procedure applies aftera bus wakeup without terminal R ON. 
+
+Monitoring by the body-gateway module takes place at 5,10,15, 20 minutes aftertermi- 
+nal R OFF. All control units found 3 times not to have assumed sleep mode are entered 
+as sleep mode preventers in the data memory. 
+
+As part of its gateway function, the KGM is generally the last control unit to set the sleep 
+indicator bit. It is entered as a sleep mode preventer only when it is the only control unit 
+that has not yet signalled its readiness to assume sleep mode. 
+
+
+15 
+
+E6x 9/05 Model Updates 
+
+
+
+Bus Wake-Up 
+
+Control units that wake the bus system without authorization and cause a high closed cir¬ 
+cuit current are referred to as bus wake-ups. 
+
+The identity of each control unit that sends a bus telegram is stored in the telegram iden¬ 
+tifier. Therefore, every telegram can be assigned to a control unit. Data records are creat¬ 
+ed for monitoring and recording purposes. 
+
+
+Recording Data Records 
+
+The recording procedure forthe relative time from the instrument cluster is started when 
+battery voltage is applied. The relative time is a consecutive counterthat is started when 
+the battery voltage is applied forthe first time at the factory. A new data record is started 
+with every battery reset. 
+
+A data record is recorded over 1 week (168 h). Afterthe 168 hours have elapsed, the 
+data record is stored and recording of the second data record begins. 
+
+
+All statuses between two terminal R switch-on operations are recorded. The recording 
+takes into account whetherthe terminal 30g relay was ON orOFF. A maximum of 254 
+entries can be stored. The counter stops at 254 when the maximum number of 254 
+entries is exceeded. The same also applies to the number of recorded trips. 
+
+
+msm 
+
+
+Bus wake-up 
+
+
+Bus on 
+
+
+mnnirinmijunrinn 
+
+
+
+1 week 
+
+
+Schematic Representation of a Data Record 
+
+
+Index 
+
+Explanation 
+
+KI.R on 
+
+Terminal R is switched on/normal activity on the bus 
+
+KI.R off 
+
+Terminal R is switched off, the bus is at rest up to next terminal R on 
+
+Bus wake-up 
+
+Unauthorized bus wake-up during bus restand terminal R OFF 
+
+Bus on 
+
+Normal bus activity 
+
+Bus off 
+
+Bus at rest, normally no activity on the bus 
+
+1.7 
+
+Days of recording 
+
+1 week 
+
+Duration of a data record 
+
+
+16 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A total of 6 data records are recorded in the ring memory, facilitating subsequent diagno¬ 
+sis overthis period in orderto obtain a more accurate overall picture of the driving profile. 
+
+The following information is stored in a data record: 
+
+• Start of recording (relative time) 
+
+• Total distance covered in km up to the next recording 
+
+• N umber of trips of 0 - 5 km 
+
+• Numberoftrips of 5 - 20 km 
+
+• Number oftrips of 20 - 100 km 
+
+• Number oftrips of > 100 km 
+
+• Numberof bus wake-ups 
+
+
+6 i 7 j 
+
+
+
+Principle Design ofthe Ring Memory 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Data record ofthe first week without bus wake-up events 
+
+2 
+
+Data record ofthe second week without bus wake-up events 
+
+3 
+
+Data record ofthe third week without bus wake-up events 
+
+4 
+
+Data record ofthe fourth week with bus wake-up recording 
+
+5 
+
+Data record ofthe fifth week with bus wake-up recording 
+
+6 
+
+Data record ofthe current week with bus wake-up recording 
+
+7 
+
+Current recording status 
+
+
+17 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identification of Bus Wake-Ups 
+
+When entering the bus wake-up in the data record, the identifier of the bus telegram that 
+has woken the bus as well as the relative time and the current km-reading are stored in a 
+separate area of the energy data memory. This enables distinct identification of the con¬ 
+trol unit that has woken the bus. 
+
+Micro-Power Module Integrated in KGM 
+
+There is no micro-power module as a separate control unit. The entire function, including 
+the bistable relay terminal 30g_f has been integrated in the body-gateway module. The 
+relay terminal 30g_f is soldered on the pc board. The ON/OFF statuses of the relay are 
+stored in the KGM. 
+
+
+
+® 0 0 © 0 
+
+
+Inside of KGM with Relays 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Output stage for outside mirror on left 
+
+2 
+
+Output stage for outside mirror on right 
+
+3 
+
+Relay for passenger's powerwindow 
+
+4 
+
+Double relay for central locking, central arrest/lock 
+
+5 
+
+Double relay for central locking, unlock/lock 
+
+6 
+
+Terminal 30g_f relay 
+
+7 
+
+Relay for driver's powerwindow 
+
+
+18 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following loads are connected to the terminal 30g_f relay: 
+
+• Instrument cluster 
+
+• Comfort access CA 
+
+• Car communication computer/multi-audio system controller CCC/M ASK 
+
+• CD changerCDC 
+
+• Telematics control unit (TCU) 
+
+Switch-On Conditions 
+
+The relay is always activated and switched to ON when one of the following conditions 
+applies: 
+
+• When the battery is connected forthe first time 
+
+• Vehicle unlocked 
+
+• Change in status of door contacts or boot lid 
+
+• Terminal R ON 
+
+
+Switch-Off Conditions 
+
+The intelligent battery sensor IBS permanently monitors the closed-circuit current. The 
+electric loads are requested to switch themselves off if the closed-circuit current is too 
+high and the start capability limit of the battery is reached. An after running time of 2min- 
+utes is coded forthis purpose. A reset is implemented if the closed-circuit current is still 
+too high after 2 minutes or one of the following conditions applies. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CCC 
+
+—— 1 
+
+
+
+
+
+
+Kombi 
+
+
+MASK 
+
+
+
+
+
+
+
+
+
+
+
+
+CDC 
+
+
+
+
+
+
+
+
+
+ASP Bf 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TCU 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CA 
+
+
+fy.l 
+
+Overview of Control Units Connected to Terminal 30g_f Relay 
+
+
+ALBVBP 
+
+
+19 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+New MPM Functionality 
+
+A 10 second relay is performed before the KGM finally switches off the terminal 30g_f 
+relay.This is intended to eliminate any malfunctions in the control unit. 
+
+Reset conditions 
+
+• Closed-circuit current of electric loads too high 
+
+• Bus active for 60 minutes even though no switch-on condition applies 
+
+• Bus is woken 30 times even though no switch-on condition applies 
+
+The terminal 30g_f relay is switched off for 10 seconds and then switched on again as 
+part of the reset procedure. The system is monitored again afterthe reset. 
+
+Switch-Off ofTerminal 30g_f Relay 
+
+Terminal 30g_f relay is opened (OFF) if one of the following conditions applies during the 
+monitoring phase. 
+
+• Start capability limit reached 
+
+• 5 bus wake-up events with no switch-on condition 
+
+• 10 min. bus activity 
+
+The switch-off or reset is stored in the info memory of the KGM .The following informa¬ 
+tion is also stored: 
+
+• Current kilometer reading 
+
+• Relative time 
+
+• Status of relay (ON/OFF) 
+
+• Counterthat indicates how often the relay is switched on 
+
+
+20 
+
+E6x 9/05 Model Updates 
+
+
+
+Time Controlled Terminal Shutdown 
+
+In orderto improve the energy balance, the Car Access control unit 2 (CAS 2) switches 
+off via the terminal 30g relay all control units that need not necessarily be connected to 
+terminal 30 after 30 minutes or after 60 minutes if a telephone is installed. 
+
+
+HKL 
+
+
+CIO 
+
+
+
+SH 
+
+
+
+SZM 
+
+
+
+
+PDC 
+
+SHO 
+
+
+
+
+EHC 
+
+
+CVM 
+
+
+
+
+
+RLS 
+
+
+' 
+
+
+CON 
+
+
+IHKA 
+
+
+HUD 
+
+
+SOARS 
+
+
+
+VM 
+
+
+IBOC 
+
+
+
+TCU 
+
+
+TOP-HIFI 
+
+ULF 
+
+
+
+Overview of Control Units Connected to Terminal 30g 
+
+
+DSC 
+
+DXC 
+
+VGSG 
+
+
+ILWS 
+
+
+AFS 
+
+EKP 
+
+
+
+
+ALBVFA 
+
+
+AIBVBF 
+
+
+
+ARS 
+
+
+ACC 
+
+
+
+
+EGS 
+
+SMG 
+
+
+21 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Units Connected to Terminal 30 
+
+A few control units cannot be switched off due to theirfunctionality. 
+
+
+KGM 
+
+LM 
+
+
+KBM 
+
+
+DWA 
+
+
+AHM 
+
+
+CAS2 
+
+
+
+SMFA 
+
+
+SMBF 
+
+
+Overview of Control Units Connected to Terminal 30 (continuous positive) 
+
+Reasons for staying connected to terminal 30: 
+
+
+Control Unit 
+
+Reason 
+
+KGM 
+
+Due to the masterfunctionality 
+
+LM 
+
+Due to the legally required hazard warning function 
+
+KBM 
+
+Due to the Flail sensors for window monitoring 
+
+DWA 
+
+Due to the interior monitoring function 
+
+AHM 
+
+Due to the legally required hazard warning function 
+
+CAS 
+
+Due to the vehicle unlocking function 
+
+SMFA 
+
+Due to the high current consumption of the seat heating 
+
+SMBF 
+
+Due to the high current consumption of the seat heating 
+
+SZL 
+
+Due to the steering angle sensor whose data are held only in a volatile memory 
+
+DME 
+
+Due to the power management 
+
+
+22 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access System 2 
+
+
+The previous turn-key concept will be replaced as from September 05 (steering column 
+lock and start engine). Instead, the BMW 5 Series and BMW 6 Series will be equipped 
+with an electric steering column lock as well as the operating concept with the Start- 
+Stop button from the E90. 
+
+The car access system 2 is adopted from the E90. T his means various functions and 
+components from the E90 are now also available on the BMW 5 Series and BMW 6 
+Series. 
+
+The functions and components are: 
+
+• S lot for remote control or identification transmitter 
+
+• Electric steering column lock ELV 
+
+• START/STOP button 
+
+• Comfort access 
+
+
+
+The 
+
+
+
+
+car access system still features masterfunctions such as: 
+
+
+Remote control services 
+Power windows 
+
+Electric steering column lock (ELV) 
+Sunroof/panoramic glass roof 
+Vehicle data storage 
+
+
+• Central locking 
+
+• Comfort Access 
+
+• Powerwindows 
+
+• Electric vehicle immobilizer 
+
+• Terminal control 
+
+
+
+Start-Stop Button and Slot 
+
+
+Index 
+
+Explanation 
+
+1 
+
+START/STOP Button 
+
+2 
+
+2 Slot 
+
+
+23 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+CAS 2 System Circuit Diagram 
+
+
+
+
+
+
+
+pj§f 
+
+| 
+
+
+
+u 
+
+
+
+(4-lL 
+
+J1 
+
+
+
+M 
+
+J 
+
+- ♦ - 
+
+
+
+J 
+
+m 
+
+— 
+
+_ 
+
+1 
+
+9 
+
+FT 
+
+
+
+
+
+
+
+r 
+
+KBM 
+
+■ 12 ) 
+
+1 
+
+13 
+
+L 
+
+CA 
+
+
+TJ 
+
+
+
+fBO 
+
+
+16 j 
+
+
+TAGE 
+
+
+
+KI.30 
+
+
+24 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend forCAS 2 System Circuit Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Bonnet contact switch 
+
+23 
+
+Boot lid button, interior 
+
+2 
+
+Car access system 2 (CAS 2) 
+
+24 
+
+Starter 
+
+3 
+
+Brake light switch (BLS) 
+
+25 
+
+Center-lock button 
+
+4 
+
+Clutch switch 
+
+26 
+
+Hotel switch 
+
+5 
+
+Digital motor electronics (DME) 
+
+Kl. R 
+
+Terminal R 
+
+6 
+
+Intelligent battery sensor (IBS) 
+
+Kl. 15 
+
+Terminal 15 
+
+7 
+
+Wheel speed sensor 
+
+KL 15 WUP 
+
+Terminal 15 wake-up 
+
+8 
+
+Body-gateway module (KGM) 
+
+KL 15 ESV 
+
+Terminal 15, fuel injectors 
+
+9 
+
+Dynamic stability control (DSC) 
+
+KL 30 
+
+Terminal 30 
+
+10 
+
+Terminal 30g relay 
+
+KL 30g 
+
+Terminal 30 switched 
+
+11 
+
+Terminal 15, unloader relay 
+
+KL 30L 
+
+Terminal 30, load 
+
+12 
+
+Basic body module (KBM) 
+
+KL50L 
+
+Terminal 50, load 
+
+13 
+
+Identification transmitter 
+
+CAS-Bus 
+
+CAS-bus 
+
+14 
+
+Comfort access (CA) 
+
+K-CAN 
+
+BodyCAN 
+
+15 
+
+Remote control receiver 
+
+PT-CAN 
+
+Powertrain CAN 
+
+16 
+
+Remote control services - antenna signal 
+
+EWS 
+
+Electronic vehicle immobilizer 
+
+17 
+
+Electronic outer door handle module 
+(TAGE) 
+
+START-DME 
+
+Start, digital motor electronics (DME) 
+
+18 
+
+Electric steering lock (ELV) 
+
+30 ELV 
+
+Positive supply ELV 
+
+19 
+
+Telematics control unit (TCU) 
+
+31 ELV 
+
+Ground supply ELV 
+
+20 
+
+Relay, fuel injectors 
+
+FBD 
+
+Remote control services 
+
+21 
+
+Slot 
+
+FBDON 
+
+Remote control services ON 
+
+22 
+
+START/STOP button 
+
+FBD OUT 
+
+Remote control services OUT 
+
+
+On the E60, E61 and E63, the antenna forthe remote control services is installed inte¬ 
+grated in the rear window. The antenna forthe remote control services on the E64 is 
+located in the interior rear-view mirror. 
+
+The terminal 30g relay is located in the power distribution box in the luggage 
+compartment. 
+
+The terminal 30g_f relay is installed in the body-gateway module (KGM). 
+
+
+25 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Comfort Access 
+
+
+As from 09/2005 the E60, E61, E63 and E64 can be equipped with the comfort access 
+system (can be ordered as an option). These models therefore also feature "keyless" 
+access. 
+
+These models will also be equipped with following components: 
+
+• START/STOP button 
+
+• S lot for identification transmitter 
+
+• Electric steering column lock 
+
+• Car access system 2 (adopted from E90) 
+
+Note: Comfort access is based on the comfort access system from the E90 
+and E91 On vehicles equipped with comfort access, the CAS 2 has the 
+master function for comfort access. 
+
+Control Unit 
+
+The comfort access control unit is installed in the units carrier behind the glove compart¬ 
+ment. The electronic module forthe comfort access system is accommodated in a hard¬ 
+shell housing. The connector socket has 26 pins. The fuses forthe comfort access sys¬ 
+tem are located in the power distribution box behind the glove compartment. 
+
+With the exception of the antennas forthe outer door handles which are activated direct¬ 
+ly by the respective electronic outer door handle module, all antennas are connected 
+directly to the comfort access control unit. 
+
+The comfort access control unit, electronic outer door handle modules and the car 
+access system 2 are interconnected by the CAS-bus. 
+
+The CAS-bus is a bus system based on the K-bus. Faults in the electronic outer door 
+handle modules are stored in the fault code memory of the comfort access system. 
+
+Comfort access therefore also serves as the diagnostic interface forthe electronic outer 
+door handle modules. 
+
+Outer Door Handle 
+
+The previous exterior door handle is retained in full. For comfort access, an electronics 
+box is mounted on the inside of the outer door handle. The complete outer door handle 
+electronics, the inductive antenna and the capacitive sensor 1 are housed in the elec¬ 
+tronics box. The sensitive area on the outer door handles represents the capacitive 
+sensor2. 
+
+
+26 
+
+E6x9/05 Model Updates 
+
+
+
+
+The sensitive area is located directly next to the lock barrel on the driver's door or on the 
+fixed part on the outer door handles on the other doors. The Hall sensorfor identifying 
+when the outer door handle is pulled is located next to the electronics box. 
+
+The status of the Hall sensor changes when the outer door handle is pulled. This change 
+in status is detected by the electronics of the outer door handle. The vehicle is unlocked 
+by pulling the outer door handle twice within a short space of time. 
+
+The electronic outer door handle modules are connected via the CAS-bus to comfort 
+access, car access 2 and the electric steering lock. 
+
+Depending on the type of vehicle, two to four electronic outer door handle modules can 
+be installed forthe comfort access system. See following table: 
+
+
+Electronic OuterDoor Handle Module 
+
+E60 
+
+E61 
+
+E63 
+
+E64 
+
+Driver's door 
+
+
+✓ 
+
+
+✓ 
+
+Front Passenger's door 
+
+
+✓ 
+
+✓ 
+
+✓ 
+
+Rear Driver's side door 
+
+
+
+
+
+Rear Passenger's side door 
+
+✓ 
+
+✓ 
+
+
+
+Total 
+
+4 
+
+4 
+
+2 
+
+2 
+
+
+Note: A defective electronic outer door handle module ora short to ground 
+can disturb communication via the CAS-bus. As a result, thefaultcode 
+" E LV defective" can be entered in the fault code memory forthe electric 
+steering lock. 
+
+
+27 
+
+E6x 9/05 Model Updates 
+
+
+
+
+Capacitive Sensor 1 
+
+The functional principle of the capacitive sensor is already known from the E87/E90/E91. 
+
+The capacitor plate from the outer door handle, however, has been repositioned behind 
+the handle plate. The capacitor plate is located in an electronics boxthatis mounted 
+directly on the handle plate. 
+
+An electric field is generated in the area of the doorhandle plate of the outer door 
+handles. T he electric field is changed by grasping into the recessed plate of the outer 
+doorhandle. 
+
+O _ 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Field 
+
+
+
+Electric Field of Capacitive Sensor 1 
+
+
+This in turn generates a pulse which is evaluated by the electronic module in the outer 
+doorhandle forthe purpose of transferring the unlock request to the comfort access 
+system. 
+
+Capacitive Sensor 2 
+
+The capacitive sensor 2 is responsible forthe vehicle locking operation.The lock is trig¬ 
+gered by touching the sensitive area. The sensitive area is shown in the following graphic. 
+
+
+
+Sensitive Area of Capacitor 2 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+RearView 
+
+2 
+
+Center of Rotation 
+
+
+28 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Antenna 
+
+
+Three orfive antennas forthe exterior and four antennas forthe vehicle interior are used 
+pervehicle. 
+
+The antennas forthe vehicle interior and in the bumper are of the same design as the 
+antennas used on the E90. 
+
+The antennas in the luggage compartment of the E63 and E64 are integrated in the foam 
+material padding. 
+
+
+Antenna 
+
+o 
+
+to 
+
+UJ 
+
+H 
+
+to 
+
+UJ 
+
+m 
+
+to 
+
+Ul 
+
+to 
+
+Ul 
+
+
+Centre Console, front 
+
+✓ 
+
+
+
+
+
+Centre Console, rear 
+
+•/ 
+
+✓ 
+
+
+
+
+Rear Window Shelf 
+
+
+
+
+
+0 
+
+■c 
+
+1 
+
+Luggage Compartment, 
+centre 
+
+s 
+
+•/ 
+
+
+
+
+Luggage Compartment, 
+left 
+
+
+
+
+
+
+Luggage Compartment, 
+right 
+
+
+
+✓ 
+
+
+
+Luggage Compartment, 
+load sill 
+
+
+S 
+
+
+
+L. 
+
+0 
+
+■C 
+
+On Left of Rear Bumper 
+
+V 
+
+S 
+
+V 
+
+
+1 
+
+UJ 
+
+Outer Door Handle 
+
+4 
+
+4 
+
+2 
+
+2 
+
+
+Antenna Locations by Vehicle 
+
+
+
+
+29 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric Steering Column Lock (ELV) 
+
+The BMW 5 Series and BMW 6 Series can be equipped with the option SA 245 Electric 
+steering column adjustment. This option effects the installation location of the electric 
+steering column lock. 
+
+In connection with a mechanically adjustable steering column, the electric steering col¬ 
+umn lock is secured from below on the steering column. 
+
+If an electrically adjustable steering column is installed, the electric steering column lock 
+is mounted with two screws on the side ofthe steering column. 
+
+
+
+Electrically Adjustable Steering Column 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Car Access System 2 (CAS 2) 
+
+2 
+
+Electric Steering Column Lock 
+
+3 
+
+START/STOP Button 
+
+4 
+
+Slot 
+
+
+30 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+Unlocking Steering Column with Comfort Access 
+
+The steering is unlocked undervarious conditions. A fundamental condition required for 
+unlocking the vehicle is the detection of a valid identification transmitter in the interior. 
+
+The steering unlocking operation is triggered with the status "terminal R ON". 
+
+Examples of Unlocking the Steering: 
+
+Unlock Steering 
+
+• Driver's door unlocked and opened: 
+
+The steering is unlocked when a valid identification transmitter is detected in the 
+vehicle interior 3 seconds after opening the door. 
+
+• Driver's door unlocked and opened: 
+
+If more than 3 seconds has elapsed after opening the driver's door, the search for a 
+valid identification transmitter in the vehicle interior is started when the last door of 
+the vehicle is closed. The steering is unlocked if the search in the vehicle interioris 
+successful. 
+
+• Driver's door unlocked and opened: 
+
+M ore than 3 seconds has elapsed after opening the driver's door and the driver's 
+door remains open. Terminal R ON can be selected with the START/STOP button 
+and the steering is unlocked. 
+
+• A locked steering can be unlocked by inserting the identification transmitter in its 
+slot. 
+
+Locking Steering Column with Comfort Access 
+
+The steering can be locked only under certain conditions. A fundamental condition is 
+that the vehicle is stationary and the engine is turned off. The steering locking operation 
+is triggered with the status "terminal R OFF". 
+
+Examples of Locking the Steering: 
+
+Locking Steering 
+
+• Terminal 15 OFF with the START/STOP button followed by the central arrest 
+command of the central locking system. The central arrest can be triggered with the 
+remote control in the identification transmitter or via the "lock" capacitive sensor at 
+the outer door handle. 
+
+• The steering can be locked by removing the identification transmitter from its slot. 
+
+Replacement of the Steering Column 
+
+If defective, the electric steering column lock can be replaced on the electrically 
+adjustable steering column. The electric steering column lock is included in the scope 
+of delivery of a new steering column. 
+
+
+31 
+
+E6x 9/05 Model Updates 
+
+
+
+START/STOP Button 
+
+
+The START/STOP button has been adopted from the E90 and adapted to the vehicle 
+design. The START/STOP button features two Hall sensors. With the aid of the Hall sen¬ 
+sors, the car access system 2 registers when the START/STOP button is pressed. Button 
+operation can still be detected if one of the Hall sensors fails. 
+
+The lighting of the START/STOP button is powered bythe car access system 2. 
+
+Slot 
+
+The slot forthe identification transmitter has been adopted 
+from the E90 but is now installed on the steering column 
+switch cluster.The slotfeatures two Hall sensors. 
+
+One Hall sensor detects when the identification transmitter 
+is inserted and locked in position. The other registers when 
+the identification transmitter is ejected/removed. 
+
+The electric lock of the inserted identification transmitter is 
+also located in the slot. 
+
+The car access system 2 evaluates the Hall sensors of the 
+slot. 
+
+Car Access System 2 (CAS 2) 
+
+The car access system 2 is the master control unit for comfort access. The car access 
+system 2 checks the requests triggered bythe comfort access system. 
+
+For example, the car access system 2 enables activation of the central locking or of the 
+electric steering column lock. The car access system 2 is also responsible forthe engine 
+start enable. 
+
+The CAS-bus is used forthe communication between car access system 2 and comfort 
+access. 
+
+The CAS-bus is a bus system based on the K-bus. 
+
+
+
+32 
+
+E6x 9/05 Model Updates 
+
+
+
+33 
+
+E6x 9/05 Model Updates 
+
+
+
+Car Access System Circuit Diagram 
+
+
+K-CAN 
+
+
+
+
+
+30 •— 
+
+© 
+
+KBM 
+
+L 
+
+, 
+
+Q 
+
+S 
+
+
+\!y 
+
+-HH4 1 
+
+M 
+
+, & 
+HH4 1 
+
+
+
+
+=.T 
+
+8 ) 
+
+Ifl 
+
+<3 
+
+TAGE 
+
+—r 
+
+o 
+
+Cl 
+
+2 
+
+r 
+
+
+! - •KIM 
+
+In 
+
+
+34 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend forCar Access System Circuit Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+D 
+
+Driver's door lock barrel 
+
+21 
+
+Hall sensor, identification transmitter in slot 
+
+2 
+
+Body-gateway module KGM 
+
+22 
+
+Identification transmitter locked in slot 
+
+3 
+
+Car access system 2 CAS 2 
+
+23 
+
+Identification transmitter holder 
+
+D 
+
+Basic body module KBM 
+
+24 
+
+Electric steering lock ELV 
+
+5 
+
+Hall sensor "pull" TAGE passenger's side 
+
+25 
+
+Remote control antenna 
+
+6 
+
+TAGE capacitive sensor, front passenger's side 
+
+26 
+
+Remote control receiver 
+
+7 
+
+TAGE capacitive sensor, front passenger's side 
+
+27 
+
+Identification transmitter 
+
+8 
+
+TAGE antenna, front passenger's side 
+
+28 
+
+LED START/STOP button 
+
+9 
+
+Comfort access CA 
+
+29 
+
+Hall sensor, START/STOP button 
+
+10 
+
+Exterior antenna 
+
+30 
+
+Hall sensor, START/STOP button 
+
+11 
+
+Luggage compartment antenna 
+
+31 
+
+START/STOP button 
+
+12 
+
+Interior antenna, rear 
+
+CAS- 
+
+CAS-bus (K-bus protocol) Bus 
+
+13 
+
+Interior antenna, front Kl. 30 
+
+K-CAN 
+
+Body CAN 
+
+14 
+
+TAGE antenna, driver's side 
+
+KL 30 
+
+Terminal 30 
+
+15 
+
+TAGE capacitive sensor, driver's side 
+
+KL 30 
+ELV 
+
+Terminal 30 ELV (bus powersupply) 
+
+16 
+
+TAGE capacitive sensor, driver's side Kl. 31 
+
+KL 31 
+ELVER 
+
+Terminal 30 ELV unlock (ground connection) 
+
+17 
+
+Hall sensor "pull" TAGE driver's side 
+
+KL 31 
+ELV VR 
+
+Terminal 30 E LV lock (ground E LV VR connec¬ 
+tion) 
+
+18 
+
+Door contact 
+
+FBD 
+
+Remote control services 
+
+19 
+
+Transponder coil 
+
+FBD 
+
+ON 
+
+Remote control services ON 
+
+20 
+
+Hall sensor, identification transmitter in slot 
+
+FBD 
+
+OUT 
+
+Remote control services OUT 
+
+
+35 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Central Locking 
+
+
+The central locking system is described in the following based on the example of the 
+E60.The description briefly outlines the changes to the central locking system in the 
+models E61, E63 and E64. 
+
+The central locking system is a distributed function. The control units that make up the 
+system are the: 
+
+• CAS 2 
+
+• KGM 
+
+• KBM 
+
+The car access system 2 CAS 2 is the masterforthe central locking system. On vehi¬ 
+cles with comfort access CA, this control unit is also involved in the central locking sys¬ 
+tem. 
+
+Communication between CAS 2, KBM, KGM and CA takes place via the K-CAN. 
+
+Body Gateway Module (KGM) 
+
+With the aid of two double relays, the KGM controls the central locking of the front 
+doors. The double relays are integrated in the KGM. The KGM registers the status of the 
+central locking drive units and makes this status available via the K-CAN. 
+
+The statuses are: 
+
+• Central locking unlocked ER 
+
+• Central locking locked VR 
+
+• Central locking arrested (double locked) 
+
+The KGM evaluates the status of the door contacts (Hall sensors) in the front doors. The 
+KGM makes available, via the K-CAN, the status of the door contacts to other users in 
+the system network. 
+
+The status of the Hall sensors in the lock barrel of the driver's door is also evaluated by 
+the KGM and sent via the K-CAN. 
+
+
+36 
+
+E6x9/05 Model Updates 
+
+
+
+
+Relays for Central Locking 
+
+Because the KGm replace the individual front door modules in the E60/61, the relays for 
+
+
+door lock actuation are located inside. 
+
+
+
+Relays in KGM 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Output stage, outside mirror heating, 
+driver's door 
+
+2 
+
+Output stage, outside mirror heating, 
+passenger's door 
+
+3 
+
+Double relay for power window, 
+passenger's door 
+
+4 
+
+Double relay for central arrest/locking, 
+driver's door 
+
+5 
+
+Double relay for unlock/lock, 
+passenger's door 
+
+6 
+
+Relay for terminal 30g_f 
+
+7 
+
+Double relay for power window, 
+driver's door 
+
+
+Body Basic Module (KBM) 
+
+The basic body module KBM controls the central locking in the rear doors, fuel fillerflap 
+and boot lid/rear hatch. 
+
+On the E61 Touring, the KBM additionally controls the central locking forthe rear window 
+and load area cover. 
+
+The basic body module controls the central locking forthe storage compartment in the 
+center console of the E63 and E64. 
+
+
+37 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+Central Locking Circuit Diagram 
+
+
+
+38 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend forCentral Locking Circuit Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+D 
+
+Driver's door lock barrel 
+
+15 
+
+Rear window antenna 
+
+2 
+
+Body-gateway module KGM 
+
+16 
+
+Remote control receiver 
+
+3 
+
+Doorcontact, passenger's door 
+
+17 
+
+Central locking, driver's door 
+
+D 
+
+Central locking, passenger's door 
+
+18 
+
+Doorcontact, driver's door 
+
+5 
+
+Doorcontact, rear passenger's side 
+
+19 
+
+Center-lock button 
+
+6 
+
+Central locking, rear passenger's side 
+
+20 
+
+Car access system 2 CAS 2 
+
+7 
+
+Central locking, fuel fillerflap 
+
+21 
+
+Interior button for boot lid 
+
+8 
+
+Body basic module 
+
+22 
+
+Comfort access CA 
+
+9 
+
+Button, boot lid, exterior 
+
+K-CAN 
+
+Body CAN 
+
+10 
+
+Central locking, boot lid 
+
+KL 30 
+
+Terminal 30 
+
+11 
+
+Connection, luggage compartment lights 
+
+CAS 
+
+bus 
+
+Car access system bus 
+
+12 
+
+Central locking, rear driver's side 
+
+FBD 
+
+Remote control services 
+
+13 
+
+Doorcontact, rear driver's side 
+
+FBD 
+
+ON 
+
+Remote control services ON 
+
+14 
+
+Identification transmitter 
+
+FBD 
+
+OUT 
+
+Remote control services OUT 
+
+
+39 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interior Lighting 
+
+
+Doors 
+
+Together with the interior lighting master, the KGM controls the light functions in the 
+front doors. The masterforthe interior lighting is the basic body module. The KGM 
+therefore receives the request to switch the door light functions on or off via the K-CAN. 
+
+The KGM is responsible forthe following lighting systems: 
+
+• Door exit light • Courtesy lighting 
+
+• Sill lighting on the E63 • Driver's door switch cluster 
+
+Door Exit Light 
+
+Depending on the coding of the KGM, the door exit lights can be switched on either via 
+the Soft ON/Soft OFF function ordirectly.To avoid fluctuations in the brightness, the 
+door exit lights are activated pulse-width modulated by means of driver output stages. 
+
+The KGM monitors the door exit lights for shorts to ground. A temperature protection 
+facility is included in the driver output stages. A fault code is entered in the KGM as soon 
+as the triggering temperature is reached. 
+
+Courtesy Light 
+
+The courtesy lighting in the outside mirror is controlled by the KGM via the LIN bus. The 
+lighting can be switched on or off either via the Soft ON/Soft OFF function or directly. 
+
+The courtesy lighting is not activated at terminal 15 ON. 
+
+Sill Lighting E63 
+
+The sill lighting is connected in parallel to the output forthe door exit light. 
+
+Driver's Door Switch Cluster 
+
+The buttons in the driver's door switch cluster are eliminated by means of locator light¬ 
+ing, terminal 58g orthe function indicator. 
+
+The function lighting is based on the brightness value of the photosensor in the instru¬ 
+ment cluster. 
+
+The instrument cluster makes available the brightness value via the K-CAN. In connec¬ 
+tion with the LIN-bus, the KGM controls the function lighting of a pressed button (e.g. 
+child safety lock, "All windows" button E64). 
+
+Backlighting (terminal 58g) 
+
+Various lights in the front doors are operated directly by the lights module in connection 
+with terminal 58g. These lighting functions are: 
+
+• Handle plate light • Storage compartment light 
+
+• Driver's door switch cluster • Passenger's power window switch 
+
+
+40 
+
+E6x9/05 Model Updates 
+
+
+
+
+PowerWindows 
+
+
+Front Windows 
+
+The control of the powerwindows is distributed over 3 control units. These control units 
+are the CAS 2, KGM, and KBM. 
+
+The car access system CAS is the master control unitforthe powerwindow function. 
+
+Communication between CAS 2, KBM, and KGM takes place via the K-CAN. 
+
+The Convertible top module CVM makes further information available via the K-CAN for 
+operation of the powerwindows on the E64. 
+
+Body Gateway Module (KGM) 
+
+The body-gateway module KGM evaluates the front powerwindow switch on the pas¬ 
+senger's side and the driver's door switch cluster. The following power window functions 
+are integrated in the KGM: 
+
+• Control and monitoring of the direction of rotation of the powerwindow motors in 
+OPEN orCLOSED direction. 
+
+• Toll function 
+
+• Convenient opening and convenient closing 
+
+• Anti-trapping function 
+
+• Disabling powerwindow operation at terminal 50. 
+
+Body Basic Module (KBM) 
+
+The basic body module KBM controls the powerwindows in the rear doors. 
+
+Convertible Top Module (CVM) E64 
+
+The KGM receives additional requests from the driver's door switch cluster, concerning 
+the Convertible top system. 
+
+These requests are: 
+
+All windows and rearwindow OPEN orCLOSED (only E64 Convertible top module 
+CVM) 
+
+• Rear window OPEN orCLOSED 
+
+The requests, e.g. OPEN orCLOSE rearwindow, are sent via the K-CAN to the CVM. 
+The CVM controls the movement of the rearwindow. 
+
+When opening orclosing the convertible top, the KGM receives, via the K-CAN, the 
+request to lowerthe windows from the CVM .The KGM completely lowers the front win¬ 
+dows. 
+
+
+41 
+
+E6x 9/05 Model Updates 
+
+
+
+
+A closed side window reliably prevents draughts from the vehicle exterior. The window of 
+the respective door is lowered when opening the driver's or passenger's door, thus allow¬ 
+ing the doors to be opened. 
+
+The window is also closed after closing the doorto again provide reliable protection 
+against draughts. 
+
+Lowering the S ide Window E63 
+
+As on the E64, the window is lowered slightly when the driver's or passenger's door is 
+opened. The window is also closed after closing the door 
+
+The "easy entry" function can be set in the personal profile. After activating this function, 
+the windows are opened by as much as 75% after unlocking twice within 2 seconds and 
+after opening the door. 
+
+
+42 
+
+E6x 9/05 Model Updates 
+
+
+
+Outside Mirrors 
+
+Mirror Control 
+
+The mirrors are connected via the LIN-bus.The electronic mirror module controls the 
+mirrors. 
+
+The signal progression for the driver's outside mirror is as follows: 
+
+• From the KGM via the LIN-bus to the driver's door switch cluster 
+
+• From the driver's doorswitch clustervia the LIN-bus to the electronic mirror module 
+
+• The electronic mirror module controls the mirror adjustment motors. 
+
+The signal progression for the passenger's outside mirror is as follows: 
+
+• From the KGM via the LIN-bus to the electronic mirror module 
+
+• The electronic mirror module controls the mirror adjustment motors. 
+
+
+3 
+
+ffl • 
+
+O 1 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Outside mirror 
+
+2 
+
+Base Gateway Module 
+
+3 
+
+Motorfor outside mirror adjustment 
+
+4 
+
+Electrochromic outside mirrors 
+
+5 
+
+Potentiometer, outside mirror memory 
+
+6 
+
+Outside mirrorfolding motor 
+
+7 
+
+Courtesy lighting 
+
+8 
+
+M irror heating 
+
+
+43 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mirror Heating 
+
+The KGM controls the mirror heating via the LIN-bus. 
+
+Mirror Folding Function 
+
+The KGM evaluates the mirrorfold-in request and activates the fold-in motors via the LIN 
+Bus. 
+
+The mirrorfolding function can be triggered manually using the convenient closing/open¬ 
+ing function. 
+
+3 The convenient closing function can be coded. 1 
+
+Electrochromic Mirrors 
+
+The KGM receives the signal for the EC mirror function directly from the interior rear-view 
+mirror. The KGM evaluates the signal from the interior rear-view mirror and forwards the 
+request via the LIN-bus to the outside mirrors. 
+
+The electronic mirror module carries out the request. 
+
+MirrorMemory 
+
+The KGM evaluates the signals from the electronic mirror module and stores the value in 
+the KGM. 
+
+Automatic Parking (curb viewer) Function 
+
+The passenger's side mirror is turned downward when reverse gear is engaged, thus pro¬ 
+viding a better view of the curb. The automatic parking function (curb viewer) is available 
+together with the mirror memory. 
+
+
+44 
+
+E6x 9/05 Model Updates 
+
+
+
+Safety Gateway Module 
+
+
+The body-gateway module will be installed in the BMW 5 Series and BMW 6 Series as 
+from 09/2005. It is connected via two 51-pin connectors to the system network and is 
+installed in the units carrier behind the glove compartment. 
+
+The body-gateway module replaces the safety and gateway module, the door modules 
+and the micro-power module. 
+
+Functional Integration 
+
+Due to the functional integration, the KGM is involved in various functions. These func¬ 
+tions are listed in the following table: 
+
+
+Function/component 
+
+Replaced 
+
+New 
+
+Central locking 
+
+• Activation in front doors 
+
+byteflight, TMFA/ 
+
+• Activation of central locking in 
+
+• Evaluation of front door 
+
+TMBF and SGM 
+
+front doors by KGM 
+
+contacts 
+
+• Evaluation of Hall sensors In 
+driver's door lock barrel 
+
+
+• Evaluation of front door contacts 
+
+• Evaluation of Hall sensors in 
+driver's door lock barrel by KGM 
+
+Interior lighting, front 
+
+• Activation in front doors 
+
+byteflight TMFA/ 
+
+• Activation of interior lighting in 
+
+• Evaluation of front door 
+
+TMBF and SGM 
+
+front doors by KGM 
+
+contacts 
+
+
+• Evaluation of front door contacts 
+by KGM 
+
+Roller sun blind 
+
+• Activation 
+
+byteflight between 
+
+• Activation of roller sun blind 
+
+
+door module and SGM 
+
+by KGM 
+
+• Link of driver's door switch 
+cluster via LIN-bus to KGM 
+
+Automatic climate control 
+
+• Gateway 
+
+SGM 
+
+• Gateway in KGM 
+
+Telephone 
+
+• Link of steering column 
+
+byteflight between 
+
+• Link of steering column 
+
+switch cluster SZL and 
+
+SZL and SGM 
+
+switch cluster and 
+
+multifunction steering 
+wheel 
+
+
+multifunction steering 
+wheel via PT-CAN to KGM 
+
+Head-up display 
+
+* Gateway 
+
+SGM 
+
+• Gateway in KGM 
+
+Instrument cluster 
+
+
+
+• Gateway 
+
+SGM 
+
+• Gateway in KGM 
+
+
+45 
+
+E6x 9/05 Model Updates 
+
+
+
+
+Function/component 
+
+Replaced 
+
+New 
+
+Exterior lighting 
+
+• Signalling of requests from 
+steering column switch for 
+direction indicator, low 
+beam and high beam 
+
+byteflight between 
+steering column switch 
+cluster and SGM 
+
+• PT-CAN between steering 
+column switch cluster and 
+KGM 
+
+Adaptive headlight 
+
+• Signalling of data from 
+steering angle sensor in 
+
+SZL 
+
+bytef light between 
+steering column switch 
+cluster and SGM 
+
+• PT-CAN between steering 
+column switch cluster and 
+KGM 
+
+
+
+• PT-CAN to lights module 
+
+Seats 
+
+• Memory function 
+
+bytef light between 
+steering column switch 
+cluster and SGM 
+
+• PT-CAN between steering 
+column switch cluster and 
+KGM 
+
+
+
+• Memory position of outside 
+mirrors in KGM 
+
+Active backrest width 
+adjustment 
+
+• Gateway 
+
+SGM 
+
+• Gateway in KGM 
+
+
+Steering column 
+
+• Steering column 
+adjustment 
+
+byteflight between 
+steering column switch 
+cluster and SGM 
+
+• PT-CAN between steering 
+column switch cluster and 
+KGM 
+
+Steering column switch 
+cluster 
+
+• Link to SZL 
+
+byteflight between 
+steering column switch 
+cluster and SGM 
+
+• Link of steering column 
+switch cluster via PT-CAN 
+to KGM 
+
+
+46 
+
+E6x 9/05 Model Updates 
+
+
+
+Function/component 
+
+Replaced 
+
+New 
+
+Front power windows 
+
+• Power windows control 
+
+byteflight, TMFA/ 
+
+• Activation of power 
+
+• Evaluation of front door 
+contacts 
+
+• Evaluation of driver's door 
+switch cluster 
+
+• Evaluation of power window 
+switch on passenger's side 
+
+TMBF and SGM 
+
+windows in front doors by 
+KGM 
+
+• Evaluation of front door 
+contacts by KGM 
+
+• Evaluation of driver's door 
+switch cluster by KGM 
+
+• Evaluation of power 
+window switch on 
+passenger's side by KGM 
+
+Slide/tilt sunroof 
+
+• Gateway 
+
+SGM 
+
+• Gateway in KGM 
+
+Panoramic glass roof 
+
+• Vehicle speed signal 
+
+SGM 
+
+• Gateway in KGM 
+
+Anti-theft alarm system 
+
+• Evaluation of front door 
+contacts 
+
+Door modules 
+
+• Evaluation of front door 
+contacts by KGM 
+
+Wipe/wash system 
+
+• Signalling of requests from 
+
+byteflight between 
+
+• PT-CAN between steering 
+
+steering column switch for 
+
+steering column switch 
+
+column switch cluster and 
+
+wipe-wash system 
+
+cluster and SGM 
+
+KGM 
+
+
+47 
+
+E6x 9/05 Model Updates 
+
+
+
+Properties 
+
+The table below shows a selection of the specific properties of the KGM. 
+
+
+General control unit data 
+
+Voltage range 
+
+The body-gateway module operates in the voltage range between 
+
+9 V and 16 V 
+
+Closed-circuit current 
+
+In sleep mode, the control unit has a current consumption of 
+approx. 1 mA 
+
+Short-circuit-proof 
+
+The body-gateway module is short-circuit-proof with respect to 
+terminal 30 and terminal 31 
+
+Polarity reversal 
+protection 
+
+The body-gateway module is protected against polarity reversal. 
+
+Temperature range 
+
+The body-gateway module operates in a temperature range from - 
+40 °C to +80 °C 
+
+
+Location 
+
+
+
+Control Unit Location 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access 
+
+4 
+
+Body Gateway M odule (KGM) 
+
+2 
+
+Panoramic Sunroof (MDS) 
+
+5 
+
+CD Changer 
+
+3 
+
+Body Basic Module (KBM) 
+
+
+
+
+48 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Switch Cluster 
+
+
+A new steering column switch cluster will be installed in the models E60/E61/E63 and 
+E64 as from 09/2005. This steering column switch cluster represents a combination of 
+technologies that are already familiar from various predecessor models: 
+
+• As on the E87/E90, the steering angle is acquired by optical means. 
+
+• As on the E60/E65 models, the steering column stalks are equipped with 
+electric buttons. 
+
+The two control units previously responsible forthis system (electronic steering wheel 
+module LRE and electronic steering column module LSE) have been combined in one 
+control unit (steering column switch cluster). 
+
+
+MFL 
+
+
+MFL 
+
+
+
+SZL 
+
+
+
+WF 
+
+SZL 
+
+
+E6x Versions Before 9/2005 E6x Versions After9/2005 (with ACSM) 
+
+As on the E65/E60 models, the switch positions of the steering column stalks forwipers, 
+direction indicators and cruise control are registered electrically and forwarded to the 
+SZL control unit. The information from the switches and steering angle sensor are 
+processed in the SZL control unit and transferred to other systems via the F-CAN or PT- 
+CAN.The driver's airbag is connected to the ACSM control unit. 
+
+
+49 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SZL System Circuit Schematic 
+
+
+
+50 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SZL System Circuit Schematic Legend 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+i — 1 
+
+Steering column switch, direction indicator 
+lights 
+
+15 
+
+Steering wheel heating 
+
+2 
+
+Steering column switch cluster with steering 
+angle sensor 
+
+16 
+
+Switch for steering column adjustment 
+
+3 
+
+Steering column switch, wipers 
+
+17 
+
+Switch for steering wheel heating 
+
+4 
+
+Bus connections F-CAN and PT-CAN 
+
+18 
+
+Steering column stalk, cruise control 
+
+5 
+
+Horn 2xactivation 
+
+19 
+
+Temperature sensor, steering wheel heating 
+
+6 
+
+Advanced safety and crash management 
+
+KL 30 
+
+Battery positive, load 
+
+7 
+
+Coil spring assembly 
+
+KL 30 
+
+Battery positive, electronics 
+
+8 
+
+Multifunction steering wheel 
+
+KL 31 
+
+Battery negative, load 
+
+9 
+
+2-stage driver airbag 
+
+KL 31 
+
+Battery negative, electronics 
+
+10 
+
+SMG button 
+
+KL 58g 
+
+Dimming information 
+
+11 
+
+M ultifunction buttons 
+
+FAS 
+
+redundancy 
+
+Redundant information, direction indicators 
+
+12 
+
+SMG button 
+
+SMG 
+paddle + 
+
+Shift status, sequential manual gearbox, 
+plus (only for M-Sport) 
+
+13 
+
+Horn button 
+
+SMG 
+paddle 4- 
+
+Shift status, sequential manual gearbox, 
+minus (onlyforM-Sport) 
+
+14 
+
+Temperature sensor, steering wheel heating 
+
+
+
+
+Note: The stalkswitches used in the E6x updates are notoptical sensors.They 
+are conventional switched ground switches. 
+
+
+51 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C omponent Overview 
+
+
+The steering column switch cluster consists of the following components: 
+
+• SZL control unit 
+
+• Steering angle sensor 
+
+• Steering column stalk, cruise control (FRA/ACC) 
+
+• Steering column switch, direction indicator stalk 
+
+• Steering column switch, wipers 
+
+• Coil spring assembly 
+
+The following components can be replaced separately: 
+
+• Steering column switch, cruise control 
+
+• Steering column switch, direction indicators 
+
+• Steering column switch, wipers 
+
+• Coil spring assembly 
+
+• SZL control unit with steering angle sensor 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column switch, direction indicator stalk 
+
+3 
+
+Coil spring assembly 
+
+2 
+
+Steering column switch, wipers 
+
+4 
+
+Steering column switch, cruise control 
+
+
+52 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+Electronic Steering Column Switch Cluster Module 
+
+The electronic steering column switch cluster module contains a processor, the power 
+supply and following interfaces: 
+
+• F-CAN 
+
+• PT-CAN 
+
+• Electrical switches 
+
+• Horn 
+
+• SMG (M-Sport) 
+
+• Redundant lines for direction indicators 
+
+The optical sensorfor measuring the steering angle is integrated in the pc-board of the 
+control unit. 
+
+
+F-CAN Link 
+
+The SZL is connected via the F-CAN to the control units DSC and active steering AL. 
+
+All necessary information relating to the running gear is made available via the F-CAN. 
+
+PT-CAN Link 
+
+In addition to the link to the F-CAN, the SZL also features an interface to the PT-CAN. 
+Using this interface, the SZL control unit can send switch information (direction indicators, 
+wipers, cruise control, multifunction steering wheel) to the corresponding control units. 
+
+The steering angle is also sent via the PT-CAN (e.g. direction indicator reset). All diagno¬ 
+sis and programming functions are performed via this data link. 
+
+
+SZL PowerSupply 
+
+The SZL is connected to terminal 30. Only the steering angle sensor, the direction indi¬ 
+cator steering column stalk and the switch for steering column adjustment are monitored 
+every 300 ms in sleep mode. The closed circuit current is approx. 1 mA. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Plug-in connection for steering column 
+stalk, cruise control 
+
+2 
+
+Optical sensorforsteering angle 
+
+3 
+
+Plug-in connection for steering column 
+stalk, direction indicator 
+
+4 
+
+Control unit for steering column switch 
+cluster 
+
+5 
+
+Wiper steering column stalk, plug-in 
+connection is located opposite side 
+
+6 
+
+Code disc 
+
+
+Control Unit for Steering Column Switch Cluster 
+
+
+53 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+Steering Angle Sensor 
+
+The steering angle sensor is designed as a contactless, optical angle measuring system. 
+
+The system consists of a code disc and an optical sensor. The code disc is connected 
+via a drive element directly to the steering wheel. The code disc turns within the optical 
+sensor when the steering wheel is moved. 
+
+
+Steering Column Switches 
+
+As on the E65/E60, the steering column switches are 
+designed as electrical switches, which include switching 
+mats and microswitches. 
+
+Differing from the predecessor models, the connectors 
+to the SZL control unit have been modified. 
+
+
+
+Coil Spring Assembly 
+
+The coil spring assembly can be replaced only as a com¬ 
+plete unit.The task ofthe coil spring is to transmit the fol¬ 
+lowing electrical signals from and to the multifunction 
+steering wheel: 
+
+• Activation of driver airbag 
+
+• SM G control buttons 
+
+• M ultifunction buttons 
+
+• Horn and steering wheel heating 
+
+
+
+Locking 
+
+To avoid damaging the coil spring assembly, it must be set to the correct position when 
+dismantling the steering wheel and coil spring assembly. 
+
+
+The front wheels and steering wheel must be setto the straight-ahead position as the 
+prerequisite for disassembly. During disassembly ofthe steering wheel, the load on the 
+lock pin ofthe coil spring assembly is relieved and the pin can lock in the straight ahead 
+position. 
+
+
+When the steering wheel is reinstalled, this arrangement ensures that the coil spring is 
+not damaged when the steering wheel is turned to full left and right lock. 
+
+
+54 
+
+E6x 9/05 Model Updates 
+
+
+Functions 
+
+
+The functions of the steering column switch cluster are: 
+
+• Detecting steering angle and steering speed 
+
+• Detecting the controls in the multifunction steering wheel (volume, mDrive, etc.) 
+
+• Detecting switching signals from the steering column switches 
+
+• Sending and receiving information to/from the interlinked control units 
+
+• Activating steering wheel heating 
+
+• Reading switch for steering column adjustment 
+
+• Reading buttons, SMG paddles 
+
+• Reading horn button and activating horns. 
+
+Detecting Steering Angle 
+
+The steering column switch cluster must detect the steering angle and steering speed 
+information as the basis for calculating various functions in the DSC. 
+
+Further information such as the absolute steering angle orthe steering wheel rotation 
+information is calculated. A steering angle of - 1807+180° is detected. 
+
+An LED and fibre optics unit illuminate the code disc from above. Due to the pattern on 
+the code disc, the light from above reaches the bottom only in certain areas where the 
+light beams hit the line camera. This process is similarto scanning barcodes on pack- 
+ages/goods purchased. 
+
+The line camera converts the line signals into electrical signals and transfers them to the 
+SZL. 
+
+
+55 
+
+E6x 9/05 Model Updates 
+
+
+
+
+Section of Code Disc 
+
+
+
+The code disc rotates dependent on the 
+steering wheel angle setting.The pattern on 
+the code disc changes in steps of 2°. 
+
+
+Optical Sensor 
+
+
+
+
+
+The light beams hit the line camera. The light pulses 
+are converted to electrical pulses in the line sensor. 
+
+
+
+
+The pattern on the code disc changes as the The position of the light beams is displaced. The line 
+
+disc continues to turn. The light passes through camera detects the light beams in other areas and 
+
+the code disc into other areas. transfers the information to the SZL. 
+
+Relative Steering Angle 
+
+The relative steering angle indicates the angle position of the steering wheel. The infor¬ 
+mation relating to the relative steering angle is always retained even when powerto the 
+control unit is disconnected. Renewed zero adjustment is necessary only afterthe steer¬ 
+ing column switch cluster SZL has been replaced. 
+
+
+
+56 
+
+E6x 9/05 Model Updates 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Absolute Steering Angle 
+
+The absolute steering angle is a calculation based on the relative steering angle and 
+steering wheel rotation information.The absolute and relative steering angles are defined 
+during the SZL initialization procedure. The SZL detects each position of the steering 
+wheel overthe entire steering lock range. 
+
+The precondition forthe initialization procedure is that the wheels and steering wheel are 
+set in the straight-ahead position. 
+
+Steering Wheel Rotation Information 
+
+The steering wheel rotation information indicates the turn position of the steering wheel. 
+
+The steering wheel rotation information is determined automatically by a virtual calcula¬ 
+tion model. 
+
+If lost, e.g. if powerto the SZL is disconnected, this information must be taught-in again. 
+
+The steering column switch cluster SZL uses data from the speed sensors of the front 
+wheels forthe calculation. The SZL assumes the vehicle is driving straight ahead at con¬ 
+stant speeds and therefore detects its zero position. The minimum speed necessary for 
+this purpose is 20 km/h. 
+
+This process need not be initialized via the BMW diagnosis system. The SZL automati¬ 
+cally determines the steering wheel rotation information as soon as the vehicle exceeds 
+the minimum speed. 
+
+Problems may occur in calculating the steering wheel rotation information under 
+Unfavorable road conditions (icy road surfaces).The DSC sends a corresponding CC 
+message in this case. 
+
+Detecting the Controls ofthe MFL 
+
+The voltage signals ofthe buttons on the multifunction steering wheel are routed via the 
+coil spring to the steering column switch cluster SZL. The SZL evaluates the voltage sig¬ 
+nals and sends the information to the corresponding control units. 
+
+The connections ofthe driver's airbag are wired via the coil spring directly to the corre¬ 
+sponding control units. This information is therefore not evaluated in the SZL. 
+
+
+57 
+
+E6x 9/05 Model Updates 
+
+
+

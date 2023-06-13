@@ -1,0 +1,9727 @@
+Table of Contents 
+SMG II 
+
+Subject Page 
+
+Purpose of System . 3 
+
+System Components . 4 
+
+Basic Gearbox. 5 
+
+SMG II Control Unit. 5 
+
+IPO . 6 
+
+SMG II Input/Outputs. 7 
+
+DMEMSS54.10 
+
+Hydraulic Unit.10 
+
+Hydraulic Diagram. 14 
+
+Gearbox Actuator. 16 
+
+Clutch Slave Cylinder.18 
+
+Shift Lever. 18 
+
+Steering Wheel Paddle Switches.20 
+
+DRIVELOGIC Control. 20 
+
+SMG II Electronic Display Unit.21 
+
+Shift Lights. 22 
+
+DSC Control Unit.22 
+
+SAC Clutch . 22 
+
+Principle of Operation .23 
+
+Engine Starting.23 
+
+Engaging a gear.23 
+
+Upshifts and Downshifts.27 
+
+Shifting Operation .28 
+
+Driving and Shift Programs.28 
+
+A-Mode.29 
+
+S-Mode.32 
+
+Other Shift Functions.34 
+
+Safety Functions. 34 
+
+SMG II Diagnosis.36 
+
+Review Questions.38 
+
+Fault Codes.39 
+
+
+Initial Print Date:03/02 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SMG II 
+
+Model: E46 M3 SMG II 
+Production: Available 1/02 USA 
+
+
+Objectives: 
+
+After completion of this module you should be able to: 
+
+• Understand the SMG II operating modes. 
+
+• Recognize and locate the components of the SMG II. 
+
+• Understand operation of the SMG II 
+
+• Diagnose the SMG II. 
+
+
+2 
+
+
+SMG II 
+
+
+
+
+Purpose of the System 
+
+
+SMG II 
+
+The SMG II combines the six-speed manual gearbox (S6S420G) of the E46 M3 with com¬ 
+puter-controlled electrohydraulic clutch and gear change operation. The driver is provided 
+with the accuracy of manual gear selection, the convenience of automated shifting and the 
+speed and adaptability of driver-adjusted computer control. 
+
+Using technology developed for the BMW/Williams Formula 1 car, the SMG II with DRIVE- 
+LOGIC adapts the speed, accuracy and control of the race cars electrohydraulic shifting to 
+the M3. 
+
+
+
+Shift Lever and Paddles 45-01-01 
+
+
+1. Shift Lever 
+
+2. DRIVELOGIC Control 
+
+3. Shift Paddles 
+
+4. Missing Clutch Pedal 
+
+
+Features of the SMG II include: 
+
+• Two operating modes 
+
+-Manual, shift lever or the steering wheel mounted paddle switches are used to make 
+gear changes. (S-Mode) 
+
+-Automatic, gear selection and shifting provided by the SMG II. (A-Mode) 
+
+• DRIVELOGIC control to adjust shift programs in the A mode or shift dynamics in the S 
+Mode. 
+
+• Light weight and elimination of torque convertor when compared to an Automatic 
+Transmission. 
+
+• Same basic 6 speed gear box design as Non-SMG II equipped M3. 
+
+• Elimination of clutch pedal. 
+
+• Adaptable based on engine torque and speed. 
+
+
+3 
+
+SMG II 
+
+
+
+
+
+
+
+
+System Components 
+
+The SMG II system is consists of the following components: 
+
+• Basic Gearbox (S6S420G, Getrag type D) 
+
+• SMG II Control Unit (Siemens) 
+
+• SMG CAN Bus 
+
+• DME Control Unit (MSS54) 
+
+• Hydraulic unit and solenoids 
+
+• Gearbox Actuator 
+
+• Clutch Slave Cylinder with PLCD (Permanent Linear Contactless Displacement) 
+
+• Shift Lever Module with Shift Lock 
+
+• Steering Wheel Paddle mounted switches 
+
+• DRIVELOGIC Control 
+
+• Display in instrument cluster 
+
+• DSC control unit 
+
+• SAC dry single disc clutch 
+
+
+
+SMG II System Schematic 45-02-2A 
+
+
+4 
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basic Gearbox 
+
+
+
+SMG II Manual Gearbox 45-01-03 
+
+
+The standard basic gearbox (S6S420G), as used in the M3, is transformed into a sequen¬ 
+tial gearbox with the addition of a hydraulic unit and shift assembly, a special clutch slave 
+cylinder and a new shift-lever module. 
+
+
+SMG II Control Unit 
+
+The SMG II Control Unit, installed in the E-Box next to the DME, is a single board module 
+with SKE (134 pin) gray colored connectors. The unit contains protection against reverse 
+polarity and overvoltage. 
+
+Communication with the DME is via a dedicated CAN bus (SMG II CAN Bus). Based on 
+instructions received from the DME the SMG II control unit manages the clutch solenoid 
+valve, the selector shaft up and down solenoids, and the selection angle solenoid. Safety 
+functions and limp home capabilities are also part of the SMG II programming. 
+
+While the SMG II control unit receives many of the inputs and manages the control of the 
+hydraulic system, the DME is responsible for and controls all gearshifts. Sensor inputs 
+received by the SMG II control unit are relayed to the DME for processing and monitoring. 
+
+
+5 
+
+SMG II 
+
+
+
+
+
+
+
+
+
+p 
+
+rca i5i 
+
++ 1 
+
+
+riiim 
+
+
+
+
+MAIN KL 31 
+
+
+DME 
+
+
+CAN Bus 
+SMG 
+
+
+DME 
+MS S54 
+
+
+zxxxxx 
+
+
+SMG 
+
+
+MFL 
+Shift UP 
+Shift Down 
+
+
+
+Shift Lever 
+Hall Sensor 
+8* 
+
+Drivelogic Ciwilnal 
+
+Longitudinal 1 
+
+Acceleration 
+
+Sensor 
+
+General Module 
+
+
+Transmission 
+Input Speed 
+Sensor 
+
+
+
+
+jfT- 
+
+
+
+
+Potentiometer 
+
+
+ES 
+
+i 
+
+! 
+
+
+1 ' S "IT 
+
+J 
+
+Fir Vr 1 
+
+. ^ 
+
+
+Pot (2X) 
+
+Selection Angle 
+Cylinder 
+
+
+Pot (2X) 
+Shift Travel 
+Cylinder - 
+
+
+PS 2 
+
+i ! ! ■ I 
+
+
+
+PS 3 
+
+
+Li. 
+
+
+
+
+Transmission 
+
+Temperature 
+
+
+Hydraulic 
+
+Temperature 
+
+
+Hood 
+
+Microswitch (2x) 
+
+TD Signal 
+Engine RPM 
+
+
+
+Hydraulic 
+
+Pressure 
+
+
+
+DME 
+
+
+6 
+
+
+DME 
+
+
+zxx>ooc 
+
+
+DME 
+MS S54 
+
+
+CAN Bus 
+SMG 
+
+
+
+Shift Lock 
+
+
+
+EWS Module 
+
+
+Relay 
+
+
+
+
+Hydraulic Pump 
+
+Solenoid Valve Selector Shaft Up 
+Solenoid Valve Selector Shaft Down 
+Solenoid Valve Selector Angle 
+Solenoid Valve Clutch 
+
+
+
+Diagnosis 
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SMG II Control Unit Inputs/Outputs 
+
+SMG CAN Bus 
+
+The SMG CAN Bus is the link for signal exchange between the DME and SMG II Control 
+Unit. It allows the DME to issue command instructions for clutch and gearbox control as 
+well as shift sequence and enables SMG II communication with the vehicle CAN BUS via 
+the DME. 
+
+Signals exchanged via 
+Engine Speed 
+Intake Air Temp 
+Wheel Speed 
+Cruise Status 
+Brake Light Switch 
+
+Engine Speed 
+
+The engine speed signal is transmitted twice to the SMG II control unit. One signal arrives 
+via the SMG CAN, the other arrives via a hard wire from the DME. 
+
+Engine Coolant Temp 
+Engine Oil Temp 
+Intake Air Temp 
+
+The signals are inputs directly into the DME and are shared with the SMG II control unit as 
+the information is needed over the SMG II CAN. 
+
+PWG 
+
+The PWG signal is input into the DME and forwarded to the SMG II control unit. The infor¬ 
+mation is used to calculate engine load. 
+
+EDR Feedback Pots 
+
+These potentiometers provide throttle position information that is useful during slip inter¬ 
+vention. 
+
+Wheel Speed 
+
+Conditioned digital wheel speed information is received from the DSC control unit. The 
+SMG II control unit uses data from all 4 wheels to detect vehicle speed and wheel slip in 
+the A-Mode and during down shifts in all modes to detect drag torque induced wheel slip. 
+
+Transverse Acceleration 
+
+Transverse Acceleration data is transferred from the DSC control unit in the A-Mode so that 
+up and down shifts may be prevented during high speed cornering. This sensor informa¬ 
+tion is further evaluated for slip recognition purposes. 
+
+
+SMG CAN Bus: 
+
+Engine Coolant Temp 
+PWG 
+
+Transverse Acceleration 
+Parking Brake 
+Key Memory 
+
+
+Engine Oil Temp 
+EDR Feedback Pots 
+Steering Angle 
+Door Contacts 
+
+
+7 
+
+
+SMG II 
+
+
+
+Steering Angle 
+
+This data from the steering angle sensor is sent via the CAN Bus for cornering and slip con¬ 
+trol information. 
+
+Cruise Status 
+
+The cruise mode is deactivated when a driver initiated shift is made in the S-Mode, during 
+A-Mode operation, the cruise control setting is maintained. 
+
+Parking Brake 
+
+Information concerning parking brake application affects gear engagement and vehicle 
+operation. 
+
+Door Contacts 
+
+The hall effect door position sensors integrated into the door latch mechanism signal the 
+GM. This data is transferred via the K-Bus and CAN Bus for safety program initiation. 
+
+Brake Light Switch 
+
+Brake pedal status is transferred to the SMG II control unit via the DME. The signal is used 
+for: 
+
+Unlocking the shift lock Brake detection Engine Starting 
+
+Downhill detection Clutch Disengagement while stopped. 
+
+Key Memory 
+
+At this time no functions for Car or Key Memory are provided for SMG II 
+
+SMG II Control Unit Inputs 
+
+MFL 
+
+Upshift and downshift signals from the paddle switches located on the steering wheel. 
+Shift lever 
+
+Located in the shift lever module, 8 hall sensors detect upshift and downshift requests and 
+are also used for Selector Lever position indication (Forward, Reverse and Neutral). Signals 
+from the hall sensors are also used to initiate mode changes from S-Mode to A-Mode and 
+back. 
+
+DRIVELOGIC 
+
+The shift characteristics are activated by means of the switch located on the console just 
+to the rear of the shift lever. 
+
+Longitudinal Acceleration 
+
+The signals from the Longitudinal Acceleration Sensor which is mounted under the pas¬ 
+senger seat are used for uphill driving programs. 
+
+
+8 
+
+
+SMG II 
+
+
+
+General Module 
+
+Load deactivation information (Sleep) is received by the SMG II Control Unit. 
+
+
+Clutch Position 
+
+Input from the PLCD providing exact clutch position. 
+
+Shift Position 
+
+The Position sensor provides two inputs (PS2 and PS3, each a dual pot) for position recog¬ 
+nition of the main selector shaft in the transmission. 
+
+Gearbox RPM 
+
+A hall sensor is used to measure transmission input shaft speed. 
+
+Hydraulic Pressure 
+
+A Pressure transducer for monitoring hydraulic pressure sends pressure information to the 
+SMG II Control Unit. 
+
+Temperature Sensors 
+
+Two NTC sensors are used for measuring Gearbox oil temperature and hydraulic fluid 
+temperature. 
+
+Hood Contacts 
+
+Two Micro switches located in the hood latch mechanism provide a ground signal to the 
+SMG II Control Unit when the hood is closed. 
+
+Engine Speed 
+
+Calculated engine speed received from DME via hardwire serves as redundant information 
+with that received via the SMG CAN Bus. 
+
+SMG II Control Unit Outputs 
+
+Shift Lock Mechanism 
+
+The Shift Lock Mechanism locks the shift lever in position for parking and prevents 
+unintended gear changes as part of the safety programming. 
+
+EWS 
+
+During the start-up operation, the SMG II Control Unit confirms shift lever position (0) and 
+brake application and signals the EWS module which then allows starter engagement. 
+
+Hydraulic Unit 
+
+The Hydraulic Unit is energized through a relay controlled by the SMG II Control Unit. The 
+operation of four (4) solenoid valves located in the hydraulic unit that are used to actuate 
+the clutch and shift the transmission are also controlled by the SMG II. 
+
+
+9 
+
+SMG II 
+
+
+
+DME Control Unit MS S54 
+
+
+Programming in the MS S54 controls the shift sequence through the SMG II CAN Bus inter¬ 
+face with the SMG II control unit. 
+
+Hydraulic Unit 
+
+The Hydraulic Unit generates the oil pressure and controls the shifts. It is mounted under 
+the intake manifold in the area of the starter motor. 
+
+The hydraulic unit is filled with .45 L Pentosin CHF 11S fluid and operates at a working pres¬ 
+sure of 45-80 Bar. 
+
+The hydraulic units consists of the following components: 
+
+• Aluminum Housing 
+
+• Electro-Hydraulic pump with filter 
+
+• 18 pin electrical connector 
+
+• Pressure accumulator and non-return valve 
+
+• Pressure relief valve 
+
+• Oil pressure sensor 
+
+• Oil temperature sensor 
+
+• Fluid Expansion tank 
+
+• Proportional directional valve for clutch control 
+
+• Proportional directional valve for selector shaft angle control 
+
+• Pressure control valve for shift travel cylinder actuation 
+
+
+
+1. Hydraulic Line for Shift Travel 1 
+Gears 1,3,5. 
+
+2. Hydraulic Line Slave Cylinder 
+Clutch Control. 
+
+3. Hydraulic Line for Selector Angle 
+Control Cylinder. 
+
+4. Hydraulic Line for Shift Travel 2 
+Gears 2,4,6. 
+
+5. Pressure Accumulator. 
+
+6. Supply Line from Hydraulic Tank. 
+
+7. Hydraulic Fluid Temp Sensor 
+
+8. Hydraulic Fluid Pressure Sensor. 
+
+9. X 5330 18 Pin connector. 
+
+
+SMG II Hydraulic Unit 
+
+
+45-01-5A 
+
+
+
+SMG II 
+
+
+
+
+
+
+
+
+Hydraulic Pump 
+
+The Hydraulic Pump, installed in the Hydraulic unit, generates the pressure required to 
+operate the clutch and perform gear changes. 
+
+The pump is a piston pump driven by an electric motor, actuated by the SMG control unit 
+via a relay so that oil pressure is always between 45 and 80 bar. Power consumption of the 
+electric motor is 20 amps. 
+
+When the fluid pressure in the hydraulic unit drops below 45 bar, the SMG II control unit 
+activates the relay and supplies the electric motor with B+. At a hydraulic pressure of 80 
+bar, the SMG II control unit deactivates the relay. 
+
+To ensure there is sufficient pressure when the engine is started, the hydraulic pump is acti¬ 
+vated below an accumulator pressure of 45 bar when the door is opened or the vehicle is 
+unlocked with the key or the remote. 
+
+In the event of a hydraulic system failure the gearbox warning lamp is turned on in the IKE 
+and if hydraulic pressure fails to build, no further gearshifts are allowed. This allows the 
+reserve pressure in the accumulator to be used to place the gearbox in the Neutral position 
+when the vehicle comes to a stop. 
+
+Pressure Accumulator and Non-Return Valve 
+
+The Pressure Accumulator in the hydraulic unit ensures that pressure generated by the 
+pump is stored in the system for a certain amount of time. The accumulator is divided into 
+two chambers by a piston, with nitrogen at 39 bar filling one chamber and fluid delivered 
+by the hydraulic pump filling the other chamber. The volume of the accumulator is 150ccm. 
+The Non-Return Valve at the pump outlet prevents the hydraulic oil pressure from dropping 
+when the pump is not running. 
+
+Pressure Relief Valve 
+
+The Pressure Relief Valve opens if the hydraulic oil pressure reaches 100 bar, creating a cir¬ 
+cuit between the suction and pressure sides of the pump, thus preventing further increase 
+in pressure. 
+
+Hydraulic Oil Pressure Sensor 
+
+Mounted on the hydraulic unit the Oil Pressure Sensor informs the SMG II control unit of the 
+current hydraulic pressure. At 0 bar pressure a voltage signal of .5 volts is sent to the SMG 
+II with the voltage increasing linearly to 4.58 volts at 100 bar of pressure. 
+
+Failure of the pressure sensor whether shorted or open will result in the hydraulic unit being 
+activated for a fixed amount of time at predetermined intervals and after each gearshift to 
+maintain system pressure. 
+
+Hydraulic Oil Temperature Sensor 
+
+Temperature of the hydraulic oil is monitored by the SMG II control unit via a NTC temper¬ 
+ature sensor located in the hydraulic unit. 
+
+
+
+SMG II 
+
+
+
+Hydraulic Fluid Expansion Tank 
+
+
+
+Hydraulic Fluid Expansion Tank Mounting 
+
+
+45-01-09 
+
+Hydraulic Fluid Expansion Tank Quick Release 
+Coupling. 
+
+
+The Hydraulic Fluid Expansion Tank is mounted on the rear of the intake manifold and con¬ 
+nected to the hydraulic unit via a plastic supply hose with a quick release coupling. A valve 
+in the tank prevents oil loss when the supply hose is disconnected. 
+
+Solenoid Valves 
+
+Four solenoid valves are installed in the hydraulic unit. Two of the solenoid valves are 
+designed as proportional directional valves (1 - for clutch control and 1 - for selection angle 
+cylinder actuation). The other two solenoid valves are pressure control valves (both used for 
+shift travel cylinder actuation). 
+
+
+
+Hydraulic Unit in vehicle with intake manifold removed 
+
+
+1. Hydraulic lines at solenoids 
+
+2. Accumulator 
+
+3. Supply Line from Expansion 
+
+Tank 
+
+
+45-01-09 
+
+
+
+SMG II 
+
+
+
+
+
+
+Proportional Directional Valves 
+
+The two proportional directional valves have three positions: pressure reduction, pressure 
+holding, pressure increase. 
+
+
+
+Proportional Directional Control Valve 
+
+
+1. Pressure Reduction 
+
+2. Pressure Holding 
+
+3. Pressure Increase 
+
+
+The proportional directional valves are set in the pressure reduction position when there is 
+no gear shifting or clutch operation in progress. In this condition the two cylinders (clutch 
+cylinder and selector angle cylinder) are connected to the expansion tank. 
+
+During clutch operation or main selector shaft rotation the valve is placed in the pressure 
+increase position. In this position the valve connects the cylinder to the hydraulic pressure 
+accumulator. At this stage the solenoid will consume approximately 1.1-2 amps. The valve 
+is fully open up to 2 amps. 
+
+When the clutch is to be disengaged or the main selector shaft is to remain in the activat¬ 
+ed position, the valve switches to the pressure holding position. With the valve in this posi¬ 
+tion the flow of hydraulic oil to the cylinder is interrupted and the piston of the activated 
+cylinder remains in a pressurized mode. 
+
+Pressure Control Valve 
+
+The piston in the shift travel cylinder must be moved in both directions (in/out) by pressure. 
+Two pressure control valves are required to achieve this movement. 
+
+With no current applied to the valves they are in the open position allowing connection of 
+the cylinder chamber and the expansion tank. Applying current to one of the solenoids will 
+cause hydraulic fluid to flow against the cylinder piston pushing it in one direction. Fluid from 
+the other side of the piston will be forced through the second control valve into the expan¬ 
+sion tank. 
+
+
+
+
+I i i i i i i i i i r 
+J. 
+
+
+PS 3 
+
+
+45-01-11 
+
+
+SW1 - DRV1 
+Pressure Control Valve 
+
+SW2 - DRV2 
+Pressure Control Valve 
+
+ZSS 
+
+Shift Travel Cylinder 
+PS3 
+
+Shift Travel Position Sensor 
+
+
+13 
+
+SMG II 
+
+
+
+
+HH25 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j- C5 
+o a> c 
+
+-Q CC Q 
+C +j ■— 
+
+3 * ■'g 
+
+0 ) g o 
+£ O Q. 
+■- CO _ 
+
+J? 4- CC 
+
+iu ° E 
+
+c & & 
+
+O h- Z 
+
+
+§ Q 
+'43 O 
+
+O -R 
+
+Q_ 0) 
+_ C 
+
+5 x 
+E o 
+^ co 
+
+
+o> 
+
+a> 
+
+O) 
+
+.-£ Q. 
+
+D ® 
+
+^ <D 
+
+o <H 
+
+
+5 E 
+
+
+3 § £ 
+
+t°o 
+
+> o 
+
+
+(5 3 
+
+_ CC 
+
+CC "3 
+
+£x^ 
+
+= o = 
+
+
+- £ 
+£ 
+
+
+o 2 
+
+I ° 
+
+o n 
+
+O 
+
+o 
+
+o ™ 
+
+Is 
+
+ii 
+
+
+
+
+c c c £ 
+
+
+o o o o 
+
+£ £ £ £ 
+o o o o 
+O O O O 
+o o o o 
+
+"5 "5 "5 "5 
+
+CC CC CC CC 
+
+-Q -Q -Q -Q 
+> > > > 
+
+X X X X 
+
+c £ c £ 
+
+
+£ <D 3 
+
+§ 1 < 
+
+5 > X 
+
+oO 5 
+
+^ a) t: 
+cc > c cc 
+■p JS 5 a> 
+-E co -2 o 
+
+£ £ a £ 
+
+o o o o 
+
+-a -a a. -c 
+
+CD CD — CD 
+H—» H—» CU H—» 
+
+c £ c £ 
+
+3 3 F 3 
+
+O O o o 
+
+
+O O O 
+
+CC CC CC 
+3 3 3 
+
+O O O 
+< < < 
+XXX 
+
+o o o 
+
+SI SI SI 
+
+CC CC CC 
+CD CD CD 
+
+O O O 
+c c c 
+
+
+_ o 
+
+£ « 
+
++- 3 
+
+o < 
+
+o 
+
+~ a> 
+
+
+■d o 
+
+I X 
+
+25 
+
+8 8 
+
+iu o 
+
+
+
+_ c 
+o K 
+
+= o 
+
+O ^ 
+
+u> ±: 
+
+c c 
+
+8 1 | 
+
+■Q •=. O 
+
+« 3 c 
+°?o 
+
+CC (0 = 
+
+1 o O 
+■ < 2 
+
+2 (0 (0 
+
+
+(0 
+
+c 
+
+1 - o 
+o +: 
+
+>. ® o 
+
+a § 2 
+
+^ . W Q 
+(O o ® ■= 
+
+3 C 
+
+I ® 2 5 _ 
+
+o cc a> ^ o 
+
+>a- - 9-2-1= 
+
+
+CD ^ 
+CC i-= 
+
+
+a 
+
+
+i s; o 
+
+I- o. o 
+
+
+3 0 3 
+(0 £ (0 
+CO "S CO 
+
+® § 2 
+
+0.0 0 . 
+
+
+CM O ^ (0 = 
+
+
+
+W 
+
+i 04 
+
+
+
+o ^ 
+
+CC o CC 
+
+CO g CO 
+
+O) J° 
+CO ® o 
+(/) 1- 
+
+5 ® l 
+
+« 3 «> 
+
+“ CO ^ 
+
+2 co _ 
+
+£ ® iT 
+
+3 A- w 
+
+o a 
+
+< o § 
+
+o »£ 
+
+3 3 ^ 
+
+CC CC CO 
+
+■D -D l 
+
+> > CC 
+
+X X CO 
+
+
+CD 
+
+> 
+
+CC 
+
+CD > 
+
+> 4- 
+
+"cc .25 
+
+> <d 
+
+E cc 
+
+3 0) 
+
+% 3 
+V W 
+c w 
+
+o £ 
+
+Z Q. 
+
+
+> i- > CM > 
+
+$ £ X £ X CM 
+CL CO Q CO Q z CO 
+
+
+CO CO 
+
+x a 
+
+
+fl) IS 
+
+a ® ^ Jr 
+
+E = C O 
+
+LL CC CO 
+
+Q- S *1 ® 
+o w § w 
+
+” -M ■— C 
+
+3 £ 1-2 
+
+i- "C cc .ti 
+
+3 ■“ £1 W 
+
+>« = X o 
+
+X 11 . Ill Q. 
+
+
+O 
+
+i- 0) 
+
+CD — 
+
+-S 25 
+
+c w 
+
+^ o 
+
+o g 
+
+CD £ 
+
+> 25 
+
+_CC (0 
+CO c 
+
+£ o 
+
+o += 
+
+= 8 
+
+o CL 
+
+
+CD 
+
+> 
+
+>- CC 
+CD ± 
+
+"3 Z 
+
+C Ct 
+
+■ 
+
+o w 
+
+■s 
+
+■I O 
+
+3) CO 
+£ £ 
+< CD 
+
+c «> 
+
+O C 
+'■3 O 
+O 
+
+® W 
+
+a> o 
+
+(0 o. 
+
+
+>> o 
+O .2 
+
+2 | 
+
+cc d) 
+
+£ o 
+
+£ ® 
+^ ® 
+(0 O 
+
+
+
+O(0N(0>(0(0^ 
+
+<Q.ZQ.NQ.N0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gearbox Actuator 
+
+
+The Gearbox Actuator, manufactured by Getrag, is attached to the rear of the gearbox 
+housing and performs the gear change movements. 
+
+
+
+SMG II Gear Box Actuator 45-01-15 
+
+
+The gearbox actuator consists of the following components: 
+
+• Gearbox Actuator Housing 
+
+• Main Selector Shaft 
+
+• Position Sensor 
+
+
+
+Shift Travel Cylinder 
+
+
+Selection Angle Cylinder 
+
+
+Main Selector Shaft 
+
+
+Main Selector Shaft (MSS) 
+Angle Travel Cylinder and 
+Travel Cylinder. 
+
+
+43-01-96 
+
+
+is rotated by Selection 
+Moved In/Out by Shift 
+
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+Gear Actuation 
+
+
+When no gear is engaged the selector shaft is the the neutral position in the shift gate 
+between 5th and 6th gears. The piston in the selection angle cylinder (B) is pushed against 
+the stop by a spring. The shift travel cylinder is in the central position in cylinder C (pres¬ 
+sure is equal on both sides). 
+
+With the selection of 1 st gear, the piston in the selection angle cylinder (B) is charged with 
+hydraulic fluid (Pressure increasing mode). The SMG II control unit is informed by the posi¬ 
+tion sensor (PS2) when the piston and consequently the main selector shaft (MSS) has 
+reached the point in the shift gate between 1st and 2nd gears. The piston is the selection 
+angle cylinder is placed in the the pressure holding mode to maintain MSS position. 
+
+Shift Travel cylinder (C) is now activated via the control valves . One side of the piston in the 
+cylinder is supplied with hydraulic fluid under pressure, the other side of the piston cham¬ 
+ber is open to the expansion tank. The piston and with it the MSS is pushed in the appro¬ 
+priate position and a gear is engaged (Either 1st or 2nd). A redirection of fluid on the shift 
+travel cylinder piston will cause the other gear to be engaged. 
+
+
+
+A Gearbox Actuator 
+
+B Selection Angle Cylinder with Position Sensor PS2 
+C Shift Travel Cylinder with Position Sensor PS 3 
+G Manual Gearbox 
+GK Position Sensor Voltage Matrix 
+MSS Main Selector Shaft 
+
+
+Position Sensor 
+
+
+
+Position Sensor view from rear 
+
+
+of Transmission 
+
+
+The Position Sensors (PS2,PS3) for Selection Angle 
+and Shift travel are potentiometers and installed in a 
+single housing. 
+
+45-01-16 
+
+
+
+SMG II 
+
+
+
+Clutch Slave Cylinder with PLCD 
+
+
+The Clutch Slave Cylinder is an innovative and new feature of the SMG II. The component 
+consists of a slave cylinder with an integrated sensor housing. The sensor termed PLCD 
+(Permanent Linear Contactless Displacement) measures clutch release travel. 
+
+
+
+SMG II Slave Cylinder with PLCD 
+
+
+43-01-22 
+
+
+
+Piston 
+
+
+Permanent Magnet 
+
+
+Coil Core 
+
+
+
+43-01-22 
+
+
+Shift Lever 
+
+Hall effect sensors are mounted in the Shift Lever Module to detect position and movement 
+of the shift lever. A total of 8 hall sensors are used in the shift lever module with 4 sensors 
+dedicated to +/- gear change requests and mode changes requests (A to S mode). 
+
+Two sensors are used for detection of the reverse gear position and two for detection of the 
+neutral shift lever position. 
+
+The following shift lever positions are possible: 
+
+• Reverse (R) 
+
+• Idle-Speed (0) (Neutral) 
+
+• Forward/Sequential Mode (S-Mode) 
+
+• Change positions 
++ for Upshifts 
+
+- for Downshifts 
+
+• Mode Change (A/S Modes) 
+
+A spring loaded mechanism holds the shift lever in the forward, idle-speed and reverse 
+positions. 
+
+18 
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+Permanent Magnet 
+Located at bottom of shift lever 
+
+
+
+Permanent Magnet 
+
+
+Position Hall Sensors 
+
+
+Shift Lock 
+
+
+0 Position Hall Sensors 4 Hall Sensors 43-01-30 
+
+
+Shift Lock 
+
+Located towards front of shift module 
+4 Hall Sensors 
+
+Used for detection of +/- gear change 
+requests and mode change requests 
+
+0 Position Hall Sensors 
+
+Used to detect idle-speed position (0) 
+
+R Position Hall Sensors 
+
+Used to detect Reverse position (R) 
+
+
+SMG II Shift Lever Module 
+
+
+Upshifts and downshifts are made by moving the shift lever in the up or down direction from 
+the spring latched forward position. Moving the shift lever back shifts the transmission up 
+one gear, moving the lever forward shifts the transmission down one gear. The shift lever 
+must be returned to the middle position to engage another upshift or downshift. 
+
+Moving the shift lever to the right while in the forward position changes the shift modes from 
+A-Mode to S-Mode and back again. 
+
+
+Programming in the SMG II control unit will prevent impermissible downshift requests. 
+
+
+
+19 
+
+SMG II 
+
+
+
+
+
+
+Shift Lock 
+
+The shift lock prevents unintended gear changes. 
+
+For safety reasons the brake pedal must be depressed before the shift lock is disengaged, 
+allowing gear selection. Once a gear (either R or 1) has been engaged, shifting between R 
+and 1 can be accomplished without stepping on the brake pedal for a time period of 2 sec¬ 
+onds. When 2 seconds has elapsed, the shift lock will engage preventing shifting between 
+R and 1 unless the brake pedal is depressed again. 
+
+The shift lock is energized in the unlocked position and rests in the lock position. 
+
+Steering Wheel Paddle Switches 
+
+
+
+SMG Steering Mounted Paddle Switches 
+
++ Request upshift 
+- Request downshift 
+
+
+The Steering Wheel Paddles Switches are hardwired to the SMG II control unit and are used 
+to request upshift and downshifts. Pulling on the right side paddle will request the SMG II 
+control to make a shift to a higher gear. Pulling the left side paddle request a shift to a lower 
+gear. 
+
+Both paddles provide a momentary switched ground signal to the SMG II control unit. 
+
+DRIVELOGIC Control 
+
+The DRIVELOGIC Control makes it possible for the driver to adapt the gearshift character¬ 
+istics of the transmission to his own individual style with each driving mode (A-Mode, S- 
+Mode). 
+
+The DRIVELOGIC Control Button is located on the center console just to the rear of the 
+shifter. The button provides two inputs to the SMG II control unit. Both inputs are momen¬ 
+tary switched grounds, one for program mode up and one for program mode down. 
+DRIVELOGIC Control provides selection of 5 programs in the A-Mode and 6 programs in 
+the S-Mode. The individual programs differ as follows: 
+
+• A-Mode 
+
+There are 5 automated gearshift programs from A1 (Winter mode, vehicle starts off in 
+2nd gear) to A5 (Sport mode, a highly dynamic program). 
+
+
+
+SMG II 
+
+
+
+
+• S-Mode 
+
+There are 6 different sequential gearshift programs from SI (Slow, relaxed shifts with 
+soft clutch engagement) to S6 (Very fast shifts with quick clutch engagement, only 
+accessible with DSC turned off). 
+
+
+
+
+SMG II Shifter and DRIVELOGIC Control 
+
+
+
+— 
+
+
+__i p 
+
+,*43-01-50A 
+
+
+SMG II Display Vehicle in A-Mode 
+
+
+SMG II Electronic Display Unit 
+
+Located in the instrument cluster just below the tachometer is the SMG II Electronic Display 
+
+Unit. Information on the display is sent from the SMG II control unit to the instrument clus¬ 
+ter via the MS S54 control unit. 
+
+The shift program, the gear engaged and the mode are indicated in the display. 
+
+• 0 Indicates vehicle is in idle-speed or neutral. This portion of the display changes 
+dependent upon gear selected. Possible displays are: 0, 1,2, 3, 4, 5, 6 or R. 
+
+• The bar graph indicates the drive program selected. The number of the bars lighted cor¬ 
+respond to the program number (ie. 5 bars lighted means 5th program selected). 
+
+• The A next to the gear selected indicator shows the A-Mode is active. The A will disap¬ 
+pear when the gear shift lever is moved to the right and S-Mode becomes active. 
+
+• The S next to the gate indicates the S-Mode is available. When S-Mode is active, and 
+A will be displayed here. 
+
+• Gate Diagram in the display shows movement paths of the shift lever for upshift and 
+downshift requests and reverse. 
+
+SMG II display indicating: 
+
+3rd Gear 
+S-Mode 
+5th Program 
+
+
+50B 
+
+21 
+
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shift Lights 
+
+In S-Mode optimum shift points are indicated by LED’s integrated into the tachometer. As 
+the tachometer approaches redline a sequence of LED’s illuminate on the face of the 
+gauge. As the tach reaches the optimal shift point the final LED illuminates; this red LED 
+indicates the optimal shift point. 
+
+
+Shift Lights 
+
+
+43-01-51 
+
+
+
+DSC Control Unit 
+
+Data concerning transverse acceleration and wheel speed (all 4 wheel speed sensors) is 
+relayed to the SMG II control unit via the MS S54 control unit. 
+
+Unless specifically switched off Dynamic Stability Control remains in operation during all 
+modes in A-Mode and in all S-Modes except program S6. 
+
+Regardless of the last setting, DSC is automatically activated whenever the car is started. 
+
+SAC Clutch 
+
+The SMG II operates with the SAC clutch used in the S54B32 manual gearbox. 
+
+The pressure force of the pressure plate over the driving disc onto the flywheel remains the 
+same over the clutch's entire operating time. 
+
+The release force is likewise the same over the operating time.The shift quality in the SMG 
+II thus remains the same. 
+
+
+Self Adjusting Clutch (SAC) 
+
+
+43-01-97 
+
+
+Workshop Hint 
+
+FC 68 Indicates discrepency between input and output 
+speeds in relation to gear ingaged. Clutch is slipping. 
+
+
+
+SMG II 
+
+
+
+
+
+Principle of Operation 
+
+
+Engine Starting 
+
+Unlocking the car or opening the drivers door wakes up the GM which sends a wake up 
+call to the SMG II control unit. Awoken the SMG II looks at hydraulic pressure stored in the 
+accumulator. Pressure greater than 45 causes the SMG II to wait for starting initiation. 
+Hydraulic pressure under 45 bar, causes the SMG II to energize the hydraulic pump relay, 
+powering up the pump to build system pressure in anticipation of a start sequence. 
+
+Engine starting is only possible when the shift lever is in the 0 (idle-speed or neutral) posi¬ 
+tion and the brake pedal is depressed. If a gear is selected before the key is turned to the 
+start position of if the vehicle has been parked in gear, the shift lever must first be moved 
+to the 0 position and the brake depressed. 
+
+Responsibility for starter operation remains with the EWS module. As the key is turned to 
+the KL50 position, the EWS module waits for confirmation from the SMG II control unit that 
+the shift lever position is 0 and that the brake pedal is depressed. The SMG II control unit 
+is notified of KL50 and brake pedal position via the SMG CAN Bus by the MS S54. Receipt 
+of notification of KL50 causes the SMG II control module to check shift lever and brake 
+pedal position. Seeing shift lever position 0 and the brake pedal depressed, the SMG II 
+momentarily supplies a switched ground signal to the EWS module to serve as a release to 
+allow starter engagement. Upon receiving these confirmations the EWS module activates 
+the starter. 
+
+The clutch is open (not engaged) during start-up operation. 
+
+Engaging A Gear 
+
+
+Once the engine is running the driver is able to engage the gear selection of choice through 
+
+the shift lever. 
+
+
+
++ 
+
+
+The shift lever may be moved in the following 
+directions: 
+
+Travel Direction Gate for selecting direction of 
+travel (Forward, Neutral (0) and Reverse). 
+
+Selector Gate for changing operating modes 
+(A-S and S-A). 
+
+Shift Gate for selection of Specific forward gear 
+(1-6). 
+
+
+23 
+
+SMG II 
+
+
+43-01-70 
+
+
+
+
+SMG II 
+
+
+Control 
+
+Module 
+
+
+KL-50 
+
+
+
+Hydraulic Pressure 
+
+
+
+Above 45 Bar 
+
+
+Under 45 Bar 
+
+
+
+Hydraulic Unit 
+Relay 
+
+
+
+Above 45 Bar 
+
+
+
+
+Other Position 
+No Start 
+
+
+
+
+Clutch Position 
+Open 
+
+
+
+n 
+
+
+u 
+
+
+Clutch Position 
+Closed No Start 
+
+
+
+EWS 
+
+Receives Release 
+Signal 
+
+
+
+Starter Energized 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver Moves 
+Shift Lever To 
+Select Gear 
+
+
+
+
+SMG II 
+
+Control 
+
+Module 
+
+
+n 
+
+ip 
+
+
+i 
+
+y 
+
+jp 
+
+
+y 
+
+
+J L 
+
+
+Brake OFF 
+
+Movement of Shift Lever 
+Not Possible 
+
+
+
+J 
+
+Brake On 
+
+
+Display 
+Flashes 
+Car Does 
+
+
+Not Move ^ 
+
+
+Hood Open , 
+
+
+
+
+
+
+
++ 
+
+„ ' 
+
+
+
+
+
+
+Clutch Open 
+
+
+
+
+Hood Closed L F 
+
+
+Engine Speed 
+V. Speed 
+Door Status 
+Parking Brake 
+
+
+Selection Angle 
+Solenoid 
+Pressurizes 
+Piston 
+
+
+
+
+SMG II 
+
+Control 
+
+Module 
+
+
+nnr 
+
+_n_nn 
+
+R 1 3 5 
+
+MSS Rotates 
+
+
+PS 2 
+
+11 i i i j i i mnr. 
+
+
+Piston Position 
+Monitored By PS2 
+
+
+
+
+
+Selection Angle ■ 
+Solenoid 
+goes to Pressure 
+Hold Mode 
+
+
+
+Trans Piston 
+Pushes Trans 
+Into First Gear 
+
+
+2 4 6 
+
+
+ruin 
+
+
+miruu 
+
+
+R 1 3 
+
+
+Trans 
+Locked in 
+1st Gear 
+
+
+2 4 6 
+
+rum 
+
+
+minru 
+
+
+
+Solenoid For 
+Shift Travel 
+Cylinder Pressurizes 
+One Side of Piston 
+
+
+Piston Movement 
+Monitored By PS3 
+
+
+PS 3 
+
+■ £■ ■ ■■ ■ ■ ■ ■ ■ ■ n | 
+
+
+
+Selection Angle 
+Solenoid Releases 
+Pressure 
+
+
+
+25 
+
+SMG II 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Input from the hall effect switches in the gear shift lever is sent to the SMG II control unit. 
+Status of the hood and brake pedal input is checked and the SMG II control unit looks at 
+vehicle speed, engine speed, hand brake status and door position. With first gear request¬ 
+ed and status of the inputs correct, the selection angle piston is pressurized until the main 
+selector shaft reaches the shift gate between 1 st and 2nd gears as indicated by the posi¬ 
+tion sensor in the gearbox actuator assembly. The selection angle piston is then placed in 
+pressure holding position and the shift travel cylinder is pressurized on one side by opera¬ 
+tion of the two shift valves in the hydraulic unit causing it to push the main selector shaft in 
+the appropriate direction, engaging 1st gear. 
+
+
+
+6 
+
+
+
+Selection Angle cylinder rotates shift shaft 
+into proper plane, then shift travel cylinder 
+pushes the Main Selector Shaft in the prop¬ 
+er direction to engage a gear. 
+
+
+
+
+
+43 - 02-90 
+
+
+First Gear Engaged 
+
+
+Engagement of the gear via the shift travel cylinder takes place in three phases with differ¬ 
+ing pressures. 
+
+• Phase 1 is the distance which must be covered from the central position of the shift gate 
+to the synchronization point with the gear to be engaged occurs. 
+
+• Phase 2 is the engagement of the synchronizers. 
+
+• Phase 3 is the distance that the shifting sleeve must travel after engaging the synchro¬ 
+mesh mechanism before passing over the teeth of the gear wheel. 
+
+In three phases, varying pressures applied to the piston to ensure that the gear shift takes 
+place with maximum comfort under minimal material load conditions and minimal wear. 
+
+Pressure is now relieved on the selection angle piston and a spring in the selection angle 
+cylinder forces the piston back until the main selector shift contacts the flank of the 1 st gear 
+gate. The transmission is now firmly in 1 st gear. 
+
+
+
+SMG II 
+
+
+
+
+
+
+The number 1 is lighted in the shift display as communicated by the SMG II control unit to 
+the DME and further passed on to the IKE via the CAN Bus. The SMG II control unit then 
+looks at hood status and if closed allows clutch engagement. Hydraulic pressure to the 
+clutch slave cylinder is controlled by a PWM signal to the Hydraulic Unit and based on 
+engine speed, engine load, temperature, door contacts and inputs from the DSC. 
+
+Upshifts and Downshifts 
+
+The mechanical procedure for shifting whether up or down remains the same. The follow¬ 
+ing sequence occurs during an upshift from 1st to 2nd. 
+
+• The selector angle cylinder is pressurized moving the MSS to an “unlocked” position in 
+1 st gear. When the “unlocked” position is recognized by the Position Sensor, the selec¬ 
+tor angle cylinder is placed in the pressure holding mode. 
+
+• Pressure is applied to one side of the shift travel cylinder, causing the MSS shaft to 
+move across the neutral gate into 2nd gear. 
+
+• 2nd Gear is engaged and the pressure on the selector angle cylinder is released, “lock¬ 
+ing” the transmission in 2nd gear. 
+
+All the upshifts and downshifts are made dependent on programming and mode selection. 
+
+2 4 6 
+
+
+Shift travel cylinder pushing the MSS from 
+1st gear position to 2nd gear. 
+
+
+43 - 02-91 
+
+Transmission is shifted from 1st to 2nd gear. 
+
+
+
+The forces required for shifting are strongly dependent on gearbox-fluid temperature. The 
+fluid pressures acting on the pistons of the two shift cylinders are adapted according to fluid 
+temperature. 
+
+
+
+SMG II 
+
+
+
+
+
+
+Shifting Operation 
+
+Depending on the driving situation, distinctions are made between trailing-throttle upshifts, 
+trailing-throttle downshifts, acceleration upshifts and acceleration downshifts. The com¬ 
+plete shifting operation takes place in 3 phases. 
+
+• Clutch disengagement 
+
+The DME calculates engine torque in anticipation of a gear change. When a gear 
+change is initiated, the speed at which the clutch is disengaged is based on this 
+calculation. Engine torque (and rpm) is reduced as the clutch is being disengaged 
+until a predetermined set point is reached where engine torque and clutch torque 
+are approximately equal. The selector angle cylinder has begun to pressurize and the 
+MSS reaches the neutral or “unlocked” position while still in gear. At this point the shift 
+begins. 
+
+• Shift to Target Gear 
+
+The quickness of the gearshift is defined by the SMG II control unit and influenced 
+by the DME. Engine RPM drops off rapidly during the shift but engine torque remains 
+relatively flat. When clutch disengagement confirmation is received by the SMG II 
+the shift travel cylinder is pressurized on one side forcing the MSS into the neutral 
+position in the gate (i.e. between first and second gears). Additional pressure is added 
+causing the synchronization of the next gear and finally the MSS is driven to fully engage 
+the gear. The pressure is then relieved from the selector angle cylinder. 
+
+• Clutch Engagement 
+
+As soon as the target gear has been engaged fully the clutch begins to move at a speed 
+determined beforehand by the DME. Engine RPM and torque begin to increase. The 
+objective of the programming is to configure the meeting point of the engine and clutch 
+torques as smoothly as possible by the engine management system. 
+
+Driving and Shift Programs 
+
+There are two drive programs for the SMG II: A-Mode for automated shifting and S-Mode 
+for sequential shifting. Furthermore, the driver can use a DRIVELOGIC control in A/S mode 
+to match the shift point characteristics as closely as possible to his driving style. For this 
+purpose, 5 programs in A mode and 6 programs in S mode can be selected respectively. 
+The individual programs differ as follows: 
+
+• A-Mode, automated 
+
+There are five different automated shift programs, from A1 (pulling away in 2nd gear) to 
+A5 (sporty). 
+
+• S-Mode, sequential 
+
+There are six different sequential shift programs, from SI (relaxed dynamic) to S5 (sporty) 
+and, as a special function, S6 (super sporty). 
+
+
+
+SMG II 
+
+
+
+In S mode, the 6th program can only be activated if the DSC function has been deactivat¬ 
+ed beforehand. The 6th program becomes active when the DRIVELOGIC control is oper¬ 
+ated. 
+
+Only in this program is it possible also to activate the acceleration boost. This ensures that 
+the BMW E46 M3 receives the optimum propulsion. Naturally this places the highest load 
+on the vehicle components affected and so increases wear. 
+
+The driver is shown which mode and which program has been selected by the SMG II dis¬ 
+play unit in the instrument cluster. 
+
+
+
+1. Gear Selected 
+
+2. Drive Program Selected 
+
+3. Shift Mode, A/S Mode 
+
+4. A Mode is active 
+
+
+43 - 02-93 
+
+
+SMG II Display in Instrument Cluster 
+
+
+A Mode 
+
+• Shift programs A1 to A5 
+
+If the driver has selected A mode using the selector lever, gearchanges are automated 
+according to the road speed, the position of the accelerator pedal and the DRIVELOGIC 
+control in the center console. 
+
+A mode is cancelled if the driver pulls one of the two shift switches on the steering wheel, 
+moves the selector lever towards -/+ or activates S mode by briefly pressing the selector 
+lever to the right. 
+
+Five shift programs (A1-A5) are available to the driver in A mode. The software for the five 
+automated mode shift programs is stored in the SMG II control unit. The car drives in the 
+winter driving program (A1) up to the sporty highly-dynamic program (A5). 
+
+Functions are also included to detect ambient conditions automatically and to influence the 
+optimum gearselection. 
+
+Upshift suppression 
+Downshift suppression 
+Cornering 
+
+Uphill-driving detection 
+Downhill-driving detection 
+Braking retardation 
+
+
+29 
+
+SMG II 
+
+
+
+A1 program (winter driving program) 
+
+On road surfaces with a low coefficient of friction, e.g. snow or black ice, it is possible to 
+start off in 2nd gear by selecting the A1 program. 
+
+Upshift/downshift suppression 
+
+When driving, the driver may be forced to adapt the car's speed repeatedly to the flow of 
+traffic by heavy braking and acceleration according to the traffic situation. 
+
+The rapid release of the accelerator pedal and rapid acceleration are detected by the SMG 
+II control unit. If this exchange sequence takes place in short time intervals, the gearbox 
+suppresses upshifting when the accelerator pedal is released and downshifting when it is 
+depressed. 
+
+Upshifts to the economical gear only take place once the accelerator pedal has remained 
+in the same position for a brief period. 
+
+Cornering 
+
+If the accelerator pedal is rapidly released before the car corners, an upshift does not take 
+place, nor does an upshift take place while the car is cornering. 
+
+If an upshift were to occur while the car was cornering, the braking effect of the engine 
+would be reduced or cancelled entirely, which in turn could reduce the car's rate of decel¬ 
+eration and it would be necessary to change back down to improve acceleration to accel¬ 
+erate out of the corner. 
+
+Cornering is detected by the SMG II control unit by means of the DSC lateral acceleration 
+and steering angle detection. 
+
+Uphill-driving detection 
+
+Compared with driving on a level surface, tractive resistance during uphill driving increases 
+by the component of the downgrade force. This requires increased engine power to main¬ 
+tain a constant speed. Increased engine power is achieved by having the throttle open at 
+a slightly later stage. A downshift to a lower gear occurs to increase the engine speed 
+depending on the road speed. 
+
+Assuming that the speed is to be kept constant, the throttle valve angle must now be 
+reduced, which in turn would result in an upshift. The result would be damaging back-and- 
+forth shifting if the gradient were to be negotiated at a constant speed. 
+
+Characteristic maps are stored in the control unit's software to suppress shifting of this 
+type. The characteristic maps suppress back-and-forth shifting and provide the engine with 
+the optimum traction force. 
+
+
+
+SMG II 
+
+
+
+Downhill-driving detection 
+
+The rule of thumb that the same gear should be used for descending a gradient as for 
+ascending the same gradient still applies. 
+
+This ensures that the engine's braking effect is exploited. The driver does not have to 
+depress the brake pedal as frequently. This represents a clear improvement in comfort and 
+takes the strain off the service brake. 
+
+This is made possible by the implementation of a downhill-driving detection function in the 
+form of software. The control unit identifies that the vehicle speed is increasing in spite of 
+overrun conditions and infers a downhill-driving scenario. 
+
+The logic circuit in the control unit begins by preventing a shift to the gear one higher. 
+Nevertheless, if the vehicle speed increases in such a way that braking is required, a down¬ 
+shift takes place automatically to the gear one lower. This procedure can be repeated as 
+many times until 1st gear is engaged. 
+
+The required data for downhill-driving detection are engine load, vehicle speed, longitudinal 
+acceleration and service-brake condition. 
+
+Braking retardation 
+
+Because of the nature of an automatic transmission, releasing the accelerator pedal at 
+medium or high driving speed results in an upshift. If the vehicle is then accelerated again, 
+the accelerating performance is insufficient or a downshift must take place with more 
+marked acceleration. In order to prevent this behavior, the braking-retardation signal is 
+directed to the control unit. 
+
+Depending on the extent of braking retardation, a downshift to a lower gear is executed 
+during the braking procedure. This ensures that the appropriate gear is engaged when the 
+driver stops braking and starts accelerating. 
+
+
+
+SMG II Automated Shifting 
+
+
+31 
+
+SMG II 
+
+
+43 - 02-96 
+
+
+
+
+
+
+
+
+S mode, sequential 
+
+Shift programs SI to S5 
+
+The selector lever or the shift paddles on the motorsport multifunction steering wheel can 
+be used to change gear in sequential mode (S mode). In principle all shift operations are 
+executed. 
+
+There is no forced upshift when the maximum engine speed is reached. The driver is 
+reminded visually by LEDs (shift lights) in the instrument cluster to make the necessary 
+gearchange at full load before the engine's limit speed is reached. 
+
+It is possible to shift through several gears by multiple-touch operation. Gearshifting in the 
+gearbox does not always have to take place sequentially. The driver can skip a gear by 
+shifting very quickly. 
+
+If the driver changes down twice in rapid succession before the gearchange for the first shift 
+command has time to complete, the gearchange is prevented in the gearbox and the gear 
+selected by the second shift command is selected. 
+
+Downshifts which would cause the maximum engine speed to be exceeded are refused. If 
+the driver forgets to change down as the car's speed decreases, a downshift is executed 
+automatically when the road speed falls below a gear-dependent threshold stored in the 
+control unit. This ensures perfect vehicle acceleration when the accelerator pedal is 
+depressed. 
+
+Hill-climbing assistance 
+
+The SMG II is equipped with special software in order to facilitate driving off on an incline. 
+On an ascending road, the vehicle would roll back when the brake pedal is released. 
+
+The driver can activate this function by pulling the shift switch (-) on the multifunction steer¬ 
+ing wheel for a period of 0.5 seconds while the vehicle is stationary and with the brake 
+pedal pressed. The engine speed is increased in line with the gradient. When the brake is 
+released, the clutch is moved to the biting point and so the car is held momentarily at the 
+point of rolling back on an uphill gradient. 
+
+When the accelerator pedal is depressed, the clutch opens and the vehicle moves off in 1 st 
+gear. If the accelerator pedal is not pressed, the clutch opens again (after approx. 2 sec¬ 
+onds) and the vehicle may roll back. 
+
+Note: 
+
+This mode is not for extended use. Vehicle will be held only for 2 seconds. 
+Holding vehicle on upgrade by holding slight pressure on accelerator pedal 
+applies clutch. 
+
+Doing so will cause excessive wear on clutch and lead to failure. 
+
+32 
+
+
+SMG II 
+
+
+
+Acceleration boost (S6) 
+
+To activate the acceleration boost, it is necessary for the DSC to be deactivated and the S6 
+shift program to be active. Only with this setting is it possible to perform a "racing start". 
+
+The shift lever must now be pushed forwards and the accelerator pedal depressed. The 
+acceleration boost is performed once the shift lever has been released. Subsequent gear 
+shifts must be initiated manually. 
+
+There are two modes included in the acceleration boost S6 position. The “racing start” and 
+the “burnout” modes. The difference in the activation of these two modes is the rate at 
+which the accelerator pedal is depressed. 
+
+Depressing the accelerator slowly to the floor activates the “racing start” mode. In this 
+mode the clutch is pulsated at a high rate (up to 8 times a second) and the vehicle accel¬ 
+erates at the fastest speed possible without spinning the tires. The wheel speeds on the 
+front and rear axles are compared with each other and the car pulls away according to the 
+clutch biting point in order to achieve optimum propulsion. 
+
+Depressing the accelerator pedal very quickly to the floor activates “burnout” mode. This 
+mode releases the clutch totally and completely when the shift lever is released. In this 
+mode the rear tires are very likely to loose traction and the rear of the car to become unsta¬ 
+ble. Wheel speeds are ignored and the driver is in total control of wheel spin. 
+
+Note: 
+
+Both acceleration boost modes are hard on the clutch and driveline and continued use of 
+these modes (particularly the “burnout” mode) may lead to clutch or driveline failure. 
+
+
+
+43 - 02-95 
+
+
+33 
+
+SMG II 
+
+
+SMG II Shift Programs 
+
+
+
+
+Other Shift Functions 
+
+
+Slip Alert System 
+
+Under Slippery or inclement situations the SMG II can alter the clutch engagement and 
+engine RPM to ensure the rear wheels never break traction. Functional in either sequential 
+or automated mode, Slip Alert checks for tire slippage every 10 ms and also operates even 
+with the DSC turned off. 
+
+Double Declutching 
+
+To prevent a fast downshift from upsetting the M3’s composure in any way, the SMG II will 
+automatically double clutch and raise engine speed on downshifts to guarantee that engine 
+RPM and road speed are perfectly matched before the lower gear engages. The result is 
+quicker, smoother downshifts with less wear on the clutch and less chance of upsetting the 
+car’s chassis. 
+
+Changing gears without altering the position of the accelerator pedal 
+
+The driver is not required to take his foot off the accelerator pedal during the shifting oper¬ 
+ation. This applies to both automatic and manual mode. The engine management system 
+determines when a gearchange is necessary. All engine interventions, such as ignition tim¬ 
+ing intervention, cylinder fade-out and throttle adjustment are carried out automatically by 
+the MS S54. 
+
+If an upshift to the gear one higher takes place, the engine speed must be lower after the 
+shift operation. The speed is set by the ignition or the throttle. 
+
+If a downshift to the gear one lower takes place, the engine speed must be higher after 
+completion of the shift operation. The speed is increased by means of a corresponding 
+opening of the throttle. 
+
+Safety Functions 
+
+It is not necessary to disengage the gear to stop the car, regardless of whether the car is 
+being driven in A mode or S mode. 
+
+If the SMG II control unit detects that the selector lever is in the idle-speed position and the 
+engine speed is lower than the threshold set for a particular temperature, the clutch is auto¬ 
+matically disengaged to prevent the engine from stalling. 
+
+If the driver takes no action, such as opening the driver's door or depressing the brake 
+pedal, within a certain time of the car reaching a standstill with the engine running and a 
+gear engaged, the gearbox is shifted to neutral. The last active gear is engaged once an 
+appropriate action has been made. 
+
+If the driver's door is opened while the vehicle is at a standstill with the engine running and 
+a driving position selected, the gear is disengaged after a preset time threshold if no action 
+is taken within this time at the accelerator or brake pedal. 
+
+
+
+SMG II 
+
+
+
+In this situation, the driver will be warned after a preset time by the gear indicator flashing 
+and an acoustic signal of the need to disengage the gear. The warning remains, even after 
+the gear has been disengaged. Regardless of the safety function, the shift display always 
+flashes while the engine is running and the driver's door is open. 
+
+The safety function is terminated as soon as the selector lever is moved to the 0 position. 
+
+Hood Open 
+
+If the hood is opened while the car is at a standstill with the engine running and a gear 
+engaged, or if the car's condition is unclear due to a system fault, the gear is disengaged. 
+It is not possible to pull away and the gear indicator flashes when the hood is open, regard¬ 
+less of the safety function. 
+
+Shift Lock 
+
+A shift lock prevents an unintended gearchange. 
+
+It is possible to to only engage a gear with the brake applied, except that when shifting from 
+Reverse to 1 st or 1 st to Reverse, shifting may be accomplished if the car is not moving for 
+a time period of approximately 2 seconds. 
+
+The two seconds enable a rapid shift from position "R" to a forwards gear via position "0" 
+without having to depress the footbrake. 
+
+The shift lock is activated by a magnet, which locks the selector lever at zero current in the 
+"0" position. 
+
+Engine shutoff 
+
+If the key is turned to position 1 or 0 in the ignition while the selector lever is in the forwards 
+or reverse position, a gear automatically remains engaged. 
+
+If the key is turned to position 1 or 0 in the ignition while the selector lever is in idle-speed 
+position 0, a gong sounds and the gear indicator flashes in the SMG display as a reminder 
+that the car has not been secured against rolling away. 
+
+The warning is silenced after approximately 10 seconds. If the selector lever is moved to 
+the forwards or reverse position during this time, a gear is engaged automatically. 
+
+
+Emergency Acceleration 
+
+Emergency Acceleration is possible regardless of the shift mode (A-Mode or S-Mode) or 
+the DRIVELOGIC position engaged. 
+
+Depressing the accelerator pedal quickly to the floor without the brake pedal depressed will 
+engage emergency acceleration. The engine RPM will come up very quickly and the clutch 
+will be pulsated to ensure maximum acceleration. Wheel spin will be limited even if DSC is 
+switched off. 
+
+When this mode is activated subsequent shifts must be made manually. 
+
+
+35 
+
+SMG II 
+
+
+
+SMG II Diagnosis 
+
+The SMG II control unit is fully diagnosable and can be checked using a DISplus Tester or 
+GT1. 
+
+The first step involves the fault memory being read out. Malfunctions are communicated as 
+part of the SMG II control unit's self-diagnosis. The second step involves appropriate oper¬ 
+ator prompting to facilitate diagnosis with simple measuring equipment using test modules. 
+Repairs can be made once the fault in question has been found. 
+
+The diagnosis including self-diagnosis can only be carried out when the ignition (terminal 
+15) is switched on and there is a supply voltage of at least 10 volts. Erroneous fault entries 
+may be recorded if the supply voltage drops below the threshold of approx. 10 volts. 
+
+Service functions 
+
+A test program (service functions) must be carried out upon completion of various types of 
+work on the SMG system - see the following table. The test programs serve to implement 
+test, initialize and adjustment functions. 
+
+The values determined are permanently stored in the non-volatile memory only after the test 
+program has been success-fully completed. 
+
+
+Notes: 
+
+
+
+SMG II 
+
+
+
+
+
+
+
+
+
+
+
+
+Initialize “0” 
+Position in 
+Accelerator 
+Pedal 
+
+When replacing the 
+control unit and/or the 
+accelerator pedal module. 
+
+The accelerator pedal must 
+be in position “0” 
+
+15 secs. 
+
+Initialize Idle 
+Speed 
+
+Position 
+
+
+The engine must be warm, 
+the accelerator pedal must 
+not be pressed and all loads 
+must be switched off. 
+
+15 secs. 
+
+Initialize 
+
+Clutch 
+
+Engagement 
+
+Point 
+
+When replacing the 
+control unit, after work 
+on hydraulic systems 
+(valves, cables and 
+actuator) if the system 
+was opened and when 
+replacing the clutch and 
+hydraulic unit. 
+
+The gearbox must be in the 
+position “0”, the engine must 
+be warm, the accelerator 
+pedal must not be pressed 
+and the gearbox input speed 
+must be at zero at the start of 
+the test routine. 
+
+30 secs. 
+
+Check 
+
+hydraulic 
+
+lines 
+
+When replacing the 
+control unit, after work 
+on hydraulic systems 
+(valves, cables and 
+actuator) if the system 
+was opened and when 
+replacing the clutch and 
+hydraulic unit. 
+
+The engine must be off and 
+the clutch must be 
+disengaged. 
+
+
+Bleeding 
+
+When replacing the 
+control unit, after work 
+on hydraulic systems 
+(valves, cables and 
+actuator) if the system 
+was opened and when 
+replacing the clutch and 
+hydraulic unit. 
+
+The engine must be off and 
+the clutch must be 
+disengaged. 
+
+
+Initialize 
+
+Shift Module 
+
+When replacing the 
+actuator, shift lever and 
+components 
+
+The engine must be off and 
+the clutch must be 
+disengaged. 
+
+
+Initialize 
+
+Selector 
+
+Angle 
+
+Cylinder 
+
+When replacing the 
+control unit and when 
+replacing the hydraulic 
+unit. 
+
+The engine must be off and 
+the clutch must be 
+disengaged. 
+
+
+Gearbox 
+
+adaptation 
+
+When replacing the 
+control unit, gearbox, 
+hydraulic unit and the 
+gear recognition. 
+
+The engine must be off, the 
+clutch must be disengaged 
+and no brakes must be 
+pressed. 
+
+
+
+37 
+
+SMG II 
+
+
+
+
+Review Questions 
+
+1. Which control unit is responsible for managing the control of the SMG II and which 
+module make the shift decisions? 
+
+
+2. What is the purpose of the SMG CAN Bus? 
+
+
+3. Why is the data from the transverse acceleration sensor only evaluated during the A- 
+Mode of SMG II operation? 
+
+
+4. Does the cruise control become deactivated during a gear shift in the A-Mode? 
+
+
+How does this compare to cruise operation in the S-Mode? 
+
+
+5. Under what conditions will the hydraulic pump become energized when the engine is 
+not running?- 
+
+
+6. A customer complains that he can not access DRIVELOGIC Mode 6. What could the 
+cause? 
+
+7. During engine start-up operation, the starter does not engage, what are the possible 
+causes of this fault? 
+
+
+8. Why does the Selector angle cylinder have one electric solenoid at the Hydraulic Unit, 
+and the Shift travel cylinder have two solenoids? 
+
+
+9. How is the Hill-Climbing Assistance feature activated? 
+
+
+10. A customer complains he hears the Hydraulic pump run sporadically, the car shifts 
+normally, what could be the cause? 
+
+
+
+title 
+
+
+
+
+
+
+0 
+
+O 
+
+> 
+
+CD 
+
+CO 
+
+
+Z5 
+
+0 
+
+03 
+
+CD 
+
+
+d 
+
+£ 
+
+03 
+
+
+LU J 0 
+
+
+CL 
+
+£ R 
+0 £ 
+1— CD 
+
+
+03 03 
+O C 
+
+CD LU 
+
+0 c 
+■p o 
+
+o ~o 
+
+o CD 
+X 0 
+
+0 0 
+O ID 
+
+
+0 - 0 ^ 
+0 ±=: 0 ±=: 
+.b □ 03 □ 
+
+LLI ^ 0 ^ 
+
+
+^ * T3 
+0-^0 
+~ 0 X 
+
+0/3 0 0 
+
+■“ o 
+
+CL nj 
+
+E £ iE 
+
+
+o ® -g 
+
+3 * ® 
+0^0 
+
+-Q -- JZ 0 
+c --g £ 
+X O ^ ■+= 
+
+
+MI.0 
+
+
+-c 0 to 
+
+Pb: 0 
+
+■§ 8- 
+q m <c 
+
+
+
+o 0 
+
+4= _Q 
+
+CD ^ 
+
+° 5 
+
+Q_ 0 
+O 
+
+0 m 
+03 _9 
+
+0 O 
+
+Pu 
+
+m 5 
+
+
+O 0 
+
+c|o° 
+O -C Q. V 
+
+
+I l I .0 
+
+
+O 
+
+03 
+
+- - C 
+
+> ~o 
+
+"T^ 0 
+
+
+O Q +=: 
+
+
+0 
+
+0 
+
+0 03 
+
+
+0 = 
+
+
+® ® 
+03 
+
+
+03 O 
+
+
+6 C/3 
+X TD 
+
+
+0 0 0) X 
+
+
+pO0r 
+Q CD 0 o 
+
+
+0 00 
+
+0 4-J 
+03 < 
+
+
+0 
+
+CD -£ 
+
+b > 
+
+
+0 
+
+1 1 
+
+
+
+
+0 
+
+
+
+
+C 
+
+
+
+
+£ 
+
+4—' 
+
+Z5 
+
+
+
+LU 
+
+jO 
+
+
+
+
+4—' 
+
+
+
+
+'0 
+
+
+
+0 
+
+> 
+
+
+
+_Q 
+
+0 
+
+
+
+03 TD 
+
+
+O 
+
+4—' 
+
+0 
+
+o 
+
+o 
+
+03 
+
+
+TD 
+
+0 
+
+0 
+
+03 
+
+
+Z3 
+
+_C 
+
+■ i 
+
+■g 
+
+0 
+
+£ 
+
+o 
+
+
+1 
+
+C 
+
+C 
+
+H— 
+
+
+o 
+
+— 
+
+4—' 
+
+
+o 
+
+H— 1 
+
+c 
+
+_ ) 
+
+d 
+
+
+c 
+
+Z3 
+
+_c 
+
+
+0 
+
+(~ 
+
+
+JZ 
+
+O 
+
+V 
+
+0 
+
+03 
+
+r - 
+
+o 
+
+4—' 
+
+
+LU J 0 
+
+
+
+
+O = 
+
+-t—> -~> 
+
+v CO > 
+
+o ^ r 
+it= ® T3 eg 
+OO 
+
+
+Q. ® 
+
+E ^ 
+
+
+_Q 
+
+£ 
+
+< 
+
+
+td 
+
+c 
+
+o 
+
+O 
+
+
+o 
+
+0 
+
+0 
+
+Q 
+
+
+0 
+
+0 0 
+03 03 
+0 CO 
+0 +=: 
+
+IE 
+
+
+-Q 
+
+g Cl 
+
+
+O ° -H 
+>-'=5 
+■■K Q. p 
+=5 Q--- — 
+O X O O 
+
+n W c £ 
+
+Cj s_ 0 s_ 
+
+x o d o 
+£ 0 o 0 
+0 c ^ c 
+^9 0 0 
+
+C/D 0 O 0 
+
+
+d 
+
+£ d 
+
+0 £ 
+x .0 
+
+
+o 0 
+£- 03 
+
+£ co 
+0 ^ 
+
+
+X h- ~ - 
+
+d-e 8 i §3 
+
+£ CO 03 TD 0 
+
+0 0 C >> i= 
+
+h- CD LU X ^ 
+
+
+co M £ 
+
+- 9 u 
+
+- Q_ 0 O TD 
+
+R £ TD m 'O 
+
+£ 0 >, 9 c 
+
+0 +- JZ X 0 
+
+O - CO o 
+
+0 ~0 0 0 
+
+0 ^ d ^ 
+
+
+_>, Q_ 
+d £ 
+Cl 03 
+
+
+0 
+
+0 0 
+
+
+0 S' Q_ -0 CD3 .9 
+
+Li. r— O 0 0 o 
+
+TD O £ X 0 X -p! 
+
+^>,0^_o~o£ 
+
+< X > d O ^ > < 
+
+
+TD 
+
+c 01 
+
+0 R- 
+2^ 
+
+03 i_ O 
+
+o ° - 
+
+=5 
+
+-•tb "Q_ O 
+
+0 0-- — 
+O X O O 
+
+0 C ^ 
+
+CJ 0 
+x o q. o 
+
+X 0 O 0 
+0 0 0 
+
+0 o 0 
+C/D 0 O 0 
+
+
+
+> d r 
+
+R £ 0 
+Q- 0 (_ 
+
+
+0 ^ 0 
+0 0 c ^ 
+
+g3 0 0 
+0 0 o 
+0 X -p TD 
+
+~ O £ >> 
+
+2 > < x 
+
+
+o 
+
+= o 
+
+i r c 2 
+
+■p Q S w 
+^ ° 9- w 
+
+-C= 0 ° 0 
+/— ^^^— 
+-— o o CL 
++=: '0 - o 
+
+0 o + 0 
+
+O 8 co z 
+
+O CD -q O 
+
+X o_ c -t; 
+C/D Cl 03 O 
+
+
+I? 
+
+0 _0 
+
+TD O 
+>, 0 
+
+X ^ 
+
+0 0 r— 
+
+5 £ o 
+0 0 0 
+GO O O 
+
+
+d -7 
+
+|o 
+
+d br 
+
+
+0 m 
+0 0 
+
+0 
+
+0 0 
+
+
+\ O C/3 
+
+X Q- 0 -q 
+d E -0 0 
+d CD O 0 
+O U .t^ d 
+CD ^ ^ CO 
+
+0 S co 0 
+
+
+CD U ^ CO 
+0 0 c C/D 0 
+
+03 03 0 X 
+
+0 0 _Q^- — 
+
+— O 0 O 0 
+
+2 > < x > 
+
+
+.bJ 0 
+
+tl 
+
+el 
+
+-n 0 
+
+ol 
+
+-b-> 
+
+0 0 
+d O 
+
+
+TD 03 
+O C 
+O > 
+
+
+0 o CD) 
+CD _Q 0 
+
+§ -Q -o 
+
+-4-> TD 0 
+0 0 IX 
+
+
+03 -t— ' 
+
+£ o 
+.0 0 
+
+
+X O 
+O 0 
+
+
+ttz -t- 1 0 
+
+~ 0 O 
+Q TD O 
+
+
+p R- 0 TD 
+
+9- £ X 0 
+
+
+d q 
+
+
+6 g_ 
+
+O w 
+
+
+0 0 C +-• n') 
+
+03 03 0 0 -p 
+
+CO 0 'o 0 -9 
+
+0 X -p 0 JZ 
+
+i= o £ o 0 
+
+2 > < CQ > 
+
+
+0 
+
+TD ~ 
+
+O 0 
+O O 
+
+^ X 
+
+JZ 0 
+0 p; > 
+
+0 >>£= — 
+> n = 
+
+TD 0 -9 
+0 CD -X 0 
+
+£ o 0 0 
+
+0 0 -p -X 
+
+M— -t—» 0 0 
+
+-0 0 4- 
+
+Q TD O 0 
+
+
+TD 
+
+C 
+
+o 
+
+O 
+
+
+O A 
+
+0 ^ 
+O 0 
+
+■*—> 4— 1 
+
+■ 0 0 
+_03 QQ 
+
+
+C 0 
+
+i S 5 
+
+^ O 
+O > 
+> ^ 
+^ o o 
+C X- CD 
+
+O A 0 
+C >> CD 
+0 0 TD 
+
+X o 
+0 0 O 
+
+_03 QQ CD 
+
+
+1.1 
+4—' 
+
+T3 O 
+
+C CO 
+
+CO 0 
+
+
+X ^ 0 
+
+0 0 r 
+
+0 "O 0 O 
+
+CD >> 0 O 0 
+~r <X — 0 
+
+—1_ ^ ? n'i 
+
+
+Z3 0 
+
+>5 XJ 3 2 co 
+
+U = CC T3 P 
+
+c co 4 —\ 
+
+O > Cl^ ^ 
+
+•E ° | 1 o 
+
+05 A d CO d 
+
+
+0 0 
+m > ~ c 
+
+p 0 □ 0 0 
+
+6 A 2 s £ 
+
+c ® >. ^ ® 
+
+§>£ g b2 
+
+
+
+
+0 0 
+
+m > td td m > 
+
+- O 0 0 - o 
+
+C T- 0 0 JZ C 1— 
+
+O A d^^ O A 
+
+c 0 ^ > w c 0 
+
+O 03 03 £ X o 03 
+
+~ 0 C ^ O ~ 0 
+
+~ ±=L > O CM ~ ±b 
+
+0 O "i_ vj T 0 O 
+
+- 0) > TD A V - 0) > 
+
+
+~ Z5 
+^ O 
+
+4- 0 ^ 
+
+Z5 O Z5 
+0 d 0 
+_L C/3 LL 
+
+
+0 -Q 
+
+4—* '0 
+
+
+~ O 
+^ O 
+
+0 j. 
+
+
+0 -9 
+
+4—* '0 
+
+
+~ =5 
+^ o 
+0 ^ 
+
+
+0_0 0-|—■ 0 -|—. 0 _0 04—' 0 4—' 0 ~ 0 9,4— 1 94—' CD 
+
+0 Q__U o o Z) 0 d_U Z5OZ50 0 0^OOO0 
+0000d0£fZ0 0d0£pdp0d00 
+d 0 > LL 0 LL d 0 >LL 0 LL d 0 O £ U_ 0 LL d 
+
+
+~ O 
+^ O 
+
+0 j. 
+
+
+
+= £ 
+
+| « o 
+
+i « «2 
+^ CD c 
+
+I CL CO 
+
+
+.2 <o £ 
+
+= D *J 
+
+p C/) c/> 
+i CO >» 
+
+P 0 co 
+
+i q: .e 
+
+
+3 
+
+0 Q. 
+
+■o E 
+
+>1 3 
+
+X Q. 
+
+
+O 
+
+!9 0 0 
+0 0 S 5 
+
+i &§ 
+
+
+■o o 
+
+t- 0 4- 
+
+Z5 O Z5 
+0 d 0 
+U 0 LL 
+
+
+O 0) 
+co c 
+
+c > 
+
+O Q 
+■0 0 
+O = 
+
+H 
+
+
+^ _9 
+0 -9 
+
+4-* '0 
+
+I -I® 
+
+0 9- x 
+
+
+~o o 
+
+0 J. 
+
+
+F 0 0 d 0 
+
+i— ^ I I rn 
+
+
+d X > 
+
+
+o 
+
+0 = 
+
+I ^ 
+
+■0 0 
+S w 
+
+X 0 
+
+
+^ .9 
+0 -9 
+
+4— 1 '0 
+
+| |_ 0 
+2 E-i 
+
+d 0 > 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CD 
+
+O 
+
+> 
+
+CD 
+
+CO 
+
+
+LU 3 
+
+
+LU 3 
+
+
+I? 
+
+LU 3 
+
+
+~o 
+
+0 
+
+CO CO 
+0 Z5 E 
+
+5 0 = 
+
+< U_ 0 
+
+
+"D 
+
+0 
+
+.CO to 
+
+0 D E 
+
+^ 0 ~ 
+< LL 0 
+
+
+0 
+
+0 
+
+0 
+
+0 
+
+
+Q_ 
+
+E 
+
+0 
+
+
+_Q 
+
+E 
+
+< 
+
+
+"D 
+
+C 
+
+o 
+
+O 
+
+
+
+w o 
+
+Sf 
+0 ^ 
+ns 0 
+
+
+° >, 
+
+_>. _Q 
+
+S g 
+
+O 3 
+
+0 ~ o 
+
+b 0 0 
+
+-3 -Q 0 
+'0 0 0 
+U- CO CO 
+
+
+0 0 
+0 ^ 
+
+
+o Q. 
+
+-Q _ 
+
+
+b 0 
+
+-3 -Q 
+'0 0 
+LL CO 
+
+
+0 c 
+c ^ 
+
+O LQ 
+
+'■E - 0 
+
+£5 0X1 0 
+
+8.DC CD 
+
+O 0 "0 
+— J= 0 
+
+§ s £ 
+® 
+
+E T3 R 
+0-0 
+
+2 s c 
+0 0 0 
+JZ CO o 
+
+^00 
+
+
+© ^ 
+o R 
+
+0 o 
+o u 
+
+Q_ 0 
+
+O-o 
+
+0 ^ 
+
+
+■+^ 0 
+0 "O 
+
+o c 
+
+Q_ =5 
+
+
+w o 
+
+Sf 
+0 ^ 
+ns 0 
+
+
+° F 
+> _Q 
+
+5 g 
+
+O ^ 
+
+0 -£ 
+
+^ 0 
+-3 -Q 
+'0 0 
+LL CO 
+
+
+CO O* 
+
+s ^ 
+
+C O) 
+0 C 
+0 > 
+
+f ^ 
+
+_Q 0 
+
+0 
+
+O 3 
+
+o ®-s 
+
+liiS 
+
+w 
+
+
+0 +j 
+
+■° o 
+
+§ E 
+o o 
+0 o 
+
+0 ° 
+
+3" 0 
+0 — 
+
+
+"D — 
+
+0 "O 
+
+CD 0 
+
+as 
+
+0 ^ 
+0 ^ 
+
+
+0 O 
+O O 
+
+0 J- 
+
+E 0 
+
+0 U 
+
+0 3 
+
+
+0 O 
+0 - 
+
+0 0 0 
+
+8°o> 
+
+«*g? 
+a 
+
+C 3 C 
+^ > 0 
+3 3 -q 
+
+O) ^ '0 
+
+0 m 0 
+
+CD ^ CD 
+
+U O Q. 
+
+
+-0 0 O > -^ 
+
+3 Q_ 0 -0 § 
+
+r E 0 it 3 r- 
+
+3 o _C £ y= 3 
+
+O o 3 0 cd cd O 
+
+
+
+'0 
+
+“jb g 
+
+'U O) 0 
+. Q. 0 ' 
+
+■ 0- 0 E 
+
+0 ' 0 CM 
+
+0 0 F 
+. o O C 
+
+b -f= 0 o 
+0 P 0 ±± 
+c ^ C/D 0 
+0 0 „ o 
+
+C/D C/D t— CL 
+
+
+0 0 c 
+0 ) 0 ) 0 ) 
+
+0 0 "q 
+
+0 +=f "F 
+
+~ o E 
+
+^ > < 
+
+
+O o 
+
+< DQ +=: 'E 
+
+■^■^0 0 
+
+_>^ O o 
+
+Q- CL CL Q. 
+Q_ Q_ — _ 
+=5 =5 0 0 
+0 0 > > 
+^^00 
+O O ■+-* -E 
+
+0 0 u +_, 
+
+C C ±= ±= 
+0 0 JZ JZ 
+
+CO CO CO CO 
+
+
+E a) 
+
+0 c 
+
+Sc! 
+
+^ 8-s 1 
+
+o ~ 0 JZ 
+.0 T3 0 0 
+
+CD 3 — — 
+
+0 rri 0 0 
+
+b F0 c 
+
+O ^ 0) 0) 
+
+O U OD OD 
+
+
+
+0 rrt 
+
+0 3 
+
+0>CO 
+
+3 X 
+0 o 
+Cp _Q 
+
+0 b 
+0 ) 0 
+
+C 0 
+
+LU CD 
+
+
+§ m 
+
+CL _>- ~0 0 
+
+E Q- — c 0 0 
+
+© q- g o ® c 
+
+^ 0 T3 0 0 3 
+
+s b .-3 ® -§ ” 
+
+o 0 CD 0 0 _V 
+
+C c ^ ° 0 
+
+
+0^0-00 
+0 0 C ^ Z3 b 
+0) O) 0 O ±J .0 
+0 0 75 0 0) 0 
+0 ±± "F C c O 
+
+
+i=O00O00^ 
+
+
+0 0 C 
+O) 0) 0 
+
+0 0 'n 
+0 ±J "F 
+~ o E 
+
+^ > < 
+
+
+o 
+
+0 
+
+0 
+
+Q 
+
+
+0 
+
+0 0 
+
+-t—' -4— 1 
+
+O _0 ^ 
+C Q_ ~ 
+
+0 E 0 
+
+Q O M— 
+
+-3 o o 
+
+
+0 r~\ — 
+
+o ° o 
+
+Q_ 0 '- 
+
+
+O ° 
+£ ^ C 
+
+O 0 Z5 
+Z5 2= 
+^ _0 0 
+
+co cl E 
+
+
+- >* o 
+
+-D Q_ W 
+
+D §■ 0 
+O M w 
+
+o ° ° 
+
+±J Q. o 
+0 Q. U 
+O 0 O 
+-— 0 ^ 
+
+“ o ® 
+t a q. >* 
+
+O c o ^ 
+w w o >2 
+
+
+_>, o 
+
+Q. 0 
+
+CL ns 
+
+
+O 0 
+
+o? 
+
+
+o ^ 
+
+^'5 
+Q- o 
+
+
+0 
+
+Q_ F 
+O ^ 
+
+
+CO 0 O 
+
+
+- >, O 
+
+-O Q_ 0 
+
+0 3" 0 
+o^0 
+
+O b S 
+'0 
+
+±J Q- o 
+0 CL.hz 
+O 3 o 
+
+-— 0 t- 
+
+V 0 
+
+t S a > 
+O c 0 F 
+
+^ 0 b 3 
+
+
+^ A 
+
+^ < 
+
+v > 
+
+< Q_ 
+
+> §- 
+
+Cl rn 
+
+
+O 0 
+0 0 
+
+
+0 > ^ 
+0 LO 
+
+> > LO 
+
+
+.Q _0 
+
+0 CJ) 
+
+® ffl Z 
+0^0 
+>5 8 o I 
+
+c ra ® e 
+
+0 C 0 JZ 
+
+E X3 0 0 
+
+0 3 0 0 
+
+Q-'CD C C 
+
+P c D) D) 
+
+— O c/3 c/3 
+
+
+TD 
+
+C 
+
+o 
+
+O 
+
+
+.2 > 
+
+c o 
+
+A 
+
+
+CO c 
+CD © 
+
+
+A 
+
+
+© CD 
+
+g >, 
+
+© §: 
+-Q D 
+
+
+>,0 0 
+
+0.^-0 
+
+0 c o 
+
+0 0 U 
+
+
+0 c: 
+DQ 0 
+
+
+0^ A 
+
+
+0 DQ 
+£ >, 
+
+© §: 
+D 
+
+
+>,0 0 
+
+0.^-0 
+
+§" c o 
+
+0 0 U 
+
+
+0 
+
+^ _ $ 
+© k t 
+
+' 0 n') 
+0 U 
+
+0 (- _Q 
+
+DQ 0 Z3 
+
+^ 0 O 
+
+n "o ^ 
+
+^ c < 
+
+§ * >, 
+
+~ > a 
+
+'P O Q. 
+
+
+^ A 0 
+
+
+o > 
+
+A 
+
+
+3 ° 
+
+H 
+
+0 O 0 
+0Q.0 
+-L 0 LL 
+
+
+^ _0 
+O _Q 
++-• ‘0 
+
+I-I® 
+0 0 - — 
+
+
+3 ° 
+
+0 j. 
+
+
+p 0 0 Q. 0 
+
+L- ><11 mil 
+
+
+Q- — > 
+
+
+^ _0 
+O _Q 
++-• 'CD 
+
+I-I® 
+
+£ E-i 
+
+Q- — > 
+
+
+3 ° 
+
+tj E ±j 
+0 o 0 
+
+0Q.0 
+-L 0 LL 
+
+
+^ _0 
+O _Q 
++-• ‘0 
+
+I-I® 
+
+£ E -i 
+
+Q. — > 
+
+
+3 ° 
+tj E ±j 
+0 o 0 
+
+0Q.0 
+-L 0 LL 
+
+
+^ _0 
+O _Q 
+
+-H-* ‘0 
+
+I -I® 
+
+£ E-i 
+
+Q- — > 
+
+
+3 ° 
+±=f E ±j 
+0 o 0 
+
+0Q.0 
+±- 0 LL 
+
+
+^ _0 
+O _Q 
++-• ‘0 
+
+I-I® 
+
+£ e- i 
+
+Q- — > 
+
+
+
+c .g 
+
+i c I 
+
+O Q) m 
+Q. CO CO 
+
+
+c w 
+
+.2 5 - 
+
+.ti 00 CD 
+(0 c > 
+O d) CO 
+Q. co i 
+
+
+c 
+
+^ 0 
+3 5 
+
+a) cd 
+c o 
+o o 
+
+-J 0 
+
+
+o 
+
+> < 
+
+o > 
+
+0 Q. 
+
+c a 
+
+0 3 
+0) 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~o 
+
+0 
+
+0 CO 
+
+
+"O 
+
+0 
+
+.CO CO 
+
+
+"O 
+
+0 
+
+.co CO 
+
+
+0 D F 
+
+^ 0 -E 
+
+< LL 0 
+
+
+0 D E 
+
+^ 0 -E 
+
+< LL- 0 
+
+
+0 3 F 
+
+^ 0 -E 
+
+< LL 0 
+
+
+b 0 
+O 0 
+
+O CD 
+
+
+0 
+
+CD 
+
+m C CM 
+
+9 0 — 
+
+0 c § 
+
+go 
+
+£ t5 ~ 
+
+a 0 b 
+
+O 0 JZ 
+~ CO CO 
+3 _- 
+
+0 0 0 
+-Q C C 
+^0)0) 
+
+X CO CD 
+
+
+0 _0 
+O) x 
+
+~o 0 
+
+
+^ 0 
+0 a. 
+0 0 
+Q) 4—> 
+
+E a. 
+
+9 ^ 
+
+ll o 
+
+
+X LU 
+0 
+
+0 0 
+a. 0 
+co 3 
+
+
+§5 
+
+CD CO 
+
+D > 
+
+-t—> 
+
+4= "O 
+
+i3 8 
+
+W w 
+
+
+
+0 0 C 
+
+0) Q) 0 
+
+0 0 "q 
+0 ±J "F 
+
+~ o E 
+^ > < 
+
+
+0 0 c 
+
+0)0)0 
+
+0 0 "o 
+0 ±j -F 
+
+~ o E 
+^ > < 
+
+
+0 0 c 
+
+C) 0) 0 
+
+0 0 "q 
+0 ±± -F 
+
+~ o E 
+^ > < 
+
+
+UJ . A 
+^ CD 
+
+00 Q. 
+
+> §- 
+
+Cl rn 
+
+
+O 0 
+0 0 
+
+
+0 > ^ 
+0 LO 
+
+> > LO 
+
+
+S 0 
+g- 0 
+E ci 
+— co 
+
+
+b 0 - 
+0 c 9 
+
+8 o | 
+
+2 o 
+
+a 0 b 
+
+O 0 JZ 
+— 00 
+
+3 __- 
+0 0 0 
+
+U 0 0 
+.Q) 
+
+x co co 
+
+
+3 ~o 
+
+& 8 
+
++- o 
+
+m O 
+
+
+O b 
+
+-0 0 
+
+0 e 
+
+/IN *- 
+
+
+0 ^ 
+
+x -E 
+0 3 
+
+
+?-5 
+
+
+0 >< 
+> 0 
+
+
+~o o 
+
+0 -Q 
+
+0 0 
+
+Q- 0 
+
+0 Q_ 
+
+0 0 
+c 
+
+'P> Q. 
+0 
+
+
+o 
+
+"O C 
+0 -n 
+0 0 
+3 CD 
+
+0 Or 
+0 0 
+O _0 
+
+~o % 
+
+0 0 
+
+Q. CO ® 
+« © -Q 
++-■ _ 0 
+=5 E =5 
+
+o. § 0 
+
+0 4= Q- 
+
+
+■Q 0 
+
+0 0 
+0 X 
+
+a. >< 
+
+CO 0 
+
+0 c 
+
+> i_ 
+
+O O 
+
+
+■goo 
+w -a ® 
+
+-R co w £ 
+
+0 0 m o 
+
+j- a) 0 9 
+
+-9 "o ’o) "o 
+
+0 0 c 0 
+
+"o 0 0 0 
+
+r- 01 ^ Cl 
+
+^ CO Q CO 
+
+> 0 - 7-5 0 
+
+^ “ O) © 0)5 
+
+b i- C d C 50 
+
+^ o 0 0 0 o 
+
+
+0 > 
+!° 
+-3 A 
+
+
+X T3 
+
+0 £ 
+0 CB 
+
+3 "O 
+Q_ 0 
+
+s_ 0 
+
+o o 
+— o 
+
+0 r- 
+-0 
+
+o 0 
+
+
+0 0 
+0 > 
+
+
+c X 
+
+■ ■ o o 
+
+CPC 
+
+■“ 0 0 
+
+J2 o o 
+
+— Q. 0 
+
+
+A O O 
+
+
+O 0 0 
+ZOO 
+
+
+o 
+
+0 
+
+C X 
+0 0 
+0 0 
+
+
+0 
+
+0 0 
+Or 0 
+
+0 r~ 
+
+
+OO.^ 
+
+
+O) 0 
+C 0 
+LU X 
+
+
+$ $»■§ 
+A«r" 
+
+> o b -P O 
+
+0 b 0 0 C 
+0 0 r 9 r 9 0 
+X 0 O O 0 
+
+
+c/3 
+
+O 
+
+>> 
+
+Jrt 4P 
+<D O 
+4 —> 
+
+e3 
+
+rip p 
+^ o 
+
+_r * 1—1 
+Ch 
+
+_ O 3 
+
+0) 33 
+
+£ § s 
+
+F I > 
+
+S c 0 
+
+0 KTv I 
+
+X h A 
+
+
+~o 
+
+^ fi 
+
+O 
+
+
+CL 
+
+fa X 
+
+£ < 
+
+
+0 h 0 
+0 , 0 0 
+
+jz ±j 1 = 
+0 0 ' 
+>^00 
+
+'q 0 JZ 0 
+^ O 0 0 
+
+3 0 0 t! 
+
+J 0 jz o b 
+
+o-B -O b 
+
+b - S 0 
+
+1 o ra w 
+
+
+C 0 
+0 0 — 
+^ 4= 0 
+
+O I 0 
+0 0 <3 
+
+
+0 9 0 
+o-9 
+
+c 0 C 
+
+OJ > OJ 
+
+
+"S 0 
+
++- 0 4- 
+
+000 
+
+0 Q_ 0 
+J_ 0 LL 
+
+
+^ _0 
+O _Q 
++-• "0 
+
+I-I® 
+
+2 E-i 
+
+Q- 0 > 
+
+
+~o O 
+
+9 ±j 
+000 
+0 Q_ 0 
+
+-L 0 LL 
+
+
+^ _0 
+O _Q 
++-• ' 0 
+
+I-I® 
+
+2 E-i 
+
+Cl 0 > 
+
+
+O _>, 
+10 0 
+
+9 0 
+
+O b 
+Cl 0 
+0 o 
+
+
+0 0 
+
+
+0 75 § 
+
+2 §-i 
+
+ci 0 > 
+
+
+o 
+
+> CD 
+
+O > 
+CO Q. 
+
+c a 
+9 3 
+
+c/) co 
+
+
+X 
+
+o 
+
+^2 T3 
+
+CU a) 
+CD q. 
+
+O co 
+
+
+■O 
+
+CD 
+
+CD 
+
+Q. 
+
+CO ^ 
+CD o 
+
+■- | 
+gg 
+
+UJ w. 
+
+
+speeds trouble-free 
+and engine running 
+and CAN trouble-free 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+to 
+
+0 
+
+CO 0 
+^ ^ 0 
+0 Z> E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+£ * & 
+
+c ® E 
+ce -s o 
+
+° -i ^ 
+
+■a to -a 
+
+i-g 8 
+8-“-2 
+
+® — -D 
+
+-£ .s -g ^ 
+
+O) t +± 0 
+0 0 _9 Q_ 
+HI Q. O 0 
+
+
+0 TO 
+^ CD 
+-id 0 
+
+0 a. 
+
+
+0 £ X 
+0 0 c o 
+CD CD.0 _Q 
+C^5 0 o 
+0 H 0 
+
+= o E ® 
+
+2 > < CD 
+
+
+TO TO cO 
+
+0 0 15 
+
+0 0 d 
+a ag 
+0 0 co 
+0 0 r: 
+0 c o 
+CD CD 
+0 0 
+LU LU O 
+
+
+TO 
+
+0 
+
+0 0 
+^ 0 
+0 Z5 E 
+
+< LL 0 
+
+
+TO _0 
+0 O 
+
+0 ±± 
+
+-i—> _J 
+
+0 O 
+
+■“ a. 
+
+9- o 
+o o 
+o — _ 
+
+' "O o 
+
+0 0 _b 
+
+0 0 t: 
+5-0 o 
+O o o 
+
+
+
+0 0 c 
+0)0)0) 
+0 0 Vo 
+0 "F 
+
+~ o E 
+^ > < 
+
+
+
+TO 
+
+0 
+
+0 0 
+^ ^ 0 
+0 D E 
+<5 0 B 
+
+< LL 0 
+
+
+TO 
+
+0 
+
+0 0 
+^ 0 
+0 Z5 E 
+
+^ 0 B 
+
+< LL 0 
+
+
+
+
+0 
+
+0 0 
+
+
+0 +-* 
+
+Q_ J 
+E z 
+0 < 
+~ o 
+
+
+o) a g 0 
+
+9 0 TO ° 
+^ > < o 
+
+
+0 
+
+0 0 
+D) CD 
+
+0 0 
+0 4^ 
+
+I£ 
+
+
+0 Q5 '"m 9^ 
+
+Q_ _0 -92 -s= 
+
+E ^ ^ 4—> 4—' 
+
+0 0 0 n n 
+
+0 0 E E 
+
+
+0 TO TO TO TO 
+n CD 0 0 0 
+-F 0 0 0 0 
+EQ-Q-Q-Q- 
+< C/D C/D C/D C/D 
+
+
+t TO 
+
+O 0 
+
+0 
+
+Q_ -t—> 
+T3 0 O 
+
+0 m 0 
+
+0 0 ^ 
+
+8- -is 
+
+-§> £ TJ z 
+
+m w §Q 
+
+
+0 rV 
+
+
+_> o 
+
+TO 0 
+
+
+-i- 
+
+X 0 
+
+
+m 0 
+
+CO -Q 
+0 
+
+— 4 —> 
+
+0 o 
+
+TO 0 
+^ CD 
+CJ O o 
+C/D O 
+
+Q 0 > 
+
+
+— 6 0 
+9 0 0 
+
+
+E TO ^ 
+0 0 0 
+CD -— 03 
+0 0 _Q 
+m O , 
+
+
+TO 
+
+0 JZ 
+
+0 > 
+CD- E 
+
+C/D 
+
+
+0 
+
+CD 0 
+
+8 E 
+
+
+^ o 
+
+O 0 
+
+
+® ® P- 
+
+0 Q- b 
+Q__c O 
+0 \ O 
+
+o I o 
+
+
+> TO 
+
+0 P 
+
+0 a. 
+
+£ 0 
+
+t" ~o 
+
+0 0 
+9 0 
+
+T3 Q_ 
+
+O 0 
+
+
+c JB 
+
+C -Q 
+
+
+E J < 
+® O 
+
+
+
+-Q > 
+
+c o 
+
+03 A 
+
+
+2 r ® E 
+
+.2 £ 2 
+
+m o §> 
+
+O c CO 
+
+c«? 
+
+■§> o 
+
+
+~ o = 
+
+
+
+0 > 
+!° 
+05 A 
+
+
+TO > 
+0 O 
+
+
+o "co E 0 0 
+
+-■^ O T3 ^ -D 0 -D 
+
+0 V C O C o C 
+
+0 A RJ ^ (0 0 (0 
+
+
+~o o 
+
+±- 0 4- 
+
+0 O 0 
+0Q.0 
+-L 0 LL 
+
+
+^ _0 
+O _Q 
+
+4-» '0 
+
+I-I® 
+
+2 E-i 
+
+Q- — > 
+
+
+~o O 
+
+t- 0 ±- 
+
+0 O 0 
+0Q.0 
+-L 0 LL 
+
+
+^ _P 
+O _Q 
++-• '0 
+
+I-I® 
+
+0 Q- — 
+
+
+~o o 
+
+0 j. 
+
+
+^ 0 
+O _Q 
++-> '0 
+
+I-I® 
+
+0 9- — 
+
+
+~o o 
+
+0 j. 
+
+
+^ _0 
+O _Q 
++-• '0 
+
+I-I® 
+
+0 9- — 
+
+
+~o o 
+
+0 j. 
+
+
+0 000.0^0 000.0^0 000.0 
+EL ^ | | i mil Q_ EL I | i mil O EL I | i mil 
+
+
+Q- — > 
+
+
+Cl ±z > 
+
+
+^ _0 
+O _Q 
+-+-• '0 
+
+I-I® 
+
+2 E-i 
+
+Q- — > 
+
+
+CD o 
+
+C GO ^ 
+
+O) = Z 
+
+C CD ^ 
+
+Ili <Ho 
+
+
+CD Q c 
+
+*1! 
+fi o ■- 
+
+O ^ <o 
+Q. «2 Q. 
+
+
+o 5 
+
+
+
+separation detected implausible value Clutch status gear ratio. 
+
+and no fault message Shifted gear The signal is supported until 
+
+via CAN Gearbox input speed it is substituted in 
+
+the event of a negative 
+speed change. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~o 
+
+0 
+
+0 CO 
+^ ^ 0 
+0 Z> E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+~o 
+
+0 
+
+0 eg 
+^ 0 
+0 Z5 E 
+
+c 0 -E 
+
+< LJ_ 0 
+
+
+~o 
+
+0 
+
+CO eg 
+0 
+
+0 D E 
+
+< LL 0 
+
+
+~o 
+
+0 
+
+CO to 
+^ 0 
+0 D E 
+
+& 0 -E 
+
+< LL 0 
+
+
+CD l_ 
+'C 0 
+^ 0 
+0 ^ 
+0 ±= 
+
+>> o 
+
+00 T3 
+TD 0 
+0 0 
+■5 Cl 
+£ 0 
+
+CO 0 
+_Q 0 
+
+
+0 i— 
+
+X m 
+
+5 &E 
+
+CU 0 ) 
+O 0 Q. 
+CD CO 
+
+0 -t-> 
+
+iP CD 0 
+c d 
+
+t3 0 
+
+
+O 13 O) 
+0 0 CI 
+
+S §J 
+
+. 00 ^= 
+
+
+"O 
+
+0 
+
+-0 
+
+o 
+
+CL c 
+d -- 
+
+■ P "O 
+O 0 0 
+
+'■e co -5 
+
+0 |_ E 
+
+. 0 +5 
+
+CO c W 
+0 CD -g 
+
+^'0 0 
+TD 0 0 
+
+
+0 ° 
+
+0 CD 
+
+C d 
+T3 0 
+
+
+0 
+
+■+-> X 
+-C 0 
+O) ' 
+
+
+0 
+
+0 td 
+
+CD 0 
+^ 0 
+
+
+o 0 
+^ 0 
+
+td b 
+
+0 o 
+
+0 — 
+r- 0 
+
+
+£ X 
+
+~ o 
+$ -Q 
+
+b 0 
+O 0 
+
+td O) 
+
+0 c 
+
+0 b 
+d o 
+
+0 1 = 
+
+
+d 0 
+
+d 0 
+
+0 — 
+
+S_ 0 
+
+0 R 
+
+0 CD 
+O) '0 
+
+TD 0 
+
+
+0 ° 
+
+0 0 
+c CL 
+0 
+
+
+0 i— 
+
+x S 
+
+9 TO 
+-+—' 
+
+C TD 
+O 0 
+cb CD 
+^ 0 
+
+
+o ^ 
+0 - 
+0 o 
+
+o td 
+0 0 
+0 0 
+
+« w 
+
+
+x O 
+
+E £ 
+
+§> s 
+
+CD 0 
+O) 
+
+
+TD 
+
+0 
+
+O 
+
+a.£ 
+
+w E 
+
+0 "b 
+
+
+c 0 
+
+CD -g 
+'0 0 
+0 0 
+
+
+0 ° 
+
+SE 
+
+0 0 
+c d 
+
+T3 0 
+
+
+.2 g 0 
+
+■■B 05 0 -£ 
+
+_Q "O Cl cO 
+
+Z5 0 C ^ 
+0 Cb 5— 
+— X 0 
+
+o 0 ° 0 
+
+-Q 0 _Q O) 
+
+S £ 0 "O 
+O > o) 0 
+
+
+
+-p Q_ 0 -p — 
+
+
+
+
+0 
+
+0 0 
+O) CD 
+0 0 
+0 ±± 
+
+I > 
+
+
+0 0 0 b b 
+^ 0 0 0 0 0 
+
+
+0 td td td td jz 
+
+n 0 0 0 0 O 
+
+-g 0 0 0 0 
+
+E Q_ d d Q_ — 
+
+< C/D C/D C/D C/D O 
+
+
+^ d 
+
+0 c 
+0 -- 
+
+CD x 
+
+
+0 
+
+jz 0 
+C/D CD 
+
+
+£&% § 
+d c — -I-J 
+
+3iBI III 
+
+0 0 c= - - - - 
+
+CD CD 0 "O "O "O "O 
+
+0 0 n 0 0 0 0 
+0 ±j - 7 = 0 0 0 0 
+
+~ O E d d d d 
+2 >< w w w w 
+
+
+J= d 
+CO c 
+0 -- 
+CD X 
+
+
+CE 0 
+JZ 0 
+C/D CD 
+
+
+S.i § ® -c 
+
+d E - -4-» -l-» 
+
+g & I III 
+
+0 0 c - - - - 
+CD CD 0 "O "O "O "O 
+
+0 0 o 0 0 0 0 
+0 +=: - 7 = 0 0 0 0 
+
+~ o E d d d d 
+
+2 >< co co co co 
+
+
+}= o. 
+
+CO c 
+0 -- 
+CD X 
+
+
+t= 0 
+
+ZZ 0 
+
+C/D CD 
+
+
+^ g.i § ® 
+
+d e — -i-j -i-j 
+
+3s 11 || 
+
+0 0 c - - - - 
+
+CD CD 0 ~0 ~0 ~0 ~G 
+
+0 0 n 0 0 0 0 
+
+0 +=: "F 0 0 0 0 
+
+~ O E d d d d 
+
+2 >< co co co co 
+
+
+^ d 
+CO c 
+0 -- 
+CD X 
+
+
+t 0 
+JZ 0 
+
+C/D CD 
+
+
+TD 
+
+0 JZ 
+
+0 > 
+d E 
+
+C/D 
+
+
+§ E S-iE 5 
+
+JZ O 0 > 33 
+
+o t— 'E 0 P 0 
+T3 fc a 2 0-2 
+
+0 S c r w w 
+0 d t 4 - ^ 3 
+
+d ( O m 0 
+
+w > 0 E ® Q. 
+
+i? E i- 2 d c 
+
+O J*: O O 0 .2 
+
+
+^ o 
+O 0 
+
+
+-7^v V 
+
+® TO P 
+
+0 d b 
+d _c o 
+
+CO \ o 
+
+
+~o 
+
+0 JZ 
+
+0 > 
+d E 
+
+C/D 
+
+
+§ ® s ® 
+
+§ eS g 
+
+JZ O 0 > ^ ^ 
+
+o t— 'E 0 P 0 
+
+T3 fc a 2 0.5 
+
+0 O 0 -0 0 CO 
+
+0 d b +- 21 3 
+
+d ( 0 b CT) 0 
+
+w > 0 E ® Q. 
+b E b ^ d 0 
+
+O J*: O O 0 .2 
+
+
+^ o 
+O 0 
+
+
+— 7 —r » VW 
+
+® TO P 
+
+0 d b 
+d _c o 
+
+0 \ O 
+
+
+TD 
+
+0 JZ 
+
+0 > 
+
+d E 
+
+C/D 
+
+
+§ E S-iE 5 
+
+JZ O 0 > ^ ^ 
+
+o t— 'E 0 P 0 
+T3 fc a 2 0.5 
+
+0 P 0 JZ 0 0 
+0 d b +- Z 5 
+
+d ( O b (T) 0 
+
+« > 0 E So. 
+
+b E b ^ d 0 
+O O O 0 _ 
+
+
+^ o 
+O 0 
+
+
+® TO P 
+
+0 d b 
+
+d_c O 
+0 \ o 
+
+
+d 0 3 
+
+o > > 
+
+0 0 0 
+0 TD d 
+JZ 0 '0 
+
+"o P 
+
+rC 0 -2 
+
+g 0 d 
+
+I g-E 
+
+
+> ^ 
+O T3 
+
+
+0 
+
+T'S 0 ^ 
+
+^ 0 
+0 0 
+
+O 0 
+
+0 0 
+
+© ® 
+
+© TD ±± 
+
+
+■E ^ S © o « o ? 
+
+^E^tcc 2 c< 
+T3 Q.XJ 0 
+
+
+^COCqcqC 0 
+
+A(C^(C 000 (C> 
+
+
+0 
+
+- 7—5 CD 
+
+In 0 
+0 0 
+
+O 0 
+
+0 0 
+_ -p - 1 0 
+
+0 0 0 
+0 TD ±i 
+
+
+<E £P © o ’■§ o z 
+
+^-DP-QfflcSc< 
+
+OT3^T3^T3 
+
+■^COCQCffiCCO 
+
+ACTJ^t‘R30CO0CO> 
+
+
+0 
+
+In 0 
+0 0 
+
+O 0 
+
+0 0 
+
+0 0 0 
+0 "O ±± 
+
+
+^ 0 
+> ^ a 32 
+
+
+■SZ =P £ © O '-S O 5 
+
+■pE-Ptocgp< 
+
+
+> w c -“ 
+
+O TJ T3 
+
+
+__ 0 __ 
+
+^ d ^ 
+
+
+^COCqCqC 0 
+
+A(O^(Oa3(O0(O> 
+
+
+0 
+
+- 7—5 CD 
+
+V, 0 
+0 0 
+O 0 
+0 0 
+
+0 0 0 
+0 "O 
+
+
+<E EP © o ■■§ o 2 
+
+N 'OPUSc®c< 
+
+OTJ^TJ 5T5 Q- -0 ^ 
+
+■^COCQCffiCCO 
+
+ACO^J _ CTJ0CO0CO> 
+
+
+~o o 
+
+^ CO ^ 
+
+0 O 0 
+0 Q .0 
+1 0 LL 
+
+
+^ _0 
+O _Q 
++-• "0 
+
+I-I® 
+
+2 E-i 
+
+d 0 > 
+
+
+~o o 
+
+tJ 2 ±J 
+
+000 
+
+0 Q .0 
+1 0 LL 
+
+
+^ _0 
+O _Q 
++-• "0 
+
+I-Is 
+
+£ E-i 
+
+d 0 > 
+
+
+"S 0 
+
+tJ 2 ±J 
+
+000 
+
+0 Q .0 
+1 W LL 
+
+
+^ _0 
+O _Q 
+
+-4-« '0 
+
+I -I® 
+
+£ E-i 
+
+d 0 > 
+
+
+~o O 
+
+tJ 2 ±J 
+0 O 0 
+0 Q_ 0 
+1 0 LL 
+
+
+^ _0 
+O _Q 
++-• '0 
+
+I-I® 
+
+£ e- i 
+
+d 0 > 
+
+
+■o 
+
+a> +- 
+a> -c 
+
+Q. D) 
+
+co z 
+
+
+■O 
+
+CD 
+
+CD ^ 
+
+CO ^ 
+
+
+■o 
+
+CD -m 
+CD -C 
+Q. D) 
+(0 Z 
+
+
+0 
+
+O 
+
+E 0 
+
+^ c_ 
+
+■O o ==* 
+
+0 c 2 
+
+0 E c 
+
+o. 2 o) 
+
+co £ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~o 
+
+0 
+
+CO 0 
+^ ^ 0 
+CD 3 E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+~o 
+
+0 
+
+.CO to 
+^ +- 0 
+0 Z5 E 
+
+^ 0 -E 
+
+< LL_ 0 
+
+
+TD 
+
+0 
+
+CO to 
+
+^ ^ 0 
+
+0 D E 
+^ 0 :E 
+
+< LL 0 
+
+
+TO 
+
+0 
+
+CO t 3 
+^ 0 
+0 Z5 E 
+
+<5 0 -E 
+
+< LL 0 
+
+
+~o 
+
+0 
+
+CO to 
+^ 0 
+0 D E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+
+> ~o 
+
+"T^ 0 
+
+
+0 o w 
+Q O 0 
+
+
+o 
+
+■ ■ -I—' 
+
+_>> o 
+Q. E 
+
+d V 
+
+w ® 
+O 0 
+
+
+0 - 0 
+E 5 
+
+
+CO O 
+0 0 
+Q_ c 
+>> CD 
+-I—> .E 
+
+0 tt 
+0 0 
+S_ 0 
+0 0 
+£ O 
+
+
+O b 0 l> _c cd 
+_c 0 c = 0 O 
+C/D CL 0 < > d 
+
+
+0) > c 
+
+0 IE m 0 
+> TO 0 JZ 
+
+§ S«s 
+gfi o| 
+
+■c c d £ 
+
+0 o w -f 
+QO c§i 
+
+
+0 
+
+0 
+
+0 ) _u 
+
+0 ^ 
+0) m CD 
+
+0 E TO 
+o) 0 0 
+c 0 0 
+
+8 8 ® 
+b o.<c 
+
+
+0 ) 0 
+
+co -E 
+b > 
+
+
+
+0 0 C 
+0) 0) 0 
+
+0 0 "q 
+0 ±b "F 
+
+~ O E 
+
+^ > < 
+
+
+0 
+
+T3 
+
+0 T-5 
+0 0 
+0 E 0 0 E 
+
+0 o Q_ c o 
+
+0 0 =6 to 
+
+_0 -^2 -2 q 
+
+0 0 0)0 
+0 0^00 
+E 0 0 o 0 
+
+CD < > _l 0 
+
+
+0 
+
+0 0 
+D> 0 
+0 0 
+0 ^ 
+
+I£ 
+
+
+0 
+
+0 
+
+CL -Q 
+E CD 0 
+
+S Q-^ 
+
+-4-> 0 E 
+
+o -2 ° 
+
+■p E O 
+
+E 0 o 
+
+< > Q 
+
+
+0 
+
+0 0 
+O) 0 
+0 0 
+0 ^ 
+
+I£ 
+
+
+-b E ° 
+
+0 0+3 
+0 CO 
+
+Q_ 0 .> 
+
+0 ° 0 
+L Q_ 0 
+
+0 7^0 
+tt 0 ^ 
+
+boo 
+
+
+< C/D C/D 
+
+
+0 _Q 
+
+
+0 0 
+Q. ^ 
+
+a e o 
+
+0 0 o 
+0 r E 
+
+0 0 C ■ 
+
+D) gi.® ® 
+8 £ -p ■£ 
+
+^ o £ ® 
+
+2 > < co 
+
+
+-tb 0 
+
+E Q 
+
+d § E 
+d e 0 
+
+0 0 
+
+0 0 c "5 
+0 0 0 0 
+
+0 0 O 
+0 bb "F TO 
+;= O E >> 
+
+2 > < x 
+
+
+Q- ®" 
+
+i l| 
+
+0 d > 
+
+0 0 
+0—0 
+0 0 E 
+0 0 0 
+Q_ "O o 
+^ >> 0 
+
+
+^ 0 0 -5 
+
+">, iS 0 0 
+
+I GO O O 
+
+
+a b 
+
+0 0 
+d 0 
+0 o 
+
+« 8 
+
+
+0 r - 
+_C 0 -- 0 
+
+-n '4= b o 
+
+0^0 
+0 0 f- 0 
+
+CO 0 b > 
+
+E 0 J= 0 
+o- 0 r -0 
+
+0 0 0 ’S 
+
+to 0 p > 
+
+0 CD C i_ 
+
+Q_'0 0 O 
+
+
+C 0 
+
+o > 
+to 0 
+
+0 i? 
+0 0 
+0 R 
+
+0 O) 
+"O '0 
+
+
+o =2 o E 
+o ^ o 
+
+o O) 0 CO 
+O C O ^ 
+Q 0 ^ A 
+
+
+bb O 
+
+^ >'s 8 
+
+? S ® 
+
+O o g-r > 
+O 0 O 0 ^ 
+
+o5 o o o 3 
+
+
+ib >> 
+0 0 
+O 0 
+
+
+° 9- §5 t 
+e §■ o. & 
+o w o w 
+
+
+1 Q_ 
+tO o 
+
+
+C/D O O O 
+
+
+^ '5 a. 
+
+O v'o o 
+--^00 
+? a ® -o 
+
+o m ors 
+
+co o o o 3 
+
+
+O ^ 
+
+°< 
+
+O 13 ° 
+
+0 1- C 0 
+^ A (0 > 
+
+
+"S 0 
+
+±b 0 4b 
+
+0 O 0 
+0 Q .0 
+-L 0 LL 
+
+
+CD 
+
+CO 
+
+■9 > 
+
+0 ) (/) 
+
+.2 | 
+
+£ c Z 
+<5 o< 
+(/) "co O 
+
+
+^ _0 
+O _Q 
++-• '0 
+
+1 |_ 0 
+
+2 E ^ 
+
+CL 0 > 
+
+
+6 i 11 
+
+5>°<^ 
+
+o ~o U ~G 0 
+
+0 x- C 0 C O 
+05 A CO '> CO 4=3 
+
+
+~o o 
+
+tb E ±b 
+
+0 o 0 
+
+0 Q .0 
+-L 0 LL 
+
+
+^ _0 
+O _Q 
++-• '0 
+
+I-I® 
+
+£ E-i 
+
+CL 0 > 
+
+
+£ 
+
+o z 
+
+° < 
+
+o ° 
+
+o co 
+
+□ ■> 
+
+
+0 > 
+!° 
+01 A 
+
+
+0 _>, 
+TO ■£ 
+
+E 0 
+
+O b 
+Q. 0 
+0 O 
+
+
+0 0 
+
+
+®-§.® 
+£ E-i 
+
+Cl 0 > 
+
+
+0 > 
+
+0 2 
+01 A 
+
+
+0 _>, 
+10 o 
+
+E 0 
+
+O b 
+Q. 0 
+0 O 
+
+
+P -o 0 
+
+
+uj ^ i — I 
+
+±b bb E tc 2 to + 
+
+0 0 m O O) o DO 
+
+0 0 E -E n -E n 
+
+LL LL d C/D S C/D -2 
+
+
+
+1 g 
+0 ) — 
+E -Q 
+
+2 c 
+C/5 CD 
+
+
+to 0 
+
+m ^ 0 
+
+F 0 0 0 
+
+0 0 0 0 
+
+° -O 0 V 
+E 0 0 
+
+~ O T3 0 0 
+
+0 i- c E o 
+
+05 A CO Q. -b 
+
+
+0 >, -b 
+
+10 c o 
+2 0 ^ 
+o b C/D 
+Q_ 0 -t-* 
+0 0 C 
+
+
+O + 
+
+
+o ^ 
+TO 
+
+
+-0 0 
+0 n 
+
+'F '0 
+
+
+^-^E’F^'FECOq 
+
+EE0PoPof- — 
+
+0 0 ^ -L: b .L: 0 0 
+
+J_ LL 0.0 d 0 O -E > 
+
+
+6 £ 
+— 0 
+3 i - 
+
+0 Q, 
+
+■o E 
+> 3 
+x a 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~o 
+
+0 
+
+CO CO 
+
+^ ^ .g 
+
+0 Z5 E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+~o 
+
+0 
+
+0 eg 
+^ +- .2 
+0 Z5 E 
+
+^ 0 -E 
+
+< LL_ 0 
+
+
+"O 
+
+0 
+
+CO to 
+^ .2 
+0 D E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+_>, CO — 
+
+& § 
+3l 8 
+
+-b -C CO _c 
+CD^ CD 
+=5 — ^ — 
+O CD) < +— O) 
+C ^ C 
+
+V "co "co 
+
+^ 0 +e 0 
+O > O > 
+£ 0-0 
+C/D IX <C IX 
+
+
+v _ 0 "O 
+
+§Ero 
+
+■e s ? -e 
+
+CO E 
+
+0 2 o o 
+CD ClZ d 
+
+
+w ^ 0 "O 
+
+§Er» 
+
+■e £ ? -f 
+
+CO E 
+
+CD O O 0 
+
+CD ClZ d 
+
+
+
+0 i 
+
+D °> 
+
+-I— 1 .== 
+
+0 CO 
+
+0 0 
+d > 
+C= 0 
+
+
+'0 o 
+
+° '-s 
+
+O CJ 
+^ 0 
+
+
+w ^ o ^ 
+
+II,® '■§ I ■? g> 
+
+0 b -_g £ £ > 
+
+~ O b O rr,-C '£: 
+
+2 > < < i?C/3 Q 
+
+
+> 
+
+& £> 
+
+0 2 
+CD 0 
+0 Q_ 
+
+> ! 
+
+
+0 ±= 
+
+
+^0 0 
+o 2 
+
+
+0 c 
+CD 0 
+
+0 'q 
+_0 
+
+1 < 
+
+
+o 0 
+= o 
+
+
+0 0 0 _ 
+
+
+"D b 
+>- o 
+X < 
+
+
+0 CD 
+> b 
+0 0 
+b o 
+
+
+0 
+
+- TD 
+
+S<1 
+
+O 
+
+0 0 
+O d 
+dC/D 
+
+"0 —' 
+
+0 0 
+■4— 11 > 
+
+O 0 
+
+< b 
+
+
+CO g 
+
+c Q- 
+
+O ffl 
+
+0 b 
+0 9 
+
+d< 
+
+
+o 
+
+_0 b _0 
+CD 95 CD 
+
+0 0 C 
+0 0-0 
+
+C "0 c 
+O 0 o 
+
+"-I —' "-I—I 
+
+000 
+_0 0 _0 
+
+0 0-0 
+0 C/D 0 
+
+
+& p 
+
+
+0 ±= 
+
+
+0 0 
+o 2 
+
+
+c =1 o g 
+.® co IS — 
+
+
+"D b 
+
+>- O 
+
+X < 
+
+
+0 0 
+> b 
+0 0 
+b o 
+
+
+X 0 
+
+°i-o 2 - 
+
+c 0 c 
+o ^ b Q 
+b o 7 = b 
+
+0 0 co 0 
+0 0. 0 
+cl co cf CL 
+
+§ ©‘ i 1 
+
+b > 0 b 
+0000 
+< b Cl< 
+
+
+o >, o 
+
+o Cl c 
+
+V Cl 0 
+-0 0 0. 
+O0O 
+
+C/D O O 
+
+
+4— 4— i— 
+
+c c o o 
+±=! 0 0 -tr: b 
+0 b b 0 '0 
+
+O Z5 0 O O 
+
+~ O O Q- d 
+
+■$* r "0 X "co "0 
+
+g- Q 0 0 0 0 
+
+Q_ Sy - 1 — 1 4= 4— 4= 
+
+0 Q- 0 "o 0 o 
+
+0 o 0 0 0 0 
+
+^ fc- fc- d d 
+
+O O O 0 O 0 
+
+
+c c o O 
+±=! 0 0 ±± b 
+0 b b 0 '0 
+
+o 0 0 O o 
+
+~ O ° 0 CL 
+■$* (- "0 X "0 "O 
+
+0 Q 0 0 0 0 
+
+O ^ 4— 1 4= 4— 1 4= 
+
+0 O 0 "° 0 ° 
+
+0 o 0 0 0 0 
+
+S- S- Q_ S- Q_ 
+
+O O O 0 O 0 
+
+
+■Q > 
+
+0 A 
+
+
+Q > b 
+
+0 1 - ~o 
+0 A < 
+
+
+O 0 0 
+0O0 
+_£=’-£= b 
+° 0 m 
+
+£ 8J ■£ 
+
+= — =5 =5 
+
+X 0 o 0 
+^ ro p 
+
+
+0 2 
+0 +-* 
+
+
+0 Y O 
+o_ Y 0 
+
+O S I 
+
+
+-O 0 
+
+-7-5 0 
+
+0 0 
+
+0 Q. 
+
+
+Q > b 
+■■^ob 
+
+0 T3 
+S? A < 
+
+
+O 0 0 
+0O0 
+J= ‘4= b 
+
+° 0 m 
+
+= — 0 0 
+-Q 0 O 0 
+
+^ § ■*= p 
+
+
+0 2 
+0 
+
+
+0 Y O 
+o_ Y 0 
+
+o s i 
+
+
+-0 0 
+
+T"3 0 
+
+C 2 
+0 Q_ 
+
+
+~ 0 
+^ O 
+
+=5 O =5 
+0 Q_ 0 
+J_ 0 LL 
+
+
+®-§.® 
+£ e- i 
+
+Q-b > 
+
+
+O _>. 
+
+~0 Y "Lf "Lf -tf 
+
+0 0 0 0 '=5 0 
+
+ob 2 2 2 S 
+
+Q_ 0 - 4 —* 'o P O 0 0 
+
+0 O 0 T ^ V °=5 
+4 ^ 4^ CD -0 2 t + 0 _0 0 
+OOmOCDODQ0Q__O 
+002-C n -C n ^-(Z0 
+LL LL d C/D 2 c/d SOi > 
+
+
+’0 0 
+
+2 -2 
+o '0 
+
+
+_0 0 
+
+
+o ^ 
+
+T3 b ±=: ±=; . 1 =! 
+
+0 0 0 0 0 0 
+
+ob 2 2 22 
+
+Q_ 0 - 4 —’ 'o P "o 0 0 
+
+0 O 0 V 0 V °=5 
+
+££®t2t + Cfl0 
+
+ooSocDODQ0d0 
+
+002-C n -C n 0-(Z0 
+
+LL LL d C/D b C/D -2 O -b > 
+
+
+'0 0 
+
+2 -2 
+o '0 
+
+
+_0 0 
+
+
+0 o 
+
+5 '| 
+
+CC 0 
+
+
+0 ^ 
+
+> g- 
+
+03 3 
+
+> 0 
+T3 > 
+
+o 2 
+
+c 
+
+0 
+
+o '£ 
+(/) co 
+
+
+CO 
+
+> 0 
+-O > 
+
+o 5 
+
+c c 
+
+& g 
+o Z o 
+
+CO CO "D 
+
+
+Specified position 
+selection angle 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~o 
+
+0 
+
+.co CO 
+
+
+T3 
+
+0 
+
+.CO CO 
+
+
+"O 
+
+0 
+
+.CO CO 
+
+
+"D 
+
+0 
+
+.CO CO 
+
+
+0 D F 
+0 X 
+
+< LL 0 
+
+
+0 D E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+0 D E 
+<5 0 =i 
+
+< LL 0 
+
+
+0 D E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+v _ 0 "O 
+
+§Er» 
+-e - ? -f 
+
+CO E 
+
+0 2 o 0 
+
+CD ClZ d 
+
+
+rn 0 X 
+
+O 0 ±j 
+
+X Q)= CO 
+
+-— 1 2 
+
+J= 0 0 d 
+
+13 f ^ 0 
+
+O) t C Q5 
+
+C X 2 0 
+'i= D" 0 O) 
+0 O ^ c 
+Q Z < LU 
+
+
+O 0 
+0 X 
+
+
+0 '-E 
+> 2 
+0 0 
+JZ d 
+h- O 
+
+
+o 2 
+
+O 0 
+
+"O 0 
+0 0 
+±J 0 
+
+II 
+
+
+O 0 
+0 X 
+
+
+0 ‘E 
+> 2 
+0 0 
+JZ d 
+
+l— o 
+
+
+b 2 
+
+O 0 
+
+"O 0 
+0 0 
+±J 0 
+
+II 
+
+
+
+_>, 
+
+& E 
+
+g 3 
+
+0 2 
+O) 0 
+0 Q_ 
+
+— p 
+
+> .2 
+
+
+0 ±1 
+
+
+0 c 
+O) 0 
+
+g £ 
+
+2 < 
+
+
+Id ® 
+
+o 2 
+0 +-* 
+CL Y 
+CO F 
+
+
+O 0 
+
+= o 
+
+
+0 0 03 _ 
+
+
+"D .2 
+>> o 
+X < 
+
+
+0 2 
+> b 
+0 0 
+2 o 
+
+
+0 
+
+- T3 
+
+§<i 
+
+±J o 
+0 0 
+O d 
+CL C/D 
+
+"0 —' 
+0 2 
+
+-I—> > 
+
+O 0 
+< 2 
+
+
+w § 
+c Q- 
+O a 
+
+0 2 
+
+° 2 
+Q-C 
+
+
+o 
+
+_0 ±J _0 
+
+o) 2 a) 
+c 2 c 
+0 CL 0 
+
+C X c 
+O .2 O 
+
+"-i—> Irti "-i—i 
+
+o o o 
+_0 0 _0 
+0,0-0 
+0 C/D 0 
+
+
+0 O C 
+
+0/3 - 0 
+0+^2 
+
+0 c h= 
+
+2 0 13 
+Q_ b o 
+
+
+O 0 "O 
+
+= o 0 
+
+0 0 "F 
+
+~o 2 0 
+
+
+- '0 
+
+2 0^ 
+
+0 q -C 
+
+h= 0 5t= -2 
+O 0 O 0 0 
+
+° 2 0 O 0 
+
+-Q > CL „ CD 
+
+m <L rn r- . . 
+
+
+0 ^ o o o -E 2 
+
+T3 2 0 2 2 0 ^ 
+
+>- o cl X X o =* 
+
+X < CO o o cl CD 
+
+
+> 
+
+d 2 
+
+0 2 
+O) 0 
+
+0 d 
+
+— P 
+
+>2 
+■+—> 
+0 c 
+O) 0 
+
+g q 
+
+2 < 
+
+
+o 2 
+
+
+0 
+
+M- -Q 
+
+O E 
+
+0 ^ 
+
+CD Z 
+0 
+
+0 C 
+
+0 o 
+0 ~ 
+
+E to 
+
+■*—>> 
+
+d 
+
+0 0 
+0 ~G 
+LL 0 
+
+
+CD c 
+O -- 
+
+d ^ 
+
+to to 
+
+
+0 d 
+
+
+O.Q 2 
+
+2 2 ° 
+Q. Q- c 
+
+0 0 0 
+0 LD 
+
+/-r^ /IN 
+
+
+VU L/ ^ 2 
+
+LL 0 0 < 0 
+
+
+& ® 
+g 3 . 
+
+0 2 o 
+
+CD 0 m 
+
+3 g- g> 
+
+> ® M c f; 
+- f — 1 0 n O 
+- 0 d 
+
+£ C P 0 CD 
+O) 0 C 2 _Q 
+
+0 o d c 
+
+X 2 0 0 c 
+
+i= 2 0 -o 2 
+
+2 < LL 0 Z 
+
+
+O) C 
+
+o -- 
+
+d ^ 
+
+to to 
+
+
+0 
+
+
+0 0 2 
+
+2 2 ° 
+Q- Q- c 
+0 0 0 
+0 O ^ 
+0 < 0 
+
+
+C C O o 
+
+±j 0 0 ±j X 
+
+0 b b 0 0 
+
+O 30 OO 
+2 0 o d d 
+
+Xd "o 5 "o "0 "o 
+
+0-^ 0 0 0 0 
+
+O -I— 1 H= -I— 1 H= 
+
+0 X- O O 
+0 O 0 0 0 0 
+
+d d 
+
+O O O 0 O 0 
+
+
+c c o o 
+
+O ±J 0 0 '-tj '-E 
+
+^ 0 b b '0 '0 
+
+— 0 3 0 0 0 
+
+F'O^oaa 
+
+— 0 "O 0 "O 
+
+o Q. P 0 0 3 CD 
+
+I Q_ 0 -t—' 4= -I—> 
+
+e 3 Q- o o o O 
+
+O 0 O 0 q 0 Q 
+
+o S- S- d d 
+
+7D O O O 0 O 0 
+
+
+TD ° 
+
+g 1 
+
+o b 
+c CO 
+o O 
+
+to -C 
+
+d g_ 
+CO S- 
+
+~o 2 
+
+< Cl 
+
+
+p o 
+
+g 1 
+
+o b 
+
+C CO 
+O O 
+
+to 
+
+d g_ 
+
+< Cl 
+
+
+o > ’E 
+-2 O Tj 
+C -Q 
+
+X 3 A < 
+
+
+d 
+
+O c 0 
+0 O 0 
+jz += ^2 
+o 0 ' 
+
+= — 0 0 
+
+-Q 0 o 0 
+
+^ 0 ^ P 
+
+
+=5 2 
+0 
+
+
+0 Y O 
+df w 
+
+2^1 
+
+
+^ =5 
+-0 0 
+T"3 CO 
+
+c 2 
+
+0 d 
+
+
+d n o 
+
+o -2 ® 
+
+-t—> — JZ 
+
+to E ° o 
+
+m o ^« ■£ 
+
+F 0=000 
+6 1 | 8 || 
+
+O > :i ^ - 
+
+~ O "O '0 0 "O 
+
+"9 h ° P c 
+
+X 3 a < 2 d 2 co 
+
+
+lT -q 
+
+2 o 
+
+m 
+
+m g to 
+2 -O 0 
+^ 0 ~ 
+c O 0 
+
+O > 05 s. 
+■2 0-0 0 
+c X) 
+X 3 A 0 0 
+
+
+O b 3 .Q 
+
+0 2 O -5 ^ 
+
+2 > ^ 00-2 
+
+~ O -D 0 0 2 
+
+C T- c t c 2 
+
+X 3 A 0 O 0 0 
+
+
+o _>, 
+X 2 
+2 o 
+
+O b 
+d 0 
+0 O 
+
+
+'0 '0 0 0 
+
+O -Q O d 
+
+o R O O '0 
+
+
+dd 2 "0 2 t +'fX o 
+00mOCJ)ODClod_0 
+00bJZ n JZ n dpa3 
+LL LL d C/D 2 C/D 2 0-2 > 
+
+
+y _>. 
+x V 
+2 o 
+
+O b 
+d 0 
+0 O 
+
+
+'0 '0 0 
+O -Q O d 
+
+■5 S -O ° 
+
+
+uj ^ i f i 4_, 
+
+2 x 2 x +-50 0 
+00Q)OO)OOQod_0 
+00bJZ n JZ o dpcO 
+LL LL d C/D 2 C/D 2 O -2 > 
+
+
+O >, 
+
+X c 
+
+2 0 
+
+O b 
+d 0 
+0 o 
+
+
+0 0 
+
+
+2 E-i 
+
+dX > 
+
+
+o > 
+
+x 2 
+2 0 
+
+O b 
+d 0 
+0 O 
+
+
+0 0 
+
+
+£ E -i 
+
+dX > 
+
+
+oT-SJ 
+
+> O) 
+
+to g 
+
+-O c 
+
+■- o 
+
+O B 
+
+c o 
+
+0 0 
+
+O 0 
+0) CO 
+
+
+0 2 
+
+o X 
+
+CO o 
+
+
+c 
+
+x -2 
+
+is 
+
+0 "n 
+
+O co 
+
+
+. * o 
+
+O)^ ^ -B 
+
+~ ' c ™ 
+
+i 2 £ E. 
+
+0 O) L (0 
+■S C 3 -O 
+CO CO O CO 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+to 
+
+0 
+
+0 CO 
+
+
+TO 
+
+0 
+
+.CO CO 
+
+
+TO 
+
+0 
+
+.CO CO 
+
+
+TO 
+
+0 
+
+.CO CO 
+
+
+0 D F 
+< LL 0 
+
+
+0 D E 
+
+<p 0 -E 
+
+< LL_ 0 
+
+
+0 =5 F 
+<5 0 ~ 
+
+< LL 0 
+
+
+0 D E 
+
+^ 0 -E 
+
+< LL 0 
+
+
+O 0 
+0 TO 
+
+
+0 
+
+> 2 
+0 0 
+JZ Q. 
+
+h- o 
+
+
+b 0 
+
+O 0 
+
+"O 0 
+0 0 
+±J 0 
+
+II 
+
+
+0 0 
+jz n 
+
+tt '0 
+
+O 0 
+
+o 
+
+CD Q_ 
+
+
+CO 0 
+
+
+0 0 
+JZ ID 
+
+"P '0 
+
+O 0 
+O 
+
+O) Q_ 
+
+
+co m 
+
+
+to TO 
+
+X 0 
+
+O) O) 
+.0 0 
+
+0 2 
+Q 0 
+
+
+0 0 
+
+-- 0 
+
+0 b 
+
+CD LJ 
+0 
+
+€:| 
+
+0 
+
+0 0 
+CD 3 
+
+JZ C 
+O 
+
+-8 O 
+
+m o 
+
+
+_0 
+
+_Q 
+
+'0 . . 
+
+0 = 
+O += 
+
+°--8 
+W c 
+0 0 
+CD to 
+
+0 < 
+
+
+. 0 0 
+
+±J _Q 
+0 
+
+O £ 
+
+8 
+
+0 m 
+
+CD -52 TO 
+0 O q 
+
+gr £ 
+
+m 5 2 
+
+
+
+& 0 
+
+g 3 
+0 2 
+CD 0 
+0 Q_ 
+
+— P 
+
+> s 
+- ■+—* 
+0 C 
+CD 0 
+
+g £ 
+
+2 < 
+
+
+o E 
+
+
+o ° 
+
+go 
+
+
+0 
+
+M- -Q 
+
+O E 
+0 3 
+CD 21 
+0 
+
+0 c 
+
+0 o 
+
+0 ~ 
+
+E 0 
+
++-> 
+
+Q. 
+
+0 0 
+0 TO 
+LL 0 
+
+
+CD c 
+O -- 
+
+Q. g 
+0 0 
+
+
+0 ^ 
+
+
+o.o^ 
+
+0 S ° 
+
+Q- Q- c 
+
+0 0 Q) 
+0 CD D> 
+
+0 < 0 
+
+
+& 0 
+g 3 
+
+0 E 
+
+CD 0 
+0 Q_ 
+
+> ! 
+
+- -t—> 
+
+0 c 
+CD 0 
+
+0 O 
+
+_0 -g 
+
+1 < 
+
+
+0 Q 
+0 ~ 
+
+o -i 
+
+^ 8 
+0 Q- 
+0 
+
+CD = 
+
+
+b: 0 
+R CD 
+O CD 
+
+
+O "O 
+
+±J TO 0 
+0 0 0 
+O 0 Q. 
+Q_ Q_ 0 
+
+0 0 3 
+
+CD to Q. 
+
+S G- 0 
+
+E -P O 
+
+R X X 
+
+0 o o 
+
+to -e -e 
+0 0 0 
+0 0 0 
+co 0 0 
+
+
+§ 0 
+0 CD 
+
+*= 0 
+
+0 CD 
+
+0 R 
+
+CD 0 
+
+
+& 0 
+0 Z5 
+
+0 -P 
+
+0 E 
+
+CD 0 
+0 Q_ 
+— P 
+
+> 0 
+
+- ■+-j' 
+
+0 C 
+CD 0 
+
+g q 
+
+Z < 
+
+
+0 Q 
+0 ~ 
+
+Q -i 
+sJ* o 
+0 Q- 
+0 
+
+CD i= 
+
+
+P 0 
+0 0 
+O CD 
+
+
+o to 
+
+±± to 0 
+0 0 0 
+O 0 Q. 
+
+Q_ Q_ 0 
+
+0 0 3 
+
+o) □ a 
+E .P o 
+
+R X X 
+
+0 o o 
+
+to -e -e 
+0 0 0 
+0 0 0 
+CO CD CD 
+
+
+R 0 
+
+0 0 
+T"! CD 
+
+
+:§2 
+
+
+< o 
+
+
+g.S § 
+
+-i—> i 
+05 0 0 
+TO O 0 
+
+0 a.^ 
+
+0 iP 0 
+0 JZ 0 
+Q CO CO 
+
+
+TO 
+TO 0 
+0 0 
+0 Q. 
+a. 0 
+0 +-• 
+
+^ 0 
+0 Cl 
+
+.P o 
+
+X X 
+
+o o 
+
+_q n 
+
+0 0 
+0 0 
+
+CD CD 
+
+
+
+TO +-. 
+
+0 CD CD 
+
+0 R 0 
+
+0i0 
+
+0 C _Q 
+CJ O 
+0 '+= O 
+
+o c 
+
+0 0 C 
+0 0 
+\— 0 O 
+
+
+^ TO 
+0 JZ 0 
+-P CD 1Z 
+
+0 " l —' (Ti 
+
+DQ 0 -2 
+„ o 0 
+
+
+oI.q 
+
+c ro to 
+
+■B > U. 
+
+~ O CC 
+
+^— i— r ^ 
+
+O) A 03 
+
+
+O > 
+
+c o 
+
+O’ A 
+
+
+■Q > 
+
+c o 
+
+05 A 
+
+
+O > 
+
+!? 
+05 A 
+
+
+O _>, 
+TO -P 
+
+E 0 
+
+o t 
+a. 0 
+0 o 
+
+
+0 0 
+
+
+®-§.® 
+2 E-i 
+
+Q- — > 
+
+
+O ^ 
+
+10 0 
+E 0 
+o t 
+a. 0 
+0 o 
+
+
+0 0 
+
+
+2 E i§ 
+
+Q- — > 
+
+
+O _>, 
+TO -P 
+
+E 0 
+
+o t 
+a. 0 
+0 o 
+
+
+0 0 
+
+
+2 |-i 
+
+Q- — > 
+
+
+O ^ 
+
+10 0 
+E 0 
+
+O b 
+
+a. 0 
+
+0 o 
+
+
+0 0 
+
+
+$ £ § 
+
+2 E ^ 
+
+Q- — > 
+
+
+£ 0 
+O Q. 
+
+O CO 
+
+
+o 
+
+c 
+
+CO m 
+» O) 
+)= «J 
+CD c 
+
+O a) 
+
+
+
+^ c 
+O CO 
+
+c/) o 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

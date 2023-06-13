@@ -1,0 +1,1500 @@
+Table of Contents 
+
+
+F01 BMW Night Vision 2 
+
+Subject Page 
+
+Introduction .3 
+
+System Overview .5 
+
+System Circuit Diagram F01/F02.5 
+
+Connection of Control Units and Camera .7 
+
+PT-CAN.7 
+
+System Functions.8 
+
+The BMW Night Vision 2 System Principle .8 
+
+Principle of Pedestrian Detection.9 
+
+Various Forms of Indication.11 
+
+Availability Indicator in CID .12 
+
+Symbols in HUD (Head-up Display).13 
+
+Warning in Vehicles w/out HUD.13 
+
+Sequence of signals .13 
+
+Switch-on Conditions.14 
+
+Operation by Drive .15 
+
+Calling Up Menu.15 
+
+Contrast and Brightness.15 
+
+Pedestrian Detection.16 
+
+Visibility.16 
+
+System Components.17 
+
+Night Vision 2 Camera .18 
+
+Night Vision 2 Control Unit .19 
+
+Service Information.20 
+
+Adjusting Camera Pivot Position .20 
+
+Changing Protective Window.21 
+
+Replacing Camera Washer Jet.21 
+
+Displays Indicating Defective System .22 
+
+Programming and Coding .22 
+
+Initializing Software.22 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BMW Night Vision 2 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+
+
+After completion of this module you will be able to: 
+
+• Describe the Night Vision 2 System in the F01/F02 
+
+• Describe the functions of the Night Vision 2 System in the F01/F02 
+
+• Identify the components of the Night Vision 2 System in the F01/F02 
+
+
+2 
+
+F01 BMW Night Vision 2 
+
+
+
+
+Introduction 
+
+
+The BMW Night Vision 2 system provides the driver with a black-and-white image of the 
+driving environment ahead of the vehicle in the control display CD or central information 
+display CID. 
+
+BMW Night Vision 2 is a passive system without active infrared illumination. Objects 
+situated ahead of the vehicle are shown in varying degrees of brightness depending on 
+the temperature of these objects. This enables the driver to detect in good time heat- 
+emitting objects such as, for example, persons, animals and other vehicles. 
+
+This thermal image is recorded with a Far Infrared camera (FIR) via a special imaging 
+sensor which detects the infrared radiation in a specific wavelength range. 
+
+Intelligent algorithms in the control unit makes it possible to automatically detect persons 
+in the image. Following evaluation of distance and direction of movement, a symbol on 
+the central information display CID and in the head-up display HUD warns the driver of 
+any persons at risk. 
+
+
+
+3 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+The BMW system is distinguished from infrared systems by its robust resistance to 
+dazzling, its long range and its clearly structured image. 
+
+The system offers the customer the following advantages: 
+
+• Highlighting of non-illuminated, heat emitting objects such as pedestrians, cyclists, 
+vehicles and animals. 
+
+• Better overview of the driving situation thanks to the depiction of the route of the 
+road beyond the headlight cone. 
+
+• Improved vision in twilight (dawn/dusk) and darkness. 
+
+• Symbol warning of persons at risk in the area ahead of the vehicle. 
+
+• No dazzle in the screen image caused by the headlights of oncoming vehicles. 
+
+• Display of dark courtyard and garage entrances. 
+
+Night Vision 2 is designed as a supporting system, which, with a modified driving style, 
+affords the driver a better overview of the road conditions ahead of the vehicle. 
+
+Note: The driving speed must be adapted to the relevant visibility conditions. 
+
+
+4 
+
+F01 BMW Night Vision 2 
+
+
+
+System Overview 
+
+
+System Circuit Diagram F01/F02 
+
+
+
+5 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Circuit Diagram F01/F02 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Night Vision 2 camera 
+
+11 
+
+Video switch (VSW) 
+
+2 
+
+Central gateway module (ZGM) 
+
+12 
+
+Electromagnetic parking brake (EMF) 
+
+3 
+
+Footwell module (FRM) 
+
+13 
+
+Power distribution box, rear right 
+
+4 
+
+Night Vision 2 control unit (NVE ) 
+
+PT-CAN 
+
+Powertrain controller area network 
+
+5 
+
+Control panel, driver assist systems 
+
+(BEFAS) 
+
+K-CAN 
+
+Body controller area network 
+
+6 
+
+Instrument cluster (KOMBI) 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+7 
+
+Central information display (CID) 
+
+D-Bus 
+
+Diagnosis bus 
+
+8 
+
+Car Information Computer (CIC) 
+
+KI.31L 
+
+Terminal 31, ground 
+
+9 
+
+Controller (CON) 
+
+KI.15N 
+
+Terminal 15, after running (voltage) 
+
+10 
+
+Junction box (JB) 
+
+
+
+
+6 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Connection of Control Units and Camera 
+
+The Night Vision 2 control unit and the night vision camera are connected through the 
+following cables: 
+
+• Private CAN-bus; Diagnosis, programming and camera control 
+
+• LVDS-Video; Video signal from the camera 
+
+• CAN_POW; Power supply from control unit to camera, heating of camera lens 
+
+• Ground; Common ground of camera and control unit for suppressing interference. 
+
+The video signal is sent via a shielded LVDS cable between the camera and control unit. 
+In the control unit the signal is converted into an dCVBS (d = differential) video signal and, 
+depending on the equipment specification, transmitted to the CIC or the video switch. 
+
+The camera is powered under the following conditions: 
+
+• BMW Night Vision 2 switched on by pressing button in control panel of driver assist 
+systems BEFAS 
+
+• Rain-driving lights sensor detects twilight or darkness. 
+
+The BMW Night Vision 2 control unit is powered by the rear distribution box via terminal 
+15N. 
+
+PT-CAN 
+
+The PT-CAN connection of the Night Vision 2 control unit serves to transmit the diagno¬ 
+sis and programming data and to read out the information from the RLS (brightness), the 
+JB (driving lights status, wiper speed) and ICM (road speed and yaw rate). In addition, the 
+terminal status and the vehicle identification number (VIN) are transferred to the control 
+unit via the PT-CAN. 
+
+
+7 
+
+F01 BMW Night Vision 2 
+
+
+
+System Functions 
+
+
+The BMW Night Vision 2 System Principle 
+
+The BMW Night Vision 2 camera is a heat image camera that converts thermal radiation 
+into electronic signals. 
+
+The thermal image is converted first by the sensor into electrical signals and then, with 
+the aid of image-processing software, into a visible image in the control display or central 
+information display. 
+
+The sensor elements alter the resistance in proportion to the temperature. The higher 
+the temperature, the higher the electrical signal and the whiter the pixel will be shown. 
+
+Heat radiation is absorbed and dissipated by virtually every solid or liquid body. However, 
+the heat emitted is not visible to the human eye because it is located in the long-wave 
+infrared range. From a physical standpoint, this represents electromagnetic waves with a 
+wavelength of 8 pm to 15 pm. This long-wave infrared radiation is known as Far Infrared 
+(FIR). 
+
+The advantage of utilizing radiation in the far infrared range is the greater range com¬ 
+pared with near infrared systems (NIR) with a wavelength of 0.7 pm to 1.4 pm. These 
+systems additionally require illumination in precisely this wavelength. Essentially, FIR 
+systems consist of an optical element, a thermal imaging camera, a control unit and a 
+display. 
+
+
+The principle 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Environment ahead of vehicle 
+
+4 
+
+BMW Night Vision 2 control unit 
+
+2 
+
+Optical element 
+
+5 
+
+Control display 
+
+3 
+
+Thermal imaging sensor 
+
+
+
+
+8 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The BMW Night Vision 2 system collects in its front lens the infrared radiation of 
+heat-emitting objects such as persons, animals or vehicles in a specific wave range. 
+
+Principle of Pedestrian Detection 
+
+The Night Vision 2 control unit is equipped with three processors containing software, 
+which, in addition to image processing for display, execute an automatic person detection 
+function. The software searches the image for objects with human shape and classifies 
+these objects as persons. 
+
+Their position, speed and distance to the vehicle are then determined. The risk level is 
+analyzed based on these parameters as well as on the speed and yaw rate of the vehicle 
+and a warning is triggered. 
+
+The warning for the driver, indicating persons at risk, is given in the form a corresponding 
+symbol in the central information display CID or head-up display HUD. 
+
+
+
+9 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+These ranges change with increasing vehicle speed and follow the direction of the 
+vehicle as a function of the current steering angle (yaw rate). 
+
+In order not to unnecessarily distract the driver not all persons identified in the image 
+are signalled by a symbol. Only persons who are in a certain area directly in front of the 
+vehicle are indicated by a symbol. 
+
+The system also warns of pedestrians located in an extended area to the left and right of 
+the vehicle and are moving towards the central area (threat of collision). 
+
+
+I\MKUI I 
+
+
+
+Symbols in HUD 
+
+People who are within the central zone are always indicated. Persons in the extended 
+area are only indicated if they are moving in the direction of the central area. 
+
+Under optimum conditions, the automatic pedestrian detection function operates at a 
+distance of up to 100 m. At a driving speed in excess of 100 km/h (62 mph), the time 
+between signalling and passing the person and therefore the reaction time for braking 
+and evasive maneuvers is reduced. 
+
+
+Note: The pedestrian detection function is deactivated at speeds below 
+10 km/h (6mph). For more information regarding this feature refer to 
+the Vehicle Owner’s Manual. 
+
+
+10 
+
+F01 BMW Night Vision 2 
+
+
+
+Various Forms of Indication 
+
+
+The following table shows the different forms of indication in the two display instruments 
+CID and HUD. 
+
+
+Situation 
+
+
+Indication in CID 
+
+
+Indication in HUD 
+
+
+No pedestrians in the danger zone. 
+
+
+There is a person at a great distance 
+from the vehicle. 
+
+
+There is a person at a closer distance 
+from the vehicle. 
+
+
+A person is crossing the road 
+from right to left. 
+
+
+A person is crossing the road 
+from left to right. 
+
+
+
+11 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Availability Indicator in CID 
+
+The availability of the Night Vision 2 
+system can be restricted by environ¬ 
+mental conditions such as heavy rain, 
+extreme +/- temperatures or 
+fluctuations in light conditions. 
+
+
+
+Availability indicator in CID 
+
+
+Note: Only non-availability of person detection function is indicated. 
+
+The symbol corresponds to the "Pedestrian Detection" button 
+in the function bar. 
+
+The possible situations for the availability indicator in the CID are listed in the following 
+table. 
+
+
+Situation 
+
+
+Symbol 
+
+
+Display 
+
+
+The driver has activated the person detection function and 
+the system is available 
+
+
+The driver has activated the person detection function but the 
+system is not available, the Night Vision 2 image is still shown 
+
+
+i^/i 
+
+A r 
+
+
+The driver has deactivated the person detection function, the 
+Night Vision 2 image is still shown 
+
+
+r w ' 
+
+
+
+12 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symbols in HUD (Head-up Display) 
+
+
+If a person is detected at a great distance inside the 
+warning range of the system the pedestrian figure will 
+be shown distinctly above the road symbol. This is 
+refered to as long-distance warning. 
+
+
+
+Long-distance warning 
+
+
+If a person is detected in close range, inside the warn¬ 
+ing zone of the system, the pedestrian figure will be 
+shown distinctly on the road symbol. This is refered to 
+as short distance warning. 
+
+
+
+Short-distance warning 
+
+
+Warning in Vehicles w/out HUD 
+
+The warning symbol is shown on the CID in vehicles without HUD or with HUD deactivat¬ 
+ed. In addition, the CID initially flashes yellow 3 times when the warning comes on in 
+order to catch the driver's attention. 
+
+The warning is shown as soon as a person enters the warning zone directly ahead of the 
+vehicle or a person crosses the road from the left or from the right. 
+
+
+Sequence of signals 
+
+The following graphic shows the exact sequence of warning signals and is designed to 
+illustrate the functional principle in connection with the table. 
+
+
+
+Functional principle 
+
+
+13 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functional principle legend 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Yellow display 
+
+2 
+
+Normal display 
+
+3 
+
+Interval approximately 0.5 seconds 
+
+4 
+
+The warning symbol remains for as long as there is a 
+pedestrian in the danger zone, but at least 3 seconds 
+
+
+Switch-on Conditions 
+
+The BMW Night Vision 2 is activated as soon as the button in the control panel of the 
+driver assist systems BEFAS is pressed. 
+
+The following basic conditions can exist: 
+
+• The rain/driving lights sensor detects sufficient ambient light and the driving lights are 
+switched off; BMW Night Vision 2 is ready for operation approximately 2 seconds 
+after the button in BEFAS is pressed. A message is shown in the control display dur¬ 
+ing this period of 2 seconds. 
+
+• The rain/driving lights sensor detects insufficient ambient light and the driving lights 
+are switched on; BMW Night Vision 2 is ready for operation immediately after the 
+button is pressed. BMW Night Vision 2 cannot be activated when 
+
+• The driving lights are switched off 
+
+• The rain/ driving lights sensor detects insufficient ambient light 
+
+• The driving speed is greater than 5 km/h (3 mph). 
+
+
+Once BMW Night Vision 2 has been activated, 
+a message appears in the control display to the 
+effect that the system cannot be used at night 
+without headlights. 
+
+
+Night Vision 2 button in the BEFAS 
+
+
+
+14 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+Operation by iDrive 
+
+The individual functions and settings can be selected and activated through the Drive. 
+
+
+The following settings can be selected 
+on the F01/F02: 
+
+• Brightness 
+
+• Contrast 
+
+• Pedestrian detection. 
+
+
+-cf. 
+
+J 1 *' 
+
+
+€ 
+
+& 
+
+" 
+
+jL „ 
+
+J 
+
+
+
+
+BMW Night Vision 2 menu in the F01/F02 
+
+
+Calling Up Menu 
+
+The "Night Vision 2" menu can only be selected if the system has been activated by 
+pressing the button in the BEFAS. 
+
+Providing the preconditions have been met, the menu can be selected as follows: 
+
+• Press the controller, the "BMW Night Vision" menu is shown on the control display. 
+
+• Select the desired menu item, e.g. "Brightness", by turning the controller. 
+
+• Press the controller to activate the function. 
+
+• Set the required value and confirm by pressing. 
+
+
+Contrast and Brightness 
+
+Both values can be personalized and changed 
+on a scale between 0 % and 100 %. 
+
+
+
+Adjusting brightness 
+
+
+Note: For detailed information on the operation and functions of the Night 
+Vision 2 System refer to the vehicle Owner’s Manual. 
+
+
+15 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+Pedestrian Detection 
+
+The person detection function can be activated 
+and deactivated. 
+
+
+Visibility 
+
+The illumination range in front of the vehicle 
+with low beam is less than 50m/54yd. 
+
+Normal driving light illumination by fitted halo¬ 
+gen headlights is 100m/109yd. 
+
+
+
+Activating/deactivating person detection 
+
+
+The high beam illumination range provided by xenon headlights is 150m/164yd. However, 
+people can only be detected in this range if they are wearing reflective clothing. 
+
+Night Vision 2 will detect heat-emitting objects in the image up to a distance of about 
+300m/328yd, regardless of the amount of reflection their clothing gives off. 
+
+Automatic pedestrian detection has a maximum range of 100m/109yd. This specified 
+distance is dependent on weather factors. 
+
+
+The range of vision is also reduced in the Night Vision 2 image in the case of thick fog or 
+heavy rain. Night Vision 2 is designed as a supporting system, which provides the driver 
+a better overview of the road conditions ahead of the vehicle. 
+
+
+Comparison of BMW Night Vision 2 range of vision with different headlights 
+
+
+
+Note: The driving speed must be adapted to the relevant visibility conditions. 
+
+
+16 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+System Components 
+
+
+The BMW Night Vision 2 system consists of the camera, control unit, camera washer jet, 
+button and the sensor system. 
+
+The BMW Night Vision 2 system consists of the following components: 
+
+• Night Vision 2 camera with camera bracket in the kidney grille and 
+camera washer jet 
+
+• Night Vision 2 control unit 
+
+• Button in BEFAS 
+
+• Sensor system 
+
+
+
+Installation locations - Night Vision 2, BMW 7 Series, F01/F02 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Night Vision 2 camera 
+
+2 
+
+Night Vision 2 control unit 
+
+3 
+
+Button in control panel of driver assist systems BEFAS 
+
+
+17 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Night Vision 2 Camera 
+
+The thermal imaging camera consists of a heated protective window, optical element 
+and a thermal imaging sensor. The thermal imaging sensor is made up of a multitude 
+of sensor elements. 
+
+Each display pixel is assigned one such sensor element. The sensor elements generate 
+an electrical signal as a function of the impinging intensity of heat radiation. 
+
+The higher the temperature, the brighter 
+the corresponding pixel will be displayed. 
+
+The heat radiation is converted into elec¬ 
+trical signals on the basis of the principle 
+of a change in resistance. 
+
+The image can be replaced up to 30 
+times per second. In order to ensure an 
+image of consistent quality, it is necessary 
+for the camera to be calibrated approxi¬ 
+mately every 120 - 180 seconds. This 
+calibration can take up to approximately 
+0.3 seconds. For this reason, the image 
+may be seen to freeze briefly in the dis¬ 
+play. 
+
+The Night Vision 2 camera is mounted with a bracket directly behind the left kidney grille. 
+The camera is equipped with a sensor which detects heat-emitting objects in the far 
+infrared range (wavelengths from 8 pm to 14 pm). The camera resolution is 324 x 256 
+pixels. 
+
+The maximum angle of view is 24°. The camera operates in an ambient temperature 
+range of -40°C/-40F to +80°C/176°F. The imaging sensor is thermally insulated to pro¬ 
+vide protection against heat influences from the camera surroundings. 
+
+The washer jet is screwed to the camera bracket and is situated directly below the 
+protective window. It is directly connected to the headlight washer system and therefore 
+operates in connection with it. 
+
+A heater element is incorporated on the inside of the protective window to prevent it from 
+misting over or freezing up. The heater is located at the edge of the protective window 
+outside the camera's field of vision. 
+
+
+
+18 
+
+F01 BMW Night Vision 2 
+
+
+Night Vision 2 Control Unit 
+
+
+The control unit is installed behind the compart¬ 
+ment in the area of the A-pillar directly under the 
+light switch cluster. 
+
+The control unit calculates the displayed 720 x 
+480 pixel image from the 324 x 256 pixel raw 
+data image supplied by the camera. Automatic 
+pedestrian detection is executed in the control 
+unit. The diagnosis, programming and coding 
+data are also transmitted to the camera through 
+the control unit. 
+
+
+
+BMW Night Vision 2 control unit 
+
+
+The camera and the protective window heater 
+are powered via the control unit. The raw image 
+data from the camera are transmitted through a 
+LVDS cable to the control unit. 
+
+The image output by the control unit is made 
+available in the head unit in the form of a 
+dCVBS signal. 
+
+The camera-housing cover features a 6-pin 
+plug connection. 
+
+
+
+6-pin plug connection 
+
+
+The button for switching BMW Night Vision 2 on 
+and off is integrated in the BEFAS. 
+
+
+
+Button in the BEFAS BMW 7 Series 
+
+
+19 
+
+F01 BMW Night Vision 2 
+
+
+
+Service Information 
+
+Adjusting Camera Pivot Position 
+
+The pivot position of the camera can be adjusted by means of an adjusting screw at the 
+bracket. 
+
+
+
+Camera alignment 
+
+
+The following steps must be taken to adjust the camera on the F01/F02: 
+
+• Open hood(1). 
+
+• Remove sealing lip (2) on front panel. 
+
+• Open headlight cover (3). 
+
+• Position headlight adjustment unit with spirit level in front of vehicle. 
+
+• Insert Allen key (4) through the opening in the front panel and set the camera 
+to the required position; the line in the image must be parallel to the spirit level. 
+
+• Reassemble all parts that have been removed in reverse order. 
+
+20 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Changing Protective Window 
+
+In the event of damage the camera 
+protective window can be replaced. 
+
+
+Replacing front lens 
+
+
+
+Replacing Camera Washer Jet 
+
+A washer jet with a direct connection to the headlight washer system for cleaning the 
+protective window is mounted on the camera. 
+
+Follow the procedure below to replace the washer jet: 
+
+• Remove bumper panel. 
+
+• Remove left-side kidney grille. 
+
+• Undo two recessed cross head 
+screws (1). 
+
+• Release the hose clip on the con¬ 
+necting hose to the headlight 
+washer system and remove the 
+washer jet towards the front. 
+
+• Reinstall all parts that have been 
+removed in reverse order. 
+
+Camera washer jet 
+
+
+
+Note: Camera alignment is only possible with a BMW diagnosis system. For 
+detailed information on howto service the Night Vision 2 camera, lens or 
+washer jet please refer to the Repair Instructions available in TIS. 
+
+
+21 
+
+F01 BMW Night Vision 2 
+
+
+
+
+
+
+Displays Indicating Defective System 
+
+
+In the event of a system defect, the following 
+warnings are shown in the F01/F02: 
+
+• Check Control message in the instrument 
+cluster. 
+
+• The same Check Control message in HUD 
+if installed. 
+
+
+
+Njght Vision 
+
+9:35 ausgefallen! 99765 
+
+
+Display indicating defective system 
+
+
+Programming and Coding 
+
+Initializing Software 
+
+When replacing the camera, it is always necessary to initialize the software by entering an 
+enable code (FSC). 
+
+Note: The vehicle identification number (VIN) must always be entered when 
+ordering a new camera or a new control unit. 
+
+The camera is programmed by through of the control unit. The control unit receives the 
+programming data for the camera through PT-CAN. The control unit forwards this data to 
+the camera through the "private CAN-bus". 
+
+
+22 
+
+F01 BMW Night Vision 2 
+
+
+

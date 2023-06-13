@@ -1,0 +1,4292 @@
+Table of Contents 
+
+
+Introduction to Advanced Body Electronics 
+
+Subject Page 
+
+Introduction to Advanced Body Electronics.5 
+
+Advanced Bus Systems.8 
+
+FiberOptic Bus Networks.9 
+
+Principle of Light Transmission.10 
+
+Light Attenuation.10 
+
+Causes of Excessive Attenuation .11 
+
+Bending Radius .11 
+
+Kinking.11 
+
+Compression Points .12 
+
+Stretching .12 
+
+Abrasion Points .12 
+
+Dirty or scratched Fiber Optic Cable Ends.12 
+
+Fiber Optic System Service and Diagnosis.13 
+
+Service Considerations.13 
+
+Cable Repair .13 
+
+Fiber Optic Connectors.13 
+
+Fiber Optic Diagnosis .14 
+
+MOST Bus.16 
+
+MOST Multimedia Network.16 
+
+Principle of a Multimedia Network .17 
+
+Advantages of a Multimedia Network.17 
+
+MOST Structure .17 
+
+Data Quantities.18 
+
+Functional Description .19 
+
+Data Transport.19 
+
+Optical Bus .20 
+
+Optical Transmitter.20 
+
+Optical Receiver.20 
+
+Control Unit/Control Unit Connection.21 
+
+E65 Interfaces .22 
+
+Control Display.22 
+
+Audio System Controller (ASK).22 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Network Master (Main Controller).22 
+
+Audio Master.23 
+
+Connection Master.23 
+
+CD Changer Audio (CDC).24 
+
+Navigation System (NAV 01) .24 
+
+Slave (Subordinate) Control Units.24 
+
+Component Locations .24 
+
+MOST Bus Diagnosis .25 
+
+MOST Control Unit Sequence (E65).26 
+
+Optical Wave Guide Communication Fault.27 
+
+Control Module Does Not Switch Off Light.28 
+
+Network Wakeup Unsuccessful .28 
+
+Ring Break Diagnosis Carried Out (FCE190) .29 
+
+Testing.29 
+
+Light Output Reduction.29 
+
+Ring Break Test.30 
+
+Perform Ring Break Test.30 
+
+Status Wakeup.32 
+
+E65 MOST Bus Diagnostic Tips .33 
+
+Fault Symptoms E65 .33 
+
+Creating Images.34 
+
+Non-Digitized Area.34 
+
+Self-Burnt DVDs.34 
+
+Telephone E65.35 
+
+Audio .35 
+
+E60 MOST Bus Diagnosis .36 
+
+CCC/MASK.36 
+
+Diagnosis Excessive Temperature .36 
+
+Control Module Resets .36 
+
+MOST Configuration.37 
+
+Same Sequence.37 
+
+Different Sequence .37 
+
+Store Configuration .38 
+
+Ring Break Diagnosis.39 
+
+Stability Check .39 
+
+MOST Control Unit Supply.39 
+
+Repair of the MOST Fiber-Optic Cables .40 
+
+byteflight.46 
+
+Introduction.46 
+
+Design .46 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Function.47 
+
+Transmitter/Receiver Module (SE).47 
+
+Data Transmission.49 
+
+Diagnosis .49 
+
+Controller Area Network (CAN Bus).50 
+
+Introduction.50 
+
+E65 K-CAN.50 
+
+Introduction.50 
+
+K-CAN System/Peripherals .50 
+
+Advantages of two K-CAN Busses.51 
+
+Voltage Level on the K-CAN.52 
+
+Terminal Resistor .52 
+
+PT (Powertrain) CAN.54 
+
+Introduction.54 
+
+Voltage Level on the PT CAN .54 
+
+PT CAN Terminal Resistors .54 
+
+Failsafe Characteristics .55 
+
+"Wake-up" Lead in PT CAN Network.55 
+
+Diagnosis Bus.56 
+
+Introduction.56 
+
+Diagnosis Concept .57 
+
+Vehicle Diagnosis Access Point.57 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introduction to Advanced Body Electronics 
+
+
+Model: E65, E66, E60, E63, and E64 
+Production: All 
+
+■micnure 
+
+After completion of this module you will be able to: 
+
+• Understand changes to Body Electronic Systems on the E6X models 
+
+• Understand advanced bus systems 
+
+• Understand Principles of Fiber Optics 
+
+• Diagnose MOST Bus concerns 
+
+
+4 
+
+Introduction to Advanced Body Electronics 
+
+
+Introduction to Advanced Body Electronics 
+
+Beginning with the 2002 model year, a new era in on-board electronics began with the 
+new BMW flagship - The E65. Although there were significant cosmetic changes 
+between the last generation 7-series and the new 7, the major advances were were 
+“under the skin”. 
+
+
+
+Some of the most obvious changes were in the cockpit area. The E65 no longer used a 
+conventional key to start the vehicle, instead a remote key fob is used in conjunction with 
+a start/stop button. Entertainment and communications are now accessed via a single 
+controller, which is a part of the new Drive System. 
+
+
+
+Some of the design objectives on the E65/E66 included an overall reduction in control 
+knobs and switches. This is the objective of the Drive system, to simplify the control of 
+the various vehicle functions. 
+
+To make these changes possible, new bus networks were created. For the first time, 
+fiber optic networks were used on BMW vehicles. The 2 new bus networks are the 
+MOST bus and the new byteflight bus. In addition to the DISplus and GT-1, there are 
+some new tools for diagnosing system using fiber optic technology. 
+
+
+5 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+As with previous 7 series introductions, the E65 platform initiated a new wave of techno¬ 
+logical advances which were subsequently carried over to the rest of the model line. 
+
+From the 2004 model year, the E60 also integrates many of the new innovations from the 
+E65. 
+
+
+
+02290J2 
+
+The MOST and byteflight networks are still used, but modified slightly. The Drive con¬ 
+troller is also carried over, with less overall features and an added menu button to simply 
+operation. 
+
+
+
+Kommunikation 
+
+>V 
+
+
+Klima 
+
+I >li 
+
+Car Data 
+
+
+Entertainment 
+
+
+A / A BAYERN 3 TMC O T.,ill 21:50 
+
+
+
+To continue with the advances in technology, the new E63 and E64 were introduced with 
+some new features such as Car Computer Control (CCC) and the new Head-up Display 
+(HUD). These 2 new features will be seen on other models as well in the near future. 
+
+
+6 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+In this training course, the latest in BMW electronics technology will be covered. This 
+course will focus on the new 5, 6 and 7 series models. This includes the following vehicle 
+systems: 
+
+• Power (energy) management 
+
+• Driver information systems (Instrument cluster, Drive etc.) 
+
+• Vehicle lighting systems (including LWR, AHL etc.) 
+
+• Body Electronics (Power locks, windows, wipers etc.) 
+
+• Vehicle warning systems (PDC, DWA and ACC) 
+
+• Entertainment and Communication Systems 
+
+• Seat, mirror and steering wheel functions 
+
+• Head-up Display 
+
+• Bus Systems 
+
+• Fiber Optic technology 
+
+Systems such as Passive Safety and Climate Control will be covered in their respective 
+courses. 
+
+
+7 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Advanced Bus Systems 
+
+
+The launch of the E65 brought about new technological innovations which reguired some 
+advancements in bus technology. Fiber Optics, newly introduced to BMW group vehi¬ 
+cles, allow for a larger amount of data transfer at a faster rate. 
+
+There are 2 new Fiber Optic Networks used on the E65. These new networks are 
+MOST (Media Orientated System Transport) and byteflight. MOST is used for informa¬ 
+tion and communication systems such as navigation, audio and telephone. The new 
+byteflight system is used exclusively for the safety system (ISIS). 
+
+In addition to fiber optics, copper wire bus networks were also modified to meet the 
+needs of the new technology. New networks such as PT-CAN and K-CAN enhanced the 
+existing CAN bus and K-bus already in use on earlier models. 
+
+
+Example - E65 Bus System 
+
+
+CAS 
+
+
+
+
+SMFA 
+
+
+
+SMBF 
+
+
+
+TMFAT 
+
+
+
+TMBFT 
+
+
+
+TM FATH 
+
+
+
+TM BFTH 
+
+
+
+SMFAH 
+
+
+
+SMBFH 
+
+
+
+HKL 
+
+
+
+PM 
+
+
+AHM 
+
+
+PDC 
+
+
+RDC 
+
+
+CIM 
+
+
+LM 
+
+
+CON 
+
+
+RLS 
+
+
+SHD 
+
+
+SH 
+
+
+WIM 
+
+
+Kombi 
+
+HZ 
+
+
+ASK 
+
+nz 
+
+
+TEL 
+
+nz 
+
+
+CD * 
+
+
+
+
+CDC 
+
+
+1 
+
+
+AVT 
+
+1 
+
+
+LOGIC7 
+
+1 
+
+
+svs 
+
+
+NAV 
+
+
+D-BUS 
+
+
+
+SZL 
+
+
+SFZ 
+
+
+SASL 
+
+
+SASR 
+
+
+STVL 
+
+
+SSFA 
+
+
+SIM 
+
+
+STVR 
+
+
+SSBF 
+
+
+ARS 
+
+
+
+DME 
+
+
+
+EGS 
+
+
+
+EMF 
+
+
+GRS 
+
+
+DSC 
+
+
+SBSL 
+
+
+SBSR 
+
+
+EDC-K 
+
+
+SSH 
+
+
+K-CAN P K-CAN S MOST 
+
+
+byteflight 
+
+
+PT-CAN 
+
+
+The K-CAN (Body Controller Area Network) replaces the single wire K-bus used on earli¬ 
+er models. K-CAN is subdivided into two sections: K-CAN System and K-CAN 
+Periphery. K-CAN S and K-CAN P use the two wire twisted pair configuration. The com¬ 
+munication speed has also been increased to 100Kbps. 
+
+The PT-CAN system replaces the existing CAN system. PT-CAN differs from the existing 
+CAN system by using an additional KL-15 “wake-up” wire. Communication speed 
+remains the same at 500Kbps. 
+
+New Sub-Bus systems have also been added to provide “local” communication to the 
+larger networks. There are several Sub Bus systems on the E65, these include the 
+Driver’s door P-Bus, the Engine LoCAN, Telecommander CAN, M-Bus DWA K-Bus and 
+the BSD interface. These systems will be discussed later in this course. 
+
+
+8 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fiber Optic Bus Networks 
+
+The ever-increasing level of features available in today’s automobiles require a corre¬ 
+sponding increase in vehicle electronic systems. The transmission of data, voice and 
+images require an efficient method to move data. 
+
+Copper wire bus networks otter many advantages. However high data transmission rates 
+in copper wires can cause electro-magnetic interference with other vehicle systems. 
+Compared with copper wires, fiberoptic lines require less space and are lighter in weight 
+for the same transmission band width. In contrast with copper wires, which carry digital 
+or analog voltage signals as the means of transmitting data, fiber optic busses transmit 
+light pulses. 
+
+Fiber Optic technology has been in use in the telecommunications industry for many 
+years. However, this type of fiber-optic cable is not practical for automotive use. These 
+cable utilize glass based fibers which are not practical for automotive use. They are sub¬ 
+ject to fracture from vibration and do not hold up to “tight radius” installations. 
+
+POF (polymer optical fibers) were developed for the automotive industry. These fibers 
+were developed and manufactured by Dow-Corning. 
+
+
+Construction of Fiber Optic Cable 
+
+
+1 
+
+
+
+There are significant advantage to using POF fiber optic cables: 
+
+• There is a low sensitivity to dust. Small amounts of contamination do not adversely 
+affect communication. 
+
+• They are easy to work with. These fibers can be bent to a radius of approximately 
+50mm. This allows for practical installation within the vehicle. 
+
+• Processing is practical, these fibers can be cut and modified which makes the pro¬ 
+duction of wiring looms easy. Service repairs are also made simple. 
+
+• These fibers are inexpensive to manufacture and do not require expensive connec¬ 
+tions or housings. 
+
+
+9 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+Principle of Light Transmission 
+
+The electrical signal generated by the control unit is converted to an optical signal by an 
+internal transmitter module and sent along the fiber optic bus. The fiber core carries the 
+light beam to a receiver module which converts the light signal back to a useable electri¬ 
+cal signal. 
+
+
+
+In order to prevent the light from escaping, the fiber core is enclosed by a cladding layer. 
+The cladding is reflective and reflects light back into the core, thus making it possible to 
+transmit light along the fiber. 
+
+Light Attenuation 
+
+Attenuation refers to the reduction in strength of a signal. Light transmitted along the 
+optical fiber becomes weaker the further it has to travel. Attenuation is usually measured 
+in decibel units (dB). In fiber optic cables, attenuation is measured in terms of the num¬ 
+ber of decibels per unit of length (foot/meter etc). The less attenuation per unit distance, 
+the more efficient the cable. 
+
+
+
+In comparison with an electrical circuit, think of attenuation as “light resistance”. The 
+more attenuation in the fiber optic cable, the less light output to the receiver module. 
+
+The average attenuation for fiber optic bus lines is .5 decibels (dB) for each connector 
+and .3 dB for each meter of cable. 
+
+
+10 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Causes of Excessive Attenuation 
+
+Excessive attenuation can be caused by the following reasons: 
+
+• Bends in the fiber optic cable with a radius of less than 50mm. 
+
+• Kinks in the fiber optic cable 
+
+• Squashed or compressed fiber optic cable 
+
+• Damaged insulation on fiber optic cable 
+
+• Stretched fiber optic cable 
+
+• Dirt or grease on the exposed cable ends 
+
+• Scratches on the exposed cable ends 
+
+• Overheated fiber optic cable 
+
+Here are some examples of various fiber optic cable failures: 
+
+
+
+Bending Radius 
+
+The plastic fiber optic cable should not 
+be bent to a radius of less than 50mm. 
+That is roughly equivalent to the diame¬ 
+ter of a soft-drink can. Bending the 
+cable any tighter can impair its function 
+or irreparably damage the cable. 
+
+Light can escape at points where the 
+cable is bent too tightly. This is caused 
+by the fact that the light beam strikes the 
+interface between the core and cladding 
+at too steep an angle and is not reflect¬ 
+ed. 
+
+
+
+Kinking 
+
+Fiber optic cables must not under any 
+circumstances be kinked when fitted 
+because this damages the cladding and 
+the fiber core. The light is partially dis¬ 
+persed at the point where the fiber is 
+kinked and transmission loss results. 
+Even just kinking the cable once very 
+briefly is enough to cause permanent 
+damage. 
+
+
+11 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+Compression Points 
+
+Compression points must also be avoid¬ 
+ed because they can permanently 
+deform the light conducting cross sec¬ 
+tion of the optical fiber. This would 
+cause a loss of light. 
+
+
+
+Stretching 
+
+Overstretching of the fiber optic cables, 
+caused by pulling for example, can 
+destroy them. 
+
+Stretching reduces the cross-sectional 
+area of the fiber core. Restricted pas¬ 
+sage of light is the end result. 
+
+
+
+Abrasion Points 
+
+In comparison with copper wires, abra¬ 
+sion of fiberoptic cables does not cause 
+a short circuit. 
+
+Instead, loss of external light occurs. 
+
+The system then suffers interference or 
+fails completely. 
+
+
+Dirty or scratched Fiber Optic Cable 
+Ends 
+
+Another potential source of problems is 
+dirty or scratched cable ends. Although 
+the ends of the cables are protected 
+against accidental contact, damage can 
+still occur by incorrect handling. 
+
+Dirt on the end of an optical fiber will 
+prevent light from exiting/entering. The 
+dirt absorbs the light and increases 
+attenuation. 
+
+
+12 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fiber Optic System Service and Diagnosis 
+
+
+Service Considerations 
+
+During repair work, there are some things that need to be taken into account when 
+working with fiber optic cables. Any paintwork which reguires the use of drying by heat, 
+the temperature should not exceed 85°C. This could case deformation of the fiber optic 
+cable resulting in excessive attenuation. 
+
+Extreme care should be taken around fiber optic cables. Any wiring harness that contain 
+fiber optic cables should not be subjecting to stretching, pulling or any undue stress. 
+
+Cable Repair 
+
+Repair cable are available for the fiber optics. The MOST bus which is normally green in 
+the vehicle is repair using a black or orange cable. The MOST bus allows for up to one 
+splice between control units. 
+
+There are special tool for servicing and splicing the optical cables. 
+
+The byteflight which is a safety critical network does not allow for any splices or repairs 
+between control units. The entire defective optical cable must be replaced. 
+
+Replacement cables are orange or black. 
+
+
+Fiber Optic Connectors 
+
+There are slight differences between the connectors on the MOST and byteflight bus. 
+The transmitter/receiver module on the MOST bus are set back into the control unit 
+housing. This setup allows for the protection of the delicate fiber ends of the cable. Also, 
+MOST cable connectors are marked 1 and 2. 1 is assigned to the incoming optical fiber 
+and 2 is assigned to the outgoing optical fiber. 
+
+
+
+
+Typical connector 
+used on the MOST 
+bus components 
+
+
+13 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The byteflight bus uses a different connector configuration than MOST. Since the 
+byteflight is connected directly to the diode, the protruding fiber end is protected by a 
+flap. 
+
+The flap is retracted when the connectors are plugged together. 
+
+
+
+Typical connector used on byteflight 
+
+
+FiberOptic Diagnosis 
+
+When checking attenuation, the OPPS or OPS tester should be used in conjunction with 
+the DISplus/GT-1. 
+
+The Optical Testing and Programming System (OPPS) can be used as a substitute 
+diagnostic head for diagnosis, or to expedite programming procedures. The OPPS can 
+also be used to check attenuation on both the MOST or byteflight bus. 
+
+The OPS is an abbreviated version of OPPS. The OPS does not have the capability to 
+check attenuation on the byteflight bus. OPPS and OPS appear similar, but are different 
+in color. OPPS is gray and yellow, while OPS is gray and orange. 
+
+
+
+
+
+OPPS Tester (OPS not shown) 
+
+
+14 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Workshop Exercise - Fiber Optic Cable Repair 
+
+Using the instructor designated fiber optic cable/connector, perform a connector 
+/cable repair. 
+
+What special tool is used to remove the sheathing from the fiber optic cable? 
+
+What special tool is used to crimp the fiber optic terminal to the fiber optic cable? 
+
+What is the part number of the blades used for cutting the fiber optic cable? And how 
+many cuts are allowed per blade? 
+
+What precautions should be observed when handling fiber optic cable? 
+
+
+How many splices are allowed between two MOST bus components? 
+How many splices are allowed between two byteflight bus components? 
+What is the part number of the AMP butt connector? 
+
+
+
+15 
+
+Introduction to Advanced Body Electronics 
+
+
+
+MOST Bus 
+
+
+Of the 2 fiber optic networks introduced on the E65, the MOST bus is used for audio, 
+entertainment and communication systems. MOST stands for Media Orientated 
+Systems Transport. 
+
+Starting in 1998, OEM manufacturers such as Audi, Becker, BMW and Daimler/Chrysler 
+came together to develop a common multi-media network. As of 2001, MOSTCo 
+(Cooperation) has approximately 65 members including all of the American and European 
+auto manufacturers. Toyota and Nissan represent the Japanese auto industry. MOSTCo 
+now unites about 90 percent of global automotive production and is now on track to 
+becoming the standard for automotive multi-media services. 
+
+Since the introduction of the E65, MOST has been added to the E60, E63 and E64 vehi¬ 
+cles. MOST will also be a part of future BMW models as well. 
+
+
+
+E65 
+
+
+
+TEL 
+
+
+svs 
+
+
+CD Fond 
+
+LoaicT | AVT 
+
+ASK 
+
+CD 
+
+
+1 CDC | 
+
+
+
+
+TV f 
+
+
+NAV 
+
+
+In comparison with the E38, which had only a few entertainment -related control units on 
+the network, the E65 has a significant increase in multi-media systems. This reguires a 
+bus network with a substantial amount of bandwidth (communication speed). The 
+MOST bus was introduced with a data rate of 22.5 Mbps and will be increased as system 
+needs demand. 
+
+MOST Multimedia Network 
+
+MOST technology meets 2 essential reguirements: 
+
+• The MOST bus transports control data as well as data from audio, video navigation 
+and other services. 
+
+• MOST Technology provides a logical framework model for control of the variety and 
+complexity of data. The MOST application framework organizes the functions of the 
+overall system. MOST is able to control and dynamically manage functions that are 
+distributed in the vehicle. 
+
+
+16 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of a Multimedia Network 
+
+An important feature of a multimedia network is that it transports not only control data 
+and sensor data. A multimedia network can also carry digital audio and video signals and 
+graphics as well as other data services. 
+
+Information transmitted on MOST network 
+
+
+
+Advantages of a Multimedia Network 
+
+All data can be transported across a shared network. This offers the following benefits: 
+
+• Additional signal wiring harnesses are eliminated. 
+
+• The only addition many control units need is a power supply. 
+
+• As each participant (control unit) has access to the data, cost intensive components 
+for signal distribution are eliminated. 
+
+Different data formats also have different requirements for transmission regarding both 
+mechanisms (synchronous or asynchronous data) and the required bandwidth. The 
+MOST format is able to meet these requirements to satisfactory extent. 
+
+MOST Structure 
+
+The MOST bus is configured in a “ring” structure. Data transmission on the ring takes 
+place in one direction only. Messages can be transmitted provided the bus ring is com¬ 
+plete and fully functional. 
+
+A failure, such as an interruption in the ring, will cause a complete failure of the MOST 
+ring. All modules on the MOST bus will cease to function when there is an open in the 
+MOST bus. 
+
+
+17 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+D-BUS 
+
+
+
+Graphic example of “ring structure” 
+used on MOST bus 
+
+
+K-CANS 
+
+
+
+MOST 
+
+
+Example of MOST bus on the E65 
+
+
+
+Data Quantities 
+
+The aim is that in the near future all vehicle occupants can call up different services at 
+one time, e.g.: 
+
+• The driver calls up navigation information. 
+
+• The passenger talks on the telephone. 
+
+• A rear seat passenger listens to a CD. 
+
+
+• The other rear seat passenger watches a DVD video. 
+
+The data guantities this reguires produce the following example: 
+
+
+Application 
+
+Band-width (data rate) 
+
+Data 
+
+Data Format 
+
+AM/FM 
+
+Check Control 
+Audio/CD 
+Telephone 
+
+svs 
+
+1.4 Mbits/s 
+
+1 Channel Stereo 
+
+Synchronous 
+
+TV 
+
+CD Video 
+
+1.4 Mbits/s 
+
+Audio 
+
+MPEG 1 Video 
+
+Synchronous 
+
+DVD 
+
+2.8-11 Mbits/s 
+
+MPEG 2 Video 
+
+Synchronous and 
+Asynchronous 
+
+Navigation 
+
+250 Kbits/s 
+
+1.4 Mbits/s 
+
+1.4 Mbits/s 
+
+Vector data (arrows) 
+MPEG 1 Video (maps) 
+Voice commands 
+
+Asynchronous 
+
+Synchronous 
+
+Synchronous 
+
+Telematic services 
+
+A few bytes 
+
+
+Asynchronous 
+
+
+Using MOST, there is already the capability today to transport these large data guantities. 
+
+
+18 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functional Description 
+Data Transport 
+
+MOST currently offers a band-width of 22.5 Mbits/s . In the next generation, the band¬ 
+width will be increased to 50 and then later to 150 Mbits/s (as of approx. 2002). 
+
+In order to meet the different requirements of the applications regarding data transport, 
+each MOST message is divided into three parts: 
+
+• Control data 
+
+• Asynchronous data: e.g. navigation system, arrow representation 
+
+• Synchronous data: e.g. audio, video signals 
+
+
+Data transport on the MOST bus. 
+
+Different data is “packaged” and then sent as 
+one message to be “unwrapped” by the next 
+device on the MOST ring. 
+
+
+Bandwidth 
+
+22,5mblT/S 
+
+
+
+44,1 kHz 
+23 |is 
+
+
+A message over the MOST bus 
+
+
+
+2700 Messages 
+
+
+The control data controls the functions and devices in the network. The information can 
+be compared to CAN bus data. 
+
+The control data has a band-width of 700 Kbit/s. That corresponds to around 2700 mes¬ 
+sages per second. 
+
+For the data transmission of synchronous and/or asynchronous data, there is a total of 60 
+bytes. The limit is variable: e.g. 20 bytes of synchronous data and 40 bytes of asynchro¬ 
+nous data. 
+
+
+19 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Optical Bus 
+
+The MOST bus is a plastic optical waveguide. The MOST bus is coded in green 
+in the E65. 
+
+The light wavelength is 650 nm (red light). The MOST bus reguires the following 
+converter components: 
+
+• Optical transmitter 
+
+• Optical receiver 
+
+Each control unit of the MOST framework contains a transmitter and a receiver. The 
+transmitter and receiver have been developed by BMW. The low closed circuit (rest) cur¬ 
+rent properties of the transmitter and receiver enable optical wake-up by the MOST bus. 
+
+Optical Transmitter 
+
+A driver is fitted in the transmitter. The driver energizes an LED (light-emitting diode). 
+
+The LED transmits light signals on the MOST bus (650 nm light, i.e. red visible light). 
+The repeat freguency is 44.1 MHz. 
+
+The sensing freguency on a CD player and for audio is 44.1 MHz; this means than no 
+additional buffer is reguired, yet another reason why this bus system is so efficient for 
+multi-media. 
+
+
+
+
+Optical Receiver 
+
+The receiver receives the data from the MOST bus. The receiver consists of: 
+
+• An LED 
+
+• A pre-amplifier 
+
+• A wake-up circuit 
+
+• An interface that converts the optical signal into an electrical signal 
+
+The receiver contains a diode that converts the optical signal into an electrical signal. This 
+signal is amplified and further processed at the MOST network interface. 
+
+
+20 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Unit/Control Unit Connection 
+
+The MOST ring is composed of optical point-to-point connections between 2 control 
+units. Each control unit has a network interface. The network interface consists of: 
+
+
+svs 
+
+
+Network Interface 
+
+
+Net Services Software 
+
+
+MOST Transceiver 
+
+1 
+
+_ 1 _ _ > 
+
+_ 
+
+Optical 
+
+Optical 
+
+Receiver 
+
+Transmitter 1 
+
+
+Navigation 
+
+
+Network Interface 
+
+
+Net Services Software 
+
+
+MOST Transceiver 
+
+n 
+
+1 
+
+5 
+
+r 
+
+Optical 
+
+Optical 
+
+Receiver 
+
+Transmitter 1 
+
+
+MOST Fiber Optic Cable 
+
+
+• An opto-electrical converter (optical waveguide receiver, already mentioned). 
+
+• An opto-electrical converter (optical waveguide transmitter, already mentioned). 
+
+• A MOST transceiver (interface between the optical waveguide receiver/transmitter 
+and the electronic network driver). 
+
+• A network driver, the so-called NetServices. 
+
+The NetServices run on a microcontroller (main computer in the control unit) 
+
+On the application level, a control unit in the MOST framework contains stand-alone func¬ 
+tion units, so-called function blocks. Examples of function blocks include: 
+
+• Tuners 
+
+• Amplifiers 
+
+• CD players 
+
+A control unit can contain several function blocks at one time, e.g. the AVT contains the 
+functions: 
+
+• Antenna 
+
+• Amplifier 
+
+• Tuner 
+
+
+21 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E65 Interfaces 
+
+
+The following contains a brief summary of the tasks of the connected control units in the 
+
+MOST framework: 
+
+Control Display 
+
+The Control Display is the system master of all MOST bus functions and serves as the 
+
+power master. It wakes up the bus and is responsible for switching it off (power down). 
+
+The DIS Plus and GT1 will show a Control Display and a Control Display (Gateway). 
+
+Audio System Controller (ASK) 
+
+The audio system controller has the following controller functions: 
+
+Network Master (Main Controller) 
+
+The ASK performs the role of network master for the MOST bus. The functions of the 
+
+network master are the following: 
+
+• Wake-up, initialization, power-down - The network master wakes up the bus 
+
+and has the task of achieving an orderly initialization of the network. The ASK can 
+operate with KLR off. To turn it on, push in the volume/ON/OFF knob. Adjustments 
+and control is carried out by using the Controller and Control Display. Another task 
+of the network master is to control the power-down process. Each power-down is 
+initiated and started by the ASK. 
+
+• Configuration control - The network master detects the exact system configura¬ 
+tion each time that the network is started and compares it to the stored coded con¬ 
+figuration. 
+
+• Control of the network operation - The network master controls the MOST 
+transceiver of the slave eguipment for correct operation. The eguipment which is not 
+operating properly will be released by a reset or switched to low power mode so that 
+they do not affect bus communication. 
+
+• Fault code memory - The network master includes the fault code memory of the 
+MOST network. It stores all the faults occurring during the network operation as well 
+as deviations from the nominal configuration. 
+
+
+22 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Audio Master 
+
+As audio master, the ASK has the task to collect and process all the audio signals of the 
+vehicle and to distribute them to their destinations. 
+
+The ASK controls all the acoustic requests from the Control Display. The changes in the 
+level of a signal is not sudden, but smooth, e.g. during suppression, insertion and fading 
+out or temporary suppression of the signal at the destination: Because of this, a high- 
+quality acoustic sound is obtained. 
+
+The ASK also assumes the generation and preparation of different acoustic signals, e.g. 
+PDC signals and warnings. In the event of a request for a warning or caution signal from 
+a control unit, the ASK provides a clean acoustic change of the signals. 
+
+• Audio data - All audio data from any control unit are converted by the ASK into digital 
+audio AF format at a sampling rate of 44.1 MHz. 
+
+• Categorization of audio sources - All possible audio sources are divided into different 
+groups according to priority. Warning signals have priority over any other audio 
+source. Mixing of lower priority audio signals (e.g. navigation, radio) is possible. 
+
+• Generation of acoustic gongs - These are acoustic alarm signals which help the dri¬ 
+ver perceive sounds according to a system. The different sounds, requested by the 
+different control units, (e.g. gongs, PDC, etc.), must be generated only in association 
+with a visual indication. These come from the instrument cluster and the Control 
+Display. 
+
+The following sounds can be generated in the ASK. 
+
+• Beeping for the PDC. 
+
+• Various Check Control and warning gongs. 
+
+Note: A maximum of three sounds can be produced at once. Sounds are pro¬ 
+duced in order of importance. Any sound requests of greater than three 
+will be lost. 
+
+Connection Master 
+
+As connection master, the ASK must provide channels to the equipment connected to 
+the bus and distribute the audio signals on the outputs (loudspeakers). 
+
+The connection master also controls the basic Hi-Fi or the LOGIC 7 Hi-Fi amplifiers. 
+
+
+23 
+
+Introduction to Advanced Body Electronics 
+
+
+
+CD Changer Audio (CDC) 
+
+The CD changer is a slave control unit in the MOST framework. 
+
+Navigation System (NAV 01) 
+
+The control unit of the navigation system has controller tasks and slave functions 
+in the MOST framework. 
+
+Slave (Subordinate) Control Units 
+
+The following control units are slave control units: 
+
+• Kombi (control unit of the instrument cluster) 
+
+• AVT 
+
+• LOGIC7 
+
+• SVS Speech processing system 
+
+• Telephone 
+
+• MMC (if eguipped - not currently used on US models) 
+
+Component Locations 
+
+Located in the dashboard assembly are the Control Display, Kombi, ASK, CD changer 
+and OPPS connector. 
+
+
+
+Located in the luggage compartment, rear left, are the Logic 7 Amp, SVS, NAV and TCU. 
+
+
+
+Located in the C pillar left side, the AVT (Antenna Tuner) 
+
+
+24 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+MOST Bus Diagnosis 
+
+Due to the differences in the configuration of the MOST bus, diagnosis methods will dif¬ 
+fer slightly between the E65/E66 and the E60, E63, E64. However, there are many simi¬ 
+larities and there are some some basic rules which apply to all MOST equipped vehicles. 
+
+The following diagnosis applies to the E65/E66 configuration and the differences will be 
+pointed out as necessary. 
+
+It is important to remember that on the MOST network, messages can only be transmit¬ 
+ted provided the bus ring is complete and fully functional. If there is a ring fault in the 
+MOST network, the diagnostic system only communicates with the instrument cluster 
+and the Control Display because both of these modules are directly connected to the K- 
+CAN System Bus. 
+
+The fiber optic signals on the MOST network always travel in one direction and only in 
+one direction. Signals always originate at the Control Display and travel to the CD chang¬ 
+er, AVT, Logic 7 (if equipped), SVS, NAV, Multi-MediA Changer (if equipped), Telephone, 
+ASK, Kombi and back to the Control Display. 
+
+The MOST bus allows intersystem fault memory entries in the individual control modules. 
+A feature of the system faults is that faults may be entered in a control module although 
+the control module is OK. Conclusions may be drawn about the cause of the fault, using 
+the fault information stored in all the control modules. 
+
+The possible system faults are: 
+
+• Optical wave guide communication fault (All MOST Control Module) FC 111 
+
+• A Control Module does not switch a light off (All MOST Control Modules) 
+
+• Network wake-up unsuccessful (Control Display (Gateway), ASK, Telephone Only) 
+FCE18D 
+
+• Ring fault diagnosis run (Control Display (Gateway) and Kombi Only) FC El 90 
+
+The Control Display functions are split between acting as a Gateway and Displaying infor¬ 
+mation. The Gateway function serves as the interface between the MOST and the K- 
+CAN System buses. Although the Control Display is one control module, two control 
+module names are displayed in the DIS Plus: 
+
+• CD Control Display (MOST CAN Gateway or MCGW) 
+
+• CD Control Display 
+
+The faults stored in the Control Display are distributed between the Control Display 
+Gateway and Control Display according to the function of the fault. 
+
+
+25 
+
+Introduction to Advanced Body Electronics 
+
+
+
+MOST Control Unit Sequence (E65) 
+
+
+ZGM 
+
+Central Gateway 
+Module 
+
+
+K-CAN-System 
+
+
+ASK 
+
+Audio System 
+Controller 
+
+
+OPPS Connector 
+
+
+H KOMBI I Cl 
+
+Instrument Cluster ^1 Control C 
+
+- -y 
+
+
+CD 
+
+Display 
+
+
+CDC 
+
+Audio-CD Changer 
+
+
+Communication direction in MOST structure (E65/E66) 
+
+
+The signal transmission direction of the MOST bus in a vehicle with full 
+equipment takes place starting at the Control Display and travels serially 
+towards the CD changer. Antenna Tuner, Hi-Fi amplifier, Speech processing 
+module, Navigation, MMC (if equipped), TCU, Audio System Controller, 
+
+Instrument Cluster and again back to the Control Display. 
+
+I AVT 
+
+Antenna Amplifier 
+Tuner 
+
+
+TEL 
+
+Telephone Interface 
+
+z 
+
+
+Counts as 2 
+
+
+
+Counts as 2 
+
+
+NAVI 
+
+Navigation System 
+
+
+▼ 
+
+Logic 7 
+
+Audio Amplifier 
+Top hi-fi 
+
+svs 
+
+Speech Processing 
+System 
+
+
+Note: Important! The component sequence of the MOST controllers 
+in the ETM is incorrect when it comes to signal transmission 
+direction. The correct sequence is indicated above! 
+
+
+26 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Optical Wave Guide Communication Fault 
+
+This fault (FC 111) indicates a problem with optical transmission. Insufficient light is being 
+received by one of the modules in the ring. The loss of light may be caused by: 
+
+• Defective optical wave guide, Flarness twisted too tightly (Min. bend radius 50mm.) 
+
+• Light output or reception sensitivity of a diode is too low 
+
+• Connector not installed correctly 
+
+• Voltage fluctuation while powering up a control module 
+
+If the fault is stored, the system triggers a reset and starts up again. The music is 
+switched off briefly and the display screen of the Control Display continues to operate. 
+
+To find the module responsible for the fault, the fault memory of the modules must be 
+read in MOST ring order. 
+
+Fault lies between the module with the fault code (B) and the preceding module (A). 
+
+If the voltage has dipped below 9v, the fault may be incorrectly stored. If the voltage is low 
+perform the following test after connecting a battery charger. 
+
+1. Clear the fault memory in control module B. 
+
+2. Lower the light output in control module A. 
+
+3. Read out the fault memory in the MOST ring in order. 
+
+4. If control module B is again the first to store the fault, it can be assumed the fault 
+lies between control modules A and B. 
+
+Then, check control modules A and B for loose connections and check the optical wave 
+guide for kinks. If the visual inspection is OK, the fault can be located using the OPPS 
+tester or optionally performing the following tests. 
+
+• Remove the input optical wave guide from control module B and confirm the pres¬ 
+ence of light. If light is present, install by-pass optical wave guide in place of control 
+module A, clear fault codes in module B and perform ring break test. If MOST net¬ 
+work operates properly, then control module A is at fault and must be replaced. 
+
+If MOST network still has a fault, put module A back in the network and by-pass 
+module B. Clear faults and again perform ring break test. If MOST network operates 
+now problem is with control module B and it must be replaced. 
+
+• If light is not present at input of module B, perform by-pass of module A as above. 
+
+The possible fault scenarios are: 
+
+• Transmit diode in module A defective 
+
+• Receive diode in module B defective 
+
+• Optical wave guide fault between modules A and B 
+
+• Software error or fault in module A or B 
+
+Note: AMP butt connector p/n - 1355734-1 
+
+27 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Control Module Does Not Switch Off Light 
+
+When the MOST network is requested to sleep, the Control Display switches off the light 
+in the MOST ring. The lack of light input is a signal to the individual control modules to 
+switch off their light output and enter sleep mode. 
+
+If a control module does not switch off its light, all down stream control modules register 
+the fault “A Control Module is not switching light off.” 
+
+Important! 
+
+Failure of a control module to turn its light off, will cause the MOST network NOT to enter 
+sleep mode. If the MOST network fails to sleep, the rest of the car will not be able to 
+enter sleep mode. This will lead to battery discharge. 
+
+To diagnose, read out fault memory in MOST ring order. 
+
+The fault lies in the control module that precedes the module where the fault is first 
+stored. 
+
+Always confirm the problem by first clearing the fault and performing the diagnosis a sec¬ 
+ond time. If the same results occur, replace the defective control module. 
+
+Network Wakeup Unsuccessful 
+
+This fault indicates a problem with the optical transmission. An insufficient volume of light 
+is coming through one position of the ring and may be caused by: 
+
+• Control Module is receiving no voltage 
+
+• Optical Wave Guide harness defective 
+
+• Optical Element in a control module defective (transmit or receive) 
+
+• Connector not installed correctly 
+
+A distinction must be made as to whether the fault is currently present or sporadic. 
+
+For faults currently present, run the Ring Break Diagnosis Test Plan. 
+
+For sporadic faults perform the Luminous Power Reduction Test Plan. 
+
+
+28 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Ring Break Diagnosis Carried Out (FC El 90) 
+
+Reading out the fault memory of the Control Display (Gateway) after performing the Ring 
+Fault Diagnostic, results in a fault of Ring Fault Diagnosis Carried Out being stored. 
+
+This fault memory is not a true fault memory entry, but only an output of additional infor¬ 
+mation for relative node position. 
+
+Testing 
+
+Light Output Reduction 
+
+Reducing the light output of individual control modules is a convenient method of deter¬ 
+mining the area of a defect. 
+
+• Switch on the radio. 
+
+• In Control Module functions, begin to activate luminous power reduction in the 
+individual control module. (In this test the light output of the selected control 
+module is reduced for 5 seconds and then automatically reset to normal output) 
+
+• If the optical transmission for control module A to the next control module in the 
+ring (control module B) is OK, a slight noise may occur when the light output is 
+reduced, however the radio will continue to play. 
+
+• If the radio goes off and comes back on again(radio volume may be reduced) in 5 
+to 10 seconds, the optical transmission between control modules A and B is 
+defective. 
+
+If the visual inspection is OK, the fault can be located using the OPPS tester or optionally 
+performing the following tests. 
+
+• Remove the input optical wave guide from control module B and confirm the pres¬ 
+ence of light. 
+
+• If light is present, install by-pass optical wave guide in place of control module A, 
+clear fault codes in module B. If MOST network operates properly, then control 
+module A is at fault and must be replaced. 
+
+• If MOST network still has a fault, put module A back in the network and by-pass 
+module B. Clear faults. 
+
+• If MOST network operates now problem is with control module B and it must be 
+replaced. 
+
+• If light is not present at input of module B, perform ring break diagnostics. 
+
+
+29 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Ring Break Test 
+
+If there is a break in the ring (a defect between two control modules) the following fault 
+patterns may occur: 
+
+• Transmit diode of the transmitting control module defective 
+
+• Power supply of the transmitting control module defective 
+
+• Internal control module fault of the transmitting control module 
+
+• Receiver diode of the receiving control module defective 
+
+• Power supply of the receiving control module defective 
+
+• Internal control module fault of the receiving control module 
+
+• Optical wave guide between transmitting and receiving control module defective 
+
+These faults may occur alone or in combination. To diagnose a ring break, the first step is 
+to locate the two control modules between which the transmission failure has occurred. 
+
+This is accomplished with the ring break diagnostic function. Once the two control mod¬ 
+ules have been identified and the diagnostics have been performed, remember to check 
+the power supply and ground circuit of both modules before condemning a module. 
+
+Testing of the transmit/receive diodes will be possible using the OPPS tester. 
+
+Perform Ring Break Test 
+
+The ring break test mode is entered automatically when the power to all the modules in 
+the MOST network is switched off and then switched back on. The most effective 
+method of switching the power off and on is to disconnect the battery negative terminal 
+for 45 seconds. This time will allow the capacitors of all the control modules to dissipate. 
+
+When the battery is reconnected the control modules wake up and in MOST network 
+order transmit a light signal to the next module. Each module checks to see if it has 
+received a light signal from the previous module. If the control module does NOT receive 
+a light input signal it still transmits a signal to the next module. A relative node number of 
+0 is stored in the control module that did not receive a signal but that transmitted one. 
+
+The Control Display receives the light signal back and identifies which modules 
+responded. 
+
+Go to “Control Unit Functions” Control Display Gateway and read fault memory. 
+
+
+30 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+The Control Display will display a relative node number. This number will indicate how 
+many modules communicated after the module which set the relative node number of 0. 
+
+To find the control module with the relative node number of 0, count from the input side 
+of the Control Display (counting the Control Display as 0) towards the control modules. 
+When arriving at the control module with the number as displayed as the relative node 
+number in the DISplus, the last known communicating module has been found. 
+
+Example: 
+
+While performing the ring break diagnostics the Control Display has set a relative node 
+number of 2. Count the Control Display a 0, the Kombi will be i and the ASK will be 2. 
+
+The ring break occurs between the ASK and the module which precedes it, the tele¬ 
+phone module. 
+
+Important! 
+
+When counting control modules, the multimedia changer (if eguipped) and the Nav sys¬ 
+tem must be counted as two control modules. 
+
+In order to perform the count correctly the eguipment on the vehicle must first be 
+identified. 
+
+When using the MOST network diagram in the DISplus, connector number 1 of the opti¬ 
+cal waves are inputs and connector number 2 are outputs. 
+
+
+31 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Status Wakeup 
+
+MOST control modules require high current during standby operation and must be dis¬ 
+connected or put in sleep mode to prevent the vehicle battery from being discharged. In 
+case of a fault on the the MOST network that continuously wakes up, the entire MOST 
+bus will be woken up. The Control Display will wake up the CAN Bus and all the vehicle 
+busses will be woken up. This will lead to battery discharge. 
+
+It is of great benefit to know which module initiated the wake up call. In order to find out 
+which MOST node woke up the MOST bus, the following procedure is performed - 
+In Control Unit Functions, press “STATUS WAKEUP” 
+
+Three different response are possible: 
+
+• Control Module woke up 
+
+• Control Module woken up 
+
+• Control Module not initialized 
+
+The Control Module with the status “Control Module woke up” is the module that woke 
+up the rest of the MOST bus. 
+
+This diagnosis only informs which control module woke, not the reason for the wake up, 
+diagnostic testing should be performed on the control module and related equipment. 
+
+Hints for Vehicle Equipment Identification 
+
+• CDC - Look on passenger side of dashboard above glovebox. 
+
+• Logic 7 - Look for speaker grills on rear doors 
+
+Look on left side of trunk for large amp. 
+
+• MMC - Look on left side of trunk. 
+
+
+32 
+
+Introduction to Advanced Body Electronics 
+
+
+
+E65 MOST Bus Diagnostic Tips 
+Fault Symptoms E65 
+
+Particularly when carrying out troubleshooting in the MOST system network it is impor¬ 
+tant to know the precise significance of visible and audible symptoms. With this informa¬ 
+tion it is possible to locate and correct faults much faster. 
+
+The starting point for locating faults should always be to pose detailed questions relating 
+to the fault to the customer. This information can then be used to formulate initial consid¬ 
+eration before the BMW diagnosis system is connected. 
+
+The following information should be available to the technician: 
+
+• When does the fault occur? E.g. already during engine start or while driving? 
+
+• Since when does the fault occur? 
+
+• Does the fault depend on temperature? When cold, hot or after longer period of 
+vehicle operation? 
+
+• Do several functions fail simultaneously? If so, which? 
+
+• Is the fault still present after shutting down and restarting the vehicle? 
+
+• Was something switched on or off immediately before the fault occurred? 
+
+• Is it necessary to enter the telephone PIN after restarting the system? 
+
+• Does the radio/CD need to be switched on separately after restarting the system? 
+
+• How often does the system fail? 
+
+• How long does audio failure last? 
+
+• Can a loud clicking noise be heard in connection with the fault? 
+
+• Is the system OK again after switching terminal 15 off and on? 
+
+• What was shown on the main screen and in the assistance window? 
+
+• Does the control display fail? 
+
+• Is the display white or black or does it flicker in connection with the fault? 
+
+• Can a status line still be seen? 
+
+• What is shown after resetting the MOST bus (last menu, basic menu/start menu, 
+BMW logo)? 
+
+• Does the CD changer make a noise after audio failure? 
+
+
+33 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+In addition, various factors that could also cause malfunctions in the system should be 
+clarified: 
+
+• What control units have already been replaced? 
+
+• Did the fault symptom change after replacing control units? 
+
+• Was the light intensity reduced for the control units? 
+
+• Were the plug connections at the MOST control units checked? 
+
+• Was another or new road DVD inserted? 
+
+• What road DVD was used? 
+
+• Was something retrofitted on the vehicle or a repair carried out? 
+
+• To what CIP status (integration stage) does the vehicle correspond? 
+
+• Were aftermarket parts retrofitted into any vehicle electrical systems? 
+
+Based on the information provided by the customer and after examining any changes 
+in the system it may be possible to determine faults already at this stage. 
+
+Why are these statements important? Examples from visual applications: 
+
+Creating Images 
+
+The control display (CD) contains two control units, i.e. the CD gateway that establishes 
+the connection to the other bus systems and the CD graphics stage that builds up the 
+graphics in the control display. Not all images in the CD are created by the CD graphics 
+stage. All basic menus, sub-menus and the status line are created by the graphics stage 
+(blue). The map is presented by the navigation computer via RGB lines (red). 
+
+Consequently: 
+
+If only the map is not displayed but the rest, e.g. the on-board computer, is still visible and 
+if other menus can still be selected via the controller, in all probability the fault will be in 
+the area of the navigation system. 
+
+Important: The navigation map can also be displayed on the left-hand side. 
+
+Non-Digitized Area 
+
+A road map DVD, on which an area is not completely digitized can cause the navigation 
+screen to turn green. 
+
+Self-Burnt DVDs 
+
+A self-burnt or faults road map DVD can cause the navigation computer to crash. Also a 
+defective computer can trigger a reset of the navigation system, indicating "Initialization 
+running" in the control display. 
+
+
+34 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Telephone E65 
+
+The telephone AF is routed via the MOST bus in the form of light signals to the ASK. The 
+light is converted in the ASK and the AF is output from the speakers by means of a hard¬ 
+wired electrical signal. 
+
+The microphone is connected via copper cables directly to the telephone control unit. 
+Even if an SVS is installed, it does not have anything directly to do with hands-free tele¬ 
+phone operation. 
+
+SVS is activated when voice commands are executed. The cause of a fault in hands-free 
+operation should be sought in the area of the microphone, telephone and ASK. 
+
+If the telephone PIN is necessary after failure of the MOST bus, this indicates that the 
+telephone control unit triggered a reset and in all probability the fault can be rectified by 
+replacing the telephone control unit. 
+
+If the MOST bus is blocked, a telephone conversation via the cordless keypad handset 
+should still be possible provided the telephone itself is not defective. 
+
+Audio 
+
+The two models E60 and E65 differ considerably in the area of the audio systems. These 
+design differences necessitate different assessment methods for the purpose of locating 
+faults. 
+
+The ASK is responsible for audio output on the E65. If the vehicle is equipped with a 
+Top HiFi amplifier, the audio signal is sent in the form of a light signal from the audio 
+source to the Top HiFi amplifier and forwarded to the speakers as an electrical signal. 
+
+Some of the speakers are activated directly by the ASK and some by the Top HiFi amplifi¬ 
+er (LOGIC 7). 
+
+If the E65 is equipped with a HiFi amplifier, the sound information is transferred via a hard 
+wire circuit to the amplifier. 
+
+In connection with the Top HiFi system on the E60, all sound signals are routed from the 
+multi-audio system controller/car communication computer in the form of light signals to 
+the Top HiFi amplifier. 
+
+No sound signals are transmitted along fibre-optic cables in connection with the stereo 
+and HiFi systems. The multi-audio system controller/car communication computer itself is 
+responsible for the control of the speakers. 
+
+
+35 
+
+Introduction to Advanced Body Electronics 
+
+
+
+E60 MOST Bus Diagnosis 
+
+The MOST network uses a ring bus for data communication between the various mod¬ 
+ules. Signal transmission is by means of a fiber-optic cable. Data transmission on the ring 
+bus takes place in one direction only. On the the MOST ring, messages can only be 
+transmitted provided the bus ring complete and fully functional. 
+
+If for example the power supply or the diode of a control module is defective, the MOST 
+bus in non-operational and no communication is able to take place. Exceptions are the 
+gateway control module (CCC or MASK) and the HUD control module. 
+
+CCC/MASK 
+
+E60 series vehicles are fitted with either the CCC or the MASK. Either of these control 
+modules are the interface between the MOST bus and the K-CAN. 
+
+To diagnose the CCC or MASK: 
+
+• CCC (Car Communication Computer) all the control modules with the abbreviation 
+CCC must be selected (e.g. CCC-GW). 
+
+• MASK (Multi Audio System Controller) all the control modules the the abbreviation 
+MASK must be selected (e.g. MASK-GW). 
+
+Diagnosis Excessive Temperature 
+
+If a control module becomes too hot, this control module switches off for up to 10 min¬ 
+utes. This switches the ENTIRE MOST bus down for 10 minutes. After the control 
+module cools down it (and the MOST bus) is functional again. 
+
+If this fault, “Deactivation excess temperature”, is stored in the CCC (or MASK) and any 
+of the other MOST control modules there are two possibilities: 
+
+• If the fault is ONLY in the CCC (MASK), then this module is responsible for the 
+MOST bus shut down. 
+
+• If the fault is stored in the CCC (MASK) and one or more other control modules on 
+the MOST bus, the most likely cause of MOST bus failure is the other control mod¬ 
+ule. However, this does not rule out the possibility that the CCC (MASK) is also 
+defective. 
+
+Control Module Resets 
+
+Using the DISplus or GT1 a Test Plan may be run to check number of control module 
+resets for each control module on the MOST bus. 
+
+A control module with 0 (zero) resets has performed no reset, is not installed in the vehi¬ 
+cle, or can not be found with the diagnostic eguipment. 
+
+The control module with the highest number of resets is the most probable cause of a 
+fault with the MOST bus. 
+
+
+36 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Below is an example of a readout from the DISplus or GT1: 
+
+
+Head-Up Display 15 
+
+CD Changer 0 
+
+Headset Interface 0 
+
+Amplifier 0 
+
+Video Module 0 
+
+Telephone 0 
+
+Satellite Radio 0 
+
+Nav System Japan 0 
+
+MASK (or CCC) 15 
+
+
+Note: Resets at a rate of less than 10 may be normal for a control module. When 
+the number of resets is less than 10, this is only an indication on the pos¬ 
+sible cause of a fault. The control module should generally NOT be 
+replaced with less than 10 resets. 
+
+MOST Configuration 
+
+On the E60, certain control units are always arranged in the same order. 
+
+Other control units, on the other hand, can be connected in a different sequence. 
+
+Same Sequence 
+
+Depending on the equipment configuration, the multi-audio system controller/car com¬ 
+munication computer is always followed by the CDC, HUD and then the MOST bus ter¬ 
+minal. 
+
+Different Sequence 
+
+The sequence can change as from the MOST bus terminal. Possible control units 
+include: 
+
+- Top HiFi amplifier 
+
+- Telephone 
+
+- Video module 
+
+From the MOST bus terminal, the fibre-optic cable is routed back via the flash plug to the 
+multi-audio system controller/car communication computer. 
+
+
+37 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Store Configuration 
+
+On the E60, the sequence of control units in the MOST system network is identical in 
+the front area of the vehicle. All control units located in the luggage compartment can be 
+connected to the MOST bus terminal in any arbitrary order so that the sequence of the 
+control units can change. 
+
+Diagnosis on the MOST bus is only possible over a known sequence of control units in 
+the MOST. When storing the MOST ring configuration, the control units are written in 
+their installed sequence to a registration file. It is first necessary to check whether com¬ 
+munication on the MOST bus is possible (stability check). 
+
+The configuration is automatically restored after replacing or retrofitting a control unit in 
+the MOST system network. This takes place after programming/encoding with CIP so 
+that the control unit sequence is up-to-date. 
+
+The "Store configuration" function is not activated automatically when the control units 
+sequence is changed manually in the area of the luggage compartment (e.g. accident 
+damage repair). 
+
+E60 MOST control unit sequence 
+
+K-CAN 
+
+ccc 
+
+M-ASK FS 
+
+
+CDC 
+
+
+HUD 
+
+
+04219.03 
+
+
+
+
+TEL 
+
+
+TOP-HIFI 
+
+
+VM 
+
+
+
+38 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ring Break Diagnosis 
+
+Ring break diagnosis is already known from the E65. During ring break diagnosis on the 
+E65, the voltage supply is interrupted directly at the battery. 
+
+Contrary to the E65, restart of the MOST users on the E60 is realized via "Transport 
+mode." The following relays are switched off: 
+
+• Relay 1 MPM 
+
+• Terminal 30g 
+
+These relays supply voltage to all control units in the MOST system network. On activat¬ 
+ing transport mode, the relays are switched off and the voltage supply interrupted. 
+
+After the relays have been switched on again and the control units started up, the multi¬ 
+audio system controller/car communication computer can detect the control units that still 
+have communication capabilities and evaluate the results. Consequently, the BMW diag¬ 
+nosis system specifies a nodal point that provides an indication of the interruption on the 
+MOST bus. 
+
+The functional description in the BMW diagnosis system provides detailed information on 
+determining the nodal position on the MOST bus. 
+
+Stability Check 
+
+On the E60, the antenna tuner and the audio system controller are located in one unit. 
+The radio is still operable in the stereo and in the HiFi system in the event of a communi¬ 
+cation fault in the MOST system network. The stability check module was introduced for 
+the purpose of checking the MOST bus in such cases. 
+
+Effective operation of the MOST bus on the E60 can be checked with the stability check 
+function. 
+
+MOST Control Unit Supply 
+
+The "MOST control unit supply" module makes available schematic circuit diagrams and 
+information on the power supply of the MOST control units so that specific information is 
+quickly available as required. 
+
+
+39 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Repair of the MOST Fiber-Optic Cables 
+
+The MOST bus may only be repaired (spliced) once between 2 control units, otherwise 
+the attenuation may become too much and disrupt communication. 
+
+Attenuation in the Fiber-optic line increases as the distance between controllers 
+increases. 
+
+
+This diagram describes the approximate length of the fiber optic cable from one controller 
+to the next. 
+
+
+
+Color 
+
+Length 
+
+Max. Attenuation 
+
+■ 
+
+1-1.5 
+
+-1.4dB 
+
+■ 
+
+1.5-2 
+
+-1.7dB 
+
+■ 
+
+2.5-3 
+
+-2.4dB 
+
+
+5-5.5 
+
+-4.5dB 
+
+
+The chart above provides the maximum attenuation values based on the cable length. 
+
+The MOST bus may only be repaired using the prescribed special tool (crimping pliers) 
+and special connectors. 
+
+
+40 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - E65 MOST (Ring Break Diagnosis) 
+
+Using an E65/E66 disconnect an instructor designated MOST bus component and 
+perform complete quick test. 
+
+What is observed from the quick test results? 
+
+
+Access the “Ring Break” test plan in the diagnosis program. (Note: There are 2 
+paths to access the ring break diagnostics). Follow the on-screen prompts. 
+
+How can it be determined whether or not there is an existing ring break? 
+
+
+What are the results of the ring break test? (What nodal position is indicated?) 
+
+
+What does this nodal position indicate? 
+
+
+What are some possible causes of a “ring break” fault? 
+
+
+Restore MOST bus connection and clear all faults. 
+
+
+
+41 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Workshop Exercise - E65 MOST (Luminous Power Reduction) 
+
+
+Using the instructor supplied “attenuation tool”, dial in the appropriate amount of 
+attenuation as to cause “crackling” in the audio system. 
+
+
+Go to “luminous power reduction” test (a.k.a “test- drop in light output”). Perform 
+test and follow on-screen instructions. 
+
+
+What is the “luminous power reduction” test used for? (And when should it be used?) 
+
+
+Which component (if any) exhibited a problem during the test? 
+
+
+What does this indicate? 
+
+
+Using the “control unit functions” menu and access the affected module. Perform 
+the luminous power reduction test via the component activation menu. 
+
+What occurs during the test? 
+
+
+What does this indicate? 
+
+
+42 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Workshop Exercise - E65 MOST (Attenuation Testing) 
+
+
+Using the OPPS/OPS tester, perform an attenuation test on an instructor designated 
+component/system. Follow on-screen prompts. 
+
+What is tool# 663124 used for? 
+
+
+During the 1st calibration step (using 663124), what is the observed attenuation reading? 
+
+
+What is the allowable attenuation for this step? 
+
+
+Note: Observe extreme caution when installing or removing tool # 663125. 
+Permanent damage can result to the test cables, which would invalidate 
+attenuation readings. 
+
+What is the observed attenuation reading of the MOST control module being tested? 
+
+
+What is the specification for the attenuation test for the MOST control module? 
+
+
+Why is it necessary to reset the OPPS/OPS tester? 
+
+
+Perform attenuation test on the “optical wave guide”. Follow on-screen prompts. 
+
+What is the observed attenuation reading of the “optical wave guide” being tested? 
+
+
+What is the specification for the attenuation test for the “optical wave guide”? 
+
+
+43 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Workshop Exercise - MOST Bus (E60,E63 and E64) 
+
+
+Using an instructor designated vehicle, locate the MOST splice point in the rear of 
+the vehicle. 
+
+
+Determine the order of the MOST ring manually and record below: 
+
+
+11 “ 
+
+ccc 
+
+
+M-ASK 
+
+
+
+
+FS 
+
+
+sV 
+
+
+List the diagnosis path to access MOST configuration: 
+
+
+As per the instructors directions, manually re-configure the MOST bus by re-order¬ 
+ing selected components using the MOST bus splice point. 
+
+Check the re-configured MOST bus by access the MOST configuration test module 
+in diagnosis. 
+
+Why is this test module important and when would it be used? 
+
+
+44 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - MOST Bus (E60,E63 and E64) 
+
+
+After completing the MOST configuration test module, record the new (re-ordered) 
+MOST bus configuration below: 
+
+
+
+e; 
+
+
+(M219.CC 
+
+
+Restore MOST bus to original configuration and re-check system. 
+Locate the fiber optic jumper harness. 
+
+Where is the fiber optic jumper located? 
+
+
+45 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+byte flight 
+
+
+Introduction 
+
+The permanently increasing complexity of in-car 
+electronics and the rapidly growing amount of sen¬ 
+sors, actuators and electronic control units, places 
+higher demands on high-speed data communica¬ 
+tion protocols. 
+
+Safety critical systems need guick “thinking” proto¬ 
+cols with fault tolerant behavior. The need for on¬ 
+board diagnostics calls for flexible use of bandwidth 
+and an ever-increasing number of functions. 
+
+None of the communication solutions available on 
+the market until now have been able to fulfill all 
+these demands. 
+
+To solve these problems, BMW together with sever¬ 
+al semiconductor companies have developed byte- 
+flight a new protocol for safety-critical applications in 
+automotive vehicles. 
+
+
+D-Bus 
+
+
+K-CAN f 
+
+
+I 
+
+
+ZGM 
+
+
+PT-CAN 
+
+
+cn cn 
+
+'--j ic jri u 
+
+O' o 
+
+mk o 
+
+
+byte flight 
+
+
+The byteflight is the bus system used exclusively for 
+the ISIS system. 
+
+
+Design 
+
+The Intelligent Safety Integration System (ISIS) consists, depending on equipment level, 
+of up to 11 satellites (control units), the Safety Information Module (SIM) and the Central 
+Gateway module (ZGM). Seven of the eleven satellites contain crash detection sensors. 
+
+In the event of an accident, the necessary restraint systems have to be activated within a 
+fraction of a second in order to provide the maximum amount of protection for the vehi¬ 
+cle's occupants. 
+
+The system also has to ensure that the restraint systems are not deployed accidentally. 
+
+In order to ensure that the ISIS meets the requirements placed upon it, large volumes of 
+data have to be exchanged between the control units. This is achieved by means of an 
+extremely high data transmission rate. 
+
+The data is exchanged via a bus system. In order to protect the signals traveling along the 
+bus system from interference caused by electrical or magnetic fields, the ISIS system 
+does not use copper bus wires but optical fibers. 
+
+
+46 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+The layout of the ISIS takes the form of a star pattern. The Safety Information Module 
+(SIM) is at the center of the system. Arranged radially around it are the satellite modules. 
+
+Each of the eleven satellites is connected to the SIM by a fibre-optic cable. Each of the 
+satellites contains a transmitter/receiver module. 
+
+The SIM contains twelve transmitter and receiver modules. All information from each of 
+the satellites is made available to every other satellite by the SIM. Each individual fibre- 
+optic cable in the byteflight bus system is used for bi-directional data transmission. 
+
+Function 
+
+Transmitter/Receiver Module (SE) 
+
+The transmitter/receiver module is a module that can convert electrical signals into optical 
+signals and transmit them via optical fibers. Every satellite has an electrical-optical trans¬ 
+mitter/ receiver module. 
+
+
+Intelligent Star Coupler 
+
+
+
+The transmitter/receiver modules are connected individually via the byteflight to the 
+Intelligent Star Coupler in the SIM. The SIM also contains a transmitter/receiver module 
+for each satellite. 
+
+
+
+All information transmitted across the byteflight is in the form of data telegrams sent by 
+means of light pulses. The transmitter/ receiver modules in the SIM receive the light puls¬ 
+es from the various satellites. The Intelligent Star Coupler sends the data telegrams to all 
+satellites. Data transmission is possible in both directions. 
+
+
+47 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+3S 
+
+
+The transmitter/receiver (SE) module contains the LED for the driver circuit and the 
+receiver amplifier for converting the optical signals into digital signals. It also has an inte¬ 
+gral transmission guality monitoring circuit. 
+
+If one of the following faults occurs on one of the fiber-optic cables, the satel¬ 
+lite concerned is shut down: 
+
+• No optical signal received over a pre-defined period. 
+
+• Transmitter diode sends a continuous light signal. 
+
+• Attenuation on the fiber-optic cable too great. 
+
+The permissible degree of attenuation is stored within the system. If the attenuation 
+exceeds the specified maximum level, one of the following faults may be the cause: 
+
+• Kinking in the fiber-optic cable. 
+
+• Compression of the fiber-optic cable. 
+
+• Stretching of the fiber-optic cable. 
+
+• Broken fiber-optic cable. 
+
+• Damaged fiber-optic cable. 
+
+
+48 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Transmission 
+
+The ISIS has a number of sensors positioned at strategic points throughout the vehicle. 
+They are located in the satellites that are connected to the SIM via the byteflight. All sen¬ 
+sors are scanned continuously and the data distributed to all satellites. 
+
+
+Airbag 
+
+
+Satellit 
+
+mit 
+
+Sensor 
+
+
+
+Airbag 
+
+
+
+Satellit 
+
+mit 
+
+Sensor 
+
+
+Airbag 
+
+
+O 
+
+O 
+
+
+
+Airbag 
+
+
+
+O 
+
+
+Satellit mit 
+
+
+□ 
+
+
+□ 
+
+
+□ 
+
+
+
+0 
+
+Satellit mit 
+Sensor 
+
+
+Diagnosis 
+
+Diagnosis of the byteflight is carried out using the Diagnosis Program. Since the byte- 
+flight is a star structure and not a continuous ring like the MOST there is a test module 
+“Data transmission to the satellites” that can check communication between each satel¬ 
+lite and the SIM module. 
+
+Any satellite that does not respond must then be checked individually using a separate 
+Test Module. 
+
+Repairs to the byteflight fiber-optic cable are not permitted. However, complete cables 
+between the SIM and the affected satellites may be replaced. 
+
+
+49 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controller Area Network (CAN Bus) 
+
+
+Introduction 
+
+The CAN bus is a serial communications bus in which all connected control units can 
+send as well as receive information. Data exchanges over a CAN operate at a rate of 100 
+to 500Kbps. 
+
+The CAN protocol was originally developed by Robert Bosch GMbH and the Intel corpo¬ 
+ration in 1988 for use in the automotive electronics industry to provide a standardized, 
+reliable and cost-effective communications bus. 
+
+The CAN bus was originally introduced on BMW automobiles in 1992 740i/iL as a data 
+link between the DME and AGS control units. 
+
+E65 K-CAN 
+Introduction 
+
+For the E65, the functions that were incorporated within the main bodyshell electrical 
+system on the E38 have been distributed among a number of separate control units. 
+Those control units and various new control units are connected to the K-CAN. 
+
+The K-CAN is a new development and is subdivided into two sections, the K-CAN 
+System and the K-CAN Peripherals. 
+
+Examples of new control units and functions on the K-CAN are the Car Access System 
+(CAS), the Centre Console Control Center module (BZM), the Rear Centre Console 
+Control Center module (BZMF) and the Power Module (PM). 
+
+K-CAN System/Peripherals 
+
+The subdivision of the K-CAN into the sections "SYSTEM" and "PERIPHERALS" 
+relieves the load on the bus because the number of vehicle components (control 
+units/modules) is divided between two "independent" bus systems. 
+
+
+50 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Advantages of two K-CAN Busses 
+
+The advantages of two K-CAN busses are as follows: 
+
+• In a crash, it is possible that components could fail as a result of a short circuit on the 
+K-CAN. The K-CAN Peripherals covers such at-risk areas. If the K-CAN Peripherals 
+were to fail, the K-CAN System would still remain functional. 
+
+• Addition of new vehicle components to either bus is possible at any time. (Maximum 
+40 control units per bus) 
+
+• Low data load on the bus system from bus users due to division into two sections. 
+
+• Greater reliability. 
+
+
+
+K-CAN P 
+
+
+K-CAN S 
+
+
+51 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Voltage Level on the K-CAN. 
+
+If the CAN High voltage level changes from low to high, this represents a logical 1. If the 
+voltage level changes back to low, this represents a logical 0. The voltage level on the 
+CAN is in the range of 1V to 5V. 
+
+
+
+
+Note: The voltage can alter as a result of a defective terminal resistor, for exam¬ 
+ple. This has an effect on the CAN system. Communication between bus 
+nodes no longer functions properly. 
+
+Terminal Resistor 
+
+An electrical conductor through which current passes always has an ohmic, an inductive 
+and a capacitive impedance. When data is transmitted from point "A" to point "B" over a 
+CAN line, the total sum of that impedance has an effect on the transmission of that data. 
+
+The higher the transmission freguency, the greater the effect of the inductive and capaci¬ 
+tive impedance. The result of this can be that when the signal reaches the end of the data 
+transmission line, it is unidentifiable. For that reason, the data line is "modified" by termi¬ 
+nal resistors so as to preserve the original signal. 
+
+The inductive impedance is produced by phenomena such as the coil effect of the wire. 
+The capacitive impedance for example is produced by the effect of routing the wire paral¬ 
+lel to the vehicle body. The terminal resistors on a bus system vary. They are generally 
+dependent on the following parameters: 
+
+• Freguency of data transmission on the bus system. 
+
+• Inductive/capacitive load on the transmission channel. 
+
+• Length of the data transmission cable (The longer the cable is, the greater is the 
+inductive component). 
+
+
+52 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The control units are categorized either as basic control units or other control units. 
+Categorization is performed on the basis of the impedance level. Basic control units are 
+those which always have to be fitted in the car regardless of eguipment level or market. 
+Other control units are those that are dependent on the options fitted. 
+
+The terminal resistor values for the K-CAN system are 820 Ohm for “Basic” controllers 
+and 12K Ohms for all other control units. 
+
+
+
+For the E65 the Basic controllers are: 
+
+K-CAN S: LM, IHKA, CAS, CD, ZGM, KOMBI. 
+
+K-CAN P: CAS, TMFAT, TMBFT, HKL 
+The resistors are located inside of the control units. 
+
+Wake-Up on the K-CAN 
+
+The control units on the K-CAN network are "awakened" via the bus. For that reason, it 
+has been possible to dispense with the previous function of terminal 15 as wake-up line. 
+The wake-up message is passed directly to the control unit output stage by the CAS 
+module receiver. The output stage switches terminal 30 on and the unit is woken up. 
+
+
+53 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+PT (Powertrain) CAN 
+
+
+Introduction 
+
+The PT CAN is the fastest CAN bus in the E65. It is an existing bus system. PT CAN 
+stands for powertrain CAN. It links all control units/modules associated with the power- 
+train. All the bus nodes are connected in parallel with one another. In contrast with the 
+previous bus, (two-core twisted pair) it now has three wires. The third wire of the bus 
+cable is used as the wake-up line and has nothing to do with the actual CAN bus func¬ 
+tion. 
+
+
+Voltage Level on the PT CAN 
+
+When the bus is inactive, the bus high and 
+low levels are at 2.5 V. 
+
+When the bus becomes active, the CAN Low 
+voltage level changes to low (1.5 V) and the 
+CAN High level changes to high (4 V), thus 
+representing logical 1. 
+
+PT CAN Terminal Resistors 
+
+The PT CAN uses two terminal resistors to 
+establish the correct inductive and capacitive 
+impedance in the communication lines. Two 
+120 Ohm resistors are located in the wire har¬ 
+ness (no longer in the control units as on pre¬ 
+vious systems). The resistors are located: 
+
+• Ahead of the right front wheel. (Behind 
+bumper) 
+
+• Below the rear seat. 
+
+The resistance is measured by connecting 
+the appropriate adapter to any of the modules 
+on the PT-CAN and measuring resistance 
+between CAN-H and CAN-L. 
+
+The measured resistance should be close to 
+60 Ohms. 
+
+
+v 
+
+
+
+
+Wake Up 
+
+
+PT-CAN 
+
+
+54 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Failsafe Characteristics 
+
+If the PT CAN goes into emergency mode it is no longer available for the engine control 
+system. However, it can still provide communication between the other bus nodes even if: 
+
+• One of the CAN leads (cores) is broken- one of the CAN leads (cores) is shorting to 
+ground. 
+
+• One of the CAN leads (cores) is shorting to the power supply B+. 
+
+"Wake-up" Lead in PT CAN Network 
+
+The PT CAN for the E65 is now a three wire CAN, the third wire is a hard wire KL-15 sig¬ 
+nal used to wake up the powertrain control units. The "wake-up" lead has nothing to do 
+with the actual PT CAN function. A wake-up telegram is still transmitted by the CAS via 
+the ZGM - PT-CAN as a CAN message. 
+
+Notes: 
+
+
+55 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Diagnosis Bus 
+
+
+Introduction 
+
+The aim of diagnosis is to enable a Technician to reliably identify a defective component. 
+By the use of appropriate hardware and monitoring software, the microprocessor of a 
+control unit, for example, is able to detect faults in the control unit and its peripherals. 
+
+
+
+OBD scan tools 
+10.400 Bit/s 
+
+
+CAS 
+
+
+SMFA 
+
+
+TMFAT 
+
+
+TM 
+
+FATH 
+
+
+SMFAH 
+
+
+HKL 
+
+
+TM 
+
+BFTH 
+
+
+SM8FH 
+
+
+PM 
+
+
+AHM 
+
+
+PDC 
+
+
+RDC 
+
+
+CIM 
+
+
+LM 
+
+
+OWA 
+
+
+IHKA 
+
+
+
+K-CAN P 
+
+
+K-CAN S 
+
+
+MOST 
+
+
+byteflight 
+
+
+PT-CAN 
+
+
+Faults identified are stored in the fault memory and can be read out using the Diagnosis 
+Program. Data transfer between the vehicle and the diagnosis tool takes place via the 
+Diagnosis bus (D bus). The new features of the diagnosis bus are: 
+
+• Faster data transmission speed of 115 kBd. 
+
+• Central diagnosis access point (OBD connector). 
+
+• Single diagnostic cable (TxD II) for the entire vehicle. 
+
+• Omission of the TxDI cable. 
+
+• Access to diagnosis functions reguires “Authorization”. 
+
+• Diagnosis protocol "KWP 2000" (Keyword Protocol 2000). 
+
+• Standardized diagnosis structure for all control units. 
+
+
+56 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis Concept 
+
+The "BMW Fast" (BMW fast access for service and testing) diagnosis concept introduced 
+on the E65 is applied. This concept is based on the "Keyword Protocol 2000" (KWP 
+2000 ) 
+
+diagnosis protocol defined as part of the ISO 14230 standard. Diagnosis communication 
+takes place entirely on the basis of a transport protocol on the CAN bus. 
+
+The Diagnosis bus is connected to the Central Gateway Module. All bus systems apart 
+from the MOST bus are connected to the Central Gateway Module (ZGM). 
+
+Vehicle Diagnosis Access Point 
+
+The diagnosis tool is connected to the vehicle by means of the diagnosis connector OBD 
+( On-Board Diagnosis ). The connector is located behind a small cover in the drivers 
+side kick panel trim. There is a black plastic cap that bridges KL-30 to the D-bus when 
+the connector is not being used. This cap must be removed before installing the diagno¬ 
+sis cable. 
+
+
+
+TheTxD lead is located in pin 7 of the OBD socket and is connected directly to the ZGM. 
+
+The ZGM detects by means of the data trans-mission speed whether a BMW diagnosis 
+tool (DISplus, GT-1) or an aftermarket scanner is connected. 
+
+The DME allows access to different data depending on the diagnosis tool connected. 
+
+Note: When using an OBD scan tool for diagnosis, the transmission speed is 
+10.4 KBit/s. 
+
+
+57 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+Workshop Exercise - PT-CAN 
+
+
+Using an instructor designated vehicle, access the DME (ECM) and connect the 
+appropriate breakout box and test cables. Using the Oscilloscope, obtain a pattern of 
+the CAN High signal. 
+
+What is the voltage of the CAN High signal? And what else can be observed of the CAN 
+High signal? 
+
+
+What is the wire color for CAN High? _ 
+
+Record you oscilloscope setting and connections below. 
+
+Voltage_ Freguency _ 
+
+Connections: MFK 1 or 2 Describe positive and negative connections below: 
+
+
+Using the Oscilloscope, obtain a pattern of the CAN Low signal. 
+
+What is the voltage of the CAN Low signal? And what else can be observed of the CAN 
+Low signal? 
+
+
+What is the wire color for CAN Low? 
+
+Record you oscilloscope setting and connections below. 
+
+Voltage _ Frequency _ 
+
+Connections: MFK 1 or 2 Describe positive and negative connections below: 
+
+
+58 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Workshop Exercise - PT-CAN 
+
+Using the DISplus or GT-1 (with MIB), display the CAN High and CAN low signal together. 
+
+What can be observed regarding these two signals? 
+
+Using the multi-meter functions of the DISplus/GT-1, measure the resistance 
+between CAN High and CAN Low. 
+
+What is the total resistance between CAN High and CAN Low? 
+
+What causes the resistance readings obtained? 
+
+Where are the PT-CAN terminal resistors located in this vehicle? What is the resistance 
+value of the PT-CAN terminal resistors? 
+
+
+What occurs when CAN High is grounded? 
+
+
+What occurs when CAN High is grounded? 
+
+
+
+59 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+Workshop Exercise - K-CAN 
+
+
+Using an instructor designated vehicle, access the K-CAN circuit and display pattern 
+on oscilloscope. 
+
+What is the voltage of the K-CAN (High and Low)? 
+
+
+What are the major differences between the K-CAN and PT-CAN scope patterns? 
+
+
+What occurs if there is a malfunction of the K-CAN Low circuit? (i.e. open/grounded) 
+
+
+What occurs if there is a malfunction of the K-CAN High circuit? (i.e. open/grounded) 
+
+
+Measure the resistance between K-CAN High and K-CAN low. 
+
+What is the total resistance between K-CAN High and K-CAN Low? 
+
+
+Where are the K-CAN terminal resistors located? What are the ohmic values of these 
+resistors? 
+
+
+60 
+
+Introduction to Advanced Body Electronics 
+
+
+
+Classroom Exercise - Review Questions 
+
+Fill in the component location below: 
+
+
+
+A. _ B. _ 
+
+C. _ D. _ 
+
+E._ 
+
+In the E65, which modules perform the task of “Gateway”? 
+
+
+What are some of the handling precautions when working with fiber-optic cables? 
+
+
+61 
+
+Introduction to Advanced Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. 
+
+
+What is the difference between the fiber-optic connector of a MOST component 
+and a byteflight component? 
+
+
+5. What is the difference between the D-Bus of the E65 and other BMW models? 
+
+
+6. How many terminal resistors are located in the PT-CAN? Where are they located? 
+What should the total resistance be on the PT-CAN? 
+
+
+7. During a diagnosis of the MOST bus on an E65, the technician finds a recorded 
+fault in the SVS. The fault is “A control module does not switch off light”. Which 
+control module is most likely the cause of this fault? And why? (explain answer) 
+
+
+8. When performing the “ring break” diagnosis test, battery voltage must be 
+interrupted to MOST bus control units. What is the difference between the 
+methods of disconnecting voltage on the E65 versus the E60? 
+
+
+62 
+
+Introduction to Advanced Body Electronics 
+
+
+

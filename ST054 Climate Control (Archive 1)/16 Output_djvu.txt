@@ -1,0 +1,4837 @@
+TABLE OF CONTENTS 
+
+
+Subject Page 
+
+OUTPUTS 
+
+Water Valves .2 
+
+Auxiliary Coolant Pump.4 
+
+Blower Speed Signal .6 
+
+Stepper Motor Control .8 
+
+Compressor Control.10 
+
+Auxiliary Fan Control.12 
+
+Rear Window Defroster .14 
+
+Windshield Base / Washer Spray Jet Heaters .16 
+
+Parked Car Ventilation .18 
+
+
+IHKA/ ECM Interfaoes 
+
+
+20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+WATER VALVES 
+
+
+Temperature regulation on IHKA systems is aoeomplished by solenoid aotuated water 
+valve(s). The valve(s) are normally held open by spring pressure (failsafe), and are eleotrioal- 
+ly olosed by pulses from the IHKA oontrol module to regulate the flow of hot ooolant to the 
+heater eore(s). 
+
+
+The water valve(s) are pulsed aooording to the Y-faotor, whioh is oaloulated from the fol¬ 
+lowing inputs: 
+
+
+• Desired temperature request (left and right if equipped) 
+
+• Interior temperature 
+
+• Heater oore temperature(s) 
+
+• Ambient air temperature 
+
+• Blower speed request 
+
+
+When the desired tem¬ 
+perature sails for maxi¬ 
+mum heat, the water 
+valve(s) do not reoeive 
+pulses and are meohan- 
+ioally sprung open. 
+
+Similarly, when maxi¬ 
+mum oooling is request¬ 
+ed, the IHKA oontrol 
+module powers the 
+water valve(s) oomplete- 
+ly olosed. 
+
+
+
+
+
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+3 
+
+
+
+AUXILIARY COOLANT PUMP 
+
+
+All models except E36/46 use an electrically powered auxiliary coolant pump to ensure that 
+an adequate supply of hot coolant Is always available to the heater core(s). The IHKA con¬ 
+trol module operates the pump directly (E31 uses a relay) by supplying the ground circuit. 
+
+Pump “ON” operating criteria (E38 shown as an example): 
+
+
+• Engine coolant temperature > 32°F (supplied via K-Bus on E38/39/46) 
+
+• Y-factor > 5% 
+
+• Maximum defrost mode selected 
+
+• Maximum heating requested 
+
+• “REST” function requested 
+
+
+
+Pump “OFF” when: t 
+
+
+• Engine coolant tern- i 
+perature < 32°F and 
+either Y-Factor < 
+0%, unless other 
+Inputs call for pump 
+operation 
+
+
+AurlLiry 
+
+
+EJ LbR m-va 
+Z| N^l vMn- 
+
+
+
+
+4 
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+5 
+
+
+
+BLOWER SPEED SIGNAL 
+
+
+The blower speed is controlled by the IHKA control module regulating (varying) the ground 
+circuit through the use of transistors (final stage unit). 
+
+The IHKA control module determines the appropriate blower speed using these primary 
+inputs: 
+
+• Blower control thumbwheel/rocker switch inputs 
+
+• The “Y-factor” 
+
+In the case of the E38 (shown), each of the blower speed requests are monitored by the 
+IHKA control module. The control module always runs the blower at the higher selected 
+speed to ensure adequate air flow through the interior. The outlet flap opening will be 
+reduced on the side requesting less blower speed. 
+
+
+NOTE: Some models do not use a blower relay. 
+
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+7 
+
+
+
+STEPPER MOTOR CONTROL 
+
+
+stepper motors are installed in the system to provide infinitely variable operation of the air 
+outlet flaps for automatio olimate oontrol. M-Bus (3 wire flat harness) oontrolled motors are 
+used to operate all flaps, with the exoeption on some models of a dedioated fresh air motor 
+and oirouit. 
+
+Eaoh of these motors features its own eleotronio oirouitry and is eleotrioally ooded, indioat- 
+ing that installation is unique to a speoifio flap. 
+
+These type of stepper motors reoeive power and ground on two of the terminals, and 
+ooded operating instruotions on the third. The instruotions are digital signals (500 Hz) that 
+oontrol opening or olosing of the flaps. The mioroprooessor inside the stepper motor 
+reoeives the instruotions and oonverts them into pulses to operate the permanent magnet 
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+9 
+
+
+
+COMPRESSOR CONTROL 
+
+
+Using the E38 (99 MY) for this test, activation of the compressor clutch is an output con¬ 
+trol function of the IHKA module. Activation is carried out directly through a final stage (no 
+relay required). 
+
+If the evaporator temperature is above 37°F (3°C), and the refrigerant pressure sensor indi¬ 
+cates acceptable pressure, the control panel/module then signals the ECM that it is about 
+to activate the compressor. The IHKA module will then activate the compressor if a can¬ 
+cellation signal is not received from the ECM. 
+
+Additional criteria: 
+
+• If the “snowflake” button is on at engine start-up, the control module delays compres¬ 
+sor clutch activation until the engine speed exceeds 600 RPM for at least 5 seconds. 
+
+• If the “snowflake” is switched off while the engine is running, the control module contin¬ 
+ues to cycle the compressor (with increasingly longer off times) for up to 15 minutes. 
+
+Compressor deactivation: 
+
+• ECM detects full load - signalling IHKA 
+
+• Evaporator temperature < 2°C 
+
+• Coolant temperature > 120°C 
+
+• Refrigerant pressure sensor indicates pressure is too low/high 
+
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+11 
+
+
+
+AUXILIARY FAN CONTROL 
+
+
+Using a 99 MY vehicle (E38/39/46) for this test, the variable auxiliary fan is controlled by the 
+ECM. The auxiliary fan request comes from the IHKA control module via the K-Bus. The fan 
+speed request is based on the refrigerant pressure sensor input to the IHKA. Additional fac¬ 
+tors monitored by the ECM that influence fan operation are: 
+
+• Radiator outlet temperature sensor (exceeds the preset temperature) 
+
+• Vehicle speed 
+
+• Battery voltage level 
+
+The auxiliary fan motor incorporates an output final stage that activates the fan motor at 
+variable speeds. The output stage receives an output signal (pulse width modulated 10-100 
+Hz) from the ECM which activates the motor. 
+
+
+
+
+
+
+
+
+12 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+13 
+
+
+
+REAR WINDOW DEFROSTER 
+
+
+Using the E38 as an example for this test, the rear window defroster operating strategy 
+depends upon ambient temperature. 
+
+• If ambient temperature is < 5°F (-15°C), pressing the rear window defroster but 
+
+ton (ignition switoh in “Run”), requests the oontrol module to aotivate the defroster for 17 
+minutes, and then switoh it off. 
+
+• If the ambient temperature is > 5°F (-15°C), the oontrol module aoitvates the defroster 
+for only 10 minutes before switohing it off. 
+
+
+• Reaotivating the defroster by pressing the button again will give an additional 5 minutes 
+of defrosting, regardless of ambient temperature. 
+
+
+• If the ignition is 
+switohed “OFF” during 
+defroster operation, the 
+timer keeps operating 
+and the defroster is 
+deaotivated. If the igni¬ 
+tion is switohed “ON” 
+again with time remain¬ 
+ing, the defroster is 
+automatioally reaotivat- 
+ed until the timer runs 
+out. 
+
+• If the battery voltage 
+drops bellow 11.4 
+volts, the defroster 
+automatioally switohed 
+“OFF”, and will resume 
+operation when the 
+voltage rises above 
+12.2 volts. 
+
+
+
+14 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+15 
+
+
+
+WINDSHIELD BASE/ WASHER SPRAY JET HEATERS 
+
+
+Using the E38 as an example for this test, this circuit demonstrates that both heater sys¬ 
+tems are powered by the same relay. 
+
+• The lower portion of the windshield contains heating elements which when powered, 
+prevent the wiper blades from freezing to the glass. 
+
+• The washer spray jet heaters are designed to prevent ice from forming on and obstruct¬ 
+ing the washer nozzles. 
+
+The control module monitors the signal from the ambient temperature sensor (K-Bus) and 
+automatically activates the relay in this circuit when 
+
+r'"“ 
+
+• Ambient temperature is < 38°F (3°C), and iS 
+
+• The ignition is “ON” and 
+
+• Battery voltage is > 12.2 volts 
+
+
+If the ambient temperature exceeds 43°F 
+(6°C), the windshield base/washer spray jet 
+heaters are switched off. 
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+17 
+
+
+
+PARKED CAR VENTILATION 
+
+
+Parked car ventilation (if equipped), operates at pre-programmed times, the IHKA control 
+module: 
+
+• Opens the fresh air flaps, faoe vent flaps, and 
+
+• Closes all other flaps, and 
+
+• Operates the blower motor at low speed for one-half hour 
+Using the E38 as an example: 
+
+• All switohing is oontrolled direotly by the IHKA oontrol panel 
+
+• Desired ventilation “ON” times are programmed into the IKE On-Board Computer (BO) 
+using the Multi-Information Display (MID) 
+
+• The BO in the IKE then oommunioates with the IHKA module over the l-Bus and the K- 
+Bus 
+
+
+
+18 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+19 
+
+
+
+IHKA/ECM INTERFACES 
+
+
+The IHKA signals the ECM when A/C is requested (KO signal), this alerts the ECM to sta¬ 
+bilize idle speed (EML on 750iL) and oompensate for the additional load. This signal is Pulse 
+Width Modulated (5 Hz), whioh informs the ECM of the “get ready” request and the antioi- 
+pated oompressor load. On the 99 MY (E38/39/46), the A/C on signal is transmitted via the 
+K-Bus/CAN-Bus. 
+
+On E38/39 models, the ECM sends a reply (KOREL) signal to the IHKA oontrol module. If 
+input oonditions are oorreot, the IHKA will aotivate the A/C oompressor. In addition this sep¬ 
+arate signal oirouit is used to signal the IHKA to deaotivate the oompressor in the event that 
+stand still full load oonditions are present. 
+
+On E46/36 models, the A/C oompressor relay is aotivated by the ECM. 
+
+
+IHKA CONTROL PANEL /MODULE 
+
+
+
+72.0'F 
+
+68.0'F 
+
+
+■■■111 
+
+
+
+
+
+□ □ 
+
+i ¥)0 
+
+
+
+
+ENGINE 
+
+CONTROL 
+
+MODULE 
+
+
+A/C SYSTEM STATUS (Signal KO) 
+
+
+SWITCHED GROUND SIGNAL FROM DME FOR 
+COMPRESSOR ON/OFF CYCLING (Signal KOREL) 
+
+
+COMPRESSOR 
+ON POWER 
+
+
+COMPRESSOR 
+
+CLUTCH 
+
+SOLENOID 
+
+
+
+20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAME OF SIGNAL OR FUNCTION:_ 
+
+Vehicle:_M.Y.:_ System:_DIS CD Version:_ 
+
+What type of output signal provides current to activate this circuit? □switched Power 
+
+□ Switched Ground □ Pulse Width Modulated (PWM) □ Linear Voltage □ Linear Resistance □ Digital 
+
+Source: _ 
+
+How will the control system react if this signal becomes impaired or lost ? 
+
+Substitute Value? □ Yes □ No if yes what is it?_ 
+
+Was a fault code(s) present with this defective signal/component? □ Yes □ No 
+
+If yes what is (are) the specific code(s)?_ 
+
+Does the DIS software provide a Status Display for this signal? □ Yes □ No 
+
+If “yes”, what is it?_ 
+
+Is “component activation” possible with this signal/function? □ Yes □ No 
+
+If yes what does it do?_ 
+
+Does this help you with diagnosis? □ Yes □ No Why?_ 
+
+Pin Numbers: What is the control module pin number for the signal?_ 
+
+Is there an associated ground wire? □ Yes □ No If “yes”, pin number?_ 
+
+Are there any other signals/systems sharing the wire to consider? □ Yes □ No 
+If “yes” are there faults present in that system as well? □ Yes □ No 
+What is (are) the most suitable measurement(s) for this signal/component? 
+
+□ Voltage □ Resistance □ Capacitance □ Inductance □ Temperature □ Current □ Pressure □ Scope 
+
+Signal Range?:_Nominal Value?:_ 
+
+Notes: 
+
+
+21 
+
+
+
+MEASUREMENT SYSTEM WORKSHEET: 
+
+
+While connecting and setting up the DIS/MoDiC measurement system for signal/circuit val¬ 
+idation, note the settings in the appropriate looations for future referenoe. Dooument your 
+findings by entering the displayed values in the Multimeter or Counter Display. If the signal 
+requires the use of the osoillosoope, note your set up seleotions and sketoh the waveform. 
+
+
+^hang^^J 
+
+
+BMW Test system Multimeter 
+
+
+I [capacitance I [inductance I iTemperature I 
+
+h bill" a|ll° " I 
+
+
+J 
+
+
+^ensoi^^^J 
+
+
+1"^ □ 
+
+
+
+
+m 
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+
+I_I I setting | | devices | JmeasurmentsI 
+
+
+^hang^^J 
+
+
+BMW Test system Oscilloscope setting 
+
+id _I I MFK 2 _I I KV-Senaor I | UFK 
+
+□III nil -^-dI ^ 
+
+
+Test connectioi 
+
+
+I— □! Kvy □! 
+
+
+EDH 
+
+
+EDS 
+
+
+1 
+
+
+111-"' al 
+
+
+^ dI 
+
+
+
+
+jChannalA 1 
+
+1 □! 
+
+1 Channel B 1 
+
+□1 
+
+
+1 Trigger _ 1 
+
+Clip D 1 
+
+IrO-sIgnalDl 
+
+
+□! 
+
+
+
+|Myltimeler | 
+
+1 Counter | 
+
+1 Oscilloscope 1 
+
+1 Stimulation 1 
+
+1 devices | 
+
+
+J ^^hang^^J ^eivice^^J 
+
+
+BMW Test system Counter 
+
+
+I' |l‘".tL nlTltni.. □! |t"a‘,'‘"*D I 
+
+
+1 MFC 1 i 
+
+□ 1 
+
+[MFC 2 ■ 
+
+U aJ 
+
+
+m 
+
+F^Jl 
+
+
+
+□! 
+
+
+
+i | Counter I | Oscilloscope I I Stimulation I I Preset I 
+
+I_I I setting | j deviees | jmeasurmentsl 
+
+
+J ^^hang^^J 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A IV] 
+
+N 
+
+
+y 
+
+8 
+
+6 
+
+4 
+
+2 
+
+0 
+
+-2 
+
+-4 
+
+-6 
+
+-8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H! 
+
+
+m 
+
+
+e 
+
+
+n 
+
+
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+1_I I sef.iiHj [ I devices | | measurments| 
+
+
+T-BSgSSt! 
+
+
+
+
+SUPPLEMENTAL ETM SCHEMATIC WORKSHEET: 
+
+Using your gained understanding of the signal and with the help of your instruotor, supple¬ 
+ment your ETM referenoe by sketohing the oirouit. Add the internal symbols (pin numbers, 
+signal power supply, ground, final stage looations and signal monitor). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MEASUREMENT SYSTEM WORKSHEET: 
+
+
+While connecting and setting up the DIS/MoDiC measurement system for signal/circuit val¬ 
+idation, note the settings in the appropriate looations for future referenoe. Dooument your 
+findings by entering the displayed values in the Multimeter or Counter Display. If the signal 
+requires the use of the osoillosoope, note your set up seleotions and sketoh the waveform. 
+
+
+^hang^^J 
+
+
+BMW Test system Multimeter 
+
+
+I [capacitance I [inductance I iTemperature I 
+
+h bill" a|ll° " I 
+
+
+J 
+
+
+^ensoi^^^J 
+
+
+1"^ □ 
+
+
+
+
+m 
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+
+I_I I setting | | devices | JmeasurmentsI 
+
+
+^hang^^J 
+
+
+BMW Test system Oscilloscope setting 
+
+id _I I MFK 2 _I I KV-Senaor I | UFK 
+
+□III nil -^-dI ^ 
+
+
+Test connectioi 
+
+
+I— □! Kvy □! 
+
+
+EDH 
+
+
+EDS 
+
+
+1 
+
+
+111-"' al 
+
+
+^ dI 
+
+
+
+
+jChannalA 1 
+
+1 □! 
+
+1 Channel B 1 
+
+□1 
+
+
+1 Trigger _ 1 
+
+Clip D 1 
+
+IrO-sIgnalDl 
+
+
+□! 
+
+
+
+|Myltimeler | 
+
+1 Counter | 
+
+1 Oscilloscope 1 
+
+1 Stimulation 1 
+
+1 devices | 
+
+
+J ^^hang^^J ^eivice^^J 
+
+
+BMW Test system Counter 
+
+
+I' |l‘".tL nlTltni.. □! |t"a‘,'‘"*D I 
+
+
+1 MFC 1 i 
+
+□ 1 
+
+[MFC 2 ■ 
+
+U aJ 
+
+
+m 
+
+F^Jl 
+
+
+
+□! 
+
+
+
+i | Counter I | Oscilloscope I I Stimulation I I Preset I 
+
+I_I I setting | j deviees | jmeasurmentsl 
+
+
+J ^^hang^^J 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A IV] 
+
+N 
+
+
+y 
+
+8 
+
+6 
+
+4 
+
+2 
+
+0 
+
+-2 
+
+-4 
+
+-6 
+
+-8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H! 
+
+
+m 
+
+
+e 
+
+
+n 
+
+
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+1_I I sef.iiHj [ I devices | | measurments| 
+
+
+T-BSgSSt! 
+
+
+
+
+SUPPLEMENTAL ETM SCHEMATIC WORKSHEET: 
+
+Using your gained understanding of the signal and with the help of your instruotor, supple¬ 
+ment your ETM referenoe by sketohing the oirouit. Add the internal symbols (pin numbers, 
+signal power supply, ground, final stage looations and signal monitor). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MEASUREMENT SYSTEM WORKSHEET: 
+
+
+While connecting and setting up the DIS/MoDiC measurement system for signal/circuit val¬ 
+idation, note the settings in the appropriate looations for future referenoe. Dooument your 
+findings by entering the displayed values in the Multimeter or Counter Display. If the signal 
+requires the use of the osoillosoope, note your set up seleotions and sketoh the waveform. 
+
+
+^hang^^J 
+
+
+BMW Test system Multimeter 
+
+
+I [capacitance I [inductance I iTemperature I 
+
+h bill" a|ll° " I 
+
+
+J 
+
+
+^ensoi^^^J 
+
+
+1"^ □ 
+
+
+
+
+m 
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+
+I_I I setting | | devices | JmeasurmentsI 
+
+
+^hang^^J 
+
+
+BMW Test system Oscilloscope setting 
+
+id _I I MFK 2 _I I KV-Senaor I | UFK 
+
+□III nil -^-dI ^ 
+
+
+Test connectioi 
+
+
+I— □! Kvy □! 
+
+
+EDH 
+
+
+EDS 
+
+
+1 
+
+
+111-"' al 
+
+
+^ dI 
+
+
+
+
+jChannalA 1 
+
+1 □! 
+
+1 Channel B 1 
+
+□1 
+
+
+1 Trigger _ 1 
+
+Clip D 1 
+
+IrO-sIgnalDl 
+
+
+□! 
+
+
+
+|Myltimeler | 
+
+1 Counter | 
+
+1 Oscilloscope 1 
+
+1 Stimulation 1 
+
+1 devices | 
+
+
+J ^^hang^^J ^eivice^^J 
+
+
+BMW Test system Counter 
+
+
+I' |l‘".tL nlTltni.. □! |t"a‘,'‘"*D I 
+
+
+1 MFC 1 i 
+
+□ 1 
+
+[MFC 2 ■ 
+
+U aJ 
+
+
+m 
+
+F^Jl 
+
+
+
+□! 
+
+
+
+i | Counter I | Oscilloscope I I Stimulation I I Preset I 
+
+I_I I setting | j deviees | jmeasurmentsl 
+
+
+J ^^hang^^J 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A IV] 
+
+N 
+
+
+y 
+
+8 
+
+6 
+
+4 
+
+2 
+
+0 
+
+-2 
+
+-4 
+
+-6 
+
+-8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H! 
+
+
+m 
+
+
+e 
+
+
+n 
+
+
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+1_I I sef.iiHj [ I devices | | measurments| 
+
+
+T-BSgSSt! 
+
+
+
+
+SUPPLEMENTAL ETM SCHEMATIC WORKSHEET: 
+
+Using your gained understanding of the signal and with the help of your instruotor, supple¬ 
+ment your ETM referenoe by sketohing the oirouit. Add the internal symbols (pin numbers, 
+signal power supply, ground, final stage looations and signal monitor). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MEASUREMENT SYSTEM WORKSHEET: 
+
+
+While connecting and setting up the DIS/MoDiC measurement system for signal/circuit val¬ 
+idation, note the settings in the appropriate looations for future referenoe. Dooument your 
+findings by entering the displayed values in the Multimeter or Counter Display. If the signal 
+requires the use of the osoillosoope, note your set up seleotions and sketoh the waveform. 
+
+
+^hang^^J 
+
+
+BMW Test system Multimeter 
+
+
+I [capacitance I [inductance I iTemperature I 
+
+h bill" a|ll° " I 
+
+
+J 
+
+
+^ensoi^^^J 
+
+
+1"^ □ 
+
+
+
+
+m 
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+
+I_I I setting | | devices | JmeasurmentsI 
+
+
+^hang^^J 
+
+
+BMW Test system Oscilloscope setting 
+
+id _I I MFK 2 _I I KV-Senaor I | UFK 
+
+□III nil -^-dI ^ 
+
+
+Test connectioi 
+
+
+I— □! Kvy □! 
+
+
+EDH 
+
+
+EDS 
+
+
+1 
+
+
+111-"' al 
+
+
+^ dI 
+
+
+
+
+jChannalA 1 
+
+1 □! 
+
+1 Channel B 1 
+
+□1 
+
+
+1 Trigger _ 1 
+
+Clip D 1 
+
+IrO-sIgnalDl 
+
+
+□! 
+
+
+
+|Myltimeler | 
+
+1 Counter | 
+
+1 Oscilloscope 1 
+
+1 Stimulation 1 
+
+1 devices | 
+
+
+J ^^hang^^J ^eivice^^J 
+
+
+BMW Test system Counter 
+
+
+I' |l‘".tL nlTltni.. □! |t"a‘,'‘"*D I 
+
+
+1 MFC 1 i 
+
+□ 1 
+
+[MFC 2 ■ 
+
+U aJ 
+
+
+m 
+
+F^Jl 
+
+
+
+□! 
+
+
+
+i | Counter I | Oscilloscope I I Stimulation I I Preset I 
+
+I_I I setting | j deviees | jmeasurmentsl 
+
+
+J ^^hang^^J 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A IV] 
+
+N 
+
+
+y 
+
+8 
+
+6 
+
+4 
+
+2 
+
+0 
+
+-2 
+
+-4 
+
+-6 
+
+-8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H! 
+
+
+m 
+
+
+e 
+
+
+n 
+
+
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+1_I I sef.iiHj [ I devices | | measurments| 
+
+
+T-BSgSSt! 
+
+
+
+
+SUPPLEMENTAL ETM SCHEMATIC WORKSHEET: 
+
+Using your gained understanding of the signal and with the help of your instruotor, supple¬ 
+ment your ETM referenoe by sketohing the oirouit. Add the internal symbols (pin numbers, 
+signal power supply, ground, final stage looations and signal monitor). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MEASUREMENT SYSTEM WORKSHEET: 
+
+
+While connecting and setting up the DIS/MoDiC measurement system for signal/circuit val¬ 
+idation, note the settings in the appropriate looations for future referenoe. Dooument your 
+findings by entering the displayed values in the Multimeter or Counter Display. If the signal 
+requires the use of the osoillosoope, note your set up seleotions and sketoh the waveform. 
+
+
+^hang^^J 
+
+
+BMW Test system Multimeter 
+
+
+I [capacitance I [inductance I iTemperature I 
+
+h bill" a|ll° " I 
+
+
+J 
+
+
+^ensoi^^^J 
+
+
+1"^ □ 
+
+
+
+
+m 
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+
+I_I I setting | | devices | JmeasurmentsI 
+
+
+^hang^^J 
+
+
+BMW Test system Oscilloscope setting 
+
+id _I I MFK 2 _I I KV-Senaor I | UFK 
+
+□III nil -^-dI ^ 
+
+
+Test connectioi 
+
+
+I— □! Kvy □! 
+
+
+EDH 
+
+
+EDS 
+
+
+1 
+
+
+111-"' al 
+
+
+^ dI 
+
+
+
+
+jChannalA 1 
+
+1 □! 
+
+1 Channel B 1 
+
+□1 
+
+
+1 Trigger _ 1 
+
+Clip D 1 
+
+IrO-sIgnalDl 
+
+
+□! 
+
+
+
+|Myltimeler | 
+
+1 Counter | 
+
+1 Oscilloscope 1 
+
+1 Stimulation 1 
+
+1 devices | 
+
+
+J ^^hang^^J ^eivice^^J 
+
+
+BMW Test system Counter 
+
+
+I' |l‘".tL nlTltni.. □! |t"a‘,'‘"*D I 
+
+
+1 MFC 1 i 
+
+□ 1 
+
+[MFC 2 ■ 
+
+U aJ 
+
+
+m 
+
+F^Jl 
+
+
+
+□! 
+
+
+
+i | Counter I | Oscilloscope I I Stimulation I I Preset I 
+
+I_I I setting | j deviees | jmeasurmentsl 
+
+
+J ^^hang^^J 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A IV] 
+
+N 
+
+
+y 
+
+8 
+
+6 
+
+4 
+
+2 
+
+0 
+
+-2 
+
+-4 
+
+-6 
+
+-8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H! 
+
+
+m 
+
+
+e 
+
+
+n 
+
+
+
+
+I I Counter I | Oscilloscope I | Stimulation I | Preset I 
+1_I I sef.iiHj [ I devices | | measurments| 
+
+
+T-BSgSSt! 
+
+
+
+
+SUPPLEMENTAL ETM SCHEMATIC WORKSHEET: 
+
+Using your gained understanding of the signal and with the help of your instruotor, supple¬ 
+ment your ETM referenoe by sketohing the oirouit. Add the internal symbols (pin numbers, 
+signal power supply, ground, final stage looations and signal monitor). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

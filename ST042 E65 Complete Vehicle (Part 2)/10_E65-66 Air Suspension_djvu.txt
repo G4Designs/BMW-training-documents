@@ -1,0 +1,1168 @@
+Table of Contents 
+
+E65/66 Air Suspension 
+
+Subject Page 
+
+Single Axle Air Suspension (E65/E66).2 
+
+Purpose of the System.2 
+
+Components (E65/E66) .4 
+
+Air Supply Unit (LVA).4 
+
+Control Unit .5 
+
+Air Springs.6 
+
+Ride Height Sensor .7 
+
+Control Mode Flow Chart.8 
+
+Principle of Operation.9 
+
+Control Mode Overview .9 
+
+Control Modes .9 
+
+Sleep .9 
+
+Post Mode.10 
+
+Pre-Mode.10 
+
+Normal.11 
+
+Drive.11 
+
+Kerb (Curb) Mode.12 
+
+Curve.12 
+
+Lift .13 
+
+Transport .13 
+
+Belt .13 
+
+Operating Principle.14 
+
+Initialization/Reset Performance .14 
+
+Control Sequence.14 
+
+Safety Concept .15 
+
+Workshop Hints.16 
+
+Diagnosis .17 
+
+Service Functions .17 
+
+
+Initial Print Date:01/03 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Single Axle Air Suspension (E65/E66) 
+
+
+Purpose of the System 
+
+The single axle air suspension system used on the the E65/E66 is a further enhancement 
+of the previous single axle air suspension system used on the the E39 and X5. The com¬ 
+ponents used are similar to the Single Axle EHC System on the E53. The E65/E66 Air sus¬ 
+pension consists of the following components: 
+
+• Air Supply System (LVA) 
+
+• Control Unit (EHC) 
+
+• Two Air Springs 
+
+• Two Ride Height Sensors 
+
+• CC Display/Telltale Icon 
+
+
+
+
+2 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+
+
+
+
+D-BUS 
+
+
+
+3 
+
+E65/66 Air Suspensions 
+
+
+K-CAN P K-CAN S MOST byteflight PT-CAN 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components (E65/E66) 
+
+Air Supply Unit (LVA) 
+
+The air supply unit is located in the spare tire recess and consists of the following compo¬ 
+nents: 
+
+• Protective cover with internal acoustic 
+insulation 
+
+• Lid 
+
+• Rubber-mounted component carrier 
+
+• Compressor Unit 
+
+• Compressor Relay (Replaceable) 
+
+• Solenoid Valve Block 
+
+
+
+
+Fig. 11: Air supply unit, single-axle air suspension 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rubber Mount 
+
+6 
+
+Air Drier 
+
+2 
+
+Component Carrier 
+
+7 
+
+Compressor 
+
+3 
+
+Compressor Relay 
+
+8 
+
+Solenoid Valve, Right 
+
+4 
+
+Electric Motor 
+
+9 
+
+Solenoid Valve, Left 
+
+5 
+
+Air Cleaner 
+
+
+
+
+4 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Unit 
+
+
+The EHC control module is located in the right rear luggage compartment area in the mod¬ 
+ule carrier next to the battery. On the E65/E66, the control module is connected to the K- 
+CAN S. The EHC control module receives the following information: 
+
+
+• Vehicle Ride Height 
+
+• Load Cutout Signal 
+
+• Terminal 15 ON/OFF 
+
+• Vehicle Speed 
+
+• Lateral Acceleration 
+
+• “Engine Running” Signal 
+
+• Flap Status (Door, Hood, Trunk) 
+
+The Control unit decides on a case by 
+case basis whether a control opera¬ 
+tion is required in order to compen¬ 
+sate changes in load. It prevents 
+intervention in the case of other caus¬ 
+es. This makes it possible to adapt 
+the frequency, specified height, toler¬ 
+ance thresholds and battery load opti¬ 
+mally by means of the control opera¬ 
+tion to the relevant situation. 
+
+In addition to handling the self levelling 
+suspension, the control module moni¬ 
+tors the system components as well 
+as storing and displaying faults. The 
+control module has full diagnostic 
+capability. 
+
+
+
+
+
+The EHC module is a 26 pin module 
+with an ELO type connector. The 
+module is connected to the K CAN S. 
+The majority of the input messages 
+are from K CAN S. 
+
+
+5 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+Air Springs 
+
+
+An identifying feature of the E65/E66 air spring is the internally guided air bellows. Internally 
+guided means that the bellows is guided in an aluminum casing. The bellows is support¬ 
+ed on this casing. This prevents the compression forces from weighing heavily on the bel¬ 
+lows. 
+
+This process allows the bellows to be manufactured from a thin, flexible diaphragm which 
+can react to minimal shocks and in this way provide a more comfortable suspension. 
+
+The diaphragm is composed of only one fabric layer embedded in rubber. The fibers with¬ 
+in the fabric run longitudinally along the spring strut. The bellows is therefore known as an 
+axial air bellows. 
+
+The bottom end of the air spring strut is enclosed 
+in a bellows in order to protect the diaphragm 
+against the mechanical effects of fouling (sand, dirt 
+etc.). The lower end of the bellows incorporates 
+small holes for pressure compensation in the 
+space between the roll piston and bellows. The 
+action of the bellows rolling in this space produces 
+pressure differences. 
+
+The bellows together with the roll piston contains 
+a volume of air that is sufficient for optimum sus¬ 
+pension. 
+
+A residual pressure holding valve on the air spring 
+strut prevents it from being depressurized. The air 
+spring strut remains under pressure in the event of 
+a loss of pressure in the system. The residual 
+pressure is 3.25 +/- 0.75 bar. This ensures that 
+the bellows is not damaged when the car is still 
+being moved. 
+
+The residual pressure holding valve is secured with 
+Loctite and must NOT be removed. 
+
+The air spring strut is initially filled at the manufac¬ 
+turer to 10 bar. This pressure is reduced to 3.5 bar 
+when the spring strut is to be stored. Under this 
+pressure, the strut is extended to maximum 
+length. 
+
+The connection of the air spring struts to the air 
+supply unit (distributor block) is located on the left 
+of the luggage compartment under the flap on 
+which the wheel nut wrench is mounted. 
+
+
+
+I 
+
+t) 
+
+
+
+
+1 
+
+r 
+
+y 
+
+
+
+! 
+
+i 
+
+» 
+
+i 
+
+i 
+
+Id 
+
+] 
+
+■1 
+
+/ 
+
+1 
+
+
+6 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ride Height Sensor 
+
+
+There are two ride height sensors, one for each rear wheel. The ride height sensor is actu¬ 
+ated by a coupling rod and sends a signal to the EHC control unit. 
+
+The sensor is a hall sensor which sends a DC Analog output voltage to the EHC module. 
+The voltage range is approximately .5 to 4.5 volts. The voltage increases with increasing 
+vehicle height and the nominal voltage at normal ride height is approximately 2.5 volts. The 
+right side rear sensor is a double sensor, the additional sensor is an input to the headlight 
+leveling system and has it’s own power supply, ground and signal wires. 
+
+
+
+Check Control Messages 
+
+
+Control 
+
+Unit 
+
+Cause 
+
+Variable 
+
+Telltale Icon 
+
+Check Control 
+Message 
+
+Information in Control Display 
+
+EHC 
+
+Alive failure or 
+loss of function¬ 
+ality; transport 
+or belt mode set 
+
+
+
+
+Level Control 
+System failure 
+
+“Level Control system failure” 
+Ground clearance and driving 
+comfort reduced. Avoid high 
+speed cornering. Have 
+
+checked by BMW Service as 
+soon as possible. 
+
+EHC 
+
+Level Control 
+System sensor 
+failure. 
+
+
+
+
+Level Control 
+System Fault 
+
+“Level Control System fault” 
+Possible reduction in driving 
+comfort. Have problem 
+
+checked by BMW Service. 
+
+
+7 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Mode Flow Chart 
+
+The following chart demonstrates the control sequences of the E65/E66 with single axle 
+rear air suspension. 
+
+
+
+/ \ 
+
+
+
+Drive 
+
+
+V_ 
+
+♦ 
+
+Curve 
+
+_ 
+
+
+'N 
+
+J 
+
+
+8 
+
+E65/66 Air Suspensions 
+
+
+Principle of Operation 
+
+Control Mode Overview 
+
+
+
+E39/E53 EHC 1 
+(Single Axle) 
+
+E65/E66 
+(single Axle) 
+
+E53 EHC II 
+(Dual Axle) 
+
+Sleep 
+
+X 
+
+X 
+
+X 
+
+Wake-up 
+
+
+
+X 
+
+Post 
+
+
+X 
+
+
+Pre 
+
+X 
+
+X 
+
+X 
+
+Terminal 15 On 
+
+
+
+X 
+
+Normal 
+
+X 
+
+X 
+
+X 
+
+Drive 
+
+X 
+
+X 
+
+X 
+
+Curb 
+
+X 
+
+X 
+
+X 
+
+Curve 
+
+X 
+
+X 
+
+X 
+
+Lift 
+
+X 
+
+X 
+
+X 
+
+Twist 
+
+
+
+X 
+
+Trailer 
+
+
+
+X 
+
+Off-Road 
+
+
+
+X 
+
+Access 
+
+
+
+X 
+
+
+Control Modes 
+
+Ongoing control operations are not affected by transitions from one mode to another. 
+However, in the case of load cutout OFF, control operations are always concluded in order 
+to safeguard system deactivation. The control unit then sets the Sleep Mode. 
+
+Sleep 
+
+The vehicle is in Sleep mode, at the latest, when it has been parked for longer than 16 min¬ 
+utes with a door, hood or rear lid/hatch being operated or the terminal status changing. 
+This is the initial state of the control system. No control operation is being performed in 
+Sleep mode. 
+
+The control system goes into Pre-mode when a wake-up signal is received by the control 
+unit. 
+
+
+9 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Post Mode 
+
+
+The Post-mode is adopted in order to compensate any inclination or to adjust the ride 
+height after driving and between the Pre-mode and Sleep mode. 
+
+The Post-mode is limited in time to 1 minute. The Post-mode is only executed if the engine 
+has been running before the system switches into this mode. If the engine has not been 
+previously running, the system switches directly from Pre-mode into Sleep mode. 
+
+The control operation is performed in a narrow tolerance band of +/- 6mm and is terminat¬ 
+ed at +/- 4mm. The fast signal filter is used. 
+
+In the event of an inclination (Kerb Mode), the control operation takes place for the nominal 
+heights applicable in this situation. 
+
+Pre-Mode 
+
+The Pre-mode is activated by the “Load Cutoff” signal (e.g. by opening the door or unlock¬ 
+ing with the remote control). The Pre-mode then stays set for 16 minutes and is restarted 
+with a change in status. 
+
+The ride height of the vehicle is monitored and evaluated with a wide tolerance band. 
+
+In Pre-mode, the vehicle is only controlled to the nominal height if the level is significantly 
+below the nominal height. The control tolerance band is -40mm from the mean value for 
+the single axle air suspension and -20mm for the dual axle system. This control tolerance 
+ensures that the vehicle is only controlled up in the case of large loads in order to increase 
+the ground clearance prior to departure. Small loads give rise to small compression travel 
+and this is compensated only when the engine is started. This control setting helps reduce 
+the battery load. 
+
+With the single axle air suspension, the vehicle is controlled down when the mean value 
+derived from both ride height signals is > 0mm and one side is in excess of +10mm. With 
+twin axle air suspension, the vehicle is controlled down when one side is >15mm. 
+
+In this mode, only the mean value of the two height signals is considered when deciding 
+whether there is an need for control operation. 
+
+The control operation is executed as long as pressure is available in the accumulator. When 
+the accumulator is empty and the engine is turned off, the control operation is driven direct¬ 
+ly by the compressor. User-activated changes of ride level and filling of the accumulator are 
+not possible. 
+
+Control operations which were started in other modes are continued with the inner toler¬ 
+ance bands applicable to these modes. 
+
+There is no inclination identification in Pre-mode. 
+
+
+10 
+
+E65/66 Air Suspensions 
+
+
+
+Normal 
+
+
+The normal mode is the starting point for the vehicle’s normal operating state. It is obtained 
+by way of the engine running signal. 
+
+Ride level compensation, changing the vehicle’s ride height and filling the accumulator are 
+possible. The compressor starts up as required. 
+
+A narrower tolerance band than that in Pre-mode can be used because the battery capac¬ 
+ity does not have to be protected. The fast filter is used with a narrow tolerance band of 
++/-10mm. In this way, ride level compensation takes place outside a narrow band of 10+/- 
+10mm. The faster filter allows the system to respond immediately to changes in ride level. 
+Evaluation and control are performed separately for each wheel. 
+
+When a speed signal is recognized, the control unit switches into Drive mode. When the 
+vehicle is stopped, the control unit remains in Drive mode. The system switches back into 
+Normal mode when a door or the boot (trunk) lid is also opened. If none of the doors or 
+the boot lid is opened, the vehicle cannot be loaded or unloaded. 
+
+This prevents a control operation happening when the vehicle (for example) is stopped at 
+traffic lights and the ride height is above the mean axle due to the pitching motion on the 
+rear axle. 
+
+Drive 
+
+The Drive mode is activated for E39/E53 single axle air suspension when a speed signal of 
+>4km/h is recognized. The Drive mode is recognized from >1km/h for the E65/E66 single 
+axle air suspension and for the E53 twin-axle air suspension system. 
+
+Low pass filters are used. In this way, only changes in ride height over a prolonged period 
+of time (1000 seconds) are corrected. These are merely the changes in ride height, caused 
+by vehicle compression and a reduction in vehicle mass due to fuel consumption. The high 
+pass (fast) filter is used during the control operation. The slow filters are recognized at the 
+end of the control operation. The slow filters are re-initialized at the end of the control oper¬ 
+ation. The markedly dynamic height signals caused by uneven road surfaces are filtered 
+out. 
+
+
+11 
+
+E65/66 Air Suspensions 
+
+
+
+Kerb (Curb) Mode 
+
+
+The Kerb mode prevents the inclination caused by the vehicle mounting an obstacle with 
+one wheel from being compensated. Compensation would cause a renewed inclination of 
+the vehicle and result in a renewed control operation after the vehicle comes off the obsta¬ 
+cle. 
+
+The Kerb Mode is activated when the height difference between the left and right sides of 
+the vehicle is > 32mm for the E65/E66 with single axle air suspension and >24mm for the 
+E39/E53 with single axle air suspension and lasts longer than 0.9s. Twisting (also over both 
+axles) > 45mm must occur for the E53 with twin axle air suspension. 
+
+There must be no speed signal present. The system switches from single wheel control to 
+axle control. 
+
+The Kerb mode is quit when the difference between the left and right sides of the vehicle is 
+< 28mm for the single axle air suspension and lasts longer than 0.9s when the speed is 
+greater than > 1 km/h. 
+
+If the system switches from Kerb mode to Sleep mode, this status is stored in the 
+EEPROM. 
+
+If the vehicle is loaded or unloaded in Kerb mode, the mean value of the axle is calculated 
+by the control unit. The value is calculated in the control unit from the changes in ride level 
+of the spring travel on the left and right sides. 
+
+A change in ride level is initiated if the mean value of compression or rebound at the axle is 
+outside the tolerance band of +/- 10mm. The left and right sides of the vehicle are raised 
+or lowered in parallel. The height difference between the two sides is maintained. 
+
+Curve 
+
+Since rolling motions have a direct impact on the measured ride level, an unwanted control 
+operation would be initiated during longer instances of cornering with an appropriate roll 
+angle in spite of the slow filtering of the Drive mode. The control operations during corner¬ 
+ing would cause displacement of the air volume from the outer side to the inner side of the 
+curve. Once the curve is completed, this would produce an inclination which would result 
+in a further control operation. The Curve mode prevents this control operation whereby 
+when cornering is recognized slow filtering is stopped and a potential control operation that 
+has started is terminated. 
+
+The Curve mode is activated for the E65/E66 single axle EHC and for the E53 twin axle 
+suspension for a lateral acceleration of > 2m/s 2 and deactivated at < 1.5 m/s 2 - 
+
+The lateral acceleration is recorded by the rotation rate sensor. 
+
+12 
+
+E65/66 Air Suspensions 
+
+
+
+Lift 
+
+
+The Lift mode is used to prevent control operations when a wheel is changed or during 
+work on the vehicle while it is on a lifting platform. 
+
+This mode is recognized when the permitted rebound travel at one or more wheels is 
+exceeded. For the E65/E66 the limit is > 55mm. 
+
+A “jack” situation is also recognized when the ride level is stored and the lowering speed 
+drops below the value of 2 mm/s for 3 seconds. 
+
+If the vehicle has been raised slightly and the permitted rebound travel has not yet been 
+achieved, the control operation attempts to readjust the ride height. If the vehicle is not low¬ 
+ered, a carjack situation is recognized after a specific period of time and this ride height is 
+stored. 
+
+A reset is performed if the vehicle is again 10 mm below this stored ride height. 
+
+Transport 
+
+The Transport mode is set and cleared by means of a diagnosis activation. It serves to 
+increase the ground clearance in order to ensure a safe transportation of vehicles on trans¬ 
+porter trucks. The nominal height of the vehicle is raised in this mode by 30 mm. 
+
+When the Transport mode is activated, the air suspension symbol is indicated in the vari¬ 
+able telltale in the instrument cluster and a text message is output in the Check Control 
+Display. 
+
+Control operations do not take place in this mode because the vehicle mass does not 
+change during transportation. 
+
+Belt 
+
+The Belt mode is set for mounting on the belt in order to avoid control operations. 
+
+When the Belt mode is activated, the air suspension symbol is indicated in the variable tell¬ 
+tale in the instrument cluster and a text message is output in the Check Control display. 
+
+The Belt mode is cleared by means of a diagnostic activation only. The Belt mode can no 
+longer be set. 
+
+New control units are supplied with the Belt mode set. 
+
+Control operations are not performed, the safety concept only operates with limited effect. 
+The Belt Mode is also known as “Band Mode” or “Assembly Line Mode”. 
+
+
+13 
+
+E65/66 Air Suspensions 
+
+
+
+Operating Principle 
+
+Initialization/Reset Performance 
+
+When the control unit is powered up after a reset (such as an undervoltage < 4.5 V or by a 
+load cutoff), different tests and initializations are performed. This system is only enabled 
+after the tests have been successfully completed and starts to execute the control pro¬ 
+grams on a cyclical basis. 
+
+Occurring faults are stored and displayed. 
+
+Control Sequence 
+
+In an ongoing control operation, the high pass filter (fast filter) is always used to prevent the 
+controlled height from overshooting the nominal value. If a low pass filter (slow filter) were 
+used to calculate the ride height, brief changes of ride height would be consumed. The 
+low-pass filter is used while the vehicle is driven. This type of filtering filters out vibrations 
+which are excited by the road surface. 
+
+The high pass filter is used to respond quickly to ride level deviations from setpoint. These 
+take place while the vehicle is stationary in the event of large load changes. 
+
+Both sides of the vehicle are controlled individually, i.e. even the setpoint/actual value com¬ 
+parison for both sides is carried out individually. Exception: check for undershooting of the 
+minimum height in Pre-mode and Curb mode: consideration of the left and right mean val¬ 
+ues in each case. 
+
+The following stipulations are applicable here: 
+
+• Raising before lowering 
+
+• Activation of all valves with control in the same direction 
+
+• Individual wheel deactivation 
+
+To ensure safe closing of the non-return valve in the air drier, the drain valve is actuated 
+briefly for 200ms after the control operation has ended. 
+
+The permissible ON period of the components is monitored while control up operation are 
+executed. 
+
+
+14 
+
+E65/66 Air Suspensions 
+
+
+
+Safety Concept 
+
+The safety concept is intended to inhibit any system malfunction, particularly unintentional 
+control operations, through monitoring of signals and function relevant parameters. If faults 
+are detected, the system is switched over or shut down depending on the affected com¬ 
+ponent. The driver is informed of existing faults via the display. Detected faults are stored 
+for diagnostic purposes. 
+
+In order to ensure high system availability, existing faults, as far as possible, are cleared with 
+terminal 15 ON. This is done by resetting the fault counter to zero. However, the fault 
+memory content in the EEPROM is retained and can be read out for diagnostic purposes. 
+The system is then operational again. The fast troubleshooting helps to detect existing 
+faults before control operation can take place. 
+
+Only lowering is permitted if: 
+
+• The permissible supply voltage of 9 volts is undershot 
+
+• The permissible compressor running time of 480 seconds is exceeded. 
+
+A reset takes place if the voltage is in the OK range of 9 to 16 volts or after the compres¬ 
+sor pause time of 100 seconds has elapsed. 
+
+Only raising is permitted if: 
+
+• The permissible control down period of 40 seconds is exceeded 
+
+• The reset takes place the next time the vehicle is driven or after the next control up 
+operation. 
+
+No control operation takes place if: 
+
+• The permissible supply voltage of 16 volts is exceeded 
+The reset takes place as soon as the voltage is in the OK range. 
+
+
+15 
+
+E65/66 Air Suspensions 
+
+
+
+Workshop Hints 
+
+Ride Height Measurement 
+
+When checking vehicle ride height with EHC, measure from the lower edge of the wheel 
+opening to the center of the wheel hub. 
+
+
+
+16 
+
+E65/66 Air Suspensions 
+
+
+
+
+
+Diagnosis 
+
+Diagnostic items can be found in the “Control Unit Functions” path when using the DISplus 
+or GT-1. The functions available are Identifcation (ID page), Read/Clear Fault Memory, Read 
+Test Codes, Diagnosis Requests and Component Activation. 
+
+Service Functions 
+
+In the Diagnosis Program, there are numerous Service Functions that can be performed for 
+the E65/E66 EFIC system. By entering into the “Function Selection” program and follow¬ 
+ing the “Chassis - Pneumatic Suspension” path all of the Service Functions are listed. The 
+Service functions include Ride-Level Offset, Transport Mode and Band Mode. 
+
+
+E65/66 Air Suspensions 
+
+
+17 
+
+
+

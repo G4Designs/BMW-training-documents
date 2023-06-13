@@ -1,0 +1,4988 @@
+Table of Contents 
+
+E70 Voltage Supply and Bus Systems 
+
+Subject Page 
+
+E70 Voltage Supply .5 
+
+System Circuit Diagram .6 
+
+Legend for System Circuit Diagram .7 
+
+Overview of System Components .8 
+
+Vehicle Battery.8 
+
+Distribution Box (on battery).8 
+
+Rear Distribution Box .10 
+
+Soldered Relays (in rear distribution box).11 
+
+Battery Cables.12 
+
+Front Distribution Box .13 
+
+Installation Position .13 
+
+Front Distribution Box and J unction Box Control Unit .14 
+
+Internal Plug Connection .15 
+
+Printed Circuit Board (PCB) .16 
+
+Soldered Relays .17 
+
+Direct Contacting .18 
+
+E70 Bus Systems .20 
+
+Structure in Vehicle.20 
+
+E70 Bus System Overview .21 
+
+E70 Overall Network .24 
+
+Overview of Bus Systems.24 
+
+Main Bus Systems.25 
+
+Changes to Main Bus Systems.25 
+
+Diagnosis CAN.26 
+
+Location of D-CAN Connector .27 
+
+Body CAN .28 
+
+MOST Bus System.30 
+
+Features .30 
+
+Control Channel .31 
+
+Synchronous Channel.31 
+
+Asynchronous Channel.31 
+
+Control Unit Logon .31 
+
+MOST Users .32 
+
+Light Direction.32 
+
+MOST Access.33 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 11/06 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Fiber Optics Connector.34 
+
+Identification of Fiber Optics Conductors .34 
+
+FlexRay .36 
+
+What are the advantages of FlexRay?.37 
+
+FlexRay - a standard in the automotive industry .37 
+
+FlexRay- Use in the E70 .38 
+
+System Overview .40 
+
+Properties of FlexRay .42 
+
+Bus Topology.42 
+
+Line-based Bus Topology .42 
+
+Point-to-point Bus Topology.42 
+
+Mixed Bus Topology.43 
+
+Redundant Data Transmission .43 
+
+Bus Topology of FlexRay in the E70 .43 
+
+Transmission Medium - Signal Properties.45 
+
+Deterministic Data Transmission .46 
+
+Bus Protocol .47 
+
+High Bandwidth .47 
+
+Synchronization.47 
+
+FlexRay in the E70.48 
+
+Wake-up and Sleep Characteristics .48 
+
+Wiring .49 
+
+Plug Connections.50 
+
+Sub-bus Systems .51 
+
+K-bus Protocol .51 
+
+LIN-bus.51 
+
+BSD.51 
+
+Terminating Resistors.52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Voltage Supply and Bus Systems 
+
+Model: E70 
+
+Production: From Start of Production 
+
+
+
+After completion of this module you will be able to: 
+
+• Describe E70 Bus Systems 
+
+• Understand D-CAN 
+
+• Understand FlexRay 
+
+• Locate E70 voltage distribution components 
+
+
+4 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+E70 Voltage Supply 
+
+
+In view of the ever increasing electrical functions in the areas of vehicle comfort, 
+communication and safety, growing significance is attached to the power supply system. 
+
+In the E70, there are two separate distribution boxes. The front distribution box is near 
+the glove box and the rear distribution box is on the right-hand side of the luggage 
+compartment. 
+
+The following graphic shows the arrangement of the most important components of the 
+power supply system intheE70. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rear distribution box, right-hand side of luggage compartment 
+
+2 
+
+Front distribution box behind glove compartment 
+
+
+5 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System C ircuit Diagram 
+
+
+* 
+
+
+
+6 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Circuit Diagram 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Front distribution box, behind glove compartment 
+
+2 
+
+Rear distribution box, right hand side of luggage compartment 
+
+3 
+
+Safety battery terminal 
+
+4 
+
+Vehicle battery 
+
+5 
+
+Intelligent battery sensor (IBS) 
+
+6 
+
+Distribution box, on battery 
+
+7 
+
+Car Access System 3 (CAS 3) 
+
+8 
+
+J unction box control unit (J BE) 
+
+9 
+
+Digital Motor Electronic (DME) 
+
+10 
+
+Alternator 
+
+11 
+
+Starter 
+
+KL30 
+
+Continuous B +(battery power) 
+
+KL30g_f 
+
+Switched positive (fault dependent) 
+
+KL30g 
+
+Switched positive, time dependent 
+
+KL15 
+
+Ignition ON 
+
+DME 
+
+DM E main relay 
+
+BSD 
+
+Bit-serial data interface 
+
+K-CAN 
+
+BodyCAN 
+
+PT-CAN 
+
+Powertrain CAN 
+
+
+7 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview of System C omponents 
+
+The power supply system of the E70 consists of the following components: 
+
+• Vehicle battery 
+
+• Distribution box on the battery 
+
+• Rear distribution box on the right-hand side of the luggage compartment 
+
+• Battery cables 
+
+• Frant distribution box behind the glove compartment 
+
+• J unction box control unit 
+
+• E-box engine compartment 
+
+• J ump start connection point 
+
+• Alternator. 
+
+The most important new features/changes to the power supply system in the E70 are 
+described below 
+
+Vehicle Battery 
+
+The vehicle battery is installed on the rear right in the luggage compartment floor. 
+
+The vehicle batteries are 70 Ah and 90 Ah batteries. Depending on the equipment, 
+these batteries are AGM (Absorbent Glass Mat) batteries. The main advantage of the 
+AGM battery is its higher cycle strength. 
+
+Distribution Box (on battery) 
+
+The distribution box in the luggage compartment of the E70 is mounted directly on the 
+vehicle battery. The rear distribution box on the battery is secured on the vehicle battery 
+by means of a metal tab. The metal tabs must be pressed downward and outward in 
+order to release the distribution box. 
+
+The distribution box on the battery is equipped with fuses for the following electric loads: 
+
+• E lectrical auxiliary heater (100 A) 
+
+• Valvetronic or common rail system (80 A) 
+
+• Intelligent battery sensor IB S 
+
+• Reserve 
+
+• Front distribution box (250 A) 
+
+• Rear distribution box (100 A) 
+
+• Large electric fan 850 W (100 A) 
+
+• Reserve. 
+
+
+8 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+The distribution box on the battery should be replaced only as a complete unit. 
+
+The fuses are integrated as a complete unit in the housing of the distribution box on the 
+battery. The fuses differ in terms of their power rating. The distribution box additionally 
+contains the powersupplyforthe IBS. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery cable to engine 
+
+2 
+
+Distribution box on battery 
+
+3 
+
+Intelligent Battery Sensor (IBS) 
+
+
+Note: The connectors are color-coded and mechanically coded to avoid confu¬ 
+sion. These are high power connections, therefore always ensure cor¬ 
+rect contacting! 
+
+When replacing or working on the distribution box, always make sure the 
+plug connections and, above all, that the screw connections are secured 
+properly. Connection between battery terminal and distribution box 
+- 15 Nm. 
+
+
+jy V V 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Retaining clip 
+
+2 
+
+Connection to battery terminal 
+
+3 
+
+Rear distribution box connector 
+
+4 
+
+High current consumer connections 
+
+
+9 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rear Distribution Box 
+
+Due to the high number of consumers and control units in the E70, anotherfuse carrier 
+has been mounted in the luggage compartment. 
+
+In addition to the fuse carrier, relays are also plugged in or soldered onto the board. 
+
+The following relays are accommodated in the fuse carrier: 
+
+
+1 ) 12 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 30g relay 
+
+2 
+
+Plug connector 
+
+
+10 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+■ Soldered Relays (in rear distribution box) 
+
+Different relays are soldered onto the PCB in the rear distribution box. In the event of an 
+error, the entire distribution box must be replaced. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 30 g_f relay 
+
+3 
+
+Terminal 15 relay 
+
+2 
+
+SCA relay 
+
+
+
+
+11 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery Cables 
+
+On the E 70, two main power leads run along the underbody from the battery box to the 
+engine compartment. One of the main power leads is routed via the jump start terminal 
+to the starter and to the alternator. 
+
+
+The other cable supplies the engine electronics with power. Depending on the model of 
+vehicle, different line cross sections are used. 
+
+
+Cable 
+
+Cross section 
+
+Material 
+
+Cable to starter and alternator on N62 engine 
+
+110 mm2 
+
+Aluminum 
+
+Cable to starter and alternator on N52 engine 
+
+90 mm2 
+
+Aluminum 
+
+Cable to front distribution box behind glove box 
+
+35 mm^ 
+
+Copper 
+
+Cable to the motor electronics 
+
+10 mm^ 
+
+Copper 
+
+C able to electric fan 850 W 
+
+12 mm2 
+
+Copper 
+
+
+One battery cable is installed in the vehicle interior. It runs to the front distribution box. 
+
+
+The transfer points (magnified view) for the two main power cables is located in the 
+battery box. To avoid damage, the main power cables are installed in a protected area 
+on the underbody. 
+
+
+
+12 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Front Distribution Box 
+
+This section describes the front distribution box. The junction box control unit is 
+described in the section "J unction box control unit". 
+
+There are three versions of front distribution boxforthe E70. In the lower part of the front 
+distribution box, there is an opening through which it is connected to the junction box 
+control unit. 
+
+
+
+Installation Position 
+
+The distribution box is installed underthe instrument panel on the right-hand side. 
+To change a fuse, the distribution box must be lowered. 
+
+
+13 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+Front Distribution Box and J unction Box Control Unit 
+
+The connection between the front distribution box and the junction box control unit is 
+realized via the opening in the bottom of the distribution box. An internal plug connection 
+provides the electrical connection between the two components. 
+
+When assembled, the two components from one unit consisting of the junction box 
+control unit and the front distribution box. 
+
+
+
+Note: The distribution box and junction box control unit components are to be 
+replaced individually. In addition to the corresponding test modules in 
+the diagnostics, diagnosis cables are also available with which electrical 
+measurements can be made directly on the control-unit plugs and on the 
+internal interface. 
+
+
+14 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+■ Internal Plug Connection 
+
+The internal plug connection is on the left inside the opening forthe junction box 
+control unit. 
+
+The internal plug connection is responsible for actuating the relay in the front distribution 
+box. In addition, the correct operation of this relay is monitored by the junction box 
+control unit. 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Monitoring connection 
+
+2 
+
+Actuation connection 
+
+
+15 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Printed Circuit Board (PCB) 
+
+Different relays are used in the distribution box corresponding to the equipment and 
+engine variants. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+EHC relay 
+
+3 
+
+Relay for wiper stage 1 
+
+2 
+
+Rear wiper relay 
+
+
+
+
+16 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+■ Soldered Relays 
+
+Different relays are soldered onto the PCB in the front distribution box. In the event of a 
+fault, the entire distribution box must be replaced. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 30g relay 
+
+4 
+
+Relay for wiper stage 2 
+
+2 
+
+Heated rear window relay 
+
+5 
+
+Terminal 87 relay 
+
+3 
+
+Horn and headlight cleaning system double relay 
+
+
+
+
+17 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Direct Contacting 
+
+On the distribution boxes, direct contacting to the fuses is carried out. The fuses are 
+plugged into the PCB with a connection in the plug connector. The other plug connector 
+is connected directly with the connectors on the wiring harness. 
+
+The advantages of this design modification are: 
+
+• Improved package space utilization 
+
+• Improved heat dissipation 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front distribution box housing 
+
+3 
+
+Wiring harness connector 
+
+2 
+
+Fuse 
+
+
+
+
+Note: Particular care must be taken to ensure thatthe fuses are fitted firmly 
+when unplugging and re-connecting the connectors forthe wiring har¬ 
+ness. The fuses must be braced when plugging in the wiring harness. 
+
+
+18 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+E70 Bus Systems 
+
+This reference information deals with the bus systems of the E70. The following 
+innovations have been implemented in the bus systems in the new BMWX5 (E70): 
+
+• New data transmission speed on the diagnostic CAN D-CAN (500 Kbps) 
+
+• FlexRay- new bus system in the area of the chassis and suspension systems 
+
+
+
+Structure in Vehicle 
+
+The basic structure of the overall network in the E70 builds on the technological basis of 
+the current E90. The drive train control units are linked through the powertrain-CAN 
+(PT-CAN). In addition, the chassis-CAN (F-CAN) is used forthe chassis and suspension 
+systems. The control units of the general vehicle electrical system are connected via the 
+K-CAN. 
+
+The MOST is the information carrier for the majority of control units in the area of 
+information and communication technologies. 
+
+A new addition is the FlexRay. This bus system is used forthe first time in the area of the 
+chassis and suspension control systems. It is described in more detail in this reference 
+information. 
+
+
+20 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+E70 Bus System Overview 
+
+
+
+21 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for E70 Bus System Overview 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Management 
+
+EMF 
+
+Electro-mechanical Parking Brake 
+
+AS 
+
+Active Steering 
+
+EWP 
+
+Electric Water Pump 
+
+ARS 
+
+Active Roll Stabilization 
+
+FD 
+
+Rear Compartment Display 
+
+ASP 
+
+Outside Mirror 
+
+FKA 
+
+Rear Compartment Heating and A/C 
+
+CA 
+
+Comfort Access 
+
+FLA 
+
+High Beam Assistant 
+
+CAS 
+
+Car Access System 
+
+FRM 
+
+Footwell Module 
+
+CCC 
+
+CarCommunication Computer 
+
+FZD 
+
+Roof Function Center 
+
+CDC 
+
+CD Changer 
+
+GWS 
+
+Gear Selector Lever 
+
+CHAMP 
+
+Central Head unit and Multimedia Platform 
+
+HB3SR 
+
+Heating/Ventilation 3rd Row 
+
+CID 
+
+Central Information Display 
+
+HiFi 
+
+HiFi Amplifier 
+
+CON 
+
+Controller 
+
+HKL 
+
+Tailgate Module 
+
+DME 
+
+Digital Motor Electronics 
+
+HUD 
+
+Head-up Display 
+
+DSC 
+
+Dynamic Stability Control 
+
+IBOC 
+
+In-Band On-Channel (HD Radio) 
+
+DSC-SEN 
+
+DSC Sensor 
+
+IBS 
+
+Intelligent Battery Sensor 
+
+DVD 
+
+Digital Video Disc Changer 
+
+IHKA 
+
+Automatic Heating and Air Conditioning 
+
+EDC SHL 
+
+Electronic Damper Control, rear left satellite 
+
+JB 
+
+J unction Box 
+
+EDCSHR 
+
+Electronic Damper Control, rear right satellite 
+
+Kombi 
+
+Instrument Cluster 
+
+EDC SVL 
+
+Electronic Damper Control, front left satellite 
+
+OC-3 
+
+Seat Occupancy Sensor (US) 
+
+EDC SVR 
+
+Electronic Damper Control, front right satellite 
+
+PDC 
+
+Park Distance Control 
+
+EGS 
+
+Electronic Transmission Control 
+
+QLT 
+
+Oil Quality/Level/Temperature sensor 
+
+EHC 
+
+Electronic Height Control 
+
+RFK 
+
+Reversing Camera 
+
+EKP 
+
+Electric Fuel Pump (control unit) 
+
+RLSS 
+
+Rain/Driving lights/Solarsensor 
+
+
+22 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for E70 Bus System Overview - Cont. 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+RSE 
+
+Rear Seat Entertainment 
+
+BSD 
+
+Bit-serial Data Interface 
+
+SBFA 
+
+Driver's Switch Cluster 
+
+Crash-Sig 
+
+Crash Signal 
+
+SDARS 
+
+Satellite Radio Control Unit 
+
+D-CAN 
+
+Diagnosis CAN 
+
+SINE 
+
+Siren and Tilt Sensor 
+
+F-CAN 
+
+Chassis CAN 
+
+SMBF 
+
+Passenger Seat M odule 
+
+F lexRay 
+
+FlexRay Bus System 
+
+SMC 
+
+Stepper Motor Controller 
+
+K-Bus 
+
+Body Bus 
+
+SMFA 
+
+Driver's Seat Module 
+
+K-CAN 
+
+BodyCAN 
+
+SVBF 
+
+Passenger's Seat Adjustment 
+
+LIN-Bus 
+
+Local Interconnect Network Bus 
+
+SVFA 
+
+Driver's Seat Adjustment 
+
+LoCAN 
+
+Local CAN 
+
+SZL 
+
+Steering Column Switch Cluster 
+
+MOST 
+
+Media Oriented Systems Transport 
+
+TAGE 
+
+Electronic Outer Door Handle Module 
+
+MOST 
+
+WUP 
+
+MOST Wake-up Line 
+
+TCU 
+
+Telematics Control Unit 
+
+PT-CAN 
+
+Powertrain CAN 
+
+TOP-HIFI 
+
+Top Hi-Hi Amplifier 
+
+WUP 
+
+Wake-up Line 
+
+TPM 
+
+Tire Pressure Monitoring System 
+
+
+CAS Bus Connection 
+
+TPM-SEN 
+
+Tire Pressure Control (TPM -Sensor) 
+
+
+
+VDM 
+
+Vertical Dynamics Management (EDC) 
+
+
+
+VGSG 
+
+Transfer Case Control Unit (VTG) 
+
+
+
+WT 
+
+Variable Valve Gear 
+
+
+
+
+IHKA Stepper Motors 
+
+
+
+
+Generator 
+
+
+
+
+
+
+
+
+
+
+
+
+23 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E70 Overall Network 
+
+
+The overall network in the E70 consists of various bus systems that enable communica¬ 
+tion between the individual control units. In view of the increasing interconnection of the 
+control units, it is possible to use the sensors of one system throughout the network. 
+
+The sensors are connected to the control unit that initially requires the information 
+logic-based and virtually in real time. This information, however, can also be made 
+available to other control units. 
+
+Using the example of the vertical dynamics management (VDM), initially, the VDM control 
+unit acquires the ride-height levels of the wheels. The dynamic headlight-range 
+adjustment facility can also use this information for the purpose of adapting the beam 
+height of the headlights. The VDM makes available the information via the corresponding 
+bus systems to the footwell module. 
+
+Apart from the FlexRay and the D-CAN, all bus systems in the E70 are already known 
+from other BMW models. This section outlines all bus systems in the E70. 
+
+This bus system is used for the first time for the data exchange in the area of the vertical 
+dynamics management (VDM). It is used to exchange data between the VDM control 
+unit and the EDC satellites. 
+
+Overview of Bus Systems 
+
+In principle, a distinction is made between two groups of bus systems: 
+
+• Main bus systems 
+
+• Sub-bus systems 
+
+Main bus systems are responsible for the data exchange between the control units 
+throughout the vehicle system. This includes system functions such as diagnosis, 
+network management, programming and encoding. 
+
+For example, when locking the doors in the E70,the status of the door contacts is read in 
+via the footwell module. The information is transmitted via the K-CAN to the junction box 
+control unit which in turn activates the central locking drive units. 
+
+Sub-bus systems exchange data within one function group. For example, the data of the 
+driver's door switch cluster are read in by the junction box control unit and forwarded to 
+the footwell module. The connection provided between the driver's door switch cluster 
+and junction box control unit is a sub-bus known as the LIN-bus. 
+
+
+24 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+Main Bus Systems 
+
+
+Main Bus System 
+
+Data Rate 
+
+Bus Structure 
+
+D-CAN 
+
+500 Kbits/s 
+
+Linear, two-wire 
+
+K-CAN 
+
+100 Kbits/s 
+
+Lineartwo-wire, single wire mode 
+possible for emergency operation 
+
+PT-CAN 
+
+500 Kbits/s 
+
+Linear, two-wire 
+
+F-CAN 
+
+500 Kbits/s 
+
+Linear, two-wire 
+
+FlexRay 
+
+10 M bits/s 
+
+Star, two wire 
+
+MOST 
+
+22.5 Mbits/s 
+
+Ring, fiber optics 
+
+
+■ Changes to Main Bus Systems 
+
+The most important changes to the main bus systems include. 
+
+• Diagnosis CAN D-CAN now with modified data rate (500 Kbit/s) 
+
+• FlexRay- new bus system in area of chassis and suspension control systems, 
+vertical dynamics management (VDM). 
+
+As before, the central gateway function is integrated in the junction box control unit. 
+
+A further gateway that sends diagnosis jobs between PT-CAN and FlexRay is located in 
+the VDM control unit. 
+
+
+25 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis CAN 
+
+After connecting a BMW diagnostic system, the gateway (junction box control unit) 
+places the requests of the BMW diagnostic system on the internal buses. The responses 
+undergo the same process in opposite direction. 
+
+In future, a new communication protocol will be used for diagnosis. The D-CAN will 
+replace worldwide the previous diagnostic interface and its protocol which is based on 
+KWP 2000 (Keyword Protocol 2000). 
+
+The reason for the changeover is a new legal requirement in the USA requiring that all 
+vehicles be equipped with the D-CAN as from model year 2008. The transitional phase 
+will begin in September 2006. The E70 will be one of the first vehicles equipped with 
+D-CAN. 
+
+This modification will then be phased-in on all BMW models. An optical programming 
+system OPS or an optical testing and programming system OPPS as well as an OBD 
+connection cable forthe OPS with following identification are required to perform diag¬ 
+nostic procedures on these vehicles. 
+
+
+
+
+O 4 vtO 
+
+
+CAM included 
+Made' : n German 
+
+
+
+
+
+
+26 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+Location of D-CAN Connector 
+
+The diagnosis socket is located underthe dashboard on the driver's side. 
+
+D-CAN support with the diagnostic head is technically not possible. The following 
+interfaces can be used: 
+
+• OPS 
+
+• OPPS 
+
+
+
+OBD access in the vehicle will remain unchanged. The pin assignments are as follows: 
+
+• 16 =Terminal 30 
+
+• 5=Terminal31 
+
+• 14+6 = Communication connections 
+
+The diagnosis socket is located underthe dashboard on the driver's side. 
+
+
+
+Kl. 30 
+Kk 31 
+
+D-CAN Low 
+D-CAN High 
+
+
+
+
+
+
+27 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BodyCAN 
+
+The known familiarCAN-bus systems are still used on the E70. In view of their 
+distribution in the vehicle, the control units are linked at various nodal points. 
+
+Several connections forthe K-CAN are provided not only in the wiring harness but also at 
+the junction box control unit. 
+
+Electrically, there is only one K-CAN. This means, from an electrical point of view, all 
+linked control units are connected in parallel to the K-CAN. 
+
+Physically, various control units are connected at nodal points or at one control unit, i.e. 
+the junction box control unit. 
+
+
+
+
+“1 
+
+
+! 
+
+| 
+
+
+C1D 
+
+
+tiT.ZV 
+
+
+■ k-J- hbaka 
+
+
+r 1:0 
+
+
+t ¥ PM 
+
+
+Ci1£> 
+
+
+ft 3.-11« 
+
+
+' fihtOT 
+
+
+31 
+
+
+JTfcA 
+
+
+CCk | 
+
+
+|L_ 
+
+
+FI A 
+
+
+j 
+
+
+rrn 
+
+
+IIK£ 
+
+
+
+
+: l: 
+
+y 
+
+
+
+
+:n.- 
+
+
+J 
+
+
+the 
+
+
+
+
+; ajiI t 
+
+
+HKL 
+
+
+: 
+
+
+IK I -1! ± 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+K-CAN distributor 
+
+3 
+
+K-CAN 
+
+2 
+
+Optional equipment 
+
+
+
+
+28 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+MOST Bus System 
+
+Features of the MOST system MOST is a data bus technology for multimedia 
+applications that was specifically developed for use in motor vehicles. 
+
+MOST stands for "Multimedia Oriented System Transport". The MOST bus uses light 
+pulses for the purpose of transmitting data and is based on a ring structure. The data are 
+transmitted only in one direction in the ring. 
+
+MOST technology satisfies two important requirements: 
+
+1. The MOST bus transports control data as well as data for audio, navigation and 
+other services. 
+
+2. M OST technology provides a logical model for controlling the data variety and 
+complexity, i.e.the MOST application framework. The MOST application 
+framework organizes functions of the overall system. 
+
+MOST is capable of controlling and dynamically managing distributed functions in the 
+vehicle. An important characteristic of a multimedia network is that it not only transports 
+control data and sensor data such as on the CAN-bus and LIN-bus for instance. 
+
+In addition, a multimedia network can also transmit digital audio and video signals and 
+transport graphics as well as other data services. 
+
+Features 
+
+• High data rate 22.5 Mbits/s 
+
+• Synchronous/asynchronous data transmission 
+
+• MOST assigns the control units to nodes in the bus 
+
+• Fiber optics cables as transmission medium 
+
+• Ring structure 
+
+Each MOST control unit can send data on the MOST bus. Only the gateway control unit 
+can initiate data exchange between the MOST bus and other bus systems. The control 
+units, CHAMP and the car communication computer, are used as the gateway and mas¬ 
+ter control unit. 
+
+The data are transmitted on various channels on the MOST bus. Corresponding to the 
+application, the data are sent to different time windows within the data flow (channels). 
+
+
+30 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+Control Channel 
+
+Control signals such as volume control for the Top HiFi amplifier and data for 
+diagnosis purposes are sent via the control channel. 
+
+Synchronous Channel 
+
+The synchronous channel is mainly reserved forthe purpose of sending audio data. 
+
+Asynchronous Channel 
+
+The asynchronous channel transfers image data from the navigation system such as 
+the direction arrows. The control channel and the asynchronous channel are used for 
+programming the control units on the MOST bus and correspondingly adapt it to the 
+MOST-direct access 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Synchronous channel 
+
+3 
+
+Control channel 
+
+2 
+
+Asynchronous channel 
+
+
+
+
+Control Unit Logon 
+
+Precisely in the same way as on the E6xmodels, the control units installed on the MOST 
+bus are stored in a registration file in the master control unit. The corresponding data are 
+stored during the production process and, in connection with control unit retrofits, after 
+programming the respective control unit. 
+
+The control units and their sequence on the MOST bus are stored in this registration file. 
+With the fiber optics connector, it is possible to connect control units in the rear area of 
+the E70 after factory production or after a repair in different order. 
+
+With the aid of the registration file, the BMW diagnosis system can determine the 
+installed control units and their order. During their start-up procedure, all control units on 
+the MOST bus send their identifier to the master control unit. In this way, the master 
+control unit detects what control units are connected to the MOST bus. A corresponding 
+fault location can be concluded in diagnosis if the login of one or several control units is 
+not received. 
+
+
+31 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOST Users 
+
+In the E70,the MOST bus is usedforthe components in information/communication 
+systems. The CCC,orthe CHAMP is used as the master control unit. Other bus 
+users may be: 
+
+• CD changer/DVD changer 
+
+• Top-HiFi amplifier 
+
+• Satellite tuner (SDARS), IBOC 
+
+• Telephone 
+
+• Head-up display (HUD) 
+
+The following overview shows a possible equipment configuration. 
+
+
+O 
+
+Q 
+
+U 
+
+
+D 
+
+
+
+
+□ 
+
+
+
+HI 
+
+l^_l 
+
+1=3 ■ 
+C3 • 
+1=3- 
+
+TCU 1 
+
+L 
+
+-i TOP-H1 FI 
+
+
+
+
+-f 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ccc 
+
+CarCommunications Computer 
+
+TOP- 
+
+Hifi 
+
+Top Hi-Fi amplifier 
+
+TCU 
+
+Telematics Control Unit 
+
+1 
+
+Fiberoptic connector 
+
+
+Light Direction 
+
+Data are always sent in one direction on the MOST bus. Each control unit can send data 
+on the MOST bus. The physical light direction is from the master control unit (CHAM P, 
+multi-audio system controller or car communication computer) to the fiber optics 
+connector and from here to the control units in the luggage compartment (Top H iF i 
+amplifier, CD-changeretc.). From the last control unit, the light returns via the 
+MOST-direct access to the master control unit. 
+
+
+32 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOST Access 
+
+As on all vehicles equipped with 
+a MOST bus system, direct 
+MOST access is also provided 
+on the E70. 
+
+The direct MOST access is 
+located on the right hand side 
+underthe dashboard in the 
+vehicle interior. 
+
+A cover provides direct access 
+to the MOST. 
+
+
+
+The two connectors must be 
+removed from the holder 
+secured on the cover. 
+
+
+
+The two connectors are then 
+plugged together. The OPS/ 
+OPPS can now be connected 
+to the connector as usual. 
+
+
+
+33 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fiber Optics Connector 
+
+The use of the fiber optics connector provides the advantage of being able to easily 
+retrofit control units in the area of the luggage compartment. The connector is located 
+behind the left-hand cover next to the rear seat backrest. It is arranged in the MOST bus 
+system between the front area (head unit, CDC and HUD) and the rear area of the vehicle 
+(TEL etc.). 
+
+
+
+One or two fiber optics connectors are installed corresponding to the equipment 
+configuration. One is responsible for the factory-installed control units. The other is used 
+for the preparations for options. 
+
+A fiber optics connectorfor option preparations is installed only if option preparations are 
+actually installed. The ends of the fiber optics conductors for options are always grouped 
+together on the same row in the fiber optics connector to avoid damage to the ends of 
+the fiber optics conductors. 
+
+As soon as the retrofit is installed, the fiber optics connectors are reconnected according 
+to instructions and integrated in the MOST bus. 
+
+Identification of Fiber Optics Conductors 
+
+The fiber optics conductors are identified at their ends making it is possible to identify 
+the control unit from which the fiber optics conductor comes or goes. 
+
+
+34 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+35 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+FlexRay 
+
+In the future, driving dynamics control systems, driver assistance systems and their innov¬ 
+ative interconnection will be evermore important for the differentiation of the BMW 
+badge. Since today's networking systems using the CAN-bus have already reached their 
+limit, it is necessary to find a suitable alternative for CAN. 
+
+In co-operation with Daimler Chrysler AG and the semiconductor manufacturers 
+Freescale (formerly Motorola) and Philips, BMW AG founded the FlexRay consortium 
+in 1999 for the purpose of developing innovative communication technology. 
+
+The consortium was soon joined by further partners, including Bosch and General 
+Motors and to date, the Ford Motor Company, Mazda, Elmos and Siemens VDO have 
+also decided to join. In the meantime, almost all significant car makers and suppliers 
+throughout the world have joined the FlexRay consortium. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Real time capabilities, deterministic (strictly defined) and redundant 
+
+2 
+
+Conditional realtime capabilities - sufficient for control systems 
+
+3 
+
+No real time capabilities 
+
+
+FlexRay is a new communication system which aims at providing reliable and efficient 
+data transmission with real-time capabilities between the electrical and mechatronic 
+components for the purpose of interconnecting innovative functions in motor vehicles, 
+both today and in the future. 
+
+
+36 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Development of the new FlexRay communication system was prompted by the ever 
+growing technological requirements placed on a communication system for 
+interconnecting control units in motor vehicles and the realization that an open and 
+standardized solution was needed for infrastructure systems. 
+
+FlexRay provides an efficient protocol for real-time data transmission in distributed sys¬ 
+tems as used in motor vehicles. 
+
+With a data transmission rate of 10 M bits/s, the FlexRay is distinctly faster than the data 
+buses used in the area of the chassis, drive train and suspension oftoday's motor 
+vehicles. 
+
+In addition to the higher bandwidth, F lexRay supports deterministic data transmission and 
+can be configured such that reliable continued operation of remaining communication 
+systems is enabled even in the event of individual components failing. 
+
+What are the advantages of F lexRay? 
+
+• High bandwidth (10 Mbits/s compared to 0.5 Mbits/s of the CAN) 
+
+• Deterministic (= real-time capabilities) data transmission 
+
+• Reliable data communication 
+
+• Supports system integration 
+
+• Standard in automotive industry 
+
+■ FlexRay - a standard in the automotive industry 
+
+The FlexRay bus system is an industrial standard and is therefore supported and further 
+developed by many manufacturers. 
+
+
+merit Members 
+
+
+l>*l J- L-iIl I . 'Irv.-jr.:- n El II 
+
+
+Hn rrf| ^ M r ■ ■ ri 
+
+Lyild’l e .l'Tjh £ I iJ- 
+
+
+Associate Members 
+
+
+TV-itt-j-kih 
+
+
+l.hMIlJ 
+
+
+WlUiA 
+
+
+UtLfcbiV, 'i ■ I n 
+
+
+
+
+
+
+*• i n 3 i.ara' a 
+
+
+M.i-IitJ, 
+
+
+TyrCO 
+pl^rli nnic <* 
+
+Corner alian 
+
+
+Qote Member 
+
+
+Krt ik ne T ■ 
+KJA MOTORS 
+
+
+□ MW Group 
+
+
+Toyota 
+
+Rer-nnlt 
+
+
+Volkswagen 
+
+
+PtiiNpa 
+
+
+□jiifntCTOirysIrcr 
+
+
+General Motors. 
+
+
+EOich 
+
+
+r.ll |All III HI , 
+
+
+Honda 
+Moboi t i. 
+
+
+ElKI-- • ■ !■ ■■ 
+UpwniwrJ I +wr._.tn 
+
+j U"i T RirJP . 
+
+
+KHEL-rfpr^-''*r 
+
+
+H- Li &CiN 
+
+Frnrr.c .i!r Semico -ductor 
+
+i* 1 
+
+lYi-o fcJcocran : l^ord Motor Co^pony 
+
+-Sn Pc upcot Citroon 
+
+
+■■ !H 
+
+rnSLIJW 
+
+
+hEirgilEnl r 
+
+HI AT 
+
+
+KM. 
+
+
+
+
+TIN 
+
+i'l’rr.'Liiln 
+
+, L1 1 
+
+T.-,-:i4 Mu-hMIi. 
+
+jrf.- ■ j'J■ III 
+
+
+liliikLinnj ij 
+
+n-Op-B-rri-: 
+fn • "AmifiTJi- 
+
+h-, •- i. i ■» L. 
+H ij i v % i tJ 
+LiitsCviwhiu 
+fy(T<r T WZffl E 
+
+
+■ - i La -.1 I- - .11 
+
+EniHAi: !Y 
+
+
+■ i frr.l 
+[ Mill Irj 
+
+■ i-- ■ 
+
+
+\ i ■! pm 
+
+
+‘jlilrii S.I.liJiunr.i i:~iill ( I r--i 
+
+j-'h’’-‘■ i-iT»:■*-r*-3>-' * >piH 
+
+
+37 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlexRay - Use in the E70 
+
+With the launch ofthe E70, the FlexRay bus system will be used forthe first time 
+worldwide in a standard production vehicle. The FlexRay bus system establishes the 
+connection between the VDM control unit (vertical dynamics management) and the EDC 
+satellites at the shock absorbers. A detailed functional description ofthe overall system 
+can be found in the reference information - "Vertical Dynamics Systems”. 
+
+
+
+38 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+39 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+System Overview 
+
+
+
+
+D-CAN 
+
+
+PT-Can 
+
+
+■■ 
+
+
+
+
+OBD 
+
+
+
+
+VDM 
+
+
+
+40 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+J unction box control unit 
+
+2 
+
+Vertical Dynamics management (VDM) 
+
+3 
+
+Diagnosis connector 
+
+4 
+
+Ride height sensors, front 
+
+5 
+
+EDC satellites with vertical acceleration sensors and solenoid valves 
+
+6 
+
+Ride height sensors, rear 
+
+D-CAN 
+
+Diagnosis CAN 
+
+F-CAN 
+
+Chassis CAN 
+
+PT-CAN 
+
+Powertrain CAN 
+
+FlexRay 
+
+FlexRay bus system 
+
+KL 30 g 
+
+Terminal 30g 
+
+
+41 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Properties of FlexRay 
+
+
+The most important properties of the FlexRay bus system are outlined in the following: 
+
+• Bus topology 
+
+• Transmission medium - signal properties 
+
+• Deterministic data transmission 
+
+• Bus protocol 
+
+
+Bus Topology 
+
+The FlexRay bus system can be integrated in various topologies and versions in the 
+vehicle. 
+
+
+The following topologies can be used: 
+
+• Line-based bus topology 
+
+• Point-to-point bus topology 
+
+• M ixed bus topology 
+
+
+Line-based Bus Topology 
+
+All control units (SG1...SG3) in line-based 
+topology are connected by means of a 
+two-wire bus, consisting of two twisted 
+copper cores. This type of connection is 
+also used on the CAN-bus. The same 
+information but with different voltage level 
+is sent on both lines. 
+
+
+
+The transmitted differential signal is 
+immune to interference. The line-based 
+topology is suitable only for electrical data 
+transmission. 
+
+Point-to- point Bus Topology 
+
+The satellites (control units SG2...SG5) in 
+point-to-point bus topology are each 
+connected by a separate line to the central 
+master control unit (SGI). Point-to-point 
+topology is suitable for both electrical as 
+well as optical data transmission. 
+
+
+Line-based bus topology 
+
+
+
+42 
+
+E70 Voltage Supply and Bus Systems 
+
+
+Point to point bus topology 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mixed Bus Topology 
+
+Mixed bus topology caters for the use of different topologies in one bus system. Parts of 
+the bus system are line-based while other parts are point-to-point. 
+
+■ Redundant Data Transmission 
+
+Fault-tolerant systems must ensure continued reliable data transmission even after failure 
+of a bus line. This requirement is realized by way of redundant data transmission on a 
+second data channel. 
+
+A bus system with redundant data transmission uses two independent channels. 
+
+Each channel consists of a two-wire connection. In the event of one channel failing, the 
+information of the defective channel can be transmitted on the intact channel. FlexRay 
+enables the use of mixed topologies also in connection with redundant data transmission. 
+
+B us Topology of F lexRay in the E 70 
+
+The physical configuration of the FlexRay bus system in the E70 is point-to-point. 
+
+All EDC satellites are individually connected via plug connections to the VDM control unit. 
+
+Internally, however, the left and right EDC satellites are connected to form a line-based 
+topology. The two lines are connected by means of a double point-to-point connection 
+consisting of two bus drivers. Every item of information that is sent from one of the EDC 
+satellites orfrom the central VDM control unit reaches all connected control units. 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Channel 1 
+
+B 
+
+Channel 2 
+
+
+43 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+VDM System Schematic 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Vertical Dynamics Management (VDM) 
+
+6 
+
+Bus driver 
+
+2 
+
+EDS satellites, front left 
+
+7 
+
+Terminating resistor 
+
+3 
+
+EDS satellites, front right 
+
+8 
+
+Microprocessor 
+
+4 
+
+EDS satellites, rear right 
+
+F lexRay 
+
+F lexRay bus system 
+
+5 
+
+EDS satellites, rear left 
+
+
+
+
+44 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transmission Medium - Signal Properties 
+
+The bus signal of the FlexRay must be within defined limits. A good and bad image of 
+the bus signal is depicted below. The electrical signal must not enter the inner area 
+neither on the time axis nor on the voltage axis. The FlexRay bus system is a bus system 
+with a high data transmission rate and therefore with rapid changes in the voltage level. 
+
+The voltage level as well as the rise and drop of the voltage (edge steepness) are 
+precisely defined and must be within certain values. There must be no infringements of 
+the marked "fields" (green and red hexagon). 
+
+Electrical faults resulting from incorrect cable installation, contact resistance etc. can 
+cause data transmission problems. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Good image 
+
+B 
+
+Bad image 
+
+
+The images shown above can be depicted only with very fast oscilloscopes. 
+
+The oscilloscope in the BMW diagnostic system is not suitable for representing such 
+images. 
+
+The voltage ranges of the FlexRay bus system are: 
+
+• System ON - no bus communication 2.5 V 
+
+• High signal - 3.1 V (voltage signal rises by 600 mV) 
+
+• Low signal - 1.9 V (voltage signal falls by 600 mV) 
+
+The voltage values are measured with respect to ground. 
+
+
+45 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deterministic Data Transmission 
+
+
+The CAN-bus system is an event-controlled bus system. Data are transmitted when an 
+event occurs. In the event of an accumulation of events, delays may occur before further 
+information can be sent. If an item of information cannot be sent successfully and free of 
+errors, this information is continually sent until the communication partner confirms its 
+receipt. 
+
+If faults occur in the bus system, this "event controlled” information can back up causing 
+the bus system to overload, i.e. there is a significant delay in the transmission of individual 
+signals. This can result in poor control characteristics of individual systems. 
+
+The FlexRay bus system is a time-controlled bus system that additionally provides the 
+option of transmitting sections of the data transmission event-controlled. In the time 
+controlled part, time slots are assigned to certain items of information. One time slot is a 
+defined period of time that is kept free fora specific item of information (e.g. engine 
+speed). 
+
+Consequently, important periodic information is transmitted at a fixed time interval in the 
+FlexRay bus system so that the system cannot be overloaded. 
+
+Other less time-critical messages are transmitted in the event-controlled part. An exam¬ 
+ple of deterministic data transmission is outlined in the following. 
+
+
+U i 
+
+
+
+
+2 
+
+
+
+
+
+
+
+
+n 
+
+
+
+
+e 
+
+
+V 
+
+xyz... 
+
+
+abc... 
+
+..jultul 
+
+
+„uiLn n 
+
+
+junm 
+
+jujjl 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+t 
+
+
+\m - 
+
+
+
+
+& 
+
+
+46 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Time-controlled part of cyclic data transmission 
+
+2 
+
+Event-controlled part of cyclic data transmission 
+
+3 
+
+Cycle (5 ms total cycle length of which 3 ms static 
+(= time-controlled) and 2 ms dynamic (= event-controlled) 
+
+n 
+
+Engine speed 
+
+< 
+
+Angle 
+
+t 
+
+Temperature 
+
+V 
+
+Road speed 
+
+xyz..abc.. 
+
+Event-controlled information 
+
+t 
+
+Time 
+
+
+Bus Protocol 
+
+Deterministic data transmission ensures that each message in the time-controlled part is 
+transmitted in real time. Real time means that the transmission takes place within a 
+defined time. 
+
+Therefore, important bus messages are not sent too late due to overloading of the bus 
+system. If lost due to a temporary problem in the bus system (e.g. EMC problem) a 
+message cannot be sent again. A current value is sent in the next assigned time slot. 
+
+High Bandwidth 
+
+The FlexRay bus system operates with a data transmission rate of 10 M bits/s. 
+
+This speed corresponds to 20 times the data transmission rate of the PT-CAN. 
+
+Synchronization 
+
+A common time base is necessary in orderto ensure synchronous execution of individual 
+functions in interconnected control units. Time matching must take place via the bus 
+system as all control units operate with their own clock generator. 
+
+The control units measure the time of certain synchronization bits, calculate the mean 
+value and adapt their bus clock to this value. This system ensures that even minimal time 
+differences do not cause transmission errors in the long term. 
+
+
+47 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlexRay in the E70 
+
+The FlexRay bus system in the E70 is designed as a two-wire, single-channel bus 
+system. Acting as the gateway, the VDM control unit establishes the connection 
+between the PT-CAN and FlexRay bus systems. 
+
+Data communication between the EDC satellites on the FlexRay and the other control 
+units installed in the E70 takes place via the VDM control unit. 
+
+
+
+Wake-up and Sleep Characteristics 
+
+The control units are activated by means of an additional wake-up line. The wake-up line 
+has the same function as the previous wake-up line (15WUP) in the PT-CAN. The signal 
+curve corresponds to the signal curve of the PT-CAN. 
+
+As soon as the bus system is woken, the VDM receives a High level on the PT-CAN and 
+transfers this signal to the wake-up line of the FlexRay, thus also waking the satellites. 
+
+
+
+48 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The "wake-up voltage curve" graphic shows the typical behavior of the voltage curve in 
+response to unlocking and starting the vehicle. 
+
+Phase 1: 
+
+Driver unlocks the car, the CAS control unit activates the K-CAN and the PT-CAN, the 
+voltage level in the PT-CAN briefly goes to High, the VDM copies the signal and transfers 
+it to the wake-up line on the FlexRay. 
+
+Phase 2: 
+
+Car is opened, terminal R is still OFF, the voltage levels in the bus systems drop again. 
+
+Phase 3: 
+
+Car is started, terminal 15 is ON, the voltages remain at the set levels until terminal 15 is 
+turned off again. 
+
+Phase 4: 
+
+The complete vehicle network must assume sleep mode at terminal R OFF in order to 
+avoid unnecessary power consumption. Each control unit in the network signs off to 
+ensure that all control units "are sleeping". Only when all EDC satellites have signed off 
+at the VDM control unit can this control unit pass on this information to the PT-CAN and 
+therefore to the complete network. An error message is stored if this is notthe case. 
+This error message is then evaluated as part of the energy diagnosis procedure. 
+
+■ Wiring 
+
+The wiring of the FlexRay bus in the E70 is executed as a sheathed, two-core, twisted 
+cable. The sheathing protects the wires from mechanical damage. The terminating 
+resistors are located in the EDC satellites. Each satellite has one terminating resistor. 
+Since the surge impedance (impedance of high-frequency lines) of the lines depends on 
+external influencing factors, the terminating resistors are precisely matched to the 
+required resistance. 
+
+T he four sections of line to the satellites can be checked relatively easily by means of a 
+resistance measuring instrument (ohmmeter, multimeter). The resistance should be 
+measured from the VDM control unit. See BMW diagnostic system for pin assignments 
+
+The following conclusions can be made: 
+
+RBP-BM: cor = 10 Ohms - There is a short circuit in this section of line. 
+
+RBP-BM: 10-90 Ohms - This section of line is damaged 
+
+(e.g. moisture in connector, line pinched) 
+
+RBP-BM: 90-110 Ohms - This section of line is OK and the satellite is connected 
+
+(Note: Impedance errors are not recognized) 
+
+RBP-BM: > 110 Ohms - There is a break in the line orthe satellite is not connected 
+
+or there is a break in the connection to the satellites. 
+
+
+49 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+Note: Measuring the resistance of the FlexRay lines cannot provide a 100% 
+deduction in terms ofthe system wiring. In the case of damage such as 
+pinching orconnectorcorrosion,the resistance may be within the toler¬ 
+ance when the system is static. 
+
+In dynamic mode, however, electrical influences can cause increased 
+surge resistance, resulting in data transmission problems. 
+
+Note: It is possible to repair the FlexRay bus. If damaged, the cables can be 
+connected using conventional cable connectors. Special requirements, 
+however, must be observed when reinstalling the system. 
+
+The wiring ofthe FlexRay system consists of twisted lines. This twisted 
+arrangement (transposition) should be retained as far as possible. 
+Repaired areas with stripped insulation must be sealed again with shrink- 
+fit tubing. Water can affectthe surge resistance and therefore the effi¬ 
+ciency ofthe bus system. 
+
+■ Plug Connections 
+
+The two plug connections contain the powersupply ofthe control units, the wake-up line 
+and the bus connection with wake-up line. The connection to the satellites in the wheel 
+arch is made with waterproof plugs. Two plugs are used: 
+
+
+
+Terminal 30g 
+
+Plug 1, black 
+
+Terminal 31 
+
+
+Wake-up line 
+
+Plug 1, blue 
+
+FlexRay (green wire) 
+
+F lexRay (pink wire) 
+
+
+50 
+
+E70 Voltage Supply and Systems 
+
+
+
+
+
+
+
+
+
+Sub-bus Systems 
+
+Sub-bus systems are known from the other BMW models. 
+
+
+Main Bus System 
+
+Data Rate 
+
+Bus Structure 
+
+K-Bus 
+
+9.6 Kb its/s 
+
+Linear, single-wire 
+
+LIN-Bus 
+
+9.6/19.2 Kbits/s 
+
+Linear, single-wire 
+
+BSD 
+
+9.6 Kb its/s 
+
+Linear, single-wire 
+
+
+K-bus Protocol 
+
+The term "K-bus (protocol)" is used fora series of sub-bus systems in the bus overview. 
+These sub-bus systems are used for various purposes. The K-bus protocol used here is 
+a common component already used in predecessor models. The sub-bus is used in 
+connection with the following systems: 
+
+• Connection between SINE and FZD 
+
+• Connection between ACSM and TCU 
+
+• Electronic outer door handle module 
+
+• Comfort Access 
+
+• Seat adjustment switch on multifunction seat 
+
+• EWS connection between CAS and DME+EGS (N52). 
+
+LIN-bus 
+
+The LIN-bus was used for the first time on the E46 for controlling the outside mirrors. 
+
+The LIN-bus realizes the following connections in the E70: 
+
+• Footwell module to driver's door switch cluster 
+
+• Footwell module to outside mirrors High 
+
+• Roof functions center to rain/driving lights/ solar sensor 
+
+• Actuation of IH KA actuator motors 
+
+• Footwell module to stepper motor controller 
+
+• Connections between gear selector lever module and electronic transmission control 
+
+BSD 
+
+The bit-serial data interface BSD is still used on the E70. It makes the following 
+connections from the engine management to the corresponding subsystems: 
+
+• Intelligent battery sensor 
+
+• Generator regulator 
+
+• Oil condition sensor 
+
+• Electric coolant pump 
+
+
+51 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminating Resistors 
+
+Terminating resistors are used to ensure exact signal progression in the bus systems. 
+These terminating resistors are located in the control units of the bus systems. 
+
+Terminating resistors are located in each control unit connected to the K-CAN. 
+
+In connection with the main bus systems F-CAN and PT-CAN, terminating resistors are 
+always located only in two control units on the bus. 
+
+The terminating resistors in the F-CAN are located in the control units: 
+
+• Steering column switch cluster 
+
+• Dynamic stability control 
+
+The terminating resistors in the PT-C AN are located in the control units: 
+
+• Electromagnetic parking brake 
+
+• Dynamic stability control 
+
+
+52 
+
+E70 Voltage Supply and Bus Systems 
+
+
+
+
+53 
+
+E70 Voltage Supply and Bus Systems 
+
+
+

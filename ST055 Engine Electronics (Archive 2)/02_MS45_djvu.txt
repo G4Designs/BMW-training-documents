@@ -1,0 +1,12874 @@
+Table of Contents 
+
+
+MS45 
+
+Subject Page 
+
+MS45 .2 
+
+Objectives of the M odule .2 
+
+Purpose of the System.3 
+
+System Components .4 
+
+Power Supply 6 
+
+Principle of Operation.7 
+
+Workshop Hints .8 
+
+Tools and Equipment .9 
+
+Air Management 10 
+
+Principle of Operation.18 
+
+Workshop Hints .22 
+
+Tools and Equipment .25 
+
+Fuel Management 26 
+
+Principle of Operation.32 
+
+Workshop Hints .38 
+
+Tools and Equipment .42 
+
+Ignition Management 43 
+
+Principle of Operation.48 
+
+Workshop Hints .52 
+
+Tools and Equipment .58 
+
+Emissions Management 60 
+
+Evaporative Emissions .60 
+
+Exhaust Emissions .64 
+
+Principle of Operation.70 
+
+Workshop Hints.81 
+
+Tools and Equipment.83 
+
+Performance Controls 84 
+
+Tools and Equipment.91 
+
+Review Questions 92 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MS45 
+
+Models: E85Z4 
+
+E83 X3 - all except M54B30 automatic 
+
+Production Date: Start of Production MY 2003 - E85 
+
+Start of Production MY 2004 - E83 
+
+Manufacturer: Siemens 
+
+Pin Connector: 134 Pins - 5 Modular Connectors 
+
+
+Objectives of the Module 
+
+
+After completing this module, you will be able to: 
+
+
+Describe the Power Supply for the Fuel Injectors and Ignition Coils. 
+
+
+Understand the EDK and Idle Air Actuator Operation. 
+
+
+ame the Differences of the M S45 Fuel Supply System. 
+
+
+List the Inputs Reguired for Fuel Injector Operation. 
+Describe Emission Optimized Function. 
+
+
+ame the Two Types of Emissions the ECM Controls. 
+
+
+Explain Why Two Sensors are Used to Momtor Accelerator Pedal Movement. 
+Understand DM TL Evaporative Leak Testing. 
+
+
+Describe How the Ignition System is Monitored 
+
+
+2 
+
+
+MS45 
+
+
+
+
+
+MS45 
+
+
+Purpose of the System 
+
+
+The MS45 system is an evolution of the MS43 system and manages the following 
+functions: 
+
+
+Air: 
+
+
+Fuel: 
+
+
+Ignition: 
+
+• Idle Speed Valve 
+
+
+• Fuel Supply (Non-Return) 
+
+
+• Direct Ignition/Optimized 
+
+• Electronic Throttle 
+
+
+• Fuel Injection 
+
+
+• Knock Control 
+
+• Hot Film Air Mass Meter 
+
+
+
+
+• Ignition Monitoring 
+
+• Resonance-Turbulence 
+
+
+
+
+
+Intake Control 
+
+
+
+
+
+
+
+
+
+] 
+
+* r ^ 
+
+
+
+
+Emissions: 
+
+• OBD Compliant 
+
+• Secondary Air Injection 
+
+• Pre and Post Oxygen Sensors 
+
+• Oxygen Sensor Heating 
+
+• MAP Thermostat 
+
+• Misfire Detection 
+
+• Evaporative Emission Control and Leak 
+Detection 
+
+• Ambient Pressure Sensing 
+
+• Malfunction Indicator Light 
+
+
+Performance Controls: 
+
+• Dynamic Driving Control "Sport" Mode 
+
+• Dual VANOS Control 
+
+• Electric Cooling Fan 
+
+• Ebox Fan Control 
+
+• PT CAN Bus Communication 
+
+• EWS III (3.3) 
+
+• Cruise Control 
+
+• Alternator Interfacing (BSD) 
+
+• ECM Programming 
+
+
+3 
+
+
+MS45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+
+MS45 Engine Control Module: The Engine Control M odule (ECM) features a single 
+printed circuit board with two 32-bit microprocessors. 
+
+
+The task of the first processor is to control: 
+
+• Engine Load 
+
+• Electronic Throttle 
+
+• Idle Actuator 
+
+• Ignition 
+
+• Knock Control 
+
+The task of the second processor is to control: 
+
+• Air / Fuel Mixture 
+
+• Emission Control 
+
+• Misfire Detection 
+
+• Evaporative Leak Detection 
+
+
+
+12550000.tiff 
+
+
+
+X60001 X60002 X60003 
+
+9-Pin 24-Pin 52 - Pin 
+
+
+X60004 X60005 
+
+40 - Pin 9 - Pin 
+
+
+The 134 pin ECM is manufactured by Siemens to BMW specifications. The ECM is the SKE 
+(standard shell construction) housing and uses 5 modular connectors. Fortesling, use the 
+Universal Adapter Set (break-out box) Special Tool #90 88 6 121 300. 
+
+
+4 
+
+
+MS45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components: Inputs - Processing - Outputs 
+
+
+© 
+
+
+_ KL1S 
+MEMORY 
+
+
+POWFR 
+
+
+AUK Hi 31 
+
+
+
+ADMASS SIGNAL 
+
+
+INTAKE 
+r~ Alft TEMP 
+
+
+•/ 
+
+
+IH 
+
+
+■ un 
+
+
+
+POSITION 
+
+
+ENGINE 
+
+
+r,. 
+
+
+
+TEMPE MATURE 
+
+
+CRANKSHAFT 
+
+POSITION 
+
+SENSOR 
+
+
+n 
+
+
+\ 
+
+
+£CM 
+
+
+MaIN NIL ji 
+
+
+r 
+
+
+RELAY ■■ — 
+OPERATING POWER 
+
+
+fcM&llTOR 
+
+
+
+CAMSHAFT 
+POSITION 
+SENSORS 2x 
+
+
+©a 
+
+
+j 
+
+
+
+
+
+
+
+RADIATOR OUTLET 
+
+TEMPERATURE 
+
+SENSOR 
+
+DMTL 
+
+
+
+LK 
+
+
+
+IWIFTi. 
+
+n -*> U-r p 
+
+1 ■ - , 
+
+
+
+
+CRUISE CONTROL 
+
+
+
+
+SPORT SWITCH 
+
+OIL 
+TEMP 
+SENSOR 
+
+
+r? 
+
+
+khakeugHT. SWITCH 
+
+
+
+BRAKE LKi-HT TEST 5A1TCH 
+
+
+4* 
+
+
+!HKA 
+
+
+
+VEHICLE 
+SPEED INPUT 
+
+
+ROLLING CODE 
+
+
+j-mniu 
+
+
+T 
+
+
+MS45 
+
+
+PQWE& 
+
+syppiv 
+
+
+
+AIR 
+
+MANAGEMENT 
+
+
+
+IGNITION 
+
+MANAGEMENT 
+
+
+EMISSION 
+
+MANAGEMENT 
+
+
+PERFORMANCE 
+CONTROL 
+
+
+RE30NAHCE- 
+
+TURBULEHCE 
+
+
+INTAKE SYSTEM 
+
+
+MOTOR DRIVEN 
+
+THROTTLE VALVE 
+
+
+CNWI t>)RGTTLE WARMWC 
+
+FUEL PUMP 
+
+SEOUENim 
+FUEL INJECTOR 
+CONTROL (6KJ 
+
+iIGMTION COIL 
+
+
+
+CONTROL {SX) 
+
+
+ISECONDARY AIR 
+NJECTkOH RELAY 
+■CONTROL 
+
+
+ft 
+
+tf-e 
+
+
+
+SECONDARY 
+AIR INJECTION 
+PUMP 
+
+
+PHE- 
+
+CAT 
+
+^tll 
+
+
+
+
+HAP- 
+
+CDNTflCH-LEV 
+
+
+HEATED 
+
+THERW03TA1 
+
+
+
+09 
+
+SENSOR 
+
+HEATING 
+
+
+PURGE 
+I %•' VALVE 
+CONTROL 
+
+
+DMTL 
+
+
+rm 
+
+& 
+
+
+MALFUNCTION 
+
+Indicator 
+
+LhOHT 
+
+
+
+
+o 
+
+
+
+
+
+INTAKE 
+V“Hua 
+
+frXffM ■_j_ _(fe 
+
+
+£BQ 
+
+
+STARTER 
+
+
+EKhAUET MNDS 
+
+
+( 2*1 
+
+
+■SDlEN^D 
+
+COMPRESSOR 
+CLUTCH 
+
+
+
+
+
+AC COMPRE SSOR 
+
+
+' ELECTRIC FAN 
+
+Y‘. 
+
+
+OS D II SCAN TOOL 
+
+
+DISplu* 
+
+
+45 - 02-01 
+
+
+5 
+
+
+MS45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply 
+
+
+
+I_M 
+
+
+KL 15 
+
+
+MEMORY 
+POWER 
+
+
+
+MS45 
+
+
+
+ECM 
+
+RELAY — 
+
+
+
+MAIN KL 31 
+
+
+OPERATING POWER 
+
+& MONITOR 
+
+
+
+POWER 
+
+SUPPLY 
+
+
+
+45 - 02-02 
+
+
+KL30 - Battery Voltage: B+ is the main supply of operating voltage to the ECM. 
+
+
+Power Supplies: The power supplies (KL15 
+and ECM Relay) are fused to the MS45 ECM. 
+The fuses are housed in the Engine Fuse Block 
+located in the Electronics Box. 
+
+KL15 - Ignition Switch: When the ignition is 
+switched “on” the ECM is informed that the en¬ 
+gine is about to be started. KL15 (fused) sup¬ 
+plies voltage to the Engine Control Module 
+Relay and the Fuel Injector Relay. Switching 
+KL15 “off” removes the ECM operating voltage. 
+
+
+
+ECM 
+
+
+55 - 01-01 
+
+Engine Control Module Relay: The ECM Relay provides the operating voltage for: 
+
+
+1. 
+
+ECM 
+
+6. 
+
+Ignition Coil 
+
+2. 
+
+Fuel Injection 
+
+7. 
+
+Evaporative Leak Detection Pump 
+
+3. 
+
+Idle Air Actuator 
+
+8. 
+
+Camshaft Sensor 
+
+4. 
+
+Evaporative Emission Valve 
+
+9. 
+
+Hot Film Air Mass 
+
+5. 
+
+Fuel Pump Relay 
+
+10. 
+
+Oxygen Sensor Heaters 
+
+
+Ground: Multiple ground paths are necessary to complete current flow through the ECM. 
+
+
+Connector X60001 
+
+Connector X60005 
+
+Pin 4 - Ground for ECM 
+
+Pin 5 - Ground for ECM 
+
+Pin 5 - Ground for ECM 
+
+
+Pin 6 - Ground for ECM 
+
+
+6 
+
+MS45 Power Supply 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+Battery Voltage is monitored by the ECM for fluctuations. It will adjust the output func¬ 
+tions to compensate for a lower (6v) and higher (14v) voltage value. For example, the ECM 
+will: 
+
+• Modify pulse width duration of fuel injection 
+
+• Modify dwell time of ignition 
+
+
+When KL15 is switched “on” the ECM is ready for engine management. The ECM will acti¬ 
+vate ground to energize the Engine Control Module Relay. The Engine Control Module 
+Relay supplies operating voltage to the ECM and the previously mentioned operating com¬ 
+ponents. Five seconds after the ignition is switched on and the voltage at the KL15 input 
+is >9 volts, the ECM compares the voltage to the ECM Relay supplied voltage. If the volt¬ 
+age difference between the two terminals is greater than 3 volts, a fault code will be set. 
+
+
+When KL15 is switched “off” the ECM operating voltage is removed. The ECM will main¬ 
+tain a ground to the Engine Control Module Relay for a few seconds to maintain ignition coil 
+activation (Emission Optimized) and as long as three minutes to complete the DM TL test. 
+
+
+Ground is required to complete the cur¬ 
+rent path through the ECM. The ECM also: 
+
+
+• Internal links a constant ground (1) to activate 
+components 
+
+• Switches ground (2) to activate components 
+
+
+
+01-04 
+
+
+7 
+
+MS45 Power Supply 
+
+
+
+Workshop Hints E85 Electronics Box - ECM and Fuses 
+
+Power Supply - Testing 
+
+1. ECM (DME) 
+
+2. EGS or SMG (if equipped) 
+
+3. ECM main relay 
+
+4. Fuel injector relay 
+
+5. - SMG (if equipped) hydraulic pump relay 
+- EGS (if equipped) reverse light relay 
+
+Inadequate power and ground supply 
+can result in: 
+
+
+
+1. No Start 
+
+2. Hard Starting (Long Crank Times) 
+
+3. Inaccurate Diagnosis Status or ECM (not found) 
+
+4. Intermittent/Constant “Engine Emission/EML” 
+Light 
+
+5. Intermittent/Constant Driveability Problems 
+
+
+Power supply including fuses should be 
+tested. 
+
+
+
+The ignition (KL15) must be switched off 
+when removing or installing the ECM 
+connector to prevent voltage spikes (arc¬ 
+ing) that can damage the Control 
+Module! 
+
+
+The Engine Control Module Relay (locat¬ 
+ed in the Electronics Box) should be test¬ 
+ed for: 
+
+
+1. Battery Voltage and Switched Ground (1) 
+
+2. Resistance (1) 
+
+3. Battery Voltage and Voltage Drop (2) 
+
+
+
+8 
+
+MS45 Power Supply 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tools and Equipment 
+
+
+Power Supply 
+
+When testing power supply to an ECM, the 
+DISplus/GTI multimeter function as well as a 
+reputable hand held multimeter can be used. 
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+
+When installing the Universal Adapter to the 
+ECM (located in the Electronics Box in the 
+engine compartment), make sure the ignition is 
+switched off. 
+
+
+SKE BREAKOUT BOX SET 
+P/N 90 88 6 121 300 
+
+
+ENGINE CONTROL 
+MODULE HARNESS 
+
+
+
+pq 
+
+
+
+
+©©©©© 
+
+©s©©© 
+
+©©©©© 
+
+©©©©© 
+
+© 0 ©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+
+nn 
+
+g 
+
+p 
+
+€ 
+
+z 
+
+l 
+
+
+
+pq 
+
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+© 0 ©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+16550020 
+
+
+
+12550003 
+
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+This will allow sufficient time to complete the 
+DM TL test. Voltage may be present (up to 3 
+minutes) causing damage to the ECM/TCM if 
+they are disconnected during this time period 
+(arcing). 
+
+
+The Engine Control Module Relay should be 
+tested using the relay test kit (P/N 88 88 6 613 
+010) shown on the right. 
+
+This kit allows testing of relays from a remote 
+position. Always consult the ETM for proper 
+relay connections. 
+
+
+
+
+12550001 
+
+9 
+
+MS45 Power Supply 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Management 
+
+
+
+Throttle Valve: The throttle valve plate is electronically operated to regulate intake air flow 
+by the ECM. The purpose is for precision throttle operation, OBD compliant for fault moni¬ 
+toring, DSC and Cruise Control. This integrated electronic throttle reduces extra control 
+modules, wiring, and sensors. Adjusting electronic throttles is not permitted, the throttle 
+assembly must be replaced as a unit The adaptation values must be cleared and adapta¬ 
+tion procedure must be performed using the DISplus/GTI. 
+
+
+The throttle assembly for the MS45 system is 
+referred to as the EDK. The EDK is distin¬ 
+guished by: 
+
+
+• EDK does not contain a PWG, It is remotely mounted 
+(integrated in the accelerator pedal assembly). 
+
+• The accelerator pedal is not mechanically “linked” to the 
+EDK. 
+
+
+
+16550007 
+
+
+Throttle Position Sensor: The accelerator 
+pedal module provides two variable voltage sig¬ 
+nals to the ECM that represents accelerator 
+pedal position and rate of movement. 
+
+Dual Hall Sensors are integral in the accelerator 
+pedal module. The ECM compares the two val¬ 
+ues for plausibility. The module contains internal 
+springs to return the accelerator pedal to the 
+rest position. 
+
+
+HALL SENSOR 
+POWER 
+
+
+
+10 
+
+MS45 Air Management 
+
+
+13550011 .eps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM provides voltage (5v) and ground for 
+the Hall sensors. As the accelerator pedal is 
+moved from rest to full throttle, the sensors pro¬ 
+duce a variable voltage signal. 
+
+
+• Hall sensor 1 (request) = 0.5 to 4.5 volts 
+
+• Hall sensor 2 (plausibility) = 0.5 to 2.0 volts 
+
+
+If the signals are not plausible, the ECM will use 
+the lower of the two signals as the requested 
+input. The throttle response will be slower and 
+the maximum throttle response will be reduced. 
+
+
+
+Throttle Motor and Feedback Position: The 
+
+MS45 ECM powers the EDK motor using pulse 
+width modulation for opening and closing the 
+throttle plate. The throttle plate is also closed by 
+an integrated return spring. 
+
+Two integrated potentiometers provide voltage 
+feedback signals to the ECM as the throttle plate 
+is opened and closed. 
+
+
+MOTOR 
+
+CONTROL 
+
+
+ELECTRIC THROTTLE 
+
+
+
+
+13550002 
+
+
+• Feedback signal 1 provides a signal from 0.5v (closed) to 
+4.5 V (Full Throttle) 
+
+
+• Feedback signal 2 provides a signal from 4.5v (closed) to 
+0.5V (Full Throttle) 
+
+
+Potentiometer 1 is the primary feedback signal 
+of throttle plate position and signal 2 is the plau¬ 
+sibility cross check through the complete throt¬ 
+tle plate movement. 
+
+
+
+13550005 
+
+
+11 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Idle Air Actuator: This valve regulates air by-passing 
+the throttle valve to control the engine idle/low speed. 
+
+The valve is supplied with battery voltage from the ECM 
+Relay. The Idle Air Actuator is a two-coil rotary actua¬ 
+tor. The ECM is equipped with two final stage transis¬ 
+tors which will alternate positioning of the actuator. 
+
+
+
+The final stages are "pulsed" simultaneously by the 
+ECM which provides ground paths for the actuator. 
+The duty cycle of each circuit is varied to achieve the 
+required idle RPM. 
+
+If this component/circuits are defective, a fault code will 
+be set and the “Malfunction Indicator Light” will be illu¬ 
+minated when the OBD II criteria is achieved. 
+
+
+
+i ► 
+
+
+16550008 
+
+
+Hot-Film Air Mass Meter (HFM): The air volume 
+input signal is produced electronically by the HFM 
+which uses a heated metal film (180° C above intake air 
+temperature) in the air flow stream. 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+MS 41.1 
+
+CONTROL 
+
+MODULE 
+
+
+The ECM Relay provides the operating voltage. As air 
+flows through the HFM, the film is cooled changing the 
+resistance which affects current flow through the cir¬ 
+cuit. The sensor produces a 1-5 volt varying signal. 
+Based on this change the ECM monitors and regulates 
+the amount of injected fuel. 
+
+
+
+If this input is defective, a fault code will be set and the 
+“Malfunction Indicator Light” will be illuminated when 
+the OBD II criteria is achieved. The ECM will operate 
+the engine using the Throttle Position and Engine RPM 
+inputs. 
+
+
+NOTE: The HFM is non-adjustable. 
+
+
+13550017 
+
+
+
+12 
+
+MS45 Air Management 
+
+
+13550004 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Temperature Signal: The HFM contains an integral air temperature sensor. This is a 
+Negative Temperature Coefficient (NTC) type sensor. This signal is required by the ECM to 
+correct the air volume input for changes in the intake air temperature (air density) affecting 
+the amount of fuel injected, ignition timing and Secondary Air Injection activation. 
+
+
+If this input is defective, a fault code will be set and the 
+“Malfunction Indicator Light” will be illuminated when the OBD 
+II criteria is achieved. The ECM will operate the engine using 
+the Engine Coolant Sensor input as a back up. 
+
+
+
+The ECM provides the power supply to the sensor which decreases in resistance as the 
+temperature rises and vice versa. The ECM monitors an applied voltage to the sensor that 
+will vary as air temperature changes the resistance value. 
+
+
+13550004 
+
+
+Notes: 
+
+
+13 
+
+MS45 Air Management 
+
+
+
+
+Resonance/Turbulence Intake System: On the M54, the intake manifold is split into two 
+groups of three (runners) which increases low end torque. The intake manifold also has 
+separate (internal) turbulence bores which channels air from the idle speed actuator direct¬ 
+ly to one intake valve of each cylinder (matching bore of 5.5mm in the cylinder head). 
+
+Routing the intake air to only one intake valve causes the intake to swirl in the cylinder. 
+Together with the high flow rate of the intake air due to the small intake cross sections, this 
+results in a reduction in fluctuations and more stable combustion. 
+
+
+VIAIN VIAINIFOLJ 
+
+
+
+TURBULENCE BORE T5.5mm 135500011 
+
+Resonance System: The resonance system provides increased engine torque at low 
+RPM, as well as additional power at high RPM. Both of these features are obtained by 
+using an ECM controlled resonance flap (in the intake manifold). 
+
+During the low to mid range rpm, the resonance flap is closed. This produces a long/sin¬ 
+gle intake tube which increases engine torque. 
+
+During mid range to high rpm, the resonance flap is open. This allows the intake air to draw 
+through both resonance tubes, providing the air volume necessary for additional power at 
+the upper RPM range. 
+
+
+14 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Resonance Flap (shown on the right) is 
+closed when vacuum is applied and sprung 
+open. This is a unitized assembly that is bolted 
+into the intake manifold. 
+
+The ECM controls a solenoid valve for reso¬ 
+nance flap activation. At speeds below 3750 
+RPM, the solenoid valve is energized and vac¬ 
+uum supplied from an accumulator closes the 
+resonance flap. This channels the intake air 
+through one resonance tube, but increases the 
+intake velocity. 
+
+
+
+135500012 
+
+
+When the engine speed is greater than 3750 
+RPM (which varies slightly - temperature influ¬ 
+enced), the solenoid is de-energized. The reso¬ 
+nance flap is sprung open, allowing flow through 
+both resonance tubes, increasing volume. 
+
+
+When the flap is closed, this creates another 
+“dynamic” effect. 
+
+
+• #1 Cylinder Intake Valve open low to Mid Range RPM 
+(<3750 RPM). 
+
+
+• #1 Cylinder Intake Valve closes #5 Intake Valve Open => 
+Intake Air Bounce Effect low to Mid Range RPM (<3750 
+
+
+
+RPM). 
+
+
+13550010 
+
+
+As the intake air is flowing into cylinder #1, the 
+intake valves will close. 
+
+This creates a “block” for the in rushing air. The 
+air flow will stop and expand back (resonance 
+wave back pulse) with the in rushing air to cylin- . 
+der #5. 
+
+
+• #1 Cylinder Intake Valve closes #5 Intake Valve Open => 
+Intake Air Bounce Effect Low to Mid Range RPM (<3750 
+RPM)). 
+
+The resonance “wave”, along with the intake 
+velocity, enhances cylinder filling. 
+
+
+
+13550009 
+
+15 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the engine speed is greater than 3750 
+RPM the solenoid is de-energized. The reso¬ 
+nance flap is sprung open, allowing flow through 
+both resonance tubes, increasing volume. 
+
+
+• #1 Cylinder Intake Valve Open - Intake air drawn from both 
+resonance tubes. Mid to High Range (>3750 RPM) 
+
+
+
+13550008 
+
+
+• #5 Cylinder Intake Valve Open - Intake air drawn from both 
+resonance tubes. Mid to High Range RPM (>3750 RPM). 
+
+
+The resonance “wave”, along with the intake 
+volume, enhances cylinder filling. 
+
+
+
+13550000007 
+
+
+Pressure Control Valve: The pressure control 
+valve varies the vacuum applied to the 
+crankcase ventilation depending on engine 
+load. The valve is balanced between spring 
+pressure and the amount of manifold vacuum. 
+
+The oil vapors exit the separator labyrinth (2) in 
+the cylinder head cover (1). The oil vapors are 
+drawn into the cyclone type liquid/vapor sepa¬ 
+rator (3) regulated by the pressure control valve 
+(5). 
+
+The oil vapors exit the pressure control valve 
+into the intake manifold. The collected oil will 
+drain back into the oil pan (4). 
+
+
+
+16 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The vapors exit the pressure control valve and are 
+drawn into the intake manifold through an external dis¬ 
+tribution tube (2). The tube has a splice at the front to 
+equally distribute vapors to the back. 
+
+As the vapors exit the pressure control valve, they are 
+drawn into the intake manifold through this external 
+tube for even distribution. 
+
+
+At idle when the intake manifold vacuum is high, the 
+vacuum reduces the valve opening allowing a small 
+amount of crankcase vapors to be drawn into the 
+intake manifold. 
+
+At part to full load conditions when intake manifold 
+vacuum is lower, the spring opens the valve and addi¬ 
+tional crankcase vapors are drawn into the intake man¬ 
+ifold. 
+
+
+1. Engine Oil Vapors 
+
+2. Collective Drain Back Oil 
+
+3. Oil Vapors to the Intake Manifold 
+
+
+
+Notes; 
+
+
+17 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Air flow into the engine is regulated by the Throttle Valve and/or the Idle Air Actuator. Both 
+of these air “passages” are necessary for smooth engine operation from idle to full load. On 
+the MS45 system, the Throttle Valve and the Idle Air Actuator are electrically controlled. All 
+of the ECM monitoring, processing and output functions are a result of regulated air flow. 
+
+
+AJftMASS S 
+
+
+AJftMA&S SIGNAL 
+
+T INI AKE 
+r AIR TEMP 
+
+
+l 
+
+
+THROTTLE 
+■ ■ FOSiWkhi 
+
+
+
+
+EWQINE 
+
+TEMPERATURE 
+
+
+CRANKSHAFT 
+j; \.. POSITION 
+
+T A’ 5ENS0H 
+
+
+
+
+
+RESONANCE- 
+|_ TUH5UIFNCF r 
+INTAKf SYSTEM 
+
+
+_MOjpR DRIVEN 
+THROTTLE VALVE 
+
+
+Dll, & 
+
+
+U» i: -.nh,r V.ih"- 
+
+
+ENMuL lli'K'l lU me 
+
+
+
+45-02-02 
+
+
+The Accelerator Pedal Position (PWG) is monitored by the ECM for pedal angle posi¬ 
+tion and rate of movement. As the accelerator is moved, a rising voltage signal from the 
+potentiometers/Hall sensors requests acceleration and at what rate. The ECM will increase 
+the volume of fuel injected into the engine, advance the ignition timing and open the Throttle 
+Valve and/or Idle Air Actuator. 
+
+The “full throttle” position indicates maximum acceleration to the ECM, and in addition to 
+the functions just mentioned, this will have an effect on the air conditioning compressor 
+(covered in Performance Controls). 
+
+As the accelerator pedal is released (integral springs), a decrease in voltage signals the 
+ECM to activate fuel shut off if the RPM is above idle speed (coasting). The Throttle Valve 
+will be closed and Idle Air Actuator Valve will open to maintain idle speed. 
+
+The ECM monitors the engine idle speed in addition to the accelerator pedal position and 
+throttle position voltage. If the voltage values have changed (mechanical wear of throttle 
+plate or linkage), the ECM will adjust the Idle Air Actuator to maintain the correct idle speed. 
+
+The potentiometers/Hall sensors are non-adjustable because the ECM “learns” the throttle 
+angle voltage at idle speed. If the throttle housing/accelerator pedal module is replaced, the 
+
+adaptations must be cleared and adaptation procedure must be performed using the 
+DISplus/MoDIC. If this is not performed, the vehicle will not start, or run in “fail-safe” mode. 
+
+If this input is defective, a fault code will be stored and the “Malfunction Indicator and/or 
+EML” Light will be illuminated. Limited engine operation will be possible. 
+
+
+18 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+The MS45 PWG pedal position sensor consists of two separate Hall sensors with differ¬ 
+ent voltage characteristics and independent power supply (located in the accelerator pedal 
+module). 
+
+
+The pedal position sensor is mon¬ 
+itored by checking each individual 
+sensor circuit and comparing the 
+two pedal values. Monitoring is 
+active as soon as the sensors 
+receive voltage (KL15). The ECM 
+decides what operating mode the 
+pedal position sensor is to 
+assume. 
+
+
+• Mode = Pedal position sensor fully 
+operable. 
+
+• Mode 1 = Failure of one pedal position 
+position sensor (maximum engine speed 
+is limited). 
+
+• Mode 2 = Failure of both pedal position 
+sensors (engine speed limited to 1500 
+rpm). 
+
+
+
+
+The Idle Air Actuator is controlled by the ECM modulating the ground signals (PWM at 
+100 Hz) to the valve. By varying the duty cycle applied to the windings, the valve can be 
+progressively opened, or held steady to maintain the idle speed. 
+
+
+The ECM controls the Idle Air Actuator to supply the necessary air to maintain idle speed. 
+When acceleration is requested and the engine load is low (<15%), the actuator will also 
+supply the required air. 
+
+
+The basic functions of the idle speed control 
+are: 
+
+
+• Control the initial air quantity (air temp <0° C, EDK is simul¬ 
+taneously opened). 
+
+• Variable preset idle based on load and inputs. 
+
+• Monitor RPM range intake for each preset position. 
+
+• Vaccum Limitation 
+
+• Smooth out the transition from acceleration to decelera¬ 
+tion. 
+
+
+
+TURBULENCE BORE 3:5.5mm 
+
+
+135500011 
+
+
+19 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Under certain engine operating parameters, the EDK throttle control and the Idle Air 
+Actuator are operated simultaneously. This includes all idling conditions and the transition 
+from off idle. As the request for load increases, the idle valve will remain open and the EDK 
+will supply any additional air volume required to meet the demand. 
+
+Backup Operation of Idle Air Actuator: 
+
+If a fault is detected with the Idle Air Actuator, the ECM will initiate failsafe measures 
+depending on the effect of the fault (increased air flow or decreased air flow). If there is a 
+fault in the Idle Air Actuator/circuit, the EDK will compensate to maintain idle speed. The 
+“Malfunction Indicator and/or EML” Light will be illuminated to inform the driver of a fault. 
+
+If the fault causes increased air flow (actuator failed open), VANOS and Knock Control are 
+deactivated which noticeably reduces engine performance. 
+
+The MS45 EDK Feedback Signal Monitoring/Backup Operation when a fault is detected in 
+the system is as follows: 
+
+• The EDK provides two separate signals from two integrated potentiometers (Pot 1 and Pot 2) representing the 
+exact position of the throttle plate. 
+
+• EDK Pot 1 provides the primary throttle plate position feedback. As a redundant safety feature, Pot 2 is continu¬ 
+ously cross checked with Pot 1 for signal plausibility. 
+
+• If plausibility errors are detected between Pot 1 and Pot 2, MS45 will calculated the inducted engine air mass 
+(from HFM signal) and only utilize the potentionmeter signal that closely matches the detected intake air mass. 
+
+- The MS 43.0 uses the air mass signaling as a “virtual potentiometer” (Pot 3) for a comparative source 
+to provides failsafe operation. 
+
+- If MS 43.0 cannot calculate a plausible conclusion from the monitored Pots (1 or 2 and virtual 3) the EDK 
+motor is switched off and fuel injection cut out is activated (Failsafe operation if not possible). 
+
+• The EDK is continuously monitored during all phases of engine operation. It is also briefly activated/adapted 
+when KL 15 is initially switched on as a “preflight check” to verify it’s mechanical integrity (no binding, 
+appropriate return spring tension, etc). This is accomplished by monitoring both the motor control amperate 
+and the reaction speed of the EDK feedback potentiometers. If faults are detected the EDK motor is switched 
+off and the fuel injection cut off is activated (failsafe operation is not possible). The engine does however 
+continue to run extremely rough at idle speed. 
+
+• When in emergency operation, the engine speed is always limited to 130 RPM by fuel injector cutout, and 
+activation of the “EML” light to alert the driver of a fault. 
+
+• When in emergency operation, the engine speed is always limited to 1300 RPM by fuel injector cutout, and 
+activation of the “EML” light to alert the driver of a fault. 
+
+• When a replacement EDK is installed, the MS45 adapts to the new component (required amperage draw for motor 
+control, feedback pot tolerance difference, etc). This occurs immediately after the next cycle of KL15 for approximately 
+30 seconds. During this period of adaptation, the maximum opening of the throttle plate is 25%. 
+
+20 
+
+MS45 Air Management 
+
+
+
+The Total Intake Air Flow Control is performed by the ECM simultaneously operating the 
+EDK throttle control and the Idle Air Actuator. 
+
+
+The ECM detects the driver’s request from the potentiometers/Hall Sensors monitoring the 
+accelerator pedal position. This value is added to the Idle Air control value and the total is 
+what the ECM uses for EDK activation. The ECM then controls the Idle Air Actuator to sat¬ 
+isfy the idle air “fill”. In addition, the EDK will also be activated = pre-control idle air charge. 
+Both of these functions are utilized to maintain idle RPM. 
+
+The EDK is electrically held at the idle speed position, and all of the intake air is drawn 
+through the Idle Air Actuator. Without a load on the engine (<15%), the EDK will not open 
+until the extreme upper RPM range. If the engine is under load (>15%), the Idle Air Actuator 
+is open and the EDK will also open. 
+
+The Hot-Film Air Mass Meter (HFM) varies voltage monitored by the ECM representing 
+the measured amount of intake air volume. This input is used by the ECM to determine the 
+amount of fuel to be injected. 
+
+The heated surface of the hot-film in the intake air stream is regulated by the ECM to a con¬ 
+stant temperature of 180° C above intake air temperature. The incoming air cools the film 
+and the ECM monitors the changing resistance which affects current flow through the cir¬ 
+cuit. The hot-film does not require a “clean burn”, it is self cleaning due to the high operat¬ 
+ing temperature for normal operation. 
+
+If this input is defective, a fault code will be set and the “Malfunction Indicator Light” will illu¬ 
+minate when the OBD II criteria is achieved. The ECM will maintain engine operation based 
+on the Throttle Position Sensors and Crankshaft Position/Engine Speed Sensor. 
+
+The Air Temperature signal allows the ECM to make a calculation of intake air tempera¬ 
+ture. The varying voltage input from the NTC sensor indicates the larger proportion of oxy¬ 
+gen found in cold air, as compared to less oxygen found in warmer air. The ECM will adjust 
+the amount of injected fuel because the quality of combustion depends on oxygen sensing 
+ratio. 
+
+The ignition timing is also affected by air temperature. If the intake air is hot the ECM retards 
+the base ignition timing to reduce the risk of detonation. If the intake air is cooler, the base 
+ignition timing will be advanced. The ECM uses this input as a determining factor for 
+Secondary Air Injection activation (covered in the Emissions section). 
+
+If this input is defective, a fault code will be set and the “Malfunction Indicator Light” will illu¬ 
+minate when the OBD II criteria is achieved. The ECM will maintain engine operation based 
+on the HFM and Engine Coolant Temperature sensor. 
+
+
+21 
+
+MS45 Air Management 
+
+
+
+Workshop Hints 
+
+Air Management 
+
+Unmetered air leaks can be misleading when diagnosing faults causing “Malfunction 
+Indicator Light”/driveability complaints. 
+
+Crankcase Ventilation System 
+
+A fault in this system can often “mislead” diagnosis. This type of fault can produce: 
+
+Please refer to the following Service Information Bulletins for details on the Crankcase 
+Ventilation System: 
+
+• Mixture/misfire detected codes 
+
+• Whistling noise 
+
+• Performance/driveability complaints 
+
+
+Throttle Position Sensors - Testing 
+
+
+The Throttle Position Sensors can be tested with the following methods: 
+
+
+• DISplus Status Page (appox. 0.5v. to 4.5v) 
+
+• DISplus Oscilloscope - Select from the Present measure¬ 
+ment which requires taking the measurement with the 
+ECM and the Universal Adapter connected to the cirucuit 
+as shown on the right). 
+
+
+
+22 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Idle Air Actuator Valve - Testing 
+
+
+• The Idle Air Actuator Valve and air circuit (passage ways) 
+should be checked for physical obstructions. Visually 
+inspect the sealing gasket, mounting bracket and air hose 
+clamps. 
+
+• The resistance of the valve winding should be checked 
+
+• The ECM ouput and Idle Speed Control Valve operation 
+can be tested by “Component Activation” on the DISplus/ 
+GT1. 
+
+
+
+13550009 
+
+
+• The Pulse Width Modulation ground outputs from the ECM 
+can be tested using the DISplus/GTI Oscillloscope. 
+
+• Consult Technical Data for specified idle speed. 
+
+
+NOTE: If the valve is blocked or contaminated, 
+an HFM fault code can also be present. 
+
+
+Air Temperature Signal - Testing 
+
+
+
+
+Print Screen 
+
+
+<1 
+
+
+Function 
+|| Selection 11 
+
+
+Document 
+
+
+SI,. II8<1 > III I ~ 
+
+
+13550011 
+
+
+
+The HFM contains an integral air temperature 
+sensor. NTC sensors decrease in resistance as 
+the temperature rises and vice versa. The ECM 
+monitors the sensor voltage which varies as 
+temperature changes the resistance value. For 
+example, as temperature rises: 
+
+
+• Resistance through the sensor decreases. 
+
+• Voltage drop across the sensor decreases. 
+
+• Input signal voltage also decreases (5-0v). 
+
+This sensor should be tested using: 
+
+
+• DISplus/GTI Status Page 12550016 
+
+• DISplus/GTI Multimeter (ohms) 
+
+
+
+23 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hot-Film Air Mass Sensor 
+
+
+This component is non-adjustable and tampering is not permitted. A faulty Hot-Film Air 
+Mass Sensor can produce the following complaints: 
+
+
+• Difficult To Restart When Engine Is Hot 
+
+• Engine Starts Then Stalls 
+
+• “Malfunction Indicator Light” Illuminated 
+
+• Engine Starts and Runs Only With 
+Accelerator Pedal Depressed 
+
+
+Testing: The Hot-Film Air Mass 
+Sensor can be tested with the fol¬ 
+lowing methods: 
+
+• DISplus/GTI Fault Code and 
+Component Testing. 
+
+
+• DISplus/GTI Status Page 
+
+
+
+
+• DISplus/GTI Oscillloscope-which requires taking 
+the measurement with the ECM and the 
+Universal Adapter connected to the circuit 
+(engine running). 
+
+
+NOTE: Visually inspect the sensor for damaged, missing or blocked screens. The screens 
+affect air flow calibration. Also inspect the sealing rings where the sensor inserts in the air 
+filter housing and intake boot. Ensure the pin connections are tight. 
+
+
+24 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tools and Equipment 
+
+
+The DISplus/GTI as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+
+
+DISplus 
+
+
+
+GT-1 16550019 
+
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+When installing the Universal Adapter to the 
+ECM (located in the Electronics Box in the 
+engine compartment), make sure the ignition is 
+switched off. 
+
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+This will allow sufficient time to complete the 
+DM TL test. Voltage may be present (up to 3 
+minutes) causing damage to the ECM/TCM if 
+they are disconnected during this time period 
+(arcing). 
+
+
+The Slack Tube Manometer Test Tool (#99 00 0 
+001 410) should be used to troubleshoot 
+crankcase ventilation valves. 
+
+
+SKE BREAKOUT BOX SET 
+
+
+
+16550020 
+
+
+
+
+12550002 
+
+
+25 
+
+MS45 Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Management 
+
+
+
+ADMASS-SIGNAL 
+« - i YFt,$F 
+
+' mi t«f- 
+
+
+
+suacm-E. 
+
+FOSITiOrt 
+
+
+
+_Engine _ 
+
+■^MI'bhlHl UMt 
+
+
+
+CPUMKSHArt 
+KK€HDN 
+LiifNsmi ! 
+
+ll —■—MTU.!' ■ I—I 
+
+
+CjUrfiHAFT 
+l»OSITIQK 
+SENSC4B Si 
+
+
+
+FUEL 
+
+FUCLRUNP j }_ "'1 
+
+dJujt i j 
+
+MANAGEMENT 
+
+1 
+
+nJCL I'JJC LTD FIY 
+
+COMIWDLOSXJ ^ 
+
+i / 
+
+
+Fuel Tank: The fuel tank is made 
+of high density polyethylene 
+(reduced weight) which is manu¬ 
+factured to meet safety require¬ 
+ments. 
+
+A mid-chassis mounted “saddle” 
+type tank is used providing a tun¬ 
+nel for the driveshaft but creates 
+two separate lower chambers. 
+
+
+1. Ventilation line 
+
+2. Filler tube 
+
+3. Operating vent valve 
+
+4. Fuel pump assembly 
+
+5. Filling vent valve 
+
+6. Left fuel level sensor 
+
+7. Left syphon jet 
+
+8. Overpressure protection valve 
+
+9. Fuel filter and fuel pressure regulator 
+
+10. Anti-chafing pads (foam cushion) 
+
+
+
+A syphon jet is required with this type of tank to 
+transfer fuel from the left side, linked to the fuel 
+return line. As fuel moves through the return, the 
+syphon jet creates a low pressure (suction) to 
+pick up fuel from the left side of the tank and 
+transfer it to the right side at the fuel pick up. 
+
+The fuel tank capacity is 55 liters (14.5 gallons). 
+This includes a ren/e capacity of 8 liters (2 gal.). 
+
+
+
+26 
+
+MS45 Fuel Management 
+
+
+Detailed View of Syphon Jet 
+
+
+16550030 
+
+
+
+
+The E85 fuel tank design represents the next step in reducing the potential evaporative 
+emissions. This design reduces the number of external connections and openings by 
+increasing the amount of “in tank” or integral components. The fuel system is divided into 
+two subsystems: fuel supply and fuel ventilation (evaporative contaiment and control - refer 
+to Emissions Management section). 
+
+
+MS45 Fuel Supply: 
+
+
+
+
+1. Filler cap and tank grounding 
+
+2. Filler tube 
+
+3. Slosh baffle (anti-spitback valve) 
+
+4. Fuel tank 
+
+5. Baffle chamber with right fuel level sen¬ 
+sor 
+
+6. Electric fuel pump (EKP) 
+
+7. Right syphon jet 
+
+8. Service access cap with fuel filter 
+
+9. Fuel pressure regulator (3.5 bar) 
+
+10. Left syphon jet 
+
+11. Fuel supply line 
+
+12. Injection rail 
+
+
+
+kt-10749 
+
+When the fuel pump is energized, it supplies fuel from the pickup area in the baffle cham¬ 
+ber through the fuel filter to the fuel pressure regulator. The fuel supply pressure is con¬ 
+trolled by the 3.5 Bar fuel pressure regulator (integrated in the fuel filter assembly). The reg¬ 
+ulator is influenced by internal fuel pressure and not intake manifold vacuum. The fuel exits 
+the fuel pressure regulator supplying the fuel rail and the injectors. The fuel rail distributes 
+an even supply of fuel to all of the injectors, and also serves as a volume reservoir. 
+
+The fuel is supplied through a Non Return Fuel Rail System. The fuel return line is located 
+on the filter/regulator assembly which directs the unused fuel back through the fuel tank. 
+The fuel tank hydrocarbons are reduced by returning the fuel from this point (lower tem¬ 
+peratures) instead of from the fuel rail. 
+
+As fuel moves through the return, the syphon jet creates a low pressure (suction) to pick 
+up fuel from the left side of the tank and transfer it to the right side at the fuel pick up. A 
+second syphon jet is mounted through the baffle chamber to draw as much fuel as possi¬ 
+ble from the right side of the tank into the baffle chamber (critical for low fuel or reserve sit¬ 
+uations). 
+
+
+27 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Pump: The electric fuel pump supplies constant 
+fuel volume to the injection system. This system uses a 
+single submersible (in the fuel tank) pump. The inlet is 
+protected by a mesh screen. 
+
+When the fuel pump is powered, the armature will 
+rotate the impeller disc creating low pressure at the 
+inlet. The fuel will be drawn into the inlet and passed 
+through the fuel pump housing (around the armature). 
+The fuel lubricates and cools the intervals of the pump 
+motor. 
+
+The fuel will exit through a non-return check valve to 
+supply the injection system. The non-return check 
+valve is opened by fuel exiting the pump and will close 
+when the pump is deactivated. This maintains a 
+“prime” of fuel in the filter, lines, hoses and fuel rail. 
+
+
+
+The pump contains an internal overpressure relief valve that will open (reducing roller cell 
+pressure) if there is a restriction in the fuel supply hardware. 
+
+
+Fuel Supply Components: The fuel is transferred from the fuel pump to the fuel filter. The 
+fuel filter “traps” contaminants before they reach the fuel injectors and should be replaced 
+at the specified interval. The large filter size also serves as a volume reservoir (dampening 
+fuel pump pulsations). 
+
+
+Fuel Pressure Regulator: The Fuel Pressure Regulator maintains a constant pressure for 
+the fuel injectors. The fuel pressure is set to 3.5 bar by internal spring tension on the restric¬ 
+tion valve. The fuel pressure regulator is not influenced by vacuum. 
+
+The ECM determines the fuel quantity compensation for manifold vacuum changes. This is 
+based on throttle position, HFM and load for precise compensation. 
+
+When the restriction valve opens, unused fuel returns from the regulator/filter assembly 
+back through the fuel tank to the left side syphon jet. 
+
+
+28 
+
+MS45 Fuel Management 
+
+
+
+
+I 
+
+
+:k 
+
+H 
+
+
+iT-" 
+
+
+Siemens Fuel Injectors: The Fuel Injectors are elec¬ 
+tronically controlled solenoid valves that provide pre¬ 
+cise metered and atomized fuel into the engine intake 
+ports. The Fuel Injector Valve consists of: 
+
+1. Fuel Strainer 
+
+2. Electrical Connector 
+
+3. Solenoid Winding 
+
+4. Closing Spring 
+
+5. Solenoid Armature 
+
+6. Needle Valve 
+
+7. Pintle 
+
+Fuel is supplied from the fuel rail to the injector body. 
+The fuel is channeled through the injector body to the 
+needle valve and seat at the tip of the injector. Without 
+electrical current, the needle valve is sprung closed 
+against the seat. 
+
+
+The Fuel Injectors receive voltage from the Fuel Injector 
+Relay. The ECM activates current flow through the 
+injector solenoid creating a magnetic field that pulls the 16550013 
+needle “up” off of its seat. The pressurized fuel flows 
+through the tip of the injector that is fitted with a direc¬ 
+tional angle "plate" with dual outlets. This “fans out” 
+the spray into an angled patterns which helps to atom¬ 
+ize the fuel. When the ECM deactivates current flow, 
+the needle valve is sprung closed against the seat and 
+fuel flow through the injector is stopped. The lower 
+portion of the injector body is jacketed in metal. 
+
+The length of time that the ECM activates the Fuel 
+Injectors is very brief, the duration is in milli-seconds 
+(ms). This affects the mount of fuel volume flowing 
+through the Fuel Injectors. The ECM will vary the 
+length of time (ms) to regulate the air/fuel ratio (mix¬ 
+ture). 
+
+
+
+
+
+A Fuel Injector is faulty (mechanical or electrical), it can produce the following complaints: 
+
+
+• Malfunction Indicator Light 
+
+• Excessive Tailpipe smoke (leaking) 
+
+• Engine Hydrolock (leaking) 
+
+
+• Misfire/Rough Idle (Leaking or Blocked) 
+
+• Long Crank Time (Leaking) 
+
+• Oxygen Sensor/Mixture/Injector Related Fault Code 
+
+29 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankshaft Position/RPM Sensor (Hall Effect): This sensor provides the crankshaft 
+position and engine speed (RPM) signal to the ECM for fuel pump and Injector operation. 
+
+
+A Hall sensor is mounted on the left side at the 
+rear of the engine block. The impulse wheel is 
+mounted on the crankshaft inside the crank¬ 
+case, at the rear main bearing support. The 
+impulse wheel contains 58 teeth with a gap of 
+two missing teeth. 
+
+The Hall sensor is supplied with voltage from 
+the ECM. A digital square wave signal is pro¬ 
+duced by the sensor as the teeth of the impulse 
+wheel pass by. The “gap” allows the ECM to 
+establish crankshaft position. 
+
+
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+135500020 
+
+
+The crankshaft position sensor is monitored as part of OBD II requirements for Misfire 
+Detection. If this input is faulty, the ECM will operate the engine (limited driveability) from the 
+Camshaft Sensor input. A fault with this input will produce the following complaints: 
+
+
+• Hard Starting/Long Crank Time 
+
+• “Malfunction Indicator Light” 
+
+• Driveability/Misfire/Engine Stalling 
+
+Camshaft Sensors - Intake and Exhaust Camshafts 
+
+
+The "static" Hall sensors are used so that the camshaft positions are recognized once igni 
+tion is on (KL15) before the engine is started. The function of the intake cam sensor is: 
+
+
+• Cylinder “work cycle” for injection timing 
+
+• Synchronization 
+
+• Engine speed sensor (if crankshaft speed sensor fails) 
+
+• VANOS position control of the intake cam 
+
+The exhaust cam sensor is used for VANOS 
+position control of the exhaust cam. If these sen-, 
+sors fail there are no substitute values, the sys¬ 
+tem will operate in the failsafe mode with no 
+VANOS adjustment. The engine will still operate, 
+but torque reduction will be noticeable. 
+
+
+
+NOTE: Use caution on repairs as not to bend the impulse wheels. 
+
+
+30 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engine Coolant Temperature: The Engine 
+Coolant Temperature is provided to the ECM 
+from an NTC type sensor located in the coolant 
+jacket of the cylinder head (left rear). The sensor 
+contains two NTC elements, the other sensor is 
+used for the instrument cluster temperature 
+gauge. 
+
+The ECM determines the correct air/fuel mixture 
+required for the engine temperature by monitor¬ 
+ing an applied voltage to the sensor (5v). This 
+voltage will vary (0-5v) as coolant temperature 
+changes the resistance value. 
+
+
+
+
+MS 41.1 
+
+CONTROL 
+
+MODULE 
+
+
+' ' H 
+
+TO INSTRUMENT 
+CLUSTER 
+
+
+13550015 
+
+
+
+COOUVNT NTC SENSOR 
+LOCATED ON INTAKE 
+SIDE OF CYLINDER HEAD 
+
+
+If the Coolant Temperature Sensor input is faulty, a fault code will be set the ECM will 
+assume a substitute value (80° C) to maintain engine operation. 
+
+
+Throttle Position: For details about the sensor, refer to the Air Management section. As 
+the throttle is opened, the ECM will increase the volume of fuel injected into the engine. As 
+the throttle plate is closed, the ECM activates fuel shut off if the rpm is above idle speed 
+(coasting). 
+
+
+Hot-Film Air Mass Meter (HFM): The air volume input signal is used by the ECM to deter¬ 
+mine the amount of fuel to be injected for correct air/fuel ratio. For details about the sen¬ 
+sor, refer to the Air Management section. 
+
+
+Air Temperature: This signal allows the ECM to make a calculation of air density. For 
+details about the sensor, refer to the Air Management section. 
+
+The varying voltage input from the NTC sensor indicates the larger proportion of oxygen 
+found in cold air, as compared to less oxygen found in warmer air. The ECM will adjust the 
+amount of injected fuel because the quality of combustion depends on oxygen sensing 
+ratio. 
+
+
+31 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Fuel Management delivers fuel from the tank to the intake ports of the engine. To accom¬ 
+plish this, fuel supply must be available to the fuel injectors. Then the fuel must be inject¬ 
+ed in the precise amount and at the correct time. The ECM does not directly monitor fuel 
+supply, although it does control fuel supply. The Fuel Pump supplies fuel when it receives 
+operating voltage from the Engine Control Module Relay supplying the Fuel Pump Relay. 
+The ECM controls and monitors fuel injection. 
+
+
+
+
+POSITION 
+
+
+
+EHGJHE 
+
+rtUl'EPlriTliftE 
+
+
+
+CHJLJUK SHAFT 
+POSITION 
+LLNSmi 
+
+
+OAM £ HA FT 
+P-OSITIQH 
+SE ufiona 2i 
+
+
+
+FUEL 
+
+MANAGEMENT 
+
+
+fuel rump 
+
+TT 
+
+
+fiUlaV t & H thOL 
+
+rj 
+
+sequential 
+
+
+TULL i'-i -ILL run 
+
+CQIfTflOLOSidi ^ 
+
+
+
+
+
+45 - 02-04 
+
+
+The Fuel Pump will be activated when 
+the ignition (KL15) is switched “on” and 
+the ECM supplies a ground circuit to 
+activate the Fuel Pump Relay. The Fuel 
+Pump Relay supplies operating power to 
+the in-tank mounted fuel pump. This is a 
+momentary activation to “pressurize” 
+(prime) the fuel system. 
+
+The ECM then requires an engine speed 
+signal from the Crankshaft Position/RPM 
+Sensor to maintain continuous Fuel 
+Pump Relay activation. 
+
+If the engine RPM signal is not present, 
+the ECM will deactivate the Fuel Pump 
+Relay. 
+
+
+Operating Power 
+
+
+
+13550012 
+
+
+The Fuel Injectors will be opened by the ECM to inject pressurized fuel into the intake 
+ports. The Fuel Injectors receive voltage from the Engine Control Module Relay. The ECM 
+controls the opening by activating the ground circuits for the Solenoid Windings. The ECM 
+will vary the duration (in milli-seconds) of “opening” time to regulate the air/fuel ratio. 
+
+
+32 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM has six Final Stage output transistors 
+that switch ground to the six injector solenoids. 
+The Injector “triggering” is first established from 
+the Crankshaft Position/RPM Sensor. 
+
+
+The ECM is programmed to activate the Final 
+Stage output transistors once for every two rev¬ 
+olutions of the crankshaft in two groups (Semi- 
+Sequential Injection). 
+
+
+The injectors are opened in two groups for every 
+complete “working cycle” of the engine. This 
+delivers the fuel charge for cylinders 1,5,3 dur¬ 
+ing one revolution of the crankshaft and cylin¬ 
+ders 6,2,4 during the second revolution of the 
+crankshaft. This process enhances fuel atom¬ 
+ization during start up. 
+
+
+During start up, the ECM recognizes the 
+Camshaft Position (Cylinder ID) input. The 
+camshaft position is referenced to the crank¬ 
+shaft position. It then switches the injection to 
+Full Sequential. This process “times” the injec¬ 
+tion closer to the intake valve opening for 
+increased efficiency. 
+
+
+
+Semi-Sequential Injection 
+
+
+
+= FUEL INJECTED I I = INTAKE VALVE(S) OPEN 
+
+135500016 
+
+
+Full Sequential Injection 
+
+
+When activated, each injector delivers the full 
+fuel charge at separate times during each 
+engine working cycle. 
+
+
+If this input is faulty, the ECM will activate the 
+injectors in Parallel to maintain engine operation 
+and set a fault code. 
+
+
+
+135500015 
+
+
+33 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Injector “open” Time to maintain engine operation after it has been started is det¬ 
+ermined by the ECM (programming). The ECM will calculate the injection “timing” based on 
+a combination of the following inputs: 
+
+
+• Battery Voltage 
+
+• Throttle Position 
+
+• Air Flow Volume/Mass 
+
+• Air Temperature 
+
+• Crankshaft Position/RPM 
+
+• Camshaft Position (Cylinder ID) 
+
+• Engine Coolant 
+
+• Oxygen Sensor 
+(Detailed in Emissions) 
+
+
+
+The injection ms value will be regulated based on battery voltage. When cranking, the volt¬ 
+age is low and the ECM will increase the ms value to compensate for injector “lag time”. 
+When the engine is running and the battery voltage is higher, the ECM will decrease the 
+injection ms value due to faster injector reaction time. 
+
+
+Cold starting requires additional fuel to compensate for poor mixture and the loss of fuel as 
+it condenses onto cold intake ports, valves and cylinder walls. The cold start fuel quantity 
+is determined by the ECM based on the Engine Coolant Temperature Sensor input during 
+start up. 
+
+During cranking, additional fuel is injected (in Semi-Sequential) for the first few crankshaft 
+revolutions. After the first few crankshaft revolutions, the injected quantity is metered down 
+as the engine comes up to speed. When the engine speed approaches idle rpm, the ECM 
+recognizes the Camshaft Position and switches to Full Sequential injection. 
+
+When the engine is cold, optimum fuel metering is not possible due to poor air/fuel mixing 
+and an enriched mixture is required. The Coolant Temperature input allows the ECM to 
+adjust the injection ms value to compensate during warm up and minimize the the injected 
+fuel at engine operating temperature. 
+
+
+34 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the engine is at idle, minimum injection is required. Additional fuel will be added if the 
+ECM observes low engine rpm and increasing throttle/air volume inputs (acceleration 
+enrichment). As the throttle is opened, the ECM monitors acceleration and rate of move¬ 
+ment. The ECM will increase the volume of fuel injected into the engine by increasing the 
+injection ms value. The “full throttle” position indicates maximum acceleration and the ECM 
+will add more fuel (full load enrichment). 
+
+As the throttle is closed, the ECM decreases the injection ms value (fuel shut off) if the rpm 
+is above idle speed (coasting). This feature decreases fuel consumption and lowers emis¬ 
+sions. When the engine rpm approaches idle speed, the injection ms value is increased 
+(cut-in) to prevent the engine from stalling. The cut-in rpm is dependent upon the engine 
+temperature and the rate of deceleration. 
+
+The Hot-Film Air Mass (HFM) signal provides the measured amount of intake air vol¬ 
+ume/mass. This input is used by the ECM to determine the amount of fuel to be injected 
+to “balance” the air/fuel ratio. 
+
+The Air Temperature Signal allows the ECM to make an additional calculation of air densi¬ 
+ty. The varying voltage input from the NTC sensor indicates the larger proportion of oxygen 
+found in cold air, as compared to less oxygen found in warmer air. The ECM will adjust the 
+amount of injected fuel because the quality of combustion depends on oxygen sensing 
+ratio (details in Emissions). 
+
+The Crankshaft Position/RPM signals the ECM to start injection as well as providing infor¬ 
+mation about the engine operation. This input is used in combination with other inputs to 
+determine engine load which increases/decreases the injection ms value. Without this in¬ 
+put, the ECM will not activate the injectors. 
+
+The Camshaft Position (Cylinder ID) affects the injection timing (Semi-Sequential/Full 
+Sequential). To accomplish this, the ECM contains six Final Stage output transistors that 
+activate the injectors individually. The engine operates sufficiently on Semi-Sequential 
+Injection (two groups of three), but more efficiently on Full Sequential Injection (six individ¬ 
+ual). If one of the fuel injector circuits faulted, the engine can still operate on limited power 
+from the other remaining fuel injector circuits. 
+
+
+35 
+
+MS45 Fuel Management 
+
+
+
+Injection “Reduction” Time is required to 
+control fuel economy, emissions, engine and 
+vehicle speed limitation. The ECM will “trim” 
+back or deactivate the fuel injection as neces¬ 
+sary while maintaining optimum engine opera¬ 
+tion. 
+
+As the throttle is closed during deceleration, the 
+ECM decreases the injection ms value (fuel shut 
+off) if the rpm is above idle speed (coasting). 
+This feature decreases fuel consumption and 
+lowers emissions. 
+
+
+ECM 
+
+
+
+
+When the engine rpm approaches idle speed, the injection ms value is increased (cut-in) to 
+prevent the engine from stalling. The cut-in rpm is dependent upon the engine temperature 
+and the rate of deceleration. This function can be observed as displayed on the Fuel 
+Economy (MPG) gauge. 
+
+
+The ECM will selectively deactivate injectors to control maximum engine rpm (regardless of 
+vehicle speed). When the engine speed reaches 6500 rpm, the injectors will be individual¬ 
+ly deactivated as required to protect the engine from over-rev. 
+
+
+As the engine speed drops below 6500 rpm, injector activation will be resumed. This fea¬ 
+ture does not protect the engine from a forced over-rev such as improperly down¬ 
+shifting a manual transmission equipped vehicle (driver error). 
+
+
+Maximum vehicle speed is also limited by the 
+ECM selectively deactivating the injectors 
+(regardless of engine rpm). 
+
+This limitation is based on the vehicle dimen¬ 
+sions, specifications and installed tires (speed 
+rating). 
+
+
+
+36 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM will also protect the 
+Catalytic Converter by deactivat¬ 
+ing the injectors. 
+
+If the ECM detects a “misfire” 
+(ignition, injection or combustion) 
+it can selectively deactivate the 
+Final Stage output transistor for 
+that cylinder(s). 
+
+The injector(s) will not open, pre¬ 
+venting unburned fuel from enter¬ 
+ing the exhaust system. 
+
+On the MS45 system, there are 
+six individual injector circuits 
+resulting in deactivation of one or 
+multiples. This will limit engine 
+power, but protect the Catalytic 
+Converter. 
+
+
+
+PRIMARY 
+
+SECONDARY 
+
+
+
+PRIMARY 
+
+SECONDARY 
+
+PRIMARY 
+SECONDARY 
+
+
+
+
+PRIMARY 
+
+SECONDARY 
+
+
+
+PRIMARY 
+
+SECONDARY 
+
+PRIMARY 
+SECONDARY 
+
+
+
+
+
+135500022 
+
+
+Fuel Injection Control Monitoring is performed by the ECM for OBD II requirements. 
+Faults with the fuel injectors and/or control circuits will be stored in memory. This monitor¬ 
+ing includes: 
+
+
+• Closed Loop Operation 
+
+• Oxygen Sensor Feedback 
+
+These additional corrections are factored into 
+the calculated injection time. If the correction 
+factor exceeds set limits a fault will be stored in 
+memory. 
+
+When the criteria for OBD II monitoring is ach¬ 
+ieved, the “Malfunction Indicator Light” will be 
+illuminated. 
+
+
+
+ENGINE LOAD -► 
+
+13550010 
+
+
+37 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Before any service work is performed on any fuel system related component, 
+always adhere to the following: 
+
+• Observe relevant safety legislation pertaining to your area. 
+
+• Ensure adequate ventilation. 
+
+• Use exhaust extraction system where applicable (alleviate fumes). 
+
+• DO NOT OPERATE THE FUEL PUMP unless it is properly installed in the fuel tank and is submersed in the fuel 
+(fuel lubricates the pump). 
+
+• Always wear adequate protection clothing including eye protection. 
+
+• Use caution when working around a hot engine compartment 
+
+• During fuel system repair that involves “sealing rings”, always replace them with a new COPPER rings only. 
+
+• BMW does not recommend any UNAUTHORIZED MODIFICATIONS to the fuel system. The fuel system are 
+designed to comply with strict federal safety and emissions regulations. In the concern of product liability, it is 
+unauthorized to sell or perform modifications to customers vehicles, particular in safety related areas. 
+
+• Always consult the Repair Instructions on the specific model you are working on before attempting a repair. 
+
+
+Fuel 
+
+Fuel quality should always be considered when diagnosing a driveability complaint. The 
+type of fuel, proper AKI rating, impurities and moisture are not factored by the ECM. 
+
+Please refer to the Owner’s Manual and following Service Information Bulletins regarding 
+fuel: 
+
+
+• Gasoline Fuel Quality S.l. #13 01 88 (1564) 
+
+• Gasoline Additive S.l. #13 04 88 (1591) 
+
+
+38 
+
+MS45 Fuel Management 
+
+
+
+Fuel Supply 
+
+The fuel supply hardware should be visually inspected for damage that can affect pick-up, 
+transfer, pressure and return. Please refer to the Repair Instructions for details on fuel sup¬ 
+ply hardware. 
+
+
+Fuel Filter, Pressure Regulator, Pump and Sending Unit Access 
+
+Caution! The fuel tank must be 
+drained first before removing the 
+Service access cap to perform 
+any repair attempts. 
+
+Consult the Repair Instructions 
+for additional details and updated 
+information. 
+
+1. Fuel tank 
+
+2. Service access cap 
+
+The fuel filter, fuel pressure regulator, electric fuel pump, right fuel level sensor and syphon 
+jet are accessed through the “Service access cap”. Remove the single 6 pin electrical con¬ 
+nector (2 pins for the fuel pump, 2 for each level sensor - left/right). Remove the fuel sup¬ 
+ply line by releasing the “quick” release coupling. 
+
+The fuel tank is secured by two straps to the body. 
+
+
+
+39 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+The Fuel Injectors should also be tested using the DISplus/GTI for: 
+
+
+• Resistance 
+
+• Power Supply 
+
+• Status Display - Fuel Injection Signal 
+
+• ECM Final Stage transistor activation. This test functions is found 
+under the oscilloscope Preset list - “Ti Injection Signal”. Install the 
+Universal Adapter, Diagnostic cable, MFK 2 negative lead to ECM 
+ground and MFK 2 positive lead to the ground activation circuit for the 
+injector. This test is performed with the engine cranking or running. 
+
+MFK 2 
+Negative 
+
+
+
+MFK 2 
+Positive 
+
+
+
+16550018 
+
+
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankshaft Position/RPM 
+Sensor 
+
+This sensor should be tested 
+using the DISplus/GTI for: 
+
+• Power Supply 
+
+• DC Voltage 
+
+• Status Display 
+
+• Oscilloscope Display found under Preset 
+Measurements - “Engine Speed Sensor 
+Signal” 
+
+
+Engine Coolant Temperature 
+
+
+CRANKSHAFT 
+POSITION 
+SENSOR 
+(HALL EFFECT) 
+
+
+
+| Change |" |End j'' | Services 
+
+
+BMW Test system Oscilloscope display 
+v 
+
+
+Help 
+
+
+
+
+25 -15 -5 
+
+-20 -10 
+
+5 
+
+0 
+
+
+<li 
+
+Function 1 
+
+| Selection | 
+
+| Document | 
+
+Te st 
+
+| Module 
+
+
+
+
+Test 
+
+System 
+
+
+□ 
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+135500020 
+
+
+NTC sensors decrease in resis¬ 
+tance as the temperature rises 
+and vice versa. The ECM moni¬ 
+tors the sensor voltage which 
+varies as temperature changes 
+the resistance value. For exam¬ 
+ple, as temperature rises: 
+
+• Resistance through the sensor decreases 
+
+• Voltage drop of the sensor decreases 
+
+• Input signal voltage also decreases (5-0v) 
+
+
+The Sensor should be tested 
+using: 
+
+• DISplus/GTI Multimeter degrees C 
+(dependent on engine temperature). 
+
+• DISplus/GTI Multimeter ECM input 
+2.250K ohms at 20° C Temp. Gauge 
+
+
+
+
+
+
+1 Print 
+
+Change II 
+
+I 6 *II 
+
+Services 
+
+
+
+BMW Test system Oscilloscope display 
+
+
+
+
+
+□ 
+
+
+
+Y 
+
+39 | 10 
+
+
+t t 
+
+TO INSTRUMENT 
+CLUSTER 
+
+
+
+13550015.eps 
+
+
+input 6.7 k ohms at 20° C Temperature. 
+
+
+Gauge input 6.7 K ohms at 20° C. 
+
+
+41 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tools and Equipment 
+
+
+The DISplus/GTI as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+When installing the Universal Adapter to the 
+ECM (located below the windshield on the pas¬ 
+senger side of the engine compartment), make 
+sure the ignition is switched off. 
+
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+
+
+DlSplus 
+
+
+
+GT-l 
+
+16550019 
+
+
+SKE BREAKOUT BOX SET 
+
+
+
+This will allow sufficient time to complete the 
+DM TL test Voltage may be present (up to 3 
+minutes) causing damage to the ECM/TCM if 
+they are disconnected during this time period 
+(arcing). 
+
+
+16550020 
+
+
+
+42 
+
+MS45 Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition Management 
+
+
+AJHMAftt 4HHAL 
+
+
+
+INTAKE 
+Ain TEA 
+
+
+
+Thorne 
+
+position 
+
+
+
+ENGINE 
+
+TEMFERATURE 
+
+
+
+CRANKSHAFT 
+POSITION 
+C W--^ EENEOH 
+
+
+
+
+KNQC 
+ESn SO 
+
+
+
+IGNITION 
+
+MANAGEMENT 
+
+
+iOHUMfCOiL 
+goniudl rsx l 
+
+
+
+45-02-05 
+
+
+Ignition Coils: The high voltage supply required to ignite the mixture in the combustion 
+chambers is determined by the stored energy in the ignition coils. The stored energy con¬ 
+tributes to the ignition duration, ignition current and rate of high voltage increase. The Coil 
+circuit including primary and secondary components consists of: 
+
+
+1. Coil Assembly 
+
+• Primary Winding 
+
+• Secondary Winding 
+
+2. Boot Connector 
+
+3. Spark Plug 
+
+4. ECM Final Stage Transistor 
+
+
+
+16550021 
+
+The Coil Assembly contains two copper windings insulated from each other. One winding 
+is the primary winding, formed by a few turns of thick wire. The secondary winding is 
+formed by a great many turns of thin wire. 
+
+The MS45 primary winding receives battery voltage from the ECM Main Relay which is acti¬ 
+vated by the ignition switch KL15 (Emission Optimized). The ECM provides a ground path 
+for the primary coil (Terminal 1) by activating a Final Stage transistor. The length of time that 
+current flows through the primary winding is the “dwell” which allows the coil to “saturate” 
+or build up a magnetic field. 
+
+After this storage process, the ECM will interrupt the primary circuit at the point of ignition 
+by deactivating the Final Stage transistor. The magnetic field built up within the primary 
+winding collapses and induces the ignition voltage in the secondary winding. 
+
+
+43 
+
+MS45 Ignition Management 
+
+
+
+
+The high voltage generated in the secondary 
+winding is discharged through Coil Terminal 4 to 
+the spark plug (insulated by the boot connec¬ 
+tor). The primary and secondary windings are 
+un-coupled, therefore, the secondary winding 
+requires a ground supply (Coil Terminal 4a). 
+
+There is an individual ignition circuit and coil for 
+each cylinder on the MS45 system. The six indi¬ 
+vidual ignition coils are integrated with the insu¬ 
+lated connector (boot). The assemblies are 
+mounted on top of the cylinder head cover. 
+
+The coils are removed by lifting the swivel latch 
+connector retainer to release the wiring harness, 
+apply a slight twist and lift the assembly 
+upwards. 
+
+Spark Plugs: The spark plugs introduce the ignition energy into the combustion chamber. 
+The high voltage “arcs” across the air gap in the spark plug from the positive electrode to 
+the negative electrode. This creates a spark which ignites the combustible air/fuel mixture. 
+
+
+The spark plugs are located in the center of the combustion 
+area (on the top of the cylinder head) which is the most suit¬ 
+able point for igniting the compressed air/fuel mixture. 
+
+Note: High Performance Platinum Spark Plugs are approved 
+for use. 
+
+• NGK BKR6EQUP (quad electrode, non adjustable gap) 
+
+
+Faults with the Ignition Output Components are monitored by the ECM. If there are 
+faults with the ignition coil(s) output and/or spark plugs, the following complaints could be 
+encountered: 
+
+• “Malfunction Indicator Light” With Mixture Related Fault Codes 
+
+• Poor Engine Performance 
+
+• No Start/Hard Starting 
+
+• Excessive Exhaust Emissions/Black Smoke 
+
+
+
+
+S&cewdafy 
+
+Winding 
+
+
+Insulting 
+
+Bool 
+
+
+
+
+j- 
+
+
+
+12410003 
+
+
+
+
+11410047 
+
+
+The ignition is monitored by the ECM via the secondary ignition feedback circuit and 
+Crankshaft Position/RPM Sensor. If a Misfire fault is present, the “Malfunction Indicator 
+Light” will illuminate when the OBD II criteria is achieved and the ECM will deactivate the 
+corresponding fuel injector for that cylinder. Engine operation will still be possible. 
+
+
+44 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knock Sensors: are required to prevent detonation (pinging) from damaging the engine. 
+The Knock Sensor is a piezoelectric conductor-sound microphone. The ECM will retard the 
+ignition timing (cylinder selective) based on the input of these sensors. Detonation can 
+occur due to: 
+
+
+• High Compression Ratio 
+
+• Poor Quality Fuel (Octane Rating) 
+
+• High Level of Cylinder Filling 
+
+
+• Maximum Timing Advance Curve 
+
+• High Intake Air and Engine Temperature 
+
+• Carbon Build-Up (Combustion Chamber) 
+
+
+The Knock Sensor consists of: 
+
+1. Shield Wire 
+
+2. Cup Spring 
+
+3. Seismic Mass 
+
+4. Housing 
+
+5. Inner Sleeve 
+
+6. Piezo-Ceramic Element 
+
+
+13550005 
+
+
+
+A piezo-ceramic ring is clamped between a seismic mass and the sensor body. When the 
+seismic mass senses vibration (flexing), it exerts a force on the peizo-ceramic element. 
+Opposed electrical charges build up on the upper and lower ceramic surfaces which gen¬ 
+erates a voltage signal. The acoustic vibrations are converted into electrical signals. These 
+low voltage signals are transmitted to the ECM for processing. 
+
+
+There are two Knock Sensors bolted to the 
+engine block on the intake manifold side, (1) 
+between cylinders 1 - 3 and (2) between cylin¬ 
+ders 4 - 6. If the signal value exceeds the 
+threshold, the ECM identifies the “knock” and 
+retards the ignition timing for that cylinder. 
+
+If a fault is detected with the sensor(s), the ECM 
+deactivates Knock Control. The “Malfunction 
+Indicator Light” will be illuminated when the 
+OBD II criteria is achieved, the ignition timing 
+will be set to a conservative basic setting and a 
+fault will be stored. 
+
+
+
+13550001 
+
+
+45 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+Crankshaft Position/RPM Sensor: This sensor provides the crankshaft position and 
+engine speed (RPM) signal to the ECM for ignition activation and correct timing. This input 
+is also monitored for Misfire Detection. For details about the sensor, refer to the Fuel 
+Management section. 
+
+
+A fault with this input will produce the following 
+complaints: 
+
+• No Start 
+
+• Intermittent Misfire/Driveability 
+
+• Engine Stalling 
+
+
+CRANKSHAFT 
+POSITION 
+SENSOR 
+(HALL EFFECT) 
+
+
+
+EO HDH 
+
+BMW Test system Oscilloscope display 
+
+|i 
+
+
+
+a 
+
+
+bbp m E3 
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+13550010 
+
+
+Camshaft Position Sensors (Cylinder Identification): The cylinder ID sensor input 
+allows the ECM to determine camshaft position in relation to crankshaft position. It is used 
+by the ECM to establish the “working cycle” of the engine for precise ignition timing. For 
+details about the sensor, refer to the Fuel Management section. 
+
+
+If the ECM detects a fault with the Cylinder ID Sensor, the “Malfunction Indicator Light” will 
+be illuminated when the OBD II criteria is achieved and the system will still operate precise 
+single ignition based on the Crankshaft Position/RPM Sensor. 
+
+If the signal is impaired during a restart, the ECM will activate “double ignition”. The ignition 
+coils will be activated on both the compression and exhaust strokes to maintain engine 
+operation. 
+
+
+Engine Coolant Temperature: The ECM 
+
+determines the correct ignition timing required 
+for the engine temperature. For details about 
+the sensor, refer to the Fuel Management sec¬ 
+tion. This sensor is located in the coolant jacket 
+of the cylinder head (left rear). 
+
+If the Coolant Temperature Sensor input is 
+faulty, the “Malfunction Indicator Light” will be 
+illuminated when the OBD II criteria is achieved 
+and the ECM will assume a substitute value (80° 
+C) to maintain engine operation. The ignition 
+timing will be set to a conservative basic setting. 
+
+
+
+
+
+m 
+
+
+39 
+
+
+1 
+
+
+SIGNAL- 
+
+
+m 
+
+
+10 
+
+
+jt 
+
+
+
+
+w w 
+
+TO INSTRUMENT 
+CLUSTER 
+
+
+13550015 
+
+
+
+COOLANT NTC SENSOR 
+LOCATED ON INTAKE 
+SIDE OF CYLINDER HEAD 
+
+
+46 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hot-Film Air Mass Meter: This input is used by the 
+ECM to determine the amount of ignition timing 
+advance based on the amount of intake air volume. For 
+details about the sensor, refer to the Air Management 
+section. 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+V 
+
+
+w 
+
+
+8 
+
+
+7 
+
+
+If this input is defective, a fault code will be set and the 
+“Malfunction Indicator Light” will illuminate when the 
+OBD II criteria is achieved. The ECM will maintain 
+engine operation based on throttle position and the 
+Engine Speed Sensor, and the ignition timing will be 
+set to a conservative basic setting. 
+
+
+
+13550004 
+
+
+Throttle Position: This provides the ECM with accelerator pedal position and rate of 
+movement. As the accelerator pedal is depressed the ECM will advance the ignition timing. 
+The “full throttle” position indicates maximum acceleration to the ECM, the ignition will be 
+advanced for maximum torque. For details about the sensor, refer to the Air Management 
+section. 
+
+
+Air Temperature: This signal allows the ECM to make a calculation of air density. For 
+details about the sensor, refer to the Air Management section. 
+
+The ECM will adjust the ignition timing based on air temperature. If the intake air is hot the 
+ECM retards the ignition timing to reduce the risk of detonation. If the intake air is cooler, 
+the ignition timing will be advanced. 
+
+If this input is defective, a fault code will be set and the “Malfunction Indicator Light” will illu¬ 
+minate when the OBD II criteria is achieved. The ignition timing will be set to a conservative 
+basic setting. 
+
+
+Notes: 
+
+
+47 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Ignition Management provides ignition to the combustion chambers with the required volt¬ 
+age at the correct time. Based on the combination of inputs, the ECM calculates and con¬ 
+trols the ignition timing and secondary output voltage by regulating the activation and 
+dwell of the primary ignition circuits. The ECM controls and monitors the secondary igni¬ 
+tion output including Misfire Detection. 
+
+
+SIGNAL 
+
+
+
+" *5 “ hTAKF 
+
+-,S_rZ~ 
+
+
+
+
+t^RCJTTIE 
+
+POaiTON 
+
+
+TNLjihr 
+
+S. " TEUPEfUTUItE 
+
+
+o 
+
+
+CnANKXHAM 
+Sr r j;; 13n 
+
+
+
+jCNiriow 
+
+MANAGEMENT 
+
+
+iot« iicih cot 
+COM^OL (111} 
+
+
+
+45-02-05 
+
+
+The ECM has a very “broad” range of ignition timing. This is possible by using a Direct 
+Ignition System, or sometimes referred to as “Static Ignition System” (RZV). Reliability is 
+also increased by having separate individual ignition circuits. 
+
+
+The Ignition Control is determined by the ECM (load dependent). The ECM will calculate 
+the engine “load” based on a combination of the following inputs: 
+
+
+Battery Voltage 
+Air Temperature 
+
+Camshaft Positions (Cylinder ID) 
+
+
+• Accelerator Pedal Position 
+
+• Engine Coolant 
+
+• Knock Sensors 
+
+
+• Air Flow Volume 
+
+• Crankshaft Position / RPM 
+
+
+The dwell time will be regulated based on battery voltage. When cranking, the voltage is 
+low and the ECM will increase the dwell to compensate for saturation “lag time”. When the 
+engine is running and the battery voltage is higher, the ECM will decrease the dwell due to 
+faster saturation time. 
+
+The Crankshaft Position/RPM signals the ECM to start ignition in firing order (1 -5-3-6-2-4) 
+as well as providing information about the engine operation. This input is used in combina¬ 
+tion with other inputs to determine engine load which advances/retards the ignition timing. 
+Without this input, the ECM will not activate the ignition. 
+
+
+48 
+
+MS45 Ignition Management 
+
+
+
+
+
+Cold start is determined by the 
+ECM based on the engine 
+coolant temperature and rpm 
+during start up. A cold engine will 
+crank over slower than a warm 
+engine, the ignition timing will 
+range between top dead center 
+to slightly retarded providing opti¬ 
+mum starting. 
+
+When starting a warm engine, the 
+rpm is higher which results in 
+slightly advanced timing. 
+
+If the engine coolant and intake 
+air temperature is hot, the ignition 
+timing will not be advanced 
+reducing starter motor “load”. 
+
+
+
+ECM 
+
+Relay 
+
+
+12550010 
+
+
+Multiple Ignition Pulses ensure good spark 
+quality during engine start up. The ECM will 
+activate the ignition coils 9 times (voltage 
+dependent) per 720° of crankshaft revolution. 
+
+The ignition timing will be progressively 
+advanced assisting the engine in coming up to 
+speed. As the engine speed approaches idle 
+rpm, the timing remains slightly advanced to 
+boost torque. When the engine is at idle speed, 
+minimum timing advance is required. This will 
+allow faster engine and catalyst warm up. 
+
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Test system Oscilloscope display 
+v 
+
+
+Help 
+
+
+
+
+Memory 
+
+
+1 W- ^w. f\& 
+
+
+■25 -15 -5 5 15 
+
+-20 BlO 0 10 20 
+
+
+Hold Screen 
+
+
+MULTIPLE 
+IGNITION 
+PULSES 
+FROM 
+EACH COIL 
+
+
+ms 
+
+
+Function 
+
+
+Document 
+
+
+Test 
+
+Selection 
+
+
+
+
+Module 
+
+
+< D> 
+
+
+Test 
+
+System 
+
+
+12550011 
+
+
+The multiple pulsing switches to single pulse when: 
+
+
+• Engine Speed >1350 RPM (varied with engine temperature) 
+
+
+The timing will be advanced when the ECM observes low engine rpm and increasing throt¬ 
+tle/air volume inputs (acceleration torque). As the throttle is opened, the ECM advances the 
+timing based on engine acceleration and at what rate. The ECM will fully advance timing for 
+the “full throttle” position indicating maximum acceleration (torque). 
+
+
+49 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MS45 Emission Optimized - Ignition Key Off 
+
+
+“Emission Optimized Ignition Key Off” is a 
+programmed feature of the MS45 ECM. 
+
+After the ECM detects KL15 is switched 
+“off”, the ignition stays active (ECM 
+Relay/voltage supply) for two more indi¬ 
+vidual coil firings. 
+
+
+EMISSION OPTIMIZED IGNITION KEYOFF 
+
+MS42 
+
+
+
+Already injected fuel 
+before “key off” 
+
+INJECTION 
+
+
+IGNITION 
+
+
+
+
+▲ 
+
+Start key off 
+
+
+
+This means that just two cylinders are 
+fired - not two revolutions. 
+
+This feature allows residual fuel injected 
+into the cylinders, as the ignition key is 
+switched off, to be combusted as the 
+engine runs down. 
+
+
+MS45 
+
+
+
+
+INJECTION 
+
+
+
+
+IGNITION 
+
+
+
+
+▲ 
+
+Start key off 
+
+. ▲ 
+
+ignition off 
+
+
+12410009 
+
+
+
+When KL15 is switched “off” the 
+ECM operating voltage is removed. 
+
+
+.■!: 
+
+
+
+
+- 
+
+
+
+
+A 
+
+
+
+
+— 
+
+
+
+
+I 
+
+
+
+
+^_i 
+
+
+
+The ECM will maintain a ground to 
+the Engine Control Module Relay for 
+a few seconds to maintain ignition 
+coil activation. 
+
+
+
+
+
+
+
+50 
+
+MS45 Ignition Management 
+
+
+12410002 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The HFM signal represents the amount of intake air volume. This input is used by the ECM 
+to determine the amount of timing advance to properly combust the air/fuel mixture. 
+
+The Air Temperature Signal assists the ECM in reducing the risk of detonation (ping). If the 
+intake air is hot the ECM retards the ignition timing. If the intake air is cooler, the ignition tim¬ 
+ing will be advanced. 
+
+As the throttle is closed, the ECM decreases the ignition timing if the rpm is above idle 
+speed (coasting). This feature lowers the engine torque for deceleration. When the engine 
+rpm approaches idle speed, the timing is slightly advanced to prevent the engine from 
+stalling. The amount of advance is dependent upon the engine temperature and the rate of 
+deceleration. 
+
+
+Knock Control allows the ECM to further advance the ignition timing under load for 
+increased torque. This system uses two Knock Sensors located between cylinders 1,2,3 
+and between cylinders 4,5,6. Knock Control is only in affect when the engine temperature 
+is greater than 35 °C and there is a load on the engine. This will disregard false signals while 
+idling or from a cold engine. 
+
+
+Based on the firing order, the 
+ECM monitors the Knock Sen¬ 
+sors after each ignition for a nor¬ 
+mal (low) signal. 
+
+If the signal value exceeds the 
+threshold, the ECM identifies the 
+“knock” and retards the ignition 
+timing (3°) for that cylinder the 
+next time it is fired. This process 
+is repeated in 3° increments until 
+the knock ceases. 
+
+The ignition timing will be adv¬ 
+anced again in increments to just 
+below the knock limit and main¬ 
+tain the timing at that point. 
+
+
+
+S-t HHii-Hbi 
+
+ufruri On £0MBU4f 
+HQItft 9U4IL in i -f 
+r. MlCPO^IiOhr 
+
+
+13550010 
+
+
+If a fault is detected with the Knock Sensor(s) or circuits, the ECM deactivates Knock 
+Control. The ignition timing will be set to a conservative basic setting (to reduce the risk of 
+detonation) and a fault will be stored. The “Malfunction Indicator Light” will be illuminated 
+when the OBD II criteria is achieved. 
+
+
+51 
+
+MS45 Ignition Management 
+
+
+
+
+
+Workshop Hints 
+
+Before any service work is performed on any ignition system related component, 
+always adhere to the following: 
+
+• Observe relevant safety legislation pertaining to your area 
+
+• Always wear adequate protection clothing including eye protection 
+
+• Use caution when working around a HOT engine compartment 
+
+• Always consult the REPAIR INSTRUCTIONS on the specific model you are working on before attempting a repair. 
+
+• Always SWITCH OFF THE IGNITION (KL 15) before working on the ignition system. 
+
+• Use only BMW approved test leads. 
+
+• NEVER TOUCH COMPONENTS CONDUCTING CURRENT with the engine running. 
+
+• Do not connect suppression devices or a “test light” to terminal 1 of the ignition coils. 
+
+• Terminal 1 from the ignition coil to the ECM (High Voltage approximately 350 V) 
+
+
+HIGH VOLTAGE - DANGER! 
+
+Caution! Hazardous voltages occur at: 
+
+• Ignition Leads 
+
+• Spark Plug Connector 
+
+• Spark Plug 
+
+• Ignition Coil (High Voltage at terminal 4 is approximately 40 KV) 
+
+• Terminal 1 from the ignition coil to the ECM (High Voltage approximately 350V) 
+
+
+52 
+
+MS45 Ignition Management 
+
+
+
+
+Ignition System Diagnosis 
+
+
+A fault survey should first be performed using the DISplus/GTI to determine if there is a 
+fault in the primary ignition or secondary ignition. If there is a fault in the primary ignition, 
+testing should include: 
+
+
+• Power Supply at the coil (KL 15) 
+
+
+
+• Resistance of the harness and ignition coil primary winding 
+- using the Universal Adapter with the ECM disconnected 
+
+
+
+16550021 
+
+
+ECM Final Stage transistor activation. This test 
+function is found under the Oscilloscope Preset 
+list - “Ignition Signal Primary” (normal Terminal 1 
+Signal shown on the right). 
+
+
+Install the Universal Adapter, Diagnostic cable, 
+MFK 2 negative lead to ECM ground and MFK 
+2 positive lead to the ground activation circuit 
+for Terminal 1 of the ignition coil. This test is per¬ 
+formed with the engine cranking/running. 
+
+
+
+
+4Hmh 
+
+13 £ 
+
+350017 
+
+
+53 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If there is a fault in the secondary ignition, testing should include: 
+
+
+• Primary Ignition 
+
+
+• Evaluation of Secondary Oscilloscope Patterns 
+
+
+The Following are Examples of Secondary 
+Oscilloscope Patterns (consult Repair 
+Instructions for ignition pattern variations per 
+coil manufacturer): 
+
+This is a normal pattern for one ignition circuit 
+with the engine at idle speed. 
+
+
+• Normal Combustion Period 
+
+• Normal Ignition Voltage Peak 
+
+
+
+Multiple Ignition Pulses ensure good spark 
+quality during engine start up. The ECM will 
+activate the ignition coils 9 times per 720° of 
+crankshaft revolution. 
+
+This is a normal pattern for one ignition circuit 
+when: 
+
+
+1. Normal Combustion Period 
+
+2. Normal Ignition Voltage Peak 
+
+
+Long Spark Period (1) with Low Ignition Volt¬ 
+age Peak (2). If Spark Period is Fluctuating: 
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Test system Oscilloscope display 
+v 
+
+
+Memory 
+
+
+f\/ J- f\frj - j\jsL f\\L f W- j\/J- f\/S 
+
+
+
+-25 
+
+-15 
+
+
+-5 
+
+
+5 
+
+
+
+-20 
+
+
+-10 
+
+
+0 
+
+
+
+
+
+l< 
+
+
+Function 
+
+Selection 
+
+
+Document 
+
+
+Test 
+
+Module 
+
+
+15 
+
+
+10 
+
+
+20 
+
+
+Help 
+
+
+MULTIPLE 
+IGNITION 
+PULSES 
+FROM 
+EACH COIL 
+
+
+ms 
+
+
+<1 D> 
+
+
+Test 
+
+System 
+
+
+12550011 
+
+
+• Indicates Low Compression 
+
+• Contamination on Spark Plug or Defective Spark Plug 
+
+
+Short Spark Period (1) with High Ignition 
+Voltage Peak (2). 
+
+
+• Defective Ignition Connector or Resistive Adaptive Boot 
+
+
+
+1 1 H i\ m I 1 1 11 1 1 \i I i I I H I 1 1 11 1 1 H 8 1 \ 11 H 1 11 n I H I I ] 
+
+■OQ K K TV DV H A » H Ifl 1 
+
+
+07550002 
+
+
+54 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Evaluation of Ignition Voltage Peaks at Idle 
+Speed (Multiple Cylinders Displayed). 
+
+1. Normal Attenuation (Voltage Reduction) Process 
+
+2. Shorten Attenuation Process (arrow)-Defective Ignition Coil 
+
+3. Absence of Attenuation (arrow )-Defective Ignition Coil 
+
+
+
+07550004 
+
+
+No Sparking Voltage Line (Single Cylinder 
+Displayed) 
+
+• Defective Ignition Coil 
+
+
+Evaluation of Ignition Voltage Peaks under 
+Sudden Loads (Multiple Cylinders Displayed). 
+
+
+
+07550005 
+
+
+• Defective Ignition Coil 
+
+Decaying Process is considerably Higher than 
+Ignition Voltage Peak (2): 
+
+• Lean Mixture 
+
+• Defective Fuel Injector 
+
+• Low Compression 
+
+
+
+1WVUHM»4fi»»l-D El 
+
+07550006 
+
+
+55 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+The Repair Instructions should be consulted for additional Oscilloscope Patterns under var¬ 
+ious engine speeds. 
+
+In Summary, 
+
+If the Secondary Ignition Voltage is Too High (Excessive Resistance for Ignition): 
+
+
+• Spark Plug Gap is to Large (Worn or Burned) 
+
+• Incorrect Heat Range Spark Plug 
+
+• Compression is too High (Carbon, etc.) 
+
+• Interruption in the Secondary Ignition Connector or Resistive Adapter Boot 
+
+
+If the Secondary Ignition Voltage is Too Low (Low Resistance for Ignition): 
+
+• Spark Plug Gap is Too Small (Mishandled on Installation) 
+
+• Incorrect Heat Range Spark Plug 
+
+• Compression is Too Low 
+
+• Voltage Leak in the Secondary Ignition Connector or Resistive Boot to Ground 
+
+
+Spark Plugs 
+
+
+The Spark Plugs should be inspected for the proper type, gap 
+and replaced at the specified intervals. 
+
+Refer to the Service Information Bulletin S.l. #12 01 99 for the 
+proper type and a visual of the spark plug (showing effects of 
+combustion, fouling, etc.) 
+
+
+
+
+13550057 
+
+
+56 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knock Sensors 
+
+
+The Knock Sensors should be tested using the 
+DIS/GT1 for: 
+
+• Fault Codes 
+
+• Status Display - Knock Control 
+(active / not active) 
+
+• Oscilloscope Display (Low DC Voltage -mV setting) 
+
+
+When installing Knock Sensors: 
+
+
+
+DO NOT MIX THE LOCATIONS or Engine 
+Damage will result! The Knock Sensors use a 
+combined connection to the engine harness. 
+The Knock Sensor with the shorter cable is for 
+cylinders 4 - 6. 
+
+Do Not Over Tighten attaching bolt! - Piezo 
+ceramic will be cracked. Torque to 20 nm. 
+
+Do Not Under Tighten attaching bolt, a lose 
+sensor can vibrate producing a similar signal to 
+a knock. 
+
+
+
+57 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tools and Equipment 
+
+
+The DISplus/GTI as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+
+
+
+
+
+16550019 
+
+
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+When installing the Universal Adapter to the 
+ECM, make sure the ignition is switched off. 
+
+
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+
+SKE BREAKOUT BOX SET 
+P/N 90 88 6 121 300 
+
+
+ENGINE CONTROL 
+MODULE HARNESS 
+
+
+
+0 ©©©© 
+©©©©© 
+©©©©© 
+©©©©© 
+© © © © © 
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+©©©©© 
+
+©©© 0 © 
+
+©©©©© 
+
+©©©©© 
+
+©©© 0 © 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+16550020 
+
+
+This will allow sufficient time to complete the 
+DM TL test. Voltage may be present (up to 3 
+minutes) causing damage to the ECM/TCM if 
+they are disconnected during this time period 
+(arcing). 
+
+When Testing the Secondary Ignition System, 
+use Special Tool (Secondary Voltage Test Cable) 
+#90 88 6 127 050. This provides a clamping 
+surface for the DISplus primary and secondary 
+ignition adapter clamps. Refer to the HELP but¬ 
+ton for additional (on screen) connections. 
+
+Caution! Observe Safety Precautions, High 
+Voltage is Present with the Engine Running 
+
+
+
+
+
+W127-GSQ 
+
+
+
+58 
+
+MS45 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Spark Plugs should be properly installed 
+and torqued using the following Special Tools: 
+
+
+• 12 1 200 Torque Adapter 
+•12 1 171 Spark Plug Socket 
+
+
+NOTE: NEVER USE AIR TOOLS FOR REM¬ 
+OVAL OR INSTALLATION! 
+
+
+
+13550020 
+
+
+59 
+
+MS45 Ignition Management 
+
+
+
+
+Emissions Management - M54B2.5 Low Emission Vehicle (LEV) 
+
+- M54B3.0 Ultra Low Emission Vehicle (ULEV) 
+
+Evaporative Emissions: The control of the evaporative fuel vapors (Hydrocarbons) from 
+the fuel tank is important for the overall reduction in vehicle emissions. The evaporative sys¬ 
+tem has been combined with the ventilation of the fuel tank, which allows the tank to breath 
+(equalization). The overall operation provides: 
+
+• An inlet vent, to an otherwise “sealed” fuel tank, for the the entry of air to replace the fuel 
+consumed during engine operation. 
+
+• An outlet vent with a storage canister to “ trap and hold” fuel vapors that are produced 
+by the expansion/evaporation of the fuel in the tank, when the vehicle is stationary. 
+
+The canister is then "purged" using the engine vacuum to draw the fuel vapors into the 
+combustion chamber. This "cleans" the canister allowing for additional storage. Like any 
+other form of combustible fuel, the introduction of these vapors on a running engine must 
+be controlled. 
+
+The ECM controls the Evaporative Emission Valve which regulates purging of evaporative 
+vapors. The evaporative system must be monitored for correct purge operation and Leak 
+Detection. 
+
+
+1. Fuel supply line 
+
+
+2. Evaporative purge line 
+
+
+3. Evaporative vent line (to carbon canister) 
+
+4. Atmospheric vent line with filter 
+
+
+5. Carbon canister with DM TL pump 
+
+
+
+60 
+
+MS45 Emissions Management 
+
+
+
+
+
+1. Overpressure protection valve 
+
+2. Filling vent valve (rollover valve) 
+
+3. Operating vent valve 
+
+4. Ventilation line 
+
+5. Mushroom valve (“T” fitting) 
+
+6. Carbon canister 
+
+7. DM TL (leakage diagnosis pump) 
+
+8. Filter 
+
+
+9. Atmospheric vent line 
+
+10. DM TL (electrical control circuit) 
+
+11. ECM (DME) 
+
+12. Evaporative emission (purge) control valve 
+
+13. Evaporative emission (purge) line 
+
+14. Intake manifold 
+
+15. Engine air filter 
+
+16. M54 engine 
+
+
+On-Board Refueling Vapor Recovery (ORVR - DM TL Equipped Vehicles): The ORVR 
+system recovers and stores hydrocarbon fuel vapor that was previously released during 
+refueling. Non ORVR vehicles vent fuel vapors from the tank venting line back to the filler 
+neck and in many states reclaimed by a vacuum receiver on the filling station’s fuel pump 
+nozzle. 
+
+
+When refueling an ORVR equipped vehicle, the pressure of the fuel entering the tank forces 
+the hydrocarbon vapors through the Filling Vent Valve (2) and the large tank ventilation line 
+(4) into the Carbon Canister (6). The HC is stored in the Carbon Canister and the system 
+can then “breath” through the DM TL (!) and the filter (8). 
+
+Note: A small diameter connection to the filler neck is provided by the Mushroom Valve “T 
+fitting” (5). This is necessary for checking the filler cap/neck during Evaporative Leak 
+Testing. 
+
+
+61 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ventilation continues until the rising fuel level lifts the float in the Filling Vent Valve (2) and 
+closes the outlet. When the ventilation outlet is closed, a pressure cushion (vapor area) is 
+created in the fuel tank. This creates a backup of fuel into the filler neck and the tank is full. 
+
+This leaves a vapor area of approximately 6 liters above the fuel level. This area provides 
+integral liquid/vapor separation. The vapor condensates separate and drain back into the 
+fuel. The remaining vapors exit the fuel tank (when sufficient pressure is present) through 
+the Operating Vent Valve (3) to the Carbon Canister. 
+
+Note: The Operating Vent Valve is also equipped with a protection float in the event of an 
+“overfill” situation. 
+
+
+Carbon Canister: As the hydrocarbon vapors enter the canister, they will be absorbed by 
+the active carbon. The remaining air will be vented to the atmosphere through the end of 
+the canister, DM TL and filter, allowing the fuel tank to “breath”. 
+
+When the engine is running, the canister is 
+"purged" using intake manifold vacuum to draw 
+air through the canister which extracts the HC 
+vapors into the combustion chamber. 
+
+The Carbon Canister with DM TL and air filter 
+are located at the right rear underside of the 
+vehicle, below the luggage compartment floor. 
+
+
+
+Evaporative Emission Valve: This ECM controlled solenoid valve regulates the purge flow 
+from the Carbon Canister into the intake manifold. The ECM Relay provides operating volt¬ 
+age, and the ECM controls the valve by regulating the ground circuit. The valve is powered 
+open and closed by an internal spring. 
+
+
+If the Evaporative Emission Valve circuit is defec¬ 
+tive, a fault code will be set and the “Malfunction 
+Indicator Light” will illuminate when the OBD II 
+criteria is achieved. 
+
+If the valve is “mechanically” defective, a drive- 
+ability complaint could be encountered and a 
+mixture related fault code will be set. 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS FROM 
+
+CHARCOAL 
+
+CANISTER 
+
+
+
+VAPORS TO VACUUM PORT 
+ON THROTTLE HOUSING 
+
+
+135500038 
+
+
+62 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Evaporative Leakage Detection (DM TL): This com- 1 
+ponent ensures accurate fuel system leak detection for 
+leaks as small as 0.5 mm by slightly pressurizing the 
+fuel tank and evaporative components. The DM TL 
+pump contains an integral DC motor which is activated 
+directly by the ECM. The ECM monitors the pump 
+motor operating current as the measurement for 
+detecting leaks. 
+
+The pump also contains an ECM controlled change 
+over valve that is energized closed during a Leak 
+Diagnosis test. The change over valve is open during all 
+other periods of operation allowing the fuel system to 
+“breath” through the inlet filter. The DM TL is located 
+under the luggage compartment floor with the Carbon ^ 
+Canister. 
+
+1. In its inactive state, filtered fresh air enters the evap¬ 
+orative system through the sprung open valve of the 
+DM TL. 
+
+2. When the DME activates the DM TL for leak testing, 
+it first activates only the pump motor. This pumps air 
+through a restricter orifice (0.5 mm) which causes 
+the electric motor to draw a specific amperage 
+value. This value is equivalent to the size of the 
+restricter. 
+
+3. The solenoid valve is then energized which seals the 
+evaporative system and directs the pump output to 3 
+pressurize the evaporative system. 
+
+• A large leak is detected in the evaporative system if the amperage 
+value is not achieved. 
+
+• A small leak is detected if the same reference amperage is achieved. 
+
+• The system is sealed if the amperage value is higher than the refer¬ 
+ence amperage. 
+
+
+Since MY 2002, a heating element is integrated in the 
+DM TL pumpto eliminate condensation. The heater is 
+provided battery voltage with “KL15” and the ECM pro¬ 
+vides the ground path. 
+
+
+
+13410089 
+
+
+
+13410088 
+
+
+AIR INLET 
+
+
+
+13410087 
+
+
+63 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exhaust Emissions: The combustion process of a gasoline powered engine produces 
+Carbon Monoxide (CO), Hydrocarbons (HC) and Oxides of Nitrogen (NOx). 
+
+
+• Carbon Monoxide is a product of incomplete combustion under conditions of air deficiency. CO emissions are 
+dependent on the air/fuel ratio. 
+
+
+• Hydrocarbon are also a product of incomplete combustion which results in unburned fuel. HC emissions are 
+dependent on air/fuel ratio and the ignition of the mixture. 
+
+
+• Oxides of Nitrogen are a product of peak combustion temperature (and temperature duration). NOx emissions are 
+dependent on internal cylinder temperature affected by the air/fuel ratio and ignition of the mixture. 
+
+
+Control of exhaust emissions is accomplished by the engine and engine management 
+design as well as after-treatment. 
+
+• The ECM manages exhaust emissions by controlling the air/fuel ratio and ignition. 
+
+• The ECM controlled Secondary Air Injection further dilutes exhaust emissions leaving the engine and reduce the 
+catalyst warm up time. 
+
+• The Catalytic Converter further reduces exhaust emissions leaving the engine. 
+
+
+64 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bosch LSH 25 Oxygen Sensors: The pre-cat 
+oxygen sensors measure the residual oxygen 
+content of the exhaust gas. The sensors pro¬ 
+duces a low voltage (0-1000 mV) proportional to 
+the oxygen content that allows the ECM to mon¬ 
+itor the air/fuel ratio. 
+
+The sensors are mounted in the hot exhaust str¬ 
+eam directly in front of the catalytic converters. 
+
+
+PRE-CATALYST SENSORS 
+
+
+
+
+The “tip” of the sensor contains a microporous platinum coating (electrodes) which conduct 
+current. The platinum electrodes are separated by solid electrolyte which conducts oxygen 
+ions. The platinum conductors are covered with a highly porous ceramic coating and the 
+entire tip is encased in a ventilated metal “cage”. 
+
+This assembly is submersed in the exhaust stream. The sensor body (external) has a small 
+vent opening in the housing that allows ambient air to enter the inside of the tip. 
+
+The ambient air contains a constant level of oxygen content (21 %) and the exhaust stream 
+has a much lower oxygen content. The oxygen ions (which contain small electrical charges) 
+are “purged” through the solid electrolyte by the hot exhaust gas flow. The electrical 
+charges (low voltage) are conducted by the platinum electrodes to the sensor signal wire 
+that is monitored by the ECM. 
+
+
+Notes: 
+
+
+65 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12410006 
+
+If the exhaust has a lower oxygen content (rich mixture), there will be a large ion “migration” 
+through the sensor generating a higher voltage (950 mV). 
+
+If the exhaust has a higher oxygen content (lean mixture), there will be a small ion “migra¬ 
+tion” through the sensor generating a lower voltage (080 mV). 
+
+
+This voltage signal is constantly changing due to 
+combustion variations and normal exhaust pul¬ 
+sations. 
+
+The ECM monitors the length of time the sen¬ 
+sors are operating in the lean, rich (including the 
+time of rise and fall) and rest conditions. The 
+evaluation period of the sensors is over a pre¬ 
+defined number of oscillation cycles. 
+
+
+Rest Time 
+
+
+
+This conductivity is efficient when the oxygen 
+sensor is hot (250° - 300° C). For this reason, 
+the sensor contains a heating element. This 
+“heated” sensor reduces warm up time, and 
+retains the heat during low engine speed when 
+the exhaust temperature is cooler. 
+
+
+
+66 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Direct Oxygen Sensor Heating: The oxygen sensor conductivity is efficient when it is hot 
+(600° - 700° C). For this reason, the sensors contain heating elements. These “heated” sen¬ 
+sors reduce warm up time, and retain the heat during low engine speed when the exhaust 
+temperature is cooler. OBD II requires monitoring of the oxygen sensor heating function and 
+heating elements for operation. 
+
+The four oxygen sensor heating circuits receive operating voltage from the ECM Relay 
+when KL15 is switched “ON”. Each of the sensors heaters are controlled through separate 
+final stage transistors. 
+
+The sensor heaters are controlled with a pulse width modulated voltage during a cold start. 
+This allows the sensors to be brought up to operating temperature without the possibility 
+of thermal shock. The duty cycle is then varied to maintain the heating of the sensors. 
+
+When the engine is decelerating (closed throttle), the ECM increases the duty cycle of the 
+heating elements to compensate for the decreased exhaust temperature. 
+
+
+
+67 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Catalytic Converter Monitoring: The efficiency of catalyst operation is determined by 
+evaluating the oxygen consumption of the catalytic converters using the pre and post oxy¬ 
+gen sensor signals. A properly operating catalyst consumes most of the 02 (oxygen) that 
+is present in the exhaust gas (input to catalyst). The gases that flow into the catalyst are 
+converted from CO, HC and NOx to CO 2 , H 2 O and N2 respectively. 
+
+
+In order to determine if the catalysts are working correctly, post catalyst oxygen sensors are 
+installed to monitor exhaust gas content exiting the catalysts. The signal of the post cat. 02 
+sensor is evaluated over the course of several pre cat. 02 sensor oscillations. 
+
+
+During the evaluation period, the signal of the 
+post cat. sensor must remain within a relatively 
+constant voltage range (700 - 800 mV). The 
+post cat. 02 voltage remains high with a very 
+slight fluctuation. This indicates a further lack of 
+oxygen when compared to the pre cat. sensor. 
+
+
+Good 
+
+Signal 
+
+
+
+If this signal decreased in voltage and/or 
+increased in fluctuation, a fault code will be set 
+for Catalyst Efficiency and the “Malfunction 
+Indicator Light” will illuminate when the OBD II 
+criteria is achieved. 
+
+
+uj 
+
+Defective < 
+
+Signal ^ 
+
+> 
+
+
+
+TIME 165500046 
+
+
+Secondary Air Injection: Injecting ambient air into the exhaust stream after a cold engine 
+start reduces the warm up time of the catalyst and reduces HC and CO emissions. The 
+ECM controls and monitors the Secondary Air Injection. 
+
+An Electric Secondary Air Pump and Air Injection Valve direct fresh air through an internal 
+channel in the cylinder head into the exhaust ports. The Air Injection Valve is opened by air 
+pressure (from the pump) and is closed by an internal spring. 
+
+The E85 uses a higher volume Secondary Air 
+Pump (45 kg/hour). The pump contains an inte¬ 
+gral air filter element which is maintenance free. 
+
+1. Air filter 
+
+2. Secondary air pump (SLP) 
+
+3. Air injection valve (SLV) 
+
+
+
+68 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Misfire Detection: As part of the OBD II regulations the ECM must determine misfire and 
+also identify the specific cylinder(s), the severity of the misfire and whether it is emissions 
+relevant or catalyst damaging based on monitoring crankshaft acceleration. 
+
+In order to accomplish these tasks the ECM monitors the crankshaft for acceleration by the 
+impulse wheel segments of cylinder specific firing order. The misfire/engine roughness cal¬ 
+culation is derived from the differences in the period duration of individual increment gear 
+segments. 
+
+Each segment period consist of 
+an angular range of 90° crank 
+angle that starts 54° before Top 
+Dead Center. 
+
+If the expected period duration is 
+greater than the permissible value 
+a misfire fault for the particular 
+cylinder is stored in the fault 
+memory of the ECM. 
+
+
+Depending on the level of misfire 
+rate measured the ECM will illu¬ 
+minate the "Malfunction Indicator 
+Light”, deactivate the specific fuel 
+injector to the particular cylinder 
+and switch oxygen sensor control 
+to open-loop. 
+
+In order to eliminate misfire faults that can occur as a result of varying flywheel tolerances 
+(manufacturing process) an internal adaptation of the flywheel is made. The adaptation is 
+made during periods of decel fuel cut-off in order to avoid any rotational irregularities which 
+the engine can cause during combustion. This adaptation is used to correct segment dura¬ 
+tion periods prior to evaluation for a misfire event. 
+
+If the sensor wheel adaptation has not been completed the misfire thresholds are limited to 
+engine speed dependent values only and misfire detection is less sensitive. The crankshaft 
+sensor adaptation is stored internally and is not displayed via DISplus or GT1. If the adap¬ 
+tation limit is exceeded a fault will be set. 
+
+
+CRANKSHAFT 
+POSITION 
+SENSOR 
+(HALL EFFECT) 
+
+
+
+| Print 
+
+| Change 
+
+l End 
+
+| Services |” 
+
+
+BMW Test system Oscilloscope display 
+
+
+
+
+Help 
+
+
+
+
+<1 Oi l ll£L \ 
+
+
+
+
+Print 
+
+
+Change 
+
+
+j End j" j Services ^ 
+
+
+BMW Test system Oscilloscope display 
+v 
+
+
+
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+ENGINE MISFIRE DETECTED 
+
+
+134100101 
+
+
+69 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Emissions Management controls evaporative and exhaust emissions. The ECM monitors 
+the fuel storage system for evaporative leakage and controls the purging of evaporative 
+vapors. The ECM monitors and controls the exhaust emissions by regulating the com¬ 
+bustible mixture and after treating by injecting fresh air into the exhaust system. The cat¬ 
+alytic converter further breaks down remaining combustible exhaust gases and is moni¬ 
+tored by the ECM for catalyst efficiency. 
+
+
+
+The MS45 Evaporative Leakage Detection is performed on the fuel storage system by 
+the DM TL pump which contains an integral DC motor that is activated by the ECM. The 
+ECM monitors the pump motor operating current as the measurement for detecting leaks. 
+The pump also contains an ECM controlled change over valve that is energized closed dur¬ 
+ing a Leak Diagnosis test. The ECM initiates a leak diagnosis test every time the criteria are 
+met. The criteria is as follows: 
+
+
+• Engine OFF with ignition switched OFF. 
+
+• ECM still in active state or what is known as “follow up mode” (ECM Relay energized, ECM and components 
+online for extended period after key off). 
+
+• Prior to Engine/Ignition switch OFF condition, vehicle must have been driven for a minimum of 20 minutes. 
+
+• Prior to minimum 20 minute drive, the vehicle must have been OFF for a minimum of 5 hours. 
+
+• Fuel Tank Capacity must be between 15 and 85% (safe approximation between 1/4 - 3/4 of a tank). 
+
+• Ambient Air Temperature between 4°C & 35°C (40°F & 95°F ) 
+
+• Altitude < 2500m (8,202 feet). 
+
+• Battery Voltage - between 10.95 and 14.5 Volts 
+
+
+PHASE 1 - Reference Measurement 
+
+The ECM activates the pump motor. The pump 
+pulls air from the filtered air inlet and passes it 
+through a precise 0.5 mm reference orifice in 
+the pump assembly. The ECM simultaneously 
+monitors the pump motor current flow. The 
+motor current raises quickly and levels off (sta¬ 
+bilizes) due to the orifice restriction. The ECM 
+stores the stabilized amperage value in memo¬ 
+ry. The stored amperage value is the electrical 
+equivalent of a 0.5 mm (0.020”) leak. 
+
+
+Throttle 
+Plate 
+
+
+Purge 
+
+Valve 
+
+
+
+0.5mm 
+
+Reference 
+
+Orifice 
+
+
+j-llA/V 
+
+
+Canis 
+
+iter 
+
+
+
+
+□i 
+
+
+Valve 
+
+
+X 
+
+
+z 
+
+
+100000 ) 
+
+
+rMRjq 
+
+
+
+Electric 
+Motor LDP 
+
+
+
+135500065 
+
+
+70 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHASE 2 - Leak Detection 
+
+The ECM energizes the Change Over Valve 
+allowing the pressurized air to enter the fuel sys¬ 
+tem through the Charcoal Canister. The ECM 
+monitors the current flow and compares it with 
+the stored reference measurement over a dura¬ 
+tion of time. 
+
+Once the test is concluded, the ECM stops the 
+pump motor and immediately de-energizes the 
+change over valve. This allows the stored pres¬ 
+sure to vent thorough the charcoal canister 
+trapping hydrocarbon vapor and venting air to 
+atmosphere through the filter. 
+
+Test Results 
+
+The time duration varies between 45 & 270 sec¬ 
+onds depending on the resulting leak diagnosis 
+test results (developed tank pressure “amper- 
+age’Vwithin a specific time period). However the 
+chart depicts the logic used to determine fuel 
+system leaks. 
+
+
+If the ECM detects a leak, a fault 
+will be stored and the “Malfun¬ 
+ction Indicator Light” will be illumi¬ 
+nated. Depending on the amper¬ 
+age measurement detected by 
+the ECM, the fault code displayed 
+be small leak or large leak. 
+
+
+
+Fresh Air 
+
+
+134100100 
+
+
+
+Fresh Air 
+
+
+13550066 
+
+
+Current 
+
+
+Refuelling during the test will 
+interrupt the diagnosis and the 
+DM TL will be denergized. The 
+ECM detects this by: 
+
+• Pressure drop when filler cap is removed 
+
+• Rise in pressure due to refuelling 
+
+If refuelling does not take place 
+immediately after opening the 
+filler cap (pressure rise missing), a 
+large leak is detected. 
+
+
+
+13550064 
+
+71 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If the vehicle was refueled and the filler cap was not properly installed, the 
+“Check Filler Cap” message will be displayed in the instrument cluster for 20 
+seconds. 
+
+If the filler cap is installed and there is no leakage present the next time the 
+leakage test is performed, the “Malfunction Indicator Light” will not be illu¬ 
+minated (additional detailed information on page 82 of Workshop Hints). 
+
+
+CHECK 
+
+FILLER 
+
+CAP 
+
+
+Evaporative Emission Purging is regulated by the ECM controlling the Evaporative 
+Emission Valve. The Evaporative Emission Valve is a solenoid that regulates purge flow from 
+the Active Carbon Canister into the intake manifold. The ECM Relay provides operating 
+voltage, and the ECM controls the valve by regulating the ground circuit. The valve is pow¬ 
+
+
+ered open and closed by an internal spring. 
+The “purging” process takes place when: 
+
+• Oxygen Sensor Control is active 
+
+• Engine Coolant Temperature is >67° C 
+
+• Engine Load is present 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS FROM 
+
+CHARCOAL 
+
+CANISTER 
+
+
+
+VAPORS TO VACUUM PORT 
+ON THROTTLE HOUSING 
+
+
+
+135500038 
+
+
+The Evaporative Emission Valve is opened in stages to moderate the purging. 
+
+
+• Stage 1 opens the valve for 10 ms (milli-seconds) and then closes for 150 ms. 
+
+
+• The stages continue with increasing opening times (up to 16 stages) until the valve is completely open. 
+
+
+• The valve now starts to close in 16 stages in reverse order 
+
+
+• This staged process takes 6 minutes to complete. The function is inactive for 1 minute then starts the process all 
+over again. 
+
+
+• During the purging process the valve is completely opened during full throttle operation and is completely closed 
+during deceleration fuel cutoff. 
+
+
+Evaporative Purge System Flow Check is performed by the ECM when the oxygen 
+sensor control and purging is active. When the Evaporative Emission Valve is open the ECM 
+detects a rich/lean shift as monitored by the oxygen sensors indicating the valve is func¬ 
+tioning properly. 
+
+If the ECM does not detect a rich/lean shift, a second step is performed when the vehicle 
+is stationary and the engine is at idle speed. The ECM opens and close the valve (abrupt¬ 
+ly) several times and monitors the engine rpm for changes. If there are no changes, a fault 
+code will be set. 
+
+
+72 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel System Monitoring is per¬ 
+formed by the ECM which verifies 
+the calculated injection time (ti) in 
+relation to engine speed, load 
+and the oxygen sensor signal as 
+a result of the residual oxygen in 
+the exhaust stream. 
+
+The ECM uses the oxygen sensor 
+signal as a correction factor for 
+adjusting and optimizing the mix¬ 
+ture pilot control under all engine 
+operating conditions. 
+
+
+] 
+
+
+INTAKE AIR 
+MASS „ 
+
+
+► 
+
+
+
+
+5 , 
+
+
+WHERE MULTIPLICATIVE ADAPTATION OCCURS 
+
+
+WHERE 
+
+ADDITIVE 
+
+ADAPTATION 
+
+OCCURS 
+
+
+
+
+
+O 
+
+
+
+
+
+□ 
+
+
+♦ 
+
+
+ENGINE 
+
+SPEED 
+
+
+
+
+OXYGEN 
+
+SENSOR 
+
+SIGNAL(S) 
+
+
+
+ADAPTATION 
+OXYGEN INFLUENCE 
+SENSOR 
+INFLUENCE 
+
+INJECTION TIME 
+
+
+
+
+
+
+
+f 
+
+
+[ 
+
+
+
+M 
+
+
+& 
+
+
+% 
+
+
+ADAPTATION OF 
+INJECTION 
+TIME DURATION 
+
+
+135500055 
+
+
+Adaptation Values are stored by the ECM in order to maintain an "ideal" air/fuel ratio. 
+The ECM is capable of adapting to various environmental conditions encountered while the 
+vehicle is in operation (changes in altitude, humidity, ambient temperature, fuel quality, etc.). 
+
+
+The adaptation can only make slight corrections and can not compensate for large 
+changes which may be encountered as a result of incorrect airflow or incorrect fuel supply 
+to the engine. 
+
+Within the areas of adjustable adaptation, the ECM modifies the injection rate under two 
+areas of engine operation: 
+
+
+• During idle and low load mid range engine speeds (Additive Adaptation). 
+
+• During operation under a normal to higher load when at higher engine speeds (Multiplicative Adaptation). 
+
+
+These values indicate how the ECM is compensating for a less than ideal initial air/fuel ratio. 
+
+
+NOTE: If the adaptation value is greater than "0.0" Additive (% Multiplicative), the ECM is 
+trying to richen the mixture. If the adaptation value is less then "0.0” Additive (% 
+Multiplicative), the ECM is trying to lean-out the mixture. 
+
+
+73 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Catalyst Monitoring is performed by the ECM under oxygen sensor closed loop opera¬ 
+tion. The changing air/fuel ratio in the exhaust gas results in lambda oscillations at the pre¬ 
+catalyst sensors. These oscillations are dampened by the oxygen storage activity of the 
+catalysts and are reflected at the post catalyst sensors as a fairly stable signal (indicating 
+oxygen has been consumed). Conditions for Catalyst Monitoring: 
+
+
+Requirements 
+
+• Closed loop operation 
+
+• Engine coolant temperature 
+
+• Vehicle road speed 
+
+• Catalyst temperature (calculated) 
+
+• Throttle angle deviation 
+
+• Engine speed deviation 
+
+• Average lambda value deviation 
+
+
+Status/Condition 
+
+YES 
+
+Operating Temp. 
+
+3 - 50 MPH (5 to 80 km/h) 
+350°C to 650°C 
+Steady throttle 
+Steady/stable engine speed 
+Steady/stable load 
+
+
+* Catalyst temperature is an internally calculated value that is a function of load/air mass 
+and time. 
+
+
+As part of the monitoring process, the pre and 
+post 02 sensor signals are evaluated by the 
+ECM to determine the length of time each sen¬ 
+sor is operating in the rich and lean range. 
+
+
+If the catalyst is defective the post 02 sensor 
+signal will reflect the pre 02 sensor signal 
+(minus a phase shift/time delay), since the cat¬ 
+alyst is no longer able to store oxygen. 
+
+
+The catalyst monitoring process is stopped 
+once the predetermined number of cycles are 
+completed, until the engine is shut-off and start¬ 
+ed again. After completing the next "customer 
+driving cycle" whereby the specific conditions 
+are met and a fault is again set, the "Malfunction 
+Indicator Light” will be illuminated. 
+
+
+
+Good 
+
+Signal 
+
+
+
+TIME 
+
+
+Note: The catalyst efficiency is monitored once 
+per trip while the vehicle is in closed loop oper¬ 
+ation. 
+
+
+LL! 
+
+
+Defective 
+
+Signal 
+
+
+£ 
+
+< 
+
+
+LU 
+
+<D 
+< 
+
+
+O 
+
+> 
+
+
+PRE POST 
+
+
+
+74 
+
+MS45 Emissions Management 
+
+
+TIME 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary Air Injection is required to reduce HC and CO emissions while the engine is 
+warming up. Immediately following a cold engine start (-10 to 60°C) fresh air/oxygen is 
+injected directly into the exhaust stream. 
+
+
+The temperature signal is provid¬ 
+ed to the ECM by the Air 
+Temperature Sensor in the HFM*. 
+
+The ECM provides a ground cir¬ 
+cuit to activate the Secondary Air 
+Injection Pump Relay. The relay 
+supplies voltage to the Secon¬ 
+dary Air Injection Pump. 
+
+The single speed pump runs for 
+approximately 90 seconds after 
+engine start up. 
+
+* Below -10° C the pump is acti¬ 
+vated briefly to “blow out” any 
+accumulated moisture. 
+
+
+
+Secondary Air Injection Monitoring is performed by the ECM via the use of the pre-cat¬ 
+alyst oxygen sensors. Once the air pump is active and is air injected into the exhaust sys¬ 
+tem the oxygen sensor signals will indicate a lean condition (up to 16 seconds). 
+
+
+If the oxygen sensor signals do not change 
+within a predefined time a fault will be set and 
+identify the faulty bank. 
+
+If the additional oxygen is not detected for two 
+consecutive cold starts, the ECM determines a 
+general fault with the function of the secondary 
+air injection system. After completing the next 
+cold start and a fault is again present the 
+"Malfunction Indicator Light” will be illuminated 
+when the OBD II criteria is achieved. 
+
+
+
+75 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Misfire Detection is part of the OBD II regulations the ECM must determine misfire and 
+also identify the specific cylinder(s). The ECM must also determine the severity of the mis¬ 
+fire and whether it is emissions relevant or catalyst damaging based on monitoring crank¬ 
+shaft acceleration. 
+
+Emission Increase: 
+
+• Within an interval of 1000 crankshaft revolutions, the ECM adds the the detected misfire 
+events for each cylinder. If the sum of all cylinder misfire incidents exceeds the predeter 
+mined value, a fault code will be stored and the “Malfunction Indicator Light” will be illu¬ 
+minated. 
+
+
+• If more than one cylinder is misfiring, all misfiring cylinders will be specified and the indi¬ 
+vidual fault codes for each misfiring cylinder, or multiple cylinders will be stored. The 
+“Malfunction Indicator Light” will be illuminated. 
+
+Catalyst Damage: 
+
+
+• Within an interval of 200 crankshaft revolutions the detected number of misfiring events 
+is calculated for each cylinder. The ECM monitors this based on load/rpm. If the sum of 
+cylinder misfire incidents exceeds a predetermined value, a “Catalyst Damaging” fault 
+code is stored and the “Malfunction Indicator Light” will be illuminated. 
+
+
+If the cylinder misfire count 
+exceeds the predetermined 
+threshold the ECM will take the 
+following measures: 
+
+• The oxygen sensor control will 
+be switched to open loop. 
+
+• The cylinder selective fault code 
+is stored. 
+
+• If more than one cylinder is mis 
+firing the fault code for all indi 
+vidual cylinders and for multiple 
+cylinders will be stored. 
+
+• The fuel injector to the respec 
+tive cylinder(s) is deactivated. 
+
+
+
+
+76 
+
+MS45 Emissions Management 
+
+
+CRANKSHAFT 
+
+POSITION 
+
+SENSOR 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electrically Heated Thermostat 
+
+
+Model specific variants of the electrically heated thermostat are equipped on all LEV/ULEV 
+compliant engines. This thermostat allows the engine to run more efficiently than conven¬ 
+tional thermostats improving fuel economy. 
+
+
+The ECM also electrically activates the thermostat to lower the engine coolant temperatures 
+based on monitored conditions. It is both a conventionally functioning and ECM controlled 
+thermostat (two stage operation). ECM control adds heat to the wax core causing the ther¬ 
+mostat to open earlier than it’s mechanical temperature rating providing increased coolant 
+flow. 
+
+
+Conventional Function: The ther¬ 
+mostat begins to open at 103°C. This 
+is at the inlet side of the water pump 
+and represents the temperature of the 
+coolant entering the engine. Before 
+the 103°C temperature is realized, the 
+coolant is circulated through the 
+engine block by the water pump. 
+
+After the temperature reaches 103°C it 
+is maintained as the inlet temperature 
+by the thermostat. The coolant tem¬ 
+perature at the water pump engine 
+outlet is approximately 110°C. The 
+additional 7°C is achieved after the 
+coolant has circulated through the 
+block. 
+
+
+The operating temperature of the 
+engine will remain within this range as 
+long as the engine is running at part 
+load conditions and the engine 
+coolant temperature does not exceed 
+113°C. 
+
+
+°c 
+
+115 
+
+110 
+
+105 
+
+100 
+
+95 
+
+90 
+
+85 
+
+80 
+
+
+▲ 
+
+110°C THERMOSTAT 
+
+_L_ 
+
+- part\ 
+
+FULL LOAD / PART 
+
+- LOAD \ 
+
+/ LOAD 
+
+
+L 85°C THERMOSTAT 
+-► TIME 
+
+
+COLD COOLANT 
+
+
+
+COLD COOLANT 
+
+
+
+HOT COOLANT 
+
+▼ RETURNED TO RADIATOR 
+
+
+77 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ECM Control 
+
+
+Electric thermostat activation is based on the following parameters: 
+
+• Engine temperature > 113°C 
+
+• Radiator Coolant Outlet Temperature 
+
+• Load signal “ti” > 5.8 ms 
+
+• Intake air temp > 52°C 
+
+• Vehicle speed >110 MPH 
+
+
+When one or more of these monitored conditions is determined, the ECM activates 
+(switched ground) the thermostat circuit. The activated heating element causes the wax 
+core in the thermostat to heat up and open the thermostat increasing coolant circulation 
+through the radiator which brings the engine temperature down. 
+
+The temperature of the coolant at the inlet side of the water pump will drop to approximately 
+85°C and the temperature at the outlet side will drop to approximately 103°C when acti¬ 
+vated . 
+
+
+COLD OOOLANT 
+
+
+
+78 
+
+MS45 Emissions Management 
+
+
+
+
+The “Malfunction Indicator Light” (MIL) will be illuminated under the following conditions: 
+
+• Upon the completion of the next consecutive 
+driving cycle where the previously faulted 
+system is monitored again and the emissions 
+relevant fault is again present. 
+
+• Immediately if a “Catalyst Damaging” fault 
+occurs (see Misfire Detection). 
+
+The illumination of the light is performed in 
+accordance with the Federal Test Procedure 
+(FTP) which requires the lamp to be illuminated 
+when: 
+
+• A malfunction of a component that can affect the emission performance of the vehicle 
+occurs and causes emissions to exceed 1.5 times the standards required by the (FTP). 
+
+• Manufacturer-defined specifications are exceeded. 
+
+• An implausible input signal is generated. 
+
+• Catalyst deterioration causes HC-emissions to exceed a limit equivalent to 1.5 times the 
+standard (FTP). 
+
+• Misfire faults occur. 
+
+• A leak is detected in the evaporative system, or “purging” is defective. 
+
+• ECM fails to enter closed-loop oxygen sensor control operation within a specified time inter¬ 
+val. 
+
+• Engine control or automatic transmission control enters a "limp home" operating mode. 
+
+• Ignition is on (KL15) position before cranking = Bulb Check Function. 
+
+Within the BMW system the illumination of the Malfunction Indicator Light is performed in 
+accordance with the regulations set forth in CARB mail-out 1968.1 and as demonstrated 
+via the Federal Test Procedure (FTP). The following page provides several examples of 
+when and how the Malfunction Indicator Light is illuminated based on the "customer drive 
+cycle". 
+
+
+
+79 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+DRIVE 
+CYCLE # 1 
+
+DRIVE 
+CYCLE # 2 
+
+DRIVE 
+CYCLE # 3 
+
+DRIVE 
+CYCLE # 4 
+
+DRIVE 
+CYCLE # 5 
+
+, 
+
+* DRIVE 
+CYCLE # 43 
+
+TEXT 
+
+NO. 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT CODE 
+
+ERASED 
+
+MIL 
+
+STATUS 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+check) 
+
+ENGINE 
+
+
+
+
+
+
+
+1. 
+
+YES 
+
+YES 
+
+OFF 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. 
+
+YES 
+
+YES 
+
+OFF 
+
+NO 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+4. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+P 
+
+
+5. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+\ 
+
+_ 
+
+1 
+
+k 
+
+r 
+
+/ 
+
+6. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+\ault/ 
+
+C&DE 
+
+ERASED 
+
+- 5 
+
+V 
+
+OFF 
+
+
+1. A fault code is stored within the ECM upon the first occurrence of a fault in the system 
+being checked. 
+
+2. The "Malfunction Indicator Light” will not be illuminated until the completion of the sec¬ 
+ond consecutive "customer driving cycle" where the previously faulted system is again 
+monitored and a fault is still present or a catalyst damaging fault has occurred. 
+
+3. If the second drive cycle was not complete and the specific function was not checked 
+as shown in the example, the ECM counts the third drive cycle as the “next consecu¬ 
+tive" drive cycle. The "Malfunction Indicator Light” is illuminated if the function is checked 
+and the fault is still present. 
+
+4. If there is an intermittent fault present and does not cause a fault to be set through mul¬ 
+tiple drive cycles, two complete consecutive drive cycles with the fault present are 
+required for the "Malfunction Indicator Light” to be illuminated. 
+
+5. Once the "Malfunction Indicator Light” is illuminated it will remain illuminated unless the 
+specific function has been checked without fault through three complete consecutive 
+drive cycles. 
+
+6. The fault code will also be cleared from memory automatically if the specific function is 
+checked through 40 consecutive drive cycles without the fault being detected or with the 
+use of either the DISplus, GT1 or Scan tool. 
+
+
+NOTE: In order to clear a catalyst damaging fault (see Misfire Detection) from memory, the 
+condition must be evaluated for 80 consecutive cycles without the fault reoccurring. 
+
+
+80 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Before any service work is performed on any fuel sys¬ 
+tem related component, always adhere to the following: 
+
+• Observe relevant safety legislation pertaining to your area. 
+
+• Ensure adequate ventilation. 
+
+• Use exhaust extraction system where applicable (alleviate fumes). 
+
+• DO NOT SMOKE while performing fuel system repairs. 
+
+• Always wear adequate protection clothing including eye protection 
+
+• Use caution when working around a HOT engine compartment 
+
+• BMW does not recommend any UNAUTHORIZED MODIFICATIONS to the fuel system. The fuel systems are 
+designed to comply with strict Federal Safety and Emissions Regulations. In the concern of product liability, it is 
+unauthorized to sell or perform modifications to customer vehicles, particularly in safety areas. 
+
+
+
+The "Malfunction Indicator Light” can be diagnosed with an aftermarket Scan Tool that 
+allows Technicians without BMW Special Tools or Equipment to Diagnose an emission sys¬ 
+tem failure. With the use of a universal scan tool, connected to the "OBD" DLC (located in 
+the driver’s side left lower instument panel area) an SAE standardized DTC can be 
+obtained, along with the condition associated with the illumination of the "Malfunction 
+Indicator Light”. Using the DISplus or GT1, a fault code and the conditions associated with 
+its setting can be obtained prior to the illumination of the "Malfunction Indicator Light”. 
+
+
+
+DUE 
+
+
+PT-CAN 
+
+EGS 
+z| SMG 
+
+kYJT IlPJa 1 
+D£2 
+
+
+E Gcirceu P 
+
+
+
+81 
+
+MS45 Emissions Management 
+
+
+
+Misfire Detection 
+
+Refer to Service Information Bulletin S.l. #12 02 97 for details about Misfire Fault Codes. 
+
+
+Testing the Oxygen Sensor should be performed using the DISplus Oscilloscope from 
+the “Preset Measurement” List. The scope pattern should appear as below for a normal 
+operating sensor. 
+
+If the signal remains high (rich condition) the following should be checked: 
+
+• Fuel Injectors 
+
+• Fuel Pressure 
+
+• Ignition System 
+
+• Input Sensors that influence air/fuel mixture 
+
+• Engine Mechanical 
+
+
+If the signal remains low (lean condition) the following should be checked: 
+
+• Air/Vacuum leak 
+
+• Fuel Pressure 
+
+• Input Sensor that influence air/fuel mixture 
+
+• Engine Mechanical 
+
+NOTE: A MIXTURE RELATED FAULT CODE SHOULD BE INVESTIGATED FIRST AND 
+DOES NOT ALWAYS INDICATE A DEFECTIVE OXYGEN SENSOR! 
+
+
+Check Filler Cap (additional information from page 72) 
+
+After refueling and switching the ignition “ON”, the ECM detects a fuel level increase. When 
+the ignition is switched “OFF”, the ECM activates the DM TL for a “brief test” to check the 
+filler cap. If the filler cap was not properly installed; when the vehicle is started and driven 
+at a speed >10 Km/h, the “Check Filler Cap” light will illuminate for 25 seconds (and then 
+go out). 
+
+The second time the ignition is cycled “OFF”, the DM TL is activated to test the filler cap. If 
+loose; when the vehicle is started and driven at a speed >10 Km/h, the “Check Filler Cap” 
+light will be illuminated for 25 seconds (and then go out). 
+
+If the filler cap is properly secured, the “Malfunction Indicator Light” will not be illuminated 
+and a fault code will not be stored in the ECM. 
+
+The third time the ignition is cycled “OFF”, the DM TL is activated to test the filler cap. If 
+loose; a “Large Leak” fault code is stored in the ECM. The “Malfunction Indicator Light” will 
+be illuminated the next time the engine is started. 
+
+
+82 
+
+MS45 Emissions Management 
+
+
+
+Tools and Equipment 
+
+
+The DISplus/Gtl as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+
+
+DISplus GT-1 
+
+
+The correct Universal Adapter for the M545 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+
+When installing the Universal Adapter to the 
+ECM (located below the windshield on the pas¬ 
+senger side of the engine compartment), make 
+
+
+SKE BREAKOUT BOX SET 
+P/N 90 88 6 121 300 
+
+
+ENGINE CONTROL 
+MODULE HARNESS 
+
+
+
+pq 
+
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+©©©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+
+nn 
+
+s 
+
+
+e 
+
+z 
+
+V 
+
+
+
+hi 
+
+
+pq 
+
+
+©©©©© 
+
+©©©©© 
+
+©a®©© 
+
+©©©©© 
+
+©©©©© 
+
+© 
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+sure the ignition is switched off. 
+
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the "OFF" posi¬ 
+tion before disconnecting the ECM/ TCM. 
+
+
+This will allow sufficient time to complete the DM 
+TL test Voltage may be present (up to 3 min¬ 
+utes) causing damage to die ECM /TCM if they 
+are disconnected during this time period (arc¬ 
+ing). 
+
+
+
+83 
+
+MS45 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Performance Controls 
+
+
+O 
+
+
+£hii££ i.iiii! Ikt. 
+
+
+4; ft 
+
+
+
+
+:«ur:nE---:ii 
+
+B _ mmi w-r+#!!■■ 
+
+
+Era 
+
+hi 
+
+
+5Mli" 
+
+
+
+
+HKJi 
+
+
+
+■VT. yli+Li L 
+m iPh ' 0 iLHJY 
+
+
+
+
+h:i. ..Mi _.i_i 
+
+
+PERFORMANCE 
+i:-::-h i kl'l 
+
+
+Dynamic Driving Control (if equipped) 
+
+
+
+
+SSL - 1 
+
+
+m 
+
+
+:■ 
+
+
+s^mn 
+
+
+
+
+TSKtra 
+
+
+ilr 
+
+
+rr c vi 
+
+
+a 
+
+
+j:: 
+
+
+ELr:p=t: r«i 
+
+
+7- 
+
+■ fi r > 
+
+
+i:ii:p a m-l'j hi ■ :'ki. 
+
+
+
+
+
+42-05-06 
+
+
+The MS45 ECM contains two different throttle 
+progression functions (Sport and Normal). The 
+Dynamic Driving Control function is selected by 
+pressing the “Sport” button located in the cen¬ 
+ter console (1). 
+
+The switch provides a ground signal (input) to 
+the ECM when pressed. The MS45 activates 
+the sport characteristics for the Electronic 
+throttle control (EDK). This provides an increase 
+in throttle opening and response time over the 
+non-sport position. 
+
+
+
+When this function is activated, the function 
+indicator light in the Sport button is illuminated 
+by the Electric Power Steering (EPS) Control 
+Module. When the ignition is cycled, this func¬ 
+tion resets back to the non-sport function (it 
+must be re-selected by the driver). 
+
+The ECM additionally provides the request for 
+the Dynamic Driving Control function over the 
+PT CAN bus to the following control modules: 
+
+
+
+_ 
+
+, [ 
+
+■ ‘ 
+
+u 1 1 1 
+
+
+1 
+
+
+
+
+
+
+
+
+
+kt-10057 
+
+
+If equipped: 
+
+• Electronic Power Steering (EPS) • Automatic transmission (EGS) 
+
+• Instrument cluster (Kombi) • SMG 6-speed sequential manual gearbox 
+
+
+Note: Refer to the respective sections for the function influence on these systems. 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+Cruise Control 
+
+
+Cruise control functions are activated directly from the stalk 
+(lever) to the ECM. The individual positions (requests) are dig¬ 
+itally encoded and are input to the ECM over a serial data wire. 
+The cruise control operational requirements are BMW “typi¬ 
+cal”. The E85 does not have a “system on” indicator light. 
+
+Cruise Control is integrated into the ECM because of the EDK 
+operation. 
+
+
+
+• The ECM controls vehicle speed by activation of the Electronic Throttle Valve (EDK). 
+
+• The clutch switch disengages cruise control to prevent over-rev during gear changes. 
+
+• The brake light switch and the brake light test switch are input to the ECM to disengage cruise control as well as 
+fault recognition during engine operation of the EDK. 
+
+
+Road speed is input to the ECM for cruise control as well as DSC regulation. The road 
+speed signal for cruise control is supplied by the DSC Control module. 
+
+
+Electric Fan 
+
+The electric cooling fan is controlled by the ECM for engine cooling system and air condi¬ 
+tioning system requirements. The ECM uses a remote power output final stage (mounted 
+on the fan housing). The electric fan is controlled by a pulse width modulated signal from 
+the ECM. 
+
+The fan (and speed) is activated by the ECM based on: 
+
+
+• Coolant outlet temperature 
+
+• Catalyst temperature (calculated by the ECM) 
+
+• Vehicle speed 
+
+• Battery voltage 
+
+• Air Conditioning refrigerant pressure (calculated by IHKA and sent via the PT CAN bus to the ECM) 
+
+
+
+16550025 
+
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+ECM Integrated Temperature Sensor 
+
+The E Box fan is controlled by the MS45 ECM. The control module 
+contains an integral NTC temperature sensor for the purpose of mon¬ 
+itoring the E box temperature and activating the fan. 
+
+When the internal temperature exceeds 65° C, the ECM provides a 
+switched ground for the E Box fan to cool the E box control modules. 
+
+
+Alternator Interface 
+
+
+
+The alternator communicates data with the ECM via the BSD line (bit-serial data interface 
+- single wire). This is necessary to allow the ECM to adapt its calculations and specific con¬ 
+trol data to the alternator output. In addition, the ECM controls the following functions: 
+
+
+• Activation/deactivation of the alternator. 
+
+• Informimg the voltage regulator of the nominal voltage value to be set. 
+
+• Controlling the alternator’s load response. 
+
+• Diagnosing the BSD line. 
+
+• Storing alternator fault codes. 
+
+• Activating the charging indicator light in the instrument cluster. 
+
+
+The charging indicator light operation has not changed from present vehicles. 
+
+
+EWS III (3.3) 
+
+The electronic driveaway protection system (EWS III) remains unchanged from the current 
+E46 BMW models. 
+
+
+PT CAN Bus Communication 
+
+
+The ECM provides signals to other “driveline” related modules for torque control, shift qual¬ 
+ity, diagnosis, safety enhancements, etc. This is covered in the appropriate sections. 
+
+
+
+
+45-02-05 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dual VANOS Control 
+
+
+Performance, torque, idle characteristics and exhaust emissions reduction are improved by 
+Variable Camshaft Timing (VANOS). The VANOS unit is mounted directly on the front of the 
+cylinder head and adjusts the Intake and Exhaust camshaft timing from retarded to 
+advanced. The ECM controls the operation of the VANOS solenoid which regulates the oil 
+pressure required to move the control piston. Engine RPM, load and temperature are used 
+to determine VANOS activation. 
+
+
+VANOS mechanical operation is dependent on engine oil pressure applied to position the 
+control pistons. When oil pressure is applied to the control pistons (regulated by the sole¬ 
+noids), the pistons move causing the splined adjustment shafts to move. The straight 
+splines slide within the camshaft sleeves. The helical splines rotate the camshaft drive 
+sprockets changing the position in relation to the camshaft position which advances/ 
+retards the intake/exhaust camshaft timing. 
+
+
+
+VAN □ S 
+
+
+
+
+135500066 
+
+
+
+The operation of the VANOS solenoid is monitored in accordance with the OBD II require¬ 
+ments for emission control. The ECM monitors the final stage output control and the signal 
+from the Camshaft Position Sensors for VANOS operation. 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+Dual VANOS consists of the following parts: 
+
+
+• Intake and exhaust camshafts with helical gear insert 
+
+
+• Sprockets with adjustable gears 
+
+
+• VANOS actuators for each camshaft 
+
+
+• 2 three-way solenoid switching valves 
+
+
+• 2 impulse wheels for detecting camshaft position 
+
+
+• 2 camshaft position sensors (Hall effect) 
+
+
+TWO POSITION PISTON 
+HOUSING WITH 
+INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+KL 15 
+
+
+ECM 
+
+
+
+SOLENOID 
+
+
+TWO POSITION PISTON HOUSING 
+WITH INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+ENGINE 
+OIL SUPPLY 
+
+
+Qet: 
+
+
+
+
+OIL TEMP 
+SENSOR 
+
+
+13550006 
+
+
+When the engine is started, the camshafts are in the “failsafe” position (deactivated). The 
+intake camshaft is in the RETARDED position - held by oil pressure from the sprung open 
+solenoid. The exhaust camshaft is in the ADVANCED position - held by a preload spring in 
+the actuator and oil pressure from the sprung open solenoid. 
+
+
+After 50 RPM (2-5 seconds) from engine start, the ECM is monitoring the exact camshaft 
+position. The ECM positions the camshafts based on engine RPM and the throttle position 
+signal. From that point the camshaft timing will be varied based on intake air and coolant 
+temperatures. 
+
+88 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The dual VANOS system is “fully variable”. When the ECM detects the camshafts are in the 
+optimum positions, the solenoids are modulated (approximately 100-220 Hz) maintaining 
+oil pressure on both sides of the actuators to hold the camshaft timing. 
+
+CAUTION: The VANOS MUST be removed and installed exactly as described in the Repair 
+Instructions! 
+
+
+NOTE: If the VANOS camshaft system goes to the failsafe mode (deactivated) there will be 
+a noticeable loss of power. 
+
+DEACTIVATED 
+
+
+EXHAUST: Advanced -piston moved in 
+
+
+INTAKE: Retard - piston moved out 
+
+
+EXHAUST 
+
+
+TWO POSITION PISTON 
+HOUSING WITH 
+INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+KL 15 
+
+
+
+ECM 
+
+
+SOLENOID 
+
+
+TWO POSITION PISTON HOUSING 
+WITH INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+ENGINE 
+OIL SUPPLY 
+
+
+INTAKE 
+
+
+
+ACTIVATED 
+
+
+EXHAUST: Advanced - piston moved 
+out 
+
+
+INTAKE: Retard - piston moved in 
+
+
+EXHAUST 
+
+
+TWO POSITION PISTON 
+HOUSING WITH 
+INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+KL 15 
+
+
+IVIO*+£. 
+
+ECM 
+
+
+ECM 
+
+
+
+TWO POSITION PISTON HOUSING 
+WITH INTERNAL/EXTERNAL 
+HELICAL GEAR CUP 
+
+
+ENGINE 
+OIL SUPPLY 
+
+
+Par 
+
+
+INTAKE 
+
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ECM Programming - FLASH Control Modules 
+
+
+The MS45 ECM is a programmable “FLASH” Control Module. The ECM contains a sol¬ 
+dered in FLASH EPROM which can be programmed/updated up to 13 times. The EPROM 
+has basic information always present in it referred to as “resident data”. This resident data 
+gives the EPROM its identification and contains instructions for the programming of the 
+operational maps. When you program, you are inputting operational maps to the ECM such 
+as injection timing and ignition timing, etc. 
+
+Always refer to the latest programming IDC Bulletin for a complete list of FLASH program¬ 
+mable control modules and the latest program highlights. An unprogrammed control mod¬ 
+ule will not allow the engine to start. DME (ECM) FLASH programming is performed with 
+the DISplus/GTI using the latest software. 
+
+Using the “automatic” determination process (preferred method), the GT1 compares the 
+part numbers stored in the FLASH EPROM of the currently installed ECM with a list of pos¬ 
+sible replacement part numbers stored in the DISPIus or GT1 memory. The comparison is 
+done to: 
+
+
+• Display the part number for the replacement programmable control module for that vehicle. 
+
+• Determine if the GT1 can “ recommend” a replacement part number(s) from the list of part numbers stored in 
+memory. 
+
+• Identify a proper replacement program or control module 
+
+
+
+MS45 Performance Controls 
+
+
+
+Tools and Equipment 
+
+
+The DISplus/Gtl as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+When installing the Universal Adapter to the 
+ECM (located below the windshield on the pas¬ 
+senger side of the engine compartment), make 
+sure the ignition is switched off. 
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+
+
+DlSplus 
+
+
+
+GT-1 
+
+
+16550019 
+
+
+SKE BREAKOUT BOX SET 
+
+
+
+This will allow sufficient time to complete the DM 
+TL test. Voltage may be present (up to 3 min¬ 
+utes) causing damage to the ECM/TCM if they 
+are disconnected during this time period (arc¬ 
+ing). 
+
+
+16550020 
+
+
+
+VANOS 
+
+The electrical/hydraulic function can be checked 
+“statically” by using the adapter tools and shop 
+supplied regulated compressed air. 
+
+Special Tool # 90 88 6 113 450 adapts regulat¬ 
+ed compressed air to substitute for engine oil 
+pressure required to move the VANOS piston. 
+Special Tool # 90 88 6 126 410 allows battery 
+voltage and ground to activate the solenoid. 
+
+
+
+135500076 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+
+1. Describe the Power Supply for the MS45 Fuel Injectors and Ignition Coils: 
+
+
+2. Name the Components of the MS45 Fuel Supply System that are “integral” in the fuel 
+tank: 
+
+
+3. List the inputs required for Fuel Injector operation: 
+
+
+4. Describe the Emission Optimized Function: 
+
+
+5. Name two types of Emissions the ECM controls:_ 
+
+6. What two sensors are used to monitor MS45 accelerator movement? 
+
+7. Why are there two inputs from the Accelerator Module?_ 
+
+
+8. Where is the DM TL located on an E85?_ 
+
+9. Why does the MS45 have multiple ignition pulses? 
+
+10. How is the ignition system monitored?_ 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+

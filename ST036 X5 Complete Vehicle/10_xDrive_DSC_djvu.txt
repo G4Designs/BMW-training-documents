@@ -1,0 +1,1641 @@
+Table of Contents 
+xDrive / DSC 
+
+Subject Page 
+
+Purpose of the System .4 
+
+xDrive .4 
+
+xDrive - System Components.5 
+
+ATC 400 / ATC 500 Transfer Case.5 
+
+Power Flow.6 
+
+Servomotor with Motor Position Sensor.7 
+
+Coding Resistor .7 
+
+Transfer Case Electronic Control Unit .8 
+
+Bus Overview .8 
+
+IPO .9 
+
+xDrive - Principle of Operation.10 
+
+xDrive.10 
+
+TCC .10 
+
+Pre-control.11 
+
+“Open” Transfer Case vs xDrive .12 
+
+Traction Control / Driving Dynamics Control.13 
+
+Tire Tolerance Logic.14 
+
+xDrive / DSC - System Components.17 
+
+Hydraulic Schematic.17 
+
+DSC Module.18 
+
+Yaw and Transversal Acceleration Sensors.18 
+
+Wheel Speed Sensors.18 
+
+xDrive / DSC System - Principle of Operation .19 
+
+System Functions .19 
+
+DSC: .19 
+
+xDrive:.19 
+
+ASC-X/ADB-X.20 
+
+Limp Home Operation.20 
+
+Warning Indicator Lamps.21 
+
+
+Initial Print Date: 10/03 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Workshop Hints.22 
+
+Transfer Case Oil and Monitoring.22 
+
+Diagnosis.22 
+
+Programming (flashing).22 
+
+
+
+
+
+
+xDrive/DSC 
+
+
+Model: E83/E53 MU (Model Update) 
+
+Production: E83 - Start of Production MY 2004 
+E53 MU - 9/03 
+
+
+
+After completion of this module you will be able to: 
+
+• Explain the xDrive mechanical operation 
+
+• Describe the xDrive power flow 
+
+• Identify the coding resistor and understand its purpose 
+
+• Diagnose the VGSG control of the multi-disc clutch 
+
+• Perform an “on vehicle” test to verify xDrive function 
+
+• Explain the Oil change procedure found in Service Functions 
+
+
+3 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Purpose of the System 
+
+
+xDrive 
+
+The innovative xDrive four-wheel drive is a system that controls and regulates the distrib¬ 
+ution of driving torque to the front and rear axles. The measured variables of DSC are 
+used by xDrive but are also influenced by modified handling performance. 
+
+The multi-disc clutch is the heart of the xDrive. By using the controlled multi-disc clutch, 
+it is possible to resolve the conflict between traction and handling performance. 
+
+This is achieved through the fact that torque distribution is not determined by a fixed gear 
+ratio in the xDrive as was the case in the previous systems. Instead, the distribution of 
+driving torque is dependent on the locking torque of the controlled multi-disc clutch in 
+the transfer case and on the transferable torque to the front and rear axles. 
+
+
+
+4 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+xDrive - System Components 
+
+ATC 400 / ATC 500 Transfer Case 
+
+The ATC 400 is installed in the E83 and the ATC 500 in the E53 MU. They differ in that 
+the ATC 500 is splined to the front propeller shaft and the ATC 400 uses a four bolt 
+flange. In addition, there is one more disc in the multi-disc clutch of the ATC 500 and the 
+distance between the input shaft and the output shaft to the front axle is 19 mm greater 
+than in the ATC 400. 
+
+
+
+1. Input from manual / automatic transmission 
+
+2. Output to rear axle prop, shaft 
+
+3. Output to front axle prop, shaft 
+
+4. Servomotor 
+
+
+5. Clutch discs 
+
+6. Adjusting levers with ball ramp 
+
+7. Chain 
+
+8. Disc cam 
+
+
+The flange illustration of the ATC transfer case is the same for automatic and manual 
+transmissions. 
+
+
+5 
+
+xDrive / DSC 
+
+
+TF03-3608 
+
+
+
+
+
+
+
+
+
+
+
+Power Flow 
+
+When the multi-disc clutch in the transfer case is disengaged, no driving torgue is trans¬ 
+mitted to the front axle. All of the driving torgue is then distributed to the rear axle. This is 
+because the input shaft (1) is splined providing a permanent connection to the rear axle 
+propeller shaft output flange (2). The multi-disc clutch couples the rear axle propeller 
+shaft output flange to the front propeller shaft output (3). 
+
+The driving torgue on the front axle is increased or decreased by regulating the locking 
+pressure of the multi-disc clutch, providing a stepless coupling of the front axle to the dri- 
+vetrain. This depends on driving situations and road conditions. When the multi-disc 
+clutch is fully engaged, the front and rear axles turn at the same speed. 
+
+Driving torgue distribution (front/rear) is based on available traction at each axle. For 
+example, when traction is identical on the front and rear axles and a driver accelerates 
+from a stop in first gear at full throttle, the rear axle is capable of sustaining greater driving 
+torgue as the vehicle weight shifts from the front to the rear. 
+
+Another example is when the front axle is on a high traction surface and the rear axle is on 
+ice. In this case, virtually 100% of the available driving torgue is transmitted to the front 
+axle. Based on available traction, virtually no driving torgue can be supported by the rear 
+axle . Obviously, when more driving torgue is transmitted to the front axle, driving torgue 
+on the rear axle is proportionally reduced due to lack of traction. 
+
+
+
+1. Input from transmission 2. Rear propeller shaft output 3. Front propeller shaft output 
+
+6 
+
+xDrive / DSC 
+
+
+
+
+
+Adjusting Levers 
+
+When the disc cam is rotated, it forces the adjusting levers 
+apart. 
+
+The ball ramps create a precision axial movement which 
+compresses and increases pressure on the multi-disc clutch. 
+
+This is completely variable up to a full lock. 
+
+
+Servomotor with Motor Position Sensor 
+
+
+Note: 
+
+On a vehicle equipped with an automatic transmission, when driving onto brake 
+analyzers, move the selector lever to the “N” position . On a vehicle equipped 
+with a manual transmission, do not press the accelerator pedal once on the 
+brake analyzer. This keeps the transfer case clutch open and the vehicle 
+cannot be pulled off the analyzer. 
+
+
+
+The servomotor with worm gear are powered 
+to rotate the disc cam. 
+
+The servomotor is a permanent magnet (1) DC 
+motor which contains a Hall sensor (2) to 
+detect the position and the adjusting speed of 
+the motor shaft. 
+
+This is proportional to the degree of multi-disc 
+clutch engagement. 
+
+
+
+Coding Resistor 
+
+Because of mechanical tolerances in produc¬ 
+tion, the characteristic curve of the multi-disc 
+clutch locking torgue varies slightly. 
+
+Once the actual locking torgue has been mea¬ 
+sured on the clutch test bench, a resistor is 
+attached to the servomotor; the resistor's value 
+is a reference to the locking torgue characteris¬ 
+tic. 
+
+Each time the engine is started, the transfer 
+case control unit measures the resistance 
+value once and the optimum program map for 
+the transfer case fitted is selected. 
+
+
+
+1. Disc cam 3. Coding resistor 
+
+2. Electric motor 4. Worm gear 
+
+
+7 
+
+xDrive / DSC 
+
+
+
+
+
+
+Transfer Case Electronic Control Unit 
+
+The transfer case control unit (VGSG) is installed in 
+the E83 on the rear floor panel under the luggage 
+compartment trim. 
+
+In E53 MU, it is located underneath the rear bench 
+seat on the left. 
+
+I. 9-pin ELO connector (not used) 
+
+II. 6-pin ELO connector 
+
+III. 18-pin ELO connector 
+
+
+
+Bus Overview 
+
+
+
+The transfer case control unit (VGSG) is on the PT-CAN Bus. VGSG shares information 
+with DSC for overall xDrive control and has diagnostic communication via the OBD con¬ 
+nector . 
+
+Notes: 
+
+
+8 
+
+xDrive / DSC 
+
+
+Tfc03 3306 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inputs 
+
+
+Processing 
+
+
+Outputs 
+
+
+
+1. Transfer case control unit 
+
+2. Transfer case clutch servomotor 
+
+3. Instrument cluster 
+
+4. DSC hydraulic modulator 
+
+5. DSC control unit 
+
+6. RDW button 
+
+7. HDC button 
+
+
+8. DSC button 
+
+9. Brake fluid level 
+
+10. Wheel speed sensor 
+
+11. Steering angle sensor 
+
+12. Yaw/transverse acceleration sensors 
+
+13. EGS 
+
+14. ECM(DME) 
+
+
+xDrive / 
+
+
+TF03-3685 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+xDrive - Principle of Operation 
+
+
+xDrive 
+
+The transfer case control unit (VGSG) regulates the locking pressure of the multi-disc 
+clutch in the transfer case. The transfer case control unit receives information on the 
+reguired clutch locking pressure from the DSC control unit. The processing, control and 
+electronics reguired for this are integrated in the transfer case control unit. This informa¬ 
+tion is converted and output as a corresponding rotary motion of the servomotor. 
+
+In order to position the servomotor and compensate for wear, a reference run is carried 
+out each time the ignition is switched off. The servomotor position is determined by a 
+Hall sensor integrated in the servomotor. During the reference run, the clutch is engaged 
+and disengaged completely (once). While the clutch is actuated, the current consump¬ 
+tion is measured for the servomotor position. This allows the VGSG to determine the 
+beginning and end of the clutch actuating procedure. 
+
+A clutch and oil wear calculation is also processed and stored in the VGSG. It increases 
+the locking pressure as necessary in order to reduce friction. 
+
+In the event of DSC failure, the VGSG incorporates a fallback level (strategy) for activating 
+the transfer case clutch in order to maintain the four-wheel drive function. 
+
+
+TCC 
+
+Regulation of the transfer case clutch (TCC) locking pressure allows stepless coupling of 
+the front axle to the drivetrain. The driving torgue on the front axle can be increased or 
+decreased depending on the driving situation and road conditions. Obviously, when 
+more driving torgue is transmitted to the front axle, driving torgue on the rear axle is pro¬ 
+portionally reduced due to lack of traction. 
+
+The advantages of variable distribution of driving torgue to the front and rear axles are: 
+
+• Optimum utilization of the cornering and longitudinal wheel forces on the front and 
+rear axles. 
+
+• DSC brake interventions only become necessary at a significantly later stage, an 
+increase in comfort refinement. 
+
+• Compared with an “open” differential transfer case and DSC, xDrive significantly 
+improves driving torgue distribution when traction on the front and rear axles is 
+notably different. 
+
+
+The DSC control unit influences control of the transfer case clutch. Even when DSC is 
+deactivated, TCC remains active for the purpose of maximum traction and driving 
+dynamics. 
+
+10 
+
+xDrive / DSC 
+
+
+Permanent four-wheel drive is only completely deactivated in three control situations: 
+
+• During very tight cornering with low engine torgue to allow speed compensation 
+between the front and rear axles (e.g. parking) 
+
+• At speeds > 180 km/h 
+
+• When the vehicle dramatically understeers 
+
+The transfer case clutch control logic is described in three main modules: 
+
+• Pre-control 
+
+• Traction control / driving dynamics control 
+
+• Tire tolerance logic 
+
+
+Pre-control 
+
+The pre-control logic (shared from DSC) reflects the driver's command and is calculated 
+based on: 
+
+
+• Accelerator pedal value 
+
+• Engine torgue 
+
+• Engine rpm 
+
+
+• Vehicle speed 
+
+• Gear 
+
+• Steering angle 
+
+
+In normal driving, the clutch is operated with minimum slip so that permanent four-wheel 
+drive with a driving torgue distribution of 40% on the front axle and 60% on the rear axle 
+is available. 
+
+Even when the traction for the front and rear axles is dramatically different, the pre-control 
+ensures that the system responds very guickly, as can be seen in graphic on the following 
+page. 
+
+
+Notes: 
+
+
+11 
+
+xDrive / DSC 
+
+
+
+M = Driving torque M VA = Driving torque on front axle t = Time 
+
+
+In the case of the open transfer case, the brake is applied after slip is detected on the rear 
+axle. This takes approximately one half of a second in reaction time. 62% of the driving 
+torque is supported on the two rear brake discs and only 38% of the driving torque can 
+be transferred to the front axle. In other words, wheel slip must be sensed first before dri¬ 
+ving torque is transferred through the transfer case by applying the rear wheel brakes. 
+
+In contrast to an “open” transfer case (differential), the xDrive does not require brake inter¬ 
+vention on the rear axle because no slip can occur (permanent through connection). The 
+transfer case clutch is engaging the front axle as the vehicle is accelerating. This takes 
+significantly less time (approx, one/tenth of a second). 
+
+12 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Traction Control / Driving Dynamics Control 
+
+Traction control monitors the slip conditions on the front and rear axles. The wheel 
+speeds, yaw rate and transversal acceleration serve as the input signals. 
+
+The function of traction control/driving dynamics control is to achieve optimum traction 
+and to keep the vehicle stable. 
+
+As seen in the following graphic, in the event of an oversteer tendency, the transfer case 
+clutch is completely engaged and the maximum supportable driving torgue on the front 
+axle is transmitted. This helps to “puli’ the front of the vehicle until stability is achieved. 
+
+
+
+In the event of an understeer tendency, the clutch can be fully disengaged if necessary. 
+In this example, the front axle is separated from the drivetrain and the driving torgue can 
+only be transmitted to the rear axle. This helps to “push” the rear of the vehicle until sta¬ 
+bility is achieved. 
+
+
+60% 
+
+
+
+13 
+
+xDrive / DSC 
+
+
+Tire Tolerance Logic 
+
+The tire tolerance logic detects different tread circumferences on the front and rear axles. 
+This occurs when: 
+
+• Mixed tires are used 
+
+• Space saving spare tire is installed 
+
+• Tires are used that have been worn down to different levels 
+
+
+Normally, tire circumference deviations result in drivetrain torgue bias (unwanted varia¬ 
+tions). 
+
+
+The tire circumference can fluctuate up to 1 % or more as a result of mixed tires or wear. 
+The tire tolerance logic decides depending on the driver's command and driving situation 
+whether the slip is to occur in the transfer case clutch or at the contact area between tire 
+and road. 
+
+If the slip is permitted in the transfer case clutch, the locking pressure set by the pre-con¬ 
+trol is reduced in order to keep the work loss low. In the driving dynamic control situation, 
+the clutch is locked slightly more than normal, the four wheel drive is always guaranteed 
+when reguired. 
+
+For maximum xDrive performance, tires (and wheels) of the same diameter should be 
+installed on the vehicle. 
+
+
+Notes: 
+
+
+14 
+
+xDrive / DSC 
+
+
+Workshop Exercise - xDrive Transfer Case 
+
+
+
+With the Instructor’s assistance, perform the following: 
+
+1. Disassemble xDrive transfer case. Familiarize yourself with the mechanical 
+operation. _ 
+
+
+2. What are the differences between the ATC 400 and the ATC 500? 
+
+
+3. The multi-disc clutch (when engaged) locks what two components together? 
+
+
+4. What is the purpose of the adjusting levers and the cam disc? 
+
+
+5. Visually identify the coding resistor, why is it necessary? 
+
+
+6. When the E83 is placed on a brake analyzer (or dyno), what procedure must be 
+followed for: 
+
+Manual Transmission - 
+
+Automatic Transmission - 
+
+7. The VGSG regulates the - 
+
+and receives information on the required locking pressure from the _ 
+
+8. When the multi-disc clutch is not engaged, the E83 will always be driven by _ 
+
+
+Why? 
+
+
+15 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - xDrive on Vehicle 
+
+
+
+With the Instructor’s assistance, perform the following: 
+
+1. With the E83 placed securely on a vehicle lift and all 4 wheels off of the ground, 
+start the engine and place the vehicle in a forward gear. 
+
+Manual Transmission: release clutch pedal and observe which wheels are being 
+
+driven _. Now press down on the accelerator pedal (slightly), 
+
+what do you observe or feel? _ 
+
+
+Automatic Transmission: release brake pedal and observe which wheels are 
+
+being driven _. Now press down on the accelerator pedal 
+
+(slightly), what do you observe or feel? _ 
+
+
+Based on your observations, explain why this occurs: 
+
+
+2. Apply the parking brake (completely). Start the engine and place the vehicle in a 
+forward gear. 
+
+Manual Transmission: release clutch pedal, what do you observe? _ 
+
+
+Automatic Transmission: release brake pedal and press down on the accelerator 
+pedal (slightly), what do you observe? _ 
+
+
+Based on your observations, explain why this occurs: 
+
+
+3. Is DSC braking application required to transfer drive torque from the rear output 
+to the front output? _ 
+
+
+4. DSC braking application takes place to provide: 
+
+
+16 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+xDrive / DSC - System Components 
+
+
+The xDrive / DSC system consists essentially of those components from the familiar 
+DSC8. The controllable multi-disc clutch in the transfer case is a new feature. 
+
+
+• DSC8 module 
+
+• Transfer case electronic control unit (VGSG) 
+
+• Yaw and transversal acceleration sensors 
+
+• Wheel speed sensors 
+
+• Pressure sensor 
+
+• Steering angle sensor 
+
+
+Brake fluid warning switch 
+Brake light switch 
+DSC button 
+
+Transfer case motor position sensor 
+Coding resistor 
+Transfer case servomotor 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DSC Module 
+
+
+The DSC module located in the engine compartment 
+consists primarily of the following three components: 
+
+• Surface mounted control unit 
+
+• Valve block with integrated pressure sensor 
+
+• Pump motor 
+
+
+It is the same design as the DSC8 module which was 
+introduced at BMW with the E60. 
+
+
+
+Yaw and Transversal Acceleration Sensors 
+
+The sensor (assembly) in the E83 and the E53 MU 
+is located on the transmission tunnel at the rear. 
+
+X Longitudinal vehicle axis 
+Y Transversal vehicle axis 
+Z Vertical vehicle axis 
+ay Transversal acceleration 
+ii Yaw 
+
+
+
+Wheel Speed Sensors 
+
+The active wheel speed sensors reguire a supply volt¬ 
+age for operation and output a signal of non speed 
+dependent constant amplitude. 
+
+
+1. Sensor ring (ferromagnetic wheel bearing seal carrier) 
+
+2. Sensor 1C with Hall elements 
+
+3. Sensor housing 
+
+
+The xDrive uses wheel speed sensors with an integrated evaluation circuit. The output 
+signal is transmitted with the pulse width modulation (PWM). 
+
+The rising signal edge is used to determine road speed; the pulse width contains addi¬ 
+tional information on the direction of rotation, standstill detection, installation position 
+detection and air gap reserve to the sensor ring. Direction of rotation detection is by 
+the internal Hall sensor signals (like E65). 
+
+18 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+xDrive / DSC System - Principle of Operation 
+
+As featured in earlier DSC modules, the DSC8 mounted control unit also features two 
+microprocessors. The surface mounted control unit also incorporates two semiconductor 
+relays: 
+
+• One for the pump motor 
+
+• One for the solenoid valves 
+
+
+When a speed of 6 km/h (4mph) is exceeded, an electronic self-test is started which the 
+pump motor and all the solenoid valves are briefly activated. When the brake light switch 
+is activated simultaneously at that speed (for example: two footed drivers), the self-test is 
+carried out at 15 km/h. Checking of the wheel speed signals is started at 2.75 km/h. 
+
+In the xDrive, the DSC also assumes the function of calculating the locking pressure for 
+the multi-disc clutch in the transfer case. The locking pressure is set based on the dri¬ 
+ver's command and regulated as reguired depending on the driving situation. 
+
+The locking pressure produces the distribution of driving torgue to the front and rear 
+axles. The DSC sends the reguired locking pressure reguest to the VGSG via the PT- 
+CAN Bus. 
+
+In turn, the VGSG signals the locking pressure actually set depending on: 
+
+• Transfer case fluid temperature (calculation based on locking pressures) 
+
+• Electric motor loads 
+
+• Multi-disc clutch loads 
+
+
+System Functions 
+
+The xDrive / DSC system comprises the following functions (same as E60 or E53 
+
+
+except for *): 
+
+DSC: 
+
+• ABS Antilock Braking System 
+
+• ASC-X Automatic Stability Control X * 
+
+• DSC Dynamic Stability Control 
+
+• EBV Electronic brake-force distribution 
+
+• DBC Dynamic Brake Control 
+
+
+• CBC Cornering Brake Control 
+
+• MSR Engine drag-torgue control 
+
+• HDC Hill Descent Control 
+
+• ADB-X Automatic Differential Brake * 
+
+
+xDrive: 
+
+• TCC Transfer Case Control (previously covered) 
+
+19 
+
+xDrive / DSC 
+
+
+ASC-X/ADB-X 
+
+Unlike regular road vehicles, SAVs are also meant to demonstrate satisfactory handling 
+characteristics and appropriate traction on unconventional roads. In order to provide opti¬ 
+mum propulsion with sufficient cornering stability on both normal roads and other road 
+surfaces, Automatic Stability Control X (ASC-X) contains a detection function to distin¬ 
+guish between them. 
+
+When off-road terrain is detected, wheel slip threshold is increased to provide sufficient 
+traction force with the increased levels of traction loss. 
+
+ASC-X is supplemented by the Automatic Differential Brake (ADB-X) function, which 
+applies the brakes to the wheels per axle, for side to side torgue transfer. For example, 
+when a wheel is spinning on one side (up to the slip setpoint), the brakes are applied to 
+that wheel and the driving torgue is transferred through the axle differential to the wheel 
+with the higher traction. This provides superb capabilities when there are diagonal trac¬ 
+tion losses (ie. left front/right rear). 
+
+ADB-X remains active when DSC is deactivated. Furthermore, ADB-X can develop full 
+capability because the engine power is not reduced, even during extreme four wheel 
+drive operation. Only that wheel which has a low traction receives the brake application. 
+
+The brake disc can overheat with excessive ADB-X intervention with DSC deactivated. In 
+this situation, the operation is discontinued at a disc temperature of approx. 700 °C and is 
+resumed when this temperature drops below approx. 400 °C. This is a calculation per¬ 
+formed by the DSC control unit based on brake application time, pressure, wheel speed, 
+etc. 
+
+
+Limp Home Operation 
+
+In order to maintain the four wheel drive function for as long as possible even in the event 
+of important sensor signal failures or failure of the DSC control unit, a limp home control is 
+integrated in the transfer case control unit. This control operates in redundancy to the 
+transfer case clutch control in the DSC control unit. The limp home control contains only 
+two control functions, precontrol and traction-slip control. 
+
+The wheel speed signals are very important to traction/slip control. Engine signals, 
+steering angle and yaw are used predominantly for precontrol. If individual sensor signals 
+fail, substitute values are calculated and the relevant functions operated with extended 
+control thresholds. 
+
+This strategy is continued until useful four wheel drive control is no longer possible. In 
+this event, the driver is alerted by the DSC/xDrive lamp coming on in the instrument clus¬ 
+ter and also by an acoustic warning signal (gong). 
+
+Faulted wheel speed signals on the rear axle are calculated by driving or engine speed 
+(remember, the rear wheels are always driven). If the front wheel speed signals fail, the 
+values of the rear axle are adopted. Wheel speeds also substitute for a faulty steering 
+angle signal. 
+
+20 
+
+xDrive / DSC 
+
+
+Warning Indicator Lamps 
+
+The warning indicator lamps 
+for the xDrive / DSC are found 
+in the instrument cluster as 
+shown on the right. 
+
+
+The warning indicator lamps 
+and acoustic signals (gong) are 
+assigned to the xDrive / DSC 
+system states of malfunction 
+described below. 
+
+
+
+DSC deactivated 
+
+
+
+
+DSC faulty (ABS only) 
+or 
+
+VGSG faulty 
+
+
+with gong 
+
+
+
+Complete DSC failure 
+or 
+
+Complete DSC failure 
+and VGSG failure 
+
+
+
+21 
+
+xDrive / DSC 
+
+
+TE03-33O8 
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+
+CAUTION!!! 
+
+
+On a vehicle equipped with an automatic transmission, when driving onto brake 
+analyzers, move the selector lever to the “N” position . On a vehicle equipped 
+with a manual transmission, do not press the accelerator pedal once on the 
+brake analyzer. This keeps the transfer case clutch open and the vehicle cannot 
+be pulled off the analyzer. 
+
+Towing: Use only a flatbed carrier! 
+
+Transfer Case Oil and Monitoring 
+
+Please refer to BMW Operating Fluids for the required transfer case oil and specifications 
+for the correct amount. 
+
+Oil Monitoring is performed by the VTG control module to determine when a service 
+(change) is due. The VTG calculates transfer case and clutch wear based on the amount 
+of slip, engagement pressure (torque), speed and mileage. 
+
+This calculation accounts for normal “dry” road driving, “adverse” road driving and 
+“other” road extreme driving. Depending on individual vehicle use - driving styles and 
+driving conditions, the transfer case oil service interval will vary. 
+
+When a service is due, this will be indicated by a Fault Code and additional details are 
+available using the DISplus/ GT1. Service functions provide directions on changing the 
+transfer case oil and updating the VTG control module with the necessary reset and 
+adaption procedure. This is extremely important for CBS. 
+
+
+Diagnosis 
+
+Diagnosis is available for fault repairs and service procedures using the DSIplus/GTI. 
+When the tire tolerance logic is active, it can be read out in the fault memory. 
+
+
+Programming (flashing) 
+
+Both the transfer case control unit (VTG) and the DSC control unit are programmable and 
+the new control unit(s) must be programmed when replaced. The wear values stored in 
+the VTG control module (to be replaced) must be transferred to the replacement VTG. 
+
+
+22 
+
+xDrive / DSC 
+
+
+
+
+Workshop Exercise - VTG Inputs/Signals 
+
+
+
+1. Using the DISplus/GTI, perform an automatic vehicle determination and locate 
+the transfer case (transmission) control. 
+
+2. For the vehicle you are using, list the power supply sources and locations 
+
+(power distribution, fuse box, etc.): _ 
+
+
+3. What are the connector and pin numbers for the Coding (classification) 
+
+Resistor? Connector: _ Pins: _ 
+
+4. Disconnect the harness connector at the VTG and perform a resistance 
+
+measurement of the Coding Resistor. What is the value? _ 
+
+5. With the DISplus/GTI, access VTG - “Diagnosis Control unit functions”. Select 
+
+Diagnosis requests, Control module - Battery voltage to transfer case and 
+Coding status. What values are displayed? _ _ 
+
+
+Additional Information: 
+
+6. With the DISplus/GTI, access VTG - “Diagnosis Control unit functions”. Select 
+Diagnosis requests, Transmission, Transmission integrator 1 and Transmission 
+integrator 2. Select Display. 
+
+These are kW hours of wear on the transfer case calculated by the VTG control 
+module (based on wear factors, refer to page 22). 
+
+
+Now select Clutch, Plate integrator 1, 2 and 3. Select Display. 
+
+These are kW hours of wear on the multi-disc clutch calculated by the VTG con¬ 
+trol module (based on wear factors, refer to page 22). These are deleted during 
+a control module reset (oil service procedure). 
+
+
+Notes: 
+
+
+23 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - VTG Outputs/Signals 
+
+
+1. Using the DISplus/GTI, locate the wiring diagram for the transfer case control. 
+
+2. What are the connector and pin numbers for the servomotor (actuator)? 
+
+Connector: _ Pins: _ 
+
+3. Disconnect the harness connector at the VTG and perform a resistance 
+
+measurement of the servomotor “drive motor” (inside the actuator). What is the 
+value ? _ 
+
+4. Reconnect the harness, and measure the voltage applied to the drive motor: 
+
+With key on (KL15) _ 
+
+Engine started _ 
+
+Raise vehicle on lift, place in a forward gear and accelerate slightly. _ 
+
+Set up a scope pattern and repeat the step above, what do you observe? 
+
+
+Record the duty cycle (%) while repeating the step above _ 
+
+5. With the DISplus/GTI, access VTG - “Diagnosis Control unit functions”. Select 
+Diagnosis requests, Servomotor, Current consumption, Angle of rotation actual 
+value and Display. 
+
+Start engine and record readings _ _ 
+
+Place vehicle in a forward gear and accelerate slightly _ _ 
+
+Now select Diagnosis requests, Clutch, Nominal clutch torque, Actual clutch 
+torque and Display. 
+
+Start engine and record readings _ _ 
+
+Place vehicle in a forward gear and accelerate slightly _ 
+
+6. With the Diagnostic head connected, ignition “on” (KL15), parking brake 
+“released” and transmission in “neutral”, raise the vehicle on the lift. 
+
+With the DISplus/GTI, access VTG - “Diagnosis Control unit functions”. Select 
+Component activation, Servomotor and clutch. 
+
+Turn one front wheel by hand (slowly) and have a colleague select “Activate” 
+while continuing to turn the front wheel steadily. What did you observe? 
+
+
+24 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - VTG Service/Repairs 
+
+
+
+1. Using the DISplus/GTI, locate Sen/ice functions for the transfer case (transmis¬ 
+sion control) VTG. 
+
+2. What procedures appear in the Components column? _ 
+
+
+3. Select the Oil change service path, what component is “adapted” during this 
+
+procedure ? _ 
+
+4. Select the Repair service path, what “selections” are available? 
+
+
+5. When you select [3] Replace transfer case, does “Adaption” occur during this 
+
+procedure ? _ 
+
+6. When you select [4] Replace VTG control, what values are read out during this 
+
+procedure ? _ 
+
+What procedure must be performed with the values? 
+
+
+7. When you select [5] Enter wear values in new VTG control, what does this pro¬ 
+cedure prompt you to do? _ 
+
+What is provided on screen for you to accomplish this? _ 
+
+8. Return to the main component selection column and select Complete vehicle, 
+Drive, Transmission control VTG, Transmission oil and Test plan. 
+
+Does “Adaption” occur during this procedure? 
+
+Is there an on screen indication about the condition of the transfer case oil? _ 
+
+If yes, what is displayed? _ 
+
+
+25 
+
+xDrive / DSC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

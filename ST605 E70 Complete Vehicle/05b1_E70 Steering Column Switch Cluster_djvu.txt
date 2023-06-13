@@ -1,0 +1,1320 @@
+Table of Contents 
+
+E70 Steering Column Switch Cluster 
+
+Subject Page 
+
+Introduction .3 
+
+System Overview .4 
+
+System Circuit Diagram .4 
+
+System Components.6 
+
+Sensor System.7 
+
+Steering Angle Sensor.7 
+
+Code Disc .7 
+
+Optical Sensor.7 
+
+LED and FiberOptics Unit.8 
+
+Line Camera .8 
+
+Steering Column Switches .8 
+
+Function .8 
+
+Steering Column Stalk.10 
+
+High Beam/Direction Indicator Switch.10 
+
+Cruise Control .10 
+
+Wiper Switch .10 
+
+Coil Spring Assembly.11 
+
+Locking.11 
+
+Steering Wheel Heating.11 
+
+Principles of Operation.13 
+
+Detecting Steering Angle and Speed .13 
+
+Relative Steering Angle (±180°) .13 
+
+Absolute Steering Angle.13 
+
+Steering Wheel Rotation Information .13 
+
+Detecting the Controls in the M ultifunction Steering Wheel .15 
+
+Detecting the Signals ofthe Steering Column Switches .15 
+
+Direction Indicator/High Beam Switch .15 
+
+Wiper Switch.15 
+
+Cruise Control Switch .15 
+
+Signal Flow.16 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Switch Cluster 
+
+Model: E70 
+
+Production: From Start of Production 
+
+
+
+
+
+After completion of this module you will be able to: 
+
+• Explain the technology used for the stalk levers 
+
+• Understand and identify the different components used in the SZL 
+
+
+2 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+Introduction 
+
+
+A steering column switch cluster SZL is used on the E70 that can detect the steering 
+angle and the settings of the steering column switches for wiper, direction indicator light 
+and cruise control by means of optical sensors. 
+
+In addition to the optical sensors, buttons based on switching-mat technology are used 
+for the buttons on the multifunction steering wheel and various buttons on the steering 
+column stalks. The voltage signals are read by the steering column switch cluster. 
+
+The information from the switches and steering angle sensor are in part processed in 
+the steering column switch cluster and transferred to other systems via the F-CAN. A 
+part of the information is forwarded directly to other control units. 
+
+Note: In terms of design and function, the steering column switch cluster 
+essentially corresponds to the steering column switch clusteron the 
+E 90. A new feature is the electronic steering wheel module that is 
+responsible for controlling the steering wheel heating. 
+
+
+
+3 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+System Circuit Diagram 
+
+
+
+
+
+
+
+4 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Circuit Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Horn switch 
+
+17 
+
+Footwell module FRM 
+
+2 
+
+Multifunction steering wheel 
+
+18 
+
+Control unit for steering column switch cluster 
+
+3 
+
+2-stage driver airbag 
+
+19 
+
+Instrument cluster KO M B1 
+
+4 
+
+Temperature sensor for steering wheel heating 
+
+BC 
+
+On-board computer 
+
+5 
+
+Electronic steering wheel module 
+
+F-CAN 
+
+Chassis CAN 
+
+6 
+
+Steering wheel heating 
+
+FL 
+
+High beam 
+
+7 
+
+Steering wheel 
+
+FRAL 
+
+Direction indicator light, left 
+
+8 
+
+Horn 
+
+FRAR 
+
+Direction indicator light, right 
+
+9 
+
+Horn relay 
+
+Kl. 30 
+
+Terminal 30 
+
+10 
+
+J unction box control unit 
+
+Kl. 30g 
+
+Terminal 30 switched 
+
+11 
+
+Coil spring assembly 
+
+Kl. 31 
+
+Terminal 31 
+
+12 
+
+Housing of steering column switch cluster 
+
+Kl. 58g 
+
+Terminal 58g 
+
+13 
+
+Advanced crash safety module ACSM 
+
+LWS 
+
+Steering angle sensor 
+
+14 
+
+Steering column switch, wipers 
+
+Power 
+
+Down 
+
+Command from the IHKA control unit to shut 
+down or reduce the electronic steering wheel 
+
+module 
+
+15 
+
+Steering column switch, cruise control 
+
+WUP 
+
+Wake-up line 
+
+16 
+
+Steering column switch, direction indicator lights 
+
+
+
+
+5 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+The steering column switch cluster SZL consists of the following components: 
+
+• Electronic steering column switch cluster module 
+
+• Steering angle sensor 
+
+• Steering column switch, cruise control 
+
+• Steering column switch, direction indicator stalk 
+
+• Steering column switch, wipers 
+
+• Coil spring assembly 
+
+The steering column switch cluster SZL can only be replaced as a complete unit. The 
+coil spring assembly is fitted on the steering column switch cluster. The coil spring 
+assembly can be removed and individually replaced. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column switch, direction indicator stalk 
+
+2 
+
+Steering column switch, cruise control 
+
+3 
+
+Code disc 
+
+4 
+
+Steering column switch cluster with optical sensor 
+
+5 
+
+Steering column wiper stalk with buttons for rain/driving lights/solar sensor 
+
+
+The electronic steering column switch cluster module contains a processor, the power 
+supply and following interfaces: 
+
+• F-CAN 
+
+• Optical switches 
+
+• Electrical switches 
+
+The optical sensorfor measuring the steering angle is integrated in the pc-board of the 
+control unit. 
+
+
+6 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor System 
+
+
+Steering Angle Sensor 
+
+The steering angle sensor is designed as a contactless, 
+optical angle measuring system. 
+
+The system consists of a code disc and an optical 
+sensor.The code disc is connected via a drive element 
+directly to the steering wheel. 
+
+The code disc turns within the optical sensor when the 
+steering wheel is moved. 
+
+Code Disc 
+
+The code disc is died black and features a line pattern. This pattern consists of two con¬ 
+tinuous lines on the outside and inside ofthe code disc. 
+
+Broken lines are located between the two continuous lines at a defined spacing with 
+respect to each other. These lines represent the digital area ofthe sensor. The digital 
+code changes every 2°. 
+
+The obliquely arranged lines in the outer area represent the analog area ofthe sensor. 
+
+These lines permit exact measurement (0.1°) ofthe steering angle. 
+
+The steering angle sensor detects the steering angle setting ofthe steering wheel and is 
+evaluated in the SZL.The information is mainly required by the DSC control unit. 
+
+Optical Sensor 
+
+The optical sensor is designed as follows. 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fiber Optics Unit 
+
+2 
+
+Code Disc 
+
+3 
+
+Steering Column 
+
+4 
+
+Line Camera 
+
+5 
+
+Output: Conversion to Electrical Signals 
+
+6 
+
+PC-Board 
+
+7 
+
+LED 
+
+
+7 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LED and FiberOptics Unit 
+
+The task of the LED in connection with the fiber optics unit is to project light from the top 
+onto the code disc. The LED is soldered directly to the pc-board ofthe SZL.The fiber 
+optics unit is secured to the pc-board by means of two screws. Together, the LED with 
+the fiber optics unit and line camera make up the optical sensor. 
+
+
+Line Camera 
+
+The line camera is located underthe code disc.The line camera converts optical signals 
+that penetrate through the code disc into electrical signals. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Line Camera 
+
+2 
+
+FiberOptics Unit 
+
+
+Steering Column Switches 
+
+The positions of all steering column stalks are determined optically. The steering column 
+stalks are mounted such that they can be swivelled and run in a curved path at the lower 
+end ofthe stalk to define the switching characteristics in the respective positions. The 
+advantage of optical acquisition ofthe stalk position is that it is possible to precisely 
+determine the pressure point. The spring force ofthe microswitch need not be taken into 
+account when defining the stalk force required for switching. 
+
+Function 
+
+Depending on the type of steering column stalk, there are three orfour LEDs on the out¬ 
+side and one optical receiver (light dependent resistor LDR) on the inside ofthe steering 
+column housing ofthe steering column stalk. A shutter is provided on the steering col¬ 
+umn stalk which, when in rest position, is located between the center LED and the LDR. 
+As a result, the shutter blanks out the light ofthe center LED when in rest position. 
+
+As soon as the steering column stalk is moved, the shutter moves up or down. One of 
+the outer LEDs is now covered. The LEDs are never activated together but always 
+clocked one afterthe other. In this way, the electronic SZL module can detect which LED 
+is currently blanked out. The function can be monitored by measuring the current at the 
+LED. 
+
+The buttons and thumbwheels in the steering column switches are realized by means of 
+buttons based on switching mat technology. The resulting voltage signals are either rout¬ 
+ed to the SZL and distributed to the corresponding control units (wiper switch - junction 
+box control unit) or forwarded directly to other control units. 
+
+
+8 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+The functional principle of the optical sensors of the steering column switches is repre¬ 
+sented in simplified form in the graphics below. As the result of vertical movement, the 
+upper diode is blanked out then followed by the center diode. In actual fact, both the hori¬ 
+zontal as well as the vertical stalk movement is detected. 
+
+
+Steering Column Stalk in Rest Position 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column stalk 
+
+5-7 
+
+LED 
+
+2 
+
+Pivot point of steering column stalk 
+
+8 
+
+Cover 
+
+3 
+
+Retaining fixture 
+
+9 
+
+Light-dependent resistor (LDR) 
+
+4 
+
+Conductor 
+
+
+
+
+
+Steering Column Stalk in Operated Position 
+
+
+9 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Stalk 
+
+High Beam/Direction Indicator Switch 
+
+The steering column stalk features the buttons for the on-board computer and the rocker 
+switch for scrolling through the menus of the on-board computer. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+On-Board Computer Button 
+
+2 
+
+Rocker Switch 
+
+
+Cruise Control 
+
+The steering column stalk contains the button for the cruise control. The set speed value 
+can be changed by pushing the stalk forward or pulling it back. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rocker Switch 
+
+2 
+
+Button fro RLSS 
+
+
+Wiper Switch 
+
+The steering column stalk contains the button for switching the automatic wipe function 
+ON/OFF with the rain/driving lights/solar sensor. 
+
+The sensitivity of the rain/driving lights/solar sensor or the automatic interval can be set 
+with the rocker switch. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Cruise Control Button 
+
+
+
+10 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Coil Spring Assembly 
+
+
+The coil spring assembly can be replaced only as a complete unit. The task of the coil 
+spring is to transmit the following electrical signals from and to the multifunction steering 
+wheel: 
+
+• Activation of driver airbag 
+
+• Control buttons SMG (being prepared) 
+
+• Multifunction buttons 
+
+• Horn 
+
+• Steering wheel heating 
+
+
+
+Locking 
+
+To avoid damaging the coil spring assembly, it must be set to the correct position when 
+dismantling the steering wheel and coil spring assembly. 
+
+The front wheels and steering wheel must be set to the straight-ahead position as the 
+prerequisite for disassembly. 
+
+During disassembly of the steering wheel, the load on the lock pin of the coil spring 
+assembly is relieved and the pin can lock in the straight ahead position. 
+
+When the steering wheel is reinstalled, this arrangement ensures that the coil spring is 
+not damaged when the steering wheel is turned to full left and right lock. 
+
+
+Steering Wheel Heating 
+
+
+The steering wheel heating is controlled by the electronic steering wheel module. The 
+electronic steering wheel module is accommodated in the steering wheel. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering Wheel Heating Button 
+
+2 
+
+Electronic Steering Wheel Button 
+
+
+11 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+The steering wheel heating is activated by means of a switch on the steering wheel. The 
+switch is connected directly to the electronic steering wheel module. The power is sup¬ 
+plied via two dedicated connections. 
+
+To prevent overloading the electrical system, the function can be deactivated by the IHKA 
+by means of a power-down connection. 
+
+
+
+Standard Steering Wheel Sport Steering Wheel 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering Wheel Heating Indicator Light 
+
+2 
+
+Steering Wheel Heating Button 
+
+
+12 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principles of Operation 
+
+
+The functions of the steering column switch cluster are: 
+
+• Detecting switching signals in the steering column switches 
+
+• Detecting steering angle and steering speed 
+
+• Detecting the controls in the multifunction steering wheel 
+
+• Sending and receiving information to/from the interlinked control units 
+
+Detecting Steering Angle and Speed 
+
+The steering column switch cluster must detect the steering angle and steering speed 
+information as the basis for calculating various functions in the DSC. 
+
+Further information such as the absolute steering angle or the steering wheel rotation 
+information is calculated. A steering angle of - 1807+180° is detected. 
+
+An LED and fiber optics unit illuminate the code disc from above. Due to the pattern on 
+the code disc, the light from above reaches the bottom only in certain areas where the 
+light beams hit the line camera. 
+
+The line camera converts the line signals into electrical signals and transfers them to the 
+steering column switch cluster. 
+
+Relative Steering Angle (±180°) 
+
+The relative steering angle indicates the angle position of the steering wheel. The infor¬ 
+mation relating to the relative steering angle is always retained even when power to the 
+control unit is disconnected. Renewed zero point adjustment is necessary only afterthe 
+steering column switch cluster has been replaced. This requirement also applies when 
+replacing the DSC or performing repairs on the steering/steering column systems. 
+
+Absolute Steering Angle 
+
+The absolute steering angle is a calculation based on the relative steering angle and 
+steering wheel rotation information.The absolute and relative steering angles are 
+defined during zero point adjustment of the steering column switch cluster. The SZL 
+detects each position of the steering wheel over the entire steering lock range. 
+
+The precondition for the zero point adjustment is that the wheels and steering wheel are 
+set in the straight-ahead position. 
+
+Steering Wheel Rotation Information 
+
+The steering wheel rotation information indicates the turn position of the steering wheel. 
+
+The steering wheel rotation information is determined automatically by a virtual calcula¬ 
+tion model. 
+
+If lost, e.g. if power to the SZL is disconnected, this information must be taught-in again. 
+
+
+13 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+Section of Code Disc 
+
+
+
+The code disc rotates dependent on the 
+steering wheel angle setting.The pattern on 
+the code disc changes in steps of 2°. A resolution 
+of 0.1° can be achieved forthe steering angle sen¬ 
+sor by evaluating the linear track. 
+
+
+
+The pattern on the code disc changes as the 
+disc continues to turn.The light passes through 
+the code disc into other areas. 
+
+
+Optical Sensor 
+
+
+
+The light beams hit the line camera. The light pulses 
+are converted to electrical pulses in the line sensor. 
+
+
+
+The position of the light beams is displaced. The line 
+camera detects the light beams in other areas and 
+transfers the information to the SZL. 
+
+
+The steering column switch cluster uses data from the speed sensors of the front wheels 
+forthe calculation. The SZL assumes the vehicle is driving straightahead at constant 
+speeds and therefore detects its zero position. The minimum speed necessary for this 
+purpose is 20 km/h.This process need not be initialized via the BMW diagnosis system. 
+The SZL automatically determines the steering wheel rotation information as soon as the 
+vehicle exceeds the minimum speed. 
+
+Problems may occur in calculating the steering wheel rotation information under unfavor¬ 
+able road conditions (icy road surfaces). The DSC sends a corresponding check control 
+message in this case. 
+
+
+14 
+
+E70 Steering Column Switch Cluster 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detecting the Controls in the Multifunction Steering Wheel 
+
+The voltage signals of the buttons on the multifunction steering wheel are routed via the 
+coil spring to the steering column switch cluster. The SZL evaluates the voltage signals 
+and sends the information to the corresponding control units. 
+
+The connections of the Steptronic switches, horn and of the driver airbag are wired 
+directly via the coil spring to the corresponding control units. This information is therefore 
+not evaluated in the SZL. 
+
+Detecting the Signals of the Steering Column Switches 
+
+Optical switches are used in connection with the steering column stalks on the E70. 
+Optical sensors detect the stalk position and make this information available to the steer¬ 
+ing column switch cluster. Buttons based on switching mat technology are located in the 
+heads of the steering column switches. They transfer voltage signals corresponding to 
+the switch position to the steering column switch cluster SZL. 
+
+Note: The operating procedure and the resulting functions are described in the 
+Owner's Handbook. 
+
+Direction Indicator/High Beam Switch 
+
+The signals of the direction indicator and high beam switch are monitored by the SZL 
+and transferred via three voltage-coded lines to the footwell module. Only information 
+relating to the switch positions is transmitted. 
+
+The signals of the on-board computer button and the rocker switch are transferred via a 
+line from the SZL to the instrument cluster. 
+
+The functions in the respective switch positions are defined in the control units. 
+
+Wiper Switch 
+
+The signals of the wiper switch are calculated directly in the steering column switch clus¬ 
+ter and transferred via the F-CAN to the DSC and to the junction box. 
+
+Cruise Control Switch 
+
+The signals from the cruise control switch are routed via the F-CAN to the DSC and fur- 
+thervia the PT-CAN to the DM E/DDE. The functions are calculated in the engine man¬ 
+agement. 
+
+The signals for the dynamic cruise control DCC or active cruise control ACC systems are 
+made available to the longitudinal dynamics management LDM. Data are sent via the F- 
+CAN to the DSC. From the DSC, the data are placed on the PT-CAN making them avail¬ 
+able to the longitudinal dynamics management. 
+
+
+15 
+
+E70 Steering Column Switch Cluster 
+
+
+
+Signal Flow 
+
+The acquired and calculated data of the steering column switch cluster are mainly trans¬ 
+ferred via the F-CAN to the corresponding control units. 
+
+The information fordiagnosis is therefore also transferred via the F-CAN to the DSC.The 
+DSC establishes the communication interface with the BMW diagnosis system. 
+
+The steering column switch cluster cannot be addressed directly via the BMW diagnosis 
+system. 
+
+The DSC must be encoded after replacing the steering column switch cluster. The DSC 
+transfers the coding to the steering column switch cluster. 
+
+
+16 
+
+E70 Steering Column Switch Cluster 
+
+
+

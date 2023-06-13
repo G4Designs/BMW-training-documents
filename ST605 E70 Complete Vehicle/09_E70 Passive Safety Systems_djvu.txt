@@ -1,0 +1,2311 @@
+Table of Contents 
+
+
+E70 Advanced Crash Safety Module (ACSM) 
+
+
+Subject Page 
+
+Introduction .4 
+
+Advanced Crash Safety M odule ACSM .4 
+
+Schematic Circuit Diagram ACSM E70.6 
+
+Functions.8 
+
+Basic Tasks of ACSM .8 
+
+Crash-Relevant Functions .8 
+
+Evaluating the SensorSignals.9 
+
+Detecting a Crash and Determining the Triggering Times 
+
+and the Order.10 
+
+Triggering the Output Stages of the Firing Circuits .10 
+
+Outputting the Crash Telegram .11 
+
+Crash Entries .11 
+
+Emergency Call Functions.12 
+
+Automatic Emergency Call .12 
+
+Breakdown Call .12 
+
+Manual Emergency Call.12 
+
+Rollover Protection System .13 
+
+Rollover Detection.13 
+
+Functional Principle of the Yaw Rate Sensor.15 
+
+Seat Position Detection .16 
+
+System Monitoring Functions.16 
+
+System Self-test (pre-drive check).16 
+
+Cyclic M onitoring.17 
+
+Indication of System Operability .17 
+
+Fault Indication and Fault Storage .17 
+
+Fault Output (diagnosis).17 
+
+Seat Belt Reminder Function .17 
+
+Deactivation of SBR Function.19 
+
+Deactivation of Passenger Airbags.19 
+
+Passenger Airbag OFF Light.19 
+
+0C3 Mat .20 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Components.22 
+
+Crash Safety M odule .22 
+
+Sensors and Switches .23 
+
+B-Pillar Satellite.23 
+
+Digital Data Transmission by Means of Current Interface.24 
+
+Up-Front Sensors.24 
+
+Door Pressure Sensors .24 
+
+OC3 Mat .25 
+
+Emergency Call Button .25 
+
+Seat-Belt Buckle Switches.25 
+
+Actuators.26 
+
+Front Airbag, Driver.27 
+
+Front Airbag, Passenger.27 
+
+Curtain Airbag .28 
+
+Side Airbag .29 
+
+Front Seat Belt Pretensioner.29 
+
+Adaptive Seat Belt Force Limiter.30 
+
+Adaptive Seat Belt Force Limiter Positive Engagement.30 
+
+Adaptive Seat Belt Force Limiter Non-Positive Engagement .31 
+
+Safety Battery Terminal .31 
+
+Service Information.32 
+
+General Safety Regulations.32 
+
+Crash Safety M odule .32 
+
+B-pillarSatellite .32 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Crash Safety Module 
+
+
+Model: E70 
+
+Production: From Start of Production 
+
+IBIICT1UIS 
+
+After completion of this module you will be able to: 
+
+• Describe the different functions of the ACSM on the E70. 
+
+• Identify the components that comprise the ACSM ontheE70. 
+
+• Diagnose functions of the ACSM system on the E 70. 
+
+• Service components on the ACSM system used on the E70. 
+
+
+3 
+
+E70 Advanced Crash Safety Module 
+
+
+
+Introduction 
+
+
+Advanced Crash Safety Module ACSM 
+
+The safety system ACSM is used in the E70.The task of ACSM is to detect accident 
+situations critical forthe vehicle occupants and to activate the necessary restraint sys¬ 
+tems selectively corresponding to the crash severity. 
+
+The crash safety module performs internal diagnosis and monitors all inputs and out¬ 
+puts. Any faults that may occur are stored nonvolatile in the 
+crash safety module and indicated to the driver by way 
+of the airbag indicator lamp in the instrument cluster. 
+
+Communication with other control units in the 
+vehicle's system network takes place via the K- 
+CAN and the F-CAN. 
+
+In the event of a crash, a K-bus telegram is trans¬ 
+mitted (provided a telephone is installed) via an 
+additional separate data line to the Telematics 
+Control Unit (TCU) and the emergency call trig¬ 
+gered (depending on national version). 
+
+It is possible to encode the crash safety module via the K- 
+
+CAN. Diagnosis of the crash safety module takes place via the diagnosis 
+
+CAN to the gateway that is located in the J unction-box ECU on the E70. 
+
+
+
+4 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+F-CAN Signals atACSM Control Unit 
+
+
+In/Out 
+
+Signal 
+
+Source 
+
+Function 
+
+IN 
+
+Vehicle Speed 
+
+Wheel Speed Sensors 
+
+Dynamic Stability Control DSC 
+
+Information for recognizing possible 
+rollover situation 
+
+IN 
+
+YAW Rate 
+
+Dynamic Stability Control DSC 
+
+Information for recognizing possible 
+rollover situation 
+
+IN 
+
+Steering angle 
+
+Steering angle sensor 
+
+Steering column switch cluster 
+
+Information for recognizing possible 
+rollover situation 
+
+
+5 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+Schematic Circuit Diagram ACSM E70 
+
+
+
+6 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Up-front sensor, left 
+
+2 
+
+Head airbag, front passenger's side 
+
+3 
+
+Footwell module FRM 
+
+4 
+
+Instrument cluster 
+
+5 
+
+Car Access System (CAS) 
+
+6 
+
+J unction-box ECU 
+
+7 
+
+Switch for passenger airbag deactivation 
+
+8 
+
+Up-front sensor, right 
+
+9 
+
+Head airbag, driver's side 
+
+10 
+
+Door pressure sensor, right 
+
+11 
+
+F rant passenger airbag, 2-stage 
+
+12 
+
+Adaptive seat belt force limiter, right 
+
+13 
+
+ACSM ECU 
+
+14 
+
+Front passenger's seat 
+
+15 
+
+B - pillar satellite, right 
+
+16 
+
+Safety battery terminal 
+
+17 
+
+Main power connection to starter and alternator 
+
+18 
+
+Ground 
+
+19 
+
+Telephone 
+
+20 
+
+Seat belt pretensioner, left 
+
+21 
+
+Seat belt pretensioner, right 
+
+22 
+
+Side airbag, right 
+
+23 
+
+Side airbag, left 
+
+24 
+
+Anchor-fitting pretensioner 
+
+25 
+
+Seat occupancy detector 
+
+26 
+
+Power supply, seat occupancy detector 
+
+27 
+
+Seat occupancy detector (SBE for EU), front passenger 
+
+28 
+
+Seat occupancy detector (SBE forEU), driver 
+
+29 
+
+Seat belt buckle switch, driver 
+
+30 
+
+Seat belt buckle switch, front passenger 
+
+31 
+
+Ground point 
+
+32 
+
+Driver's seat 
+
+33 
+
+B-pillar satellite, left 
+
+34 
+
+Adaptive seat belt force limiter, left 
+
+35 
+
+Door pressure sensor, left 
+
+36 
+
+Driver's airbag, two-stage 
+
+37 
+
+Steering column switch cluster SZL 
+
+38 
+
+Indicator lamp for passenger airbag deactivation 
+
+K-CAN 
+
+Body CAN 
+
+K-Bus 
+
+Body Bus 
+
+KL R 
+
+Terminal R 
+
+
+7 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Basic Tasks of ACS M 
+
+The task of advanced crash safety module is to evaluate permanently all the sensor sig¬ 
+nals in orderto identify a crash situation. As a result of the sensor signals and their evalu¬ 
+ation, the crash safety module identifies the direction of the crash and the severity of the 
+impact. 
+
+Also included is information on the occupants and whetherthey have their seat belts 
+fastened or not. From this information, measures are taken to selectively trigger the nec¬ 
+essary restraint systems. The ACSM monitors itself at all times and indicates that the 
+system is in standby mode by the airbag indicator lamp briefly going out after every "igni¬ 
+tion ON" status. If a fault occurs during operation, it is indicated by the airbag indicator 
+lamp and is additionally stored in the fault code memory. This fault code memory can be 
+read out for diagnostic purposes. 
+
+In the event of a crash, this is communicated to the other users in the bus-system net 
+work by way of a bus telegram. The relevant control units respond to this telegram by 
+executing their own activities. 
+
+These activities include: 
+
+• Opening the central-locking system 
+
+• Activating the hazard warning flashers 
+
+• Switching on the interior lights 
+
+• Deactivating the fuel pump 
+
+• Switching off the alternator 
+
+• Automatic emergency call 
+
+Anotherfunction of ACSM is the seat belt reminderfunction, which uses optical and 
+acoustic signals to remind the driver and front passengerto fasten their seat belts. 
+
+C rash- Relevant Functions 
+
+The crash safety module mustfulfill the following crash-relevant functions: 
+
+• Evaluating the sensor signals 
+
+• Detecting a crash and determining the triggering times and the order 
+
+• Triggering the output stages of the firing circuits 
+
+• Output of a crash telegram for other users in the communication system network 
+
+
+8 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+Crash entries 
+Emergency call functions 
+Driver's seat position recognition 
+
+
+Evaluating the SensorSignals 
+
+The crash safety module incorporates a longitudinal acceleration sensor and a transverse 
+acceleration sensor. The sensors serve to detect and verify front-end, side-on and rear- 
+end crashes. 
+
+The crash safety module additionally contains a sensorfor rollover detection. This func¬ 
+tion has been adopted from the E64 and activates the curtain airbag and the seat belt 
+pretensioners in the E70. 
+
+Satellites are installed at the B-pillars. T he satellites each consist of a longitudinal acceler¬ 
+ation sensor and a transverse acceleration sensor. 
+
+Together with the transverse acceleration sensor in the crash safety module, the trans¬ 
+verse acceleration sensors serve to detect side-on crashes. 
+
+Together with the longitudinal acceleration sensor in the crash safety module, the longitu¬ 
+dinal acceleration sensors serve to detect front-end and rear-end crashes. 
+
+
+Sensors in the E70 
+
+
+
+
+
+
+
+
+
+9 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+The acceleration sensors measure the positive acceleration (+) and the negative acceler¬ 
+ation (- / deceleration) in the X and Y directions. 
+
+The resultant from the xand y signals is the definitive factor in determining the direction 
+of the impact. 
+
+Note: US vehicles have additional up-front sensors and door pressure sensors. 
+
+Detecting a C rash and Determining theTriggering Times and the Order 
+
+The crash safety module uses the values transmitted by the sensors to determine the 
+direction and severity of the crash. 
+
+The threshold values of two independent sensors must be detected simultaneously in 
+orderto detect a crash. In the case of a front end crash, for example, the acceleration val¬ 
+ues from the B-pillar satellite and from the longitudinal-acceleration sensor must be 
+detected in the crash safety module. 
+
+Based on the crash severity and direction, an algorithm determines the triggering (firing) 
+points and the order of the restraint systems to be activated. 
+
+Triggering the Output Stages of the Firing Circuits 
+
+The firing-circuit output stages are only triggered if the corresponding thresholds are 
+detected by two different sensors simultaneously, for example the B-pillar satellite and the 
+crash safety module. 
+
+From "Terminal RON" the crash safety module is supplied with power by the Car Access 
+System CAS and is ready for operation on completion of the system selftest. The firing 
+capacitors, which also serve as an energy reserve, are charged up by a switching con¬ 
+troller. The firing capacitors provide the firing energy in the event of a crash even if the 
+power supply is interrupted as the result of the crash. 
+
+The output stages of the firing circuits consist of a high-side and a low-side power circuit 
+breaker. The high-side power circuit-breaker controls the firing voltage, while the low-side 
+power circuit-breaker switches to ground. The output stages of the firing circuits are con¬ 
+trolled by the microprocessor. 
+
+The high-side and low-side power circuit breakers also serve the purpose of checking the 
+firing circuits during the system self-test. 
+
+
+10 
+
+E70 Advanced Crash Safety Module 
+
+
+
+Outputting the C rash Telegram 
+
+In the event of a crash involving triggering of the restraint systems, the crash safety 
+module sends a crash telegram to the users in the bus-system network. As a result, 
+the respective control units perform the following functions corresponding to the crash 
+severity: 
+
+
+Function 
+
+ECU 
+
+S hut down electric fuel pump (as from 6-cylinder and 
+diesel engines) 
+
+Electric fuel pump (EKP) module 
+
+Shutdown electric fuel pump on 4-cylinder engines 
+
+DM E 
+
+Switch off alternator 
+
+DM E 
+
+Open central locking 
+
+J unction-box ECU 
+
+Switch on hazard warning lights 
+
+Footwell module 
+
+Switch on interior lights 
+
+Footwell module 
+
+M ake emergency call 
+
+Telematics control unit 
+
+
+Crash Entries 
+
+In the event of a crash where one or more actuators are triggered, a crash entry is stored 
+in a non-erasable memory. After three crash entries, a non-erasable fault entry is stored in 
+the fault memory with the instruction to replace the crash safety module. 
+
+The three crash entries could also be stored during the course of an accident. Each 
+crash entry is assigned a system time. The control unit remains capable of firing even 
+afterthree crash entries. 
+
+The crash entries cannot be erased and serve the purpose of subsequent device diagno¬ 
+sis. A maximum of three crash entries can be stored. The control unit must then be 
+replaced. 
+
+
+11 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+Emergency Call Functions 
+
+A manual and an automatic emergency call is provided as standard on US vehicles. 
+Furthermore, the driver has the option of activating a breakdown call. Irrespective of 
+whetherthe customer orders a telephone or not, each vehicle is equipped with a telemat¬ 
+ics control unitTCU, a telephone antenna, a hands-free kit as well as a GPS antenna for 
+determining position. 
+
+Automatic Emergency Call 
+
+The crash safety module sends a crash telegram to theTCU in the event of a crash of 
+corresponding crash severity. TheTCU places an emergency call, which at the same time 
+contains the location of the vehicle. 
+
+Parallel to this, attempts are made to set up a voice connection with the vehicle occu¬ 
+pants to obtain more information on the accident (severity of the accident, number of 
+injured) so that further rescue operations can be initiated. 
+
+Breakdown Call 
+
+
+The breakdown-call button in the E70 ora menu button in the central information display 
+is used to establish a connection with the BMW Emergency Service in the relevant coun¬ 
+try. 
+
+
+Manual Emergency Call 
+
+
+The emergency-call button is located 
+in the roof console. The emergency- 
+call button is connected directly to the 
+TCU. Pressing the emergency-call 
+buttons establishes a voice connec¬ 
+tion with the relevant country provider. 
+The voice connection is indicated by 
+a flashing LED in the switch. 
+
+
+
+
+Emergency call button in roof functions center E70 
+
+
+12 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+Rollover Protection System 
+
+The rollover protection system is an important instrument for improving occupant protec¬ 
+tion in the event of the vehicle rolling over. The seat belt pretensioners and the curtain 
+airbags are triggered in response to corresponding crash severity. 
+
+There are different factors which can cause a carto overturn or roll over. The most com¬ 
+mon causes are: 
+
+• The vehicle leaves the road. One side of the vehicle digs into a roadside ditch and 
+the vehicle rolls over. 
+
+• The car hits a ramp (a crash barrier) on one side. The car rotates about its longitudi¬ 
+nal axis as a result of the high angular velocity. 
+
+• The car skids sideways off the road surface and buries itself with its wheels in the 
+soft soil. The kinetic energy could be sufficient to upend and overturn the car. 
+
+• The car skids sideways off the road into the curb and is upended. 
+
+The crucial factors which determine whetherthe car overturns are not just the angle but 
+also the angular velocity at which the car is set into the roll. All these vehicle movements 
+can also occur after a front-end, side-on or rear-end crash. 
+
+Rollover Detection 
+
+The module incorporates a special sensor system for detecting rollover situations. 
+Besides the two sensors for longitudinal (x-axis) and transverse acceleration (y-axis), there 
+is a yaw-rate sensor and a Low-g sensorforthe z-axis and for the y-axis. In addition to its 
+own measured values, the crash safety module constantly receives information from the 
+DSC relating to the current driving characteristics of the vehicle. This information serves 
+to meet the demanding requirements relating to the triggering times. 
+
+The longitudinal and transverse acceleration sensors registerthe positive and negative 
+vehicle acceleration in a measuring range of O-lOOg. They serve to detect elevated accel¬ 
+eration and deceleration in a crash. 
+
+The two Low-g sensors have a narrow measuring range from 0-2g and can precisely 
+detect low levels of acceleration and deceleration when, for example, the vehicle skids lat¬ 
+erally off the road and buries itself with its wheels in the soft soil. 
+
+
+13 
+
+E70 Advanced Crash Safety Module 
+
+
+
+Crash Detection E70 
+
+
+
+
+
+T 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Crash safety module 
+
+6 
+
+Curtain airbag, front passenger 
+
+2 
+
+Rollover sensor 
+
+7 
+
+Dynamic stability control DSC 
+
+3 
+
+Low-g-sensors (z-/y-axis) 
+
+8 
+
+Seat belt pretensioner, driver 
+
+4 
+
+Longitudinal and transverse acceleration sensors 
+
+9 
+
+Curtain airbag, driver 
+
+5 
+
+Seat belt pretensioner, front passenger 
+
+10 
+
+Safety battery terminal 
+
+
+The sensors provide a voltage as measured variable. This voltage is a measure forthe 
+acceleration and is converted directly into digital signals in the sensor. The digital values 
+are sent to the processor in the crash safety module for evaluation. The processor evalu¬ 
+ates the signals from the longitudinal and transverse acceleration sensors and the two 
+Low-g sensors. The signals of the yaw rate sensor are also included in the calculation. 
+The results are compared with the stored algorithm. If the processor detects that a 
+rollover situation is imminent, it will triggerthe seat belt pretensioners and the curtain 
+airbags. 
+
+
+14 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functional Principle of the Yaw Rate Sensor 
+
+A yaw rate sensor is used for detecting rollover situations. The yaw rate sensor has a 
+comblike structure. It consists of a fixed comb structure (3) and a rotational oscillator (2) 
+with amoving comb structure. Together, the comb structures form a capacitor. The rota¬ 
+tional oscillator is fitted on bearings on a shaft (1) in its center. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rotational axis 
+
+2 
+
+Rotational oscillator 
+
+3 
+
+Fixed comb structure 
+
+
+When the vehicle is in a horizontal position, the rotational oscillator turns within the comb 
+structure and detects the change of direction (left/right). If the vehicle is brought into a tilt¬ 
+ing position (on a slope), the rotational oscillator is moved out of the comb structure.S 
+
+This causes a change in capacity, which in turn creates a change in voltage proportional 
+to the deflection of the rotational oscillator in the mV range, which is evaluated as the 
+measured variable. 
+
+The voltage change is directly related to the angle and, in the same way, the speed of the 
+voltage change is directly related to the angle velocity.The angle and the angle velocity 
+are the measurements used for the algorithm calculation. 
+
+The voltage values are directly converted into digital values in the yaw rate sensor and 
+sent to the main processorfor evaluation. 
+
+
+15 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+Seat Position Detection 
+
+Adaptive or intelligent restraint systems are developed with the aim of optimizing the pro¬ 
+tection offered by the restraint system under changing conditions. Besides the crash 
+severity, the seated position and posture of the occupant are important factors in calculat¬ 
+ing the triggering procedures. 
+
+A seat position recognition facility is used on the driver's side in the E70 forthe purpose 
+of distinguishing persons in terms of their body size. The task of the seat position recog¬ 
+nition facility is to distinguish between a relatively small person and a normal sized person 
+within the forward/backward adjustment range of the seat. This recognition function is a 
+further technical feature designed to increase occupant safety. The characteristics of the 
+adaptive seat belt force limiter is correspondingly adapted to the driver's seat position. 
+
+In accordance with US legislation (FM VSS208) a facility for recognizing the size of per¬ 
+sons must be provided on the driver's seat. This size recognition facility is based on the 
+adjustment range of the forward/backward seat adjustment facility. On the E 70, the exact 
+position is determined by the actuator motor in the driver's seat. 
+
+A detailed description of the functional principle of the position detection system can be 
+found in the Product Information "Seats" 
+
+
+System Monitoring Functions 
+
+
+The crash safety module must execute the following system monitoring functions: 
+
+
+System self-test (pre-drive check) 
+Cyclic monitoring 
+Indication of system operability 
+Fault indication and fault storage 
+Fault output (diagnosis) 
+
+Seat belt reminderfunction 
+
+
+• Deactivation of passenger airbags 
+
+System Self-test (pre-drive check) 
+
+ACSM performs a system self-test as from 
+"Terminal R ON". The airbag indicator lamp is 
+activated for about. 5 s during the system self¬ 
+test. 
+
+When the system self-test is concluded and no 
+fault has been found, the airbag indicator lamp 
+goes out and the system is ready for operation. 
+
+
+
+16 
+
+E70 Advanced Crash Safety Module 
+
+
+TEW *4 794 
+
+
+
+
+Cyclic Monitoring 
+
+Once the system self-test has been successfully concluded and the system is ready for 
+operation, a cyclic monitoring procedure is performed forfault monitoring purposes. 
+
+Cyclic monitoring serves the purpose of internal diagnosis of the ECU and the overall 
+airbag system. Cyclic monitoring is carried out for as long as the system is at 
+"Terminal R ON". 
+
+Indication of System Operability 
+
+ACSM system operability is indicated by the airbag indicator lamp going out in the instru¬ 
+ment cluster. 
+
+Fault Indication and Fault Storage 
+
+The crash safety module has a non-volatile fault memory. The airbag indicator lamp indi¬ 
+cates any entry in the fault memory. 
+
+A distinction is made between internal and external faults when entering the fault code. 
+Events such as triggering of the airbag or seat belt pretensioner are also stored in the 
+fault memory. 
+
+Note: The entry of a triggered restraint system in the fault memory does not 
+mean that the restraint system was defective in the crash situation, 
+rather it only means that the restraint system is not available for further 
+triggering. 
+
+Fault Output (diagnosis) 
+
+With the aid of the diagnostic tools (DIS plus, GT1), the fault memory can be read out 
+via the diagnosis interface. After rectifying the faults or after replacing the triggered 
+components, the fault memory can be cleared with the diagnosis command "Clearfault 
+memory". 
+
+Seat Belt Reminder Function 
+
+All vehicles with ACSM have a Seat Belt Reminderfunction (SBR) as standard.The SBR 
+function detects whetherthe driver and front passenger have fastened their seat belts. If 
+not, a corresponding indicator reminds them to fasten their seat belt. Both seat belt buck¬ 
+le switches are monitored separately. 
+
+If the seat belt is not worn orthe seat belt is unbuckled while driving at a speed in excess 
+of about. 8 km/h, a corresponding audible and visual warning is given. 
+
+
+17 
+
+E70 Advanced Crash Safety Module 
+
+
+
+The seat belt warning is given by: 
+
+• Fixed seat belt indicator lamp (seat belt symbol) 
+
+• Variable seat belt indicator lamp (Check Control message) 
+
+• Audible warning provided by the gong 
+
+• Check control text message on vehicles with central information display 
+
+Note: If with terminal 15 the seat belt contact on the driver's side is not closed, 
+an audible warning is triggered and the seat belt warning lamp activated 
+for 6 seconds. 
+
+The SBR function is subdivided into two phases. 
+
+The first phase is the initialization, monitoring and warning begin with the vehicle station- 
+ary.The gong is additionally activated intermittently for maximum 90 s or until the seat 
+belt is fastened. At the same time, the check control indicator is activated with the vari¬ 
+able indicator lamp with the seat belt 
+warning symbol for max. 23 s. On vehi¬ 
+cles with the central information dis¬ 
+play, a text message "Fasten seat belt" 
+is additionally displayed. 
+
+If the driver/front passenger does not 
+fasten their seat belt within this period 
+of time, the variable indicator lamp and 
+the text message will go out after 23 s 
+and the gong will switch off after 90 s. 
+
+The fixed seat belt indicator lamp in the 
+instrument cluster remains on until the 
+seat belt is fastened. 
+
+The second phase involves monitoring while driving, i.e. the system monitors whetherthe 
+occupants have their seat belts fastened during vehicle operation.If the front passenger 
+seat is detected as occupied, the front passenger switch must also detect that the pas¬ 
+senger seat belt is fastened so as not to trigger a warning. A visual and audible warning is 
+triggered 15 s after unbuckling the seat belt while driving. The gong is activated intermit¬ 
+tently for maximum 90 s or until the seat belt is fastened again. At the same time, the vari¬ 
+able indicator lamp with the seat belt warning symbol is activated for max. 23 s.The fixed 
+indicator lamp remains active until the seat belt is fastened again. On vehicles with the 
+central information display, a text message "Fasten seat belt" is additionally displayed for 
+maximum 23 s. 
+
+Note: If a warning was given for more than 90 s, the SBR function is not activat¬ 
+ed again until the seat belt has been fastened and unbuckled again. 
+
+
+
+18 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+Deactivation of SBR Function 
+
+
+The SBR would constantly trigger an alarm customers who predominantly use the vehi¬ 
+cle alone and transport objects on the front passenger's seat, like a briefcase, laptop etc. 
+
+For such cases, the customer has the option of having the SBR function disabled in the 
+workshop.The SBR function forthe front passengerside can be disabled with the coding 
+option. In this case, only the audible warning, check control and text messages if applica¬ 
+ble are suppressed. The seat belt mannikin in the instrument cluster remains on. 
+
+Deactivation of Passenger Airbags 
+
+The front and side passenger airbags must be disabled when a child seat is mounted on 
+the passenger's side. 
+
+Deactivation and activation of the front passenger airbags is the responsibility of the driver. 
+
+Note: In US vehicles the law requires that a child seat tested to specifications 
+(NHTSA FMVSS 208) with a child approximately one year old on the front 
+passenger seat be automatically detected and the passengerairbags be 
+deactivated. 
+
+When a child restraint system holding a small child tested in accordance with NHTSA 
+FMVSS 208 is used, the law in the USA requires that this be automatically detected and 
+the front passengerairbags deactivated. In order to meet legislative requirements, the 
+step was taken to replace the seat-occupancy detector (SBE) with an intelligent 
+Occupant Classification (0C)facility. 
+
+Passenger Airbag OFF Light 
+
+The passenger airbag OFF lamp is located at 
+the front of the roof functions center FZD next 
+to the interior lights. The passenger airbag OFF 
+lamp is activated and lights yellow when the 
+passenger's front airbag and the side airbag on 
+the passenger's side are deactivated. The 
+brightness of this light is controlled by auto¬ 
+matic regulation of the display lighting. 
+
+
+
+19 
+
+E70 Advanced Crash Safety Module 
+
+
+
+0C3 Mat 
+
+
+The 0C3 mat (Occupant Classification) detects a child seat tested in accordance with 
+NHTSA on the basis of the pressure per unit area and disables the passenger airbag. 
+
+
+The OC3 mat consists of conductors in a pressure-sensitive resistance grid, so-called 
+FSR elements (Force Sensitive Resistance).The conductors are connected to the elec¬ 
+tronic evaluation unit. 
+
+
+The FSR elements are wired in such a way 
+that they can be sampled individually. When 
+The mechanical load on a sensor element 
+increases electrical resistance decreases 
+and the measurement current changes 
+accordingly. 
+
+
+
+
+By analyzing the signals from the individual 
+sensors, the analyzer can map the occupan¬ 
+cy of the seat surface and identify local con¬ 
+centrations of weight. The relationship 
+between the areas and the load points indi¬ 
+cates whetherthere is a person ora child 
+seat holding a small child present. 
+
+
+
+
+OC3 MatE70 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Surface imprint of a person 
+
+B 
+
+Surface imprint of a child seat 
+
+
+
+20 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Block diagram of an 0C3 mat E 70 
+
+
+
+U 
+
+
+
+
+® 3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+FSR elements 
+
+3 
+
+Electronic evaluation unit 
+
+2 
+
+Output monitoring 
+
+4 
+
+Input monitoring 
+
+
+The electronic evaluation unit of the 0C3 mat sends a telegram via a separate K-bus to 
+the crash safety module. The front passenger airbags (front and side airbags) are disabled 
+when a child seat with small child is detected. The crash safety module activates the pas¬ 
+senger airbag OFF indicator lamp in the roof functions center. 
+
+
+Note: The front passenger airbags are not deployed when the front seat is not 
+occupied. However, this is not indicated by the Passenger Airbag OFF 
+light. 
+
+
+21 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+Crash Safety Module 
+
+The advanced crash safety module essentially comprises the following components: 
+
+• Crash safety module 
+
+• Sensors and switches 
+
+• Actuators 
+
+The crash safety module is located centrally on the transmission tunnel in the vehicle. 
+The crash safety module consists of a die cast housing with integrated plug cover. 
+The crash safety module contains various sensors: 
+
+• Rollover sensor 
+
+• Low-g sensors 
+
+• Longitudinal and transverse acceleration sensors 
+
+
+
+The advanced crash safety module has a comprehensive sensor system. Transverse 
+acceleration sensors in the B-pillarand door pressure sensors are used forthe purpose 
+of side-on crash detection. The B-pillar satellites also have longitudinal acceleration sen¬ 
+sors for front- and rear-end crash detection. 
+
+Note: The crash safety module is located on the transmission tunnel behind 
+the hand brake. Various sensors (rollover, Low-g as well as longitudinal 
+and transverse acceleration sensors) are integrated in the crash safety 
+module and the crash safety module is integrated in the K-C AN. 
+
+
+22 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+Sensors and Switches 
+
+
+In addition to the two sensors in the crash safety module, the system makes further use 
+of the following sensors and switches to evaluate the crash severity and the correspond¬ 
+ing triggering strategy: 
+
+• B-pillar satellites 
+
+• Up-front sensor 
+
+• Door pressure sensor 
+
+• OC3 Mat 
+
+• Seat belt buckle switches 
+
+• Airbag switch 
+
+• Emergency call button 
+
+
+The acceleration sensors measure the positive 
+acceleration and the negative acceleration 
+(deceleration) in the X and Y directions.The 
+resultant from the X and Y signals is the defini¬ 
+tive factor in determining the direction of the 
+impact. 
+
+The B-pillar satellites serve the purpose of 
+detecting front-end, side-on and rear-end 
+crashes. 
+
+The B-pillar satellites on the left and right are 
+of identical design and are allocated by way of 
+mechanical coding during installation. 
+
+
+
+B-Pillar Satellite 
+
+The B-pillar satellite consists of a longitudinal acceleration sensor and a transverse accel¬ 
+eration sensor. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Mounting points 
+
+2 
+
+Mechanical coding 
+
+3 
+
+Connection for cable plug 
+
+
+Note: Externally, the B-pillar satellites are identical to those on other BMW 
+models. It is important to make sure the part number is correct. The 
+airbag indicator lamp will come on if the incorrect satellites are 
+installed. 
+
+
+23 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+Digital Data Transmission by Means of Current Interface 
+
+The recorded acceleration values ofthe micromechanical acceleration sensors are con¬ 
+verted in an ASIC (Application Specific Integrated Circuit) into digital signals. With the aid 
+of a data telegram, the digital signals are transmitted uni-directionally to the crash safety 
+module. 
+
+The signals are transmitted via a current interface, which supplies the electronic circuitry 
+with voltage. 
+
+The electronic circuitry receives a voltage level of about. 5-10 mA via the current inter¬ 
+face. The level rises at a step of 20 mA when a data telegram is transmitted so that only 
+two lines per measurement channel are required. 
+
+The transmitted data are evaluated in the crash safety module. 
+
+Up-Front Sensors 
+
+The up-front sensors in the front end on the 
+left and right sides serve to detect a front-end 
+crash.They deliverthe initial information on 
+the progress and severity ofthe collision to 
+the crash safety module. 
+
+Each up-front sensor consists of an accelera¬ 
+tion sensorfor recording the 
+deceleration/acceleration, a signal conditioner 
+and an ASIC for data transmission. 
+
+The measured values are sent in the form of a 
+data telegram to the crash safety module and 
+are used in the calculation ofthe algorithm. 
+
+The data are transmitted in the same way as 
+the B-pillar satellites. 
+
+Door Pressure Sensors 
+
+The door pressure sensors in the front doors 
+serve the purpose of verifying the plausibility 
+ofthe acceleration signals from the B-pillar 
+satellites and the crash safety module during 
+side-on crash detection. The door pressure 
+sensors are situated in the inner panels ofthe 
+frontdoors and measure the increase in pres¬ 
+sure within the door in the event of a side-on 
+impact. 
+
+
+
+
+24 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+In the event of a side-on impact with the door, the outer door panel is pressed inward, 
+thus reducing the inner doorspace and increasing the pressure.This change in pressure 
+is measured by the door pressure sensors. 
+
+The door pressure sensor also includes an electronic module, which digitizes the pres¬ 
+sure values and transmits them cyclically to the crash safety module. The data are trans¬ 
+mitted in the same way as the B-pillar satellites. 
+
+The pressure values are evaluated in the crash safety module. 
+
+
+OC3 Mat 
+
+US legislation stipulates that the use of a 
+child restraint system conforming to NHTSA 
+and holding a small child on the front passen¬ 
+ger's seat must be detected automatically 
+and the front passenger airbag disabled. 
+
+The OC3 mat can detect an occupied child 
+seat tested in accordance with the regulation 
+(NHTSA FM VSS 208) on the basis ofthe 
+pressure per unit area and disable the pas¬ 
+senger airbag (front and side airbag). The 
+passenger airbag OFF light comes on when a 
+child restraint system tested in accordance 
+with NHTSA and holding a small child was 
+detected on the front passenger's seat. 
+
+Emergency Call Button 
+
+The emergency-call button is fitted as stan¬ 
+dard in US vehicles, even if no telephone has 
+been ordered. 
+
+S eat- B elt B uc kle S witc hes 
+
+The seat-belt buckle switches signal whether 
+the seat belts are fastened or not. These 
+switches transmit signals to the crash safety 
+module and are used fortriggering the 
+required restraint systems and forthe seat 
+belt reminderfunction. 
+
+
+
+
+The seat belt buckle switch is located in the seat belt buckles ofthe driver's and front 
+passenger's seat. The seat-belt buckle switch is designed as a two-wire Hall-effect 
+switch.The crash safety module powers the Hall switch via a current interface. The cur¬ 
+rent intake ofthe switch varies depending on whetherthe seat belt is fastened or not. 
+The seat belt buckle switch is permanently monitored as from "Terminal RON". 
+
+
+25 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Actuators 
+
+The crash safety module is responsible for activating the following actuators: 
+
+• Front airbag, 2-stage, driver's side 
+
+• Front airbag, 2-stage, passengerside 
+
+• Head airbag, left and right 
+
+• Left and right side airbag integrated in the back rest of both front seats 
+
+• Seat belt pretensioner, front, left and right 
+
+• Adaptive seat belt force limiter, left and right 
+
+• Safety battery terminal 
+
+The following warning lamps are additionally activated: 
+
+• Airbag indictor lamp 
+
+• Seat belt indicator lamp 
+
+• Passenger airbag OFF light 
+
+
+
+26 
+
+E70 Advanced Crash Safety Module 
+
+
+Front Airbag, Driver 
+
+In conjunction with the seat belt, the driver's front airbag is designed to reduce the risk of 
+serious injury to the driver's head orthorax during a head-on collision. The front airbag for 
+the driver's side is located in the hub cushion of the steering wheel. The driverfront 
+airbag is equipped with a 2-stage inflator assembly. 
+
+The two stages of the airbag are triggered with a time delay depending on the crash 
+severity and use of seat belt. The two stages of the inflator assembly facilitate a restraint 
+function adapted to the crash severity and consequently reduce additional stress on the 
+occupants during the development phase. 
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of firing pellet, first stage 
+
+2 
+
+Connection offiring pellet, second stage 
+
+
+Front Airbag, Passenger 
+
+Together with the seat belt, the task of the front airbag on the passenger's side is to 
+reduce the risk of serious injury to the front passenger during a frontal crash. The 2-stage 
+front airbag on the passenger's side is located underthe instrument panel. 
+
+Deployment of the front passenger airbag breaks the instrument panel at defined points 
+and opens a flap, which is connected to the instrument panel by means of a fabric strap. 
+The passenger airbag opens in the direction of the windshield. The passenger airbag 
+emerges in an upward direction and is supported on the windshield and on the instru¬ 
+ment panel. 
+
+
+27 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+Curtain Airbag 
+
+The well-proven curtain airbag is used as the head protection system in connection with 
+the ACSM on the E70. 
+
+The curtain airbag extends from the A-pillarup to the C-pillarand covers the entire side 
+section at head level. The curtain airbag inflates between the occupants and side win¬ 
+dows or side trim panels. 
+
+
+
+In connection with the side airbag in the front seat, it provides optimum protection forthe 
+occupants in the event of side impact. 
+
+The curtain airbag reduces the movement of the head and other extremities towards the 
+outside during a side crash. This results in lower neck shearforces as well as bending 
+moments in the cervical vertebrae. In addition, it also prevents direct head contact with 
+the side structure ofthe obstacle. 
+
+The inflator assembly (gas generator) mounted between the B-pillarand C-pillaris trig¬ 
+gered in the event of a side crash. The gas flows out ofthe pressure vessel through the 
+two gas lances into the curtain airbag. 
+
+Simultaneously filling the curtain airbag at the front and rear ensures the air cushion is 
+filled uniformly. 
+
+The head airbag is brought into position because ofthe way the curtain airbag is mount¬ 
+ed on the A-pillar and the C-pillar. The curtain airbag extends between the side window 
+and side trim panel and the occupants. 
+
+The closed system retains the structural strength and stability ofthe curtain airbag for 
+several seconds 
+
+
+28 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+Side Airbag 
+
+For many years now, the side airbag has been used at BMW as an important integral part 
+in occupants safety and protection systems. The task of the side airbags is to minimize 
+the risk of injury to the driver/front passenger in the trunk/torso area in the event of a side 
+impact. 
+
+The side airbags mounted in the back rest of the front seats with the aim of achieving 
+optimum interiorfunctionality and appealing design in the E70 while also satisfying the 
+demanding safety requirements. The task of the side airbags is to minimize the risk of 
+injury to the driver/front passenger in the pelvic and trunk/torso area in the event of a side 
+impact. 
+
+The side airbag is triggered in response to a 
+sufficiently strong pulse from the side. The 
+side airbag emerges through the tear seam in 
+the backrest and inflates between the door 
+and occupant. The air cushion between the 
+door and occupant provides controlled damp¬ 
+ing and therefore reduces load/strain on the 
+occupant. 
+
+Front Seat Belt Pretensioner 
+
+
+
+The task of the pyrotechnic seat belt pretensioner is to minimize the seat belt slack in the 
+pelvis and shoulder areas in the event of a crash, thus also preventing "submarining", i.e. 
+slipping under a slack seat belt. 
+
+The seat belt pretensioners are located on the driver's, front passenger's and left and 
+right rear seats. The seat belt pretensioners are fired in the event of a front- or rear-end 
+crash. In the E70 they are also activated in the event of an imminent rollover. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Before triggering 
+
+2 
+
+After triggering 
+
+
+
+29 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+Adaptive Seat Belt Force Limiter 
+
+
+The pyrotechnic seat belt force limiterforthe driver and front passenger is designed as 
+seat belt retractor with adaptive force limitation. The force is changed overfrom a high 
+level to a lower level with the aid of a gas generator. This must also be possible during a 
+crash in orderto achieve gradual force reduction. 
+
+
+The kinetic energy of the occupant is 
+uniformly reduced overthe duration of 
+the crash thanks to optimum matching 
+with the airbag, thus achieving lower 
+occupant stress values. Adaptive force 
+limitation is achieved in that a second 
+torsion shaft can be optionally coupled 
+or de-coupled by the main torsion shaft, 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Second torsion shaft 
+
+2 
+
+Gearwheel on second torsion shaft 
+
+3 
+
+Pyrotechnic actuator 
+
+4 
+
+Gearwheel on first torsion shaft 
+
+5 
+
+Seat belt reel 
+
+
+
+
+When the two gear wheels are positively 
+engaged, the two torsion shafts rotate as 
+the result of the force applied by the belt. 
+The torque of the two torsion shafts 
+counteracts the belt force. 
+
+
+Adaptive Seat Belt Force Limiter Positive 
+
+The belt force is transmitted through the 
+seat belt webbing to the belt reel. 
+
+
+Engagement 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Second torsion shaft 
+
+2 
+
+First torsion shaft 
+
+3 
+
+Seat belt reel 
+
+
+30 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adaptive Seat Belt Force Limiter Non-Positive Engagement 
+
+When the pyrotechnic actuator is triggered, 
+the second torsion shaft shifts upward thus 
+disengaging from the first gearwheel. Only 
+the first torsion shaft is now subjected to 
+the torque of the belt and therefore turns at 
+a greater rate. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Second torsion shaft 
+
+2 
+
+First torsion shaft 
+
+3 
+
+Seat belt reel 
+
+
+
+Safety Battery Terminal 
+
+The safety battery terminal is triggered at different thresh olds when the crash safety 
+module detects a front-end, side-on or rear end crash of sufficient severity. The connec¬ 
+tion between battery and starter/ alternator cable is then separated by pyrotechnical 
+teams. At the same time, the alternator is switched off by means of a crash telegram sent 
+to the DM E. The safety battery terminal is located directly at the positive terminal of the 
+battery. 
+
+
+31 
+
+E70 Advanced Crash Safety Module 
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+General Safety Regulations 
+
+The safety information provided in the repair instructions must be complied with 
+whether working on the safety system, particularly on the airbag units and the seat belt 
+pretensioners. This requirement applies particularly to disassembly and assembly jobs. 
+
+• Only qualified and specially trained personnel are permitted to perform testing and 
+assembly jobs on the safety systems. 
+
+• All work on components of the airbag system must be carried out with the negative 
+terminal disconnected. 
+
+• The specified waiting time must be allowed to elapse to discharge the capacitors 
+(>30 s) 
+
+• The battery must be completely disconnected when performing electric welding 
+work on the vehicle. 
+
+Crash Safety Module 
+
+Crash entries 
+
+In the event of a crash where one or more actuators are triggered, a crash entry is stored 
+in a non-erasable memory. Afterthree crash entries, a non-erasable fault entry is stored 
+in the fault memory with the instruction to replace the crash safety module. 
+
+Fault entries 
+
+The entry of a triggered restraint system in the fault memory does not mean that the 
+restraint system was defective in the crash situation, rather it only means that the 
+restraint system is not available for further triggering. 
+
+B - pillar S atellite 
+
+Visually, the B-pillar satellites look like those on other BMW models. However,they trans¬ 
+mit different data protocols. It is important to make sure the part number is correct. The 
+airbag indicator lamp will come on if the incorrect satellites are installed. 
+
+
+32 
+
+E70 Advanced Crash Safety Module 
+
+
+
+

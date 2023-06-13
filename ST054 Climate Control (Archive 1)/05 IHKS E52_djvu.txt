@@ -1,0 +1,565 @@
+Table of Contents 
+
+
+BMW FEATURES 
+
+Subject Page 
+
+• Purpose of The System.02 
+
+-System Components 
+
+•IHKS Panel.03 
+
+•Control Panel Connections. 04 
+
+-Blower Settings 
+
+•System Operation.05 
+
+-Flap Setting. 06 
+
+- Auxiliary Water Pump.06 
+
+-Temperature Control. 07 
+
+-Airconditioning. 07 
+
+-Idle Speed Compensation. 07 
+
+-Filling Station Effect. 07 
+
+-Characteristic Map Cooling. 08 
+
+-Defrost Functions. 08 
+
+-Rear Defogger. 08 
+
+-Program Selector Switch. 09 
+
+-Auxiliary Fan K-Bus Interface. 10 
+
+-K-Bus Interface.11 
+
+
+Revision Date: 
+12/00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IHKS - Heating and Air Conditioning 
+
+Purpose of the System 
+
+An integrated heating/air conditioning control system (IHKS) is used in the Z8 to provide 
+the driver and passanger a comfortable atmosphere regardless of conditions outside 
+the vehicle. The heater/air conditioner is designed as an air-based control. 6 actuator are 
+used to distribute the air and control the temperature. 
+
+
+
+64E52IHKSAIRFLOW0100 
+
+
+System Components 
+
+The IHKS consists of the following main components: 
+
+• Electronic Control panel/module with integrated fresh air grille 
+
+• Heater/air conditioner unit 
+
+• Five actuator (bus stepper motors) for controlling the recirculated air, temperature 
+mixing, defroster, face vent and foot-well flaps 
+
+• One actuator (high speed stepper motor) for controlling the fresh air flap 
+
+• Electric shut-off water valve 
+
+• Electric auxiliary water pump 
+
+• Refrigerant pressure sensor 
+
+• Evaporator temperature sensor 
+
+• Rear window defogger relay 
+
+• Series resistors for blower motor 
+
+
+2 
+
+
+
+
+IHKS Control Panel 
+
+The interior temperature, fan speed, and air distribution are set with classic rotary knobs 
+and push buttons. The setting request are processed by the integrated electronics. 
+
+
+
+Number 
+
+Description 
+
+1 . 
+
+Blower setting (5-stage rotary switch, including off) 
+
+2. 
+
+Defrost button 
+
+3. 
+
+Temperature setting (potentiometer) 
+
+4. 
+
+Air Distributor (potentiometer) 
+
+5. 
+
+Rear window defragger button (if hardtop fitted) 
+
+6. 
+
+A/C Program selector switch (potentiometer) 
+
+7. 
+
+Air flow control 
+
+8. 
+
+Fresh air grille 
+
+
+3 
+
+
+
+
+
+
+
+
+
+Control Panel - Connections 
+
+
+A total of 3 plug connections 
+are integrated in the IHKS 
+control module. 
+
+The forth is a separate con¬ 
+nection to the blower switch. 
+
+
+
+The IHKS control module 
+is located on the back of 
+the control panel. 
+
+The Z8 IHKS can be coded and 
+diagnosed via the DIS/MoDIC. 
+
+
+
+Blower Setting 
+
+The blower control is designed as a 5-stage switch (including off). When the blower switch 
+is set to the zero position all flaps are closed and the refrigerant circuit is switched off 
+automatically. 
+
+The IHKS features “ram” air compensation in which the fresh air flap is increasingly closed 
+as the vehicle speed increases thus making it dependent on the type of top used (hardtop 
+or soft top). The fresh air flap is operated by a high speed stepper motor. The IHKS receives 
+information (via the K-bus) as to whether the soft top is open or closed. 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Operation 
+
+Functions: 
+
+• Blower control 
+
+• Temperature control 
+
+• Recirculated air/fresh air mode 
+
+• Air conditioner mode 
+
+• Defroster function 
+
+• Air distribution 
+
+• Rear window defogger 
+
+
+Note: If the IHKS control module is 
+replaced, it must be recoded. 
+
+
+
+Air Distribution 
+
+
+The air flow is adjusted by a 360° potentiometer. The 
+flaps are controlled by 3 stepper motors (bus) that oper¬ 
+ate the defroster, face vent and footwell flaps. Flap 
+control is dependent on the position of the air distribu¬ 
+tion knob as 
+
+well as the position of the temperature knob. 
+
+Different characteristic curves are used for the maximum 
+warm setting and the maximum cold setting. 
+
+If the temperature control knob is anywhere between 
+these two settings, the new flap position is set. 
+
+
+Full 
+
+
+
+5 
+
+
+
+
+
+
+
+
+
+
+
+Flap setting 
+
+The stepper motors for flap operation execute a position run after ignition terminal 15 has 
+been switched off. The fresh air and defroster flaps are completely opened, and all other 
+flaps are closed. 
+
+The temperature setting flap is the only flap that remains unchanged. This procedure lasts 
+approximately 15 seconds. 
+
+The IHKS performs a calibration run after every 20th time the ignition is switched off or after 
+an interruption in memory power. The flap end positions serve as reference points. 
+
+A total of five (200 Hz) stepper motors with M-bus activation and one (500 Hz) high speed 
+fresh air motor are used. 
+
+
+IHKS Off (KL 15 on) 
+
+Defroster function 
+
+IHKS OFF (KL 15 off) 
+
+Fresh air 
+
+Closed 
+
+Open 
+
+Open 
+
+Recirculation 
+
+Closed 
+
+Closed 
+
+Closed 
+
+Defrosting 
+
+Closed 
+
+Open 
+
+Open 
+
+Ventilation 
+
+Closed 
+
+Closed 
+
+Closed 
+
+Footwell 
+
+Closed 
+
+Closed 
+
+Closed 
+
+Temperature 
+
+Unchanged 
+
+Maximum 
+
+Unchanged 
+
+
+Auxiliary Water Pump 
+
+An auxiliary water pump is installed to ensure the necessary water flow rate at low engine 
+rpm. 
+
+The auxiliary water pump is switched on when the following conditions are fulfilled: 
+
+• Water valve is opened (de-energized) 
+
+• Engine rpm < 2000 rpm 
+
+• Engine temperature > 32 °F 
+
+• Start procedure completed (terminal 50) 
+
+The auxiliary water pump is switched off when, apart from the engine speed that must 
+exceed 2500 rpm, at least one of the above conditions is not fulfilled. 
+
+
+6 
+
+
+
+
+Temperature Control 
+
+The rotary knob locks in both end positions. The temperature is set by means of a mixing 
+flap that is operated by a stepper motor (bus). The temperature control potentiometer 
+can be turned through an angle of 240°. 
+
+The water valve is closed when the control knob is set in the minimum position. From the 
+10 o'clock position (potentiometer value) on, the water valve is opened and the auxiliary 
+water pump switched on. 
+
+Air Conditioning 
+
+The air conditioning is requested by a combination switch. The IHKS activates the A/C 
+compressor magnetic clutch, and cool air flows from the evaporator. With the aid of 
+a temperature mixing flap, this air is blended with warm air from the heater core. 
+
+To prevent the evaporator surface from icing up, the evaporator temperature sensor sig¬ 
+nals the IHKS to deactivate the compressor clutch. The switching threshold is 
+set at approximately 1 °C (34 degrees F). 
+
+
+Idle Speed Compensation 
+
+The Engine Control Module (ECM) compensates the idle speed to ensure smooth opera¬ 
+tion of the engine at idle. 
+
+The IHKS will signal the ECM for idle speed compensation when at least one of the 
+following conditions occurs: 
+
+• Rear window defogger switched on (hardtop fitted) 
+
+• Blower set to max. position 
+
+• Air conditioning switched on 
+
+
+Filling Station Effect 
+
+The filling station effect corresponds to the heater core “hot soak”, because the water 
+valve is sprung open with out power. In order to avoid this effect, after ignition 
+terminal 15 is switched off, power is still applied to the water valve for 5 minutes. 
+
+
+7 
+
+
+
+Characteristic Map Cooling 
+
+Characteristic map cooling is not used in the Z8 with the S62 B50 engine. 
+
+
+Defroster Function 
+
+The defroster function has priority over other functions. It has the task of defrosting the 
+windshield as fast as possible. 
+
+The following functions are activated for this purpose: 
+
+• The temperature is set to maximum warm. 
+
+• The blower speed is set to the highest stage. 
+
+• Defroster flaps fully open. 
+
+• All other air distribution flaps are closed. 
+
+• The fresh air flap is fully opened (recirculated air closed). 
+
+• The water valve is opened. 
+
+• The auxiliary water pump is switched on. 
+
+
+Rear Window Defogger 
+
+This function is active only in conjunction with the hardtop. During the defrost phase the 
+heating is fully powered for 17 minutes. 
+
+If the defrost phase is not sufficient to completely defrost the rear window the 
+heating can be activated for a further 5 minutes by pressing the rear window 
+defogger button again. 
+
+If the heating is switched off for any reason the timer is stopped so that defrosting can 
+continue from exactly this point when switched on again. 
+
+The rear window defogger is completely deactivated when the unloader function is active 
+(starting the vehicle). 
+
+
+8 
+
+
+
+Program Selector Switch for Recirculated Air, Outside Air, A/C Functions 
+
+The functions are selected by a rotary knob with 4 settings. Each set¬ 
+ting corresponds to a program. 
+
+
+
+Setting 
+
+Function 
+
+i 
+
+Recirculating air with air conditioning 
+
+2 
+
+Outside air with air conditioning 
+
+3 
+
+Outside air 
+
+4 
+
+Recirculating air 
+
+
+The recirculation air control flap is operated by a stepper motor (bus). 
+
+
+Filters 
+
+The micro-filters are located under the hood. 
+
+To service the micro-filters, simply remove the four 
+torx screws and remove the cover panel. 
+
+
+
+9 
+
+
+
+
+
+Auxiliary Fan 
+
+The auxiliary fan stage (speed) is determined from the refrigerant pressure sensor signal. 
+The IHKS signals the ECM via the K-bus, and the ECM will activate the auxiliary fan. 
+
+The fan stage (speed) is generally set to 0 at vehicle speeds above 50 mph (ram air) 
+
+
+
+K-bus Interface 
+
+This interface transmits data such as the vehicle speed, engine speed and diagnosis 
+between the IHKS control unit and the IKE. 
+
+The K-bus is also used to transmit compressor load values as well as auxiliary fan 
+request from the IHKS through the IKE then over the can line to the ECM. 
+
+
+10 
+
+
+
+Heater/Air Conditioner Housing 
+
+The heater/air conditioner housing design is based on the E36/7. To compliment the 
+lightweight and compact design, stepper motors are used to operate the flaps. 
+
+
+
+FootWell 
+
+
+Recirculation 
+
+
+Open Vent 
+
+
+Fresh Air 
+
+
+Mixing 
+
+
+Diagnosis 
+
+All inputs and outputs are monitored by the IHKS control module. Faults are stored in the 
+EEPROM after terminal 15 has been switched off. Faults that occur sporadically can be 
+deleted by the IHKS control module after successful self-repair. However, the entry "spo¬ 
+radic fault" is retained. 
+
+Unlike previous IHKS systems, the Z8 version is diagnoseable via DIS/MoDIC. 
+
+
+11 
+
+
+

@@ -1,0 +1,2743 @@
+Technical training. 
+
+Product information. 
+
+G12 Passive Safety Systems 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1501 8/1/2015 
+
+\ _ / 
+
+
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as the result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2015 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information contained in this document forms an integral part of the technical training of the 
+BMW Group and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: July 2015 
+
+BV-72/Technical Training 
+
+
+
+
+G12 Passive Safety Systems 
+
+Contents 
+
+
+1. Introduction.1 
+
+1.1. The hidden protector.1 
+
+2. System Overview.2 
+
+2.1. System wiring diagrams.3 
+
+2.1.1. Bus overview.3 
+
+2.1.2. System wiring diagram.6 
+
+2.2. System overview.8 
+
+3. Functions.11 
+
+3.1. Functions of Crash Safety Module.11 
+
+3.2. Crash-relevant functions.11 
+
+3.2.1. Evaluating the sensor signals.12 
+
+3.2.2. Impact detection.12 
+
+3.2.3. Trigger time and trigger sequence.13 
+
+3.2.4. Activation of the ignition circuit output stages.13 
+
+3.2.5. Sending the crash message.13 
+
+3.2.6. Crash documentation.14 
+
+3.2.7. Emergency call function.14 
+
+3.3. System monitoring functions.14 
+
+3.3.1. System self test.15 
+
+3.3.2. Display of system operability.15 
+
+3.3.3. Cyclic monitoring.15 
+
+3.3.4. Fault display and fault storage.15 
+
+3.3.5. Output of faults (diagnosis).15 
+
+3.3.6. Acoustic and visual seat belt warning.16 
+
+3.3.7. Deactivating the airbag.16 
+
+3.4. Active protection.16 
+
+3.4.1. System wiring diagram for Active Protection.17 
+
+3.4.2. PreCrash.18 
+
+3.4.3. PostCrash.20 
+
+4. System Components.21 
+
+4.1. Crash Safety Module.21 
+
+4.2. Sensors and switches.21 
+
+4.2.1. Lateral and longitudinal acceleration sensor.21 
+
+4.2.2. Door pressure sensor.22 
+
+4.2.3. Airbag front sensor.23 
+
+4.2.4. Sensors in the ACSM.24 
+
+4.2.5. CIS mat.25 
+
+4.2.6. Seat belt buckle switch.25 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+Contents 
+
+
+4.2.7. Emergency call button.26 
+
+4.2.8. Seat-position sensors.27 
+
+4.3. Actuators.27 
+
+4.3.1. Overview.27 
+
+4.3.2. Driver's airbag.28 
+
+4.3.3. Front passenger airbag.29 
+
+4.3.4. Knee airbag.30 
+
+4.3.5. Head airbag.31 
+
+4.3.6. Side airbag.31 
+
+4.3.7. Automatic tensioner with adaptive force limiter.32 
+
+4.3.8. Active head restraints, front.33 
+
+4.3.9. Safety battery terminal.34 
+
+4.3.10. Airbag indicator light.34 
+
+4.3.11. Seat belt warning light.35 
+
+4.3.12. Indicator lamp for front passenger airbag deactivation.35 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+1. Introduction 
+
+1.1. The hidden protector 
+
+The passive safety system of the G12 is based on the objectives and characteristics of current BMW 
+models. The passive safety system fulfils all legislative requirements worldwide. 
+
+The restraint systems ensure that the risk of injury is reduced. 
+
+A 5th generation Advanced Crash Safety Module (ACSM) is used as the central airbag control unit for 
+the passive safety system in the G12. In contrast to other series, with the passive safety system of the 
+G12 the central sensor system is integrated in the ACSM control unit and not in the Integrated Chassis 
+Management (ICM). This is possible with the G12 as the Crash Safety Module (ACSM) is located in the 
+center of vehicle. 
+
+The ACSM 5 of the G12 is a bus user in the FlexRay. The sensor data of the central sensor system 
+which was previously provided by the Integrated Chassis Management (ICM) can be transmitted 
+directly by the Crash Safety Module (ACSM) via FlexRay to the Dynamic Stability Control (DSC). 
+
+
+1 
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+The following bus overview outlines the vehicle electrical system structure of the G12 and the 
+incorporation of the Crash Safety Module (ACSM) in the FlexRay. 
+
+
+2 
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+2.1. System wiring diagrams 
+
+
+2.1.1. Bus overview 
+
+
+
+G12 bus overview 
+
+
+3 
+
+
+SWW2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+ACC 
+
+Active cruise control 
+
+ACSM 
+
+Crash Safety Module 
+
+AMPT 
+
+Top Hi-Fi amplifier 
+
+ASD 
+
+Active Sound Design 
+
+BDC 
+
+Body Domain Controller 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DME2 
+
+Digital Engine Electronics 2 
+
+DSC 
+
+Dynamic Stability Control 
+
+EARSH 
+
+Electric active roll stabilization rear 
+
+EARSV 
+
+Electric active roll stabilization front 
+
+EGS 
+
+Electronic transmission control 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FLA 
+
+High-beam assistant 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector 
+
+HEADUNIT 
+
+Head unit 
+
+HKFM 
+
+Tailgate function module 
+
+HSR 
+
+Rear axle slip angle control 
+
+IHKA 
+
+Integrated automatic heating / air conditioning 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KOMBI 
+
+Instrument panel 
+
+LEM 
+
+Light effect manager 
+
+NFC 
+
+Near Field Communication 
+
+NVE 
+
+Night Vision Electronics 
+
+PCU 
+
+Power Control Unit 
+
+PMA 
+
+Parking manoeuvring assistant 
+
+RFK 
+
+Reversing camera 
+
+RSE 
+
+Rear Seat Entertainment 
+
+RSL 
+
+Radar sensor left (avoidance assistant) 
+
+RSR 
+
+Radar sensor right (avoidance assistant) 
+
+SAS 
+
+Optional equipment system 
+
+SMBF 
+
+Seat module, passenger 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+SMBFH 
+
+Seat module, passenger, rear 
+
+SMFA 
+
+Seat module, driver 
+
+SMFAH 
+
+Seat module, driver, rear 
+
+SPNMHL 
+
+Seat pneumatics module back left 
+
+SPNMHR 
+
+Seat pneumatics module back right 
+
+SPNMVL 
+
+Seat pneumatics module front left 
+
+SPNMVR 
+
+Seat pneumatics module front right 
+
+SWW 
+
+Lane change warning (master) 
+
+SWW2 
+
+Lane change warning (slave) 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top rear side view camera 
+
+VDP 
+
+Vertical dynamics platform 
+
+VTG 
+
+Transfer case 
+
+WCA 
+
+Wireless charging tray 
+
+ZGM 
+
+Central gateway module 
+
+1 
+
+Start-up node control units for starting and synchronizing 
+the FlexRay bus system 
+
+2 
+
+Control units with wake-up authorisation 
+
+3 
+
+Control units also connected at terminal 15WUP 
+
+
+5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+2.1.2. System wiring diagram 
+
+
+
+6 
+
+
+TE141915 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (DSC) 
+
+2 
+
+Instrument cluster (KOMBI) 
+
+3 
+
+Airbag front sensor, left 
+
+4 
+
+Airbag front sensor, right 
+
+5 
+
+Fuses for power distribution box, front right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Switch for front passenger airbag deactivation (only Korea) 
+
+8 
+
+Knee airbag, front passenger 
+
+9 
+
+Front passenger airbag 
+
+10 
+
+Head airbag, right 
+
+11 
+
+Airbag sensor, door, right (pressure) 
+
+12 
+
+Acceleration sensor, B-pillar on right 
+
+13 
+
+Adaptive belt force limiter, passenger's side 
+
+14 
+
+Belt tensioner, front passenger 
+
+15 
+
+Seat occupancy mat (only Korea) 
+
+16 
+
+Crash-active headrest, front passenger 
+
+17 
+
+Side airbag, front passenger 
+
+18 
+
+Seat-position sensor, front right 
+
+19 
+
+Seat occupancy mat, CIS mat 
+
+20 
+
+Seat belt buckle switch, front passenger 
+
+21 
+
+Electronic fuel pump control 
+
+22 
+
+Junction box electronics (JBE) 
+
+23 
+
+Belt tensioner, front passenger 
+
+24 
+
+Seat belt buckle switch, rear right (only vehicles with comfort seats in rear 
+passenger compartment (OE 460) or Executive Lounge (OE 7GZ)) 
+
+25 
+
+Safety battery terminal (SBK) 
+
+26 
+
+Telematic Communication Box 2 (TCB2) 
+
+27 
+
+Seat belt buckle switch, rear left (only vehicles with comfort seats in rear 
+passenger compartment (OE 460) or Executive Lounge (OE 7GZ)) 
+
+28 
+
+Belt tensioner, driver 
+
+29 
+
+Seat belt buckle switch, driver 
+
+30 
+
+Seat-position sensor, front left 
+
+31 
+
+Side airbag, driver's side 
+
+32 
+
+Crash-active headrest, driver 
+
+33 
+
+Crash Safety Module (ACSM) 
+
+34 
+
+Belt tensioner, driver 
+
+
+7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+35 
+
+Adaptive belt force limiter, driver's side 
+
+36 
+
+Acceleration sensor, B-pillar on left 
+
+37 
+
+Airbag sensor, door, left (pressure) 
+
+38 
+
+Head airbag, left 
+
+39 
+
+Clock spring 
+
+40 
+
+Driver's airbag 
+
+41 
+
+Knee airbag, driver 
+
+42 
+
+Roof function center (FZD) 
+
+
+2.2. System overview 
+
+
+© 
+
+
+© 
+
+
+(D©|| 
+
+
+ff 
+
+
+at 
+
+t . 
+
+
+y 
+
+
+\ v 
+
+
+V 
+
+
+/ 
+
+
+
+/ 
+
+& 
+
+
+( 35 ) 
+
+G12 system overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+24 ) 
+
+
+
+8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, right 
+
+2 
+
+Knee airbag, front passenger 
+
+3 
+
+Power distribution box, front right 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Switch for front passenger airbag deactivation (Not for US) 
+
+6 
+
+Airbag sensor, door, right (pressure) 
+
+7 
+
+Front passenger airbag 
+
+8 
+
+Roof function center (FZD) 
+
+9 
+
+Automatic tensioner, front passenger 
+
+10 
+
+Acceleration sensor, B-pillar on right 
+
+11 
+
+Side airbag, front passenger 
+
+12 
+
+Crash-active headrest, front passenger 
+
+13 
+
+Crash-active headrest, driver 
+
+14 
+
+Electronic fuel pump control 
+
+15 
+
+Flead airbag, left 
+
+16 
+
+Seat belt, rear right 
+
+17 
+
+Junction box electronics (JBE) 
+
+18 
+
+Telematic Communication Box 2 (TCB2) 
+
+19 
+
+Safety battery terminal (SBK) 
+
+20 
+
+Seat belt, rear left 
+
+21 
+
+Head airbag, right 
+
+22 
+
+Seat belt buckle switch, rear right (only vehicles with comfort seats in rear 
+passenger compartment (OE 460) or Executive Lounge Seating (OE 7GZ)) 
+
+23 
+
+Seat belt buckle switch, rear left (only vehicles with comfort seats in rear 
+passenger compartment (OE 460) or Executive Lounge Seating (OE 7GZ)) 
+
+24 
+
+Side airbag, driver's side 
+
+25 
+
+Acceleration sensor, B-pillar on left 
+
+26 
+
+Automatic tensioner, driver 
+
+27 
+
+Seat belt buckle switch, front passenger 
+
+28 
+
+Seat belt buckle switch, driver 
+
+29 
+
+Driver's airbag 
+
+30 
+
+Airbag sensor, door, left (pressure) 
+
+31 
+
+Instrument cluster (KOMBI) 
+
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+32 
+
+Knee airbag, driver 
+
+33 
+
+Dynamic Stability Control (DSC) 
+
+34 
+
+Crash Safety Module (ACSM) 
+
+35 
+
+Airbag front sensor, left 
+
+
+10 
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+3.1. Functions of Crash Safety Module 
+
+The function of the Crash Safety Module is to permanently evaluate all sensor signals in order to 
+identify a crash situation. Based on the sensor signals and their evaluation, the Crash Safety Module 
+(ACSM) identifies the direction of the crash and the severity of the impact. 
+
+The Crash Safety Module (ACSM) evaluates the sensor information and then initiates the relevant 
+measures for selective activation of the necessary restraint systems. 
+
+At the same time the Crash Safety Module (ACSM) monitors the system itself and indicates when it is 
+ready for operation by switching off the airbag indicator light. 
+
+If an error occurs during operation this is stored in a fault memory The fault memory can be read out 
+for diagnosis purposes. 
+
+If a crash situation is detected, a crash message is sent to the other bus users in the data bus network 
+as notification. The relevant control units respond to this signal by executing their own activities 
+according to the severity of the crash. 
+
+The activities include: 
+
+• Opening the central locking system 
+
+• Activating the hazard warning flasher 
+
+• Switching on the interior light 
+
+• Making an emergency call 
+
+An additional function of the Crash Safety Module is the acoustic seat belt warning that reminds the 
+driver using visual and acoustic signals to fasten his seat belt. With help of a seat belt buckle switch it 
+is determined whether the driver has fastened his seat belt. Furthermore, for vehicles in the US version 
+the position of the driver and the front passenger seat is monitored. 
+
+The functions of the Crash Safety Module generally belong to one of the following areas: 
+
+• Crash-relevant functions 
+
+• System monitoring functions 
+
+• Additional convenience functions 
+
+3.2. Crash-relevant functions 
+
+The Crash Safety Module must fulfil the following crash-relevant functions: 
+
+• Evaluating the sensor signals 
+
+• Impact detection 
+
+• Determining actuators to be activated 
+
+• Specifying the trigger time and trigger sequence 
+
+• Activation of the ignition circuit output stages 
+
+
+11 
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+Sending the crash message to all bus users 
+Crash documentation 
+Emergency call function 
+
+
+3.2.1. Evaluating the sensor signals 
+
+The sensors serve to identify and verify front-end, side-on and rear-end crashes and also as roll-over 
+detection. 
+
+The sensors are located in the Crash Safety Module (ACSM) or are directly connected to the Crash 
+Safety Module, where their signals are evaluated and processed. 
+
+
+3.2.2. Impact detection 
+
+The US version of the vehicles is equipped with the following sensors: 
+
+• one lateral and one longitudinal acceleration sensor in the B-pillars (green). 
+
+• one airbag sensor to monitor the pressure in each of the front doors (blue). 
+
+• one lateral and one longitudinal acceleration sensor in the ACSM (yellow). 
+
+• one roll rate sensor in the ACSM (yellow). 
+
+• one vertical acceleration sensor in the ACSM (yellow). 
+
+• one front sensor on each of the engine supports (red). 
+
+The airbag sensors in the doors assist with the identification of a side-on crash. 
+
+The airbag front sensors assist with the identification of a head-on crash and its corresponding 
+severity. 
+
+
+
+G12 sensors 
+
+
+
+
+■A— 
+
+
+
+
+Cl 
+
+
+* 
+
+
+
+
+12 
+
+
+4-1918 
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+3.2.3. Trigger time and trigger sequence 
+
+The Crash Safety Module uses the values transmitted by the sensors to determine the direction and 
+severity of the crash. 
+
+In the case of a head-on crash, correspondingly high acceleration values must be detected for example 
+by the longitudinal acceleration sensors in the rear side panels and by the longitudinal acceleration 
+sensor in the Crash Safety Module (ACSM). An algorithm determines the severity and direction of the 
+crash based on the accelerations. This information is used to assist calculation of the activation times 
+and sequence in which the restraint systems are activated. 
+
+A possible imminent rollover is also detected and the appropriate protection systems are energized. 
+
+3.2.4. Activation of the ignition circuit output stages 
+
+The Crash Safety Module is supplied by the power distribution box on the rear right using terminal 
+30B. The Crash Safety Module (ACSM) is in offline mode with terminal 30B. This means that it is 
+active on the data bus and can perform all diagnostic functions. 
+
+Activation of the ignition circuits is blocked and is available as of the "Residing" driving condition once 
+the system self-test is complete. The Crash Safety Module (ACSM) is also ready for ignition in the 
+"Driving" driving condition. 
+
+The ignition capacitors are recharged via a switching controller. These ignition capacitors make the 
+firing energy available in the event of a crash. If the voltage supply is interrupted during a crash, the 
+ignition capacitors serve briefly as an energy reserve. 
+
+The ignition circuit output stages consist of a high-side and a low-side power switch. The high-side 
+power switch connects the ignition voltage, while the low-side power switch connects to the ground. 
+The ignition circuit output stages are controlled by a microcontroller. 
+
+The high-side and low-side power switches also serve to check the ignition circuits during the system 
+self-test. 
+
+
+3.2.5. Sending the crash message 
+
+In the event of a collision involving activation of the restraint systems, the Crash Safety Module 
+(ACSM) sends a crash signal to the bus users in the data bus network. 
+
+The Telematic Communication Box 2 (TCB2) is actuated in parallel via a direct single-wire connection. 
+The Telematic Communication Box 2 (TCB2) is the follow-on telematics control unit to the Telematic 
+Communication Box (TCB). The TCB2 acts as a data modem in the vehicle and has one or two data 
+aerials as well as a connection to an emergency aerial. This can be used to establish a telephone 
+connection via the connected vehicle microphone even if the vehicle has rolled over. A built-in SIM 
+card inside the control unit makes these emergency calls possible. 
+
+
+13 
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+As a result, the respective control units perform the following functions depending on the crash 
+severity: 
+
+
+Function 
+
+Control unit 
+
+Switch off electric fuel pump 
+
+Digital Motor Electronics (DME) via electronic 
+fuel pump control (EKPS) 
+
+Release central locking system 
+
+Body Domain Controller (BDC) 
+
+Switch on hazard warning flashers 
+
+Body Domain Controller (BDC) 
+
+Switch on interior light 
+
+Body Domain Controller (BDC) 
+
+Transmit emergency call 
+
+Telematic Communication Box 2 (TCB2) 
+
+
+3.2.6. Crash documentation 
+
+In the event of a collision where one or more actuators are activated, a crash entry is stored in a non¬ 
+erasable memory. After five crash entries, a non-erasable fault code entry is stored together with the 
+information that the five crash messages have been saved. The airbag indicator light also lights up 
+continuously. 
+
+A 
+
+The five crash entries could also be stored during the course of an accident. Each crash entry is 
+assigned a system time. The control unit remains ignitable even after five crash entries. The crash 
+entries cannot be erased and serve the purpose of subsequent device diagnosis. A maximum of five 
+crash entries can be saved. The control unit must then be replaced. 
+
+
+3.2.7. Emergency call function 
+
+The emergency call functions are country-specific and are available to customers in countries with 
+ConnectedDrive Services infrastructure. An emergency call requires an active SIM card 
+in the Telematic Communication Box 2 (TCB2) and an available mobile phone network. 
+
+The emergency call button is connected directly to the Telematic Communication Box 2 (TCB2). 
+
+The manual emergency call allows the driver to request assistance in the event of a medical 
+emergency. 
+
+
+3.3. System monitoring functions 
+
+The Crash Safety Module has the following system monitoring functions: 
+
+• System self-test (pre-drive check). 
+
+• Display of system operability. 
+
+• Cyclic monitoring. 
+
+• Fault display and fault storage. 
+
+• Output of faults (diagnosis). 
+
+
+14 
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+Acoustic and visual seat belt warning. 
+
+Deactivation of the front passenger airbag and side airbag on the passenger's 
+side in European version vehicles (only vehicles with (OE 5DA)). 
+
+Deactivation of the front passenger airbag and side airbag and knee airbag on 
+the passenger's side and the knee airbag in the US version of the vehicles. 
+
+
+3.3.1. System self test 
+
+The Crash Safety Module (ACSM) performs a system self-test after a terminal change has been made 
+as of the "Residing" driving condition. The airbag indicator light is activated for roughly five seconds 
+during the system self test. 
+
+Once the system self-test is complete and no faults have been identified, the airbag indicator light 
+goes out and the system is operational. 
+
+3.3.2. Display of system operability 
+
+The airbag indicator light in the instrument panel goes out to indicate that the Crash Safety Module 
+is ready for operation. 
+
+3.3.3. Cyclic monitoring 
+
+Once the system self-test has been successfully concluded and the system is ready for operation, 
+a cyclic monitoring procedure is performed for fault monitoring purposes. This cyclical monitoring 
+serves the internal diagnosis of the control unit and overall airbag system. Cyclical monitoring takes 
+place continuously as of the "Residing" driving condition. It is also continued after a terminal change 
+has been made as of the "Driving" driving condition. 
+
+3.3.4. Fault display and fault storage 
+
+The Crash Safety Module (ACSM) has a non-volatile fault memory. The airbag indicator light lights 
+up to indicate a fault entry. 
+
+Events such as the activation of an airbag or retractor tensioner are also stored in the fault memory. 
+
+A 
+
+If the fault memory contains the entry that the restraint system has been activated, this only means 
+the ignited restraint system is not available for further activation and not that it malfunctioned during 
+the crash. 
+
+
+3.3.5. Output of faults (diagnosis) 
+
+The fault memory can be read out via the diagnostic interface with the assistance of the Integrated 
+Service Technical Application ISTA in the BMW diagnosis system. After rectifying the faults or after 
+replacing activated components, the fault memory can be cleared with the diagnosis command 
+"Clear fault memory". 
+
+
+15 
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+3.3.6. Acoustic and visual seat belt warning 
+
+An acoustic and visual seat belt warning is a standard feature of all vehicles equipped with the Crash 
+Safety Module (ACSM). The Crash Safety Module (ACSM) records whether or not the driver or front 
+passenger have fastened their seat belts. If they have not, an acoustic and visual warning is output 
+to remind them to fasten their seatbelts. Both seat belt buckle switches are monitored separately. 
+Depending on the national-market version and optional equipment, seat belt buckle switches are also 
+installed in the rear passenger compartment and a seat belt warning is issued accordingly for the rear 
+seat passengers. 
+
+3.3.7. Deactivating the airbag 
+
+CIS mat 
+
+Provision is made in US versions of the vehicles for the airbag to be deactivated automatically in order 
+to satisfy the regulations of the National Highway Traffic Safety Administration NHTSA. When the child 
+seats listed in the regulation are occupied by a child this must lead to deactivation of the airbag. 
+
+To do so, a seat occupancy mat is used on the front passenger seat for the purpose of occupancy 
+detection and classification of occupants in the front passenger seat. A Capacitive Interior Sensing 
+mat (CIS mat) is used in the G12. 
+
+The CIS mat is made up of two elements: A sensor wire, which runs parallel to the seat heating in 
+the seat cushion, and an evaluation unit. The CIS mat measures the capacity and ohmic resistance 
+between the sensor wire (anode) and the vehicle ground (cathode) at a frequency of 120 kHz. The 
+CIS mat determines from the change in capacity and resistance whether the front passenger seat is 
+occupied by an adult or a child in a child seat. 
+
+The deactivation of the front passenger airbag, the side airbag and knee airbag on the passenger's 
+side is signalled by the indicator lamp for front passenger airbag deactivation. 
+
+The indicator lamp for front passenger airbag deactivation in the roof function center lights up if a 
+child seat with child (for example a child restraint system that has been tested in accordance with the 
+NHTSA regulations and is holding a small child on the front passenger seat) was detected or if the 
+front passenger seat is unoccupied. 
+
+
+3.4. Active protection 
+
+The standard equipment of the G12 already contains the Active Protection safety package (OE 5AL). 
+
+The Active Protection safety package (OE 5AL) comprises the following three functionally 
+independent subsystems: 
+
+• PreCrash 
+
+• PostCrash 
+
+• Alertness assistant 
+
+The Active Protection safety package (OE 5AL) increases the safety of the occupants through 
+preventative measures in the event of critical driving situations (PreCrash) and through measures after 
+a crash (PostCrash). The attention assist monitors the driving style of the driver during a trip 
+and encourages the driver to take breaks if necessary. 
+
+
+16 
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+3.4.1. System wiring diagram for Active Protection 
+
+
+
+G12 system wiring diagram for Active Protection 
+
+
+17 
+
+
+TE15-0060 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (DSC) 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Electronic Power Steering (EPS) 
+
+4 
+
+Radar sensor for active cruise control (ACC) 
+
+5 
+
+Fuse in power distribution box, front right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+CAN terminator 
+
+8 
+
+Reversible motor-driven reel, right (REMABF) 
+
+9 
+
+Fuse in power distribution box, rear right 
+
+10 
+
+Front passenger seat module, rear (SMBFH) 
+
+11 
+
+Driver's seat module, rear (SMFAH) 
+
+12 
+
+Reversible motor-driven reel, left (REMAFA) 
+
+13 
+
+Front passenger seat module, (SMBF) 
+
+14 
+
+Crash Safety Module (ACSM) 
+
+15 
+
+Roof function center (FZD) 
+
+16 
+
+Camera-based driver support systems (KAFAS) 
+
+17 
+
+Control unit for optional equipment system SAS 
+
+
+3.4.2. PreCrash 
+
+The PreCrash subsystem introduces preventative protective measures for the occupants in known 
+critical driving situations which may lead to an accident. 
+
+Identification of critical driving situations 
+
+Critical driving situations are identified with help of the inertial sensor system installed in the vehicle. 
+Critical driving situations include: 
+
+• Emergency braking initiated 
+
+• Strong understeer 
+
+• Strong oversteer 
+
+• Rollover of the vehicle 
+
+For vehicles with the optional Driving Assistance Plus (Package ZDB) which includes Active Driving 
+Assistant (OE 5AS) and Active Driving Assistant Plus (OE 5AT) imminent collisions that have 
+been detected with help of the radar sensor system and KAFAS stereo camera. For the PreCrash 
+identification, separate thresholds to the collision warning thresholds are made available by the KAFAS 
+or radar sensor system for activating the PreCrash functions. 
+
+
+18 
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+Basic PreCrash functions 
+
+The standard equipment of the G12 already contains the Active Protection safety package (OE 5AL) 
+and offers the following basic ranges of functions: 
+
+Convenience function 
+
+• When the seat belt is fastened, the front seat belts are automatically 
+pre-tensioned once when driving starts. 
+
+Safety functions 
+
+In detected situations that are critical for driving dynamics (for example own emergency braking, 
+strong understeer, skidding) the following individual functions are activated according to need: 
+
+• Automatic pre-tensioning of front seat belts 
+
+• Automatic closing of windows up to a gap 
+
+Enhanced PreCrash functions 
+
+Different ranges of functions are implemented with the PreCrash subsystem depending on the 
+equipment. 
+
+The "Enhanced PreCrash functions" include additional ranges of functions on top of the basic 
+functions. 
+
+The table below provides an overview of the individual ranges of functions for the PreCrash subsystem 
+and how these are linked to the optional equipment: 
+
+
+
+Scope of function 
+
+Optional 
+
+equipment* 
+
+"Extension" 
+of PreCrash 
+functions 
+(only with 
+additional optional 
+equipment) 
+
+Automatic closing of the glass sunroof 
+
+Positioning the front passenger backrest 
+
+Positioning the rear seat backrests 
+
+Option 402 
+Option 456 
+Option 460 
+
+"Extension" of 
+detected PreCrash 
+situations 
+(only with 
+additional optional 
+equipment) 
+
+Additional need-based activation of PreCrash functions in 
+the case of: 
+
+Detected, unavoidable collisions with vehicles travelling in 
+front or stationary vehicles (requires OE with collision alert) 
+Automatic emergency braking of the vehicle in the event of 
+imminent collisions above a specific deceleration threshold 
+Detected, unavoidable rear-end collisions caused by 
+colliding vehicles 
+
+OE 5AS or 
+
+OE 5AT 
+
+
+19 
+
+
+
+
+
+G12 Passive Safety Systems 
+
+3. Functions 
+
+
+*Explanation of optional equipment codes: 
+
+• OE 402 Panoramic electric glass moonroof 
+
+• OE 456 Multi-contour seats 
+
+• OE 460 Rear comfort seats 
+
+• OE 5AS Active Driving Assistant 
+
+• OE 5AT Active Driving Assistant Plus 
+
+
+3.4.3. PostCrash 
+
+The PostCrash subfunction includes the automatic braking function after an accident, which brakes 
+the vehicle to a standstill in certain accident situations without intervention from the driver. The risk of 
+another collision can thus be reduced. The driver may oversteer the automatic braking after a crash by 
+pressing the brake pedal or accelerator pedal. 
+
+The automatic braking after a crash is activated if a crash with sufficient severity has been identified 
+in the Crash Safety Module (ACSM). The Crash Safety Module (ACSM) then sends a signal to the 
+electronic fuel pump control unit (EKPS) to switch off the fuel pump. This same signal is evaluated by 
+the DSC control unit. The DSC control unit then brakes the vehicle with help of the DSC pump and 
+brings it to a standstill. 
+
+The DSC generates a setpoint deceleration of 5 m/s2 for braking. The setpoint deceleration is only 
+achieved if road conditions permit this. During automatic braking the accelerator pedal and brake 
+pedal are monitored. The automatic braking is interrupted if the accelerator pedal is pressed or if the 
+brake pedal is pressed for a longer period by the driver. Pressing the accelerator pedal only causes the 
+braking process to stop. Acceleration of the vehicle is not possible as the fuel pump is switched off. 
+
+Also during automatic braking the ABS prevents the wheels from blocking and the DSC stabilizes the 
+vehicle. If the DSC is in DSC OFF mode during automatic braking, a forced activation of the DSC is 
+effected. 
+
+Approx. 1.5 seconds after reaching standstill, the brake is automatically released and the vehicle must 
+be secured against rolling away. 
+
+If a crash is detected, which leads to activation of the safety battery terminal, then automatic braking 
+cannot be activated as the DSC pump is no longer supplied with power. 
+
+Automatic braking is not activated under the following conditions: 
+
+• The DSC has failed before the crash. 
+
+• The ABS has failed before the crash. 
+
+• The brake fluid level is too low. 
+
+If these faults occur during or after the crash, the control is led to the end as these faults are then 
+interpreted as consequences of the crash. 
+
+
+20 
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+4.1. Crash Safety Module 
+
+In the G12 the Crash Safety Module (ACSM) is located centrally in the vehicle under the center 
+console between the two front seats. The central sensor system is integrated in the Crash Safety 
+Module (ACSM). 
+
+
+
+G12 Crash Safety Module (ACSM) 
+
+
+4.2. Sensors and switches 
+
+
+4.2.1. Lateral and longitudinal acceleration sensor 
+
+The lateral and longitudinal acceleration sensors assist with the identification of head-on crashes, 
+side-on crashes and rear-end crashes. 
+
+The airbag sensor consists of a longitudinal acceleration sensor and a lateral acceleration sensor. 
+The acceleration sensors measure the positive and negative acceleration in the X and Y direction. 
+The resulting value from the X and Y signal is decisive in identifying the direction of the crash. The 
+airbag sensors assist with the identification of head-on, side-on and rear-end crashes. The airbag 
+sensors on the left and right are of identical design and are allocated by way of mechanical encoding 
+during installation. 
+
+
+21 
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 lateral and longitudinal acceleration sensor 
+
+
+4.2.2. Door pressure sensor 
+
+In the G12 pressure sensors are installed in the driver's door and front passenger door. The pressure 
+sensors in the doors are now no longer attached with a bolt as was previously the case, but instead are 
+screwed into the bracket (inner door panel) and the electrical connections and plug connections can 
+only be connected once the relevant sensors have been installed. 
+
+Side crashes are identified with the assistance of the airbag sensors. In addition to the lateral 
+acceleration values that are present, the pressure in the door cavity also increases in the event of a 
+side-on crash. 
+
+The airbag sensors in the doors are used to verify the plausibility of the acceleration signals from 
+the B-pillar airbag sensors and the Crash Safety Module (ACSM) when a side-on crash is detected. 
+The airbag sensors are situated in the inner panel of the doors and measure the pressure increase in 
+the event of a side-on collision. In the event of a side-on collision at the door the outer skin is pushed 
+inwards. The door interior is reduced in size and the inner pressure increases. This pressure change 
+is measured by the airbag sensors. The airbag sensor also includes electronics, in addition to the 
+pressure sensor, that digitise the pressure readings and transmit them cyclically to the Crash Safety 
+Module (ACSM). The data transfer is effected analogue to the airbag sensors in the B-pillars. 
+
+The pressure readings are evaluated in the Crash Safety Module (ACSM). 
+
+
+22 
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 door airbag sensor (pressure) 
+
+
+4.2.3. Airbag front sensor 
+
+Two front sensors are installed in the front area. The measured values are forwarded to the Crash 
+Safety Module (ACSM) where they are evaluated. 
+
+The airbag front sensors on the left and right assist with the identification of a head-on crash. 
+
+The sensors deliver additional information to the Crash Safety Module (ACSM) on the characteristics 
+and severity of the collision. Each sensor contains an acceleration sensor for recording the 
+deceleration, signal processing technology and electronics for data transfer. The measured values are 
+sent in the form of a message to the Crash Safety Module (ACSM) and are used in the calculation of 
+the algorithm. 
+
+
+23 
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 airbag front sensor 
+
+
+4.2.4. Sensors in the ACSM 
+
+In the G12, the central sensor system is integrated in the Crash Safety Module (ACSM). The Crash 
+Safety Module (ACSM) contains a longitudinal and lateral acceleration sensor, a vertical acceleration 
+sensor and a roll rate sensor for impact detection. The Crash Safety Module (ACSM) also includes a 
+longitudinal and lateral acceleration sensor and a yaw sensor for the driving dynamics control. 
+
+The sensor data for impact detection is evaluated in the Crash Safety Module (ACSM) and helps to 
+identify side-on, rear-end or head-on crashes and assists with roll-over detection. The sensor data not 
+yet evaluated for the driving dynamics control is sent to the DSC control unit via FlexRay where it is 
+processed. 
+
+
+24 
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 Crash Safety Module (ACSM) 
+
+
+4.2.5. CIS mat 
+
+The capacitive interior sensing mat (CIS mat) is fitted in the front passenger seat. The CIS mat detects 
+whether the front passenger seat is occupied by an adult or a by child in a child seat. The deactivation 
+of the front passenger airbag, the side airbag and the knee airbag on the passenger's side is signalled 
+by the indicator light for front passenger airbag deactivation. 
+
+4.2.6. Seat belt buckle switch 
+
+The seat belt buckle switches are located in the seat belt buckles of the driver and front passenger 
+seat. 
+
+The seat belt buckle switch detects whether the seat belt buckle tongue is in the seat belt buckle. The 
+Crash Safety Module (ACSM) supplies power to the sensors and performs the evaluation. As of driving 
+readiness, the seat belt buckle switch is permanently monitored and used for the visual and acoustic 
+seat belt warning and also to determine which restraint systems are to be triggered. 
+
+
+25 
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 seat belt buckle switch 
+
+
+4.2.7. Emergency call button 
+
+The emergency call button is located in the roof function center. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Emergency call button 
+
+
+26 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+4.2.8. Seat-position sensors 
+
+In accordance with the US legal requirement (FMVSS208), a height identification for the person in 
+the driver and front passenger seat must be effected. This height identification is effected via the 
+adjustment travel of the forward/back seat adjustment. In US-version vehicles, the exact position is 
+identified using the seat-position sensors for the driver and front passenger seats. 
+
+The job of the seat-position detector is to distinguish between a relatively small person and a person 
+of normal height within the lengthways adjustment range of the seat. This detection is another 
+technical feature aimed at increasing the safety of the occupants. The deployment of the two airbag 
+stages is then adjusted to the driver's/front passenger's seat position. 
+
+The seat-position detector takes the form of a 2-wire hall effect sensor and is supplied with power via 
+the Crash Safety Module (ACSM). The current level of the seat-position sensor changes depending on 
+the seat position. 
+
+
+4.3. Actuators 
+
+4.3.1. Overview 
+
+The following actuators are installed in the G12: 
+
+• Two-stage driver's airbag 
+
+• Two-stage front passenger airbag 
+
+• Knee airbag on front left and right 
+
+• Head airbag on left and right 
+
+• Side airbag on front left and right 
+
+• Belt tensioner with adaptive force limiter 
+
+• Safety battery terminal 
+
+In addition, the following indicator lights inform the vehicle occupants about the condition of the safety 
+systems: 
+
+• Airbag indicator light. 
+
+• Seat belt warning light. 
+
+• Indicator lamp for front passenger airbag deactivation. 
+
+The familiar three-point seat belts are used as the seat belt systems for all seats in the G12. 
+
+
+27 
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 seat belt 
+
+
+Index Explanation 
+
+1 Seat belt buckle 
+
+2 Belt tensioner 
+
+
+4.3.2. Driver's airbag 
+
+The purpose of the driver's airbag is to reduce the risk of injury to the driver in combination with the 
+seat belt when a front-end crash occurs. The driver's airbag is located in the steering wheel impact 
+plate. The driver's airbag is equipped with a gas generator. 
+
+A two-stage gas generator is installed which can be used to activate the stages at short or long time 
+differences, depending on the severity of the crash detected and taking into consideration the seat 
+position. 
+
+In addition, the driver's airbag features an active vent valve. 
+
+
+28 
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+© ® 
+
+
+
+G12 driver's airbag 
+
+
+4 
+
+UJ 
+
+Index 
+
+Explanation 
+
+
+1 
+
+Ignition squib, level 1 
+
+
+2 
+
+Ignition squib, level 2 
+
+
+
+4.3.3. Front passenger airbag 
+
+The purpose of the front passenger airbag is to reduce the risk of accident to the front passenger in 
+the event of a front-end crash. The front passenger airbag is located in the dashboard. When the front 
+passenger airbag expands, the dashboard tears open at defined points. 
+
+A two-stage gas generator is installed which can be used to activate the stages at short or long time 
+differences, depending on the severity of the crash detected and taking into consideration the seat 
+position. 
+
+The front passenger airbag features an active vent valve. 
+
+
+29 
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition squib for active vent valve 
+
+2 
+
+Ignition squib, level 1 
+
+3 
+
+Ignition squib, level 2 
+
+
+4.3.4. Knee airbag 
+
+The US standards (laws) contain requirements on the passive restraint of occupants (without seatbelt). 
+This is why in the US version of the vehicles a knee airbag is also required on the driver's side and 
+passenger's side to control the forwards displacement of the occupant(s) in the event of a head-on 
+crash. 
+
+
+
+
+G12 knee airbags in US version of vehicles 
+
+30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+4.3.5. Head airbag 
+
+Head airbags are installed in the G12 to protect the occupants' heads in the event of a side collision. 
+
+The head airbag extends from the A-pillar to the C-pillar and covers the entire area of the side 
+windows. It expands between the occupants and side structure. 
+
+System features: 
+
+• Extended covered area across all front and rear side windows. 
+
+• Protection of occupants from glass splinters. 
+
+• Covered area for different-sized occupants optimized. 
+
+
+
+G12 head airbag 
+
+
+4.3.6. Side airbag 
+
+As with all current BMW models, the side airbag at the front ignites out of the front seat backrest. 
+
+The side airbags and gas generators are accommodated in a plastic housing, the airbag module. 
+This is installed in the front seat backrest and is concealed by the seat cover. 
+
+If activated, the side airbag emerges outwards from the backrest frame and spreads between 
+the side structure and occupant. 
+
+A_ 
+
+It is important to ensure that no additional seat covers are fitted as they would greatly impair the 
+function of the side airbag, or even immobilize it altogether. 
+
+
+31 
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 side airbag 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Side airbag 
+
+
+4.3.7. Automatic tensioner with adaptive force limiter 
+
+An automatic reel with adaptive force limiter for the driver and front passenger is installed in the G12. 
+With the aid of a gas generator, there is a changeover from a high to a low power level during the 
+impact, in order to reduce the seat belt restraining forces. 
+
+When optimally harmonised with the airbag, it ensures the kinetic energy acting on the occupants is 
+more evenly dissipated for the duration of the crash. Thus lower occupant stress values are achieved. 
+
+
+32 
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 retractor tensioner with adaptive force limiter 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of ignition squib, belt tensioner 
+
+2 
+
+Connection of ignition squib, adaptive force limiter 
+
+
+4.3.8. Active head restraints, front 
+
+The active head restraint is used in the new BMW 7 Series in conjunction with the multifunction seat. 
+This is a head restraint with a pyrotechnic actuator that optimizes the distance and height of the 
+headrest in relation to the head if a rear-end collision of sufficient force occurs. This reduces the load 
+on the cervical vertebrae in the event of a rear-end collision. The head restraint is activated early, even 
+prior to backwards displacement of the occupant's head. 
+
+The active head restraint reduces the load in the cervical vertebrae in the event of a rear-end collision. 
+For the vehicle occupants therefore, correct adjustment of the head restraint and the distance of the 
+head from the head restraint is of crucial importance. 
+
+In the event of a rear-end collision, the active head restraint reduces the distance between the head 
+and the head restraint before the occupants are displaced backwards. This reduces the danger of 
+injury to the cervical vertebrae, even if a minor accident occurs. 
+
+
+33 
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+A _ __ 
+
+Seat or head restraint covers and/or accessories that could impair the protective effect must not be 
+mounted on the head restraints. 
+
+
+4.3.9. Safety battery terminal 
+
+The safety battery terminal (SBK) is triggered at different thresholds when the Crash Safety Module 
+(ACSM) detects a head-on, side-on or rear-end crash of sufficient severity. 
+
+Even though the safety battery terminal (SBK) has been disconnected, a voltage supply to all safety¬ 
+relevant consumers such as hazard warning lights, interior light, airbag and telephone (including 
+emergency call) is ensured. 
+
+
+
+G12 safety battery terminal (SBK) 
+
+
+4.3.10. Airbag indicator light 
+
+The airbag indicator light is located on the instrument panel. The airbag indicator light lights up and 
+then goes out during the pre-drive check to signal readiness of the Crash Safety Module (ACSM) and 
+passive safety systems. The airbag indicator light is controlled via a message on the FlexRay from 
+the Crash Safety Module (ACSM) via the Body Domain Controller (BDC) to the instrument cluster. 
+The instrument cluster receives a message cyclically. If the message remains off, the airbag indicator 
+light is activated. 
+
+
+34 
+
+
+
+
+
+
+
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+4.3.11. Seat belt warning light 
+
+A visual and audible warning is issued if the seat belt is not fastened or is unbuckled during a trip. 
+
+
+
+4.3.12. Indicator lamp for front passenger airbag deactivation 
+
+The indicator lamp for front passenger airbag deactivation is in the roof function center in the G12. 
+The indicator lamp for front passenger airbag deactivation is automatically activated if the CIS mat 
+detects a small child in a child seat or if the front passenger seat is unoccupied. 
+
+
+35 
+
+
+G12 Passive Safety Systems 
+
+4. System Components 
+
+
+
+G12 indicator lamp for front passenger airbag deactivation 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Indicator lamp for front passenger airbag deactivation 
+
+
+36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Qualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

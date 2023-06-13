@@ -1,0 +1,1143 @@
+Table of Contents 
+
+Vehicle Coding Information 
+
+Subject Page 
+
+Vehicle Coding Information.3 
+
+Introduction.3 
+
+ZCS Structure .4 
+
+ZCS Stored Location in Vehicle .6 
+
+ZCS Identification / Display .7 
+
+Accessing Stored ZCS Information.7 
+
+Accessing ZCS Information Label.8 
+
+ZCS Codable Control Modules .9 
+
+Vehicle Order.11 
+
+Review Questions.14 
+
+
+Initial Print Date: 12/04 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Coding Information 
+
+
+Model: All 
+
+Production: All 
+
+■Biiermis 
+
+After completion of this module you will be able to: 
+
+• Understand the purpose of the Central Coding Key (ZCS code) 
+
+• Locate/view the ZCS information and determine where it is stored 
+
+• Identify what modules in a vehicle are codable via ZCS 
+
+• Understand the purpose of a Vehicle Order (VO/FA) 
+
+• Access and explain the information contained within the vehicle order 
+
+
+2 
+
+Vehicle Coding Information 
+
+
+Vehicle Coding Information 
+
+Introduction 
+
+As part of an ongoing process to reduce the need 
+for country, model and option specific control 
+modules, BMW began to utilize a multi digit vehi¬ 
+cle coding structure referred to as a Central 
+Coding Key (ZCS) and later changed to a struc¬ 
+ture referred to as a Vehicle Order (VO/FA). 
+
+The Central Coding Key (ZCS) is a unique 37 digit (originally a 48 digit) code that con¬ 
+tains specific model, country variation and individual equipment/option information fora 
+vehicle. 
+
+During the manufacturing process of a vehicle, the ZCS code is created to identify the 
+specific vehicle being built and to properly code the control modules installed during the 
+assembly process once the vehicle reaches the end of the line. To ensure that the ZCS 
+code can be retrieved once the vehicle leaves the factory it is stored in one or two control 
+modules, depending on the model. 
+
+ZCS is often referred to as a “key” since it is able to automatically “unlock” or "activate” 
+specific functions of a new control module or can be used to recode a used control mod¬ 
+ule to be compatible with the specific vehicle it has been installed into. With the intro¬ 
+duction of the E31 the ZCS information was used for the first time as a coding key for 
+replacement vehicle control modules, this ensured that the replacement modules would 
+be coded to the required specification of the vehicle. 
+
+As the number of options & accessories available for installation in a vehicle increased, an 
+alternative to the ZCS code was introduced on 9/01 production E46 vehicles. The ZCS 
+system was replaced with a system known as the Vehicle Order (VO/FA). The VO is a 
+straightforward listing of vehicle specific information including a list of the option codes 
+pertaining to the systems or equipment installed in the vehicle and is used in the same 
+manner as the ZCS to properly code replacement or additional modules. 
+
+Regardless of which structure is utilized on a vehicle, codeable modules have no limit as 
+to the number of times that they can be recoded. 
+
+
+GM 16430000P 
+SA 0000422005009CC0U 
+VN 000001 El16K 
+
+
+3 
+
+Vehicle Coding Information 
+
+
+
+
+ZCS Structure 
+
+
+The 37 digit structure of the ZCS is subdivided 
+into three segments. The segments represent 
+specific information about the vehicle. 
+
+Each segment ends with a checksum “digit”. 
+
+A checksum is utilized by the coding software to 
+detect unacceptable/erroneous manually entered 
+coding information. 
+
+The information/digits of the ZCS code reflects the options installed in the vehicle and 
+should never be changed manually unless it is necessary for special recoding functions 
+such as: 
+
+• Canadian market vehicle being moved to the US 
+
+• Retrofit installation of an accessory system (ie. CPT9000 phone system 
+or BMW ULF system refer to SI B840103 & B84 08 04) 
+
+If a modification needs to be made to the ZCS structure and there is no information avail¬ 
+able in a service bulletin then the BMW Technical Hotline should be contacted for assis¬ 
+tance by submitting a PUMA case, requesting a modified ZCS code. 
+
+Each portion of the ZCS provides specific information regarding that vehicle: 
+
+GM (Grundmerkmale) - Identifies the “Basic Features” of the vehicle and contains 
+
+9 digits that are used to describe: 
+
+• Vehicle type (E36, E38, E39 ...) 
+
+• Specific body style of the vehicle (Sedan, Coupe ...) 
+
+• Country specific coding identification (US, UK, ECE ...) 
+
+• Unique equipment that affects the basics of the vehicle 
+(with sunroof, without sunroof, wheel size ...) 
+
+• Basic language variant (English, Spanish, German ...) 
+
+SA (Sonderausstattungs) - Identifies the “Special Equipment” of the vehicle and contains 
+
+17 digits that describe what features/functions are installed in 
+the vehicle, such as: 
+
+• Power Windows or Manual windows 
+
+• Power Door Locks or Manual Door Locks 
+
+• Power Sunroof or Manual Sunroof 
+
+• Power Convertible Top or Manual Convertible Top 
+
+• Phone Pre-wire 
+
+The SA segment is configured to provide a total of 64 possible number combinations 
+(option groups) for all series vehicles worldwide. The information is modified whenever 
+a new component/accessory is added to the vehicle via a retrofit coding procedure. 
+
+4 
+
+Vehicle Coding Information 
+
+
+GM 16430000P 
+SA 0000422005009CC0U 
+VN 000001 El16K 
+
+
+
+
+VN (Versionsnummer) - Identifies the “Version Number” of the vehicle and contains 11 
+
+digits that are used to describe: 
+
+• Series specific coding data that are not reflected in the GM or 
+SA segments. This includes, model year dependent data, 
+software and hardware versions of the control modules 
+installed, coding instructions, etc. 
+
+The VN is displayed as 40 possible combinations of digits. A deliberate change in the 
+VN will result in erroneous coding data being used when recoding a module or coding a 
+replacement module which will affect the proper operation of a control module(s) coded 
+with an incorrect VN. 
+
+Note: In its original form the ZCS was displayed as a 48 digit code containing a 
+fourth segment, the AM (Antriebsmanagement) which identified 
+Powertrain management information specific to the vehicle, however this 
+information was eliminated and was not needed for coding a control 
+module. 
+
+
+FOUR DIGIT PORTION REPRESENTS VEHICLE BODY AND SPECIFIC BODY EQUIPMENT 
+(COUPE, SEDAN, ROADSTER, SUNROOF, ETC,) 
+
+There are 4096 possible combinations of digits per model. 
+
+
+GM 
+
+
+i 
+
+/A 
+
+
+/ 
+
+
+
+\ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ CHECK 
+) DIGIT 
+
+
+VEHICLE TYPE COUNTRY SPECIFIC CODING ID 
+
+
+LANGUAGE VARIANT 
+
+
+SPECIAL EQUIPMENT THAT 
+DIRECTLY AFFECTS BODY 
+
+
+SA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N---' V, ^ 
+
+
+y W 
+
+
+The SA segment is configured to provide a total of 64 possible number CHECK 
+
+combinations for all series vehicles worldwide. The number combinations DIGIT 
+
+
+are special equipment option packages. 
+
+
+VN 
+
+v V 7 'A/ 
+
+The VN is displayed as 40 possible CHECK 
+combinations of digits. DIGIT 
+
+
+5 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZCS Stored Location in Vehicle 
+
+The ZCS is stored in the vehicle to simplify the coding procedures when a module needs 
+to be recoded or a replacement module needs to be coded. Depending on the vehicle, 
+the ZCS information is stored in the following locations: 
+
+
+Vehicle 
+
+Model 
+
+Module 
+
+Vehicle 
+
+Model 
+
+Module 
+
+E31 
+
+All 
+
+EKM 
+
+E39 
+
+All 
+
+Instrument Cluster/EWS 
+
+E32 
+
+All 
+
+Instrument Cluster 
+
+E38 
+
+All 
+
+Instrument Cluster/EWS 
+
+E34 
+
+All 
+
+Instrument Cluster 
+
+E46* 
+
+All 
+
+Instrument Cluster/LSZ 
+
+E36 
+
+318i/is 
+325i/is 
+M3 
+
+Instrument Cluster 
+
+E52 
+
+All 
+
+Instrument Cluster/LSZ 
+
+E36 
+
+CO 
+
+N -> 
+
+CO CO 
+
+l-t- 
+
+EWSII 
+
+As of 9/98: 
+
+Instrument Cluster/EWS 
+
+E53 
+
+All 
+
+Instrument Cluster/LSZ 
+
+
+* The E46 switched to a Vehicle Order (VO) data structure in 9/01. 
+
+The procedure to code control modules that utilize the ZCS information can be per¬ 
+formed via the DISplus/GT 1 or SSS using Progman with CIP 15.0 or higher and access¬ 
+ing the “Codierung ZCS/FA” function. Always reference service bulletins for information 
+regarding the latest coding version and any possible software errors. 
+
+When coding a ZCS codable control module the coding program in CIP automatically 
+searches the stored location, based on the VIN, and codes the selected module accord¬ 
+ing to the information provided in the ZCS code. 
+
+On later production vehicles the ZCS information began to be stored in two locations, 
+referred to as redundant data storages, this insures that the information is always available 
+in the event the primary device storing the data fails. 
+
+Note: On early production vehicles without redundant data storage, if the mod¬ 
+ule being coded or recoded is the module that stores the ZCS informa¬ 
+tion, then the vehicles ZCS information must be obtained from the label 
+located on the vehicle or electronically accessed from the module and 
+printed out then entered manually via the input screen on DISplus/GTI 
+or SSS. 
+
+For vehicles with redundant data storage the coding of the module stor¬ 
+ing the data is performed automatically using the information stored in 
+the “back up” module. 
+
+
+6 
+
+Vehicle Coding Information 
+
+
+
+
+ZCS Identification / Display 
+
+The ZCS information for a specific vehicle can be obtained by: 
+
+• Accessing the control module(s) that electronically stores the information, 
+using the DISplus/GTI orSSS 
+
+• Locating the ZCS label affixed in the vehicle 
+
+Accessing Stored ZCS Information 
+
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+
+Model series SELECTION 
+
+
+■L 
+
+
+CIP 
+
+
+
+
+From Progman establish a connection to the 
+interface connected to the vehicle and access 
+CIR 
+
+To perform the procedure from CIP 
+the Model series must be selected 
+
+(3 series, 7 series ...)■ 
+
+Then select the body (E32, E36 ...). 
+
+
+Select “Codierung ZCS/FA”. 
+
+Then advance screen to the right two times to 
+enter the vehicle series selection screen. 
+
+
+
+Example: 
+
+Select vehicle series (i.e “E36 Series”). 
+
+
+
+7 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select “Display coding code and code for 
+printout”. 
+
+
+
+
+
+Ucbcrtchnft 
+
+
+Coangcwe 
+
+QM 1^X009 
+
+sa ooco«a;oo«omcar 
+VN OMOfFE93EO 
+
+
+CoangwMM 
+trUMruTCD 
+
+
+
+
+ZCS Information for vehicle is displayed along 
+with the stored location. 
+
+
+
+Accessing ZCS Information Label 
+
+On earlier production vehicles the ZCS label is affixed to the 
+vehicle in a specific location depending on the model: 
+
+• E36 - Under rear seat; center area or next to left send¬ 
+ing unit of fuel tank. 
+
+• Z3 Roadster - In Trunk; under carpet on floor, forward 
+of tool kit. 
+
+• E31/32/34 - In fuse box cover 
+
+• E38 - In E-Box cover 
+
+Note: As of 9/98 production the ZCS label was eliminated from the vehicle. 
+Some older vehicles will have identification labels containing an AM 
+segment, this information is not needed for coding or recoding a control 
+module on that vehicle. 
+
+
+
+8 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZCS Codable Control Modules 
+
+Control modules located in a vehicle that are ZCS codable are listed/identified by the 
+“Codierung ZCS/FA” function contained in CIR 
+
+
+A list of the modules specific to the model can be accessed as follows: 
+
+
+
+
+
+
+From Progman establish a connection to the 
+interface connected to the vehicle and access 
+CIR 
+
+To perform the procedure from CIP 
+the Model series must be selected 
+
+(3 series, 7 series ...)■ 
+
+Then select the body (E32, E36 ...)■ 
+
+
+Select “CodierungZCS/FA”. 
+
+Then advance screen to the right two times to 
+enter the vehicle series selection screen. 
+
+
+
+
+Uebcrschrtft 
+
+
+
+Example: 
+
+Select vehicle series (i.e “E36 Series”). 
+
+
+
+9 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select “Recode”. 
+
+
+Then advance screen to the right. 
+
+
+UebencMft 
+
+
+
+
+
+Displays control modules that are ZCS 
+codable. 
+
+
+
+
+Workshop Exercise 
+
+
+Access the ZCS coding information on an E36, E39, E46 or E53. and identify 
+where the information is stored. 
+
+Determine which modules in an E36, E39, E46 or E53 are codable. 
+
+
+10 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Order 
+
+In 9/01 the ZCS vehicle data structure on the E46 was replaced with what is referred to 
+as the Vehicle Order (VO) or Fahrzeugauftrag (FA). The vehicle order structure is utilized 
+on all new models introduced/produced as of 9/01. such as E65/66, E60, E63/64, E83, 
+E85 etc. Models such as E36, E39, E52, and E53 produced after 9/01 continued to be 
+manufactured using the ZCS structure until production of the model is complete. 
+
+
+Vehicle Order for E46 as of 9/01 Production: 
+
+
+Vehicle identific¬ 
+ation number: 
+
+KW17732 
+
+
+E-Wort: 
+
+521,522,534,550,639, 
+
+645,650,661,674,692, 
+
+818,823,832,845,853, 
+
+876,925,926,992,302, 
+
+Vehicle order: 
+
+
+HO-Wort: 
+
+633L, 
+
+Vehicle order and 
+
+vehicle identifica— 
+
+Model series: 
+
+E46 
+
+
+tion number are 
+
+Type des. code: 
+
+EV33 
+
+
+stored in 
+
+Time criterion: 
+
+0904 
+
+SA: 
+
+KOMBI 
+
+Paint code: 
+
+0A08 
+
+1 CA,205,210,240,249, 
+
+
+Upholstery code: 
+
+Assbly. no.: 
+
+N6SW 
+
+279,354,403,411,431, 
+
+438,441,459,465,473, 
+
+488,494,495,502,520, 
+
+
+
+Vehicle Order for New Models as of 9/01 Introduction: 
+
+
+
+Select measures plan. 
+
+Date / time: 
+
+10.11.2004/ 13:31 
+
+Model series: 
+
+E60 
+
+Vehicle ID number: 
+
+WBANA53584B848013 
+
+Vehicle order: 
+
+E60 # 1203*NA53%0475&LCBA$ 1CA$205$248$2RA 
+$302$319$354$403$415$416$430$431$438$441 
+$442$459$465$473$488$494$502$534$540$563 
+$605$609$620$639$645$676$694$697$785$818 
+$823$850$853$876$8SP$925$992-B110+K639+O111 
++0112 
+
+Vehicle data status: 
+
+E060-04-09-504 
+
+Target data status: 
+
+E060-04-09-504 
+
+
+11 
+
+Vehicle Coding Information 
+
+
+
+
+
+
+
+
+
+The vehicle order format contains information pertaining to the production of a specific 
+vehicle such as: 
+
+Series Type - (E46, E65, E60, etc.) 
+
+Time Criterion - Identifies date the options/hardware equipment available for installation 
+into the vehicle was standardized/”locked”. This information does not 
+refer to the production date of the vehicle. A problem with coding or 
+programming may occur if a module or option based on a newer or 
+older time criterion date is installed into the vehicle. 
+
+Model Code (Basic Type) - Base level from which the vehicle is “created/built”. 
+
+Paint Code - Identifies the color of the vehicle at time of production. 
+
+Upholstery Code - Identifies the type of upholstery installed in the vehicle at time of 
+
+production. 
+
+Assembly Number - Identifies the programmed part number for powertrain (Not used) 
+
+E-Wort - Identifies additions/options added to the vehicle that are not part of standard 
+SA codes/options 
+
+HO-Wort - Identifies options installed at Center/Dealer using 3 digit option code 
+(Currently not used. 
+
+Installed Option/SA Codes - Listing of accessories & equipment options installed in 
+
+the vehicle. 
+
+The information contained in the vehicle order is used to identify the module(s)/system(s) 
+that are/should be installed in the vehicle and also what if any control modules need to be 
+updated if a new system/option is added or removed to/from the vehicle to ensure proper 
+compatibility with the devices installed in the vehicle. The information contained in the 
+vehicle order such as installed options, is modified whenever a new component (mod¬ 
+ule/system) is installed and coded to the vehicle. If the new component is not properly 
+coded to the vehicle the SA listing is not updated and problems can be encountered 
+whenever a measures plan for the vehicle is created, vehicle needs to be recoded or 
+VKM/Individualization functions are to be modified. 
+
+A listing of the components that need to be updated is provided whenever a measures 
+plan is generated (refer to CIP module for additional information). 
+
+
+12 
+
+Vehicle Coding Information 
+
+
+
+Example: Information contained in the VO of an E60 
+
+
+
+Select measures plan. 
+
+Date / time: 
+
+10.11.2004/ 13:31 
+
+Model series: 
+
+E60 
+
+Vehicle ID number: 
+
+WBANA53584B848013 
+
+Vehicle order: 
+
+E60 # 1203*NA53%0475&LCBA$ 1CA$205$248$2RA 
+$302$319$354$403$415$416$430$431$438$441 
+$442$459$465$473$488$494$502$534$540$563 
+$605$609$620$639$645$676$694$697$785$818 
+$823$850$853$876$8SP$925$992-B110+K639+OI11 
++0112 
+
+Vehicle data status: 
+
+E060-04-09-504 
+
+Target data status: 
+
+E060-04-09-504 
+
+
+Series Type: 
+Time Criterion: 
+
+
+Model Code: 
+
+
+Paint Code: 
+
+
+E60 
+
+Identified as 1203 indicates the date (month/year) that the list of 
+available options/hardware available for installation into the vehicle 
+was standardized/”locked”. Although the vehicle referenced was 
+produced in 6/04 the time criterion of 1203 is still valid and indi¬ 
+cates that no changes were made to the available option pack¬ 
+ages/hardware available for installation into that specific model 
+since 1203. 
+
+Identified as NA53 indicates the vehicle and engine type plus pro¬ 
+vides information pertaining to the country the vehicle was built for 
+(i.e. LH or RH drive). If an automatic transmission is installed it will 
+be considered an NA63, however the model code contained in the 
+VO will always reflect the base level which is a manual transmis¬ 
+sion vehicle. 
+
+Identified as 0475 indicates the color of the vehicle at time of pro¬ 
+duction. 
+
+
+Upholstery Code: Identified as LCBA indicates the type of upholstery installed in the 
+
+vehicle at time of production. 
+
+Installed Option/ 
+
+SA Codes: Listing of accessories & equipment options installed in the vehicle 
+
+1CA - Selection COP relevant vehicles 
+205 -Automatic transmission 
+248 - Steering Wheel Ideating 
+2RA - LT/ALYwheels 
+
+
+13 
+
+Vehicle Coding Information 
+
+
+
+
+Review Questions 
+
+1. What is the purpose of a ZCS code in a vehicle? 
+
+
+2. Where is the ZCS code stored in a vehicle? 
+
+
+3. How can you determine what modules in the vehicle are codeable via the ZCS 
+code? 
+
+
+4. What is the purpose of a Vehicle Order what information does it contain? 
+
+
+5. When was the VO structure introduced? 
+
+
+6. Which models utilize a VO structure? 
+
+
+7. How can the VO information of a vehicle be accessed? 
+
+
+14 
+
+Vehicle Coding Information 
+
+
+

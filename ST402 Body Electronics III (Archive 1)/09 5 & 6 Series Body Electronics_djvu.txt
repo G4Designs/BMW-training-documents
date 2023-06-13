@@ -1,0 +1,9762 @@
+Table of Contents 
+
+
+5 and 6 Series Body Electronics 
+
+Subject Page 
+
+General Vehicle Electrical Systems.10 
+
+System Overview.11 
+
+E63/E64 Changes from E60.12 
+
+General Electrical New Features .13 
+
+KBM (Body Base Module).13 
+
+Door Modules.13 
+
+CAS System.13 
+
+PDC .13 
+
+RDW(FTM) .13 
+
+Roller Sunblind.13 
+
+Multifunction Seat.14 
+
+KBM.14 
+
+Power Windows.14 
+
+Switch Block SBFA.15 
+
+LIN Bus .15 
+
+Door Modules.15 
+
+byteflight .16 
+
+SGM.16 
+
+K-CAN.16 
+
+KBM.16 
+
+Power Window Motors.17 
+
+Door Contacts .17 
+
+CAS .18 
+
+Operation .19 
+
+Opening of Passenger Front by Driver.19 
+
+Opening of Rear Window by Driver.19 
+
+Indirect Anti-Trapping .19 
+
+Phase 1 .20 
+
+Phase 2 .20 
+
+Power Detection .20 
+
+Initialization of Power Windows.20 
+
+Slide/Tilt Sunroof.23 
+
+Slide/Tilt Sunroof Push-Button.23 
+
+Slide/Tilt Sunroof Module .23 
+
+Car Access System.23 
+
+Functions .24 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Panic Mode .24 
+
+Emergency Operation .24 
+
+Initialization .24 
+
+E63 Glass Tilt Sunroof.25 
+
+Changes Compared to the E60.25 
+
+System Components.25 
+
+Control Unit MDS.25 
+
+Functions .25 
+
+Control Button.25 
+
+Glass Tilt Sunroof.25 
+
+Sunroof Visor.25 
+
+Service Information.27 
+
+Initialization.27 
+
+Manual Initialization with Control Button .27 
+
+Preconditions.27 
+
+Glass Tilt Sunroof .27 
+
+E61 Panorama Glass Sunroof.28 
+
+Functions of the Control Button.29 
+
+Panorama Glass Sunroof Functions.29 
+
+To Open Sunroof Visor .30 
+
+To Open Sunroof Visor and Roof Panel .30 
+
+Tilt Position .30 
+
+To Close Roof Panels.30 
+
+To Close Sunroof Visor and Roof Panel.31 
+
+To Close Sunroof Visor.31 
+
+Speed Control of Wind Deflector with Roof Open .31 
+
+Toll Operation.31 
+
+Convenient Opening and Closing via Key .32 
+
+Initialization .32 
+
+Anti-trapping Circuit .32 
+
+Central Locking System.33 
+
+Secure Lock (Double Lock).34 
+
+Automatic Locking .35 
+
+Crash Unlock .35 
+
+Power on Status.35 
+
+DWA - Central Lock Interface.35 
+
+Remote Control FBD .35 
+
+Trunk Locking.36 
+
+Hotel Setting .36 
+
+Automatic Relock .36 
+
+Car & Key Memory .37 
+
+Codeable Key Memory Functions.37 
+
+Codeable Car Memory Functions.37 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Windshield Wiping/Washer System .38 
+
+System Components .38 
+
+Wiper Switch.38 
+
+Rain and Light Sensor (RLS) .40 
+
+Safety and Gateway Module .40 
+
+Steering Column Switch Cluster.40 
+
+Integrated automatic heating and air-conditioning system.40 
+
+Body Basic Module (KBM) .41 
+
+Wiper Motor.41 
+
+Touring (E61): .42 
+
+Windshield and Rear Window Washer Pump (on the Touring) _42 
+
+Headlamp Washer Pump .42 
+
+Heated Washer Jets .42 
+
+System Functions.42 
+
+Wiper Functions .42 
+
+Touring (E61).43 
+
+Windshield and Rear Window Wash Function (on the Touring)_43 
+
+Headlamp Washer System .43 
+
+Safety Function .44 
+
+Replacing the Wiper System .44 
+
+Workshop Hints.45 
+
+Wiper Blades .45 
+
+Washer Jets .45 
+
+Car Access System .46 
+
+Wake-up Time.47 
+
+Workshop Hints.49 
+
+Condition Based Service.49 
+
+Manual Update of CBS Data.49 
+
+Manual Update of Fault Memory Data.49 
+
+Anti-theft Alarm System.54 
+
+Components.55 
+
+Ultrasonic Interior Motion Sensor.55 
+
+Tilt Alarm Sensor.55 
+
+Hood Contact Switch .55 
+
+DWA Control Unit .55 
+
+Car Access System.55 
+
+Driver's and Front-Passenger Door Modules.56 
+
+Body Basic Module (KBM) .56 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Sliding/tilting Sunroof Control Unit.56 
+
+Integrated Heating and Air Conditioning System .56 
+
+Light Module .56 
+
+Siren with Integrated Tilt Alarm Sensor.56 
+
+DWALED .57 
+
+Principle of Operation.58 
+
+Arming (priming)/disarming .58 
+
+DWA Alarm Triggering (Alarm-trigger Signal).59 
+
+CAS Authentication to Prevent Tampering .60 
+
+Forced Disarming.60 
+
+Independent Voltage Supply .60 
+
+Reverse Polarity Detection .60 
+
+System Power-Down for Storage.60 
+
+Bus Monitoring .60 
+
+Automatic adaptation of sensitivity of ultrasonic 
+
+interior motion sensor.61 
+
+Deactivating interior motion sensor and tilt monitoring .61 
+
+Emergency Function for Acoustic DWA Alarm .62 
+
+Combined Operation with Lock Cylinder and Remote Control .62 
+
+DWA Alarm Output (coding) .62 
+
+Panic Mode.62 
+
+E63/E64 Alarm System (DWA).63 
+
+New Features for DWA on E63 and E64 Vehicles .63 
+
+Advantages of Microwave Sensors.63 
+
+Components.65 
+
+Microwave Sensors.65 
+
+Construction .66 
+
+Car Access System (CAS).67 
+
+Driver's Door Module (TMFA) and Front-passenger Door Module 
+
+(TMBF) .67 
+
+Body Basic Module (KBM) .67 
+
+Light Module (LM).67 
+
+Emergency power siren with integrated tilt alarm sensor (SINE).67 
+
+DWALED .67 
+
+Principle of Operation.68 
+
+Activating and Deactivating.68 
+
+Sensor Operation .68 
+
+Tilt Alarm Sensor.70 
+
+DWA Control Unit .70 
+
+DWA Alarm Triggering (Alarm-trigger Signal).71 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Undervoltage recognition, overvoltage recognition, 
+
+car battery monitoring.72 
+
+Monitoring of sub-bus for anti-theft alarm .72 
+
+Deactivating interior motion sensor and tilt monitoring .72 
+
+Combined operation with lock cylinder and remote control.73 
+
+Operation .73 
+
+Panic Mode .73 
+
+Park Distance Control PDC.74 
+
+Components.77 
+
+Ultrasonic Sensors.77 
+
+PDC Button.78 
+
+PDC Control Unit .78 
+
+Multi-audio System Controller / Car Communication Computer . .78 
+
+Central Information Display.78 
+
+Instrument Cluster.79 
+
+DSC Control Unit .79 
+
+Electronic Transmission Control .79 
+
+Light Module.79 
+
+Car Access System .79 
+
+Principle of Operation.80 
+
+Acoustic Warnings.80 
+
+Visual Warnings .81 
+
+Check Control .81 
+
+Conditions for Switching On and Off.82 
+
+Problematic Conditions for Switching On and Off.82 
+
+Operation .82 
+
+Active Cruise Control .83 
+
+ACC System Overview.84 
+
+Exterior Lights.85 
+
+Components.86 
+
+Light Switch with Control Panel Unit .86 
+
+Brake Light Switch.86 
+
+Reverse Lights .87 
+
+Brake Force Display.87 
+
+Service Information.87 
+
+E63/E64 Exterior Lighting .88 
+
+Changes as Compared to E60 .88 
+
+Brake Force Display.88 
+
+E61 Tail light.89 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Adaptive Headlights (AHL) .90 
+
+Introduction.90 
+
+Components.92 
+
+Light Switch .92 
+
+Direction Indicator/High-beam Switch.92 
+
+Steering Column Switch Cluster .92 
+
+Ride-height Sensors.92 
+
+Brake Light Switch .93 
+
+Position Sensor (E60, E65, E53) .93 
+
+Car Access System.93 
+
+EGS control unit or reversing light switch .93 
+
+Rain-light sensor for automatic driving lights control .94 
+
+Steering Angle Sensor and DSC Sensor .94 
+
+AHL Control Unit on E60, E63.95 
+
+Stepper Motor Controllers .95 
+
+Light Module .95 
+
+Safety and Gateway Module .95 
+
+Xenon-headlight Control Unit.95 
+
+Stepper Motors for the Adaptive Headlights .96 
+
+Function Indicator (On Light Switch).96 
+
+Principle of Operation.97 
+
+System Activation and Calibration Sequence .97 
+
+Activation of Stepper Motor Controllers .98 
+
+Speed Dependent Analysis of Input Signals .98 
+
+Horizontal swivelling of the headlights by the 
+
+stepper motor controller.98 
+
+Deactivation of adaptive headlight movements 
+
+under extreme driving conditions .99 
+
+Deactivation of adaptive headlight movements 
+
+in response to system faults .99 
+
+Setting Headlights to Parked Position.99 
+
+Activation of automatic headlight-range adjustment 
+
+by the AHL control unit .100 
+
+Adaptive headlights for automatic driving lights control .100 
+
+Switch-on Conditions.101 
+
+Workshop Hints .102 
+
+AHL Control Unit .102 
+
+Replacing SMC.102 
+
+Replace Bi-Xenon Headlights .102 
+
+Diagnosis.102 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Interior Lighting .109 
+
+PWM Control.109 
+
+Consumer Shutdown Terminal.109 
+
+Consumer Shutdown.109 
+
+Roller Sunblind.Ill 
+
+System Function.Ill 
+
+Seats .112 
+
+Seat Variants .112 
+
+Electrical Interfaces.112 
+
+Electric, Sport and Multi-Function Seats.112 
+
+Seat Heating .112 
+
+Lumbar Support .112 
+
+Active Seat.114 
+
+Entry/Exit Function for the Multi-Function Seat .114 
+
+Functional Principle .114 
+
+One example in which the entry/exit aid is activated.114 
+
+Seats E63/E64.115 
+
+Introduction .115 
+
+Components .116 
+
+Seat Adjustment Buttons .116 
+
+Lumbar Support Button .116 
+
+Seat Memory Button .116 
+
+Seat Heating Switch .116 
+
+Hall Sensors.116 
+
+Temperature Sensor for Seat Heating .116 
+
+Centre Console Switch Cluster (SZM).116 
+
+E63/E64 Driver's Seat Module .116 
+
+Passenger's Seat Module, E64 Only .117 
+
+Seat Heating .117 
+
+Seat Adjustment Drive Units .117 
+
+Head Restraint Angle Adjustment .117 
+
+Lumbar Support .117 
+
+Central Information Display .117 
+
+Head-up Display.117 
+
+Seat Heating LEDs .118 
+
+K-CAN.118 
+
+K-Bus.118 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Principle of Operation.119 
+
+Seat Adjustment.119 
+
+Rear Easy-entry Facility .120 
+
+Seat bleating .120 
+
+E63/E64 Seat Heating.121 
+
+Installation Location.121 
+
+Construction .121 
+
+Function of Seat Heating.122 
+
+Seat Heating ON and OFF.122 
+
+Seat Heating Temperature Control.123 
+
+Monitoring of Temperature Sensor.123 
+
+Seat Heating Output Management .123 
+
+Overvoltage/undervoltage Detection.123 
+
+Behavior in the Event of Undervoltage.123 
+
+Behavior in the Case of Overvoltage .124 
+
+Short-circuit Detection .124 
+
+No-load Detection .124 
+
+Plausibility Check of Temperature Profile .124 
+
+Outside Mirrors.125 
+
+Steering Column Adjustment.126 
+
+Components .128 
+
+Switch for Steering-column Adjustment.128 
+
+Steering-column Adjustment Drive Unit.128 
+
+Steering Column Switch Cluster.128 
+
+SZM .128 
+
+Door Contact in the Driver's Door.128 
+
+Principle of Operation.129 
+
+Manual Steering-column Adjustment.129 
+
+Steering-column Memory.129 
+
+
+Overheating Protection for Steering-column Adjustment Motors .. .130 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5 and 6 Series Body Electronics 
+
+
+Model: E60, E61, E63 and E64 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Identify and locate electrical components 
+
+• Explain the operation of body electrical systems 
+
+• Diagnose body electrical systems 
+
+• Perform various service related functions 
+
+
+9 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+General Vehicle Electrical Systems 
+
+This module contains information pertaining to various body electrical systems. The 
+vehicles covered include the E60, E61, E63 and E64. The primary focus will be on the 
+E60. Differences between the E60/E61 and the E63/E64 body electronics will be 
+pointed out as necessary. Unless otherwise mentioned, the E63/E64 body electronics 
+are identical to the E60. 
+
+
+E60 E61 
+
+
+
+The components and operation of the following electrical systems 
+
+
+k/ V_y ky I \y vJ V_y I I L Vy i 
+
+
+KBM 
+
+Anti-theft alarm system 
+Interior lighting 
+
+Windshield wiping and washing 
+Exterior lighting 
+Sliding/tilting sunroof 
+Car Access System (CAS) 
+
+E61 Multi Drive Sunroof (MDS) 
+
+
+Central locking system 
+Active cruise control 
+Power windows 
+Park Distance Control 
+Roller sunblind 
+
+E63 Multi Drive Sunroof (MDS) 
+AHL 
+
+
+10 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+
+
+02115JE 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Door Module, driver’s side (TMFA) 
+
+10 
+
+Car Access System (CAS) 
+
+2 
+
+Driver’s switch block module (SBFA) 
+
+11 
+
+Body Basic Module (KBM) 
+
+3 
+
+Driver’s door lock actuator 
+
+12 
+
+Driver’s side rear window switch 
+
+4 
+
+Driver’s front power window motor 
+
+13 
+
+Driver’s side rear door lock actuator 
+
+5 
+
+Safety and Gateway Module (SGM) 
+
+14 
+
+Driver’s side rear power window motor 
+
+6 
+
+Door Module, passenger side (TMBF) 
+
+15 
+
+Passenger side rear window switch 
+
+7 
+
+Passenger door window switch 
+
+16 
+
+Passenger side rear door lock actuator 
+
+8 
+
+Passenger front door lock actuator 
+
+17 
+
+Passenger side rear power window motor 
+
+9 
+
+Passenger power window motor 
+
+
+
+
+11 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E63/E64 Changes from E60 
+
+The function of the power windows correspond to those of the E60. However, the rear 
+windows are fixed and the corresponding pins of the KBM are not used. The E63/E64 
+does not use switches for the rear driver or passenger door (window). Also the power 
+window motors and regulator assemblies are also deleted. Otherwise the operation of 
+the power window circuits is the same as the E60. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Door Module, driver’s side (TMFA) 
+
+6 
+
+Passenger door module (TMBF) 
+
+2 
+
+Driver’s switch block module (SBFA) 
+
+7 
+
+Power window switch, passenger front 
+
+3 
+
+Door contact, driver’s door front 
+
+8 
+
+Door contact, passenger front 
+
+4 
+
+Power window regulator, driver’s front 
+
+9 
+
+Power window regulator, passenger front 
+
+5 
+
+Safety and Gateway Module (SGM) 
+
+10 
+
+Car Access System (CAS) 
+
+
+12 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Electrical New Features 
+
+
+KBM (Body Base Module) 
+
+The KBM controls the following functions: 
+
+• Rear Power Windows 
+
+• Central Locking (Rear Doors, Trunk/Tailgate and Fuel Filler Flap) 
+
+• Windshield Wiping/Wash System 
+
+• Interior Lighting 
+
+• Consumer Shutdown 
+
+Door Modules 
+
+The Door Module is integrated into the ASE. It communicates with other vehicle 
+systems via the byteflight. 
+
+The Door Modules contain the following functions: 
+
+• Mirror Adjustment, Heating, Memory, Folding and Lighting 
+
+• Central Locking (Front Doors Only) 
+
+• Front Power Windows (with indirect anti-trapping) 
+
+• Connection to Driver’s Door Switch Block 
+
+• Connection to Passenger’s Door Power Window Switch) 
+
+• Door Entry Lights and Switch Illumination 
+
+• Recording of Front Door Pressure Sensor Information 
+
+CAS System 
+
+The Car Access System (CAS2) is based on the CAS of the E65, however in the E60 the 
+ignition starter switch and the CAS are two separate components. The E60 CAS is 
+connected directly to the K-Bus and does not perform any repeater functions. 
+
+PDC 
+
+The signal from the PDC button is forwarded to the PDC Control Unit via the K-CAN. 
+
+RDW (FTM) 
+
+E60 uses RDW (FTM) for low tire warning. Information concerning low tire is based on 
+wheel speed and is received from the DSC. 
+
+Roller Sunblind 
+
+The rear window roller sunblind is controlled from the center console switch panel. The 
+roller sunblinds for the side windows are manually operated. 
+
+13 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Multifunction Seat 
+
+The multifunction seat makes it easier to get in and out of the vehicle. The backrest width 
+and seat cushion depth are retracted for this purpose. 
+
+
+KBM 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Compact Disc Changer (CDC) 
+
+4 
+
+Adaptive Headlights (AHL) 
+
+2 
+
+Body Basic Module (KBM) 
+
+5 
+
+Tire Pressure Control (RDC) Not for US 
+
+3 
+
+Safety and Gateway Module (SGM) 
+
+
+
+
+Located in the equipment frame at the glove box, the KBM has 4 electrical connectors 
+(XI3252 54-pin, XI3254 3-pin, XI3253 13-pin, XI3255 6-pin) and an operating voltage 
+range of 9-16 Volts. The KBM is internally protected against shorts to terminal 30 or 31 
+and equipped with reverse polarity protection. 
+
+1. XI3252 
+
+2. XI3254 
+
+3. XI3253 
+
+4. XI3255 
+
+
+0Z414..02 
+
+
+
+Power Windows 
+
+
+The front power windows are activated by the door modules of the respective door. 
+
+The rear power windows are activated by the basic body module KBM. 
+
+The power windows are operated as usual from the switch block in the driver's door 
+(SBFA) and the switches in the other doors. Various safety functions and statutory 
+requirements have been taken into consideration. 
+
+
+14 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Switch Block SBFA 
+
+All the windows may be operated from the SBFA. The Switch Block passes all window 
+requests to the TMFA via the LIN Bus. 
+
+LIN Bus 
+
+The LIN Bus is a sub bus allowing communication between the TMFA and the SBFA. 
+
+Door Modules 
+
+The door module contains separate "modules" for the door module electronics and the 
+Advanced Safety Electronics. 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Mounting holes 
+
+5 
+
+Connection for input signals 
+
+2 
+
+Input channel to pressure sensor 
+
+6 
+
+Connection for interior mirror 
+
+3 
+
+Connection for switch block 
+
+7 
+
+Connection for exterior mirror 
+
+4 
+
+Connection for power supply 
+
+
+
+
+The door module is the interface between: 
+
+• Switch block, driver's door • Switch, passenger side 
+
+• Door contact • Incremental sensor in power-window motor 
+
+• byteflight • Power-window motor 
+
+The driver's door switch block is linked to the driver's door module by means of an LIN- 
+Bus. Control of mirror adjustment, heating and front area light is also integrated in the 
+door modules. 
+
+The ASE system is integrated in the Door Modules. The door modules also incorporate 
+the activation system for side air bag deployment. 
+
+The door module is powered with 10 V from terminal 30 and with 10V by the SGM. The 
+10 V supply is buffered for the function of the ASE system. When replacing the door 
+module, bear in mind that the capacitor needs a few minutes to discharge. The airbag 
+might be deployed if you replace the door module with the capacitor still charged. 
+
+
+15 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+byte flight 
+
+The byteflight bus system is involved in window operation as a method for door 
+modules to communicate with the SGM. 
+
+SGM 
+
+The SGM converts and forwards messages to/from the byteflight and K-Can. 
+
+K-CAN 
+
+The K-CAN provides a communication path between the SGM, the CAS and the KBM 
+as well as body modules. 
+
+KBM 
+
+The KBM receives input from the rear door window switches and the rear door contact 
+switches and provides output to the rear window motors. The KBM also monitors the 
+incremental sensor (hall sensors) in the rear window motors for position, speed and 
+rotation. 
+
+Additionally the KBM allows also for contact and control of the rear windows through 
+CAN communication with the SGM. 
+
+The KBM provides both power and ground to the rear window motors. 
+
+
+
+16 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Window Motors 
+
+The drive mechanism of a power window lift is a cable lift mechanism consisting of: 
+
+• A DC motor 
+
+• A reduction gear with incremental sensor (Hall sensor) 
+
+• Evaluation Circuit 
+
+• A shrouded connection 
+
+The drive mechanism incorporates two Hall sensors, which are addressed by a magnet 
+wheel mounted on the armature shaft. 
+
+The two Hall sensors and the magnet wheel determine with the aid of the door module 
+or the KBM the direction of rotation, the speed and the position of the window. 
+
+
+
+Power window system, front 
+
+
+Power window system, rear 
+
+
+02540_02 
+
+
+Door Contacts 
+
+The door contact switches, incorporated in the door latch mechanisms, provide door 
+open/close data to the Door Modules/KBM. 
+
+
+17 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAS 
+
+
+The Car Access System control unit functions as the master for power window functions: 
+
+• Operation by radio remote control key • Comfort functions (One-Touch) 
+
+• Central-locking interface • Child lock 
+
+• Country-specific programming 
+
+
+© 
+
+
+Z) 
+
+
+
+n 
+0 0 
+
+
+— 
+
+
+& 
+
+
+
+
+TMFA 
+
+
+
+
+
+
+ZJ 
+
+
+
+
+
+
+TMBF 
+
+
+— c 
+
+r""" i 
+
+
+
+-- C— —0- 
+
+ZJ 
+
+N 
+
+_- 
+
+
+i- 
+
+■-( 
+
+
+
+
+1 < 
+
+-W 
+
+
+Z) 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Driver’s switch block module (SBFA) 
+
+12 
+
+Car Access System (CAS) 
+
+2 
+
+Passenger front door window switch 
+
+13 
+
+Window Switch, right rear 
+
+3 
+
+Hall sensor driver’s door 
+
+14 
+
+Door contact, right rear 
+
+4 
+
+Driver’s front power window motor 
+
+15 
+
+Hall sensor, right rear 
+
+5 
+
+Door contact driver’s door 
+
+16 
+
+Window motor, right rear 
+
+6 
+
+Door Module, driver’s side (TMFA) 
+
+17 
+
+Body Basic Module (KBM) 
+
+7 
+
+Safety and Gateway Module (SGM) 
+
+18 
+
+Window motor, left rear 
+
+8 
+
+Door Module, passenger side (TMBF) 
+
+19 
+
+Hall sensor, left rear 
+
+9 
+
+Hall sensor passenger door, front 
+
+20 
+
+Door contact, left rear 
+
+10 
+
+Passenger front power window motor 
+
+21 
+
+Window switch, left rear 
+
+11 
+
+Door contact passenger door front 
+
+
+
+
+18 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operation 
+
+Opening of Passenger Front by Driver 
+
+The signal triggered in the SBFA when the button is pressed is sent via a LIN Bus to the 
+TMFA. The TMFA sends the signal via the byteflight to the SGM. 
+
+The SGM converts the signal and sends it on the K-CAN to the CAS(the master for the 
+front windows). The CAS evaluates the signal and sends a command to the SGM on the 
+K-CAN. The SGM forward the command via the byteflight to the TMBF. 
+
+The TMBF receives the command for window movement, and a check signal from the 
+Hall-sensor in the window motor and if necessary calculates indirect trapping protection. 
+The window is then moved per the request. 
+
+Opening of Rear Window by Driver 
+
+
+
+Indirect Anti-Trapping 
+
+Anti-trapping protection is active over the entire window travel in the closing direction. 
+Indirect anti-trapping protection does not eliminate trapping completely but rather 
+restricts it to a maximum permissible trapping force. 
+
+For each subsequent closing operation, the currently required closing force is determined 
+and compared with the stored value. If the difference between the two force values is 
+over the specified trigger threshold, the direction of window movement is reversed imme¬ 
+diately. 
+
+The reversing procedure is country and function dependent (emergency mode). 
+
+In order to ensure safe closing of the window glass, the drive mechanisms are briefly 
+operated to their full extent when the zero position is reached at the upper stop. 
+
+Power-window anti-trapping protection has been developed in accordance with legal 
+requirements in order to reliably prevent injury to vehicle occupants. When an object is 
+detected in the path of the window, window travel is stopped and the window rolled down 
+slightly. 
+
+Anti-trapping protection is deactivated by the emergency close function (panic mode). 
+The control sequence is divided into two phases. 
+
+
+19 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phase 1 
+
+The closing position is overpressed until the emergency close mode is activated after a 
+specific response time. The window is closed at maximum speed and with increased 
+anti-trapping protection force. Anti-trapping protection remains activated even during 
+emergency closing. If trapping is detected, the window is reversed only a short distance. 
+
+Phase 2 
+
+The button is released and overpulled again in 4 s. The window is now closed without 
+anti-trapping protection with full force. In the event of blocking, the power-window motor 
+is supplied with power until thermal protection is engaged. 
+
+In the event of faulty anti-trapping protection, there is the option of emergency-closing 
+the windows. 
+
+If fully operational anti-trapping protection cannot be detected, e.g. faulty sensors, auto¬ 
+matic operation is not permitted. 
+
+Power Detection 
+
+The system adapts itself to changes in the weather and environmental influences. The 
+closing force is recorded by indirect sensors (Hall sensors) and limited accordingly. 
+
+Initialization of Power Windows 
+
+
+Front Windows 
+
+Rear Windows 
+
+On Initial start-up, only the upper window stop has 
+to be learned. For this purpose the window must 
+be held for 500ms at the upper stop position. 
+
+A characteristic curve in not learned for the front 
+windows. The lower stop does not have to be 
+approached. In order to compensate for mechani¬ 
+cal aging, an automatic readjustment of the end 
+position is performed cyclically at the upper stop. 
+
+Move window to full closed position and hold 
+for at least 500ms. 
+
+The rear windows must be initialized. 
+
+During the initialization the end positions of the 
+window travel are determined by limit runs into the 
+upper window seal and to the lower window stop. 
+
+Move window to full closed position and hold 
+for at least 500ms. 
+
+Move window to lower window stop and hold 
+for 17 seconds. 
+
+Move window to full closed and continue to 
+hold the switch in the window closing direc¬ 
+tion. 
+
+The Window will open the close to confirm 
+proper initialization. 
+
+Note: This procedure is the same as E65. 
+
+
+20 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Power Windows 
+
+
+Using an instructor designated vehicle, perform the following operations as directed. 
+
+Using proper repair instructions in WebTIS, remove drivers side door panel. Using the 
+proper test cables, obtain the correct scope pattern of the LIN-Bus signal from the switch 
+assembly to door module. 
+
+What is the observed voltage range of the LIN Bus? 
+
+
+Using the appropriate test cables, create a short circuit to ground on the LIN-Bus. 
+
+What is observed when the LIN Bus is grounded? (failures, fault codes etc.) 
+
+
+Using the appropriate test cables, create a short circuit to B+ on the LIN-Bus. 
+
+What is observed when the LIN Bus is shorted to B+? (failures, fault codes etc.) 
+
+
+Perform Initialization on front windows. List proper steps and relevant observations. 
+
+
+
+Perform Initialization on rear windows. List proper steps and relevant observations. 
+
+
+21 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Check the anti-trap feature on both the front and rear windows. 
+
+Is the anti-trap closing force approximately the same on both the front and rear? 
+
+
+Is the anti-trap closing force the same for the entire window travel? 
+
+
+Perform the anti-trap test again quickly after performing the test a first time. 
+Is the closing force the same as on the first test? 
+
+
+Notes: 
+
+
+22 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Slide/Tilt Sunroof 
+
+
+
+1. Car Access System (CAS) 
+
+2. SHD module with integrated electronics 
+
+3. Sunroof switch 
+
+
+
+1. Sunroof switch 
+
+2. SHD module with integrated electronics 
+
+3. Car Access System (CAS) 
+
+
+Slide/Tilt Sunroof Push-Button 
+
+The push-button for the slide/tilt sunroof (SHD) switches to ground. The power supply of 
+the push-button features polarity reversal protection and is disconnected from the power 
+supply in the event of overvoltage and in sleep mode. 
+
+Slide/Tilt Sunroof Module 
+
+The SHD module controls and monitors the electric motor and therefore the movement 
+of the slide/tilt sunroof. The commands the driver selects with the push-button are trans¬ 
+ferred directly to the slide/tilt sunroof module. 
+
+Communication with the vehicle is controlled via the K-CAN. The SHD module receives 
+information relating to terminal 58g via the K-CAN from the light module. The SHD 
+module controls the LEDs of the SHD push-button. Terminal 58g has a clock cycle of 
+200 Hz for the purpose of dimming the lighting. 
+
+Car Access System 
+
+The CAS contains the master function for auto-remote opening. 
+
+
+23 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Panic Mode 
+
+Panic Mode is triggered by pressing and holding the SHD button in the 2nd notch 
+position. 
+
+With this function, the sunroof is closed without anti-trap or closing force limitation pro¬ 
+tection. Panic close is possible only at speeds under 16 km/h. 
+
+
+Emergency Operation 
+
+In Emergency Mode, the sunroof only moves for 750ms at a time. The emergency func¬ 
+tion is only available when the CAS has signaled the SHD control module, “Emergency 
+Mode Enable”, via the K-CAN. 
+
+Emergency operation is active under the following conditions: 
+
+• Coding Invalid 
+
+• Defective Hall-sensor 
+
+
+• Initialization incomplete 
+
+If initialization is incomplete operation is permitted based on scaling or characteristic 
+curves. 
+
+With no scaling, movement is allowed only in the direction of the scaling position. 
+With no characteristic curve learned, movement is only is the closing direction. 
+
+
+Initialization 
+
+Initialization of the Sunroof is performed as follows: 
+
+• Press the operating switch to the “Lift” position and hold. 
+
+• After 15 seconds, the sunroof will “Lift”. Continue to hold the switch. 
+
+• After approximately 5 seconds the sunroof will close. Continue to hold the switch. 
+
+• The sunroof will then open completely and close completely. 
+
+• If the switch is released at any time during the procedure the operation must be 
+repeated. 
+
+
+Note: Anti-trapping protection does not function during the initialization 
+process. 
+
+
+24 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+E63 Glass Tilt Sunroof 
+
+
+
+03545 03 
+
+
+Changes Compared to the E60 
+
+Instead of the slide/tilt sunroof, the E63 features a glass tilt sunroof. The sunroof visor 
+is two-piece. Two motors are installed for operating the glass tilt sunroof. The system 
+differs in design from the standard SHD, the Multi-Drive Sunroof module (MDS) contains 
+the operating electronics for the sunroof motors (2). The MDS and the sunroof motors 
+are separate components rather than the integrated style of the SHD. 
+
+System Components 
+
+The following components relating to the glass tilt sunroof are fitted in the vehicle: 
+
+• Control button for glass tilt sunroof 
+
+• Control unit, multi-drive sunroof MDS, for glass tilt sunroof 
+
+• Motor for glass tilt sunroof 
+
+• Motor for sunroof visor 
+
+Communication with other users in the vehicle, such as the Car Access System (CAS), 
+takes place via the K-CAN. 
+
+Control Unit MDS 
+
+The MDS is installed in the carrier in the glove compartment. 
+
+Functions 
+
+Control Button 
+
+The button functions are described in the Owner's Handbook. 
+
+Glass Tilt Sunroof 
+
+The functions of the glass tilt sunroof are based on the tilt functions of the E60 slide/tilt 
+sunroof. 
+
+Sunroof Visor 
+
+The functions of the sunroof visor are based on the functions of the sunroof visor for the 
+panoramic glass sunroof 
+
+
+25 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+& 
+
+
+
+■ 
+
+ere 
+
+Lrt 
+
+ro 
+
+O 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Lock cylinder, driver’s door 
+
+8 
+
+Car Access System (CAS) 
+
+2 
+
+Door contact, driver’s door 
+
+9 
+
+Motor for glass tilt sunroof 
+
+3 
+
+Driver’s door module (TMFA) 
+
+10 
+
+Motor for sunroof visor 
+
+4 
+
+Safety and Gateway Module (SGM) 
+
+11 
+
+Sunroof switch 
+
+5 
+
+Passenger door module (TMBF) 
+
+12 
+
+Multi-Drive Sunroof module (MDS) 
+
+6 
+
+Door contact, passenger side 
+
+13 
+
+Light Module 
+
+7 
+
+Cas Access System (CAS) 
+
+14 
+
+Light Module control switch 
+
+
+26 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Initialization 
+
+Initialization of the glass tilt sunroof is based on that of the E60. The glass tilt sunroof can 
+be initialized either via the control button or the tester. 
+
+Only full initialization will ensure complete operability of the glass roof. 
+
+Manual Initialization with Control Button 
+
+The characteristic curve is relearned during every new or re-initialization of the glass 
+tilt sunroof. 
+
+Preconditions 
+
+The glass sunroof must be clean and be at room temperature. Terminal 15 ON must be 
+applied. When the glass tilt sunroof is subsequently initialized using the control button, 
+this button must remain pressed until the initialization procedure is concluded. 
+
+The control button is pressed and held in the lift sunroof direction. The initialization run 
+starts up approximately. 15 seconds after pressing the control button. 
+
+Glass Tilt Sunroof 
+
+The glass tilt sunroof can be replaced only together with the sunroof visor. 
+
+The motors and the control unit can be replaced individually. The MDS module must be 
+encoded and initialized after replacement. 
+
+
+27 
+
+5 and 6 Series Body Electronics 
+
+
+
+E 61 Panorama Glass Sunroof 
+
+
+The panorama glass sunroof in the E61 is the same as the panorama glass sunroof on 
+the E53 and the E83. The functional principle is therefore only briefly mentioned here. 
+
+
+
+The Multi Drive Sunroof module (MDS) controls and monitors the electric motors and 
+therefore the movement of the panorama glass sunroof. The MDS is installed on the 
+carrier behind the glove compartment. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+CD Changer (CDC) 
+
+4 
+
+Adaptive Headlight Module (AHL) 
+
+2 
+
+Body Basic Module (KBM) 
+
+5 
+
+Multi Drive Sunroof Module (MDS) 
+
+3 
+
+Safety and Gateway Module (SGM) 
+
+6 
+
+Passive Go (Comfort Access) 
+
+
+28 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions of the Control Button 
+
+
+The control button has three directions of movement. There are therefore three different 
+functions available: a manual function, a pressure-point function and a double-click func¬ 
+tion. The double-click function is when the control button is pressed beyond the pressure 
+point or to the raise position twice in quick succession. This allows the customer to open 
+or close the panorama glass sunroof automatically regardless of its current position. 
+
+The current movement of the panorama glass sunroof can be stopped by pressing the 
+control button in the opposite operating direction. The panorama glass sunroof control 
+button switches to earth and is supplied with power from terminal 58g via the MDS. 
+
+Panorama Glass Sunroof Functions 
+
+
+>1) vy & 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Slide/tilt glass roof panel 
+
+4 
+
+Rear Visor 
+
+2 
+
+Tilt glass roof panel 
+
+5 
+
+Visor Gap 
+
+3 
+
+Front visor 
+
+
+
+
+29 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Initial status: both glass roof panels and both visors closed. 
+
+
+To Open Sunroof Visor 
+
+Press "OPEN" once 
+
+• Signal from switch to control unit 
+
+• Control unit activates rear motor 
+
+• Rear motor opens both visors 
+
+• Roof panel remains closed 
+
+To Open Sunroof Visor and Roof Panel 
+
+Press "OPEN" twice (double-click) 
+
+• Signal from switch to control unit 
+
+• Control unit initially activates rear motor 
+
+• Rear motor opens both visors 
+
+• With a time offset, control unit activates front motor 
+
+• Front motor opens front roof panel 
+
+• Rear motor raises wind deflector 
+
+Tilt Position 
+
+Press "TILT" once 
+
+• Signal from switch to control unit 
+
+• Control unit activates both motors 
+
+• Front motor tilts both roof panels 
+
+• Rear motor moves both visors to gap position (vent position) 
+
+To Close Roof Panels 
+
+Press "CLOSE" once 
+
+• Signal from switch to control unit 
+
+• Control unit activates front motor 
+
+• Front motor closes both roof panels 
+
+
+30 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+To Close Sunroof Visor and Roof Panel 
+
+Press "CLOSE" twice (double-click) 
+
+• Signal from switch to control unit 
+
+• Control unit initially activates front motor 
+
+• Front motor closes both roof panels 
+
+• With time delay, control unit activates rear motor 
+
+• Rear motor closes both visors and releases the wind 
+deflector so that the roof panel can press it down. 
+
+To Close Sunroof Visor 
+
+(only possible with roof panel already closed) 
+
+Press "CLOSE" once 
+
+• Signal from switch to control unit 
+
+• Control unit activates rear motor 
+
+• Rear motor closes both visors 
+
+Speed Control of Wind Deflector with Roof Open 
+
+As from a driving speed of 140 km/h, the control unit receives a speed signal from the 
+DSC control unit. The control unit then activates the rear motor that releases the wind 
+deflector (motor turns only slightly, the sunroof visors do not move). As a result, the wind 
+deflector is pressed into a lower position. 
+
+Toll Operation 
+
+All control functions are also available as toll functions (comfort functions). 
+
+They are activated by pressing beyond the switch notch. 
+
+• Open sunroof visor only 
+
+• Open sunroof visor and roof panel (up to comfort setting) 
+
+• Roof panel tilt position and visor vent position 
+
+• Close roof panel only 
+
+• Close roof panel and sunroof visor 
+
+• Close sunroof visor only with roof panels already closed 
+
+
+31 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Convenient Opening and Closing via Key 
+
+The roof can also be operated by pressing and holding the remote control 
+in "open" or "close" direction. 
+
+Initialization 
+
+• Press switch in tilt position 
+
+• Both roof panels move to tilt position, both visors move to vent position 
+
+• Press and hold switch for 15 seconds 
+
+• Initialization begins (keep switch pressed) 
+
+• Both sunroof visors open 
+
+• Both roof panels are lowered 
+
+• Both roof panels open and close again 
+
+• Both sunroof visors close 
+
+• Release switch, panorama glass sunroof is initialized 
+
+Anti-trapping Circuit 
+
+Both the roof panels as well as the sunroof visors are eguipped with an anti-trapping 
+circuit. If the control unit recognizes a trapping situation, the corresponding motor is 
+stopped and driven in the opposite direction. 
+
+As a result, the roof panel or sunroof visor opens again (approximately. 15 cm) releasing 
+the obstruction. 
+
+
+32 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Central Locking System 
+
+The central locking system involves the actuation/evaluation of the doors, trunk and fuel 
+filler flap. The central locking functions of the doors are eguipped with double lock 
+functions and operate in accordance with the two-motor principle. 
+
+The door modules control the central locking functions of the front doors. The KBM 
+controls the central locking in the rear area. 
+
+
+
+02114_02 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Lock cylinder, driver’s door 
+
+12 
+
+Door contact, driver’s door 
+
+2 
+
+Trunk release button, interior 
+
+13 
+
+Central locking , driver’s door 
+
+3 
+
+Central locking button 
+
+14 
+
+Door contact, front passenger door 
+
+4 
+
+Remote control (key) 
+
+15 
+
+Central locking, passenger door front 
+
+5 
+
+Lock cylinder, trunk/tailgate 
+
+16 
+
+Door contact, rear driver’s side door 
+
+6 
+
+Trunk release button , exterior 
+
+17 
+
+Central locking, rear driver’s side door 
+
+7 
+
+Safety and Gateway Module (SGM) 
+
+18 
+
+Door contact, rear passenger side door 
+
+8 
+
+Car Access System (CAS) 
+
+19 
+
+Central locking, rear passenger side door 
+
+9 
+
+Driver’s door module (TMFA) 
+
+20 
+
+Central locking, fuel filler flap 
+
+10 
+
+Passenger door module (TMBF) 
+
+21 
+
+Central locking, tailgate 
+
+11 
+
+Body Basic Module (KBM) 
+
+
+
+
+33 
+
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The central locking system consists of the following control inputs: 
+
+• Driver's door lock cylinder 
+
+• Center-lock button 
+
+• Remote control key 
+
+• Trunk lock cylinder 
+
+The system can be additionally unlocked via the crash sensor and forced release is possi¬ 
+ble by means of the "key inserted" signal in the CAS. A function is triggered when a 
+status change at the respective input is detected. If several new ZV commands are given 
+while a command is being carried out, only the last command will be subsequently exe¬ 
+cuted. 
+
+The CAS is the central locking master and is responsible for enabling all central locking 
+procedures in the vehicle. 
+
+The central locking can assume following statuses: 
+
+
+Status 
+
+Explanation 
+
+Unlocked 
+
+All locks are in the unlocked position, outer and inner door handles are operational. 
+
+Selective Unlocked 
+
+The driver’s door in unlocked. All other locks are in the lock position. 
+
+Locked 
+
+All locks are in the lock position. Outer door handles are not operational. Inner door handles 
+
+are operational 
+
+Secured 
+
+All locks are in the lock position. Inner and outer door handles are not operational. 
+
+Opened 
+
+At least one lock is in the unlocked position. 
+
+
+Secure Lock (Double Lock) 
+
+The secure lock function (locking of the vehicle from the outside using either the remote 
+or the drivers door lock cylinder) uses a mechanical coupling to uncouple the locking pin 
+of the door from the lock. The vehicle can then no longer be opened by the following 
+actions: 
+
+• Pulling the locking buttons 
+
+• Pulling the inner door handle 
+
+• Pulling the outer door handle 
+
+• Pressing the center-lock button 
+
+Secure lock is only possible: 
+
+• At terminal R off and key not inserted 
+
+• After opening and closing the driver's door or Opening the passenger's door 
+
+No action takes place following the secure lock request when the driver's door is open. 
+
+A secure locked (secured) vehicle cannot be unlocked via diagnosis functions. 
+
+A secure locked (secured) vehicle can be changed to “Lock status” by pressing the 
+center console lock button (CLT). 
+
+
+34 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The vehicle lock status is changed from secure to unlocked when the CAS recognizes a 
+valid transponder key has been inserted. 
+
+Automatic Locking 
+
+If the system is not yet locked or if a door was opened with the ZV locked, a lock com¬ 
+mand is executed on exceeding a speed of 16 km/h. 
+
+Crash Unlock 
+
+In the event of a crash, the safety and gateway module (SGM) releases the central locking 
+system (ZV) via the bus network at terminal R or 15. 
+
+The ZV assumes "crash mode" even when the central locking was already unlocked. 
+
+Crash unlock is disabled when the vehicle status is secure lock. 
+
+Crash mode is released when an unlock/lock request is made. This corresponds to deac¬ 
+tivation of crash mode. 
+
+Power on Status 
+
+The central locking status does not change by disconnecting and reconnecting the 
+supply voltage. There is no reaction if command inputs are active while reconnecting the 
+supply voltage (reset). 
+
+DWA - Central Lock Interface 
+
+The anti-theft alarm system DWA is not an integral part of the central locking system, 
+however, it requires commands and signals from this system. The central locking system 
+(ZV) monitors the status of the doors, hood,trunk, fuel filler flap and terminals. The DWA 
+monitors the tilt alarm sensor (NG) as well as the ultrasonic interior protection system 
+(USES). 
+
+The DWA is armed by means of any valid ZS command from an authorized control point 
+or via the remote control. An LED provides an optical signal of the DWA status. 
+
+The tilt alarm sensor and interior protection are switched off if a ZS command is initiated 
+within 3 s after initially arming the DWA. 
+
+The luggage compartment is accessible without triggering alarm even when the DWA is 
+armed via the remote control. An alarm is triggered if the lock cylinder on the trunk is 
+operated mechanically with the DWA armed. 
+
+Remote Control FBD 
+
+Evaluation of the logic remote control (FBD) signals is integrated in the CAS control unit. 
+In addition to various other functions, the central locking functions that can be coded in 
+the key memory can be selected "personalized" in the CAS control unit. 
+
+It is possible to actuate the central locking by means of a second remote control with the 
+key inserted. 
+
+
+35 
+
+5 and 6 Series Body Electronics 
+
+
+
+Different personalized functions can be selected depending on the type of remote control 
+key used. The functions "selective ZV", "lock as from 16 km/h" as well as "lock after 2 
+minutes" can be coded in the CAS. 
+
+The remote control number identifies the key on which the "unlock" button was last 
+pressed. Irrespective of this function, the currently used key is always identified as the 
+control point in connection with the "unlock trunk" function. 
+
+Trunk Locking 
+
+The trunk can be unlocked and opened via: 
+
+• Radio remote control FBD 
+
+• External trunk button on boot lid handle 
+
+• Internal trunk button in driver's footwell 
+
+• Lock cylinder on trunk; purely mechanical 
+
+Hotel Setting 
+
+The hotel setting is initiated via the lock cylinder of the trunk. The following control 
+points are deactivated when the hotel setting is initiated: 
+
+• Trunk button via remote control 
+
+• Exterior trunk button 
+
+• Interior trunk button 
+
+The trunk remains locked even when the vehicle is unlocked. The hotel setting is indicat¬ 
+ed to the customer by means of the switch position. 
+
+The push-button on the trunk is therefore only active when the vehicle is unlocked and 
+stationary and not when the hotel setting is initiated. 
+
+The interior button is additionally active even when the vehicle is locked but only up to 
+the specified speed threshold. 
+
+The system can always be unlocked via the remote control with the ignition key removed 
+without the hotel setting engaged. 
+
+Automatic Relock 
+
+The central locking unlocks (selective or global, corresponding to coding) when a release 
+command is triggered inadvertently via the remote control. If no door or hood/trunk is 
+opened within 2 minutes, the central locking reassumes the locked status in connection 
+with the coding "automatic relock." 
+
+
+36 
+
+5 and 6 Series Body Electronics 
+
+
+
+Car & Key Memory 
+
+The central individualization elements are the coding data of the vehicle. Certain code- 
+able functions are enabled for the car memory as part of the individualization procedure. 
+
+In connection with the personalization, individual functions depending on the vehicle key, 
+maximum 4, used to unlock the system, are also controlled for the central locking. 
+Otherwise the central locking operates in accordance with the coded basic setting. 
+
+The central locking functions therefore depend on the personalization of the 4 vehicle 
+keys and on the standard coding for the vehicle. 
+
+Codeable Key Memory Functions 
+
+
+Coding 
+
+Description 
+
+Automatic relock 
+
+Relock after 2 minutes 
+
+Speed lock 
+
+Lock from 16 km/h 
+
+Selective unlock 
+
+Only if the driver’s door is unlocked 
+
+
+Codeable Car Memory Functions 
+
+
+Coding 
+
+Description 
+
+Terminal R prohibits trunk operation 
+
+The trunk is not opened when terminal R is engaged 
+
+Unlock on removing key 
+
+The vehicle unlocks after the key is removed if the system 
+was locked via the speed lock or terminal R lock. 
+
+Crossover operation disabled 
+
+A vehicle locked via the remote can not be unlocked with 
+
+the key. 
+
+
+37 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windshield Wiping/Washer System 
+
+The wipe/wash system is a conventional wipe/wash system with reset contact. All 
+wipe/wash functions can be activated with the wiper switch once terminal R is on. The 
+rain and light sensor (RLS) is fitted as standard. Wiper system functions are vehicle 
+speed dependent. 
+
+To reduce noise and wear, the load circuit of the wiper motor has been designed as an 
+external double relay. The wipers are driven by an electric motor with a reducer gear. A 
+transistor is integrated in the body base module (KBM) for the washer fluid pump. 
+
+The wiper blades have a new method of attachment to the windshield-wiper arm. 
+
+The wash/wipe system no longer has ball-and-socket type washer jets. Instead, fan-type 
+jets are used (fluidic jets). 
+
+The washer jet heater is controlled by the IHKA module. And a headlight cleaning 
+system is offered as an option 
+
+The Touring (E61) has a rear window wiper with a separate rear window washer pump as 
+standard. 
+
+System Components 
+Wiper Switch 
+
+The wiper switch is operated by a brief press (similar to E65). The wiper switch does not 
+lock into place. 
+
+The signal from the wiper switch is passed on by the steering column switch cluster 
+(SZL) to the Safety and gateway module (SGM). The SGM transmits the signal to the 
+KBM. 
+
+The axial switch on the end of the wiper switch is used to activate automatic mode (auto¬ 
+matic control of wipers by rain/light sensor). When automatic mode is not active, intermit¬ 
+tent wiper mode is controlled according to vehicle speed. 
+
+
+
+38 
+
+5 and 6 Series Body Electronics 
+
+
+Wiper System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering Column Switch 
+
+7 
+
+Wiper Motor 
+
+2 
+
+SZL 
+
+8 
+
+Wipe/Wash Relay 
+
+3 
+
+RLS 
+
+9 
+
+Washer Fluid Pump 
+
+4 
+
+SGM 
+
+10 
+
+SRA Relay 
+
+5 
+
+CAS 
+
+11 
+
+SRA Pump 
+
+6 
+
+KBM 
+
+
+
+
+39 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rain and Light Sensor (RLS) 
+
+The rain/light sensor is integrated in the rear-view mirror pedestal attached to the 
+windshield. The RLS is a combined rain sensor and ambient light sensor. It detects the 
+amount of rain falling on the windshield in order to control the windshield wipers, and the 
+level of ambient light in order to control the headlights. 
+
+The rain sensor sends the "Switch on wipers" reguest to the body basic module (KBM) 
+via the body CAN-Bus (K-CAN). 
+
+If the rain and light sensor should fail or be faulty, the KBM will take control. The KBM will 
+switch to an emergency mode. Emergency mode is a speed-dependent intermittent 
+mode. 
+
+
+
+Safety and Gateway Module 
+
+The SGM switches the wiper switch signal from the byteflight to the K-CAN via SZL. 
+
+Steering Column Switch Cluster 
+
+The steering-column switch cluster (SZL) forms the interface between the wiper switch 
+and the Safety and gateway module (SGM). The signals are transmitted via the byteflight 
+data bus. 
+
+Integrated automatic heating and air-conditioning system 
+
+The integrated automatic heating and air-conditioning module (IHKA) controls the 
+washer-jet heating system. 
+
+
+40 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Body Basic Module (KBM) 
+
+The body basic module (KBM) receives all the 
+information that is required for operation of the 
+wipe/wash system. 
+
+The body base module activates the following 
+components: 
+
+• Dual relay module for the wiper motor 
+
+• Relay for the headlight cleaning system 
+
+• Washer fluid pump 
+
+The KBM also controls the wash/wipe system 
+on the Touring (E61) which also includes the 
+wash/wipe system for the rear window). 
+
+The body basic module is connected via the 
+K-CAN and communicates with the: 
+
+• Safety and gateway module (SGM) 
+
+• Rain-light sensor (RLS) 
+
+• Integrated automatic heating and air 
+conditioning system (IHKA) 
+
+
+
+The following systems are outputs/actuators of the wiper/washer system: 
+
+
+Wiper Motor 
+
+The wiper system is a twin-arm synchronous system with reciprocating action (four-bar 
+linkage). The motor is a rotary motor without an electronic module and is controlled by 
+KBM via a double relay. 
+
+The wiper motor's end position (off position) is detected by a reset contact integrated in 
+the wiper motor. The crank is permanently connected to the wiper motor. 
+
+
+
+41 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Touring (E61): 
+
+The rear window wiper motor is mounted on the rear window and is controlled by the 
+KBM via a relay. 
+
+The rear window wiper motor's end position (off position) is detected by a reset contact 
+integrated in the wiper motor. 
+
+Windshield and Rear Window Washer Pump (on the Touring) 
+
+Both washer pumps are attached to the washer fluid reservoir. The washer pumps are 
+controlled by the KBM. The washer jets are not adjustable. The new-design washer jets 
+(fluidic jets) produce a pulsating, fan-shaped jet of fluid. 
+
+Headlamp Washer Pump 
+
+The headlamp washer system is an option. The option includes a washer fluid reservoir 
+which holds 5 liters instead of 3 liters. (Note: the Touring reservoir always holds 5 liters). 
+
+The headlamp-washer pump is mounted on the washer-fluid reservoir. The washer 
+pump is controlled by the KBM via a relay. 
+
+Heated Washer Jets 
+
+The washer-jet heater system prevents the washer jets freezing in cold weather. 
+
+The washer-jet heater system is controlled by the IHKA module on the basis of outside 
+temperature (< 3°C). The washer-jet heating system consists of heating resistors. 
+
+System Functions 
+
+The wash/wipe system incorporates the following functions: 
+
+• Wiper functions 
+
+• Windshield and rear window wash function (on the Touring) 
+
+• Headlight washer function 
+
+• Safety function 
+
+Wiper Functions 
+
+The windshield-wiper functions are available as soon as Terminal R status is ON. 
+
+The following wiper functions are provided (see also wiper switch system): 
+
+• Flick wipe (one-wipe) 
+
+• Intermittent wipe 
+
+• Wiper speed 1 
+
+• Wiper speed 2 
+
+• Automatic wipe controlled by rain-light sensor 
+
+
+42 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Touring (E61) 
+
+The rear window is wiped intermittently (the customer can program the duration of the 
+intervals, see Owner's Handbook). 
+
+No wiper operation is allowed when the rear window is open (via rear window contact 
+switch). 
+
+When reverse gear is engaged intermittent operation switches to constant wiping. 
+
+Windshield and Rear Window Wash Function (on the Touring) 
+
+The windshield-washer functions are available as soon as Terminal R status is ON. 
+
+To operate the windshield washer, the wiper switch is pulled backwards (towards driver). 
+
+Touring: To wash the rear window, the wiper switch must be pushed forwards (away from 
+the driver) (speed 2). 
+
+The washer pump continues running as long as the switch is held in that position. If the 
+wiper switch is operated only momentarily (< 300 ms), only the washer pump switches 
+on. If the switch is held in position for longer, the wipers come into action after a short 
+delay. After the washer pump has switched off, the wipers complete three more wipes to 
+dry the windshield. 
+
+Headlamp Washer System 
+
+When the low beams headlights are switched on, the headlamps are washed every 10th 
+time the windshield washer is operated. 
+
+After ignition ON and dipped beam headlights ON: 
+
+The headlamps are cleaned at the same time as the first wash movement for the 
+windshield. 
+
+Wash-cycle sequence: 
+
+• 0.7 seconds ON 
+
+• 1.3 seconds OFF 
+
+• 0.7 seconds ON 
+
+After the headlamps have been washed, they cannot be washed again for another 10 
+minutes (repeat lock). 
+
+The repeat lock is reset by Terminal R status OFF. 
+
+
+43 
+
+5 and 6 Series Body Electronics 
+
+
+
+Safety Function 
+
+The signal from the reset contact on the wiper motor (also the rear window wiper on the 
+E61) is used as an anti-jamming function for the wiper motor. If the signal from the 
+resetting switch is not present when the wiper motor is switched on, the wiper motor is 
+switched off again. 
+
+The wiper motor can then only be switched on one more time. 
+
+After that, the wiper motor can only be switched on subject to the following conditions: 
+
+• 3 minutes have elapsed 
+
+• Terminal R OFF followed by Terminal R ON 
+
+The wiper motor can only be switched on by operating the wiper switch (not automatical¬ 
+ly due to risk of injury). 
+
+Once the anti-jamming function has been activated, the windshield-washer and head¬ 
+lamp-washer pumps can be operated 3 more times. 
+
+Replacing the Wiper System 
+
+Note: Operate the windshield-wiper switch before fitting the windshield-wiper arms. 
+
+Press the windshield-wiper switch once before fitting the windshield-wiper arms. 
+
+The wiper motor will then return to the parked position. 
+
+A replacement windshield-wiper system is supplied set to the change-over position. This 
+enables fitting of the left-hand mounting bracket (2 screws). 
+
+
+44 
+
+5 and 6 Series Body Electronics 
+
+
+
+Workshop Hints 
+
+Wiper Blades 
+
+The new-design wiper blades make removing/refitting easier and quicker. 
+
+When the wiper blades are replaced, the wiper-blade bearings are replaced as well. Worn 
+wiper blade bearings do not therefore necessitate replacement of the windshield-wiper 
+arms. The angle at which the wiper blade is set on the windshield-wiper arm is 
+adjustable (± 4°). 
+
+The wiper blades carry a model identification code (e.g. 5). The fixing geometry of the 
+wiper-blade bearing prevents reversal of the left and right wiper blades. 
+
+
+
+
+Washer Jets 
+
+The washer jets are no longer adjustable (not ball-and-socket type). The E60 is fitted with 
+fluidic washer jets. These jets wet the entire surface of the windshield (fan-shaped jet). It 
+is neither possible nor necessary for the customer/service technician to adjust the jet. 
+
+
+
+45 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access System 
+
+The CAS of the E60 is based on the CAS of the E65. The internal designation is CAS 2. 
+
+The following changes have been made compared with the CAS of the E65: 
+
+• Direct connection to the K-CAN 
+
+• Repeater function has been omitted 
+
+• Ignition starter switch and the CAS are 2 separate components 
+
+• Data transfer as part of the Condition Based Service 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Light switch with control panel 
+
+4 
+
+CAS 
+
+2 
+
+Instrument Cluster 
+
+5 
+
+Light Module 
+
+3 
+
+SZL 
+
+6 
+
+TMFA 
+
+
+46 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The CAS includes the following functions: 
+
+• Reading in ignition starter switch (ZAS) 
+
+• Transponder authentication 
+
+• Terminal control 
+
+• Electronic immobilizer enable to injection system 
+
+• Master function for central locking system (ZV) 
+
+• Master function for power windows (FH) and slide/tilt sunroof (SHD) 
+
+• Remote control services (FBD) 
+
+• Internal CAS functions 
+
+- Wake-up signals 
+
+- Sleep signals 
+
+• Vehicle functions 
+
+- Personalization 
+
+- Auto encoding of vehicle model/transmitter 
+
+- Vehicle order 
+
+- Total distance recorder 
+
+- Condition Based Service CBS 
+
+- Voltage supply, brake-light switch 
+
+Wake-up Time 
+
+The vehicle can be woken up by various control units. 
+
+These control units have different wake-up times. 
+
+
+Control Unit 
+
+Wake-up time 
+
+CAS 
+
+750 milliseconds 
+
+SGM 
+
+500 milliseconds 
+
+IBS 
+
+550 milliseconds 
+
+
+47 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAS System Overview 
+
+
+PTCAN 
+
+
+vi) 
+
+
+
+© 
+
+
+® 
+
+KBM 
+
+
+SGM 
+
+
+K-CAN 
+
+
+2 i - 
+
+
+2 3 
+
+
+
+& 
+
+
+3 
+
+
+
+
+ft 3 
+
+
+yg 
+
+
+3 
+
+
+\ 
+
+
+
+'5 
+
+
+
+
+vi) 
+
+
+
+CAS 
+
+
+
+
+3 ) 
+
+© 
+
+
+© 
+
+DME 
+
+
+EGS 
+
+
+SMG 
+
+
+m 
+
+
+
+
+* . 
+
+
+w 
+
+vD 
+
+W 
+
+
+
+
+
+
+3 
+
+
+
+3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+KBM 
+
+12 
+
+Integrated Power Supply Module (IVM) 
+
+2 
+
+SGM 
+
+13 
+
+Starter 
+
+3 
+
+CAS 
+
+14 
+
+Hood Contact 
+
+4 
+
+DME (ECM) 
+
+15 
+
+Ignition/Starter Switch 
+
+5 
+
+EGS/SMG 
+
+16 
+
+Remote 
+
+6 
+
+Output EWS 
+
+17 
+
+Radio Receiver 
+
+7 
+
+Output Terminal R (KLR) 
+
+18 
+
+Brake Light Switch 
+
+8 
+
+Output Terminal 15 Wake-up 
+
+19 
+
+Clutch Switch Module 
+
+9 
+
+Output Terminal 15-1 to 15-3 
+
+20 
+
+Centerlock Button 
+
+10 
+
+Output Terminal 30g Relay 
+
+21 
+
+DSC 
+
+11 
+
+ACC wake-up line 15WUP_RS 
+
+22 
+
+Trunk Lock Cylinder 
+
+
+48 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Condition Based Service 
+
+The data for Condition Based Service (CBS) is updated during each journey. The fault 
+memory data is also updated during each journey. The conditions for this are: 
+
+• Activation of terminal 15, speed exceeded 50 km/h and speed dropped below 
+30km/h 
+
+• The data is updated after a distance of 10 km has been covered and after speed has 
+dropped below 30 km/h 
+
+Manual Update of CBS Data 
+
+The procedure for transferring current data to the key during servicing is as follows: 
+
+- Insert key in ignition and turn to position "R" 
+
+- Press and hold Centerlock button 
+
+- After 15 s the CBS data will have been transferred to the key 
+
+- Read out the key 
+
+Manual Update of Fault Memory Data 
+
+- Press and hold Centerlock button 
+
+- Insert key in ignition 
+
+- Turn key from position "0" to position "R" 
+
+- After 15 s, the fault memory data will have been transferred to the key 
+
+- Read out the key 
+
+
+49 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - CAS 
+
+
+Using an instructor designated vehicle, locate the CAS and prepare to connect the 
+appropriate test cables. 
+
+Using the Oscilloscope, measure the EWS signal between the CAS and the DME 
+(ECM). 
+
+
+Describe the signal shown and record scope settings below: 
+
+
+Using the appropriate fused jumper, ground the EWS signal. Remove ignition key for 
+20 seconds, then attempt to start vehicle. 
+
+What is observed regarding vehicle starting, fault codes etc? 
+
+
+Using the correct ETM, list the correct CAS pin numbers for the following: 
+
+SBE/OC-3 Power supply/Wakeup 
+SZL power supply/Wakeup 
+
+ACC Power supply/Wakeup _ 
+
+KL30g _ 
+
+Brake light switch input 
+
+
+50 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: Chassis #: Production Date: 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+
+51 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. What is different between the CAS module in the E65/66 and the CAS module in 
+the 5 and 6 series? 
+
+
+2. Describe the communication path between the driver’s door window switch and 
+the passenger door power window motor: 
+
+
+3. Describe how the byteflight bus is involved in power window operation: 
+
+
+4. How is the LIN bus involved in the power window system? 
+
+
+5. Where are the door contact switches located and what is this input used for? 
+
+
+52 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+Regarding sunroof operation, What is “Panic Mode” and How is it initiated? 
+
+
+How does the E63 sunroof differ from the E60 sunroof? 
+
+
+Describe the signal path for the operation of the wipers? 
+
+
+What special tool is used to adjust the washer nozzles on the E60? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anti-theft Alarm System 
+
+
+The anti-theft alarm system (DWA) detects and reports attempts at vehicle tampering or 
+intrusion. The vehicle interior is monitored by the ultrasonic interior motion detector 
+(USIS). If an attempt is made to break into the vehicle and to enter the interior, the DWA 
+alarm is triggered. A tilt alarm sensor integrated into the siren monitors the vehicle's 
+position. The tilt alarm sensor detects if the vehicle is raised or towed away. The DWA 
+system uses an acoustic alarm via siren and visual indication via the exterior lights which 
+are controlled through the Lamp Module (LM). 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DWA control unit 
+
+7 
+
+Safety and Gateway Module (SGM) 
+
+2 
+
+DWA LED in rearview mirror housing 
+
+8 
+
+Passenger’s door module (TMBF) 
+
+3 
+
+Siren (Acoustic Alarm) 
+
+9 
+
+Car Access System (CAS) 
+
+4 
+
+Light Module (for visual indication) 
+
+10 
+
+Tilt alarm sensor in siren housing (SINE) 
+
+5 
+
+Body Basic Module (KBM) 
+
+11 
+
+Ultrasonic interior motion sensor (USIS) 
+
+6 
+
+Driver’s door module (TMFA) 
+
+
+
+
+54 
+
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The anti-theft alarm system receives input 
+signals from the following components: 
+
+Ultrasonic Interior Motion Sensor 
+
+The ultrasonic interior motion sensor uses 
+ultrasonic waves to monitor the vehicle interi¬ 
+or. Movement is detected if the reflection 
+(echo) of the ultrasonic waves changes. The 
+sensitivity of the ultrasonic interior motion 
+sensor can be adapted to different conditions 
+(e.g. sliding/tilting sunroof open). 
+
+
+
+USIS with integrated 
+DWA module 
+
+
+Tilt Alarm Sensor 
+
+The tilt alarm sensor monitors the vehicle's 
+horizontal position (inclination in longitudinal 
+and lateral directions). The signal from the tilt 
+alarm sensor is evaluated by the microproces¬ 
+sor in the siren. The tilt alarm sensor detects a 
+change in the vehicle position and triggers a 
+DWA alarm. 
+
+Hood Contact Switch 
+
+The hood contact switch is a ground input to 
+the CAS to indicate the status of the hood. 
+
+
+
+The following control units are involved in the anti-theft alarm system: 
+
+
+DWA Control Unit 
+
+The DWA control unit is integrated into the housing for the ultrasonic interior motion 
+sensor. The DWA control unit activates the siren via a single-wire bus. The DWA control 
+unit is connected to the K-CAN. 
+
+
+Car Access System 
+
+The CAS control unit monitors the status of the central locking system. The hood 
+contact switch is connected to the CAS control unit. The opening of the hood is thus 
+monitored (open or closed). The CAS control unit feeds this signal to the DWA control 
+unit via the K-CAN. The CAS control unit also supplies the flowing signals: 
+
+• Trunk-lid unlocking via remote control 
+
+• Key in ignition starter switch 
+
+• Status of convenience opening/closing 
+
+
+55 
+
+5 and 6 Series Body Electronics 
+
+
+
+Driver's and Front-Passenger Door Modules 
+
+The door modules (TMFA and TMBF) supply information about the position of the front 
+power windows. The signal is fed to the DWA control unit via the K-CAN. 
+
+In addition, the door modules monitor the door contacts in the front doors. 
+
+Body Basic Module (KBM) 
+
+The KBM supplies the position of the rear power windows. The signal is fed to the DWA 
+control unit via the K-CAN. 
+
+The body basic module also monitors: 
+
+• Door contacts in rear doors 
+
+• Tailgate contact switch 
+
+• Rear window contact switch (E61 only) 
+
+Sliding/tilting Sunroof Control Unit 
+
+The SHD control unit supplies information about the position of the sliding/tilting sunroof 
+(or Panorama glass sunroof on the E61). The signal is fed to the DWA control unit via the 
+K-CAN. 
+
+Integrated Heating and Air Conditioning System 
+
+The integrated heating and air conditioning system (IHKA) controls the independent 
+ventilation function. The IHKA feeds this signal to the DWA control unit via the K-CAN. 
+The signal for the independent ventilation function is needed to calibrate the sensitivity of 
+the ultrasonic interior motion sensor. 
+
+Light Module 
+
+The light module (LM) actuates the lighting system for the visual DWA alarm. The DWA 
+control unit feeds the triggering signal to the light module via the K-CAN. 
+
+The following actuators are actuated for the anti-theft alarm system: 
+
+Siren with Integrated Tilt Alarm Sensor 
+
+The siren with integrate tilt alarm sensor (SINE) emits the acoustic DWA alarm. The DWA 
+control unit activates the siren via a single-wire bus. In addition to the DWA alarm, the 
+siren can also emit an acoustic confirmation signal when the system is primed or 
+disarmed (can be set on the Central Information Display and controller). 
+
+
+56 
+
+5 and 6 Series Body Electronics 
+
+
+
+DWA LED 
+
+
+
+The DWA LED is located on the underside of the interior mirror and provides a visual 
+indication of the status of the alarm system. The DWA LED is directly actuated by the 
+DWA control unit via a wire. The following displays are possible: 
+
+• DWA LED off: DWA is disarmed. 
+
+• DWA LED flashes (frequency = 0.5 Hz): DWA is primed. 
+
+• DWA LED flashes with a frequency of 2 Hz for 10 seconds and then continues with 
+
+a frequency of 0.5 Hz: DWA is primed but a door or hatch is not closed or a sensor is 
+defective. 
+
+• DWA LED flashes with a frequency of 2 Hz for 5 minutes and then continues with a 
+frequency of 0.5 Hz: alarm is triggered. 
+
+• DWA LED lights up for 2 seconds and then flashes with a frequency of 0.5 Hz: the 
+ultrasonic interior motion sensor and the tilt alarm sensor are deactivated. 
+
+
+57 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+The anti-theft alarm system incorporates the following functions: 
+
+• Priming/disarming 
+
+• DWA alarm triggering (alarm-trigger signal) 
+
+• Automatic adaptation of sensitivity of ultrasonic interior motion sensor 
+
+• Deactivating interior motion sensor and tilt alarm sensor 
+
+• Emergency function for acoustic DWA alarm 
+
+• Combined operation with lock cylinder and remote control 
+
+Arming (priming)/disarming 
+
+The anti-theft alarm system is primed when the central locking is locked/deadlocked. 
+Locking/deadlocking reguires: 
+
+The driver's door to be opened and closed after terminal 15 is switched OFF. 
+
+The DWA control unit transmits the "Prime" message to the siren with integrated tilt 
+alarm sensor (SINE) via the local data bus. The siren is then immediately primed. 
+
+3 seconds after being primed, the door and hatch contacts are monitored. The condition 
+for this is that the contacts have idle status (doors and tailgate / rear window on E61 
+closed). 
+
+The DWA LED starts flashing and the hazard warning lights flash once as a visual confir¬ 
+mation. Depending on the national version, a short acoustic warning tone may also sound 
+from the siren (see national version). 
+
+After the DWA has been primed and all doors and hatches are closed (including the rear 
+window on the E61): 
+
+• The ultrasonic interior motion sensor starts to map out the interior by means of ultra¬ 
+sonic waves. The interior can be monitored after approximately 20 seconds. 
+
+• The monitoring of the interior is interrupted if the side windows and/or the sliding/tilt¬ 
+ing sunroof are closed using the convenience closing function. 
+
+• Like the interior monitoring, the tilt monitoring does not start until the doors and 
+hatches are closed. When it is activated, the tilt alarm sensor first conducts a 30 
+second long calibration sequence. Tilt monitoring does not start until the calibration 
+sequence has been completed. 
+
+• If the luggage compartment is opened during the calibration sequence, the calibra¬ 
+tion sequence is interrupted. The calibration sequence is then restarted when the 
+luggage compartment is closed again. The monitoring functions of the ultrasonic 
+interior motion sensor and the tilt alarm sensor have priority. If a faulty door or hatch 
+contact is detected, this will automatically be assumed to be closed. 
+
+
+58 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+• The anti-theft alarm system is disarmed when the central-locking system is 
+unlocked. The DWA LED stops flashing and the hazard warning lights flash twice 
+as a visual confirmation. 
+
+• The luggage compartment can also be unlocked and opened with the remote con¬ 
+trol without the alarm being triggered, even if the alarm system is activated. When 
+the luggage compartment is opened, the interior monitoring and tilt monitoring are 
+deactivated. The interior monitoring and tilt monitoring are reactivated as soon as the 
+luggage compartment is closed again. 
+
+DWA Alarm Triggering (Alarm-trigger Signal) 
+
+The DWA alarm is triggered if an alarm status is detected while the alarm system is 
+activated. The following will trigger the DWA alarm: 
+
+• Forced opening of a door: Bus signal from door contact (via door modules or KBM. 
+
+• Forced opening of luggage compartment: Bus signal from tailgate contact switch via 
+KBM. 
+
+• Forced opening of rear window on E61: Bus signal from rear window contact switch 
+(via KBM) 
+
+• Forced opening of hood: Bus signal from hood contact switch (via CAS) 
+
+• Movement in interior: Signal from ultrasonic interior motion sensor 
+
+• Vehicle in inclined position: Signal from tilt alarm sensor 
+
+• Open circuit in local data bus (between DWA control unit and siren) 
+
+• Monitoring of vehicle battery: 
+
+- On-board supply voltage drops from 7.5 to 6.5 volts within 40 minutes 
+
+- Battery positive cable cut through 
+
+- On-board supply voltage > 18 volts 
+
+When a DWA alarm is triggered, the DWA control unit activates the siren via the local data 
+bus. At the same time, the DWA control unit transmits a message through the K-CAN. 
+The light module activates the visual alarm via the lighting system. 
+
+The siren can trigger an acoustic alarm if it is separated from the vehicle electrical system 
+by manipulation while the DWA is activated. 
+
+If the local data bus is separated as this happens, the DWA control unit will also trigger 
+the visual alarm. 
+
+A DWA alarm will immediately be cancelled if: 
+
+• The DWA is disarmed (e.g. with the remote control) 
+
+• The message "key is in ignition lock" is detected (from CAS) 
+
+
+59 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+CAS Authentication to Prevent Tampering 
+
+To prevent the DWAfrom being easily disarmed by the central locking and tailgate status 
+message "Central locking control" using a CAN tool, the CAS authenticates itself with the 
+DWA. 
+
+Each time an unlocked vehicle is locked for the first time, the CAS sends an authentica¬ 
+tion to the DWA. Any further "locking" signals are then no longer accepted. 
+
+When the system is disarmed, the DWA expects the CAS to again send authentication 
+with the first locking operation. 
+
+The system permits two disarming attempts with the wrong authentication, after which 
+an alarm is issued. 
+
+Forced Disarming 
+
+The DWA is forcibly disarmed if a person located in the vehicle centrally locks the vehicle 
+and then inserts the key into the ignition. The CAS evaluates this action and transmits a 
+"locked" message. The DWA is thus disarmed. 
+
+Independent Voltage Supply 
+
+Due to the independent voltage supply, the emergency siren can issue an alarm even 
+when the vehicle voltage supply is disconnected. The independent voltage supply is pro¬ 
+vided by Lithium (Li) cells. The Li cells are not rechargeable. The status of the batteries 
+can be read out via the diagnostics system. 
+
+Reverse Polarity Detection 
+
+The reverse polarity detection system detects reverse polarity in the event of the vehicle 
+being jump-started and stores this in its information memory. 
+
+System Power-Down for Storage 
+
+If the emergency siren is disarmed and without an external power supply, the batteries 
+switch to a low power status. Current consumption is then a maximum of 25 A. 
+
+The electronics return the emergency siren to its normal operating status when the vehi¬ 
+cle battery is reconnected. 
+
+Bus Monitoring 
+
+If the DWA detects messages on the local DWA bus that indicate attempts to disarm or 
+tamper with the emergency siren or the tilt sensor, an alarm will be triggered. 
+
+
+60 
+
+5 and 6 Series Body Electronics 
+
+
+
+Automatic adaptation of sensitivity of ultrasonic interior motion sensor 
+
+
+To prevent false alarms, the sensitivity of the ultrasonic interior motion sensor is adapted 
+to the vehicle's conditions. To do this, the DWA control unit (and thus also the ultrasonic 
+interior motion sensor) receives the following information via the K-CAN: 
+
+
+Position of front power windows (door module, driver and front passenger) 
+Position of rear power windows (body basic module) 
+
+Position of sliding/tilting sunroof (sliding/tilting sunroof control unit) 
+
+Status of comfort functions, e.g. convenience opening (Car Access System) 
+Independent ventilation function (IHKA) 
+
+
+The range (sensitivity) of the ultrasonic signals is adapted. The positions of the side win¬ 
+dows and the sliding/tilting sunroof are evaluated by the DWA. If no position value is avail¬ 
+able, a less sensitive setting is selected. 
+
+
+If the DWA is activated and a comfort function is executed (e.g. convenience closing 
+using remote control): 
+
+• If the position of the side windows or sliding/tilting sunroof is changed, the interior 
+monitoring function is deactivated for as long as the closing procedure runs. 
+
+• After the closing movement has been completed, or at most after 25 seconds the 
+positions of the side windows and sliding/tilting sunroof are re-evaluated and the 
+sensitivity adapted. 
+
+The switching-on of the independent ventilation is also monitored to prevent false alarms 
+(movement in vehicle interior caused by airflow). 
+
+
+Deactivating interior motion sensor and tilt monitoring 
+
+It may be advisable to deactivate the tilt monitoring and interior motion sensor under the 
+following conditions: 
+
+• When the vehicle is being transported (e.g. rail, ferry) 
+
+• When the vehicle is parked in a two-level garage 
+
+• When persons or animals remain in the vehicle 
+
+The tilt monitoring and interior motion sensor are deactivated when the command 
+"lock/doublelock" is executed twice within the space of 10 seconds (e.g. with the remote 
+control). 
+
+The DWA LED indicates the deactivation by lighting up for 2 seconds. 
+
+The ultrasonic interior motion sensor and the tilt alarm sensor can also be permanently 
+deactivated (see Car and Key Memory). 
+
+
+61 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Emergency Function for Acoustic DWA Alarm 
+
+If the siren fails during an alarm, or if the local data bus is interrupted, the acoustic alarm 
+is emitted from the fanfare horn. To do this, the DWA control unit transmits a message to 
+the steering column switch cluster (SZL). 
+
+Combined Operation with Lock Cylinder and Remote Control 
+
+The alarm system can be primed and disarmed by either the door lock or the remote 
+control (= combined operation). In some countries, insurance requirements prohibit such 
+combined operation. 
+
+In the event of the combined operation failing, the alarm system can still be primed at the 
+door lock, but cannot be disarmed at the door lock. Disarming is only possible with the 
+remote control. The function of the combined operation can be encoded in the CAS con¬ 
+trol unit. 
+
+DWA Alarm Output (coding) 
+
+Individual settings can be made with the Car & Key Memory 
+
+Acoustic confirmation from siren when primed and disarmed. The alarm tone can be set 
+to an intermittent tone for 30 seconds 
+
+Panic Mode 
+
+Panic mode enables the DWA alarm to be triggered to attract attention in the event of a 
+threat from the outside or an accident. 
+
+Panic mode is triggered with the remote control. To do this, the special button has to be 
+pressed for 3 seconds. Panic mode can be triggered regardless of the DWA status 
+(primed/disarmed). Panic mode is ended when any button on the remote control is 
+pressed. 
+
+If the siren fails during panic mode, the acoustic alarm is emitted from the fanfare horn 
+(emergency function). 
+
+The duration of the alarm in panic mode is unlimited (until the vehicle battery is flat). 
+
+
+62 
+
+5 and 6 Series Body Electronics 
+
+
+
+E63/E64 Alarm System (DWA) 
+
+The alarm system detects and warns of any attempts to break in or tamper with the 
+vehicle. The system is installed in various types of vehicles in different country-specific 
+versions. The DWA of the E63 is equipped with multiplex microwave sensors, the CAN- 
+Sine and the DWA LED. 
+
+
+
+New Features for DWA on E63 and E64 Vehicles 
+
+For the first time, not only the tilt alarm sensor, but also the software for the anti-theft 
+alarm is integrated in the emergency power siren (SINE = siren and tilt alarm sensor). 
+The DWA control unit used to date is no longer installed. 
+
+Also, new for BMW vehicles, the new multiplex microwave sensors (MuW) 
+are fitted in the E63/E64. 
+
+The advantages of these MuW sensors are: 
+
+• Interior protection 
+
+• Effective MuW sensor detection during interior monitoring 
+
+• No false alarms triggered by MuW sensors during interior monitoring 
+
+Advantages of Microwave Sensors 
+
+The microwave sensors can be installed in hidden locations. 
+
+The interior monitoring function works, for example, even when the side windows are 
+open. The DWA control unit in the emergency power siren is connected to the 
+microwave sensors by a sub-bus. When the boot-lid lock is mechanically unlocked with 
+the key, the DWA alarm is triggered. 
+
+The anti-theft alarm system, integrated in the CAN-Sine, communicates with the 
+components via the K-CAN or via the DWA bus. 
+
+
+63 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+DWA Overview (6 Series) 
+
+
+
+
+14,S 
+
+
+1 byte flight f 
+
+
+
+TMFA 
+
+
+
+
+10 
+
+
+
+
+
+1 
+
+
+byteflsght 
+
+
+SGM 
+
+
+f 
+
+
+£__J 
+
+
+K-CAN 
+
+
+
+
+CAS 2 
+
+
+
+12 
+
+
+
+
+
+3 ) 
+
+
+
+TMBF 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hall Sensor, driver’s door 
+
+8 
+
+Multiplex microwave sensor, rear passenger side 
+
+2 
+
+Driver’s door module (TMFA) 
+
+9 
+
+Multiplex microwave sensor, Rear driver’s side 
+
+3 
+
+Safety and Gateway Module (SGM) 
+
+10 
+
+Multiplex microwave sensor, drivers side door 
+
+4 
+
+Passenger door module (TMBF) 
+
+11 
+
+Hood contact 
+
+5 
+
+Hall sensor, passenger’s door 
+
+12 
+
+CAN-SINE tilt alarm sensor with integrated emer¬ 
+gency current siren 
+
+6 
+
+DWA LED 
+
+13 
+
+Car Access System (CAS 2) 
+
+7 
+
+Multiplex microwave sensor, passenger door) 
+
+14 
+
+Lock, driver’s door 
+
+
+64 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The following component description concerns changes to the DWA components on the 
+6 series (E63/E64). Unless otherwise mentioned, the components are the same as the 
+5 series (E60/E61). 
+
+The anti-theft alarm system receives input signals from the following components: 
+
+Microwave Sensors 
+
+The microwave sensors monitor the vehicle interior. Movement is detected if the reflec¬ 
+tion (echo) of the microwaves changes. The sensitivity of the microwave sensors is 
+adapted for different conditions (e.g. vehicle model, installation location of microwave 
+sensors). 
+
+Two of the microwave sensors are installed on the inner door panel of the driver's door 
+and front-passenger door. The other two additional microwave sensors are installed on 
+the inside of the B-pillars. 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Microwave Sensor 
+
+2 
+
+Inner door panel 
+
+
+65 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Microwave Sensor 
+
+2 
+
+B-pillar 
+
+
+Construction 
+
+Each microwave sensor consists of the following 
+components: 
+
+• Transmitter unit 
+
+• Receiver unit 
+
+• Interface to sub-bus for anti-theft alarm 
+
+• Internal circuit for 5-volt power supply 
+
+
+
+VXmja 
+
+
+66 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access System (CAS) 
+
+The CAS monitors the central locking system. 
+
+The bonnet contact switch is connected to the CAS. The bonnet is thus monitored (open 
+or closed). The CAS feeds the signal to the DWA control unit in the emergency power 
+siren via the K-CAN. The CAS supplies the following signals: 
+
+• Boot-lid unlocking via remote control 
+
+• Key in ignition starter switch or terminal 15 ON 
+
+• Status of convenience opening/closing 
+
+• Authentication by CAS as protection against manipulation (refer to E60/E61) 
+
+Driver's Door Module (TMFA) and Front-passenger Door Module (TMBF) 
+
+The door modules provide information about the position of the door contacts. The signal 
+is fed to the DWA control unit in the emergency power siren via the K-CAN. The driver's 
+door module also provides the signal from the lock cylinder. 
+
+Body Basic Module (KBM) 
+
+The body basic module monitors the boot lid (open or closed). The signal is fed to the 
+DWA control unit in the emergency power siren via the K-CAN. 
+
+When the boot-lid lock is mechanically unlocked with the key, the DWA alarm is triggered. 
+
+Light Module (LM) 
+
+The light module actuates the lighting system for the visual DWA alarm. The DWA control 
+unit feeds the triggering signal to the light module via the K-CAN. 
+
+The following actuators are actuated for the anti-theft alarm system: 
+
+Emergency power siren with integrated tilt alarm sensor (SINE) 
+
+The emergency power siren emits the acoustic DWA alarm. In addition to the DWA 
+alarm, the emergency power siren can also emit an acoustic confirmation signal when the 
+system is activated or deactivated (can be set on the Central Information Display (CID) 
+and controller). 
+
+DWA LED 
+
+The DWA LED is on the bottom of the inside rearview mirror. The LED gives a visual 
+indication of the status of the anti-theft alarm. It is directly actuated by the DWA control 
+unit in the emergency power siren via a wire. 
+
+For the operation of the DWA LED, refer to the E60 DWA section. 
+
+
+67 
+
+5 and 6 Series Body Electronics 
+
+
+
+Principle of Operation 
+
+The anti-theft alarm system incorporates the following functions: 
+
+• Activating and deactivating 
+
+• DWA alarm triggering (alarm-trigger signal) 
+
+• Undervoltage recognition, overvoltage recognition, car battery monitoring (positive 
+and negative cables) 
+
+• Monitoring of sub-bus 
+
+• Deactivating interior motion sensor and tilt monitoring 
+
+• Emergency function for acoustic DWA alarm 
+
+• Combined operation with lock cylinder and remote control 
+
+Activating and Deactivating 
+
+The anti-theft alarm system is activated when the central locking is locked/secured. 
+Locking/securing requires: 
+
+• Drivers door to be opened and closed after terminal 15 is switched OFF. 
+
+• The emergency power siren is then immediately activated. 
+
+• 3 seconds after activation, the door and hatch contacts are monitored. This is condi¬ 
+tional on the contacts being in their rest position (doors and hatches closed). 
+
+• The DWA LED starts to flash as a visual acknowledgement. The hazard warning 
+lights flash once. 
+
+• Depending on the national version, a short acoustic warning tone may also sound 
+from the emergency power siren (see national version). 
+
+Sensor Operation 
+
+The microwave sensor is a movement detector. The microwave sensor detects move¬ 
+ment and the direction of movement (changes in distance) in the entire vehicle interior. 
+The range/sensitivity of the microwave sensors is pre-set (depending on vehicle model 
+and equipment). 
+
+3 seconds after the last door or hatch is closed, the microwave sensor starts its 
+reference run. 
+
+During the reference run, the vehicle interior is "scanned". This allows any changes in the 
+vehicle interior (e.g. objects left on the rear seat) to be recognized. A self-test monitors 
+the correct functioning of the microwave sensors. The microwave sensors are operational 
+20 seconds after the start of the reference run. 
+
+
+68 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+CO 
+
+o 
+
+I 
+
+00 
+
+CM 
+
+CO 
+
+CO 
+
+o 
+
+
+The 4 microwave sensors monitor the vehicle interior in zones. For this, the vehicle interi¬ 
+or is divided into in 4 quadrants. 
+
+The microwaves disperse in the shape of a sphere. 
+
+The DWA control unit actuates the microwave sensors in the following order: 
+
+The microwave sensors work in a frequency range of approximately. 2.5 GHz. The 
+microwave sensor uses the Doppler effect to create the alarm trigger signal. 
+
+The DWA control unit in the emergency power siren evaluates the signals from the 
+microwave sensor and triggers the alarm. 
+
+The emergency power siren for the acoustic alarm is actuated. The signal for the visual 
+alarm is fed to the light module through the K-CAN. 
+
+
+69 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+Tilt Alarm Sensor 
+
+
+The tilt alarm sensor monitors the vehicle's horizontal position (inclination in longitudinal 
+and lateral directions). 
+
+
+The signal from the tilt alarm sensor is evaluated by the DWA control unit. The tilt alarm 
+sensor detects when the vehicle is raised or towed away and triggers a DWA alarm. 
+
+
+
+Rear Bumper 
+
+Siren with integrated 
+DWA functions and 
+tilt sensor 
+
+
+The following control units are involved in the anti-theft alarm system: 
+
+DWA Control Unit 
+
+The software for the DWA is integrated in the emergency power siren. The DWA control 
+unit in the emergency power siren controls the anti-theft alarm. 
+
+The microwave sensors are connected to the alarm system control unit by a single-wire 
+bus (K-Bus). The DWA control unit is connected to the K-CAN. 
+
+• After the DWA has been activated, and after all doors and flaps have been closed, 
+the microwave sensors start to monitor the interior. The interior can be monitored 
+after approximately. 20 seconds. 
+
+• The monitoring of the interior is interrupted if the side windows and/or the sliding/tilt¬ 
+ing sunroof are closed using the convenience closing function. 
+
+Like the interior monitoring, the tilt monitoring does not start until the doors and hatches 
+are closed. When it is activated, the tilt alarm sensor first conducts a 30 second long ref¬ 
+erence run. Tilt monitoring does not start until the reference run has been completed. 
+
+If the luggage compartment is opened during the reference run, the reference run is 
+interrupted. The reference run is then restarted when the luggage compartment is closed 
+again. The monitoring function of the microwave sensors and the tilt alarm sensor have 
+priority. If a faulty door or hatch contact is detected, this will automatically be assumed to 
+be closed. 
+
+
+70 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+The anti-theft alarm system is deactivated when the central-locking system is unlocked. 
+The DWA LED stops flashing and the hazard warning lights flash twice as a visual confir¬ 
+mation. Depending on the national version, a short acoustic warning tone (dual tone) may 
+also sound from the emergency power siren (see national version). 
+
+
+The boot lid can also be unlocked and opened with the remote control without the alarm 
+being triggered, even if the alarm system is activated. When the boot lid is opened, the 
+interior and tilt monitoring functions are deactivated. The interior monitoring and tilt moni¬ 
+toring are reactivated as soon as the boot lid is closed again. 
+
+
+DWA Alarm Triggering (Alarm-trigger Signal) 
+
+The DWA alarm is triggered if an alarm status is detected while the alarm system is acti¬ 
+vated. The following will trigger the DWA alarm: 
+
+• Forced opening of a door: Bus signal from door module (door contact) 
+
+• Forced opening of trunk lid: Bus signal from KBM (trunk lid contact switch) 
+
+• Forced opening of hood: Bus signal from CAS (hood contact switch) 
+
+• Movement in interior: signal from microwave sensors 
+
+• Vehicle in inclined position: signal from tilt alarm sensor 
+
+• Open circuit in sub-bus (between the alarm system control unit in the emergency 
+power siren and the microwave sensors) 
+
+• Undervoltage, overvoltage, car battery monitoring (positive and negative cables) 
+
+When a DWA alarm is triggered, the DWA control unit activates the emergency power 
+siren loudspeaker. At the same time, the DWA control unit transmits an alarm signal 
+through the K-CAN. The light module activates the visual alarm via the lighting system. 
+
+The emergency power siren may also trigger an acoustic alarm if the anti-theft alarm is 
+active and the emergency power siren is separated from the vehicle electrical system by 
+manipulation (integral power supply from batteries). 
+
+The DWA alarm is interrupted immediately under the following conditions: 
+
+• Anti-theft alarm is deactivated 
+
+• Message "Key in ignition lock" (from CAS) and terminal 15 ON 
+
+
+71 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Undervoltage recognition, overvoltage recognition, car battery monitoring 
+
+When the anti-theft alarm is active, the DWA control unit monitors the on-board supply 
+voltage in the range between 6.5 and 17 volts. 
+
+The DWA control unit recognizes the following deviations: 
+
+• Undervoltage On-board supply voltage less than 6.5 volts 
+
+• Overvoltage On-board supply voltage greater than 17 volts 
+
+• On-board supply voltage drops from 7.5 to 6.5 volts within 40 minutes 
+
+• Battery positive or negative cable cut through 
+
+The voltage thresholds for overvoltage and undervoltage must be recognized for 
+at least 250 milliseconds. 
+
+Monitoring of sub-bus for anti-theft alarm 
+
+The sub-bus between the alarm system control unit in the emergency power siren and 
+the microwave sensors is monitored for open circuits. 
+
+Deactivating interior motion sensor and tilt monitoring 
+
+It may be advisable to deactivate the tilt monitoring and interior motion 
+sensor under the following conditions: 
+
+• When the vehicle is being transported (e.g. rail, ferry) 
+
+• When the vehicle is parked in a two-level garage 
+
+• When persons or animals remain in the vehicle 
+
+The tilt monitoring and interior motion sensor are deactivated when the command 
+"lock/secure" is executed twice within the space of 3 seconds (e.g. with the remote 
+control). 
+
+The DWA LED indicates the deactivation by lighting up for 2 seconds. 
+
+The microwave sensors and the tilt alarm sensor can also be permanently deactivated 
+(see Car and Key Memory).Emergency function for acoustic DWA alarm 
+
+If the emergency power siren fails during an alarm, or if the sub-bus to the microwave 
+sensors is interrupted, the acoustic alarm will be emitted through the fanfare horn. To do 
+this, the DWA control unit transmits a message to the steering column switch cluster 
+(SZL). 
+
+
+72 
+
+5 and 6 Series Body Electronics 
+
+
+
+Combined operation with lock cylinder and remote control 
+
+The alarm system can be activated and deactivated by either the door lock or the remote 
+control (= combined operation). In some countries, insurance requirements prohibit such 
+combined operation. 
+
+In the event of the combined operation failing, the alarm system can still be activated at 
+the door lock, but cannot be deactivated at the door lock. Deactivation is only possible 
+with the remote control. The combined operation function can be encoded in the Car 
+Access System (CAS). 
+
+Operation 
+
+The visual and acoustic confirmation for activation and deactivation is not a function of 
+the Car and Key Memory. 
+
+The customer is able to set the type of confirmation using the Central Information Display 
+and the controller (menu "Settings" under "Vehicle settings"). 
+
+Panic Mode 
+
+Panic mode enables attention to be attracted in the event of a threat from the outside or 
+an accident (DWA alarm). Panic mode must be encoded. 
+
+The button for trunk lid unlocking then works as a button for panic mode. 
+
+The button has to be pressed for 3 seconds. 
+
+Panic mode can be triggered regardless of DWA status (activated/deactivated). Panic 
+mode is ended when any button on the remote control is pressed. If the emergency 
+power siren fails during panic mode, the acoustic alarm is emitted from the fanfare horn 
+(emergency function). 
+
+The duration of the alarm in panic mode is unlimited (until the vehicle battery is flat). 
+
+
+73 
+
+5 and 6 Series Body Electronics 
+
+
+
+Park Distance Control PDC 
+
+The E60 is equipped with the 8-channel PDC system which is carried over from the E65. 
+On the 5 and 6 series, PDC is optional equipment. The system supports the driver in 
+maneuvering in tight parking scenarios. 
+
+
+
+TEO33D01 
+
+
+On the E60, PDC has the following new features: 
+
+• The PDC button is in the SZM. The signal from the PDC button is transferred to the 
+PDC control unit through the K-CAN. 
+
+• The signal from the reverse-light switch (reverse gear engaged) on vehicles with 
+manual transmission is transferred from the light module to the PDC control unit via 
+the K-CAN. 
+
+• Display form of the optical warnings on the Central Information Display. 
+
+For an automatic gearbox, the signal for reverse gear is made available by the EGS 
+control unit by way of a K-CAN message. 
+
+The PDC measures the distance to objects within its range with ultrasonic sensors. 
+These sensors are carrier over from the E65. 
+
+
+74 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+PDC Module 
+
+9 
+
+Car Access System (CAS) 
+
+2 
+
+Central Information Display (CID) 
+
+10 
+
+Light Module (LM) 
+
+3 
+
+M-ASK or CCC 
+
+11 
+
+Electronic Transmission Control (EGS) 
+
+4 
+
+Mid-Range loudspeaker (driver’s door) 
+
+12 
+
+Dynamic Stability Control (DSC) 
+
+5 
+
+Mid-Range loudspeaker (passenger door) 
+
+13 
+
+Instrument Cluster 
+
+6 
+
+Mid-Range loudspeaker (left rear) 
+
+14 
+
+Center Console Switch Center (SZM) 
+
+7 
+
+Mid-Range loudspeaker (right rear) 
+
+15-18 
+
+Ultrasonic Sensors (rear) 
+
+8 
+
+Trailer Module (AHM) Not for US 
+
+19-22 
+
+Ultrasonic Sensors (front) 
+
+
+The driver is warned of an object that could cause a collision as follows: 
+
+• Acoustic warning (via M-ASK (or CCC), and mid-range loudspeaker) 
+
+• Visual warning (via Central Information Display) 
+
+The PDC uses these two 2 warning functions to offer a degree of comfort for 
+drivers who are hard of hearing or physically impaired. 
+
+A fault in the PDC is indicated by a Check-Control message. 
+
+Important: Responsibility remains with the driver at all times 
+
+PDC is unable to take the place of the driver's personal assessment of obstacles. 
+
+The ultrasonic sensors have a blind spot. Objects in this blind spot cannot be detected. 
+The ability to detect objects can stretch the physical limits of ultrasonic measurements 
+(no or poor reflection of ultrasonic impulses, e.g. trailer tow bars or narrow objects). 
+
+Low objects that have already been indicated can "disappear", before a continuous tone 
+sounds (e.g. a high curb). 
+
+The evaluation of obstacles is thus the responsibility of the driver, even with PDC. 
+
+
+76 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+PDC consists of the following components: 
+
+Ultrasonic Sensors 
+
+There are 4 ultrasonic sensors in each of the front and rear bumpers. The sensors emit 
+ultrasonic impulses. These ultrasonic impulses are reflected by obstacles (echo impulses). 
+
+The ultrasonic sensors receive and amplify these echo impulses. The amplified echo 
+impulses are then converted into a digital signal. Each ultrasonic sensor has its own 
+microprocessor, its own power supply and its own data connection to the PDC control 
+unit. 
+
+Important: Measuring range of ultrasonic sensors 
+
+The measuring range of the ultrasonic sensors is between approximately 25 centimeters 
+and 200 centimeters. If the minimum distance that can be detected rises to an 
+impermissible level, a fault message is entered in the fault memory. 
+
+Dirt contamination, moisture, ice and snow can cause an impermissible rise in the mini¬ 
+mum distance that can be detected. 
+
+Note: Cleaning the ultrasonic sensors 
+
+To make sure the system remains fully operational, keep the ultrasonic sensors clean and 
+free from ice. Do not clean by spraying high-pressure washers directly at the ultrasonic 
+sensors. When cleaning, always maintain a minimum distance of at least 10 centimeters. 
+
+
+
+77 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+PDC Button 
+
+The PDC button is in the center console switch cluster (SZL). The signal from the PDC 
+button is transferred through the K-CAN to the PDC control unit. 
+
+
+
+The PDC button is used to manually switch the Park Distance Control system on and off. 
+When the PDC is switched on, the function LED in the PDC button lights up. 
+
+If a fault develops in the PDC, the function LED in the PDC button flashes. 
+
+
+PDC Control Unit 
+
+The PDC control unit controls the ultrasonic sensors for transmitting ultrasonic impulses. 
+The PDC control unit also receives the digital signals from the individual ultrasonic sen¬ 
+sors. By comparing the individual digital signals, the PDC control unit calculates the mini¬ 
+mum distance between the ultrasonic sensor and the object. 
+
+
+
+When an object is detected, an acoustic warning and a visual warning are given. 
+
+The PDC control unit is connected to the following control units via the bus systems: 
+
+Multi-audio System Controller/Car Communication Computer 
+
+The multi-audio system controller (M-ASK) or Car Communication Computer (CCC) 
+emits the PDC acoustic warning through the mid-range loudspeakers. 
+
+Central Information Display 
+
+The visual PDC warnings are given in the Central Information Display (CID). 
+
+In addition, information regarding a Check-Control message that may be present is 
+shown. 
+
+
+78 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+Instrument Cluster 
+
+A current Check-Control message is indicated by a symbol in the LCD display in the 
+instrument cluster. Moreover, the instrument cluster also provides the exterior tempera¬ 
+ture and the mileage reading for the PDC control unit. 
+
+Ice and frost can cause an unexpected response from the ultrasonic sensors. The 
+response characteristics of the ultrasonic sensors changes depending on the exterior 
+temperature. 
+
+If a fault is stored in the fault memory, the kilometer reading and the exterior temperature 
+are also stored. 
+
+DSC Control Unit 
+
+The DSC control unit supplies the PDC with information about the roadspeed and dis¬ 
+tance travelled. 
+
+Electronic Transmission Control 
+
+On vehicles with automatic transmission, the electronic transmission control (EGS) 
+supplies the signal that reverse gear is engaged. 
+
+Light Module 
+
+On vehicles with manual transmission, the light module (LM) supplies the signal that 
+reverse gear is engaged. 
+
+Car Access System 
+
+The CAS control unit supplies the PDC with the terminal status (e.g.. terminal 15). 
+
+For vehicles from 03/2004, power is supplied to the PDC control unit through terminal 
+30g (active) instead of terminal 15. 
+
+
+79 
+
+5 and 6 Series Body Electronics 
+
+
+
+Principle of Operation 
+
+PDC incorporates the following functions: 
+
+• Acoustic warnings 
+
+• Visual warnings 
+
+• Check Control 
+
+Acoustic Warnings 
+
+The acoustic warnings are emitted by the M-ASKvia the mid-range loudspeaker. 
+
+If an object is detected by 2 ultrasonic sensors, the loudspeaker closest to the object is 
+actuated. The mid-range loudspeaker in the left/right-hand front doors or the mid-range 
+loudspeaker on the left/right-hand sides of the rear shelf can be actuated. If an object is 
+detected by 3 ultrasonic sensors, the mid-range loudspeakers on the left and right-hand 
+sides are actuated together. 
+
+The smaller the distance to the object, the faster the sequence of acoustic warning tones. 
+A distance of less than approximately 25 centimeters is indicated by a continuous tone. 
+The warning tone switches off as soon as the vehicle moves away from the object. 
+
+If the vehicle is moving directly towards a wall, the acoustic warning tone will be switched 
+off after approximately. 3 seconds so that it does not distract the driver. If the vehicle con¬ 
+tinues to approach the wall, the warning will be reactivated. 
+
+Effective range for acoustic warnings: 
+
+• Approximately 60 centimeters for the ultrasonic sensors at the two corners of the 
+front bumper 
+
+• Approximately 70 centimeters for the two middle ultrasonic sensors in the front 
+bumper 
+
+• Approximately 60 centimeters for the ultrasonic sensors at the two corners of the 
+rear bumper 
+
+• Approximately 150 centimeters for the two middle ultrasonic sensors in the rear 
+bumper 
+
+
+80 
+
+5 and 6 Series Body Electronics 
+
+
+
+Visual Warnings 
+
+The visual PDC warnings are given in the Central Information Display (CID). This is 
+subject to the display in the CID being active. The visual warnings are given earlier than 
+the acoustic warnings. 
+
+The effective range is approximately 2 meters at the front and approximately 2.5 meters 
+at the rear. 
+
+The graphic display is shown on the CID. The PDC control unit supplies the distance 
+between the ultrasonic sensor and the object detected via the K-CAN. The display on 
+the CID is an overhead view of the vehicle with the effective ranges of the ultrasonic 
+sensors. 
+
+The distance to objects detected is shown in the colors of traffic lights: 
+
+• Distance down to 100 centimeters: green 
+
+• Distance between 100 an 50 centimeters: yellow 
+
+• Distance less than 50 centimeters: red 
+
+The display appears as soon as the PDC is switched on (manually or automatically). The 
+display overrides other displays in the CID. When the PDC is switched off again, the pre¬ 
+vious display automatically appears again in the Central Information Display. 
+
+Check Control 
+
+If a fault develops in the PDC, the function LED in the PDC button flashes. If this occurs , 
+PDC cannot be switched on. 
+
+At the same time, a Check-Control message is displayed in the following form: 
+
+• Symbol in the LCD display in the instrument cluster 
+
+• The following text appears in the status line of the Central Information Display: 
+
+"PDC failure!" 
+
+In the menu "BMW Service", the following text can be called up in the submenu 
+"Check-Control messages": "Park Distance Control” 
+
+No acoustic warning available for Park Distance Control (PDC). Have the problem 
+checked by BMW Service as soon as possible. 
+
+
+81 
+
+5 and 6 Series Body Electronics 
+
+
+
+Conditions for Switching On and Off 
+
+PDC is switched on under the following conditions: 
+
+• PDC button pressed (PDC switched on manually) 
+
+• Reverse gear engaged (PDC switched on automatically) 
+
+PDC is switched off under the following conditions: 
+
+• PDC button pressed (PDC switched off manually) 
+
+• Ignition switched off (PDC switched off automatically 
+
+• After driving approximately. 50 meters 
+
+• After exceeding a speed of 30 km/h 
+
+Problematic Conditions for Switching On and Off 
+
+In borderline situations, PDC may give a warning even though there is no object within 
+the effective range (reflection from the ground, e.g. on coarse gravel). 
+
+In borderline situations, it could happen that objects that are present are not detected 
+(no or insufficient reflection due to geometric form). 
+
+Under the following conditions, it could happen that the PDC gives a warning, even 
+though there is no object within the effective range: 
+
+• Ultrasonic sensor incorrectly located in its bracket 
+
+• Heavy rain 
+
+• Severe dirt contamination or icing of the ultrasonic sensors 
+
+• Ultrasonic sensors covered in snow 
+
+• Echo pulses caused by ground, e.g. extremely coarse road surface or high grass 
+
+• Very smooth walls in large, enclosed, rectangular spaces, e.g. in underground car 
+parks (interference from earlier, reflected echo impulses) 
+
+Under the following conditions, the PDC may not recognize an obstacle that is present: 
+
+• Low objects or objects with corners and sharp edges (no reflection) 
+
+• If you drive alongside a wall while you are parking, the acoustic warning will be deac¬ 
+tivated so long as you are moving parallel to the wall. 
+
+Operation 
+
+The visual warning (display) is switched on in the Central Information Display (CID) as 
+follows: 
+
+• "Settings" menu 
+
+• "Vehicle settings" menu 
+
+• "PDC" menu 
+
+• Activate "Display on" 
+
+82 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Active Cruise Control 
+
+The Active Cruise Control system (ACC) is the same as that in the E65. 
+
+The ACC has the following defining properties: 
+
+• Operated from a steering column stalk 
+
+• Statuses are shown in the instrument cluster display 
+
+• Four selectable increment stages 
+
+• Speed preselection in 1 km/h stages 
+
+• Sheet steel bracket in the E60 with plastic intermediate holder 
+for the sensor control unit 
+
+• Audible instructions to the driver have been omitted 
+
+
+ACC Sensor E60 
+
+
+
+83 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+ACC System Overview 
+
+
+
+02633.02 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rear brake pressure sensor 
+
+8 
+
+Instrument Cluster 
+
+2 
+
+Front brake pressure sensor 
+
+9 
+
+CAS 
+
+3 
+
+DSC 
+
+10 
+
+Trailer Module (not for US) 
+
+4 
+
+DME (ECM) 
+
+11 
+
+Light Module 
+
+5 
+
+EGS 
+
+12 
+
+M-ASK 
+
+6 
+
+SZL 
+
+13 
+
+ACC Control unit 
+
+7 
+
+SGM 
+
+
+
+
+84 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exterior Lights 
+
+
+The exterior lighting is based on the exterior lighting of the E65 and available in the fol¬ 
+lowing versions: 
+
+• Basic version with halogen headlights 
+
+• Adaptive Headlight System (AHL) with bi-xenon headlights 
+
+Voltage for all the lights is regulated by the light module. This regulation compensates for 
+fluctuations in vehicle voltage. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+
+Light Switch with Control Panel Unit 
+
+The light switch is remotely mounted from the light module. They are connected by 
+means of a ribbon cable. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Light Switch 
+
+4 
+
+CAS 
+
+2 
+
+Instrument Cluster 
+
+5 
+
+Light Module 
+
+3 
+
+SZL 
+
+6 
+
+TMFA 
+
+
+Brake Light Switch 
+
+The car access system supplies the brake light switch with voltage. Signals from the 
+brake light switch are used by the Light Module to activate the brake lights. 
+
+The Light Module also supplies the brake signal to other systems via the K-CAN. 
+
+
+86 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reverse Lights 
+
+On manual transmission vehicles, the signal is made available via a switch from the gear 
+selector lever. The light module controls the reversing lights accordingly. 
+
+On automatic transmission vehicles, the signal is made available by the transmission con¬ 
+trol unit via the PT-CAN. 
+
+The signals for reverse gear and the brake light are made available to other subscribers 
+by the light module via the K-CAN. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Left Side brake lights 
+
+3 
+
+Right Side brake lights 
+
+2 
+
+Raised (3rd) brake light 
+
+4 
+
+Brake Force Display (BFD) lights 
+
+
+Brake Force Display 
+
+The segments of the rear fog light are used as the BFD as of a deceleration of 5 m/sec 2 . 
+
+Service Information 
+
+In the E60, the light switch contributes to improved protection for the occupants. This 
+increased level of protection is achieved by artificially enlarging the impact surface of the 
+light switch. 
+
+In the event of an accident, a person sitting behind the steering wheel could knock 
+against the light switch with his/her knee for instance. While retaining full functionality, the 
+light switch can be shifted towards the rear. This increases the impact surface about the 
+light switch. After being pressed back, the light switch must be pulled out to move it into 
+the forward position again. 
+
+
+87 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E63/E64 Exterior Lighting 
+Changes as Compared to E60 
+
+The E63/E64 features 2 lamp bulbs in each directional indicator for the front directionals. 
+
+The marker light of the E63 is fed from below into the light guide. The hotspot is located 
+at the feed point of the light guide. 
+
+The front side markers are eguipped with lamp bulbs. LED’s are used for the tail lights 
+and brake lights. 
+
+
+Parking Lights ON Turn Signal ON 
+
+
+
+Brake Force Display 
+
+The upper LED’s of the rail light are used as the BFD as of a deceleration of 6 m/s 2 . 
+
+
+88 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+E61 Tail light 
+
+The tail light assembly on the E61 is a split unit with one portion on the rear hatch and 
+the other on the rear quarter panel. The tail light is divided into 7 areas. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Directional indicator 
+
+5 
+
+Tail light/brake light 
+
+2 
+
+Two-stage brake light 
+
+6 
+
+Tail light/brake light 
+
+3 
+
+Reverse light 
+
+7 
+
+Side marker light 
+
+4 
+
+Rear reflector 
+
+
+
+
+The lamps for the tail light, brake light and directional are located in individual sockets. 
+The center (third) brake light used LED technology and is located in the rear spoiler. 
+
+
+89 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adaptive Headlights (AHL) 
+
+
+Introduction 
+
+The adaptive headlights system is designed to improve nighttime driving visibility in turns. 
+This is achieved by turning the bi-xenon headlights towards the inside of a bend when 
+cornering. This improves illumination of the curve of the road which in turn, improves to 
+level of visibility for the driver. Without AHL, the driver would be looking into a “black 
+hole” when cornering. 
+
+AHL enhances the already existing active safety features. The system collects data 
+regarding vehicle speed, steering angle and rotational speed (yaw) and controls a set of 
+stepper motors to make adjustments to the bi-xenon headlights. AHL also works in 
+conjunction with other vehicle systems via the various bus networks. 
+
+
+
+90 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AHL System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Headlight Switch 
+
+8 
+
+Right side swivel (positioner) module, includes 
+right headlight assembly. 
+
+(with SMC/XENON and shutter assembly) 
+
+2 
+
+Light Module (LM) 
+
+9 
+
+Car Access System (CAS) 
+
+3 
+
+Rain and Light Sensor (RLS) 
+
+10 
+
+Front Level Sensor 
+
+4 
+
+Safety and Gateway Module (SGM) 
+
+11 
+
+Rear Level Sensor 
+
+5 
+
+Steering Column Switch Cluster (SZL) 
+
+12 
+
+Adaptive Headlight Module (AHL) 
+
+6 
+
+Brake Light Switch (BLS) 
+
+13 
+
+Dynamic Stability Control (DSC) 
+
+7 
+
+Left side swivel (positioner) module, includes left 
+
+headlight assembly. 
+
+(with SMC/XENON and shutter assembly) 
+
+
+
+
+91 
+
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+
+Light Switch 
+
+The rotary switch for the side lights and dipped- 
+beam (low beam) headlights differs depending on 
+the vehicle eguipment level. For the adaptive head¬ 
+lights function to 
+
+operate, the light switch must be set to position "A". 
+("A" = "automatic driving lights control" or "adaptive 
+headlights"). 
+
+Direction Indicator/High-beam Switch 
+
+The high-beam headlights are switched on and off 
+with the direction indicator/high-beam switch (by 
+pressing or pulling the switch). The adaptive head¬ 
+lights function operates with both dipped and high- 
+beam headlights. 
+
+Steering Column Switch Cluster 
+
+The control unit in the steering column switch clus¬ 
+ter (SZL) forwards the signals from the direction indi¬ 
+cator/high-beam switch. 
+
+
+
+Headlight Switch 
+
+
+
+Signal path: 
+
+
+SZL -> byteflight -> SGM -> K-CAN -> LM 
+SZL -> byteflight -> SGM -> PT-CAN -> AHL 
+
+Ride-height Sensors 
+
+The ride-height sensors supply the input signals for 
+the headlight-range adjustment. One ride-height 
+sensor is located on the right-hand side of the front 
+axle. A ride-height sensor is located on the right of 
+the rear axle. 
+
+The automatic headlight-range adjustment adapts 
+the height adjustment of the headlights for different 
+operating conditions (e.g. when laden, when braking 
+and when accelerating in dynamic driving situations). 
+
+
+
+Ride Height Sensor 
+
+
+If the special equipment "Adaptive headlights" is fitted, the adaptive headlights control 
+unit evaluates the signals from the ride-height sensors (AHL control unit). This is 
+because: The AHL control unit also controls automatic headlight-range adjustment. 
+
+
+92 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+Brake Light Switch 
+
+If the special equipment "Adaptive headlights" is fitted, the signals from the brake light 
+switch are read by the adaptive headlights control unit. 
+
+In addition, the brake light switch signal is also an input signal for automatic headlight- 
+range adjustment, see above: ride-height sensors. 
+
+
+Position Sensor (E60, E65, E53) 
+
+
+The position sensor in the positioner module for the bi-xenon headlights supplies a signal 
+indicating the aim of the headlights in the horizontal plane. 
+
+
+
+Car Access System 
+
+The Car Access System (CAS) supplies input signals with regard to the terminal manage¬ 
+ment (e.g. terminal 15 ON). 
+
+The adaptive headlights control unit is activated when terminal 15 is switched ON. 
+
+EGS control unit or reversing light switch 
+
+When reverse gear is engaged, the headlights are moved to the straight-ahead position. 
+
+• On vehicles with automatic transmission, the EGS control unit supplies the relevant 
+signal to the light module (the EGS control unit is the control unit for electronic 
+transmission control). 
+
+• On vehicles with manual transmission, the signal is supplied by the reversing 
+light switch. 
+
+
+93 
+
+5 and 6 Series Body Electronics 
+
+
+Rain-light sensor for automatic driving lights control 
+
+The rain-light sensor measures the ambient light conditions outside the vehicle. 
+
+• As it starts to get dark, the rain-light sensor sends the message "Twilight" to the light 
+module. The light module informs the adaptive headlights control unit so that the 
+automatic headlight-range adjustment of the dipped-beam headlights can be acti¬ 
+vated. The headlights are tilted up and down as reguired, but they are not yet swiv¬ 
+elled towards the bend in the road. 
+
+• In darkness, the rain-light sensor sends the message "Darkness" to the light module. 
+The light module sends the relevant information to the adaptive headlights control 
+unit. 
+
+The headlights are swivelled as necessary. 
+
+Steering Angle Sensor and DSC Sensor 
+
+The steering angle sensor and DSC sensor (DSC = Dynamic Stability Control) supply 
+
+signals for the adaptive headlights to the adaptive headlights control unit. These signals 
+
+are evaluated as follows, depending on the vehicle's speed: 
+
+• Vehicle speeds up to 30 km/h - The adaptive headlights function is controlled on 
+the basis of the information from the steering angle sensor (in the SZL). 
+
+• Vehicle speeds between 30 km/h and 50 km/h - In the 30 to 50 km/h speed 
+range, there is a continuous transition in signal evaluation: from the evaluation of 
+signals sent by the steering angle sensor to evaluation of the signals sent by the yaw 
+rate sensor (in the DSC sensor). 
+
+• In extreme dynamic driving situations - ( e.g. if the vehicle starts to skid or fish¬ 
+tail), even at speeds less than 50 km/h, the signals from the yaw-rate-sensor are 
+considered. If the vehicle starts to skid or fishtail, the headlights will move to the 
+straight-ahead position. The headlights are not swivelled until the vehicle has 
+stabilized. 
+
+• Vehicle speeds over 50 km/h - At speeds upwards of 50 km/h, the signals from 
+the yaw rate sensor (in the DSC sensor) form the primary basis for control of the 
+adaptive headlights function. 
+
+Reason: for a constant cornering radius, the steering angle required increases over 
+proportionally with increasing speed. In addition, the steering angle required also 
+depends on the coefficient of friction of the road surface. 
+
+Yaw rate is directly proportional to speed. For this reason, the yaw rate is always 
+the most suitable measure for controlling the adaptive headlights at high speeds. 
+Even at high speeds, however, the steering angle sensor signal is used to detect 
+(predict) the driver's commands in advance. This is because: The yaw rate signal is 
+not supplied until the vehicle has responded to the steering wheel movement. 
+
+The steering-angle sensor signal is disabled so that rapid, momentary steering 
+adjustments do not affect the adaptive headlights function. 
+
+94 
+
+5 and 6 Series Body Electronics 
+
+
+
+AHL Control Unit on E60, E63 
+
+The AHL control unit is responsible for the 
+vertical and horizontal adjustment of the bi¬ 
+xenon headlights. For safety reasons, the 
+AHL control unit is also responsible for the 
+LWR (automatic headlight-range adjustment) 
+for vertical adjustment). 
+
+The AHL control unit is connected to the 
+PT-CAN and is located in the control module 
+carrier behind the glove compartment. 
+
+Stepper Motor Controllers 
+
+The stepper motor controllers (SMCs) control 
+the stepper motors in the headlights for the 
+AHL functions (L/R) as well as the LWR func¬ 
+tions (Vertical). The SMC control units com¬ 
+municate with the AHL control module via the 
+LIN bus. 
+
+Light Module 
+
+On the E60, the light module (LM) controls 
+and monitors all vehicle lights. Information is 
+transmitted and received via the K-CAN data 
+bus. The light module is responsible for the 
+actuation of the indicator light for AHL (on the 
+light switch). 
+
+
+
+Light Module 
+
+
+
+Safety and Gateway Module 
+
+On the E60, the safety and gateway module 
+(SGM) is the interface between the two data 
+buses K-CAN and PT-CAN. Thus, all informa¬ 
+tion exchanged between the light module and 
+the AHL control unit passes through the 
+SGM. Information from the yaw rate sensor (in 
+the DSC sensor) is also fed through the SGM 
+to the AHL control unit. 
+
+Xenon-headlight Control Unit 
+
+The xenon-headlight control unit monitors the 
+D2-S bulbs for the bi-xenon headlights. 
+
+
+
+95 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+Stepper Motors for the Adaptive Headlights 
+
+The stepper motors turn the positioner modules in the bi-xenon headlights. 
+
+The stepper motors turn the headlights vertically and horizontally (vertically = for the 
+automatic headlight-range adjustment and horizontally for adaptive headlights). 
+
+
+
+Function Indicator (On Light Switch) 
+
+The function of the AHL is indicated by the FLC LED lighting permanently. A fault in the 
+AHL system is indicated by the FLC LED flashing with the AHL active. 
+
+The green FLC LED has two functions: 
+
+• The LED lights up permanently when the light switch is set to position “A”. 
+
+The AHL and LWR systems are active when the LED is on solid. 
+
+• The LED flashes if a fault develops in the adaptive headlight system. 
+
+The LED actuated by the light module. 
+
+The low beam headlight and the headlight vertical aim control (LWR) remain active in the 
+case of fault. The swivel function of the bi-xenon modules is deactivated. 
+
+A reference run is performed during every new start. If a defect is found, the bi-xenon 
+headlights are switched off to ensure oncoming traffic cannot be dazzled. The fog lights 
+are switched on as a substitute function. 
+
+
+96 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Principle of Operation 
+
+The adaptive headlights system adjusts the horizontal aim of the headlights (i.e. from side 
+to side) in order to illuminate the inside of a bend when cornering. 
+
+The following functions of the adaptive headlights system are described below: 
+
+• System activation and calibration sequence 
+
+• Activation of stepper motor controllers (SMC) 
+
+• Speed-dependent analysis of input signals 
+
+• Horizontal swivelling of the headlights by the stepper motor controller 
+
+• Deactivation of adaptive headlight movements under extreme driving conditions 
+
+• Deactivation of adaptive headlight movements in response to system faults 
+
+• Setting headlights to parked position 
+
+• Activation of automatic headlight-range adjustment by the AHL control unit 
+
+• Adaptive headlights for automatic driving lights control 
+
+System Activation and Calibration Sequence 
+
+When terminal 15 is switched ON, the headlights always perform a calibration sequence, 
+even if the lights are not switched on. The AHL control unit sends the "perform calibra¬ 
+tion sequence" request to the stepper motor controllers (SMCs, control units for the 
+headlight stepper motors). The stepper motor controllers actuate the stepper motors in 
+the headlights. The calibration sequence is performed. During the calibration sequence, 
+the headlights move in the following manner: 
+
+• The headlights move horizontally (= calibration sequence for the AHL). 
+
+• The headlights move vertically (= calibration sequence for the headlight-range 
+adjustment function). 
+
+• At the end of the calibration sequence, the headlights are in the straight-ahead 
+position. 
+
+Following the calibration sequence, the system is ready for operation. 
+
+When reverse gear is engaged, the headlights are moved to the straight-ahead position. 
+
+Note: The calibration sequence is performed only after terminal 15 has been switched 
+OFF for at least 15 seconds. 
+
+If terminal 15 is switched on and off repeatedly (for example, for demonstration reasons), 
+the headlights are not calibrated each time terminal 15 is switched on. 
+
+Terminal 15 must have been switched off for at least 15 seconds before it is switched on 
+again. Only then is a calibration sequence performed when terminal 15 is switched on. 
+
+
+97 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Activation of Stepper Motor Controllers 
+
+The AHL control unit transmits the nominal values for the positioner modules (position 
+and speed of movement of the positioner modules) to the stepper motor controllers 
+(SMC). The AHL control unit calculates the nominal values on the basis of the following 
+input signals: 
+
+• Vehicle road speed 
+
+• Steering angle (at speeds up to 
+50 km/h , depending on program¬ 
+ming) (50km/h = 31 mph) 
+
+• Yaw rate (above 50 km/h, see 
+"Steering-angle sensor and DSC 
+sensor" above) 
+
+Speed Dependent Analysis of 
+Input Signals 
+
+The adaptive headlights are controlled 
+based on input from the steering angle 
+sensor and the yaw rate sensor. The 
+AHL control will use these signals on 
+a priority basis depending upon road 
+speed. 
+
+The encoding process performed at the end of the production line determines the 
+priority assigned to sensor signals above which speed threshold (see above). 
+
+Horizontal swivelling of the headlights by the stepper motor controller 
+
+Horizontal range of movement of headlights 
+
+• Inwards, i.e. towards center of vehicle: up to a maximum of 8° 
+
+• Outwards: up to max. 15° 
+
+That means in a right-hand bend the right-hand headlight turns by up to 15° (the right- 
+hand headlight is the "inside" headlight on a right-hand bend. It therefore swivels 
+outwards away from the vehicle center). 
+
+The left-hand headlight swivels through a maximum of 8° (the left-hand headlight swivels 
+towards the vehicle center, i.e. inwards). 
+
+The headlight on the outside of the bend reaches its end position at the same time as 
+the headlight on the inside of the bend, ensuring that the road is evenly illuminated. 
+
+On a right-hand bend, the left-hand headlight is on the outside of the bend. The right- 
+hand headlight is on the inside of the bend. 
+
+
+
+1. Vehicle Speed 2. Steering Angle 
+
+3. Yaw (rotation) 
+
+
+98 
+
+5 and 6 Series Body Electronics 
+
+
+Deactivation of adaptive headlight movements under extreme driving 
+conditions 
+
+If the vehicle starts to skid and fishtail, the swivelling movement of the adaptive headlights 
+is deactivated as follows: 
+
+• The headlights are returned to the straight-ahead position. The headlights are no 
+longer turned. 
+
+• The lights remain on. 
+
+Deactivation of adaptive headlight movements in response to system faults 
+
+If a system fault occurs, the green indicator lamp on the light switch flashes. Dazzling of 
+oncoming traffic must be prevented in the event of a system fault. To this end, the 
+swivelling movement of the adaptive headlights is deactivated as follows: 
+
+• If the stepper motors are still functional, the headlights are returned to the straight¬ 
+ahead position. The headlights are no longer swivelled towards bends in the road. 
+
+• If it is no longer possible for a headlight to be moved back to the straight-ahead posi¬ 
+tion, the headlight is tilted downwards (by the stepped motors for automatic head¬ 
+light-range adjustment). This prevents dazzling of oncoming traffic. 
+
+• If the headlight cannot be tilted downwards, the bi-xenon bulb in this headlight is dis¬ 
+abled as follows: 
+
+- When the vehicle is parked, the AHL control unit recognizes sleep mode 
+(stand still plus terminal R OFF for several minutes). 
+
+- The next time the vehicle is restarted, the bi-xenon light of the defective head 
+light is not switched on. 
+
+- The front foglights are switched on in order to ensure a minimum level of 
+illumination. 
+
+- The dipped-beam headlights are not switched off while the vehicle is in motion. 
+
+Setting Headlights to Parked Position 
+
+When terminal R is switched off, the headlights move to the parked position. The parked 
+position is important for the headlights' next calibration sequence: from the parked posi¬ 
+tion, the headlights are run through a calibration sequence in the pre-drive-check. During 
+each calibration sequence, the AHL control unit relearns the straight-ahead position for 
+the headlights. 
+
+When the headlights have reached the parked position, the stepper motor controllers 
+(SMCs) inform the AHL control unit ("acknowledge"). 
+
+The AHL control unit deactivates the stepper motor controllers. 
+
+The run-down period lasts approximately 10 seconds. 
+
+
+99 
+
+5 and 6 Series Body Electronics 
+
+
+
+Activation of automatic headlight-range adjustment by the AHL control unit 
+
+If special equipment "Adaptive headlights" is fitted, the AHL control unit also controls the 
+automatic headlight-range adjustment. 
+
+The automatic headlight-range adjustment adapts the headlight range for different oper¬ 
+ating conditions. Variations in the vehicle tilt angle are produced by vehicle loads and 
+braking or acceleration in extreme driving situations. The automatic headlight-range 
+adjustment tilts the headlights up and down as required. 
+
+The AHL control unit controls the automatic headlight-range adjustment as follows: 
+
+1. The ride-height sensors and the brake light switch send the input signals for the 
+headlight-range adjustment to the AHL control unit. 
+
+2. From the input signals received, the AHL control unit calculates the vehicle tilt angle 
+(along the longitudinal axis, relative to the road surface). 
+
+3. Using the stepper motors for moving the headlights vertically, the headlight range is 
+adjusted automatically and dynamically. 
+
+The headlight range is adjusted so that the actual headlight range conforms to the legally 
+required headlight range as follows: 
+
+• If vehicle rear is lower than front - The actual headlight range will be longer than 
+the legally stipulated range. The headlight beam height is lowered to reduce the 
+headlight range to match the legal requirement. 
+
+• If the vehicle is horizontal - The actual headlight range will be the same as the 
+legally stipulated range. 
+
+• If vehicle front is lower than rear - The actual headlight range will be shorter than 
+the legally stipulated range. The headlight beam height is raised to increase the 
+headlight range to match the legal requirement. 
+
+Adaptive headlights for automatic driving lights control 
+
+The automatic driving lights control feature (option in conjunction with the RLS) 
+automatically switches the side lights and dipped-beam headlights on and off. 
+
+Switch-on conditions: 
+
+• The light module must be encoded with automatic driving lights control. 
+
+• The light switch must be in position "A" ("A" for automatic driving lights 
+control or adaptive headlights). 
+
+• The rain-light sensor must be installed and operational. 
+
+
+100 
+
+5 and 6 Series Body Electronics 
+
+
+
+The rain-light sensor detects the brightness of the ambient light. The rain-light sensor 
+sends the following requests to the light module: 
+
+• Low ambient brightness (twilight, darkness, in a low-level garage or tunnel): "switch 
+on dipped-beam headlights" request. 
+
+• Sufficient ambient brightness: "switch off dipped-beam headlights" request. 
+
+If only the side (parking) lights are to be switched on, the light switch must be set to side 
+lights (switch position 1). 
+
+When the light switch is set to position "A", the AHL control unit is also activated: 
+
+• When the automatic driving lights control function switches on the dipped-beam 
+headlights (e.g. at dawn/dusk), the adaptive headlights function is notified at the 
+same time. 
+
+The light module sends the message "Dipped headlights on" to the AHL control 
+unit (and the AHL control unit takes over control of automatic headlight-range adjust¬ 
+ment). 
+
+• The light module also takes account of the signals from the rain-light sensor. 
+
+The headlights are not turned when the vehicle is cornering until total darkness sets 
+in. 
+
+The message "Dipped (low beam) headlights on" is generated separately for each head¬ 
+light unit. 
+
+If a headlight fails, the movement of the adaptive headlights is suspended. 
+
+The front foglights are switched on in order to ensure a minimum level of illumination. 
+
+Switch-on Conditions 
+
+When terminal 15 is switched ON, the AHL control unit "wakes up". The swivelling of the 
+lights is subject to the following conditions: 
+
+• Reverse gear must not be engaged. 
+
+• No system faults must be present. The indicator light must not be flashing. 
+
+• The D2-S bulbs in both headlight units must be working (the D2-S bulbs are the 
+bulbs for the xenon headlights). 
+
+• The vehicle must not be skidding or fishtailing. 
+
+• The rain-light sensor must detect darkness. 
+
+• Additional precondition for activation: automatic driving lights 
+control is active (light switch in position "A", see above). 
+
+
+101 
+
+5 and 6 Series Body Electronics 
+
+
+
+Workshop Hints 
+
+Various repairs may be necessary during the course of vehicle's service life. As a conse¬ 
+quence of repair work, it may be that the system parts for the AHL are installed with dif¬ 
+ferent software and hardware versions. In each case, the replaced components must be 
+adapted to the specific requirements of the vehicle. 
+
+AHL Control Unit 
+
+After replacing an AHL control unit, it is necessary to enter the vehicle identification 
+number and to encode the control unit depending on specific vehicle data. 
+
+The complete AHL function will not be operative if adaptation to the vehicle is not per¬ 
+formed. 
+
+Replacing SMC 
+
+After replacing the SMC, it is necessary to enter the vehicle identification number and 
+headlight-dependent coding in the SMC control unit. 
+
+The complete AHL function will remain inoperative if this adaptation is not performed. 
+
+Particular care must be taken when replacing the SMC to ensure that the housing seal of 
+the SMC is fitted correctly. 
+
+Replace Bi-Xenon Headlights 
+
+After replacing the bi-xenon headlights, it is necessary to encode the corresponding SMC 
+depending on the headlights. 
+
+If this adaptation is not performed, the function will appear to be operative but not correct. 
+The swivel range and zero point can vary from vehicle model to vehicle model and the bi¬ 
+xenon headlight can have a different status! 
+
+The headlights must be adjusted and checked. 
+
+Diagnosis 
+
+The AHL system must be set to diagnosis mode in order to perform the following jobs: 
+
+• Read out of relevant bus signals with vehicle stationary 
+
+-Road speed 
+-Yaw rate 
+-Steering angle 
+
+• Checking signal plausibility 
+
+• Checking that conditions for activation are fulfilled 
+
+-Rain and light sensor status 
+-Light switch status 
+
+Missing or non-plausible BUS signals are stored in the form of fault codes in the AHL 
+control unit. The types of fault are stored in the SMC. The SMCs are accessed via the 
+AHL control unit. 
+
+
+102 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: Chassis #: Production Date: 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+103 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: _ Chassis #: _ Production Date: _ 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+104 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: _ Chassis #: _ Production Date: _ 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+105 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: _ Chassis #: _ Production Date: _ 
+
+Complaint: 
+
+
+
+106 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+What is the difference between the alarm siren on the E60 compared to the 
+E63/E64? 
+
+
+On the E60 DWA system, What signal does the IHKA module send to DWA and 
+Why? 
+
+
+Under what conditions will PDC be switched “OFF”? 
+
+
+What is BFD? Explain 
+
+
+What are the three main input variables for AHL? 
+
+
+107 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i Classroom Exercise - Review Questions 
+
+
+6. Explain the signal path between the turn signal switch and the AHL module? 
+
+
+7. What are the two functions of the Green LED on the light switch (AHL equipped 
+vehicles)? 
+
+
+Notes: 
+
+
+108 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interior Lighting 
+
+The interior lights of the E60 are pulse width modulated and automatically controlled by 
+various inputs. 
+
+PWM Control 
+
+The output is active from terminal 15 with a permanent clocking in a frequency of 100 
+Hz. In this way the power output is controlled. From a voltage of 12.8 V the pulse width 
+modulation is adjusted in such a way as to provide a power output of 100% as for 12.8 V. 
+
+In the case of voltage drops in the vehicle electrical system of up to 1 V, the pulse width 
+modulation is corrected and thus a constant brightness of the lamps connected at the 
+consumer shutdown output is ensured. 
+
+Below 12.8 V voltage regulation is no longer corrected. The brightness can fluctuate with 
+the battery voltage level. 
+
+Consumer Shutdown Terminal 
+
+Some loads/consumers such as reading, glovebox and luggage compartment lights can 
+remain switched on when the car is stopped. In order to protect the battery, these con¬ 
+sumers are shut down after a drop at terminal R with a delay of 16 minutes, or immedi¬ 
+ately with the diagnosis telegram. 
+
+Consumer Shutdown 
+
+Power outputs are made available by the KBM 2 for consumer shutdown. 
+
+• VA 1 (Output 1): 
+
+- Reading lights 
+
+- Vanity lights 
+
+- Boot 
+
+• IB 2 (Output 2): 
+
+- Glovebox light 
+
+
+109 
+
+5 and 6 Series Body Electronics 
+
+
+
+System Overview Interior Lighting 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Door contact, rear driver’s side door 
+
+15 
+
+Footwell light, driver, front 
+
+2 
+
+Door contact, rear passenger side door 
+
+16 
+
+Footwell light, passenger front 
+
+3 
+
+Button, trunk lid exterior 
+
+17 
+
+Glovebox lighting 
+
+4 
+
+Central locking, tailgate 
+
+18 
+
+Exit light, driver, rear 
+
+5 
+
+Remote control 
+
+19 
+
+Exit light, passenger, rear 
+
+6 
+
+Lock cylinder, tailgate 
+
+20 
+
+Luggage compartment light 
+
+7 
+
+Lock cylinder, driver’s door 
+
+21 
+
+Luggage compartment light 
+
+8 
+
+Door contact, driver’s door front 
+
+22 
+
+Interior reading lights, front 
+
+9 
+
+Door contact, passenger door, front 
+
+23 
+
+Interior reading lights, rear 
+
+10 
+
+Body Basic Module (KBM) 
+
+24 
+
+Vanity light, driver/passenger 
+
+11 
+
+Car Access System (SGM) 
+
+25 
+
+Exit light, driver’s side 
+
+12 
+
+Safety and Gateway Module (SGM) 
+
+26 
+
+Front area light, driver 
+
+13 
+
+Door module TMFA, driver front 
+
+27 
+
+Exit light, driver’s side 
+
+14 
+
+Door module TMBF, passenger front 
+
+28 
+
+Front area light, passenger side 
+
+
+110 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Roller Sunblind 
+
+
+An electric roller sunblind is available for the rear window of the E60. Mechanical roller 
+sunblinds are also available for the side windows of the E60. 
+
+System Function 
+
+The roller sunblind is operated from the switch in the driver's side switch block. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Driver’s door switchblock 
+
+4 
+
+Car Access System 
+
+2 
+
+Driver’s door module 
+
+5 
+
+Center Console Switch Center (SZM) 
+
+3 
+
+Safety and Gateway Module (SGM) 
+
+6 
+
+Roller Sunblind 
+
+
+Ill 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seat Variants 
+
+Three different seat versions are available for the E60. 
+
+• Electric basic seat with memory 
+
+• Electric sports seat with memory 
+
+• Multi-function seat with memory 
+
+Provision is also made for the installation of various options: 
+
+• Electric seat heater 
+
+• Seat ventilation system 
+
+• Active seat option 
+
+• Lumbar support option 
+
+Electrical Interfaces 
+
+One 8-pin and one 25-pin connector are used to connect the system to the vehicle elec¬ 
+trical system. The pin assignment of the 10 compartment plug connections has not 
+changed from those for the seats in the E65. The 6 compartment plug connections for 
+the seat modules have not changed either. 
+
+Electric, Sport and Multi-Function Seats 
+
+The signals required for seat adjustment are generated with the aid of the adjustment 
+switches. The signals are forwarded to the center console switch center (SZM) by means 
+of an interface similar to a K-Bus. The center console switch center then forwards the 
+data to the seat modules via the K-CAN. 
+
+Signals are processed in the seat modules. With the aid of the output stage in the seat 
+modules, the motors in the seat are activated for seat adjustment. 
+
+Seat Heating 
+
+The heating circuits vary depending on the equipment fitted. The multifunction seat and 
+the option seat ventilation system have 4 heating circuits. In a 4 heating circuit system, 
+the backrest and seat cushion each have a rapid-heat area and a secondary heat area. 
+Each heat area is fitted with a temperature sensor. Current is applied to a maximum of 
+two heating circuits at any one time. 
+
+Seat variants that are not based on the multi-function seat and that are not fitted with the 
+option seat ventilation system have 2 heat circuits. In a 2 heating circuit system, the back¬ 
+rest and seat cushion each have one heat area. 
+
+Lumbar Support 
+
+The seats are fitted with a pneumatically operated lumbar support adjustment. 
+
+112 
+
+5 and 6 Series Body Electronics 
+
+
+
+Seat System Overview (Multifunction Seat example) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution, front 
+
+10 
+
+Driver’s seat module (SMFA) 
+
+2 
+
+Seat switch panel 
+
+11 
+
+Seat heating (Seat bottom) 
+
+3 
+
+Center Console Switch Center (SZM) 
+
+12 
+
+Seat heating (Backrest) 
+
+4 
+
+Safety and Gateway Module (SGM) 
+
+13 
+
+Lumbar support 
+
+5 
+
+Driver’s Door Module (TMFA) 
+
+14 
+
+Active seat 
+
+6 
+
+Exterior mirror, driver 
+
+15 
+
+Fan motors, ventilated seat 
+
+7 
+
+Passenger door module (TMBF) 
+
+16-22 
+
+Seat adjustment motors 
+
+8 
+
+Exterior mirror, passenger side 
+
+23 
+
+Head restraint adjustment 
+
+9 
+
+Power distribution, front 
+
+
+
+
+113 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Seat 
+
+
+The active seat is already described in the training material for the E65. To provide sup¬ 
+port and relieve the strain on the spinal column and back muscles during long journeys, 
+the active seat can be installed in the vehicle (Refer to the Active Seat section in the E65 
+training material). 
+
+Entry/Exit Function for the Multi-Function Seat 
+
+There is an entry/exit aid for both the driver and passenger. The entry/exit aid is available 
+in conjunction with the multi-function seat. The entry/exit aid system uses the backrest 
+width (LBV) and seat cushion depth (STV) adjustment functions. 
+
+The backrest width is retracted to allow entry/exit into the vehicle. This creates more 
+space in the area of the backrest. The seat cushion depth is reduced. This creates more 
+space around the seat area. 
+
+Functional Principle 
+
+One example in which the entry/exit aid is activated 
+
+The customer stops the vehicle. The vehicle is not in gear, the engine is either running or 
+switched off. The vehicle door is opened. The door contact indicates this. The exit aid is 
+activated. The LBV and then the STV are retracted. The customer gets out and the door 
+is closed. The exit aid remains in that position and is used to assist entry when the 
+customer gets back in the car. 
+
+
+114 
+
+5 and 6 Series Body Electronics 
+
+
+
+Seats E63/E64 
+
+
+Introduction 
+
+The E63 and E64 will feature electrically adjustable driver's and passenger's seats as 
+standard. 
+
+
+
+Electrically adjustable sports seats will be optionally available. The sports seats addition¬ 
+ally feature a manual seat depth adjustment facility, more pronouncedly formed seat 
+upholstery and a lumbar support. 
+
+The electrical control is identical for both the basic seat and sport seat. Both versions 
+include seat memory on the driver’s side. 
+
+The K-Bus connects the driver's seat module (SMFA) to the SZM. In the E64, the pas¬ 
+senger's seat module (SMBF) is also connected to this K-Bus. 
+
+The SZM represents the interface between the K-Bus of the seats and the K-CAN. The 
+K-CAN and SZM therefore connect the seat control units to the control units of the body 
+electronic systems. 
+
+
+115 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Components 
+
+The system features the following switches and sensors: 
+
+Seat Adjustment Buttons 
+
+The seat adjustment buttons are located on the outer sides of the seat cushions. They 
+vary in terms of number and function. The E64 seat is additionally equipped with an 
+option for electrically adjusting the head restraints (headrests). 
+
+Lumbar Support Button 
+
+A rocker switch is provided on the seat to adjust the lumbar support. 
+
+Seat Memory Button 
+
+Only the driver's seat features additional buttons for the seat memory. 
+
+Seat Heating Switch 
+
+The buttons for controlling the seat heating are included in the center console switch 
+cluster. 
+
+Hall Sensors 
+
+Hall sensors are installed for the purpose of detecting the position of the seats. The sen¬ 
+sors are integrated in the seat drive units. 
+
+Temperature Sensor for Seat Heating 
+
+A temperature sensor is installed in each of the seat cushions for the seat heating. 
+
+The seats are controlled by the following control units: 
+
+Centre Console Switch Cluster (SZM) 
+
+In addition to the switches, the electronic circuits for the heating control and monitoring 
+functions are integrated in the center console switch cluster (SZM). The SZM is also 
+responsible for the electronic control of the steering column adjustment function. 
+
+E63/E64 Driver's Seat Module 
+
+The control unit of the driver's seat module (SMFA) communicates via the K-Bus with the 
+center console switch cluster (SZM). 
+
+
+116 
+
+5 and 6 Series Body Electronics 
+
+
+
+Passenger's Seat Module, E64 Only 
+
+The control unit of the passenger's seat module (SMBF) communicates via the K-Bus 
+with the center console switch cluster (SZM). 
+
+In the E63 the drive units are controlled directly by a load circuit. 
+
+The following actuators are driven to perform the seat functions: 
+
+Seat Heating 
+
+The seat cushion heating and backrest heating are installed such that they cover the 
+entire area. Even the side sections and thigh supports are heated: 
+
+Seat Adjustment Drive Units 
+
+The following drive units are installed in the E63 and E64 seat: 
+
+• Drive unit for seat forward/backward adjustment with 2 adjustment speeds 
+
+• Drive unit for seat height adjustment 
+
+• Drive unit for seat cushion tilt adjustment 
+
+• Drive unit for backrest angle adjustment 
+Additionally installed in the E64: 
+
+• Drive unit for head restraint height adjustment 
+
+Head Restraint Angle Adjustment 
+
+The head restraint angle adjustment as well as the seat depth adjustment on the sports 
+seat are always manual. 
+
+Lumbar Support 
+
+The lumbar support in the seat backrest consists of 2 lumbar cushions as well as an elec¬ 
+tric air pump with electrically operated valves. 
+
+The following displays provide seat status information: 
+
+Central Information Display 
+
+A corresponding check control message is shown on the central information display (CID) 
+when, for example, a backrest is not locked in correctly (E64 only). 
+
+Head-up Display 
+
+A corresponding check control message and an information text are shown in the head- 
+up display (HUD) when the backrest is not locked in correctly (E64 only). 
+
+
+117 
+
+5 and 6 Series Body Electronics 
+
+
+
+Seat Heating LEDs 
+
+3 light emitting diodes (LEDs) in the center console switch cluster indicate the switched 
+status of the seat heating system. 
+
+Seat communication features the following bus systems: 
+
+K-CAN 
+
+The body controller area network (K-CAN) is a two-wire bus for communication between 
+all control units connected to the K-CAN. 
+
+K-Bus 
+
+The body bus (K-Bus) is a single-wire connection. The center console switch cluster and 
+the seat modules communicate with each other via the K-Bus. 
+
+
+118 
+
+5 and 6 Series Body Electronics 
+
+
+
+Principle of Operation 
+
+
+The system functions of the electrically operated seats include: 
+
+• Seat adjustment 
+
+• Rear easy-entry facility 
+
+• Seat heating 
+
+
+Seat Adjustment 
+
+The installed seats feature the following seat adjustment options: 
+
+• Seat forward/backward adjustment (with electric drive unit, 2 speed stages) 
+
+• Seat height adjustment (with electric drive unit) 
+
+• Seat depth adjustment (manual only, sports seat only) 
+
+• Backrest angle adjustment (with electric drive unit) 
+
+• Head restraint height adjustment (E63: manual; E64: with electric drive unit) 
+
+• Head restraint angle adjustment (manual only) 
+
+• Lumbar support height adjustment (electro-pneumatic) 
+
+• Lumbar support depth adjustment (electro-pneumatic) [more ...] 
+
+The standard seat forward/backward adjustment, seat height adjustment, seat cushion tilt 
+adjustment and backrest angle adjustment facilities are each operated with separate elec¬ 
+tric drive units in all seats. The head restraint height adjustment is driven by an electric 
+drive unit only on the E64. 
+
+All these functions are controlled via the control panel on the outer sides of the seat 
+cushions. Signals from the respective button trigger seat adjustment in the required 
+directions. 
+
+
+A separate rocker switch is used to operate the lumbar support. An electric pump sup¬ 
+plies the lumbar support cushion with compressed air. The individual air chambers are 
+filled or emptied via several valves to vary the height and thickness of the lumbar support. 
+
+
+The limit stop is calculated for each drive unit in order to reduce the load of the electric 
+drive units to a minimum. Automatic recognition of the limit stops is integrated in each of 
+the electric drive units. Hall sensors integrated in the drive units register the adjustment 
+distances which are processed in the seat module. In the event of the drive unit blocking, 
+the detected position value is interpreted as the limit stop. All subsequent adjustments 
+are interrupted just before this point. 
+
+
+Once the obstruction has been removed, adjustment can again extend beyond the newly 
+detected limit stop when the seat adjustment button is pressed again. 
+
+
+119 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Rear Easy-entry Facility 
+
+The rear easy-entry facility is controlled by a push-button on the seat backrest. The rear 
+easy-entry facility can be activated only under the following conditions: 
+
+• The vehicle must be stationary with no wheels turning 
+
+• The door must be opened 
+
+Rapid adjustment is achieved with the second speed stage of the drive unit for seat for¬ 
+ward/backward adjustment. The seat moves for as long as the button is pressed. At the 
+same time, the backrest can be released manually and folded forward. 
+
+The seat moves back to its initial position when the seat adjustment button is 
+pressed back. 
+
+Seat Heating 
+
+The seat heating system heats the seat cushion and backrest including the side sections. 
+Separate seat heating switches (push-buttons) in the center console switch cluster 
+(SZM) control the driver's seat and passenger's seat. 
+
+The center console switch cluster controls the seat heating electronically. The system 
+is monitored by a temperature sensor. The seat heating is operational as from terminal 
+15 "ON". 
+
+
+3 LEDs located above the seat heating switches indicate the heating stage currently 
+active in the seat heating system. 
+
+Note: The seat heating is not actuated while the steering column is adjusted. 
+
+The current at the center console switch cluster would be too high if the seat heating and 
+steering column adjustment were operated simultaneously. The seat heating is interrupt¬ 
+ed in order to protect the center console switch cluster (SZM). 
+
+
+120 
+
+5 and 6 Series Body Electronics 
+
+
+
+E63/E64 Seat Heating 
+
+
+Installation Location 
+
+The heating mats of the heating system are integrated in the seat cover. The electronic 
+circuits and push-buttons necessary for operating the seat heating system are integrated 
+in the center console switch cluster (SZM). 
+
+
+
+
+
+
+T&1Q4QQ3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Temperature sensor in seat cushion 
+
+6 
+
+Heating mat in backrest 
+
+2 
+
+Heating mat in seat cushion 
+
+7 
+
+Seat and backrest upholstery 
+
+3 
+
+Heating mat in thigh support 
+
+8 
+
+Head restraint 
+
+4 
+
+Heating mat in side sections of seat cushion 
+
+9 
+
+Seat frame 
+
+5 
+
+Heating mat in side sections of backrest 
+
+10 
+
+Thigh support 
+
+
+Construction 
+
+The seat heating system consists of a carbon fibre net integrated in the seat covers. The 
+heating mats are also integrated in the thigh support and side sections of the seats. The 
+head restraint (headrest) is not heated. 
+
+There is a direct line from the center console switch cluster (SZM) to the heating mats for 
+control purposes. A temperature sensor in the seat measures the current temperature. 
+
+
+121 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Function of Seat Heating 
+
+The heating mats for the driver's seat and passenger's seat are controlled separately. 
+
+The heating stage is selected with the seat heating switches in the center console switch 
+cluster. The seat heating is operational as from terminal 15 ON. The heating stage is 
+selected by pressing the seat heating switch several times. 3 green light emitting diodes 
+(LEDs) above the seat heating switches indicate the status of the seat heating system. 
+
+Operate the seat heating systems as described in the Owner's Handbook. 
+
+Note: The seat heating is interrupted when steering column adjustment is activated. 
+
+The seat heating is interrupted in order to protect the SZM. The current at the SZM 
+would be too high if the seat heating and steering column adjustment were operated 
+simultaneously, posing a risk of irreparable damage to the electronic circuitry. 
+
+The seat heating system features the following functions: 
+
+• Seat heating ON and OFF 
+
+• Seat heating temperature control 
+
+• Monitoring of temperature sensor 
+
+• Seat heating output management 
+
+• Overvoltage/undervoltage detection 
+
+• Short-circuit detection 
+
+• No-load detection 
+
+• Plausibility check of temperature profile 
+
+Seat Heating ON and OFF 
+
+Separate seat heating switches (push-buttons) in the center console switch cluster 
+(SZM) control heating stages for the driver's seat and passenger's seat as follows: 
+
+• Switch briefly pressed lx: Seat heating stage 3 ON > 3 LEDs ON 
+
+• Switch briefly pressed 2x: Seat heating stage 2 ON > 2 LEDs ON 
+
+• Switch briefly pressed 3x: Seat heating stage 1 ON > 1 LED ON 
+
+• Switch pressed lx long: Seat heating OFF > LEDs OFF 
+
+The seat heating can be switched off in any stage by pressing the button for longer 
+than 1.2 seconds. The LED indicators are located above the seat heating switch. 
+
+
+122 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Seat Heating Temperature Control 
+
+An electronic temperature control circuit is integrated in the SZM. A temperature sensor 
+is integrated in the heating mat for the purpose of registering the seat temperature. 
+
+The seat heating is deactivates at terminal 15 OFF. The selected heating stage remains 
+stored for a further 15 minutes. The seat heating is activated and operated at the heating 
+stage last selected at terminal 15 ON. The heating stage currently activated is indicated 
+by the number of illuminated LEDs. 
+
+Monitoring of Temperature Sensor 
+
+The temperature sensor is permanently monitored. The seat heating and LEDs are 
+switched off immediately if a short circuit or line break (open circuit) is detected. The 
+system can be switched on only by means of the seat heating switch. The seat heating 
+is deactivated when a short-circuit or an open circuit is detected in the temperature 
+sensor. The LED lights briefly before the electronic module switches off. The seat 
+heating can then be reactivated. The temperature sensor is checked again. 
+
+Seat Heating Output Management 
+
+If there is a drop in the vehicle's system voltage, the heating output is correspondingly 
+adapted in 4 stages as follows: 
+
+• "No reduction", normal unrestricted operation. 
+
+• "25 % reduction", when heating stage 3 is set the system uses heating stage 2. 
+However, the LED indicating stage 3 remains on. The system switches back to heat¬ 
+ing stage 3 when the heating output management signals "no reduction". 
+
+• "50 % reduction", seat cushion and backrest with side sections are heated at half 
+capacity. The system switches back to 100 % heating output when the heating out¬ 
+put management signals "no reduction". 
+
+• "Heating deactivated", the LED for the selected heating stage remains switched on. 
+The seat heating is reactivated when the heating output management signals "no 
+reduction". 
+
+Overvoltage/undervoltage Detection 
+Behavior in the Event of Undervoltage 
+
+The seat heating is switched off when the supply voltage for the SZM drops below a 
+value between 11.0 V and 11.8 V for more than 5 seconds. The current seat heating 
+setting is retained. The seat heating can be switched on again only when the voltage 
+value is higher than 11.8 V to 12.6V for longer than 4 seconds. The seat heating switch 
+can be used to select the heating stage and switch off the system. 
+
+The LED remains on. The time limit of 5 seconds restarts when the seat heating is deac¬ 
+tivated as the result of undervoltage being detected and then reactivated. 
+
+
+123 
+
+5 and 6 Series Body Electronics 
+
+
+
+Behavior in the Case of Overvoltage 
+
+The seat heating is deactivated immediately when the supply voltage for the center con¬ 
+sole switch cluster (SZM) exceeds a value between 15.9 V and 16.7 V for longer than 
+0.1 seconds. The seat heating LED is switched off. 
+
+The seat heating and the LED indicator are not switched on again automatically when the 
+normal voltage range from 11.8 V to 16.6 V is re-established. The LED may light briefly 
+before the electronics is switched off when the seat heating is deactivated as the result 
+of an overvoltage and then switched on again. 
+
+Short-circuit Detection 
+
+Actuation of the seat heating system is short-circuit-proof with respect to terminal 30 
+(battery positive terminal). The heating mats and LEDs are deactivated in response to a 
+short-circuit. They can be switched on again only by means of the seat heating switch. 
+The seat heating is also switched off as the result of increased power intake due to a 
+defective heating mat. 
+
+No-load Detection 
+
+The LED cannot be activated when a heating mat is not connected or there is a break 
+in the wiring (open-circuit). 
+
+The LED lights briefly when the seat heating is deactivated and briefly reactivated in the 
+event of a short-circuit, the heating mat not connected or a break in the wiring. 
+Conseguently, the electronic circuitry switches off the seat heating system. 
+
+Plausibility Check of Temperature Profile 
+
+A plausibility check is performed only at a seat temperature of 30°C or less. This prevents 
+the temperature in the backrest increasing to impermissibly high levels. 
+
+After the seat heating has been activated, the electronic circuitry expects a temperature 
+increase at the temperature sensor. The seat heating is switched off immediately when 
+the seat temperature is lower than 30°C and no increase in the temperature value is mea¬ 
+sured within 255 seconds. 
+
+The LED is also switched off. 
+
+
+124 
+
+5 and 6 Series Body Electronics 
+
+
+
+Outside Mirrors 
+
+Activation of the wing mirrors is performed by the door modules by means of the local 
+electronics in the front doors. All the mirror functions, except for electrochromatic wing 
+mirror and mirror heating, are active with terminal R on through to consumer shutdown. 
+
+The mirror functions are controlled exclusively in the door modules, which communicate 
+with each other via the byteflight. All the mirror adjustment functions are served by the 
+adjusting switches in the switch block in the driver's door. 
+
+The following options are available: 
+
+• Electrochromatic interior rearview and wing mirrors 
+
+• Electrochromatic interior rearview mirror 
+
+• Light package including front-area lights in wing mirrors 
+
+• Wing-mirror memory in conjunction with seat memory 
+
+
+
+
+
+
+VS223.02196. 02 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rear view mirror (Electrochromatic) 
+
+5 
+
+TMBF 
+
+2 
+
+Driver’s switch block 
+
+6 
+
+Side view mirror, right (Electrochromatic) 
+
+3 
+
+TMFA 
+
+7 
+
+KBM 
+
+4 
+
+Side view mirror, left (Electrochromatic) 
+
+8 
+
+SGM 
+
+
+125 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Adjustment 
+
+The fully electric steering-column adjustment allows the driver to set the steering wheel 
+to the best possible position. This is done with a switch on the left-hand side of the 
+steering column. The tilt and fore-and-aft position of the steering column are adjusted by 
+means of an electric motor. 
+
+
+
+Vehicles with electric steering column adjustment have a steering-column memory in 
+conjunction with seat memory and mirror memory. 
+
+The steering-column adjustment is actuated by the SZM. One motor drives the tilt and 
+fore-and-aft adjustment. A second motor changes the direction of adjustment via the 
+adjustment gears. 
+
+Possible functions of steering column adjustment are: 
+
+• Height adjustment 
+
+• Reach adjustment 
+
+• Entry/exit aid 
+
+• Steering-column memory 
+
+• Motor protection 
+
+
+126 
+
+5 and 6 Series Body Electronics 
+
+
+
+Steering Column Adjustment (Overview) 
+
+
+
+
+
+
+
+r 
+
+
+
+02262_02 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column adjustment button 
+
+8 
+
+Seat Module, Driver’s Side (SMFA) 
+
+2 
+
+Exterior mirror, driver 
+
+9 
+
+Safety and gateway Module (SGM) 
+
+3 
+
+Steering column switch cluster (SZL) 
+
+10 
+
+Passenger Door Module (TMBF) 
+
+4 
+
+Driver’s door module (TMFA) 
+
+11 
+
+Center Console Switch Center (SZM) 
+
+5 
+
+Power distribution, rear 
+
+12 
+
+Motor for steering column adjustment 
+
+6 
+
+Seat switches 
+
+13 
+
+Motor for steering column adjustment 
+
+7 
+
+Multi-function Steering wheel 
+
+14 
+
+Exterior mirror, passenger side 
+
+
+127 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The steering-column adjustment consists of the following components: 
+
+Switch for Steering-column Adjustment 
+
+This switch enables the driver to adjust the tilt and fore-and-aft setting of the steering col¬ 
+umn. The switch for steering-column adjustment is on the left-hand side of the steering 
+column. 
+
+Steering-column Adjustment Drive Unit 
+
+Two motors are built into the drive unit. 1 motor drives the tilt and fore-and-aft adjustment 
+of the steering column. The second motor changes the direction of adjustment via the 
+adjustment gears. 
+
+The adjustment movement and position recognition for both tilt and fore-and-aft adjust¬ 
+ment are recorded in the drive unit for the steering-column memory. There are 2 Hall 
+sensors and 2 magnetic rings (16-pin) integrated in the drive unit. 
+
+Steering Column Switch Cluster 
+
+The switch for steering-column adjustment sends its signal to the SZL. The SZL 
+forwards this signal to the SZM. 
+
+Signal path: 
+
+Switch for steering-column adjustment > SZL > byteflight > SGM > K-CAN > SZM. 
+
+SZM 
+
+The center console switch cluster (SZM) actuates the steering-column adjustment. The 
+SZM also stores the positions for the steering-column memory. 
+
+Door Contact in the Driver's Door 
+
+The center console switch cluster requires the signal from the door contact in conjunc¬ 
+tion with the terminal status for the easy-entry system. 
+
+Signal path: 
+
+Driver's door contact switch > TMFA > byteflight > SGM > K-CAN > SZM 
+
+
+128 
+
+5 and 6 Series Body Electronics 
+
+
+
+Principle of Operation 
+
+The fully electric steering-column adjustment comprises the following functions: 
+
+• Manual steering-column adjustment 
+
+• Steering-column memory 
+
+• Overheating protection for steering-column adjustment motors 
+
+Manual Steering-column Adjustment 
+
+The driver is able to adjust the steering column with a switch. When the switch is operat¬ 
+ed, the signal is transmitted cyclically from terminal 30 (cycle time: 100 milliseconds). The 
+steering-column adjustment is actuated for as long as the signal is being received. 
+
+Once the switch is no longer actuated, the message "Stop" is transmitted 3 times. 
+
+The steering-column adjustment is stopped when this signal is received, or if the cyclic 
+message is not received twice. 
+
+To enable a failure of the steering column switch cluster to be detected, a further a cyclic 
+message is transmitted when the data bus is active (cycle time: 1 second). 
+
+When changing the direction of adjustment, the center console switch cluster first actu¬ 
+ates the motor for setting the adjustment gears. 
+
+The actuation of this motor is time-dependent. The adjustment motor is not actuated 
+until the direction of adjustment is correctly set. The total adjustment movement is no 
+more than 36 millimeters for tilt adjustment and 40 millimeters for fore-and-aft adjust¬ 
+ment. 
+
+Steering-column Memory 
+
+The position of the steering column in each direction of adjustment is recorded by a Hall 
+sensor. This position is stored in the center console switch cluster (SZM). This allows the 
+Key Memory to call up the position of the steering column for up to 4 vehicle keys. 
+
+The tilt adjustment moves to the uppermost position to make it easier to get in and out of 
+the vehicle. 
+
+For the easy-access facility, the steering-column adjustment is automatically actuated 
+under the following conditions: 
+
+• Terminal R OFF 
+
+• Terminal R ON and driver's door opened (via door contact) 
+
+• Terminal 15 OFF with driver's door open (via door contact) 
+
+
+129 
+
+5 and 6 Series Body Electronics 
+
+
+
+The steering-column memory is activated under the following conditions: 
+
+• One of the two memory buttons for the seat-mirror memory and the steering-column 
+memory on the seat is pressed (from terminal R OFF). 
+
+• Another remote control is used (personalization). Condition: The selection "Last seat 
+position after unlocking" is activated in the "Settings" menu in the Central 
+information Display (CID) (from 09/2003). 
+
+In both cases, the steering-column memory will not move the steering column to the 
+stored position until terminal 15 is switched ON. 
+
+Overheating Protection for Steering-column Adjustment Motors 
+
+To protect the motors against overheating, a temperature model is stored in the center 
+console switch cluster. 
+
+The temperature model makes allowance for the warming up and cooling down of the 
+motors. 
+
+It is possible to move the steering column in either direction through the range of move¬ 
+ment at least 6 times before overheating protection is activated. 
+
+
+130 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the “Complaint, Cause, Correction” format. 
+
+Vehicle: _ Chassis #: _ Production Date: _ 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+131 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, diagnose the complaint outlined below. 
+Complete worksheet using the ‘‘Complaint, Cause, Correction” format. 
+
+Vehicle: _ Chassis #: _ Production Date: _ 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+132 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+Describe the signal path from the Driver’s door switchblock to actuate the E60 
+roller sunblind: 
+
+
+What control module stores the steering column memory settings? 
+
+
+On the E64, how is the customer informed that the seat backrest is not locked? 
+Why is this information important to the driver? 
+
+
+Describe the signal path for seat heating: (between switch and heating mats). 
+
+
+133 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i Classroom Exercise - Review Questions 
+
+
+5. Describe the overheating protection for the steering column adjustment motors: 
+
+
+6. What situation is indicated when the PDC button flashes? 
+
+
+7. How is “Panic Mode” initiated on DWA? 
+
+
+Notes: 
+
+
+134 
+
+5 and 6 Series Body Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

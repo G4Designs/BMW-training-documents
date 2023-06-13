@@ -1,0 +1,3641 @@
+TABLE OF CONTENTS 
+
+
+Subject Page 
+
+MS S52 .2 
+
+Objectives of the Module .2 
+
+Purpose of the System.3 
+
+System Components.4 
+
+Engine Throttle Control (EDR).6 
+
+Cruise Control Operation .10 
+
+Idle Control System - ZWD 5 .11 
+
+Input Signals/Components .12 
+
+Power Supply and Grounds .12 
+
+Camshaft Position Sensors.13 
+
+Crankshaft Position Sensor.14 
+
+Hot Film Air Mass Sensor.15 
+
+Engine Coolant Temperature Sensor.16 
+
+Oil Temperature/Level Sensor.17 
+
+Throttle Progression Switch .18 
+
+Power Transmission Switch .19 
+
+Oxygen Sensors .20 
+
+Knock Sensors .21 
+
+Exhaust Temperature Sensor .22 
+
+Integrated Ambient Barometric Pressure Sensor .23 
+
+Outputs/Components .24 
+
+Main Relay Control.24 
+
+Fuel Pump Module.25 
+
+Non Return Fuel Rail System .25 
+
+E Box Fan Control .26 
+
+Secondary Air Injection.27 
+
+Auxiliary Fan Control.28 
+
+VANOS Solenoid Control .29 
+
+Oil Sump Changeover Valves .30 
+
+Injector Control .31 
+
+Ignition Coil Triggering .32 
+
+Oxygen Sensor Heating .33 
+
+Idle Control Valve.34 
+
+Purge Control Valve .35 
+
+DM-TL (Diagnosis Module - Tank Leakage) .36 
+
+
+Review Questions 
+
+
+43 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MS S52 
+
+
+Model: E39 M5 S62B50 Engine 
+E52Z8 S62B50 Engine 
+
+Production Date: 09/99 
+
+Manufacturer: Siemens 
+
+Pin Connector: 134 Pins - 5 Modular Connectors 
+
+
+Objectives of the Module 
+
+After completing this module, you will be able to: 
+
+• Describe the Power Supply for the Ignition Coils 
+
+• Understand the EDR Operation 
+
+• Name the Component Locations of the Fuel Supply System 
+
+• List the Inputs Required for Fuel Injector Operation 
+
+• Understand the Oil Sump Changeover Function 
+
+• List the Systems Affected by the “SPORT” Switch 
+
+• Explain Why Two Sensors are used to Monitor Throttle Movement 
+
+• Describe the Dual Input from the Accelerator Pedal 
+
+• Explain How the Secondary Ignition is Monitored for Misfire 
+
+2 
+
+
+ST055 MS S52 
+
+
+
+MS S52 
+
+
+Purpose of the System 
+
+The engine management system for the M5 is the BMW - MS S52 system. The hardware 
+and software have been developed by BMW while the control module is supplied by 
+Siemens. The control module is the SKE (Standard Shell Construction) 134 pin design. The 
+MS S52 system conforms to TLEV emission standards. 
+
+The main features of the MS S52 include: 
+
+• Modular plug structure 
+
+• Engine Torque Calculation 
+
+• Electronic Throttle Control (EDR) single motor controlling 8 throttle valves 
+
+• Separate Idle Control Valve (ZWD 5) 
+
+• Integrated Cruise Control 
+
+• Double VANOS Control 
+
+• 2 - Hot-Film Air Mass Sensors 
+
+• Integrated Adaptive Knock Control 
+
+• Secondary Air Injection Control 
+
+• Mixture Adaption - Idle and Part load 
+
+• Fully Sequential Injection 
+
+• Engine Over-rev & Max Speed Limiting 
+
+• Oxygen Sensor Heating 
+
+• Catalytic Converter Temperature Monitoring 
+
+• Engine Torque Limiting through DSC Regulation 
+
+• Four EDR emergency running (limp home) programs 
+
+• Two different throttle progression programs (sport switch) 
+
+• Two different servotronic characteristic programs (sport switch) 
+
+• Variable engine speed warning zone (Tachometer) 
+
+• Oil pump circuit changeover 
+
+
+3 
+
+ST055 MS S52 
+
+
+
+
+
+System Components 
+
+
+The MS S52 engine control system incorporates two separate, equivalent processors. 
+However, the functions of the two processors are different. The functions of the first proces¬ 
+sor include: 
+
+• Load acquisition control 
+
+• Electronic throttle control (EDR) 
+
+• Idle actuator control 
+
+• Ignition and Knock control 
+
+The functions of the second processor include: 
+
+• Fuel injection control 
+
+• Engine speed limitation 
+
+• Misfire detection 
+
+• OBD II monitoring 
+
+• DTML control (leak diagnosis) 
+
+
+
+4 
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+MS S54 ECM Inputs - Processing - Outputs 
+
+
+
+5 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ELECTRONIC THROTTLE CONTROL (EDR) 
+
+
+FUNCTIONAL DESCRIPTION 
+
+The electronic throttle control system (EDR) was developed specifically for the S62 engine. 
+The design criteria was to develop an EML system capable of actuating the eight throttles 
+while ensuring that the power potential of the S62 engine was not compromised. The three 
+main components of the system include: 
+
+• The pedal position sensor (PWG) - same component that is used on the M62 TU EML 
+system. 
+
+• The EDR motor - new component designed with the ability to control the eight throttles. 
+
+
+
+• MS S52 engine control system - responsible for operation and monitoring of the throttle 
+control system. 
+
+The pedal position sensor is the driver’s wish for increased torque output of the engine. The 
+PWG input is processed by the MS S52 control module. Plausibility checks are carried out 
+and the EDR motor is operated to open the throttle valves. All eight throttle valves are 
+opened simultaneously through the linkages connected to the EDR. The system requires 
+approximately 120 ms to fully open the closed throttle valves. 
+
+Feedback of the current throttle valve position is achieved through two throttle valve poten¬ 
+tiometers located on the ends of the throttle valve shafts. 
+
+
+6 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THROTTLE POSITION SENSOR (PWG) 
+
+
+The PWG provides two separate variable voltage signals to the MS S52 control module for 
+determining the request for EDR operation. The MS S52 monitors the changing signal 
+ranges of both circuits as the pedal is pressed from idle to full throttle. 
+
+PWG Pot #1. = 0.5V to 4.5V. 
+
+PWG Pot #2. = 0.5V to 2.0V 
+
+PWG Pot signal #1. is the primary input for throttle opening request. The signal from Pot 
+#2. is used primarily for plausibility checking. If the signal ranges are incorrect, The MS S52 
+will activate an emergency operating program based on the specific fault recognized. 
+
+
+
+7 
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EDR THROTTLE POSITION FEEDBACK SIGNALS 
+
+
+The throttle valve positions are monitored by two feedback potentiometers mounted on the 
+ends of the throttle valve shafts. Each potentiometer has its own power (5 volt) and ground 
+supply for safety reasons. The two signals are used for redundant monitoring of the throt¬ 
+tle valve positions. 
+
+Due to their positioning on the engine, the signals from the potentiometers are inverse, 
+however the MS S52 is monitoring the linear characteristics of the signal for determining 
+throttle valve position. 
+
+Checking of the potentiometer signals is split into checking each signal individually and 
+comparing the two signal values. 
+
+Different emergency operating programs are activated depending on what fault might occur 
+with the feedback signal circuits as follows: 
+
+• Emergency program #1. - Error while checking signal comparison. 
+
+• Emergency program #1. - Fault with one potentiometer signal or sensor. 
+
+• Emergency program #2. - Fault with both potentiometer signals or sensors. 
+
+
+
+8 
+
+ST055 MS S52 
+
+
+
+
+EDR SAFETY CONCEPT 
+
+
+A pre-drive check of the EDR system is carried out every time the ignition is switched On 
+(KL 15). The MS S52 control module briefly opens the throttles and checks the following: 
+
+• The zero set point of the feedback potentiometers - throttle valve closed position. 
+
+• Free movement of the throttle valves. 
+
+• Operation of the EDR actuator motor. 
+
+• Operation of the return springs in the EDR actuator motor. 
+
+
+EMERGENCY PROGRAMS 
+
+There are a total of four emergency operation programs stored in the MS S52 control mod¬ 
+ule. The MS S52 control module will activate one of these programs depending on which 
+fault is present or what the failed component is. With any fault that is relevant to the EDR 
+system, the engine’s output torque will be reduced to provide limited driveability of the vehi¬ 
+cle. 
+
+EMERGENCY PROGRAM #1. - Engine operation with PWG input. The engine’s output 
+torque is limited to 480 Nm. This program will set with faults in one PWG sensor input or 
+one throttle valve feedback input. 
+
+EMERGENCY PROGRAM #2. - Engine operation through the idle valve actuator. The 
+engine’s output torque is limited to 300 Nm and the vehicle’s speed to 70 MPH. With pro¬ 
+gram #2, the throttle valves are shut down and only the idle valve is used for engine oper¬ 
+ation. This program will set with a fault in one air mass sensor input and one PWG sensor 
+input. 
+
+EMERGENCY PROGRAM #3. - Engine operation with jammed throttle valves. The engine’s 
+output torque is limited to 300 Nm and the speed is limited to 35 MPH. This is carried out 
+through ignition and injection intervention if the MS S52 senses that the throttle valves are 
+jammed or stuck and cannot be closed by applying power through the EDR actuator. 
+
+EMERGENCY PROGRAM #4. - Engine operation with a control module internal fault. The 
+engine’s output torque is limited to 250 NM and the speed is limited to 35 MPH. Depending 
+on the degree of the fault, the control module with the dual processors will enable limited 
+engine operation. 
+
+
+9 
+
+ST055 MS S52 
+
+
+
+CRUISE CONTROL OPERATION 
+
+
+As with other EML systems, the MS S52 control module 
+takes over the function of cruise control. Throttle activation 
+is provided by the MS S52 automatic control of the EDR 
+actuator and monitoring of the feedback potentiometers. 
+
+All driver requested cruise control function requests are pro¬ 
+vided to the MS S52 from the MFL control module in the 
+steering wheel over a single FGR data lead. 
+
+
+
+BRAKE/CLUTCH SWITCH INPUTS 
+
+
+The brake and clutch switch signals are input to the MS S52 control module for cruise con¬ 
+trol operation. 
+
+
+
+n r“U~ 
+
+
+12 
+
+
+
+
+
+
+
+
+CRUISE CONTROL 
+"(FGR) DATA SIGNAL 
+
+
+BRAKE LIGHT 
+
+- SIGNAL 
+
+- BRAKE TEST 
+SIGNAL 
+
+^ CLUTCH 
+SIGNAL 
+
+
+10 
+
+ST055 MS S52 
+
+
+Gear Recognition 
+Switch 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IDLE CONTROL SYSTEM (ZWD 5) 
+
+
+Idle control on the S62 engine is carried out using the ZWD 5 idle control valve. The valve 
+features a second air supply system that functions independently from the throttle control 
+system. The idle valve draws in metered air from the intake plenum and it is connected to 
+both sets of throttle valves though an interconnected pipe. 
+
+The valve receives power from the main relay and the open and close windings are con¬ 
+trolled by the MS S52 control module. Without power, the valve is open approximately 30%. 
+
+Under certain conditions, the idle control valve can be opened by the control module to pro¬ 
+vide air flow for emergency (limp home) operation. 
+
+
+
+
+ST055 MS S52 
+
+
+
+
+
+INPUT SIGNALS/COMPONENTS 
+
+
+POWER SUPPLY AND GROUNDS 
+
+The MS S52 control module receives the following power supply inputs: 
+
+• KL 30 - Constant Battery power. The ECM receives KL 30 from the battery to monitor 
+the voltage level as an input and adjusts output functions if the battery voltage drops 
+below a certain threshold. 
+
+• KL 15 - Ignition Key On. The MS S52 control module receives KL 15 for its wake up call 
+and for activation of the engine control module relay. 
+
+• KL 15 - Main Relay (engine control relay) Power Supply. The ECM receives its operation 
+from the main relay once the relay is energized by the ECM. 
+
+
+
+
+Fuse carrier, 
+engine electronics 
+
+
+
+
+
+Engine control 
+module (DME) 
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAMSHAFT POSITION SENSORS 
+
+Located on the rear of the cylinder head, the camshaft position sensors (Hall effect) moni¬ 
+tor the position of the camshafts to establish start of ignition firing order, setup sequential 
+fuel injection triggering and for accurate camshaft advance and retard (double VANOS) tim¬ 
+ing feedback. 
+
+With full variable VANOS control on both the intake and exhaust camshafts, four cam posi¬ 
+tion sensors are required. 
+
+The sensors are provided with operating power from the ECM main relay and produce a 
+square wave input signal to the ECM. The trigger wheels contain a wide tooth that is used 
+to establish full sequential injection. 
+
+
+
+13 
+
+ST055 MS S52 
+
+
+
+
+
+CRANKSHAFT POSITION SENSOR 
+
+
+The engine speed (RPM) and crankshaft position input signals are provided by the induc¬ 
+tive pulse sensor that scans the incremental gear wheel mounted on the flywheel of the 
+engine. The rotation of the gear wheel generates an A/C voltage signal in the sensor where¬ 
+by each tooth of the wheel produces one pulse. The engine control module counts these 
+pulses and determines engine speed and crankshaft position. 
+
+The signal from the crankshaft sensor is also used for OBD II monitoring for misfire detec¬ 
+tion. 
+
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+HOT FILM AIR MASS SENSOR 
+
+
+The MS S52 system uses the hot film air mass sensor for measuring the air intake volume. 
+Two air mass sensors are used with the M5 engine to ensure that an sufficient volume of 
+air can enter the engine under full load operating conditions. 
+
+The operation of the hot film air mass sensor remains the same as previous systems. The 
+sensor receives operating power from the ECM relay. 
+
+
+
+INTAKE AIR TEMPERATURE 
+
+Intake air density (temperature) for injection is automatically compensated for by the air 
+mass sensors. 
+
+However, an additional air temperature (NTC) function is required for ignition timing.The 
+sensing function is integrated into the driver’s side air mass meter and provides a signal 
+dependent on air temperature. 
+
+
+15 
+
+ST055 MS S52 
+
+
+
+
+
+
+ENGINE COOLANT TEMPERATURE SENSOR 
+
+
+The engine coolant temperature (NTC) input to the control module is used to provide 
+enrichment for cold starts and cold engine running conditions. The sensor is located near 
+the thermostat housing. 
+
+The oil temperature sensor input is used as a replacement value in the event of a failure 
+with the coolant temperature sensor input. 
+
+
+
+16 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MONITORS ENGINE 
+OIL TEMPERATURE 
+FOR CALCULATION 
+
+
+HEATED TO IQ C 
+ABOVE OIL TEMP AND 
+TIMED AS IT COOLS 
+
+
+
+
+ijuuuuuuuui_ 
+
+
+Oil Temperature/Level Sensor: The electronic level sensor is located in the engine sump 
+mounted to the engine oil pan. The probe of the level sensor contains two temperature 
+sensing elements. 
+
+
+• One senses the engine oil temperature. 
+
+
+• The other is heated to 10° C above the temperature of the engine and then is allowed to 
+cool. 
+
+
+The length of time it takes to cool the heated element is how the sensor determines the 
+engine oil level. When the oil level is high it covers a larger portion of the probe submersed 
+in the oil sump. The engine oil around the probe absorbs the heat of the heated element 
+quicker than if the level is low. 
+
+The microporcessor in the base of the sensor produces a pulse width modulated signal 
+proportional to the oil level. The pulse width increases with a decreased level of oil. 
+
+Based on the oil temperature, the visual warning LEDs in the tachometer will illuminate at 
+cold engine start up and slowly be extinguished as the oil temperature increases. One 
+amber and the red LEDs always stay illuminated reminding the driver of maximum rpm 
+zone. The oil temp sensor also serves as a vital input for VANOS operation, varying the sole¬ 
+noid control based on oil temperature (reaction time of camshaft movement). In the event 
+of a fault the engine coolant temperature is used as a substitute value. 
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THROTTLE PROGRESSION SWITCH 
+
+
+The MS S52 control system contains two different throttle progression program curves 
+(Sport and Normal). The sport program is selected by pressing the sport switch located in 
+the center console switch panel. 
+
+The switch provides a ground signal as an input when pressed. The MS S52 activates the 
+sport characteristics for the EDR throttle control. This provides an increase in throttle open¬ 
+ing over the non-sport position. 
+
+At the same time the ZKE control module is signaled over the CAN and K-Bus to activate 
+the sport servotronic (increased road feel) steering characteristic program. 
+
+
+
+18 
+
+ST055 MS S52 
+
+
+
+
+
+
+POWER TRANSMISSION SWITCH 
+
+
+The power transmission switch (circuit) consists of two switches in series. The circuit 
+includes a clutch switch and a gear selector switch on the transmission. The functions of 
+the power transmission switch are as follows: 
+
+• Cutout for cruise control operation 
+
+• Enable condition for idle control 
+
+The switches provide a high signal for the MS S52 when the clutch is disengaged and the 
+transmission is in gear. 
+
+If either the clutch is engaged or the transmission is in neutral, the cruise control will be dis¬ 
+engaged. 
+
+
+
+19 
+
+ST055 MS S52 
+
+
+
+
+
+OXYGEN SENSORS 
+
+Four oxygen sensors are used on the MS S52 as with other engine management systems. 
+Two oxygen sensors, mounted in front of the catalytic converters and two sensors are 
+mounted behind the converters to monitor the efficiency of the catalyst. 
+
+The two pre-converter oxygen sensors monitor the air fuel mixture and their inputs are 
+used to adjust the mixture to achieve the ideal air/fuel ratio for all driving conditions. When 
+heated, the oxygen sensor generates a voltage based on the oxygen content differential 
+between the exhaust gas and the ambient air. The greater the oxygen differential, the high¬ 
+er the voltage generated will be. The oxygen sensor swing in voltage ranges from 0.15V 
+(Lean) to 0.85V (Rich). 
+
+
+The two post-converter oxygen sensors monitor the oxygen level after the conversion by 
+the catalyst. This signal is relatively steady at approximately 0.8V. The engine control mod¬ 
+ule compares the signals of the pre and post oxygen sensors for conversion efficiency and 
+if the values go outside of the programmed parameters, faults will be stored relating to cat¬ 
+alytic converter operation. 
+
+
+
+20 
+
+ST055 MS S52 
+
+
+
+
+
+KNOCK SENSORS 
+
+
+The use of knock sensors allows the MS S52 control module to maintain the optimum igni¬ 
+tion timing curve for all engine operating conditions. If detonation occurs, the signal from 
+the knock sensors allows the engine control module to retard the timing to prevent engine 
+damage. 
+
+Each knock sensor produces a varying voltage signal that is dependent on the level of noise 
+produced by the cylinders. This voltage signal input is processed by the control module and 
+if the level exceeds the programmed parameters for knock, the timing is retarded until the 
+knock is eliminated. 
+
+
+
+ACCEPTABLE 
+
+fWNGE 
+
+
+KNOCK SENSORS 
+MONITOR COMBUSTION 
+NOISE SIMILAR TO 
+
+
+A MICROPHONE 
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+CATALYTIC CONVERTER TEMPERATURE MONITORING 
+
+
+The M5 is equipped with an exhaust temperature sensor at the catalyst for cylinder bank 
+5-8. The sensor is a PTC resistor which allows the MS S52 to monitor the catalyst tem¬ 
+perature. This input is considered for mixture control by the MS S52 for catalyst efficiency. 
+In the event of an overheat situation, the ECM will illuminate the Malfunction Indicator Light 
+(MIL) and set a fault code. Under certain load conditions, the fuel mixture is enriched to aid 
+in cooling down the catalytic converters. 
+
+
+
+22 
+
+
+ST055 MS S52 
+
+
+
+
+
+
+INTEGRATED AMBIENT BAROMETRIC PRESSURE SENSOR 
+
+
+The MS S52 Control module contains an integral ambient barometric pressure sensor. The 
+sensor is part of the SKE and is not serviceable. The internal sensor is supplied with 5 volts 
+In return the sensor provides a linear voltage of approximately 2.4 to 4.5 volts representa¬ 
+tive of barometric pressure (altitude). 
+
+The MS S52 monitors barometric pressure for the following reasons: 
+
+* The barometric pressure signal along with calculated air mass provides an additional 
+correction factor to further refine injection “on” time. 
+
+
+* Provides a base value to calculate the air mass being injected into the exhaust system by 
+the secondary air injection system. This correction factor alters the secondary air injection 
+“on” time, optimizing the necessary air flow into the exhaust system. 
+
+
+* Recognition of altitude above the accepted criteria postponing DM-TL activation for evap¬ 
+orative emission leak diagnosis. 
+
+
+
+INTEGRAL 
+
+BAROMETRIC 
+
+PRESSURE 
+
+SENSOR 
+
+
+PROVIDES ADDITIONAL CORRECTION 
+FACTOR FOR FOLLOWING FUNCTIONS 
+
+
+
+2 3 
+
+
+
+
+A 
+
+
+SECONDARY 
+AIR PUMP 
+RELAY 
+
+VACUUM 
+
+VENT 
+
+
+
+
+0 SENSOR 
+HEATING 
+
+
+LEAK DIAGNOSISTEST 
+POSTPONEMENT 
+
+
+FRESH 
+AIR INLET 
+
+
+
+
+DM-TL 
+(Diagnostic Module - 
+Tank Leak detection) 
+
+
+V V V 
+
+
+23 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OUTPUTS/Components 
+
+
+MAIN RELAY CONTROL 
+
+The MS S52 control module activates the main relay when KL 15 is switched ON. This pro¬ 
+vides operating power for the control module and in addition the following systems/circuits 
+also receive operating power from the main relay: 
+
+• Traction control module 
+
+• Fuel pump relay 
+
+• Secondary air pump relay/air pump 
+
+• E-box cooling fan 
+
+• Auxiliary oil pump solenoids 
+
+• Purge valve 
+
+• Fuel injectors 
+
+• Vanos solenoids 
+
+• Oxygen sensor heaters 
+
+• Air mass sensors 
+
+• Idle control valve 
+
+
+The MS S52 maintains the ground for the main relay for a short duration after the ignition 
+has been switched off. This allows the control module to store the adaption values and any 
+fault codes. 
+
+
+
+ST055 MS S52 
+
+
+
+
+FUEL PUMP MODULE 
+
+
+The MS S52 controls the activation of the fuel pump module. After the ignition is switched 
+ON, the MS S52 provides a pulse width modulated ground for the fuel pump module and 
+the ground is maintained with the presence of the engine speed signal. 
+
+A new fuel pump is utilized to match the fuel supply demands of the S 62 engine. While 
+the pump delivers more volume and pressure, this creates more heat due to the increased 
+power consumption. To lower the in-tank temperature, the fuel pump module will vary the 
+pump speed (amperage). The MS S52 control module will vary the ground signal (PWM) 
+to the fuel pump module. This variation is based on engine speed and load: 
+
+• Idle and part load = low pump speed 
+
+• Start-up (20 seconds) and full-load = full pump speed 
+
+
+The power to the fuel pump relay will be switched off in the event of an airbag activation. 
+The MRS III control module will signal the Engine control module over K-bus and CAN bus 
+for this purpose. 
+
+
+
+MS S52 
+
+
+K BUS 
+
+dh - 
+
+
+MRS ill 
+(3-99 PROD) 
+
+
+FUEL PUMP MODULE 
+
+
+FUEL 
+
+PUMP 
+
+
+NON RETURN FUEL RAIL SYSTEM 
+
+The S62 engine utilizes the same method of meeting 
+Running Loss Compliance as previously seen on the 
+M62 TU. The regulated fuel supply is controlled by the 
+fuel pressure regulator integrated in the fuel filter 
+assembly (pressure testing tap at this point). A fuel 
+return line is located on the filter/regulator assembly. 
+The system provides even fuel distribution to all fuel 
+injectors due to a “T” connection feeding both fuel 
+rails. The new fuel rails do not contain a return line. 
+
+
+
+25 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E BOX FAN CONTROL 
+
+
+The E Box fan is controlled by the MS S52. The control module contains an integral NTC 
+temperature sensor for the purpose of monitoring the E Box temperature and activating the 
+fan. 
+
+When the temperature of the E Box exceeds predetermined values, MS S52 provides a 
+switched ground for the E Box fan to cool the E Box located control modules. 
+
+With every engine start-up, MS S52 briefly activates the fan ensuring continued fan motor 
+operation for the service life of the vehicle. This feature is intended to prevent fan motor 
+“lock up” from lack of use. 
+
+
+
+
+
+
+
+26 
+
+ST055 MS S52 
+
+
+E-BOX FAN 
+CONTROL 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECONDARY AIR INJECTION 
+
+
+The secondary air injection system consists of the same components as previous systems 
+with V8 specific locations. 
+
+
+The MS S52 control unit controls the vacuum vent valve and the secondary air injection 
+pump relay separately but simultaneously. 
+
+The secondary air pump operates at a start temperature of between 10°C and 40°C. It con¬ 
+tinues to operate for a max. of 2 minutes at idle speed. 
+
+MS S52 contributes an additional correction factor for secondary air “on” time with the 
+additional input from the integral ambient barometric pressure sensor. 
+
+This sensor provides a base value to calculate the air mass being injected into the exhaust 
+system. This helps to “fine tune” the secondary air injection “on” time, optimizing the nec¬ 
+essary air flow into the exhaust system which reduces the time to catalytic converter light- 
+off. 
+
+
+
+VACUUM 
+
+VENT 
+
+VALVE 
+
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUXILIARY FAN CONTROL 
+
+
+The Auxiliary Fan motor incorporates an output final stage that activates the fan motor at 
+variable speeds. The auxiliary fan is controlled by the MS S52. The motor output stage 
+receives power and ground and activates the motor based on a PWM signal (10 - 100 Hz) 
+received from the MS S52. 
+
+
+The fan is activated based on the following factors: 
+
+
+• Radiator outlet temperature sensor input exceeds a preset temperature. 
+
+• IHKA signalling via the K and CAN bus based on calculated refrigerant pressures. 
+
+• Vehicle speed. 
+
+• Battery voltage level. 
+
+
+When the over temperature light in the instrument cluster is on (120°C) the fan is run in the 
+overrun function. This signal is provided to the ECM via the CAN bus. When this occurs 
+the fan is run at a frequency of 10 Hz. 
+
+
+
+RADIATOR 
+
+OUTLET 
+
+TEMPERATURE 
+
+SENSOR 
+
+
+AUX FAN 
+OUTPUT 
+STAGE/MOTOR 
+
+
+IHKA SIGNALING VIA CAN BUS: 
+-Variable Speed Auxiliary Fan Control 
+
+- IHKA on 
+
+- Compressor Activation Status 
+
+
+28 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VANOS SOLENOID CONTROL 
+
+
+Control of the VANOS solenoids is an output function of the MS S52 control module. There 
+is an inlet and exhaust solenoid for each camshaft. These solenoids are both installed on 
+one side of the control piston. The engine control module regulates the solenoids through 
+a pulse width modulated signal to apply or drain control oil pressure from the VANOS pis¬ 
+tons. 
+
+Camshaft adjustment is based on several characteristic maps stored in the control module. 
+The main control parameters for camshaft adjustment are derived from the the engine 
+speed signal and the throttle valve position signal. 
+
+
+
+29 
+
+ST055 MS S52 
+
+
+OIL SUMP CHANGEOVER VALVES 
+
+
+The oil supply system of the S62B50 engine is specifically designed for the M5, due to its 
+ability for high speed cornering (transverse acceleration of up tol .2g) that could cause the 
+engine oil to be forced (and trapped) into the outer edge of the cylinder head and the rear 
+area of the oil sump. To prevent oil starvation from occurring during these driving situations, 
+two additional scavenging oil pumps are installed within the main oil pump housing. The 
+main oil pump’s function is to supply the engine with the required volume of oil for all of its 
+lubrication needs. The two additional pumps only supply the oil sump with the scavenged 
+oil. 
+
+Each additional oil pump incorporates a solenoid changeover valve that is connected to two 
+scavenging tubes that pickup from the rear section of the oil pan and the outer edge of the 
+cylinder head. The scavenging tubes in the oil pan crossover so that the right side pump 
+draws from the rear left side of the pan and the left pump from the right side of the pan. 
+
+When cornering at forces > 0.9g, the MS S52 will switch one solenoid to draw oil from the 
+cylinder head while the second solenoid will continue to draw oil from the rear of the 
+pan.The MS S52 control module receives the G-force signal from the DSC control module 
+over the CAN line. 
+
+
+
+
+30 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+INJECTOR CONTROL 
+
+
+The MS S52 control module calculates the correct injection time based on the control 
+parameters of: 
+
+• Engine speed 
+
+• Air mass 
+
+• Throttle position 
+
+• Oxygen Sensor feedback signal 
+
+• Engine coolant 
+
+• Barometric pressure 
+
+• Battery voltage 
+
+• Catalyst Temperature Sensor 
+
+The injectors receive operating power from the main relay and the control module provides 
+the ground for the duration of the injection time (MS value). 
+
+
+
+31 
+
+ST055 MS S52 
+
+
+
+
+
+IGNITION COIL TRIGGERING 
+
+
+Control of the ignition coils is an output function of the MS S52 control module. The sys¬ 
+tem is 100% solid state with no moving parts. The control module triggers each coil indi¬ 
+vidually based on the parameters of engine speed and crankshaft position. 
+
+The ignition timing can be modified between each individual coil firing and can also be 
+adjusted on a cylinder selective basis for knock control. 
+
+The power supply for the ignition coils is provided by a relay. This relay is identified as an 
+“unloader relay” in the ETM and component listing displays. 
+
+The unloader relay was integrated into all vehicles starting with the 1997 model year. The 
+purpose of this relay is to isolate the voltage supply as well as to relieve the ignition switch 
+of the additional current draw needed by the ignition coils. 
+
+When KL 15 is switched on, the relay control circuit is provided power to close the relay 
+providing operating voltage to ignition coils. 
+
+
+
+POWER DISTRIBUTION 
+
+
+
+◄ 
+
+
+
+♦ 
+
+
+
+IGNITION 
+
+SWITCH 
+
+
+KL 15 “Wake Up Call 
+
+
+
+IGNITION COIL 
+POWER RELAY 
+
+(Unloader Relay) 
+
+
+JJ 
+
+
+
+
+
+
+
+
+
+
+
+32 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OXYGEN SENSOR HEATING 
+
+
+Oxygen sensor heating is an output function of the MS S52 control module. The heating 
+circuits receive operating power from the main relay when KL 15 is switched on. Each of 
+the heaters is controlled through a separate final stage which is monitored by the control 
+module for OBD II purposes. 
+
+The heaters are controlled with a pulsed square wave voltage during cold start which allows 
+heating to occur without the result of thermo-shock. The duty cycle is then varied to main¬ 
+tain the heating of the sensors. On decel, the duty cycle will be increased to maintain the 
+heating of the sensors during closed throttle operation with fuel cut. 
+
+
+
+MCMTOR 
+
+
+MONfTQR 
+
+
+
+MONITOR 
+
+
+
+
+
+MOJTlDfl 
+
+MS S52 
+
+
+IT ™ ” f 
+
+u f 
+
+"—1 
+
+O' f 
+
+F3 I 
+
+n 
+
+| 1 
+
+D L 
+
+j 30A 1 
+
+[L-— — 
+
+U_ J 
+
+
+J Fuse carrier, 
+
+D engine electronics 
+
+
+PRE CATALYTIC CONVERTER 
+O, SENSOR 
+
+
+V-T-- 
+
+la YWYi 
+
+
+
+hi-VWV| 
+
+
+
+PFIF CATA-YTIG CONVERTER 
+O, SENSOR 
+
+
+
+POST CATALYTIC CONVERTER 
+O, SENSOR 
+
+
+
+VvWn 
+
+
+
+33 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IDLE CONTROL VALVE 
+
+The S62 engine uses an idle control valve for idle stabilization. During idle conditions, the 
+throttle valves are closed and all idle air passes through the idle valve. The valve on the S62 
+engine is the three wire ZWD 5 system. 
+
+The valve has two windings that oppose each other. By varying the duty cycle applied to 
+the windings, the valve can be progressively opened, closed or held steady to maintain the 
+idle at a specified speed. The valve has a mechanical fail-safe opening (30%) which will 
+allow the engine to idle in the event of a malfunction with the control of the valve. 
+
+The idle control valve also serves as a fail-safe in the event of certain faults with the throt¬ 
+tle control system (EDR). The MS S52 control module can progressively open the valve to 
+allow limited operation of the engine. 
+
+
+
+34 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+PURGE CONTROL VALVE 
+
+
+The MS S52 system uses a purge valve that is sprung closed and powered open. This type 
+of purge valve is required for OBD II compliancy and evaporative system leak detection 
+tests. This type of valve also prevents vapors escaping into the atmosphere when the vehi¬ 
+cle is not in use. The valve will not open under fuel vapor over pressure. 
+
+The valves are cycled periodically during engine operation. The duty cycle of the purge 
+valve solenoid may vary between 0 and 100% depending on engine operating conditions. 
+
+The evaporative purge system is monitored for flow check after fuel system adaptation is 
+complete and the ECM oxygen sensor feedback is in closed loop. The diagnosis starts dur¬ 
+ing normal purge operation. After the system has completed a purge cycle, the valve is 
+cycled abruptly several times. In addition to the rich/lean shift, the engine idle speed will 
+vary. If the predetermined values are reached, the system is functioning properly. 
+
+The flow check will operate after the following conditions have been met: 
+
+• Vehicle speed = 0 • Oxygen sensors in closed loop 
+
+• Engine at idle speed • Coolant temperature above set limit 
+
+
+
+r vH- :* T +‘ +■ ■*+— "-I 
+
+
+HP 
+
+* 
+
+
+
+
+
+
+
+
+35 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DM-TL (DIAGNOSIS MODULE - TANK LEAKAGE) 
+
+
+A new Fuel System Leak Diagnosis Pump is equipped on the M5. The pump will eventu¬ 
+ally replace the current vacuum LDP on all vehicles. 
+
+
+The pump is manufactured by Bosch to BMW specifications. 
+
+
+• Bosch ECMs identify the electrical function of the pump as DM-TL. 
+
+
+• Siemens ECMs identify the electrical function as “LDP-M1” 
+
+
+
+Pin 1 = Pump Motor Control 
+Pin 2 = Vent Valve Control 
+Pin 3 = Power Supply 
+
+
+CHANGE OVER PUMP 
+
+VALVE AIR INLET AIR INLET 
+
+
+MOTOR/ 
+PUMP 
+(INTERNAL) 
+
+
+CHANGE OVER 
+VALVE 
+(INTERNAL) 
+
+
+DETAILED 
+VIEW 
+
+
+FILTERED 
+
+AIR 
+
+INLET 
+
+
+OUTLET TO 
+CHARCOAL 
+CANISTER 
+
+
+36 
+
+ST055 MS S52 
+
+
+
+
+
+Functional Overview: 
+
+
+The DM-TL is located in the drivers side rear wheel well in the M5. 
+
+
+1. In it’s inactive state, filtered fresh air enters the evaporative system through the sprung 
+open valve of the DM-TL. 
+
+2. When the DME activates the DM-TL for leak testing, it first activates only the pump 
+motor. This pumps air through a restricter orifice (1.0 or 0.5 mm) which causes the elec¬ 
+tric motor to draw a specific amperage value. This value is equivalent to the size of the 
+restricter. 
+
+3. The solenoid valve is then energized which seals the evap system and directs the pump 
+output to pressurize the evap system. 
+
+
+The evap system is detected as having a large leak if the amperage value is not realized, a 
+small leak if the same reference amperage is realized or no leak if the amperage value is 
+higher than the reference amperage. 
+
+
+© 
+
+
+FRESH 
+
+
+AIR INLET 
+
+
+
+DM-TL 
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+
+w v v 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+1 
+
+
+
+
+© 
+
+
+il 
+
+
+
+A_A 
+
+IH9EI 
+
+
+
+
+
+FRESH 
+
+
+AIR INLET 
+
+
+
+DM-TL 
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+
+V V V 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+l 
+
+
+
+
+© 
+
+
+CURRENT 
+
+MONITOR 
+
+
+"V 
+
+
+
+©v 
+
+
+© 
+
+
+© 
+
+
+il 
+
+
+
+\_A 
+
+IDE I 
+
+
+
+
+
+FRESH 
+
+
+AIR INLET 
+
+
+
+DM-TL 
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+
+v/ v v 
+
+
+’ 
+
+
+) 
+
+ECM 
+
+MAIN 
+
+
+d y 
+
+
+RELAY 
+
+V 
+
+v!/ 
+
+<4 
+
+
+
+
+
+
+
+i 
+
+
+© 
+
+
+CUR 
+
+RENT 
+
+MON 
+
+ITOR 
+
+
+REFERENCE 
+
+
+
+
+© - 
+
+
+
+
+© 
+
+
+il 
+
+
+A 
+
+
+
+A 
+
+
+IDE 
+
+
+■(p 
+
+
+
+i® 
+
+
+CURRENT 
+MOIs ITOR 
+
+
+
+
+REFERENCE 
+
+
+
+© 
+
+
+'© 
+
+
+37 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FUNCTION 
+
+
+The DC Motor LDP ensures accurate fuel system leak detection for leaks as small as 
+1,0mm (.040”). The pump contains an integral DC motor which is activated directly by the 
+engine control module. The ECM monitors the pump motor operating current as the meas¬ 
+urement for detecting leaks. 
+
+The pump also contains an ECM controlled change over valve that is energized closed dur¬ 
+ing a Leak Diagnosis test. The change over valve is open during all other periods of oper¬ 
+ation allowing the fuel system to “breath” through the inlet filter (similar to the full down 
+stroke of the current vacuum operated LDP). 
+
+
+
+DC MOTOR LDP INACTIVE - NORMAL PURGE VALVE OPERATION 
+
+
+In it’s inactive state the pump motor and the change over valve of the DC Motor LDP are 
+not energized. When purge valve operation occurs filtered air enters the fuel system com¬ 
+pensating for engine vacuum drawing on the hydrocarbon vapors stored in the charcoal 
+canister. 
+
+38 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LEAK DIAGNOSIS TEST PRECONDITIONS 
+
+
+The ECM only initiates a leak diagnosis test every second time the criteria are met. The cri¬ 
+teria is as follows: 
+
+• Engine OFF with ignition switched OFF. 
+
+• Engine Control Module still in active state or what is known as “follow up mode” (Main 
+Relay energized, control module and ECM components online for extended period after 
+key off). 
+
+• Prior to Engine/Ignition switch OFF condition, vehicle must have been driven for a min¬ 
+imum of 20 minutes. 
+
+• Prior to minimum 20 minute drive, the vehicle must have been OFF for a minimum of 5 
+hours. 
+
+• Fuel Tank Capacity must be between 15 and 85% (safe approximation between 1/4 - 
+3/4 of a tank). 
+
+• Ambient Air Temperature between -7°C & 35°C (20°F & 95°F) 
+
+• Altitude < 2500m (8,202 feet). 
+
+• Battery Voltage between 11.5 and 14.5 Volts 
+
+When these criteria are satisfied every second time, the ECM will start the Fuel System Leak 
+Diagnosis Test. The test will typically be carried out once a day ie:, once after driving to 
+work in the morning, when driving home in the evening, the criteria are once again met but 
+the test is not initiated. The following morning, the test will run again. 
+
+
+39 
+
+ST055 MS S52 
+
+
+
+LEAK DIAGNOSIS TEST 
+
+
+PHASE 1 - REFERENCE MEASUREMENT 
+
+The ECM activates the pump motor. The pump pulls air from the filtered air inlet and pass¬ 
+es it through a precise 0.5mm reference orifice in the pump assembly. 
+
+The ECM simultaneously monitors the pump motor current flow . The motor current raises 
+quickly and levels off (stabilizes) due to the orifice restriction. The ECM stores the stabilized 
+amperage value in memory. The stored amperage value is the electrical equivalent of a 0.5 
+mm (0.020”) leak. 
+
+
+
+40 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHASE 2 - LEAK DETECTION 
+
+
+The ECM energizes the Change Over Valve allowing the pressurized air to enter the fuel sys¬ 
+tem through the Charcoal Canister, The ECM monitors the current flow and compares it 
+with the stored reference measurement over a duration of time. 
+
+
+
+Once the test is concluded, the ECM stops the pump motor and immediately de-energizes 
+the change over valve. This allows the stored pressure to vent thorough the charcoal can¬ 
+ister trapping hydrocarbon vapor and venting air to atmosphere through the filter. 
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEST RESULTS 
+
+
+The time duration varies between 45 & 270 seconds depending on the resulting leak diag¬ 
+nosis test results (developed tank pressure “amperage” / within a specific time period). 
+However the chart below depicts the logic used to determine fuel system leaks. 
+
+
+Current 
+
+
+
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+
+1. Describe the Power Supply for the ignition coils: 
+
+
+2. Name the Components of the Fuel Supply System: 
+
+
+3. The MS S52 requires the Camshaft Position Sensors to provide:_ 
+
+4. The driver's side hot film air mass meter provides a signal for which 2 ouputs? 
+
+5. What new input has been added for the Cruise Control feature?_ 
+
+6. What two sensors are used to monitor throttle movement? 
+
+7. Why are there two inputs from the Accelerator Module?_ 
+
+
+8. What 2 systems on the M5 are affected by the "Sport" switch?_ _ 
+
+9. How many speeds will the Secondary Air Injection Pump run at?_ 
+
+10. Which control module supplies the MS S52 with cornering force input in order to acti¬ 
+vate the Oil Sump Changeover Valves?_ 
+
+11. How is the secondary ignition monitored for misfire?_ 
+
+
+12. Which electric motor drives all eight throttles on the S62 engine? 
+
+
+43 
+
+ST055 MS S52 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2175 @@
+Table of Contents 
+
+
+Rear Air Conditioning 
+
+Subject Page 
+
+Purpose of the System .3 
+
+System Components.4 
+
+Evaporator Housing with Actuators and Flaps .4 
+
+Stepper motor control .4 
+
+Actuation reliability .5 
+
+Calibration run .6 
+
+Position run .6 
+
+Refrigerant Circuit.7 
+
+Refrigerant Capacity.9 
+
+Refrigerator Box.9 
+
+Blower and Blower Control Module .10 
+
+Recirculating Air Filter.11 
+
+Evaporator Temperature Sensor.11 
+
+Control Panel with Electronics .11 
+
+Wiring Harness with Connectors .12 
+
+Calibration of left/right control panels .13 
+
+Rear Air Conditioning Duct Work .14 
+
+System Operation .15 
+
+Control Unit Operating Matrix.18 
+
+Operation via IHKA.18 
+
+Operation via controller (1-Drive) .18 
+
+Service Information.21 
+
+Filling mode .21 
+
+Diagnosis .21 
+
+Diagnosis with Tester .23 
+
+Control unit identification data.23 
+
+Vehicle identification number.24 
+
+Fault code memory.24 
+
+Control unit status data, defaults .24 
+
+Condensation Water Drain .24 
+
+Review Questions .25 
+
+
+Initial Print Date: 1/03 
+
+
+Revision Date:03/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rear Air Conditioning 
+
+Model: E66 
+
+Production: Start of Production MY 2003 
+
+
+Objectives: 
+
+After completion of this module you should be able to: 
+
+• Identify the components and locations of the Rear Air Conditioning System 
+
+• Explain the operation of the FKA 
+
+• Diagnosis error conditions in the FKA 
+
+
+2 
+
+
+
+
+Purpose of the System 
+
+From E66 series launch, a Rear Compartment Air Conditioning system (FKA) may be 
+
+installed as an option. The rear compartment air conditioner is located in the front area of 
+the luggage compartment and consequently reduces the volume of the luggage compart¬ 
+ment by about 20 percent (incl. trim panels). 
+
+
+
+The control and integration of the rear compartment air conditioning system in the IHKA 
+refrigerant circuit is designed so that independent operation is possible for either the front 
+or rear unit. 
+
+The air required for rear compartment air conditioning is drawn in via a particle filter (recir¬ 
+culated air filter) from the luggage compartment. 
+
+The rear compartment air conditioning system additionally supplies cold air to an integrat¬ 
+ed refrigerator box. This refrigerator box should not be confused with the electrically oper¬ 
+ated refrigerator box that is optionally available also for the E65. 
+
+The rear air conditioning system performs the following functions: 
+
+• Regulates air volume distributed through rear ducts. 
+
+• Temperature and air volume control for left and right rear occupants. 
+
+• Air conditioning (cooling). 
+
+• Electronic control of rear evaporator temperature. 
+
+• Operation of integrated rear compartment refrigerator box. 
+
+
+3 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+The rear air conditioning system consists of the following components: 
+
+• Evaporator Housing with Actuators and Flaps 
+
+• Refrigerant Circuit 
+
+Evaporator and Expansion Valve 
+Refrigerant Cut-Off Valve 
+Connection point for refrigerant lines 
+
+• Refrigerator Box 
+
+• Blower and Blower Control Module 
+
+• Recirculating Air Filter 
+
+• Evaporator Temperature Sensor 
+
+• Control Panel with Electronics 
+
+• Rear Air Conditioning Duct Work 
+
+• Wiring Harness with Connector 
+
+
+
+Evaporator Housing with 
+Actuators and Flaps. 
+Connection Point for 
+Refrigerant Lines. 
+Refrigerator Box 
+Blower, Blower output 
+Final Stage and Recirculating 
+Air Filter. 
+
+
+Evaporator Housing with Actuators and Flaps 
+
+The air is distributed and mixed by means of 4 flaps and stepper motors in the rear air 
+conditioning unit. 
+
+Stepper motor control 
+
+The 2 stratification and ventilation flaps in each system are adjusted by means of 4 bipolar 
+stepper motors. The stepper motors are connected by means of a step-down gear mech¬ 
+anism in order to ensure the required flap torque. The connection is made up of a three- 
+wire ribbon cable connection to which all stepper motors are connected in parallel. 
+
+
+4 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+View from front 
+
+
+View from trunk 
+
+
+Stepper Motors for Air and Stratification Flaps 
+
+1. Drive for air flap, R/S air volume. 
+
+2. Drive for air flap, US air volume. 
+
+3. Drive for R/S stratification flap. 
+
+4. Drive for US stratification flap. 
+
+The three bus lines carry the supply voltage, ground and serial data information. An 
+address is assigned for each of the individual stepper motors for individualization purpos¬ 
+es. Each programmed address can be written only one single time and can then no longer 
+be deleted or changed. 
+
+Each stepper motor is a controlled unit. It monitors all data on the bus, however, it accepts 
+and answers only if its own address is recognized and no fault has occurred in the trans¬ 
+mission of the message 
+
+Only the stepper motor with the written address matching the "monitored" address 
+accepts, after checking, the content of the message, executes the received command and 
+generates a status message as a response that is sent back to the control unit. 
+
+Actuation reliability 
+
+Different torques result for the 4 stepper motors as the result of changes in the system volt¬ 
+age. While the motor is activated with low-noise sine mode at voltages V (B+TERM30) 
+
+> 11 V, the drive mode changes over to full step mode at lower voltages. 
+
+Changeover of drive mode: 
+
+
+V (B+TERM30) < 9.0 V 
+
+V (B+TERM30) >9.0 V and < 10.0 V 
+
+V (B+TERM30) > 10.0 V and < 11.0 V 
+
+V (B+TERM30) >11.0 V and < 16.0 V 
+
+V (B+TERM30) > 16.0 V 
+
+
+Motor stops 
+
+Motor runs at 140 Hz and in full step mode 
+Motor runs at rated frequency and in full step 
+mode 
+
+Motor runs at rated frequency and in sine mode 
+Motor stops (due to power loss in the drive 1C) 
+
+
+These conditions also apply to the calibration run! 
+
+
+5 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Calibration run 
+
+None of the stepper motors features an actual position detection function, i.e. they always 
+move relative to a reference point. One of the flap end positions (0 or 100% serves as the 
+reference point). 
+
+The flaps assume an end position after replacing the control unit or in the event of inter¬ 
+ruptions in the voltage supply during normal operation. The end position is selected such 
+that the subsequent set position can be reached over the shortest distance (position opti¬ 
+mization). If calibration of the stepper motors is necessary due to voltage failure, the bit gen¬ 
+erated for this purpose is processed by the control unit itself. 
+
+Optimization of the motor running times is achieved by incorporating the set positions: If the 
+flap is open following calibration, the calibration run is also conducted in "open" direction. 
+
+Position optimization therefore takes place based on the following criteria: 
+
+Position optimization during calibration: 
+
+Setpoint > 50%: calibration in OPEN direction 
+Setpoint < 50%: calibration in CLOSED direction 
+
+Position run 
+
+The flaps assume certain positions after turning off the engine (terminal 15 de-energized). 
+The ventilation flaps are closed and the stratification flaps are moved to the mid-position. 
+
+Adjustment angle, number of steps and adjustment time Ventilation flap left/right 
+
+Adjustment angle: 100 degrees 
+
+Number of steps: per 15 degrees = 300 steps (at 100 degrees = 2000 steps) 
+Adjustment time: CLOSED <-> OPEN approx. 10 seconds 
+
+Stratification flap left/right 
+
+Adjustment angle: 109 degrees 
+
+Number of steps: per 15 degrees = 300 steps (at 109 degrees = 2180 steps) 
+Adjustment time: CLOSED <-> OPEN approx. 11 seconds 
+
+Note: The calibration run can also be triggered by the diagnosis tester. 
+
+Flaps/flap kinematics 
+
+Flap positions 
+
+The programs for positioning the flaps are only active when Terminal 15 is active. 
+
+Rear compartment refrigerator box operation 
+
+(rear compartment air conditioning left/right OFF) 
+
+• Ventilation flaps: 0% 
+
+• Stratification flaps: 50% 
+
+
+6 
+
+Rear Air Conditioning 
+
+
+
+MAX-AC 
+
+• Ventilation flaps: 100% 
+
+• Stratification flaps: cold 
+
+Manual settings 
+
+The setting of the ventilation flap is dependent on the blower status on the left and right 
+side. The flap is opened to 100% on the side with the largest blower share. 
+
+Restriction of the ventilation flap on the side with the smaller blower share is determined in 
+accordance with the following characteristic curve: 
+
+This theoretically determined flap opening function still needs to be corrected by the device¬ 
+dependent flap characteristic curve illustrated in the following. Consequently, the actual flap 
+opening is determined individually for each side, corresponding to the required volume of 
+air. 
+
+The flap correction characteristic curve is the same for both sides. 
+
+Refrigerant Circuit 
+
+
+
+IHKA Refrigerant Circuit 
+
+1. Auxiliary Fan 
+
+2. Condenser (2A) with Dryer (2B) 
+
+3. Refrigerant Compressor 
+
+4. Pressure Sensor 
+
+5. Fill adapter port 
+
+6. Bulkhead Interface 
+
+7. IHKA Evaporator 
+
+8. Front Shut Off Valve 
+
+9. IHKA Expansion Valve 
+
+10. Refrigerant Lines to FKA 
+
+
+The rear compartment air conditioning system (FKA) is connected to the refrigerant circuit 
+of the IHKA. The two circuits are isolated by means of two shut-off valves that are fitted only 
+in connection with the rear compartment air conditioning system. The shut-off valves are fit¬ 
+ted in the pressure line ahead of the respective expansion valves of IHKA and FKA. 
+
+Two shutoff valves provide the separation between the two refrigerant circuits. 
+
+The front shut-off valve blocks off the refrigerant circuit with respect to the front evaporator 
+(IHKA). The rear shut-off valve blocks off the refrigerant circuit with respect to the rear evap¬ 
+orator (FKA). 
+
+
+7 
+
+Rear Air Conditioning 
+
+
+
+When both systems are in operation, the output of both systems can be controlled inde¬ 
+pendently by means of corresponding cyclic timing of the valves. At least one valve, how¬ 
+ever, must always be opened. 
+
+The compressor output depends on the system with the higher refrigerant requirement. The 
+system with the lower refrigerant requirement is switched cyclically. Both systems are 
+switched cyclically by the shut-off valves in partial load mode. The compressor runs con¬ 
+tinuously at low output. Both valves are opened and the compressor runs at maximum 
+output at full load. 
+
+Both shut-off valves (front in the IHKA and rear in the FKA) are activated by the FKA and 
+are closed when no power is applied. If a rear compartment air conditioning system is 
+installed, the IHKA must be coded to "FKA installed." Otherwise, the shut-off valves will 
+remain closed and non-operative. Damage may even be incurred! 
+
+
+
+Rear Evaporator and Expansion Valve 
+
+1. Evaporator 
+
+2. Expansion Valve 
+
+3. Connection for Refrigerant Lines 
+
+4. Rear Shut Off Valve 
+
+
+
+Rear Refrigerator 
+Refrigerant Pressure Line to FKA 
+Refrigerant Suction Line from FKA 
+FKA Line connections 
+
+
+8 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Refrigerant Capacity 
+
+Vehicles equipped with FKA have an increase in the refrigerant capacity of 310 grams and 
+increase in the refrigerant oil capacity of 60 grams. 
+
+Refrigerator Box 
+
+The rear compartment refrigerator box is located behind the center armrest of the rest 
+seats. From here, the rear compartment refrigerator box can be conveniently opened and 
+switched on. 
+
+Cooled air from the rear compartment air conditioning system flows through the rear com¬ 
+partment refrigerator box. The air is then directed into the luggage compartment. 
+
+Cooled air from the rear compartment air conditioning system flows through the rear com¬ 
+partment refrigerator box while the engine is running. 
+
+
+1. Grip to open refrigerator box. 
+
+2. push button switch w/Blue LED. 
+
+3. Cooling air inlet. 
+
+4. Air outlet into luggage compartment. 
+
+
+
+To maintain operation of the rear compartment refrigerator box when the rear compartment 
+air conditioning system is switched off (left and right OFF), only the ventilation flaps are 
+closed and the entire cooling air is made available for the rear compartment refrigerator box. 
+In this case, the blower operates at a fixed setting (EEPROM value). 
+
+The rear compartment refrigerator box can be switched on or off both by means of a push¬ 
+button on the cover of the refrigerator box. Function feedback takes place by means of a 
+blue LED in the push-button. Operation of the rear compartment refrigerator box via the 
+push-button is only possible, however, when both the left and the right control panel of the 
+rear compartment air conditioning system are in OFF mode. The FKA is then operated at 
+minimum blower stage and minimum temperature. 
+
+The rear compartment refrigerator box is always switched on automatically as soon as one 
+of the two control panels assumes manual mode or when MAX AC is active. In this case, 
+the push button has no function. 
+
+
+9 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+Blower and Blower Control Module 
+
+
+
+1. Blower final stage 
+
+2. Blower 
+
+3. Recirculating Air Filter 
+
+4. Condensation water drain 
+
+
+
+Blower and Blower Control Module 
+
+
+Blower and Blower Control Module shown 
+removed from Rear Air Conditioning unit. 
+
+
+Blower Volume control 
+
+Due to the separate control for the right and left, the blower output is corrected as a func¬ 
+tion of the following factors: 
+
+• Respective blower setting 
+
+• Maximum value of both blower settings 
+
+• Correction factor 
+
+In manual setting mode, the blower can be set directly by the blower adjuster between min¬ 
+imum and 75% of the maximum value. 
+
+Activation to 100% is only possible via the MAX AC function. 
+
+The potentiometer value of 0 - 100% is converted to the blower proportions on the basis 
+of a characteristic curve (EEPROM values). 
+
+
+10 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+Recirculating Air Filter 
+
+The demands made of the recirculating air filter correspond to the general quality specifi¬ 
+cations for particle filters (BMW QV 64 028). The service intervals that are defined in the 
+maintenance manual also depend on these requirements. 
+
+Evaporator Temperature Sensor 
+
+The resistance of the Evaporator Temperature Sensor should be approx. 9k Ohms. The 
+working range is -10 °C...+40 °C and the substitute value is -10 °C. 
+
+Control Panel with Electronics 
+
+
+1 2 3 
+
+
+
+Left side Control Panel Right side Control Panel 
+
+1. Stratification Knob 
+
+2. Max AC cooling button 
+
+3. AC Blower control Knob 
+
+4. US OFF Button 
+
+5. Lever for air flow directional control 
+
+
+Control panel are provided on the left and right for individual control of the rear compart¬ 
+ment air conditioning system. These control panels are also referred to as satellites. 
+
+While the left-hand control panel only contains control and indicator elements, the right- 
+hand control panel also contains the control electronics. 
+
+The push-buttons feature LEDs to indicate when the corresponding function is active. 
+
+The following colors in the push-buttons indicate the active function: 
+
+• MAX AC Green 
+
+• OFF Orange 
+
+• Rear compartment refrigerator box ON Green 
+
+All buttons are equipped with a second LED to serve as a symbol and locator light. 
+
+All function LEDs are activated by the FKA control unit to ensure that the LEDs serve as a 
+reliable feedback for the program status. 
+
+
+11 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+The function LEDs are powered via a voltage regulator to ensure their brightness does not 
+vary in the event of voltage fluctuations. 
+
+Since the push-buttons are not locked mechanically, their priority is defined by way of pro¬ 
+gramming. The function lighting of the lower-ranking push-button is switched off for the 
+purpose of indicating the priority to the customer. 
+
+The status of the rear compartment air conditioning system is additionally shown on the 
+control display. 
+
+
+
+Right Side Control Unit 
+With Control Electronics 
+
+
+Wiring Harness with Connectors 
+
+
+
+1 2 
+
+
+L/S Control Panel 
+
+1. 12 Pin Socket 
+
+2. Air Duct Connection 
+
+
+Pin Description 
+
+L/S 12 Pin Socket 
+
+1. B+ Supply Left 
+
+7. Not used 
+
+2. Temperature pot,I/s 
+
+8. Push-buttons, I/s 
+
+3. Blower pot, I/s 
+
+9. MAX AC LED, I/s 
+
+4. Locator light, PWM 
+
+10. OFF LED, I/s 
+
+5. VCC Monitor, I/s 
+
+11. Not used 
+
+6. Ground FKA, I/s 
+
+12. Monitor lighting, I/s 
+
+
+
+1 2 3 
+
+
+R/S Control Panel 
+
+1. Air Duct Connection 
+
+2. 18 Pin Socket 
+
+3. 12 Pin Socket 
+
+
+Pin Description 
+
+R/S 12 Pin Socket 
+
+1. B+Supply Right 
+
+7. Not used 
+
+2. Temperature pot,r/s 
+
+8. Push-buttons, r/s 
+
+3. Blower pot, r/s 
+
+9. MAX AC LED, r/s 
+
+4. Locator light, PWM 
+
+10. OFF LED, r/s 
+
+5. VCC Monitor, r/s 
+
+11. Not used 
+
+6. Ground FKA, r/s 
+
+12. Monitor lighting, r/s 
+
+
+12 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Updated 
+
+Information 
+
+
+Pin Designation 
+
+18 Pin Socket R/S Control Unit 
+
+1. Terminal 30 
+
+10. CAN Bus High 
+
+2. MBus (MUX4) 
+
+11. CAN Bus Low 
+
+3. Terminal 31 
+
+12. Sensor Ground 
+
+4. Refrigerant shut-off valve, Front 
+
+13. Ground Stepper Motors 
+
+5. Refrigerant shut-off valve, Rear 
+
+14. Supply Voltage, Stepper Motors 
+
+6. Temperature Evaporator, Rear 
+
+15. Ground Stepper Motors 
+
+7. Not used except on Protection Vehicles 
+
+16. Refrigerator Box Function LED 
+
+8. Temperature Sensor, Left 
+
+17. Refrigerator Box Locator Light LED 
+
+9. Temperature Sensor, Right 
+
+18. Refrigerator Box Push-Button 
+
+
+Calibration of left/right control panels 
+
+Manual operation of the rear compartment air conditioning system from two separate con¬ 
+trol panels takes place by means of push-buttons and rotary knobs, of which only those on 
+the right are "intelligent." These two control panels must be matched with respect to each 
+other; i.e. the right-hand control panel must be calibrated with the exact end stop values of 
+the potentiometers of the left-hand control panel. 
+
+
+
+
+Start of calibration: 
+
+
+
+
+Start calibration by pressing all four push-buttons on both control panels simultaneously for 
+at least 3 seconds. Be sure the ignition is in the terminal R position. 
+
+After starting the calibration procedure, the LEDs of the OFF button and MAX AC button 
+on the left control panel flash. 
+
+
+• Turn both rotary knobs on the left-hand control panel to the left end stop (minimum 
+values). 
+
+• Press the MAX AC button on the left-hand control panel. The MAX AC LED stops flash 
+ing as an indication for storage of the left end stops. 
+
+• Turn both rotary knobs on the left-hand control panel to the right end stop (maximum 
+values). 
+
+• Press the OFF button on the left-hand control panel. The OFF LED stops flashing as an 
+indication for storage of the right end stops. 
+
+
+The above procedure calibrates the left side potentiometers to the right side pots and con¬ 
+trol unit. The FKA control unit is “smart” and will only accept values (end stop positions)that 
+are within specified limits. If the LED’s continue to flash when the button is pushed, confirm 
+that the dial is turned completely to the end stop. 
+
+
+13 
+
+Rear Air Conditioning 
+
+
+
+Rear Air Conditioning Duct Work 
+
+The rear compartment air conditioning system supplies the outlet grilles integrated in the 
+headliner with temperature controlled air via ducts in the C-pillars. 
+
+
+
+
+1 
+
+1. Pressure and Suction Refrigerant Line. 
+
+Note: Not in actual locations. 
+
+2. Blower and recirculated air filter. 
+
+3. Rear Compartment Refrigerator Box 
+
+4. Left/Right ducts to roof outlets. 
+
+5. Left/Right outlets in control units. 
+
+
+
+
+
+14 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Operation 
+
+
+The rear compartment air conditioning system (FKA) is connected to the refrigerant circuit 
+of the IHKA. The two circuits are isolated by means of two shut-off valves that are fitted only 
+in connection with the rear compartment air conditioning system. The shut-off valves are fit¬ 
+ted in the pressure line ahead of the respective expansion valves of IHKA and FKA. 
+
+The rear compartment air conditioning system supplies the outlet grilles integrated in the 
+headliner with temperature controlled air via ducts in the C-pillars. 
+
+
+
+1. IHKA 
+
+2. FKA 
+
+3. Shut-off valve for coolant circuit 
+
+4. Auxiliary water pump 
+
+5. Dual water valve 
+
+6. Condenser with integrated dryer 
+
+7. Auxiliary fan 
+
+
+The rear compartment air conditioning system is operated by means of: 
+
+• Push-buttons and rotary knobs on the left/right control panels 
+
+• Push-button on the rear compartment refrigerator box (only refrigerator box ON/OFF) 
+
+• MAX AC function of the rear compartment air conditioning system 
+
+• Controller in control panel of front center console 
+
+
+15 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+Control Display 
+
+
+
+
+Drive 
+
+
+-s 
+
+
+
+
+Temperature Sensor 
+
+
+12 Wire Output 
+
+
+Left Unit 
+
+
+Output Inputs 
+
+Temperature Sensor LED's 
+
+Pot Setting 
+Button Setting 
+
+
+
+Blower Final Stage 
+
+
+
+
+Stepper Motor (4x) 
+
+
+
+Front Refrigerant Valve 
+
+
+
+Rear Refrigerant Valve 
+
+
+
+
+Evaporator Temperature 
+Sensor 
+
+
+Refrigerator Button & LED 
+
+
+16 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Refrigerant shut-off valve, front, 
+pressure line of IHKA. 
+
+2. R/S Control Unit 
+
+3. Temperature Sensor in Air Duct to R/S 
+
+4. Refrigerator Box 
+
+5. Blower with final stage output 
+
+6. MUX motors (4) for flap drives 
+
+7. Refrigerant shut-off valve, rear 
+
+8. Evaporator Temperature Sensor 
+
+9. Temperature Sensor in Air Duct to US 
+
+10. L/S Control Unit 
+
+
+17 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Unit Operating Matrix 
+
+
+Function 
+
+Location 
+
+Control 
+
+Function Feedback 
+
+Action 
+
+Temperature setting 
+Left 
+
+Control panel 
+
+Left 
+
+Rotary Knob 
+
+Marking on pot 
+
+Setting of temperature 
+set point, Left 
+
+Temperature setting 
+Right 
+
+Control Panel 
+
+Right 
+
+Rotary Knob 
+
+Marking on pot 
+
+Setting of temperature 
+set point, Right 
+
+Blower setting 
+
+Left 
+
+Control panel 
+
+Left 
+
+Rotary Knob 
+
+Marking on pot 
+
+Change of flap 
+opening, Left and 
+blower speed 
+
+Blower setting 
+
+Right 
+
+Control Panel 
+
+Right 
+
+Rotary Knob 
+
+Marking on pot 
+
+Change of flap 
+opening, Right and 
+blower speed 
+
+OFF 
+
+Left 
+
+Control panel 
+
+Left 
+
+Push-Button 
+
+Function LED 
+
+Orange 
+
+Air supply for US off 
+
+OFF 
+
+Right 
+
+Control Panel 
+
+Right 
+
+Push-Button 
+
+Function LED 
+
+Orange 
+
+Air supply for R/S off 
+
+OFF 
+
+Left and Right 
+
+Control Panel 
+
+Left and Right 
+
+Push-Button 
+
+Function LED’s 
+
+Orange 
+
+FKA OFF 
+
+MAX AC 
+
+Left 
+
+Control panel 
+
+Left 
+
+Push-Button 
+
+Function LED 
+
+MAX blower and 
+stratification cold US 
+
+MAX AC 
+
+Right 
+
+Control Panel 
+
+Right 
+
+Push-Button 
+
+Function LED 
+
+MAX blower and 
+stratification cold R/S 
+
+Refrigerator Box 
+
+Refrigerator Cover 
+
+Push-Button 
+
+Function LED 
+
+Depends on status of 
+FKA 
+
+
+Operation via IHKA 
+
+Communication between the IHKA and FKA control panels and with other control units 
+takes place via the K-CAN bus. 
+
+Both control panels in the rear compartment assume MAX AC mode when the MAX AC 
+function is switched on at the IHKA. When the MAX AC function is switched off again at the 
+IHKA, the status before the MAX AC function was switched on is re-established on either 
+side of the rear compartment air conditioning system. However, this only applies if no 
+adjustments were made to the rear compartment air conditioning system during the MAX 
+AC function. 
+
+The rear compartment air conditioning can then be operated normally. 
+
+Operation via controller (1-Drive) 
+
+The control display communicates via the K-CAN SYSTEM with the rear compartment air 
+conditioning and can influence its settings. 
+
+
+18 
+
+Rear Air Conditioning 
+
+
+
+
+The following settings of the rear compartment air conditioning system are possible via the 
+controller and are shown on the control display: 
+
+Rear compartment air conditioning 
+
+The rear compartment air conditioning can be switched off via the controller or switched to 
+MAX AC mode. A signal change is required for this purpose. When the signal changes from 
+0 to 1, both control panels are switched to MAX AC mode and both control panels are 
+switched to OFF mode after a change from 1 to 0. The rear compartment air conditioning 
+can be operated normally again after the changeover. The status of the rear compartment 
+air conditioning system is sent back to the control display and indicated by a colour change 
+in the displayed name. 
+
+NOTE: 
+
+Signal = 0: Both control panels are switched off 
+
+Signal = 1: At least one control panel is switched on irrespective of whether in manual mode 
+
+or in MAX AC mode. 
+
+Operation of the rear compartment air conditioning system can be locked out by the con¬ 
+troller; i.e. the currently set functions of the rear compartment air conditioning system are 
+"frozen" and operation is no longer possible. The lock-out status is sent back to the con¬ 
+trol display and indicated by a color change in the displayed name. 
+
+The remaining control functions of the controller of the IHKA are not affected by the lock¬ 
+out of the rear compartment air conditioning. 
+
+
+
+
+Car parked 
+Seat Temp 
+
+
+
+Display for activating the 
+Rear Air Conditioning in the 
+Control Display 
+
+
+Display for activating the 
+Refrigerator Box in the 
+Control Display 
+
+
+19 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating philosophy 
+
+The rear compartment air conditioning system is not switched off when the OFF button on 
+only one control panel (left or right) is pressed but rather only the air supply is interrupted 
+by closing the ventilation flap on the respective side. 
+
+
+Rear Air Conditioning Left OFF 
+
+Rear Air Conditioning Right OFF 
+
+Status or Rear Air Conditioning 
+
+i 
+
+i 
+
+OFF 
+
+0 
+
+i 
+
+ON 
+
+i 
+
+0 
+
+ON 
+
+0 
+
+0 
+
+ON 
+
+
+OFF Button 
+
+MAX AC Button 
+
+FKA Before Mode 
+
+FKA Mode After 
+
+
+
+OFF 
+
+Manual 
+
+MAX AC 
+
+OFF 
+
+Manual 
+
+Max AC 
+
+1 
+
+0 
+
+0 
+
+0 
+
+1 
+
+1 
+
+0 
+
+0 
+
+1 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+0 
+
+X 
+
+0 
+
+0 
+
+1 
+
+1 
+
+0 
+
+1 
+
+X 
+
+0 
+
+0 
+
+1 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+0 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+1 
+
+0 
+
+0 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+0 
+
+0 
+
+1 
+
+0 
+
+1 
+
+0 
+
+
+X= status before OFF (MAX AC is deleted by load shut-down) 
+
+
+Influence of rotary knobs on the OFF and MAX AC functions 
+
+• OFF active: Moving the temperature adjuster or the blower adjuster on one side by at 
+least one notch activates the mode that was active prior to OFF. 
+
+• MAX AC active:Moving the temperature adjuster or the blower adjuster on one side by 
+at least one notch activates manual mode of the respective side. 
+
+
+20 
+
+Rear Air Conditioning 
+
+
+
+
+Rear compartment refrigerator box function 
+
+The rear compartment refrigerator box can be switched on or off both by means of a push¬ 
+button on the cover of the refrigerator box as well as via a message in the control display 
+(see "Operation via controller"). Function feedback takes place by means of a blue LED in 
+the push-button. Operation of the rear compartment refrigerator box via the push-button is 
+only possible, however, when both the left and the right control panel of the rear compart¬ 
+ment air conditioning system are in OFF mode. The FKA is then operated at minimum blow¬ 
+er stage and minimum temperature. 
+
+The rear compartment refrigerator box is always switched on automatically as soon as one 
+of the two control panels assumes manual mode or when MAX AC is active. In this case, 
+the push button has no function. 
+
+Transport mode 
+
+This mode is activated/deactivated via standard diagnosis telegrams. When transport 
+mode is activated, the rear compartment air conditioning system assumes OFF mode and 
+remains in this state for as long as transport mode is active (operation is inhibited). After 
+cancelling transport mode, the rear compartment air conditioning system remains in the 
+OFF state, however, it can be operated again. 
+
+Service Information 
+
+Filling mode 
+
+Filling mode can be activated via the diagnosis interface for the rear compartment air con¬ 
+ditioning system. In this mode, both shut-off valves (front/rear) are opened. 
+
+Diagnosis 
+
+E65/E66 diagnosis consists of two different subjects: 
+
+• Self-diagnosis 
+
+• Fault code memory management 
+
+The first subject concerns the application tasks which independently carry out self-diagno¬ 
+sis on hardware components if possible and makes available the resulting information for 
+the second subject (fault code memory management). 
+
+The data resulting from diagnosis represent the interface between these two components. 
+While it is the responsibility of the application tasks to diagnose the faults, the resulting infor¬ 
+mation is made available via fault code memory management to the tester. 
+
+In order to be able to distinguish better between these two subjects, in the following, self- 
+diagnosis is still referred to as such while fault code memory management will be referred 
+to as diagnosis. 
+
+
+21 
+
+Rear Air Conditioning 
+
+
+
+Self-diagnosis 
+
+• All inputs and outputs can be activated in the diagnosis program. 
+
+• The control unit features a self-diagnosis cycle; fault location (fault code), type of 
+fault, fault counter and ambient conditions are stored in the fault code memory. 
+
+Self-diagnosis is activated when terminal 15 is switched on provided the following diagno¬ 
+sis conditions are fulfilled: 
+
+• Engine speed = 0 or engine running signal from IKE (integrated body electronics) 
+
+• System voltage (terminal 30) within working range (11 V...15.5 V) 
+
+• No request for independent heating/independent ventilation 
+
+Self-diagnosis is active after a system transient recovery time of t > 4 s. 
+
+During normal operation (up to deactivation of terminal 15), input diagnosis is conducted 
+cyclically (at 4 second intervals). Only restricted diagnosis of the outputs is possible as the 
+fault frequency is only checked based on the current operating status for various system 
+outputs. If a fault is determined (sporadic fault), the corresponding DD-bit (diagnosis defect 
+bit) is set in the RAM of the control unit and a corresponding fault code is entered in the 
+fault code memory (static RAM) of the control unit. 
+
+Error messages are generated only if the conditions for diagnosis are fulfilled. 
+
+When a fault occurs, the faulty system input is replaced by the corresponding substitute 
+value and system outputs are deactivated. The output must remain activated in certain 
+cases for drivers for 2 outputs and a status line otherwise a fault will also be detected for 
+the intact output. 
+
+The fault status of the system ports is redefined during the subsequent diagnosis cycle 
+(repair attempt every 20 s). Generally in the case of fault, a maximum of 15 repair attempts 
+are carried out. The output is then considered to be defective and is initially no longer 
+switched in this operating cycle. Self diagnosis takes place again after terminal 15 has been 
+switched off and on again and 15 repair attempts are implemented for each defective out¬ 
+put. 
+
+The fault code entries are transferred from the fault code memory (static RAM) to the mem¬ 
+ory (EEPROM) within 3 seconds after switching off the ignition (terminal 15). Coding data 
+are stored immediately. 
+
+The memory content is transferred to the fault code memory of the control unit after "Power 
+ON Reset" (terminal 30). Here, the fault code entries (fault location and type of fault) are sup¬ 
+plemented or updated corresponding to the current fault situation. 
+
+With the aid of the diagnosis tester, the fault code memory (static RAM) can be read out 
+and its contents displayed. Only the diagnosis tester can delete the complete fault code 
+memory. 
+
+
+22 
+
+Rear Air Conditioning 
+
+
+
+Diagnosis with Tester 
+
+With the aid of standardized diagnosis commands it is possible to intervene via the diag¬ 
+nosis tester in control unit operation or control unit data and settings can be read out. 
+
+Control unit operating data 
+
+With the aid of the following diagnosis commands, control unit operating data can be read 
+out in predefined blocks and settings changed. 
+
+• Read analogue inputs. All analogue values are output that are read in via the analogue/ 
+digital converter of the micro controller. 
+
+• Read controller variables. Current values for the controlled variables and the air output 
+are output. 
+
+• Read control panel settings. Current settings on the control panel are read out. 
+
+• Read digital ports. The signals currently applied at all PORT registers of the micro con 
+trailer are output. 
+
+• Read flap positions. Current settings of the four air distribution flaps are output. 
+
+Set or delete diagnosis test bit. General diagnosis test mode is activated or deactivated for 
+the FKA by setting the "diagnosis test" bit. 
+
+• Initiate calibration. The FKA adjusts the four flaps to defined positions. 
+
+• Control front or rear refrigerant valve 
+
+The FKA opens or closes the front or rear refrigerant valve or sets "diagnosis defect" for 
+this valve. 
+
+• Control blower 
+
+The FKA sets the blower output as specified or sets "diagnosis defect" for the blower. 
+
+• Control left or right ventilation flap. The FKA sets the opening of the left or right ventila 
+tion flap as specified or sets "diagnosis defect" for this flap. 
+
+• Control left or right stratification flap. 
+
+The FKA sets the opening of the left or right stratification flap as specified or sets "diag 
+nosis defect" for this flap. 
+
+• Activate fill mode. Both refrigerant valves are activated simultaneously to facilitate filling 
+or discharging the system with refrigerant. 
+
+• Read out boot software version. The current software version of the boot loader can be 
+read out. 
+
+• Calibration of potentiometer for left or right satellite 
+
+• Calibration of the potentiometers for the left or right satellites is started. 
+
+Control unit identification data 
+
+With the aid of diagnosis commands, control unit identification data and logistics data can 
+be read out in predefined blocks and entered in the memory (EEPROM) of the rear com¬ 
+partment air conditioning system. 
+
+
+23 
+
+Rear Air Conditioning 
+
+
+
+
+Vehicle identification number 
+
+This identification option is used to enter the vehicle identification number in the FKA mem¬ 
+ory (EEPROM). Since the vehicle identification number is a part of the UIF entries (UIF = 
+User Info Field) a check must be conducted here as to what UIF is currently applicable. 
+
+Fault code memory 
+
+The fault code memory can contain a maximum of 6 fault codes determined by the control 
+unit during vehicle operation together with 8 ambient conditions such as setpoints, 
+inside/outside temperatures and terminal status. 
+
+The first data byte contains the number of fault codes. This is followed by a detailed 
+description of the first defined fault code with: 
+
+• Fault code 
+
+• Type of fault 
+
+• Frequency counter 
+
+• Eight ambient conditions providing information on the respective status of the con¬ 
+trol unit when the fault occurred 
+
+Following this fault code description, up to 5 further fault codes can be stored in the same 
+way. 
+
+Control unit status data, defaults 
+
+The current control panel settings and other important status data are written to the FKA 
+memory (EEPROM) shortly before the control unit assumes sleep mode (30 s after 
+terminal R OFF). 
+
+To save the control panel settings, the data are additionally stored after the last change to 
+the control panel settings: 
+
+• Every 10 seconds with the engine running 
+
+• Every second with the engine stationary 
+
+Condensation Water Drain 
+
+The Condensation Water Drain below the evaporator is 
+designed to ensure the condensation water is drained 
+off reliably even with the vehicle in extreme positions. 
+
+
+Particular care must be taken during assembly to 
+ensure that the condensation water drain is fitted cor¬ 
+rectly. 
+
+
+
+24 
+
+Rear Air Conditioning 
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+1. Once programmed may one of the stepper motors (MUX4) be moved to another 
+
+stepper motor position?_ 
+
+Why?_ 
+
+2. Why is the FKA fitted with two (2) electric shut off valves?_ 
+
+Where are they located?_ 
+
+3. At what times is the Refrigerant Box switched on?_ 
+
+4. What is the location of the FKA blower final stage?_ 
+
+5. Where is the Recirculating air filter for the FKA located and what must be done to 
+
+replace it?_ 
+
+6. Which FKA control satelittes contains the control electronic for FKA operation?_ 
+
+7. How are the left and right control satellites calibrated?_ 
+
+
+8. How does the FKA communicate with the IHKA and other control units in the car? 
+
+9. Is the temperature setting of the FKA controllable through the 1-Drive?_ 
+
+10. How does the transport mode affect FKA operation?_ 
+
+11 .What special procedures need to be performed to check or adjust refrigerant levels 
+in cars equipped with FKA?_ 
+
+12. Does the FKA system operate in a heat mode? _ 
+
+
+25 
+
+Rear Air Conditioning 
+
+
+

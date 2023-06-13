@@ -1,0 +1,5764 @@
+
+Technical training. 
+
+Product information. 
+
+F48 General Vehicle Electronics 
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1508 9/1/2015 
+
+\ _ / 
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left-hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as a result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2015 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information contained in this document forms an integral part of the technical training of the 
+BMW Group and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: June 2015 
+
+BV-72/Technical Training 
+
+
+
+
+F48 General Vehicle Electronics 
+
+Contents 
+
+
+1. Vehicle Electrical System.1 
+
+1.1. Data bus overview.1 
+
+1.2. Main bus systems.3 
+
+1.2.1. K-CAN.3 
+
+1.2.2. PT-CAN.8 
+
+1.2.3. FlexRay.9 
+
+1.2.4. D-CAN.13 
+
+1.2.5. Ethernet.13 
+
+1.2.6. MOST.13 
+
+1.3. Sub-bus systems.13 
+
+1.3.1. Local interconnect network bus.13 
+
+1.3.2. Local-CAN.14 
+
+1.3.3. USB.14 
+
+1.3.4. APIX.14 
+
+1.4. Control units.15 
+
+1.4.1. Complete overview.15 
+
+1.4.2. Body Domain Controller.17 
+
+1.4.3. Frontal Light Electronics.17 
+
+1.4.4. TRSVC control unit.18 
+
+1.4.5. Park Distance Control/Parking Maneuver Assistant.19 
+
+1.4.6. Crash Safety Module.20 
+
+1.4.7. Dynamic Stability Control.20 
+
+1.4.8. Optional equipment system.21 
+
+1.4.9. Camera-based driver support systems.22 
+
+1.4.10. Automatic operation of tailgate.23 
+
+1.4.11. Longitudinal torque distribution.23 
+
+2. Voltage Supply.24 
+
+2.1. Overview.24 
+
+2.2. Components.26 
+
+2.2.1. Battery.27 
+
+2.2.2. Intelligent battery sensor.27 
+
+2.2.3. Power distribution boxes.28 
+
+3. Exterior Lights.30 
+
+3.1. Headlights.30 
+
+3.1.1. Halogen headlight.30 
+
+3.1.2. LED headlight with extended scope.31 
+
+3.1.3. fog lights.34 
+
+3.2. Rear lights.35 
+
+3.2.1. In vehicles with halogen headlights.35 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+Contents 
+
+
+3.2.2. Vehicles with LED headlights.36 
+
+4. Interior Lighting.37 
+
+4.1. System wiring diagram.38 
+
+5. Heating/Air Conditioning Systems.41 
+
+5.1. Components and systems.41 
+
+5.1.1. Integrated automatic heating and air conditioning.41 
+
+5.1.2. Heating and air-conditioning unit.46 
+
+5.1.3. Microfilter.48 
+
+5.1.4. Air/Water separation (Venturi adapter).49 
+
+5.1.5. ECO PRO mode of heating and air conditioning program.51 
+
+6. Locking and Security Functions.52 
+
+6.1. Overview of functions.54 
+
+6.1.1. Remote control receiver.55 
+
+6.2. Central locking system.55 
+
+6.2.1. Special functions.56 
+
+6.2.2. System wiring diagram.57 
+
+6.3. Comfort Access.59 
+
+6.3.1. System wiring diagram.60 
+
+6.3.2. System components.62 
+
+6.4. Hands free tailgate opening.63 
+
+6.4.1. System wiring diagram.64 
+
+6.4.2. Functional description of tailgate opening.65 
+
+7. Alarm System.69 
+
+7.1. System wiring diagram.69 
+
+8. Wash/Wipe System.71 
+
+8.1. Introduction.71 
+
+8.2. Operation.71 
+
+8.3. System wiring diagram.72 
+
+9. Steering Wheel Heating.74 
+
+9.1. System wiring diagram.74 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.1. Data bus overview 
+
+
+H 
+
+
+
+2 
+
+
+F48 data bus overview 
+
+
+0B 
+
+5 I 
+\ i 
+
+lilt 
+
+Hi 
+
+
+II: II 
+
+Hi 
+
+
+
+i 
+
+
+TE13-2567.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Start-up node control units for starting and 
+synchronizing the FlexRay bus system 
+
+2 
+
+Control units with wake-up authorisation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AMP 
+
+Audio amplifier 
+
+BDC 
+
+Body Domain Controller 
+
+CID 
+
+Central information display 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+EGS 
+
+Electronic transmission control 
+
+EPS 
+
+Electronic Power Steering 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FZD 
+
+Roof function center 
+
+HEADUNIT 
+
+Headunit 
+
+HKL 
+
+Automatic operation of tailgate 
+
+HUD 
+
+Head-Up Display 
+
+IHKA 
+
+Integrated heating and air conditioning 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KOMBI 
+
+Instrument cluster 
+
+LMV 
+
+Longitudinal torque distribution 
+
+PDC 
+
+Park Distance Control 
+
+PMA 
+
+Parking Manoeuvring Assistant 
+
+SAS 
+
+Optional equipment system 
+
+SMFA 
+
+Driver's seat module 
+
+TBX 
+
+Touchbox 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Control unit for rear view camera and Side View 
+
+ZGM 
+
+Central gateway module 
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.2. Main bus systems 
+
+
+1.2.1. K-CAN 
+
+
+In the F48 the following K-CANs are used: 
+
+• K-CAN2 
+
+• K-CAN3 
+
+• K-CAN4 
+
+All K-CAN data buses have a data transfer rate of 500 kBit/s. 
+The K-CAN with 100 kBit/s is no longer used in the F48. 
+
+
+3 
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+K-Can termination 
+
+
+© 
+
+
+
+F48 K-Can termination 
+
+
+4 
+
+
+TE13-2568 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Integrated heating and air conditioning 
+
+3 
+
+Headunit 
+
+4 
+
+Controller (CON) 
+
+5 
+
+K-CAN terminator 
+
+6 
+
+Touchbox (TBX) 
+
+7 
+
+Audio amplifier (AMP) 
+
+8 
+
+Telematic Communication Box (TCB) 
+
+
+The CAN buses are shown in the overview of the bus systems. The actual physical layout (topology) is 
+shown using the example of the K-CAN2. 
+
+As with most bus systems, terminating resistors are also used for protection of the K-CAN to avoid 
+residual voltages on the data lines. 
+
+The terminating resistors for the termination are located in the: 
+
+• Body Domain Controller and 
+
+• K-CAN terminators. 
+
+All other control units are connected at the K-CAN terminator without a terminating resistor. 
+
+
+5 
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+CAN terminator 
+
+
+
+CAN terminator 
+
+Depending on the equipment package, in the CAN terminator the terminating resistor for the 
+corresponding CAN bus is installed. The terminating resistor comprises two resistances connected 
+in series, each 60 Ohm. A measuring tap against ground with a capacitor for the reduction of high- 
+frequency faults is also installed. Ferrite beads are installed for all bus lines in the CAN terminator. 
+Ferrite beads suppress high-frequency faults on the CAN data lines, thus making possible line lengths 
+of up to 5 m in the wiring harness. 
+
+Ferrite core 
+
+A ferrite core is a component made from the ferromagnetic material iron oxide hematite (Fe203). It is 
+characterized by low or no conductivity. The inductance or the magnetic field is increased as part of a 
+coil (throttle or transformer). If a ferrite core is secured around a conductor, which routes signals at low 
+frequency or direct current voltage, high-frequency faults are attenuated with its help. 
+
+
+
+Ferrite core 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ferrite core using the example of a USB line 
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Oscilloscope 
+
+If there are no terminating resistors in a CAN bus or they are faulty, this may lead to reflections or 
+faults. These reflections or faults are shown in the following graphic: 
+
+
+© ® 
+
+
+M Ctm 
+
+?MtV 
+
+t 
+
+Os 
+
+fnoprr 
+
+■■ ■ 
+
+IM Cut 
+
+7 000 V 
+
+1 
+
+0 % 
+
+•"BO" 
+
+
+n« Cm 
+
+3646V 
+
+M 
+
+Otto 
+
+lost 
+
+9/ 
+
+rule** 
+
+4 343 V 
+
+10 
+
+01 to 
+
+1 rye* 
+
+Auto 
+
+A Cur 
+
+1006/V 
+
+tn 
+
+000% 
+
+
+htQ&ind 
+
+ACur 
+
+1 /360V 
+
+VT 
+
+000% 
+
+
+
+
+
+61 
+
+41 6 |B 
+
+
+
+
+
+At 
+
+t63|U 
+
+
+
+
+Oscilloscope holder K-CAN 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Oscilloscope holder with active CAN terminator 
+
+2 
+
+Oscilloscope holder with disconnected or faulty CAN terminator 
+
+
+7 
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+Installation location 
+
+Depending on the equipment package, a maximum of four CAN terminators are installed in the F48. 
+The installation locations are shown in the following graphic: 
+
+
+
+F48 installation location of CAN terminators 
+
+
+Index 
+
+Explanation 
+
+1 
+
+CAN terminator integrated in the Body Domain Controller 
+
+2 
+
+K-CAN3 terminator, rear right 
+
+3 
+
+K-CAN2 terminator, rear right 
+
+4 
+
+K-CAN4 terminator, rear left 
+
+
+1.2.2. PT-CAN 
+
+In the F48 the following PT-CANs are used: 
+
+• PT-CAN 
+
+• PT-CAN2 
+
+
+8 
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.2.3. FlexRay 
+
+
+© © © 
+
+
+
+© 
+
+
+F48 system wiring diagram for FlexRay 
+
+
+9 
+
+
+TE13-0796 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME) 
+
+2 
+
+Electronic Power Steering (electromechanical power steering) (EPS) 
+
+3 
+
+Dynamic Stability Control (DSC) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Optional equipment system (SAS) 
+
+6 
+
+Crash Safety Module (ACSM) 
+
+
+FlexRay data bus topology 
+
+The FlexRay is shown in a simplified form in the data bus overview. The actual topology (star-shaped 
+data bus topology) is shown in the graphic at the top. 
+
+The star coupler with four drivers is located in the Body Domain Controller (BDC). The FlexRay control 
+units are connected to these bus drivers independent of their termination type. 
+
+Bus termination 
+
+As with most bus systems, resistors are also used for termination for the FlexRay to avoid reflections 
+on the data lines at both ends of the data lines. The value of these terminating resistors is calculated 
+from the data transfer speed and the cable lengths. The terminating resistors are located in the control 
+units. In the F48 the terminating resistors have a value of 90 ohm (total resistance 45 ohm). 
+
+A_ 
+
+Use the vehicle wiring diagram for measuring the (de-energized) FlexRay data bus for the 
+determination of the line or terminating resistor. 
+
+
+Signal properties 
+
+Electrical faults, which arise from incorrect cable routing, contact resistances, etc. may cause faulty 
+data transfer. 
+
+
+10 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Mrtsgerfcr 
+
+
+
+Oscilloscope presentation of FlexRay 
+
+
+The voltage ranges of the FlexRay bus system are: 
+
+• System ON - no bus communication 2.5 V 
+
+• High signal - 3.1 V (voltage signal increases to 600 mV and upwards) 
+
+• Low signal -1.9 V (voltage signal decreases from 600 mV downwards) 
+
+The voltage values are measured against ground. 
+
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+Deterministic data transfer 
+
+
+I© 
+
+
+©_J 
+
+
+
+
+
+
+
+
+n 
+
+
+o 
+
+V 
+
+
+t° 
+
+
+V 
+
+
+xyz... 
+
+
+abc... 
+
+iUUTJL 
+
+
+JUilTUT 
+
+
+J1HJLTL 
+
+
+JIULTIIUI 
+
+
+iumnii 
+
+
+JUBOJUl 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deterministic data transfer 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Time-controlled range of cyclical data transfer 
+
+2 
+
+Event-controlled range of cyclical data transfer 
+
+3 
+
+Cycle [5 ms overall cycle duration, of which 3 ms static (= time-controlled) 
+and 2 ms dynamic (= event-controlled)] 
+
+n 
+
+Speed of rotation 
+
+<° 
+
+Angle 
+
+t° 
+
+Temperature 
+
+V 
+
+Speed 
+
+xyz... abc... 
+
+Event-controlled information 
+
+t 
+
+Time 
+
+
+12 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The CAN bus system is an event-controlled bus system. Data is transmitted when an event occurs. 
+
+As these events have different priorities (e.g. ambient temperature has a lower priority than a DSC 
+intervention, for example), the priorities are also sent in the bus message. The message with the 
+higher priority is sent first. As the control unit still wants to send the message which has the lower 
+priority, it frequently results in overloading in the bus systems. 
+
+The FlexRay works with so-called "time slots". With this method the messages are sent and are not 
+controlled by events, but each control unit in the FlexRay network is assigned a fixed time slot in which 
+it sends its message within a certain period. This time slot is synchronised with every restart of the 
+data bus. The control units which synchronize the FlexRay are always labelled in the bus diagram with 
+a "S" (see chapter 1.1). 
+
+A_ 
+
+The FlexRay can also be synchronised with the BMW diagnosis system in the event of a fault and 
+corresponding fault code. 
+
+
+1.2.4. D-CAN 
+
+The D-CAN for the vehicle diagnosis has a data transfer rate of 500 kBit/s. 
+
+1.2.5. Ethernet 
+
+The Ethernet access is used for programming the entire vehicle. 
+
+In a F48 with navigation system the map update for the navigation can also be effected using the 
+Ethernet interface. 
+
+
+1.2.6. MOST 
+
+In the F48 the Media Oriented System Transport (MOST) bus works at a data transfer rate of 
+22.5 MBit/s. 
+
+1.3. Sub-bus systems 
+
+1.3.1. Local interconnect network bus 
+
+Different data rates are used for the local interconnect network bus according to the information 
+required. The data transfer rates of the local interconnect network bus in the F48 range from 19.2 kBit/ 
+s to 20.0 kBit/s. 
+
+Examples: 
+
+• 19.2 kBit/s FLEL, FLER 
+
+• 20.0 kBit/s remote control receiver 
+
+The Body Domain Controller is designed for the different data rates at the corresponding inputs. 
+
+
+13 
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.3.2. Local-CAN 
+
+With corresponding optional equipment, the Local Controller Area Network connects the optional 
+equipment system (SAS) with the control unit for the camera-based driver support systems (KAFAS). 
+
+The Local Controller Area Network has a data transfer rate of 500 kBit/s. 
+
+
+1.3.3. USB 
+
+Depending on the equipment, the following USB connections are possible: 
+
+• from the headunit to the Telematic Communication Box (TCB) 
+
+• from the headunit to the telephone base plate 
+
+• from the headunit to the USB port 
+
+
+1.3.4. APIX 
+
+The central information display (CID) and the Head-Up Display (HUD) in the F48 are not connected to 
+a vehicle data bus. Both control units are connected directly to the headunit via an APIX interface or 
+the instrument cluster (KOMBI). APIX (Automotive Pixel Link) is a bit-serial data transfer system. 
+
+
+
+APIX 
+
+
+Index 
+
+Explanation 
+
+1 
+
+APIX transmitter 
+
+2 
+
+Message to be sent (max. 1 Gbit/s) 
+
+3 
+
+APIX receiver 
+
+4 
+
+Confirmation message (62.5 Mbit/s) 
+
+
+14 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.4. Control units 
+
+This chapter contains information on control units, 
+
+• which are used for the first time in the F48 
+
+• which have been adapted for the F48 
+
+
+1.4.1. Complete overview 
+
+The installation locations of all the control units are shown in the following graphic. 
+
+
+
+F48 Installation location of the control units 
+
+
+15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Frontal Light Electronics Right (FLER) 
+
+2 
+
+Dynamic Stability Control (DSC) 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Camera-based driver support systems (KAFAS) 
+
+5 
+
+Headunit 
+
+6 
+
+Controller (CON) 
+
+7 
+
+Roof function center (FZD) 
+
+8 
+
+Optional equipment system (SAS) 
+
+9 
+
+Park Distance Control (PDC)/Parking Manoeuvring Assistant (PMA) 
+
+10 
+
+Automatic operation of tailgate (HKL) 
+
+11 
+
+Rear view camera (RFK) 
+
+12 
+
+Telematic Communication Box (TCB) 
+
+13 
+
+Amplifier (AMP) 
+
+14 
+
+Touchbox (TBX) 
+
+15 
+
+Longitudinal torque distribution (LMV) 
+
+16 
+
+Crash Safety Module (ACSM) 
+
+17 
+
+Driver's seat module (SMFA) 
+
+18 
+
+Instrument cluster (KOMBI) 
+
+19 
+
+Integrated heating and air conditioning (IHKA) 
+
+20 
+
+Electronic Power Steering (EPS) 
+
+21 
+
+Digital Engine Electronics (DME) 
+
+22 
+
+Electronic transmission control (EGS) 
+
+23 
+
+Frontal Light Electronics Left (FLEL) 
+
+
+16 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.4.2. Body Domain Controller 
+
+
+
+F48 Body Domain Controller (BDC) 
+
+
+The Body Domain Controller replaces the control units known from the F20/F30: 
+
+• Front Electronic Module (FEM) 
+
+• Rear Electronic Module (REM) 
+
+Further information on the Body Domain Controller is available in the ST1312 reference manual "FI 5 
+General Vehicle Electrical System". 
+
+1.4.3. Frontal Light Electronics 
+
+
+
+F48 Frontal Light Electronics Left and Right 
+
+The control units for the Frontal Light Electronics Left (FLEL) and Frontal Light Electronics Right 
+(FLER) are installed in the left and right headlight for the LED headlight equipment. 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+The Frontal Light Electronics includes: 
+
+• The activation of the LEDs in the corresponding headlight. 
+
+• The activation of the stepper motor for the headlight beam throw adjustment. 
+
+The control units FLEL and FLER are connected at the K-CAN3 and at the LIN. 
+
+1.4.4. TRSVC control unit 
+
+
+/L 
+
+
+
+F48 TRSVC control unit 
+
+
+The Top Rear Side View Camera (TRSVC) control unit and the actual rear view camera are integrated in 
+the one housing. 
+
+Only the rear view camera is offered for the F48. 
+
+The TRSVC control unit is connected at the K-CAN3. With the BMW diagnosis system the rear view 
+camera is displayed as a TRSVC. 
+
+
+18 
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.4.5. Park Distance Control/Parking Maneuver Assistant 
+
+
+HR 
+
+
+
+F48 Park Distance Control 
+
+Park Distance Control (PDC) assists the driver when maneuver in and out of a parking space. 
+
+The current distance from an obstruction is indicated by acoustic signals and on a visual display. 
+
+In vehicles with Parking Maneuver Assistant (PMA), the sensors of the Park Distance Control (PDC) 
+are evaluated by the Parking Maneuver Assistant control unit. 
+
+The customer can find the Parking Maneuver Assistant in the equipment list as Parking Maneuver 
+Assistant (SA 5DP). The Parking Maneuver Assistant facilitates parking in gaps between cars parallel 
+to the roadway. 
+
+The PDC/PMA control unit is connected at the K-CAN2. 
+
+A_ 
+
+In the BMW diagnosis system the PDC control unit is displayed as a PMA. 
+
+
+19 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.4.6. Crash Safety Module 
+
+
+
+F48 Crash Safety Module 
+
+
+The function of the Advanced Crash Safety Module (ACSM) is to permanently evaluate all sensor 
+signals in order to identify a crash situation. The ACSM evaluates the information from the sensors 
+then forwards corresponding measures for selective activation of the necessary restraint systems. 
+
+The ACSM records the yaw rate and sends this information on the FlexRay data bus. 
+
+No additional yaw sensors are required for the following systems: 
+
+• Dynamic Stability Control (DSC) 
+
+• Navigation system 
+
+The ACSM is connected to the FlexRay. 
+
+
+1.4.7. Dynamic Stability Control 
+
+
+
+F48 Dynamic Stability Control 
+
+
+20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The Dynamic Stability Control (DSC) also includes the tire pressure control function as well as the 
+activation of the actuators of the EMF, in addition to the familiar functions for driving stability control, 
+in the F48. These functions are described in more detail in the section "F48 Chassis and Suspension". 
+
+The DSC is connected at the FlexRay. 
+
+1.4.8. Optional equipment system 
+
+
+
+F48 Optional equipment system 
+
+
+The optional equipment system SAS control unit is not an element of the standard equipment. 
+
+The vehicle must have at least one of the two optional equipment packages in order for an SAS 
+to be installed: 
+
+• Dynamic Damper Control (SA 223) 
+
+• Driving Assistant (SA 5AS) 
+
+The optional equipment system (SAS) control unit provides a variety of driver assistance functions. 
+
+Possible functions: 
+
+• Collision warning with city braking function (SA 5AS) 
+
+• Pedestrian warning with city braking function (SA 5AS) 
+
+• Cruise control with braking function (as a sub-function of ACC Stop&Go (SA 5AS)) 
+
+• Camera-based cruise control ACC Stop&Go (SA 5AT) 
+
+• Dynamic Damper Control (SA 223) 
+
+The image information required by the optional equipment system (SAS) is provided by the camera- 
+based driver support systems (KAFAS) control unit. 
+
+The optional equipment system is connected at the FlexRay and via a Local Controller Area Network at 
+the camera-based driver support system. 
+
+
+21 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.4.9. Camera-based driver support systems 
+
+
+
+F48 Camera-based driver support systems 
+
+
+The control unit camera-based driver support systems (KAFAS) is required for the following 
+optional equipment: 
+
+• Camera-based cruise control ACC Stop&Go 
+
+• Road sign recognition including no overtaking display 
+
+• Lane departure warning 
+
+• Collision warning 
+
+• Pedestrian warning with city braking function 
+
+• Collision warning with city braking function 
+
+The camera-based driver support system control unit is connected to the PT-CAN and to the optional 
+equipment system (SAS) via a Local Controller Area Network. 
+
+
+22 
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.4.10. Automatic operation of tailgate 
+
+
+9 ■ ■ J 
+
+
+
+F48 control unit for automatic operation of tailgate 
+
+The automatic operation of tailgate (HKL) is responsible for the automatic tailgate opening and 
+closing. The HKL monitors and activates the electric spindle drives for the tailgate activation. 
+
+The HKL is connected at the K-CAN2. 
+
+1.4.11. Longitudinal torque distribution 
+
+
+
+F48 control unit for longitudinal torque distribution 
+
+
+In the F48 with four-wheel drive, the longitudinal torque distribution distributes the drive torque 
+variably to the front and rear axles. 
+
+The longitudinal torque distribution is connected at the K-CAN3. 
+
+
+23 
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.1. Overview 
+
+
+
+F48 Voltage supply 
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Power distribution box, passenger compartment 
+
+4 
+
+Battery power distribution box 
+
+5 
+
+Battery 
+
+
+24 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+
+F48 system wiring diagram for voltage supply 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+B+jump start terminal point 
+
+2 
+
+Electric fan relay 
+
+3 
+
+Battery 
+
+4 
+
+Intelligent battery sensor 
+
+5 
+
+Battery power distribution box 
+
+6 
+
+Digital Engine Electronics (DME) 
+
+7 
+
+Alternator 
+
+8 
+
+Starter motor 
+
+9 
+
+Preheating control unit (only for diesel-engine cars) 
+
+10 
+
+Electronic Power Steering (EPS) 
+
+11 
+
+Dynamic Stability Control (DSC) 
+
+12 
+
+Power distribution box, passenger compartment 
+
+13 
+
+Body Domain Controller (BDC) 
+
+14 
+
+Blower motor, passenger compartment 
+
+
+2.2. Components 
+
+The voltage supply of the F48 is comprised of the following components: 
+
+• Battery 
+
+• Intelligent Battery Sensor (IBS) 
+
+• Battery power distribution box 
+
+• Power distribution box, passenger compartment 
+
+• Alternator 
+
+• Ground connections 
+
+• Body Domain Controller (BDC) 
+
+
+26 
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.2.1. Battery 
+
+
+
+AGM battery 
+
+
+Depending on the equipment package, either a 70 Ah AGM battery or 80 Ah AGM battery is installed 
+in the engine compartment in the F48. 
+
+
+2.2.2. Intelligent battery sensor 
+
+
+
+Intelligent battery sensor 
+
+Index 
+
+Explanation 
+
+1 
+
+Negative battery terminal 
+
+2 
+
+Intelligent battery sensor (IBS) 
+
+3 
+
+Battery earth lead 
+
+
+The intelligent battery sensor (IBS) records the following data of the battery: 
+
+• Voltage 
+
+• Current 
+
+• Pole temperature 
+
+
+The IBS performs the calculation and the evaluation of the information. The results are then forwarded 
+to the superior control units via local interconnect network bus (DME and BDC). 
+
+
+27 
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+The IBS has the same range of functions as with the predecessor models. The data transfer via the 
+local interconnect network bus between the IBS, DEM and BDC is new. The IBS has a wake-up 
+function. 
+
+The IBS continuously records relevant values for the battery indicators when the vehicle is in rest 
+state. These can be read out for the diagnosis in the DME/DDE. 
+
+A 
+
+The IBS is fully functional directly after installation at the battery terminal (screw connection at 
+negative battery terminal and connection of signal lines), i.e. the basic variables voltage, current and 
+temperature can be called up straight away. However, the variables deduced for power management 
+(battery condition, starting capability, etc.) must be recalculated and are therefore available with a 
+delay. 
+
+
+2.2.3. Power distribution boxes 
+
+Power distribution box, passenger compartment 
+
+The power distribution box in the passenger compartment is located behind the glove box. 
+
+Some functions for which load relays are integrated in the BDC are protected directly in the BDC. 
+
+
+
+
+
+F48 Power distribution box, passenger compartment 
+
+index 
+
+Explanation 
+
+1 
+
+Relay, terminal 15N 
+
+2 
+
+Relay, terminal 30B 
+
+3 
+
+Relay, terminal 30B 
+
+
+
+28 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+Battery power distribution box 
+
+The battery power distribution box supplies the following components with voltage: 
+
+• Power distribution box, passenger compartment 
+
+• Electric fan 
+
+• Electronic Power Steering (EPS) 
+
+• Dynamic Stability Control (DSC) (pump) 
+
+• Body Domain Controller (BDC) 
+
+
+
+F48 Battery power distribution box 
+
+
+Power distribution box in Body Domain Controller 
+
+The following components are protected by fuses in the BDC power distribution box: 
+
+• Steering column switch cluster (SZL) 
+
+• Intelligent Safety button 
+
+• Light switch 
+
+• Rain-light-solar-condensation sensor (RLSBS) 
+
+• OBD2 interface 
+
+• Heating and air-conditioning units 
+
+• Outside door handle electronics (TAGE) 
+
+• Telematic Communication Box (TCB) 
+
+• Hands free tailgate activation 
+
+• Power windows 
+
+• Central locking system 
+
+• Heated rear window 
+
+• Rear wiper 
+
+
+29 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+3.1. Headlights 
+
+There are some new features in the area of the headlights for the F48. 
+
+The F48 receives halogen headlights in the basic equipment. LED headlights with extended scope 
+(SA 5A4) are available as optional equipment. 
+
+Xenon headlights are not offered for the F48. 
+
+3.1.1. Halogen headlight 
+
+With the halogen headlights, the low-beam headlight, the high beam, as well as the turn indicator, 
+are realized using bulbs. The side light and the daytime driving lights are generated via LEDs. 
+
+
+
+F48 Halogen headlight 
+
+Index 
+
+Explanation 
+
+1 
+
+Bulb for high beam 
+
+2 
+
+Bulb for low-beam headlight 
+
+3 
+
+Bulb for turn indicator 
+
+4 
+
+LEDs for side light/daytime driving lights 
+
+
+30 
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+3.1.2. LED headlight with extended scope 
+
+The optional equipment LED headlight with extended scope (SA 5A4) also includes the adaptive light 
+distribution, the cornering light and the static adaptive headlight, in addition to the functions of the 
+LED headlight. 
+
+
+
+F48 LED headlight with extended scope 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Cornering light 
+
+2 
+
+Design trim 
+
+3 
+
+Positioning light 
+
+4 
+
+Low-beam headlight/High-beam headlight 
+
+5 
+
+Bulb for turn indicator 
+
+6 
+
+Side lights/Daytime driving lights 
+
+
+Functions 
+
+The variable beam pattern offers improved adaptation of the beam pattern on the road situation. 
+Depending on the speed driven, a distinction is made between the following beam patterns: 
+
+• Cornering light 
+
+• Adaptive headlight 
+
+
+Cornering light 
+
+The LED cornering light is integrated at the side in the headlight. During a slow journey (up to 45 km/h) 
+the cornering light is either activated via the turn indicator or from a certain steering angle. 
+
+Static adaptive headlight 
+
+At speeds between 45 km/h and 70 km/h the cornering light is used as a "static Adaptive Headlight". 
+The LEDs, which are responsible for the cornering light, are activated in order to illuminate the 
+cornering area. This function is called a static Adaptive Headlight because the headlight is not moved. 
+
+
+31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+Special features 
+
+In vehicles with LED headlights a ride height sensor for the automatic headlight beam throw 
+adjustment is installed at the front and rear axle on the right side of vehicle. 
+
+For the F48 with LED headlight, a headlight cleaning system is not required. This could be waived due 
+to compliance with all legal requirements. 
+
+The Frontal Light Electronics Left and Right (FLEL/FLER) is installed at the rear side of the LED 
+headlight and controls the following functions: 
+
+• Low-beam headlight 
+
+• High beam 
+
+• Headlight flasher 
+
+• Headlight beam angle adjustment 
+
+• Cornering lights 
+
+In addition, the FLE controls the temperature control in the LED headlight. The values of two 
+temperature sensors at the heat sink serve as input signals. After switching off the lighting function an 
+after-run of the fans of up to 60 seconds is possible. In the temperature control there is also a function 
+for the de-icing of the LED headlight. 
+
+In the case of a failure of a temperature sensor the fans are switched on at full power to protect the 
+components in the LED headlight. The data from the FLE is transferred to the Body Domain Controller 
+(BDC) via the local interconnect network bus for the diagnosis of the fans and temperature sensors. 
+
+A 
+
+For legal reasons (approval of light technology), the LED headlight obtains a forced connection for the 
+rain-light-solar-condensation sensor. 
+
+
+32 
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+System wiring diagram 
+
+
+
+1 P 1 ^ 
+
+F48 system wiring diagram for the LED headlight 
+
+
+33 
+
+
+TE13-2594 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Left fog light 
+
+2 
+
+LED headlight with extended scope, left 
+
+3 
+
+LED headlight with extended scope, right 
+
+4 
+
+Right fog light 
+
+5 
+
+Ride height sensor, front right 
+
+6 
+
+Fuses in the power distribution box in the passenger compartment 
+
+7 
+
+Body Domain Controller (BDC) 
+
+8 
+
+Fuse in the Body Domain Controller 
+
+9 
+
+Ride height sensor, rear right 
+
+10 
+
+Light switch 
+
+11 
+
+Hazard warning switch/intelligent Safety button 
+
+12 
+
+Steering column switch cluster (SZL) 
+
+13 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+14 
+
+Fuse in the power distribution box, battery 
+
+
+3.1.3. fog lights 
+
+
+
+F48fog lights 
+
+The F48 comes with fog lights as standard equipment. Halogen lights are used inside the fog lights. 
+
+
+34 
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+3.2. Rear lights 
+
+Depending on equipment, two different versions of rear lights are used in the F48. 
+
+3.2.1. In vehicles with halogen headlights 
+
+
+
+F48with halogen headlights 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Turn indicator 
+
+2 
+
+Reversing light 
+
+3 
+
+Tail light/fog light 
+
+4 
+
+Tail light/brake light 
+
+Only bulbs are used in the rear lights for vehicles with halogen headlights. 
+
+
+35 
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+3.2.2. Vehicles with LED headlights 
+
+
+
+F48with LED headlights 
+
+Index 
+
+Explanation 
+
+1 
+
+Turn indicator 
+
+2 
+
+Tail light (LED) 
+
+3 
+
+Reversing light 
+
+4 
+
+Fog light 
+
+5 
+
+Brake light 
+
+
+In conjunction with LED headlights (SA 5A4), the tail light function in the rear light is performed with 
+LEDs. 
+
+
+36 
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+The F48 is offered with two different concepts of interior lighting. 
+
+• Basic 
+
+• Lights package (SA 563) 
+
+Other contour lights can also be installed with the optional equipment Sport Line (SA 7AC) and xLine 
+(SA 7HW). 
+
+
+37 
+
+
+
+F48 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+4.1. System wiring diagram 
+
+
+
+F48 system wiring diagram for interior lighting with light package (SA 563) 
+
+
+38 
+
+
+TE13-2597 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell light, front left 
+
+2 
+
+Lighting, decorative strip on passenger's side 
+
+3 
+
+Footwell light, front right 
+
+4 
+
+Glove box light 
+
+5 
+
+Glove box switch 
+
+6 
+
+Fuses in the power distribution box in the passenger compartment 
+
+7 
+
+Body Domain Controller (BDC) 
+
+8 
+
+Door pocket lighting, front right 
+
+9 
+
+Door pocket lighting, front right 
+
+10 
+
+Outside door handle light, front right 
+
+11 
+
+Door entry lighting, front right 
+
+12 
+
+Door contact, front right 
+
+13 
+
+Door pocket lighting, rear right 
+
+14 
+
+Door pocket lighting, rear right 
+
+15 
+
+Outside door handle light, rear right 
+
+16 
+
+Door entry lighting, rear right 
+
+17 
+
+Door contact, rear right 
+
+18 
+
+Luggage compartment light 
+
+19 
+
+Footwell light, rear right 
+
+20 
+
+Tailgate lock with switch 
+
+21 
+
+Footwell light, rear left 
+
+22 
+
+Door contact, rear left 
+
+23 
+
+Door entry lighting, rear left 
+
+24 
+
+Outside door handle light, rear left 
+
+25 
+
+Interior light unit, rear 
+
+26 
+
+Door pocket lighting, rear left 
+
+27 
+
+Door pocket lighting, rear left 
+
+28 
+
+Front interior light unit 
+
+29 
+
+Door contact, front left 
+
+30 
+
+Door entry lighting, front left 
+
+31 
+
+Outside door handle light, front left 
+
+32 
+
+Switch for make-up mirror light, left 
+
+33 
+
+Switch for make-up mirror light, right 
+
+34 
+
+Make-up mirror light, right 
+
+
+39 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+35 
+
+Make-up mirror light, left 
+
+36 
+
+Door pocket lighting, front left 
+
+37 
+
+Lighting, center stack 
+
+38 
+
+Door pocket lighting, front left 
+
+
+40 
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+In the F48 one variant of the heating and air conditioning systems are available for the US: 
+
+• IHKA 2/1 zones 
+
+In the zone specification the first number denotes the number of controllable temperature zones 
+(temperature selector wheels) and the second number denotes the number of controllable airflow 
+volume and air distribution zones (separate fan settings). 
+
+A _ 
+
+For the air-conditioning system of the F48 the refrigerant R134a is used. 
+
+Other equipment for the F48: 
+
+• Seat heating for driver and front passenger (SA 494) 
+
+• Steering wheel heating (SA 248) 
+
+• Mirror heating (standard equipment) 
+
+• Heated washer jets (standard equipment) 
+
+5.1. Components and systems 
+
+5.1.1. Integrated automatic heating and air conditioning 
+
+An automatic air-conditioning system is available for the F48 as optional equipment (SA 534). 
+
+Contents: 
+
+• Two-zone automatic air conditioning 
+
+• 5 climate controls (automatic programs) for setting the desired intensity 
+
+• Condensation sensor 
+
+• Automatic air recirculation control sensor (NOx, CO) for automatic air recirculation function 
+
+• Combination filter with activated carbon for fresh air and air recirculation function 
+
+• Personal Profiles are stored in a key-dependent way 
+
+• MAX AC function (maximum cooling in passenger compartment) 
+
+• Defrost function (quick removal of condensation) 
+
+• Fresh air vent in the rear passenger compartment 
+
+
+41 
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+
+Control panel 
+
+
+
+F48 IHKA control panel 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Defrost window glass and remove condensation 
+
+2 
+
+Temperature, left 
+
+3 
+
+Automatic program 
+
+4 
+
+Switch off system 
+
+5 
+
+Amount of air, AUTO intensity 
+
+6 
+
+Display 
+
+7 
+
+SYNC program 
+
+8 
+
+Maximum cooling 
+
+9 
+
+Temperature, right 
+
+10 
+
+Air conditioning function 
+
+11 
+
+Automatic air recirculation control/air recirculation function 
+
+12 
+
+Seat heating, right 
+
+13 
+
+Air distribution 
+
+14 
+
+Seat heating, left 
+
+15 
+
+Passenger compartment temperature sensor 
+
+16 
+
+Heated rear window 
+
+
+42 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+Components 
+
+Sensors and actuators which are connected to the Body Domain Controller (BDC) control unit are 
+involved in the function of the heating and air-conditioning system in the F48: 
+
+• Pressure sensor 
+
+The BDC evaluates the pressure sensor signal and makes it available to the IHKA control unit 
+via the K-CAN4. 
+
+• Blower 
+
+The IHKA request is sent via the LIN bus to the blower. 
+
+• Air conditioning compressor 
+
+The air conditioning compressor is controlled by the BDC by means of a pulse-width- 
+modulated signal. The BDC can also actuate the air conditioning compressor clutch. 
+However, the request is always made by the IHKA. 
+
+• Automatic air recirculation control sensor 
+
+The automatic air recirculation control sensor is read by the BDC via a local interconnect 
+network bus. The IHKA assumes the automatic air flap control, which communicates 
+with the BDC via K-CAN4. 
+
+• Rain-light-solar-condensation sensor (RLSBS) 
+
+The rain-light-solar-condensation sensor communicates with the BDC via a 
+local interconnect network bus. 
+
+
+43 
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+System wiring diagram 
+
+
+
+F48 system wiring diagram for IHKA 
+
+
+44 
+
+
+TE13-2602 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery power distribution box 
+
+2 
+
+Automatic air recirculation control sensor 
+
+3 
+
+Air conditioning compressor 
+
+4 
+
+Refrigerant pressure sensor for switching off in the 
+event of excess pressure in the refrigerant circuit 
+
+5 
+
+Fuses in the power distribution box in the passenger compartment 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Fuse in the power distribution box, BDC 
+
+8 
+
+Temperature sensor for evaporator 
+
+9 
+
+Stepper motor, blending flap, left 
+
+10 
+
+Stepper motor, blending flap, right 
+
+11 
+
+Stepper motor, fresh air/air recirculation function 
+
+12 
+
+Stepper motor, flaps, footwell ventilation, left and right 
+
+13 
+
+Stepper motor flaps for defrost function 
+
+14 
+
+Ventilation temperature sensor, left 
+
+15 
+
+Audio operating facility 
+
+16 
+
+Operating unit for standard heating and air conditioning 
+
+17 
+
+Integrated heating and air conditioning (IHKA) 
+
+18 
+
+Electric auxiliary heater (only for diesel engines) 
+
+19 
+
+Blower motor, passenger compartment 
+
+20 
+
+Blower output stage, local interconnect network bus control 
+
+21 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+
+45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+5.1.2. Heating and air-conditioning unit 
+
+
+
+F48 Heating and air-conditioning unit 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Air vent, top 
+
+2 
+
+Temperature sensor, center vent 
+
+3 
+
+Temperature sensor, footwell air outlet 
+
+4 
+
+Heat exchanger 
+
+5 
+
+Discharge of condensation from the heating and air-conditioning unit 
+
+6 
+
+Stepper motor for blending flap 
+
+7 
+
+Connector at the control unit for integrated heating / air-conditioning 
+regulation/IHKA 
+
+8 
+
+Sleeve, bulkhead 
+
+9 
+
+Blower motor 
+
+10 
+
+Blower output stage 
+
+
+46 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+
+
+F48 Heating and air-conditioning unit 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Temperature sensor, center vent 
+
+2 
+
+Stepper motor for footwell air outlet, left and right 
+
+3 
+
+Stepper motor for defrost function 
+
+4 
+
+Recirculated air flap 
+
+5 
+
+Ambient air intake area at the bulkhead 
+
+6 
+
+Stepper motor for recirculated air flap (with kinematics control) 
+
+7 
+
+Service flap of two microfilters 
+
+8 
+
+Stepper motor for blending flap 
+
+9 
+
+Evaporator temperature sensor 
+
+10 
+
+Ventilation flaps, air vent at feet 
+
+11 
+
+Temperature sensor, footwell air outlet 
+
+12 
+
+Air flaps, center vent 
+
+
+47 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+
+5.1.3. Microfilter 
+
+
+
+F48 heating and air-conditioning unit, replacement of microfilter 
+
+Index 
+
+Explanation 
+
+1 
+
+Upper microfilter 
+
+2 
+
+Lower microfilter 
+
+
+
+F48 heating and air-conditioning unit, replacement of microfilter 
+
+
+48 
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+A _ _ 
+
+Two microfilters are installed in the F48. The BMW repair instructions must be followed for the 
+replacement of the microfilters. 
+
+
+5.1.4. Air/Water separation (Venturi adapter) 
+
+
+
+F48 air/water separation (Venturi adapter) 
+
+So that no water enters the heating and air-conditioning unit, a cover (Venturi adapter) is installed 
+before the air intake in the engine compartment. 
+
+The fresh air drawn in is accelerated by the design of the Venturi adapter and redirected 90°. 
+Through this process the water separates at the cover and then drains off downwards. 
+
+
+49 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+
+
+Ui 
+
+
+F48 function of air/water separation (Venturi adapter) 
+
+P* 
+
+Index 
+
+Explanation 
+
+
+1 
+
+Cover 
+
+
+2 
+
+Dirt trap 
+
+
+3 
+
+Fresh air drawn in 
+
+
+4 
+
+Separated condensate 
+
+
+
+50 
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+5. Heating/Air Conditioning Systems 
+
+5.1.5. ECO PRO mode of heating and air conditioning program 
+
+In ECO PRO mode the heating and air conditioning functions can be configured. This also contributes 
+to a reduction in fuel consumption thanks to the intelligent heating and air-conditioning management. 
+
+
+£15 
+
+JL ECO PRO 
+
+i / /< * 
+
+L/ Efficient driving 
+
+
+
+
+F48 ECO PRO mode 
+
+A 
+
+The cooling system cannot be filled or bled in ECO PRO mode. Observe the BMW repair instructions. 
+
+
+
+51 
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+In the F48 there are two distinct systems concerned with vehicle access: 
+
+• Basic access, central locking system 
+
+• Comfort Access (SA 322) 
+
+The entire locking and security function of the F48 is integrated in the Body Domain Controller (BDC). 
+
+
+52 
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+
+
+® 
+
+© 
+
+
+® 
+
+
+
+@® 
+
+F48 system wiring diagram for locking and security functions 
+
+
+53 
+
+
+Z~S180-£131 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Engine Electronics (DME) 
+
+2 
+
+Engine compartment lid contact switch 
+
+3 
+
+Electronic transmission control (EGS) 
+
+4 
+
+Dynamic Stability Control (DSC) 
+
+5 
+
+Fuse in the power distribution box in the passenger compartment 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Remote control receiver 
+
+8 
+
+Interior antenna 
+
+9 
+
+Advanced Crash Safety Module (ACSM) 
+
+10 
+
+Central locking button, left 
+
+11 
+
+START-STOP button 
+
+12 
+
+Ring antenna (transponder coil) 
+
+13 
+
+Clutch switch (only for vehicles with manual gearbox) 
+
+14 
+
+Steering column switch cluster (SZL) 
+
+
+6.1. Overview of functions 
+
+The following locking and security functions are integrated in the Body Domain Controller: 
+
+• Comfort Access 
+
+• Central locking system 
+
+• Terminal control 
+
+• Electronic immobilizer 
+
+
+54 
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+6.1.1. Remote control receiver 
+
+The remote control receiver is installed in the luggage compartment on the right. 
+
+The radio signal received by the remote key is forwarded by the remote control receiver via a local 
+interconnect network bus to the BDC. 
+
+
+& 
+
+
+
+F48 Installation location of the remote control receiver 
+
+
+6.2. Central locking system 
+
+The function of the central locking system of the F48 is based on that of current BMW models. 
+With the introduction of the BDC, all relevant functions for the central locking system are handled 
+by one control unit. The function is as follows: 
+
+• The radio signal from the ID transmitter is received by the remote control receiver. 
+
+• The signal causes the BDC to activate the central locking system and the interior lighting. 
+
+• The BDC evaluates the status of all door contacts. In this way, for example, the vehicle can 
+be prevented from being locked while the driver's door is open. 
+
+• The status of the central locking system button is also evaluated by the BDC. 
+
+The BDC activates the central locking system, depending on the status. 
+
+• The BDC is responsible for the status recording and activation of the central 
+locking system in the tailgate. 
+
+
+55 
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.2.1. Special functions 
+
+Automatic locking (Personal Profile) 
+
+From a speed greater than 16 km/h the vehicle is automatically locked. 
+
+A_ 
+
+Different functions of the central locking system can be individually adjusted via the 
+central information display. 
+
+
+Automatic unlocking in the event of a crash 
+
+As soon as the Body Domain Controller (BDC) receives a crash message from the Advanced Crash 
+Safety Module (ACSM), the vehicle is unlocked. 
+
+After the crash message, the central locking button and the remote control receiver are blocked for 
+the central locking system function. Both are only reactivated after a terminal change. 
+
+Selective unlocking 
+
+The vehicle can also be selectively unlocked in the case of corresponding encoding. Initially, only 
+the driver's door is unlocked. The rest of the vehicle is unlocked upon a subsequent request for 
+unlocking. Depending on the operating point and the national-market version, the fuel filler flap is 
+already unlocked after the first or second request. 
+
+Convenient opening 
+
+By operating the remote control button "Unlock" for approximately 3 seconds the convenient opening 
+can start. The windows and, if installed the panorama glass roof (SA 402), are opened in the process. 
+The button on the remote key must be held down until the process is complete. 
+
+Convenient closing 
+
+By operating the remote control button "Lock" for approximately 3 seconds the convenient closing 
+can start. The windows and, if installed the panorama glass roof (SA 402), are closed in the process. 
+The button on the remote key must be held down until the process is complete. 
+
+If the vehicle has the optional equipment Comfort Access (SA 322), the windows and the panorama 
+glass roof (SA 402) can be closed by pressing the grooved surface on the outer door handle. 
+
+
+56 
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.2.2. System wiring diagram 
+
+
+
+F48 system wiring diagram for central locking system 
+
+
+57 
+
+
+TE13-2610 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine compartment lid contact switch 
+
+2 
+
+Fuses in the power distribution box in the passenger compartment 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Door lock, passenger's side, front 
+
+5 
+
+Central locking button on passenger's side 
+
+6 
+
+Door lock, passenger's side, rear 
+
+7 
+
+Servo drive for fuel filler flap 
+
+8 
+
+Remote control receiver 
+
+9 
+
+Luggage compartment light 
+
+10 
+
+Tailgate lock 
+
+11 
+
+Door lock, driver's side, rear 
+
+12 
+
+Door lock, driver's side, front 
+
+13 
+
+Central locking button, driver's side 
+
+14 
+
+Switch block for driver's side 
+
+15 
+
+Button for tailgate activation 
+
+16 
+
+Instrument cluster (KOMBI) 
+
+
+58 
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+The central locking button is designed as a rocker switch in the F48. 
+
+
+
+F48 central locking button 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Unlock vehicle 
+
+2 
+
+Lock vehicle 
+
+
+6.3. Comfort Access 
+
+With the optional equipment Comfort Access (SA 322), the F48 obtains access to the vehicle without 
+a key. The Comfort Access function is already known from other BMW models. 
+
+
+59 
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.3.1. System wiring diagram 
+
+
+® 
+
+
+
+60 
+
+
+TE13-2607 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Fuse in the Body Domain Controller 
+
+3 
+
+Door contact, passenger's side 
+
+4 
+
+Outside door handle electronics, passenger's side 
+
+5 
+
+Exterior antenna, passenger's side 
+
+6 
+
+Exterior antenna, rear bumper 
+
+7 
+
+Interior antenna, luggage compartment 
+
+8 
+
+Exterior antenna, driver's side 
+
+9 
+
+Interior antenna, rear 
+
+10 
+
+Outside door handle electronics, driver's side 
+
+11 
+
+Door contact, driver's side 
+
+12 
+
+Interior antenna (front) 
+
+
+61 
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+6.3.2. System components 
+
+For the CA function, the Body Domain Controller activates the aerials for the exterior and passenger 
+compartment. 
+
+The outside door handle electronics TAGE are also read in by the BDC. 
+
+
+
+
+F48 installation location of the Comfort Access aerials 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Outside door handle electronics, right 
+
+3 
+
+Antenna for outer area, right 
+
+4 
+
+Remote control receiver 
+
+5 
+
+Antenna for outer area in the rear bumper 
+
+6 
+
+Tailgate button 
+
+7 
+
+Tailgate lock 
+
+8 
+
+Interior antenna, luggage compartment 
+
+9 
+
+Interior antenna, rear 
+
+10 
+
+Antenna for outer area, left 
+
+11 
+
+Outside door handle electronics, left 
+
+12 
+
+Interior antenna (front) 
+
+13 
+
+Digital Motor Electronics (DME) 
+
+
+The function of Comfort Access is known from current BMW models. 
+
+
+62 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.4. Hands free tailgate opening 
+
+In combination with the optional equipment Comfort Access (SA 322) and automatic operation of 
+tailgate (SA 316), the F48 has hands free tailgate opening. 
+
+
+63 
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.4.1. System wiring diagram 
+
+
+© 
+
+
+
+F48 system wiring diagram for non-contact tailgate opening 
+
+
+64 
+
+
+TE13-2615 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+K-CAN terminator 
+
+3 
+
+Automatic operation of tailgate (HKL) 
+
+4 
+
+Control electronics for non-contact tailgate opening 
+
+5 
+
+Exterior antenna, rear bumper 
+
+6 
+
+Sensor at top for non-contact tailgate opening 
+
+7 
+
+Sensor at bottom for non-contact tailgate opening 
+
+8 
+
+Tailgate lock switch 
+
+9 
+
+Acoustic warning device 
+
+
+6.4.2. Functional description of tailgate opening 
+
+The operation is effected by means of targeted foot movement to and from the bumper. Two sensors 
+detect the movement contactlessly via capacitive measurement. 
+
+
+
+F48 non-contact tailgate opening by foot movement 
+
+Index 
+
+Explanation 
+
+1 
+
+Cross-section, rear bumper 
+
+2 
+
+Evaluation electronics for non-contact tailgate opening 
+
+3 
+
+Sensor at top for non-contact tailgate opening 
+
+4 
+
+Sensor at bottom for non-contact tailgate opening 
+
+
+65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+The following components are involved in the function: 
+
+• Body Domain Controller 
+
+• Tailgate lock 
+
+• Evaluation electronics for non-contact tailgate opening 
+
+• Automatic operation of tailgate (HKL) 
+
+• Comfort Access antenna, bumper, rear 
+
+• Two capacitive sensors 
+
+• Acoustic warning device 
+
+
+
+
+F48 inputs/outputs for non-contact tailgate opening 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Capacitive sensors 
+
+2 
+
+Evaluation electronics for non-contact tailgate opening 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Exterior antenna, rear bumper 
+
+5 
+
+Automatic operation of tailgate (HKL) 
+
+6 
+
+Acoustic warning device 
+
+7 
+
+Tailgate lock 
+
+
+66 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+
+F48 sensors for non-contact tailgate opening 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Tailgate lock 
+
+2 
+
+Comfort Access antenna, bumper, rear 
+
+3 
+
+Evaluation electronics for non-contact tailgate opening 
+
+4 
+
+Sensor at top for non-contact tailgate opening 
+
+5 
+
+Sensor at bottom for non-contact tailgate opening 
+
+
+The two sensors are connected to the evaluation electronics and constantly measure the capacity. 
+
+A comparison of the time characteristic of the measured capacities permits the identification of a 
+certain movement pattern. 
+
+A targeted foot movement to and from the bumper can be detected herefrom. The top sensor detects 
+the shin, the bottom sensor the toes. 
+
+The detection range is between the rear lights. 
+
+The sensors are secured in the inside of the rear bumper. 
+
+The evaluation electronics evaluate the signals from the sensors and make this information available 
+to the BDC via the local interconnect network bus. If there is a valid ID transmitter near the Comfort 
+Access antenna in the rear bumper, the BDC initiates an opening of the tailgate. 
+
+The tailgate opens regardless if it was locked or unlocked. 
+
+The tailgate of the F48 can also be closed again using the same foot movement as for opening. 
+
+With the closing of the tailgate via the non-contact tailgate activation, a sound is output by an acoustic 
+warning device, which is installed in the tailgate. 
+
+
+67 
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+
+if) 
+
+
+F48 acoustic warning device 
+
+
+68 
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+7. Alarm System 
+
+7.1. System wiring diagram 
+
+
+
+B 
+
+B 
+
+njo 
+
+
+
+F48 system wiring diagram for alarm system 
+
+
+69 
+
+
+TE13-2612 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+7. Alarm System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine compartment lid contact switch 
+
+2 
+
+Fuses in the power distribution box in the passenger compartment 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Door contact, passenger's side, front 
+
+5 
+
+Door contact on passenger's side, rear 
+
+6 
+
+Siren with tilt alarm sensor 
+
+7 
+
+Tailgate lock contact 
+
+8 
+
+Door contact, driver's side, rear 
+
+9 
+
+Door contact, driver's side, front 
+
+10 
+
+Roof function center (FZD) 
+
+11 
+
+LED in the interior mirror 
+
+
+The alarm system in the F48 is optional equipment (SA 302). 
+
+The alarm system in the F48 is equipped with an ultrasonic interior movement detector for monitoring 
+the passenger compartment. The ultrasonic interior movement detector (USIS) is fully integrated in 
+the roof function center (FZD). 
+
+The door contacts, engine compartment lid switch and the opening of the tailgate are monitored by 
+the Body Domain Controller. As soon as a status changes, the ultrasonic interior movement detector 
+receives this information via the K-CAN2. In the event of an activated alarm system a siren with tilt 
+alarm sensor is activated by the control unit in the event of a break-in. 
+
+The SINE is connected to the roof function center via a local interconnect network bus. 
+
+A 
+
+By operating the central locking button on the remote key twice, the tilt sensor and the interior 
+movement detector are deactivated up to the next unlocking process. 
+
+
+The status of the alarm system is displayed via the LED at the interior mirror. 
+
+
+70 
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+8. Wash/Wipe System 
+
+
+8.1. Introduction 
+
+The following wipe/wash functions are possible in the F48: 
+
+• Intermittent wipes 
+
+• Continuous wipe in interval stage 1 
+
+• Continuous wipe in interval stage 2 
+
+• Flick wipes 
+
+Other equipment for the F48: 
+
+• Washer jet heating (standard equipment) 
+
+• Automatic mode via rain-light-solar-condensation sensor (SA 521) 
+
+8.2. Operation 
+
+The F48 has a newly designed wiper lever. The rear wiper is no longer activated by pressing the 
+complete wiper lever, but using a rotary switch. 
+
+
+
+F48 wash/wipe switch 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Windscreen wiper, wiper stages 
+
+2 
+
+Interval setting or for rain sensor (SA 521) sensibility setting 
+
+3 
+
+Rotary switch for rear window wiper function 
+
+4 
+
+Automatic button, for rain sensor (SA 521) 
+
+
+71 
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+8. Wash/Wipe System 
+
+
+8.3. System wiring diagram 
+
+
+
+® 
+
+kS- 
+
+
+F48 system wiring diagram for wash/wipe system 
+
+
+72 
+
+
+TE13-0900 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+8. Wash/Wipe System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Heated washer jet, left (SA 313) 
+
+2 
+
+Heated washer jet, right (SA 313) 
+
+3 
+
+Washer fluid level switch 
+
+4 
+
+Electric motor, windscreen washer pump 
+
+5 
+
+Fuse in the power distribution box in the passenger compartment 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Fuse in the power distribution box Body Domain Controller 
+
+8 
+
+Wiper motor, rear 
+
+9 
+
+Steering column switch cluster (SZL) 
+
+10 
+
+Instrument cluster (KOMBI) 
+
+11 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+12 
+
+Wiper motor, front 
+
+
+73 
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+9. Steering Wheel Heating 
+
+9.1. System wiring diagram 
+
+
+
+■& 
+
+KJ15* 
+
+
+UH Bui 
+
+
+® 
+
+-& 
+
+w»r 
+
+
+0 * 
+
+
+F48 system wiring diagram for steering wheel heating 
+
+
+74 
+
+
+TE13-2683 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 General Vehicle Electronics 
+
+9. Steering Wheel Heating 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Vibration actuator 
+
+2 
+
+Fuse in the power distribution box in the passenger compartment 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Fuse in the Body Domain Controller 
+
+5 
+
+Multifunction steering wheel buttons, right 
+
+6 
+
+Horn switch 
+
+7 
+
+Multifunction steering wheel buttons, left 
+
+8 
+
+Button, steering wheel heating 
+
+9 
+
+Steering column switch cluster (SZL) 
+
+10 
+
+Steering wheel module 
+
+11 
+
+Heating element for the steering wheel heating 
+
+
+The F48 receives a steering wheel heating (SA 248) as optional equipment. The steering wheel 
+heating is only available in conjunction with the leather sports steering wheel (SA 255). 
+
+
+75 
+
+
+
+
+
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Qualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

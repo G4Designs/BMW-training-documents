@@ -1,0 +1,5456 @@
+Table of Contents 
+
+
+E70 Vertical Dynamics Systems 
+
+Subject Page 
+
+History of Vertical Dynamics .5 
+
+EDC .5 
+
+System Description .5 
+
+EHC .6 
+
+ARS.7 
+
+Adaptive Drive.8 
+
+What is "Adaptive Drive"? .8 
+
+General Information .8 
+
+System Overview .11 
+
+Active Roll Stabilization (ARS).11 
+
+ARS Bus Overview.11 
+
+ARS System Circuit Diagram.12 
+
+ARS Components .13 
+
+Vertical Dynamics Control (VDC) .14 
+
+VDC Bus Overview.14 
+
+VDC System Circuit Diagram.16 
+
+Legend forVDC System Circuit Diagram .17 
+
+VDC Components .18 
+
+Ride Height Sensor Location.19 
+
+Electronic Height Control (EHC).20 
+
+EHC System Diagram .20 
+
+EHC Pneumatic Diagram .21 
+
+EHC Components .22 
+
+System Functions.24 
+
+Active Roll Stabilization (ARS).24 
+
+Physical Conditions .24 
+
+Affect of the Self-steering Behavior .26 
+
+1. Identical stabilizing torque on both axles .26 
+
+2. Larger stabilizing torque on the front axle.26 
+
+System Dynamics.28 
+
+Comparison between the conventional stabilizer bar and the 
+
+active stabilizer bar .28 
+
+
+Initial Print Date: 10/06 Revision Date: 11/06 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Operating States.29 
+
+Straight-ahead Travel.29 
+
+Cornering.29 
+
+Restricted Function .29 
+
+Hydraulic Circuit, Normal Function .30 
+
+Hydraulic Circuit, Fail-safe Function .31 
+
+Vertical Dynamics Control (VDC) .32 
+
+General Information .32 
+
+Objectives of the VDC System .34 
+
+System Network.35 
+
+Electronic Height Control (EHC).36 
+
+AirSpring Functions .36 
+
+Control Modes with Single-axle Air Suspension .36 
+
+Sleep-mode.36 
+
+Post-mode.37 
+
+Pre-mode.37 
+
+Normal mode .37 
+
+TiltS witch.38 
+
+Drive Mode .38 
+
+Kerb (Curb) .38 
+
+Curve .39 
+
+Lift.39 
+
+Special Modes (Belt).39 
+
+Functional Principle .40 
+
+Initialization/reset Behavior:.40 
+
+Control Sequence .40 
+
+Safety Concept.41 
+
+System Components.42 
+
+ARS Components.42 
+
+ARS Control Unit .42 
+
+ARS Control Unit Inputs.43 
+
+ARS Control Unit Outputs.43 
+
+Lateral Acceleration Sensor.44 
+
+Active anti-roll Bar .46 
+
+Function of Pressure Relief Valves .47 
+
+Operating Principle of Oscillating Motors .48 
+
+Front Axle Anti-roll Bar .49 
+
+Rear Axle Anti-roll Bar .50 
+
+Hydraulic Valve Block.51 
+
+Pressure Control Valves .52 
+
+Directional Valve .53 
+
+Failsafe Valve.53 
+
+Switch-position Recognition Sensor .53 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+Front-axle/Rear-axle Pressure Sensors.53 
+
+Tandem Pump.54 
+
+Radial Piston Pump (part of the tandem pump).55 
+
+Vane-cell Pump (part of the tandem pump) .55 
+
+Fluid Reservoir .56 
+
+Fluid Level Sensor.57 
+
+Hydraulic-fluid Cooler .57 
+
+VDC Components.58 
+
+VDM Control Unit.58 
+
+Control Strategy .58 
+
+Display Control .59 
+
+Degradation Behavior in the Event of a Fault .60 
+
+Diagnostic Functions.60 
+
+EDC Satellite Control (with damper).61 
+
+EDC Satellite Control Unit .61 
+
+Twin-tube Gas Pressure Damper .62 
+
+Ride-height Sensor .63 
+
+EHC Components.66 
+
+EHC Control Unit .66 
+
+Air Supply Unit (LVA) .67 
+
+AirSuspension .68 
+
+Ride-height Sensor .68 
+
+Service Information.71 
+
+Steering Angle Calibration .71 
+
+ARS Initialization.71 
+
+ARS Bleeding Procedure .72 
+
+Diagnostics .73 
+
+Programming.76 
+
+Coding .76 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vertical Dynamics Systems 
+
+
+Model: E70 
+
+Production: From Start of Production 
+
+■MICTIWIS 
+
+After completion of this module you will be able to 
+
+• Describe the differences between EDC and VDC 
+
+• Locate and Identify VDC and ARS components 
+
+
+4 
+
+E70 Vertical Dynamics Systems 
+
+
+History of Vertical Dynamics 
+
+
+If we were to break down the common dynamic driving systems of today into the three 
+coordinate axes by their principle of operation and assign them according to their 
+function, BMW vehicles would have three different systems that would belong to the 
+vertical dynamics systems. 
+
+Vertical dynamics systems (effective direction mainly along the z-axis or vertical axis) 
+
+• VDC/EDC - Vertical Dynamics Control (Electronic Damper Control) 
+
+• EHC - Electronic Height Control 
+
+• ARS - Active Roll Stabilization (or Dynamic Drive) 
+
+EDC 
+
+An EDC was firstfitted to a BMW in 1987, in the 
+BMWE30M3. EDC I was firstfitted in series 
+production in 1987 in the E32 (7 Series, 750i), 
+which was based on the premise of manual toggling 
+between a comfort and sports suspension setting. 
+
+EDC II was then introduced in the E24 (6 Series). 
+
+Even at this early stage of development, EDC 
+functioned with characteristic curve mapping. 
+
+Then in 1990, EDC III was fitted in the series 
+production of the E31, E38 and E39. A modified 
+form ofthis system, EDC-K, was also laterto be 
+found in the E65. 
+
+System Description 
+
+Chassis designs should be able to offerthe driver 
+(and occupants) the best possible standards in 
+driving comfort, a very high level of driving safety, 
+high agility and easy handling. 
+
+Conventional, non-adjustable vibration dampers are 
+only able to achieve a compromise between these 
+objectives. 
+
+The electronically controlled dampersystem was 
+developed to practically eliminate this conflict of 
+objectives. 
+
+BMW EDC-K is a fully-automatic system that 
+continually adjusts the damper settings to the 
+current driving situation. 
+
+
+
+
+
+5 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+The fundamental difference between EDC-K and EDC III is the design of the EDC valves 
+and their control logic. EDC-K thus improves driving comfort without impairing driving 
+safety. If the damper settings are too soft or comfortable, the vehicle will quickly begin to 
+vibrate on unfavorable road conditions. 
+
+EDC-K remains in the soft damper setting for as long as possible and only changes 
+immediately to the harder setting when the road situation requires it. 
+
+The system also guarantees consistently good vibration damping characteristics however 
+the vehicle is laden. In addition, all vehicle movements which have an effect on vehicle 
+handling are monitored constantly by sensors. All measurement results are analyzed by a 
+microprocessor and appropriate control commands are transferred to the dampers. 
+
+The damping force at the damper is adjusted by solenoid valves with infinite variability in 
+line with the changing road surface conditions, load status and handling characteristics. 
+
+EHC 
+
+It all began for BMW with level control systems, which were available for the 7 Series 
+(E23/E32), 6 Series (E24) and 5 Series (E28) as option or, in some vehicles, as part of the 
+standard equipment. 
+
+A distinction was made between: 
+
+• Hydro-pneumatic suspension 
+
+• Self-levelling suspension with electrohydraulic pump 
+
+• Self-levelling suspension with engine driven piston pump 
+
+• Single-axle air suspension 
+
+• Twin-axle air suspension 
+
+The purpose of a level control system is to maintain the height of the vehicle body as 
+close as possible to a predefined level under all load conditions. Through a constant level 
+of the body mainly the driving quality (e.g. camber, toe-in) will remain unaltered in the 
+event of changes in payload. 
+
+With the E39, the entire rear-axle load was supported by a single-axle air suspension for 
+the first time. This system was controlled automatically under all operating states and 
+thus did not permit any intervention by the driver. 
+
+With the X5 (E53), the single-axle air suspension system was taken from the E39 and 
+adapted accordingly. In addition, E53 customers were given the opportunity to order a 
+twin-axle air suspension system fortheir vehicle. 
+
+The twin-axle air suspension and its scope for adjustment by the driver has particular 
+advantages by comparison with the single axle air suspension, especially as regards off 
+road handling. Lowering the entire body makes it easierto get into and out of the 
+vehicle and facilitates loading and unloading. 
+
+6 
+
+E70 Vertical Dynamics Systems 
+
+
+
+ARS 
+
+The customer-friendly name forthe option is "Dynamic Drive" and was first available in 
+the 7 Series with the E65. The Dynamic Drive in the E60 is the same as the Dynamic 
+Drive in the E65. 
+
+As the vehicle drives through a bend, a rolling moment builds up about the vehicle's roll 
+axis (x-axis) due to the centrifugal force that acts on the center of gravity of the vehicle. 
+This momenttilts the vehicle body towards the wheel on the outside of the bend, causing 
+the vehicle to rapidly approach its dynamic limits. The tilting of the body and the accom¬ 
+panying shift in wheel load differences are counteracted by the use of anti-roll bars. 
+
+• Conventional anti-roll bar - During cornering, the wheel suspension on the out¬ 
+side of the bend is compressed and the wheel suspension on the inside ofthe bend 
+rebounds. This has a twisting effect on the anti-roll bar (torsion). The forces arising 
+in the bearing points ofthe anti-roll bar produce a moment that counteracts the tilt¬ 
+ing ofthe body. The effect is to improve the distribution of loads acting on both 
+wheels on the same axle. 
+
+A disadvantage of a passive anti-roll bar is that the basic suspension tuning hardens 
+when the suspension is compressed on one side ofthe vehicle during straight 
+ahead travel.This results in a reduction in comfort. 
+
+• Active anti-roll bar -The Dynamic Drive active chassis system also known as 
+Active Roll Stabilization (ARS) - is a revolutionary step in chassis and suspension 
+engineering. Forthe firsttime, the trade-off between handling/agility and comfort is 
+largely eliminated. This results in a new type of "driving pleasure" typical of BMW. 
+
+Dynamic Drive has two active anti-roll bars, which have a positive influence on body 
+roll and handling characteristics. The fundamental feature of Dynamic Drive is the 
+divided anti-roll bars on each axle. The two halves ofthe anti-roll bars are connected 
+by a hydraulic oscillating motor. 
+
+One half of the anti-roll bar is connected to the shaft ofthe oscillating motor, the 
+otherto the housing ofthe oscillating motor.These active anti-roll bars control stabi¬ 
+lizing moments: 
+
+• which reduce the reciprocal movement ofthe vehicle body, 
+
+• which make it possible to achieve high levels of agility and target precision 
+over the entire road speed range, 
+
+• and produce optimum self-steering characteristics. 
+
+During straight-ahead travel, the system improves suspension comfort because the 
+anti-roll bar halves are de-coupled, with the effect that the basic suspension tuning does 
+not additionally harden when the suspension on one side is compressed. 
+
+
+7 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Adaptive Drive 
+
+What is "Adaptive Drive"? 
+
+With the Adaptive Drive option in the E70, Dynamic Drive active roll stabilization (ARS) 
+and the variable damper adjustment (VDC) are functionally linked for the first time. 
+
+The integration of both systems provides maximum safety, comfort and agility beyond 
+compare for an SAV (Sports Activity Vehicle). 
+
+Adaptive Drive reduces lateral roll of the body, which normally occurs during high-speed 
+cornering or in the event of rapid swerving. Adaptive Drive also reduces the required 
+steering angle and improves ride comfort coupled with an increase in driving dynamics. 
+
+The customer can choose between a normal and a sporty basic setting. Adaptive Drive 
+means increased driving pleasure and less tiring driving. Unpleasant pitching and lateral 
+rolling of the body are diminished or eliminated entirely. The self-steering and load trans¬ 
+fer characteristics of the vehicle are significantly improved. 
+
+The reciprocal movements in the upper part of the body, which are inherent in the design 
+of SAV vehicles, are considerably reduced. The vehicle can be driven with higher levels 
+of precision and agility. The system also contributes to shorter braking distances. 
+
+General Information 
+
+Due to specific dynamic influences acting on the vehicle while it is in motion, the body is 
+prone to self-movements, which can be divided into and illustrated by three categories. 
+
+These degrees of freedom can be defined by basing the categories on the mathematics 
+coordinate system with its three spatial coordinate axes. 
+
+• Longitudinal dynamics - The main direction of motion - the direction of travel - is 
+defined by the x- or longitudinal - axis. Longitudinal dynamic driving states, such as 
+acceleration or braking, result in a pitching of the vehicle, which is where the vehicle 
+is subjected to motion about the y axis. 
+
+• Lateral dynamics - Lateral dynamics is where the direction of motion is along the 
+y- or lateral - axis, e.g. as a result of steering or swerving, and the vehicle exhibits 
+movement about the x-axis in the form of a rolling motion. 
+
+• Vertical dynamics - Vertical dynamics is where the vehicle body moves along the 
+z - or vertical - axis and the raising and lowering ofthe body, e.g. on bumpy roads, 
+are described as vertical strokes. 
+
+Movement ofthe vehicle about the z or vertical axis is known as yaw. Movements 
+such as these occur during under or oversteering and are also commonly described 
+as sporty drifting. 
+
+
+8 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Coordinate Axes 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Yawing (about the vertical axis) 
+
+3 
+
+Rolling (about the longitudinal axis) 
+
+2 
+
+Pitching (aboutthe vertical axis) 
+
+
+
+
+These basic dynamic driving properties depend, in particular, on the following vehicle 
+dimensions. 
+
+
+9 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+The position of the center of gravity in a vehicle, its distance from road level, the 
+wheelbase and the track width are decisive parameters in the dynamic driving behavior of 
+a vehicle. 
+
+
+z 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Distance forthe center of gravity 
+from the road surface 
+
+3 
+
+Wheelbase 
+
+2 
+
+Track width 
+
+
+
+
+10 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+Active Roll Stabilization (ARS) 
+
+ARS Bus Overview 
+
+
+JB 
+
+
+Kombi 
+
+
+
+
+
+DSC SiN 
+
+
+
+
+
+SZL 
+
+DSC 
+
+
+OME 
+
+ODE 
+
+
+CAS 
+
+
+FRM 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+KOMBI 
+
+Instrument cluster 
+
+SZL 
+
+Steering Column Switch Cluster 
+
+CAS 
+
+Car Access System 
+
+DSC 
+
+Dynamic Stability Control 
+
+FRM 
+
+Footwell Module 
+
+ARS 
+
+Active Roll Stabilization 
+
+J B 
+
+J unction box 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC_SEN 
+
+DSC Sensor 
+
+VDM 
+
+Vertical Dynamics Management 
+
+
+11 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARS System Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hydraulic valve block 
+
+8 
+
+Car Access System 
+
+2 
+
+Dynamic Stability Control 
+
+9 
+
+Footwell Module 
+
+3 
+
+J unction Box (control unit) 
+
+10 
+
+Steering Wheel Switch Cluster 
+
+4 
+
+Active Roll Stabilization 
+
+11 
+
+Kombi 
+
+5 
+
+Lateral acceleration sensor 
+
+12 
+
+Hydraulic fluid sensor 
+
+6 
+
+Vertical Dynamics Management 
+
+13 
+
+Digital Motor Electronics 
+
+7 
+
+DSC Sensor 
+
+
+
+
+12 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARS Components 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hydraulic-fluid reservoir 
+
+6 
+
+Valve block 
+
+2 
+
+Hydraulic-fluid radiator (cooler) 
+
+7 
+
+Lateral acceleration sensor 
+
+3 
+
+Front oscillating motor 
+
+8 
+
+Hydraulic lines 
+
+4 
+
+Tandem pump 
+
+9 
+
+Rear oscillating motor 
+
+5 
+
+Control unit 
+
+
+
+
+13 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vertical Dynamics Control (VDC) 
+
+VDC Bus Overview 
+
+
+JB 
+
+
+KL 
+
+
+Afl3 -' 
+
+
+- OME 
+
+DDE 
+
+
+GWS 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+J B 
+
+J unction box 
+
+VDM 
+
+Vertical Dynamics Management 
+
+DSC_SENS 
+
+DSC Sensor 
+
+EDC 
+
+SVL 
+
+Electronic Damper Control satellite, front left 
+
+SZL 
+
+Steering Column Switch Cluster 
+
+EDC 
+
+SVR 
+
+Electronic Damper Control satellite, front right 
+
+ARS 
+
+Active Roll Stabilization 
+
+EDC 
+
+SHL 
+
+Electronic Damper Control satellite, rear left 
+
+DME 
+
+Digital Motor Electronics 
+
+EDC 
+
+SHR 
+
+Electronic Damper Control satellite, front right 
+
+GWS 
+
+Gear Selector Switch 
+
+
+
+
+14 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15 
+
+E70 Vertical Dynamics Systems 
+
+
+
+VDC System Circuit Diagram 
+
+
+(9 0 
+
+
+
+16 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend forVDC System C ircuit Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+n 
+
+Electronic Damper Control satellite, front left 
+
+9 
+
+Electronic DamperControl satellite, rear left 
+
+2 
+
+Ride height sensor, front left 
+
+10 
+
+Ride height sensor, rear left 
+
+3 
+
+Digital Motor Electronics 
+
+11 
+
+Steering Column Switch Cluster 
+
+D 
+
+Ride height sensor, front right 
+
+12 
+
+Gear Selector Switch 
+
+5 
+
+Electronic DamperControl satellite, front right 
+
+13 
+
+J unction box 
+
+6 
+
+Ride height sensor, rear right 
+
+14 
+
+Active Roll Stabilization 
+
+7 
+
+Electronic DamperControl satellite, rear right 
+
+15 
+
+DSC Sensor 
+
+8 
+
+Vertical Dynamics Management 
+
+
+
+
+17 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VDC Components 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Damper Control satellite, front right 
+
+4 
+
+Vertical Dynamics Management 
+
+2 
+
+Gear Selector Switch 
+
+5 
+
+Electronic Damper Control satellite, rear left 
+
+3 
+
+Electronic Damper Control satellite, rear right 
+
+6 
+
+Electronic Damper Control satellite, front left 
+
+
+18 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ride HeightSensorLocation 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ride height sensor (4x) 
+
+
+19 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+Electronic Height Control (EHC) 
+
+
+EHC System Diagram 
+
+
+
+
+3 
+
+
+a_ 
+
+HI 
+
+
+H H 
+
+
+
+
+
+20 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for EHC System Diagram 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module 
+
+4 
+
+Right height sensor, right 
+
+2 
+
+Airsupply unit 
+
+5 
+
+Ride height sensor, left 
+
+3 
+
+EHC control unit 
+
+6 
+
+Headlight range adjustment sensor 
+
+
+EHC Pneumatic Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+LVA, Airsupply unit 
+
+7 
+
+Solenoid valve, left side 
+
+B 
+
+Compressor unit 
+
+8 
+
+Restrictor 
+
+C 
+
+Solenoid valve block 
+
+9 
+
+Restrictor 
+
+1 
+
+Air intake 
+
+10 
+
+Air drier 
+
+2 
+
+Pressure limiting/holding valve 
+
+11 
+
+Non-return valve 
+
+3 
+
+Outlet valve 
+
+12 
+
+Electric motor 
+
+4 
+
+Solenoid valve, right side 
+
+13 
+
+Compressor 
+
+5 
+
+Air spring, rear right 
+
+14 
+
+Air cleaner 
+
+6 
+
+Air spring, rear left 
+
+
+
+
+21 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EHC Components 
+
+
+z) 
+
+l) ZJ v! 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Air cleaner 
+
+6 
+
+Ride height sensor, right 
+
+2 
+
+Retaining plate 
+
+7 
+
+EHC control unit 
+
+3 
+
+LVA, Air supply unit 
+
+8 
+
+Air spring, rear left 
+
+4 
+
+Pneumatic lines 
+
+9 
+
+Ride height sensor, left 
+
+5 
+
+Air spring, rear right 
+
+
+
+
+22 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23 
+
+E70 Vertical Dynamics Systems 
+
+
+
+System Functions 
+
+
+Active Roll Stabilization (ARS) 
+
+Physical Conditions 
+
+When the vehicle drives through a bend, the vehicle is subjected to lateral acceleration 
+[ay], which acts on the vehicle's center of gravity [1], The vehicle body rolls about the 
+roll axis [2] due to the kinematics of the front and rear axle. The roll angle is formed, (max. 
+5°). This produces a maximum change in level on the wheel arch of 10 cm. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle without Adaptive Drive 
+
+Ma 
+
+Body torque 
+
+B 
+
+Vehicle with Adaptive Drive 
+
+1 
+
+Center of gravity [SP] 
+
+M 
+
+Rolling moment 
+
+2 
+
+Roll axis [RA] 
+
+ay 
+
+Lateral acceleration 
+
+Fy 
+
+Lateral force 
+
+9 
+
+Roll angle 
+
+h 
+
+Lever arm center of gravity height 
+
+
+In a passive vehicle with conventional suspension, the rolling moment [M ] is absorbed 
+by the anti-roll bars and springs. The springs on the outside of the bend are com¬ 
+pressed and the springs on the inside of the bend rebound. In addition, the anti-roll bars 
+rotate. A roll angle [.] forms between the vertical and the body. 
+
+In a vehicle with Adaptive Drive, the rolling moment [M ] can be fully compensated for by 
+the active anti-roll bars up to a specific rate of lateral acceleration ay. A roll angle only 
+begins to form once the rolling moment [M ] has exceeded the moment [M a] actively set 
+by the anti-roll bar. The residual rolling moment [M] is then absorbed by the passive 
+springs. 
+
+
+24 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The active body moments [M a] at the front and rear axle counteract the rolling moment 
+[M ]. Using this approach, the roll angle is compensated for in accordance with the 
+characteristic curve specified in the control unit. The roll angle is fully compensated for 
+up to a lateral acceleration of approximately 5 m/s 2 (0.5 g). 
+
+A roll angle can form even with Adaptive Drive, but only at higher rates of lateral accelera¬ 
+tion. The roll angle together with an increasing understeering trend therefore provide the 
+driver with an indication that the vehicle is approaching its limit range. 
+
+There is no compensation fortire compression caused by the rolling moment [M ]. 
+
+
+
+The roll angle shown is achieved when the vehicle is unladen and the driver is in the 
+vehicle. When the vehicle is fully laden, the larger body mass effects a greater lateral 
+force on the vehicle. Depending on the arrangement of the vehicle load (inside the 
+vehicle or on the roof), there may also be a change in leverage [h]. 
+
+The vehicle will then exhibit a somewhat larger roll angle than is shown in the control 
+characteristic curve. A fully laden passive vehicle still forms a larger roll angle. 
+
+The distribution of the active body torque between the front and rear axle depends on 
+the road speed. 
+
+
+25 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Affect of the Self-steering Behavior 
+
+The self-steering behavior can be decisively influenced by the distribution of the stabiliz¬ 
+ing torque on the axles. The greaterthe stabilizing torque on an axle, the lowerthe lateral 
+forces transmitted on this axle. 
+
+Two cases are described below with different distributions of stabilizing moments at the 
+axles: 
+
+1. Identical stabilizing torque on both axles 
+
+Handling is NEUTRAL. The front wheels can apply about the same amount of lateral 
+force on the road as the rear wheels without drive torque. The handling conditions are 
+neutral. 
+
+A vehicle which is tuned to neutral handling conditions provides very agile handling, the 
+steering reacts very quickly. The driver experiences precise handling. 
+
+Even an inexperienced driver can control a vehicle which is tuned to neutral handling very 
+well at low speeds. 
+
+2. Larger stabilizing torque on the front axle 
+
+Handling is UNDERSTEERING. The front axle wheels cannot apply the same amount of 
+lateral force on the road as the rear axle wheels. The vehicle suffers understeer. 
+
+A greater steering-wheel angle is required to be able to follow the desired course. 
+
+An understeering vehicle can generally be well controlled even by an inexperienced driver 
+at higherspeeds and higher cornering speeds. This very sensitive handling reduces the 
+vehicle's agility. 
+
+Adaptive Drive adjusts the stabilizing moments at the front and rear axles in such a way 
+that different handling characteristics are produced for low and high speeds. 
+
+
+y 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Road Speed 
+
+Explanation 
+
+1 
+
+Front axle 
+
+A 
+
+Low 
+
+Neutral 
+
+2 
+
+Rear axle 
+
+B 
+
+High 
+
+Understeering 
+
+
+26 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More active body moment [Ma] is required with increasing lateral acceleration. 
+
+The characteristic curves are shown fortwo different road speeds. 
+
+The following illustration shows the relationship between lateral acceleration [ay] and 
+steering wheel angle [LW] for the passive vehicle and for the vehicle with Adaptive Drive 
+and in different road speed ranges. 
+
+y) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+v = 15 km/h 
+
+2 
+
+v = 250 km/h 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Passive, agility v < 100 km/h 
+
+1 
+
+Passive, agility v > 150 km/h 
+
+2 
+
+RS, agility v < 100 km/h 
+
+2 
+
+ARS, agility v > 150 km/h 
+
+
+27 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The passive vehicle is configured as slightly understeering irrespective of the speed 
+range. 
+
+Adaptive Drive is tuned to be neutral in the lower road speed range. The driver does not 
+have to steer as much to drive through the same bend. This results in optimum handling 
+and agility. 
+
+In the upper speed range, both vehicles behave almost identically with regard to the 
+required steering angle on the same bend. 
+
+The hydro-mechanical concept is designed so that a greater active stabilizing torque 
+cannot occur on the rear axle than on the front axle under any circumstances. This means 
+that mechanically and hydraulically the vehicle with Adaptive Drive is safeguarded such 
+that no oversteering and therefore for normal customers no critical handling characteris¬ 
+tics can occur under any circumstances. 
+
+System Dynamics 
+
+Adaptive Drive has to respond as fast as is required in the event of rapid lane changes, 
+rapid cornering or rapid changes of direction on winding country roads. 
+
+
+The system dynamics of Adaptive Drive are determined by the duration of the following 
+stages: 
+
+
+Process 
+
+Time 
+
+Signal detection by sensor, processing of sensor signals in the control 
+unit, valve control 
+
+Approximately 10 milliseconds 
+
+Change of direction, reversal of moment direction, directional valve 
+
+Approximately 30 milliseconds 
+
+Pressure increase (force per wheel) 
+
+0 - >30 bar(0 - >350 N) 
+
+0 - >160 bar(0- >2100 N) 
+
+Approximately 120 milliseconds 
+
+Approximately 400 milliseconds 
+
+
+Comparison between the conventional stabilizerbarand the active stabilizer bar 
+
+Active stabilizer bars introduce fewer comfort reducing forces into the body than passive 
+stabilizer bars. In this case a differentiation must be made depending on the frequency 
+with which the forces were introduced. 
+
+
+Road stimulus 
+
+Anti-roll bar behavior 
+
+At approximately 1 Hz (natural body frequency) 
+
+With smaller strokes, the active anti-roll bartwists 
+more easily than a conventional anti-roll bar 
+
+The forces introduced into the body are reduced, 
+the vehicle becomes more comfortable and body 
+displacement is reduced 
+
+From 8 Hz (wheel natural frequency) 
+
+Both anti-roll bars behave in a similar way. On a vehi¬ 
+cle with an active stabilizer bar this is because the 
+fluid is not displaced so quickly. 
+
+
+28 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating States 
+Straight-ahead Travel 
+
+When the engine is started, the pump delivers hydraulic fluid to the system and a back 
+pressure builds up. The pressure difference of approximately 1 bar which exists between 
+the chambers of the control motor is very small and has no effect on the anti-roll bar. 
+
+The pressure valves forthe front-axle anti-roll bar(PVV) and rear-axle anti-roll bar(PVH) 
+are not supplied with current and are therefore open. The hydraulic fluid can flow back 
+into the hydraulic-fluid reservoir directly. This condition remains unchanged as long as 
+the vehicle is travelling straight ahead. 
+
+The system function is displayed continuously up to 15 km/h. The full stabilization poten¬ 
+tial is available from 15 km/h onwards. 
+
+Cornering 
+
+As the vehicle enters a bend, the signals from the lateral acceleration sensor are sent to 
+the ARS control unit. The control unit now sends a pulse-width-modulated signal (PWM) 
+to the pressure valves forthe front and rear-axle anti-roll bars. The strongerthe lateral 
+acceleration, the greaterthe signal will be (current). The strongerthe current supplied to 
+the valve, the more the valve closes and the higherthe pressure which builds up in the 
+anti-roll bars. The pressures at the anti-roll bars are detected by pressure sensors [10, 
+11] and sent to the control unit. 
+
+Direction valve [9] is controlled by the control unit to increase and maintain pressure suit¬ 
+able to the characteristic of the bend (left or right hand bend). A sensor [8] detects the 
+switch position of the direction valve. 
+
+Restricted Function 
+
+If a fault is detected, the system enters failsafe mode. The control unit stores the fault in 
+the fault memory and displays the failsafe condition in the instrument cluster. Failsafe 
+condition is retained until start-up is completed without a fault. 
+
+Failsafe valve [7] is closed by a spring in the event of a system malfunction. The hydraulic 
+fluid in the front anti-roll bar is sealed in, thereby ensuring sufficient stabilization and an 
+understeering effect equivalent to that of a conventional chassis. 
+
+External leakage: 
+
+External leakage is detected by the front and rear pressure sensors and results in the total 
+failure of the system. The failsafe situation is shown in the following hydraulic circuit 
+diagram overview. 
+
+
+29 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Hydraulic Circuit, Normal Function 
+
+
+
+10 
+
+
+11 
+
+
+
+14 <15 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front oscillating motor [S MV] 
+
+9 
+
+Direction valve [RV] 
+
+2 
+
+Rear oscillating motor [SM FI] 
+
+10 
+
+Rear-axle pressure sensor [DSH] 
+
+3 
+
+Front-axle hydraulic circuit 1[V1] 
+
+11 
+
+Front-axle pressure sensor [DSV] 
+
+4 
+
+Front-axle hydraulic circuit 2 [V2] 
+
+12 
+
+Front-axle pressure valve [PVV] 
+
+5 
+
+Rear-axle hydraulic circuit 1 [HI] 
+
+13 
+
+Rear-axle pressure valve [PVH] 
+
+6 
+
+Rear-axle hydraulic circuit 2 [H2] 
+
+14 
+
+Tandem pump [P] 
+
+7 
+
+Failsafe valve [FS] 
+
+15 
+
+Hydraulic-fluid reservoir[HB] 
+
+8 
+
+Switch-position recognition sensor [SSE] 
+
+
+
+
+30 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hydraulic Circuit, Fail-safe Function 
+
+
+
+14 , (15 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front oscillating motor [S MV] 
+
+9 
+
+Direction valve [RV] 
+
+2 
+
+Rear oscillating motor [SM FI] 
+
+10 
+
+Rear-axle pressure sensor [DSH] 
+
+3 
+
+Front-axle hydraulic circuit 1[V1] 
+
+11 
+
+Front-axle pressure sensor [DSV] 
+
+4 
+
+Front-axle hydraulic circuit 2 [V2] 
+
+12 
+
+Front-axle pressure valve [PVV] 
+
+5 
+
+Rear-axle hydraulic circuit 1 [HI] 
+
+13 
+
+Rear-axle pressure valve [PVH] 
+
+6 
+
+Rear-axle hydraulic circuit 2 [H2] 
+
+14 
+
+Tandem pump [P] 
+
+7 
+
+Failsafe valve [FS] 
+
+15 
+
+Hydraulic-fluid reservoir[HB] 
+
+8 
+
+Switch-position recognition sensor [SSE] 
+
+
+
+
+31 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vertical Dynamics Control (VDC) 
+
+
+General Information 
+
+The Vertical Dynamics Control (VDC) system being introduced forthe time from SOP 
+with the E70 is a component of the Adaptive Drive equipment package and is an 
+advancement of the EDC-K already fitted on the E65. Like EDC-K, VDC is notable for its 
+continually adjustable dampers whereby, within certain limits, as many damping charac¬ 
+teristic curves (damping force - piston speed) as desired can be plotted. The characteris¬ 
+tic curve used depends on the driving situation, in other words, the variables that 
+describe the dynamic driving state of the vehicle and which are selected automatically at 
+the driver's command. 
+
+Comparison between EDC-K in the E65 and VDC in the E70: 
+
+
+
+EDC-K 
+
+VDC 
+
+Model 
+
+E65 from introduction into series 
+production from 7/2001 
+
+E70 from SOP 10/06 in the Adaptive Drive equipment 
+package 
+
+Program Selection 
+
+via Control Display and controller 
+
+"SPORT" button next to gear selector switch 
+
+Control unit 
+
+EDC-K control unit on the device hold¬ 
+er behind glove compartment 
+
+VDM control unit: rear left of luggage compartment 
+
+FourEDC satellite control units directly on the damper 
+
+Sensors 
+
+Vertical: 
+
+vertical acceleration sensor, front left, 
+front right, rear right 
+
+Longitudinal: 
+
+wheel speed sensors, front left, front 
+right 
+
+Lateral: 
+
+steering angle sensor (LWS) from the 
+steering column switch cluster 
+
+Vertical: 
+
+fourvertical acceleration sensors integrated in the EDC 
+satellite-control units, four ride-height sensors 
+connected directly to the VDM control unit 
+
+Longitudinal: 
+
+wheel speed sensors orvehicle speed from the DSC 
+control unit 
+
+Lateral: 
+
+steering angle sensor (LWS) from the steering column 
+switch cluster, Rotor position sensor (if Active Steering 
+fitted), lateral acceleration (DSC sensor) as redundant 
+signal to the steering angle 
+
+Damper 
+
+Twin-tube gas-pressure dampers 
+
+Twin-tube gas-pressure dampers 
+
+Diagnostics 
+
+fully compatible 
+
+VDM and EDC satellite control units 
+flash-programmable 
+
+Programming 
+
+EDC-K control unit is flash 
+programmable 
+
+VDM and EDC satellite control units are flash 
+programmable 
+
+Coding 
+
+
+VDM and EDC satellite control units are codable 
+
+Malfunction display 
+
+Messages in the Control Display or 
+instrument cluster 
+
+Messages in the Control Display or instrument cluster 
+
+Testing 
+
+Diagnostic tester 
+
+Diagnostic tester 
+
+
+32 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+33 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Objectives oftheVDC System 
+
+The primary objective oftheVDC system to improve ride comfort while maintaining 
+driving safety at an invariably high level. H igh levels of ride comfort are achieved when 
+the vehicle body hardly moves along the vertical axis in spite of excitations of the vehicle 
+induced by cornering or by the road surface itself (bumps, gaps). Forthis reason, the 
+adjustable dampers are operated in line with a soft, comfortable damping characteristic 
+curve in as many situations as possible. 
+
+High levels of driving safety are achieved if the wheels never lose contact with the road 
+surface and a high support force is available if required. A harder damping characteristic 
+is therefore set if the driving situation or driver's intervention (e.g. steering, braking) 
+demands it. 
+
+As with EDC-K,the dampers have an infinite number of damping characteristic curves at 
+their disposal; unlike EDC-K, however, the dampers are controlled not only axle by axle 
+but also at each individual wheel. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Rebound stage 
+
+1 
+
+Comfort 
+
+B 
+
+Compression stage 
+
+2 
+
+Stability 
+
+X 
+
+Piston speed (m/s) 
+
+3 
+
+S afety 
+
+y 
+
+Damping force (N) 
+
+
+
+
+34 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+In its regulation, the system uses the complete characteristic map of the rebound and 
+compression stages between the comfort (1) and stability (2) threshold curves. 
+
+In the event of a fault, the control range is minimized to safety characteristic curve (3). 
+
+System Network 
+
+The VDC system is a mechatronic system consisting of electronic, hydraulic and 
+mechanical subsystems. These can be subdivided by function as follows: 
+
+• Detection of input signals 
+
+- Sensors for ride heights and rates of vertical acceleration to permit detection of 
+the driving state and the prevailing road conditions 
+
+- Control element to enable the driverto set the damping program (comfort, 
+sport). This is located on, and electrically integrated in, the gear selector switch. 
+
+- Steering angle (output by the SZL control unit via F-CAN) for preemptive 
+detection of cornering 
+
+- Lateral acceleration (out by the DSC sensorvia F-CAN) for detection of 
+cornering 
+
+- Vehicle speed orwheel speeds (output by the DSC control unit via F-CAN) 
+
+• Processing unit 
+
+- VDM control unit - This checks the plausibility of the incoming signals and uses 
+control algorithms that deliver damping forces at individual wheels as a set point 
+value 
+
+- EDC satellite control units - These process the signals from the vertical 
+acceleration sensors on the one hand and output the processed signal. On the 
+other hand, they convert into a valve current the target force from the VDM 
+control unit by means of a stored characteristic curve 
+
+• Actuators 
+
+The electrically controllable valve in the adjusting damper makes it possible to realize 
+the different damping force characteristic curves 
+
+• Communications media 
+
+The VDM control unit is connected to the PT-CAN, F-CAN and FlexRay; the EDC 
+satellite control units are only connected to the FlexRay 
+
+
+35 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Electronic Height Control (EHC) 
+
+Air Spring Functions 
+
+The various control modes in the E70 are designed in a similar way to those in the E6x: 
+
+
+
+Control Modes with Single-axle Air Suspension 
+
+Ongoing control operations are not affected by transitions from one mode to another. 
+Afterthe procedure of the follow-up time the EHC control unit sets the sleep mode. 
+
+Any yet active control operations will be terminated. 
+
+Sleep-mode 
+
+The vehicle is in Sleep-mode at the latest when it has been parked forlongerthan 16 
+minutes without a door or hood/trunk lid being operated orthe terminal status changing. 
+This is the initial state of the control system. No control operation is performed in Sleep 
+mode. The control system goes into Pre-mode when a wake-up signal is received by the 
+EHC control unit. 
+
+
+36 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Post-mode 
+
+Post-mode is activated in orderto compensate for any inclination orto adjust the ride 
+height after driving and between the Pre mode and Sleep mode. 
+
+The Post-mode is limited in time to 1 minute. This mode is only executed if the engine 
+has been running before the system switches into this mode. If the engine has not been 
+running, Sleep mode is entered directly from Premode. 
+
+The control operation is performed in a narrow tolerance band of-6 mm and is terminat¬ 
+ed at-4 mm. The quick signal filter is used. In the event of an inclination (Kerb mode), 
+the control operation takes place forthe nominal heights applicable in this situation. 
+
+Pre-mode 
+
+The activation of the Pre-mode with follow-up triggering afterwards takes place with flap 
+change orchange ofterminal R from ON to OFF. The ride height ofthe vehicle is moni¬ 
+tored and evaluated with a wide tolerance band. 
+
+In Pre-mode, the vehicle is only controlled up to the nominal height if the level is signifi¬ 
+cantly below the nominal height. The control tolerance band is -60 mm from the mean 
+value. This control tolerance ensures that the vehicle is only controlled up in the case of 
+large loads in orderto increase the ground clearance priorto departure. Small loads give 
+rise to small compression travel and this is compensated only when the engine is started. 
+This control setting helps to reduce the battery load. 
+
+With single-axle air suspension, the vehicle is controlled down when the mean value of 
+both ride height signals is > 0 mm and one side is in excess of +10 mm. 
+
+In this mode, only the mean value ofthe two ride height signals (fast filter) is considered 
+when deciding whetherthere is a need fora control operation.There is no inclination 
+detection in Pre-mode. 
+
+Normal mode 
+
+Normal mode is the starting pointforthe vehicle's normal operating state. It is obtained 
+by way ofthe "Engine running" signal. Ride level compensation and a change in the 
+vehicle's ride height are possible. The compressor starts up as required. 
+
+A narrower tolerance band than that in Pre mode can be used because the battery 
+capacity does not have to be protected. The fast filter is used with a narrow tolerance 
+band of ± 10 mm. In this way, ride level compensation takes place outside a narrow 
+tolerance band of ±10 mm. The faster filter allows the system to respond immediately to 
+changes in ride level. Evaluation and control are performed separately for each wheel. 
+
+When a speed signal is detected, the EHC control unit switches into Drive mode. 
+
+When the vehicle is stopped, the EHC control unit switches into Normal mode. 
+
+The system switches back into Normal mode only when a doororthe trunk lid is also 
+opened. If none ofthe doors orthe boot lid is opened, the vehicle logically cannot be 
+loaded or unloaded. 
+
+
+37 
+
+E70 Vertical Dynamics Systems 
+
+
+
+This prevents a control operation happening when the vehicle is, for example, stopped at 
+traffic lights and the ride height is above the mean value due to a possible pitching 
+motion at the rear axle. 
+
+TiltS witch 
+
+The single-axle air suspension enters this mode if a signal is registered on the vehicle 
+bus bytheTMPS. A flat tire can be relieved of load thanks to the "Inclination in run flat 
+mode" function. When this message is received, the flat tire can be relieved of load by 
+the venting of air on the defective side and an intake of air on the unaffected side of the 
+vehicle. 
+
+Drive Mode 
+
+Drive mode forthe single-axle air suspension is activated when a speed of >1 km/h is 
+detected. Low-pass filters are used. In this way, only changes in ride height over a 
+prolonged period oftime (1000 seconds) are corrected. These are merely the changes 
+in ride height, caused by vehicle compression and a reduction in vehicle mass due to fuel 
+consumption. 
+
+The high-pass filter (fast filter) is used during the control operation. The slow filters are 
+re-initialized atthe end of the control operation. The markedly dynamic height signals 
+caused by uneven road surfaces are filtered out. 
+
+Kerb (Curb) 
+
+The Kerb mode prevents the inclination caused by the vehicle mounting an obstacle with 
+only one wheel from being compensated. Compensation would cause a renewed 
+inclination ofthe vehicle and result in a renewed control operation afterthe wheel came 
+off the obstacle. 
+
+Kerb mode is activated if the difference in height between the left and right-hand side of 
+the vehicle is >28 mm and this difference remains forlongerthan 0.9 s. No speed signal 
+may be present for this mode to be set. The system switches from single-wheel control 
+to axle control. 
+
+Kerb mode is quit if the difference between the left and right-hand side ofthe vehicle is 
+<24 mm and this difference remains forlongerthan 0.9 s or if the speed is > 1 km/h. 
+
+If the system switches from Kerb mode to Sleep mode, this status is stored in the 
+EEPROM. 
+
+If the vehicle is being loaded or unloaded in Kerb mode, the EHC control unit calculates 
+the mean value forthe axle from the changes in ride height determined from the spring 
+travel on the right and left-hand side. 
+
+A change in ride level is initiated if the mean value of compression or rebound atthe axle 
+is outside the tolerance band of ± 10 mm. The left and right sides ofthe vehicle are 
+raised or lowered in parallel. The height difference between the two sides is maintained. 
+
+
+38 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Curve 
+
+Since rolling motions have a direct impact on the measured ride levels, an unwanted 
+control operation would be initiated during longer instances of cornering with an 
+appropriate roll angle in spite of the slow filtering of the Drive mode. 
+
+The control operations during cornering would cause displacement of the air volume from 
+the outer side to the inner side of the curve. Once the curve is completed, this would 
+produce an inclination which would result in a further control operation. Curve mode 
+prevents this adjustment by stopping the slow filtering when cornering is detected and 
+cancelling any adjustment that may have been started. 
+
+Curve mode is activated above a lateral acceleration of >2 m/s 2 and deactivated at 
+<1.5 m/s 2 . The lateral acceleration is recorded by the DSC sensor. 
+
+Lift 
+
+The Lift mode is used to prevent control operations when a wheel is changed or during 
+work on the vehicle while it is on a lifting platform. 
+
+This mode is detected when the permitted rebound travel at one or more wheels is 
+exceeded >65 mm. A jacking situation is also detected and the ride height stored if the 
+lowering speed drops below the value of 0,7 mm/s for 8 seconds. 
+
+If the vehicle is raised only slightly and the permitted rebound travel has not yet been 
+reached, the control operation attempts to readjust the ride height. If the vehicle is not 
+lowered, a carjack situation is recognized after a specific period of time and this ride 
+height is stored. A reset is performed if the vehicle is again 10 mm below this stored ride 
+height. 
+
+Special Modes (Belt) 
+
+Belt mode is set during assembly in the works to prevent control operations. When Belt 
+mode is activated, no message will be displayed in the instrument cluster. This is only 
+recognizable by the non-deletable fault memory entry "energy-save mode active". 
+
+Belt mode is cleared by means of diagnostics control only. The Belt mode can no longer 
+set afterwards. 
+
+New EHC control units (spare part) are supplied with Belt mode set. Control operations 
+are not performed, the safety concept only operates with limited effect. 
+
+
+39 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Control modes 
+
+Single-axle airsuspension 
+
+Sleep 
+
+No control, load cutout on 
+
+Post 
+
+Approximately. 1 minute fast filter 2 s, very narrow tolerance band < -6 / > 6 mm, control 
+
+ends at <-4 />4 mm 
+
+Pre 
+
+Approximately. 20 minutes fast filter 2 s, wide tolerance band controlled up when <-60 mm, 
+controlled down when mean value > 0 mm and one side > 10 mm 
+
+Tilt_S witch 
+
+Can be activated and deactivated by coding; not activated when a trailer is connected to the 
+vehicle. Activated in response to RDC/RPA bus message 
+
+Normal 
+
+Engine running: Fast filter 2 s, narrow tolerance band ± 10 mm 
+
+Drive 
+
+v > 1 km/h, slow filter 1,000 s, narrow tolerance band ± 10 mm 
+
+Kerb 
+
+ON when: difference between left and right-hand sides of vehicle > 28 mm, longerthan 
+
+0.9 s changeover from single-wheel control to axle control 
+
+OFF when: difference between left and right-hand sides of vehicle < 24mm, t = 0.9 s orv>l km/h 
+
+Curve 
+
+ON when: lateral acceleration >2 m/s2 
+
+OFF when: lateral acceleration <1.5 m/s2 
+
+Lift 
+
+ON when: rebound travel >65 mm at one or more wheels 
+
+J ack on at: Lowering speed drops below the value 0,7 mm/s for 8 s, ride height storing 
+
+OFF when: level change <-10 mm, ride height drops below stored setting by > 10 mm 
+
+
+Functional Principle 
+
+
+Initialization/reset Behavior: 
+
+Different checks and initializations are carried out when the EHC control unit is powered 
+up after a reset (triggered by an undervoltage). The system is only enabled after the tests 
+have been successfully completed and starts to execute the control programs on a 
+cyclical basis. Occurring faults are stored and displayed. 
+
+Control Sequence 
+
+In an ongoing control operation, the high-pass filter (fast filter) is always used to prevent 
+the controlled height from overshooting the nominal value. If a low-pass filter (slow filter) 
+were used to calculate the ride height, brief changes of ride height would be "absorbed". 
+
+The low-pass filter is used when the vehicle is in motion (see Normal mode) to filter out 
+vibrations induced by prevailing road conditions on this basis of this method offiltering. 
+
+The high-pass filter is used to respond quickly to ride level deviations from set point. 
+These take place while the vehicle is stationary in the event of large load changes (see 
+Pre-mode). 
+
+Both sides of the vehicle are controlled individually, i.e. even the set point/actual-value 
+comparison for both sides is carried out individually. 
+
+Exception: check for falling below the minimum height in Pre-mode and Kerb mode.The 
+left/right mean values are taken into consideration here. 
+
+
+40 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following stipulations are applicable here: 
+
+• Raising before lowering 
+
+• All valves controlled with control in the same direction 
+
+• Individual wheel deactivation. 
+
+To ensure reliable closing of the non-return valve in the air drier, the drain valve is 
+controlled by the EHC control unit briefly for 200 ms afterthe control-up procedure has 
+ended. 
+
+The permissible ON period ofthe components is monitored while control up operations 
+are executed. 
+
+Safety Concept 
+
+The safety concept is intended to inhibit any system malfunction, particularly unintention¬ 
+al control operations, through the monitoring of signals and function-relevant parameters. 
+If faults are detected, the system is switched over or shut down depending on the 
+components concerned. The driver is informed of a malfunction by the display, and 
+detected faults are stored for diagnostics purposes. 
+
+In orderto ensure high system availability, existing faults, as far as possible, are cleared 
+with terminal 15 ON. This is done by resetting the fault counterto zero. However, the 
+fault memory content in the EEPROM is retained and can be read out for diagnostic 
+purposes. 
+
+The system is then operational again. The fast troubleshooting helps to detect existing 
+faults before control operations can take place. 
+
+Only lowering is permitted if: 
+
+• The permissible supply voltage of 9 volts is undershot 
+
+• The permissible compressor running time of 480 seconds is exceeded 
+
+A reset takes place if the voltage is in the OK range of 9 to 16 volts or after the compres¬ 
+sor pause time of 100 seconds has elapsed. 
+
+Only raising is permitted if: 
+
+• The permissible control down period of 40 seconds is exceeded 
+
+• The reset takes place the next time the vehicle is driven or afterthe next control-up 
+procedure. 
+
+No control if: 
+
+• The permissible supply voltage of 16 volts is exceeded 
+The reset takes place as soon as the voltage is in the OK range. 
+
+
+41 
+
+E70 Vertical Dynamics Systems 
+
+
+
+System Components 
+
+
+ARS Components 
+
+ARS Control Unit 
+
+The ARS control unit is located in the vehicle interior nearthe right-hand A-pillar. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+ARS Control unit 
+
+
+The ARS control unit is supplied with powervia terminal 30 and is protected by a 10 A 
+fuse. 
+
+
+The ARS control unit is activated exclusively by the Car Access System (CAS) on a CAN 
+wake-up line after "ignition ON". 
+
+A vehicle authentication process takes place when the system is started. This compares 
+the vehicle identification numberfrom CAS with the vehicle identification number which 
+is encoded in the ARS control unit. 
+
+Then the ARS control unit's hardware and software are checked. 
+
+All the outputs (valve magnets) are subjected to a complex check for short circuits and 
+breaks. If there is a fault, the system switches the actuators into a safe driving condition. 
+
+The ARS control unit switches off if there is undervoltage or overvoltage. 
+
+The ARS control unit learns the offsetforthe steering angle and the lateral acceleration 
+during start-up and during driving. 
+
+
+42 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+ARS Control Unit Inputs 
+
+The ARS control unit uses the input signals to calculate control of the actuators. The 
+input signals are also checked for plausibility and used for system monitoring. 
+
+The ARS control unit receives the following input signals: 
+
+• Lateral acceleration 
+
+• PT-CAN 
+
+• Front-axle circuit pressure 
+
+• Rear-axle circuit pressure 
+
+• Switch-position detection position 
+
+• Fluid level sensor signal. 
+
+The most important Dynamic Drive control signal is the measured lateral acceleration 
+value. Additional information from the PT-CAN that describes lateral dynamics includes 
+the road speed signal, steering wheel angle and the yaw velocity from the yaw rate 
+sensor. 
+
+From this information, the stabilization requirement is determined and the appropriate 
+active moments are implemented. The road speed and steering angle signals also help 
+to improve the response time of the system. 
+
+ARS Control Unit Outputs 
+
+All outputs are compatible with diagnostics and protected against short-circuit. 
+
+The outputs include controls for: 
+
+• Pressure regulating valves forfront and rear axle 
+
+• Directional valve 
+
+• Failsafe valve 
+
+• 5 V powersupplyforthe sensors: 
+
+- Lateral acceleration sensor 
+
+- Pressure sensors at the front and rear axle 
+
+- Switch-position recognition sensor (SSE). 
+
+The valves are controlled by the supply of current regulated by pulse-width modulation 
+(PWM). The current measurements of the individual coil currents are designed with 
+redundancy. The valve currents are mutually checked for plausibility on a continuous 
+basis. 
+
+Thanks to the current measurement, the pressure can be set more precisely and the 
+switch valves can be monitored electronically. 
+
+
+43 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+A telegram is sent to the DM E on the PT-CAN. The telegram contains information on 
+how much powerthe tandem pump currently requires to supply the active anti-roll bars. 
+
+In this way, output at the engine can be increased to satisfy the additional power 
+requirement. 
+
+A regular data signal (alive signal) is output and read by other ARS control units to identify 
+whether the system is still active. 
+
+All signal faults are detected and stored in the non-volatile memory. 
+
+Fault symptoms of output signals are 
+
+• Short circuit to terminal 30 and terminal 31 
+
+• Open circuit and 
+
+• Valve short circuits. 
+
+Lateral Acceleration Sensor 
+
+The lateral acceleration sensor supplies the main sensor signal. It measures the lateral 
+acceleration of the vehicle during cornering up to a measurement range of 1.1 g. It is 
+installed on the base plate underthe right front seat. The ARS control unit can learn an 
+offset during start-up and when the vehicle is in motion. 
+
+
+
+
+44 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Active anti-roll Bar 
+
+The oscillating motor and the oscillating motor housing are joined by one half of the anti¬ 
+roll bar. 
+
+The active anti-roll bar consists of the oscillating motor and the anti-roll bar halves fitted 
+to the oscillating motor, with press-fitted roller bearings fortheir connection to the axle 
+carriers. The use of roller bearings ensures optimum comfort thanks to better response 
+and reduced control forces. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Oscillating motor housing 
+
+2 
+
+Oscillating motor shaft 
+
+
+The oscillating motor of the front axle stabilizer bar is fitted with 2 pressure relief valves. 
+
+Airfilter elements are fitted to the pressure relief valves. These airfiltercaps with Goretex 
+inserts must not be removed. 
+
+There are screw plugs in the area of the pressure relief valves on the oscillating motorof 
+the rear-axle anti-roll bar. 
+
+
+46 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Pressure relief valve with airfiltercap 
+
+4 
+
+Hydraulic connection 
+
+2 
+
+Pressure relief valve with airfiltercap 
+
+5 
+
+Hydraulic connection 
+
+3 
+
+Front oscillating motor 
+
+
+
+
+Function of Pressure Relief Valves 
+
+When the vehicle is driven on poor road surfaces, brief underpressures (cavitation) result 
+from the movements of the anti-roll bar, which in turn could cause rattling noises. 
+
+Pressure relief valves have been fitted on the front oscillating motor in orderto eliminate 
+these noises. These pressure relief valves allow the filtered airto flow into the oscillating 
+motor. This prevents cavitation. This small quantity of air is absorbed by the hydraulic 
+fluid (Pentosin) to form an emulsion, which is discharged during subsequent activations 
+of the oscillating motor. The surplus air is separated in the expansion tank. 
+
+Since no noises can be heard at the rear axle, the pressure relief valves have been 
+omitted from the rear oscillating motor. 
+
+
+47 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Operating Principle of Oscillating Motors 
+
+The oscillating motor has three functions to perform: 
+
+• The oscillating motor transfers the torque into the anti-roll bars. 
+
+• The oscillating motor de-couples the anti-roll bar halves. 
+
+• In the event of system failure (failsafe mode), the front axle anti-roll bar creates 
+sufficient damping via the oscillating motor hydraulic fluid (hydraulic locking). It now 
+works like a conventional anti-roll bar. 
+
+Exception: If the oscillating motor chambers no longer contain any fluid as a result of 
+a leak, the front axle anti-roll bar can no longer create damping. 
+
+The opposing chambers in the oscillating motor are connected to one another. 
+
+The same pressure exists in both chambers. Two chambers are supplied with high 
+pressure fluid using one connection. The two other chambers are connected to the tank 
+via the return line. 
+
+The forces FH (High) orFL (Low) are created as a result of the differences in pressure. 
+Since FH is greaterthan FL, a torque MS is produced, which causes the shaft to turn in 
+relation to the housing. 
+
+Since one half of the stabilizer bar is connected to the shaft, and the other with the 
+hous ing, the two halves turn in opposite directions. 
+
+This torque MS generates the active moment M A around the vehicle longitudinal axis via 
+the anti-roll bar connections which counteracts the rolling moment M during cornering. 
+The shell is forced upwards on the outside of a curve, and dragged down on the inside of 
+a curve. 
+
+
+
+48 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+The maximum body torque on the front and rear axle occurs when there is a high degree 
+of lateral acceleration. The system pressure is then 160 bar at the front axle and also 160 
+bar at the rear axle. At 160 bar, both oscillating motors generate a force of 850 Nm. 
+
+If the oscillating motortwists as a consequence of external forces (road excitation, e.g. 
+bumps or potholes), the oscillating motorthen acts as a torsional vibration damper. 
+
+As a result of the twisting action, fluid is forced out of the two chambers. 
+
+The fluid that is forced outflows through the lines and the hydraulic valve block, the 
+hydraulic resistances in which produce a damping effect. 
+
+In the event of failsafe locking (hydraulic locking), the oscillating motor can only twist with 
+a very high damping effect as a consequence of the hydraulic jamming in the oscillating 
+motor. 
+
+Front Axle Anti-roll Bar 
+
+
+
+vi> -d) e) v i> i 5 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Anti-roll bar link connection to swivel bearing 
+
+4 
+
+Oscillating motor 
+
+2 
+
+Anti-roll bar bracket 
+
+5 
+
+Anti-roll bar links 
+
+3 
+
+Anti-roll bar 
+
+
+
+
+The anti-roll bar is mounted on the front-axle carrier. The anti-roll bar links are connected 
+to the "goose-necks" of the swivel bearings. 
+
+
+49 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rear Axle Anti-roll Bar 
+
+The anti-roll bar is mounted behind the rear axle carrier. The anti-roll bar links are 
+connected to the rear-axle swinging arms. 
+
+
+
+& Q) Q) & 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Lines from the hydraulic valve block 
+
+3 
+
+Anti-roll bar 
+
+2 
+
+Anti-roll bar links 
+
+4 
+
+Oscillating motor 
+
+
+50 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hydraulic Valve Block 
+
+The hydraulic valve block is located on the floor plate of the vehicle behind the front 
+right hand wheel housing level with the front right hand door. The hydraulic valve block is 
+connected to a carrier plate bolted to the body. 
+
+
+
+The hydraulic valve block houses the following valves and sensors: 
+
+• 2 pressure regulating valves; one for the front axle and one for the rear axle 
+
+• one direction valve 
+
+• one failsafe valve 
+
+• 2 pressure sensors; one sensorforthe front axle, one sensorforthe rear axle 
+
+• one switch-position recognition sensor. 
+
+The hydraulic valve block has the following connections: 
+
+• 2 lines to the oscillating motor at the front 
+
+• 2 lines to the oscillating motor at the rear 
+
+• one connection forthe line to the tandem pump 
+
+• one connection forthe line to the hydraulic fluid reservoir. 
+
+
+51 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Directional valve 
+
+8 
+
+Tandem pump line 
+
+2 
+
+Rear-axle pressure sensor 
+
+9 
+
+Hydraulic-fluid reservoir line 
+
+3 
+
+Line 2, front-axle oscillating motor 
+
+10 
+
+Line 1, rear axle oscillating motor 
+
+4 
+
+Proportional pressure limiting valve, front axle 
+
+11 
+
+Line 2, front axle oscillating motor 
+
+5 
+
+Proportional pressure limiting valve, rear axle 
+
+12 
+
+Line 1, front axle oscillating motor 
+
+6 
+
+Front-axle pressure sensor 
+
+13 
+
+Failsafe valve 
+
+7 
+
+Switch position recognition sensor 
+
+
+
+
+Pressure C ontrol Valves 
+
+There is a pressure control valve on both the front and rear axles. They both adjust the 
+actuation pressures for the front- and rear-axle anti-roll bars. 
+
+During straight-ahead travel, the pressure regulating valves are in the precurrent-supply 
+(0.35 A) stand-by position; the throttles are open. The fluid is able to flow freely into the 
+tank. 
+
+As the vehicle enters a bend, the valves are supplied with current. The pressure in the 
+oscillating motors increases rapidly and is regulated to the set point value. Depending on 
+the road speed and rate of lateral acceleration, pressures of up to 160 bar at the front and 
+rear axle may be achieved. 
+
+The pressure at the front-axle oscillating motor is equal to orgreaterthan the pressure at 
+the rear-axle oscillating motor. 
+
+
+52 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Directional Valve 
+
+The directional valve is electrically actuated. It specifies the direction of the high-pressure 
+fluid (active pressures) and the reservoir fluid for right-hand and left-hand bends. 
+
+Failsafe Valve 
+
+The failsafe valve (safety valve) is electrically actuated. The failsafe valve responds in the 
+event of a failure in the power supply or if a fault is detected in the system. 
+
+In the absence of current, the failsafe valve shuts down the front-axle oscillating motor. 
+The rear-axle oscillating motor is short circuited and simultaneously connected to the 
+tank line. The circulating position limits the system pressure and causes the flow to 
+circulate. 
+
+Switch-position Recognition Sensor 
+
+The task of this sensor is to detect the specific position of the directional valve. 
+
+2 positions can be detected: 
+
+• Left-hand control 
+
+• Right-hand control. 
+
+Front-axle/Rear-axle Pressure Sensors 
+
+The pressure sensors are responsible for detecting the front and rear axle anti-roll bar 
+hydraulic pressures. The sensors are mounted on the hydraulic valve block. 
+
+The pressure sensor offset values are learned by the ARS control unit once, during 
+start-up. 
+
+
+
+53 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tandem Pump 
+
+The hydraulic pumps fitted in the E70 were developed with a modular design. 
+
+Depending on the engine and equipment specification, a suitably dimensioned hydraulic 
+pump is flange-mounted to the engine in the same installation space. 
+
+Decisive equipment attributes: 
+
+• Basic steering 
+
+• Active Steering AS (option 217) 
+
+• C02 measure (option 1CB) 
+
+• Adaptive Drive (option 2VA) 
+
+• Adaptive Drive and Active Steering. 
+
+The hydraulic pump driven by the engine's poly-V-belt is, on vehicles with Adaptive Drive, 
+invariably a tandem pump, which consists of a radial piston part for ARS and a vane-cell 
+partforthe power steering. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Radial piston pump 
+
+3 
+
+Steering pressure connection 
+
+B 
+
+Vane-cell pump 
+
+4 
+
+ARS pressure connection 
+
+1 
+
+Intake connection 
+
+5 
+
+Input flange 
+
+2 
+
+Proportional valve 
+
+
+
+
+54 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Radial Piston Pump (part of the tandem pump) 
+
+This radial piston pump has 10 pistons set out in two rows and designed fora maximum 
+pressure of 210 bar. 
+
+When the engine is idling, the pump speed is approximately 750 rpm. Atthis idling 
+speed, the radial piston part delivers a minimum fluid flow rate of approximately 6.75 
+liters/minute at a pressure of approximately 5 bar. This means that sufficient system 
+dynamics are also guaranteed when the engine is idling. 
+
+At a pump speed of 1,450 rpm, the maximum fluid flow rate is limited to 13.3 rpm. 
+
+Vane-cell Pump (part of the tandem pump) 
+
+This part comprises 10 vane cells and designed for a maximum pressure of 135 bar. 
+
+The vane-cell part has a characteristic map controlled fluid flow rate of 7-15 liters/minute. 
+
+The decisive parameters forthe characteristic map are the vehicle's road speed and the 
+steering angle speed. 
+
+Adaptive Drive and the power steering share the same fluid reservoir and radiator. 
+
+
+55 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Fluid Reservoir 
+
+In the fluid reservoir is a fluid filter and fluid level sensor. The fluid filter cannot be 
+replaced. The screw cap is fitted with a dipstick, which makes it possible to check the 
+fluid level. A "MAX" mark indicates the maximum permissible fluid level, measured at 
+room temperature (20°C). 
+
+If a dipstick check at room temperature reveals the fluid reservoirto be dry, the reservoir 
+must be topped up with the specified hydraulic fluid. If the lowest edge of the dipstick is 
+still only just wet with hydraulic fluid (3), this is to be construed as the "MIN" mark. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Fluid reservoir 
+
+3 
+
+Hydraulic fluid 
+
+2 
+
+"MAX" mark 
+
+
+
+
+56 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fluid Level Sensor 
+
+The fluid level sensor detects the fluid level in the fluid reservoir. The fluid level sensor 
+determines whether the fluid level has dropped below a critical minimum level and acti¬ 
+vates a warning message. Normal movements of the fluid in the reservoir are not cause 
+fora message. 
+
+A mobile float contains a reed contact that converts float movements into an electric 
+signal. 
+
+The fluid level sensor is fitted to the fluid reservoir. Short/open circuits cannot be 
+detected by the fluid level sensor. A line break is interpreted as a loss of fluid. 
+
+
+
+
+Fluid level sensor(l) 
+
+
+
+
+Hydraulic-fluid Cooler 
+
+The hydraulic-fluid cooler serves to maintain a fluid temperature of <120°C in all 
+hydro-mechanical components under all conditions, although temperatures of < 135°C 
+are acceptable for brief periods. 
+
+
+57 
+
+E70 Vertical Dynamics Systems 
+
+
+
+VDC Components 
+
+VDM Control Unit 
+
+
+1 2 3 4 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access 
+
+4 
+
+Vertical Dynamics Management 
+
+2 
+
+Not for US market 
+
+5 
+
+Electronic Height Control 
+
+3 
+
+Park Distance Control 
+
+
+
+
+Control Strategy 
+
+The underlying control strategy is known as the "Skyhook regulator"; the name reflects 
+the highest of control objectives: to keep the vehicle body at the same height irrespective 
+of the driving situation (as if the vehicle were suspended from the sky). 
+
+To achieve this highest of all comfort objectives, the movements of the entire body have 
+to be evaluated. To this end, there is a comprehensive analysis of ride heights and 
+accelerations along the z-axis within the frequency range of between approximately 1 and 
+3 Hz. 
+
+
+58 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+The necessary (total) damping force forthis control component will turn out to be com¬ 
+paratively low. To simultaneously ensure that the wheels do not lose contact with the 
+road surface and that optimum contact force is transferred according to the situation, the 
+movement of each individual wheel is evaluated and not just the movement of the entire 
+body. The movements, or excitations, relevant here take place within a frequency range 
+of between approximately 11 and 13 Hz and can therefore be distinguished from the 
+movements of the body. This control component will therefore calculate high damping 
+forces dependent on the vertical movement of the individual wheel. 
+
+As a matter of principal, these forces may be different at each individual wheel and, for 
+the first time with VDC, can be implemented as such. 
+
+Furthermore, VDC regulation takes into consideration steering inputs (e.g. transition from 
+straight-ahead travel to cornering) based on the steering angle curve. If VDC detects a 
+rapid increase in the steering angle, the controller infers that the vehicle is entering a 
+bend and can preventively adjust the dampers on the outside of the bend to a harder 
+setting in advance. In this way, VDC is able to support ARS regulation and contributes to 
+a reduction in vehicle rolling movements (of course, this applies also during steady-state 
+circular driving). 
+
+Moreover, VDC is able to detect the braking applications of the driver based on the brake 
+pressure information supplied by DSC. A high brake pressure normally results in a 
+pitching of the vehicle; VDC counteracts this by adjusting the front dampers to higher 
+damping forces. 
+
+This also results in an improvement in the front/rear brake force distribution, which in turn 
+reduces the braking distance (by comparison with a vehicle without VDC). 
+
+The VDC controller adjusts the basic damping force level in accordance with the damp¬ 
+ing program selected by the driver (comfort/sport). Nevertheless, high damping forces 
+are always applied at individual wheels in critical driving situations, e.g. despite the fact 
+that the comfort program is selected. 
+
+Once the individual control components have been prioritized, a target damping force is 
+output on the FlexRay for each wheel or damper. In addition, the dampers are prescribed 
+a current value forthe steady-state operating point. 
+
+Display Control 
+
+The VDM control unit is responsible for evaluating the button on the gear selector lever 
+that the driver uses to select the damping program. Depending on the damping program 
+selected, the VDM control unit issues a request on the PT-CAN to switch the LED in the 
+button on or off (off = comfort, on = sport). 
+
+
+59 
+
+E70 Vertical Dynamics Systems 
+
+
+
+Degradation Behavior in the Event of a Fault 
+
+Depending on the type of fault present, the VDM control unit decides which of three 
+degradation levels must come into effect. 
+
+• Level 1: Substitute values If, for example, the steering angle signal is unavailable, 
+different variables will be used as a substitute value for cornering detection. 
+
+The driver receives no failure message. No fault code memory entry is stored. 
+
+• Level 2: Constant supply of current. 
+
+The VDM control unit specifies a constant damping force, which is the same for all 
+four wheels ("medium-hard damping"). This leads to a constant supply of current to 
+the valve in the adjusting dampers. A triggering factorforthis degradation level may 
+be a faulty ride-height sensor, for example. The driver receives a failure message. 
+
+A fault code memory entry is stored. 
+
+• Level 3: Zero supply of current. 
+
+If a fault is present in the load circuit, e.g. in the control of a valve, the VDM control 
+unit will select the third degradation level: it tells the dampers that the valve is no 
+longer permitted to be supplied with current. The valve therefore moves into a 
+position that corresponds to a rather hard suspension setting. The driver receives a 
+failure message. A fault code memory entry is stored. 
+
+From the damping force selected in the degradation levels, it can be seen that it is always 
+the safe condition (hardertuning) that is adopted in the event of a fault (failsafe behavior). 
+
+Diagnostic Functions 
+
+The VDM control unit only stores its own faults in its fault memory. Faults with the EDC 
+satellite control units are stored in their own fault memory. In the event of a VDC fault, 
+therefore, it is necessary to check not only the fault memory of the VDM control unit, but 
+of the satellites too. The VDM control unit also functions as a diagnostics gateway 
+between the PT-CAN and VD-FlexRayso that the EDC satellite control units are accessi¬ 
+ble to the tester). 
+
+Note: The fault memories of the VDM control unit and the EDC satellite control 
+units must be checked in the eventof a VDC system failure. Unlike the 
+EDC-Kinthe E65, it is not necessary to perform straight-ahead calibra¬ 
+tion of the VDC system following replacement of the steering angle sen- 
+sor/SZL. 
+
+
+60 
+
+E70 Vertical Dynamics Systems 
+
+
+
+EDC Satellite Control (with damper) 
+
+This new generation EDC on the E70 is located externally, unlike the EDC system in the 
+E65. The twin-tube gas-pressure damper, EDC satellite control unit and the EDC control 
+valve with wiring as far as the first plug connection form one complete component and 
+can only be replaced in this combination. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Twin-tube gas pressure dampers 
+
+3 
+
+EDC control valve 
+
+2 
+
+EDC satellite control unit 
+
+
+
+
+EDC Satellite Control Unit 
+
+The following functions are implemented in the EDC satellite control unit: 
+
+• Signal processing:The EDC satellite control units each have one single-axis acceler¬ 
+ation sensor on the control unit board. It is a micro mechanical structural element, 
+which converts accelerations into capacitance changes first and then into an analog 
+voltage signal. 
+
+This is processed accordingly by the EDC satellite control unit and made available to 
+theVDM control unit via FlexRay. 
+
+• Actuating functions: Each EDC satellite control unit has a damping characteristic 
+map valid forthis type of damperthat is electronically stored in the form of support 
+points. It is therefore possible to compensate for unavoidable tolerances (variations) 
+arising from manufacture and achieve a higher degree of actuating precision (damp¬ 
+ing force). 
+
+
+61 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note: TheEDC satellite control unit with twin tube gas-pressure damper 
+and EDC control valve can only be replaced as one unit. The vehicle 
+model and installation location (e.g. front left) must be stated when a 
+replacement part is being ordered. 
+
+• Diagnostic functions 
+
+Each EDC satellite control unit is compatible with diagnostics and has its own fault 
+memory. 
+
+Note: The fault memories of the VDM control unit and the EDC satellite con¬ 
+trol units must be checked in the event of a VDC system failure. If the 
+E DC satellite control units do not respond to diagnostics, there may 
+be a fault in the VDM control unit (diagnostic gateway) or FlexRay. A 
+calibration of the ride-height sensors and acceleration sensors must 
+be carried out in the VDM control unit following replacement of an 
+EDC satellite control unit. 
+
+Twin-tube Gas Pressure Damper 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Damping force (N) 
+
+2 
+
+Piston speed (m/s) 
+
+A 
+
+Control current = 2 A 
+
+B 
+
+Control current = 0.65 A 
+
+
+62 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ride-height Sensor 
+
+The ride-height sensors are electrically connected directly to the VDM control unit. 
+
+The mode of signal transfer is analog. Two way or one-way sensors may befitted to the 
+rear axle, depending on the vehicle's equipment level. 
+
+Two-way sensors deliverthe signal not only to the VDM control unit but also to the EHC 
+control unit. 
+
+Note: If a new ride- height sensor is being fitted, it must be ensured that only 
+parts with matching part numbers are fitted. In particular, care must be 
+taken not to confuse one-way and two-way sensors (one-way/two-way 
+depends on the equipment level of the vehicle). Two-way sensors bear 
+the marking "doppelt" on the housing. 
+
+
+E70 Ride HeightSensors 
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with one output 
+
+B 
+
+Adaptive drive with Xenon 
+
+A 
+
+Xenon only 
+
+
+
+
+63 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+E70 Ride HeightSensors (Cont.) 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with one output 
+
+A 
+
+Option-EHC and Xenon 
+
+2 
+
+Two-way ride height sensor with two outputs 
+
+B 
+
+Adaptive drive and EHC with Xenon 
+
+
+64 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E70 Ride Height Sensor Variants 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Two-way ride height sensor with two outputs 
+
+2 
+
+One-way ride height sensor with one output 
+
+
+65 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+EHC Components 
+
+
+EHC Control Unit 
+
+The EHC control unit is located in a module carrier in the rear of the luggage compart¬ 
+ment on the right-hand side. 
+
+
+1 2 ; 3 , 4 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access 
+
+4 
+
+Vertical Dynamics Management 
+
+2 
+
+Not for US market 
+
+5 
+
+Electronic Height Control 
+
+3 
+
+Park Distance Control 
+
+
+
+
+The EHC control unit receives the following signal information: 
+
+• Vehicle ride height 
+
+• Load cutout signals 
+
+• Terminal 15 ON/OFF 
+
+• Vehicle speed 
+
+• Lateral acceleration 
+
+• "Engine running" signal 
+
+• Hatch status. 
+
+The EHC control unit decides on a case-by-case basis whether a control operation is 
+required in orderto compensate for changes in load. It is thus possible to optimally adapt 
+the frequency, specified heights, tolerance thresholds and battery load to the relevant sit¬ 
+uation by means of the control operation. 
+
+The EHC control unit is fully compatible with diagnostics. 
+
+
+66 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Air Supply Unit(LVA) 
+
+The air supply unit is fitted to the underbody of vehicle by a component carrier level with 
+the front right door. 
+
+
+£) vl) ^ 
+
+
+
+L 6 vD 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rubber mount 
+
+5 
+
+Valve block 
+
+2 
+
+Component carrier 
+
+6 
+
+Compressor 
+
+3 
+
+Air drier 
+
+7 
+
+Air intake 
+
+4 
+
+Electric motor 
+
+
+
+
+67 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AirSuspension 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rubber gaiter 
+
+2 
+
+Inner pipe 
+
+
+Note: When a new air spring is being fitted, care must be taken to ensure that it 
+is not over-stretched. Otherwise, the retaining ring forthe inner pipe 
+could snap off the rubber gaiter, which could result in damage to the sus¬ 
+pension airbag. 
+
+Forthis reason, the top of the airspring should be secured to the body 
+first, and only then should it be connected to the axle carrier. 
+
+Ride-height Sensor 
+
+The ride-height sensors are electrically connected directly to the EHC control unit. 
+
+The mode of signal transfer is analog. Two-way or one-way sensors may befitted to the 
+
+rear axle, depending on the vehicle's equipment level. Two-way sensors deliverthe signal 
+
+not only to the VDM control unit but also to the EHC control unit. 
+
+Note: If a new ride- height sensor is being fitted, it must be ensured that only 
+parts with matching part numbers are fitted. In particular, care must be 
+taken not to confuse one-way and two-way sensors (one-way/two-way 
+depends on the equipment level of the vehicle). Two-way sensors bear 
+the marking "doppelt" on the housing. 
+
+68 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+E70 Ride HeightSensors for EHC 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with one output 
+
+B 
+
+Adaptive drive 
+
+A 
+
+Standard - Xenon only 
+
+
+
+
+E70 Ride Height Sensor Variants 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Two-way ride height sensor with two outputs 
+
+2 
+
+One-way ride height sensor with one output 
+
+
+69 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E70 Ride HeightSensors for EHC (Cont.) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with one output 
+
+A 
+
+Option-EHC and Xenon 
+
+2 
+
+Two-way ride height sensor with two outputs 
+
+B 
+
+Adaptive drive and EHC with Xenon 
+
+
+70 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+If Dynamic Drive fails, DSC can no longer be deactivated or if it is already deactivated it 
+does not switch back on automatically. The connections for all the hydraulic compo¬ 
+nents are designed in different dimensions and lengths so that they cannot be trans¬ 
+posed. 
+
+A disturbing transmission of noise into the vehicle interior occurs due mainly to the 
+assembly and line connections. The lines must not make contact; they must be routed 
+correctly through the brackets without slack ortension. They are covered by the under¬ 
+body paneling. 
+
+Steering Angle Calibration 
+
+After work on the front axle, it is necessary to carry out a steering angle calibration with 
+the Dynamic Drive control unit. 
+
+The Dynamic Drive system is dependent on the exact zero balance of the steering angle. 
+The maximum deviation tolerance is 1. Precise chassis alignment is a prerequisite. 
+
+The steering angle calibration must always be carried out on the measuring stand and in 
+accordance with BMW axle alignment guidelines. 
+
+The zero position is lost each time the Dynamic Drive control unit is flash programmed. 
+
+A steering angle calibration is required wheneverthe control unit is flash programmed. 
+
+ARS Initialization 
+
+The initialization procedure must always be carried out once the system has been 
+opened ora part has been replaced. This also applies afterthe lateral acceleration 
+sensor has been replaced. 
+
+The following conditions must be guaranteed for calibration of the offset values of the 
+lateral acceleration sensor and the two pressure sensors: 
+
+• The vehicle must be stand level on all four wheels 
+
+• The vehicle must be unladen 
+
+• The engine must be idling 
+
+• Rest status (doors closed, persons are not allowed in the vehicle). 
+
+No persons may remain within the vicinity of moving chassis parts during the initialization 
+(both in the works and the workshop). In addition you must ensure that the basic 
+commissioning conditions (temperature range, constant engine speed etc.) are 
+maintained. The ground clearance must not be limited and the doors must not be 
+closed. The arms of the hoist may no longer be situated beneath the car. 
+
+
+71 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+The commissioning procedure is split into five stages which follow on from each other 
+automatically: 
+
+
+1: direction valve test 
+
+(from 3 to 3.4 s) 
+
+Firstthe direction valve is tested by evaluating the signal ofthe SSE. 
+
+II: low-pressure test 
+
+(from 3.4 to 4.3 s) 
+
+The failsafe and direction valves are without power during this stage. Then tests 
+are carried out with pressure control valves with and without power on the front 
+and rear axle.This causes the body to roll. The sides ofthe vehicle must be clear. 
+
+III: high-pressure testfront 
+
+axle 
+
+(from 4.3 to 9.9 s) 
+
+Pressure of 180 bar is applied to the front-axle oscillating motor. Air in the sys¬ 
+tem, internal leaks and a blocked oscillating motor are detected. 
+
+IV: high-pressure test rear axle 
+
+(from 9.9 to 15 s) 
+
+Pressure of 170 bar is applied to the rear-axle oscillating motor. Air in the system, 
+internal leaks and a blocked oscillating motor are detected. 
+
+V: pressure control valve test 
+
+(from 15 to 25 s) 
+
+The characteristic curves of the front and rear axle are checked (set point/actual- 
+value comparison). Faulty pressure control valves are detected. 
+
+
+ARS Bleeding Procedure 
+
+A bleeding procedure must be carried out using the diagnostic tester if the ARS system 
+was opened hydraulically. The bleeding procedure is performed exclusively by way of the 
+initialization routine of the diagnostic tester and not at the pressure relief valves or at the 
+screw plugs ofthe oscillating motors. 
+
+If the test still detects air in the system, a short movement trip should be made if 
+necessary. 
+
+The initialization routine must then be repeated afterthe short trip. 
+
+In the event of an extreme leak or suspected partial function ofthe pressure relief valves 
+(noticeable by rattling noises in the front end), the pressure relief valves and the pneumat¬ 
+ic lines must be replaced with new components. 
+
+
+72 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnostics 
+
+
+The following faults can be detected at the components: 
+
+
+Component 
+
+Fault type 
+
+Fault detection via: 
+
+Control unit 
+
+De-energized orfaulty 
+
+Instrument clusterthrough absence of 
+alive counter, VIN not recognized during 
+authentication, watchdog 
+
+Pump 
+
+No Pressure 
+
+set point/actual-value comparison 
+pressures 
+
+Directional valve 
+
+J ammed in "energized" position 
+(spring break, dirt) 
+
+Direction-valve sensor 
+
+J ammed in "de-energized" position 
+(line break) 
+
+Direction valve sensor and current 
+monitoring 
+
+Pressure control valve FA 
+
+Open (de-energized, p =pRA) 
+
+set point/actual-value comparison, pres¬ 
+sure at front axle, current measurement 
+
+Closed (mechanical fault) 
+
+(pFA =pmax) 
+
+set point/actual-value comparison, 
+pressure, front axle 
+
+RA pressure control valve 
+
+Open (de-energized) (p =0) 
+
+set point/actual-value comparison, pres¬ 
+sure, rear axle,and current measurement 
+
+Closed (mechanical fault) 
+
+(pRA and pFA = pmax) 
+
+set point/actual-value comparison, 
+pressure, rear axle, 
+
+Failsafe valve 
+
+J ammed open 
+
+Pre-drive check 
+
+J ammed closed (line) 
+
+C urrent measurement 
+
+Actuator front/rear axle 
+
+Leaking (no torque) 
+
+set point/actual-value comparison pressure 
+
+Blocked 
+
+set point/actual-value comparison pressure 
+
+CAN bus 
+
+Total failure (line disconnected) 
+
+CAN timeout 
+
+Steering angle, vCar, aq,Y 
+
+Implausible or absent 
+
+Plausibility monitoring and CAN bus sig¬ 
+nal fault detection 
+
+Sensoraq 
+
+Total failure (line disconnected) 
+
+Voltage monitoring 
+
+Incorrect signal 
+
+Check plausibility via CAN signals 
+
+Fluid level sensor 
+
+No signal (line) 
+
+
+Front-axle pressure sensor 
+
+No signal (line) 
+
+Voltage monitoring 
+
+Incorrect signal 
+
+set point/actual-value comparison, 
+pressure,front axle 
+
+Rear axle Pressure sensor 
+
+No signal (line) 
+
+Voltage monitoring 
+
+Incorrect signal 
+
+set point/actual-value comparison, 
+pressure, RA 
+
+Direction-valve sensor 
+
+No signal (line) 
+
+Voltage monitoring 
+
+Incorrect signal 
+
+set point/actual-value comparison, 
+pressure, RA 
+
+
+73 
+
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Depending on the fault, the system displays one of the following responses. 
+
+System Shutdown (failsafe status) 
+
+The following faults result in system shutdown, i.e. all output stages are de-energized: 
+
+• Fault in the front-axle anti-roll bar 
+
+• Fault at the front-axle pressure sensor 
+
+• Fault in the pressure build-up (pump, pressure-limiting valve on the front axle) 
+
+• Fault in the control unit 
+
+• VIN is not sent via the C AS / absent / incorrect 
+
+• Direction valve position fault, faulty SSE 
+
+• No PT-CAN signal 
+
+The de-energized failsafe valve shuts off the chambers of the active anti-roll bar. Fluid equalization can only take 
+place by means of internal leakage of the oscillating motor and valve block. The non-return valves in the valve 
+block make it possible to siphon off the fluid to prevent cavitation in the front-axle oscillating motor. 
+
+The chambers of the rear-axle oscillating motor must not be shutoff. 
+
+The handling corresponds virtually to that of a conventional vehicle. The crossoverto the failsafe status can also 
+be controlled in the event of extreme manoeuvring. 
+
+
+Warning message 
+
+Cornering stability! Drive slowly around bends 
+
+Instruction 
+
+Driving-stability system not functioning, driving stability restricted. 
+
+No high cornering speeds. 
+
+Continued driving possible, contact BMW Service immediately 
+
+The fluid level sensor in the fluid reservoir responds in the event of a fluid loss in the Dynamic Drive hydraulic system 
+or in the steering circuit. 
+
+The driver is alerted so that damage to the tandem pump caused by continued driving is avoided. 
+
+Warning message 
+
+Fluid loss! Pull over carefully, switch off engine 
+
+Instruction 
+
+Fluid loss in the chassis and steering systems. 
+
+Continued driving not possible, contact BMW Service immediately 
+
+
+74 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+Restricted Control Comfort 
+
+A lateral acceleration is calculated from the road speed and steering-wheel angle from the CAN signals. This signal 
+is fasterthan the actual lateral acceleration and compensates the time delay of the hydro-mechanical system. In the 
+event of a fault in these two signals, the system responds with a delayed roll compensation. This arises only in the 
+case of extremely quick steering manoeuvres and is barely noticeable in normal cornering manoeuvres. 
+
+In the event of a faulty lateral acceleration sensor, the lateral acceleration is calculated from the CAN signals only. No 
+impairment of function can be detected by the customer. 
+
+In the event of a fault in the rear-axle circuit, i.e. a stabilization at the front axle only, the customer notices that the 
+vehicle is subject to larger rolling motions. Agility diminishes at road speeds < 120 km/h. 
+
+The system also responds if the "failsafe valve jammed open fault" is detected in the Pre-drive check. 
+
+An electrical fault in the rear-axle pressure sensor may result in minorfailures in roll-angle compensation. To be on 
+the safe side, slightly more stabilizing torque is exerted on the front axle than in normal operation. This can be felt by 
+the driver. 
+
+Warning message Instruction 
+
+Cornering stability slightly restricted Chassis stabilization slightly restricted around bends. 
+
+Continued driving possible, contact BMW Service at next 
+opportunity 
+
+
+Restricted System Monitoring 
+
+Dynamic Drive receives the following sensor signals from the DSC and SZL on the PT-CAN: 
+
+• Lateral acceleration 
+
+• Yaw velocity 
+
+• Road speed 
+
+• Steering-wheel angle 
+
+These signals are used to check the lateral acceleration sensor. 
+
+Drop-out of the engine-speed signal (DME) results in restricted control comfort. 
+
+In the event of a fault in the lateral acceleration and yaw velocity CAN signals, the system is lacking two items of 
+redundant information. Since this information is used exclusively for checking the other signals, the Dynamic Drive 
+function is preserved with full control comfort. 
+
+Although no restriction of the Dynamic Drive function exists, the message "Chassis and suspension-control system 
+comfort restricted" is displayed for the driver who is requested to drive to the workshop at the next opportunity. 
+
+
+Warning message Instruction 
+
+Cornering stability slightly restricted Chassis stabilization slightly restricted around bends. Continued 
+
+driving possible, contact BMW Service at next opportunity 
+
+
+75 
+
+E70 Vertical Dynamics Systems 
+
+
+
+
+
+
+
+
+
+
+A "dynamic" driver will notice the absence of the steering angle signal. The warning 
+messages must be acknowledged by the driver. Each warning message goes out only 
+after it has been acknowledged. 
+
+Once the cause of the fault has been rectified, the control unit can be returned to full 
+function. 
+
+There are two reset conditions depending on how fast a fault is to be detected: 
+
+• All faults that are no longer present are reset with "ignition Off". Forthisto happen, it 
+is necessary to wait until the vehicle has entered sleep mode before switching to 
+"ignition On" again. 
+
+• Sporadic faults which can mostly be traced back to communication faults in the CAN 
+bus are then automatically reset while the vehicle is moving straight ahead or 
+stationary provided they have only occurred briefly and rarely. In this case, the 
+customer cannot detect the activation while the vehicle is moving or stationary. 
+
+The associated faults with important additional information are stored in the fault 
+memory. This additional information contains the kilometer reading/mileage at which 
+the fault occurred, whether the fault is currently present and the frequency with 
+which the fault in question has occurred. Thus, when the vehicle is brought into the 
+garage/workshop, it is possible to carry out a specific analysis of the currently 
+present fault and also an analysis of a sporadic fault. 
+
+Programming 
+
+It is possible to program the Dynamic Drive control unit. 
+
+Coding 
+
+It is possible to code the Dynamic Drive control unit. 
+
+
+76 
+
+E70 Vertical Dynamics Systems 
+
+
+

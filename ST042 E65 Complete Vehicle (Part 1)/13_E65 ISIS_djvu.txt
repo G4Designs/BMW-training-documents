@@ -1,0 +1,4317 @@
+Table of Contents 
+
+INTELLIGENT SAFETY INTEGRATION SYSTEM 
+(ISIS) 
+
+Subject Page 
+
+Purpose of the System.3 
+
+System Overview.5 
+
+Components.7 
+
+Safety Information Module (SIM).8 
+
+byteflight .17 
+
+A-Pillar Satellites (SASL/SASR).17 
+
+B-Pillar Satellite, Left (SBSL).20 
+
+B-Pillar Satellite, Right (SBSR).21 
+
+Seat Satellites (SSFA/SSBF).24 
+
+Seat Satellite, Rear (SSH).25 
+
+Front Door Satellites (STVL/STVR).27 
+
+Vehicle Satellite Center (SFZ).29 
+
+Steering Column Switch Center (SZL).30 
+
+Central Gateway Module (ZGM).31 
+
+Driver Airbag.32 
+
+Passenger Airbag.32 
+
+Knee Airbags.33 
+
+Advanced Head Protection System (AHPS).34 
+
+Side Airbags. 37 
+
+Front Seatbelt Tensioners.38 
+
+Front belt Tension Limiters.39 
+
+Rear Seatbelt Tensioners.41 
+
+Seat Occupancy Detection.43 
+
+Seatbelt Buckle Switch.43 
+
+Active Head Restraint System (AKS).44 
+
+Battery Safety Terminal.47 
+
+Principle of Operation 
+
+Triggering Strategy.48 
+
+ISIS Emergency Call Function.52 
+
+Airbag Warning Lights and Check Control.55 
+
+Workshop Hints.58 
+
+Review Ouestions.59 
+
+
+Initial Print Date: 10/01 
+
+
+Revision Date:11/01 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INTELLIGENT SAFETY INTEGRATION SYSTEM (ISIS) 
+
+Model: E65 - 745i 
+
+Production Date: 11/2001 - Start of Production 
+
+Objectives 
+
+After completing this module you should be able to: 
+
+• Understand the reason why the ISIS uses a network of satellites instead of controlling 
+all functions by one central control module. 
+
+• Describe the various modules and safety systems used in the E65. 
+
+• Understand the reason for the various self-diagnosis functions of the SIM and 
+satellites. 
+
+• Understand the triggering strategy of the ISIS. 
+
+
+2 
+
+
+ISIS 
+
+
+
+
+Purpose of the System 
+
+With the launch of the E65, a completely new passive safety system, the ISIS (Intelligent 
+Safety Integration System), is introduced. 
+
+The MRS system (Multiple Restraint System) used so far consists of a central control unit 
+with piezo-electric acceleration sensors and the two external satellites for side crash detec¬ 
+tion. The centralization and the associated sequential processing of different signals via 
+conventional wiring harnesses led to high loads on the computer unit, time losses and 
+greater susceptibility to malfunction. 
+
+Due to the limited performance of the microprocessor an expansion of the system to 
+include other necessary sensors and trigger circuits for pyrotechnical actuators is not pos¬ 
+sible with the existing MRS. 
+
+
+
+kt-8135 
+
+
+The ISIS system consists of the Safety Information Module SIM and several control units, 
+called satellites, that are linked across the byteflight bus. In the case of the MRS system 
+there was only one central control unit. On the E65, the acceleration sensors are integrat¬ 
+ed into the satellites. 
+
+
+3 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The actuators are directly connected to the satellites and are activated by the satellites. The 
+satellites are fitted at strategic points in the car. The distributed sensor system in the car 
+enables measurement of the accelerations occurring as close as possible to the outer shell 
+of the body and at the location of the collision. 
+
+The direct recording and processing of the information in the control unit mean that signif¬ 
+icantly shorter reaction times can be achieved. The mechanical time lag within the body to 
+a central control unit is eliminated. 
+
+The distributed sensors in the satellites provide redundant information that is interchanged 
+via the byteflight. This leads to even more reliable trigger decisions. In comparison to the 
+MRS systems used to date, the ISIS enables, (for example in the event of a side-on colli¬ 
+sion) earlier triggering. 
+
+Because of the use of byteflight, the ISIS system has the following advantages: 
+
+• High communication speed 
+
+• Highest level of system security 
+
+• Faster trigger decisions 
+
+• Redundant information provided by the sensor 
+
+• Software update via bus 
+
+• Self-diagnostic procedure 
+
+• Mechanical safety switch is unnecessary 
+
+• No electromagnetic disturbances due to fiber-optic communication 
+
+• No electrical connection between transmitter and receiver module 
+
+• Simple system upgrade 
+
+
+4 
+
+
+ISIS 
+
+
+
+
+Components 
+
+The ISIS is made up of the following components: 
+
+• SIM (System Master) 
+
+• byteflight 
+
+• A-Pillar Satellites, Left and Right 
+
+• B-Pillar Satellites, Left and Right 
+
+• Seat Satellites, Driver and Passenger 
+
+• Seat Satellite, Rear 
+
+• Door Satellite, Driver and Passenger 
+
+• Vehicle Center Satellite 
+
+• Steering Column Switch Center 
+
+• Central Gateway Module 
+
+• Driver and Passenger Front “Smart” Airbags 
+
+• Driver and Passenger Knee Airbags 
+
+• Advanced HPS I (HPS II with rear airbag option) 
+
+• Side Airbags, Driver and Passenger (Rear side airbags optional) 
+
+• Seat Belt Tensioners with Buckle Switch, Driver and Passenger 
+
+• Seat Belt Tension Limiters, Driver and Passenger 
+
+• Seat Belt End Fitting Tensioners, Left and right rear passengers 
+
+• Seat Occupancy Sensors, Driver and Passenger (4 seating positions with rear airbag 
+option) 
+
+• Active Head Restraint (with Comfort Seat option) 
+
+• Safety Battery Terminal 
+
+5 
+
+
+ISIS 
+
+
+
+
+System Overview 
+
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview 
+
+
+1 
+
+KOMBI with warning lights 
+
+17 
+
+Head Restraint Adjustment Motor, Right 
+
+2 
+
+Central Gateway Module 
+
+18 
+
+Head Restraint Adjustment Motor, Left 
+
+SASR 
+
+Satellite A-pillar, Right with Acceleration 
+Sensor 
+
+19 
+
+Ignition Stage for Belt Tensioner, Left 
+
+Rear 
+
+3 
+
+Ignition Stage 1 and 2 for Passenger 
+Airbag 
+
+20 
+
+Ignition Stage for Side Airbag, Left Rear 
+
+4 
+
+Ignition Stage for Advanced HPS I/ll 
+
+21 
+
+Seat Occupancy Sensor, Left Rear 
+
+5 
+
+Ignition Stage for Passenger Knee 
+
+Airbag 
+
+SFZ 
+
+Satellite Vehicle Center with 
+
+Acceleration Sensor 
+
+STVR 
+
+Satellite, Right Front Door with Pressure 
+Sensor 
+
+SBSL 
+
+Satellite, B-Pillar Left with Acceleration 
+Sensor 
+
+6 
+
+Ignition Stage for Side Airbag, Right 
+
+Front 
+
+22 
+
+Ignition Stage for Belt Tension Limiter, 
+
+Left 
+
+SSBF 
+
+Seat Satellite, Passenger Seat 
+
+SSFA 
+
+Seat Satellite, Drivers Seat 
+
+7 
+
+Seat Occupancy Sensor for Passenger 
+Seat 
+
+23 
+
+Buckle Switch, Drivers Seat 
+
+8 
+
+Buckle Switch, Passenger Seat 
+
+24 
+
+Seat Occupancy Sensor for Drivers 
+
+Seat 
+
+9 
+
+Ignition Stage for Seatbelt Tensioner, 
+Passenger Seat 
+
+25 
+
+Ignition Stage for Active Head Restraint, 
+Drivers Seat 
+
+10 
+
+Ignition Stage for Active Head Restraint, 
+Passenger Seat 
+
+26 
+
+Ignition Stage for Seatbelt Tensioner, 
+Drivers Seat 
+
+SBSR 
+
+Satellite, B-Pillar Right Side with 
+Acceleration Sensor 
+
+STVL 
+
+Satellite, LEFT front Door with Pressure 
+Sensor 
+
+11 
+
+Ignition Stage for Belt Tension Limiter, 
+Right 
+
+27 
+
+Ignition Stage for Side Airbag, Left Front 
+
+12 
+
+Ignition Stage for BST 
+
+SASL 
+
+Satellite A-Pillar, Left with Acceleration 
+Sensor 
+
+13 
+
+Fuel Pump 
+
+28 
+
+Ignition Stage for Knee Airbag, left Front 
+
+SSH 
+
+Satellite, Rear Seat 
+
+29 
+
+Ignition Stage for Advanced HPS I/ll 
+
+14 
+
+Seat Occupancy Sensor, Right Rear 
+
+SZL 
+
+Satellite, Switch Center, Steering 
+
+Column 
+
+15 
+
+Ignition Stage for Side Airbag, Right 
+
+Rear 
+
+30 
+
+Ignition Stage 1 and 2 for Driver airbag 
+
+16 
+
+Ignition Stage for Belt Tensioner, Right 
+Rear 
+
+TEL 
+
+Telephone 
+
+
+7 
+
+
+ISIS 
+
+
+
+
+Safety Information Module (SIM) 
+
+In the network of satellites, the Safety Information Module SIM is the central unit. The SIM 
+has the following functions: 
+
+• Supply operating power to the satellites and provide an energy reserve in the event of 
+failure of the voltage supply during an accident. 
+
+• The SIM is the connection master (using the Intelligent Star Coupler) and system 
+master of the byteflight fiber-optic network. 
+
+• Triggering an automatic emergency call in the event of a collision. 
+
+The SIM is located behind the glovebox. 
+
+
+
+Linear voltage controller 
+Linear voltage controller 
+byteflight microprocessor 
+Intelligent Star Coupler 
+Power supply with fuses 
+Memory back-up capacitor 
+Switching controller 
+Switching controller 
+Switch 
+
+
+
+Circuitry overview of the SIM 
+
+
+kt-8392 
+
+
+8 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply of the SIM During Operation 
+
+
+The SIM is supplied with voltage KL terminals 30 and ground from KL31. If the vehicle volt¬ 
+age is sufficient then a switching controller (8) is supplied first, which supplies voltage to the 
+intelligent Star Coupler ( 4 ) and the power supply ( 5 ). 
+
+The second switching controller (7) is supplied by KL 30 during operation and is controlled 
+by the microprocessor via the cable SHDN 2. The capacitor is charged as of KL R. 
+
+The charging of the capacitor forms the emergency energy reserve. The capacitor voltage 
+is 400 V. 
+
+
+Electrical Power Supply in the Event of a Crash 
+
+If the vehicle voltage falls below approx. 8 V, the switching controller ( 7 ) uses the reserve 
+voltage from the capacitor. 
+
+The switching controller provides operating power to replace the missing voltage from KL 
+30 until the capacitor is fully discharged or the vehicle voltage is restored. 
+
+Operation of the switching controller is controlled by the microprocessor across the cable 
+SHDN2. If KL R is off, the switching controller is switched off again, but there is no dis¬ 
+charge of the memory backup capacitor. 
+
+
+Closed-Circuit Current Cutout 
+
+The switching controller (8), which supplies voltage to the Star Coupler and satellites, is 
+switched off by the microprocessor (3) in sleep mode via the signal SHDN1 (shut down) to 
+reduce the current draw of the module to below 1mA. 
+
+In order to ensure the necessary basic functions occur also in sleep mode, a 9.8 V linear 
+controller (1) is switched in parallel to the switching controller and this is permanently in 
+operation. 
+
+The wakeable S/E (transmitter/receiver) modules in the Star Coupler and a downstream 
+5 V linear controller ( 2 ) are supplied with this voltage. This second linear controller supplies 
+the microprocessor. 
+
+The satellites ( SZL, ZGM ) are connected to the wakeable S/E modules, and these satel¬ 
+lites are able to wake up the byteflight. The other S/E modules are supplied via the switch 
+( 9 ) by the switching controller ( 8 ) and are switched off in sleep mode. 
+
+
+9 
+
+
+ISIS 
+
+
+
+Intelligent Distributor 
+
+The intelligent distributor of the SIM performs the following tasks: 
+
+• Power supply for each individual satellite. 
+
+• Current limitation for each individual satellite. 
+
+• Power shutdown for each individual satellite in the event of a fault. 
+
+In order to ensure reliable function of the ISIS, all the satellites are supplied with voltage cen¬ 
+trally by the SIM. To ensure that the system functions perfectly in the event of a short cir¬ 
+cuit or overload on one of the supply lines, there must be an intelligent current distribution. 
+
+The distributor integrated in the SIM limits the current on each supply line to the satellites 
+to 100 mA (Approx. 10V). An exception is the SZL, which has a current intake of approx. 
+120 mA, as the steering wheel electronics are also supplied. 
+
+If this current limit is exceeded, it causes a reduction in the current output. It is also pos¬ 
+sible to switch off each individual satellite. 
+
+Intelligent Star Coupler 
+
+The transmitter and receiver module is a component that is able to convert electrical sig¬ 
+nals into optical signals and transmit them across the byteflight fiber-optic bus. 
+
+Each satellite has a transmitter and receiver module (S/E module). 
+
+Each of the S/E modules is connected via the byteflight with the Intelligent Star Coupler in 
+the SIM. In the SIM, there is also a transmitter and receiver module for each satellite. 
+
+
+
+10 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+byteflight Master 
+
+The byteflight master has two tasks to perform: 
+
+• Generation of the synchronization pulses (Sync. Pulse) 
+
+• Setting the satellites in alarm mode (Alarm Pulse) 
+
+In the ISIS, the SIM is configured as byteflight master (bus master). In principle, any satel¬ 
+lite can be configured by software as bus master. However, there may only be one bus 
+master in the system. 
+
+All other satellites (bus slaves) use the sync pulse for internal synchronization. Each slave 
+can transmit telegrams between the sync, pulses on the byteflight. 
+
+
+Synchronization Pulses 
+
+The SIM provides the synchronization pulses at intervals of 250jis. The alarm mode is 
+transmitted across the width of the sync, pulse. The duration of a sync, pulse in alarm sta¬ 
+tus is approx. 2jis. Normally, the synchronization pulse lasts approx. 3jis. 
+
+
+
+ijsyfi^-a - Synchrmisati^rK-Pulsw-Alarm 
+
+“ Synchr&Til^aliDfia-PulBa4lorrnil kt-66i4 
+
+The duration of a complete telegram can vary between 4.6 to 1 6jlls. 
+
+On the basis of all the available information provided by the sensors, the bus master (SIM) 
+must decide whether the satellites are to be set in the alarm mode. 
+
+When the alarm mode is set by the SIM, all the trigger circuits (B+) of the ISIS are placed 
+on trigger standby. 
+
+
+11 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To trigger a stage, two separate signals must always be transmitted on the byteflight. The 
+high-side (B+) switch of the trigger circuit in the satellites is controlled via the alarm mode 
+of the byteflight. 
+
+The low-side switch is controlled by the microprocessor in the satellites. On the basis of 
+the transmitted telegrams with the sensor signals, the trigger algorithm recognizes when 
+the low-side (ground) switch has to be closed. 
+
+The following graphic uses a trigger stage as an example to show signal paths necessary 
+for triggering. 
+
+
+
+Alarm mode pulse 
+High-side switch 
+Ignition capacitor 
+Ignition stage 
+Low-side switch 
+Satellite processor 
+Satellite 
+
+
+
+Watchdog Function 
+
+The Intelligent Distributor allows the SIM to deactivate the power supply for individual satel¬ 
+lites. This possibility is used to implement a watchdog function. The relevant status 
+telegram is used to monitor the satellites. If any of the following faults is detected by the 
+bus master (SIM), the satellite is deactivated: 
+
+• Internal fault in the satellite. 
+
+• System time incorrect. 
+
+• Status telegram not received. 
+
+Depending on the type of fault, up to two attempts are made to switch on again after 100 
+ms. If the power on reset in the satellite module does not rectify the fault, the satellite 
+remains off until the next wake-up of the bus system. 
+
+
+12 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Time 
+
+The system time is used as a reference when events such as faults or triggering of 
+pyrotechnic actuators are recorded. This feature enables time recording of stored events 
+in various control units. 
+
+The SIM is the bus master in the ISIS system and thus responsible for generating the syn¬ 
+chronization pulses. This is why it makes sense for the SIM to also be the reference for the 
+system time. 
+
+In the ISIS system, there is a uniform system time for all satellites (slaves). During produc¬ 
+tion of the vehicle at the factory, the system time is started by means of a diagnosis com¬ 
+mand. This operation is only possible once, (a reset of the system time is not possible). 
+
+The resolution of this time is 250jis and it is triggered by the sync, pulses on the byteflight. 
+This means that only the actual operation time during which the byteflight is active is record¬ 
+ed. The maximum time that can be recorded is over 76,000 hours. 
+
+The time is stored in the RAM of the microprocessor. Under the following conditions, there 
+is also an entry in the EEPROM: 
+
+• Once per hour. 
+
+• On transition into the sleep mode. 
+
+• When the battery is disconnected (Shut-down signal from PM). 
+
+• When the complete system is supplied by the energy reserve. 
+
+
+13 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Synchronization of the System Time 
+
+In order to ensure the same system time in all modules, a regular synchronization of all 
+satellites is necessary. 
+
+There is a distinction between the synchronization in normal operation and synchronization 
+of new modules installed in the vehicle as spare parts. 
+
+The mileage reading is also stored in the SIM. In order to set up a relation between the sys¬ 
+tem time and mileage reading, the current mileage reading is saved during the 
+synchronization of the system time. 
+
+
+Synchronization in Normal Operation 
+
+When the byteflight is started following sleep mode and approx, every 16 s during opera¬ 
+tion, the SIM transmits a "system time" telegram. 
+
+Due to the relatively low priority of the telegram, there is no assurance that the routing takes 
+place immediately. This leads to a possible difference between the time in the SIM and the 
+time in the satellites. 
+
+As the SIM knows the time of the transmission of the telegram, a correction is possible. 
+
+A second telegram "system time" with the correction value as part of the content is sent. 
+
+The correct system time is therefore the total of the values of the two system time 
+telegrams. The satellites only adopt the system time when both system time telegrams 
+have been received. 
+
+
+14 
+
+
+ISIS 
+
+
+
+Self-Diagnosis of the ISIS 
+
+
+The self-diagnosis of the overall system ISIS consists of: 
+
+• Self-diagnosis of the SIM 
+
+• Pre-drive check, phase 1 
+
+• Pre-drive check, phase 2 
+
+• Self-diagnosis in operation 
+
+Self-Diagnosis of the SIM 
+
+When KL R is switched on, or at wake-up, an internal self-diagnosis of the SIM is carried 
+out first. 
+
+If a fault occurs during the tests, it is entered in the fault memory, stopping the program 
+and disabling communication on the bus. 
+
+Since the instrument cluster receives no bus signals, the airbag warning lamp (AWL) is acti¬ 
+vated. 
+
+
+Pre-Drive Check 
+
+When KL R is switched on, a self-diagnosis of the overall systems is carried out. During 
+this period the system cannot be triggered. 
+
+This is indicated by activation of the airbag warning lamp AWL. The total duration of a fault- 
+free pre-drive check is less than five seconds. 
+
+The pre-drive check is divided into two phases. 
+
+The pre-drive check only starts when the SIM has received the first control unit status mes¬ 
+sages from all of the satellites known by coding and no fault has been communicated. 
+
+If the status message of a module is not received or if a fault has been communicated, the 
+power supply of the satellite module is switched off. 
+
+
+15 
+
+
+ISIS 
+
+
+
+Pre-Drive Check, Phase 1 
+
+
+In phase 1 of the pre-drive check, the igniter output stages are tested (with the exception 
+of the high-side transistor, which is controlled via the alarm pulse). 
+
+During phase 1, no alarm pulse is generated. The sensors are stimulated and tested. On 
+conclusion of this test the result is communicated in the control unit status telegram. An 
+OK signal is only transmitted if all the tests have run without faults. 
+
+If any faults occur during the pre-drive check, these are stored in the fault memory. 
+
+Pre-Drive Check, Phase 2 
+
+In phase 2 of the pre-drive check, the alarm path from the SIM to the igniter output stages 
+is checked. 
+
+The SIM transmits an alarm pulse, which is taken back after a 30 ms waiting period. Now 
+each satellite transmits a status telegram with an OK signal to the SIM. 
+
+If the alarm mode is not correctly received, a fault entry is made in the fault memory. 
+
+This concludes the pre-drive check and the modules can now start normal operation. This 
+means that the satellites with ignition capacitors can now be charged. 
+
+If all ignition capacitors are fully charged, this is notified in the status telegram to the SIM. 
+
+The AWL is switched off when all the modules report full ignition capacitors and no fault is 
+stored. 
+
+Self-Diagnosis During Operation 
+
+During operation, the SIM continuously monitors itself. If a fault is found, the byteflight com¬ 
+munication is stopped and the power supply of the satellites is switched off by the SIM. 
+(See watchdog function) 
+
+The S/E modules are capable of diagnosing the optical signal quality. A warning signal is 
+generated when the optical reception quality falls below a certain threshold. The communi¬ 
+cation still can function without faults. 
+
+The SIM and all the satellites continuously check the VIN received across the byteflight 
+against the VIN entered in the control units. If there is no match or an entry is missing, the 
+AWL is switched on. 
+
+
+16 
+
+
+ISIS 
+
+
+
+byteflight 
+
+
+□ Bufi 
+
+
+K-CAN "”i- = *i ipTrGAM 
+
+The information about the byteflight communication *- mi* 
+
+technology is described in the chapter “Bus 
+
+Systems”. 
+
+
+
+A-Pillar Satellite, Left and Right (SASL/SASR) 
+
+The satellites of the A-pillar left/right are virtually 
+identical. 
+
+The satellites are installed to the left and right 
+under the A-pillar trim panel in the footwell. 
+
+The A-pillar satellites have integrated transverse 
+(side impact) and longitudinal (front or rear 
+impact) sensors. 
+
+The SASL is responsible for deploying the 
+Advanced Head Protection airbags (AHPS I/ll) 
+and the drivers side knee airbag. 
+
+The SASR is responsible for deploying the passenger airbag, the AHPSI/II and the passen¬ 
+ger knee airbag. 
+
+The A-pillar satellites are connected to the SIM via the byteflight. The power supply of the 
+satellites is also from the SIM and it is buffered by the memory backup capacitor. 
+
+In sleep mode of the byteflight, the power supply of the SASL/SASR is deactivated by the 
+SIM. The watchdog function is run by the SIM. 
+
+
+
+17 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+1. Voltage regulator 
+
+2. Igniter output stage for AHPS 
+I/ll and knee airbag 
+
+3. Ignition stage for AHPS I/ll 
+
+4. Ignition stage for knee airbag 
+
+5. Ignition output stage for 
+passenger airbag 
+
+6. Ignition stage 1 for passenger 
+airbag 
+
+7. Ignition stage 2 for passenger 
+airbag 
+
+8. Longitudinal accel. sensor 
+
+9. Transverse accel. sensor 
+
+
+10. Transmitter/Receiver module 
+
+11. Microprocessor 
+
+
+A-Pillar Satellite Sensors 
+
+One acceleration sensor for the longitudinal acceleration and one for the transversal accel¬ 
+eration are integrated in the A-pillar satellites. 
+
+The sensors provide a variable voltage. This voltage is a measurement of the vehicle accel¬ 
+eration. This voltage signal is filtered, amplified, converted and transmitted as a data 
+telegram. 
+
+The strategic arrangement of acceleration sensors in the vehicle and the sensor data rec¬ 
+ognized in satellites, enable recognition of the direction and crash severity. 
+
+For the ISIS system, a detected crash severity and direction of the impact are distinguished 
+according to frontal, side, or rear-end collision. 
+
+With the involvement of the seat occupation detection, the seatbelt buckle input and using 
+a stored trigger algorithm, accident-relevant triggering of the pyrotechnic actuators (e.g. 
+seatbelt tensioner, airbags) is intended to achieve the greatest possible degree of occupant 
+protection. 
+
+
+
+18 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Self-Diagnosis of the Trigger Circuits During the Pre-Drive Check 
+
+During the pre-drive check, the entire trigger circuits are checked. If no faults occur during 
+the check, the ignition capacitors are charged and the satellites are ready for triggering. 
+Self-diagnosis includes: 
+
+• Check of the coding of the trigger circuit for plausibility. 
+
+• Check of the trigger circuit for short circuit to ground or B+. 
+
+• Check of the trigger circuit for open-circuit. 
+
+• Check of the ignition capacity and ignition voltage. 
+
+• Check of the trigger circuit resistance. 
+
+• Test of the low-side switch. 
+
+• Test of the high-side switch and the alarm path. 
+
+The check of the high-side and low-side switches takes place with the ignition capacitor 
+discharged. If any of the faults listed below are detected in a trigger circuit, the ignition 
+capacitor stays discharged. 
+
+This prevents accidental deployment of the trigger circuit if another fault occurs during 
+operation. 
+
+For all other faults, there is no danger of accidental deployment. The fault is indicated by 
+the AWL and stored in the fault code memory. 
+
+Self-Diagnosis in Normal Operation 
+
+In normal operation, there is a constant check of the trigger circuits. A fault message is 
+issued, but only when the fault is confirmed over a specified period of time. 
+
+If a short circuit to ground or B+ is detected, the corresponding ignition capacitor is dis¬ 
+charged. 
+
+In normal operation, the self-diagnosis is restricted to checks of the trigger circuit for short 
+circuits and open circuits. 
+
+
+19 
+
+
+ISIS 
+
+
+
+
+B-Pillar Satellite, Left (SBSL) 
+
+The SBSL is located in the left B-pillar above the seatbelt inertia reel. The SBSL contains 
+a sensor for transverse acceleration only. 
+
+
+The left B-pillar satellite is responsible for deploying the drivers seatbelt tension limiter. 
+
+
+
+The SBSL satellite is connected to the SIM via the byteflight. The power supply of the satel¬ 
+lite is also from the SIM and it is buffered by the memory backup capacitor. 
+
+
+In sleep mode of the byteflight, the power supply of the SBSL is deactivated by the SIM. 
+
+
+The watchdog function is run via the SIM. The SBSL monitors the ignition stage for the belt 
+tension limiter of the seatbelt on the driver's side. 
+
+
+
+Voltage regulator 
+
+Ignition output stage seatbelt 
+tension limiter 
+
+Ignition stage for seatbelt 
+tension limiter 
+
+Transverse acceleration sensor 
+Transmitter/Receiver module 
+Microprocessor 
+
+
+20 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor 
+
+
+An acceleration sensor for the transversal acceleration is integrated in the SBSL. The sen¬ 
+sor provides a variable voltage. This voltage is a measurement of the vehicle’s sideways 
+acceleration. 
+
+The ignition stages are diagnosed by igniter ICs and ignited by means of ignition capaci¬ 
+tors. 
+
+The self-diagnosis of the trigger circuits during the pre-drive check and in normal operation 
+is the same for all satellites. (See SASL) 
+
+
+B-Pillar Satellite, Right (SBSR) 
+
+The SBSR is located in the right side B-pillar above the seatbelt inertia reel. The SBSL con¬ 
+tains a sensor for transverse acceleration only. 
+
+The right side B-pillar satellite is responsible for deploying the passenger seatbelt tension 
+limiter, the battery safety terminal (BST) and for operating the fuel pump (EKP). 
+
+
+
+The satellite SBSR is connected to the SIM via the byteflight. The power supply of the 
+satellites is also from the SIM and it is buffered by the memory backup capacitor. 
+
+The voltage supply of the electric fuel pump is by means of a separate terminal 30. 
+
+In the sleep mode of the byteflight, the power supply of the SBSR is switched off by the 
+SIM; the operating voltage of the electric fuel pump is unaffected by this. 
+
+The “watchdog” function is run by the SIM. 
+
+
+21 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+Voltage regulator 
+
+Ignition output stage seatbelt 
+tension limiter and BST 
+
+Ignition stage for seatbelt 
+tension limiter 
+
+Ignition stage for BST 
+
+Final stage for fuel pump 
+
+Electric fuel pump 
+
+Transverse acceleration sensor 
+
+Transmitter/Receiver module 
+
+Microprocessor 
+
+
+Sensor 
+
+
+An acceleration sensor for the transverse acceleration is integrated in the SBSR. The sen¬ 
+sor provides a variable voltage. This voltage is a measurement of the vehicle’s sideways 
+acceleration. 
+
+
+The ignition stages are diagnosed and controlled by the ignition ICs. The self-diagnosis of 
+the trigger circuits during the pre-drive check and in normal operation is the same for all 
+satellites. (See SASL) 
+
+
+Electronic Control of the Fuel Pump 
+
+The SBSR of the ISIS system controls the fuel pump delivery rate during operation of the 
+vehicle and fuel supply cutoff in the event of a crash. 
+
+The advantages of having a variable fuel pump delivery rate are: 
+
+• Reduction of tank warming (evaporative emissions reduction). 
+
+• Reduction of the power consumption by approx. 50 Watts. 
+
+• Increase of the fuel pump service life. 
+
+• Integration of crash deactivation. 
+
+• Elimination of the fuel pump (EKP) relay. 
+
+22 
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The fuel is supplied depending on consumption. The DME (ECM) determines a fuel require¬ 
+ment in liters per hour (l/h). 
+
+
+DME 
+
+
+PT-CAH 
+
+
+hytefllaht 
+
+
+
+
+The SBSR receives the fuel requirement from the DME (ECM) via the PT-CAN and the 
+byteflight. If the fuel requirement from the DME (ECM) fails, or the bus system is defective, 
+the fuel pump is operated at maximum speed (default). 
+
+
+The delivery volume of the fuel pump is regulated by the electronic control of the EKP volt¬ 
+age supply. 
+
+In the microprocessor, the required quantity from DME (ECM) is converted into a pulse- 
+width-modulated signal and transmitted to the EKP controller. The adjustable pulse width 
+produces a variable voltage that is used to operate the fuel pump. 
+
+The current consumption (Amps) of the pump is measured in the EKP controller, this deter¬ 
+mines the rotation speed of the pump. The rotation speed is transmitted to the micro¬ 
+processor, which calculates the current fuel delivery volume. The delivery volume is 
+checked using a setpoint / actual comparison and the control voltage is corrected if nec¬ 
+essary. 
+
+
+Fuel Cutoff After a Collision 
+
+If the ISIS system detects a crash of sufficient severity, the fuel pump is shut down to pre¬ 
+vent a possible fire if fuel lines under the hood were to be damaged. The fuel pump can 
+then be reactivated by switching the ignition off and on. At that point the fuel pump is again 
+ready for operation. 
+
+
+23 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seat Satellite, Driver / Passenger (SSFA / SSBF) 
+
+
+The satellites of the driver and passenger 
+side are identical. The satellite is located 
+below the seat frame between the seat rails. 
+It is fitted with the seat module beneath a 
+cover in a plastic tray. 
+
+
+1. Seat Satellite 
+
+2. Seat Module 
+
+
+The SSFA/SSBF contain no acceleration sensors but do evaluate the seat occupancy (SBE) 
+sensors and the seatbelt buckle switches. 
+
+The seat satellites are responsible for deploying the driver/passenger seatbelt tensioners 
+and the Active Head Restraint (comfort seat option only). 
+
+The satellite SSFA / SSBF are connected to the SIM via the byteflight. The power supply 
+of the satellites is also from the SIM and it is buffered by the memory backup capacitor. In 
+sleep mode of the byteflight, the power supply of the SSFA / SSBF is deactivated by the 
+SIM. The watchdog function is run by the SIM. 
+
+
+
+1. Voltage regulator 
+
+
+
+
+byteflight 
+
+
+
+
+
+
+2. Ignition output stage, seatbelt 
+tensioner and active head 
+restraint 
+
+3. Ignition stage for seatbelt 
+tensioner 
+
+4. Ignition stage for active head 
+restraint 
+
+5. Interface for buckle switch 
+
+6. Belt buckle switch 
+
+7. Transmitter/Receiver module 
+
+8. Microprocessor 
+
+
+24 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The satellites SSFA/SSBF control and monitor the trigger circuits of the seatbelt lock ten¬ 
+sioners and the Active Head Restraints. The belt buckles are monitored by a Hall sensor. 
+The Hall switches are identical to those of the E38 since 3/97. The seat occupation detec¬ 
+tion is monitored via an interface in the satellite. 
+
+
+Seat Satellite, Rear (SSH) 
+
+The rear seat satellite is installed if the vehicle is ordered with rear side airbags (SA 261). 
+The special equipment also includes the Advanced HPS (AHPS ) for rear seat passengers, 
+but these are triggered by the SASL/SASR. The rear seat satellite is fitted beneath the rear 
+seat cushion in the middle area. 
+
+
+kt-7038 
+
+
+
+The SSH contains no acceleration sensors but does evaluate the rear seat occupancy 
+(SBE) sensors. 
+
+The seat satellite, rear is responsible for deploying the left/right rear passenger airbags and 
+seatbelt tensioners. Additionally if the vehicle is equipped with basic seats the SSH is 
+responsible for controlling the electric rear head restraints. 
+
+
+The satellite SSH is connected to the SIM via the byteflight. The power supply of the satel¬ 
+lites is also from the SIM and it is buffered by the memory backup capacitor. In sleep mode 
+of the byteflight, the power supply of the SSH is deactivated by the SIM. The watchdog 
+function is run by the SIM. 
+
+The power supply for the head restraint adjustment is unaffected by this. 
+
+
+25 
+
+
+ISIS 
+
+
+
+2 
+
+
+* BB= ■ 
+
+
+05 
+
+LU ba7a_sbe& 
+
+
+
+
+
+1. Voltage regulator 
+
+2. Ignition output stage for 
+side airbag and seatbelt 
+tensioner 
+
+3. Ignition stage for side airbag 
+right rear 
+
+4. Ignition stage for seat belt 
+tensioner, right rear 
+
+5. Ignition output stage for 
+side airbag and seatbelt 
+tensioner 
+
+6. Ignition stage for side airbag 
+left rear 
+
+7. Ignition stage for seat belt 
+tensioner, left rear 
+
+8. Output stage for head 
+restraint, right 
+
+9. Motor for head restraint 
+
+10. Output stage for head 
+restraint, Left 
+
+11. Motor for head restraint 
+
+12. Switch for head restraint 
+
+
+Note: Operation of the head restraints on vehicles equipped 13 - Transmitter/Receiver module 
+with rear Comfort seats is carried out by the seat modules. 14 Microprocessor 
+
+
+Rear Head Restraints 
+
+The rear head restraints are moved out automatically by an electric motor if the seat occu¬ 
+pation detection detects an occupant and KL R is on. 
+
+The head restraint is returned to its lowest position when KL R is switched off or an empty 
+seat is detected. 
+
+
+26 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Front Door Satellite, Left/Right (STVL/STVR) 
+
+
+The STVL/STVR are located inside the front doors, attached to the inner door carriers. The 
+STVL/STVR contain a pressure sensor. 
+
+
+
+kt-8057 
+
+1. Door satellite 
+
+2. Door Module 
+
+3. Pressure Sensor 
+
+
+The front door satellites are responsible for deploying the driver and passenger side 
+airbags. 
+
+
+The satellite STVL / R is connected to the SIM via the byteflight. The power supply of the 
+satellites is also from the SIM and it is buffered by the memory backup capacitor. In sleep 
+mode of the byteflight, the power supply of the STVL / R is deactivated by the SIM. The 
+watchdog function is run by the SIM. 
+
+
+27 
+
+
+ISIS 
+
+
+
+
+
+
+
+Voltage Regulator 
+
+Ignition output stage for side 
+airbag 
+
+Ignition stage for side airbag 
+Pressure Sensor 
+Transmitter/Receiver module 
+Microprocessor 
+
+
+Sensor System 
+
+A pressure sensor is integrated into the front door satellite. In the event of a collision, pen¬ 
+etration of the door outer skin reduces the volume of the door, which leads to a significant 
+rise in pressure. 
+
+The relative pressure change and rise in pressure evaluated overtime are important factors 
+for the crash evaluation. 
+
+The ignition stages are diagnosed and controlled by the igniter ICs. The self-diagnosis of 
+the trigger circuits during the pre-drive check and in normal operation is the same for all 
+satellites. (See SASL) 
+
+
+28 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Center Satellite (SFZ) 
+
+The SFZ is located on the transmission tunnel, under the front center console. The SFZ 
+contains a transverse and longitudinal acceleration sensor. 
+
+
+
+The vehicle center satellite, center is not responsible for deploying any airbags or pyrotech¬ 
+nic devices. 
+
+The SFZ is connected to the SIM via the byteflight. The power supply of the satellite is also 
+from the SIM and it is buffered by the memory backup capacitor. In sleep mode of the byte- 
+flight, the power supply of the SFZ is deactivated by the SIM. The watchdog function is run 
+via the SIM. 
+
+
+Sensor System 
+
+
+The vehicle center satellite only records sensor data; it has no triggering functions. One 
+acceleration sensor for the longitudinal acceleration forces and one for the transversal 
+acceleration forces are integrated in the SFZ. The sensors provide a variable voltage. This 
+voltage is a measurement of the vehicle acceleration. This information is provided to the 
+SIM and the other satellites for evaluation of crash thresholds. 
+
+
+
+1. Voltage regulator 
+
+2. Microprocessor 
+
+3. Longitudinal acceleration sensor 
+
+4. Transverse acceleration sensor 
+
+5. Transmitter/Receiver module 
+
+
+29 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Switch Center (SZL) 
+
+All the components on the steering wheel are controlled by the steering column switch cen¬ 
+ter unit (SZL). The SZL is divided into two electronic modules. One is located in the steer¬ 
+ing wheel and the other is attached to the steering column. Both units are connected by 
+means of spiral spring. 
+
+The SZL contains no ISIS sensors and is responsible for deploying the drivers airbag. 
+
+
+
+The SZL is integrated in the steering column electronics and linked to the SIM via the byte- 
+flight. The power supply of the SZL is also from the SIM and it is buffered by the memory 
+backup capacitor. 
+
+
+In addition, there is a KL 30 for the supply of circuit elements not relevant to safety (e.g. 
+steering wheel heating) and a KL 15 “ON” from the CAS for redundancy. 
+
+
+In sleep mode of the byteflight, the power supply of the SZL is deactivated by the SIM. The 
+watchdog function is run by the SIM. 
+
+
+
+Satellite 
+
+Steering wheel electronics 
+Airbag 
+
+Voltage regulator 
+
+Microprocessor 
+
+Coil spring 
+
+Ignition output stage 
+
+Driver airbag ignition 
+stage 1 
+
+Driver airbag ignition 
+stage 2 
+
+
+30 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Central Gateway Module (ZGM) 
+
+
+The ZGM is installed in the module carrier behind the glovebox. The Central Gateway 
+Module does not contain any sensors and is not responsible for deploying any airbags or 
+pyrotechnic devices. 
+
+
+
+The ZGM has the task of coordinating the various data speeds of the telegrams between 
+the buses and directing messages between the individual bus systems. The following 
+busses are connected to the ZGM: 
+
+
+• byteflight 
+
+• K-CAN-System 
+
+• PT-CAN and PT wake-up line 
+
+• Diagnosis bus 
+
+1. Voltage regulator 
+
+2. Microprocessor 
+
+3. Data memory EEPROM 
+
+4. Interface for D-bus 
+
+5. Interface for K-CAN-S 
+
+6. Interface for PT-CAN 
+
+7. Transmitter/receiver module 
+
+8. Wake-up logic module 
+
+
+
+kt-8396 
+
+
+31 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver Airbag 
+
+A 2-stage driver “SMART” airbag, (which has been 
+available since 3/99) is used on the E65. 
+
+The airbag has a volume of approx. 62 liters. There is 
+only one design for all trim levels. 
+
+Depending on the crash severity detected, the two 
+ignition stages are ignited. The faster the two ignitions 
+succeed one another, the faster the airbag is filled. To 
+eliminate hazards during rescue operations or dispos¬ 
+al, both priming caps are always triggered. 
+
+New for the E65 is the color matching of the airbag 
+unit to the interior color trim. Airbag units are offered 
+in the following colors: black, beige, grey or blue. 
+
+1. Ignition stage 1 
+
+2. Ignition stage 2 
+
+
+Passenger Airbag 
+
+
+
+
+The front passenger airbag is a 2-stage SMART airbag with a volume of approx. 135 liters. 
+It is a hybrid technology design. The gas generator is a combination of solid fuel and inert 
+gas. The passenger airbag module consists of a gas generator, airbag and housing. It is 
+fitted beneath the instrument panel, above the glovebox and behind the CD changer. 
+
+
+The instrument panel has been designed in such a way that it tears open at defined points 
+in the event of a crash and the airbag can emerge upwards. There is no separate cover for 
+the airbag, this prevents the airbag from being deflected if the panel does not swing out of 
+the way properly. 
+
+
+
+ISIS 
+
+
+
+
+
+
+
+
+Knee Airbags 
+
+For the U.S. version of the E65, there is a new innovation, the knee airbag. 
+
+The knee airbag is installed on the driver 
+and passenger side. In the event of a 
+crash, the knee airbags support the knee, 
+especially if the driver or passenger are not 
+wearing seatbelts. 
+
+The location of these airbags produce a 
+controlled forward shift of the upper body, 
+which is cushioned by the conventional dri¬ 
+ver or passenger airbag. 
+
+
+The knee airbag on the driver's side is located below the steering column, it is incorporat¬ 
+ed into the under-dash trim. 
+
+
+
+
+The knee airbag on the passenger side is located in the lid of the glovebox, beneath a 
+cover. The knee airbag is a one-stage airbag with gas generator. The volume is approx. 16 
+liters. 
+
+
+
+
+Passenger Knee Airbag 
+
+kt-8190 
+
+
+kt-8189 
+
+33 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The airbag module on the driver's side consists of a plastic housing, the gas generator and 
+the airbag. On the passenger side, it consists of a metal housing, the gas generator and 
+the airbag. 
+
+For the passenger knee airbag, the glovebox lid is the mounting for the airbag module. 
+
+Operation 
+
+In the event of a crash of sufficient severity, the gas generator is ignited. The escaping gas 
+fills the airbag located between the housing and the cover. The filling airbag presses the 
+cover towards the occupant. 
+
+Several retaining belts fix the cover in its position in front of the air cushion. The passen¬ 
+ger's knees touch the cover. Over the surface of the cover, the load is distributed across 
+the airbag and the passenger is supported. 
+
+The support of the knee initiates a controlled fon/vard shift of the upper body, which is cush¬ 
+ioned by the driver or passenger airbag. 
+
+The knee airbags can only be seen by the lettering "AIRBAG" on the top right of the glove- 
+box lid or top left on the driver's side and by the cable connection for the airbag module. 
+
+
+Advanced Head Protection System (AHPS) 
+
+New for the E65 is the Advanced HPS, (AHPS) an extended head airbag. The ITS Inflatable 
+Tubular Structure familiar from other BMW models has been extended by a curtain. 
+
+There are two versions of the AHPS. 
+
+
+
+kt-8181 1 
+
+AHPS for front passengers only 
+
+
+34 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Advanced HPS I is for the head area of the driver and passenger. It runs from the A- 
+pillar to behind the B-pillar, as before. The volume is approx. 12 liters. 
+
+
+
+Optional AHPS for front and rear seat passengers 
+
+When rear airbags are ordered as an option (SA 261), there is the Advanced HPS II for the 
+head area at the front and rear. The AHPS II runs from the A-pillar to the C-pillar and cov¬ 
+ers the entire side section. The volume is approx. 24 liters. 
+
+In conjunction with the side airbags in the front and rear doors, it provides optimum side 
+protection for all passengers. The Advanced HPS prevents the head and other extremities 
+of the occupants from swinging outward. This leads to less severe neck backlash forces 
+and less severe head injuries. 
+
+Advantages of the system: 
+
+• Extended covered area for side windows front and rear. 
+
+• Protection against glass splinters and penetrating objects. 
+
+• Improved protection area for any size occupants. 
+
+
+35 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operation 
+
+
+The Advanced HPS is fitted in the roof zone. It consists of a woven tube with an addition¬ 
+al curtain wrapped around it. The curtain is secured to the roof frame and is tensioned 
+downward by the woven tube. 
+
+
+1. Gas generator for 
+AH PS II 
+
+2. Gas generator for 
+AHPS I 
+
+
+
+
+In the event of a side collision, the generator is ignited and the gas flows through the gas 
+injector into the woven tube. The woven tube expands to approx. 130 mm in diameter and 
+its length is reduced. 
+
+Secure fitting of the woven tube on the A-pillar and the C-pillar HPS II or on the roof frame 
+(AHPS I) brings the head airbag into position. In the process, the curtain tightens between 
+the side window or pillar trim and the occupant. 
+
+The high tensioning force in the woven tube pulls the curtain downward, which increases 
+the stability of the curtain. The closed system means that the structural firmness and 
+stability remain for several seconds. This is an advantage if the vehicle rolls over. 
+
+
+36 
+
+
+ISIS 
+
+
+Side Airbags 
+
+
+On the E65, side airbags are installed in the front doors and are optional for the rear doors. 
+The strategy of having the rear side airbags disconnected from the factory continues with 
+the E65. The AHPS II system is not affected because they pose no risk to children sitting 
+out of position. 
+
+The side airbags reduce the risk of occupant injury in the torso region of the body in the 
+case of a side collision. Compared to the AHPS, the side airbags deflate relatively quickly, 
+with a precise damping effect. 
+
+In conjunction with the Advanced HPS, it provides optimum side protection. The airbag 
+shape is designed to be compatible with various occupant positions and sizes. The prin¬ 
+ciple of the side airbags is identical to that used so far in the other models. 
+
+A new feature is that the airbags are fitted in a function unit within the door trim. This sig¬ 
+nificantly improves the effect if the inflation is obstructed, (e.g. occupants leaning heavily on 
+the paneling). 
+
+Moreover, the airbag no longer emerges into the passenger compartment by opening a 
+cover in the door trim, but by tearing a seam in the middle area of the panel. 
+
+As before, a one-stage gas generator with a high proportion of inert gas is used. The vol¬ 
+ume is approx. 12 liters. The front and rear airbags are identical parts. The front side airbag 
+is bolted at two points, the rear at another additional point to the door frame. 
+
+
+
+37 
+
+
+ISIS 
+
+
+
+
+
+Front Belt Tension Limiter 
+
+The belt tension limiters for the driver and passenger seat are inertia reel seatbelts with 
+adaptive force limitation. 
+
+A gas generator is used to switch from a high 
+degree of force to a lower degree of force. This 
+also has to be possible during an accident to 
+achieve a regressive force reduction. The advan¬ 
+tage of the adaptive belt tension limiter is the 
+considerable reduction of the load on the chest 
+in the event of a crash. 
+
+With optimum coordination to the airbag, the 
+kinetic energy of the occupant is reduced evenly 
+across the duration of the crash, thus achieving 
+low occupant load values. 
+
+Operation 
+
+The adaptive force limitation is based on a two-stage torsion bar (stage shaft). The torsion 
+bar consists of the two head ends left and right, the stages and the center head. The belt 
+force is transferred to the seatbelt roller. The seatbelt roller is connected to a sleeve that 
+contains the torsion bar. There is a shaft ring with locking pawls on the sleeve. The lock- 
+
+1. Seatbelt webbing 
+
+2. Seatbelt roller 
+
+3. Shaft ring 
+
+4. Locking pawls 
+
+5. Housing 
+
+6. Sleeve 
+
+7. Center head 
+
+8. Torsion bar 
+
+In the first stage, with the preset high level of force, the torque of the seatbelt roller is trans¬ 
+ferred via the locking pawls to the center head of the torsion bar. 
+
+If the seatbelt roller is turned relative to the fixed torsion bar, the force is transferred to the 
+thicker part of the torsion bar. This produces the high power level. This is the function of a 
+normal emergency locking retractor. 
+
+38 
+
+
+ing pawls transfer the torque to the torsion bar. 
+
+12 3 4 
+
+
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Seatbelt webbing 
+
+2. Seatbelt roller 
+
+3. Shaft ring 
+
+4. Locking pawls 
+
+5. Housing 
+
+6. Sleeve 
+
+7. Center head 
+
+8. Torsion bar 
+
+
+In the event of a crash, the gas generator is ignited and a plunger moves out, shifting the 
+shaft ring axially. The locking pawls are now no longer held by the sleeve and no longer 
+transfer more torque to the center head of the torsion bar. 
+
+
+The belt force is now passed across the right-hand head end into the stage shaft and runs 
+through the entire torsion bar. The lower diameter on the right-hand side means that the 
+torsion bar is twisted further and thus the force is reduced to a lower level. 
+
+
+Seatbelt Upper Anchor Position 
+
+Using new simulation methods with regard to installation and ergonomics, it was deter¬ 
+mined that there is an optimal area for all occupants to locate the seatbelt upper anchor. 
+
+The anchor point is no longer adjusted automatically based on seat movement as the sys¬ 
+tem on the previous model. In addition the fitting is now designed as a roller. The low 
+friction power (drag) of the seatbelt increases wearing comfort. 
+
+
+
+39 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Front Seatbelt Tensioners 
+
+On the E65, pyrotechnic seatbelt tensioners are used for the driver and passenger seat. 
+The principle of the seatbelt lock tensioner is the same as that used in the E38/E39. 
+
+The seatbelt tensioner has the task in the event 
+of a crash to remove or reduce any belt slack in 
+the pelvic and shoulder region. 
+
+The belt slack comes about mainly due to the 
+motion of the occupants or due to clothing, 
+
+(especially when heavy clothing are worn in the 
+winter). 
+
+This ensures that the occupant is restrained 
+firmly on the seat and prevents "submarining", 
+slipping under a slack seatbelt. 
+
+There is also earlier restraint and thus earlier binding to the vehicle. The seatbelt tensioner 
+forms a unit with the seatbelt buckle. It consists of an ignition stage, generator, plunger and 
+cable. The belt buckle switch is integrated in the seatbelt buckle. 
+
+In the event of a crash of sufficient severity, the gas generator is ignited. The gas spreads 
+and shifts the plunger in the tensioning pipe. The cable connected to the plunger then pulls 
+the seatbelt buckle downward and the belt slack from the belt system. 
+
+On the E65, there are the following technical changes. The ignition stage is no longer direct¬ 
+ly connected onto the gas generator but rather the connection comes out on a cable 
+together with the belt buckle switch cable and is plugged under the seat. If the seatbelt 
+tensioner needs replacing, the seat does not have to be removed. 
+
+
+
+40 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rear Seatbelt (End Fitting) Tensioner 
+
+
+If the rear airbag package is ordered, end fitting tensioners are fitted for the outer rear seats. 
+In the middle, a three-point automatic belt is fitted. (The basic version has 3 three-point 
+automatic belts.) 
+
+
+The rear seatbelt consists of the following components: 
+
+
+1. Inertia reel with single-stage 
+mechanical force transmission 
+
+2. Sliding latch plate 
+
+3. Belt (end fitting) tensioner 
+
+4. Belt buckle 
+
+
+
+The rear end fitting tensioners have the same task as the seatbelt tensioners at the front, 
+that is removing the slack in the belt during the crash as well as early binding of the occu¬ 
+pant to the vehicle deceleration (called riding out the crash). 
+
+Since the space available beneath the rear seat is limited, it meant that a component sim¬ 
+ilar to the front seatbelt tensioner could not be used, a new solution had to be found. 
+
+The belt slack is removed by drawing in the seatbelt strap at the end fitting point. The iner¬ 
+tia reel seatbelt forms the upper attachment point, the end fitting tensioner is the lower 
+attachment point. 
+
+
+41 
+
+
+ISIS 
+
+
+
+
+
+The end fitting tensioner 
+
+1. Tensioning tube 
+
+2. Gas generator 
+
+3. Electrical connector 
+
+4. Belt roller 
+
+5. Seatbelt webbing 
+
+6. Housing 
+
+7. Roller coupling 
+
+8. Cable pulley 
+
+9. Cable 
+
+Operation 
+
+The rear seat satellite (SSH) ignites the ignition stage in the event of a crash if the seat has 
+been detected as occupied. 
+
+When the gas generator ignites, the rise in pressure shifts a plunger in the pipe. The cable 
+end is drawn in the pipe in a linear direction by the plunger. The other cable end is wound 
+by a pulley and turns the belt winding shaft. 
+
+A roller coupling blocks the belt winding shaft so that when force is applied into the belt 
+system after the tensioning process this can no longer be turned back. The end fitting ten¬ 
+sioners tighten the belt slack at the pelvic area first and then the chest area belt slack. 
+
+The tensioning path is determined by the cable pulley diameter and the usable plunger trav¬ 
+el. The maximum tensioning length is approx. 150 mm. 
+
+
+
+42 
+
+
+ISIS 
+
+
+Seat Occupancy Detection 
+
+
+Seat occupancy detection mats are installed in the seat 
+cushion of the driver and passenger seat and if equipped 
+with optional rear airbags, they are also used in the left 
+and right rear seats. 
+
+The sensor mat is identical to the mats used in previous 
+models for the MRS systems. The sensor system consists 
+of pressure sensors that use an electronic evaluation unit 
+(SBE) to detect whether there is weight on the seat. 
+
+kt-8067 
+
+As of a weight of approx. 12 kg (26.4lbs.), the seat is recognized as occupied. The elec¬ 
+tronic evaluation units of the seat occupation mats are connected to the relevant satellites. 
+(SSFA/SSBF=sensors for front seat, SSH=sensors for rear seat) 
+
+The information regarding seat occupation is required for activation of the following 
+functions: 
+
+
+• Airbag activation 
+
+• Activation of the seatbelt tensioners and/or end 
+fitting tensioners 
+
+• Triggering the active head restraints 
+
+• Automatic positioning of the rear head- 
+restraints 
+
+Seatbelt Buckle Switch 
+
+The belt buckle switch used in the E65 is a two-wire Hall switch, as already in use in vari¬ 
+ous models since 3/97. 
+
+The airbags triggering thresholds are different depending on the crash severity and depend¬ 
+ing on whether the seatbelt has been fastened or not. 
+
+The belt buckle switch is located in the seatbelt buckle on the driver and passenger seat. 
+It is used to detect whether the seatbelt has been fastened or not. The detection arrives as 
+a signal at the relevant satellites. The detection serves to trigger the pyrotechnic actuators 
+in the event of a crash,( e.g. seatbelt tensioner, airbags etc.) 
+
+The belt buckle switch also serves to initiate a seatbelt warning in case the vehicle is start¬ 
+ed without a seatbelt having been fastened. 
+
+
+
+
+43 
+
+ISIS 
+
+
+
+
+
+
+
+
+
+Active Head Restraint System (AKS) 
+
+Another innovation of the E65 is the Active Head 
+Restraint System which is part of the driver and 
+passenger multifunction seat (comfort seat). 
+
+No active head restraint is installed for the basic 
+seat, as the fixed positioning between the backrest 
+and head restraint means that the occupants head 
+is always positioned near the head restraint. 
+
+In a rear-end collision, the occupants are acceler¬ 
+ated along with the vehicle. The upper torso and 
+pelvis of the occupants rest against the backrest 
+and thus absorb this acceleration immediately. 
+
+The head, in contrast, is usually not in constant contact with the seat and therefore is slow¬ 
+er to respond to the forces acting on the vehicle body. In the initial phase of the crash, the 
+head remains in its original position. In relation to the body, which moves fon/vards, the 
+head moves backwards. 
+
+It is only when the head makes contact with the head restraint that this relative movement 
+between head and body is reduced and the head then is accelerated at the same rate as 
+the body. 
+
+This pitching motion of the head, leads to cervical vertebrae injuries (whiplash). The dan¬ 
+ger of cervical vertebrae injuries is higher when there is a greater distance between the head 
+and head restraint. The head restraints are intended to prevent, to the greatest possible 
+extent, the dangerous pitching motion of the head. 
+
+In the case of the multifunction seat, the adjustability of the head restraint means that there 
+is the possibility that the gap between the head restraint and head increases. In the event 
+of a crash, the gap could be relatively large, leading to greater strain on the cervical verte¬ 
+brae. 
+
+For this reason, the active head restraint was developed. In the event of a crash, this sys¬ 
+tem reduces the gap between the head restraint and head and thus the rate of cervical ver¬ 
+tebrae injuries. 
+
+
+
+44 
+
+
+ISIS 
+
+
+1. Mounting of the AKS 
+
+2. Electrical connection for ignition 
+stage. 
+
+3. Gas generator 
+
+4. Support bar 
+
+5. Center of rotation 
+
+6. Head restraint height 
+adjustment 
+
+
+
+The active head restraint system is located in the backrest of the multifunction seat. It con¬ 
+sists of a support tube, which is fitted on bearings in the backrest. A retaining plate attach¬ 
+es the system firmly with the backrest. 
+
+The support tube serves as fixture for the head restraint, the adjustment mechanism of the 
+head restraint, as well as the head restraint height adjustment. 
+
+The adjustment mechanism consists of a retaining plate and a sliding element. The sliding 
+element is a moveable part connected to the gate located on the support tube. The retain¬ 
+ing plate is firmly attached to the backrest. The generator is located between the retaining 
+plate and the sliding element. 
+
+
+
+
+1. 
+
+Head restraint 
+
+1 
+
+2. 
+
+Guides 
+
+
+3. 
+
+Support tube 
+
+
+4. 
+
+Retaining plate 
+
+_____— 2 
+
+5. 
+
+Push rod 
+
+2 
+
+.- 4 
+
+V- 
+
+6. 
+
+Gas generator 
+
+i. 
+
+\ \ 
+
+7. 
+
+Ignition stage 
+
+>i 
+
+8. 
+
+Mounting points 
+
+J 
+
+9. 
+
+Sliding element 
+
+
+45 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+The generator consists of a casing, plunger, ignition stage and connection. It is attached 
+to the retaining plate and the sliding element by spring clips. 
+
+In the event of a crash, the ignition stage is activated, the solid fuel bums and the gas pro¬ 
+duced forces out the push rod. The push rod moves out and shifts the sliding element. 
+
+The support tube is pivoted fon/vards because of the slanted, elongated holes in the sup¬ 
+port tube which the sliding element rides in. 
+
+This means that the head restraint attached to the support tube is also moved in the direc¬ 
+tion of travel. The adjustment range of the headrest is approx. 9 degrees. 
+
+Depending on the vertical adjustment of the head restraint at the time, different adjusting 
+distances can result. The adjustment of the head restraint, measured on the cushion, is 
+approx. 40 mm when the head restraint is retracted (all the way down). 
+
+When the head restraint is fully extended (all the way up), the adjustment is approx. 60 mm. 
+
+
+If the Active Head restraint has been triggered in a crash, only the gas generator needs to 
+be replaced to return the system to normal function. 
+
+
+AKS in stand-by position 
+
+
+AKS in deployed position 
+
+
+
+
+
+kt-7855 
+
+
+kt-7856 
+
+
+46 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery Safety Terminal (BST) 
+
+The Battery Safety Terminal (BST) is technically identical to the one used in MRS systems. 
+
+If the ISIS system detects a crash of sufficient severity, the ignition stage of the BST is trig¬ 
+gered by the B-pillar satellite, right (SBSR). 
+
+A small quantity of solid fuel electrically and mechanically cuts the starter and alternator line 
+from the positive terminal of the battery. This prevents possible short circuits in the engine 
+compartment. 
+
+A separate vehicle electrical system connection through the Power Module ensures that the 
+remaining vehicle circuit retains its function when the BST is triggered. 
+
+This ensures the operation of all the important functions such as lights, hazard warning 
+lights, telephone emergency call, etc. 
+
+
+
+1. Starter cable 
+
+2. Positive battery terminal 
+
+3. Ignition capsule 
+
+4. Connection for the Power Module 
+and vehicle circuit supply 
+
+
+47 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+Triggering Strategy 
+
+A completely new safety system, the ISIS, has been developed for the E65. With its decen¬ 
+tralized satellites fitted at strategic points in the vehicle, it is possible for the first time to 
+implement 100%, all-round detection on the vehicle. 
+
+Triggering Thresholds 
+
+Numerous crash and road tests under extreme conditions have been used to set the BMW 
+triggering thresholds for all possible types of accidents. 
+
+The triggering thresholds are divided according to crash severity (CS). There are four types 
+of crash severity: 
+
+1. CS 0 Light collision No airbag activation 
+
+2. CS 1 Medium collision Possible airbag triggering, stage 1 
+
+3. CS 2 Severe collision Airbag triggering, stage 1 
+
+4. CS 3 Very severe collision Airbag triggering, stage 1+2 
+
+
+The triggering thresholds are set depending on the crash severity as well as various other 
+factors, (e.g. 0°, 30°, or offset crash). 
+
+Other important information is also included, such as whether the occupant is wearing a 
+seatbelt or not. 
+
+This results in the trigger thresholds for the activation of the various restraint systems. 
+Depending on the type of accident, different crash severities have been specified: 
+
+• Frontal crash CS 0, CS 1, CS 2, CS 3 
+
+• Side-impact crash CS 0, CS 1, CS 2 
+
+• Rear crash CS 0, CS 1, CS 2 
+
+
+48 
+
+
+ISIS 
+
+
+
+ISIS 
+
+
+Example: Head-On impact with immovable object at 0° Crash severity 3 
+
+
+t ms- 
+
+
+Seatbelt tensioner 
+Driver and passenger 
+
+Belt tension limiter, left 
+
+Belt tension limiter, right 
+
+Driver airbags stage 1 
+stage 2 
+
+Passenger airbags stage 1 
+
+stage 2 
+
+Rear (end fitting) tensioner 
+Left and right 
+
+
+
+CD 
+
+
+Battery safety terminal 
+Trigger algorithm 
+
+
+Setup phase 
+
+
+Priming phase Restraint phase Beginning of return shift 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If a fault is detected in the seat occupancy detection system, it is assumed that the seat is 
+occupied and the restraint systems are activated. 
+
+
+If a fault is detected in the seatbelt buckle detection system, it is assumed that the seatbelt 
+is not fastened and the restraint systems are activated with CS1. 
+
+In spite of this an attempt is made to activate the seatbelt lock tensioner. 
+
+Frontal Collision CS 1 
+
+The table below shows the activated actuators with crash severity 1. 
+
+
+Actuators 
+
+Seatbelt 
+
+Fastened 
+
+Seatbelt not 
+
+Fastened 
+
+Remarks 
+
+Driver airbag stage 1 
+
+
+X 
+
+
+Driver airbag stage 2 
+
+
+X 
+
+
+Front passenger airbag, stage 1 
+
+
+X 
+
+
+Front passenger airbag, stage 2 
+
+
+X 
+
+
+Seatbelt tensioner, driver 
+
+X 
+
+
+
+Seatbelt tensioner, passenger 
+
+X 
+
+
+If occupied 
+
+Rear seatbelt (end-fitting) tensioner, left (opt). 
+
+X 
+
+X 
+
+If occupied 
+
+Rear seatbelt (end-fitting) tensioner, right (opt). 
+
+X 
+
+X 
+
+If occupied 
+
+
+Frontal Collision CS 2 / CS 3 
+
+The activation of the airbag stages and the belt tension limiter takes place via differentiation 
+of the crash severity with various decelerations on activation. 
+
+
+Actuators 
+
+Seatbelt 
+
+Fastened 
+
+Seatbelt not 
+
+Fastened 
+
+Remarks 
+
+Driver airbag stage 1 
+
+X 
+
+X 
+
+
+Driver airbag stage 2 
+
+X 
+
+X 
+
+
+Front passenger airbag, stage 1 
+
+X 
+
+X 
+
+If occupied 
+
+Front passenger airbag, stage 2 
+
+X 
+
+X 
+
+If occupied 
+
+Knee airbag, left 
+
+X 
+
+X 
+
+
+Knee airbag, right 
+
+X 
+
+X 
+
+If occupied 
+
+Front seatbelt tension limiter, left 
+
+X 
+
+
+
+Front seatbelt tension limiter, right 
+
+X 
+
+
+If occupied 
+
+Seatbelt tensioner, driver 
+
+X 
+
+
+
+Seatbelt tensioner, passenger 
+
+X 
+
+
+If occupied 
+
+Rear seatbelt (end-fitting) tensioner, left (opt). 
+
+X 
+
+X 
+
+If occupied 
+
+Rear seatbelt (end-fitting) tensioner, right (opt). 
+
+X 
+
+X 
+
+If occupied 
+
+Battery Safety Terminal 
+
+X 
+
+X 
+
+
+Stop electric fuel pump 
+
+X 
+
+X 
+
+
+Emergency phone call 
+
+X 
+
+X 
+
+
+
+50 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Side Collision, Left CS1 
+
+
+Actuators 
+
+Remarks 
+
+AH PS I/ll, left 
+
+
+Side airbag, front left 
+
+
+Side airbag, rear left 
+
+If occupied 
+
+
+Side Collision, Left CS2 
+
+
+Actuators 
+
+Remarks 
+
+AH PS I/ll, left 
+
+
+Side airbag, front left 
+
+
+Side airbag, rear left 
+
+If occupied 
+
+Battery safety terminal 
+
+
+Stop electrical fuel pump 
+
+
+Emergency phone call 
+
+
+
+Side Collision, Right CS1 
+
+
+Actuators 
+
+Remarks 
+
+AH PS I/ll, right 
+
+If occupied 
+
+Side airbag, front right 
+
+If occupied 
+
+Side airbag, rear right 
+
+If occupied 
+
+
+Side Collision, Right CS2 
+
+
+Actuators 
+
+Remarks 
+
+AH PS I/ll, right 
+
+
+Side airbag, front right 
+
+If occupied 
+
+Side airbag, rear right 
+
+If occupied 
+
+Battery safety terminal 
+
+
+Stop electrical fuel pump 
+
+
+Emergency phone call 
+
+
+
+Rear Collision CS1 
+
+
+Actuators 
+
+Remarks 
+
+Active Head restraint, driver 
+
+
+Active Head restraint, passenger 
+
+If occupied 
+
+
+51 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+Rear Collision, CS2 
+
+
+Actuators 
+
+Remarks 
+
+Active Head restraint, driver 
+
+
+Active Head restraint, passenger 
+
+If occupied 
+
+Seatbelt tensioner, driver 
+
+
+Seatbelt tensioner, passenger 
+
+If occupied 
+
+Rear seatbelt (end fitting) tensioner, left 
+
+If occupied 
+
+Rear seatbelt (end fitting) tensioner, right 
+
+If occupied 
+
+Battery safety terminal 
+
+
+Stop electric fuel pump 
+
+
+Emergency phone call 
+
+
+
+ISIS Emergency Call Function 
+
+Two different emergency calls are possible by telephone. An automatic emergency call trig¬ 
+gered by the SIM, which has detected a corresponding crash severity, as well as a manu¬ 
+ally triggered emergency call via the emergency (SOS) call button. 
+
+To place an emergency call by telephone, the telephone and the telephone interface, 
+including antenna system, must be on standby and supplied with sufficient power. 
+
+After triggering of the emergency call, an SMS message (Short Message Service: info such 
+as vehicle location, how many airbags were deployed and what speed the crash occured 
+at) is sent to the service provider and a voice connection is set up. 
+
+Two numbers are set for the two emergency call functions; these are dialled alternately until 
+a connection is set up. If no connection has been set up after 60 seconds, the telephone 
+dials the emergency number 911. 
+
+To support any recovery activity that might be necessary, the Light Module switches on the 
+interior lighting and the hazard warning lights. 
+
+The central locking system is also unlocked by the CAS (Car Access System). 
+
+
+52 
+
+
+ISIS 
+
+
+
+
+Automatic Emergency Call 
+
+
+If the ISIS system detects a crash of sufficient severity, the emergency call by telephone is 
+triggered automatically. The emergency call contains data from the navigation computer 
+concerning the location of the vehicle. When the emergency call reaches the service 
+provider, the location data is displayed on the Control Display. 
+
+
+i 
+
+
+B 
+
+
+CD 
+
+
+MOST 
+
+TiCri E'cnu 
+
+
+
+
+K-CAN 3 
+
+
+
+Serial connection 
+
+
+
+Satellite 
+
+
+
+
+A /— I Emergency button 
+
+
+
+kt-8533 
+
+
+There is a direct, serial, single-wire connection between the SIM and telephone. If the con¬ 
+nection is disrupted or fails, the overall bus system is used to trigger the emergency call. 
+
+
+
+CD 
+
+1 
+
+MOST 
+
+TFI FFttW 
+
+
+
+
+
+hytv flight 
+
+
+Serial connection 
+
+-tf- 
+
+
+
+Satellite 
+
+
+
+
+A 
+
+
+
+Emergency button 
+
+
+kt-8528 
+
+
+The telegram then goes from the SIM to the Central Gateway Module via the K-CAN to the 
+Control Display and the MOST bus to the telephone. Once an emergency call has been 
+triggered, it cannot be cancelled. To ensure that the emergency call has reached the 
+provider, an acknowledgement is transmitted, and this is stored in the system. The service 
+provider sets up a voice connection to the vehicle and receives confirmation of the emer¬ 
+gency call. If no voice connection is set up or the occupants are unable to respond, the res¬ 
+cue services are notified automatically. 
+
+
+53 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manual Emergency Call 
+
+In the event of an emergency, the driver or passengers can press the emergency call but¬ 
+ton. The current vehicle position is then displayed in the Control Display along with a mes¬ 
+sage indicating that the emergency call has been placed. 
+
+The service provider sets up a voice connection to the vehicle and receives confirmation of 
+the emergency call. Once the voice connection to the provider has been set up, the green 
+button display flashes. The rescue services are then notified and this is indicated on the 
+Control Display. 
+
+
+
+54 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Airbag Warning Lights (AWL) and Check Control 
+
+The E65 has a variety of systems for the display of faults in the ISIS. These include warn¬ 
+ing lamps, Check Control graphic symbols and Check Control text messages displayed in 
+the KOMBI and Control Display. 
+
+
+The warning lamps include the airbag warning lamp AWL and the "fasten seatbelt" lamp. 
+The warning lamps illuminate in the LED warning light field of the KOMBI. 
+
+
+
+The airbag warning lamp is activated in the pre-drive check and is switched on in the event 
+of the following system faults: 
+
+
+• Fault in the self-diagnosis of the SIM. 
+
+• Communication fault in the byteflight. 
+
+• Fault during the pre-drive check. 
+
+• Vehicle identification number incorrect or missing. 
+
+The faults in the control unit or the satellites are transmitted to the SIM as a status telegram. 
+These messages are transferred from the SIM via the byteflight to the Central Gateway 
+Module (ZGM) and via the K-CAN-S to the KOMBI. 
+
+
+Activation of the airbag warning lamp AWL, the graphic symbols and the Check Control 
+messages are controlled by the instrument cluster on the basis of the data received from 
+
+
+the SIM. 
+
+
+If the functions in the overall system that are relevant to safety are operating correctly, the 
+SIM transmits a message to the instrument cluster at regular intervals, approx, every 200 
+ms. If this signal fails for longer than 2 seconds, the KOMBI indicates this as a fault in the 
+system by causing the airbag warning lamp to light up. 
+
+
+55 
+
+
+ISIS 
+
+
+Check Control Messages 
+
+The graphic symbols appear in the information display field of the KOMBI. The following 
+symbols are possible: 
+
+The red airbag symbol is activated when there is a fault in the driver or front passenger 
+airbag. 
+
+The yellow airbag symbol is activated in the event of faults in the side airbags, the head 
+airbags as well as the seatbelt tensioner or belt tension limiter. 
+
+The yellow service symbol is activated in the event of faults in the fuel pump circuit. 
+
+The following Check Control messages are for start of production E65: 
+
+
+Check Control Message 
+displayed in KOMBI 
+
+Message displayed in 
+
+Control Display 
+
+Cause 
+
+Front pass, restraint system 
+
+“Front pass, restraint system 
+
+Fault in firing circuit of 
+
+fault! 
+
+• 11 
+
+■ 
+
+fault!” Belt tensioner or belt 
+force limiter fault. Continue to 
+wear belts despite fault. Please 
+contact the nearest BMW center 
+
+pass, belt tensioner or 
+tension limiter. 
+
+Driver restraint system 
+
+“Driver restraint system 
+
+Fault in firing circuit of 
+
+fault! 
+
+M 
+
+fault!” Belt tensioner or belt 
+force limiter fault. Continue to 
+wear belts despite fault. Please 
+contact the nearest BMW center 
+
+driver belt tensioner or 
+tension limiter. 
+
+Restraint system, 
+
+“Restraint system left rear 
+
+Fault in firing circuit of 
+
+left rear, fault! 
+
+pm 
+
+Mam 
+
+fault!” Belt tensioner fault. 
+
+Continue to wear belts despite 
+restraint system fault. Please 
+contact the nearest BMW center 
+
+left rear belt tensioner. 
+
+Restraint system, 
+
+“Restraint system right rear 
+
+Fault in firing circuit of 
+
+right rear, fault! 
+
+Mam 
+
+fault!” Belt tensioner fault. 
+
+Continue to wear belts despite 
+restraint system fault. Please 
+contact the nearest BMW center 
+
+right rear belt tensioner. 
+
+
+56 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Check Control Message 
+displayed in KOMBI 
+
+Message displayed in Cause 
+
+Control Display 
+
+Restraint systems! 
+
+Fault in pass, restraint system Various faults in ISIS or 
+
+affecting airbag, belt tensioner missing Alive signal, 
+
+or belt force limiter. Cont. to 
+wear belts despite fault. 
+
+Please contact the nearest 
+
+BMW center 
+
+Left rear side airbag 
+fault! 
+
+“Left rear side airbag fault” If Failure in firing circuit of 
+
+possible, avoid transporting left rear side airbag, 
+
+passengers in left rear seat. 
+
+Please contact the nearest 
+
+BMW center. 
+
+Riqht rear side airbaq 
+fault! 
+
+“Right rear side airbag fault” If Failure in firing circuit of 
+
+possible, avoid transporting right rear side airbag, 
+
+passengers in right rear seat. 
+
+Please contact the nearest 
+
+BMW center. 
+
+Driver airbags fault! 
+
+“Driver airbags fault” System Failure in firing circuit of 
+
+fault affecting operation of the driver airbags (including 
+
+driver airbags. Please contact knee airbag), 
+
+the nearest BMW center. 
+
+Front Passenger 
+airbags fault! 
+
+“Front passenger airbags Failure in firing circuit of 
+
+fault” If possible, avoid front passenger airbags 
+
+transporting passengers in (including knee airbag), 
+
+the front seat. Please contact 
+the nearest BMW center. 
+
+Fuel pump fault! 
+
+Drive moderately 
+
+Fuel pump fault. This can Failure in fuel pump 
+
+lead to breakdown or circuit, 
+
+reduction in engine output. 
+
+Please contact the nearest 
+
+BMW center. 
+
+
+57 
+
+
+ISIS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Synchronization of New Modules 
+
+When new satellite modules are fitted, these modules have no system time. Transmission 
+of the two system time telegrams allows the module to adopt the system time. This is only 
+possible when the stored system time in the satellite modules is smaller that the time sent. 
+
+If the system time in a module is greater than the time sent, (trying a part from another vehi¬ 
+cle), the system time is not adopted and an entry is made in the fault memory. 
+
+When the SIM or any satellite is replaced, the system time must be entered. As the sys¬ 
+tem time is available in all ISIS modules, it can be transferred into the new module. 
+
+This takes place via the Diagnosis Program (Service Functions). To do so, the 
+DISplus/MoDiC requests the system time from all satellites and selects the largest. 
+
+The DISplus/MoDiC adds an amount to this time and transmits the result into the new mod¬ 
+ule as the system time. The correction amount compensates for the run time between 
+reading from the satellites and entry in the new module. 
+
+This prevents fault messages from the satellites because the system time transferred by the 
+new module is smaller than that stored in the satellites. 
+
+
+58 
+
+
+ISIS 
+
+
+
+Review Questions 
+
+
+1. Why is it possible for the SIM to react faster than the previous MRS system? 
+
+
+2. Where does the power supply (B+) to the satellites originate from? What happens to 
+the power supply (B+) if a fault is logged in one of the satellites? 
+
+
+3. Where is the system time for the ISIS system stored? What is this time used for? 
+
+
+4. What two signals must be received by a satellite before a pyrotechnic actuator (airbag, 
+seatbelt tensioner etc.) can be deployed? How do these signals arrive to the satellite? 
+
+
+5. Which satellite is responsible for deploying the BST? What other actuators or devices 
+does it control? 
+
+
+6. When an AKS is deployed what components must be replaced? 
+
+
+7. What function must be carried out when a new control module is fitted to the ISIS 
+system? 
+
+
+59 
+
+
+ISIS 
+
+
+

@@ -1,0 +1,1136 @@
+Table of Contents 
+
+E90 Dynamic Driving Systems 
+
+Subject Page 
+
+Dynamic Stability Control System.3 
+
+Fading Support.5 
+
+Braking Readiness.5 
+
+Brake Disk Drying.6 
+
+Soft Stop .6 
+
+Start Assist .7 
+
+Electronic Control Brake (ECB) Actuation Interface .7 
+
+Yaw Moment Compensation.7 
+
+System Components .8 
+
+Inlet & Distribution Valves .8 
+
+Wheel-Speed Sensors.8 
+
+DSC Sensor.8 
+
+DSC Module .9 
+
+Steering-Angle Sensor .9 
+
+DTC Button .9 
+
+Brake Fluid Level Switch.9 
+
+Brake Light Switch .9 
+
+Parking Brake Warning Switch .9 
+
+Sensor Information .11 
+
+General Overview .12 
+
+Anti-lock Braking System(ABS).13 
+
+Electronic Brake Force Distribution (EBV).13 
+
+Cornering Brake Control (CBC).13 
+
+Automatic Stability Control (ASC).13 
+
+Dynamic Traction Control (DTC) .14 
+
+Engine Drag Torque Control (M SR) .14 
+
+Dynamic Brake Control (DBC).14 
+
+RPA:Tire Defect Indicator.15 
+
+CBS: Condition Based Service .15 
+
+
+Initial Print Date: 03/05 
+
+
+Revision Date: 06/05 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dynamic Driving Systems 
+
+
+Model: E90 
+
+Production: From Start of Production 
+
+■MICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Establish an understanding of the changes in the DSC system 
+
+
+2 
+
+E90 Dynamic Driving Systems 
+
+
+Dynamic Stability Control System 
+
+
+The E90 in the U.S. is equipped with a new Dynamic Stability Control System (DSC) 
+referred to as M K60E5, manufactured by ContinentalTeves, which builds upon the sys¬ 
+tems used in other BMW models. With this system several new functions are intro¬ 
+duced that result in significantly improved comfort during brake intervention (due to uti¬ 
+lization of a P WM signal on the input control valves) and more precise wheel braking. 
+
+New functions introduced with M K60E5: 
+
+• Fading Support 
+
+• Braking Readiness 
+
+• Brake Disk drying 
+
+• Soft Stop 
+
+• Start Assist 
+
+• Electronic Control Brake Actuation (ECBA) 
+
+• Yaw M oment Compensation with AFS 
+
+These new functions contribute to increased directional stability, optimized comfort, 
+enhanced system availability/response plus reduce the minimum braking distance. 
+
+In the MK60E5 the designation "E5" represents the 5 pressure sensors which are inte¬ 
+grated into the hydraulic control unit: 
+
+• A combined pressure sensor on the inlet side which monitors the plausibility of the 
+pressures of the tandem brake master cylinder (T HZ) 
+
+• Fourfurther sensors on the outlet side which measure the braking pressure of the 
+assigned wheel brake 
+
+Note:Thatthe labeling of the DSC button has been changed to DTC and the 
+MK60E5 system will also be used on the New M5. 
+
+
+3 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+The new functions available on the M K60E5 DSC system are a result of the following 
+additional components: 
+
+• Solenoid valves with variable map forflow rate - utilizes a PWM signal 
+
+• 5 brake pressure sensors integrated in the new DSC module 
+
+• 4 active wheel-speed sensors with direction of rotation detection 
+
+• 1 longitudinal-acceleration sensor on the circuit board of the DSC control module 
+
+• DSC sensortaken with redundant signals on vehicles with Active Steering (2x rate of 
+yaw, 2x lateral acceleration) 
+
+
+
+4 
+
+E90 Dynamic Driving Systems 
+
+
+
+Fading Support 
+
+
+High temperatures (>550°C)can occuratthe brake discs when brakes are applied overa 
+long period (i.e. brakes applied while traveling downhill) or as a result of multiple 
+"extreme" brake applications (i.e. applied pressure >80 bar). As the temperature of the 
+brake disc increases, the level of friction that can be generated when the brake pads are 
+applied is decreased (coefficient of friction is reduced as brake disc temperature increas¬ 
+es), which can result in a diminishing brake effect (fading). 
+
+In orderto reduce the brake "fading" effect the DSC system (M K60E5) calculates the 
+temperature of the brake discs, based on: 
+
+• Applied brake pressure 
+
+• Duration of brake application 
+
+• Rate of vehicle deceleration 
+
+In the event the DSC system detects fading, brake pressure is increased in line with the 
+calculated temperature model in orderto maintain a constant ratio of brake pedal force to 
+vehicle deceleration (if necessary, pedal travel is increased to compensate forthe fading 
+effect). 
+
+The DSC system detects fading as follows: 
+
+• DSC compares the current vehicle deceleration with a nominal value based on the 
+current brake pressure. 
+
+• DSC increases brake pressure until the nominal deceleration is achieved or until all 
+wheels are subjectto ABS control. 
+
+• Process is ended when the brake pedal is released. 
+
+Note: The increase in brake pressure depends on road speed (under 100 km/h). 
+
+At the time this function is activated, a Check-Control message (brake warning light) 
+appears in the LCD display in the instrument cluster (warning threshold 1). If the brake- 
+disc temperature increases further, the legally stipulated brake warning lamp is also acti¬ 
+vated (warning threshold 2). 
+
+Braking Readiness 
+
+If the DSC system notices that the accelerator pedal is released quickly, the brakes are 
+immediately pretensioned, to shorten the brake apply response time. To accomplish this 
+task the DSC system generates a low braking pressure by applying a PWM signal to the 
+solenoid valves, without creating any measurable deceleration of the vehicle. By applying 
+a small amount of brake pressure the working clearance between the brake pads and 
+brake disc is reduced. If the brakes are not applied within a certain time, the brake pres¬ 
+sure that was applied is reduced. 
+
+The pre-tensioning of the brakes depends on the vehicle's speed (above 70 km/h). 
+
+
+5 
+
+E90 Dynamic Driving Systems 
+
+
+
+The Brake Readiness function is activated underthe following conditions: 
+
+• Vehicle speed >70 km/h 
+
+• Minimum time between rapid accelerator pedal release and brake application <8 
+sec. (DM E provides the signal regarding rapid release of accelerator pedal to DSC 
+via PT-CAN) 
+
+Brake Disk Drying 
+
+Brake disk drying removes moisture that gathers on the brake disks while traveling on wet 
+roads or in the rain. 
+
+In orderto dry the brakes while the vehicle is traveling down the road, the DSC module 
+generates a low brake pressure which lightly" applies the brakes disks and "wipes down" 
+the disks without creating a measurable deceleration of the vehicle. 
+
+The application of the low brake pressure signal is done on a cyclical (regular) basis and 
+is dependent on: 
+
+• Road speed (greaterthan 70 km/h 
+
+• Signal from rain sensor indicating continuous wiper operation (e.g. stage 1 or 2) 
+
+The drying action cycle is performed approximately every: 
+
+• 200 sec during stage 1 operation 
+
+• 120 sec during stage 2 operation 
+
+Note:The cycle is altered if the brakes are applied by the driver during these 
+times. 
+
+This function results in a shorter response time if the brakes are applied during the cycli¬ 
+cal low brake pressure application. 
+
+Soft Stop 
+
+Soft stop prevents a "jerky" stop causing the occupants to "lurch" forward, when braking 
+the vehicle to a standstill. 
+
+Activation offunction: 
+
+• Light brake application (<25 bar) under constant pressure 
+
+• Road speed (under 5 km/h) 
+
+The soft stop function reduces the braking pressure at the rear axle just prior to the vehi¬ 
+cle reaching a complete stop in orderto reduce "jerking/jolt" effect normally encountered 
+when reaching a standstill. The DSC system calculates the moment that standstill can be 
+expected based on the current road speed plus rate of deceleration and reduces braking 
+pressure accordingly. 
+
+
+6 
+
+E90 Dynamic Driving Systems 
+
+
+
+Start Assist 
+
+
+The start-off assistant prevents the vehicle from moving unexpectedly, based on the 
+degree of incline, as the driver releases the brake pedal and moves to the accelerator 
+pedal (ie. when pulling away on a hill). 
+
+The "start assist" function is accomplished as follows: 
+
+• Gradient (degree of incline) is determined by the longitudinal-acceleration sensor 
+located in the DSC control module. 
+
+• Based on the degree of incline, the necessary braking torque or engine torque is cal¬ 
+culated by the DSC module. 
+
+• Brake pressure needed to hold the vehicle is momentarily maintained (approx 2 sec). 
+
+• Brake pressure is reduced as soon as the available engine torque is sufficient to 
+move the vehicle or accelerator is not depressed within approx. 2 sec. 
+
+The function can be activated when driving forward or backwards and is deactivated 
+when the parking brake is applied and can not be activated if the transmission is in neu¬ 
+tral. 
+
+Note: If no move is made to pull away within approx. 2 seconds of the brake 
+pedal being released, the start-off assistant will be deactivated. 
+
+Electronic Control Brake (EC B) Actuation Interface 
+
+The interface between Dynamic Stability Control (DSC) and Active Cruise Control (ACC) 
+has been improved with the introduction of the Longitudinal Dynamic Management 
+(LDM) system, which is responsible forthe transmission of the signals associated with 
+ACC/cruise control operation. 
+
+The software in the DSC control module has been enhanced and allows the demands of 
+the ACC to be evaluated more quickly thereby allowing pressure at the brakes to be built 
+up or reduced more efficiently with regard to vehicle deceleration and comfort. 
+
+Yaw Moment Compensation 
+
+With conventional systems, the driver has to actively steerthe vehicle in a straight line 
+if the brakes are applied on a road surface with non-uniform traction levels ("split p"). 
+
+In this situation counter steering keeps the vehicle in its track and helps to achieve 
+acceptable braking distances. 
+
+On the E90, if the vehicle is equipped with the Active Front Steering (AFS) option and 
+brakes are applied on a road surface with non-uniform traction levels ("split p"), DSC in 
+conjunction with AFS, initiates the active steering actions in orderto stabilize the vehicle 
+and shorten the braking distance. The function is accomplished by having the DSC con¬ 
+trol module calculate the yaw rate plus interpret information from the front steering angle 
+sensor and transmit the information to the AFS control module, which establishes the 
+yaw-moment compensation correction angle needed for stabilization/counter steering. 
+
+
+7 
+
+E90 Dynamic Driving Systems 
+
+
+
+System Components 
+
+The DSC system consists of the following: 
+
+Inlet & Distribution Valves 
+
+These solenoid valves used to be digitally actuated: either OPEN or CLOSED. 
+
+On this system the inlet valves for the wheel brakes and distribution valves are actuated in 
+such a way that the flow rate is variably controlled via a PWM signal. 
+
+Wheel-Speed Sensors 
+
+Four active wheel-speed sensors measure the speed of the individual wheels. This type 
+of sensor is also able to recognize the direction of wheel rotation. 
+
+DSC Sensor 
+
+The DSC sensor on vehicles equipped with active steering utilizes 2 yaw rate sensor ele¬ 
+ments to transmit redundant signals capturing the rate of yaw (rotation about the vertical 
+axis) and lateral acceleration to the AFS module via the chassis CAN (F-CAN) 
+
+
+
+8 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+DSC Module 
+
+The DSC module consists of the hydraulic module and the DSC control electronics. 
+
+All 5 brake pressure sensors are integrated into the valve block ofthe DSC module. 
+
+Note: The circuit board ofthe DSC control module also contains an integrated 
+longitudinal-acceleration sensorwhich is used forthe start assist func¬ 
+tion. 
+
+Steering-Angle Sensor 
+
+The steering angle sensor is located in the steering column switch cluster (SZL) and 
+optically measures the angle of rotation ofthe steering wheel. 
+
+Signal path to the DSC control module: Steering column switch cluster-> F-CAN 
+(looped through J BE) -> DSC control module 
+
+DTC Button 
+
+The DTC button is located in the center console between the central air vents and has 
+three operating modes: 
+
+1. DSC operational (standard setting) 
+
+2. DTC operational (If DTC button is depressed once DSC switches Off) 
+
+3. DSC and DTC completely deactivated (If DTC button is depressed for extended period) 
+Signal path to the DSC control module: DTC button ->J BE -> PT-CAN -> DSC module 
+The instrument cluster receives the signal through the K-CAN. 
+
+Brake Fluid Level Switch 
+
+If the brake fluid level is too low, this will be detected (via a reed contact in the expansion 
+tank) and an appropriate message is sent to the DSC control module. 
+
+DSC is deactivated if there is insufficient brake fluid. 
+
+Signal path to the instrument cluster: DSC module -> PT-CAN ->J BE -> K-CAN -> 
+Instrument cluster 
+
+Brake Light Switch 
+
+Together with the signals from the brake pressure sensors, braking actions are recog¬ 
+nized. 
+
+Parking Brake Warning Switch 
+
+DSC will recognize skidding that has been deliberately initiated by the driver and regula¬ 
+tion will not take place, since a handbrake turn should remain technically possible. 
+
+
+9 
+
+E90 Dynamic Driving Systems 
+
+
+
+E90 - DSC Hydraulic Circuit 
+
+
+V 
+
+
+• 1 ) 
+
+
+V 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Brake Fluid Expansion Tank 
+
+12 
+
+Inlet Valve (Analog), Right Front 
+with Switching Orifice 
+
+2 
+
+Rear-axle Brake Circuit 
+
+13 
+
+Inlet Valve (Analog), Right Rear 
+
+3 
+
+Front-axle Brake Circuit 
+
+14 
+
+Inlet Valve (Analog), Left Rear 
+
+4 
+
+Pressure Sensor, Push Rod Circuit 
+
+15 
+
+Outlet Valve, Left Rear 
+
+5 
+
+Pulsation Damper 
+
+16 
+
+Outlet Valve, Right Rear 
+
+6 
+
+Isolating Valve 
+
+17 
+
+Outlet Valve, Left Front 
+
+7 
+
+Electric Changeover Valve 
+
+18 
+
+Outlet Valve, Right Front 
+
+8 
+
+Self-Priming Return Pump 
+
+19 
+
+Wheel Brake, Right Front 
+
+9 
+
+DamperChamber 
+
+20 
+
+Wheel Brake, Left Front 
+
+10 
+
+Accumulator Chamber 
+
+21 
+
+Wheel Brake, Right Rear 
+
+11 
+
+Inlet Valve (Analog), Left Front 
+with Switching Orifice 
+
+22 
+
+Wheel Brake, Left Rear 
+
+
+10 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor Information 
+
+
+Sensor 
+
+Functional principal 
+
+Manufacturer 
+
+Active wheel-speed sensors* 
+
+Magneto-resistive principle 
+
+Teves 
+
+Steering angle sensor (LWS) in steering column 
+switch cluster (SZL) 
+
+Optoelectronic 
+
+
+Yaw rate sensor 
+
+Twin tuning fork principle 
+
+Teves 
+
+Lateral-acceleration sensor 
+
+Capacitive principle 
+
+Teves 
+
+Longitudinal-acceleration sensor** 
+
+Integrated in DSC control module 
+
+
+5 pressure sensors 
+
+Integrated in hydraulic block 
+
+
+Brake light switch 
+
+Hall principle 
+
+
+Brake-fluid level switch 
+
+Reed contact switch 
+
+
+
+* Wheel-speed sensors with grey shield = M K60E5 with direction-of rotation detection 
+(the braking response when traveling in reverse is different then it is for vehicle traveling 
+forwards, output to navigation system, EGS etc.) 
+
+* Wheel-speed sensors with black shield =MK60psi (Used on E87 Non U.S. Model) 
+does not have direction of rotation capability 
+
+** For the start assist function 
+
+
+11 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Overview 
+
+
+The DSC system is a Driving Stabilization System and offers the following advantages: 
+
+• DSC optimizes driving stability when pulling away, accelerating, braking and coast¬ 
+ing. 
+
+• DSC recognizes and reduces unstable driving conditions such as understeering or 
+oversteering. 
+
+• DSC improves traction, especially with Dynamic Traction Control (DTC) 
+
+Within the limitations of the laws of physics, DSC helps to keep the vehicle on a safe 
+course. 
+
+To do this, DSC must know the following parameters regarding the vehicles driving 
+dynamics: 
+
+• Yaw rate as a measure of rotary movement of the vehicle around the vertical axis 
+
+• Lateral acceleration 
+
+• Road speed 
+
+• Longitudinal acceleration 
+
+In addition, the driver's intentions are recognized via input from: 
+
+• Steering angle sensor 
+
+• Brake pressure sensor 
+
+• Throttle setting/accelerator pedal position 
+
+The values are used to establish the actual condition in which the vehicle is currently 
+moving and to compare these values with those calculated by the DSC control module. If 
+the actual values differ from the calculated values, DSC is activated and initiates brake 
+actions or engine control functions. 
+
+Advantages: 
+
+The DSC system counters all dynamically unstable driving conditions within the physical 
+limitations dictated by the laws of physics, to enhance driving comfort and safety. 
+
+
+12 
+
+E90 Dynamic Driving Systems 
+
+
+
+Anti-lock Braking System(ABS) 
+
+ABS prevents the wheels from locking when the brakes are applied. 
+
+Advantage: Optimum utilization of road surface friction - the vehicle remains stable and 
+steerable. 
+
+Brake pressure is regulated at all wheels to ensure that each wheel runs with optimum 
+slip. When this happens, slip is controlled so that the maximum possible braking and lat¬ 
+eral stability forces can be transmitted. 
+
+Electronic Brake Force Distribution (EBV) 
+
+EBV is a component of ABS and controls the brake force distribution between the front 
+and rear wheels. 
+
+Advantage: Regardless of the vehicles load state, the best possible braking distance is 
+achieved while maintaining driving stability. 
+
+Modern vehicles have relatively large brakes on the rear axle to shorten braking distances. 
+To prevent the rear wheels from being overbraked in certain driving situations, EBV per¬ 
+manently monitors wheel slip and controls rear axle slip independent of the front axle. 
+
+Cornering Brake Control (CBC) 
+
+CBC is an extension of ABS. CBC enhances driving stability if the brakes are applied 
+when cornering. 
+
+Advantage: If the brakes are applied in a corner, optimum brake force distribution ensures 
+tracking stability. 
+
+When cornering, even very light braking can shift the axle-load distribution to the left or 
+right so that driving stability is impaired. If required, CBC generates a stabilizing load 
+moment when the brakes are applied lightly outside the ABS intervention range. 
+
+Automatic Stability Control (ASC) 
+
+ASC prevents the wheels from spinning when the vehicle is accelerating. 
+
+Advantage: Improved traction and vehicle stability. 
+
+If one of the wheels of the drive axle is on a high-grip surface and the other is on a slip¬ 
+pery surface, the wheel tending to skid is braked. 
+
+ASC also intervenes in the engine control (to reduce the ignition angle, injection quantity, 
+throttle valve setting) in order to reduce/inhibit vehicle acceleration in the event of wheel 
+slip. 
+
+
+13 
+
+E90 Dynamic Driving Systems 
+
+
+
+Dynamic Traction Control (DTC) 
+
+The functions of the DTC correspond to those of DSC with a slightly modified regulating 
+characteristics. DTC is activated by deactivating DSC (DTC button depressed). DTC 
+intervenes in the braking actions to imitate the function of a conventional differential lock. 
+
+Advantage: DTC allows better traction. 
+
+Vehicle stabilization intervention (e.g. reduced power output) is delayed slightly, compared 
+to DSC, which enhances traction with a slight loss of driving stability. 
+
+This function offers a compromise between driving stability and traction, especially when 
+accelerating and/or driving uphill on a loose surface or snow-covered road surface (sur¬ 
+face friction requiring more slip). 
+
+DSC provides a high degree of driving stability with adequate traction, however DTC 
+offers better traction with a slight reduction in stability. Therefore, the deactivation of 
+DSC should be reserved for emergencies (driving in deep snow, for example). 
+
+Engine Drag Torque Control (MSR) 
+
+If the vehicle is operated in low gear while coasting downhill or if is the vehicle is suddenly 
+shifted into a lower gear, the drive wheel may be slowed down by the engine braking 
+effect to rapidly which can result in an unstable operating condition, resulting in the drive 
+wheels locking up. 
+
+Engine Drag Torque Control (MSR) provides protection against locking of the drive 
+wheels. 
+
+
+Advantage: The drive wheels retain their lateral stability in overrun mode. 
+
+The wheel speed sensors tell MSR as soon as the wheels are about to lock. MSR then 
+briefly reduces the engine's drag torque by opening the throttle slightly. 
+
+Dynamic Brake Control (DBC) 
+
+DBC supports the driver in emergency braking situations. It does this by automatically 
+increasing braking pressure if the brake pedal is not depressed with sufficient force. 
+
+Advantage: Shortest possible braking distances in emergency braking situations by 
+achieving ABS regulation on all four wheels. 
+
+The brake pedal is frequently not depressed strongly enough in emergency braking situa¬ 
+tions. The ABS feedback control range is not reached (or not on all 4 wheels). 
+
+
+14 
+
+E90 Dynamic Driving Systems 
+
+
+
+RPA: Tire Defect Indicator 
+
+RPA is not a driving dynamic function. 
+
+DSC uses the Run Flat Indicator (RPA) to monitorthe tire pressure throughout the jour¬ 
+ney. 
+
+The RPA records the wheel speeds using the wheel-speed sensors of the Dynamic 
+Stability Control (DSC). The RPA compares the speeds of the individual wheels with the 
+average speed. In this way the RPA is able to detect a loss of tire pressure. 
+
+The RPA detects a drop in pressure below about 30% ±10% of the initial value. The 
+RPA indicator and warning light indicates a drop in tire pressure. 
+
+The RPA will indicate this after just a short distance, as a rule after a few minutes, from a 
+certain minimum speed (e.g. 25 km/h) up to the permissible top speed. 
+
+Initialization is started manually. Then (after a journey has started), initialization runs auto¬ 
+matically. In other words, the circumference of individual tires are recorded and evaluated. 
+
+The initialization phase lasts approx. 5 to 15 minutes forthe individual speed ranges. 
+
+
+CBS: Condition Based Service 
+
+CBS is not a driving dynamic function. 
+
+Condition Based Service, as the name suggests, is a means of ensuring that the car is 
+serviced as and when necessary. CBS comprises various maintenance operations, e.g. 
+engine oil, spark plugs and brake pads. 
+
+The remaining distance forthe front and back brake pads are calculated separately in the 
+DSC control module. 
+
+When making the calculation, the condition of the brake pad wear sensors is taken into 
+account (reference point at 6 mm and 4 mm). 
+
+
+Important 
+
+
+a 
+
+
+Referto ST056 C hassis Dynamics for more detailed informa¬ 
+tion regarding the operation of the DSC System Functions. 
+
+
+15 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+Workshop Exercise - Dynamic Stability Control 
+
+
+Check procedure for initialization of steering angle sensor using diagnostic eguip- 
+ment (DISplus/GTl). 
+
+
+16 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. What new function are introduced with the M K60E5 system and what do they do? 
+
+
+2. On what othervehicle will M K60E5 be used? 
+
+
+3. What is the purpose of the 5 pressure sensors? 
+
+
+4. What is Yaw M oment Compensation? What option must the vehicle have 
+installed? 
+
+
+5. What is different with the DSC button?? 
+
+
+6. What is different with the wheel speed sensors used on the E90? 
+
+
+17 
+
+E90 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

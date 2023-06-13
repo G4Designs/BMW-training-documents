@@ -1,0 +1,1170 @@
+Table of Contents 
+
+MOST Bus Diagnosis 
+
+Subject Page 
+
+MOST Technology 3 
+
+MOST Multimedia Network 3 
+
+Data Transport 5 
+
+Optical Bus 6 
+
+Optical Transmitter. 6 
+
+Optical Receiver. 6 
+
+Control Unit Connections 7 
+
+Interfaces.8 
+
+Control Display. 9 
+
+ASK . 9 
+
+CDC .10 
+
+Navigation .10 
+
+Slave Control Units .10 
+
+Component Locations 10 
+
+Communication Direction 11 
+
+Diagnosis . 12 
+
+Testing . 15 
+
+Status Wakeup 18 
+
+Review Questions 19 
+
+
+Initial Print Date:03/02 
+
+
+Revision Date:08/02 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOST Bus Diagnosis 
+Model: E65 - E66 
+
+Production Date: Start of Production 
+
+
+Objectives: 
+
+After completing this module you should be able to: 
+
+Understand the reason for optical busses. 
+
+Know how optical busses transfer information. 
+
+Relate the direction and flow of information on the MOST Bus 
+Perform diagnosis and troubleshooting of MOST Bus. 
+
+
+2 
+
+MOST Bus Diagnosis 
+
+
+
+
+System Overview 
+MOST Technology 
+
+Until very recently, only very few entertainment-related control units were networked. In the 
+course of the development, the number of components increased continuously. 
+
+In addition, the scope of functions of individual components has been extended consider¬ 
+ably. In particular, however, completely new logical networking means that all the compo¬ 
+nents are growing to become a system: individual functions work together and produce a 
+high-guality overall system. This results in significant growth in system complexity. 
+
+This new dimension of system complexity can no longer be managed using the existing bus 
+systems. 
+
+
+
+MOST Multimedia Network 
+
+MOST technology meets 2 essential reguirements: 
+
+1. The MOST bus transports control data as well as data from audio, video, navigation and 
+otherservices (SMS =Short Message Service, TMC =Traffic Message Channel, in othermar- 
+kets). 
+
+2. M OST technology provides a logical framework model for control of the variety and com¬ 
+plexity of data: the MOST Application Framework. The MOST Application Framework 
+organizes the functions of the overall system. 
+
+MOST is able to control and dynamically manage functions that are distributed in the vehi¬ 
+cle. 
+
+
+3 
+
+MOST Bus Diagnosis 
+
+
+
+
+Principle of a Multimedia Network 
+
+An important feature of a multimedia network is that it transports not only control data and 
+sensor data, e.g. like the CAN bus and I bus (instrumentation bus). A multimedia network 
+can also carry digital audio and video signals and graphics as well as other data services. 
+
+Information transmitted on MOST network 
+
+
+
+Advantages of the Multimedia Network 
+
+All data can be transported across a shared network. This offers the following benefits: 
+
+Additional signal wiring harnesses are eliminated. 
+
+The only addition many control units need is the power supply. 
+
+As each participant (= each control unit) has access to all the 
+data, cost-intensive assemblies for signal distribution can be 
+eliminated. 
+
+Different data formats also have different requirements for transmission regarding both 
+mechanism (synchronous or asynchronous data) and the required band-width 
+(baud or bits/second). The M OST format is able to meet these requirements to a satisfac¬ 
+tory extent. 
+
+
+4 
+
+MOST Bus Diagnosis 
+
+
+
+Functional Description 
+Data Transport 
+
+MOST currently offers a band-width of 22.5 M bits/s . In the next generation, the band-width 
+will be increased to 50 and then later to 150 Mbits/s (as of approx. 2002). 
+
+In order to meet the different requirements of the applications regarding data transport, 
+each MOST message is divided into three parts: 
+
+Control data 
+
+
+Asynchronous data: e.g. navigation system, arrow 
+representation 
+
+Synchronous data: e.g. audio, video signals 
+
+
+Data Transport on the MOST 
+
+
+22.5MBit; i 
+
+
+A message over the MOST 
+
+
+
+44.1 MHz 
+
+
+
+Different data is "packaged" 
+and then sent as one mes¬ 
+sage to be "unwrapped" by 
+next device on the MOST 
+ring. 
+
+
+Control Data Asynchronous Synchronous data 
+
+700 kB/s Data 
+
+2700 Messages e.g Navigation (arrow Audio 
+
+display) Video 
+
+
+KT-9388 
+
+
+The control data controls the functions and devices in the network. The information can be 
+compared to CAN bus data. 
+
+
+The control data has a band-width of 700 Kbit/s. That corresponds to around 2700 mes¬ 
+sages per second. 
+
+For the data transmission of synchronous and/or asynchronous data, there is a total of 60 
+bytes. The limit is variable: e.g. 20 bytes of synchronous data and 40 bytes of asynchro¬ 
+nous data. 
+
+
+5 
+
+MOST Bus Diagnosis 
+
+
+
+Optical Bus 
+
+The MOST bus is a plastic optical waveguide. The MOST bus is coded in green in the E65 
+(Repair cables are black in color). The light wavelength is 650 nm (red light). The MOST 
+bus reguires the following converter components: 
+
+Optical transmitter 
+Optical receiver 
+
+Each control unit of the MOST framework contains a transmitter and a receiver. The trans¬ 
+mitter and receiver have been developed by BMW. The low closed circuit (rest) current 
+properties of the transmitter and receiver enable optical wake-up by the MOST bus. 
+
+
+Optical Transmitter 
+
+A driver is fitted in the transmitter. The 
+driver energizes an LED (light-emitting 
+diode). 
+
+The LED transmits light signals on the 
+MOST bus (650 nm light, i.e. red visible 
+light). The repeat freguency is 44.1 
+MHz. 
+
+
+Transmitter 
+
+
+
+3AIP 
+
+
+Driver 
+
+
+LED 
+
+
+n=> Light 
+
+
+43 - 07-31 
+
+
+The sensing freguency on a CD playerand foraudio is 44.1 M Hz; this means than no addi¬ 
+tional buffer is reguired, yet another reason why this bus system is so efficient for multi¬ 
+media. 
+
+
+Optical Receiver 
+
+The receiver receives the data from the 
+MOST bus. The receiver consists of: 
+
+An LED 
+
+A pre-amplifier 
+
+A wake-up circuit 
+
+
+Receiver 
+
+
+
+
+
+Wake Pre- 
+
+LED 
+
+-up Amp. 
+
+
+
+Light 
+
+
+43 - 07-30 
+
+
+An interface that converts the optical signal into an electrical signal 
+
+The receiver contains a diode that converts the optical signal into an electrical signal. This 
+signal is amplified and further processed at the MOST network interface. 
+
+
+6 
+
+MOST Bus Diagnosis 
+
+
+
+
+
+
+Control Unit/Control Unit Connection 
+
+The MOST ring is composed of optical point-to-point connections between 2 control units 
+Each control unit has a network interface. The network interface consists of: 
+
+
+Example 
+
+
+svs 
+
+
+Network interface 
+
+NetServices SW 
+
+
+Most 
+
+transceiver 
+
+
+Navigation 
+
+
+Network interface 
+
+NetServices SW 
+
+
+Most 
+
+transceiver 
+
+
+MOST Fiberoptic cable 
+
+
+KT-9397 
+
+An opto-electrical converter (optical waveguide receiver, already mentioned). 
+
+An opto-electrical converter (optical waveguide transmitter, already mentioned). 
+
+A MOST transceiver (interface between the optical waveguide receiver/transmitter and 
+the electronic network driver). 
+
+A network driver, the so-called NetServices. 
+
+
+The NetServices run on a microcontroller (main computer in the control unit) 
+
+On the application level, a control unit in the MOST framework contains stand-alone func¬ 
+tion units, so-called function blocks. Examples of function blocks include: 
+
+
+Tuners 
+Amplifiers 
+CD players 
+
+
+A control unit can contain several function blocks at one time, e.g. the AVT contains the 
+functions: 
+
+
+Antenna 
+
+Amplifier 
+
+Tuner 
+
+
+7 
+
+MOST Bus Diagnosis 
+
+
+
+Interfaces 
+
+
+The following contains a brief summary of the tasks of the connected control units in the 
+MOST framework: 
+
+Control Display 
+
+The Control Display is the system master of all MOST bus functions and serves as the 
+power master. It wakes up the bus and is responsible for switching it off (power down). 
+The DIS Plus and GT1 will show a Control Display and a Control Display (Gateway). 
+
+Audio System Controller (ASK) 
+
+The audio system controller has the following controller functions: 
+
+Network Master 
+
+The ASK performs the role of network master for the MOST bus. The functions of the net¬ 
+work master are the following: 
+
+Wake-up, initialization, power-down 
+
+The network master wakes up the bus and has the task of achieving an orderly 
+initialization of the network. The AS K can operate with KLR off. To turn it on, push in 
+the volume/ON/OFF knob. Adjustments and control is carried out by using the 
+Controller and Control Display. 
+
+Anothertask of the network master is to control the power-down process. Each power¬ 
+down is initiated and started by the ASK. 
+
+Configuration control 
+
+The network master detects the exact system configuration each time that the network 
+is started and compares it to the stored coded configuration. 
+
+Control of the network operation 
+
+The network master controls the MOST transceiver of the slave equipment for correct 
+operation. The equipment which is not operating properly will be released by a reset or 
+switched to low power mode so that they do not affect bus communication. 
+
+Fault code memory 
+
+The network master includes the fault code memory of the MOST network. It stores all 
+the faults occurring during the network operation as well as deviations from the 
+nominal configuration. 
+
+
+
+Audio Master 
+
+As audio master, the AS K has the task to collect and process all the audio signals of the 
+vehicle and to distribute them to their destinations. 
+
+The ASK controls all the acoustic requests from the Control Display. The changes in the 
+level of a signal is not sudden, but smooth, e.g. during suppression, insertion and fading 
+out or tempo ran/ suppression of the signal at the destination: Because of this, a high-qual¬ 
+ity acoustic sound is obtained. 
+
+The ASK also assumes the generation and preparation of different acoustic signals, e.g. 
+PDC signals and warnings. In the event of a request for a warning or caution signal from 
+a control unit, the ASK provides a clean acoustic change of the signals. 
+
+Audio data 
+
+All audio data from any control unit are converted by the AS K into digital audio AF 
+format at a sampling rate of 44.1 M Hz. 
+
+Categorization of audio sources 
+
+All possible audio sources are divided into different groups according to priority. Warning 
+signals have priority over any other audio source. M ixing of lower priority audio signals 
+(e.g. navigation, radio) is possible. 
+
+Generation of acoustic gongs 
+
+These are acoustic alarm signals which help the driver perceive sounds according to a 
+system. The different sounds, requested by the different control units, (e.g. gongs, PDC, 
+etc.), must be generated only in association with a visual indication. These come from 
+the instrument cluster and the Control Display. 
+
+The following sounds can be generated in the ASK. 
+
+Beeping forthe PDC. 
+
+Various Check Control and warning gongs. 
+
+
+Note: 
+
+A maximum of three sounds can be produced at once. Sounds are produced in order of 
+importance. Sounds requested exceeding three will be lost. 
+
+Connection Master 
+
+As connection master, the AS K must provide channels to the equipment connected to the 
+bus and distribute the audio signals on the outputs (loudspeakers). 
+
+The connection master also controls the basic Hi-Fi or the LOGIC 7 Hi-Fi amplifiers. 
+
+
+9 
+
+MOST Bus Diagnosis 
+
+
+
+CD Changer Audio (CDC) 
+
+The CD changer is a slave control unit in the MOST framework. 
+
+Navigation System (NAV 01) 
+
+The control unit of the navigation system has controller tasks and slave functions in the 
+MOST framework. 
+
+Slave Control Units 
+
+The following control units are slave control units: 
+
+Kombi (control unit of the instrument cluster) 
+
+AVT 
+
+L0GIC7 
+
+SVS Speech processing system 
+
+Telephone 
+
+MMC 
+
+Component Locations 
+
+Located in the dashboard assembly: 
+
+
+Control Display 
+CD Changer 
+AS K 
+Kombi 
+
+OPPS Connector 
+
+
+
+Located in the luggage compartment, rear left: 
+
+
+Logic 7 
+SVS 
+NAV 
+MMC 
+
+Telephone 
+
+
+Located in the C pillar left side: 
+
+AVT 
+
+
+
+10 
+
+MOST Bus Diagnosis 
+
+
+
+Communication Direction in MOST structure 
+
+
+ZGM 
+
+Genlrsi Gateway 
+
+
+K-C AN-System 
+
+
+ASK 
+
+Autfa SiSlem 
+
+Cc'ntri^lRT 
+
+
+OPPS Connector 
+
+
+KOMBI 
+
+
+in ;.-ii .Tieri CiuTie-f 
+
+
+
+H. 
+
+
+The signal transmission direction of the MOST in a vehicle 
+with full equipment takes place starting at the Control 
+Display and travels serially towards the CD changer, 
+Antenna tuner, Hi-fi amplifier, Speech Processing Module, 
+Navigation, Multi-media Changer, telephone, Audio 
+System Controller, Instrument Cluster and again back to 
+the Control Display. 
+
+
+CD 
+
+Coniro! Display 
+
+
+T 
+
+r 
+
+
+CDC 
+
+Audio CD d'WijjGr 
+
+
+
+Important!!! The component sequence of the MOST controllers in the ETM is incor¬ 
+rect when it comes to signal transmission direction. The correct sequence is indi¬ 
+cated above! 
+
+
+11 
+
+MOST Bus Diagnosis 
+
+
+
+
+Diagnosis 
+
+
+It is important to remember that on the MOST network, messages can only be transmitted 
+provided the bus ring is complete and fully functional. If there is a ring fault in the MOST 
+network, the diagnostic system only communicates with the instrument cluster and the 
+Control Display because both of these modules are directly connected to the K-CAN 
+System Bus. 
+
+The fiberoptic signals on the MOST network always travel in one direction and only in one 
+direction. Signals always originate at the Control Display and travel to the CD changer, AVT, 
+Logic 7 (if eguipped), SVS, NAV, MultiMediaChanger (if equipped), Telephone, ASK, Kombi 
+and back to the Control Display. 
+
+The MOST bus allows intersystem fault memory entries in the individual control modules. 
+A feature of the system faults is that faults may be entered in a control module although the 
+control module is OK. Conclusions may be drawn about the cause of the fault, using the 
+fault information stored in all the control modules. 
+
+The possible system faults are: 
+
+Optical wave guide communication fault (All MOST Control Module) FC 111 
+
+A Control M odule does not switch a light off (All M OST Control M odules) 
+
+Network wake-up unsuccessful (Control Display (Gateway), ASK, Telephone Only) 
+
+FC E18D 
+
+Ring fault diagnosis run (Control Display (Gateway) and Kombi Only) FC E190 
+
+The Control Display functions are split between acting as a Gateway and Displaying infor¬ 
+mation. The Gateway function serves as the interface between the MOST and the K-CAN 
+System buses. Although the Control Display is one control module, two control module 
+names are displayed in the DIS Plus: 
+
+CD Control Display (Gateway) 
+
+CD Control Display 
+
+The faults stored in the Control Display are distributed between the Control Display 
+Gateway and Control Display according to the function of the fault. 
+
+
+12 
+
+MOST Bus Diagnosis 
+
+
+
+Optical Wave Guide Communication Fault 
+
+This fault (FC 111) indicates a problem with optical transmission. Insufficient light is being 
+received by one of the modules in the ring. The loss of light may be caused by: 
+
+Defective optical wave guide, Harness twisted too tightly (Min. bend radius 50mm.) 
+
+Light output or reception sensitivity of a diode is too low 
+
+Connector not installed correctly 
+
+Voltage fluctuation while powering up a control module 
+
+If the fault is stored, the system triggers a reset and starts up again. The music is switched 
+off briefly and the display screen of the Control Display continues to operate. 
+
+To find the module responsible for the fault, the fault memory of the modules must be read 
+in M OST ring order. 
+
+Fault lies between the module with the fault code (B) and the preceding module (A). 
+
+If the voltage has dipped below 9v, the fault may be incorrectly stored. If the voltage is low 
+perform the following test after connecting a battery charger. 
+
+1. Clearthe fault memory in control module B. 
+
+2. Lower the light output in control module A. 
+
+3. Read out the fault memory in the M OST ring in order. 
+
+4. If control module B is again the first to store the fault, it can be assumed the fault lies 
+
+between control modules A and B. 
+
+Then, check control modules A and B for loose connections and check the optical wave 
+guide for kinks. If the visual inspection is OK, the fault can be located using the OPPS tester 
+or optionally performing the following tests. 
+
+Remove the input optical wave guide from control module B and confirm the presence 
+of light. 
+
+If light is present, install by-pass optical wave guide in place of control module A, clear 
+fault codes in module B and perform ring break test. If M OST network operates prop¬ 
+erly, then control module A is at fault and must be replaced. 
+
+If MOST network still has a fault, put module A back in the network and by-pass mod¬ 
+ule B. Clear faults and again perform ring break test. If MOST network operates now 
+problem is with control module B and it must be replaced. 
+
+If light is not present at input of module B, perform by-pass of module A as above. 
+
+
+Note: AMP Butt connector # 1355734-1 
+
+
+13 
+
+MOST Bus Diagnosis 
+
+
+
+The possible fault scenarios are: 
+
+Transmit diode in module A bad 
+
+Receive diode in module B bad 
+
+Optical wave guide fault between modules A and B 
+
+Software error or fault in module A or B 
+
+Control Module Does Not Switch Off Light 
+
+When the MOST network is requested to sleep, the Control Display switches off the light in 
+the M OST ring. The lack of light input is a signal to the individual control modules to switch 
+off their light output and enter sleep mode. 
+
+If a control module does not switch off its light, all down stream control modules register 
+the fault "A Control Module is not switching light off." 
+
+Important: 
+
+Failure of a control module to turn its light off, will cause the MOST network NOT to enter 
+sleep mode. If the MOST network fails to sleep, the rest of the car will not be able to enter 
+sleep mode. This will lead to battery discharge. 
+
+To diagnose: 
+
+Read out fault memory in M OST ring order 
+
+The fault lies in the control module that precedes the module where the fault is 
+first stored. 
+
+Always confirm the problem by first clearing the fault and performing the diagnosis a sec¬ 
+ond time. If the same results occur, replace the defective control module. 
+
+Network Wakeup Unsuccessful 
+
+This fault indicates a problem with the optical transmission. An insufficient volume of light is 
+coming through one position of the ring and may be caused by: 
+
+Control Module is receiving no voltage 
+Optical Wave Guide harness defective 
+
+Optical Element in a control module defective (transmit or receive) 
+
+Connector not installed correctly 
+
+A distinction must be made as to whether the fault is currently present or sporadic. 
+
+For faults currently present, run the Ring Break Diagnosis Test Plan. 
+
+For sporadic faults perform the Luminous Power Reduction Test Plan. 
+
+
+14 
+
+MOST Bus Diagnosis 
+
+
+
+Ring Break Diagnosis Carried Out (FC E190) 
+
+Reading out the fault memory of the Control Display (Gateway) after performing the Ring 
+Fault Diagnostic, results in a fault of Ring Fault Diagnosis Carried Out being stored. 
+
+This fault memory is not a true fault memory entry, but only an output of additional infor¬ 
+mation for relative node position. 
+
+Testing 
+
+Light Output Reduction 
+
+Reducing the light output of individual control modules is a convenient method of deter¬ 
+mining the area of a defect. 
+
+Switch on the radio. 
+
+
+In Control Module functions, begin to activate luminous power reduction in the individ¬ 
+ual control module. (In this test the light output of the selected control module is 
+reduced for 5 seconds and then automatically reset to normal output) 
+
+If the optical transmission for control module A to the next control module in the ring 
+(control module B) is OK, a slight noise may occur when the light output is reduced 
+however the radio will continue to play. 
+
+If the radio goes off and comes back on again(radio volume may be reduced) in 5 to 10 
+seconds, the optical transmission between control modules A and B is defective. 
+
+If the visual inspection is OK, the fault can be located using the OPP5 tester or optionally 
+performing the following tests. 
+
+
+Remove the input optical wave guide from control module B and confirm the presence 
+of light. 
+
+If light is present, install by-pass optical wave guide in place of control module A, clear 
+fault codes in module B. If M OST network operates properly, then control module A 
+is at fault and must be replaced. 
+
+If M OST network still has a fault, put module A back in the network and by-pass 
+module B. Clear faults. 
+
+
+If M OST network operates now problem is with 
+control module B and it must be replaced. 
+
+If light is not present at input of module B, 
+perform ring break diagnostics. 
+
+
+
+15 
+
+
+MOST Bus Diagnosis 
+
+
+
+
+
+Ring Break Test 
+
+
+If there is a break in the ring (a defect between two control modules) the following fault pat¬ 
+terns may occur: 
+
+Transmit diode of the transmitting control module defective 
+
+Power supply of the transmitting control module defective 
+
+Internal control module fault of the transmitting control module 
+
+Receiver diode of the receiving control module defective 
+
+Power supply of the receiving control module defective 
+
+Internal control module fault of the receiving control module 
+
+Optical wave guide between transmitting and receiving control module defective 
+
+These faults may occur alone or in combination. To diagnose a ring break, the first step is 
+to locate the two control modules between which the transmission failure has occurred. 
+
+This is accomplished with the ring break diagnostic function. Once the two control modules 
+have been identified and the diagnostics have been performed, remember to check the 
+power supply and ground circuit of both modules before condemning a module. 
+
+Testing of the transmit/receive diodes will be possible using the OP PS tester. 
+
+Perform Ring Break Test 
+
+The ring break test mode is entered automatically when the power to all the modules in the 
+MOST network is switched off and then switched back on. The most effective method of 
+switching the power off and on is to disconnect the battery negative terminal for 45 sec¬ 
+onds. This time will allow the capacitors of all the control modules to dissipate. 
+
+When the battery is reconnected the control modules wake up and in MOST network order 
+transmit a light signal to the next module. Each module checks to see if it has received a 
+light signal from the previous module. If the control module does NOT receive a light input 
+signal it still transmits a signal to the next module. A relative node number of 0 is stored in 
+the control module that did not receive a signal but that transmitted one. 
+
+The Control Display receives the light signal back and identifies which modules responded. 
+Go to "Control Unit Functions" Control Display Gateway and read fault memory 
+
+
+16 
+
+MOST Bus Diagnosis 
+
+
+
+The Control Display will display a relative node number. This number will indicate how many 
+modules communicated after the module which set the relative node number of 0. 
+
+To find the control module with the relative node number of 0, count from the input side of 
+the Control Display (counting the Control Display as 0) towards the control modules. When 
+arriving at the control module with the number as displayed as the relative node number in 
+the DISplus, the last known communicating module has been found. 
+
+Example: 
+
+While performing the ring break diagnostics the Control Display has set a relative node 
+number of 2. Count the Control Display a 0, the Kombi will be 1 and the AS K will be 2. 
+The ring break occurs between the ASK and the module which precedes it, the telephone 
+module. 
+
+Important 
+
+When counting control modules, the multimedia changer (if equipped) and the Nav system 
+must be counted as two control modules. 
+
+In order to perform the count correctly the equipment on the vehicle must first be identified. 
+When using the MOST network diagram in the DISplus, connector number 1 of the optical 
+waves are inputs and connector number 2 are outputs. 
+
+
+
+Workshop Hint 
+
+For repair of MOST optical wave guide use special tools: 
+
+61-4-320 Crimping Tool Kit 
+
+Refer to EPC 61_1578 for specific optical wave guide repair parts. 
+
+
+Workshop Hint 
+
+When preparing to initiate a Ring Break Test it is very important that 
+the removal and reinstallation of the battery cable be quick and with¬ 
+out hesitation. 
+
+Hesitation removing or replacing the battery cable may cause volt¬ 
+age spikes that will render the Ring Break Test void. 
+
+
+Module input 
+Terminal 1 
+
+
+
+CDC 
+
+Module output 
+
+Audio CD Changer 
+
+
+
+Terminal 2 
+
+
+
+Module input 
+
+
+
+
+Terminal 1 
+
+
+
+AVT 
+
+Antenna Amplify 
+
+Module output 
+
+Tuner 
+
+w 
+
+Terminal 2 
+
+
+17 
+
+MOST Bus Diagnosis 
+
+
+
+
+
+
+Status Wakeup 
+
+MOST control modules require high current during standby operation and must be discon¬ 
+nected or put in sleep mode to prevent the vehicle battery from being discharged. In case 
+of a fault on the the MOST network that continuously wakes up, the entire MOST bus will 
+be woken up. The Control Display will wake up the CAN Bus and all the vehicle busses will 
+be woken up. This will lead to battery discharge. 
+
+It is of great benefit to know which module initiated the wake up call. In order to find out 
+which MOST node woke up the MOST bus, the following procedure is performed: 
+
+In Control Unit Functions, press "STATUS WAKEUP" 
+
+Three different response are possible: 
+
+Control Module woke up 
+Control Module woken up 
+Control Module not initialized 
+
+The Control M odule with the status "Control M odule woke up" is the module that woke up 
+the rest of the M OST bus. 
+
+This diagnosis only informs which control module woke, not the reason for the wake up, 
+diagnostic testing should be performed on the control module and related equipment. 
+
+
+Hints for Vehicle Equipment Identification 
+
+CDC - Look on passenger side of dashboard above glovebox 
+
+
+Logic 7 - Look for speaker grills on rear doors 
+Look on left side of trunk for 
+large amp. 
+
+M M C - Look on left side of trunk. 
+
+
+Workshop Hint 
+
+Telephone modules may be swapped from vehicle to vehicle 
+for testing purposes, however if the original telephone mod¬ 
+ule is not returned to the original vehicle the Emergency func¬ 
+tions will notoperated properly. 
+
+In case of an accident, information regarding location and 
+VIN will not be correct therfore help will not be dispatched. 
+
+
+
+18 
+
+MOST Bus Diagnosis 
+
+
+
+OPPS Diagnostics 
+
+
+Customer Complaint: Navigation and Radio not functioning, CD appears to be locked 
+
+up. 
+
+Diagnosis: Perform Short Test Using Standard Diagnostic Head 
+
+Which MOST bus components are found 7 _ 
+
+How are these components found by the DisPlus?_ 
+
+What procedure will be used to diagnose the MOST Bus 7 _ 
+
+
+What happens when this diagnostic procedure is used 7 _ 
+
+If a Ring Break Test is performed, what node number is given 7 
+At this point what diagnostic path would be followed? 
+
+
+Diagnosis with OPPS 
+
+Connect the OPPS to the vehicle using the proper Diagnostic cable 
+
+PN _. (Don't forget, some diagnostic operations will occur in the 
+
+luggage compartment) 
+
+Attach the OPPS to the OPPS connector in the vehicle using fiber optic 
+cable PN_. 
+
+Perform Short Test 
+
+Which MOST Bus components are found 7 _ 
+
+Is this different than in the previous test 7 Why 7 _ 
+
+
+Follow the DisPlus Test Plan Procedures fortesting the light output of 
+suspect components. 
+
+What diagnostic path is followed now 7 Why 7 _ 
+
+
+19 
+
+MOST Bus Diagnosis 
+
+
+
+
+Review Questions 
+
+1. The MOST messages are divided into three parts. Name the three parts 
+
+
+2. What component in a control unit converts the electrical signals into optical signals 7 
+
+
+3. Name the functions of the Network M aster of the M OST network 
+
+
+4. What is the maximum number of sounds that may be produced simultaneously 7 
+
+
+5. Name the control units of a typical MOST bus in the direction of flow of the optical 
+signal. _ 
+
+
+6. When performing a Luminous Power Reduction, the radio goes off and comes back 
+on at a lower volume, what could be the problem 7 _ 
+
+
+7. Using the schematic on page 11 (a fully optioned vehicle), the Control Display shows 
+a relative node number of 8. Which control module is identified as the last known 
+communicating module 7 
+
+
+20 
+
+MOST Bus Diagnosis 
+
+
+

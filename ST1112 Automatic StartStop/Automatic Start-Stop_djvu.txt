@@ -1,0 +1,5115 @@
+Table of Contents 
+
+
+Automatic Start/Stop (MSA) 
+
+Subject Page 
+
+Introduction .5 
+
+System Overview.5 
+
+K-CAN signals at the DME.10 
+
+Preconditions.11 
+
+Principles of Operation.13 
+
+System Function .13 
+
+Stop inhibitors and start enablers .14 
+
+Engine conditioning.15 
+
+Alternator capacity utilization .15 
+
+Battery status .16 
+
+Climate control requirements.17 
+
+Heating mode.17 
+
+Air-conditioning mode.17 
+
+Inadequate brake servo vacuum .18 
+
+Power steering .18 
+
+Safety requirements.18 
+
+Preventing the engine being switched 
+
+off if the vehicle is moving.19 
+
+Preventing automatic engine starting 
+
+when a gear is engaged .19 
+
+System-related deactivation.19 
+
+Response to deactivation by a safety function.20 
+
+Response to deactivation by system faults 
+
+(emergency mode concept) .20 
+
+Deactivation due to external conditions.20 
+
+Signal path in electrical system.21 
+
+Deactivation by MSA button .22 
+
+Energy management.23 
+
+Availability when engine switched off by MSA.23 
+
+Availability while engine is started by MSA.23 
+
+
+Initial Print Date: 08/11 
+
+
+Revision Date: 09/11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Components.24 
+
+Brake Servo Vacuum Sensor.24 
+
+Manual Gearbox Neutral Position Sensor.25 
+
+MSA Button .27 
+
+Clutch Switch.27 
+
+Hood Contact Switch .28 
+
+Seatbelt-buckle Switch .28 
+
+Actuators.28 
+
+Starter .29 
+
+Alternator.30 
+
+Battery.30 
+
+Indicator Lamp.31 
+
+Indication concept .32 
+
+Electrical system stabilization.32 
+
+Terminal management.34 
+
+DC/DC control unit.35 
+
+Bypass mode .36 
+
+Boost mode.36 
+
+Terminal 50 .36 
+
+Automatic Start/Stop II (MSA II).37 
+
+System Overview.38 
+
+Automatic start/stop function - Manual transmission .38 
+
+Automatic start/stop function - Automatic transmission.38 
+
+MSA II Wiring Diagrams.39 
+
+DC/DC converter .41 
+
+Automatic Mode .44 
+
+Driving.45 
+
+Stopping.46 
+
+Driving off.47 
+
+Establishing start-up readiness .47 
+
+Automatic hold .48 
+
+Preventing automatic engine shutdown.48 
+
+Switch-off Inhibitors .49 
+
+Switch-on Prompts.50 
+
+Deactivation .51 
+
+Deactivation via automatic start/stop function button .52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Components.53 
+
+Storage Evaporator.53 
+
+Function of the conventional air-conditioning evaporator.53 
+
+Function of the storage evaporator.53 
+
+Hydraulic Pressure Accumulator .55 
+
+Installation location.56 
+
+Design.57 
+
+Charging.58 
+
+Locking.59 
+
+Discharging .60 
+
+Service Information.61 
+
+Protection Against Automatic Engine Start .61 
+
+Automatic start/stop function checklist of 
+
+possible customer complaints .61 
+
+Automatic Deactivation of Terminal 15 .64 
+
+Power Management and Battery Replacement.64 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Start/Stop 
+
+Model: E89 sDrive28i (N20 MT), F10 528i/535i, 
+
+FI 2 640i with the N20, N55 w/MT and AT 
+
+Production: 9/2010 and 9/2011 
+
+IBIEC1JVE! 
+
+After completion of this module you will be able to: 
+
+• Understand the operation of the MSA system used in BMW vehicles. 
+
+• Identify the components of the Automatic Start/Stop system. 
+
+• Understand the difference between MSA and MSA II and its updated features. 
+
+• Descibe the prerequisites to the operation of the system. 
+
+
+4 
+
+Automatic Start/Stop (MSA) 
+
+
+Introduction 
+
+
+The Automatic Start/Stop (MSA) system was first introduced on European E8x, E9x 
+vehicles in conjunction with manual transmission and four-cylinder engines. 
+
+It is one more BMW Efficient Dynamics measure aimed at meeting the voluntary com¬ 
+mitment of reducing C02 emissions while enhancing fuel economy. 
+
+The MSA system lowers fuel consumption and emissions by automatically switching the 
+engine off when the car is stationary. The engine is subseguently restarted automatically 
+as well, as soon as the appropriate conditions for restarting are satisfied. 
+
+Although the F04 ActiveHybrid 7 uses the MSA function it was never offered in the US 
+in a non hybrid model until its introduction on the E90 M3 (MT and DCT) in 9/2010. 
+
+With the introduction of the E89 Z4 sDrive28i (MT) and FI 0 528i in September 2011 to 
+the US market MSA has been offered as standard eguipment. This coincideds with the 
+US launch of the N20 4 cylinder engines in these models. 
+
+The FI 0 535i and FI 2 640i with the N55 engine are also available with MSA as stan¬ 
+dard eguipment at this time. 
+
+While MSA I is installed in BN2000 models Fxx vehicles use the second generation of 
+MSA (MSA II) which has been further developed to operate in combination with auto¬ 
+matic transmissions and the BN2020 electrical system. 
+
+Note: The following section describes the basic operation of MSA I on 
+
+BN2000 vehicles. This material serves as reference information for the 
+MSA II system on BN2020 vehicles as both systems share components 
+and functions. See the MSA II section for more information regarding 
+updated features and functions. 
+
+System Overview 
+
+The Automatic Start/Stop function is integrated in the engine management (DME). The 
+MSA function makes use of a variety of existing data from the bus system. Various sen¬ 
+sors are also reguired for proper functioning of the system. The input/output diagram in 
+the “System Overview Section” provides a general view of the most important input and 
+output signals. 
+
+
+5 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Input output diagram for automatic start/stop (MSA I) 
+
+
+
+6 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital engine management module (DME) 
+
+2 
+
+Car access system 
+
+3 
+
+Starter 
+
+4 
+
+Instrument cluster 
+
+5 
+
+Center console switch cluster with MSA button 
+
+6 
+
+Wheel speed sensor 
+
+7 
+
+Intelligent battery sensor (IBS) 
+
+8 
+
+Hood contact switch 
+
+9 
+
+Seatbelt-buckle switch 
+
+10 
+
+Clutch switch, 90% position 
+
+11 
+
+Clutch switch, 10% position 
+
+12 
+
+Brake servo vacuum sensor 
+
+13 
+
+Gearbox neutral position sensor 
+
+14 
+
+Automatic climate control (IHKA) 
+
+
+7 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System circuit diagram for automatic start/stop (BN2000) 
+
+
+
+4 
+
+
+rpi 
+0 
+
+
+V 
+
+
+
+DME/DDE 
+
+
+DC/DC 
+
+
+11 1 
+
+S) 
+
+<Ej 
+
+n 
+
+IHKA 
+
+
+0 ■■ 
+SZM 
+
+
+9 
+
+K-CAK 
+
+
+
+I & 
+
+IBS 
+
+
+8 
+
+
+8 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hood contact switch 
+
+2 
+
+Starter 
+
+3 
+
+Brake servo vacuum sensor 
+
+4 
+
+Gearbox neutral position sensor 
+
+5 
+
+Digital engine management module (DME) 
+
+6 
+
+DC/DC converter 
+
+7 
+
+Junction box (control unit with power distribution box) 
+
+8 
+
+Intelligent battery sensor (IBS) 
+
+9 
+
+Center console switch cluster with MSA button 
+
+10 
+
+Automatic climate control (IHKA) 
+
+11 
+
+Instrument cluster 
+
+12 
+
+Car access system 
+
+13 
+
+Gearbox neutral position sensor 
+
+
+9 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-CAN signals at the DME 
+
+
+In/Out 
+
+Signal 
+
+Source/Recipient 
+
+Function 
+
+In 
+
+Gearbox neutral position 
+
+Neutral position sensor => DME 
+
+Stop inhibitor and 
+start inhibitor 
+
+In 
+
+Brake servo vacuum 
+
+Brake servo vacuum sensor => DME 
+
+Stop inhibitor and 
+
+start enabler 
+
+In 
+
+Engine compartment 
+open/closed 
+
+Hood contact microswitch => CAS 
+
+MSA deactivation 
+
+In 
+
+Change of steering angle 
+
+Steering-angle sensor => EPS/AL 
+
+Stop inhibitor 
+
+In 
+
+Clutch pedal 
+position 10% 
+
+Clutch switch => DME 
+
+Start enabler when 
+
+in neutral, stop 
+inhibitor 
+
+In 
+
+Clutch pedal 
+
+90% position 
+
+Clutch switch => CAS 
+
+Start enabler when 
+
+in extended neutral 
+zone, stop inhibitor 
+
+In 
+
+Driver's seatbelt 
+
+fastened/unfastened 
+
+Seatbelt-buckle switch => ACSM 
+
+MSA deactivation 
+
+In 
+
+MSA on/off 
+
+MSA button (center console) => IHKA 
+
+MSA activation/ 
+
+deactivation 
+
+In 
+
+Battery status 
+
+IBS => DME 
+
+Stop inhibitor and 
+
+start enabler 
+
+In 
+
+Road speed 
+
+Wheel speed sensor => DSC 
+
+Stop inhibitor and 
+
+start enabler 
+
+In 
+
+Evaporator temperature 
+
+Evaporator temperature sensor 
+
+=> IHKA 
+
+Stop inhibitor and 
+
+start enabler 
+
+In 
+
+Degree of misting 
+
+Misting sensor => IHKA 
+
+Stop inhibitor and 
+
+start enabler 
+
+Out 
+
+Display 
+
+DME => Instrument cluster 
+
+Status indications 
+and CC messages 
+
+Out 
+
+Start signal 
+
+CAS => starter motor 
+
+Engine starting 
+
+
+10 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Preconditions 
+
+The MSA function can only be performed under certain conditions. 
+
+The engine is switched off if: 
+
+• the vehicle is stationary (speed below 3 kph/2 mph) 
+
+• the vehicle has been driven at over >5 kph/3 mph since the last time the engine 
+was stopped 
+
+• the vehicle has been driven at over >5 kph/3 mph since the last time terminal 15 
+was switched over 
+
+• the manual gearbox is in neutral 
+
+• the clutch pedal is not depressed 
+
+• the steering wheel is not being turned 
+
+• the engine speed is approximately idling speed 
+The engine is restarted in response to driver action if: 
+
+• the gearbox is in neutral (see section on neutral position sensor) and the clutch 
+pedal is depressed (10%) 
+
+• the gear lever is in the extended neutral zone (see section on neutral position sen¬ 
+sor) and the clutch pedal is depressed (90%) 
+
+The engine is restarted without action by the driver (only if switched off by MSA if: 
+
+• the vehicle starts rolling (5 kph/3 mph forwards or backwards) 
+
+• the brake system pressure falls below a defined threshold 
+
+• the battery charge level falls below a defined threshold 
+
+• the misting sensor detects misting on the windshield (IHKA) 
+
+• the evaporator temperature exceeds a certain threshold while the air-conditioning 
+compressor is switched on 
+
+The basic condition for restarting the engine is that the manual gearbox is in neutral. 
+
+A precise description of all the conditions and exceptions that determine whether or not 
+the MSA can operate is provided in the section "Stop inhibitors and start enablers". 
+
+External conditions such as the outside temperature (MSA only operates at temperatures 
+< +3 °C/37.4 °F) can result in the MSA function being unavailable for extended periods. 
+The MSA function is always activated when the engine is not running, terminal 15 is 
+switched on and a so-called "driving cycle" is initiated. The MSA can be switched off by 
+means of the MSA button. The MSA is automatically switched on again the next time a 
+driving cycle is initiated. 
+
+
+11 
+
+Automatic Start/Stop (MSA) 
+
+
+
+When the system is active, the console switch’s LED is not illuminated. The following 
+table is an overview of the operational situations when the system is active: 
+
+
+Transmission 
+
+type 
+
+Engine automatically 
+switches off when all of the 
+following requirements are 
+met: 
+
+Engine automatically 
+restarts when any of 
+the following items are 
+detected: 
+
+Engine does not automati¬ 
+cally switch off when any of 
+the following items are 
+detected: 
+
+Manual 
+
+transmission 
+
+• After vehicle has been dri¬ 
+ven over at least 3 mph, but 
+is now fully stopped 
+
+• Transmission is in neutral 
+and the clutch pedal is not 
+depressed 
+
+• Driver’s safety belt is fas¬ 
+tened 
+
+• Driver’s door is closed 
+
+Note: If the air condition¬ 
+ing system (A/C) is on, the 
+airflow volume will be 
+reduced. 
+
+• Transmission is in neu¬ 
+tral and clutch is 
+depressed 
+
+• Steering wheel move¬ 
+ment 
+
+• Steering wheel is being 
+moved, or is at maximum lock 
+
+• Outside temperature is 
+below 37.4 °F 
+
+• Engine has not yet reached 
+operating temperature 
+
+• Vehicle battery is significantly 
+discharged 
+
+• Hood is unlocked 
+
+• After driving in reverse 
+
+• Condensation is detected on 
+windows while A/C is on 
+
+M DCT 
+
+• After vehicle has been dri¬ 
+ven over at least 5 mph, but 
+is now fully stopped 
+
+• Vehicle comes to a full stop 
+using the service brakes 
+
+• Transmission is either in 
+drive or sequential mode 
+
+• Driver’s safety belt is fas¬ 
+tened 
+
+• Driver’s door is closed 
+
+Note: If the air condition¬ 
+ing system (A/C) is on, the 
+airflow volume will be 
+reduced. 
+
+• Brake pedal is released 
+
+• Accelerator pedal is 
+pressed at same time 
+the brake pedal is 
+pressed 
+
+• Steering wheel move¬ 
+ment is detected 
+
+• Selector lever moved 
+from D or S to N or R 
+
+Same as above, as well as: 
+
+• Excessively steep uphill or 
+downhill gradient 
+
+• Stop-and-go traffic 
+
+• Brake pedal is released shortly 
+after coming to a full stop 
+
+
+Note: On the M3 with the M DCT the clutch sensor is not monitored by MSA to 
+start and shut down the engine. Instead the DME looks at brake pressure 
+for this purpose. 
+
+Note: For information regarding the MSA System on Automatic vehicles refer 
+to the MSA II section of this training material. 
+
+
+12 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principles of Operation 
+
+
+System Function 
+
+Provided all the preconditions are satisfied, the MSA functions as follows: 
+
+
+
+Vehicle is moving... Gear is engaged... Engine is running... 
+
+Accelerator is depressed... Instrument cluster shows 
+
+time and temperature. 
+
+
+
+Driver brakes until vehicle 
+comes to a stop... 
+
+
+Driver puts the gearbox in 
+neutral... 
+
+and releases the clutch 
+pedal... 
+
+
+Engine stops... 
+
+The instrument cluster 
+shows the "Start/Stop" 
+symbol. 
+
+
+13 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver wants to drive off 
+again... 
+
+
+Driver depresses the clutch The appropriate gear can 
+pedal... be engaged and the car can 
+
+
+Engine starts. 
+
+
+drive off.. 
+
+
+The "Start/Stop" symbol 
+disappears and time and 
+temperature reappear. 
+
+
+Stop inhibitors and start enablers 
+
+The MSA function has to be suppressed under certain conditions. The engine then con¬ 
+tinues running even though the gear lever is in the neutral position and the clutch pedal 
+has been fully released. Example: stop inhibitor 
+
+
+
+Driver brakes until the vehi¬ 
+cle comes to a stop... 
+
+
+Driver puts the gearbox in 
+neutral... 
+
+and releases the clutch 
+pedal... 
+
+
+Engine continues running... 
+
+A stop inhibitor is present 
+and the instrument cluster 
+displays the appropriate 
+symbol. 
+
+
+14 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conversely, there are also situations in which the engine must be started even though the 
+driver takes no active steps (e.g. pressing the Start/Stop button or depressing the clutch). 
+
+Note: We must point out that start enablers are conditions that require the 
+engine to start automatically, without action by driver. And start 
+inhibitors are conditions that do not allow the engine to stop. 
+
+The following are possible stop inhibitors and start enablers: 
+
+• Engine conditioning (stop inhibitor only) 
+
+• Battery status 
+
+• Electrical system power demand 
+
+• Climate control requirements 
+
+• Inadequate brake servo vacuum 
+
+• Inadequate power steering assistance (stop inhibitor only) 
+
+• Various safety requirements (reverse gear engaged, 
+steering wheel movement and deceleration) 
+
+• Vehicle starting to roll 
+
+
+Engine conditioning 
+
+In addition to its primary function of providing the motive power for the vehicle, the engine 
+also has to perform a number of ancillary functions. These functions are necessary for 
+operational reliability, comfort/convenience and exhaust emissions compliance. 
+
+The following conditions prevent the engine from being switched off: 
+
+• Engine-coolant temperature below a certain level 
+(dependent on engine model, approx. 20 - 50 °C/68 - 122 °F) 
+
+• Activated charcoal filter must have been purged 
+
+• Engine not running at idling speed i.e. > 900 rpm. 
+
+
+Alternator capacity utilization 
+
+Reduced alternator output capacity or a high level of power demand from the electrical 
+system (I > 60 A) as an average immediately before the point at which the engine would 
+be switched off and which can but must not be reduced or switched off by the APM 
+results in a stop inhibitor. 
+
+
+15 
+
+Automatic Start/Stop (MSA) 
+
+
+
+Battery status 
+
+The battery status is a fundamental factor affecting the existence of stop-inhibiting and 
+start-enabling conditions. Computation of the battery status is performed by the 
+Advanced Power Management (APM). That function is integrated in the engine manage¬ 
+ment (see Energy management) and has been extended specifically for the MSA. 
+
+The aim is to ensure reliable engine starting from an electrical system viewpoint after the 
+engine has not been running for a defined period. Before the engine is switched off, a 
+reliable prediction of the minimum absolute remaining usable capacity and the minimum 
+voltage level when subsequently restarting the engine from warm is made. 
+
+The APM calculates the status of the electrical system on the basis of the following data: 
+
+• Battery status 
+
+- Charge level too low 
+
+- Charge level implausible 
+
+- Battery temperature too high 
+
+- Starting voltage dip too low on previous MSA start 
+
+• Power demand from electrical equipment in use 
+
+The result can be either prevention or requirement of MSA function. 
+
+The following information may be signalled: 
+
+• Stop-inhibiting condition 
+
+• Start-enabling condition 
+
+The MSA responds to battery charge level in the following manner: 
+
+
++ 
+
+
+1 2 3 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+In the green zone, 
+the MSA can function fully 
+
+2 
+
+In the yellow zone, the engine 
+is not switched off 
+
+3 
+
+In the red zone, the engine is started 
+
+
+Note: If the battery charge level drops into the red zone after the MSA has 
+switched the engine off, the MSA restarts the engine. 
+
+
+16 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+Climate control requirements 
+Heating mode 
+
+If the engine coolant temperature is significantly below the required temperature for 
+heater fan operation, this is treated as a stop inhibitor. In heating mode (while the engine 
+is not running) the electric auxiliary water pump or main electric water pump is activated. 
+The demand is signalled by the climate control panel via the bus system. 
+
+Air-conditioning mode 
+
+In certain situations it is necessary to ensure that the air conditioning compressor 
+continues to provide cooling capacity so as to dehumidify and lower the temperature in 
+the vehicle’s interior. 
+
+Depending on equipment the following stop inhibitors may apply: 
+
+• Automatic air conditioning: MAX AC button pressed 
+
+• Air conditioning: high fan setting and low fan output temperature and compressor 
+button pressed. 
+
+The MSA system has to be inhibited if there is a demand for windshield defrosting. 
+Depending on equipment this is detected by: 
+
+• Automatic air conditioning: 
+
+Defrost button pressed and compressor activated 
+
+• Air conditioning: 
+
+High fan setting and airflow directed onto windshield and compressor activated 
+
+If the misting sensor signal indicates that the windshield is misting, MSA is inhibited if the 
+air conditioning is switched on (stop-inhibiting condition). If this occurs when the engine 
+is switched off, a start command is issued. 
+
+If the evaporator temperature rises above a defined threshold when the engine has been 
+switched off by the MSA and the air conditioning is on, this constitutes a start enabling 
+condition which will prompt the engine to start automatically. 
+
+If the evaporator temperature is above a defined threshold when the air conditioning is on, 
+this constitutes a stop-inhibiting or start enabling condition. 
+
+If the engine has been switched off by the MSA, a less comfortable interior climate may 
+result (dampness/odor). 
+
+Note: For further information regarding climate control refer to the MSA II 
+System Components section of this training material. 
+
+
+17 
+
+Automatic Start/Stop (MSA) 
+
+
+
+Inadequate brake servo vacuum 
+
+In order to ensure there is always sufficient braking power (even when the engine is 
+switched off) the vacuum in the brake servo has to be continuously monitored. 
+
+If reguired, the engine is automatically restarted, i.e. if the vacuum drops below 500 hPa 
+(0.5 Bar) while the engine has been stopped by MSA. 
+
+Power steering 
+
+Regardless of the power steering used (EPS or hydraulic) the engine can not be switched 
+off as long as the steering wheel is being turned. In such situations, there must always be 
+power steering assistance available. The MSA system detects steering wheel movement 
+based on the signals from the steering column switch cluster (via the bus system) to 
+determine if the engine can be switched off. 
+
+Safety requirements 
+
+If the hood is opened, the MSA is deactivated in order to prevent the engine being start¬ 
+ed automatically when work is being carried out in the engine compartment. The engine 
+compartment lid contact switch is monitored for this purpose. It is always possible to start 
+the engine with the Start/Stop button. 
+
+Reactivation of the MSA is possible once the hood has been closed and either the 
+engine has been started or the vehicle speed has reached 5 kph/3 mph. 
+
+If the driver gets out of the vehicle, the MSA is deactivated in order to prevent the engine 
+being started automatically. 
+
+The driver's seatbelt buckle is monitored for that purpose. 
+
+• If the driver's seatbelt buckle is unfastened, the MSA is deactivated. The engine can 
+not be switched off by the MSA until the seatbelt buckle is fastened again and the 
+vehicle has reached a speed of > 5 kph/3 mph once (stop inhibitor only). 
+
+
+The engine may be started despite the seatbelt being 
+unfastened and the hood being open if the vehicle speed 
+exceeds 5 kph/3 mph. 
+
+
+
+• If an automatic start demand is issued, a CC message is generated. 
+
+• Reactivation of the MSA is possible once the driver's seatbelt has been fastened 
+and either the engine has been started or the vehicle speed has reached 
+
+5 kph/3 mph. 
+
+The signal indicating the status of the seatbelt-buckle switch is provided by the safety 
+system via the bus system. 
+
+
+18 
+
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Preventing the engine being switched off if the vehicle is moving 
+
+On no account must the engine be switched off if the vehicle is moving. The engine can 
+not be switched off until the vehicle speed is below 3 kph/2 mph. 
+
+Preventing automatic engine starting when a gear is engaged 
+
+If a gear is engaged on a vehicle with manual transmission, automatic engine starting 
+must be prevented. 
+
+Detection of when the drive is disengaged is performed by means of the gearbox neutral 
+position sensor. 
+
+System-related deactivation 
+
+The MSA can also be deactivated for system related reasons. A CC message is dis¬ 
+played to the driver on the instrument cluster if a start request is received. 
+
+The following deactivators can be responsible for system-related deactivation: 
+
+• Seatbelt-buckle signal 
+
+• Hood contact switch 
+
+• Engine emergency mode 
+
+• Implausible sensor or bus signals 
+
+• Vehicle being towed 
+
+• Key not detected (Comfort Access) 
+
+
+
+Driver brakes until vehicle 
+comes to a stop... 
+
+
+Driver puts the gearbox in 
+neutral... 
+
+and releases the clutch 
+pedal... 
+
+Engine stops... 
+
+
+Driver unfastens seatbelt... 
+
+The MSA function is deacti¬ 
+vated, the engine remains 
+off... 
+
+The engine only restarts if 
+the driver presses the 
+Start/Stop button. 
+
+
+19 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Response to deactivation by a safety function 
+
+If the MSA is deactivated by a safety function after the engine has been switched off by 
+the MSA, the engine can only be restarted by the Start/Stop button and if the road speed 
+exceeds 5 kph/3 mph. 
+
+Response to deactivation by system faults (emergency mode concept) 
+
+If a fault in the MSA system complex (signal inputs, actuator systems, bus signals ...) 
+is detected, a stop inhibitor is set or the MSA deactivated. 
+
+Thus, detection of a fault while the engine is running prevents the MSA subsequently 
+switching the engine off at any time. If the engine detects a fault after it has been 
+switched off by the MSA, the following scenarios are distinguished: 
+
+1. If a safety-related fault is detected (fault on neutral-position sensor, brake servo vac¬ 
+uum sensor, clutch sensor, enable signal line, hood switch or driver's seatbelt-buckle 
+switch), the MSA is immediately deactivated and automatic restarting of the engine 
+is no longer possible. 
+
+2. If other types of fault are detected (DME emergency mode, etc.) which are not safe¬ 
+ty-critical, the MSA is allowed to start the engine once more. Subsequently, however, 
+the MSA is no longer permitted to switch the engine off. 
+
+3. If faults in bus communication with the DME engine management module are 
+encountered, the MSA is deactivated. 
+
+
+
+If the MSA is deactivated due to a system fault, the 
+instrument cluster displays a CC message (ID397). 
+
+Instruction as to further action required (take car to 
+dealer) ID397. 
+
+
+Deactivation due to external conditions 
+
+
+
+If the seatbelt is unfastened or the hood opened after 
+the engine has been switched off by the MSA, the 
+MSA is deactivated and the engine can only be 
+restarted by the Start/Stop button or if the road speed 
+exceeds 5 kph/3 mph. If the driver attempts to start 
+the car by depressing the clutch, CC message ID450 
+is displayed after 1 -2 seconds. 
+
+
+20 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+Signal path in electrical system 
+
+The Car Access System (CAS) is only a subordinate control unit in this situation and 
+does not perform any calculations of its own regarding automatic engine starting. 
+
+The information for engine starting clearance is transmitted via the bus system in 
+the first instance: 
+
+• DME 
+
+• PT-CAN 
+
+• Junction-box 
+
+• K-CAN 
+
+• CAS 
+
+
+
+K-CAN 
+
+
+
+DME/DDE 
+
+
+MSA 
+
+
+
+In addition, clearance for starting is also signalled via a separate line. The CAS compares 
+the two signals. If the time lag between the two signals exceeds a certain limit, the MSA 
+is not allowed to start the engine. A fault memory entry is registered. 
+
+
+21 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+Deactivation by MSA button 
+
+The MSA function can be manually deactivated by means of the MSA button, in which 
+case the LED in the button lights up. 
+
+Every time the engine is restarted, the MSA function is reactivated. 
+
+
+Button not pressed 
+-> LED off 
+
+
+Button pressed; driver 
+wants MSA deactivated 
+
+-> LED on 
+
+
+
+
+Driver brakes until vehicle Driver puts the gearbox in Engine continues 
+
+„ neutral... running, 
+
+comes to a stop... a 
+
+and releases the clutch 
+
+pedal... 
+
+
+22 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Energy management 
+
+Availability when engine switched off by MSA 
+
+When the engine has been switched off by the MSA, excessive power consumption must 
+be avoided. Therefore, all large consumers of electricity are switched off, or their con¬ 
+sumption reduced. The displays remain active. 
+
+The following are switched off: 
+
+• Rear window heater 
+
+• Mirror heaters 
+
+• Seat heaters 
+
+The following are adjusted to the situation: 
+
+• Heater fan 
+
+The automatic climate control (IHKA) is responsible for adjusting the heater fan. 
+
+Availability while engine is started by MSA 
+
+There are restrictions to the following functions while the engine is being started by the 
+MSA: 
+
+• Power windows 
+
+• Windshield wipers 
+
+• Sliding sunroof 
+
+• Interior and exterior lights 
+
+After the engine has been started, automatic sequences are continued. 
+
+If the power windows or sunroof are in the middle of an automatic sequence when the 
+engine is started, the sequence is interrupted. 
+
+Once the engine has been started, the automatic sequence is continued. The windshield 
+wipers are also briefly halted while the engine is started. 
+
+Multimedia, CD or radio playback is not restricted in anyway. 
+
+
+23 
+
+Automatic Start/Stop (MSA) 
+
+
+
+System Components 
+
+
+As already mentioned in the system overview, the MSA function involves a complex sys¬ 
+tem of interactions across the entire bus system. However, the information required is 
+provided by existing signals from other systems. 
+
+The following components are necessary for the MSA: 
+
+• System's own sensors 
+
+- Brake servo vacuum sensor 
+
+- Manual gearbox neutral position sensor 
+
+- MSA button 
+
+• External sensors, e.g. 
+
+- Clutch switch 
+
+- Hood contact switch 
+
+- Seatbelt-buckle switch (driver) 
+
+
+Brake Servo Vacuum Sensor 
+
+
+Vacuum sensor 
+
+
+In order to ensure that there is sufficient vacu¬ 
+um for brake servo assistance at all times, the 
+brake servo is fitted with a vacuum sensor. 
+
+The brake servo vacuum sensor is located next 
+to the brake servo and is connected via a sep¬ 
+arate lead. 
+
+
+Voltage proportional to vacuum 
+
+
+
+urn 
+
+
+
+The brake servo vacuum sensor supplies volt¬ 
+age signals proportional to the vacuum pre¬ 
+sent (see graph). 
+
+
+Note: If there is insufficient vacuum, the 
+MSA starts the engine even with¬ 
+out action by the driver. 
+
+
+24 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+Manual Gearbox Neutral Position Sensor 
+
+The neutral position sensor is mounted on 
+top of the gearbox housing and its purpose 
+is to detect when the gear lever is in the 
+neutral position. The neutral position sensor 
+is a PLCD (permanent-magnet linear con¬ 
+tactless displacement) sensor. 
+
+
+Method of operation of neutral position sensor 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Digital engine management 
+module (DME) 
+
+3 
+
+Magnet 
+
+2 
+
+PLCD sensor 
+
+4 
+
+Gear-shift linkage rod 
+
+
+Moving the gear lever moves the gear-shift linkage rod and, therefore, the magnet. 
+
+The DME is able to detect the position of the gear lever by means of the PLCD sensor. 
+
+
+The following distinctions have to be made for the purposes of the MSA function: 
+
+• Gear engaged - MSA function disabled 
+
+• Gear lever in neutral position - MSA starts engine if clutch is depressed by 10% 
+
+• Gear lever moved slightly out of neutral position - engine is started if clutch 
+depressed by 90% 
+
+
+Manual gearbox neutral position sensor 
+
+
+
+25 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+PLCD sensor learning zone 
+
+3 
+
+Engine started if clutch depressed by 90% 
+
+2 
+
+Engine started if clutch depressed by 10% 
+
+
+
+
+The learning sequence (orange) is necessary to compensate for tolerances in the 
+mechanical and electrical systems. 
+
+The DME then calculates the maximum ranges relative to the learned gear-lever neutral 
+position within which the engine can be started if the clutch is depressed. 
+
+When the clutch is fully depressed, the engine can still be started when the gear lever is 
+deflected by up to 1.89 mm (10% PWM). 
+
+The PLCD sensor is provided with a 5 V power supply. The output voltage is a PWM 
+signal whose pulse duty factor changes according to the position of the gear lever 
+(10-90%). 
+
+The neutral position sensor has to complete a learning phase. If the DME is replaced, the 
+learned data can be copied by reading the learned position using the diagnosis system 
+(provided the old DME can be read) before the unit is replaced and then writing it to the 
+new unit. 
+
+The learning sequence is described in the BMW diagnosis system. 
+
+
+26 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSA Button 
+
+
+In all models, except the E90 M3, the MSA button is used to deactivate the MSA system. 
+If the terminal 15 signal changes to on when the engine is not running or if the MSA but¬ 
+ton is pressed again, the MSA is reactivated. 
+
+
+mm ~ mm mm 
+
+
+
+
+- j 
+
+_ * 
+
+
+
+
+MSA 
+
+1 
+
+
+The signal from the MSA button is received by the IHKA and passed on to the engine 
+management. The indicator lamp is controlled by the IHKA. 
+
+Note: In the E90 M3 the MSA system is OFF by default and is activated by 
+pressing the button in the center console. 
+
+Clutch Switch 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+10% clutch pedal depression detected 
+
+2 
+
+90% clutch pedal depression detected 
+
+
+The existing clutch switch signal is used as an input variable for the MSA. 
+
+Two statuses are registered: 
+
+• 10% clutch pedal depression 
+
+• 90% clutch pedal depression 
+
+Note: In the M3 the clutch sensor signal is not monitored in the M DCT trans¬ 
+mission for the MSA function. Instead the DME monitors brake pressure 
+to determine when to start the engine as the driver wishes to drive off. 
+
+
+27 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+Hood Contact Switch 
+
+The hood contact switch signal is taken into 
+account as a determining factor in the MSA calcu¬ 
+lations. If the hood is open, the engine must not be 
+started or stopped by the MSA for safety reasons. 
+
+
+Note: If the hood switch is defective 
+(continuously signals "open"), 
+all MSA functions are suppressed. 
+
+
+
+CAUTION!!! 
+
+
+If the top of the hood switch is covered over (workshop 
+mode), it signals "Switch closed". The MSA function is 
+active. Caution: the engine may start automatically. 
+
+
+Seatbelt-buckle Switch 
+
+The seatbelt-buckle switch enables the MSA to 
+detect if the driver's seatbelt is fastened. If the dri¬ 
+ver's seatbelt is not fastened, the MSA responds in 
+different ways depending on the vehicle status. 
+
+• If the engine is running, a stop inhibitor is set 
+
+• If the engine has been switched off by the 
+MSA, the MSA is deactivated. The engine can 
+only be restarted by means of the Start/Stop 
+button. 
+
+
+
+Actuators 
+
+The MSA indirectly operates the starter motor and indicator lamps/CC or display mes¬ 
+sages on the instrument cluster. 
+
+
+28 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Starter 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Forked lever: reinforced 
+
+6 
+
+Planetary gears: more direct transmission 
+
+2 
+
+Relay armature: lubricant coated 
+
+7 
+
+Planetary gears: needle roller bearings 
+
+3 
+
+Relay springs: greater number of cycles 
+
+8 
+
+Planetary gears: sintered internal 
+gear with damper 
+
+4 
+
+Starter motor (+electrical system): 
+updated, higher power 
+
+9 
+
+Pinion: number of teeth increased 
+
+5 
+
+Magnets: higher flux/demagnetization 
+resistance (high torque) 
+
+10 
+
+Drive shaft bearing: needle roller bearing 
+
+
+With the MSA, the starter motor has significantly more work to do. Therefore, it has been 
+designed for substantially more (approx. 8 times as many) starting cycles. 
+
+The components of the starter motor have been adapted to the higher demands 
+(see legend). 
+
+
+29 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alternator 
+
+
+Due to battery discharge while the engine has 
+been switched off by the MSA, a more powerful 
+alternator is fitted. 
+
+
+
+Battery 
+
+The MSA always comes together with intelligent alternator control (IGR). Due to the sub¬ 
+stantially more freguent charging and discharging cycles, the load on the battery is very 
+high. AGM batteries provide the possibility of achieving a similar service life despite the 
+high loadings because they have a higher recharging capacity. 
+
+AGM batteries with a minimum capacity of 90 Ah are fitted, depending on the vehicle and 
+eguipment levels. 
+
+
+
+30 
+
+Automatic Start/Stop (MSA) 
+
+
+As of the introduction of the F10, the intelligent battery sensor IBS is used to improve the 
+battery condition detection. In BN2020 vehicles the following criteria are used to estab¬ 
+lish whether or not the battery is defective and needs to be replaced: 
+
+• Identification of faulty battery cells in the vehicle battery 
+
+• Establishing the remaining capacity of the vehicle battery 
+
+• Battery water loss detected 
+
+• Long immobilization period with low state of charge 
+
+• Charge capacity 
+
+• Charge balance when the vehicle is at a standstill 
+
+• Charge balance when the vehicle is moving 
+
+• Lowest permitted discharging 
+
+• Discharge via the automatic start/stop function (MSA). 
+
+These criteria are recorded using the measured values obtained from the intelligent bat¬ 
+tery sensor and other measured variables of the voltage supply. Only specific criteria may 
+be used to determine the battery condition, depending on the powertrain and eguipment 
+used in the vehicle. 
+
+The battery condition detection determines whether the battery needs to be replaced 
+based on the severity and number of defects detected. Furthermore, the vehicle user is 
+notified via the "Check power supply" check control message that a problem may exist. 
+The fault entry can only be deleted once the vehicle battery change service function has 
+been carried out. 
+
+The condition of the battery can be read out in Service via the "battery condition" or 
+"energy diagnosis" procedures ("General information “battery" menu) in order to deter¬ 
+mine whether it needs to be replaced. 
+
+
+Indicator Lamp 
+
+
+There are a number of new indications that provide feedback from the MSA for the driver. 
+
+
+The possible MSA indications are detailed in the next chapter. 
+
+
+
+31 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Indication concept 
+
+The following indications are used in conjunction with the MSA: 
+
+If the engine can be started by the MSA, that status is continuously 
+indicated on the instrument cluster. If the driver wants to see the time 
+and temperature, the indication can be suppressed by pressing the 
+computer roller. 
+
+
+
+if there is a fault on the MSA hardware that causes the MSA to be 
+deactivated, a CC message is displayed. 
+
+Text of CC message: "Automatic start/stop has failed." 
+
+
+
+If the MSA is deactivated to ensure functional safety ("Seatbelt buckle 
+unfastened"), another CC message is displayed as soon as a start 
+compeller is present: 
+
+Text: "Automatic start/stop deactivated." 
+
+
+
+Electrical system stabilization 
+
+As a result of the substantially more frequent starting cycles, there are correspondingly 
+more voltage dips in the electrical system due to the electrical load. 
+
+In order to stabilize the supply voltage for particularly voltage-sensitive electrical compo¬ 
+nents and thereby protect them, a DC/DC converter is used in conjunction with the MSA. 
+
+The DC/DC converter supplies the terminal 30g_DC/DC and terminal 30g_f_DC/DC 
+relays with a constant voltage even during a starting cycle. 
+
+The DC/DC converter requires the following control signals: 
+
+• Terminal 50 
+
+• Terminal 15 
+
+• Terminal 30g 
+
+• Terminal 30g_f ON 
+
+• Terminal 30g_f OFF 
+
+
+32 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+The terminal 50 signal is provided by the CAS, the terminal 15 and terminal 30g signals 
+by the junction-box control unit. 
+
+The DC/DC converter has a diagnosis output (PWM signal) that provides the following 
+coded information: 
+
+• Converter OK 
+
+• Converter defective 
+
+• Converter overheated 
+
+The diagnosis lead is read and analyzed by the JB. 
+
+The DC/DC control unit is located in the electronics box in the engine compartment. 
+
+The DC/DC control unit contains the electronic circuitry for converting the voltage and the 
+terminal 30g_f_DC/DC and terminal 30g_DC/DC relays. 
+
+
+
+In addition to terminals 30g_DC/DC and 30g_f_DC/DC, the terminals 30g and 30g_f, and 
+therefore the terminal relays, are retained. 
+
+
+33 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminal management 
+
+Voltage-sensitive electrical components are supplied with a matched voltage when nec¬ 
+essary. That supply is only provided under certain conditions (starting cycle and voltage 
+below 10.5 V). Otherwise, the connected control units are supplied with the normal elec¬ 
+trical system power supply diverted through the DC/DC converter. 
+
+
+KJ.50 Oagnose Kl 30g 
+
+
+
+KJ.15 
+
+
+KJ. I KL30gJ 
+
+ON OFF 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electrical system power supply under various 
+loads before DC/DC converter 
+
+4 
+
+DC/DC control unit 
+
+2 
+
+DC/DC converter 
+
+5 
+
+Junction-box power distributor 
+
+3 
+
+Electrical system power supply under various 
+loads after DC/DC converter 
+
+
+
+
+34 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DC/DC control unit 
+
+Inside the DC/DC converter is the actual converter module that, depending on conditions, 
+provides either a matched voltage or the normal electrical system power supply voltage 
+for the terminals 30g_DC/DC and 30g_f_DC/DC. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Bypass switch 
+
+6 
+
+Input voltage subject to electrical 
+system fluctuations 
+
+2 
+
+DC/DC module 
+
+7 
+
+Input voltage testing leads 
+
+3 
+
+Diagnosis lead 
+
+8 
+
+Terminal 50 data lead 
+
+4 
+
+DC/DC converter 
+
+9 
+
+DC/DC module power supply 
+
+5 
+
+Stabilized electrical system voltage 
+
+
+
+
+The DC/DC module uses the input voltage testing leads and terminal 50 to decide 
+whether to supply the DC/DC terminals via the bypass or the DC/DC converter. 
+
+The relays 30g_DC/DC and 30g_f_DC/DC are also accommodated in the DC/DC 
+control unit. 
+
+The terminal 30g and terminal 30g_f relays are retained in the power distributor. 
+The DC/DC control unit basically operates in the following modes: 
+
+• Boost mode 
+
+• Bypass mode 
+
+
+35 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bypass mode 
+
+In bypass mode, the electrical system power supply is not fed through the DC/DC con¬ 
+verter. A bypass passes it straight through to the outputs of the DC/DC converter. 
+
+Boost mode 
+
+In boost mode, the electrical system voltage is adjusted. The decision as to when stabi¬ 
+lization is necessary/possible is dependent on the following factors: 
+
+• Terminal 50 on/off 
+
+• and input voltage at the DC/DC converter. 
+
+Terminal 50 
+
+Boost mode is activated if terminal 50 is on and the voltage drops below 10.5 V. As soon 
+as terminal 50 is active, the DC/DC converter goes into a standby mode in order to 
+improve response characteristics. Not until the voltage drops below the defined threshold 
+of 10.5 V is boost mode activated and the matched voltage supplied to the terminal 30g 
+and 30g_f relays. 
+
+Typical voltage progression when engine is started 
+
+Bypass Boost Bypass 
+
+
+U/V 
+
+
+
+The blue line represents a typical voltage progression when the engine is started. 
+Depending on external factors, the voltage may drop as low as 7.5 V. 
+
+The red line shows the voltage provided by the DC/DC control unit. 
+
+
+36 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+Automatic Start/Stop II (MSA II) 
+
+
+Originally the MSA system was only available for manual transmission European BMW 
+models. (This system is described in the previous section of this training manual). MSA II 
+however, is the second generation of the system that was especially adapted to operate 
+with automatic transmissions and BN2020 vehicles. 
+
+The F04 ActiveHybrid 7 was the first BMW in the US market (as of 3/2010) to use the 
+MSA function in combination with an automatic transmission. That system uses the E 
+Machine to start the combustion engine instead of a conventional type starter. 
+
+The FI 0 528i (N20), 535i (N55) and FI 2 640i (N55) are available as of 9/2011 with the 
+MSA II system (as standard equipment) with both the manual and automatic 8 speed 
+transmission while the E89 sDrive28i (N20) is currently only available with MSA if com¬ 
+bined with the manual transmission. 
+
+MSA II system highlights: 
+
+• Air conditioning function is enhanced with the cold storage evaporator 
+
+• The hydraulic pressure accumulator allows MSA II to operate with automatic 
+transmissions. 
+
+• Driver presence detection via driver's seat belt and driver's door switch. 
+
+
+MSA II System Components 
+
+
+
+
+-'Pf ?. 1 
+
+
+Setter) 
+
+
+IBS Seatbelt 
+sv.itch 
+
+
+
+I iiiw yi lyuiauui/ piC99Ui c 
+
+^ accumulator automatic 
+transmission) 
+
+
+HIS (Hydraulic pressure 
+
+
+F10.F12/ N55/N20 AT 
+
+
+37 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+Automatic start/stop function - Manual transmission 
+
+The operating logic of the automatic start/stop function in vehicles with manual gearbox 
+has already been discussed in the MSA I section of this training material. 
+
+When the car is stopped and the driver engages neutral and releases the clutch pedal, 
+the automatic start/stop function switches the engine off. This means that the vehicle 
+does not use any fuel when it is at a standstill. When the driver depresses the clutch 
+pedal again, the engine is automatically restarted and the driver can continue driving. 
+
+Automatic start/stop function - Automatic transmission 
+
+The description that follows therefore deals specifically with the automatic start/stop func¬ 
+tion in conjunction with the automatic transmission. 
+
+
+The engine will NOT automatically turn OFF if: 
+
+• Outside temperature below 37.4°F. 
+
+• Outside temperature above 86°F. 
+
+• Vehicle interior is not yet warmed up or cooled down. 
+
+• Engine is not yet warmed up. 
+
+• Vehicle battery state of charge very low. 
+
+• After vehicle was driven in reverse. 
+
+• Steering wheel operated after vehicle stopped. 
+
+• Stop&Go-Traffic. 
+
+
+If MSA is active (ENGINE OFF), the engine will be turned ON automatically if: 
+
+• Interior temperature cannot be maintained (cooling and heating). 
+
+• Windshield fogging. 
+
+• Vehicle battery state of charge drops below a threshold. 
+
+• Steering wheel input is detected. 
+
+• Change gear lever position from D to N; D to M/S; P to D. 
+
+• The accelerator and the brake pedal are pressed at the same time. 
+
+
+38 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+MSA II Wiring Diagrams 
+
+FI 0 Automatic start/stop MSA II wiring diagram 
+
+
+
+39 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hood contact switch 
+
+2 
+
+Zero-gear sensor (vehicles with manual transmission only) 
+
+3 
+
+Digital Motor Electronics DME 
+
+4 
+
+Junction box electronics with front power distribution box 
+
+5 
+
+DC/DC converter 
+
+6 
+
+Rear right power distribution box 
+
+7 
+
+Intelligent battery sensor (IBS) 
+
+8 
+
+Battery 
+
+9 
+
+Battery power distribution box 
+
+10 
+
+Seat belt buckle contact, driver's seat 
+
+11 
+
+Chassis Management, ICM 
+
+12 
+
+Steering column switch cluster (SZL) 
+
+13 
+
+Clutch switch (vehicles with manual transmission only) 
+
+14 
+
+Instrument cluster KOMBI 
+
+15 
+
+Driver's side door contact 
+
+16 
+
+Footwell module FRM 
+
+17 
+
+Crash safety module, ACSM 
+
+18 
+
+Start/Stop button 
+
+19 
+
+Car Access System CAS 
+
+20 
+
+Central Gateway Module 
+
+21 
+
+Electromechanical Power Steering EPS 
+
+22 
+
+Dynamic Stability Control (DSC) 
+
+23 
+
+Brake vacuum-sensor (vehicles with manual transmission only) 
+
+24 
+
+Starter 
+
+
+40 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DC/DC converter 
+
+The higher frequency of starting operations in vehicles with the automatic start/stop func¬ 
+tion can lead to voltage dips in the vehicle electrical system. One or two DC/DC convert¬ 
+ers are installed in order to protect specific voltage-sensitive components (depending on 
+the vehicle equipment). 
+
+The DC/DC converters supply a constant voltage to the 30B_DC/DC terminals, also dur¬ 
+ing the starting operation. 
+
+A DC/DC converter is installed if the speakers are activated by a radio or additional ampli¬ 
+fier. Two DC/DC converters are installed if the speakers are activated by one of the head- 
+units, due to the high power consumption of the headunit. This applies for vehicles with¬ 
+out the HiFi speaker system (SA 676) or the HiFi system (SA 677) but with one of the fol¬ 
+lowing items of optional equipment: 
+
+• Radio Professional (SA 663) 
+
+• Navigation system (optional extra 609) 
+
+As a basic rule, only one DC/DC converter is installed in vehicles with the HiFi speaker 
+system (SA 676) or HiFi system Professional (SA 677). 
+
+Note: For a detailed explanation of how the DC/DC converter operates refer to 
+the MSA I section of this training material. 
+
+
+41 
+
+Automatic Start/Stop (MSA) 
+
+
+
+MSA II Wiring Diagram with Double DC/DC Converter 
+
+
+
+42 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Power Steering (EPS) 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Electronic transmission control (EGS) 
+
+4 
+
+vacuum sensor (vehicles with manual transmission only) 
+
+5 
+
+Starter motor 
+
+6 
+
+Zero-gear sensor (vehicles with manual transmission only) 
+
+7 
+
+Power distribution box, engine compartment 
+
+8 
+
+Dynamic Stability Control (DSC) 
+
+9 
+
+Central gateway module 
+
+10 
+
+Car Access System (CAS) 
+
+11 
+
+Junction box power distribution box 
+
+12 
+
+DC/DC converter 2 
+
+13 
+
+Luggage compartment power distribution box 
+
+14 
+
+Intelligent battery sensor (IBS) 
+
+15 
+
+Battery 
+
+16 
+
+safety battery terminal (SBK) 
+
+17 
+
+DC/DC converter 1 
+
+18 
+
+Door contact, driver 
+
+19 
+
+FRM 
+
+20 
+
+Crash Safety Module (ACSM) 
+
+21 
+
+Start/Stop button 
+
+22 
+
+Instrument panel (KOMBI) 
+
+23 
+
+Clutch switch (vehicles with manual transmission only) 
+
+24 
+
+Seat belt buckle contact, driver 
+
+25 
+
+Integrated Chassis Management 
+
+Terminal 15N 
+
+Ignition (after-run) 
+
+Terminal 30B 
+
+Terminal 30, time-dependent 
+
+
+43 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Mode 
+
+The automatic start/stop function is ready for operation following every engine start. 
+
+The function is activated once the vehicle reaches a specific speed: 
+
+• Vehicles with manual transmission: > 5 km/h/3 mph. 
+
+• Vehicles with automatic transmission: > 9 km/h/5 mph. 
+
+The driver presence detection via the seat belt buckle switch and also via the door con¬ 
+tact has been introduced as a new feature of MSA II. 
+
+When the driver leaves the vehicle, the automatic start/stop function is deactivated, in 
+order to prevent the engine from starting automatically. 
+
+The MSA function is always reactivated if: 
+
+• the driver's seat belt is fastened and the vehicle is travelling at a speed of > 5 km/h 
+
+• the driver's door is closed and the vehicle is travelling at a speed of > 5 km/h/3 
+mph*. 
+
+* > 9 km/h/5 mph - vehicles with automatic transmission 
+
+The prerequisites for deactivation of the automatic start/stop function vary, depending on 
+which switching mode the seatbelt buckle switch and door contact are in when the auto¬ 
+matic start/stop function is activated: 
+
+
+Status during activation of automatic 
+start/stop function 
+
+Prerequisites for deactivation of automatic 
+start/stop function 
+
+• The driver's seat belt is fastened. 
+
+• The driver's door is closed. 
+
+The driver unfastens the seat belt buckle and 
+opens driver's door. 
+
+• The driver's seat belt is not fastened. 
+
+• The driver's door is closed. 
+
+The driver opens the driver's door. 
+
+• The driver's seat belt is fastened. 
+
+• The driver's door is opened. 
+
+The driver unfastens the seat belt buckle. 
+
+
+The automatic start/stop function is reactivated if: 
+
+• the seat belt buckle is fastened and/or the driver's door is closed and the engine has 
+been started 
+
+• the seat belt buckle is fastened and/or the driver's door is closed and the vehicle is 
+travelling at a speed of > 5 km/h/3mph*. 
+
+* > 9 km/h/5mph - vehicles with automatic transmission 
+
+
+44 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Driving 
+
+The purpose of the automatic start/stop function is to switch the engine off when the 
+vehicle is at a standstill. As long as the vehicle is in motion the driver will not be aware of 
+the automatic start/stop function. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Vehicle moving 
+
+2 
+
+Selector lever in drive position D, driver operates accelerator pedal 
+
+3 
+
+Engine running, the driving situation is reflected by the engine speed display 
+and fuel consumption display 
+
+
+45 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stopping 
+
+From the driver's point of view, the stopping process with subsequent engine stop is as 
+follows: 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Vehicle slows to a standstill, e.g. at a red light 
+
+2 
+
+Selector lever remains in the "D" drive position, driver depresses the brake 
+pedal to decelerate and hold the vehicle at a standstill 
+
+3 
+
+The engine is switched off after roughly 1 second, "0" engine speed will be 
+displayed on the tachometer 
+
+
+In the situation depicted above the driver holds the car at a standstill by depressing the 
+brake pedal. 
+
+Alternatively, the driver can select selector lever position "P" and release the brake pedal. 
+The engine remains switched off. If then the drive position "D" is subsequently engaged, 
+the engine starts without delay. 
+
+
+46 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driving off 
+
+The driver indicates his intention to drive off by releasing the brake pedal. 
+
+If the driver previously held the car at a standstill by depressing the brake pedal, the 
+engine starts as soon as the driver releases the brake pedal. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Driver wishes to continue the journey (e.g. green light) 
+
+2 
+
+The selector lever remains in drive position "D", driver releases the brake pedal 
+
+3 
+
+Engine is started, revolution counter and fuel consumption display revert back 
+to normal to reflect the driving situation 
+
+
+If the driver moves the selector lever into position "P" after the engine was switched off 
+automatically, the engine starts automatically if the selector lever is now moved to posi¬ 
+tion "D". 
+
+
+During this process, the automatic engine start is not activated automatically via a signal 
+from the brake light switch, but by the DSC control unit that monitors the brake pressure. 
+
+
+Establishing start-up readiness 
+
+If the driver wants to start the engine but not yet drive off, he can establish start-up 
+readiness by: 
+
+• Pressing the brake pedal briefly, applying more force 
+
+• Releasing the brake pedal slightly 
+
+Both of these actions will prompt the engine to start automatically. 
+
+
+47 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic hold 
+
+If the driver has activated the "Automatic Hold" function, he/she can also release the 
+brake pedal once the vehicle has come to a standstill. The automatic start/stop function 
+also switches the engine off in this case. The car is held at a standstill by the DSC 
+hydraulics. The engine only starts if the driver operates the accelerator pedal. 
+
+Preventing automatic engine shutdown 
+
+In order to be able to drive off guickly, e.g. at a crossing, the automatic engine shutdown 
+can be actively prevented if within one second after the vehicle comes to a standstill the 
+brake pedal is pressed briefly, applying more force than usual, then immediately held with 
+the usual brake pedal force. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Vehicle slows to a standstill, e.g. at a red light 
+
+2 
+
+Immediately after the vehicle comes to a standstill (within one second) 
+the brake pedal is pressed briefly, applying more force than usual, then 
+immediately held with the usual brake pedal force 
+
+3 
+
+The engine continues running 
+
+
+48 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Switch-off Inhibitors 
+
+Under certain conditions it is necessary to suppress the MSA function: 
+
+• the vehicle is coasting (vehicles with manual transmission only) 
+
+• the brake vacuum is too low (vehicles with manual transmission only) 
+
+• the brake pedal is not pressed firmly enough which means the vehicle is detected as 
+not being held sufficiently (vehicles with automatic transmission only) 
+
+• the vehicle stops on uphill/downhill gradients > 12% 
+
+• the steering angle is > 6° 
+
+• the steering wheel movement is not yet complete (as otherwise insufficient support 
+will be provided by the power steering as a consequence) 
+
+• the vehicle was not driven at a speed of > 5 km/h/3 mph* following the previous 
+engine shutdown 
+
+• the engine is not running at idle speed (accelerator pedal is being pressed) 
+
+• the vehicle is being driven in reverse 
+
+• the Hill Descent Control (HDC) has been activated 
+
+• the operating temperature of the engine is too low 
+
+• the carbon canister is being purged 
+
+• the fuel grade is insufficient 
+
+• the gearbox adaptation is active (vehicles with automatic transmission only) 
+
+• the hydraulic pressure accumulator is not charged yet (vehicles with automatic 
+transmission only) 
+
+• stop-and-go traffic 
+
+• the state of charge is too low 
+
+• the ambient temperature is below +3 °C/ 37.4 °F (ice warning) 
+
+• the ambient temperature is above +30 °C/ 86 °F (with heating and air conditioning 
+system switched on) 
+
+• the condensation sensor of the IHKA detects fogging of the windshield 
+
+• the heating and air conditioning system is switched on but the passenger compart¬ 
+ment has not yet warmed up or cooled down to the required temperature 
+
+• the brakes have been applied via ABS. 
+
+• > 9 km/h/5 mph - vehicles with automatic transmission 
+
+
+49 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Switch-on Prompts 
+
+Conversely, it may be necessary to start the engine under the following conditions: 
+
+• the vehicle is not sufficiently held by the released brake pedal (vehicles with 
+automatic transmission only) 
+
+• the steering wheel is moved 
+
+• the engine is not running at idle speed (accelerator pedal is being pressed) 
+
+• the transmission changes from "P" to "D"; the driver previously shifted from "D" to 
+"P" when the engine was automatically switched off (vehicles with automatic trans¬ 
+mission only) 
+
+• the transmission changes from "D" to "N" or "R" (vehicles with automatic transmis¬ 
+sion only) 
+
+• the brake vacuum is too low (vehicles with manual transmission only) 
+
+• the state of charge is too low 
+
+• the ambient temperature is above +30 °C/86 °F (with heating and air conditioning 
+system switched on) 
+
+• the condensation sensor of the IHKA detects fogging of the windshield 
+
+• the evaporator temperature is too low to ensure sufficient climate control. 
+
+
+50 
+
+Automatic Start/Stop (MSA) 
+
+
+
+Deactivation 
+
+If a deactivation condition exists, the automatic start/stop function is deactivated. 
+
+The following scenarios arise, depending on when the deactivation condition for the 
+automatic start/stop function occurred: 
+
+• the engine continues running and is no longer stopped automatically 
+
+• the engine was stopped automatically and starts once again automatically 
+
+• the engine was stopped automatically and no longer starts automatically (the Check 
+Control message "MSA off" appears - the start/stop button must be operated in 
+order to the start the engine). 
+
+The following deactivation conditions may occur: 
+
+• the driver's absence has been detected 
+
+• the engine did not start when starting 
+
+• the engine compartment lid is unlocked 
+
+• a fault related to the automatic start/stop function has been detected at the engine, 
+transmission or components involved in the automatic start/stop function 
+
+• the bus communication is faulty 
+
+• the automatic start/stop function has been deactivated via the automatic start/stop 
+function button 
+
+• the automatic start/stop function was deactivated via the diagnosis system 
+
+• the vehicle is in transport mode 
+
+• the engine was stalled. 
+
+The individual statuses can be read out using the diagnosis system. 
+
+An easy-to-follow example of a deactivation with subsequent switch-on request: 
+
+• the automatic start/stop function is deactivated via the automatic start/stop function 
+button in the automatic engine shutdown phase 
+
+• as a consequence, the engine starts automatically 
+
+• after this, no further automatic engine shutdowns occur, the automatic start/stop 
+function remains deactivated. 
+
+
+51 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Deactivation via automatic start/stop function button 
+
+
+
+FI 0 automatic start/stop function button location 
+
+The automatic start/stop function can be deactivated manually via the automatic 
+start/stop function button (1). The LED in the button lights up when the function is deac¬ 
+tivated. The automatic start/stop function is reactivated each time the engine is restarted. 
+
+
+52 
+
+Automatic Start/Stop (MSA) 
+
+
+System Components 
+
+
+Storage Evaporator 
+
+To maintain the climate control of the passenger compartment when the engine is off, 
+for vehicles with automatic start/stop function, a cold accumulator, known as the storage 
+evaporator, is installed. 
+
+Function of the conventional air-conditioning evaporator 
+
+The warm airflow is drawn across the air-conditioning evaporator as the refrigerant 
+evaporates. The evaporation process extracts heat and moisture from the air as it flows 
+across it. 
+
+The heat is transfered to the refrigerant and sent to the AC system condenser. There it is 
+extracted out of the vehicle through the process of convection as fresh airflows across 
+the core of the condenser. 
+
+Function of the storage evaporator 
+
+The “cold” storage evaporator uses a cold accumulator that is installed behind a conven¬ 
+tional air-conditioning evaporator. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Storage evaporator 
+
+2 
+
+Refrigerant passages 
+
+3 
+
+Line for storage medium 
+
+
+53 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+As with a conventional air-conditioning evaporator, the storage evaporator also evaporates 
+the refrigerant. In addition, the refrigerant passages are surrounded with a storage medi¬ 
+um. As the evaporation process draws heat out of the storage medium it freezes and 
+becomes rigid, this is refered to as the “transition phase” from liguid to solid. 
+
+Latent heat stored by storage medium in the storage evaporator 
+
+
+
+Index 
+
+Explanation 
+
+T 
+
+Temperature 
+
+Tp 
+
+Temperature of the transition phase 
+
+E 
+
+Stored quantity of heat 
+
+Ep 
+
+Quantity of heat of the transition phase 
+
+
+If the engine is off, e.g. at a red light, the air conditioning compressor is also off. 
+
+The refrigerant is no longer able to evaporate, thus the storage medium is no longer 
+being cooled. 
+
+When the transition phase temperature is reached, the storage medium starts to melt and 
+thus draws heat from the air flowing across it. 
+
+
+54 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hydraulic Pressure Accumulator 
+
+When the automatic start/stop function is activated the engine may shut off once the 
+vehicle is at a standstill, the engine restarts automatically as the driver releases the brake 
+to drive off. 
+
+In these engine stop phases the transmission oil pump is not driven, thus the fluid pres¬ 
+sure supply ceases, the gearshift elements open, and there is no longer a transfer of 
+power in the transmission. Maximum transmission oil pressure is required in order for the 
+drive off process to take place dynamically without a noticeable delay when the automatic 
+start/stop function is activated. However, the mechanically driven transmission oil pump 
+cannot build up pressure quickly enough while the engine is starting. 
+
+A hydraulic pressure accumulator is therefore used in the automatic transmission for this 
+purpose (as with F04). With the volume of transmission fluid stored in the hydraulic pres¬ 
+sure accumulator, the shift elements can be filled as soon as the engine is started, even 
+before the transmission oil pump has built up the necessary pressure to drive off. 
+
+Variation in transmission oil pressure overtime at engine start 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmission oil pressure 
+
+2 
+
+Nominal value of the transmission oil pressure which is required to 
+hydraulically actuate the shift elements 
+
+3 
+
+Characteristic of the transmission oil pressure with 
+hydraulic pressure accumulator 
+
+4 
+
+Characteristic of the transmission oil pressure without 
+hydraulic pressure accumulator 
+
+5 
+
+Point at which the automatic transmission with hydraulic pressure 
+accumulator is ready to drive off 
+
+6 
+
+Point at which the automatic transmission without hydraulic pressure 
+accumulator is ready to drive off 
+
+7 
+
+Time 
+
+
+55 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installation location 
+
+The hydraulic pressure accumulator is integrated in the automatic transmission. It is 
+located in the transmission oil sump, in the direction of travel behind the mechatronics 
+module. 
+
+The hydraulic pressure accumulator can be replaced as a separate component. 
+
+8 Speed Automatic Transmission cutaway 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmission housing 
+
+2 
+
+Transmission oil sump 
+
+3 
+
+Hydraulic pressure accumulator 
+
+
+56 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+Design 
+
+
+Design of hydraulic pressure accumulator 
+
+
+
+(?) (?) 0 (?) 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection to hydraulic system of automatic transmission 
+
+2 
+
+Throttle and non-return valve 
+
+3 
+
+Hydraulic piston 
+
+4 
+
+Hydraulic cylinder 
+
+5 
+
+Coil spring 
+
+6 
+
+Electromechanical latch mechanism 
+
+
+The hydraulic pressure accumulator consists of a hydraulic cylinder. This cylinder contains 
+a piston that moves against the force of a spring. The piston can be electromechanically 
+locked in the tensioned end position. The electromechanical latch mechanism incorpo¬ 
+rates locking balls, a tension spring, a release spring, and a solenoid. 
+
+The solenoid is activated and deactivated by the EGS. A corresponding wiring harness 
+to the hydraulic pressure accumulator is laid inside the transmission housing. 
+
+The cylinder of the hydraulic pressure accumulator is connected to the transmission's 
+hydraulic system directly (without any valves between them). The hydraulic pressure 
+accumulator in fact contains an element which functions as a throttle and non-return 
+valve. The throttle limits the volumetric flow of the fluid while the hydraulic pressure 
+accumulator is being filled. In general, this filling operation corresponds to the charging 
+operation of the accumulator which is why the expressions "charging" or "discharging" 
+are used in this description. 
+
+
+57 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The non-return valve ensures that the transmission fluid flows into the hydraulic pressure 
+accumulator via the throttle during charging. The transmission fluid does not flow through 
+the throttle during the discharging process, the non-return valve now opens instead to 
+allow an unrestricted flow of transmission fluid back into the hydraulic system. The pur¬ 
+pose of the non-return valve is therefore not to maintain the pressure in the charged 
+state. In the charged state, the transmission fluid in the hydraulic pressure accumulator is 
+depressurized and the energy is stored in the tensioned spring. 
+
+
+Charging 
+
+The hydraulic pressure accumulator is therefore always charged when the engine is run¬ 
+ning and the transmission oil pump is working. During charging transmission fluid flows 
+through the throttle into the hydraulic cylinder. In the process only a small volume is 
+drawn from the hydraulic system so that the pressure level does not drop unintentionally. 
+The transmission fluid pushes on the piston which acts against the spring force increas¬ 
+ing the tension on the spring. 
+
+Charging of the hydraulic pressure accumulator 
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Discharged state - charging procedure starts 
+
+B 
+
+Charged state - charging procedure ends 
+
+1 
+
+Transmission fluid flows from the hydraulic system of the automatic 
+transmission into the hydraulic pressure accumulator 
+
+2 
+
+Volumetric flow of the transmission fluid is limited by the throttle 
+
+3 
+
+The transmission fluid exerts force on the piston which moves 
+and tensions the coil spring 
+
+4 
+
+Transmission fluid exerts a force on the piston so that it is 
+held in the "charged" end position 
+
+
+58 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+At the end of the charging process the piston travels past the latch mechanism (locking 
+balls) until it reaches the end/stop. The transmission fluid pressure holds the piston 
+against the spring force in the end position. 
+
+The latch mechanism does not engage yet. The hydraulic pressure accumulator is fully 
+charged in this end position. 
+
+Locking 
+
+When the engine is switched off (while the hydraulic pressure accumulator is charged) 
+the transmission oil pressure drops causing the spring to be released slightly. This allows 
+the piston to slide into the locked position where locking balls hold the piston mechani¬ 
+cally in place. 
+
+The now energized solenoid holds the inner slide in place so that the locking balls cannot 
+enter the channels designated for releasing the lock. The electric power used for this is 
+low (< 10 W) and is only reguired while the engine is off. Therefor the additional energy 
+consumption of the hydraulic pressure accumulator viewed over an entire driving cycle is 
+very low. 
+
+Charged and locked state of the hydraulic pressure accumulator 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Mechanical latch mechanism 
+
+2 
+
+Solenoid activated 
+
+
+59 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Discharging 
+
+When the engine is started, as the driver wants to drive off, the gearshift elements in the 
+automatic transmission for driving off must be engaged. The hydraulic pressure accumu¬ 
+lator supplies the transmission fluid pressure required for this during the discharging 
+process. 
+
+As the solenoid is deactivated for discharging the inner slide (driven by a small spring) 
+moves in the direction of the locking balls. This allows the balls to enter the channels 
+designated for releasing the lock which in turn releases the piston. The spring (com¬ 
+pressed during the charging process) exerts force on the piston which pressurizes the 
+transmission fluid in the cylinder. 
+
+Discharging of the hydraulic pressure accumulator 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+The large spring pushes on the piston,which in turn, forces the 
+transmission fluid out of the hydraulic cylinder 
+
+2 
+
+Transmission fluid can now flow through the throttle 
+and the opened non-return valve 
+
+3 
+
+Transmission fluid flows from the hydraulic pressure accumulator back 
+into the hydraulic system of the automatic transmission 
+
+
+The piston moves (in the graphic to the left) and thereby pushes the transmission fluid 
+back into the transmission hydraulic system. The transmission fluid exits the cylinder 
+through the now opened non-return valve and throttle. 
+
+The oil volume forced back into the hydraulic system of the transmission is sufficient to 
+engage the gearshift elements needed for the driving off process. This system is 
+designed to provide the initial fluid pressure needed for the transmission to go into “Gear” 
+at the exact moment just before the engine is started. As soon as the engine is started, 
+the transmission fluid pressure is then again generated by the transmission oil pump and 
+the entire process is restarted. 
+
+
+60 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Protection Against Automatic Engine Start 
+
+Observe the safety precautions when carrying out repair work on vehicles with the auto¬ 
+matic start/stop function. 
+
+The engine is prevented from starting automatically when repair work is being carried 
+out in the engine compartment. The automatic start/stop function is deactivated as soon 
+as the engine compartment lid is opened. The diagnosis system can also be used to 
+deactivate the automatic start/stop function temporarily. 
+
+Note: When the compartment lid contact switch is pulled out it engages in the 
+Service position. The automatic start/stop function is subsequently 
+active although the hood is open 
+
+The engine can be restarted via the start/stop button. 
+
+The automatic start/stop function is reactivated if: 
+
+• the engine compartment lid is closed and the engine is started 
+
+• the engine compartment lid is closed and the vehicle is travelling at 
+a speed of > 5 km/h/3 mph* 
+
+* > 9 km/h/5 mph - vehicles with automatic transmission 
+
+
+Automatic start/stop function checklist of possible 
+customer complaints 
+
+In the event of customer complaints, check these against the "Automatic start/stop func¬ 
+tion checklist". 
+
+Process any fault entries using the diagnosis system. If no fault entries exist, check the 
+condition of the automatic start/stop function with the automatic start/stop function sys¬ 
+tem check. 
+
+The automatic start/stop function system check service function shows an overview of 
+the automatic start/stop function status that was previously present and provides further 
+assistance with troubleshooting. 
+
+
+61 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+Customer complaint 
+
+YES 
+
+NO 
+
+Frequently no engine shutdown: 
+
+the engine repeatedly does not stop in situations where it should shut down automatically. 
+
+Check the general prerequisites for automatic engine shutdown in dialog with the customer: 
+
+Driver's seat belt fastened? 
+
+□ 
+
+□ 
+
+Vehicle at standstill? 
+
+□ 
+
+□ 
+
+Automatic transmission in position "D", brake pedal depressed? 
+
+□ 
+
+□ 
+
+Engine at operating temperature? 
+
+□ 
+
+□ 
+
+Vehicle not driven backwards before stopping? 
+
+□ 
+
+□ 
+
+Automatic start/stop function activated (automatic start/stop 
+function button not operated - LED does not light up)? 
+
+□ 
+
+□ 
+
+Ambient temperature > 3 °C / 37.4 ° F? 
+
+□ 
+
+□ 
+
+State of charge of battery OK (no long immobilization periods or 
+excessive short distance driving)? 
+
+□ 
+
+□ 
+
+Quality level of battery OK (no external charging procedure, 
+no other devices connected to the battery)? 
+
+□ 
+
+□ 
+
+
+If all criteria have been answered with Yes: 
+
+• Operate automatic start/stop function system check service function. 
+If at least one criterion has been answered with No: 
+
+• Automatic start/stop function is in working order. 
+
+
+62 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Customer complaint 
+
+
+YES 
+
+
+NO 
+
+
+Sometimes no engine shutdown: 
+
+the engine sometimes does not stop in situations where it should shut down automatically. 
+
+Check whether the engine shutdown has been blocked by the automatic function 
+for safety or comfort reasons. Explain the automatic functions to the customer: 
+
+Heating and air conditioning system switched on and passenger compartment in 
+cooling-down period (e.g. when setting off or following engine shutdown) 
+
+□ 
+
+□ 
+
+Windshield starts to fog up with automatic air conditioning 
+
+□ 
+
+□ 
+
+Steering wheel movements when vehicle is at a standstill 
+
+□ 
+
+□ 
+
+Stop-and-go traffic (at least three stops made in short succession 
+at a speed of < 25 km/h/15 mph) 
+
+□ 
+
+□ 
+
+
+If all criteria are answered with No: 
+
+• Operate automatic start/stop function system check service function. 
+
+
+If at least one criterion is answered with Yes: 
+
+• Automatic start/stop function is in working order. 
+
+
+Customer complaint 
+
+YES 
+
+NO 
+
+Sudden automatic engine start: the engine unexpectedly starts automatically. 
+
+Check whether the engine has been automatically started by the automatic function for safety 
+or comfort reasons. Explain the automatic functions to the customer: 
+
+Passenger compartment heating up with heating and air conditioning 
+system switched on 
+
+□ 
+
+□ 
+
+Windshield starts to fog up with automatic air conditioning 
+
+□ 
+
+□ 
+
+Steering wheel movements when vehicle is at a standstill 
+
+□ 
+
+□ 
+
+Vehicle has started rolling (speed < 5 km/h/3 mph or 9 km/h/5 mph) 
+
+□ 
+
+□ 
+
+Low brake vacuum due to repeated operation of brake pedal 
+
+□ 
+
+□ 
+
+State of charge of battery too low due to extended engine stop phases 
+
+□ 
+
+□ 
+
+
+If all criteria are answered with No: 
+
+• Operate automatic start/stop function system check service function. 
+If at least one criterion is answered with Yes: 
+
+• Automatic start/stop function is in working order. 
+
+
+63 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Customer complaint 
+
+YES 
+
+NO 
+
+Engine not starting: 
+
+the brake pedal was released but the engine did not start automatically. 
+
+Driver's door and seat belt buckle unfastened during the engine stop phase? 
+
+□ 
+
+□ 
+
+Or engine compartment lid open? 
+
+□ 
+
+□ 
+
+
+If answered with No: 
+
+• Operate automatic start/stop function system check service function. 
+
+If answered with Yes: 
+
+• Automatic start/stop function is in working order. 
+
+Automatic Deactivation of Terminal 15 
+
+Terminal 15 is switched off automatically via the door contact when the driver's door is 
+opened and closed with the engine switched off. 
+
+Terminal 15 can be permanently switched back on by subseguently pressing the 
+start/stop button. 
+
+Power Management and Battery Replacement 
+
+The automatic start/stop function and power management are strongly intertwined. 
+Battery type and charge state data may be lost following: 
+
+• programming of the engine control 
+
+• replacement of the intelligent battery sensor 
+
+• disconnection of the battery 
+
+• battery replacement 
+
+This data is only available again once a standby current measurement has been carried 
+out internally in the vehicle and once it has gone to sleep and has been locked. This mea¬ 
+surement takes around 6 hours and the vehicle must not be woken up during the 
+process. Providing the data has not been transferred, the automatic start/stop function will 
+not be active. 
+
+In order for the battery data to be registered by the vehicle following battery replacement, 
+its internal standby current must be measured. 
+
+If the battery is replaced, an AGM battery must be reinstalled to ensure the automatic 
+start/stop function remains in proper working order. 
+
+
+64 
+
+Automatic Start/Stop (MSA) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

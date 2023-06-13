@@ -1,0 +1,1221 @@
+Table of Contents 
+
+E60 Active Front Steering 
+
+Subject Page 
+
+Active Front Steering.3 
+
+New System Features.3 
+
+Advantages of the System .4 
+
+Mechanical System Overview.4 
+
+System l-P-0 .5 
+
+System Schematic .6 
+
+Components.7 
+
+DSC Sensor.7 
+
+Active Front Steering Control Unit.8 
+
+Input Signals.8 
+
+Total Steering-Angle Sensor.9 
+
+Steering-Angle Sensor .9 
+
+Motor Position Sensor of Actuating Unit.10 
+
+Safety and Gateway Module (SGM) .10 
+
+Hydraulic Pump .11 
+
+Hydraulic Schematic with ECO Valve .11 
+
+Power-Steering Cooler.12 
+
+Active Front Steering Actuating Unit.12 
+
+Principle of Operation.14 
+
+Functions of Active Front Steering .14 
+
+Variable Steering Gear Ratio.14 
+
+Yaw- Rate Control .14 
+
+Power-Steering Support.15 
+
+System Safety .15 
+
+Service Information.16 
+
+AFS Initialization/Adjustment.16 
+
+Wheel Alignment.17 
+
+Interference in Radio Reception .17 
+
+Diagnosis, Coding.17 
+
+Servotronic.17 
+
+
+Initial Print Date: 08/03 
+
+
+Revision Date: 09/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model: E60 
+
+Production: Start of Production MY 2004 
+Active Front Steering 
+
+Objectives: 
+
+After completion of this module you will be able to: 
+
+• Understand basic AFS operation 
+
+• Locate and Identify AFS components 
+
+• Perform AFS Initialization/Start-up procedure 
+
+• Perform Wheel Alignments on AFS equipped vehicles 
+
+
+2 
+
+E60 Active Front Steering 
+
+
+
+
+Active Front Steering 
+
+Conventional rack-and-pinion power steering is used in the E60. Two items of options (SA) 
+are also available: 
+
+• Servotronic 
+
+• The active front steering system (AFS) 
+
+The active front steering option is only available in conjunction with the Servotronic option. 
+
+The design and operating principle of the Servotronic option have remained the same as in 
+previous models. 
+
+The active front steering system is introduced on BMW vehicles for the first time on the E60. 
+
+The electronic controlled steering system assists the driver beyond the usual assist of the 
+power steering with a variable steering ratio. The core element of the steering system is the 
+so-called superimposing gear. The superimposing gear is a ring gear which is part of a sim¬ 
+ple planetary gear set integrated into the steering rack between the steering spindle and the 
+pinion gear. An electric motor engages the ring gear via a worm gear drive as a function of 
+the vehicle speed. In this way, the steering system can modify the front wheel angle by 
+changing the output ratio of the steering rack. The electric motor can be run in fon/vard or 
+reverse depending on the needs of the AFS system. When the motor is run in the forward 
+direction, the steering is more direct. When the motor is run in reverse, the steering is less 
+direct. 
+
+In critical situations, the steering system can specifically modify the wheel angle engaged 
+by the driver and thereby stabilize the vehicle more quickly than the driver. The active front 
+steering system is integrated in the vehicle electrical system via the Powertrain CAN (PT- 
+CAN) and the new Chassis CAN (F-CAN). 
+
+The active front steering system is very closely linked to the Dynamic Stability Control (DSC) 
+drive-control system. Sensors and signals used by DSC are also used by the active front 
+steering control unit. 
+
+New System Features 
+
+The flow rate supplied by the hydraulic pump is adjusted by means of an electrically con¬ 
+trollable valve, known as an Electrically Controlled Orifice (ECO). It is controlled as a func¬ 
+tion of engine speed, road speed and steering wheel angle. 
+
+
+3 
+
+E60 Active Front Steering 
+
+
+Advantages of the System 
+
+The active front steering system assists the driver in steering movements and actively intro¬ 
+duces additional steering angles into the steering as a function of driving-dynamic variables. 
+
+When the vehicle is being parked, only minimal steering wheel movements are needed to 
+deliver large steering angles. Less than 2 turns are needed to move the steering wheel from 
+one lock to the other. 
+
+At high speeds, on highways for instance, the steering gear ratio becomes increasingly 
+more indirect right up to the level of conventional steering and even beyond. The simulta¬ 
+neously increasing steering-wheel torque level prevents unintentional steering movements 
+and the driver can feel the improvement in directional stability. 
+
+Unintentional vehicle motion, e.g. oversteering, is compensated by the active front steering 
+system without the driver having to take corrective action to maintain the desired course. 
+
+Mechanical System Overview 
+
+
+
+1. Hydraulic fluid reservoir 4. Hydraulic hose 
+
+2. Hydraulic pump with ECO valve 5. Steering gear with actuating unit 
+
+3. Power steering cooler for hydraulic fluid 
+
+
+4 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+System l-P-0 
+
+
+
+1. Wheel speed sensor 
+
+2. Brake pad wear sensors 
+
+3. Brake light switch 
+
+4. Brake fluid level switch 
+
+5. DSC button 
+
+6. DSC sensor 1 
+
+7. DSC sensor 2 
+
+8. Summation steering angle sensor 
+
+9. Steering angle sensor 
+
+10. Motor position sensor, actuating unit 
+
+11. Instrument cluster 
+
+12. DSC control unit 
+
+
+13. AFS Active front steering control unit 
+
+14. Safety and Gateway Module (SGM) 
+
+15. DME Control unit 
+
+16. Lock, actuating unit 
+
+17. AFS Actuating unit 
+
+18. Servotronic valve 
+
+19. BMW diagnostic system (DISplus/GT-1) 
+
+20. Flydraulic pump with ECO valve 
+PT-CAN Powertrain CAN 
+
+F-CAN Chassis CAN 
+K-CAN Body CAN 
+
+
+5 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Schematic 
+
+
+
+1. Wheel speed sensor, front left 
+
+2. Wheel speed sensor, rear left 
+
+3. Brake light switch 
+
+4. Brake fluid level switch 
+
+5. DSC button 
+
+6. DSC sensor 1 
+
+7. DSC sensor 2 
+
+8. Summation steering angle sensor 
+
+9. Steering angle sensor 
+
+10. Instrument cluster 
+
+11. DSC control unit 
+
+
+12. AFS Active front steering control unit 
+
+13. Safety and Gateway Module (SGM) 
+
+14. Wheel speed sensor, front right 
+
+15. Wheel speed sensor, rear right 
+
+16. Brake pad wear sensor 
+
+17. Brake pad wear sensor 
+
+18. DME control unit 
+
+19. Lock, actuating unit 
+
+20. Electric motor, actuating unit 
+
+21. Servotronic valve 
+
+22. ECO valve, hydraulic pump 
+
+
+6 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+DSC Sensor 
+
+The lateral-acceleration and yaw-rate sensors are combined in a single housing and desig¬ 
+nated the DSC sensor. The active front steering system is also provided with a second DSC 
+sensor in addition to the DSC sensor fitted as standard. 
+
+DSC sensor 1 is located under the right front seat. DSC sensor 2 is located under the left 
+front seat. 
+
+The two DSC sensors are technically identical but coded by means of the software so that 
+they cannot be mixed up. DSC sensor 2 is used for redundant signal acquisition of yaw 
+rate and lateral acceleration. 
+
+Both sensors supply yaw-rate and lateral acceleration signals. The use of two DSC sen¬ 
+sors makes it possible to perform the plausibility check. 
+
+
+
+0 0 0 
+
+02695 
+
+
+Installation locations of DSC sensors and active front steering control unit 
+
+1. DSC sensor 2 for active front steering 3. Active front steering control unit 
+
+2. DSC sensor 1 for brake system 
+
+
+7 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+Active Front Steering Control Unit 
+
+The active front steering control unit 
+is located in the right footwell and 
+screwed down to the floorpan. 
+
+The control unit is protected by a 
+kickplate housing. 
+
+The kickplate housing incorporates 
+a pin for connecting the shielding for 
+the 3 phases of the active front 
+steering actuating unit. 
+
+The control unit is integrated in the 
+vehicle electrical system via the PT- 
+CAN and the F-CAN. 
+
+The active front steering control unit 
+calculates the signals for activating 
+the active front steering actuating 
+unit from the various input signals. 
+
+Input Signals 
+
+• DSC signals (wheel speeds, yaw rate and lateral acceleration) 
+
+• Steering angle 
+
+• Total (summation) steering angle 
+
+• Position of electric servomotor of actuating unit 
+
+The active front steering control unit is initialized when the ignition is turned on. 
+
+The active front steering actuating unit cannot be activated during the initialization proce¬ 
+dure. The sensor signals are checked and calibrated if necessary. 
+
+If faults are detected, either the "Error" fault status is adopted or yaw rate control is deac¬ 
+tivated. In the case of the "Error" fault status, it is not possible to activate the actuating unit. 
+The "Drive" status is adopted after successful initialization. 
+
+The active front steering control unit sends the current message corresponding to the 
+required flow rate to the SGM via the PT-CAN. 
+
+
+
+8 
+
+E60 Active Front Steering 
+
+
+Total Steering-Angle Sensor 
+
+The total (summation) steering-angle sensor is only fitted in the vehicle if the active front 
+steering system is fitted. 
+
+The total steering-angle sensor records the rotation angle of the steering pinion and thus 
+the wheel deflection (or actual steering angle) of the vehicle. 
+
+The total steering-angle sensor is flange-mounted at the bottom of the steering gear. 
+
+
+
+02639.02 
+
+
+1. Total steering angle sensor 
+
+
+Steering-Angle Sensor 
+
+The steering-angle message is directed from the steering column switch cluster (SZL) to the 
+active front steering control unit via a serial interface and via the F-CAN. 
+
+The SZL incorporates a second processor for redundant steering-angle calculation. This 
+second processor is only fitted if the active front steering system is fitted and serves to 
+monitor the plausibility of the signal. 
+
+The steering-angle sensor is integrated in the steering column switch cluster. 
+
+
+9 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+Motor Position Sensor of Actuating Unit 
+
+The motor position sensor of the actuating unit 
+is located on the rear side of the electric motor 
+of the active front steering actuating unit. 
+
+The motor position sensor consists of a sensor 
+chip and a magnet. 
+
+The sensor chip records the position of the 
+electric motor according to the magneto¬ 
+resistive principle. 
+
+The information on the rotor position is sent to 
+the active front steering control unit via a direct 
+line in pulse width modulated form. 
+
+
+
+Motor position sensor 
+
+
+Safety and Gateway Module (SGM) 
+
+
+The SGM consists of a combination of the 
+Central Gateway Module (ZGM) known from 
+the E65 and the Safety and Information Module 
+(SIM). 
+
+The SGM is located in the equipment carrier 
+behind the glovebox. 
+
+The SGM receives from the active front steer¬ 
+ing control unit the specified setpoint current 
+for activating the Servotronic valve and the 
+ECO. The SGM activates the Servotronic valve 
+and the ECO in pulse width modulated form. 
+
+In vehicles without active front steering, the 
+software for activating the Servotronic valve 
+and the ECO is implemented in the SGM. 
+
+
+
+10 
+
+E60 Active Front Steering 
+
+
+Hydraulic Pump 
+
+
+The hydraulic pump is a vane pump and is equipped with an electrically controllable valve 
+for regulating the flow rate of the hydraulic fluid. This valve is called the Electrically 
+Controlled Orifice (ECO). 
+
+
+The active front steering system can generate 
+higher wheel-angle speeds compared with con¬ 
+ventional rack-and-pinion power steering sys¬ 
+tems. High hydraulic system flow rates must be 
+maintained in the hydraulic system for the high 
+wheel-angle speeds. In order to deliver the need¬ 
+ed hydraulic requirements, a larger power steer¬ 
+ing pump would need to be installed. However 
+this would increase fuel consumption. An alterna¬ 
+tive would be to install a controllable hydraulic 
+pump. A conventional pump with the added ECO 
+valve has been installed on the E60. 
+
+The hydraulic pump with the ECO regulates the 
+flow rate according to requirements and reduces 
+the dynamic pressure in the steering system. 
+
+
+Hydraulic Schematic with ECO Valve 
+
+The low power consumption of the hydraulic 
+pump helps to reduce vehicle fuel consumption 
+and thus C02 emissions. 
+
+The ECO is sprung closed and powered open by 
+the SGM. When the ECO is fully energized, the 
+pump can deliver the maximum flow rate of 15 1/ 
+min dependent upon engine speed. 
+
+When deactivated and de-energized, the ECO 
+valve is closed and pump delivers a reduced flow 
+rate of approx. 7 l/min for steering-effort support. 
+
+
+
+1. ECO Valve 
+
+
+
+1. Hydraulic reservoir 
+
+2. Hydraulic pump 
+
+3. ECO valve 
+
+4. Rack and pinion power steering 
+
+5. Pressure control valve 
+
+6. Pressure limiting valve 
+
+7. Restrictor orifice 
+
+
+11 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power-Steering Cooler 
+
+The power-steering cooler is located on the 
+engine-cooling module. This cooler consists of 
+4 tubes of rectangular cross-section and sol¬ 
+dered fins. The cooler is needed due to the 
+increased hydraulic power needed to deliver 
+higher wheel angle speeds. 
+
+
+Active Front Steering Actuating Unit 
+
+
+
+The active front steering actuating unit is located on the steering gear. It is integrated in the 
+split steering column between the Servotronic valve and the rack. 
+
+
+This actuating unit comprises a brushless synchronous DC motor and a planetary gear. 
+
+The core component of the active front steering actuating unit is a planetary gear with 2 
+inputs. One input is from the driver via the steering spindle, the other is from the ring gear 
+via the actuator motor 
+
+
+1 
+
+
+
+1. Summation steering-angle sensor 
+
+2. Rack 
+
+3. Planetary-gear housing 
+
+4. Magnetic lock 
+
+
+5. Servotronic valve 
+
+6. Steering spindle 
+
+7. Electric motor 
+
+
+12 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+One input shaft is connected via the 
+Servotronic valve to the lower steering 
+spindle. This input shaft is connected 
+to the “sun” gear of the planetary set. 
+The second input comes from the ring 
+gear. The ring gear is driven by the 
+electric motor via a self-locking worm- 
+gear drive as a step-down stage. The 
+wormgear drive actuates the ring gear 
+which superimposes the steering 
+angle of the front wheels specified by 
+the driver. 
+
+An electromagnetically controlled safe¬ 
+ty interlock is fitted. The safety inter¬ 
+lock is spring loaded and engages the 
+worm gear drive on the actuator motor 
+when no voltage is applied. 
+
+The safety interlock is released at a 
+current of approx. 1.8 A. 
+
+The rotor position of the electric motor 
+is recorded by the motor position sen¬ 
+sor on the motor itself. 
+
+The electric motor is powered by way 
+of 3 phases. The 3 phases are ener¬ 
+gized alternately by the electronics of 
+the active front steering control unit. 
+
+The shielding is furnished by the 
+ground connection of the electric 
+motor housing to the body. 
+
+However, the actuating forces for the 
+steering angle are not applied by the 
+electric motor but rather by the power 
+steering system. 
+
+
+1. Lock 4. Worm gear 
+
+2. Worm-gear drive 5. Planetary gear 
+
+3. Electric motor 
+
+
+
+
+1. Motor position sensor 
+
+2. Electric motor 
+
+3. Electro-magnetic lock 
+
+
+13 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+Principle of Operation 
+
+Functions of Active Front Steering 
+
+Active front steering, which specifically changes the steering angle of the front wheels spec¬ 
+ified by the driver, sets new standards in terms of agility, comfort and safety. 
+
+The system comprises the following functions: 
+
+• Variable steering gear ratio 
+
+• Yaw-rate control (support of DSC) 
+
+• Power-steering support (assist) 
+
+Variable Steering Gear Ratio 
+
+The variable steering gear ratio adapts the steering gear ratio to the road speed and the 
+steering angle requested by the driver. The steering is designed to be indirect at high 
+speeds and direct at low speeds. 
+
+Vehicle maneuverability is significantly increased at slow speeds or when parking by the 
+active front steering actuating unit. The driver no longer needs to grip the steering wheel 
+excessively. When the vehicle is stationary, 2 turns are enough to move the steering wheel 
+from one lock to the other. 
+
+At high speeds (> 75 mph), active steering allows a more indirect steering gear ratio than 
+do conventional steering systems. The servomotor operates in the opposite direction to the 
+steering-wheel angle at high speeds. 
+
+Unintentional steering movements are prevented in conjunction with the increased steering- 
+torque level (Servotronic). 
+
+Yaw-Rate Control 
+
+The active front steering system supports the stability functions of DSC. 
+
+In dynamic critical situations, active front steering system can specifically modify the steer¬ 
+ing angle of the front wheels specified by the driver and stabilize the vehicle much more 
+quickly than the driver. 
+
+The intervention thresholds of DSC are much higher than those of active front steering. If 
+vehicle oversteering is detected, the active front steering system intervenes first in order to 
+stabilize the vehicle. DSC intervenes only if the steering system is not enough to stabilize 
+the vehicle. 
+
+
+14 
+
+E60 Active Front Steering 
+
+
+Power-Steering Support 
+
+Power-steering support is implemented by a conventional rack-and pinion power steering 
+system. Servotronic is available as an option. The electronics and the software for 
+Servotronic are incorporated in the SGM if active front steering is not fitted. 
+
+For the active front steering system, the software for power-steering support is incorporat¬ 
+ed in the active front steering control unit. The output stage for activating the Servotronic 
+valve and the valve in the hydraulic pump (ECO) is located in the SGM. The ECO regulates 
+the hydraulic flow rate in the hydraulic pump in order to provide only the flow rate current¬ 
+ly required for the power steering. 
+
+System Safety 
+
+Unintentional system self-steering is classified as safety-critical behavior by the active front 
+steering system. 
+
+The safe system status (failsafe) is the lowest-energy status of the actuating-unit servomo¬ 
+tor. Regardless of whether the safe status is brought about by a power loss or by intentional 
+deactivation by the system, it is essential to ensure that the actuating unit does not engage 
+the steering system. The actuating unit is blocked by a lock, which engages the unit's 
+worm-gear drive. The lock is preloaded by a spring and held against the preload by the 
+voltage supply. An interruption of the voltage supply will thus cause the lock to engage the 
+worm-gear drive of the actuating unit. 
+
+The locked superimposing gear ensures that manual steering by the driver via the steering 
+column is still possible. The steering then responds like conventional steering. The purely 
+mechanical gear ratio between the steering wheel and the front wheels is maintained. 
+
+The electric motor of the active front steering actuating unit is connected with 3 phases. A 
+short circuit to ground thus prevents the electric motor from completing a full rotation as 
+the motor can only rotate a maximum of 120° (360° : 3). 
+
+The Servotronic valve switches at zero current to the fast-driving curve. Power-steering 
+support is reduced accordingly. When the ECO is at zero current, the flow rate is 7 l/min. 
+
+If the active front steering control unit does not send a valid message on the PT-CAN, the 
+SGM operates after 100 ms with a road speed-dependent substitute curve. The substitute 
+curve ensures sufficient steering properties for the passive active front steering system. 
+
+
+15 
+
+E60 Active Front Steering 
+
+
+The driver is alerted to system faults by way of a warning lamp, a variable warning lamp and 
+Check Control messages in the instrument cluster. 
+
+The Check Control message runs as follows: AFS failure! Steer with care. 
+
+The following information appears in the control display: 
+
+Steering behavior altered! Possible to continue the journey. Steering wheel may 
+be at angle. Have the problem checked by the nearest BMW Service. 
+
+Switch-on Conditions 
+
+The switch-on conditions for the active front steering system are terminal 15 On and a run¬ 
+ning engine. 
+
+When the engine is started, the system performs a synchronization of the steering-wheel 
+position and the steering angle. This ensures that steering-wheel position and steering 
+angle match up after steering wheel movements when the system is deactivated (passive 
+status). Steering-wheel movements or movements by the wheels can be discerned. 
+
+Service Information 
+
+AFS Initialization/Adjustment 
+
+The technician must perform the initialization/adjustment procedure after performing the fol¬ 
+lowing work: 
+
+• Any alignment adjustments or steering component replacement 
+
+• Steering column work 
+
+• After replacement or programming of the AFS control module 
+
+• After replacement or programming of the SZL control module 
+
+A steering-angle adjustment (offset) must be carried out if the SZL or the steering rack is 
+replaced. This must be carried out on the KDS (alignment equipment). 
+
+The total steering-angle sensor on the steering gear is calibrated to the middle of the rack 
+at the steering-gear manufacturer. 
+
+The AFS adjustments can be found in the service functions menu of the DISplus/GT-1. 
+
+
+16 
+
+E60 Active Front Steering 
+
+
+Wheel Alignment 
+
+If the vehicle requires a wheel alignment, the initialization procedure must be started before 
+beginning the alignment. Using the DISplus/GT-1, complete the following steps: 
+
+• Access the test module for “Startup adjustment/AFS. When prompted, answer 
+“Yes” to the alignment question. 
+
+• Center steering rack and check alignment marks on the steering gear 
+
+• Install tool # 324150 and lock steering wheel 
+
+• Proceed with alignment 
+
+• After completing the last steps of the alignment (front toe adj), remove 324150. 
+
+• Proceed with the remaining portion of the test module. 
+
+This will set the total steering angle to 0 degrees by locking the superimposing gear (ring 
+gear). The AFS control module will de-energize the electromagnetic lock which will hold the 
+AFS actuator motor which will in turn hold the superimposing gear stationary. If alignment 
+is attempted without performing this procedure, the steering will be off-center by a consid¬ 
+erable amount. Special tool # 324150 is used to hold the steering wheel in the center posi¬ 
+tion. Failure to use the special tool will result in an off-center steering wheel. 
+
+Interference in Radio Reception 
+
+Interference in radio reception can be caused by there being no connection of the shield¬ 
+ing of the 3 phases of the actuating unit to the housing of the active front steering control 
+unit. 
+
+Diagnosis, Coding 
+
+Servotronic 
+
+Servotronic is activated in diagnosis as an independent control unit, the output stage for 
+Servotronic is located in the SGM. Only the vehicle-specific configuration is entered by way 
+of coding. 
+
+
+17 
+
+E60 Active Front Steering 
+
+
+
+
+Workshop Exercise - AFS Adjustments 
+
+
+Remove underbody panels and thrust plate from vehicle and install special tool # 324150. 
+Why is tool # 324150 needed to perform an alignment? 
+
+
+Remove special tool # 324150. Leave underbody panels and thrust plate off. 
+
+Using DISplus/GT-1 perform short test. Access test plan for “Startup Adjustment/AFS”. 
+Answer “Yes” to alignment question. 
+
+List the sequence of components adjusted during this procedure: 
+
+
+What is the difference between answering Yes or No at the beginning of this procedure? 
+
+
+When should the Startup/Adjustment be performed? 
+
+
+List the steps for performing an alignment on a vehicle equipped with AFS: 
+
+
+What 2 special tools are specific to the E60 wheel alignment? 
+
+
+18 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - AFS Adjustments 
+
+
+With the engine running, How many turns of the steering wheel are required to go from lock 
+to lock? 
+
+
+Under control unit functions page, locate the status request for “Value Steering Angle”. 
+With the steering wheel in the straight ahead position, note the values for: 
+
+Driver’s steering angle _ 
+
+Total steering angle _ 
+
+With the engine running, turn the wheel from lock to lock and note the changes in the above 
+angles. What is observed regarding the difference between these angles? 
+
+
+Turn the steering wheel to the left lock position and disconnect the AFS motor connection. 
+Turn the steering wheel back to the straight ahead position and note the new steering angle 
+values: 
+
+Driver’s steering angle _ 
+
+Total steering angle _ 
+
+Are the values the same for the straight ahead position? Why or Why not? 
+
+
+Reconnect AFS motor connection, clear fault codes and perform “Startup 
+Adjustment/AFS”. 
+
+List the path taken to access the test plan for “Startup Adjustment/AFS”. 
+
+
+Re-install underbody panels and thrust plate on vehicle. 
+
+
+19 
+
+E60 Active Front Steering 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

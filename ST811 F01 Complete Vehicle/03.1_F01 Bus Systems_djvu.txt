@@ -1,0 +1,3613 @@
+Table of Contents 
+
+
+F01 Bus Systems 
+
+Subject Page 
+
+Introduction .5 
+
+Bus Systems F01/F02 .5 
+
+Structure in Vehicle.5 
+
+Overall Bus Overview F01/F02 .6 
+
+Overall Network of the F01/F02 .9 
+
+Overview of Bus Systems.9 
+
+Main Bus Systems.10 
+
+Changes to main bus systems .10 
+
+Diagnosis CAN .11 
+
+Location of D-CAN connection.12 
+
+Body CAN .13 
+
+Body CAN 2.14 
+
+Powertrain-CAN PT-CAN .15 
+
+Powertrain-CAN 2 .16 
+
+Ethernet - Faster Programming Access .17 
+
+Ethernet in the F01/F02 .17 
+
+Application in the F01/F02.17 
+
+Security .17 
+
+Features of Ethernet .18 
+
+Functions of Ethernet .18 
+
+FlexRay .19 
+
+Features of the FlexRay .19 
+
+What are the Advantages of FlexRay?.20 
+
+FlexRay - A Standard in the Automotive Industry.20 
+
+FlexRay - Application in the F01/F02 .21 
+
+FlexRay Bus Topology on the F01 .23 
+
+Bus Termination .23 
+
+Properties of FlexRay .25 
+
+Bus Topology.25 
+
+Line-based Bus Topology.25 
+
+Point-to-point Bus Topology.26 
+
+Mixed Bus Topology.26 
+
+Redundant Data Transmission .27 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 11/09 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Transmission Medium - Signal Properties .28 
+
+Deterministic Data Transmission.29 
+
+Bus Signal .30 
+
+High Bandwidth .30 
+
+Wake-up and Sleep Characteristics .30 
+
+Synchronization.31 
+
+Fault Handling.32 
+
+Wiring .32 
+
+Measurements on the FlexRay .33 
+
+Most Bus.34 
+
+MOST Bus System.34 
+
+Features of the MOST system.34 
+
+Features.34 
+
+Control channel.35 
+
+Synchronous channel .35 
+
+Asynchronous channel .35 
+
+Registration of ECUs in the MOST.36 
+
+MOST control units and light direction .36 
+
+Light direction.38 
+
+Fiber Optic Connector.38 
+
+Sub-bus Systems.40 
+
+Characteristics of Sub-bus Systems.40 
+
+BSD .40 
+
+K-Bus Protocol.40 
+
+Local CAN.41 
+
+LIN-Bus.41 
+
+LIN V2.0 (or V2.1).42 
+
+LIN-Bus Overview F01/F02.44 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Bus Systems 
+
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+■MICTWIS 
+
+After completion of this module you will be able to: 
+
+• Understand the changes to the bus systems on the F01/F02 
+
+• Understand the expansion of FlexRay 
+
+• Understand the use of Ethernet in the F01/F02 
+
+• Understand LIN-Bus changes 
+
+
+4 
+
+F01 Bus Systems 
+
+
+Introduction 
+
+
+Bus Systems F01/F02 
+
+In order to integrate the latest electronic features, there have been numerous develop¬ 
+ments to the bus network as compared to the previous 7-series (E65). Continuing with 
+the philosophy of “distributed functions”, there has been more consolidation of various 
+functions. Some bus systems, such as byteflight, have been eliminated while recent 
+developments such as FlexRay have been expanded. The following innovations have 
+been implemented in the bus systems in the new BMW F01/F02: 
+
+• Powertrain CAN PT-CAN has been expanded to include a second PT-CAN 2 bus. 
+
+• K-CAN has been expanded to include a second K-CAN 2 bus with 500 kBits/s. 
+
+• FlexRay has been expanded and has replaced the F-CAN 
+
+• Ethernet has been adopted for faster programming access 
+
+• LIN-Bus system with extended functions. 
+
+Example of bus system, K-CAN 2 
+
+
+
+
+
+Structure in Vehicle 
+
+With deployment of the central gateway module (ZGM), the F01/F02 has a newly linked 
+bus structure. The engine management and chassis control systems are linked across 
+the PT-CAN (or PT-CAN 2) and the FlexRay bus system to the central gateway module 
+(ZGM). The control units of the general vehicle electrics are connected across the 
+K-CAN and K-CAN 2. 
+
+The MOST is the information carrier for the majority of control units in the area of infor¬ 
+mation and communication technologies. The vehicle diagnosis communicates across 
+the D-CAN. The vehicle is programmed / encoded via the Ethernet access point. 
+
+The sub-bus system LIN has other links. 
+
+
+5 
+
+F01 Bus Systems 
+
+
+
+
+
+6 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AL 
+
+Active steering 
+
+CAS 
+
+Car Access System (CAS 4) 
+
+CIC 
+
+Car Information Computer 
+
+CID 
+
+Central information display 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+DVD 
+
+Digital video disc 
+
+EDCSHL 
+
+Electronic damper control, satellite rear left 
+
+EDCSHR 
+
+Electronic damper control, satellite rear right 
+
+EDC SVL 
+
+Electronic damper control, satellite front left 
+
+EDC SVR 
+
+Electronic damper control, satellite front right 
+
+EGS 
+
+Electronic transmission control 
+
+EHC 
+
+Electronic height control 
+
+EKPS 
+
+Electrical fuel pump 
+
+EMA LI 
+
+Electrically motorized reel, left, (seat belt) 
+
+EMARE 
+
+Electrically motorized reel, right, (seat belt) 
+
+EMF 
+
+Electromechanical parking brake 
+
+FD 
+
+Rear display 
+
+FD2 
+
+Rear display 2 
+
+FKA 
+
+Rear compartment heating/air conditioning 
+
+FLA 
+
+High-beam assistant 
+
+FRM 
+
+Footwell module 
+
+FZD 
+
+Roof functions center 
+
+GWS 
+
+Gear selector lever 
+
+HiFi 
+
+HiFi amplifier 
+
+HKL 
+
+Trunk lid lift 
+
+HSR 
+
+Rear-axle drift angle control (Rear steering control module) 
+
+HUD 
+
+Head-up Display 
+
+ICM 
+
+Integrated Chassis Management 
+
+IHKA 
+
+Integrated heating and air conditioning 
+
+JB 
+
+Junction box electronics 
+
+KAFAS 
+
+Camera assisted driver assistance systems 
+
+KOMBI 
+
+Instrument cluster 
+
+NVE 
+
+Night Vision electronics 
+
+PDC 
+
+Park Distance Control 
+
+OBD 
+
+On board diagnostic connector 
+
+
+7 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+RSE-Mid 
+
+Rear seat entertainment (Mid) 
+
+SDARS 
+
+Satellite radio 
+
+SMBF 
+
+Seat module, passenger 
+
+SMBFH 
+
+Seat module, passenger rear 
+
+SMFA 
+
+Seat module, driver 
+
+SMFAH 
+
+Seat module, driver side rear 
+
+SWW 
+
+Lane change warning (Active blind spot detection) 
+
+SZL 
+
+Steering column switch cluster 
+
+TCU 
+
+Telematics control unit 
+
+TOP-HIFI 
+
+Top-HiFi amplifier 
+
+TPMS 
+
+Tire Pressure Monitoring System 
+
+TRSVC 
+
+Top Rear Side View Camera Module (for rear/side view camera ) 
+
+ULF-SBX High 
+
+Interface box - high version 
+
+VDM 
+
+Vertical dynamics management 
+
+VSW 
+
+Video switch 
+
+ZGM 
+
+Central gateway module 
+
+
+Key to abbreviations - bus overview 
+
+
+Index 
+
+Explanation 
+
+BSD 
+
+Bit-serial data interface 
+
+D-CAN 
+
+Diagnosis-on CAN 
+
+Ethernet 
+
+Fast data protocol 
+
+FlexRay 
+
+FlexRay bus system 
+
+K-CAN 
+
+Body CAN 
+
+K-CAN 2 
+
+Fast body CAN (500 KB) 
+
+LIN 
+
+Local Interconnect Network 
+
+Local CAN 
+
+Local CAN bus (in the F01/F02 for environment sensors) 
+
+MOST 
+
+Media Oriented System Transport 
+
+PT-CAN 
+
+Powertrain CAN 
+
+PT-CAN 2 
+
+Powertrain CAN 2 
+
+WUP 
+
+Wake-up line 
+
+
+* 
+
+
+Star coupler - distributor for the FlexRay connections in the central gateway module. 
+
+
+
+
+s 
+
+
+Startup node -control units responsible for starting up and synchronizing the FlexRay bus system. 
+
+
+8 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overall Network of the F01/F02 
+
+The overall network in the F01/F02 consists of various bus systems that enable commu¬ 
+nication between the individual control units. In view of the increasing interconnection of 
+the control units, it is possible to use the sensors of one system throughout the network. 
+
+The sensors are connected to the control unit that initially requires the information logic- 
+based and virtually in real time. This information, however, can also be made available to 
+other control units. 
+
+Using the example of the vertical dynamics management (VDM), initially, the VDM control 
+unit picks up the ride-height levels of the wheels using height-level sensors. 
+
+The automatic headlight vertical aim control can also use this information for the purpose 
+of adapting the beam throw of the headlights. The VDM makes available the information 
+via the corresponding bus systems (VDM -FlexRay - ZGM - K-CAN 2 - FRM) to the 
+footwell module. 
+
+Apart from the Ethernet, all bus systems in the F01/F02 are already known from other 
+BMW models. This section provides an overview of all bus systems of the F01/F02. 
+
+This Product Information contains a detailed description of the Ethernet system, of the 
+FlexRay bus and of the LIN-Bus sub-bus system. 
+
+Overview of Bus Systems 
+
+In principle, a distinction is made between two groups of bus systems: 
+
+• Main bus systems such as Ethernet, FlexRay, KCAN, K-CAN 2, MOST, PT-CAN 
+and PTCAN2 
+
+• Sub-bus systems such as BSD, D-CAN, LIN, Local-CAN. 
+
+Main-bus systems are responsible for the data exchange between the control modules 
+throughout the vehicle system. This includes system functions such as diagnosis, 
+programming and encoding. 
+
+Sub-bus systems exchange data within one function group. 
+
+For example, the data of the rain-light-solar condensation sensor are read in by the 
+junction box electronics, processed and forwarded to the wiper module. The connection 
+between the control units of the rain-light-solar-condensation sensor and junction box 
+electronics is a sub-bus and designed as a LIN-Bus. 
+
+
+9 
+
+F01 Bus Systems 
+
+
+
+Main Bus Systems 
+
+
+Main-bus system 
+
+Data rate 
+
+Bus topology 
+
+D-CAN (diagnosis-on CAN) 
+
+500 kBit/s 
+
+Linear, two-wire 
+
+Ethernet 
+
+100 M Bit/s 
+
+Linear 
+
+FlexRay 
+
+10 Mbits/s 
+
+Mixed topology, two-wire 
+(see section dealing with FlexRay) 
+
+K-CAN (body CAN) 
+
+100 kBit/s 
+
+Linear, two-wire, single-wire mode 
+possible for emergency operation 
+
+K-CAN 2 (fast body CAN) 
+
+500 kBit/s 
+
+Linear, two-wire 
+
+MOST (Media-Oriented System Transport bus) 
+
+22.5 MBit/s 
+
+Ring, optical fiber 
+
+PT-CAN (chassis CAN) 
+
+500 kBit/s 
+
+Linear, two-wire 
+
+PT-CAN 2 (powertrain CAN) 
+
+500 kBit/s 
+
+Linear, two-wire 
+
+
+The main bus systems are responsible for cross-system data exchange. 
+
+Changes to main bus systems 
+
+The most important changes to the changes systems in the F01/F02 are: 
+
+
+• Ethernet -fast vehicle programming access 
+
+• Powering up certain bus systems also possible without wake-up line 
+(new now KCAN 2). 
+
+The central gateway module interlinks all the main bus systems. 
+
+
+10 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis CAN 
+
+After connecting a BMW diagnostic 
+system, the gateway (central gateway 
+module) places the reguests of the BMW 
+diagnostic system on the internal buses. 
+
+The responses undergo the same process 
+in opposite direction. 
+
+Only the one new communication protocol 
+will be used for diagnosis. Worldwide, the 
+D-CAN (Diagnostics-on CAN) has 
+replaced the previous diagnostic interface 
+and its protocol which is based on KWP 
+2000 (Keyword Protocol 2000). 
+
+The reason for the changeover was a new 
+legal requirement in the USA requiring that 
+all vehicles be equipped with the D-CAN 
+as from model year 2008. The transitional 
+phase began in September 2006. The 
+E70 was the first vehicle equipped with 
+D-CAN. This modification was then 
+phased in on all new BMW models. 
+
+To ensure complete diagnosis for the F01 / F02, an ICOM A is required as diagnosis 
+adapter. 
+
+The terminal resistors for the D-CAN are located in the following components: 
+
+• Central gateway module 
+
+• OBD2 connector (on wiring harness side). 
+
+
+
+Diagnosis access 
+
+
+ZGfo 
+
+
+
+.. Q pj n £ 
+
+
+D-CAN H 
+
+T 
+
+OBD2 
+
+o Pin 14 
+
+
+
+D-CAN L 
+
+
+
+11 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Location of D-CAN connection 
+
+The diagnosis socket is located under the dashboard on the driver's side. The ICOM A 
+used as the interface to the BMW diagnosis system. 
+
+
+
+Diagnosis access in vehicle 
+
+
+OBD access in the vehicle will remain unchanged. The pin assignments are as follows: 
+
+• 3,11,12,13 = Ethernet connections. 
+
+• 16 = Terminal 30 
+
+• 5 = Terminal 31 
+
+• 14 + 6 = Communication connections 
+
+• 8 = activation of Ethernet. 
+
+
+12 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Body CAN 
+
+The bus systems used to date are also used in the F01/F02. The K-CAN is responsible 
+for communication of the components with a low data transfer rate. The K-CAN is also 
+connected to the other bus systems via the central gateway module. 
+
+The K-CAN is set up as line topology. Some control units in the K-CAN have a LIN-Bus 
+as sub-bus. The K-CAN has a data transfer rate of 100 kBit/s and is designed as a twist¬ 
+ed pair of wires. The K-CAN has the possibility to be operated as a single-wire bus in the 
+event of a fault. 
+
+The K-CAN control unit is wakened via the bus, without an additional wake-up line. 
+
+The following control units are fitted in the KCAN: 
+
+• CID Central Information Display 
+
+• CON Controller 
+
+• EHC, Electronic FHeight Control 
+
+• FD Rear Display 
+
+• FD2 Rear Display 2 
+
+• FKA, rear heater / air-conditioning system 
+
+• HiFi, hi-fi amplifier 
+
+• HKL, luggage compartment lid lift 
+
+• HUD, Flead-Up Display 
+
+• IHKA, integrated heater/air conditioning system* 
+
+• SMBF passenger seat module* 
+
+• SMBFH rear passenger seat module* 
+
+• SMFA driver seat module* 
+
+• SMBFH rear module on driver' seat side* 
+
+• TPMS, Tire Pressure Monitoring System 
+
+• TRSVC panoramic camera* 
+
+• VSW, video switch 
+
+• ZGM, central gateway module. 
+
+
+13 
+
+F01 Bus Systems 
+
+
+
+
+BodyCAN 2 
+
+The K-CAN 2 is responsible for communication of the control units with a high data 
+transfer rate. The K-CAN 2 is also connected to the other bus systems via the central 
+gateway module (ZGM). A LIN-Bus as a sub-bus is connected to all control units in the 
+K-CAN 2. The K-CAN 2 can be wakened via any of these sub busses, without an addi¬ 
+tional (hardwire) wake-up line. This is represented by the “wake authorized” symbol |T| 
+next to all of the control units of K-CAN 2 on the Bus Overview. (See bus chart below). 
+
+To provide a rapid start enable, the CAS has an additional redundant bus connection to 
+the DME. On this CAS bus, the data are transferred per K bus protocol. 
+
+The K-CAN 2 has a data transfer rate of 500 kBit/s and is designed as a twisted pair of 
+wires. 
+
+The following control units are fitted in the KCAN 2: 
+
+• CAS Car Access System 
+
+• FRM, footwell module 
+
+• FZD, roof functions center 
+
+• JBE, junction box electronics 
+
+• PDC, Park Distance Control (integrated in JBE) 
+
+• ZGM, central gateway module. 
+
+The terminal resistors in the K-CAN 2 are located in the following control units: 
+
+• Central gateway module 
+
+• Junction box electronics. 
+
+
+Q 
+
+m 
+
+
+
+14 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Powertrain-CAN PT-CAN 
+
+The PT-CAN connects the engine management system to the gearbox control, but now 
+also interconnects systems in the area of safety and driver assistance systems. 
+
+It is line-based with tap lines to the individual systems. The PT-CAN has a data transfer 
+rate of 500 kBit/s and is designed as a twisted pair of wires. Control units with a power 
+supply via terminal 30 have an additional wake-up line (see illustration). 
+
+
+PT-CAN 
+
+
+DME 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Crash Safety Module 
+
+DME 
+
+Digital Motor Electronics 
+
+EGS 
+
+Electronic transmission control 
+
+EMF 
+
+Electromechanical parking brake 
+
+EMA LI 
+
+Electrically motorized reel, left 
+
+EMA RE 
+
+Electrically motorized reel, right 
+
+GWS 
+
+Gear selector lever 
+
+KAFAS 
+
+Camera-based driver assistance systems 
+
+KOMBI 
+
+Instrument cluster 
+
+NVE 
+
+Night Vision electronics 
+
+
+The terminal resistors in the PT-CAN are located in the following control units: 
+
+• Instrument cluster 
+
+• Electromechanical parking brake. 
+
+
+15 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Powertrain-CAN 2 
+
+The PT-CAN 2 forms a redundancy for the PT-CAN in the area of the engine manage¬ 
+ment system and also transfers signals to the fuel pump control. The PT-CAN 2 has a 
+data transfer rate of 500 kBit/s and is designed as a twisted pair of wires with an addition¬ 
+al wake-up line. 
+
+
+PT-CAN 2 
+
+
+DME - • EKPS 
+
+
+EGS -* - GWS 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+DME 
+
+Digital Motor Electronics 
+
+EGS 
+
+Electronic transmission control 
+
+EKPS 
+
+Electronic fuel pump control 
+
+GWS 
+
+Gear selector lever 
+
+
+The terminal resistors in the PT-CAN 2 are located in the following control units: 
+
+• Digital Motor Electronics 
+
+• Control unit for electric fuel pump. 
+
+
+16 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ethernet - Faster Programming Access 
+
+Ethernet in the F01/F02 
+
+Ethernet is a manufacturer-neutral, cable-bound network technology. Most computer 
+networks nowadays are based on this data transfer technology. 
+
+The so-called Ethernet was developed more than 30 years ago. Since then, the data 
+transfer rates have multiplied. The IEEE 802.3u specification with 100 MBit/s data trans¬ 
+fer rate is used in the F01/F02. The IEEE 802.3xx is a standard for cable-bound net¬ 
+works of the Institute of Electrical and Electronic Engineers. This specification is also 
+known as "Fast Ethernet". 
+
+The transfer protocols are the protocols TCP/IP (Transmission Control Protocol/ Internet 
+Protocol) and UDP (User Datagram Protocol). 
+
+Application in the F01/F02 
+
+The Ethernet in the diagnosis socket is only enabled when the BMW programming 
+system (ICOM A) is connected. There is an activation bridge in the programming 
+connector, between pins 8 and 16. This switches the power supply for the Ethernet 
+controller in the central gateway module. 
+
+This means that Ethernet access to the central gateway module is disabled while the 
+vehicle is being driven by the customer. The Ethernet connection between the informa¬ 
+tion and communications systems is permanently enabled in the diagnosis socket inde¬ 
+pendently of the activation bridge. 
+
+Security 
+
+Each participant in an Ethernet has an individually assigned identification number, an 
+MAC address (Media Access Control). This address and the VIN (Vehicle Identification 
+Number) identifies the vehicle to the BMW programming system on connection setup. 
+This prevents changes to the data records and stored values by third parties. 
+
+In the same way as in a computer network in the office, each device in a network must 
+receive unigue identification. This is why the central gateway module is assigned a so- 
+called IP address by the programming system after connection setup. 
+
+The function of an IP address in a network corresponds to that of a telephone number in 
+the telephone network. This IP address is assigned per DHCP (Dynamic Host 
+Configuration Protocol). This is a method of automatic allocation for IP addresses to user 
+devices in a network. 
+
+
+17 
+
+F01 Bus Systems 
+
+
+
+Features of Ethernet 
+
+• Very high data rate of 100 MBit/s 
+
+• System start time with connection setup and address assignment under three sec¬ 
+onds, sleeping under one second 
+
+• System access only via BMW programming systems. 
+
+Functions of Ethernet 
+
+• Faster programming of the vehicle in Service 
+
+
+Ethernet 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+ZGM 
+
+Central gateway module 
+
+OBD2 
+
+Diagnosis socket 
+
+CIC 
+
+Central information computer 
+
+
+
+
+The wiring between the diagnosis socket and ZGM is with two pairs of wires without 
+additional shielding. There is also an activating line that supplies the Ethernet controllers 
+in the control units with voltage. 
+
+There is a Cat5 cable between the diagnosis connector and the BMW programming sys¬ 
+tem. These Cat5 cables are network cables with four twisted, unshielded pairs of wires 
+that are approved for signal transfers at up to 100 MHz operating frequency. However, 
+two pairs of wires are sufficient for the transfer capacity required in the F01/F02. 
+
+
+18 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlexRay 
+
+
+Features of the FlexRay 
+
+In future, driving dynamics control systems, driver assistance systems and their innova¬ 
+tive interconnection will be ever more important for the differentiation of the BMW mar¬ 
+que. Since networking via the CAN bus had already reached its limits, it was necessary 
+to urgently find a suitable alternative for CAN. 
+
+In co-operation with Daimler/Chrysler AG and the semiconductor manufacturers 
+Freescale (formerly Motorola) and Philips, BMW AG founded the FlexRay consortium in 
+1999 for the purpose of developing innovative communication technology. 
+
+Bus system speeds 
+
+
+
+10 - 20 1 00 500 1 0000-20000 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Real-time capabilities, deterministic (strictly defined) and redundant 
+
+2 
+
+Conditional real-time capabilities - sufficient for control systems 
+
+3 
+
+No real-time capabilities 
+
+
+Bosch and General Motors joined the consortium as partners later. Since 2002, the Ford 
+Motor Company, Mazda, Elmos and Siemens VDO have decided to join. In the mean¬ 
+time, almost all significant car makers and suppliers throughout the world have joined the 
+FlexRay consortium. 
+
+FlexRay is a new communication system which aims at providing reliable and efficient 
+data transmission with real-time capabilities between the electrical and mechatronic 
+components for the purpose of interconnecting innovative functions in motor vehicles, 
+both today and in the future. 
+
+
+19 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Development of the new FlexRay communication system was prompted by the ever 
+growing technological reguirements placed on a communication system for interconnect¬ 
+ing control units in motor vehicles and the realization that an open and standardized solu¬ 
+tion was needed for infrastructure systems. FlexRay provides an efficient protocol for real¬ 
+time data transmission in distributed systems as used in motor vehicles. 
+
+With a maximum data transmission rate of 10 Mbits/s per channel, the FlexRay is distinct¬ 
+ly faster than the data buses used to date in the area of the chassis, drive train and sus¬ 
+pension of today's motor vehicles. Until now, this data rate could only be achieved with 
+fiber-glass cables. 
+
+In addition to the higher bandwidth, FlexRay supports deterministic data transmission and 
+can be configured such that reliable continued operation of remaining communication 
+systems is enabled even in the event of individual components failing. 
+
+What are the Advantages of FlexRay? 
+
+• High bandwidth (10 Mbits/s compared to 0.5 Mbits/s of the CAN) 
+
+• Deterministic (= real-time capabilities) data transmission 
+
+• Reliable data communication 
+
+• Supports system integration 
+
+• Standard in automotive industry 
+
+FlexRay - A Standard in the Automotive Industry 
+
+The FlexRay bus system is an industrial standard and is therefore supported 
+and further developed by many manufacturers. 
+
+Members of the FlexRay consortium 
+
+
+Development Members 
+Associate Members 
+
+
+Gore Members 
+
+
+tyc© 
+
+flcclrontc* 
+Cor potation 
+
+
+BMW Group 
+
+
+0*tphi 
+
+Cwpwnlipn 
+
+
+Volkswagen 
+
+
+General Motors 
+
+
+~ — \ 
+
+
+NXP Semiconductors 
+
+
+-^ 
+
+
+NIS8AM 
+MOTOR 
+CO., Ltd 
+
+
+Freeacale Semiconductor Couiii*Miul 
+Tew AC & Co 
+
+
+Tyco Electronic* Fu*d Motor Company 
+
+PSA Pnugeol CtlnxHi 
+
+
+20 
+
+F01 Bus Systems 
+
+
+
+FlexRay - Application in the F01/F02 
+
+In the F01/F02, the FlexRay bus system is being used for the first time across systems to 
+network dynamic driving control systems and the engine management system in a series 
+vehicle. The central gateway module sets up the link between the various bus systems 
+and the FlexRay. 
+
+FlexRay - simplified view 
+
+
+
+21 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Physical structure of FlexRay F01/F02 (topology) 
+
+
+EDCSVL EDCSVR 
+
+
+
+22 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+index 
+
+Explanation 
+
+AL 
+
+Active steering system 
+
+BD 
+
+Bus driver 
+
+DM 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+EDCSH 
+
+Electronic damper control, rear left satellite 
+
+EDCSHR 
+
+Electronic damper control, rear right satellite 
+
+EDCSVL 
+
+Electronic damper control, front left satellite 
+
+EDCSVR 
+
+Electronic damper control, front right satellite 
+
+HSR 
+
+Rear-axle drift angle control 
+
+ICM 
+
+Integrated Chassis Management 
+
+SZL 
+
+Steering column switch cluster 
+
+VDM 
+
+Vertical dynamics management 
+
+ZGM 
+
+Central gateway module 
+
+
+FlexRay Bus Topology on the F01 
+
+The FlexRay is shown in a simplified form in the overview of the bus systems. The actual 
+topology is shown in the graphic above. 
+
+Depending on the level of eguipment of the vehicle, the ZGM contains one or two so- 
+called star couplers, each with four bus drivers. The bus drivers forward the data of the 
+control units via the communication controller to the central gateway module (ZGM). 
+Depending on the type of termination the FlexRay control units have, they are connected 
+to these bus drivers in two different ways. 
+
+Bus Termination 
+
+In the same way as most bus systems, resistors for termination (as bus termination) are 
+also used at both ends of the data lines on the FlexRay to prevent reflections on the lines. 
+
+
+23 
+
+F01 Bus Systems 
+
+
+
+
+
+The value of these terminal resistors is determined from the data transfer rate and cable 
+lengths. The terminal resistors are located in the control units. 
+
+If only one control unit is connected to a bus driver (e.g. SZL to the bus driver BDO), the 
+connections on the bus driver and on the control unit are fitted with a terminal resistor. 
+
+Terminal resistor 
+
+
+
+This type of connection at the central gateway module is called "end node termination". 
+
+If the connection at the control unit is not the physical finish node (e.g. DSC, ICM and 
+DME at the bus driver BD2), it is referred to as a FlexRay transmission and forwarding 
+line. In this case, both components must be terminated at the ends of each bus path with 
+terminal resistors. 
+
+
+
+This connection option exists for the central gateway module and a number of control 
+units. However, the control unit with a transmission and forwarding line has a 'non-end 
+node termination' for data pickup. This type of termination cannot be tested using mea¬ 
+surement systems at the control unit connector due to its resistor / capacitor circuit. 
+
+To measure the (current-free) FlexRay bus to determine the line or terminating resistance, 
+please be sure to use the vehicle wiring diagram. 
+
+
+24 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Properties of FlexRay 
+
+
+The most important properties of the FlexRay bus system are outlined in the following: 
+
+• Bus topology 
+
+• Transmission medium - signal properties 
+
+• Deterministic data transmission 
+
+• Bus signal. 
+
+Bus Topology 
+
+The FlexRay bus system can be integrated in various topologies and versions in the 
+vehicle. The following topologies can be used: 
+
+• Line-based bus topology 
+
+• Point-to-point bus topology 
+
+• Mixed bus topology. 
+
+Line-based Bus Topology 
+
+All control units (e.g. SGI to SG3) in line-based topology are connected by means of a 
+two-wire bus, consisting of two twisted copper cores. This type of connection is also 
+used on the CAN-bus. The same information but with different voltage level is sent on 
+both lines. 
+
+The transmitted differential signal is immune to interference. The line-based topology is 
+suitable only for electrical data transmission. 
+
+Line-based bus topology 
+
+
+
+25 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+Point-to-point Bus Topology 
+
+The satellites (control units SG2 to SG5) in point-to-point bus topology are each con¬ 
+nected by a separate line to the central master control unit (SGI). Point-to-point topology 
+is suitable for both electrical as well as optical data transmission. 
+
+
+
+Mixed Bus Topology 
+
+Mixed bus topology caters for the use of different topologies in one bus system. 
+
+Parts of the bus system are line-based while other parts are point-to-point. 
+
+This bus topology is applied in the F01/F02. The central gateway module (depending on 
+the eguipment version) contains one or two active neutral points, each with four bus dri¬ 
+vers. This means that up to eight connection options are available. 
+
+
+26 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Redundant Data Transmission 
+
+Fault-tolerant systems must ensure continued reliable data transmission even after failure 
+of a bus line. This requirement is realized by way of redundant data transmission on a 
+second data channel. 
+
+
+SGI SG2 SG3 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Channel 1 
+
+B 
+
+Channel 2 
+
+
+A bus system with redundant data transmission uses two independent channels. Each 
+channel consists of a two-wire connection. In the event of one channel failing, the infor¬ 
+mation of the defective channel can be transmitted on the intact channel. 
+
+
+FlexRay enables the use of mixed topologies also in connection with redundant data 
+transmission. 
+
+
+27 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transmission Medium - Signal Properties 
+
+The bus signal of the FlexRay must be within defined limits. A good and bad image of 
+the bus signal is depicted below. The electrical signal must not enter the inner area nei¬ 
+ther on the time axis nor on the voltage axis. The FlexRay bus system is a bus system 
+with a high data transfer rate and thus with rapid changing of the voltage level. 
+
+The voltage level as well as the rise and drop of the voltage (edge steepness) are precise¬ 
+ly defined and must be within certain values. There must be no infringements of the 
+marked "fields" (green and red hexagon). Electrical faults resulting from incorrect cable 
+installation, contact resistance etc. can cause data transmission problems. 
+
+Good and bad image 
+
+© 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Good image 
+
+B 
+
+Bad image 
+
+
+
+
+The images shown above can be depicted only with very fast (laboratory) oscilloscopes. 
+The oscilloscope in the BMW diagnostic system is not suitable for representing such 
+images. 
+
+The voltage ranges of the FlexRay bus system are: 
+
+• System ON - no bus communication 2.5 V 
+
+• High signal - 3.1 V (voltage signal rises by 600 mV) 
+
+• Low signal - 1.9 V (voltage signal falls by 600 mV). 
+
+The voltage values are measured with respect to ground. 
+
+
+28 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+Deterministic Data Transmission 
+
+The CAN network is an event-controlled bus system. Data are transmitted when an event 
+occurs. In the event of an accumulation of events, delays may occur before further infor¬ 
+mation can be sent. If an item of information was not sent successfully and free of errors, 
+this information is continually sent until the communication partner confirms its receipt. 
+
+If faults occur in the bus system, this event-controlled information can back up causing 
+the bus system to overload, i.e. there is a significant delay in the transmission of individual 
+signals. This would result in poor control characteristics of individual systems. 
+
+
+© 1 
+
+® 
+
+
+
+n 
+
+«° 
+
+t° 
+
+V 
+
+xyz... 
+
+abc... 
+
+JULTJBLl 
+
+| JUIILTU 
+
+JJULTL 
+
+_ 
+
+JULTUlJ 
+
+| IjultitthI | 
+
+1|PJLJUUI[| 
+
+
+l 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Time-controlled part of cyclic data transmission 
+
+2 
+
+Event-controlled part of cyclic data transmission 
+
+3 
+
+Cycle [5 ms total cycle length of which 3 ms static (= time-controlled) 
+and 2 ms dynamic (= event-controlled)] 
+
+n 
+
+Engine speed 
+
+<° 
+
+Angle 
+
+t° 
+
+Temperature 
+
+V 
+
+Road speed 
+
+xyz... abc... 
+
+Event-controlled information 
+
+t 
+
+Time 
+
+
+29 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The FlexRay bus system is a time-controlled bus system that additionally provides the 
+option of transmitting sections of the data transmission event-controlled. In the time-con¬ 
+trolled part, time slots are assigned to certain items of information. One time slot is a 
+defined period of time that is kept free for a specific item of information (e.g. engine 
+speed). 
+
+Conseguently, important periodic information is transmitted at a fixed time interval in the 
+FlexRay bus system so that the system cannot be overloaded. 
+
+Other less time-critical messages are transmitted in the event-controlled part. 
+
+An example of deterministic data transmission is outlined in the following. 
+
+Bus Signal 
+
+Deterministic data transmission ensures that each message in the time-controlled part is 
+transmitted in real time. Real time means that the transmission takes place within a 
+defined time. 
+
+Therefore, important bus messages are not sent too late due to overloading of the bus 
+system. If lost due to a temporary problem in the bus system (e.g. EMC problem) a mes¬ 
+sage cannot be sent again. A current value is sent in the next assigned time slot. 
+
+High Bandwidth 
+
+The FlexRay bus system provides a maximum data transfer rate of up to 10 MBit/s per 
+channel. This corresponds to 20 times the data transfer rate of the PT-CAN 2 or D-CAN. 
+
+Wake-up and Sleep Characteristics 
+
+Although the FlexRay control units can be wakened per bus signal, most FlexRay control 
+units are activated across an additional wake-up line by the CAS. The wake-up line has 
+the same function as the previous wake-up line (15WUP) in the PT-CAN. The signal 
+curve corresponds to the signal curve of the PTCAN. 
+
+The active steering and the VDM are not wakened via the wake-up cable, rather per bus 
+signal. The four damper satellites are then activated directly by the VDM by switching the 
+power supply. 
+
+The "wake-up voltage curve" graphic shows the typical behavior of the voltage curve in 
+response to unlocking and starting the vehicle. 
+
+
+
+30 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phase 1: 
+
+Driver unlocks the vehicle. The CAS control unit activates the wake-up impulse and 
+sends it across the wake-up line to the connected FlexRay control units. 
+
+Phase 2: 
+
+Car is opened, terminal R is still OFF, the voltage levels in the bus systems drop again. 
+
+Phase 3: 
+
+Car is started, terminal 15 is ON, the voltages remain at the set levels until terminal 15 is 
+turned off again. 
+
+Phase 4: 
+
+The complete vehicle network must assume sleep mode at terminal R OFF in order to 
+avoid unnecessary power consumption. Each control unit in the network signs off to 
+ensure that all control units "are sleeping". 
+
+An error message is stored if this is not the case. This error message is then evaluated as 
+part of the energy diagnosis procedure. 
+
+Synchronization 
+
+A common time base is necessary in order to ensure synchronous execution of individual 
+functions in interconnected control units. Time matching must take place via the bus sys¬ 
+tem as all control units operate with their own clock generator. 
+
+The control units measure the time of certain synchronization bits, calculate the mean 
+value and adapt their bus clock to this value. The synchronization bits are sent in the 
+static part of the bus message. Synchronization starts in the FlexRay after the system 
+start between two of the control units authorized for wake-up (in the bus overview marked 
+with "S") once the CAS control unit has sent a wake-up impulse. 
+
+When this operation is concluded, the remaining control units log on to the FlexRay in 
+succession and calculate their differential values. In addition, there is a calculated correc¬ 
+tion of the synchronization during operation. This system ensures that even minimal time 
+differences do not cause transmission errors in the long term. 
+
+
+31 
+
+F01 Bus Systems 
+
+
+
+Fault Handling 
+
+In the event of faults on the bus lines (e.g. short circuit or short circuit to earth) or on the 
+FlexRay control units themselves, individual control units or entire branches can be 
+excluded from the bus communication. This does not include the branch with the four 
+FlexRay control units authorized for wake-up (ZGM, DME, DSC, ICM). If there is an inter¬ 
+ruption in the communication between these control units, no engine start is possible. 
+
+In addition, a so-called bus watchdog prevents the control units from sending messages 
+are times when they are not authorized to do so. This prevents other messages from 
+being overwritten. 
+
+Wiring 
+
+The wiring of the FlexRay bus in the F01/F02 is executed as a sheathed, two-wire, twist¬ 
+ed cable. The sheathing protects the wires from mechanical damage. Some of the termi¬ 
+nal resistors are located in the central gateway module and in the user devices. Since the 
+surge impedance (impedance of high-freguency lines) of the lines depends on external 
+influencing factors, the terminating resistors are precisely matched to the reguired resis¬ 
+tance. The sections of line to the user devices can be checked relatively easily by means 
+of a resistance measuring instrument (ohmmeter, multimeter). The resistance should be 
+measured from the central gateway module. Pin assignment, see 'BMW diagnostic sys¬ 
+tem'. 
+
+The terminal resistors in the FlexRay are located in the following control modules: 
+
+• Central gateway module (only end node) 
+
+• Electronic Damper Control satellites. 
+
+• Digital Motor Electronics 
+
+• Dynamic Stability Control 
+
+• Rear-axle drift angle control 
+
+• Steering column switch cluster 
+
+• Lane change warning. 
+
+
+32 
+
+F01 Bus Systems 
+
+
+
+Measurements on the FlexRay 
+
+For resistance measurement in the FlexRay, be sure to observe the vehicle wiring 
+diagram! 
+
+The various termination options mean that misinterpretations of the measurement results 
+can occur. 
+
+Measuring the resistance of the FlexRay lines cannot provide a 100% deduction in terms 
+of the system wiring. In the case of damage such as pinching or connector corrosion, the 
+resistance value may be within the tolerance when the system is static. 
+
+In dynamic mode, however, electrical influences can cause increased surge resistance, 
+resulting in data transmission problems. 
+
+It is possible to repair the FlexRay bus. If damaged, the cables can be connected using 
+conventional cable connectors. Special reguirements, however, must be observed when 
+reinstalling the system. 
+
+The wiring of the FlexRay system consists of twisted lines. Where possible, this twisting 
+should not be altered during repairs. Repaired areas with stripped insulation must be 
+sealed again with shrink-fit tubing. Moisture can affect the surge resistance and therefore 
+the efficiency of the bus system. 
+
+
+33 
+
+F01 Bus Systems 
+
+
+
+Most Bus 
+
+
+MOST Bus System 
+
+Features of the MOST system 
+
+MOST is a data bus technology for multimedia applications that was specifically devel¬ 
+oped for use in motor vehicles. 
+
+MOST stands for "Multimedia Oriented System Transport". The MOST bus uses light 
+pulses for the purpose of transmitting data and is based on a ring structure. The data are 
+transmitted only in one direction in the ring. 
+
+MOST technology satisfies two important reguirements: 
+
+1. The MOST bus transports control data as well as audio data, navigation and other 
+services. 
+
+2. MOST technology provides a logical model for controlling the data variety and 
+complexity, i.e. the MOST application framework. The MOST application frame¬ 
+work organizes functions of the overall system. 
+
+MOST is capable of controlling functions that are distributed in the vehicle and to man¬ 
+age them dynamically. 
+
+An important characteristic of a multimedia network is that it not only transports control 
+data and sensor data such as on the CAN bus and LIN-Bus. 
+
+In addition, a multimedia network can also transmit digital audio and video signals and 
+transport graphics as well as other data services. 
+
+Features 
+
+• High data rate 22.5 Mbits/s 
+
+• Synchronous/asynchronous data transmission 
+
+• MOST assigns nodes in the bus to the control units 
+
+• Optical fiber as transmission medium 
+
+• Ring structure. 
+
+Each MOST control unit can send data on the MOST bus. Only the central gateway 
+module can initiate data exchange between the MOST bus and other bus systems. 
+
+The Car Information Computer functions as the master control unit; the gateway to 
+the remaining bus system is the central gateway module. 
+
+The data are transmitted on various channels on the MOST bus. Corresponding to the 
+application, the data are sent to different time windows within the data flow (channels). 
+
+
+34 
+
+F01 Bus Systems 
+
+
+
+
+Control channel 
+
+Control signals such as volume control for the Top HiFi amplifier and data for diagnosis 
+purposes are sent via the control channel. 
+
+Synchronous channel 
+
+The synchronous channel is mainly reserved for the purpose of sending audio data. 
+
+20 -Data transfer channels 
+
+Asynchronous channel 
+
+The asynchronous channel transfers image data from the navigation system such as the 
+map view and direction arrows. 
+
+The control channel and the asynchronous channel are used for programming the control 
+units on the MOST bus and correspondingly adapt it to the MOST-direct access. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Synchronous channel 
+
+2 
+
+Asynchronous channel 
+
+3 
+
+Control channel 
+
+
+35 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Registration of ECUs in the MOST 
+
+Precisely in the same way as on the E6x models, the control units installed on the MOST 
+bus are stored in a registration file in the master control unit. The corresponding data are 
+stored during the production process and, in connection with control unit retrofits, after 
+programming the respective control unit. 
+
+The ECUs and their order on the MOST bus are stored in this registration file. With the 
+fiber optic cable connector, it is possible to connect control units in the rear area of the 
+F01/F02 ex factory or after a repair in different order. With the aid of the registration file, 
+the BMW diagnosis system can determine the installed control units and their order. 
+
+In addition, this registration file is also stored in the central gateway module so that there 
+is still access to the control unit registration in the event of a fault in the MOST frame¬ 
+work. This means that the diagnosis can be used to call up the last functional status from 
+the central gateway module. 
+
+Although the master control unit of the MOST, the CIO, is connected to the K-CAN, it 
+does not carry out the function of a gateway control unit. If communication on the MOST 
+is no longer possible, the necessary data can only be read out via the central gateway 
+module. 
+
+MOST control units and light direction 
+
+In the F01/F02, the MOST bus is used for the components in information/communication 
+systems. The Car Information Computer is used as the master control unit. Other bus 
+users may be: 
+
+• DVD changer 
+
+• Instrument cluster 
+
+• Top-HiFi amplifier 
+
+• Satellite tuner SDARS (only US version) 
+
+• Telephone 
+
+The MOST programming access used in models to date is no longer reguired for the 
+F01/F02. The programming now takes place on these vehicles via the Ethernet access 
+point. 
+
+
+36 
+
+F01 Bus Systems 
+
+
+
+MOST ring intheF01/F02 
+
+
+KOMBI 
+
+
+DVDC 
+
+
+
+CIC 
+
+
+|-1 TCU □□ ULFSBX 
+
+
+□ 
+
+□□ 
+
+I-1 
+
+
+SDARS 
+
+
+RSE 
+
+
+TOP HIFI 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+TOP HIFI 
+
+Top-HiFi Amplifier 
+
+KOMBI 
+
+Instrument Cluster 
+
+DVDC 
+
+DVD Changer 
+
+SDARS 
+
+Satellite Tuner 
+
+RSE 
+
+Rear Seat Entertainment 
+
+ULF-SBX 
+
+Interface Box 
+
+TCU 
+
+Telematics Control Unit 
+
+ZGM 
+
+Central Gateway Module 
+
+CIC 
+
+Car Information Computer 
+
+
+
+
+37 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Light direction 
+
+Data are always sent in one direction on the MOST bus. Each control unit can send data 
+on the MOST bus. 
+
+The physical light direction runs from the master control unit (Car Information Computer) 
+to the DVD changer, to the instrument cluster, to the central gateway module and from 
+there to the fiber optic cable distributor. All the control units fitted in the rear end are con¬ 
+nected at the fiber optic cable distributor. From the last control unit, the light returns to 
+the master control unit. 
+
+Fiber Optic Connector 
+
+The use of the fiber optic connector provides the advantage of being able to easily retrofit 
+control units in the area of the luggage compartment. 
+
+Fiber optic cable connector, rear left in the luggage compartment 
+
+
+
+The fiber optic cable connector is located in the luggage compartment of the F01/F02, to 
+the left behind the side wall trim. The fiber optic cable connector is arranged in the 
+MOST bus system between the front area of the vehicle (head unit, DVD changer) and 
+the rear area of the vehicle (TCU, VM etc.). 
+
+One or two fiberoptic connectors are installed corresponding to the equipment configu¬ 
+ration. One fiber optic connector is responsible for the factory-installed control units. The 
+other fiber optic connector is used for the preparations for options. 
+
+The ends of the fiber optic cables, for additional options, are always grouped together on 
+the same row in the fiber optic connector to avoid damage to the ends of the fiber optic 
+cables. 
+
+As soon as the retrofit is installed, the fiber optic connectors are reconnected according 
+to instructions and integrated in the MOST bus. Within the framework of programming, 
+the control unit sequence is reloaded into the master control unit. 
+
+38 
+
+F01 Bus Systems 
+
+
+
+
+
+Sub-bus Systems 
+
+
+Characteristics of Sub-bus Systems 
+
+Sub-bus systems exchange data within the system. These systems are used to 
+exchange relatively small guantities of data in specific systems. 
+
+
+Sub-bus systems 
+
+Data rate 
+
+Bus topology 
+
+BSD (bit-serial data interface) 
+
+9.6 kBit/s 
+
+Linear, single-wire 
+
+LIN (Local Interconnect Network) 
+
+9.6/19.2/20.0 kBit/s 
+
+Linear, single-wire 
+
+Local CAN 
+
+500 kBit/s 
+
+Linear, two-wire 
+
+
+BSD 
+
+The bit-serial data interface BSD is also used on the F01/F02 (due to lack of available 
+interfaces). It makes the following connections from the engine management to the cor¬ 
+responding subsystems: 
+
+• Alternator regulator 
+
+• Oil condition sensor 
+
+K-Bus Protocol 
+
+The term "K-Bus (protocol)" is used for a series of sub-bus systems in the bus overview. 
+These sub-bus systems are used for various purposes. The K-Bus protocol used here is 
+a common component already used in predecessor models. The protocol is used, e.g. 
+on the following systems: 
+
+• Connection between ACSM and TCU 
+
+• Comfort Access 
+
+• CAS bus. 
+
+• LIN-Bus 
+
+
+40 
+
+F01 Bus Systems 
+
+
+
+
+
+Local CAN 
+
+
+The Local-CAN serves to transfer the high data volumes of the environment sensors to 
+the ICM. (E.g.: short-range sensor to the ICM.) The Local-CAN has a data transfer rate of 
+500kBits/s and is designed as a twisted pair configuration. 
+
+
+ICM 
+
+
+LRR 
+
+
+SRR-L 
+
+
+SRR-R 
+
+
+LIN-Bus 
+
+The LIN-Bus was used for the first time on the E46 for controlling the outside mirrors. 
+Mainly the versions V2.0 or higher are used in the F01/F02. For the F01/F02, various 
+connections per LIN-Bus are implemented: 
+
+• E.g.: Footwell module to driver's door switch cluster 
+
+• Connection from footwell module to the outside mirrors 
+
+• Connection from roof functions center to rain-light-solar-condensation sensor 
+
+• Activation of the 16 IHKA actuator motors per "daisy chain" assignment (series con¬ 
+nection of the signal lines). 
+
+The Local Interconnect Network was developed as a low-cost communication option for 
+intelligent actuators and sensors in the motor vehicle sector. The LIN is standardized, 
+which is why it is used in development, production and service. The first application of a 
+LIN system in an automobile took place in the year 2001 with version VI .1. 
+
+The LIN is a sub-bus configured as a single-wire system. The power supply and signal 
+excursion are at battery voltage level. In all cases, only one master control unit is fitted in a 
+LIN assembly; up to 16 items of eguipment (so-called slaves) may be attached to the 
+bus. 
+
+
+41 
+
+F01 Bus Systems 
+
+
+
+
+
+
+There is no prescribed bus topology; only the maximum cable length in a LIN-Bus is lim¬ 
+ited to 40 meters. In the F01 / F02, the data transfer rate of the LIN ranges from 2.4 to 
+19.2 kBit/s. Terminal resistors are not required due to the low data transfer rate; these are 
+not fitted in the F01/F02. On the LIN VI ,x, all slaves have a fixed identifier and the data 
+protocol only permits periodical messages to be sent. 
+
+Synchronization of the LIN takes place at the start of every message sent by the master 
+controller. A so-called "self-synchronization" of the bus takes place without clocking 
+quartz crystal. 
+
+The main area of deployment in motor vehicles is mechatronic applications, e.g. mirror 
+adjustment and other actuator motors. One control unit (e.g. junction box electronics) 
+forms the bus master controller; all other connected control units (e.g. wiper module) are 
+the slaves. 
+
+In the F01/F02, the following control units still correspond to the VI .x specification: 
+
+• Belt hand-over 
+
+• Outside mirror 
+
+• Blower output stages 
+
+• Intelligent Battery Sensor 
+
+LINV2.0 (orV2.1) 
+
+LIN components that correspond to the specification of data protocol LIN V2.0 or higher 
+have extended functions. 
+
+• The LIN components for V2.x are delivered with a device ID and a base configura¬ 
+tion. The final (dynamic) configuration and the allocation of the ID number take place 
+on commissioning by the master control unit. If one of these components is 
+replaced, this operation must be initiated manually by means of the BMW diagnosis 
+system. 
+
+• The data protocol has become more variable, permitting, if required, periodic along¬ 
+side sporadic messages as of specification V2.0. These "sporadic frames" are only 
+sent if the master control unit requires data from the slave control units or outputs 
+data. Without such a request, the time slots in the messages remain empty. 
+
+• The master control units can send so-called multiple requests to slave groups. To 
+reduce the bus load, the contacted slaves only respond in the case of changed val¬ 
+ues (e.g. door contact). 
+
+All master control units of the LIN V2.x specification are downwardly compatible to (slave) 
+components of previous specifications. However, all V2.0 slaves also require a V2.x mas¬ 
+ter controller. 
+
+
+42 
+
+F01 Bus Systems 
+
+
+
+A number of the connected components are only diagnosis-capable to a limited degree, 
+for example the rain-light-solar-condensation sensor. In this case, the master control unit 
+serves as the gateway to the remaining bus system. The diagnosis requests from the 
+ZGM or BMW diagnosis system are inserted in the sporadic section of a LIN frame. 
+
+A special feature in the F01/F02 is that the data communication between the Comfort 
+Access and diversity aerial is implemented with 20.0 kBit/s due to the large number of 
+small data packages. The slightly higher transfer rate means that the time slots in the data 
+protocol can be better exploited. 
+
+The master control unit sends the "sleep command" to place the LIN in the idle state. 
+The "sleep command" can also be sent with terminal R "On", e.g. for mirror adjustment. 
+The "wake-up command" can also be sent by a slave. 
+
+The LIN messages in the data protocol are divided into four sections: 
+
+• Synchronization 
+
+• Identifier 
+
+• Data 
+
+• Checksum 
+
+
+43 
+
+F01 Bus Systems 
+
+
+
+LIN-Bus Overview F01/F02 
+
+
+
+
+S 5 
+
+
+
+44 
+
+F01 Bus Systems 
+
+
+StSKH SM PAHl it ~ SMBFH S(SVH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key for LIN-Bus control units (F01/F02) 
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+ASPBF 
+
+Outside mirror, passenger 
+
+ASPFA 
+
+Outside mirror, driver 
+
+AUC 
+
+Automatic recirculated air control 
+
+BEFAS 
+
+Driver assistance systems operating unit 
+
+BEL 
+
+Light operating unit 
+
+CAS 
+
+Car Access System 
+
+DME 
+
+Digital Motor Electronics 
+
+FBD 
+
+Remote Control Services 
+
+FRM 
+
+Footwell Module 
+
+FZD 
+
+Roof Functions Center 
+
+GDO 
+
+Garage door opener 
+
+IBS 
+
+Intelligent Battery Sensor 
+
+IHKA 
+
+Integrated Heating and Air Conditioning, automatic 
+
+ISP 
+
+Interior Mirror 
+
+JB 
+
+Junction Box Electronics 
+
+LRE 
+
+Steering Wheel Electronics 
+
+MFL 
+
+Multi-function Steering Wheel 
+
+OC-3 
+
+Seat Occupancy Detection, front passenger 
+
+PDC 
+
+Park Distance Control 
+
+RLSBS 
+
+Rain-light-solar-condensation sensor 
+
+SBSBF 
+
+Switch block for seat adjustment, passenger 
+
+SBSBFH 
+
+Switch block for seat adjustment, passenger’s side rear 
+
+SBSFA 
+
+Switch block for seat adjustment, driver 
+
+SBSFAH 
+
+Switch block for seat adjustment, driver’s side rear 
+
+SBSTBF 
+
+Switch block for seat memory, passenger 
+
+SBSTBFH 
+
+Switch block for seat memory, passenger’s side rear 
+
+SBSTFA 
+
+Switch block for seat memory, driver 
+
+SBSTFAH 
+
+Switch block for seat memory, driver’s side rear 
+
+SBTBFH 
+
+Switch block for windows, passenger’s side rear 
+
+SBTFA 
+
+Switch block for windows, driver 
+
+SBTFAH 
+
+Switch block for windows, driver’s side rear 
+
+SINE 
+
+Alarm Siren 
+
+SMBF 
+
+Seat Module, passenger 
+
+
+45 
+
+F01 Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key for LIN-Bus control units (F01/F02) cont. 
+
+
+Index 
+
+Explanation 
+
+SMBFH 
+
+Seat Module, passenger’s side rear 
+
+SMFA 
+
+Seat Module, driver 
+
+SMFAH 
+
+Seat Module, driver’s side rear 
+
+SORO 
+
+Roller sunblind 
+
+SRTBFH 
+
+Roller sunblind switch, passenger’s side rear 
+
+SRTFAH 
+
+Roller sunblind switch, driver’s side rear 
+
+SSH 
+
+Seat heating switch 
+
+SZL 
+
+Steering column switch cluster 
+
+TMSL 
+
+Headlight module, left 
+
+TMSR 
+
+Headlight module, right 
+
+TPMS 
+
+Tire Pressure Monitoring System 
+
+WM 
+
+Wiper Motor/module 
+
+ZGM 
+
+Central Gateway Module 
+
+ZWP 
+
+Auxiliary water pump 
+
+
+46 
+
+F01 Bus Systems 
+
+
+
+

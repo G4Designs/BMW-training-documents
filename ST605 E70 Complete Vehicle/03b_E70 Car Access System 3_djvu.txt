@@ -1,0 +1,1108 @@
+Table of Contents 
+
+E70 Car Access System 3 (CAS 3) 
+
+Subject Page 
+
+Car Access System 3.3 
+
+History of the Car Access System .3 
+
+IPO Car Access System 3 (CAS 3) .4 
+
+System Circuit Diagram - CAS 3 .6 
+
+Functional Overview .8 
+
+Terminal Control .9 
+
+Terminal Control (in Comfort Access).9 
+
+Electronic Vehicle Immobilizer 3 (EWS 3).10 
+
+Electronic Vehicle Immobilizer4.10 
+
+Design of EWS 4 .10 
+
+Start Enable through EWS .11 
+
+Data Transmission .12 
+
+Secret Key.12 
+
+Gearbox Enable .13 
+
+Start Value Matching .13 
+
+Emergency Release .13 
+
+Vehicle Data Storage.14 
+
+Data for Condition-based Service.14 
+
+Manual Update of CBS Data .14 
+
+Manual Update of Fault Memory Data.14 
+
+Control Unit Replacement.15 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access System 3 
+
+
+Model: E70 
+
+Production: From Start of Production 
+
+■MICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Understand the operation ofthe Car Access System (CAS3) in the E70 
+
+• Locate and identify CAS components in the E70 
+
+
+2 
+
+E70 Car Access System 3 
+
+
+Car Access System 3 
+
+
+The Car Access System now features the 3rd generation of control units. The electronic 
+vehicle immobilized (EWS 4) is also used in connection with the Car Access System 3. 
+The previous functions of the electronic vehicle immobilizer 3 have been retained. 
+
+The Car Access System 3 can therefore be operated togetherwith the electronic vehicle 
+immobilizer 3 or4. The digital motor electronics and the Car Access System 3 are 
+incorporated in the overall electronic vehicle immobilizer system in the E70. 
+
+In addition, the electronic transmission control is used as a further immobilizer in the 
+E70. The electronic vehicle immobilized improves the antitheft properties of the 
+vehicle. A longer cryptic code is used forthe data exchange. 
+
+The cryptic code provides the enable to start the engine. The Car Access System 3 is 
+backwards compatible with the Car Access System 2. This means the functions of the 
+Car Access System 2 are also included in the Car Access System 3. 
+
+The electronic vehicle immobilizer3 orthe electronic vehicle immobilizer4 is used 
+depending on the engine installed and the associated digital engine management. 
+
+The table below shows the assignment of the engine managementto the respective 
+electronic vehicle immobilizer. 
+
+
+Vehicle 
+
+Launch Date 
+
+Engine 
+
+Engine 
+
+Management 
+
+EWS function 
+
+E70 
+
+10/06 
+
+N62B4801 
+
+ME9.2.3 
+
+EWS 3 
+
+E70 
+
+10/6 
+
+N52B30O1 
+
+MSV80 
+
+EWS 4 
+
+
+History of the Car Access System 
+
+The Car Access System was used forthe firsttime in the E65 (03/2002). It has 
+undergone continuous further development and has been successively introduced 
+in various BMW models. 
+
+The models include: 
+
+• E66 as from 09/2003 
+
+• E60 as from 03/2003 
+
+• E63 as from 09/2003 
+
+• E61 as from 04/2004 
+
+• E64 as from 04/2004 
+
+• E90 as from 03/2005 
+
+• E91 as from 09/2005. 
+
+• E60 M 5 as from 03/2005 
+
+• E63 M 6 as from 03/2005 
+
+
+3 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IPO Car Access System 3 (CAS 3) 
+
+
+
+The Car Access System 3 (2) is responsible forterminal control. For instance "Terminal 
+15 ON" is made available to the intelligent battery sensor (4). The terminal status, e.g. 
+"Terminal R ON/terminal R OFF", can be selected with the START-STOP button (11). 
+
+The Car Access System 3 provides the start enable for the starter (5) in connection with 
+the digital motor electronics 3 and the brake light switch (13). 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hood contact switch 
+
+10 
+
+Telematics Control Unit 
+
+2 
+
+Car Access System 3 
+
+11 
+
+START-STOP button 
+
+3 
+
+Digital Motor Electronics 
+
+12 
+
+Central Lock Button 
+
+4 
+
+Intelligent Battery Sensor 
+
+13 
+
+Brake Light Switch 
+
+5 
+
+Starter 
+
+14 
+
+Dynamic Stability Control 
+
+6 
+
+J unction BoxControl Unit 
+
+CAS-bus 
+
+CAS-bus 
+
+7 
+
+Identification Transmitter 
+
+K-CAN 
+
+Body-CAN 
+
+8 
+
+Terminal 15 
+
+PT-CAN 
+
+Powertrain-CAN 
+
+9 
+
+Electronic Outer Door Handle Module 
+
+
+
+
+4 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram - CAS 3 
+
+
+
+6 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Circuit Diagram - CAS 3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+i — 1 
+
+Car Access System 3 
+
+KL15_3 
+
+Terminal 15 (output 3) 
+
+2 
+
+Electronic Transmission Control Module 
+
+KL15 Wup 
+
+Terminal 15 (wake-up) 
+
+3 
+
+Hood contact switch 
+
+KL30 
+
+Terminal 30 
+
+4 
+
+Dynamic Stability Control 
+
+KL30g 
+
+Terminal 15 (switched) 
+
+5 
+
+Digital M otor E lectronics 
+
+KL30g_f 
+
+Terminal 15 (switched, fault) 
+
+6 
+
+J unction Box Control Unit 
+
+KL50L 
+
+Terminal 50 load 
+
+7 
+
+Footwell Module (FRM) 
+
+KL54 
+
+Signal, brake light switch 
+
+8 
+
+Central-lock button/hazard warning switch 
+
+KL54T 
+
+Signal, brake light switch 
+
+9 
+
+Comfort Access (CA) 
+
+CAS-bus 
+
+CAS-bus 
+
+10 
+
+Remote control receiver in diversity module 
+
+D-CAN 
+
+Diagnosis CAN 
+
+11 
+
+START-STOP button 
+
+K-CAN 
+
+Body CAN 
+
+12 
+
+Holder 
+
+PT-CAN 
+
+Powertrain CAN 
+
+13 
+
+Brake Light Switch (BLS) 
+
+A S 
+START 
+
+Start/Start termination DME 
+
+KLR 
+
+Terminal R 
+
+FBD 
+
+Remote control services 
+
+KLR 
+
+ACSM 
+
+Terminal R, Advanced Crash Safety 
+Management 
+
+WUP 
+
+FBD 
+
+Wake-up, remote control services 
+
+KL15_1 
+
+Terminal 15 (output 1) 
+
+EWS 3 
+
+Electronic Vehicle Immobilizer 3 
+
+KL15_2 
+
+Terminal 15 (output 2) 
+
+EWS 4 
+
+Electronic Vehicle Immobilizer4 
+
+
+7 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functional Overview 
+
+The Car Access System 3 is responsible for many functions, including the masterforthe 
+following functions: 
+
+• Central locking 
+
+• Powerwindows 
+
+• Panoramic glass roof 
+
+• Comfort Access 
+
+The Car Access System 3 enables or interrupts the execution of the aforementioned 
+functions. 
+
+
+The control units which execute the functions are: 
+
+J unction Box control unit 
+
+Central Locking 
+
+Footwell Module 
+
+PowerWindows 
+
+Roof Functions Center 
+
+Panoramic Glass Roof 
+
+Comfort Access 
+
+Comfort Access 
+
+
+Furtherfunctions are integrated in the Car Access System 3. 
+They are: 
+
+• Terminal control 
+
+• Electronic vehicle immobilized 
+
+• Vehicle data storage 
+
+
+8 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminal Control 
+
+The remote control must be inserted and locked in its slot in orderto activate terminal 
+control. The vehicle then automatically receives the terminal status "terminal R ON." 
+The terminals can now be changed with the START-STOP button in the following order: 
+
+• Terminal 15 
+
+• Terminal R 
+
+• Terminal 30 
+
+• Terminal R 
+
+• Terminal 15 
+
+Note: This order is only possible when the brake pedal has not been pressed 
+on automatic transmission vehicles. As soon as the brake pedal is 
+pressed, the engine will start the next time the START-STOP button is 
+pressed. 
+
+Terminal Control (in Comfort Access) 
+
+On vehicles equipped with Comfort Access, the identification transmitter need only be 
+located in the vehicle interior and need not be inserted in the holder. The identification 
+transmitter is detected by the antennas in the vehicle interior. Provided the vehicle was 
+left in a correct manner, the terminal selection will start with the status "terminal 30". 
+Provided the brake pedal has not been pressed, it is now possible to switch through 
+the terminals one afterthe other by pressing the START-STOP button. 
+
+
+9 
+
+E70 Car Access System 3 
+
+
+
+Electronic Vehicle lmmobilizer3 (EWS 3) 
+
+
+The familiarfunctions of the previous electronic vehicle immobilizer 3 have been retained. 
+The Car Access System 3 is integrated in the system network via the K-CAN. The vehi¬ 
+cle key data are read into the Car Access System 3 via the key slot. 
+
+Pin 20 is used in connection with the Car Access System 3. The enable code is 
+signalled to the digital motor management via this pin. 
+
+The Car Access System 3 contains the start relay that is activated by means of an 
+integrated circuit. The integrated circuit is informed via a separate line (A_S_Start) that the 
+digital engine electronics is ready to start. Furthermore, the start procedure is terminated 
+via the A_S_Start line if the engine does not start up because, for example, there is a fault 
+in the PT-CAN system. Data transmission is unidirectional. 
+
+Electronic Vehicle Immobilized 
+
+The electronic vehicle immobilizer 4 is an immobilizer system that prevents unauthorized 
+engine start. It was used forthe first time in the Car Access System 3 in the E92. 
+
+The electronic vehicle immobilizer4 uses a new, modern encryption system. A 128 bit 
+long secret key is assigned to each vehicle and stored in the BMW database. This secret 
+key is known only to BMW. The secret key is programmed and locked in the Car Access 
+System 3 and in the digital engine management. 
+
+Once entered in the control unit, the secret key can no longer be changed, deleted or 
+read. This therefore means that each control unit is assigned to a specific vehicle. 
+
+The electronic vehicle immobilizer 4 operates with bidirectional and redundant data 
+transmission. The K-CAN (CAN protocol) and CAS-bus (K-bus protocol) are used forthis 
+purpose. 
+
+Pin 30 of the Car Access System 3 serves as the connection to the CAS-bus. 
+
+The redundant data transmission enables operation of the electronic vehicle immobilizer 
+even if a bus system fails due to a defect. 
+
+Design of EWS 4 
+
+The vehicle immobilizer consists of the identification transmitter which identifies itself to 
+the vehicle and therefore to the Car Access System 3. The Car Access System 3 
+exchanges data via the CAS-bus with the digital motor electronics and thus cancels the 
+immobilizerfunction. 
+
+The software forthe electronic vehicle immobilizeras well as the enable forthe starter is 
+resident in the CAS 3. The digital engine management is responsible for issuing the 
+enable forthe ignition and fuel injection. 
+
+The gearboxfunctions are enabled by the electronic transmission control. The remote 
+control or the identification transmitter must be identified as matching the vehicle before 
+the electronic vehicle immobilizer issues the start enable. This already takes place before 
+a vehicle is unlocked. 
+
+10 
+
+E70 Car Access System 3 
+
+
+
+A renewed check (authentication) must be performed as soon as an attempt is made to 
+start the engine. The check establishes whetherthe remote control matches the vehicle 
+or the identification transmitter is located in the vehicle interior. 
+
+The vehicle can be started if the check is successful. Authentication starts with the 
+status "Terminal 15 ON". 
+
+Note: The start enable can be given only by a remote control matching the 
+vehicle ora suitable identification transmitter. 
+
+Start Enable through EWS 
+
+The start procedure is enabled by means of a special request and response procedure 
+known as challenge-response. As from "Terminal 15 ON", the digital engine 
+management sends an encrypted random numberto the CAS 3. The digital engine 
+management generates the random number in a random number generator. 
+
+
+CAS-Bus 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Car Access System 3 
+
+4 
+
+J unction Box Control Unit 
+
+2 
+
+Digital Motor Electronic 
+
+5 
+
+Key Slot 
+
+3 
+
+Electronic Transmission Control 
+
+6 
+
+START-STOP Button 
+
+
+11 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From this random numbertogether with its secret key, the Car Access System calculates 
+a response and sends it to the digital engine management. In the meantime, the digital 
+engine management calculates the expected response from the random number with its 
+secret key. 
+
+The Car Access System 3 and the digital engine management use the same secret key 
+and algorithm for the calculation. The electronic vehicle immobilizer is cancelled if the 
+value which the CAS 3 sends to the digital engine management agrees with the value 
+calculated by the engine management. 
+
+The engine can now be started. 
+
+Note: As from "Terminal 15 ON", a cyclic query (challenge-response) is per¬ 
+formed as long as the engine is notyet running. A fault code is entered 
+in the CAS 3 if there is no query from the digital engine management 
+approximately 10 seconds after the start of the request. 
+
+Data Transmission 
+
+Data transmission is redundant via the bus systems. The signal from the digital engine 
+management reaches the CAS 3 via the K-CAN and the CAS-bus. The digital engine 
+management, however, is connected to the PT-CAN. Forthis reason, the signal is sent 
+via the gateway of the junction box control unit to the K-CAN. The runtime ofthe signals 
+via the bus systems is of no significance as the signal that reaches the digital engine 
+management first is used forthe electronic vehicle immobilizer. 
+
+The authentication is repeated in response to following events: 
+
+• Transmission and response time exceeded 
+
+• Transmission problems 
+
+• Response with the secret security code incorrect 
+
+(e.g. incorrect secret key due to control unit from another vehicle). 
+
+Secret Key 
+
+The control units are assigned a secret key on the assembly line. This secret key is 
+generated from a random number. The secret key is valid fora pair of control units and 
+linked to the specific vehicle. This means that one pair of control units receives the same 
+secret key. Once the secret key has been entered, the control unit is locked. From this 
+point on, the control unit is permanently tied to this secret key and the vehicle. 
+
+The CAS 3 and the digital motor electronics form one pair of control units. 
+
+Note: Since the control units are assigned to the specific vehicle, replacement 
+with a unit from another vehicle is not possible. When replacing a con¬ 
+trol unit, the new control unit must be ordered from BMW. Matching of 
+the control units to each other is no longer necessary. 
+
+
+12 
+
+E70 Car Access System 3 
+
+
+
+Gearbox Enable 
+
+
+The enable is based on a procedure similarto that used forEWS 3. As from "Terminal 
+15 ON", the CAS 3 sends encrypted individual codes to the electronic transmission 
+control. The electronic transmission control deciphers and checks these individual 
+codes. If the check is successful, the gearbox control unitwill enable the gearbox 
+functions. 
+
+The electronic gearbox control unit forms a pair of control units togetherwith the CAS 3. 
+
+Start Value Matching 
+
+A start value matching procedure between the CAS 3 and the electronic transmission 
+control is performed on the assembly line. As part of this procedure, the CAS 3 transfers 
+in encrypted form an individual code to the electronic transmission control. 
+
+Consequently, the electronic transmission control knows the individual code and can 
+check whetherthe gearbox functions can be enabled. 
+
+
+Emergency Release 
+
+The parking lock cannot be released in the 
+event of a defect or data transmission error. 
+Forthis reason, the E70 features a mechanical 
+emergency release facility for the parking lock. 
+A handle forthe emergency release of the 
+parking lock is located in the luggage com¬ 
+partment. 
+
+This handle must be plugged in underthe left 
+cup holder, turned through 90° and pushed 
+down. The gearbox is released as soon as the 
+handle has been locked in position. 
+
+The vehicle can now be towed but not driven. 
+
+Note: The handle must remain locked in 
+position while the vehicle is being 
+towed. The parking lock will 
+engage if the handle is removed 
+while the vehicle is being towed. 
+This could cause an accident in 
+unfavorable towing situations. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Turn Handle 
+
+2 
+
+Push Handle 
+
+
+13 
+
+E70 Car Access System 3 
+
+
+
+
+
+
+
+Vehicle Data Storage 
+
+The Car Access System 3 stores the following vehicle data: 
+
+• Personal Profile, the Car Access System 3 stores data forthe Personal Profile 
+
+• Vehicle order, the vehicle order is stored in the footwell module 
+
+• Redundant data storage for instrument cluster 
+
+• Data for condition-based service CBS 
+
+• Authentication for diagnosis access to vehicle 
+
+Data for Condition-based Service 
+
+The data for condition-based service are stored and transferred to the remote control. 
+This data can be read out via the key readerfor service purposes. The data forthe 
+condition-based service are updated during vehicle operation. 
+
+The data in the fault code memory are also updated during vehicle operation. 
+
+The conditions are: 
+
+• "Terminal 15 ON", Speed above 50 km/h and below 30 km/h 
+
+• The data are updated after covering a distance of 10 km and at a speed below 30 
+km/h. 
+
+Manual Update of CBS Data 
+
+The procedure for transferring current data to the remote control during servicing is as 
+follows: 
+
+• Insert remote control in its holder 
+
+• Press and hold center-lock button and select "terminal 15 ON" with the START- 
+STOP button. 
+
+• After 15 s the CBS data will have been transferred to the remote control. 
+
+• Read out remote control. 
+
+Manual Update of Fault Memory Data 
+
+The procedure for transferring current data to the remote control during servicing is as 
+follows: 
+
+• Press and hold center-lock button 
+
+• Insert remote control in its holder 
+
+• Select "Terminal 15 ON" with the START-STOP button 
+
+• The fault code memory data are transferred to the remote control after 15 seconds. 
+
+• Read out remote control. 
+
+14 
+
+E70 Car Access System 3 
+
+
+
+Control Unit Replacement 
+
+A defect in the control units belonging to the EWS represents a challenge forthe Service 
+technician. Since a defective control unit cannot be replaced by control units from other 
+vehicles particular care is necessary when performing the diagnostic procedure. 
+
+A defective control unit can be ordered through spare part channels. However, it is 
+importantto bear in mind that the digital engine management and the CAS 3 were 
+supplied already coded to the vehicle. 
+
+This has the advantage that only the control unit is replaced and the matching procedure 
+with the electronic vehicle immobilizer is not necessary. There is no point in ordering a 
+control unit to be kept in stock as the secret key is assigned to the control unit and the 
+vehicle. 
+
+A matching procedure is necessary forthe electronic transmission control after 
+replacement. As part of this procedure, the CAS 3 transfers the individual code to the 
+electronic transmission control. 
+
+Note:The matching procedure can take several minutes. 
+
+
+15 
+
+E70 Car Access System 3 
+
+
+
+

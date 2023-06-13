@@ -1,0 +1,1067 @@
+Table of Contents 
+
+
+Dynamic Stability Control 8+ 
+
+Subject Page 
+
+Introduction .3 
+
+Successor of DSC8.3 
+
+System Overview .4 
+
+System Components.6 
+
+Bosch DSC8+Module .6 
+
+Sensor System.7 
+
+DSC Sensor.7 
+
+Yaw Rate .7 
+
+Acceleration/Gradient .7 
+
+Wheel Speed Sensors .8 
+
+Functions.9 
+
+Operating Modes.9 
+
+Dry Braking .10 
+
+Brake Standby .11 
+
+Soft Stop.12 
+
+Fading Compensation .13 
+
+Start Assistant .14 
+
+Electric Steering Column Lock (ELV) .15 
+
+Service Information.16 
+
+
+Initial Print Date: 09/05 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dynamic Stability Control 8+(DSC8+) 
+
+Model: E60, E61, E63, E64 
+
+
+Production: from 9/2005 
+
+■biictihis 
+
+After completion of this module you will be able to: 
+
+• Understand the improvements made to the DSC8+system 
+
+
+2 
+
+Dynamic Stability Control 8 + 
+
+
+Introduction 
+
+
+Successorof DSC8 
+
+The Bosch traction control and stability system DSC8+will be phased-in on the E6x 
+model series as from 09/2005. E6x all-wheel drive model series are equipped with 
+DXC8+. 
+
+The main differences between the DSC8 and the DSC8+are in the software of the DSC 
+control unit and the further-optimized components within the DSC module. 
+
+Further comfort and safety functions have been achieved with the introduction of the 
+DSC8 + 
+
+Overview of expanded functions: 
+
+• Dry Braking 
+
+• Brake Standby 
+
+• Automatic Soft-Stop Function 
+
+• Fading Assistance 
+
+• Start Assistant 
+
+Forthe first time, activation of the fading-brake support function is indicated by a yellow 
+indicator in the instrument cluster. 
+
+
+
+3 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+fc ■ 
+
+
+System Overview 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+DSC8+ Control M odule 
+
+2 
+
+DSC SensorCluster(3.22 or3.8) 
+
+3 
+
+Steering Column Switch Cluster 
+
+4 
+
+Wheel Speed Sensors 
+
+5 
+
+DTC Button 
+
+
+4 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+
+
+
+DSC8+Hydraulic System Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Tandem Brake M aster Cylinder 
+
+10 
+
+Wheel Brake, front left 
+
+2 
+
+Pressure Sensor 
+
+11 
+
+Wheel Brake, front right 
+
+3 
+
+Changeover Valves 
+
+12 
+
+Wheel Brake, rear right 
+
+4 
+
+High Pressure Shift Valve 
+
+13 
+
+Wheel Brake, rear left 
+
+5 
+
+Return Pump 
+
+14 
+
+Outlet Valve, rear right 
+
+6 
+
+Inlet Valve, front right 
+
+15 
+
+Outlet Valve, rear left 
+
+7 
+
+Inlet Valve, front left 
+
+16 
+
+Inlet Valve, rear right 
+
+8 
+
+Outlet Valve, front right 
+
+17 
+
+Inlet Valve, rear left 
+
+9 
+
+Outlet Valve, front left 
+
+
+
+
+5 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+Bosch DSC8+Module 
+
+The DSC8+module essentially consists of two components: 
+
+• Add-on control unit 
+
+• Valve block with integrated pressure sensor. 
+
+On exceeding a speed of approximately 4 mph (6 km/h), an electronic self-test is started, 
+involving brief activation of the pump motor and all solenoid valves. 
+
+If the brake is operated at a driving speed of 4 mph (6 km/h) the self-test will be per¬ 
+formed at approximately 9 mph (15 km/h). 
+
+The check of the wheel speed signals is already started at approximately 1.5 mph 
+(2.75 km/h). 
+
+The analog-controlled valves provide even more exact control particularly in the low 
+pressure range. 
+
+Advantages: 
+
+• Reduced control noise 
+
+• Improved control quality and control convenience 
+
+• Improved brake intervention through active/dynamic cruise control AC C/DC C. 
+
+
+
+6 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+Sensor System 
+
+
+DSC Sensor 
+
+The DSC sensor MM 3.8 registers following parameters: 
+
+• lxTransverse acceleration 
+
+• lx Yaw rate 
+
+• lx Longitudinal acceleration (uphill gradient, 
+downhill incline) 
+
+The DSC sensor MM 3.22 is used on vehicles with active steering. 
+
+This sensor redundantly measures the most important variables for the active steering. 
+
+• 2xTransverse acceleration 
+
+• 2xYaw rate 
+
+• lx Longitudinal acceleration (uphill gradient, downhill incline) 
+
+Initially, the plausibility of each measured value is checked in the sensor before this value 
+is sent on the CAN. 
+
+Yaw Rate 
+
+The sensor element forthe yaw rate consists of a surface mounted micro-mechanical 
+measuring element and a digital sensor evaluation circuit. The sensor is based on the 
+CVG principle (Coriolis Vibratory Gyroscope). 
+
+An electrostatic diaphragm drive generates the opposite phase oscillation of the seismic 
+masses. One rotation about the x-axis of the vehicle, i.e. one rotation rate, generates a 
+Coriolis force on the acceleration sensors that is measured capacitively. Synchronous 
+demodulation of the Coriolis acceleration, utilizing the velocity of the seismic masses, 
+generates a signal that is proportional to the rotation rate. 
+
+Acceleration/Gradient 
+
+The sensor element for acceleration also consists of a surface-mounted micromechanical 
+element and a digital sensor evaluation circuit and is used for measuring the transverse 
+and longitudinal acceleration of the vehicle. Likewise, its operating principle is based on 
+capacitive measurement. 
+
+
+
+7 
+
+Dynamic Stability Control 8 + 
+
+
+
+Wheel Speed Sensors 
+
+Active wheel speed sensors with an integrated evaluator circuit are used in connection 
+with the DSC8+. 
+
+The active wheel speed sensors require a supply voltage for their operation and output a 
+square-wave signal that is dependent on the wheel speed. 
+
+The output signal is transmitted as a data protocol using the pulse width modulation 
+method (PWM). The PWM signal is used to determine the speed while the pulse width 
+contains additional information on the direction of rotation, standstill detection, location 
+detection and air gap (clearance) reserve to sensor ring. 
+
+Detection of the direction of rotation is made possible by the internal signal offset of 3 
+correspondingly arranged Hall elements in the sensor 1C. 
+
+When the wheel is stationary, the wheel speed sensor outputs a pulse every 0.75 sec¬ 
+onds. It is therefore possible to check the operational readiness of the sensor even when 
+the vehicle is stationary. 
+
+Detection of the installation location indicates whether the change in the magnetic field 
+strength is sufficient to ensure reliable operation. 
+
+
+1 j 2 , 3 / 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Sensor Ring 
+
+2 
+
+Sensor 1C with Hall Sensors 
+
+3 
+
+Sensor Housing 
+
+
+8 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+Functions 
+
+Operating Modes 
+
+The DSC 8 +offers the customer3 different operating modes: 
+
+• DSC ON 
+
+• DSC OFF 
+
+• DTC 
+
+The various functions in the individual operating modes are illustrated in the following: 
+
+
+Function 
+
+DSC ON 
+
+DTC 
+
+DSC OFF 
+
+
+DTC 
+
+<£) 
+
+ABS 
+
+X 
+
+X 
+
+X 
+
+ASC Engine intervention 
+
+X 
+
+X 1 
+
+
+ASC Brake intervention 
+
+X 
+
+X 
+
+X 
+
+MSR 
+
+X 
+
+
+
+EBV 
+
+X 
+
+X 
+
+X 
+
+DBC 
+
+X 
+
+X 
+
+X 
+
+CBC 
+
+X 
+
+X 
+
+X 
+
+Dry braking 
+
+X 
+
+X 
+
+X 
+
+Start assistant 
+
+X 
+
+X 
+
+X 
+
+Brake standby 
+
+X 
+
+X 
+
+X 
+
+Soft-stop 
+
+X 
+
+X 
+
+X 
+
+Fading assistance 
+
+X 
+
+X 
+
+X 
+
+Trailer stabilization logic 
+
+X 
+
+X 
+
+
+Yaw moment control 
+
+X 
+
+X 2 
+
+X 3 
+
+
+1 = Thresholds increased 
+
+2 = Control thresholds increased 
+
+3 = Only active when brake light switch closed 
+
+
+9 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+Dry Braking 
+
+In wet conditions, a film of water is formed on the brake discs, resulting in delayed 
+response of the brakes. 
+
+In connection with previous systems it was therefore recommended to operate the brake 
+from time to time in wet conditions to wipe off the waterfilm. 
+
+This dry braking function is dependent on the activity of the windscreen wiper. 
+
+When the windscreen wiper is operating in continuous wipe mode, the wheel brakes are 
+lightly applied againstthe brake disc cyclically every 90 seconds in orderto wipe off the 
+waterfilm. 
+
+Dry braking takes place underfollowing conditions: 
+
+• Speed >70 km/h 
+
+• In continuous wipe mode 
+
+This applies only if the driver does not apply the brake himself during this period of time. 
+A delay of operating noises are not perceivable forthe driver. 
+
+
+
+Left Brake Disc with Water Film before Dry Braking Right Brake Disc After Dry Braking 
+
+
+10 
+
+Dynamic Stability Control 8 + 
+
+
+
+Brake Standby 
+
+The brake pads are applied againstthe brake disc when the accelerator pedal is released 
+quickly thus reducing the emergency braking stopping distance (by approx. 30 cm/100 
+km/h).The DSC module builds up a low braking pressure (approx. 2.5 bar) within a short 
+space of time (approx. 0.5 s) in orderto eliminate the clearance between the brake pad 
+and brake disc by applying the brake pads. 
+
+The brake standby function is activated under following conditions: 
+
+• Speed >70 km/h 
+
+• M inimum time between brake application 8 s 
+
+• The brake standby function is not activated in response 
+to performance-oriented driving. 
+
+The signal indicating quick release of the accelerator pedal is made available by the 
+DM E/DDE control unit via the PT-CAN. 
+
+The sensitive driver may perceive a slightly harder brake pedal. A delay of operating nois¬ 
+es are not perceivable for the driver. 
+
+
+
+Index 
+
+Explanation 
+
+P 
+
+Brake Pressure in bar 
+
+t 
+
+Time in milliseconds 
+
+1 
+
+Brake Pressure atTandem MasterBrake Cylinder 
+
+2 
+
+Brake Pressure Curve with Brake Standby at Wheel 
+
+3 
+
+Brake Pressure Curve without Brake Standby at Wheel 
+
+
+11 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+
+
+
+Soft Stop 
+
+When braking to a standstill, a so-called stopping jerks occurs where the occupants per¬ 
+ceive increased deceleration as a result of the transition from sliding friction to adhesion 
+friction on the brake disc. 
+
+When braking lightly (< 25 bar) at constant pressure to standstill, the soft-stop function 
+automatically reduces the braking pressure on the rear axle just before reaching standstill. 
+
+Consequently, the deceleration peak perceived by the occupants is reduced by approx. 
+50% and extended overtime. 
+
+The function is inactive at medium to high deceleration or during ABS control in order not 
+to extend the braking distance. 
+
+The speed and standstill status are detected via the wheel speed sensors. 
+
+
+
+Deceleration with and without Soft Stop 
+
+
+Index 
+
+Explanation 
+
+m/s 2 
+
+Deceleration 
+
+s 
+
+Time in seconds 
+
+Red 
+
+Deceleration without soft stop 
+
+Blue 
+
+Deceleration with soft stop 
+
+-50% 
+
+Reduction of occupant deceleration 
+
+
+12 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fading Compensation 
+
+
+High temperatures (>550 °C) can occuratthe brake discs when driving downhill for 
+longer periods of time or as the result of multiple braking operations (>80 bar). These 
+high temperatures result in a change in the coefficient of friction of the brake pads, caus¬ 
+ing the braking effect to diminish (fading). 
+
+The brake disc temperature is calculated based on a temperature model contained in the 
+DSC8+software. The braking pressure applied bythe driver is measured bythe pressure 
+sensor and compared with the current vehicle deceleration (setpoint/target value). 
+
+
+If the braking effect diminishes, the driver is assisted by the fading compensation with 
+additional pressure build-up ofthe DSC module. 
+
+
+
+A warning lamp in the instrument cluster informs 
+the driver of the overheated brake. 
+
+
+The DSC control unit enters information in the fault code memory in response to activa¬ 
+tion ofthe facing compensation function. 
+
+Function triggered at temperatures above 500 °C 
+
+• HFC (Hydraulic Fading Control) is active for longerthan 500 ms and the brake disc 
+temperature is above 500 °C. 
+
+Function triggered at temperatures above 700 °C (multiple braking) 
+
+• HFC is active and the brake disc temperature is above 700 °C.The warning light in 
+the instrument cluster is activated if the fading compensation function is triggered at 
+brake disc temperatures above 700 °C. A check control message is additionally out¬ 
+put on vehicles equipped with a display. 
+
+
+13 
+
+Dynamic Stability Control 8 + 
+
+
+
+Start Assistant 
+
+This function provides assistance when driving off on uphill gradients by temporarily 
+maintaining brake pressure in the wheel brakes. 
+
+Based on the gradient, the DSC calculates the holding pressure required in the wheel 
+brakes in orderto hold the vehicle. 
+
+When the brake pedal is released, the pressure at the wheel brakes is immediately 
+reduced to the holding pressure calculated by the DSC. After a further 0.7 seconds, the 
+DSC reduces the pressure in the wheel brakes in stages to 0 bar and the vehicle starts 
+off slowly providing the accelerator pedal is not pressed. 
+
+Reducing the pressure at the wheel brakes decreases the breakaway noise of the brakes. 
+This function is not active when the parking brake is applied. 
+
+The angle of inclination is measured by the longitudinal acceleration sensor in the DSC 
+sensor and made available in the form of a telegram on the CAN. 
+
+This function is also effective on a downhill incline with reverse gear engaged. 
+
+
+
+
+Brake Pressure at the Wheels 
+
+
+14 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+Electric Steering Column Lock (ELV) 
+
+The ELV safety concept includes the monitoring of the vehicle status. The CAS will not 
+permit the steering column to be locked if the speed signal from the DSC is not plausible 
+orthere is no signal. The CAS deactivates terminal 15 when none of the wheel speed 
+sensors send a valid signal while the vehicle is stationary. 
+
+The DSC8+ informs the CAS of the vehicle status with regard to: 
+
+• Standstill 
+
+• Vehicle moving 
+
+• Validity of speed signal 
+
+The information is transmitted redundantly via the CAN and hard wiring between the 
+control units. As from terminal position "R", the CAS supplies system voltage on the DFA 
+CAS line to the DSC. 
+
+When the DSC is operational, the voltage applied by the CAS is connected to ground in 
+various frequencies. 
+
+• 10 Hz vehicle stationary < 5 km/h 
+
+• 50 Hz driving speed >5 km/h 
+
+This function is a part of the safety concept of the electric steering column lock. 
+
+The CAS does not permit locking of the ELV if it does not receive a valid speed signal. 
+
+The DSC must detect at least 3 wheel speed sensors as valid forthe control unit to apply 
+a frequency on the DFA CAS line. 
+
+
+
+System Schematic ELV 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DSC8+Dynamic stability control 
+
+3 
+
+ELV Electric steering lock 
+
+2 
+
+CAS2 Comfort access system 
+
+4 
+
+Wheel speed sensors 
+
+
+15 
+
+Dynamic Stability Control 8 + 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Some jobs on the DSC sensor system require adjustments in the DSC module as well 
+as the LWS and DSC sensors to ensure correct operation. 
+
+
+IMPORTANT!!! 
+
+
+All DSC systems withouta pre-charge pump require 
+the low-viscosity DOT4 brake fluid. Observe regula¬ 
+tions governing fluids and lubricants. 
+
+
+16 
+
+Dynamic Stability Control 8 + 
+
+
+
+

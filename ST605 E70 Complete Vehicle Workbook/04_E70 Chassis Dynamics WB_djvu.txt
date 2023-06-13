@@ -1,0 +1,5328 @@
+Table of Contents 
+
+
+E70 Chassis Dynamics Workbook 
+
+Subject Page 
+
+Chassis And Suspension .7 
+
+Front Axle .8 
+
+Virtual Pivot Point.9 
+
+Front Axle Data .9 
+
+Front Axle Adjustments.9 
+
+Rear Axle.10 
+
+Chassis Comparison (E70 vs. E53) .11 
+
+Wheels and Tires.12 
+
+RSC tires with emergency running properties .12 
+
+Extended Hump Rims (EH2+) .12 
+
+Tire Pressure Monitoring System (TPMS).12 
+
+Brakes.13 
+
+Steering Column .13 
+
+Lateral Dynamics .14 
+
+Active Steering (AS).14 
+
+Changes to Active Steering .15 
+
+Cumulative (total) Steering Angle (virtual) .15 
+
+Electronically Controlled Bypass Valve (EVV).15 
+
+Yaw-rate Control Plus (GRR+).16 
+
+Special Feature .16 
+
+Difference to Yaw Moment Compensation .16 
+
+
+Initial Print Date: 12/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Vertical Dynamics.18 
+
+Adaptive Drive .18 
+
+Vertical Dynamics Control.19 
+
+Comparison between EDC-K in the E65 and VDC in the E70.20 
+
+VDC System Overview .21 
+
+VDC Overview Explanation .21 
+
+Objectives of the VDC System .22 
+
+System Network .22 
+
+VDC Components .23 
+
+Control Strategy .23 
+
+Display Control .24 
+
+Degradation Behavior in the Event of a Fault.24 
+
+Diagnostic Functions .24 
+
+EDC Satellite Control (with damper) .25 
+
+EDC Satellite Control Unit.25 
+
+Twin-Tube Gas Pressure Damper.26 
+
+Ride-height Sensor.26 
+
+E70 Ride Height SensorVariants .27 
+
+FlexRay in the E70 .28 
+
+Bus Topology .29 
+
+Line-based Bus Topology.29 
+
+Point-to-point Bus Topology.29 
+
+Mixed Bus Topology.29 
+
+Redundant Data Transmission .29 
+
+Bus Topology of FlexRay in the E70.30 
+
+Transmission Medium - Signal Properties .30 
+
+Deterministic Data Transmission.31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Bus Protocol.31 
+
+High Bandwidth.31 
+
+Synchronization.31 
+
+Wake-up and Sleep Characteristics.32 
+
+Wiring .32 
+
+Active Roll Stabilization .36 
+
+Passive vs. Active Roll Bar .36 
+
+ARS System Overview (E70).37 
+
+ARS System Components.38 
+
+ARS Control M odule .38 
+
+Lateral Acceleration Sensor .38 
+
+Active Anti-roll Bar .39 
+
+Hydraulic Valve Block.40 
+
+Tandem Pump.41 
+
+Radial Piston Pump (part of tandem pump).41 
+
+Vane-cell Pump (part of the tandem pump).41 
+
+Fluid Reservoir.42 
+
+Fluid Level Sensor .42 
+
+Hydraulic-fluid Cooler.42 
+
+Service Notes.43 
+
+Steering Angle Calibration.43 
+
+ARS Initialization .43 
+
+ARS Bleeding Procedure .43 
+
+Programming .43 
+
+Coding.43 
+
+Electronic Height Control (EHC) .44 
+
+EHC Control Unit.45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Air Supply Unit (LVA) .45 
+
+AirSuspension .45 
+
+Ride-height Sensor.45 
+
+Longitudinal Dynamics.46 
+
+Dynamic Stability Control .46 
+
+ABS .46 
+
+DSC System Overview.47 
+
+Overview of DSC Components.48 
+
+DSC Hydraulic Unit.48 
+
+DSC Control Unit .48 
+
+Wheel Speed Sensor.48 
+
+DSC Sensor.48 
+
+Steering Column Switch Cluster(SZL).49 
+
+Overview of DSC Functions (DSC E7X) .49 
+
+Electromechanical Parking Brake (EMF) .50 
+
+Basic Functions of EM F .51 
+
+Emergency Release.51 
+
+Restoring Operation After Emergency Release.51 
+
+EMF Components.52 
+
+EMF Button .52 
+
+EMF Actuating Unit .52 
+
+EMF Actuating Unit (Internal Components).53 
+
+Service Information for EM F .54 
+
+Adjusting the Brake Shoes .54 
+
+Removing the Bowden Cable Assemblies.54 
+
+Start-up .54 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Initializing the Parking Brake.55 
+
+Bedding in the Duo-servo Brake .55 
+
+Function on Brake Rolling Dynamometer .55 
+
+Example Scenarios .55 
+
+Transition from EMF Actuating Unitto DSC .55 
+
+Transition from DSC to EMF Actuating Unit.55 
+
+Function of the Parking Brake Controlled by the DSC Hydraulics .56 
+
+Dynamic Braking .56 
+
+Exiting Dynamic Emergency Braking .57 
+
+Error Messages .57 
+
+General Parking Brake Fault Concept .58 
+
+Fault Distribution Between DSC and EMF Control Unit.58 
+
+Fault Regeneration .58 
+
+Dynamic Cruise Control (DCC) .59 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6 
+
+E70 Chassis Dynamics Workbook 
+
+
+E70 Chassis Dynamics 
+
+Model: E70 
+
+Production: From Start of Production 
+
+IBIECTIVES 
+
+After completion of this module you will be able to: 
+
+• Identify and Adjust E70 Front Suspension 
+
+• Diagnose VDC and FlexRay Concerns 
+
+
+• Understand Changes to Active Steering on the E70 
+
+
+
+Chassis And Suspension 
+
+
+E70 Chassis Dynamics Workbook 
+
+7 
+
+
+
+
+
+
+
+
+8 
+
+E70 Chassis Dynamics Workbook 
+
+
+Front Axle 
+
+Forthe first time on a BMW vehicle, a double wishbone front axle is used on the E70. The outstanding driving dynamics, the excellent 
+driving comfort as well as the stable straight-ahead running properties are factors of this design solution that contribute to a high degree of 
+driving pleasure and safety while making the vehicle ideal for every day use and providing the most relaxing drive on long journeys. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ride-height sensor 
+
+2 
+
+Mount 
+
+3 
+
+Spring strut 
+
+4 
+
+Uppercontrol arm (upperwishbone) 
+
+5 
+
+Spring strut support 
+
+6 
+
+Swivel bearing 
+
+7 
+
+Wheel bearing 
+
+8 
+
+Stabilizer link 
+
+9 
+
+Tension strut with hydraulic mount 
+
+10 
+
+Control arm, bottom 
+
+11 
+
+Spring strut fork 
+
+12 
+
+Anti-roll bar 
+
+
+The addition of the upper control arm (wishbone) positively 
+influences front wheel travel by reducing Camber changes during 
+jounce and rebound events. 
+
+
+The arrangement of the suspension allows the strut assembly to 
+be focused on dampening duties alone. The strut is no longer part 
+of the steering, but fixed in place (no upper bearing). 
+
+The steering axis now rotates by way of the swivel bearing (6). 
+
+The arrangement of the front suspension includes bearings at 
+various swivel points. This allows for reduced friction, which in turn 
+allows the damper (strut) to respond more sensitively to road 
+surface irregularities. 
+
+This design works well in conjunction with the Vertical Dynamics 
+M anagement (VDM) system. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components with special materials (see graphic on previous page): 
+
+• The forged aluminum swivel bearing (6) with the 3rd genera¬ 
+tion wheel bearing (7) Semi-trailing arm connected via steel 
+bushes/tapered screw connection to the swivel bearing. 
+Attention: Referto special repair instructions! 
+
+• The A-arm at the top (4) is made from forged aluminum and 
+the cylindrical joint pin is clamped in the swivel bearing (6). 
+
+• Tension strut with hydraulic mount (9) and bottom control arm 
+(10) are forged steel components while the bottom control 
+arm bears the spring strut (3) by means of the cast steel 
+spring strut fork (11). 
+
+• The front axle subframe is a welded steel structure with an 
+aluminum thrust panel for maximum lateral stiffness with 
+service openings. 
+
+Virtual Pivot Point 
+
+The steering pivot axis of the wheel suspension is now formed by a 
+joint at the top A-arm and the virtual pivot point of the lower arm 
+level as known from the spring strut or McPherson axle. 
+
+
+
+
+Front Axle Data 
+
+
+Front axle data 
+
+E70 
+
+Wheel 
+
+R18 8.5J X 18 EH2 +IS46 
+
+Tires 
+
+255/55 R18 
+
+Rim offset (mm) 
+
+46 
+
+Tire radius (mm) 
+
+338 
+
+Wheelbase (mm) 
+
+2933 
+
+Track width (mm) 
+
+1644 
+
+Camber 
+
+-0° 20' ±20' 
+
+Camber difference 
+
+0° ±30' 
+
+Total toe-in 
+
+10' ±6’ 
+
+Wheel axle angle 
+
+o 
+
+O 
+
+Kingpin offset (mm) 
+
+-8.4 
+
+Toe-out difference angle 
+
+2.1° ±30' 
+
+Caster angle 
+
+7° 48' ±30' 
+
+
+Front Axle Adjustments 
+
+The toe adjustment on the front axle is carried out by means of a 
+tie rod adjustment as on past models. 
+
+The Camber adjustment, however, can only be adjusted by a 
+replacement of the upper control arm (wishbone). The control arm 
+is available in three possible part numbers. One of which is the 
+standard (zero) arm, while the other two are offset to effect a small 
+Camberchange if needed. 
+
+
+E70 Chassis Dynamics Workbook 
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10 
+
+E70 Chassis Dynamics Workbook 
+
+
+Rear Axle 
+
+The E70 utilizes the integral IV rear axle from the E53 with some 
+further improvements. This rear axle design contributes to 
+improved driving dynamics without compromising comfort and 
+driving safety. 
+
+The rear axle arrangement made it possible to increase the width 
+and depth of the load area. The result is a considerably larger and 
+more functional load space (third row of seats) particularly through 
+the use of the single-axle air spring (rear axle air suspension). 
+
+The resulting advantages include: 
+
+• Outstanding driving dynamics, further increased compared to 
+the E53, without compromising comfort and driving safety. 
+
+• Distinctly larger and more functional load area by increasing 
+the effective load width and depth. 
+
+• Level control (1-axis air suspension) ensures constant ride- 
+height and driving characteristics irrespective of the vehicle 
+load. 
+
+
+
+Rear axle data 
+
+E70 
+
+Wheel 
+
+R18 8.5J X 18 EH2 +IS46 
+
+Tires 
+
+255/55 R18 
+
+Rim offset (mm) 
+
+46 
+
+Tire radius (mm) 
+
+338 
+
+Wheelbase (mm) 
+
+2933 
+
+Track width (mm) 
+
+1650 
+
+Camber 
+
+-1° 30' ±15' 
+
+Camber difference 
+
+0° ±30' 
+
+Total toe-in 
+
+10' ±6' 
+
+Wheel axle angle 
+
+o 
+
+O 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Control arm 
+
+2 
+
+Wheel carrier 
+
+3 
+
+Integral link 
+
+4 
+
+Upper radius arm 
+
+5 
+
+Swinging arm 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chassis Comparison (E70 vs. E53) 
+
+
+
+E53 
+
+E70 
+
+Front axle 
+
+Double pivot spring strut front axle 
+
+Double wishbone front axle 
+
+Suspension/damping, front 
+
+Steel spring orairspring 
+
+Steel spring 
+
+Anti-roll bar, front 
+
+M echanical 
+
+M echanical or Hydraulic 
+
+Rear axle 
+
+Integral IV 
+
+Integral IV 
+
+Suspension/damping, rear 
+
+Steel spring orairspring 
+
+Steel spring orairspring 
+
+Anti-roll bar, rear 
+
+M echanical 
+
+M echanical or Hydraulic 
+
+Brake, front 
+
+B rake disc diameter up to 356 mm 
+
+Brake disc diameter up to 365 mm 
+
+Brake, rear 
+
+Brake disc diameter up to 324 mm 
+
+Brake disc diameter up to 345 mm 
+
+Parking brake 
+
+Drum brake, mechanical 
+
+Drum brake, with electro-mechanical parking brake (EMF) 
+
+Wheels/tires 
+
+Standard tires 
+
+Run flat tires 
+
+Steering 
+
+Power steering orServotronic 
+
+Power steering or active steering 
+
+
+E70 Chassis Dynamics Workbook 
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12 
+
+E70 Chassis Dynamics Workbook 
+
+
+Wheels and Tires 
+
+Forthe first time, an X-vehicle is equipped as standard with the run 
+flat safety system. Tire damage and tire failure are among the most 
+feared driving experiences. 
+
+The BMW run flat safety system: 
+
+• Warns the driver in good time of imminent tire pressure loss 
+so that counter-measure can be taken. 
+
+• Allows the journey to be continued for a defined distance even 
+in the event of complete loss of tire pressure. 
+
+• Keeps the tire safely on the rim even in the event of sudden 
+tire pressure loss at high speed. 
+
+The entire safety package consists of three components: 
+
+• RSC tires with emergency running properties 
+
+• Extended hump rims (EH2+) 
+
+• Tire Pressure Monitoring System (TPMS). 
+
+RSC tires with emergency running properties 
+
+With its reinforced side walls, additional strip inserts and heat- 
+resistant rubber mixtures, even when completely depressurized, the 
+"self-supporting tire" makes it possible to continue the journey for a 
+limited distance at a maximum speed of 80 km/h. This means each 
+tire is also its own spare wheel. 
+
+The maximum range after complete tire pressure loss is: 
+
+• approximately 250 km at low vehicle load 
+
+• approximately 150 km at medium vehicle load 
+
+• approximately 50 km at high vehicle load 
+
+In the case of slow pressure loss, i.e. representative of approxi¬ 
+mately 80% of all tire failure cases, the remaining range as from the 
+TPMS warning is approximately 2000 km. ABS, ASC and DSC 
+remain fully operational even in the event of complete tire pressure 
+loss. 
+
+
+When driving with a run flat tire with no pressure, the optionally 
+available adaptive drive system automatically distributes the vehicle 
+weight overthe remaining wheels so as to relieve the load on the 
+depressurized tire with the aim of achieving the highest possible 
+range for continued operation. 
+
+Extended Hump Rims (EH2+) 
+
+The specially shaped rim humps ensure that the RSC tire cannot 
+detach from the rim even in the case of sudden tire pressure loss. 
+This means substantially greater safety particularly when driving at 
+high speed and on winding roads. 
+
+The system consisting of the run flat tires (RSC), rims with the 
+extended hump (EH2+) contour and the electronic monitoring 
+system (TPMS in USA), renders a spare wheel or space-saver 
+wheel, breakdown kit or vehicle jack unnecessary and this creates 
+more storage space in the luggage compartment while also saving 
+weight. 
+
+Tire Pressure Monitoring System (TPMS) 
+
+
+TPM Control 
+Module 
+
+
+
+Note: For more information on the TPMS system, refer to 
+the reference material in the C hassis Dynamics 
+(ST504) class which is available onTIS or ICP. 
+
+
+
+
+
+
+
+
+
+Brakes 
+
+In terms of function, an optimized high performance brake system 
+is used on the E70. Floating brake calipers are fitted on the front 
+and rear axle. The brake system in the E70 features the known 
+brake wear monitoring system forthe CBS indicator. 
+
+
+Front axle 
+
+N52B30 US+LA 
+
+N62B48 US+LA 
+
+Brake caliper housing 
+
+GGG (Cast iron) 
+
+GGG (Cast iron) 
+
+Brake caliper/piston diameter [mm] 
+
+60 
+
+60 
+
+Brake disc thickness [mm] 
+
+30 
+
+30 
+
+Brake disc diameter [mm] 
+
+332 
+
+348 
+
+Size 
+
+17" 
+
+18” 
+
+Rear axle 
+
+N52B30 US+LA 
+
+N62B48 US+LA 
+
+Brake caliper housing 
+
+Aluminum 
+
+Aluminum 
+
+Brake caliper/piston diameter [mm] 
+
+44 
+
+44 
+
+Brake disc thickness [mm] 
+
+20 
+
+24 
+
+Brake disc diameter [mm] 
+
+320 
+
+345 
+
+Size 
+
+17" 
+
+18” 
+
+Parking brake 
+
+Duo-Servo 185x30 (EMF) 
+
+
+Steering Column 
+
+The E70 is available with an electrically adjustable steering column 
+as standard equipment. 
+
+Adjustment range of electrical steering column: 
+
+• Vertical +/-25 mm 
+
+• Horizontal +/-20 mm 
+
+A special feature of the electrically adjustable column is that only 
+one electric motor is required forthe height and tilt adjustment and 
+this motor is connected to a special gear mechanism for both 
+adjustment axes. 
+
+
+
+E70 Chassis Dynamics Workbook 
+
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14 
+
+E70 Chassis Dynamics Workbook 
+
+
+Lateral Dynamics 
+
+
+Active Steering on the E70 is part of the lateral dynamics systems 
+Nowadays, dynamic driving systems are subdivided according to 
+their mode of operation. For example, lateral dynamics systems 
+are those systems which influence the vehicle laterally (in a turn). 
+
+In the E70, there are two systems which are considered part of 
+the lateral dynamics systems. 
+
+• Servotronic - Speed-dependent hydraulic steering torque 
+assistance 
+
+• AS - Active Steering (previously AFS, Active Front Steering) 
+
+The E70 is the first all-wheel-drive vehicle to be offered with 
+Active Steering (AS) Servotronic is only offered in conjunction 
+with the Active Steering. 
+
+Active Steering (AS) 
+
+Active Steering was initially offered in the E60 (5 Series). Since 
+then, a large proportion of BMW's in the 3 and 6 Series now have 
+Active Steering. It is only the X models and other all-wheel-drive 
+vehicles that have not yet been provided with this for reasons of 
+space. 
+
+This innovative steering system is now being offered, as an 
+option, in an all-wheel-drive vehicle forthe first time at BMW, 
+namely in the E70. 
+
+Forthe most part, the active steering system on the E70 is much 
+the same as on previous models. There are some minor changes 
+which will be discussed in this section. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DSC Sensor 
+
+5 
+
+Fluid reservoir 
+
+2 
+
+Steering Column Switch Cluster 
+
+6 
+
+Steering gear 
+
+3 
+
+AS control unit 
+
+7 
+
+Hydraulic pump 
+
+4 
+
+AS actuating unit 
+
+8 
+
+Power steering cooler 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C hanges to Active Steering 
+
+
+1 
+
+
+On the E70, certain changes have been made to the Active 
+Steering system on the E70. They are as follows: 
+
+• The cumulative (total) steering angle sensor has been omitted 
+
+• The ECO valve has been replaced by the Electronically 
+Controlled Bypass Valve (EVV). 
+
+• Yaw moment compensation is now enhanced with the 
+addition of GRR+. 
+
+Cumulative (total) Steering Angle (virtual) 
+
+With the addition of Active Steering on the E70, the total steering 
+angle sensor has been omitted from the system. The value forthe 
+total steering angle is now a "virtual" value which is calculated from 
+the driver's steering angle and the motor position sensor value. 
+
+The virtual (total) steering angle value provides the same informa¬ 
+tion as the the total steering angle sensor. The initialization proce¬ 
+dure still needs to be carried out when there are any changes to 
+the system. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Rack and pinion unit 
+
+5 
+
+Engine 
+
+2 
+
+Steering valve 
+
+6 
+
+EVV 
+
+3 
+
+Flow regulating piston (in pump) 
+
+7 
+
+Throttle (restrictor) 
+
+4 
+
+Vane-cell pump 
+
+
+
+
+The initialization process has changed and differs slightly from the 
+procedure on previous vehicles with Active Steering. 
+
+Electronically Controlled Bypass Valve (EVV) 
+
+The EVV regulates the volumetric flow of hydraulic fluid in the 
+hydraulic pump to ensure that only the volumetric flow currently 
+required to provide power assistance is made available. 
+
+Example: 
+
+When the vehicle is being driven straight ahead without power 
+assistance, the circulation pressure in the steering hydraulic circuit 
+drops, thus reducing the circulation pressure and the power con¬ 
+sumption. If a steering movement is required, the volumetric flow is 
+immediately raised again and the usual steering angle speed is 
+ensured. 
+
+
+The EVV (1) therefore controls the power consumption of the 
+hydraulic pump, thus reducing the fuel consumption and the C02 
+emissions ofthe combustion engine. 
+
+
+
+E70 Chassis Dynamics Workbook 
+
+15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16 
+
+E70 Chassis Dynamics Workbook 
+
+
+Yaw-rate Control Plus (GRR+) 
+
+The "yaw-rate control plus" function assists the driver when he is 
+braking on roads with varying friction coefficients, in a similar way to 
+the yaw moment compensation. This function represents a signifi¬ 
+cant safety feature. 
+
+In the case of braking on different surface friction coefficients 
+(asphalt/ice orsnow), a moment builds up about the z or vertical 
+axis (yaw moment) rendering the vehicle unstable. 
+
+In this special case, the Active Steering control unit calculates the 
+steering angle (maximum ±4°) required for the front wheels to keep 
+the vehicle stable using the actual yaw rate and the longitudinal and 
+lateral acceleration. 
+
+
+Special Feature 
+
+This function shortens the braking distance because the yaw-rate 
+control plus allows higher braking pressure on the high friction 
+coefficient side. 
+
+
+Difference to Yaw Moment Compensation 
+
+With yaw moment compensation, an important calculation principle 
+for automatic early counter-steering was the difference between 
+the front wheel braking pressures that were detected by the DSC 
+and based on which the DSC calculated the angle for attack of the 
+front wheels and transmitted to the AS control unit. 
+
+This shared functionality of the DSC and AS control unit is now 
+fully integrated into the AS control unit with yaw-rate control plus 
+This active counter-steering creates counter-torque about the z or an d, due to the high communication rate, precise interaction 
+vertical axis (red arrow) which compensates for the earlier acting between the two units has now been achieved, 
+yawing force (yellow arrow). 
+
+In this way, the vehicle is stabilized by clever interaction between 
+the DSC braking and the AS function, resulting in a new safety 
+aspect, unique in this class. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Active Steering 
+
+
+Using an instructor designated E70, connect the diagnostic 
+equipment and perform a short test. Proceed to test module for 
+Active Steering initialization. 
+
+Are there any special tools required forthis process? 
+
+
+When does this procedure need to be carried out? 
+
+
+How is total steering angle value calculated? 
+
+
+
+Is there a "physical" sensorforthe total steering angle? 
+
+
+Where can the "startup/adjustment" test module be found in 
+diagnosis? 
+
+
+E70 Chassis Dynamics Workbook 
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18 
+
+E70 Chassis Dynamics Workbook 
+
+
+Vertical Dynamics 
+
+
+The vertical dynamics systems are those systems which affect 
+vehicle motion along the vertical (orz-axis). In other words, the up 
+and down movement of the chassis and or body. 
+
+On the E70, these systems include: 
+
+• Vertical Dynamics Control (VDC -previously EDC) 
+
+• Electronic Height Control (EHC) 
+
+• Active Roll Stabilization (ARS) 
+
+Adaptive Drive 
+
+Adaptive Drive is an optional system on the E70 which includes 
+the combination of ARS and VDC. For the first time, these sys¬ 
+tems are functionally linked which provides maximum safety, com¬ 
+fort and agility beyond compare for an S AV. 
+
+Adaptive Drive reduces lateral roll ofthe body, which normally 
+occurs during high-speed cornering or in the event of rapid 
+swerving. 
+
+Adaptive Drive also reduces the required steering angle and 
+improves ride comfort coupled with increased driving dynamics. 
+
+The customer can choose between a normal and a sporty basic 
+setting via a switch on the center console (near G WS). 
+
+Unpleasant pitching and lateral rolling ofthe body are diminished 
+or eliminated entirely. The self-steering and load transfer charac¬ 
+teristics ofthe vehicle are significantly improved. 
+
+The reciprocal movements in the upper part ofthe body, which 
+are inherent in the design of SAV vehicles, are considerably 
+reduced. The vehicle can be driven with higher levels of precision 
+and agility. The system also contributes to shorter braking dis¬ 
+tances. 
+
+
+
+
+
+
+
+Vertical Dynamics Control 
+
+The Vertical Dynamics Control (VDC) system being introduced on the E70 from SOP. VDC is a component of the Adaptive Drive equip¬ 
+ment package and is an advancement of the EDC-K already fitted on the E65. 
+
+Like EDC-K, VDC is notable for its continually adjustable dampers whereby, within certain limits, as many damping characteristic curves 
+(damping force - piston speed) as desired can be plotted. 
+
+The characteristic curve used depends on the driving situation, in otherwords, the variables that describe the dynamic driving state of the 
+vehicle and which are selected automatically at the driver's command. 
+
+
+E70 Chassis Dynamics Workbook 
+
+19 
+
+
+
+
+
+
+20 
+
+E70 Chassis Dynamics Workbook 
+
+
+Comparison between EDC-K in the E65 and VDC in the E70 
+
+
+
+EDC-K 
+
+VDC 
+
+Model 
+
+E65 from introduction into series 
+production from 7/2001 
+
+E70 from SOP 10/06 in the Adaptive Drive equipment package 
+
+Program Selection 
+
+via Control Display and controller 
+
+"SPORT" button next to gear selector switch 
+
+Control unit 
+
+EDC-K control unit on the device holder behind glove 
+compartment 
+
+VDM control unit: rear left of luggage compartment 
+
+Four EDC satellite control units directly on the damper 
+
+Sensors 
+
+Vertical: 
+
+vertical acceleration sensor, front left, front right, rear right 
+
+Longitudinal: 
+
+wheel speed sensors, front left, front right 
+
+Lateral: 
+
+steering angle sensor (LWS) from the steering column switch cluster 
+
+Vertical: 
+
+fourvertical acceleration sensors integrated in the EDC satellite-control units, four 
+ride-height sensors connected directly to the VDM control unit 
+
+Longitudinal: 
+
+wheel speed sensors orvehicle speed from the DSC control unit 
+
+Lateral: 
+
+steering angle sensor (LWS) from the steering column switch cluster, Rotor position 
+sensor (if Active Steering fitted), lateral acceleration (DSC sensor) as redundant signal 
+
+to the steering angle 
+
+Damper 
+
+Twin-tube gas-pressure dampers 
+
+Twin-tube gas-pressure dampers 
+
+Diagnostics 
+
+fully compatible 
+
+VDM and EDC satellite control units 
+flash-programmable 
+
+Programming 
+
+EDC-K control unit is flash 
+programmable 
+
+VDM and EDC satellite control units are flash 
+programmable 
+
+Coding 
+
+
+VDM and EDC satellite control units are codable 
+
+Malfunction display 
+
+Messages in the Control Display or instrument cluster 
+
+M essages in the Control Display or instrument cluster 
+
+Testing 
+
+Diagnostic tester 
+
+Diagnostic tester 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VDC System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+J unction Box Control Module 
+
+4 
+
+Ride height sensors, front 
+
+2 
+
+Vertical Dynamics Management 
+
+5 
+
+EDC Satellites 
+
+3 
+
+Diagnostic connector 
+
+6 
+
+Ride height sensors, rear 
+
+
+VDC Overview Explanation 
+
+The VDM control module is connected to F-CAN, PT-CAN and the 
+FlexRay bus systems. The four EDC satellites are connected to the 
+VDM through FlexRay. The satellites contain the vertical accelera¬ 
+tion sensors and the solenoid valves for dampening. 
+
+Each satellite has its own power and ground supply. Power (B+) is 
+supplied bythe KL30g circuit. 
+
+The ride height sensors are "hardwired" to the VDM and send 
+analog signals to report vehicle ride height. 
+
+
+E70 Chassis Dynamics Workbook 
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22 
+
+E70 Chassis Dynamics Workbook 
+
+
+Objectives oftheVDC System 
+
+The primary objective of the VDC system to improve ride comfort 
+while maintaining driving safety at an invariably high level. High 
+levels of ride comfort are achieved when the vehicle body hardly 
+moves along the vertical axis in spite of excitations of the vehicle 
+induced by cornering or by the road surface itself (bumps, gaps). 
+
+Forthis reason, the adjustable dampers are operated in line with a 
+soft, comfortable damping characteristic curve in as many situa¬ 
+tions as possible. 
+
+High levels of driving safety are achieved if the wheels never lose 
+contact with the road surface and a high support force is available if 
+required. A harderdamping characteristic is therefore set if the 
+driving situation or driver's intervention (e.g. steering, braking) 
+demands it. 
+
+As with EDC-K, the dampers have an infinite number of damping 
+characteristic curves at their disposal; unlike EDC-K, however, the 
+dampers are controlled not only axle by axle but also at each 
+individual wheel. 
+
+In its regulation, the system uses the complete characteristic map 
+of the rebound and compression stages between the comfort (1) 
+and stability (2) threshold curves. 
+
+In the event of a fault, the control range is minimized to safety char¬ 
+acteristic curve (3). 
+
+System Network 
+
+The VDC system is a mechatronic system consisting of electronic, 
+hydraulic and mechanical subsystems. These can be subdivided 
+by function as follows: 
+
+• Detection of input signals 
+
+- Sensors for ride heights and rates of vertical acceleration 
+to permit detection of the driving state and the prevailing 
+road conditions 
+
+
+- Control elementto enable the driverto set the damping 
+program (comfort, sport).This is located on, and 
+electrically integrated in, the gear selector switch. 
+
+- Steering angle (output by the SZL control unit via F-CAN) 
+for preemptive detection of cornering 
+
+- Lateral acceleration (out by the DSC sensorvia F-CAN)for 
+detection of cornering 
+
+- Vehicle speed or wheel speeds (output by the DSC control 
+unit via F-CAN) 
+
+• Processing unit 
+
+- VDM control unit - This checks the plausibility of the 
+incoming signals and uses control algorithms that deliver 
+damping forces at individual wheels as a set point value 
+
+- EDC satellite control units - These process the signals 
+from the vertical acceleration sensors on the one hand 
+and output the processed signal. On the other hand, they 
+convert into a valve current the target force from the VDM 
+control unit by means of a stored characteristic curve 
+
+• Actuators 
+
+The electrically controllable valve in the adjusting damper 
+makes it possible to realize the different damping force charac¬ 
+teristic curves 
+
+• Communications media 
+
+The VDM control unit is connected to the PT-CAN, F-CAN 
+and FlexRay; the EDC satellite control units are only connect¬ 
+ed to the FlexRay 
+
+
+
+VDC Components 
+
+
+VDM Control Unit 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access 
+
+4 
+
+Vertical Dynamics Management 
+
+2 
+
+Not for US Market 
+
+5 
+
+Electronic Height Control 
+
+3 
+
+Park Distance Control 
+
+
+
+
+Control Strategy 
+
+The underlying control strategy is known as the "Skyhook regula¬ 
+tor"; the name reflects the highest of control objectives: to keep the 
+vehicle body at the same height irrespective of the driving situation 
+(as if the vehicle were suspended from the sky). 
+
+To achieve this highest of all comfort objectives, the movements of 
+the entire body have to be evaluated. To this end, there is a 
+comprehensive analysis of ride heights and accelerations along the 
+z-axis within the frequency range of between approximately 1 and 3 
+Hz. 
+
+
+The necessary (total) damping force forthis control component will 
+turn out to be comparatively low. To simultaneously ensure that the 
+wheels do not lose contact with the road surface and that optimum 
+contact force is transferred according to the situation, the move¬ 
+ment of each individual wheel is evaluated and not just the move¬ 
+ment of the entire body. 
+
+The movements, or excitations, relevant here take place within a 
+frequency range of between approximately 11 and 13 Hz and can 
+therefore be distinguished from the movements of the body. 
+
+This control component will therefore calculate high damping 
+forces dependent on the vertical movement of the individual wheel. 
+
+As a matter of principal, these forces may be different at each 
+individual wheel and, forthe first time with VDC, can be implement¬ 
+ed as such. Furthermore, VDC regulation takes into consideration 
+steering inputs (e.g. transition from straight-ahead travel to corner¬ 
+ing) based on the steering angle curve. 
+
+If VDC detects a rapid increase in the steering angle, the controller 
+infers that the vehicle is entering a bend and can preventively 
+adjust the dampers on the outside of the bend to a harder setting 
+in advance. In this way, VDC is able to support ARS regulation and 
+contributes to a reduction in vehicle rolling movements (of course, 
+this applies also during steady-state circular driving). 
+
+Moreover, VDC is able to detect the braking applications of the 
+driver based on the brake pressure information supplied by DSC. A 
+high brake pressure normally results in a pitching of the vehicle; 
+VDC counteracts this by adjusting the front dampers to higher 
+damping forces. 
+
+This also results in an improvement in the front/rear brake force 
+distribution, which in turn reduces the braking distance (by compar¬ 
+ison with a vehicle without VDC). 
+
+The VDC controller adjusts the basic damping force level in accor¬ 
+dance with the damping program selected by the driver 
+(comfort/sport). 
+
+
+E70 Chassis Dynamics Workbook 
+
+23 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24 
+
+E70 Chassis Dynamics Workbook 
+
+
+Nevertheless, high damping forces are always applied at individual 
+wheels in critical driving situations, e.g. despite the fact that the 
+comfort program is selected. 
+
+Once the individual control components have been prioritized, a 
+target damping force is output on the FlexRay for each wheel or 
+damper. In addition, the dampers are prescribed a current value for 
+the steady-state operating point. 
+
+Display Control 
+
+The VDM control unit is responsible for evaluating the button on 
+the gear selector leverthat the driver uses to select the damping 
+program. Depending on the damping program selected, the VDM 
+control unit issues a request on the PT-CAN to switch the LED in 
+the button on or off (off = comfort, on = sport). 
+
+Degradation Behavior in the Event of a Fault 
+
+Depending on the type of fault present, the VDM control unit 
+decides which of three degradation levels must come into effect. 
+
+• Level 1: Substitute values If, for example, the steering angle 
+signal is unavailable, different variables will be used as a 
+substitute value for cornering detection. The driver receives 
+no failure message. No fault code memory entry is stored. 
+
+• Level 2: Constant supply of current. The VDM control unit 
+specifies a constant damping force, which is the same for all 
+four wheels ("medium-hard damping"). This leads to a 
+constant supply of current to the valve in the adjusting 
+dampers. A triggering factorforthis degradation level may be a 
+faulty ride-height sensor, for example. The driver receives a 
+failure message. A fault code memory entry is stored. 
+
+• Level 3: Zero supply of current. If a fault is present in the load 
+circuit, e.g. in the control of a valve, the VDM control unit will 
+select the third degradation level: it tells the dampers that the 
+valve is no longer permitted to be supplied with current. The 
+valve therefore moves into a position that corresponds to a 
+
+
+rather hard suspension setting. The driver receives a failure 
+message. A fault code memory entry is stored. 
+
+From the damping force selected in the degradation levels, it can 
+be seen that it is always the safe condition (hardertuning) that is 
+adopted in the event of a fault (failsafe behavior). 
+
+Diagnostic Functions 
+
+The VDM control unit only stores its own faults in its fault memory. 
+Faults with the EDC satellite control units are stored in their own 
+fault memory. In the event of a VDC fault, therefore, it is necessary 
+to check not only the fault memory of the VDM control unit, but of 
+the satellites too. The VDM control unit also functions as a diag¬ 
+nostics gateway between the PT-CAN and VD-F lexRay so that the 
+EDC satellite control units are accessible to the tester). 
+
+Note: The fault memories of the VDM control unit and the 
+EDC satellite control units must be checked in the 
+event of a VDC system failure. Unlike the EDC-Kin 
+the E65, it is not necessary to perform straight-ahead 
+calibration of the VDC system following replacement 
+of the steering angle sensor. 
+
+
+
+EDC Satellite Control (with damper) 
+
+This new generation EDC on the E70 is located externally, unlike 
+the EDC system in the E65. The twin-tube gas-pressure damper, 
+EDC satellite control unit and the EDC control valve with wiring as 
+far as the first plug connection form one complete component and 
+can only be replaced in this combination. 
+
+
+
+EDC Satellite Control Unit 
+
+The following functions are implemented in the EDC satellite 
+control unit: 
+
+• Signal processing:The EDC satellite control units each have 
+one single-axis acceleration sensor on the control unit board. 
+
+It is a micro mechanical structural element, which converts 
+accelerations into capacitance changes first and then into an 
+analog voltage signal. 
+
+This is processed accordingly by the EDC satellite control unit 
+and made available to the VDM control unit via FlexRay. 
+
+• Actuating functions: Each EDC satellite control unit has a 
+damping characteristic map valid forthis type of damperthat 
+is electronically stored in the form of support points. 
+
+It is therefore possible to compensate for unavoidable toler¬ 
+ances (variations) arising from manufacture and achieve a 
+higher degree of actuating precision (damping force). 
+
+Note: The EDC satellite control unit with twin tube gas-pressure 
+damper and EDC control valve can only be replaced as one 
+unit. The vehicle model and installation location (e.g. front 
+left) must be stated when a replacement part is being 
+ordered. 
+
+• Diagnostic functions 
+
+Each EDC satellite control unit is compatible with diagnostics 
+and has its own fault memory. 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Strut damper (shock) 
+
+3 
+
+EDC solenoid (control valve) 
+
+2 
+
+EDC Satellite (with sensor) 
+
+
+
+
+Note: The fault memories of the VDM control unit and the EDC 
+satellite control units must be checked in the event of a 
+VDC system failure. If the EDC satellite control units do 
+not respond to diagnostics, there may be a fault in the 
+VDM control unit (diagnostic gateway) or FlexRay. A cali¬ 
+bration of the ride-height sensors and acceleration sen¬ 
+sors must be carried out in the VDM control unit following 
+replacement of an EDC satellite control unit. 
+
+
+E70 Chassis Dynamics Workbook 
+
+25 
+
+
+
+
+
+
+
+
+
+
+
+26 
+
+E70 Chassis Dynamics Workbook 
+
+
+Twin-Tube Gas Pressure Damper 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Damping Force (N) 
+
+A 
+
+Control current = 2 A 
+
+2 
+
+Piston Speed (m/s) 
+
+B 
+
+Control current = 0.65 A 
+
+
+Ride-height Sensor 
+
+The ride-height sensors are electrically connected (hardwired) 
+directly to the VDM control unit. The ride height is sent from the 
+sensorto the VDM via an analog circuit. 
+
+Two way or one-way sensors may be fitted to the rear axle, 
+depending on the vehicle's equipment level. 
+
+
+Note: If a new ride- height sensor is being fitted, it must be 
+ensured that only parts with matching part numbers 
+are fitted. In particular, care must be taken not to 
+confuse one-way and two-way sensors (one¬ 
+way/two-way depends on the equipment level of the 
+vehicle). Two-way sensors bearthe marking "dop- 
+pelt" on the housing. 
+
+
+E70 Ride HeightSensors 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with 
+one output 
+
+B 
+
+Adaptive drive w or w/o Xenon 
+
+A 
+
+Option- Xenon only 
+
+C 
+
+Option - EHC only 
+
+
+Two-way sensors deliverthe signal not only to the VDM control 
+unit but also to the EHC control unit. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E70 Ride Height Sensors (cont.) 
+
+
+
+
+
+© ■ 
+
+
+
+E70 Ride Height SensorVariants 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+One-way ride height sensor with 
+one output 
+
+B 
+
+Option -EHC and Xenon 
+
+2 
+
+Two-way ride height sensor with 
+two outputs 
+
+C 
+
+Adaptive drive and EHC 
+w or w/o Xenon 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Two-way ride height sensor with 
+two outputs 
+
+2 
+
+One-way ride height sensor with 
+one output 
+
+
+E70 Chassis Dynamics Workbook 
+
+27 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28 
+
+E70 Chassis Dynamics Workbook 
+
+
+FlexRay in the E70 
+
+
+With the launch of the E70, the FlexRay bus system will be used 
+forthe first time worldwide in a standard production vehicle. 
+
+Currently, the E70 only uses the FlexRay bus in the Vertical 
+Dynamics M anagement (VDM)system. The FlexRay bus system 
+establishes the connection between the VDM control unit (vertical 
+dynamics management) and the EDC satellites at the shock 
+absorbers. 
+
+
+Future BMW modules will expand the use of FlexRay due to the 
+need for increased network speed and reliability. 
+
+
+
+The FlexRay bus system in the E70 is designed as a two-wire, sin¬ 
+gle-channel bus system. Acting as the gateway, the VDM control 
+unit establishes the connection between the PT-CAN and FlexRay 
+bus systems. 
+
+Data communication between the EDC satellites on the FlexRay 
+and the other control units installed in the E70 takes place via the 
+VDM control unit. 
+
+
+
+Index 
+
+Explanation 
+
+EDC SVL 
+
+EDC Satellite, Front Left 
+
+EDC SVR 
+
+EDC Satellite, Front Right 
+
+EDC SHL 
+
+EDC Satellite, Rear Left 
+
+EDC SHR 
+
+EDC Satellite, Rear Right 
+
+VDM 
+
+Vertical Dynamics Management 
+
+
+The most important properties of the FlexRay bus system are 
+outlined in the following: 
+
+• Bus topology 
+
+• Transmission medium - signal properties 
+
+• Deterministic data transmission 
+
+• Bus protocol 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus Topology 
+
+The FlexRay bus system can be integrated in various topologies 
+and versions in the vehicle. 
+
+The following topologies can be used: 
+
+• Line-based bus topology 
+
+• Point-to-point bus topology 
+
+• M ixed bus topology 
+
+Line-based Bus Topology 
+
+All control units (SG1...SG3) in line-based topology are connected 
+by means of a two-wire bus, consisting of two twisted copper 
+cores. This type of connection is also used on the CAN-bus. 
+
+The same information but with different voltage level is sent on 
+both lines. 
+
+The transmitted differential signal is immune to interference. 
+
+The line-based topology is suitable only for electrical data 
+transmission. 
+
+
+
+Point-to-point Bus Topology 
+
+The satellites (control units SG2...SG5) in point-to-point bus 
+topology are each connected by a separate line to the central 
+master control unit (SGI). Point-to-point topology is suitable for 
+both electrical as well as optical data transmission. 
+
+
+
+Mixed Bus Topology 
+
+Mixed bus topology caters forthe use of different topologies in one 
+bus system. Parts ofthe bus system are line-based while other 
+parts are point-to-point. 
+
+Redundant Data Transmission 
+
+Fault-tolerant systems must ensure continued reliable data trans¬ 
+mission even afterfailure of a bus line. This requirement is realized 
+by way of redundant data transmission on a second data channel. 
+
+A bus system with redundant data transmission uses two inde¬ 
+pendent channels. Each channel consists of a two-wire connec¬ 
+tion. In the event of one channel failing, the information ofthe 
+defective channel can be transmitted on the intact channel. 
+
+FlexRay enables the use of mixed topologies also in connection 
+with redundant data transmission. 
+
+
+E70 Chassis Dynamics Workbook 
+
+29 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30 
+
+E70 Chassis Dynamics Workbook 
+
+
+Bus Topology of FlexRay in the E70 
+
+The physical configuration of the FlexRay bus system in the E70 is 
+point-to-point. All EDC satellites are individually connected via 
+plug connections to the VDM control unit. 
+
+Internally, however, the left and right EDC satellites are connected 
+to form a line-based topology. The two lines are connected by 
+means of a double point-to-point connection consisting of two bus 
+drivers. Every item of information that is sent from one of the EDC 
+satellites orfrom the central VDM control unit reaches all connect¬ 
+ed control units. 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Channel 1 
+
+B 
+
+Channel 2 
+
+
+Transmission Medium - Signal Properties 
+
+The bus signal of the FlexRay must be within defined limits. A 
+good and bad image of the bus signal is depicted below. The elec¬ 
+trical signal must not enterthe inner area neither on the time axis 
+nor on the voltage axis. 
+
+
+The FlexRay bus system is a bus system with a high data transmis¬ 
+sion rate and therefore with rapid changes in the voltage level. 
+
+The voltage level as well as the rise and drop of the voltage (edge 
+steepness) are precisely defined and must be within certain values. 
+There must be no infringements of the marked "fields" (green and 
+red hexagon). 
+
+
+
+Electrical faults resulting from incorrect cable installation, contact 
+resistance etc. can cause data transmission problems. 
+
+The images shown above can be depicted only with very fast 
+oscilloscopes. The oscilloscope in the current BMW diagnostic 
+system is not suitable for representing such images. 
+
+The voltage ranges of the FlexRay bus system are: 
+
+• System ON - no bus communication 2.5 V 
+
+• High signal - 3.1 V (voltage signal rises by 600 mV) 
+
+• Low signal - 1.9 V (voltage signal falls by 600 mV) 
+
+The voltage values are measured with respect to ground. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deterministic Data Transmission 
+
+The CAN-bus system is an event-controlled bus system. Data are 
+transmitted when an event occurs. In the event of an accumulation 
+of events, delays may occur before further information can be sent. 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Time-controlled part of cyclic data transmission 
+
+2 
+
+Event-controlled part of cyclic data transmission 
+
+3 
+
+Cycle (5 ms total cycle length of which 3 ms static 
+(= time-controlled) and 2 ms dynamic (= event-controlled) 
+
+n 
+
+Engine speed 
+
+< 
+
+Angle 
+
+t° 
+
+Temperature 
+
+V 
+
+Road speed 
+
+xyz.. abc.. 
+
+Event-controlled information 
+
+t 
+
+Time 
+
+
+If an item of information cannot be sent successfully and free of 
+errors, this information is continually sent until the communication 
+partner confirms its receipt. 
+
+
+If faults occur in the bus system, this "event controlled" information 
+can back up causing the bus system to overload, i.e. there is a 
+significant delay in the transmission of individual signals. This can 
+result in poor control characteristics of individual systems. 
+
+
+The FlexRay bus system is a time-controlled bus system that 
+additionally provides the option of transmitting sections ofthe data 
+transmission event-controlled. In the time controlled part, time 
+slots are assigned to certain items of information. One time slot is a 
+defined period of time that is kept free fora specific item of 
+information (e.g. engine speed). 
+
+Consequently, important periodic information is transmitted at a 
+fixed time interval in the FlexRay bus system so that the system 
+cannot be overloaded. Other less time-critical messages are trans¬ 
+mitted in the event-controlled part. 
+
+Bus Protocol 
+
+Deterministic data transmission ensures that each message in the 
+time-controlled part is transmitted in real time. Real time means 
+that the transmission takes place within a defined time. 
+
+Therefore, important bus messages are not sent too late due to 
+overloading ofthe bus system. If lost due to a temporary problem in 
+the bus system (e.g. EMC problem) a message cannot be sent 
+again. A current value is sent in the next assigned time slot. 
+
+High Bandwidth 
+
+The FlexRay bus system operates with a data transmission rate of 
+10 M bits/s. This speed corresponds to 20 times the data transmis¬ 
+sion rate ofthe PT-CAN. 
+
+Synchronization 
+
+A common time base is necessary in orderto ensure synchronous 
+execution of individual functions in interconnected control units. 
+Time matching must take place via the bus system as all control 
+units operate with their own clock generator. 
+
+The control units measure the time of certain synchronization bits, 
+calculate the mean value and adapt their bus clock to this value. 
+This system ensures that even minimal time differences do not 
+cause transmission errors in the long term. 
+
+
+E70 Chassis Dynamics Workbook 
+
+31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32 
+
+E70 Chassis Dynamics Workbook 
+
+
+Wake-up and Sleep Characteristics 
+
+The control units are activated by means of an additional wake-up 
+line. The wake-up line has the same function as the previous 
+wake-up line (15WUP) in the PT-CAN. The signal curve 
+corresponds to the signal curve of the PT-CAN. 
+
+As soon as the bus system is woken, the VDM receives a High 
+level on the PT-CAN and transfers this signal to the wake-up line 
+of the FlexRay, thus also waking the satellites. 
+
+
+
+The "wake-up voltage curve" graphic shows the typical behavior of 
+the voltage curve in response to unlocking and starting the vehicle. 
+
+Phase 1: 
+
+Driver unlocks the car, the CAS control unit activates the K-CAN 
+and the PT-CAN, the voltage level in the PT-CAN briefly goes to 
+High, the VDM copies the signal and transfers it to the wake-up line 
+on the FlexRay. 
+
+Phase 2: 
+
+Car is opened, terminal R is still OFF, the voltage levels in the bus 
+systems drop again. 
+
+Phase 3: 
+
+Car is started, terminal 15 is ON, the voltages remain at the set lev¬ 
+els until terminal 15 is turned off again. 
+
+
+Phase 4: 
+
+The complete vehicle network must assume sleep mode at termi¬ 
+nal R OFF in orderto avoid unnecessary power consumption. Each 
+control unit in the network signs off to ensure that all control units 
+"are sleeping". 
+
+Only when all EDC satellites have signed off at the VDM control 
+unit can this control unit pass on this information to the PT-CAN 
+and therefore to the complete network. An error message is 
+stored if this is notthe case. 
+
+This error message is then evaluated as part of the energy 
+diagnosis procedure. 
+
+Wiring 
+
+The wiring of the FlexRay bus in the E70 is executed as a 
+sheathed, two-core, twisted cable. The sheathing protects the 
+wires from mechanical damage. The terminating resistors are 
+located in the EDC satellites. Each satellite has one terminating 
+resistor. 
+
+
+if r (r 
+
+• | M 41 * 
+
+>liJ i 
+
+n 
+
+TT “ 
+
+ft ©n 
+
+J 
+
+r——— 
+1 
+
+! r 
+
+i • 
+i • 
+i * 
+
+• 
+
+i 
+
+• 
+
+9 
+
+- , 
+
+xZ ] | 
+
+1 1 1 
+
+rs* J t 
+
+KM 
+
+075 it 
+
+frvon 
+
+3 MC© 1 
+
+a ji 
+
+_ 2_ 
+
+an 
+
+ON 
+
+
+a " 
+
+* 
+
+Pr*nr !■»*« 
+
+» 
+
+311 
+
+03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Since the surge impedance (impedance of high-frequency lines) of 
+the lines depends on external influencing factors, the terminating 
+resistors are precisely matched to the required resistance. 
+
+The four sections of line to the satellites can be checked relatively 
+easily by means of a resistance measuring instrument (ohmmeter, 
+multimeter). The resistance should be measured from the VDM 
+control unit. See BMW diagnostic system for pin assignments. 
+
+The following conclusions can be made about the resistance 
+between the VM D module and EDC satellite: 
+
+• <or = 10 Ohms - There is a short circuit in this section of line. 
+
+• 10-90 Ohms - This section of line is damaged (e.g. moisture 
+in connector, line pinched) 
+
+• 90-110 Ohms - This section of line is OK and the satellite is 
+connected (Note: Impedance errors are not recognized) 
+
+• > 110 Ohms - There is a break in the line orthe satellite is not 
+connected orthere is a break in the connection to the 
+satellites. 
+
+
+E70 Chassis Dynamics Workbook 
+
+33 
+
+
+
+34 
+
+E70 Chassis Dynamics Workbook 
+
+
+
+Workshop Exercise - FlexRay and VDM 
+
+
+Using the instructor designated E70, connect diagnostic equip¬ 
+ment and perform short test. Note any faults to VDC or EDC 
+systems. 
+
+
+List any faults present: 
+
+
+Using the test module and or ETM, locate the VDM connector. 
+Unplug the VDM and test resistance to each EDC satellite. 
+Record results below: 
+
+
+EDC Satellite 
+
+Resistance Value 
+
+Front Left 
+
+
+Front Right 
+
+
+Rear Left 
+
+
+Rear Right 
+
+
+
+While investigating the above fault, note the power supply (B+) 
+to each of the EDC satellites and record in the chart below: 
+
+
+EDC Satellite 
+
+PowerSupply/Fuse # 
+
+Front Left 
+
+
+Front Right 
+
+
+Rear Left 
+
+
+Rear Right 
+
+
+
+What relay/circuit supplies power supply for each of the above 
+satellites? 
+
+
+Besides wiring concerns and terminating resistors, what other 
+issues can affect the FlexRay bus system? 
+
+
+What is the operating voltage of the FlexRay bus? 
+
+
+What should the resistance values be on a normal (non-faulted) 
+circuit? 
+
+
+Are any of the above values out of specification? 
+
+
+Can the oscilloscope from the DISplus/GT-1 be used to check the 
+FlexRay bus? Explain answer. 
+
+
+
+
+
+E70 Chassis Dynamics Workbook 
+
+35 
+
+
+
+36 
+
+E70 Chassis Dynamics Workbook 
+
+
+Active Roll Stabilization 
+
+The customer-friendly name forthe option is "Dynamic Drive" and 
+was first available in the 7 Series with the E65. Since then, the ARS 
+system has been used in the 5 and 6 series and now forthe first 
+time in an SAV - the E70. 
+
+ARS is one of the two "functionally linked" systems which make up 
+the "Adaptive Drive" feature in the E70. 
+
+
+
+As the vehicle drives through a bend, forces act on the vehicle 
+causing it to rotate about the vehicles roll axis (X-axis). This force 
+causes the body to tilt towards the outside of the bend. Ultimately, 
+this causes the vehicle to rapidly approach its dynamic limits. 
+
+The ARS system, through the use of active anti-roll bars, is capable 
+of counteracting this force. By preventing this situation, ARS can 
+greatly contribute to vehicle stability especially on turns and during 
+evasive maneuvers. 
+
+Passive vs. Active Roll Bar 
+
+The following is a comparison of passive and active roll bars: 
+
+• Conventional (passive) anti-roll bar - During cornering, 
+the wheel suspension on the outside of the bend is 
+compressed and the wheel suspension on the inside of the 
+
+
+bend rebounds. This has a twisting effect on the anti-roll bar 
+(torsion). The forces arising in the bearing points of the anti¬ 
+roll bar produce a moment that counteracts the tilting of the 
+body. The effect is to improve the distribution of loads acting 
+on both wheels on the same axle. 
+
+A disadvantage of a passive anti-roll bar is that the basic 
+suspension tuning hardens when the suspension is com¬ 
+pressed on one side of the vehicle during straight ahead travel. 
+This results in a reduction in comfort. 
+
+• Active anti-roll bar- The Dynamic Drive active chassis sys¬ 
+tem also known as Active Roll Stabilization (ARS) - is a revolu¬ 
+tionary step in chassis and suspension engineering. Forthe 
+first time, the trade-off between handling/agility and comfort is 
+largely eliminated. This results in a new type of "driving pleas¬ 
+ure" typical of BMW. 
+
+Dynamic Drive has two active anti-roll bars, which have a 
+positive influence on body roll and handling characteristics. 
+The fundamental feature of Dynamic Drive is the divided anti¬ 
+roll bars on each axle. The two halves of the anti-roll bars are 
+connected by a hydraulic oscillating motor. 
+
+One half of the anti-roll bar is connected to the shaft of the 
+oscillating motor, the otherto the housing of the oscillating 
+motor. These active anti-roll bars control stabilizing moments: 
+
+• which reduce the reciprocal movement of the vehicle body, 
+
+• which make it possible to achieve high levels of agility and 
+target precision overthe entire road speed range, 
+
+• and produce optimum self-steering characteristics. 
+
+During straight-ahead travel, the system improves suspension 
+comfort because the anti-roll bar halves are de-coupled, with the 
+effect that the basic suspension tuning does not additionally hard¬ 
+en when the suspension on one side is compressed. 
+
+
+
+
+ARS System Overview (E70) 
+
+
+
+y yy y y 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hydraulic fluid reservoir 
+
+6 
+
+Valve block 
+
+2 
+
+Hydraulic fluid cooler 
+
+7 
+
+Lateral acceleration sensor 
+
+3 
+
+Front oscillating motor 
+
+8 
+
+Hydraulic lines 
+
+4 
+
+Tandem pump 
+
+9 
+
+Rear oscillating motor 
+
+5 
+
+Control unit 
+
+
+
+
+E70 Chassis Dynamics Workbook 
+
+37 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38 
+
+E70 Chassis Dynamics Workbook 
+
+
+ARS System Components 
+
+The ARS system components are outlined in the following: 
+
+ARS Control Module 
+
+The ARS control module (1) is located in the vehicle interior near 
+the right-hand A-pillar. The module is supplied with powervia 
+terminal 30 and is protected by a 10 A fuse. 
+
+The ARS control module is activated exclusively by the Car Access 
+System (CAS) on a CAN wake-up line after "ignition ON". 
+
+
+
+A vehicle authentication process takes place when the system is 
+started. This compares the vehicle identification numberfrom CAS 
+with the vehicle identification number which is encoded in the ARS 
+control unit. 
+
+Then the ARS control unit's hardware and software are checked. 
+
+
+All the outputs (valve magnets) are subjected to a complex check 
+for short circuits and breaks. If there is a fault, the system switches 
+the actuators into a safe driving condition. 
+
+The ARS control unit switches off if there is undervoltage or over¬ 
+voltage. 
+
+The ARS control unit learns the offset forthe steering angle and 
+the lateral acceleration during start-up and during driving. 
+
+Lateral Acceleration Sensor 
+
+The lateral acceleration sensor supplies the main sensorsignal. It 
+measures the lateral acceleration of the vehicle during cornering up 
+to a measurement range of 1.1 g. It is installed on the base plate 
+underthe right front seat. The ARS control unit can learn an offset 
+during start-up and when the vehicle is in motion. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Anti-roll Bar 
+
+The oscillating motor and the oscillating motor housing are joined 
+by one half of the anti-roll bar. 
+
+The active anti-roll bar consists of the oscillating motor and the 
+anti-roll bar halves fitted to the oscillating motor, with press-fitted 
+roller bearings fortheir connection to the axle carriers. The use of 
+roller bearings ensures optimum comfort thanks to better response 
+and reduced control forces. 
+
+
+V © V -V V © 0 © 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Anti-roll bar link connection to swivel bearing 
+
+2 
+
+Anti-roll bar bracket 
+
+3 
+
+Anti-roll bar 
+
+4 
+
+Oscillating motor (hydraulic) 
+
+5 
+
+Anti-roll bar links 
+
+
+There are screw plugs in the area of the pressure relief valves on 
+the oscillating motor of the rear-axle anti-roll bar. 
+
+
+
+Rear axle anti-roll bar 
+
+
+© Vi) <*) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lines from hydraulic valve block 
+
+2 
+
+Anti-roll bar links 
+
+3 
+
+Anti-roll bar 
+
+4 
+
+Oscillating motor (hydraulic) 
+
+
+The rear anti-roll bar is mounted behind the rear axle carrier. The 
+anti-roll bar links are connected to the rear-axle swinging arms. 
+
+
+The oscillating motor of the front axle stabilizer bar is fitted with two 
+pressure relief valves. 
+
+
+Air filter elements are fitted to the pressure relief valves. These air 
+filter caps with Goretex inserts must not be removed. 
+
+
+E70 Chassis Dynamics Workbook 
+
+39 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40 
+
+E70 Chassis Dynamics Workbook 
+
+
+Hydraulic Valve Block 
+
+The hydraulic valve block is located on the floor plate of the vehicle 
+behind the front right hand wheel housing level with the front right 
+hand door. The hydraulic valve block is connected to a carrier plate 
+bolted to the body. 
+
+
+® ® ® © © 
+
+
+
+3> ^ v2S) & ® © 
+
+
+The hydraulic valve block houses the following valves and sensors: 
+
+• 2 pressure regulating valves; one for the front axle and one for 
+the rear axle 
+
+• one direction valve 
+
+• one failsafe valve 
+
+• 2 pressure sensors; one sensorforthe front axle, one sensor 
+for the rear axle 
+
+• one switch-position recognition sensor. 
+
+The hydraulic valve block has the following connections: 
+
+• 2 lines to the oscillating motor at the front 
+
+• 2 lines to the oscillating motor at the rear 
+
+• one connection forthe line to the tandem pump 
+
+• one connection forthe line to the hydraulic fluid reservoir. 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Directional valve 
+
+8 
+
+Tandem pump line 
+
+2 
+
+Rear-axle pressure sensor 
+
+9 
+
+Hydraulic fluid reservoir line 
+
+3 
+
+Line 2, front axle oscillating motor 
+
+10 
+
+Line 1, rear axle oscillating motor 
+
+4 
+
+Proportional pressure limiting 
+valve, front axle 
+
+11 
+
+Line 2, front axle oscillating motor 
+
+5 
+
+Proportional pressure limiting 
+valve, rear axle 
+
+12 
+
+Line 1, front axle oscillating motor 
+
+6 
+
+Front axle pressure sensor 
+
+13 
+
+Failsafe valve 
+
+7 
+
+Switch position recognition 
+sensor 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tandem Pump 
+
+The hydraulic pumps fitted in the E70 were developed with a 
+modulardesign. Depending on the engine and equipment specifi¬ 
+cation, a suitably dimensioned hydraulic pump is flange-mounted 
+to the engine in the same installation space. 
+
+The exact pump design installed is dependent upon the optional 
+equipment, such as: 
+
+• Basic steering 
+
+• Active Steering (AS) 
+
+• CO2 measures 
+
+• Adaptive Drive 
+
+• Adaptive Drive and Active Steering. 
+
+
+The hydraulic pump driven by the engine's poly-V-belt is, on 
+vehicles with Adaptive Drive, invariably a tandem pump, which con¬ 
+sists of a radial piston part for ARS and a vane-cell partforthe 
+power steering. 
+
+Radial Piston Pump (partoftandem pump) 
+
+This radial piston pump has 10 pistons set out in two rows and 
+designed fora maximum pressure of 210 bar. 
+
+When the engine is idling, the pump speed is approximately 750 
+rpm. Atthis idling speed, the radial piston part delivers a minimum 
+fluid flow rate of approximately 6.75 liters/minute at a pressure of 
+approximately 5 bar. This means that sufficient system dynamics 
+are also guaranteed when the engine is idling. 
+
+At a pump speed of 1,450 rpm, the maximum fluid flow rate is limit¬ 
+ed to 13.3 rpm. 
+
+
+
+
+Vane-cell Pump (part of the tandem pump) 
+
+This part comprises 10 vane cells and designed fora maximum 
+pressure of 135 bar. The vane-cell part has a characteristic map 
+controlled fluid flow rate of 7-15 liters/minute. 
+
+The decisive parameters forthe characteristic map are the vehicle's 
+road speed and the steering angle speed. 
+
+Adaptive Drive and the power steering share the same fluid 
+reservoir and radiator. 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Radial piston pump 
+
+3 
+
+Steering pressure connection 
+
+B 
+
+Vane-cell pump 
+
+4 
+
+ARS pressure connection 
+
+1 
+
+Intake connection 
+
+5 
+
+Input flange 
+
+2 
+
+Proportional valve 
+
+
+
+
+E70 Chassis Dynamics Workbook 
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+42 
+
+E70 Chassis Dynamics Workbook 
+
+
+Fluid Reservoir 
+
+In the fluid reservoir is a fluid filter and fluid level sensor. The fluid 
+filter cannot be replaced. The screw cap is fitted with a dipstick, 
+which makes it possible to check the fluid level. A "M AX" mark 
+indicates the maximum permissible fluid level, measured at room 
+temperature (20°C). 
+
+
+
+If a dipstick check at room temperature reveals the fluid reservoirto 
+be dry, the reservoir must be topped up with the specified hydraulic 
+fluid. If the lowest edge of the dipstick is still only just wet with 
+hydraulic fluid (3), this is to be construed as the "M IN" mark. 
+
+
+A mobile float contains a reed contact that converts float move¬ 
+ments into an electric signal. 
+
+The fluid level sensor (1) is fitted to the fluid reservoir. Short/open 
+circuits cannot be detected by the fluid level sensor. A line break is 
+interpreted as a loss of fluid. 
+
+
+
+Hydraulic-fluid Cooler 
+
+The hydraulic-fluid cooler serves to maintain a fluid temperature of 
+< 120°C in all hydro-mechanical components under all conditions, 
+although temperatures of < 135°C are acceptable for brief periods. 
+
+
+Fluid Level Sensor 
+
+The fluid level sensor detects the fluid level in the fluid reservoir. 
+The fluid level sensor determines whetherthe fluid level has 
+dropped below a critical minimum level and activates a warning 
+message. Normal movements of the fluid in the reservoir are not 
+cause fora message. 
+
+
+
+
+
+
+
+
+
+
+
+Service Notes 
+
+If Dynamic Drive fails, DSC can no longer be deactivated or if it is 
+already deactivated it does not switch back on automatically. The 
+connections for all the hydraulic components are designed in differ¬ 
+ent dimensions and lengths so that they cannot be transposed. 
+
+A disturbing transmission of noise into the vehicle interior occurs 
+due mainly to the assembly and line connections. The lines must 
+not make contact; they must be routed correctly through the brack¬ 
+ets without slack ortension. They are covered by the underbody 
+paneling. 
+
+Steering Angle Calibration 
+
+After work on the front axle, it is necessary to carry out a steering 
+angle calibration with the Dynamic Drive control unit. 
+
+The Dynamic Drive system is dependent on the exact zero balance 
+of the steering angle. The maximum deviation tolerance is 1. 
+Precise chassis alignment is a prerequisite. 
+
+The steering angle calibration must always be carried out on the 
+measuring stand and in accordance with BMW axle alignment 
+guidelines. 
+
+The zero position is lost each time the Dynamic Drive control unit 
+is flash programmed. A steering angle calibration is required when- 
+everthe control unit is flash programmed. 
+
+ARS Initialization 
+
+The initialization procedure must always be carried out once the 
+system has been opened ora part has been replaced.This also 
+applies afterthe lateral acceleration sensor has been replaced. 
+
+The following conditions must be guaranteed for calibration of the 
+offset values ofthe lateral acceleration sensorand the two pressure 
+sensors: 
+
+• The vehicle must be stand level on all fourwheels 
+
+
+• The vehicle must be unladen 
+
+• The engine must be idling 
+
+• Rest status (doors closed, persons are not allowed in the 
+vehicle). 
+
+No persons may remain within the vicinity of moving chassis parts 
+during the initialization (both in the works and the workshop). In 
+addition you must ensure that the basic commissioning conditions 
+(temperature range, constant engine speed etc.) are maintained. 
+The ground clearance must not be limited and the doors must be 
+closed. The arms ofthe hoist may no longer be situated beneath 
+the car. 
+
+ARS Bleeding Procedure 
+
+A bleeding procedure must be carried out using the diagnostic 
+tester if the ARS system was opened hydraulically. The bleeding 
+procedure is performed exclusively by way ofthe initialization rou¬ 
+tine ofthe diagnostic tester and not at the pressure relief valves or 
+at the screw plugs ofthe oscillating motors. 
+
+If the test still detects air in the system, a short movement trip 
+should be made if necessary. 
+
+The initialization routine must then be repeated afterthe short trip. 
+
+In the event of an extreme leak or suspected partial function ofthe 
+pressure relief valves (noticeable by rattling noises in the front end), 
+the pressure relief valves and the pneumatic lines must be replaced 
+with new components. 
+
+Programming 
+
+It is possible to program the Dynamic Drive control unit. 
+
+Coding 
+
+It is possible to code the Dynamic Drive control unit. 
+
+Note: For more detailed information on ARS intheE70, 
+refer to the reference material onTIS and 1C P. 
+
+
+E70 Chassis Dynamics Workbook 
+
+43 
+
+
+
+44 
+
+E70 Chassis Dynamics Workbook 
+
+
+Electronic Height Control (EHC) 
+
+As with the previous SAV, the E53, the new X5 has an available single-axle air suspension system. The EHC system is standard on the 
+4.8is and only available on the 3.0 version as part of the 3rd row seat option. This system operates in a similar mannerto previous EHC 
+systems. 
+
+The purpose of a level control system is to maintain the height of the vehicle body as close as possible to a predefined level under all load 
+conditions. Through a constant level of the body mainly the driving quality (e.g. camber, toe-in) will remain unaltered in the event of 
+changes in payload. 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Air cleaner (filter) 
+
+6 
+
+Ride height sensor, right 
+
+2 
+
+Retaining plate 
+
+7 
+
+EHC control unit 
+
+3 
+
+Air Supply Unit (LVA) 
+
+8 
+
+Air spring, rear left 
+
+4 
+
+Pneumatic lines 
+
+9 
+
+Ride height sensor, left 
+
+5 
+
+Air spring, rear right 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EHC Control Unit 
+
+The EHC control unit is located in a module carrier in the rear of 
+the luggage compartment on the right-hand side. 
+
+The EHC control unit receives the following signal information: 
+
+• Vehicle ride height 
+
+• Load cutout signals 
+
+• Terminal 15 ON/OFF 
+
+• Vehicle speed 
+
+• Lateral acceleration 
+
+• "Engine running" signal 
+
+• Hatch status. 
+
+The EHC control unit decides on a case-by-case basis whether a 
+control operation is required in orderto compensate for changes in 
+load. It is thus possible to optimally adapt the frequency, specified 
+heights, tolerance thresholds and battery load to the relevant situa¬ 
+tion by means of the control operation. 
+
+The EHC control unit is fully compatible with diagnostics. 
+
+Air Supply Unit(LVA) 
+
+The air supply unit is fitted to the underbody of vehicle by a 
+component carrier level with the front right door. 
+
+
+
+Air Suspension 
+
+The E70 with EHC uses air spring fitted at the rear axle. Take note 
+of the following cautions: 
+
+Note: When a new air spring is being fitted, care must be 
+taken to ensure that it is not over-stretched. 
+Otherwise, the retaining ring forthe inner pipe could 
+snap off the rubber gaiter, which could result in dam¬ 
+age to the suspension air bag. 
+
+Forthis reason, the top of the airspring should be 
+secured to the body first, and only then should it be 
+connected to the axle carrier. 
+
+Ride-height Sensor 
+
+The ride-height sensors are electrically connected directly to the 
+EHC control unit. The mode of signal transfer is analog. Two-way 
+or one-way sensors may be fitted to the rear axle, depending on the 
+vehicle's equipment level. Two-way sensors deliverthe signal not 
+only to the VDM control unit but also to the EHC control unit. 
+
+Note: If a new ride- height sensor is being fitted, it must be 
+ensured that only parts with matching part numbers 
+are fitted. In particular, care must be taken notto 
+confuse one-way and two-way sensors (one- 
+way/two-way depends on the equipment level of the 
+vehicle). Two-way sensors bearthe marking "dop- 
+pelt" on the housing. 
+
+For more information on ride height sensor configu¬ 
+ration, referto the VDC section of this workbook or 
+the reference material onTIS orICP. 
+
+
+E70 Chassis Dynamics Workbook 
+
+45 
+
+
+
+46 
+
+E70 Chassis Dynamics Workbook 
+
+
+Longitudinal Dynamics 
+
+
+Systems which affect the forward or rearward dynamics along the 
+"X-axis" is referred to as longitudinal dynamics systems. These 
+systems include various types of braking systems. 
+
+In the E70, these systems include: 
+
+• Dynamic Stability Control (DSC) 
+
+• Anti-lock Braking System (ABS) 
+
+• Electro-mechanical Parking Brake (EMF) 
+
+• Dynamic Cruise Control (DCC) 
+
+Dynamic Stability Control 
+
+The DSC system utilized on the E70 is referred to as DSC E7x. 
+The system is supplied by Bosch. With its optimized control 
+functions, the new system design makes a significant contribution 
+to increased driving dynamics. 
+
+Additional functions for active safety and additional comfort have 
+been implemented in the new system.The new system in the 
+E70 offers the following advantages: 
+
+• Driving Dynamics 
+
+- DSC mode: Increased driving dynamics and maximum 
+traction. Thanks to more precise and faster control inter¬ 
+ventions, the driver can further extend the boundaries of 
+driving dynamics while retaining vehicle safety. 
+
+- DTC mode: Compared to DSC mode, Dynamic Traction 
+Control (DTC) allows for increased slip at the drive wheels 
+to provide maximum propulsion when driving off in snow 
+for instance. In addition, the stabilizing interventions cut 
+in later in DTC mode thus allowing a more sport-oriented 
+driving profile. 
+
+
+• Active Safety 
+
+- The additional functions of brake standby, dry braking and 
+fading assistance shorten the stopping distances. 
+
+- Increased DSC efficiency makes for more effective safety 
+relevant functions. 
+
+• Comfort 
+
+- Improved operating comfort (brake interventions are less 
+audible, pedal vibration is drastically reduced) through the 
+use of a 6-piston pump in connection with a new higher- 
+frequency electrical actuation system. 
+
+- Additional functions such as start-off assistant and park¬ 
+ing brake provide increased driver assistance and com¬ 
+fort. 
+
+Note: To date, the DSC driving dynamics system on all¬ 
+wheel drive vehicles was referred to with the abbre¬ 
+viation 11 DXC 11 . S ince this lead to confusion with the 
+xDrive, in the future the dynamic stability control 
+system will be known as DSC also on all-wheel 
+drive vehicles. 
+
+ABS 
+
+ABS functions in the E70 are identical to those functions in 
+previous models. The pedal pulsations and noise from the 
+solenoid valves and pump are reduced in the E70. This is a result 
+of the high-performance hydraulic unit on the DSC E7X system. 
+
+
+
+
+DSC System Overview 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hydraulic unit with DSC control unit 
+
+5 
+
+Center Console Switch Cluster (SZM) 
+
+2 
+
+Wheel speed sensors (4x) 
+
+6 
+
+Steering Column Switch Cluster(SZL) 
+
+3 
+
+Master cylinder 
+
+7 
+
+Gear Selector Lever (GWS) 
+
+4 
+
+DSC sensor 
+
+8 
+
+EM F Actuating Unit 
+
+
+E70 Chassis Dynamics Workbook 
+
+47 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48 
+
+E70 Chassis Dynamics Workbook 
+
+
+Overview of DSC Components 
+DSC Hydraulic Unit 
+
+With its new pump concept, the hydraulic unit provides a signifi¬ 
+cant improvement in control accuracy. 2x3 pump elements with a 
+diameter of 6.5mm and intake-optimized units operate in the 
+hydraulic unit.This pump concept ensures substantially improved 
+pressure dynamics resulting in lower pedal feedback in ABS mode 
+and higher control quality. 
+
+Forthe driverthis is noticeable in as far as the pedal pulsation can 
+now only be felt very slightly during ABS braking. There is a pres¬ 
+sure sensor in the hydraulic unit. 
+
+
+
+DSC Control Unit 
+
+The DSC control unit can be replaced individually. The 47-pin 
+connector connects the DSC control unit to the engine wiring 
+harness. 
+
+
+Wheel Speed Sensor 
+
+4 active wheel speed sensors are installed in the E70. All 4 sen¬ 
+sors have a direct hardwired connection to the DSC control unit. 
+
+These active wheel speed sensors facilitate recognition of the 
+direction of rotation, air gap (clearance) and standstill. The DSC 
+control unit receives this information in the form of a PWM signal. 
+
+DSC Sensor 
+
+The DSC sensor is located underthe front passenger seat and is 
+available in two variants in the E70: 
+
+• Vehicle without active steering, DSC sensor (designation 
+M M 3.8), containing a 
+
+- Transverse acceleration sensor. 
+
+- Longitudinal acceleration sensor. 
+
+- Yaw rate sensor in a housing. 
+
+• Vehicle with active steering, DSC sensor (designation 
+M M 3.2.2), containing. 
+
+- 2 redundant transverse acceleration sensors. 
+
+- Longitudinal acceleration sensor. 
+
+- 2 redundant yaw rate sensors in a housing. 
+
+
+
+
+Steering Column Switch Cluster(SZL) 
+
+The Steering Column Switch Cluster (SZL) is carried overfrom the 
+E90 and consists of the following components: 
+
+• SZL electronics 
+
+• Steering angle sensor (optical code disc) 
+
+• Steering column stalk, cruise control 
+
+• Steering column stalk, direction indicator 
+
+• Steering column stalk, wiper 
+
+• Coil spring assembly 
+
+The steering column switch cluster can only be replaced as a 
+complete unit. The coil spring assembly is fitted on the steering 
+column switch cluster. The spring coil assembly can be removed 
+and replaced individually. 
+
+
+
+Overview of DSC Functions (DSC E7X) 
+
+
+Function 
+
+
+Can be 
+switched 
+on/off by 
+driver 
+
+
+DSC ON 
+
+
+DTC DSC OFF 
+
+
+DTC 
+
+
+
+
+ABS 
+
+EBV 
+
+CBC 
+
+MSR 
+
+ASC 
+
+ADB-X 
+
+DSC 
+
+HDC 
+
+Dry braking 
+
+Start assist 
+
+Braking readiness 
+
+Fading assistance 
+
+DBC 
+
+-DBS 
+
+-MBS 
+
+
+EMF [parking brake] © 
+
+GRR+ (included in active steering option) 
+
+RPA 
+
+CBS 
+
+
+Symbols: 
+
+• = System active 
+
+X = System with elevated control thresholds 
+© = Can be switched on/off 
+
+
+E70 Chassis Dynamics Workbook 
+
+49 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50 
+
+E70 Chassis Dynamics Workbook 
+
+
+Electromechanical Parking Brake (EMF) 
+
+The concept of EM F has been carried overfrom the E65. The system functions in much the same way as the previous design. 
+Most of the differences lie in component location and emergency release procedures. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control 
+
+4 
+
+EMF actuating unit 
+
+2 
+
+Master Cylinder 
+
+5 
+
+Emergency release for EM F 
+
+3 
+
+Gear Selector Lever 
+
+
+
+
+E70 Chassis Dynamics Workbook 
+
+50 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basic Functions of EMF 
+
+The parking brake (EMF) has two different functions, depending on 
+the operating status of the vehicle. 
+
+• Parking brake mode 
+
+- When the engine is running orthe vehicle is rolling, the 
+parking brake acts on the service brake with the aid of the 
+DSC hydraulics. This means the brake units on the front 
+and rear axle are active. 
+
+
+Note: After a power failure, it may still not be possible to 
+move the vehicle even after releasing the brake with 
+the emergency release facility. The parking lock of 
+the automatic gearbox may still be engaged. 
+
+Once released, using the emergency release facility, the parking 
+brake cannot be reactivated manually.The function can be restored 
+only by way of electrical activation. 
+
+
+- If the engine is not running and the vehicle is stationary, the 
+electromechanical actuator and its cable assembly ensure 
+the parking brake acts on the duo-servo drum brake on the 
+rear axle. In this case, the vehicle is braked as defined in the 
+control unit. 
+
+• Dynamic braking 
+
+Defined retardation is triggered via the DSC system if the 
+parking brake button is pulled up while driving. The decelera¬ 
+tion is monitored by the DSC control functions and takes place 
+for as long as the parking brake button is pulled. 
+
+
+Emergency Release 
+
+A mechanical emergency release facility is provided in orderto be 
+able to release the parking brake in the event of the electro¬ 
+mechanical actuating unit failing or insufficient power supply. 
+
+
+CAUTION!!! 
+
+
+Secure vehicle to prevent it rolling 
+before operating the emergency 
+release! 
+
+
+The release procedure is performed manually with the emergency 
+release cable assembly (2) and the emergency release handle (1) 
+from the vehicle tool kit. The emergency release procedure releas¬ 
+es the duo-servo drum brake by way of mechanical intervention in 
+the actuator of the electromechanical control unit. 
+
+
+
+Restoring Operation After Emergency Release 
+
+Afterturning on the ignition, push down the EM F operating 
+button and pull up again to activate the parking brake. 
+
+
+E70 Chassis Dynamics Workbook 
+
+51 
+
+
+
+
+
+52 
+
+E70 Chassis Dynamics Workbook 
+
+
+EMF Components 
+EMF Button 
+
+On the E70, the EMF button (1) is located in the center console 
+next to the gear selector lever. 
+
+The EMF button is based on the function logic of a hand brake. 
+
+• Pull EMF button (1) up: Parking brake is activated 
+
+• Press EMF button (1) down: Parking brake is deactivated 
+
+
+
+EMF Actuating Unit 
+
+The EMF actuating unit is located on the rear axle component 
+carrier. 
+
+
+
+Note: The indicator lamp in the instrument cluster 
+shows the driver when the EMF is activated. 
+
+
+
+
+
+
+
+
+EMF Actuating Unit (Internal Components) 
+
+The EMF actuating unit is sealed watertight and the housing 
+cannot be opened. 
+
+The EMF actuating unit contains the following main components: 
+
+• EM F control unit 
+
+• Electric motor 
+
+• Spindle gear mechanism 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+EMF Control unit 
+
+8 
+
+Flexible band 
+
+2 
+
+Bowden cable, 
+emergency release 
+
+9 
+
+Force sensor, pc board 
+
+3 
+
+Bowden cable, rear left 
+
+10 
+
+Force sensor magnet 
+
+4 
+
+Lock pin 
+
+11 
+
+Bowden cable, rear right 
+
+5 
+
+Actuating piston 
+
+12 
+
+Electrical connection 
+
+6 
+
+Spring 
+
+13 
+
+EMF Control unit 
+
+7 
+
+Emergency release cable 
+
+
+
+
+The force sensor in the EMF actuating unit is a very important 
+componentfor operation of the parking brake. With its signals, the 
+force sensor makes it possible forthe EMF control unit to deter¬ 
+mine the actuating force. The actuating force is essential for secur¬ 
+ing the required braking pressure. 
+
+
+
+8 7 ) 8 , 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Flook 
+
+5 
+
+Force sensor pc-board 
+
+2 
+
+Retaining plate 
+
+6 
+
+Piston 
+
+3 
+
+Hall-IC 
+
+7 
+
+Spring 
+
+4 
+
+M agnet 
+
+8 
+
+Lower section of housing 
+
+
+The housing of the force sensor consists of two halves. The lower 
+section of the housing (8) is made from pressure diecast aluminum 
+so that it can take up the exerted forces. 
+
+
+The upper section of the housing is made of plastic, to which the 
+force sensor pc-board (5) with the Hall-IC (3) is secured. 
+
+The magnet (4) is fixed to the piston (6). The sensor is located 
+between the left and right bowden cable assembly. During actua¬ 
+tion, the piston (6) moves with the magnet against the spring (7). 
+
+The travel range of spring compression is measured in accordance 
+with the familiar Hall principle. Since the spring data are defined, 
+the EM F control unit can calculate the applied force from the travel 
+range and the spring data. The force sensor is calibrated at the end 
+of the assembly line. 
+
+
+E70 Chassis Dynamics Workbook 
+
+53 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+54 
+
+E70 Chassis Dynamics Workbook 
+
+
+Service Information for EMF 
+Adjusting the Brake Shoes 
+
+The procedure for adjusting the parking brake shoes is the same as 
+before: 
+
+Turn the adjusting screw using a screwdriverthrough the threaded 
+hole in the wheel hub (10 teeth). 
+
+Removing the Bowden Cable Assemblies 
+
+Note: The EMF must be set to service mode with the diag¬ 
+nostic tester before performing any maintenance or 
+service procedures (the parking brake cannot be 
+applied, EMF assumes the outermost position). 
+
+The EMF will not respond to an operating signal 
+until service mode has been deactivated again. 
+
+Necessary preparation: 
+
+• To remove emergency release bowden cable assembly in 
+luggage compartment (see Emergency Release). Use pointed 
+pliers to press togetherthe white clip while pressing in the 
+direction of the floor plate. 
+
+Remove the wheels, brake calipers and brake discs (according 
+to repair instructions) to expose the duo-servo brake shoes. 
+
+The heat shield must be removed on vehicles with Active Roll 
+Stabilization (ARS) and the ARS anti-roll bar lowered. (It is suf¬ 
+ficient to release the ARS anti-roll bar at the mounting points 
+and to lower it.) 
+
+Unplug the electrical connectorfrom the EMF actuating unit. 
+
+• To detach and expose the emergency release bowden cable 
+assembly (Note: Clip fastening behind wheel arch panel). 
+Release spring clip on wheel carrier. Detach nipple of cable 
+assembly from brake show expander and pull the cable out of 
+
+
+the wheel carrier. Release the cable assembly from the clip on 
+the rear axle carrier and pull in the direction of the EMF actuat¬ 
+ing unit. 
+
+• Detach the carrierforthe EMF actuating unitfromthe rear axle 
+carrier and from the EM F actuating unit and pull out. 
+
+• Screw the union nut on the rear left wheel cable assembly by 
+5-7 turns (left-hand thread) into the spline shaft of the actuator. 
+Then fit the twist lock (square) of the threaded spindle in the 
+guide in the actuator housing. The sleeve of the cable assem¬ 
+bly must lie flat on the actuator housing before fitting the union 
+nut.Tighten the union nut to 6 Nm. Attach the rear rightwheel 
+cable assembly to the mounting point on the actuator and 
+secure with the clip. Make sure that the cable is firmly fitted. 
+
+The cable assembly must lie flat on the actuator housing 
+before fitting the union nut.Tighten to 6 Nm. 
+
+• Reinstallation takes place in the reverse order of removal. 
+
+F it the new EMF actuating unit, cable assemblies first, in the 
+package space. If it was necessary to slack off the carrierfrom 
+the EM F actuating unit, it must be resecured to the EM F 
+actuating unit and tightened to a torque of 4 ±0.5 Nm.The 
+component carrier must be secured to the rear axle carrierto a 
+torque of 19Nm±15 %. Before securing the cable assemblies 
+to the wheel carrier (tightening torque 8 Nm), check that the 
+brake cables are securely attached in the brake shoe expander 
+otherwise the EM F actuating unit may be damaged as soon 
+as it is operated. 
+
+Start-up 
+
+A new EMF actuating unit is always set to "service mode". 
+
+This mode can be actively reset with the diagnostic tester or it 
+resets itself automatically on exceeding a defined vehicle speed. 
+The actuating unit is now in "standby mode".The EMF actuating 
+unit mustthen be encoded to the vehicle. 
+
+
+
+Initializing the Parking Brake 
+
+Note: TheEMF must be initialized with the diagnostic 
+tester after replacing the drum brake linings. 
+
+Bedding in the Duo-servo Brake 
+
+If the brake shoes of the duo-servo brake are replaced as part of 
+repair or maintenance work, it is necessary to bed in the brake 
+shoes before a sufficient holding effect may be achieved. Also in 
+this case, the special routine must be activated in the EM F with the 
+diagnostic tester. 
+
+The flashing indicator lamp in the instrument cluster signals that 
+the bedding-in program is ready. 
+
+The bedding-in program will be aborted and the normal parking 
+brake function resumed if the bedding-in is not started within 30 
+minutes of program activation or if the ignition is switched off. 
+
+The bedding-in procedure can also be performed on the roller 
+dynamometer. 
+
+Function on Brake Rolling Dynamometer 
+
+The Operation of the E70 parking brake can be tested on the brake 
+rolling dynamometer. As part of the road inspection, the rear axle 
+brake can be tested with the engine running by pulling the EM F 
+button. 
+
+As part of the road inspection, the rear axle brake can be tested 
+with the engine running by pulling the EM F button. As a result, the 
+EM F actuating unit is applied, the duo-servo brake is applied and 
+the vehicle normally jumps out of the roller of the test rig. 
+
+
+Example Scenarios 
+
+Basic function of the parking brake controlled by the actuating unit 
+Scenario: "Ignition ON", the engine is notyet running and the foot 
+brake is pressed. 
+
+With the vehicle stationary, the parking brake is released or applied 
+by pulling or pressing the EMF button. The indicator lamp in the 
+instrument cluster either goes out or lights up red. 
+
+Note: The parking brake can be released only with the 
+foot brake pressed when the engine is running or 
+turned off. 
+
+The dynamic braking function is triggered if the EMF operating 
+button is pulled while the vehicle is rolling. 
+
+Transition from EMF Actuating Unit to DSC 
+
+The system switches overfrom mechanical to hydraulic mode 
+when the engine is started. If the EMF actuating unit was applied 
+at the time, the DSC hydraulics will assume control of the braking 
+force. 
+
+The EMF actuating unit is not released until the hydraulics are 
+holding the vehicle secure. The indicator lamp remains lit red 
+throughout this process, and the driver is unaware of the transition 
+(the lamp does not even flash). 
+
+Transition from DSC to EMF Actuating Unit 
+
+The transition to the EM F actuating unit always takes place on exit¬ 
+ing the hydraulic function at "ignition OFF". If the parking brake was 
+applied, the hydraulics are not released until the EM F actuating unit 
+is applied. The indicatorlamp remains red throughout this 
+transition. 
+
+
+E70 Chassis Dynamics Workbook 
+
+55 
+
+
+
+56 
+
+E70 Chassis Dynamics Workbook 
+
+
+Function of the Parking Brake Controlled by the DSC 
+Hydraulics 
+
+Scenario: "Engine mnning" 
+
+The parking brake is applied or released completely by hydraulic 
+means when the EMF operating button is pulled or pressed. 
+
+Dynamic braking ( hydraulic) is triggered with the vehicle rolling and 
+the button operated atv >3 km/h. The basic functions mainly 
+correspond to the functional scope of a conventional mechanical 
+parking brake. 
+
+The system switches between "brake applied" and "brake 
+released" with pressure buildup and pressure reduction every time 
+the EMF button is pulled or pressed. 
+
+The parking brake must be released by pressing the EM F button 
+before starting off. Pulling away against the applied brake pressure 
+results in an increase in pressure and a warning to the driver. 
+
+Scenario: "At rest" 
+
+Remove control removed The parking brake enters rest status 
+when the remote control is removed. If the parking brake is applied, 
+the time-delayed red indicator lamp signals this status to the driver. 
+
+If the EM F actuating unit is released in rest mode, the EM F actuat¬ 
+ing unit is applied when the EM F button is pulled with the vehicle 
+stationary. If the vehicle is in motion, pressing the button will initiate 
+dynamic braking. 
+
+Note: Always take the remote control with you when leav¬ 
+ing the vehicle otherwise children could release the 
+parking brake. 
+
+
+Dynamic Braking 
+
+Two braking units for brake operation are required by law 
+(previously: foot brake and hand brake) In the E70, the second 
+operating point besides the foot brake is the EM F button on the 
+gear selector lever. 
+
+The vehicle is braked by the drum brakes at the rear axle if the EMF 
+button is pressed and held at speeds below v = 3 km/h and with 
+the engine switched off. 
+
+The vehicle is braked at a rate of 3 m/s^ for 0.8 seconds if the EM F 
+button is pressed when the vehicle is in motion. Braking power is 
+then ramped up to 5 m/s^ forthe next 2 seconds. This braking 
+action is retained for as long as the EM F button is pulled. 
+
+For stability reasons (over-braking - rear axle) the dynamic braking 
+function is also triggered in the rest state in response to the vehicle 
+rolling (engine turned off, ignition OFF) by means of active pressure 
+build-up by the DSC hydraulics together with the DSC function. 
+
+The brake pressure required is made available as rapidly as 
+possible. The braking action is always monitored bythe DSC con¬ 
+trol function. This ensures vehicle stability while braking. Since all 
+four wheels are braked hydraulically, there is considerably greater 
+deceleration with a minimum of operating effort (EMF button) by 
+comparison with conventional parking brakes.The controlled 
+brakes are therefore able to contribute to improving vehicle safety. 
+
+For traffic safety reasons, operation of dynamic braking is indicated 
+to the road users behind bythe brake lights coming on. 
+
+To avoid accidental operation and misuse, the driver is notified of 
+dynamic braking operation by a display message and gong. 
+
+This function is intended only for use in an emergency and must 
+never be used as a substitute for normal operation of the service 
+brake. 
+
+
+
+The more effective braking solution is used if the parking brake 
+deceleration request is overlapped by the brake pedal being 
+depressed. The DSC control unit decides which deceleration 
+request is to be carried out. 
+
+Exiting Dynamic Emergency Braking 
+
+The vehicle will remain hydraulically braked even afterthe EM F 
+button has been released if the vehicle is braked to a halt by 
+dynamic braking. There is a transition to the normal DSC 
+hydraulics function.The hydraulic brake is only released when the 
+EMF button is pressed once more. 
+
+If the EM F button is pressed while the vehicle is still in motion, the 
+system level prevailing before the emergency dynamic braking was 
+activated is resumed. If the parking brake is released and the vehi¬ 
+cle is coasting, it is possible to activate emergency dynamic 
+braking in any situation (terminal 30,15, R) by pressing the EM F 
+button. 
+
+Error Messages 
+
+All fault statuses are detected by the monitoring system and dis¬ 
+played to the driver. The main aim is to avoid safety-critical condi¬ 
+tions forvehicle occupants, the vehicle and its surroundings. 
+
+A fault can be assigned different priorities depending on the driving 
+situation (vehicle stationary/ in motion, starting/stopping) and the 
+system availability. In addition to the indicator lamp, supplementary 
+instructions may be shown in the control display. 
+
+To avoid additional damage, faults in the parking brake mechanism, 
+particularly a broken cable in the operating cable assembly and 
+excess load are detected by the force sensor and indicated accord¬ 
+ingly. (See shutdown strategy table). 
+
+Error messages can no longer be output actively in the event of the 
+EM F control unit failing. 
+
+
+In this case, the instrument cluster assumes the control of the cor¬ 
+rect error message on recognizing the absence of the regular EMF 
+telegram via the PT-CAN (alive signal). 
+
+
+Shut-down Strategy 
+
+Fault 
+
+Availability 
+
+Back-up System 
+
+
+Parking brake 
+(mechanical) 
+v = 0 
+
+Dynamic braking 
+(hydraulic) 
+v>0 
+
+
+CAN signal 
+
+OK 
+
+OK 
+
+
+DSC 
+
+hydraulics 
+
+OK 
+
+NA 
+
+Service brake + 
+hand brake 
+
+Actuating 
+
+mechanism 
+
+NA 
+
+OK 
+
+Park position automatic 
+gearbox 
+
+EMF control 
+unit 
+
+NA 
+
+NA 
+
+Park position automatic 
+gearbox and service 
+brake and auxiliary brake 
+if necessary 
+
+
+E70 Chassis Dynamics Workbook 
+
+57 
+
+
+
+
+58 
+
+E70 Chassis Dynamics Workbook 
+
+
+General Parking Brake Fault Concept 
+
+Fault Distribution Between DSC and EMF Control Unit 
+
+Only DSC faults that actually affect operation of the parking brake 
+result in shut-down of the hydraulic function. These are mainly 
+faults that result in shut-down of the ABS functionality. 
+
+They triggerthe transition to manual emergency mode. Dynamic 
+braking is no longer possible unless only CAN faults occur affecting 
+this functionality. 
+
+• Shut-down level "electromechanical mode" (only EMF actuat¬ 
+ing unit) initiated by following DSC faults 
+
+- DSC control unit fault 
+
+- Electrical fault (e.g. wiring harness) 
+
+- Sensorfault (brake light switch/wheel speed) 
+
+- actuator fault/hydraulic unit 
+
+- Bus communication fault 
+
+• Shut-down level "electrohydraulic mode" (failure of EMF 
+actuating unit) 
+
+- Force sensorfault 
+
+- Actuator fault of EM F actuating unit 
+
+- Error in actuation electronics 
+
+- Fault in actuating mechanism 
+
+- Electrical fault 
+
+• Shut-down level "total shut-down" 
+
+- EMF control unit or controller fault 
+-EMF button fault 
+
+- Electrical fault, power supply 
+
+
+Note: All fault codes are stored in the control unitin which 
+the monitoring routine was performed.The EMF con¬ 
+trol unit is informed of the fault status of the DSC 
+control unit and vice versa. 
+
+Fault Regeneration 
+
+When a fault is detected, the system remains in a safe mode until 
+the end ofthe "ignition ON" cycle, once reached, a shut-down level 
+is not cancelled during the cycle. 
+
+
+
+Dynamic C ruise Control (DC C) 
+
+The operating and display philosophy on the DCC steering column 
+stalk and in the instrument cluster in the E70 is the same as that in 
+other model series. 
+
+Functionally, the DCC is integrated in the DSC control unit. 
+
+The DCC functionality is realized by way of communication with the 
+partner control units of the DSC control unit in the system network 
+such as DM E/DDE, EGS, SZL and instrument cluster. 
+
+The DCC function can be activated from 30 km/h/19 mph (up to 
+max. 250km/h/155mph) and is deactivated by similar factors as for 
+cruise control: 
+
+• Brake pedal actuation 
+
+• Deactivation of DSC 
+
+• Activation of DTC 
+
+• Active DSC intervention 
+
+• Deactivation by the driver 
+
+• Speed is reduced below 22 km/h 
+
+• "N" engaged 
+
+• EM F function activated 
+
+DCC achieves a deceleration of max. 2.1 m/s 2 and an acceleration 
+of about. 1.7 m/s 2 . The transverse acceleration is variably limited 
+by the Curve Speed Limiter(CLS). The primary emphasis has 
+been placed on comfortable performance in this system configura¬ 
+tion. 
+
+When cruise control with brake intervention is activated, the brake 
+lights are also activated in accordance with legal requirements in 
+connection with a system related braking operation DCC. 
+
+
+
+Extended functions of the DCC compared to a conventional cruise 
+control system: 
+
+• Active brake intervention to realize the set speed also 
+when driving downhill 
+
+• Curve Speed Limiter (CLS) - adaptation of driving speed 
+when cornering (transverse acceleration). 
+
+This function limits the maximum transverse acceleration depend¬ 
+ent on vehicle speed with the aim of achieving the greatest possi¬ 
+ble agility in DCC mode. Driving on winding country roads in a 
+speed range from > 50 km/h/31mph to < 120 km/h/74mph is 
+controlled with a value of 3.3 - 3.7 m/s 2 . 
+
+The value can increase up to 4.5 m/s forfast highway bends and 
+slow lane changes at speeds between <50 km/h/31mph and > 
+120 km/h/74mph. 
+
+• Comfort Dynamic System (CDS) - this enables a type of 
+"manual throttle mode" on the steering column stalk. 
+
+• Adapted downhill mode - the overrun fuel cutout and gear 
+down shift are correspondingly adapted. 
+
+
+E70 Chassis Dynamics Workbook 
+
+59 
+
+
+
+
+60 
+
+E70 Chassis Dynamics Workbook 
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. Circle the bus systems below which are directly connected 
+to the VDM? 
+
+D-CAN PT-CAN K-CAN FlexRay 
+
+F-CAN MOST LIN BSD 
+
+
+4. On previous vehicles equipped with Active Steering (AS), 
+the ECO valve was responsible for controlling the flow of 
+power steering fluid. Which component replaces the ECO 
+valve in the E70? (circle the correct answer) 
+
+EWS VDM EVV GRR + 
+
+GWS SHL ARS RFK 
+
+
+2. Which of the following diagnostic procedures is NOT 
+
+recommended (or possible) when investigating faults in the 
+FlexRay system? (cross out the procedure which is NOT 
+useful in diagnosis) 
+
+ETM and Ohm meter 
+
+Fault codes and test modules 
+
+Oscilloscope in DISplus orGT-1 
+
+Physical inspection of connectors and wiring 
+
+
+
+On an E70 equipped with the Adaptive Drive package and 
+Active Steering a tandem power steering pump is installed. 
+Which part of the power steering pump is responsible for 
+the hydraulic pressure in the ARS system? (circle one) 
+
+PartA PartB 
+
+A special tool is used to move the strut assembly 
+The upper wishbone must be replaced 
+The swivel bearing must be replaced 
+ThefrontCambercannotbe corrected in service 
+
+
+5. 
+
+3. During an alignment on an E70, a Camberchange is 
+
+needed, which procedure represents the proper method to 
+change frontCamber? (circle the correct answer) 
+
+An eccentric must be adjusted 
+
+
+
+
+
+
+
+
+
+
+
+6. On the Active Steering system on the E70, which ofthe (circle one) 
+
+
+following components has been omitted as compared to 
+previous models with AS? (circle one) 
+
+500Kbit/second 
+
+10M bits/second 
+
+Actuator Motor Sensor 
+
+22.5 Mbits/second 
+
+10 Kb its/second 
+
+C umulative (total) steering angle sensor 
+
+
+
+Steering Angle Sensor(SZL) 
+
+10. Which ofthe following systems/components on 
+directly connected to the FlexRay bus system? 
+
+Electromagnetic Safety Lock 
+
+GWS SZL 
+
+EDC Satellites 
+
+
+EHC VDM 
+
+EMF 
+
+
+7. On vehicles equipped with VDC, how do the ride height 
+sensors communicate with the VM D control module? 
+(circle one) 
+
+The sensors are hardwired to the VDM 
+The sensors communicate to VDM via FlexRay 
+The sensors are hardwired to the EDC Satellites 
+The sensors communicate to the VDM via PT-CAN 
+
+8. The resistance ofthe terminating resistors on the FlexRay 
+bus is between: (circle one) 
+
+200 and 240 Ohms 90 and 110 Ohms 
+
+10 and 60 Ohms 80 to 100 Ohms 
+
+9. What is the communication speed ofthe FlexRay bus? 
+
+
+the E 70 is 
+
+ARS 
+
+DME 
+
+
+E70 Chassis Dynamics Workbook 
+
+61 
+
+
+

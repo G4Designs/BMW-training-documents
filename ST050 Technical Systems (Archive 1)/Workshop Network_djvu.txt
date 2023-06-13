@@ -1,0 +1,1578 @@
+Table of Contents 
+
+Workshop Network 
+
+Subject Page 
+
+Workshop Network.3 
+
+Vehicle Bus Systems.3 
+
+Workshop Local Area Network (LAN) .4 
+
+Network Structure.5 
+
+Network Connections .6 
+
+Accessing Configuration Information .8 
+
+Workshop Layout.10 
+
+Workshop Network Components.12 
+
+Access Point .12 
+
+Wall Jack .12 
+
+CAT 5 Ethernet Cable .12 
+
+Switched Hub.12 
+
+Server.12 
+
+Common Terminology .13 
+
+Network .13 
+
+Local Area Network (LAN) .13 
+
+Ethernet .13 
+
+Ethernet Cable (CAT 5).13 
+
+RJ-45 Connectors.13 
+
+Wall Jack .13 
+
+Switched HUB.14 
+
+Network Server.14 
+
+Automatic/Online Updates .14 
+
+Access Point.14 
+
+Interface Name .15 
+
+IP Address .15 
+
+IP Subnet Mask.15 
+
+Gateway .16 
+
+
+Initial Print Date: 2/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Network 
+
+
+Model: All 
+
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Identify the equipment used in the workshop network 
+
+• Determine what components make up a workshop network 
+
+• Understand the terminology used with regard to networks and configurations 
+
+
+2 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+Workshop Network 
+
+
+As the level of technology in our vehicles continues to increase so does the level of tech¬ 
+nology that we use in our diagnostic and programming equipment within the workshop. 
+
+In order to meet the ever growing demand for more rapid transfer of information we can 
+no longer have multiple “stand alone” systems, therefore various infrastructures have 
+been created to allow multiple “stand alone” devices/systems to interact with each other 
+to share information. 
+
+The sharing of information with various control modules in our vehicles has been occur¬ 
+ring for quite some time, now we will also be doing this with the diagnostic equipment in 
+the workshop as well. 
+
+Vehicle Bus Systems 
+
+In order to make the components used in our vehicles more efficient we utilize bus 
+structures (commonly referred to as 1-Bus, K-Bus, D-Bus, DS2-Bus Byteflight, PT-CAN, 
+etc.). By using bus structures in vehicles, we can accelerate communication between 
+several different control modules. 
+
+Many common vehicle systems (such as entertainment, safety, powertrain, etc.) are 
+“stand alone” systems but also require information from other modules/systems in order 
+to be more efficient. In order to obtain the required information the systems must also 
+be able to simultaneously communicate without interfering with each other, which is 
+accomplished by using various bus structures. 
+
+Example: 
+
+The PDC receives information on vehicle 
+speed from the ABS/ASC/DSC control 
+unit. 
+
+To receive this signal, it is transmitted from: 
+
+• ABS/ASC/DSC control unit to the IKE 
+via the CAN-Bus, 
+
+• IKE control unit to the PDC control 
+unit via the K-Bus splice (inside the 
+BC1) control unit. 
+
+The workshop network operates in a 
+similar fashion. 
+
+
+FDC 
+
+
+
+
+AIC 
+
+
+Ffe-ifc- 
+
+
+l \ l 
+
+
+
+
+MFL 
+
+i 
+
+■ 
+
+
+i 
+
+LAV PI 
+
+
+HCw 
+
+
+DSP 
+
+
+z 
+
+
+Bt 1 
+
+^4 
+
+
+
+
+IHKA 
+
+
+
+V =: =5 4 
+
+
+K-Bum 
+Ctin-EkJt 
+□ingpo^fc 0JJ3- 
+
+GS2 Pro i«?i 
+
+
+
+
+£U ED 
+
+
+■V5 C-EEC 
+
+
+
+
+
+3 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Local Area Network (LAN) 
+
+A network is nothing more than a group of devices interconnected so that they can com¬ 
+municate with each other. A LAN is a network that is localized to a specific area, such as 
+a workshop or office. 
+
+The bus systems (1-Bus, K-Bus, PT-CAN, D-Bus,...) that we have been using in our vehi¬ 
+cles for quite sometime, are nothing more than networks with different configurations. 
+
+
+
+
+Workshop Network 
+
+All workshops are currently equipped with a GT1, DISplus, SSS, Diagnostic Head, 
+Access Point, desktop computer(s) and printer(s) which can be considered as satellite 
+components (control modules/sensors). 
+
+In order for these components to communicate with each other, either directly or 
+indirectly, they must be interconnected via a cable/wire to a common point or switching 
+device. Consider the switching device/hub to be similar to the IKE, which monitors all 
+devices connected to it and allows the devices to communicate with each other. The 
+interconnection of these devices results in the establishment of a network localized to 
+the workshop area thereby establishing a Local Area Network (LAN) in the workshop. 
+
+
+4 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Network Structure 
+
+By having the workshop configured to allow the various devices used on a daily basis to 
+be interconnected/networked with each other, as indicated in the illustration, additional 
+components can easily be added and online updates can automatically be installed on all 
+connected devices, as long as they have an approved IP address. 
+
+The network that exist in the workshop is not much different than the network structure 
+that is used in our vehicles. In order for control modules to communicate with each other 
+they must be correctly identified. 
+
+The identification process can be considered to occur as part of the coding procedure 
+which is done at the end of the assembly process or at anytime a new component/mod¬ 
+ule/system is added to the vehicle. By not recoding the vehicle after adding or removing 
+a module/system, the communication on a particular bus can be hampered. 
+
+This is especially true: 
+
+• If a response form a module that is no longer installed is expected 
+
+• If a new module transmits data that is not expected by anyone else on the bus 
+because it is not correctly identified 
+
+The VO for a vehicle can be considered to contain the IP addresses of the modules 
+installed in the vehicle. 
+
+If the devices on the workshop network do not have a rigidly assigned IP address, online 
+updates to specific devices can not occur. The operation/performance of a network can 
+be greatly hampered if multiple devices share an address, since the transmitted data is not 
+able to reach the correct device, it can result in jamming up the operation of the network. 
+
+
+
+5 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Network Connections 
+
+When establishing a network which will utilize multiple access terminals/jacks it is 
+recommended that the jacks and cables attached to the specific jacks are numbered 
+and that the corresponding end of the cable that connects to the router/switched hub 
+should be numbered as well. 
+
+Example: The illustration below shows a basic network structure with no miscella¬ 
+
+neous devices connected, other than a Server and Switched Hub. 
+
+The cables running to/from the Switched Hub are all numbered on both 
+ends to make troubleshooting the network easier in the event of a problem 
+with the cabling, wall jack or Switched Hub connections. 
+
+Not having the cable and wall jacks number would be like trying to 
+troubleshoot a problem with an electrical circuit in the vehicle where all 
+the wires are the same color and the components connected have no 
+pin assignments. 
+
+
+
+Network Connections 
+
+
+6 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+Once additional devices are connected it becomes very important that the configuration 
+information (IP Address, Gateway Address, Subnet Mask and Device Name) is entered 
+correctly for each device that is connected to the network. Each device must be assigned 
+a specific/unique IP Address. 
+
+It is very important that the IP address not be shared by multiple devices located on the 
+network, as this can result in “Locking-up” the network, which can have a detrimental 
+effect on any control module(s) being programmed or coded. 
+
+
+
+7 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Accessing Configuration Information 
+
+-DISplus&GTI 
+
+
+
+
+
+
+Administration System configuration 
+
+Opinling uric 
+
+
+Ht-vl Millie 
+
+
+
+The screen now displays the network config¬ 
+uration information for the device being used 
+DISplus/GTI. 
+
+
+8 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select “Diagnostic Head” 
+
+
+
+
+Select “Free diagnostic heads” 
+
+NOTE: In order for an interface to be 
+
+displayed it must be connected 
+to a vehicle and the ignition 
+turned on. 
+
+
+
+Network configuration information for the 
+selected interface is displayed. 
+
+Example: A red color band will be assigned 
+to this interface once “OK” is selected 
+
+
+9 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Layout 
+
+
+
+
+
+
+
+
+l 
+
+
+
+
+
+! 
+
+
+
+
+1 
+
+
+
+
+
+
+_!_J_ 
+
+
+
+
+
+T7T 
+
+i i i 
+
+1 
+
+i 1 1 1 
+
+
+i i i i r 
+
+
+.1 - -L., 1 
+
+
+10 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Layout Legend 
+
+
+Device # 
+
+Device Name/Description 
+
+1 
+
+Software Service Station (SSS) 
+
+2 
+
+Network Printer 
+
+3 
+
+Switched Hub (Cisco Switch WS C2950-24) 
+
+4 
+
+BMW Network 
+
+5 
+
+GT1 
+
+6 
+
+Wall Jack/Ethernet Connection point to workshop Network 
+
+7 
+
+Access Point 
+
+8 
+
+Deutronic Automatic Battery Charger 
+
+9 
+
+OPS 
+
+10 
+
+Workshop PC 
+
+11 
+
+DISplus 
+
+12 
+
+OPS Head 
+
+13 
+
+Diagnostic Head 
+
+14 
+
+Network Server 
+
+
+11 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Network Components 
+
+
+A LAN currently exists in all workshops to allow the diagnostic equipment (DISplus, GT1, 
+SSS, OPPS, OPS & Diagnostic Head) to communicate with each other. In order to suc¬ 
+cessfully diagnose, code and program a vehicle, it is required to have all equipment con¬ 
+nected to the workshop network. 
+
+Access Point 
+
+Allows direct wireless access to LAN for GT1 and 
+Diagnostic Head or Diagnostic head establishes 
+connection to LAN via wireless communication and 
+thereby can be connected to DISplus or GT1, which 
+are connected to LAN 
+
+Access point is connected directly to LAN. Symbol - 
+Model Spectrum 24/AP 3020-100 
+
+
+Wall Jack 
+
+Connection point for devices such as GT1, DISplus, 
+Access Point, SSS, Diagnostic Head, OPPS/OPS 
+Head, Printer and Network Server to Switched Router 
+via RJ45 cable. 
+
+
+
+CAT 5 Ethernet Cable 
+
+Used to establish a connection between: 
+
+• Wall jack and Switched Router/Hub 
+
+• Wall jack and devices such as GT1, DISplus, 
+Access Point, SSS, Diagnostic Head, OPPS/OPS 
+Head and Network Server. 
+
+
+
+
+Switched Hub 
+
+LAN switched distribution hub for all devices connected 
+to the network. Routes communication telegrams / 
+messages to specific devices from specific devices. 
+Allows multiple devices to communicate with each 
+other without reducing data transfer rate. 
+
+
+
+Cisco Switch WS-C2950-24 
+
+
+Server 
+
+Central computer which controls interface/communi¬ 
+cation between all devices on the Workshop LAN and 
+communication to external networks and internet. 
+Keystone device for network operation along with 
+switch/router. 
+
+12 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Common Terminology 
+
+Network 
+
+A group of computers that are interconnected with each other and able to communicate 
+with each other either by transferring data via a wired or wireless connection. 
+
+Local Area Network (LAN) 
+
+A network that exists within a specific area. 
+
+Example: By having all computers, testers and printers in the workshop 
+
+interconnected results in a Workshop LAN. 
+
+Ethernet 
+
+The term Ethernet is a communications protocol used to define a method & speed by 
+which interconnected devices are able to communicate with each other by either a wired 
+(twisted pair) or fiberoptic connection. 
+
+Common Ethernet communication protocol terms: 
+
+lOBaseT - Able to transmit data at a rate of 10Mbps for a maximum distance 
+
+of 100 meters per segment. 
+
+100BaseT - Able to transmit data at a rate of 100Mbps for a maximum distance 
+
+of 1000 meters per segment. 
+
+The speed differences are obtained by modifying the method of encoding the data to be 
+transferred. The maximum distance consist of the distance from switched hub to wall jack 
+plus length of cable used to connect a particular device. The greater the distance the 
+greater the chance of signal loss/disturbance. 
+
+Ethernet Cable (CAT 5) 
+
+A standard used to define an 8 wire cable (4 twisted pair) that is commonly used to inter¬ 
+connect various computers in the establishment of an ethernet network. Certified to 
+transmit data at a maximum rate of 100Mbps. 
+
+RJ-45 Connectors 
+
+The plastic connectors at the end of a CAT 5 cable, used to connect the cable to 
+device/computer, wall jack and hub. 
+
+Wall Jack 
+
+Accepts RJ-45 connectors when connecting devices to the network. Connection point 
+for devices like DISplus, GT1, SSS, Diagnostic Head, workshop computers and printer. 
+
+Recommendation is that outlet/jack is numbered and the corresponding end of the ether- 
+net cable connected to the switched hub is numbered as well, to assist in troubleshoot¬ 
+ing in the event of a problem. 
+
+Example: A wall jack outlet is labeled as #1 the other end of the cable at the hub 
+
+should also be labeled #1. 
+
+
+13 
+
+Workshop Network 
+
+
+Switched HUB 
+
+Allows multiple devices to send information over the network at the same time without 
+slowing down the communication process. A switched hub essentially isolates the two 
+devices that are communicating, thereby providing each component on the network a 
+separate connection at the maximum data transfer rate of the network. 
+
+Example: A switched HUB is similar to the use of cloverleafs on the highway ; traffic 
+
+does not need to stop if a change in direction needs to be made, plus 
+traffic flows smoothly from point to point. 
+
+A regular HUB does not provide each component with a separate connection point to 
+the network but rather a shared connection point. By sharing a connection point the 
+data transfer rate of the network is reduced when multiple devices try to communicate. 
+
+Example: A regular HUB is similar to the use of a 4 way intersection, the smaller the 
+
+amount of traffic using the intersection the quicker a car can go through 
+the intersection and reach its desired destination. The greater the traffic 
+the longer it will take for a car to reach its desired destination. 
+
+The switched hub installed as part of the workshop wiring project is a Cisco WS-C2950-24. 
+
+Network Server 
+
+A computer that provides information/data to other computers located on the network. 
+
+A server allows computers on its network to access information on another network, 
+such as the internet. The server is the keystone device that allows computers on its 
+specific network to access information on another network. 
+
+As an example a server can obtain and distribute software updates to all computers 
+located on its network, instead of having to physically install the updates to each 
+computer individually. 
+
+Automatic/Online Updates 
+
+The ability to connect the network server to the BMW server and check for new software 
+updates (Diagnostic, Coding & Programming data) then downloads the information to all 
+computers/equipment located on the network automatically at a specific time. 
+
+Example: New updates can be installed on SSS, GT1 and DISplus overnight in 
+
+order to have latest data available the next morning. 
+
+The application that performs online updates is referred to as JETstream. 
+
+Access Point 
+
+The access point is a wireless communication device that is able to establish a wireless 
+connection with a GT1 and/or a diagnostic head and allows them to communicate with 
+other devices on the network. 
+
+Manufactured by Symbol - Model Spectrum 24 /AP 3020-100 
+
+
+14 
+
+Workshop Network 
+
+
+
+Interface Name 
+
+The specific name assigned to the device (Ex. Diagnostic Head Blue A) 
+
+IP Address 
+
+It is a unique four segment number used to identify a specific device located on a specific 
+network. The number represents the address of the device on the network and is neces¬ 
+sary when communicating with other devices located on the network. 
+
+Example: 92.168.100.10 
+
+Usually the first three segments are used to identify the network and the 
+last segment identifies the device. The IP Subnet Mask information gener¬ 
+ally defines which segments are needed to identify the network and which 
+identify the device. 
+
+In order for a devices on the network to communicate with other devices on the network 
+it must know the addresses of those devices. If a print command is sent from a computer 
+to a printer on the network, the command must be addressed specifically to the desired 
+printer. 
+
+Example: An IP address is no different than your home address, in order to receive a 
+
+letter specifically directed to you, your name and address must be correctly 
+displayed on the letter. 
+
+IP addresses are assigned by the network administrator/provider and are rigidly assigned 
+to the device(s) located within the workshop network, by entering it into the device during 
+the initial setup. 
+
+IP Subnet Mask 
+
+This information is used to define which segment(s) of the four segment IP address 
+specifically identifies the device and which identify the specific network. 
+
+Example: 255.255.255.0 
+
+Indicates that the first three segments (255.255.255) identify the specific 
+network that the device is located on. The last segment (0) indicates that 
+this is the segment that will identify the specific device. 
+
+
+15 
+
+Workshop Network 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gateway 
+
+This information identifies the four segment address of the component located on the 
+network responsible for communicating from the current network to another network. 
+If there is no address in this location then a connection to any devices outside of the 
+current network can not be established. 
+
+Note: The network and device address information must be entered exactly 
+as defined by the network administrator for your facility, otherwise the 
+devices can not be accessed. 
+
+
+16 
+
+Workshop Network 
+
+

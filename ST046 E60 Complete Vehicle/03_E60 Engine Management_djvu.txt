@@ -1,0 +1,3244 @@
+Table of Contents 
+
+
+E60 Engine Management 
+
+Subject Page 
+
+E60 Engine Management 
+
+Objectives.2 
+
+MS45.1 
+
+Purpose of the System .3 
+
+System Components.4 
+
+New System Component / Functions .6 
+
+Power Supply .7 
+
+Air Management .13 
+
+Fuel Management .14 
+
+Emissions Management.19 
+
+Performance Controls.30 
+
+ME 9.2 
+
+Purpose of the System .31 
+
+System Components.32 
+
+
+Initial Print Date: 08/03 
+
+
+Revision Date: 09/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+E60 Engine Management 
+
+Model: E60 - 525i, 530i, 545i 
+Engine Management: 
+
+- M54B25, M54B30 Engine / Siemens MS45.1 
+
+- N62B44 Engine / Bosch ME 9.2 
+
+Production: Start of Production MY 2004 
+
+Pin Connector: 134 Pins - 5 Modular Connectors 
+
+
+Objectives: 
+
+After completion of this module you will be able to: 
+
+• Diagnose the IBS via the ECM. 
+
+• Understand the Fuel Delivery System including service access. 
+
+• Explain the Filler Venting System. 
+
+• Diagnose the Mini HFM. 
+
+• Explain FDC influence on performance. 
+
+
+2 
+
+E60 Engine Management 
+
+
+
+
+MS45.1 
+
+Purpose of the System 
+
+The MS45.1 system is a further enhancement of the MS45 system currently used on M54 
+engines and manages the following functions: 
+
+
+Air: 
+
+
+Fuel: 
+
+
+Ignition: 
+
+• Idle Speed Valve 
+
+
+• Fuel Supply (Non-Return) 
+
+
+• Direct Ignition/Optimized 
+
+• Electronic Throttle 
+
+
+• Fuel Injection 
+
+
+• Knock Control 
+
+• Hot Film Air Mass Meter 
+
+
+
+
+• Ignition Monitoring 
+
+• Resonance-Turbulence 
+
+
+
+
+
+Intake Control 
+
+
+
+
+
+
+
+
+The basic engine management inputs, processes and outputs are not included in this mod¬ 
+ule because they have not changed, refer to the ST055 Engine Electronics Technical 
+Training hand out for additional detailed information. Also, refer to ST045 E85 Technical 
+Training hand out for additional detailed information on the MS45 Engine Management 
+System. The following section is based on new controls / functions for MS45.1 system. 
+
+
+3 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components: Inputs - Processing - Outputs 
+
+
+
+4 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D-Bus 
+
+
+System Components: Bus Overview 
+
+
+
+5 
+
+E60 Engine Management 
+
+
+K-CAN MOST byteflight PT-CAN 02994_02b 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New System Components / Functions 
+
+MS45.1 Engine Control Module: The ECM is located in the under hood E box (below). 
+The following modified controls / functions have been made to MS45.1 for use in the E60. 
+
+• New hot film air mass sensor (HFM). 
+
+• Changed data record variant (matched to E60). 
+
+• Lead to the CAS for start enable (starting relay is integrated in the CAS). (automatic/SMG 
+transmissions only). 
+
+• The Driving Dynamics control (FDC) signal is transmitted via the PT-CAN. 
+
+• The cruise control (FGR) signal is sent from the MFL via the PT-CAN to the ECM. 
+
+• Connection of the intelligent battery sensor (IBS) to the bit-serial data interface (BSD). 
+
+• The software for power management (vehicle electrical system) is integrated in the ECM. 
+
+• The A/C compressor is activated via the PT-CAN. 
+
+• Fault diagnosis is performed through the SGM via the PT-CAN to the ECM. 
+
+• Activation of the ECM main relay (525i / 530i in E box, 545i in IVM). 
+
+• Bosch LSU 4.2 linear lambda oxygen sensors (pre-catalyst as in N62). 
+
+• Mini hot film air mass sensor (HFM) in the secondary air system. 
+
+
+
+
+X60001 
+9 - Pin 
+
+
+X60002 
+
+24-Pin 
+
+
+X60003 
+52 - Pin 
+
+
+X60004 
+40 - Pin 
+
+
+X60005 
+9 - Pin 
+
+
+Power Supply Engine Signals Firing Signals 
+
+Peripheral Signals Vehicle Signals 
+
+
+The 134 pin ECM is manufactured by Siemens to BMW specifications. The ECM is the 
+SKE (standard shell construction) housing and uses 5 modular connectors. For testing, 
+use the Universal Adapter Set (break-out box) Special Tool # 90 88 6 121 300. 
+
+
+6 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply 
+
+
+ECM Main Relay 
+
+The ECM main relay in the E60 is supplied with power by the ECM throughout the PT-CAN 
+bus activity. Voltage is supplied to all the output actuators (which receive power via KL 87 
+from the relay) throughout the PT-CAN bus activity. 
+
+
+The activation of main relay (525i / 530i in E box, 545i in IVM) KL 87 is necessary for the 
+function of the bit-serial data interface (BSD). The BSD is supplied with power by the ECM 
+via KL 87 and a pull up resistor. The following components communicate with the ECM via 
+the bit-serial data interface: 
+
+
+• Alternator 
+
+
+• Intelligent Battery Sensor (IBS - refer to Voltage Supply and Bus Systems for more 
+detailed information) 
+
+
+
+
+
+
+,oi 
+
+T7 
+
+
+8 
+
+
+
+
+i 
+
+
+vir 
+
+
+> i 
+
+
+
+
+
+
+
+1. Intelligent Battery Sensor (IBS) 
+
+2. Battery 
+
+3. Ignition / Starter Switch (ZAS) 
+
+4. ECM 
+
+5. Alternator 
+
+6. Starter 
+
+
+7. Integral Starter Relay (525i / 530i in CAS, 545i in IVM) 
+
+8. Rear Power Distribution Box w/ Terminal 30g Relay 
+
+9. Front Power Distribution Box 
+
+10. Car Access System (CAS) 
+
+11. Micro-Power Module (MPM) 
+
+
+7 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lead to Car Access System (CAS) 
+
+A lead is installed between the ECM and the CAS for vehicles with automatic or SMG trans¬ 
+missions and the comfort starting function. The CAS contains the function of the electronic 
+immobilizer (EWS - as in the E65) and the starter relay. 
+
+The ECM supplies the CAS with the signal for start enable. This facilitates the comfort 
+starting function and prevents starter engagement while the engine is running. 
+
+
+Intelligent Battery Sensor (IBS) 
+
+The IBS sends the calculated battery values to the ECM via the BSD. The IBS calculates 
+changes in battery SoC/SoH based on information received from the ECM on the battery 
+during the period of time between engine "OFF" and deactivation of the ECM main relay. 
+After the ECM main relay has been switched off, the IBS continues to constantly observe 
+the SoC of the battery. 
+
+Terminal IBS Wake-up 
+
+When the key is switched off, before the ECM enters sleep mode, the ECM informs the IBS 
+of the current SoC of the battery. The IBS monitors the SoC and when it drops below the 
+programmed threshold, a terminal 15 wake-up signal is sent to the ECM. The ECM wakes 
+up, obtains information on the current SoC of the battery from the IBS and requests the 
+auxiliary electrical loads to switch off. 
+
+After one wake-up sequence the IBS is prohibited from waking the vehicle again during this 
+key off cycle. The vehicle subsequently reassumes sleep mode. 
+
+The ECM reads the histogram after starting the vehicle. A corresponding entry is made in 
+the ECM fault code memory if a closed-circuit current infringement is determined. 
+
+IBS Diagnosis 
+
+The IBS features a fault code memory that is read out by the ECM. Self diagnosis checks 
+the voltage, current, temperature measurement, terminal 15 wake up as well as system 
+errors in the IBS. 
+
+
+Alternator 
+
+Bosch and Valeo alternators are installed in the E60. The alternators are fitted depending 
+on the type of engine and equipment configuration. They differ with regard to their rating 
+of 140 A and 170 A and are aircooled. 
+
+
+8 
+
+E60 Engine Management 
+
+
+Power Management 
+
+
+The power management software is contained in the ECM. When the vehicle is at rest, the 
+IBS is partially responsible for power management. The tasks of the power management 
+system include: 
+
+• Adaptation of the alternator charging voltage 
+
+• Idle speed boost for increasing the power output of the alternator 
+
+• Reduction of peak loads in the event of a shortfall in coverage provided by the vehicle 
+electrical system 
+
+• Deactivation by means of bus messages of electric loads such telephone, on reaching 
+the start capability limit of the vehicle 
+
+
+INPUT 
+
+
+
+1. Battery Voltage 
+
+2. Current Input 
+
+3. Temperature Input 
+
+4. ECM 
+
+5. Power Management 
+
+
+
+OUTPUT 
+
+
+
+DfVtE 
+
+
+
+KT-11339 
+
+
+6. EPROM with maps for Voltage,Current and Temp 
+
+7. Idle Speed control 
+
+8. Specified Alternator Charging Voltage 
+
+9. Deactivation of Electrical Loads 
+
+10. Peak Load Reduction 
+
+
+Variable Battery Charging Voltage 
+
+The variable battery charging voltage function ensures improved charging management of 
+the battery in unfavorable driving situations. The power management controls the temper¬ 
+ature dependent voltage for the charging voltage of the alternator via the BSD line. 
+
+
+9 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Idle Speed Boost 
+
+The idle speed can be increased in situations where the battery does not cover power 
+requirements. When the specified voltage alone is no longer sufficient, the ECM boosts the 
+idle speed corresponding to the engine status. 
+
+Reducing Peak Loads 
+
+The peak load of the vehicle electrical system is reduced when there is still a shortfall in bat¬ 
+tery coverage despite boosting idle speed. Peak load reduction is accomplished by: 
+
+• Reducing power output, e.g. by controlling the clock cycles of the rear window defog- 
+ger 
+
+• If reducing the power output is not sufficient, individual electric loads can be switched 
+off in extreme situations 
+
+Electric Load Cutout 
+
+The electric loads in the E60 are divided into the following categories: 
+
+• Comfort loads, e.g. window defogger, seat heating, steering wheel heating 
+
+Electric loads switch off automatically after engine "OFF." These electric loads can be acti¬ 
+vated again after the vehicle has been restarted. 
+
+
+• Legally required auxiliary electric loads, e.g. side lights, hazard warning lights 
+
+Legally required auxiliary loads must be operational for a certain period of time after engine 
+"OFF." These legally required electric loads are not switched off even on reaching the start 
+capability limit of the battery. 
+
+
+• Auxiliary electric loads, e.g. independent heating, independent ventilation, communica¬ 
+tion components such as central information display, telephone, telematic services 
+
+Auxiliary loads can be switched on after engine "OFF." The comfort electric loads switch 
+off automatically on reaching the start capability limit of the battery. Switch off is request¬ 
+ed by the ECM in the form of a CAN message. 
+
+
+• System related afterrunning loads, e.g. electric cooling fan 
+
+System related afterrunning loads can maintain operation for a defined period of time. 
+
+
+10 
+
+E60 Engine Management 
+
+
+Battery Charge Management 
+
+There are 2 "counters" in the ECM power management module. One counter is responsi¬ 
+ble for the battery charge and the other for the battery discharge level. The state of charge 
+(SoC) of the battery is formed by the difference between the charge acceptance and draw 
+level. 
+
+The power management calculates the current SoC value on restarting the vehicle. The 
+power management receives the corresponding data from the IBS via the BSD. 
+
+Battery State of Health 
+
+The IBS measures the drop in the battery terminal voltage and the starting current of the 
+starter when the vehicle is started. The IBS detects vehicle start based on current draw in 
+excess of 200A. The engine running signal is made available by the ECM. Internal resis¬ 
+tance of the battery is calculated from the current and voltage drop. 
+
+Starting current and voltage drop determined during the start phase are transferred via the 
+BSD to the ECM. From this data, the power management calculates the battery state of 
+health (SoH). 
+
+Data Transfer to the IBS 
+
+The following data is transferred via the BSD to the IBS before the ECM assumes sleep 
+mode: 
+
+• Battery SoC 
+
+• Battery SoH 
+
+• Outside (ambient) temperature 
+
+• Available discharge level 
+
+• Terminal IBS wake-up enable 
+
+• Terminal IBS wake-up disable 
+
+• ECM enters sleep mode 
+
+
+Notes: 
+
+
+11 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Power Supply 
+
+
+1. Where are these components located (in the vehicle) and what are the component num¬ 
+bers? 
+
+525i / 530i (5450 
+
+ECM Main Relay _ 
+
+Starter Relay _ 
+
+Fuel Injector Relay _ 
+
+2. Where are the Engine Management power supply fuses located? 
+
+525i / 530i _ 
+
+(5450_ 
+
+3. Does the 525i / 530i have Comfort Start? _ 
+
+If yes, what component controls this function? _ 
+
+(5450_ 
+
+4. What new functions do you observe about the mechanical ignition switch (with the key)? 
+
+
+5. Disconnect the B+ power wire for the IBS (at the battery), is there a Test Plan available? 
+
+
+What Diagnosis, Operation and component selection path(s) did you select to discov¬ 
+er if a Test Plan was available? _ 
+
+6. Select Control Unit Functions, Diagnosis Requests. Is there a status under the “Part 
+Functions” column for observing the “Messages and Results” of the IBS? _ 
+
+
+12 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Management 
+
+
+Hot Film Air Mass Sensor (HFM) 
+
+A new hot film air mass sensor (HFM) manufactured by 
+Siemens is used for the M54 in the E60. The HFM is located 
+behind the air filter housing in the intake air ducting. 
+
+
+1. Intake air temperature sensor 
+
+2. Hot film air mass sensor 
+
+3. O-ring 
+
+
+
+1 2 3 
+
+KT-10819 
+
+
+The HFM is inserted in the air filter housing (plug in) and secured with two screws. In this 
+position the HFM is freely suspended in the intake air flow. The HFM is more compact in 
+design than its predecessor and the grill is now omitted. This compact design decreases 
+pressure loss in the intake track. 
+
+
+Its operation and output signals are the same as the previous HFM. The intake air tem¬ 
+perature sensor is integrated in the HFM. 
+
+
+Notes: 
+
+
+13 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Management 
+
+Fuel Tank 
+
+The fuel tank is made of high density 
+polyethylene (reduced weight) layers 
+which is manufactured to meet safety 
+requirements. 
+
+The fuel tank has a capacity of 70 litres 
+(18.5 gal), including a resen/e capacity of 
+10 litres. 
+
+A mid-chassis mounted “saddle” type 
+tank (1) is used providing a tunnel for the 
+driveshaft but creates two separate lower 
+chambers. 
+
+The E60 fuel tank design reduces the potential evaporative emissions. This design reduces 
+the number of external connections and openings by increasing the amount of “in tank” or 
+integral components including molding the filler pipe to the tank. 
+
+The fuel tank is held in place by 2 retaining bands. The tank is secured in the middle by a 
+plastic lug formed into the tank. All body contact points are insulated with foam or rubber. 
+
+The service access caps are locat¬ 
+ed at the top of the fuel tank. The 
+following components can be 
+accessed from the vehicle interior: 
+
+• Right swirl pot, fuel pump, fuel 
+level sensor, suction-jet pump, 
+fuel lines to left tank half and left 
+suction-jet pump. 
+
+• Left fuel level sensor, fuel filter 
+and fuel pressure regulator. 
+
+1. Towards front of vehicle 
+
+The six pin wiring harness connector is located on the right service cap. The six pin wiring- 
+harness connector has 2 wires for the fuel pump power supply and 2 wires for both fuel 
+level sensors. The fuel feed line is connected to the left service cap with a quick release 
+coupling. 
+
+14 
+
+E60 Engine Management 
+
+
+
+KT-11186 
+
+
+
+
+
+
+
+
+
+
+
+Fuel Delivery Unit 
+
+The fuel delivery unit located in the fuel tank ensures bubble free fuel delivery under all oper¬ 
+ating conditions. In case of service, the left and right fuel delivery units can be removed 
+completely. The two fuel level sensors can be replaced individually. 
+
+
+1. Service access, left 
+
+2. Fuel filter 
+
+3. Fuel pressure regulator 
+
+(3.5 bar) 
+
+4. Fuel delivery unit, left 
+
+5. Fuel delivery unit, right 
+
+6. Cross over lines 
+
+7. Swirl pot 
+
+8. Service access, right 
+
+9. Tank bottom 
+
+
+
+Swirl Pot 
+
+The swirl pot contains the electric fuel pump and a suction-jet pump and is open at the top. 
+The base of the swirl pot features an outlet protection valve, which allows fuel to flow from 
+the right tank half into the swirl pot. It prevents the fuel from flowing back into the right tank 
+half (trap). 
+
+The swirl pot ensures that the fuel pump is always immersed in fuel so that the pump does 
+not draw in air. Bubble free fuel delivery is very important particularly at low fuel levels and 
+under high driving dynamics conditions when the tank is almost completely empty. 
+
+
+Notes: 
+
+
+15 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel System 
+
+
+
+1. Filler neck 
+
+2. Outlet protection valve 
+
+3. Electric fuel pump 
+
+4. Fuel filter 
+
+5. Fuel supply line 
+
+6. Fuel injectors/rail 
+
+7. Fuel pressure regulator 
+
+8. Suction-jet pump, left 
+
+9. Suction-jet pump, right 
+
+10. Fuel level sensor, right 
+
+11. Fuel level sensor, left 
+
+12. Service access cap, left 
+
+
+13. Service access cap, right 
+
+14. Filling vent valve 
+
+15. Service vent valve 
+
+16. Service vent valve 
+
+17. DMTL with activated carbon canister 
+
+18. Tank vent valve (evap. purge) 
+
+19. Evaporative purge air 
+
+20. Air filter 
+
+21. ECM 
+
+22. Oxygen sensor (pre-catalyst) 
+
+23. Exhaust manifold 
+
+
+16 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Delivery 
+
+
+
+KT-11211 
+
+
+1. Filler pipe 4. Fuel filter 
+
+2. Outlet protection valve 5. Feed line 
+
+3. Electric fuel pump 6. Fuel injectors/rail 
+
+Fuel Flow: Right tank half => swirl pot => fuel pump => fuel filter => fuel rail. 
+
+The fuel is pumped into the right tank half. The swirl pot contains the electric fuel pump. 
+Fuel passes through the valve incorporated in the base of the swirl pot into the swirl pot. 
+When the fuel level is higher, fuel also enters the swirl pot from the top. 
+
+The electric fuel pump draws in the fuel from the swirl pot (fuel pump relay located in glove- 
+box). It pumps the fuel into the fuel filter in the left tank half. The fuel flows from the fuel 
+filter through the feed line to the fuel rail. 
+
+Fuel Level Sensors 
+
+The fuel tank contains 2 sensors, one in each tank half. The tank sensors operate with float 
+elements, which are attached to a pivoted arm (angle measurement). A specific angle of 
+the sensor joint corresponds to each tank chamber fill level. 
+
+The sensor joint incorporates a potentiometer with wipers and resistor paths. Every angle 
+has a specific resistance value. The sensor is supplied with 5 Volts by the instrument clus¬ 
+ter and measures the voltage drop by the current resistance on which the wiper is resting. 
+
+
+The voltage drop measured is processed in the instrument cluster as follows: 
+
+• Conversion into a fuel level for the two chambers (on the basis of a comparison table) 
+
+• Display of the fuel level 
+
+
+17 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Pressure Regulation 
+
+
+
+1. Fuel pressure regulator (3.5 bar) 3. Return line 
+
+2. Suction-jet pump, left 4. Suction-jet pump, right 
+
+Fuel Flow: From pressure regulator => suction-jet pump in left tank half and suction-jet 
+pump in right tank half => swirl pot in right tank half. 
+
+The suction-jet pumps direct the fuel from the left and right tank halves into the swirl pot. 
+This ensures that the electric fuel pump always has a sufficient supply of fuel available. 
+
+The fuel filter incorporates the pressure regulator. The pressure regulator is a spring loaded 
+diaphragm regulator, which limits the pressure in the fuel feed line to 3.5 bar (for M54). 
+
+When the pressure rises above 3.5 bar, the pressure regulator opens a discharge port. The 
+excess fuel flows back through the discharge port into the right tank half (swirl pot) and dri¬ 
+ves the two suction-jet pumps (non-return fuel system). The fuel feed line delivers the fuel 
+at 3.5 bar to the fuel rail. 
+
+
+
+Workshop Exercise - Fuel Management 
+
+
+Using the mock up cut away fuel tank assembly: 
+
+1. Remove the service access caps, fuel pump and fuel filter. 
+
+
+18 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Management - M54B25 / M54B30 Ultra Low Emission Vehicle II 
+(ULEV II) 
+
+LEV II - Amendments to Low-Emission Vehicle regulations 
+
+At its November 1998 meeting, the Air Resources Board (ARB) amended California’s Low- 
+Emission Vehicle (LEV) regulations. The new amendments, known as LEV II, will advance 
+the state’s clean air goals through improved emission reduction standards for automobiles. 
+The ARB first adopted LEV standards in 1990. These first LEV standards run from 1994 
+through 2003. 
+
+LEV II regulations, running from 2004 through 2010, represent continuing progress in emis¬ 
+sion reductions. As the state’s passenger vehicle fleet continues to grow and more sport 
+utility vehicles and pickup trucks are used as passenger cars rather than work vehicles, the 
+new, more stringent LEV II standards are necessary for California to meet federally-man- 
+dated clean air goals outlined in the 1994 State Implementation Plan (SIP). 
+
+LEV II brings the advanced emission controls of passenger cars to light trucks and sport 
+utility vehicles; 
+
+• Near-zero evaporative emissions 
+
+• Advanced electronic engine management and on-board diagnostic systems 
+
+• More efficient catalysts 
+
+• Increased engine durability 
+
+
+The SIP is the state’s “road map” to attain federal clean air standards by 2010 and includes 
+among its measures strategies to further reduce air pollution from automobiles and other 
+mobile sources. When LEV II is fully implemented in 2010, it is estimated that smog-form¬ 
+ing emissions in the Los Angeles area will be reduced by 57 tons per day, while the 
+statewide reduction will be 155 tons per day. 
+
+The U.S. EPA has proposed the adoption of more stringent “Tier 2” (II) exhaust emission 
+standards to start with the 2004 model year. The current federal evaporative emission 
+standards are very similar to the current California standards. The more stringent California 
+LEV I and LEV II programs are necessary to attain the national and state ambient ozone 
+standards, and to fulfill the requirements of state and federal law. 
+
+
+19 
+
+E60 Engine Management 
+
+
+Evaporative Emissions Standards 
+
+Evaporative emissions from motor vehicles account for approximately half of the reactive 
+organic gas (ROG) motor vehicle emission inventory in the state, and are classified into 
+three types - running loss, hot soak and diurnal emissions. 
+
+• Running loss emissions occur when the vehicle is driven. 
+
+• Hot soak emissions occur immediately after a fully-warmed up vehicle is stationary with 
+the engine turned off. 
+
+• Diurnal (daily, happening every day) emissions occur when a vehicle is parked and are 
+caused by daily ambient temperature changes. Most of these emissions result during 
+increasing ambient temperatures which cause an expansion of the vapor in the fuel tank. 
+
+
+Exhaust Emission Reductions 
+
+The LEV II amendments include three major interrelated elements designed to reduce to 
+
+exhaust emissions: 
+
+• Restructuring the light-duty truck category so that most SUVs, mini-vans and pick-up 
+trucks are subject to the same low-emission vehicle standards as passenger cars 
+
+• Strengthening the NOx standard for passenger car and light-duty truck LEVs and ULEVs, 
+and changing other emission standards 
+
+• Establishing more stringent 2004 and subsequent model year phase-in requirements for 
+passenger cars, lightduty trucks and medium-duty vehicles. They also contain various 
+other changes, including elimination of the TLEV standard after the 2003 model year. 
+
+
+The LEV II Amendments 
+
+The LEV II amendments affect passenger cars, light-duty trucks, and medium-duty vehi¬ 
+cles. The main elements are: 
+
+• Extension of passenger car emission standards to heavier sport utility vehicles and pick 
+up trucks (with gross vehicle weight up to 8,500 pounds) which formerly had been reg¬ 
+ulated under less stringent emission standards. 
+
+• Extension and tightening of the fleet average emission standards during 2004-2010 
+(a fleet includes all new vehicles from an auto manufacturer) 
+
+• Creation of a new super-ultra low emission vehicle (SULEV) category for light-duty vehi 
+cles (SULEV’s will only emit a single pound of hydrocarbons during 100,000 miles of dri¬ 
+ving - about the same as spilling a pint of gasoline) 
+
+
+20 
+
+E60 Engine Management 
+
+
+• Significantly lower oxides of nitrogen emission standards for the low and ultra-low emis¬ 
+sion vehicle categories, a reduction of 75% from the current LEV standards 
+
+• Increased emission control durability standards from 100,000 miles to 120,000 miles for 
+passenger cars and light trucks 
+
+• Further reduction of evaporative emissions 
+
+• Creation of partial zero-emission vehicle (ZEV) credits for vehicles that achieve near zero 
+emissions. The credits would include full ZEV credit for a stored hydrogen fuel cell vehi¬ 
+cle, 0.7 credit for methanol reformer fuel cell vehicles, 0.4 credit for a compressed nat¬ 
+ural gas SULEV and 0.2 for a gasoline fueled SULEV 
+
+• Changes in how the smog index is calculated 
+
+• Amendments to the zero-emission and hybrid electric vehicle test procedures 
+
+• Removal of a less stringent emission standard that would have resulted in increased 
+sales of new diesel cars, pickups, and SUVs. 
+
+
+E60 Evaporative Emissions 
+
+The control of the evaporative fuel vapors (Hydrocarbons) from the fuel tank is important for 
+the overall reduction in vehicle emissions. The evaporative system has been combined with 
+the ventilation of the fuel tank, which allows the tank to breath (equalization). The overall 
+operation provides: 
+
+• An inlet vent, to an otherwise “sealed” fuel tank, for the the entry of air to replace the fuel 
+consumed during engine operation. 
+
+• An outlet vent with a storage canister to “ trap and hold” fuel vapors that are produced 
+by the expansion/evaporation of the fuel in the tank, when the vehicle is stationary. 
+
+The canister is then "purged" using the engine vacuum to draw the fuel vapors into the 
+combustion chamber. This "cleans" the canister allowing for additional storage. Like any 
+other form of combustible fuel, the introduction of these vapors on a running engine must 
+be controlled. 
+
+The ECM controls the Evaporative Emission Valve which regulates purging of evaporative 
+vapors. The evaporative system must be monitored for correct purge operation and Leak 
+Detection. 
+
+
+21 
+
+E60 Engine Management 
+
+
+The E60 fuel tank design reduces the potential evaporative emissions. This design reduces 
+the number of external connections and openings by increasing the amount of “in tank” or 
+integral components including molding the filler pipe to the tank. In addition, the plastic 
+walls of the fuel tank are made up of several layers. 
+
+
+1 
+
+2 
+3 
+
+
+
+
+10 11 
+
+
+KT-11188 
+
+
+1. Activated carbon canister (with DMTL) 
+
+2. Port, purge air line 
+
+3. Fresh air filter 
+
+4. Filler neck 
+
+5. Service vent line 
+
+6. Filler vent line 
+
+
+7. Service access cap, right 
+
+8. Service vent valve 
+
+9. Filler vent valve 
+
+10. Service access cap, left 
+
+11. Service vent valve 
+
+12. Towards front of vehicle 
+
+
+Note: The distinction between the following vent gases: 
+
+• Service vent gases - service vent gases are created at high ambient temperatures by 
+heating of the fuel. 
+
+• Filler vent gases - filler vent gases are created by the air displaced by fuel during 
+refuelling. 
+
+
+22 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+Service Venting System 
+
+The service venting system is integrated in the tank system and ensures pressure com¬ 
+pensation in the tank for the following situations: 
+
+Reduction of Excess Pressure 
+
+Excess pressure is generated by heating of fuel. The gases rising from the tank flow 
+through the service vent valves and the vent lines to the activated carbon filter. 
+
+Compensation of Negative Pressure 
+
+Negative pressure is generated by the fuel pump pumping off the fuel. The air is routed in 
+the opposite direction for pressure compensation. Fresh air is routed to the fuel tank via 
+the DMTL fresh air filter on the activated carbon filter. 
+
+
+Valves for Ventilation and Venting 
+
+Service Vent Valves 
+
+The fuel tank incorporates 2 service vent valves with a rollover function: if the car is inclined 
+at an angle exceeding 45° (impending or actual rollover situation), the floats in the service 
+vent valves close off the vent apertures. This prevents any fuel from escaping through the 
+activated carbon filter. 
+
+A compensating volume is required in the fuel tank for the service venting function. This 
+compensating volume is the space above the fuel level when the fuel tank is completely full 
+(approx. 6 liters). The compensating volume remains unfilled when automatic cutout of the 
+fuel pump nozzle is triggered. 
+
+Pressure Relief Valve 
+
+Any damage to the vent lines or the activated carbon filter may result in a pressure increase 
+in the fuel tank. To prevent such a pressure increase, the filler cap incorporates a 300 mbar 
+pressure relief valve. 
+
+
+Notes: 
+
+
+23 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+Filler Venting System 
+
+
+
+1. Filler neck 
+
+13. Service access cap, right 
+
+2. Outlet protection valve 
+
+14. Filling vent valve 
+
+3. Electric fuel pump 
+
+15. Service vent valve 
+
+4. Fuel filter 
+
+16. Service vent valve 
+
+5. Fuel supply line 
+
+17. DMTL with activated carbon canister 
+
+6. Fuel injectors/rail 
+
+18. Tank vent valve (evap. purge) 
+
+7. Fuel pressure regulator 
+
+19. Evaporative purge air 
+
+8. Suction-jet pump, left 
+
+20. Air filter 
+
+9. Suction-jet pump, right 
+
+21. ECM 
+
+10. Fuel level sensor, right 
+
+22. Oxygen sensor (pre-catalyst) 
+
+11. Fuel level sensor, left 
+
+12. Service access cap, left 
+
+23. Exhaust manifold 
+
+
+Refuelling 
+
+The following safety requirements are met when the tank is filled: 
+
+• Grounding - The filler neck is provided with a metal bayonet collar which accommodates 
+the filler cap or the fuel pump nozzle. The filler neck is grounded by the cap or fuel noz¬ 
+zle insertion. 
+
+• Prevention of fuel sloshing back - A slosh baffle is fitted where the filler neck enters the 
+tank. This prevents the fuel from sloshing back into the filler pipe. 
+
+
+24 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+On-Board Refueling Vapor Recovery (ORVR - DM TL Equipped Vehicles) 
+
+The ORVR system recovers and stores hydrocarbon fuel vapor during refueling. When 
+refueling the E60, the pressure of the fuel entering the tank forces the hydrocarbon vapors 
+through the Filling Vent Valve (14) and the large tank ventilation line into the Carbon Canister 
+(17). The HC’s are stored in the Carbon Canister and the system can then “breathe” 
+through the DM TL and the fresh air filter. 
+
+Note: A small diameter connection to the filler neck is provided and is necessary for check¬ 
+ing the filler cap/neck during Evaporative Leak Testing. 
+
+The ventilation continues until the rising fuel level lifts the float in the Filling Vent Valve (14) 
+and closes the outlet. When the ventilation outlet is closed, a pressure cushion (vapor area) 
+is created in the fuel tank. This creates a backup of fuel into the filler neck and the tank is 
+full. 
+
+This leaves a vapor area of approximately 6 liters above the fuel level. This area provides 
+integral liquid/vapor separation. The vapor condensates separate and drain back into the 
+fuel. The remaining vapors exit the fuel tank (when sufficient pressure is present) through 
+the Service Vent Valves (15 & 16) to the Carbon Canister. 
+
+Note: The Service Vent Valves are also equipped with protection floats in the event of an 
+“overfill” situation. 
+
+
+E60 Exhaust Emissions 
+
+The combustion process of a gasoline powered engine produces Carbon Monoxide (CO), 
+Hydrocarbons (HC) and Oxides of Nitrogen (NOx). 
+
+• Carbon Monoxide is a product of incomplete combustion under conditions of air deficiency. 
+
+CO emissions are dependent on the air/fuel ratio. 
+
+• Hydrocarbon are also a product of incomplete combustion which results in unburned fuel. 
+
+HC emissions are dependent on air/fuel ratio and the ignition of the mixture. 
+
+• Oxides of Nitrogen are a product of peak combustion temperature (and temperature duration). 
+
+NOx emissions are dependent on internal cylinder temperature affected by the air/fuel ratio 
+and ignition of the mixture. 
+
+Control of exhaust emissions is accomplished by the engine and engine management 
+design as well as after-treatment. 
+
+• The ECM manages exhaust emissions by controlling the air/fuel ratio and ignition. 
+
+• The ECM controlled Secondary Air Injection further dilutes exhaust emissions leaving the engine 
+and reduce the catalyst warm up time. 
+
+• The Catalytic Converter further reduces exhaust emissions leaving the engine. 
+
+
+25 
+
+E60 Engine Management 
+
+
+Secondary Air Injection 
+
+
+Injecting ambient air into the exhaust stream after a cold engine start reduces the warm up 
+time of the catalysts and reduces HC and CO emissions. The ECM controls and monitors 
+the Secondary Air Injection. 
+
+An Electric Secondary Air Pump and Air Injection Valve direct fresh air through an internal 
+channel in the cylinder head into the exhaust ports. 
+
+The Air Injection Valve is opened by air 
+pressure (from the pump) and is closed 
+by an internal spring. 
+
+
+1. Secondary air (injection) valve 
+
+2. Secondary air filter 
+
+3. Mini Hot film air mass sensor (HFM) 
+
+4. Intake hose 
+
+5. Secondary air pump (SLP) 
+
+The secondary air pump is equipped with an additional intake hose (4) to accommodate a 
+secondary air filter with the mini HFM (3). The mini HFM is secured in the secondary air 
+cleaner with two screws. 
+
+
+
+Mini Hot Film Air Mass Sensor (HFM) 
+
+A compact mini hot film air mass sensor (HFM manufactured by Siemens) is used in the 
+secondary air system for the M54 in the E60 (US market). 
+
+
+The mini HFM detects the air mass supplied by the secondary- 
+air pump. This function monitors the secondary air system for 
+OBD compliance. 
+
+When the mini HFM detects no air mass or insufficient air 
+mass, a fault is stored in the ECM and the Malfunction 
+Indicator Light (MIL) is activated. 
+
+The mini HFM has a compact pipe shaped design with O-ring 
+connections. 
+
+
+
+26 
+
+E60 Engine Management 
+
+
+
+
+
+
+The “Malfunction Indicator Light” (MIL) will be illuminated under the following conditions: 
+
+
+Upon the completion of the next consecutive 
+driving cycle where the previously faulted sys¬ 
+tem is monitored again and the emissions rele¬ 
+vant fault is again present. 
+
+Immediately if a “Catalyst Damaging” 
+fault occurs. 
+
+
+Q 
+
+
+
+KT-10888 
+
+The illumination of the light is performed in accordance with the Federal Test Procedure 
+(FTP) which requires the lamp to be illuminated when: 
+
+
+• A malfunction of a component that can affect the emission performance of the vehicle 
+occurs and causes emissions to exceed the standards required by the (FTP). 
+
+
+• Manufacturer-defined specifications are exceeded. 
+
+
+• An implausible input signal is generated. 
+
+• Catalyst deterioration causes HC-emissions to exceed the standard (FTP) limit. 
+
+
+• Misfire faults occur. 
+
+
+• A leak is detected in the evaporative system, or “purging” is defective. 
+
+• ECM fails to enter closed-loop oxygen sensor control operation within a specified time inter¬ 
+val. 
+
+
+• Engine control or automatic transmission control enters a "limp home" operating mode. 
+
+• Ignition is on (KL15) position before cranking = Bulb Check Function. 
+
+Within the BMW system the illumination of the Malfunction Indicator Light is performed in 
+accordance with the regulations set forth in CARB and as demonstrated via the Federal 
+Test Procedure (FTP). 
+
+
+27 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+The "Malfunction Indicator Light” can be diagnosed with an aftermarket Scan Tool that 
+allows Technicians without BMW Special Tools or Equipment to Diagnose an emission sys¬ 
+tem failure. 
+
+With the use of a universal scan tool, connected to the 
+"OBD" DLC (located in the driver’s side lower A-pillar 
+area) an SAE standardized DTC can be obtained, 
+along with the condition associated with the illumina¬ 
+tion of the "Malfunction Indicator Light”. 
+
+KT-061703 
+
+Using the DISplus or GT1, a fault code and the conditions associated with its setting can 
+be obtained prior to the illumination of the "Malfunction Indicator Light”. 
+
+
+
+D-Bus 
+
+
+
+
+RDC 
+
+
+SH 
+
+
+® SZM 
+
+
+PDC 
+
+
+DWA nz 
+
+
+
+KOMBI 
+
+
+SHD 
+
+
+
+
+RLS 
+
+
+CON 
+
+
+CAS2 
+
+
+
+CCC 
+
+
+
+M-ASK 
+
+
+FS 
+
+
+
+
+
+
+CDC 
+
+
+
+
+
+SDARS* 
+
+HUD 
+
+
+
+
+TEL 
+
+TOP-HIFI 
+
+
+I 
+
+
+SGM 
+
+
+SBSL 
+
+
+TMFA 
+
+
+SFZ 
+
+
+
+AHM 
+
+
+KBM 
+
+
+SMFA 
+
+
+SMFB 
+
+
+i 
+
+
+LM r. IHKA 
+
+iHiH 
+K-CAN 
+
+
+MOST 
+
+
+byteflight 
+
+
+PT-CAN 
+
+
+02994 02b 
+
+
+There is no direct connection to the OBD diagnostic connector. The ECM is connected to 
+the SGM via the PT-CAN Bus. The OBD diagnostic connector is connected to the SGM 
+via the Diagnosis Bus. 
+
+
+The hardwire shown above between the CAS2 and the PT-CAN control modules is the 
+KL15 (w up) signal. 
+
+
+28 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Emissions Management 
+
+
+1. What are the pin and connector numbers at the ECM for the Mini HFM? 
+
+
+2. Is there a Test Plan available for the mini HFM? _ 
+
+If so, disconnect the Mini HFM and activate the Test Plan. 
+
+Reconnect the Mini HFM, clear fault codes and activate the Test Plan again. What do 
+you observe? _ 
+
+
+3. Select Control Unit Functions, Diagnosis Requests. Is there a status under the “Part 
+
+Functions” column for observing the “Messages and Results” of the Mini HFM? _ 
+
+4. Is there a “Component Activation” feature for the Secondary Air Pump? _ 
+
+If so, install the appropriate break out box and observe voltage at the ECM on the cir¬ 
+cuit that measures the Mini HFM signal. 
+
+With the voltmeter displayed, Component Activate the Secondary Air Pump, what volt¬ 
+age did you observe? _ 
+
+
+Note: QC1 Test Drive 
+
+With the introduction of Seimens MS45 and MS45.1 engine management systems the 
+QC1 test drive shall now include the following procedure. This procedure needs to be per¬ 
+formed prior to vehicle delivery to ensure all emission relevant adaptations are validated 
+within the ECM (DME). 
+
+From a stop, accelerate moderately in 1st gear (Ml for automatic). Shift to 2nd gear (M2 
+for automatic) and accelerate to 4500rpm minimum. Leaving car in gear, allow vehicle to 
+decelerate without touching brakes or accelerator pedal until 1000 rpm is seen. During the 
+deceleration there will be a small bump (load reversal) felt at approximately 1200rpm. 
+
+These engine management systems will be in many future products so it is important to get 
+into the habit of performing this procedure prior to new vehicle delivery. This procedure is 
+not necessary on existing vehicles or those programmed at a Center. 
+
+
+29 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+Performance Controls 
+
+Driving Dynamics Control (FDC with SMG - if equipped) 
+
+The MS45.1 ECM contains two different throttle progres¬ 
+sion functions (Sport and Normal). The FDC function is 
+selected by pressing the “SPORT” button located in the 
+center console (1). 
+
+When pressed, the button provides an input signal to the 
+center console switch center (SZM). The signal is trans¬ 
+mitted from the SZM via the K-CAN > SGM > PT-CAN to 
+the ECM and the power steering. 
+
+This activates the sport characteristics for the Electronic 
+throttle control (EDK). This provides an increase in throt¬ 
+tle opening and response time over the non-sport posi¬ 
+tion. 
+
+
+KT-11846 
+
+
+When this function is activated, “SPORT” appears in the LC display in the instrument clus¬ 
+ter. When the ignition is cycled, this function resets back to the non-sport function (it must 
+be re-selected by the driver). 
+
+
+
+
+Workshop Exercise - Performance Controls 
+
+
+1. What are the pin and connector numbers at the SZM for the SPORT button? 
+
+
+2. Is there a Test Plan available for FDC ? _ 
+
+3. Select Control Unit Functions, Diagnosis Requests. Is there a status under the “Part 
+Functions” column for observing the “Messages and Results” for the SPORT button? 
+
+
+If so, what status did you observe (activate and deactive function with the button)? 
+
+
+30 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+ME 9.2 
+
+Purpose of the System 
+
+The ME 9.2 system (in the N62 equipped E60 - 545i) manages the following functions: 
+
+
+Air: 
+
+
+Fuel: 
+
+
+Ignition: 
+
+• Valvetronic 
+
+
+• Fuel Supply 
+
+
+• Direct Ignition 
+
+• Electronic Throttle Valve 
+
+
+• Fuel Injection 
+
+
+• Knock Control 
+
+• Hot-Film Air Mass Meter 
+
+
+
+
+• Ignition Monitoring 
+
+• Variable Intake Manifold 
+
+
+
+
+
+
+o. 
+
+> 
+
+ME 9.2 
+
+© 
+
+
+
+
+
+0 
+
+
+
+
+Emissions: 
+
+
+Performance Controls: 
+
+• Secondary Air Injection 
+
+
+• Bi-VANOS 
+
+• Pre and Post Catalyst Oxygen Sensing 
+
+
+• Oil Condition 
+
+• Oxygen Sensor Heating 
+
+
+• Electric Cooling Fan 
+
+• Misfire Detection 
+
+
+• Alternator 
+
+• Evaporative Purge Control/Leak Testing 
+
+
+• E-Box Cooling Fan 
+
+• Malfunction Indicator Light 
+
+
+• Comfort Start 
+
+• Cruise Control 
+
+
+The basic engine management inputs, processes and outputs are not included in this mod¬ 
+ule because they have not changed, refer to the ST055 Engine Electronics Technical 
+Training hand out for additional detailed information. Also, refer to ST042 E65 Part 2 
+Technical Training hand out for additional detailed information on the ME 9.2 Engine 
+Management System. 
+
+
+31 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+
+ME 9.2 Engine Control Module - Features: This Bosch engine management system is 
+introduced for more stringent emission requirements as well as reducing fuel consumption 
+and increasing driving performance. A flash EEPROM is used as the storage medium for 
+the program data, fault code memory as well as the adaptation values. The ECM works in 
+combination with the Valvetronic Control Module. Both Control Modules control the N62 
+engine: 
+
+• ME 9.2 ECM - overall engine management 
+
+• Valvetronic Control Module - intake valve lift 
+
+The ECM is located in the electronic box in the 
+engine compartment together with the 
+Valvetronic Control Module and the Inte-grated 
+Voltage Supply Module. 
+
+The ECM controls an electric cooling fan in the 
+base of the electronic box to draw in cool air 
+from the passenger compartment. 
+
+
+
+The 134 pin ME 9.2 ECM is man¬ 
+ufactured by Bosch to BMW 
+specifications. The ECM is the 
+SKE (standard shell construction) 
+housing and uses 5 modular con¬ 
+nectors. 
+
+For testing, use the Universal 
+Adapter Set (break-out box) 
+Special Tool: #90886121 300 
+
+
+
+X60001 X60002 X60003 X60004 X60005 
+9-Pin 24-Pin 52-Pin 40-Pin 9-Pin 
+
+
+42-04-22 
+
+
+Starting with the ME 9.2 system, a Multichan¬ 
+nel Adapter Tool is used in conjunction with 
+the DISplus to perform the complete N62 
+Engine Test (found under Service Functions). 
+
+The Multichannel Adapter Tool is installed (in 
+series) between the ECM and the engine har¬ 
+ness connectors (1, 3 and 5). In addition, the 
+four cables of MFK2 plug into the adapter sur¬ 
+face. 
+
+
+
+32 
+
+E60 Engine Management Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inputs - Processing - Outputs 
+
+
+(example from E65) 
+
+
+ME 9.2 ECM 
+
+
+u _CL 
+
+frTTTTTI 
+
+
+
+IVM 
+
+
+B+ 
+
+
+KL 15 
+
+
+KL15 "WAKEUP" 
+
+
+KL 50E 
+
+
+CAS 
+
+
+31 
+
+
+
+L * 
+
+iiiic'mfi.fKftomje 
+
+
+
+
+VARIABLE 
+INTAKE MANIFOLD 
+MOTOR 
+
+
+MAP 
+
+SENSOR 
+
+
+VALVETRONIC 
+
+CONTROL 
+
+MODULE 
+
+
+AIRMASS 
+
+SIGNAL 
+
+
+COOLANT 
+TEMP. 
+SENSOR 
+
+
+
+KNOCK 
+
+SENSOR 
+
+(4X) 
+
+
+RPM 
+
+SENSOR 
+
+
+
+
+
+cm. 
+
+SENSOR 
+
+(4X) 
+
+
+ft 
+
+
+E 
+
+
+
+
+EJ 
+
+
+DMTL 
+
+
+
+RADIATOR OUTLET 
+TEMPERATURE 
+SENSOR 
+
+
+
+ROLLING CODE JUT-TUT. 
+
+
+KL 50E 
+
+
+CAS 
+
+
+
+CRUISE CONTROL 
+
+
+
+BRAKE LIGHT 
+SWITCH 
+
+
+DCS VEHICLE SPEED 
+
+
+
+GENERATOR 
+
+
+
+ENGINE 
+OIL SENSOR 
+
+
+IHKA 
+
+
+ME 9.2 
+
+
+POWER 
+
+SUPPLY 
+
+
+AIR 
+
+MANAGEMENT 
+
+
+FUEL 
+
+MANAGEMENT 
+
+
+IGNITION 
+
+MANAGEMENT 
+
+
+EMISSION 
+
+MANAGEMENT 
+
+
+PERFORMANCE 
+
+MANAGEMENT 
+
+
+
+
+
+VARIABLE 
+INTAKE MANIFOLD 
+MOTOR 
+
+
+
+
+
+
+VALVETRONIC 
+
+CONTROL 
+
+MODULE 
+
+
+
+
+
+ELECTH C THFWTTLE 
+
+1 VALVETRONIC 
+MOTOR & VALVE 
+
+
+FUEL INJECTORS 
+
+(8X) 
+
+
+
+FUEL 
+
+'PUMP 
+
+
+
+IGNITION COIL 
+CONTROL 
+(Mt) 
+
+
+
+
+3 
+
+
+PURGE 
+
+VALVE 
+
+corrrnOL 
+
+
+DMTL 
+
+
+
+
+
+
+
+CHECK 
+
+ENGINE 
+
+LIGHT 
+
+
+IHKA 
+
+
+
+
+
+42-04-23 
+
+33 
+
+E60 Engine Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

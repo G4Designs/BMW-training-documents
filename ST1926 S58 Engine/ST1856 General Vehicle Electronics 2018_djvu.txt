@@ -1,0 +1,3730 @@
+Technical training. 
+
+Product information. 
+
+General Vehicle Electronics 2018 
+
+
+
+BMW Service 
+
+
+C \ 
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1856 10/1/2018 
+
+V_/ 
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A_ 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status: July 2018 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+The information contained in the training course materials is solely intended for participants in this 
+training course conducted by BMW Group Technical Training Centers, or BMW Group Contract 
+Training Facilities. 
+
+This training manual or any attached publication is not intended to be a complete and all inclusive 
+source for repair and maintenance data. It is only part of a training information system designed to 
+assure that uniform procedures and information are presented to all participants. 
+
+For changes/additions to the technical data, repair procedures, please refer to the current information 
+issued by BMW of North America, LLC, Technical Service Department. 
+
+This information is available by accessing TIS at www.bmwcenternet.com. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application 
+
+• Aftersales Information Research (AIR) 
+
+The information contained in this manual is not to be resold, bartered, copied, or transferred 
+without the express written consent of BMW of North America, LLC (“BMW NA”). 
+
+©2018 BMW of North America, LLC 
+
+The BMW name and logo are registered trademarks. All rights reserved. 
+
+
+
+
+General Vehicle Electronics 2018 
+
+Contents 
+
+
+1. Introduction.1 
+
+2. Electr. system > Service Pack 2018.2 
+
+2.1. Overview of the vehicle electrical systems.2 
+
+3. Bus systems.3 
+
+3.1. Bus overview.3 
+
+3.2. Ethernet.6 
+
+3.3. K-CAN6.9 
+
+4. New Control Units.11 
+
+4.1. Booster.11 
+
+4.2. Driver Camera System (DCS).12 
+
+4.3. Front radar sensor (FRS).13 
+
+4.4. Front radar sensor long range (FRSF).13 
+
+4.5. Rear radar sensor short range left (HRSNL).14 
+
+4.6. Rear radar sensor short range right (HRSNR).14 
+
+4.7. Camera-based driver assistance systems (KAFAS).15 
+
+4.7.1. KAFAS mid.15 
+
+4.7.2. KAFAS high.16 
+
+4.8. NFC station.16 
+
+4.9. Receiver Audio Module (RAM).17 
+
+4.10. Side radar sensor short range front left (SRSNVL).18 
+
+4.11. Side radar sensor short range front right (SRSNVR).18 
+
+4.12. Virtual Integration Platform (VIP).19 
+
+4.13. Wireless charging station (WCA/NFC).19 
+
+5. Dual Storage System.21 
+
+5.1. Wiring diagram.23 
+
+5.2. Lithium ion battery.24 
+
+5.3. Alternator.27 
+
+6. ID Transmitter.28 
+
+6.1. ID transmitter outside the vehicle.28 
+
+6.1.1. ID transmitter sleeping.28 
+
+6.1.2. ID transmitter awake.28 
+
+6.2. ID transmitter in the vehicle.29 
+
+7. Comfort Access 2.0.30 
+
+7.1. Highlights / customer benefit.30 
+
+7.1.1. Welcome effect.30 
+
+7.1.2. Vehicle unlocking.31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+Contents 
+
+
+7.1.3. Vehicle locking.32 
+
+7.2. Communication with ID transmitter.34 
+
+7.2.1. Communication path.34 
+
+7.2.2. Welcome effect.35 
+
+7.2.3. Vehicle unlocking.36 
+
+7.2.4. Vehicle locking.37 
+
+7.3. Settings.38 
+
+7.3.1. Automatic functions.38 
+
+7.3.2. Selective unlocking.39 
+
+7.4. Wiring diagram.39 
+
+8. BMW Digital Key.42 
+
+8.1. Introduction.42 
+
+8.2. Functions.42 
+
+8.2.1. Unlocking.42 
+
+8.2.2. Vehicle starting.42 
+
+8.3. Vehicle components.42 
+
+8.3.1. Outside door handle electronics.42 
+
+8.3.2. NFC station.43 
+
+8.3.3. Wireless charging station.44 
+
+8.4. Smartphone, NFC key card.44 
+
+8.4.1. NFC key card.44 
+
+8.4.2. Smartphone.45 
+
+8.4.3. Activating an additional smartphone (Friends Digital Key).45 
+
+9. Wireless Technologies.47 
+
+9.1. Comparison of wireless technologies.47 
+
+9.1.1. ID transmitter.48 
+
+9.1.2. NFC.48 
+
+9.1.3. Bluetooth.48 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+1. Introduction 
+
+
+The new features for the: 
+
+• Vehicle electrical system 
+
+• Control units 
+
+• Voltage supply 
+
+• Comfort Access 2.0 
+
+are described for all models in this document. 
+
+The following vehicles have acquired the corresponding new features: 
+
+• G05 
+
+• G14/G15/G16 
+
+• G12LCI 
+
+• G20 
+
+• G29 
+
+Depending on the model and national-market versions, not all vehicles acquire all the new features. 
+
+
+1 
+
+
+
+
+General Vehicle Electronics 2018 
+
+2. Electr. system > Service Pack 2018 
+
+
+2.1. Overview of the vehicle electrical systems 
+
+The vehicle electrical system 2020 (BN2020) was introduced in the F01. The predecessor system is 
+called BN2000. 
+
+
+The vehicle electrical system must be adapted to new systems, functions, components and 
+requirements. The corresponding changes are effected by Service Packs. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Service Pack 2013 introduction with FI 5/101/112 
+
+2 
+
+Service Pack 2015 introduction with G12 
+
+3 
+
+Service Pack 2018 introduction with G05 
+
+
+Subnetwork operation for entertainment and charging was introduced with Service Pack 2013. 
+Parking-residing-driving terminal control was introduced with Service Pack 2015. 
+
+The following are introduced with Service Pack 2018: 
+
+
+• Remote Software Upgrade RSU 
+
+• Comfort Access 2.0 
+
+• BMW Digital Key 
+
+
+Remote Software Upgrade enables the software in customer vehicles to be remotely updated. A 
+Remote Software Upgrade is a service in combination with the back end of ConnectedDrive which 
+facilitates the following: 
+
+• Updating of functions and information in customer vehicles. 
+
+• Fast and convenient updating of defective software in customer vehicles. 
+
+• Rapid elimination of possible security flaws in the software. 
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+3.1. Bus overview 
+
+
+
+G05 Bus overview example 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AHM 
+
+Trailer module 
+
+BDC 
+
+Body Domain Controller 
+
+Booster 
+
+Booster 
+
+CON 
+
+Controller 
+
+DCS 
+
+Driver Camera System 
+
+DME 
+
+Digital Motor Electronics 
+
+DME2 
+
+Digital Motor Electronics 2 
+
+DSC 
+
+Dynamic Stability Control 1 
+
+EARSH 
+
+Electric active roll stabilization rear 
+
+EARSV 
+
+Electric active roll stabilization front 
+
+EGS 
+
+Electronic transmission control 
+
+EHC 
+
+Electronic ride height control 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FBD 
+
+Remote control receiver 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FRS 
+
+Front radar sensor 
+
+FRSF 
+
+Front radar sensor long range 
+
+FZD 
+
+Roof function centre 
+
+GHAS 
+
+Regulated rear axle differential lock 
+
+GWS 
+
+Gear selector switch 
+
+HU-H 
+
+Head Unit High 
+
+HKFM 
+
+Tailgate function module 
+
+HRSNL 
+
+Rear radar sensor short range left 
+
+HRSNR 
+
+Rear radar sensor short range right 
+
+IHKA 
+
+Integrated automatic heating / air conditioning 
+
+KAFAS 
+
+Camera-based driver assistance systems 
+
+KOMBI 
+
+Instrument cluster 
+
+NFC 
+
+Near Field Communication 
+
+PCU 
+
+Power Control Unit 
+
+PMA 
+
+Parking Manoeuvring Assistant 
+
+RAM 
+
+Receiver Audio Module 
+
+RFK 
+
+Rear view camera 
+
+RSE 
+
+Rear Seat Entertainment 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+Index 
+
+Explanation 
+
+SAS 
+
+Optional equipment system 
+
+SMBF 
+
+Front passenger seat module 
+
+SMFA 
+
+Driver's seat module 
+
+SMBFH 
+
+Rear front-passenger side seat module 
+
+SMFAH 
+
+Rear driver's side seat module 
+
+SPNMVL 
+
+Seat pneumatics module front left 
+
+SPNMVR 
+
+Seat pneumatics module front right 
+
+SRSNVL 
+
+Side radar sensor short range front left 
+
+SRSNVR 
+
+Side radar sensor short range front right 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top rear side view camera 
+
+VDP 
+
+Vertical Dynamic Platform 
+
+VIP 
+
+Virtual Integration Platform 1 
+
+VTG 
+
+Transfer box 
+
+WCA/NFC 
+
+Wireless charging station with control electronics for Near Field 
+
+Communication 
+
+ZGM 
+
+Central Gateway Module 
+
+1 
+
+Start-up node control units for starting and synchronizing the FlexRay bus 
+system 
+
+2 
+
+Control units authorizedto perform wake-up function 
+
+3 
+
+Control units also connected at terminal 15WUP 
+
+
+1 Depending on the brake system, Dynamic Stability Control (DSC) is installed with or without the 
+Virtual Integration Platform (VIP). 
+
+Depending on the optional equipment, the control unit for the rear view camera and SideView TRSVC 
+or rear view camera RFK is installed. 
+
+Changes with Service Pack 2018: 
+
+• There is no MOST in vehicles with a new head unit 
+
+• Depending on the optional equipment, the front radar sensor (FRS) or the front radar sensor 
+long range (FRSF) is installed 
+
+• With the optional equipment air suspension on both axles electronic ride height control (EHC) 
+is used in conjunction with the Vertical Dynamic Platform (VDP) 
+
+• The antenna and the control electronics for Near Field Communication have additionally been 
+installed in the wireless charging station (WCA/NFC) 
+
+• An NFC station is installed in vehicles with the optional equipment Comfort Access without 
+wireless charging station (WCA/NFC). 
+
+
+5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+Omitted control units: 
+
+• The Light Effect Manager (LEM) is omitted. Actuation of the LEDs of the panorama roof is 
+performed by the Body Domain Controller (BDC). Actuation of the LEDs of the speakers in the 
+HIGH-End audio system is performed by the Receiver Audio Module (RAM). 
+
+• Active Sound Design is omitted. Active Sound Design has been integrated in the Receiver 
+Audio Module (RAM). If necessary, the booster is still required for the outside sound. 
+
+• The high-beam assistant (FLA) is omitted from all European versions. The function is 
+performed by the camera-based driver assistance systems (KAFAS). 
+
+
+3.2. Ethernet 
+
+The established 2-wire OABR Ethernet (OPEN Alliance BroadR-Reach) is used in all vehicles. The 
+Ethernet variant with 5 lines (4 data lines and 1 activation line) is still used by the OBD2 interface to the 
+Body Domain Controller (BDC). 
+
+The standard "Open Alliance BroadR-Reach" (OABR Ethernet) has been specially developed as a 
+new data transmission layer for use in vehicles. OABR Ethernet only requires an unshielded twisted 
+two-wire connection. If the Ethernet line is situated in the area of antennas in the vehicle, this is if 
+necessary shielded in order to avoid interference. OABR Ethernet supports bidirectional 100 MBit/s 
+communication between 2 nodes. This means that both nodes can simultaneously send and receive at 
+a data transfer rate of 100 MBit/s. OABR Ethernet requires point-to-point networking. This means that 
+the bus system is not split up between multiple nodes, as is the case e.g. with CAN (Controller Area 
+Network) systems. Instead, Ethernet switches are used for the connection of further nodes. 
+
+Ethernet switches are integrated in the following control units: 
+
+• Body Domain Controller (BDC) 
+
+• Optional equipment system (SAS) 
+
+• Head Unit High 3 (HU-H3). 
+
+The top rear side view camera (TRSVC) is the master and the Ethernet switch for the: 
+
+• Front camera 
+
+• Exterior mirror camera, left 
+
+• Exterior mirror camera, right 
+
+• Rear view camera 
+
+The instrument cluster (KOMBI) is connected to the Driver Camera System (DCS) by Ethernet. 
+
+The Receiver Audio Module (RAM) is the master for the booster. 
+
+The booster is not shown by the ISTA diagnosis system in the bus overview. 
+
+
+6 
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+In vehicles with the Head Unit High 3 (HU-H3) the following control units are connected directly to the 
+head unit: 
+
+• Telematic Communication Box (TCB) 
+
+• Rear Seat Entertainment (RSE) 
+
+• Driver Camera System (DCS) 
+
+• and Receiver Audio Module (RAM) 
+
+As a result, the Ethernet interfaces on the Body Domain Controller (BDC) are sufficient, and no 
+additional Ethernet switch (ENS) is required. 
+
+An Ethernet switch (ENS) is used in vehicles with the Head Unit Basic, depending on the vehicle 
+equipment. In the event of failure of an Ethernet switch, all bus users connected by it are disconnected 
+from the rest of the network and are no longer able to communicate via Ethernet. 
+
+In the wiring diagram the connection of the top rear side view camera (TRSVC) control unit and 
+rear view camera (RFK) is shown. In the vehicle, either TRSVC is installed for a vehicle with multiple 
+cameras, or RFK for a vehicle with a rear view camera (standalone). 
+
+The wiring diagram shows the Ethernet on the example of the G05. 
+
+
+7 
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+® 
+
+
+
+2 Ethernet 
+
+
+
+
+2 Ethernet 
+
+
+® 
+
+
+
+® 
+
+
+\ 
+
+
+® 
+
+
+
+® 
+
+
+® 
+
+
+
+
+
+
+
+© 
+
+
+L 
+
+
+® 
+
+
+Ethernet ^ 2 
+
+
+© 
+
+HEADUNIT 
+
+
+
+
+® 
+
+® 
+
+
+
+® 
+
+
+® 
+
+
+
+® 
+
+
+Ethernet 2 t 
+/ 
+
+
+2 
+
+| Ethernet 2 
+
+i 
+
+*- 1 
+
+| / | Ethernet 2 
+
+y 2 Ethernet 
+
+^^^"^Ethernfl 2 
+
+
+■ 
+
+
+® 
+
+
+Ethernet 
+
+
+8 
+
+
+TE17-2255 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Front radar sensor long range (FRSF) 
+
+2 
+
+Front camera 
+
+3 
+
+Camera-based driver assistance systems 
+
+4 
+
+Body Domain Controller 
+
+5 
+
+Exterior mirror camera, right 
+
+6 
+
+Rear view camera (RFK) (single camera without KAFAS) 
+
+7 
+
+Rear view camera 
+
+8 
+
+Booster 
+
+9 
+
+Receiver Audio Module (RAM) 
+
+10 
+
+Telematic Communication Box 2 (TCB2) 
+
+11 
+
+Rear Seat Entertainment (RSE) 
+
+12 
+
+Exterior mirror camera, left 
+
+13 
+
+Head Unit 
+
+14 
+
+Instrument cluster (KOMBI) 
+
+15 
+
+Driver Camera System (DCS) 
+
+16 
+
+Top Rear Side View Camera (TRSVC) 
+
+17 
+
+Optional equipment system (SAS) 
+
+
+3.3. K-CAN6 
+
+The control units Frontal Light Electronics Left (FLEL) and Frontal Light Electronics Right (FLER) were 
+previously connected to the K-CAN3. 
+
+An additional K-CAN for the light control units was introduced with the vehicle electrical system 
+structure 2018. 
+
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+3. Bus systems 
+
+
+®|© 
+
+FLEL 
+
+
+K-CAN6 
+
+
+BOC 
+
+... . .. 
+
+© 
+
+UJ 
+
+Index 
+
+Explanation 
+
+
+1 
+
+Frontal Light Electronics Left (FLEL) 
+
+
+2 
+
+Frontal Light Electronics Right (FLER) 
+
+
+3 
+
+Body Domain Controller (BDC) 
+
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+
+Information on new control units and on control units which have been adapted for the vehicle 
+electrical system 2018. 
+
+
+4.1. Booster 
+
+An additional booster is installed, depending on the audio variant. 
+
+Normally there is no booster in stereo and hi-fi systems. However, if an outside speaker is required for 
+the outside sound on a vehicle, depending on the engine version, a booster is installed. 
+
+Detailed information can be found in the document “ST1857 Infotainment 2018”. 
+
+
+
+Booster 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connections for speaker, voltage supply, Ethernet connection 
+
+
+11 
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.2. Driver Camera System (DCS) 
+
+
+
+Instrument cluster with Driver Camera System (DCS) 
+
+The Driver Camera System (DCS) is a camera installed in the instrument cluster directed at the driver. 
+Detailed information can be found in the document “ST1858 Driver Assistance Systems 2018”. 
+
+
+12 
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+
+4.3. Front radar sensor (FRS) 
+
+
+
+Front radar sensor (FRS) 
+
+
+The front radar sensor (FRS) supplies the input data for: 
+
+• Collision warning 
+
+• Person/cyclist warning 
+
+• Cruise control with braking function 
+
+• Active Cruse Control with Stop&Go function 
+
+• Distance information 
+
+
+4.4. Front radar sensor long range (FRSF) 
+
+
+Front radar sensor long range (FRSF) 
+
+
+
+13 
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+
+The front radar sensor long range (FRSF) is installed with the optional equipment Driving Assistant 
+Professional. 
+
+The FRSF supplies the input data for the longitudinal and lateral guidance and safety assistance 
+systems. 
+
+The front radar sensor long range (FRSF) is a further development of Active Cruise Control (ACC). 
+
+
+4.5. Rear radar sensor short range left (HRSNL) 
+
+
+
+Rear radar sensor short range left (HRSNL) 
+
+
+The rear radar sensor short range left (HRSNL) is a further development of lane change warning 
+(secondary) (SWW2). 
+
+
+4.6. Rear radar sensor short range right (HRSNR) 
+
+
+
+Rear radar sensor short range right (HRSNR) 
+
+
+The rear radar sensor short range right (HRSNR) is a further development of lane change warning 
+(primary) (SWW). 
+
+
+14 
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.7. Camera-based driver assistance systems (KAFAS) 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+KAFAS mid 
+
+B 
+
+KAFAS high 
+
+
+Depending on the assistance system, 2 different cameras are used for KAFAS. 
+
+
+• KAFAS mid 
+
+• KAFAS high. 
+
+
+4.7.1. KAFAS mid 
+
+KAFAS mid is equipped with a single camera. 
+Functions: 
+
+• Detection of lanes 
+
+• Detection of vehicles 
+
+• Detection of persons 
+
+• Detection of signs and traffic lights 
+
+
+15 
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.7.2. KAFAS high 
+
+KAFAS high is equipped with a triple camera with 3 camera lens with different aperture angles of 28°, 
+52° and 152°. This enables more situations to be recorded with better quality. 
+
+Functions: 
+
+• Detection of lanes 
+
+• Detection of vehicles 
+
+• Detection of persons 
+
+• Detection of signs and traffic lights 
+
+• Detection of stop lines 
+
+• Detection of side road boundaries 
+
+• Detection of landmarks 
+
+• Detection of clearances 
+
+
+4.8. NFC station 
+
+
+
+NFC station 
+
+
+An NFC station is installed with the optional equipment Comfort Access (SA 322) in vehicles with a 
+wireless charging stations. 
+
+Feature distinguishing an NFC station from a wireless charging station (WCA/NFC): 
+
+
+• There is no LED on the NFC station 
+
+• An LED for the charging function is incorporated on the wireless charging station (WCA/NFC). 
+
+
+The NFC control unit is not shown by the ISTA diagnosis system in the bus overview. Diagnosis is 
+performed via the Body Domain Controller. 
+
+
+16 
+
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.9. Receiver Audio Module (RAM) 
+
+The Receiver Audio Module (RAM) comes in a variety of versions and power levels. 
+
+Different housing shapes are used, depending on the components installed. Detailed information 
+about the different versions can be found in the document “ST1857 Infotainment 2018”. 
+
+
+
+Receiver Audio Module (RAM) 
+
+Depending on the number and power of the speakers, a booster, to which the audio data are streamed 
+via an Ethernet connection, is additionally installed. 
+
+The Receiver Audio Module (RAM) is a control unit and part of the infotainment system. The Receiver 
+Audio Module (RAM) is an audio amplifier with integrated tuners and an integrated sound processor. 
+
+The Receiver Audio Module (RAM) also contains Active Sound Design (ASD), and therefore an 
+additional control unit is not required. 
+
+The following tuners can be installed: 
+
+• SDARS 
+
+• FM 
+
+• AM 
+
+The RAM control unit is connected via Ethernet to the head unit. Audio control is performed by the 
+head unit. 
+
+
+17 
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.10. Side radar sensor short range front left (SRSNVL) 
+
+
+
+Side radar sensor short range front left (SRSNVL) 
+
+
+The side radar sensor short range front left (SRSNVL) is a further development of the radar sensor left 
+(RSL). 
+
+4.11. Side radar sensor short range front right (SRSNVR) 
+
+
+
+Side radar sensor short range front right (SRSNVR) 
+
+
+The side radar sensor short range front right (SRSNVR) is a further development of the radar sensor 
+right (RSR). 
+
+
+18 
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+4.12. Virtual Integration Platform (VIP) 
+
+
+
+o 
+
+00 
+
+LU 
+
+Dynamic Stability Control (DSC) with Virtual Integration Platform (VIP) 
+
+On vehicles with integrated brake systems, the Virtual Integration Platform (VIP) is integrated in the 
+brake system in addition to Dynamic Stability Control (DSC). The control unit for the integrated brake 
+system is made up of Dynamic Stability Control (DSC) and Virtual Integration Platform (VIP). Thus 
+2 control units are provided for diagnosis and programming with the ISTA diagnosis system. The 
+segmentation makes it easier to adapt to future vehicles. The DSC main functions will remain the 
+same in other vehicles, therefore no changes are made to Dynamic Stability Control (DSC). Adaptation 
+of the Virtual Integration Platform (VIP) makes it easier to adapt to future vehicles and driver assistance 
+systems. 
+
+
+4.13. Wireless charging station (WCA/NFC) 
+
+The antenna and the control electronics for Near Field Communication (NFC) have additionally been 
+installed in the wireless charging station. 
+
+
+
+Wireless charging station with Near Field Communication (NFC) 
+
+
+19 
+
+
+
+General Vehicle Electronics 2018 
+
+4. New Control Units 
+
+
+The wireless charging station (WCA) monitors the charging bay and controls the charging procedure. 
+
+The Near Field Communication (NFC) control electronics is required for Near Field Communication in 
+the vehicle. 
+
+The WCA/NFC control unit is not shown by the ISTA diagnosis system in the bus overview. Diagnosis 
+is performed via the Body Domain Controller (BDC). 
+
+
+20 
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+
+The dual storage system serves to support the vehicle electrical system. A 12 V lithium ion battery and 
+a 12 V lead-acid battery are installed for this purpose. The dual storage system serves to power the 
+vehicle electrical power system in a safe and reliable way. 
+
+The two batteries are connected in parallel and are isolated only in the event of a fault by the battery 
+isolating switch installed in the lithium ion battery. 
+
+The dual storage system is installed: 
+
+• so that the emissions threshold values are adhered to 
+
+• if necessary instead of the familiar vehicle electrical system support with a 
+50 Ah or 60 Ah lead-acid battery and Power Control Unit (PCU). 
+
+Depending on: 
+
+• the engine version 
+
+• the optional equipment 
+
+the dual storage system is installed. 
+
+Exception: 
+
+The vehicle electrical system support with a 50 Ah or 60 Ah lead- acid battery and Power Control Unit 
+(PCU) is installed in vehicles with electric active roll stabilization. 
+
+Benefits from the dual storage system: 
+
+• Reduced C02 
+
+• Weight saving with regard to vehicle electrical system support with AGM battery 
+
+• Emergency starting function 
+
+The lithium ion battery can be charged or discharged with higher currents than a lead-acid battery. 
+
+In this way, more energy can be stored for example in coasting overrun mode and exported where 
+necessary. This results in a reduction in C02 emissions. 
+
+If the dual storage system is installed instead of the vehicle electrical system support with lead-acid 
+battery, a weight saving of 17 kg (37 lbs) or 19 kg (42 lbs) is made, depending on the capacity of the 
+lead-acid battery. 
+
+If the starter battery is so flat that the engine cannot be started, the engine can if necessary be started 
+via the lithium ion battery. 
+
+C02 potential through energy recovery (1-2 g/km) 
+
+The dual storage system improves the energy recover capability of the 12V system. The energy 
+recovery power output increases from approx. 0.5 kW to approx. 2 kW. This enables a large part of the 
+base load in the vehicle to be compensated. In this way, the drivetrain is only subjected to minimal load 
+by the alternator during acceleration phases. 
+
+MSA start quality 
+
+The lithium ion battery increases the power output at the starter motor. Improved engine starting 
+reduces the engine vibrations. 
+
+
+21 
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+Protection of the lead-acid battery 
+
+Thanks to the dual storage system the cyclisation of the lead-acid battery is dramatically reduced and 
+taken on by the lithium ion battery. This significantly prolongs the service life of the lead-acid battery. 
+
+
+22 
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+5.1. Wiring diagram 
+
+
+
+Voltage supply 
+
+
+23 
+
+
+TE17-2258_2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Starter motor 
+
+3 
+
+Power distribution box, engine compartment 
+
+4 
+
+Lithium ion battery 
+
+5 
+
+Power distribution box, front right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Power distribution box, rear 
+
+8 
+
+Battery power distribution box 
+
+9 
+
+Safety battery terminal 
+
+10 
+
+Battery 
+
+11 
+
+Intelligent battery sensor 
+
+12 
+
+Advanced Crash Safety Module (ACSM) 
+
+13 
+
+Integrated supply module 
+
+14 
+
+Digital Motor Electronics (DME) 
+
+
+5.2. Lithium ion battery 
+
+Nominal voltage 12 V, capacity 10 Ah. 
+
+The lithium ion battery contains the battery monitoring electronics and the battery isolating switch. 
+
+
+
+Lithium ion battery 
+
+
+24 
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Plug connector 
+
+2 
+
+Negative terminal 
+
+3 
+
+Positive terminal 
+
+
+Connections on the lithium ion battery: 
+
+
+• Positive terminal 
+
+• Negative terminal 
+
+Plug connector with the terminals: 
+
+• Terminal 30B 
+
+• Terminal 30C 
+
+• LIN 
+
+The battery monitoring electronics is powered via terminal 30B. 
+
+Terminal 30C from the safety battery terminal is additionally connected to the lithium ion battery. This 
+ensures that the lithium ion battery is also shut down when the safety battery terminal is triggered. 
+
+Communication is performed via LIN with the Digital Motor Electronics (DME). 
+
+Battery monitoring electronics 
+
+
+
+Lithium ion battery 
+
+
+25 
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Negative terminal 
+
+2 
+
+Measuring resistor (shunt) for current measurement 
+
+3 
+
+Battery monitoring electronics 
+
+Purposes of the battery monitoring electronics: 
+
+
+• Communication via LIN data bus with DME 
+
+• Current monitoring 
+
+• Standby current monitoring 
+
+• Voltage monitoring 
+
+• Temperature monitoring 
+
+• Cell voltage monitoring 
+
+• Actuation of the battery isolating switch 
+
+• Diagnosis 
+
+Battery isolating switch 
+
+
+1 
+
+
+
+Lithium ion battery 
+
+
+26 
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+5. Dual Storage System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ventilation connection 
+
+2 
+
+Housing for lithium ion cells 
+
+3 
+
+Battery isolating switch 
+
+4 
+
+Positive terminal 
+
+
+The battery isolating switch is actuated by the battery monitoring electronics and serves to protect the 
+lithium ion battery. 
+
+If the permissible values for: 
+
+
+• Voltage 
+
+• Current 
+
+• Temperature 
+
+• State of charge 
+
+are exceeded or undershot, the battery isolating switch opens to prevent damage to the lithium ion 
+battery. 
+
+The battery isolating switch is automatically closed when the permissible values are reached. 
+
+The battery isolating switch is opened when the safety battery terminal of the vehicle battery is 
+triggered. The battery isolating switch is closed only after repair has been completed and with terminal 
+30C available. 
+
+Digital Motor Electronics (DME) 
+
+The Digital Motor Electronics (DME) is responsible for: 
+
+• charge control 
+
+• diagnosis of the lithium ion battery 
+
+• registration of battery exchange 
+
+A 
+
+The maximum charging voltage of the lithium ion battery must not be exceeded. Therefore, use 
+chargers recommended by BMW with the corresponding function software for lithium ion batteries. 
+
+
+5.3. Alternator 
+
+The alternator power has been increased to 250 A. Alternator regulation has been optimized by active 
+alternator power regulation (AGLR). A higher energy recovery power output is made possible by these 
+adaptations. 
+
+
+27 
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+6. ID Transmitter 
+
+
+The ID transmitter is equipped with a motion sensor. 
+
+The ID transmitter is already incorporated in current G series as of March 2018 and is not a Service 
+Pack 2018 measure. All G series with Comfort Access receive this ID transmitter. 
+
+
+6.1. ID transmitter outside the vehicle 
+
+
+
+ID transmitter outside the vehicle 
+
+
+Index 
+
+Explanation 
+
+A 
+
+ID transmitter sleeping (no motion detected) 
+
+B 
+
+ID transmitter awake (motion detected) 
+
+
+6.1.1. ID transmitter sleeping 
+
+If no motion is detected by the ID transmitter because it is lying for example on a table, it goes to 
+sleep after 2 minutes. Hence, no communication is possible from the vehicle to the ID transmitter. The 
+vehicle cannot be unlocked or started with a wireless range extender whereby the wireless path from 
+and to the vehicle is increased. This measure thus effectively prevents vehicle theft using this method. 
+
+6.1.2. ID transmitter awake 
+
+The ID transmitter is woken by: 
+
+• detection of motion 
+
+• or operation of a button. 
+
+This re-establishes communication with the vehicle. 
+
+
+28 
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+6. ID Transmitter 
+
+6.2. ID transmitter in the vehicle 
+
+
+
+ID transmitter in the vehicle 
+
+If the ID transmitter is in the vehicle, it must remain awake so that communication with the vehicle 
+is possible. Communication with the ID transmitter occurs when the start/stop button is operated. 
+Engine starting would not be possible if the ID transmitter were sleeping. 
+
+If the ID transmitter is in the vehicle, communication occurs every 45 minutes: 
+
+• from the vehicle to the ID transmitter 
+
+• and from the ID transmitter to the vehicle. 
+
+This prevents the ID transmitter from going to sleep. 
+
+If an ID transmitter is in the vehicle, it goes to sleep when the vehicle is locked or doublelocked with 
+different ID transmitter. 
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+New and additional functions of Comfort Access 2.0: 
+
+• Welcome effect 
+
+• Vehicle unlocking 
+
+• Vehicle locking 
+
+
+7.1. Highlights / customer benefit 
+
+The customer only needs to have the ID transmitter with them. No actuation is required. 
+The specified distances are approximate values and may vary in the different model series. 
+
+
+Comfort Access 2.0 
+
+© 
+
+© 
+
+o 
+
+CO 
+
+lZj 
+
+>— 
+
+Index 
+
+Explanation 
+
+
+1 
+
+Welcome effect on approaching the vehicle 
+
+
+2 
+
+Unlocking of doors on approaching the vehicle further 
+
+
+3 
+
+Locking of deadlocking of doors on moving away from the vehicle 1 
+
+
+
+^he doors are locked or doublelocked, depending on whether there are still persons inside the 
+vehicle. 
+
+7.1.1. Welcome effect 
+
+Welcome effect on approaching the vehicle. 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+
+
+0 
+
+k 
+
+
+
+30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+
+Welcome effect 
+
+When the customer approaches the vehicle with the ID transmitter, the Welcome effect starts at a 
+distance of approx. 3 m (1 Oft). 
+
+The following functions are activated, depending on the model version, and the optional equipment: 
+
+• Welcome light 
+
+• Interior light 
+
+• Ground lights 
+
+• Light carpet 
+
+
+7.1.2. Vehicle unlocking 
+
+Unlocking of doors on approaching the vehicle further. 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+
+31 
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+
+CO 
+
+LU 
+
+
+Vehicle unlocking 
+
+When the customer moves closer to the vehicle with the ID transmitter, the vehicle is unlocked at a 
+distance of approx. 1.5 m (5 ft). 
+
+Depending on the settings in the Central Information Display: 
+
+• selectively only the driver's door 
+
+• or all the doors are unlocked. 
+
+7.1.3. Vehicle locking 
+
+Locking of doors on moving away from the vehicle 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+
+32 
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+
+Vehicle locking 
+
+
+When the customer leaves the vehicle range with the ID transmitter, the vehicle is automatically locked 
+or doublelocked at a distance of approx. 2 m (6 ft). 
+
+Prerequisites for locking: 
+
+• Driver's door opened and closed again 
+
+• All doors closed 
+
+• No driving readiness 
+
+• ID transmitter is, when the last door is closed, in the range of 
+max. 3 m (10 ft) distance from the vehicle. 
+
+Additional prerequisites for doublelocking: 
+
+• Seat belt buckle contact not connected 
+
+• Seat occupancy detection does not detect any person. 
+
+
+Persons in the vehicle 
+
+If there are still persons inside the vehicle, the vehicle is only locked and the alarm system is not 
+activated. 
+
+ID transmitter in the vehicle 
+
+If an ID transmitter is still in the vehicle, it is deactivated on locking for the unlocking function and the 
+vehicle is locked or doublelocked. Only after the vehicle is unlocked with a different ID transmitter is 
+the ID transmitter located in the vehicle activated again. 
+
+
+33 
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+7.2. Communication with ID transmitter 
+
+7.2.1. Communication path 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+
+co 
+
+s 
+
+CO 
+
+LU 
+
+
+Communication path 
+
+Index 
+
+Explanation 
+
+1 
+
+Remote control receiver (FBD) 
+
+2 
+
+Communication 434 MHz 1 
+
+3 
+
+ID transmitter 
+
+4 
+
+Communication 125 kHz 
+
+5 
+
+Comfort Access antenna, side sill, left 
+
+
+frequency dependent on the national-market version. 
+
+Comfort Access antennas in the side sill 
+
+When the vehicle is exited, the Comfort Access antennas in the left and right side sills are activated by 
+the Body Domain Controller (BDC). 
+
+Both antennas are also activated when selective unlocking is set. Selective unlocking is a key function 
+and accordingly only active on the corresponding ID transmitter. This makes it possible to unlock the 
+vehicle from the passenger's side with a different ID transmitter on which selective unlocking is not 
+active. 
+
+
+
+34 
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+The Comfort Access antennas in the left and right side sills transmit every 0.4 s at a frequency of 
+125 kHz. If there is no ID transmitter in the transmission range of the antennas, these are activated 
+with 400 mA per antenna. 
+
+If an ID transmitter is in the transmission range of the antennas, activation per antenna is reduced to 
+50 mA, depending on the distance between the ID transmitter and the vehicle. To prevent the vehicle 
+battery from being excessively discharged, the Comfort Access antennas are deactivated after the 
+vehicle has stood idle for 2 days. A driving cycle must happen in order to reactivate this function. In this 
+way, the automatic functions are inactive without actuation by the customer. Comfort Access functions 
+with deactivated antennas as in the 1st generation. 
+
+ID transmitter 
+
+When an ID transmitter receives a signal from a Comfort Access antenna in the side sill, it transmits 
+a message to the remote control receiver (FBD). The ID transmitter transmits, depending on the field 
+strength of the signal received, a corresponding message to the remote control receiver. This message 
+is evaluated and consequently the distance is determined by the Body Domain Controller (BDC). The 
+different actions can therefore be activated, depending on the distance between the ID transmitter and 
+the vehicle. 
+
+
+7.2.2. Welcome effect 
+
+
+
+Welcome effect 
+
+
+35 
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Remote control receiver (FBD) 
+
+2 
+
+Communication 434 MHz 1 
+
+3 
+
+ID transmitter 
+
+4 
+
+Communication 125 kHz 
+
+5 
+
+Comfort Access antenna, side sill, left 
+
+6 
+
+Comfort Access antenna, side sill, right 
+
+
+1 Frequency dependent on the national-market version. 
+
+When the customer approaches the vehicle with the ID transmitter, the Welcome effect starts at a 
+distance of approx. 3 m (10 ft). 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+
+7.2.3. Vehicle unlocking 
+
+
+
+Vehicle unlocking 
+
+". .. .. 
+
+CO 
+
+UJ 
+
+>— 
+
+Index 
+
+Explanation 
+
+
+1 
+
+Remote control receiver (FBD) 
+
+
+2 
+
+Communication 434 MHz 1 
+
+
+3 
+
+ID transmitter 
+
+
+4 
+
+Communication 125 kHz 
+
+
+5 
+
+Comfort Access antenna, side sill, left 
+
+
+6 
+
+Comfort Access antenna, side sill, right 
+
+
+
+1 Frequency dependent on the national-market version. 
+
+
+36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+When the customer moves closer to the vehicle with the ID transmitter, the vehicle is unlocked at a 
+distance of approx. 1.5 m (5 ft). 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+7.2.4. Vehicle locking 
+
+
+
+Vehicle locking 
+
+Index 
+
+Explanation 
+
+1 
+
+Remote control receiver (FBD) 
+
+2 
+
+Communication 434 MHz 1 2 
+
+3 
+
+ID transmitter 
+
+4 
+
+Communication 125 kHz 
+
+5 
+
+Comfort Access antenna, side sill, left 
+
+6 
+
+Comfort Access antenna, side sill, right 
+
+
+1 Frequency dependent on the national-market version. 
+
+When the customer leaves the vehicle range with the ID transmitter, the vehicle is automatically locked 
+or doublelocked at a distance of approx. 2 m (6 ft). 
+
+The graphic shows the driver's side, the function on the passenger's side is identical! 
+
+The customer moves away from the vehicle with the ID transmitter after the driver's door has been 
+opened and closed. The vehicle is automatically locked or doublelocked at a distance of approximately 
+
+2 m (6 ft). 
+
+
+37 
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+Prerequisites for locking: 
+
+• Driver's door opened and closed again 
+
+• All doors closed 
+
+• No driving readiness 
+
+Additional prerequisites for deadlocking: 
+
+• Seat belt buckle contact not connected 
+
+• Seat occupancy detection does not detect any person 
+
+In the course of deadlocking the alarm system is activated in addition to the vehicle being locked. 
+
+7.3. Settings 
+
+7.3.1. Automatic functions 
+
+The following additional functions can be individually set with Comfort Access 2.0: 
+
+• Unlock by approaching 
+
+• Lock by leaving 
+
+Unlock by approaching 
+
+
+
+1 
+
+
+2 
+
+
+Comfort Access settings 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Unlock by approaching 
+
+2 
+
+Lock by leaving 
+
+
+38 
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+Lock by leaving 
+
+
+ft _ 
+
+—Unlock by approaching 
+
+_o D Lock by leaving 
+
+< 
+
+
+Comfort Access settings 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Unlock by approaching 
+
+2 
+
+Lock by leaving 
+
+
+~ EE) ,.il! 2DAY <1 10:46 
+
+Vehicle locks automatically by leaving. Do 
+not leave any persons in the vehicle. 
+
+
+
+7.3.2. Selective unlocking 
+
+Selective unlocking can be activated via the Doors / Key menu. Only the driver's door is unlocked with 
+selective unlocking. 
+
+
+7.4. Wiring diagram 
+
+The wiring diagram shows Comfort Access 2.0 on the example of the G05. 
+
+
+39 
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+
+Comfort Access 
+
+
+40 
+
+
+TE17-2259 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+7. Comfort Access 2.0 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuses in the power distribution box, front right 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Fuse in the Body Domain Controller 
+
+4 
+
+Switch in door lock, front passenger door 
+
+5 
+
+CAN terminator 
+
+6 
+
+Outside door handle electronics, front passenger (TAGEBF) 
+
+7 
+
+Comfort Access antenna, side sill, right 
+
+8 
+
+Switch in door lock, passenger's side rear 
+
+9 
+
+Outside door handle electronics, passenger's side rear (TAGEBFH) 
+
+10 
+
+Fuses in the power distribution box, rear right 
+
+11 
+
+Luggage compartment light, right 
+
+12 
+
+Tailgate function module HKFM 
+
+13 
+
+Control unit for contactless tailgate opening 
+
+14 
+
+Sensor at bottom for contactless tailgate opening 
+
+15 
+
+Sensor at top for contactless tailgate opening 
+
+16 
+
+Button for closing tailgate 
+
+17 
+
+Tailgate contact switch in the tailgate lock 
+
+18 
+
+Button for tailgate 
+
+19 
+
+Acoustic warning device for tailgate activation 
+
+20 
+
+Luggage compartment light, left 
+
+21 
+
+Comfort Access antenna, luggage compartment 
+
+22 
+
+Outside door handle electronics, driver's side rear (TAGEFAH) 
+
+23 
+
+Remote control receiver (FBD) 
+
+24 
+
+Switch in door lock, driver's side rear 
+
+25 
+
+Comfort Access antenna, side sill, left 
+
+26 
+
+Comfort Access antenna, passenger compartment 
+
+27 
+
+Outside door handle electronics, driver (TAGEFA) with Near Field 
+
+Communication (NFC) 
+
+28 
+
+Switch in door lock, driver's side 
+
+29 
+
+Wireless charging station with control electronics for Near Field 
+
+Communication (NFC) 
+
+30 
+
+Power window electronics, driver's side front 
+
+31 
+
+Comfort Access antenna, passenger compartment 
+
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+8. BMW Digital Key 
+
+8.1. Introduction 
+
+BMW Digital Key facilitates access to and use of the vehicle by: 
+
+• a Samsung smartphone 
+
+• or with an NFC key card 
+
+Only Samsung smartphones are supported at the market introduction of BMW Digital Key. 
+No ID transmitter is required. 
+
+BMW Digital Key is a component part of the optional equipment Comfort Access (SA 322). 
+
+
+8.2. Functions 
+
+
+8.2.1. Unlocking 
+
+To unlock the vehicle, the corresponding smartphone or the NFC chip card must be held close to the 
+outside door handle. The wireless range of NFC is only a few centimetres. 
+
+8.2.2. Vehicle starting 
+
+To start the vehicle, the corresponding smartphone or the NFC chip card must be placed in the 
+wireless charging station or NFC station. Then the vehicle can be started by pressing the start/stop 
+button. 
+
+
+8.3. Vehicle components 
+
+8.3.1. Outside door handle electronics 
+
+
+
+Outside door handle with Near Field Communication (NFC) 
+
+
+42 
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+8. BMW Digital Key 
+
+
+To unlock the vehicle, the corresponding smartphone or the NFC chip card must be held close to the 
+outside door handle. The wireless range of NFC is only a few centimetres. 
+
+
+
+Outside door handle with Near Field Communication (NFC) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronics in the outside door handle 
+
+
+The outside door handle electronics, driver (TAGEFA) with NFC is installed only in the driver's door 
+and only with the optional equipment Comfort Access (SA 322). 
+
+8.3.2. NFC station 
+
+
+
+NFC station 
+
+
+An NFC station is installed with the optional equipment Comfort Access (SA 322) in vehicles with a 
+wireless charging stations. 
+
+Feature distinguishing an NFC station from a wireless charging station (WCA/NFC): 
+
+
+43 
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+8. BMW Digital Key 
+
+
+• There is no LED on the NFC station 
+
+• An LED for the charging function is incorporated on the wireless charging station (WCA/NFC). 
+
+The NFC control unit is not shown by the ISTA diagnosis system in the bus overview. Diagnosis is 
+performed via the Body Domain Controller. 
+
+8.3.3. Wireless charging station 
+
+
+
+Wireless charging station with Near Field Communication (NFC) 
+
+
+The antenna and the control electronics for Near Field Communication have additionally been installed 
+in the wireless charging station. 
+
+
+The wireless charging station (WCA) monitors the charging bay and controls the charging procedure. 
+
+
+The Near Field Communication (NFC) control electronics is required for Near Field Communication in 
+the vehicle. The received NFC data are evaluated by the Body Domain Controller (BDC). 
+
+
+The WCA/NFC control unit is not shown by the ISTA diagnosis system in the bus overview. Diagnosis 
+is performed via the Body Domain Controller. 
+
+
+8.4. Smartphone, NFC key card 
+
+No key data are stored on the NFC key card or on the smartphone at the market introduction of BMW 
+Digital Key. For service purposes the ID transmitter must be used so that the key data can be read out 
+with the KeyReader. At a later stage it will also be possible to store one's key data on the NFC key card 
+or the smartphone. 
+
+8.4.1. NFC key card 
+
+The NFC key card facilitates access to and use of the vehicle. The NFC key card can be activated 
+by the customer in the vehicle via the corresponding Drive menu. A ConnectedDrive account is not 
+required for the NFC key card. 
+
+
+44 
+
+
+
+General Vehicle Electronics 2018 
+
+8. BMW Digital Key 
+
+8.4.2. Smartphone 
+
+Requirements: 
+
+• Supported Samsung smartphone with installed BMW Connected app 
+
+• ConnectedDrive account 
+
+Only Samsung smartphones from Galaxy class S7 and Android from 8.1 are supported at the market 
+introduction of BMW Digital Key. 
+
+The following is required for authorization at the BMW Retailer: 
+
+• Vehicle registration papers 
+
+• Customer's ID card 
+
+• ConnectedDrive account 
+
+The documents required may differ from country to country. The procedure is always similar 
+to reordering an ID transmitter. The BMW Retailer activates the corresponding services in the 
+ConnectedDrive Service Cockpit. The owner determines their Digital Key Code (4-digit), which is also 
+entered during activation by the BMW Retailer in the ConnectedDrive Service Cockpit. 
+
+This authorizedcustomer smartphone becomes the Owner Digital Key and is required for possible 
+passing-on for additional Friends Digital Keys. 
+
+The Digital Key for the owner is free for 1 year. 
+
+8.4.3. Activating an additional smartphone (Friends Digital Key) 
+
+Additional smartphones can be activated for BMW Digital Key. The owner is required to book a 
+corresponding package via the ConnectedDrive Store for this purpose. The additional Friends Digital 
+Key is valid for 1 year. 
+
+A separate ConnectedDrive account is required for each additional smartphone. 
+
+Requirements: 
+
+• Supported Samsung smartphone with installed BMW Connected app 
+
+• Own ConnectedDrive account of the friend on the Friends smartphone 
+
+A 
+
+Friends smartphones cannot invite further Friends smartphones! 
+
+
+Authorizingan additional smartphone (Friends Digital Key) 
+
+The following steps are required to authorizean additional smartphone for Friends Digital Key. 
+
+Activity on the Owner smartphone (Owner Digital Key): 
+
+
+45 
+
+
+
+
+General Vehicle Electronics 2018 
+
+8. BMW Digital Key 
+
+• Registered with the ConnectedDrive account and activated Owner Digital Key 
+
+• Passing on of key started in the Connected app 
+
+• The TAN is displayed and stored in the Connected app 
+
+Activity on the additional smartphone (Friends Digital Key): 
+
+• Registered with the Friends smartphone ConnectedDrive account and logged into the 
+Connected app 
+
+• Invitation is accepted on the Friends smartphone 
+
+The vehicle can be unlocked and locked with this Friends smartphone. 
+
+Activity in the vehicle: 
+
+• Place Friends smartphone in the wireless charging station or NFC station 
+
+• Input of the Digital Key Code and the TAN in the corresponding Drive menu. 
+
+The Digital Key Code (4-digit) required to pass on the key and the TAN (4-digit) are displayed on the 
+Owner smartphone in the ConnectedDrive app. 
+
+These codes required to activate the Friends smartphone should for security reasons be passed on by 
+telephone call. 
+
+Additional smartphone 
+
+A maximum of 4 Friends Digital Keys can be invited. Technically speaking, up to 19 Friends Keys could 
+be realised. Only packages with 1 Owner Digital Key and 4 Friends Digital Keys are offered in the 
+ConnectedDrive store. The Digital Keys are valid for 1 year each. 
+
+
+46 
+
+
+
+General Vehicle Electronics 2018 
+
+9. Wireless Technologies 
+
+9.1. Comparison of wireless technologies 
+
+Comparison of wireless technologies for vehicle access. 
+
+Bluetooth is not used for vehicle access in BMW vehicles. 
+
+
+
+ID transmitter 
+
+NFC 
+
+Bluetooth 
+
+Frequency 
+
+LF 1 125 kHz 
+
+13.56 MHz 
+
+2.4 GHz 
+
+
+HF 2 434 MHz 3 
+
+
+
+
+Positioning 
+
+
+
+
+
+Centimetre-precision 
+positioning by LF 1 
+
+
+Positioning is implied 
+by short range 
+
+
+Strong reflection 
+Positioning accuracy 
+approx. 1 m 
+
+
+Comfort / range 
+
+
+
+Max. range up to 
+approx. 6 m 
+
+
+Max. range up to 
+approx. 5 m 
+
+
+Max. range up to 
+approx. 50 m 
+
+
+Security 
+
+Secure key memory in 
+
+Secure memory in the 
+
+Not secure due to 
+
+
+the ID transmitter 
+
+Secure Element 
+
+possible software 
+
+
+Secure hardware 
+
+Hardware interface 
+
+manipulation of the 
+
+
+
+between NFC and 
+Secure Element 
+
+operating system 
+
+
+1 LF Low Frequency 
+
+2 HF High Frequency 
+
+3 Frequency dependent on the national-market version 
+
+
+47 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Vehicle Electronics 2018 
+
+9. Wireless Technologies 
+
+9.1.1. ID transmitter 
+
+The ID transmitter can be positioned with centimeter precision. The Comfort Access antennas are 
+activated by the Body Domain Controller (BDC). Communication from the Comfort Access antennas to 
+the ID transmitter is performed at 125 kHz. Depending on its position, the ID transmitter receives the 
+data of: 
+
+
+• the antennas in the side sills 
+
+• the antennas in the vehicle interior 
+
+• the antennas in the luggage compartment 
+
+The ID transmitter transmits, depending on the data received and their field strength, a corresponding 
+message to the remote control receiver. Communication from the ID transmitter to the remote control 
+receiver is performed at 434 MHz (frequency dependent on the national-market version). The data 
+received by the remote control receiver (FBD) are evaluated by the Body Domain Controller. This 
+makes it possible to pinpoint precisely the position of the ID transmitter. 
+
+Security against manipulation is ensured by secure hardware. 
+
+
+9.1.2. NFC 
+
+Precise positioning is automatically achieved by the short range of NFC. 
+
+Security is ensured by a Secure Element in the mobile phone. 
+
+9.1.3. Bluetooth 
+
+The long range of Bluetooth can give rise to strong reflections and to damping. This makes precise 
+positioning impossible. 
+
+Security is not guaranteed due to software-manipulation of the operating system. 
+
+
+48 
+
+
+
+
+
+

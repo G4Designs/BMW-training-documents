@@ -1,0 +1,4715 @@
+Technical training. 
+
+Product information. 
+
+G30 Voltage Supply and Bus Systems 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1604 11/1/2016 
+
+\ _ / 
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as the result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2016 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich. 
+
+The information contained in this document forms an integral part of the BMW Group Technical 
+Qualification and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: September 2016 
+
+Technical training. 
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+Contents 
+
+
+1. Introduction.1 
+
+2. Bus Systems.2 
+
+2.1. Bus overview.2 
+
+2.2. Main bus systems.4 
+
+2.2.1. K-CAN.4 
+
+2.2.2. PT-CAN.5 
+
+2.2.3. MOST.5 
+
+2.2.4. FlexRay.6 
+
+2.2.5. Ethernet.7 
+
+2.2.6. D-CAN.11 
+
+2.3. Sub-bus systems.11 
+
+2.3.1. LIN-Bus.11 
+
+2.3.2. Local CAN.22 
+
+2.3.3. USB.22 
+
+2.4. Diagnosis access OBD2.22 
+
+3. Control Units.23 
+
+3.1. Installation locations of control units.23 
+
+3.2. Gateway.25 
+
+3.2.1. Body Domain Controller (BDC).25 
+
+3.3. Control units on the MOST bus.28 
+
+3.3.1. Head unit.28 
+
+3.3.2. Hi-fi amplifier with MOST bus.28 
+
+3.3.3. Rear seat entertainment (RSE).30 
+
+3.4. Control units on the K-CAN2.31 
+
+3.4.1. Roof function center (FZD).31 
+
+3.4.2. Trunk function module (HKFM).32 
+
+3.4.3. Seat modules.32 
+
+3.4.4. Seat pneumatics modules.33 
+
+3.5. Control units on the K-CAN3.34 
+
+3.5.1. Frontal Light Electronics.34 
+
+3.5.2. Parking Maneuver Assistant (PMA).35 
+
+3.5.3. Lane change warning (SWW) also know as the Short Range Radar 
+
+Sensor (SRR).36 
+
+3.6. Control units on the K-CAN4.37 
+
+3.6.1. Active Sound Design (ASD).37 
+
+3.6.2. Controller (CON).38 
+
+3.6.3. Integrated automatic heating / air conditioning (IHKA).38 
+
+3.6.4. Light Effect Manager (LEM).39 
+
+3.6.5. Telematic Communication Box (TCB).40 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+Contents 
+
+
+3.7. Control units on the K-CAN5.41 
+
+3.7.1. Remote control receiver (FBD).41 
+
+3.8. Control units on the Ethernet.41 
+
+3.8.1. Active Cruise Control (ACC) Long Range Radar (LRR) sensor.41 
+
+3.8.2. Rear view camera (RFK).42 
+
+3.8.3. Top Rear Side View Camera (TRSVC).42 
+
+3.8.4. Camera-based driver support systems (KAFAS).43 
+
+3.9. Control units on the PT-CAN.44 
+
+3.9.1. Digital Motor Electronics (DME, DME2).44 
+
+3.9.2. Fligh-beam assistant (FLA).44 
+
+3.9.3. Instrument panel (KOMBI).45 
+
+3.9.4. Night vision electronics (NVE).45 
+
+3.10. Control units on the PT-CAN2.46 
+
+3.10.1. Electronic transmission control (EGS).46 
+
+3.10.2. Gear selector switch (GWS).46 
+
+3.10.3. Power Control Unit (PCU).47 
+
+3.11. Control units on the FlexRay.48 
+
+3.11.1. Advanced Crash Safety Module (ACSM).48 
+
+3.11.2. Dynamic Stability Control (DSC).48 
+
+3.11.3. Electric Active Roll Stabilization (EARS).49 
+
+3.11.4. Electronic Power Steering (EPS).50 
+
+3.11.5. Rear axle slip angle control (FISR).50 
+
+3.11.6. Optional equipment system (SAS).51 
+
+3.11.7. Transfer case.52 
+
+3.11.8. Vertical Dynamics Platform (VDP).52 
+
+3.12. Control units on the local CAN.53 
+
+3.12.1. Radar sensor (primary).53 
+
+3.12.2. Lane change warning SWW2 (secondary) also know as the Short 
+
+Range Radar Sensor (SRR2).53 
+
+4. Voltage Supply.54 
+
+4.1. Overview of voltage supply.54 
+
+4.1.1. System wiring diagram.54 
+
+4.2. Components.56 
+
+4.2.1. Overview of luggage compartment.56 
+
+4.2.2. Overview of engine compartment.57 
+
+4.2.3. Battery.57 
+
+4.2.4. Intelligent battery sensor.58 
+
+4.2.5. Safety battery terminal.58 
+
+4.2.6. Alternator.59 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+Contents 
+
+
+4.2.7. Integrated supply module.59 
+
+4.2.8. Power distribution box, front right.60 
+
+4.2.9. Power distribution box, front left (PHEV Version only).60 
+
+4.2.10. Power distribution box, rear.61 
+
+4.2.11. Body Domain Controller.61 
+
+4.2.12. PCU with vehicle electrical system assistance measure.62 
+
+4.2.13. 24 V Electronic Power Steering.62 
+
+5. Terminal Control.66 
+
+5.1. Introduction.66 
+
+5.2. Vehicle conditions.66 
+
+5.3. Power supply terminals.70 
+
+5.4. Partial network operation.71 
+
+5.4.1. Prerequisites for partial network operation.71 
+
+5.4.2. Prerequisites of control units for partial network operation.71 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+1. Introduction 
+
+
+The electrical system of the new BMW 5 Series is based on the G12. The following topic is described 
+in the Technical Reference Material for “ST 1501 G12 Complete Vehicle”. 
+
+
+Topic 
+
+“ST1501 G12 Complete Vehicle” 
+
+Ethernet 
+
+“G12 General Vehicle Electronics” 
+
+
+1 
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.1. Bus overview 
+
+
+
+Bus overview 
+
+
+TC16-C200.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+ACC 
+
+Active Cruse Control also known as Long Range Radar sensor (LRR) 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AMPT 
+
+Top HiFi amplifier 
+
+ASD 
+
+Active Sound Design 
+
+BDC 
+
+Body Domain Controller 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DME2 
+
+Digital Motor Electronics 2 
+
+DSC 
+
+Dynamic Stability Control 
+
+EARSH 
+
+Electric active roll stabilization rear 
+
+EARSV 
+
+Electric active roll stabilization front 
+
+EGS 
+
+Electronic transmission control 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FBD 
+
+Remote control receiver 
+
+FLA 
+
+High-beam assistant 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector 
+
+HEADUNIT 
+
+Head Unit 
+
+HKFM 
+
+Trunk function module 
+
+HSR 
+
+Rear axle slip angle control 
+
+IHKA 
+
+Integrated automatic heating / air conditioning 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KOMBI 
+
+Instrument panel 
+
+LEM 
+
+Light Effect Manager 
+
+NVE 
+
+Night Vision Electronics 
+
+PCU 
+
+Power Control Unit 
+
+PMA 
+
+Parking Maneuver Assistant 
+
+RFK 
+
+Reverse camera 
+
+RSE 
+
+Rear Seat Entertainment 
+
+RSL 
+
+Radar Sensor, Left (Evasion Aid) 
+
+RSR 
+
+Radar Sensor, Right (Evasion Aid) 
+
+SAS 
+
+Optional equipment system 
+
+SMBF 
+
+Seat module, passenger 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+SMFA 
+
+Seat module, driver 
+
+SPNMVL 
+
+Seat pneumatics module front left 
+
+SPNMVR 
+
+Seat pneumatics module front right 
+
+SWW 
+
+Lane change warning (primary) also known as the Short Range Radar Sensor 
+(SRR) 
+
+SWW2 
+
+Lane change warning (secondary) also known as the Short Range Radar 
+
+Sensor (SRR2) 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top rear side view camera 
+
+VDP 
+
+Vertical Dynamic Platform 
+
+VTG 
+
+Transfer case 
+
+WCA 
+
+Wireless charging tray 
+
+ZGM 
+
+Central Gateway Module 
+
+1 
+
+Start-up node control units for starting and synchronizing 
+the FlexRay bus system 
+
+2 
+
+Control units with wake-up authorization 
+
+3 
+
+Control units also connected at terminal 15 WUP 
+
+
+2.2. Main bus systems 
+
+2.2.1. K-CAN 
+
+In the G30 the following K-CAN’s are used: 
+
+• K-CAN2 
+
+• K-CAN3 
+
+• K-CAN4 
+
+• K-CAN5 
+
+The control units on the K-CAN5 are not displayed in the bus overview by the BMW diagnosis system 
+ISTA. Diagnosis is performed via the Body Domain Controller. 
+
+All K-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.2.2. PT-CAN 
+
+In the G30 the following PT-CAN are used: 
+
+• PT-CAN 
+
+• PT-CAN2 
+
+The gateway for the PT-CAN2 is located in the DME. 
+
+Both PT-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+2.2.3. MOST 
+
+On the G30 the MOST system known from other BMW models with a data transfer rate of 22.5 MBit/s 
+is used. The gateway for the MOST system is located in the HEADUNIT. 
+
+
+5 
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.2.4. FlexRay 
+
+
+
+FlexRay 
+
+
+6 
+
+
+TE14-1184.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (DSC) 
+
+2 
+
+Digital Motor Electronics (DME2) (8-cylinder engine) 
+
+3 
+
+Transfer case 
+
+4 
+
+Electronic Power Steering (EPS) 
+
+5 
+
+Electric active roll stabilization front (EARSV) 
+
+6 
+
+Digital Motor Electronics (DME) (4 & 6-cylinder engine) 
+
+7 
+
+Body Domain Controller (BDC) 
+
+8 
+
+Vertical Dynamics Platform (VDP) 
+
+9 
+
+Electric active roll stabilization rear (EARSH) 
+
+10 
+
+Rear axle slip angle control (HSR) 
+
+11 
+
+Advanced Crash Safety Module (ACSM) 
+
+12 
+
+Optional equipment system (SAS) 
+
+
+The FlexRay overview includes all engine versions and optional equipment. The DME (item 6) is used 
+for 4 & 6-cylinder engines. On 8-cylinder engines the DME2 (item 2) is used. The terminating resistors 
+for line termination are located in the DME control units and in the Body Domain Controller. 
+
+The FlexRay has a data transfer rate of 10 MBit/s. 
+
+2.2.5. Ethernet 
+
+On the G30 the 2-wire OABR Ethernet (OPEN Alliance BroadR-Reach) from the G12 is used. 
+
+The Ethernet variant with 5 lines (4 data lines and 1 activation line) is still used on the G30 by the 
+OBD2 interface to the Body Domain Controller. 
+
+Use of 2-wire OABR Ethernet on the G30 
+
+The following control units are connected to the vehicle electrical system via 2-wire OABR Ethernet 
+in the G30: 
+
+• Active Cruise Control (ACC) 
+
+• Camera-based driver support systems (KAFAS) 
+
+• Top Rear Side View Camera (TRSVC) 
+
+• Rear view camera (RFK) 
+
+
+7 
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+The following control units are additionally connected via 2-wire OABR Ethernet in the G30: 
+
+• Head unit 
+
+• Rear Seat Entertainment (RSE) 
+
+• Optional equipment system (SAS) 
+
+• Telematic Communication Box 
+
+
+Ethernet in the vehicle 
+
+The standard "Open Alliance BroadR-Reach" (OABR Ethernet) has been specially developed as a 
+new data transmission layer for use in vehicles. OABR Ethernet only requires an unshielded twisted 
+two-wire connection. OABR Ethernet supports bidirectional 100 MBit/s communication between 2 
+nodes. This means that both nodes can simultaneously send and receive at a data transfer rate of 
+100 MBit/s. OABR Ethernet requires point-to-point networking. This means that the bus system is 
+not split up between multiple nodes, as is the case e.g. with Controller Area Network (CAN) systems. 
+Instead, Ethernet switches are used for the connection of further nodes. Today, Ethernet switches 
+are integrated in the following control units: Body Domain Controller (BDC), Head Unit (HU), optional 
+equipment system (SAS), Top Rear Side View Camera (TRSVC). An Ethernet switch (ENS) is used 
+on the G30 depending on the vehicle equipment. In the event of failure of an Ethernet switch, all 
+bus users connected by it are disconnected from the rest of the network and are no longer able to 
+communicate via Ethernet. 
+
+Depending on the vehicle equipment, the control units are connected to the vehicle electrical 
+system in different ways. 
+
+On vehicles with Navigation, the data transfer takes place from the Head Unit High to the instrument 
+cluster via an APIX data cable. 
+
+Depending on the vehicle equipment an Ethernet switch may in some cases be required. 
+
+A wake-up line may be required for control units that are only connected to the Ethernet and 
+are not additionally connected to a body CAN. 
+
+Control units on the Ethernet cannot be woken up via the bus. Instead, the control units are activated 
+via the wake-up line or switched directly via terminal 15. As a result of the activation via a wake-up line, 
+so-called partial network operation is also possible. In partial network operation, individual control units 
+can switch to a rest state in different vehicle conditions. 
+
+The Ethernet topology of the G30 is listed below. 
+
+Ethernet topology with Head Unit High 
+
+In the wiring diagram the connection of the Top Rear Side View Camera (TRSVC) control unit and 
+rear view camera (RFK) is shown. In the vehicle, either TRSVC is installed for a vehicle with multiple 
+cameras, or RFK for a vehicle with a rear view camera (standalone). 
+
+On vehicles with Head Unit High, the Telematic Communication Box (TCB) and the Rear Seat 
+Entertainment are directly connected to the head unit. The data transfer from the Head Unit High to 
+the instrument cluster takes place via APIX. The instrument cluster does not require Ethernet. As a 
+result, the Ethernet interfaces on the Body Domain Controller are sufficient, and no Ethernet switch 
+(ENS) is required. 
+
+
+8 
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+© 
+
+© 
+
+
+
+Ethernet topology on vehicles with Head Unit High 
+
+
+9 
+
+
+TE160202 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Top Rear Side View Camera (TRSVC) 
+
+2 
+
+Optional equipment system (SAS) 
+
+3 
+
+Active Cruise Control (ACC) Long Range Radar (LRR) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Camera-based driver support systems (KAFAS) 
+
+6 
+
+OBD2 interface (Ethernet with 5 lines) 
+
+7 
+
+Instrument panel (KOMBI) 
+
+8 
+
+APIX data line 
+
+9 
+
+Head Unit (HEADUNIT) 
+
+10 
+
+Rear Seat Entertainment 
+
+11 
+
+Telematic Communication Box (TCB) 
+
+12 
+
+Rear view camera (RFK) 
+
+The data transfer takes place from the Head Unit High to the instrument cluster via APIX connection. 
+
+Ethernet switch 
+
+
+
+Ethernet switch 
+
+
+The Ethernet switch is required for expansion of the Ethernet network. It connects the control units 
+and forwards their data packages accordingly. 
+
+The Ethernet switch is not displayed in the bus overview by the BMW diagnosis system ISTA. 
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.2.6. D-CAN 
+
+The D-CAN has a data transfer rate of 500 kBit/s. 
+
+2.3. Sub-bus systems 
+
+2.3.1. LIN-Bus 
+
+For a better overview, the LIN buses are divided up between several wiring diagrams for the G30. 
+
+
+11 
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview in the door area 
+
+
+
+LN-a* 
+
+LM&m 
+
+Lfi-Bua 
+
+LNBm 
+
+in art 
+
+iM-a* 
+
+UN Bui 
+UN Bin 
+UN-toi 
+
+
+\SM 
+
+C< 
+
+
+
+® 
+
+m 
+
+
+
+© 
+
+
+
+LIN-Bus 
+
+
+
+12 
+
+
+90Z0-91H1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Exterior mirror, front passenger side 
+
+3 
+
+Memory seat, front passenger's side 
+
+4 
+
+Power window electronics, passenger's side front 
+
+5 
+
+Power window electronics, passenger’s side rear 
+
+6 
+
+Hands free trunk opening 
+
+7 
+
+Power window electronics, driver’s side rear 
+
+8 
+
+Power window electronics, driver's side front 
+
+9 
+
+Memory switch, driver’s side front 
+
+10 
+
+Switch block, driver's door 
+
+11 
+
+Exterior mirror, driver's side 
+
+
+13 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for engine electrical system and voltage supply 
+
+ES© 
+
+
+
+© 
+
+
+c« 
+
+
+LIN-Bus 
+
+
+
+& 
+
+
+© 
+
+
+14 
+
+
+TE160207 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Air damper control 
+
+2 
+
+Electric fan 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Power Control Unit (PCU) 500W 
+
+5 
+
+Rear right power distribution box 
+
+6 
+
+Power Control Unit (PCU) 150 W 1 
+
+7 
+
+Intelligent Battery Sensor (IBS) 
+
+8 
+
+Alternator 
+
+9 
+
+Digital Motor Electronics (DME) 
+
+
+^he Power Control Unit PCU 150 W is installed in vehicles with 24 V steering. 
+
+
+15 
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for roof function center 
+
+
+© 
+
+
+
+® ® 
+
+
+© 
+
+
+
+© 
+
+
+
+<*>© 
+
+
+
+
+© 
+
+
+
+LIN-Bus 
+
+
+16 
+
+
+TE14-1187 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rain-light-solar-condensation sensor 
+
+2 
+
+Inside mirror 
+
+3 
+
+Roof function center (FZD) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Sliding roofliner motor 
+
+6 
+
+Interior lighting, rear 
+
+7 
+
+Siren with tilt alarm sensor (SINE) 
+
+
+17 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for steering column switch cluster and operating units 
+
+
+© 
+
+-<5> 
+
+
+© 
+
+m 
+
+<*> 
+
+
+© 
+
+
+
+
+© 
+
+
+© 
+
+
+® 
+
+
+
+
+
+© 
+
+-fe- 
+
+
+
+© 
+
+
+
+© 
+
+
+
+LIN-Bus 
+
+
+18 
+
+
+TE14-118 
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wiper motor 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Operating unit, center console 
+
+4 
+
+Audio operating facility 
+
+5 
+
+Hazard warning switch/intelligent Safety button 
+
+6 
+
+Touch detection HOD (Hands Off Detection) 
+
+7 
+
+Steering wheel module 
+
+8 
+
+Multifunction steering wheel buttons, right 
+
+9 
+
+Operating unit for light 
+
+10 
+
+Steering column switch cluster (SZL) 
+
+11 
+
+Steering column adjustment 
+
+
+19 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+LIN bus overview for integrated automatic heating/air conditioning system 
+
+
+® 
+
+
+© 
+
+
+!BI 
+
+
+® 
+
+
+
+® 
+
+
+i M {k*. 
+
+
+© 
+
+E5- 
+
+
+i 
+
+
+* 
+
+® 
+
+© 
+
+
+© 
+
+
+
+
+
+-<M> 
+
+<m> 
+
+® 
+
+® 
+
+<£>- 
+
+
+® 
+
+® 
+
+■H0J* 
+
+
+
+® 
+
+© 
+
+© 
+
+© 
+
+
+
+
+<5> 
+
+■«sv 
+
+
+© 
+
+<M> 
+
+
+831 
+
+
+
+
+© 
+
+
+
+LIN-Bus 
+
+
+20 
+
+
+TE16'0210_2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Blower motor 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Operating unit, rear passenger compartment 
+
+4 
+
+Stepper motor for blending flap, right rear passenger compartment 
+
+5 
+
+Stepper motor for blending flap, left rear passenger compartment 
+
+6 
+
+Stepper motor for blending flap, right 
+
+7 
+
+Stepper motor for blending flap, left 
+
+8 
+
+Stepper motor for air distribution, right rear passenger compartment 
+
+9 
+
+Stepper motor for air distribution, left rear passenger compartment 
+
+10 
+
+Stepper motor for footwell, right 
+
+11 
+
+Stepper motor for footwell, left 
+
+12 
+
+Stepper motor for stratification, right 
+
+13 
+
+Stepper motor for stratification, left 
+
+14 
+
+Stepper motor for ventilation, right 
+
+15 
+
+Stepper motor for ventilation, left 
+
+16 
+
+Stepper motor for defrost function 
+
+17 
+
+Stepper motor for air recirculation function 
+
+18 
+
+Stepper motor for fresh air 
+
+19 
+
+Operating unit, air conditioning 
+
+20 
+
+Touch operating unit in the center grill (Not for the US) 
+
+21 
+
+Integrated Automatic Heating / Air conditioning (IHKA) 
+
+
+The LIN bus overview shows the Integrated Automatic Heating/Air conditioning system (IHKA) with the 
+maximum possible LIN bus components. 
+
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+2. Bus Systems 
+
+2.3.2. Local CAN 
+
+In the G30 the following Local Controller Area Networks are available with the corresponding 
+
+equipment: 
+
+• Local CAN from electronic transmission control (EGS) to the gear selector switch (GWS). 
+
+• Local CAN from the camera-based driver assistance system KAFAS to the 
+Parking Maneuver Assistant (PMA). 
+
+• Local CAN from the optional equipment system (SAS) to the radar sensor, front right (RSR). 
+
+• Local CAN from the optional equipment system (SAS) to the radar sensor, front left (RSL) and 
+lane change warning (secondary) (SWW2). 
+
+• Local CAN from the lane change warning (primary) (SWW) also know as the Short Range 
+Radar Sensor (SRR) to the radar sensor, right (RSR), to the radar sensor, left (RSL), and to 
+the lane change warning (secondary) (SWW2) also know as the Short Range Radar Sensor 
+(SRR2). 
+
+The control units on the local CAN are not displayed in the bus overview by the BMW diagnosis 
+
+system ISTA. Diagnosis takes place via the corresponding primary control unit. 
+
+The local CAN buses have a data transfer rate of 500 kBit/s. 
+
+
+2.3.3. USB 
+
+The following USB interfaces are provided in the G30 depending on the vehicle equipment: 
+
+• In the center console (standard) 
+
+• In the center armrest 
+
+• In the base plate 
+
+• USB interface in Rear Seat Entertainment 
+
+2.4. Diagnosis access OBD2 
+
+The vehicle diagnosis via D-CAN is effected using the OBD2 interface. The Ethernet access for the 
+vehicle programming is also located in the OBD2 interface. 
+
+
+22 
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.1. Installation locations of control units 
+
+
+
+Installation locations of control units 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rear view camera (RFK) 
+
+2 
+
+Remote control receiver (FBD) 
+
+3 
+
+Top HiFi amplifier (AMPT) 
+
+4 
+
+Lane change warning (secondary) (SWW2) 
+
+5 
+
+Video module (VM) (Not for the US) 
+
+6 
+
+Light Effect Manager (LEM) 
+
+7 
+
+Active Sound Design (ASD) 
+
+8 
+
+Telematic Communication Box (TCB) 
+
+9 
+
+Wireless charging tray (WCA) 
+
+10 
+
+Seat pneumatics module front left (SPNMVL) 
+
+
+23 
+
+
+TA16-021 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+Index 
+
+Explanation 
+
+11 
+
+Roof function center (FZD) 
+
+12 
+
+Camera-based driver support systems (KAFAS) 
+
+13 
+
+High-beam assistant (FLA) 
+
+14 
+
+Instrument panel (KOMBI) 
+
+15 
+
+Electronic steering lock (ELV) (Not for the US, 
+manual transmission vehicles only) 
+
+16 
+
+Control unit for rearview camera and SideView (TRSVC) 
+
+17 
+
+Optional equipment system (SAS) 
+
+18 
+
+Dynamic Stability Control (DSC) 
+
+19 
+
+Digital Motor Electronics (DME) 
+
+20 
+
+Frontal Light Electronics Left (FLEL) 
+
+21 
+
+Radar Sensor Left (RSL) 
+
+22 
+
+Active Cruise Control (ACC) Long Range Radar (LRR) 
+
+23 
+
+Electric active roll stabilization front (EARSV) 
+
+24 
+
+Frontal Light Electronics Right (FLER) 
+
+25 
+
+Radar Sensor Right (RSR) 
+
+26 
+
+Digital Engine Electronics 2 (DME2) 
+
+27 
+
+Electronic Power Steering (EPS) 
+
+28 
+
+Electronic transmission control (EGS) 
+
+29 
+
+Integrated automatic heating / air conditioning (IHKA) 
+
+30 
+
+Head Unit (HEADUNIT) 
+
+31 
+
+Night vision electronics (NVE) 
+
+32 
+
+Near Field Communication (NFC) (Not for the US) 
+
+33 
+
+Body Domain Controller (BDC) 
+
+34 
+
+Transfer case 
+
+35 
+
+Driver's seat module (SMFA) 
+
+36 
+
+Advanced Crash Safety Module (ACSM) 
+
+37 
+
+Gear selector switch (GWS) 
+
+38 
+
+Controller (CON) 
+
+39 
+
+Front passenger seat module, (SMBF) 
+
+40 
+
+Rear Seat Entertainment (RSE) 
+
+41 
+
+Seat pneumatics module front right (SPNMVR) 
+
+42 
+
+Rear axle slip angle control (HSR) 
+
+43 
+
+Electric active roll stabilization rear (EARSH) 
+
+44 
+
+Selective Catalytic Reduction (SCR) (Currently not available for the US) 
+
+
+24 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+Index 
+
+Explanation 
+
+45 
+
+Trailer module AHM (Not for the US) 
+
+46 
+
+Parking Maneuver Assistant (PMA) 
+
+47 
+
+Vertical dynamic platform 
+
+48 
+
+Power Control Unit 
+
+49 
+
+Trunk function module (HKFM) 
+
+50 
+
+Lane change warning SWW (primary) also know as the Short Range Radar 
+Sensor (SRR) 
+
+
+3.2. Gateway 
+
+3.2.1. Body Domain Controller (BDC) 
+
+
+
+25 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+BDC functions 
+
+The Body Domain Controller BDC is responsible for the following functions: 
+
+• Gateway 
+
+• Electronic immobilizer 
+
+• Terminal control 
+
+• Central locking system 
+
+• Exterior lights 
+
+• Power windows 
+
+• Horn 
+
+• Interior light 
+
+• Wash/wipe system 
+
+• Vehicle data storage 
+
+• Data transfer for Condition Based Service (CBS) 
+
+Fuses in the BDC 
+
+The following components are protected by fuses in the BDC: 
+
+• Audio operating facility 
+
+• Operating facility for assist systems 
+
+• Operating unit for light 
+
+• Power windows 
+
+• Heated rear window 
+
+• Trunk function module 
+
+• Integrated automatic heating / air conditioning 
+
+• OBD2 interface 
+
+• Power Control Unit 
+
+• Rain-light-solar-condensation sensor 
+
+• Steering column switch cluster 
+
+• Telematic Communication Box 
+
+• Outside door handle electronics 
+
+• Vertical dynamics platform (electronics) 
+
+• Central locking system 
+
+
+26 
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+Relay in the BDC 
+
+The following relays are located in the BDC: 
+
+• Terminal 30F 
+
+• Power window regulators 
+
+• Central locking system 
+
+• Heated rear window 
+
+• Headlight cleaning system 
+
+Gateway in the BDC 
+
+The central gateway module (ZGM) is integrated in the BDC. It is a control unit within a control unit. 
+The task of the ZGM is to connect all the data bus systems to each other. By connecting them in 
+this way, it is possible to use information from the individual bus systems on a generalized level. The 
+central gateway module is able to implement different protocols and speeds on other bus systems. 
+The programming data for the control units is transmitted by Ethernet to the vehicle via the ZGM. 
+
+LIN controller in the BDC 
+
+The BDC is the gateway for the following components at the local interconnect network bus: 
+
+• Exterior mirror, left and right 
+
+• Switch block, driver's door, front passenger door 
+
+• Steering column switch cluster 
+
+• Light switch 
+
+• Intelligent Safety button 
+
+• Audio operating facility 
+
+• Inside mirror 
+
+• Rain-light-solar-condensation sensor 
+
+• Roof function center (interior lighting) 
+
+• Comfort seat, rear passenger compartment, left and right 
+
+• Electrical steering column adjustment 
+
+• Wiper 
+
+• Operating unit, center console 
+
+• Power distribution box, rear 
+
+
+27 
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+The following control units are connected to the BDC via LIN, but the BDC has only a wake-up 
+function and not a gateway or primary function: 
+
+• Battery charging unit 
+
+• Intelligent battery sensor 
+
+• Electric fan 
+
+• Active air flap control 
+
+• Digital Motor Electronics 
+
+
+3.3. Control units on the MOST bus 
+
+3.3.1. Head unit 
+
+
+
+Head unit 
+
+
+On the G30, the head unit can be operated by touch at the CID in addition to operation via the 
+controller. In the case of optional equipment with gesture control, selected functions can also be 
+operated by means of gestures. 
+
+3.3.2. Hi-fi amplifier with MOST bus 
+
+The following amplifiers are used in the G30 depending on the audio systems: 
+
+• Standard 8-channel amplifier without bus connection for HiFi audio system. 
+
+• Optional 9-channel amplifier for Top HiFi audio system. 
+
+• Optional 10-channel amplifier for High End audio system. 
+
+
+28 
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+HiFi amplifier 
+
+8-channel amplifier without bus connection with a power of 205 W. 
+
+
+
+Top Harmon Kardon HiFi amplifier 
+
+9-channel amplifier with MOST bus and a power of 600 W. 
+
+
+
+Top HiFi amplifier 
+
+
+29 
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+High End Bowers & Wilkins amplifier 
+
+10-channel amplifier with MOST bus and a power of 1400 W. 
+
+
+
+High End amplifier 
+
+
+3.3.3. Rear seat entertainment (RSE) 
+
+
+
+Rear Seat Entertainment (RSR) 
+
+
+The Rear Seat Entertainment (RSE) on the G30 is equipped with a Blu-ray drive. 
+
+
+30 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.4. Control units on the K-CAN2 
+
+3.4.1. Roof function center (FZD) 
+
+
+
+Roof function center (FZD) 
+
+
+Depending on the vehicle equipment the roof function center FZD includes the corresponding 
+components for: 
+
+
+• Alarm system 
+
+• Control, slide/tilt sunroof 
+
+• Gesture recognition camera 
+
+• Emergency call button 
+
+On vehicles with gesture control, the gesture recognition camera is installed in the FZD. The gesture 
+recognition camera is not shown as a control unit by the BMW diagnosis system. Diagnosis takes 
+place via the FZD. The gesture recognition camera is connected to the PT-CAN4. As a result, the bus 
+signals do not have to be forwarded to another CAN bus by the Body Domain Controller. 
+
+The FZD is not responsible for the control of the interior light. The interior light unit and the FZD 
+electronics are located in the same housing. 
+
+
+31 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.4.2. Trunk function module (HKFM) 
+
+
+
+Trunk function module (HKFM) 
+
+The control unit for the power trunk function module (HKFM) is responsible for control 
+of the lift. 
+
+3.4.3. Seat modules 
+
+
+
+Seat module 
+
+
+The following seat modules are present corresponding to the vehicle equipment: 
+
+
+• Driver's seat module (SMFA) 
+
+• Front passenger seat module (SMBF) 
+
+
+The seat modules are responsible for actuation of the servomotors in the corresponding seat. 
+Depending on the equipment, there may be 2 identical seat modules installed in the vehicle. Encoding 
+of the control units takes place by connection to the wiring harness. The control unit is assigned 
+correspondingly in the vehicle depending on the additional ground encoding. 
+
+
+32 
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.4.4. Seat pneumatics modules 
+
+
+
+Seat pneumatics module back right SPNMHR 
+
+
+The following seat pneumatics modules are present corresponding to the vehicle equipment: 
+
+
+• Seat pneumatics module front left (SPNMVL) 
+
+• Seat pneumatics module front right (SPNMVR) 
+
+
+The seat pneumatics modules are responsible for the massage function in the corresponding front 
+seat. Depending on the equipment, there may be 2 identical seat pneumatics modules installed in the 
+vehicle. Encoding of the control units takes place by connection to the wiring harness. The control unit 
+is assigned correspondingly in the vehicle depending on the additional ground encoding. 
+
+
+33 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.5. Control units on the K-CAN3 
+
+3.5.1. Frontal Light Electronics 
+
+
+
+Frontal Light Electronics Right and Left 
+
+
+The control units Frontal Light Electronics Right (FLER) and Frontal Light Electronics Left (FLEL) are 
+installed in the corresponding headlight. 
+
+The Frontal Light Electronics includes: 
+
+• LED activation in the corresponding headlight. 
+
+• Actuation of the bulb for the turn indicator (depending on the headlight variant). 
+
+• Activation of the stepper motor for the headlight beam adjustment. 
+
+• Actuation of the fans. 
+
+
+34 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.5.2. Parking Maneuver Assistant (PMA) 
+
+
+
+Parking manoeuvring assistant (PMA) 
+
+
+The PMA control unit performs the corresponding functions depending on equipment: 
+
+• Park Distance Control (PDC) 
+
+• Parking assist 
+
+• Parking Maneuver Assistant Plus 
+
+Park Distance Control (PDC) assists the driver when pulling in and out of a parking space. 
+
+The current distance from an obstruction is indicated by acoustic signals and on a visual display. 
+
+The Parking Maneuver Assistant performs parking in parking spaces. 
+
+In a vehicle with Parking Maneuver Assistant (PMA) all sensors of the Park Distance Control (PDC) are 
+used. In addition, there is a sensor for the PMA in each case on the left and right of the front and rear 
+bumper panels. For the parking assistant the camera systems of the vehicle are also required. 
+
+
+35 
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.5.3. Lane change warning (SWW) also know as the Short Range Radar 
+Sensor (SRR) 
+
+
+
+Lane change warning (SWW/SRR) 
+
+Both control units lane change warning SWW (primary) and SWW2 (secondary) also know as the Short 
+Range Radar Sensor (SRR/SRR2) are shown in the picture. The SWW/SRR (primary) control unit is 
+located on the right. The control unit lane change warning SWW2/SRR2(secondary) is on the left. 
+
+The control unit for the lane change warning (SWW/SRR) is required for the following optional 
+equipment: 
+
+• Driving Assistant Plus (SA5AT) 
+
+The SWW/SRR is the primary control unit, and it is also used for diagnosis of the additional control 
+units connected to the local CAN. The control unit lane change warning SWW2/SRR2 (secondary) is 
+required for the lane change warning. 
+
+The following control units are additionally required for the optional equipment Driving Assistant Plus: 
+
+• Radar sensor, front left 
+
+• Radar sensor, front right 
+
+
+36 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.6. Control units on the K-CAN4 
+
+3.6.1. Active Sound Design (ASD) 
+
+
+
+Active Sound Design (ASD) 
+
+
+The control unit for Active Sound Design generates the engine sound for output in the vehicle interior. 
+The engine sound is calculated according to the programmed sound specification and various 
+parameters such as the accelerator pedal angle (driver's desired load), engine speed and torque. It is 
+then output via the vehicle's own audio system in the passenger compartment. 
+
+
+37 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.6.2. Controller (CON) 
+
+
+
+Controller (CON) 
+
+
+On the G30 a controller with touchpad is used. On the controller with touch control box the customer 
+can input location information for the navigation system or phone numbers and contact details as 
+numbers and letters. In the map operation the map section for example can be moved and enlarged 
+or reduced by finger movement. 
+
+3.6.3. Integrated automatic heating / air conditioning (IHKA) 
+
+
+
+Integrated automatic heating / air conditioning (IHKA) 
+
+
+The integrated automatic heating/air conditioning system (IHKA) is standard equipment in the G30. 
+
+
+38 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.6.4. Light Effect Manager (LEM) 
+
+
+
+Light Effect Manager (LEM) 
+
+The control unit LEM is responsible for controlling the following lighting systems: 
+• Speaker covers in the High End Bowers & Wilkins audio system. 
+
+
+39 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.6.5. Telematic Communication Box (TCB) 
+
+
+
+I 
+
+
+Telematic Communication Box (TCB) 
+
+
+The 2nd-generation Telematic Communication Box (TCB) is installed in the G30. The Telematic 
+Communication Box (TCB) is connected directly to the roof-mounted antenna and is responsible for 
+the following functions: 
+
+• BMW ConnectedDrive services (incl. BMW Assist with ECALL 
+(emergency call function)) + BMW Online. 
+
+• BMW Internet using a SIM card integrated in the vehicle (P-SIM). 
+
+• Remote functions (reception and controller). 
+
+• "Speech-to-text" function in Office area. 
+
+• BMW Teleservices via P-SIM. 
+
+• WLAN hotspot via P-SIM. 
+
+
+40 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.7. Control units on the K-CAN5 
+
+3.7.1. Remote control receiver (FBD) 
+
+
+
+Remote control receiver 
+
+
+The control unit remote control receiver (FBD) is responsible for communication of the remote control 
+services. It receives the data of the wheel electronics for the tire pressure control. 
+
+The control unit for the remote control service is not displayed by the BMW diagnosis system ISTA in 
+the bus overview. Diagnosis is performed via the Body Domain Controller. 
+
+
+3.8. Control units on the Ethernet 
+
+3.8.1. Active Cruise Control (ACC) Long Range Radar (LRR) sensor 
+
+
+
+Active Cruise Control ACC Long Range Radar (LRR) sensor 
+
+The control unit for active cruise control for ACC Stop & Go contains a radar-based sensor for sensing 
+the area in front of the vehicle. Both the near and far ranges are monitored by this sensor. 
+
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.8.2. Rear view camera (RFK) 
+
+
+
+On vehicles with a rear view camera only, the rear view camera is connected to the Ethernet. 
+
+
+3.8.3. Top Rear Side View Camera (TRSVC) 
+
+
+
+42 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+The control unit Top Rear Side View Camera receives the picture information from the following 
+cameras: 
+
+• Front camera 
+
+• Exterior mirror camera, left 
+
+• Exterior mirror camera, right 
+
+• Rear view camera 
+
+The cameras are connected to the TRSVC via Ethernet. 
+
+3.8.4. Camera-based driver support systems (KAFAS) 
+
+The control unit camera-based driver support systems (KAFAS) is required for the following optional 
+equipment: 
+
+
+
+Camera-based driver support systems (KAFAS) 
+
+
+• Camera-based cruise control with Stop & Go function 
+
+• Traffic Jam Assist 
+
+• Speed limit information 
+
+• Person recognition with city braking function 
+
+• Collision warning with city braking function 
+
+
+43 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.9. Control units on the PT-CAN 
+
+3.9.1. Digital Motor Electronics (DME, DME2) 
+
+
+
+Digital Motor Electronics DME and DME2 
+
+
+The illustration shows the DME and DME2 control units. The DME control unit is on the left side (seen 
+in the direction of travel). 
+
+The DME is responsible for the control of the combustion engine. In addition, the DME is the gateway 
+between PT-CAN and PT-CAN2. 
+
+The DME control unit is installed for 4 and 6-cylinder gasoline engines. 
+
+The DME2 control unit is installed in addition to the DME control unit for 8-cylinder engines. 
+
+3.9.2. High-beam assistant (FLA) 
+
+
+
+High-beam assistant (FLA) 
+
+
+On vehicles without camera-based driver assistance systems (KAFAS), the control unit for the 
+high-beam assistant is integrated in the interior mirror. On vehicles with KAFAS, the function of the 
+high-beam assistant is performed by the camera-based driver assistance system. 
+
+
+44 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.9.3. Instrument panel (KOMBI) 
+
+
+
+Instrument panel (KOMBI) 
+
+One instrument cluster version is used in the G30, since the navigation system is standard equipment. 
+
+3.9.4. Night vision electronics (NVE) 
+
+
+
+Night vision electronics (NVE) 
+
+
+The control unit Night Vision Electronics receives picture information from the Night Vision camera. 
+The picture information is transmitted via Color Video Blanking Signal to the HEADUNIT and can then 
+be displayed on in the CID, instrument cluster and Head-Up Display. 
+
+
+45 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.10. Control units on the PT-CAN2 
+
+3.10.1. Electronic transmission control (EGS) 
+
+
+
+Electronic transmission control (EGS) 
+
+
+The control unit for electronic transmission control is installed directly inside the automatic 
+transmission. 
+
+
+3.10.2. Gear selector switch (GWS) 
+
+
+
+Gear selector switch (GWS) 
+
+
+The gear selector switch (GWS) is used for selecting a drive position. 
+
+The bus connection is via the PT-CAN2 and additionally via a local CAN to the electronic transmission 
+control (EGS) unit. 
+
+
+46 
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.10.3. Power Control Unit (PCU) 
+
+
+
+The Power Control Unit is required: 
+
+• For charging the auxiliary battery. 
+
+• For supplying the vehicle electrical system from the auxiliary battery. 
+
+The Power Control Unit (PCU) contains a DC/DC converter with a power of 500 W. 
+
+The preconditions for the direction of the energy management are calculated from the use of the 
+vehicle. The auxiliary battery is charged by the PCU when the engine is running. During the phases 
+in which the combustion engine is not running, e.g. automatic engine start/stop function, the PCU 
+supplies energy from the auxiliary battery to the vehicle electrical system. 
+
+
+47 
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.11. Control units on the FlexRay 
+
+3.11.1. Advanced Crash Safety Module (ACSM) 
+
+
+
+
+Advanced Crash Safety Module (ACSM) 
+
+The function of the Advanced Crash Safety Module (ACSM) is to evaluate all sensor signals in order 
+to identify a crash situation. The ACSM evaluates the information from the sensors and then forwards 
+corresponding measures for selective activation of the necessary restraint systems. 
+
+The ACSM records the yaw rate and sends this information on the FlexRay data bus. 
+
+No additional yaw sensors are therefore required for the other systems. 
+
+3.11.2. Dynamic Stability Control (DSC) 
+
+
+
+
+Dynamic Stability Control (DSC) 
+
+
+The DSC control unit and the DSC hydraulic control unit are screwed together. The DSC control 
+unit can be replaced individually to reduce servicing costs. The functions of the tire pressure control 
+(TPMS) and the electric parking brake are integrated in the DSC control unit. 
+
+
+48 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.11.3. Electric Active Roll Stabilization (EARS) 
+
+
+
+Electric active roll stabilization front (EARSV) 
+
+
+
+Electric active roll stabilization rear (EARSH) 
+
+Above are the electric active roll stabilization units for the rear EARSH and front EARSV. 
+The control units for EARS are directly integrated in the corresponding actuator. 
+
+
+49 
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.11.4. Electronic Power Steering (EPS) 
+
+
+
+Electronic Power Steering (EPS) 
+
+The Electronic Power Steering (EPS) is supplied with 12 V or 24 V depending on the equipment and 
+engine. 
+
+An auxiliary battery, a separating element and a charging unit for the auxiliary battery are required for 
+the 24 V version. These components are installed in the luggage compartment of the G30. 
+
+The steering angle information is determined by the EPS and made available to the other control units 
+via the FlexRay bus. 
+
+3.11.5. Rear axle slip angle control (HSR) 
+
+
+
+
+
+Rear axle slip angle control (HSR) 
+
+The control unit for slip angle control is responsible for steering the rear axle. 
+
+
+50 
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.11.6. Optional equipment system (SAS) 
+
+
+
+9 
+
+
+Optional equipment system (SAS) 
+
+The optional equipment system control unit provides a variety of driver assistance functions. The SAS 
+does not have any installed sensors. The information needed for the functions is made available by 
+the corresponding control units and sensors. The SAS activates the control units necessary for the 
+corresponding function. 
+
+Possible functions: 
+
+• Collision warning with city braking function 
+
+• Cruise control with braking function 
+
+• Person recognition with city braking function 
+
+• Parking Maneuver Assistant 
+
+• Traffic Jam Assist 
+
+• Camera-based cruise control with Stop & Go function 
+
+• Proactive driving assistant 
+
+The image information required by the optional equipment system is provided by the camera-based 
+driver support systems. 
+
+
+51 
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+3.11.7. Transfer case 
+
+
+
+Transfer case 
+
+The control unit for the transfer case controls the clutch in the transfer case on vehicles with xDrive. 
+
+3.11.8. Vertical Dynamics Platform (VDP) 
+
+
+
+Vertical Dynamics Platform (VDP) 
+
+
+The control unit for the vertical dynamic platform is required for the following equipment: 
+
+• Dynamic Damper Control 
+The VDP control unit is responsible for: 
+
+• Valve control in the shock absorbers 
+
+• Detection of vehicle ride heights by the ride height sensors 
+
+
+52 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+3. Control Units 
+
+
+3.12. Control units on the local CAN 
+
+The control units on the local CAN are not displayed in the bus overview by the BMW diagnosis 
+system ISTA. Diagnosis takes place via the corresponding primary control unit. 
+
+3.12.1. Radar sensor (primary) 
+
+
+
+Radar sensor, left (RSL) and radar sensor, right (RSR) 
+
+The control units for the radar sensor, front right (RSR) and radar sensor, front left (RSL) are installed at 
+the front right and front left of the vehicle for the optional equipment Driving Assist Plus. 
+
+3.12.2. Lane change warning SWW2 (secondary) also know as the Short 
+Range Radar Sensor (SRR2) 
+
+
+
+9 
+
+
+Lane change warning 
+
+
+Both control units lane change warning SWW/SRR (primary) and SWW2/SRR2 (secondary) are shown 
+in the picture. The SWW/SRR (primary) control unit is located on the right. The control unit lane 
+change warning SWW2/SRR2 (secondary) is on the left. The control unit lane change warning SWW2/ 
+SRR2 (secondary) is connected with the control unit lane change warning SWW/SRR (primary) via a 
+local CAN. Diagnose with the BMW diagnosis system takes place via the primary control unit. 
+
+
+53 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.1. Overview of voltage supply 
+
+4.1.1. System wiring diagram 
+
+
+© 
+
+
+
+Voltage supply 
+
+
+
+54 
+
+
+TE16-02CK 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME) 
+
+2 
+
+Starter motor 
+
+3 
+
+Alternator 
+
+4 
+
+Power distribution box, engine compartment 
+
+5 
+
+Jump start terminal point 
+
+6 
+
+Auxiliary battery, engine compartment 
+
+7 
+
+Power distribution box, auxiliary battery, engine compartment 
+
+8 
+
+Power distribution box, front right 
+
+9 
+
+Body Domain Controller (BDC) 
+
+10 
+
+Fuse in the Body Domain Controller 
+
+11 
+
+CAN terminator 
+
+12 
+
+Power distribution box, rear 
+
+13 
+
+Fuse in the power distribution box, battery, right 
+
+14 
+
+Power Control Unit PCU 500 W 
+
+15 
+
+Battery power distribution box 
+
+16 
+
+Safety battery terminal 
+
+17 
+
+Battery 
+
+18 
+
+Power distribution box, front left (PHEV version only) 
+
+
+55 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2. Components 
+
+4.2.1. Overview of luggage compartment 
+
+
+© © 
+
+
+
+
+& 
+
+Ui 
+
+Battery 
+
+
+Index 
+
+Explanation 
+
+
+1 
+
+Power distribution box, battery, right 
+
+
+2 
+
+Power distribution box, rear 
+
+
+3 
+
+Power Control Unit (PCU) 500 W 
+
+
+4 
+
+Power Control Unit (PCU) 150 W 
+
+
+5 
+
+Power distribution box with safety battery terminal 
+
+
+6 
+
+Battery 
+
+
+7 
+
+Separator 
+
+
+8 
+
+Auxiliary battery, luggage compartment 
+
+
+
+The vehicle battery in the G30 is an AGM battery with 90 Ah or 105 Ah. The battery variant depends 
+on the engine version and optional equipment. 
+
+
+56 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.2. Overview of engine compartment 
+
+
+
+Auxiliary battery, engine compartment 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution box, engine compartment 
+
+2 
+
+Auxiliary battery, engine compartment 
+
+3 
+
+Power distribution box, auxiliary battery, engine compartment 
+
+4 
+
+Jump start terminal point 
+
+
+The auxiliary battery in the engine compartment of the G30 is an AGM battery with 50 Ah or 60 Ah. 
+The battery variant depends on the engine version and optional equipment. 
+
+
+4.2.3. Battery 
+
+AGM batteries are used for the voltage supply in the G30. 
+
+There may by 1,2 or 3 batteries in the vehicle depending on the engine version and vehicle 
+equipment. 
+
+• Starter battery in the luggage compartment with 90 Ah or 105 Ah. 
+
+• Auxiliary battery in the engine compartment with 50 Ah or 60 Ah. 
+
+• Auxiliary battery in the luggage compartment with 12 Ah for vehicles with 24 V steering. 
+
+An auxiliary battery in the engine compartment is used to provide assistance for the vehicle electrical 
+system. On vehicles with electric active roll stabilization, the two anti-roll bar actuators are also 
+supplied with power by this battery. 
+
+57 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.4. Intelligent battery sensor 
+
+The IBS records the following data of the 12V battery: 
+
+• Voltage 
+
+• Current 
+
+• Temperature 
+
+The IBS performs the calculation and the evaluation of the information. The results are then forwarded 
+to the DME and BDC via the local interconnect network bus. 
+
+4.2.5. Safety battery terminal 
+
+
+
+Safety battery terminal 
+
+The safety battery terminal (SBK) is activated in the event of an accident of corresponding severity. 
+The voltage supply to the positive battery connection point in the engine compartment is interrupted 
+and the consumers connected to this are de-energized. The safety battery terminal is installed in the 
+power distribution box next to the battery. 
+
+
+58 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.6. Alternator 
+
+Alternators with increased efficiency are used in the G30. The increase in alternator efficiency is 
+achieved by reducing the losses in the rectifier. The loss-causing diodes are replaced by actively 
+activated MOSFET transistors. A reduction in fuel consumption is achieved by increasing the 
+efficiency. 
+
+• Bosch with 180 A and 250 A, for 4 and 6-cylinder engines. 
+
+• Valeo with 252 A, for 8-cylinder engine. 
+
+
+4.2.7. Integrated supply module 
+
+
+
+Integrated supply module 
+
+
+The engine control and its components are supplied with a 12 V voltage via the integrated supply 
+module. 
+
+
+59 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.8. Power distribution box, front right 
+
+
+
+Power distribution box, front right 
+
+A relay for terminal 30B is installed in the front right power distribution box. 
+
+Consumers are supplied with terminal 30, terminal 30B and terminal 15N and provided with 
+corresponding fuse protection by the front right power distribution box. Terminal 15N is supplied from 
+the front power distribution box by the rear power distribution box. 
+
+4.2.9. Power distribution box, front left (PHEV Version only) 
+
+
+
+Power distribution box, front left 
+
+A relay for terminal 30B is installed in the front left power distribution box. 
+
+Consumers are supplied with terminal 30 and terminal 30B and provided with corresponding fuse 
+protection by the front left power distribution box. 
+
+
+60 
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.10. Power distribution box, rear 
+
+
+
+Power distribution box, rear 
+
+The following relays are installed in the rear power distribution box: 
+
+• 2 Relay’s, terminal 30F 
+
+• 2 Relay’s, terminal 30B 
+
+• Relay, terminal 15N 
+
+• Relay for rear window heating 
+
+All relays are bi-stable relays. The relays area activated by the Body Domain Controller via LIN. The 
+hard-wired terminal 30B relays of the two front power distribution boxes are activated via the rear 
+power distribution box. 
+
+4.2.11. Body Domain Controller 
+
+The Body Domain Controller (BDC) is responsible for the terminal control. 
+
+A terminal 30F relay is installed in the BDC. 
+
+A number of consumers are supplied with terminal 30 and terminal 30F and provided with 
+corresponding fuse protection via the BDC. 
+
+
+61 
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+4.2.12. PCU with vehicle electrical system assistance measure 
+
+Modern vehicles have a high energy consumption due to the many electrical consumers. As a result, 
+there is a high demand on the battery particularly in phases in which the combustion engine is not 
+running and the alternator supplies no energy (e.g. engine start/stop phases). 
+
+In order to protect the vehicle battery, a DC/DC converter is installed in the Power Control Unit (PCU) 
+and an auxiliary battery in the engine compartment in the G30. 
+
+The preconditions for the direction of the energy management are calculated from the use of the 
+vehicle. When the engine is running the auxiliary battery is charged from the conventional vehicle 
+electrical system. During the phases in which the combustion engine is not running, e.g. automatic 
+start/stop function, the energy is supplied from the auxiliary battery into the conventional vehicle 
+electrical system. 
+
+The Power Control Unit PCU contains a control unit which is connected to the PT-CAN2 and a DC/DC 
+converter with a power of 500 W. 
+
+On vehicles with the equipment electric active roll stabilization, this is supplied by the auxiliary battery 
+in the engine compartment. 
+
+4.2.13. 24 V Electronic Power Steering 
+
+The greater weight of the engines in the G30 on vehicles with 8-cylinder engines results in a higher 
+front axle load. This has the effect that the required power of the steering assist increases. Due to 
+these high currents, it is necessary to increase the voltage supply of the EPS to 24 V. 
+
+An auxiliary battery, separating element and a charging unit for the auxiliary battery are required for 
+this. These components are installed in the luggage compartment of the G30. 
+
+The charging unit monitors the state of charge and also charges the auxiliary battery using a DC/DC 
+converter. The EPS is only supplied with 24 V once this relay has been activated. The EPS can also be 
+operated with 12 V in the event of a fault. 
+
+
+62 
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+
+
+Voltage supply for 24 V steering 
+
+
+63 
+
+
+TE160208 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (DSC) 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Electronic Power Steering (EPS) 
+
+4 
+
+Fuse for front right power distribution box 
+
+5 
+
+Body Domain Controller (BDC) 
+
+6 
+
+Fuse in the rear power distribution box 
+
+7 
+
+Power Control Unit PCU 150 W 
+
+8 
+
+Separator 
+
+9 
+
+Auxiliary battery in the luggage compartment 
+
+10 
+
+Fuse in the power distribution box, battery 
+
+11 
+
+Battery 
+
+12 
+
+Advanced Crash Safety Module (ACSM) 
+
+13 
+
+Brake light switch 
+
+14 
+
+Steering column switch cluster (SZL) 
+
+15 
+
+Instrument panel (KOMBI) 
+
+
+Auxiliary battery with separating element 
+
+
+
+Battery and separating element 
+
+Index 
+
+Explanation 
+
+1 
+
+Auxiliary battery in the luggage compartment 
+
+2 
+
+Separator 
+
+
+64 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+4. Voltage Supply 
+
+Power Control Unit 
+
+
+
+150 W Power Control Unit 
+
+The Power Control Unit monitors the state of charge and also charges the auxiliary battery using 
+DC/DC converter. 
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+5.1. Introduction 
+
+The terminal control in the G30 is identical to the terminal control of the G12. In the G30, the vehicle 
+is always in the right condition from the point of view of the customer. The terminals are controlled 
+via a customer-oriented condition management. The terminal control is dependent on the driving 
+conditions. 
+
+5.2. Vehicle conditions 
+
+The G30 vehicle may be in the following conditions: 
+
+• PARKING (asleep) 
+
+• RESIDING (awake) 
+
+• DRIVING (ready) 
+
+The different vehicle functions are possible depending on the relevant conditions. 
+
+PARKING (asleep) 
+
+• Customer not in the vehicle. 
+
+• Vehicle secured or not used for a certain time. 
+
+• Vehicle functions cannot be operated. 
+
+RESIDING (awake) 
+
+• Customer in the vehicle. 
+
+• No driving readiness. 
+
+• Functions that are relevant when the vehicle is stationary can be operated. 
+
+DRIVING (ready) 
+
+• Customer in the vehicle. 
+
+• Driving readiness established. 
+
+• All functions are available. 
+
+The driving conditions are changed by condition management, taking into account the customer 
+behavior. Additional information is also evaluated that may help to determine the vehicle condition, 
+e.g.: 
+
+• Door opening 
+
+• Door closing 
+
+• Operations in the vehicle 
+
+
+66 
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+The following diagram shows the changes between the vehicle conditions. 
+
+
+© ® 
+
+
+
+© ® ® ® 
+
+
+Vehicle conditions 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition PARKING (asleep) 
+
+B 
+
+Transitional condition with stationary functions 
+
+C 
+
+Vehicle condition RESIDING (awake) 
+
+D 
+
+Transitional condition for establishing driving readiness or 
+ending driving readiness or Testing/Analysis/Diagnosis (PAD) 
+
+E 
+
+Vehicle condition DRIVING (ready) 
+
+1 
+
+Unlock vehicle 
+
+2 
+
+Operation of start/stop button + brake pedal 
+
+3 
+
+Press START/STOP button 
+
+4 
+
+Locks vehicle 
+
+5 
+
+No activity of a vehicle user detected for 10 minutes 
+
+6 
+
+Extended press 
+
+
+67 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Detailed overview of vehicle conditions. 
+
+
+
+Overview of vehicle conditions 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition DRIVING (ready) 
+
+B 
+
+Vehicle condition RESIDING (awake) 
+
+C 
+
+Vehicle condition PARKING (asleep) 
+
+a 
+
+Transitional condition for Establishing/ending driving readiness — 
+Testing/Analysis/Diagnosis (PAD) 
+
+b 
+
+Transitional condition with STATIONARY FUNCTIONS 
+
+
+68 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Operation of start/stop button + brake pedal + valid remote control or 
+valid ID transmitter in the vehicle interior 
+
+2 
+
+Driving readiness established, terminal 15N (terminal 50) 
+
+3 
+
+Operation of start/stop button (three times within 0,8 s) + valid remote control 
+or valid ID transmitter in the vehicle interior 
+
+4 
+
+Terminal 15N 
+
+5 
+
+Operation of start/stop button + selector lever in Neutral 
+
+6 
+
+Undoing driver's seat belt (v < 0.1 km/h, driver's door opened, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+7 
+
+Door contact change (v < 0.1 km/h, driver's seat belt undone, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+8 
+
+Press start/stop button + vehicle is stationary or press start/stop button for at 
+least 1 s + driving speed >10 km/h (6 mph) or press start/stop button at least 
+three times within 4 s + driving speed >10 km/h (6 mph) 
+
+9 
+
+Press START/STOP button 
+
+10 
+
+Terminal 30B 
+
+11 
+
+Unlock vehicle 
+
+12 
+
+Residing interaction or stationary function interaction 
+
+13 
+
+Locks vehicle 
+
+14 
+
+No customer interaction for 3 minutes 
+
+15 
+
+Extended press of head unit media button 
+
+16 
+
+Terminal 30F 
+
+Automatic switch-off 
+
+
+A Doors/Key 
+
+!l Horeb 15:20 
+
+Doors/Key 
+
+Relock automatically 
+
+The vehicle is switched off after 
+the door is opened if no one is 
+left inside the vehicle. 
+
+Lock after pulling away 
+
+^ 1 — V 
+
+Unlock at end of journey 
+
+
+1 Switch off after door opening 
+
+
+Flash for lock/unlock 
+
+
+
+Automatic switch-off 
+
+
+Switch off after door opening. 
+
+
+69 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+In the menu "Doors/Keys", an immediate change from the vehicle condition RESIDING to the vehicle 
+condition PARKING can be activated. 
+
+If this option is activated, then the system will immediately change to the vehicle condition PARKING 
+when the driver's door is opened. The omission of the after-running period in the vehicle condition 
+RESIDING saves energy. 
+
+
+5.3. Power supply terminals 
+
+Control units in the vehicle must be supplied with power only when they are needed. The following 
+terminals are used in the G30: 
+
+• Terminal 15N 
+
+• Terminal 30B 
+
+• Terminal 30F 
+
+• Terminal 30 
+
+Terminal 15N supplies control units which are needed only when driving and which may be needed to 
+safely end a journey. After-run of 5 s starts at the transition from DRIVING to RESIDING. 
+
+Terminal 30B is used to supply control units that are needed in the stationary mode RESIDING and for 
+stationary functions where the customer is not in the vehicle. An after-run of 6 minutes starts at the 
+transition from RESIDING to PARKING, and terminal 30B is then switched off. 
+
+Terminal 30F is used to supply control units which must perform functions in PARKING condition. 
+Terminal 30F is normally switched on in PARKING condition, but may be switched off due to faults in 
+the vehicle electrical system. The terminal is switched off with an after-running period of 1 min if a fault 
+is detected. 
+
+Terminal 30 control units (e.g. alarm system) are always supplied with voltage and are also not 
+switched off in the event of a fault. 
+
+
+
+Terminal 30F 
+
+Terminal 30B 
+
+Terminal 15N 
+
+PARKING, vehicle 
+electrical system not 
+OK (fault in vehicle 
+electrical system) 
+
+OFF 
+
+OFF 
+
+OFF 
+
+PARKING, vehicle 
+electrical system OK 
+
+ON 
+
+OFF 
+
+OFF 
+
+Stationary functions 
+(customer not in 
+vehicle) 
+
+ON 
+
+ON 
+
+OFF 
+
+RESIDING 
+
+ON 
+
+ON 
+
+OFF 
+
+DRIVING 
+
+ON 
+
+ON 
+
+ON 
+
+
+70 
+
+
+
+
+
+
+G30 Voltage Supply and Bus Systems 
+
+5. Terminal Control 
+
+
+Programming-analysis-diagnosis (PAD) mode 
+
+The vehicle condition programming-analysis-diagnosis is still present for diagnosis. All terminals are 
+switched on in this mode. This ensures that diagnosis can be performed with all control units. This 
+vehicle condition is displayed in the BMW diagnosis system ISTA. 
+
+Activation of the PAD mode: 
+
+• Operation of the start/stop button (three times within 0.8 s) + valid remote control or valid ID 
+transmitter in the vehicle interior. 
+
+• By the BMW diagnosis system ISTA. 
+
+The PAD mode is exited by pressing the start/stop button or by closing the diagnosis with the BMW 
+diagnosis system ISTA. 
+
+
+5.4. Partial network operation 
+
+Today's premium vehicles contain up to 70 control units with well over 100 micro-controllers which 
+are networked with each other. However, depending on the current vehicle condition or the vehicle 
+user requirements, not all convenience and assistance systems may always be needed. 
+
+It is possible to save energy, relieve the load on the battery and also prolong the battery life by targeted 
+deactivation and activation on control units which are not needed, so-called selective partial network 
+operation. 
+
+If functions are not used or needed when driving, e.g.: 
+
+• Seat adjustment 
+
+
+5.4.1. Prerequisites for partial network operation 
+
+The partial network in the Body Domain Controller calculates the partial network status on the basis 
+of the current vehicle condition and the required functions. The control units that are not required are 
+switched off by means of the corresponding bus messages. 
+
+5.4.2. Prerequisites of control units for partial network operation 
+
+Different transceivers are used in order to operate the partial network operation in control units. 
+
+These transceivers are able to evaluate and interpret messages. This control unit remains switched 
+off as long as any bus communication takes place without a valid wake-up event for the corresponding 
+control unit being present. If a valid wake-up event for the corresponding control unit is sent on the 
+bus, the transceiver can activate the voltage regulator of the micro-controller and the control unit starts 
+up. The control unit is switched off by deactivation of the voltage regulator. 
+
+
+71 
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Handlerqualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

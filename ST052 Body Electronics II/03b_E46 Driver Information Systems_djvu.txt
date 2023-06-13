@@ -1,0 +1,2827 @@
+Table of Contents 
+
+E46 Driver Information Systems 
+
+Subject Page 
+
+E46 Instrument Cluster.4 
+
+Bus Communication .5 
+
+Gateway Function.5 
+
+Cluster Displays .7 
+
+Check Control LCD Matrix .7 
+
+Transmission Matrix Display.7 
+
+Odometer/BC Display .7 
+
+Dynamic Digital Inputs .8 
+
+Distance Signal .8 
+
+CAN BUS Signals .8 
+
+Transmission Data.8 
+
+Oil Temperature.8 
+
+Dimmer Signal.8 
+
+K-Bus Signalling .8 
+
+Analog Input Signals.9 
+
+Battery Voltage .9 
+
+Fuel Tank Level .9 
+
+Outside Temperature Sensor.9 
+
+Digital Input Signals.10 
+
+Steering Column Stalk Switch .10 
+
+Brake Pad Wear Sensors.10 
+
+Instrument Panel Button.10 
+
+Inputs for Warning Lamps.10 
+
+Output Signals.11 
+
+Speed Signal “A” .11 
+
+K-Bus Interface.11 
+
+Low Fuel.11 
+
+Gong Output.11 
+
+Redundant Data Storage .12 
+
+Service Interval Indicator (SIA IV) .14 
+
+System Components .15 
+
+Service Interval Reset.15 
+
+SIA Reset Procedure using Reset Mode (from 9/99).16 
+
+Reset using Diagnosis Program .17 
+
+Instrument Cluster Replacement.17 
+
+Diagnosis .17 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+On Board Computer.18 
+
+Instrument Cluster Test Functions .19 
+
+Park Distance Control.23 
+
+Components.24 
+
+PDC Control Module.24 
+
+Ultrasonic Sensors.24 
+
+Transmitting Mode.25 
+
+Receiving Mode .25 
+
+System Operation .26 
+
+
+
+
+
+
+
+
+
+
+
+
+E46 Driver Information Systems 
+
+
+Model: E46 
+
+Production: From Start of Production 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand the operation of the E46 instrument cluster 
+
+• Identify and locate driver information system components 
+
+• Diagnose concerns related to the driver information system 
+
+
+3 
+
+E46 Driver Information Systems 
+
+
+
+
+E46 Instrument Cluster 
+
+The instrument cluster is part of the overall driver information system. The design of the 
+E46 instrument cluster is similar to the “low” version cluster introduced on the E39. 
+
+
+
+The cluster on the E46 still uses the five familiar analog gauges which are the fuel level, 
+speedometer, tachometer, coolant temperature and the fuel economy gauge. 
+
+There are also three LCD blocks which display: 
+
+• Check Control Pictogram - this area displays information regarding lamp failures, 
+door and trunk status as well as fluid levels (i.e. coolant and washer fluid) 
+
+• Odometer Display - this display shows total mileage and trip odometer informa¬ 
+tion. The Board Computer (BC) information is also displayed here. There are 5 
+pieces of information which can de displayed here by scrolling with the turn signal 
+stalk switch. The new service interval indicator is also displayed here (SIA IV). 
+
+• Transmission Display - the transmission range and program indicator is shown 
+here. Any transmission related faults are indicated to the driver by a gear symbol. 
+
+In addition to the LCD display blocks, there are various indicator lamps some of which 
+include the oil pressure warning, battery charge indicator, MIL etc. 
+
+The E46 makes extensive use of bus network for communication between control other 
+vehicle systems. The bus network also helps streamline communication and reduce the 
+overall wiring requirement. 
+
+
+4 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+Other features of the E46 cluster include: 
+
+• Stepper motor drives for the analog gauges 
+
+• New design Service Interval Indicator (SIA IV) 
+
+• Automatic transmission range/program display 
+
+The instrument cluster is a sealed unit and contains no serviceable components, 
+other than the back lighting illumination bulbs. 
+
+Bus Communication 
+
+The E46 cluster is part of a vehicle bus network which includes the following bus 
+systems: 
+
+• Controller Area Network - The CAN bus supplies the cluster with information to 
+operate the tachometer and fuel economy gauge. The “TD” (engine speed) and the 
+“ti” (injector on time) signals are now sent to the cluster as part of the CAN-Bus 
+signals rather than independent dedicated signals as before. The transmission 
+range, program and fault indicator signals are also now a part of CAN-Bus informa¬ 
+tion as well. This further reduces the wiring requirement and increases reliability. 
+
+• Body Bus - The K-bus provides the cluster with a connection to other vehicle 
+systems such as the LSZ, IHKA and GM. Signals are shared between these 
+systems which allow for a reduction in sensors and switches. 
+
+• Diagnosis Bus - The D-bus allows diagnostic communication between the vehicle 
+and the diagnostic equipment. The cluster provides a “gateway” to connect the 
+D-bus and other bus networks. 
+
+Gateway Function 
+
+The cluster provides a connection between bus systems. This allows different bus 
+networks to transfer information between them. The cluster “translates” this information 
+and distributes it to the required network. For example, the D-bus does not connect 
+directly to all modules on the E46. Any modules on the K-bus are diagnosed via the 
+pathway created by the cluster. The path is as follows - D-bus > cluster > K-bus > com¬ 
+ponent. 
+
+Signals are also shared via the gateway as well as commands. An example of this would 
+be the cruise control system. The MFL control module, which control cruise control 
+switches, sends a command to the DME system. The DME systems is responsible for 
+engine speed control. The command for “accelerate” for example, is sent to the DME via 
+the gateway (cluster) to the CAN-Bus. 
+
+
+5 
+
+E46 Driver Information Systems 
+
+
+
+E46 Bus Overview 
+
+
+IHKA 
+
+
+
+
+INSTRUMENT CLUSTER 
+
+
+
+
+
+MFL 
+
+RADIO GR 
+
+
+ABS/ASC 
+
+
+
+
+TELEPHONE 
+
+PREPARATION 
+
+
+
+
+20 PIN 
+
+DIAGNOSTIC 
+
+CONNECTION E46 Bus System (as introduced) 
+
+
+6 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cluster Displays 
+
+
+Check Control LCD Matrix 
+
+The pictogram check control display carries 
+over from the E39 for failure display warnings 
+of various lights, doors/trunk open and low 
+fluid indications. 
+
+Inputs for warning lamp indication are 
+processed by the cluster electronics and the 
+appropriate LED is illuminated. 
+
+Transmission Matrix Display 
+
+The right LCD matrix is used to display the 
+driving range and program on vehicles 
+equipped with an automatic transmission. 
+
+The transmission fault display is now also 
+integrated into the display matrix. The gear 
+with the explanation point will illuminate when 
+the electronic control of the transmission 
+detects a fault. 
+
+
+
+Odometer/BC Display 
+
+The odometer/BC display shows the total mileage as well as the trip odometer reading. 
+The SIA IV also displays for 5 seconds when the key is switched on to display service 
+interval information. 
+
+The BC also displays 5 basic pieces of information which can be scrolled with the turn 
+signal stalk switch. 
+
+
+
+7 
+
+E46 Driver Information Systems 
+
+
+/1 \ /1 \ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dynamic Digital Inputs 
+Distance Signal 
+
+This input is supplied to the cluster by the ABS/ASC/DSC control module as a square 
+wave signal. Pulses from the left rear wheel speed sensor are processed by the ABS 
+module to produce this signal. The cluster electronics process the input for the cluster 
+display and pass the signal along, on the K-Bus, as speed signal “A” for other control 
+modules requiring the vehicle speed signal. 
+
+CAN-Bus Signals 
+
+The “Ti”, engine temperature and “TD” signals are produced by the DME control 
+module and sent to the cluster. The cluster also passes the TD signal out over the K- 
+Bus. 
+
+Transmission Data 
+
+The EGS (AGS) control module provides the range selector position, driving program 
+and fault lamp activation signals to the cluster over the CAN line. 
+
+
+
+Oil Temperature 
+
+This input is a pulse width modulated signal from the Electronic Oil Level Sensor. As oil 
+level decreases the pulse width of the signal increases. If the signal shows an oil level 
+that is too low over a period of time, the instrument cluster will illuminate the Oil Warning 
+indicator LED in yellow. 
+
+Dimmer Signal 
+
+This is a pulse-width modulated signal from the LSZ. It is used to control the intensity of 
+the back lighting of the instruments and the LCDs when the lights are switched ON. This 
+signal is also output over the “K”-Bus. 
+
+K-Bus Signalling 
+
+The Cluster receives signals for the Check Control Pictogram over the K-Bus. 
+
+
+8 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analog Input Signals 
+
+
+Battery Voltage 
+
+Battery voltage is monitored by the cluster and a fault is stored if the voltage exceeds 16 
+volts. 
+
+Fuel Tank Level 
+
+Two lever action sensors are wired in parallel to the cluster. The two varying voltage 
+signals are processed by the cluster for fuel gauge and low fuel warning display. 
+
+
+
+
+Outside Temperature Sensor 
+
+A Negative Temperature Coefficient (NTC) sensor is used to measure the ambient 
+temperature. The signal is processed by the cluster and passed out over the K-Bus to 
+modules requiring this input for processing. 
+
+
+9 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Digital Input Signals 
+
+Digital inputs refer to those inputs which are represented by a ground or B+ signal. The 
+status of these signals is represented by a change in voltage either on or off (1 or 0). 
+
+The normal ignition switch terminals (KL R, KL 15 & KL 50) are input to the cluster. 
+Various functions are dependent on ignition switch position. 
+
+Steering Column Stalk Switch 
+
+As with previous systems the turn signal stalk is used to call up BC functions. The stalk 
+switch (LSS) is a ground input to the cluster. 
+
+
+Brake Pad Wear Sensors 
+
+The pad sensor inputs are used to illuminate the brake pad warning indicator as in the 
+past. The brake pad circuit is monitored for an open or interruption of the ground when 
+the sensor is worn through. The input is dampened to prevent a blinking light when the 
+sensor is not completely open. 
+
+
+KL R 
+
+
+
+9 
+
+
+INSTRUMENT PANEL BUTTON 
+
+(MILEAGE RESET - BC TEST) 
+
+
+
+
+BC STALK CONTROL 
+
+
+
+BRAKE PAD 
+
+WEAR 
+
+SENSORS 
+
+
+Q. 
+
+2 
+
+< 
+
+_j 
+
+hi 
+
+z 
+
+o 
+
+z 
+
+LU 
+
+* 
+
+o 
+
+LU 
+
+X 
+
+o 
+
+
+X 
+
+o 
+
+5 
+
+O 
+
+
+if) 
+
+CD 
+
+< 
+
+
+
+
+X 
+
+
+
+
+
+
+
+o 
+
+
+
+
+
+
+
+h— 
+
+
+
+
+
+
+
+< 
+
+
+
+
+
+
+
+z 
+
+
+
+
+
+
+
+X 
+
+
+
+
+
+
+
+LU 
+
+1 [ 1 
+
+z 
+
+
+
+
+
+!□ 
+
+X 
+
+o 
+
+
+
+
+
+< 
+
+D 
+
+
+z 
+
+_l 
+
+
+
+2 
+
+if) 
+
+if) 
+
+o 
+
+L- 
+
+HM 
+
+o 
+
+LU 
+
+> 
+
+x 
+
+o 
+
+u_ 
+
+if) 
+
+O 
+
+X 
+
+LL 
+
+LU 
+
+X 
+
+X 
+
+c 
+
+o 
+
+o 
+
+LU 
+
+* 
+
+< 
+
+LU 
+
+_l 
+
+a 
+
+5 
+
+o 
+
+5 
+
+z 
+
+cc 
+1 
+0 
+< 
+m 
+
+0 
+
+z 
+
+0 
+
+X 
+
+_l 
+
+o 
+
+LU 
+
+z 
+
+a> 
+
+'5 
+
+5- 
+
+o 
+
+X 
+
+CD 
+
+0 
+
+z 
+
+* 
+
+D 
+
+-1 
+
+LL 
+
+LU 
+
+* 
+
+o 
+
+< 
+
+0 
+
+— 
+
+X 
+
+< 
+
+if) 
+
+
+X 
+
+z 
+
+X 
+
+< 
+
+X 
+
+< 
+
+< 
+
+o 
+
+LU 
+
+0 
+
+GL 
+
+X 
+
+
+Instrument Panel Button 
+
+The reset button is used to reset the trip - odometer as in the past. It will also display the 
+mileage, if pressed with the key switched OFF. This button is also used for BC/cluster 
+test functions. 
+
+
+Inputs for Warning Lamps 
+
+Various switches are used to signal the cluster for warning and indicator lamp illumination 
+including fluid levels, control unit fault and status indicators. Examples of these include 
+the MIL lamp from the ECM (DME), the RPS indicator from the CVM, the seat belt status 
+and Airbag Warning Lamp (AWL) from the MRS control module. 
+
+
+10 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Output Signals 
+Speed Signal “A” 
+
+The vehicle speed signal is available as an output for control modules that require precise 
+vehicle speed information. Speed signal “A” is also sent as an output over the K-Bus. 
+
+K-Bus Interface 
+
+The K-Bus is used to transfer data between the cluster and other modules on the link. 
+The diagnostic interface also passes over the K-Bus fortroubleshooting with the BMW 
+diagnostic equipment. 
+
+Low Fuel 
+
+Based on the processing for the low fuel indicator lamp, this output is also sent to the 
+DME (ECM) control module. The signal is stored along with a mis-fire detection fault for 
+troubleshooting purposes. 
+
+Gong Output 
+
+The T3 tone is used for check control warnings. 
+
+
+
+LCM 
+
+IHKA 
+
+GM 
+
+▼ 
+
+
+LOW FUEL LEVEL 
+(MISFIRE DETECTION) 
+
+-► 
+
+
+
+
+
+11 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Redundant Data Storage 
+
+Specific information is stored redundantly in the instrument cluster and in the Light 
+Switch Module. The data stored redundantly includes: 
+
+• VIN 
+
+• Total Mileage 
+
+• Service Interval data 
+
+
+The redundant storage of this information allows for the replacement of a module without 
+the loss of the total mileage accumulated or the loss of the SI data. 
+
+
+The data is compared each time KL 15 is switched on. If the data does not match, the 
+manipulation dot in the mileage display block will be illuminated. 
+
+
+
+The following points must be noted with regards to the redundant storage of this data. 
+
+1. If the vehicle ID number is not the same in both modules, the manipulation dot is 
+illuminated. All functions of both modules continue to operate. 
+
+2. Data will only be transferred from the LSZ to the cluster if the ID numbers match and 
+the cluster mileage is zero. 
+
+3. The VIN is entered in the cluster through coding and will only be accepted when the 
+cluster mileage is zero. 
+
+4. The stored mileage in the LSZ can only be overwritten by a higher mileage. 
+
+5. If the two mileage values stored vary by more than 120, and the VINs are the same, 
+the cluster will continue to accumulate mileage and a fault will be stored in the clus¬ 
+ter for data transfer. 
+
+6. If the K-Bus link fails, the cluster will continue to store mileage and set a fault for the 
+Bus link. 
+
+New components should only be installed for replacement purposes and not for use as 
+test components for diagnosis as miles will accumulate if the vehicle is driven for road 
+testing purposes. 
+
+
+12 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E46 Cluster Overview 
+
+
+
+
+
+BC STALK CONTROL 
+
+
+KL 58g 
+
+
+
+(Ti/TD) CAN 
+
+
+
+BRAKE PAD 
+
+WEAR 
+
+SENSORS 
+
+
+VEHICLE SPEED SIGNAL 
+nimn^ 
+
+
+LEFT REAR 
+WHEEL SPEED 
+SENSOR 
+
+
+
+CAN 
+
+
+
+13 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Interval Indicator (SIAIV) 
+
+Beginning with the E46, the new SIA IV service interval indicator system is now used. 
+The new system now longer uses the colored LED’s as used in the past, but rather a 
+numeric display of mileage remaining to the next service. 
+
+With this system, the actual mileage remaining until the next service will be displayed 
+when the ignition is turned on. The service mileage will be displayed in the odometer 
+display for approximately 5 seconds. 
+
+
+MLSEMttE , 
+
+1 
+
+□ i nn 
+
+
+□ 1 LJUml 
+
+
+The text “Oil Service” or “Inspection” will also illuminate to show which service is due. 
+A minus (-) symbol before the mileage display indicates that a service is past due. 
+
+
+The calculation process for determining the service interval is similar to SIA III. Like the 
+SIA III system, the SIA IV system calculates service intervals based on fuel used. 
+
+A reference value of fuel is stored in the instrument cluster during the coding process, 
+this value is in gallons and is model dependent. As the vehicle is driven, the instrument 
+cluster monitors the injector on time (“ti”) signal and deducts the amount of fuel used 
+against the reference value. 
+
+
+In other words, the injector on time is an indicator of how the vehicle is driven. 
+
+For example, a large number of short trips would consume more fuel and therefore the 
+average injector on time would be greater. This increased fuel consumption would 
+reduce the service interval mileage because the average injector on-time would be higher 
+and would deduct gallons (theoretical) from the stored value (Coded Inspection Limit) at a 
+faster rate. 
+
+
+The “Coded Inspection Limit” value for each vehicle can be found in a Group62 Service 
+Bulletin. 
+
+
+14 
+
+E46 Driver Information Systems 
+
+
+
+System Components 
+
+The SIAIV system consists of the instrument cluster, the engine control module and the 
+stability control system (ASC/DSC). The instrument cluster contains all of processing 
+electronics and tine SIA display in the odometer area. 
+
+The stability control system supplies the road speed signal and the engine control 
+module supplies the injector on time (“ti”) signal via the CAN-Bus. 
+
+
+
+
+Service Interval Reset 
+
+When a vehicle comes in for an oil service or inspection (I or II), the service indicator must 
+be reset. This is important to assure consistent service intervals. Depending upon the 
+production date of the vehicle, there are a few methods to reset the service intervals. 
+
+On vehicles with a diagnosis socket in the engine compartment, the service interval 
+indicator is reset with the aid of the SIA reset tool (62 1 110). On vehicles where this 
+diagnosis socket is no longer installed in the engine compartment (2001 models an up), 
+the service interval indicator (SIA) is reset according to a defined procedure with the 
+left-hand button in the instrument cluster (trip odometer reset button). 
+
+Although the 20-pin underhood diagnostic connector was omitted in 2001 vehicles, the 
+“Reset Mode” in the instrument cluster was possible from 9/99. 
+
+In addition to the reset mode in the cluster, the SIA could be reset using the diagnostic 
+equipment (DISplus/GT-1). 
+
+
+15 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SIA Reset Procedure using Reset Mode (from 9/99) 
+
+The reset procedure is as follows: 
+
+• Ignition key must be “off” 
+
+• Press and hold the trip odometer button in the instrument cluster, and turn the 
+ignition to KLR. 
+
+• Keep the button pressed for approximately 5 seconds until one of the following 
+words appears in the display: “OIL SERVICE” or INSPECTION with the additional 
+text - RESET. 
+
+• Release the button and press and hold it again until the “reset” begins to flash. 
+
+• While the display is flashing, press the left button briefly to reset the service interval. 
+After the display has shown the new interval, the following will appear: “END SIA” 
+
+Note: The system can only be reset again after 10 liters (2.5 gal) of fuel has 
+been consumed. 
+
+The data for the service interval indicator (SIA) are also stored in the light switching center 
+(LSZ ). After replacing the instrument cluster, completing encoding and allocation based 
+on the vehicle identification number, the SIA data are transferred to the instrument cluster. 
+
+
+
+* A 
+
+
+r ESET SIA H END SIA 
+
+OILSERVICE H 
+
+15000 Miles 
+
+
+V J 
+
+
+KEEP PRESSED 
+FOR 5 SECONDS 
+AFTER KEY IS 
+SWITCHED ON. 
+
+
+E46 service interval reset 
+
+
+TAP BUTTON TO 
+RESET SI DISPLAY. 
+
+
+16 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+Reset using Diagnosis Program 
+
+The DISplus or GT-1 can be used to reset the Service Interval Indicator. The procedure is 
+as follows: 
+
+• Connect the Diagnosis head to the diagnostic connector of the vehicle. 
+
+• Identify the vehicle and perform the Short Test. 
+
+• Select Function Selection and then Service Functions. 
+
+• Highlight Reset Service Interval Indicator (Test module S6211 -00001) 
+
+• Select with tester. 
+
+• Follow the directions from the help information in the test module (upper right 
+corner). 
+
+• Select which service is to be reset and press the continue key. 
+
+• An acknowledgement is displayed on the screen that the reset has been carried out. 
+
+Instrument Cluster Replacement 
+
+If the instrument cluster (Kombi) is replaced the SI data can be retrieved from the LSZ on 
+E46 vehicles and from the LCM III on the E52. Coding procedures are the same as SIA II. 
+
+Diagnosis 
+
+Diagnosis of the SIA System is carried out using the Diagnosis program of the DISplus or 
+Gt-1. 
+
+
+17 
+
+E46 Driver Information Systems 
+
+
+
+
+On Board Computer 
+
+The On Board computer of the E46 contains the following functions: 
+
+• Time 
+
+• Outside temperature 
+
+• Average fuel consumption 
+
+• Driving range on remaining fuel 
+
+• Average speed 
+
+
+• OUTSIDE TEMPERATURE 
+
+
+
+• AVERAGE SPEED 
+
+
+
+• FUEL CONSUMPTION 
+
+
+
+• ESTIMATED DRIVING RANGE 
+ON REMAINING FUEL 
+
+
+
+The current time is always displayed when KL R is switched on. Any other BC display 
+value can be called up by pressing the turn signal lever. 
+
+To set the clock “turn” the odometer reset button to the left or right to set the desired 
+time. 
+
+To reset any other programmable displays - hold the turn signal lever in for > 2 seconds. 
+
+A freeze warning is incorporated into the BC. If the temperature drops below 37 degrees, 
+the gong will sound and the temperature display will flash. 
+
+The displays of the Board computer can be changed over from Fahrenheit to Celsius by 
+pressing the instrument cluster button and switching the ignition key on. IHKA display 
+will also change over. The average fuel consumption and average speed displays are 
+reset by pressing and holding the turn signal lever for > 2 seconds. The BC then starts to 
+calculate new average values. 
+
+
+18 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Test Functions 
+
+In addition to the fault memory and diagnostic link, the base instrument cluster contains a 
+series of test functions that can be accessed to check various functions and values. The 
+test functions are displayed in the mileage LCD block. There are a total of 21 test func¬ 
+tions. The test functions are similar to those of previous Board computers and contain 
+similar tests. 
+
+• Tests 1 & 2 are always unlocked. 
+
+• Tests 3 -21 are only accessible after unlocking the test function. 
+
+Test 19 is the unlock function for accessing the displays. 
+
+
+1. Switch Off 
+
+
+
+2. Press and Hold 
+
+
+
+3. Switch to KL R 
+
+
+
+Test 01. main menu is displayed 
+
+
+4a. Do nothing and display will 
+automatically go into sub tests 
+of main menu 0.1 
+
+
+
+
+
+
+
+
+4b. Press and release immediately 
+(< 1 second) to advance to 
+next main test menu. 
+
+
+
+
+
+Scrolling through the numbered 
+test functions is achieved by 
+pressing the instrument cluster 
+button. 
+
+The button is either pressed 
+momentarily (tapped) for 
+< 1 second or pressed and held 
+for > 1 second. 
+
+This signals the BC to display 
+the sub-tests of the displayed 
+main test menu or continue on 
+to the next main test menu. 
+
+
+\ 1 
+
+
+19 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Test Functions (1-6) 
+
+
+TEST 01. Vehicle specific data including: 
+
+Values (simulated) 
+
+Subtests: 
+
+12345 
+
+1.0 
+
+VIN 
+
+4812 
+
+1.1 
+
+Body Number 
+
+834762 
+
+6_1.2 
+
+Part number of cluster 
+
+010203 
+
+1.3 
+
+Coding/Diagnosis/Bus index 
+
+3495 
+
+1.4 
+
+Manufacturing date (Calender week/year 
+
+04_600 
+
+1.5 
+
+Hardware/software # of cluster (HW:04, SW:6.00) 
+
+415_06 
+
+3_1.6 
+
+Injection status, number of cylinders, engine factor 
+
+TEST 02. - Cluster System Test - activates the gauge drivers, indicators and LED’s to confirm 
+function. 
+
+TEST 03. - SI Data 
+
+Values (simulated) 
+
+Subtests: 
+
+1500 
+
+3.0 
+
+liters 
+
+0 
+
+3.1 
+
+Period inspection days (not applicable for US market) 
+
+TEST 04. - Momentary Consumption. 
+
+Values (simulated) 
+
+Subtests: 
+
+0267 
+
+4.0 
+
+26.7 liters/1000km 
+
+0073 
+
+4.1 
+
+7.3 liters per hour 
+
+TEST 05. - Distance Gone Consumption (Range) 
+
+Values (simulated) 
+
+Subtests: 
+
+0195 
+
+5.0 
+
+19.5 liter/100km 
+
+226 
+
+5.1 
+
+momentary distance to go (226km) 
+
+
+6. - Fuel level sensor input in liters 
+
+
+Values (simulated) 
+
+Subtests: 
+
+237415 
+
+6.0 
+
+Fuel level averaged - LH sensor input = 23.7 liters RH sensor = 41.5 liters 
+
+0652 
+
+6.1 
+
+Total tank level averaged = 65.2 liters 
+
+0667 
+
+1_6.2 
+
+Indicate value and tank phase 1 = both sensors OK 
+
+2 = one sensor fault 
+
+3 = implausible input 
+
+
+20 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Test Functions (7-19) 
+
+
+TEST 07. Temperature and Speed: 
+
+
+TEST 08. - Input values in hexadecimal form 
+
+TEST 09. - Battery Voltage 
+
+TEST 10. - Country Coding 
+
+TEST 11.- Cluster Code 
+
+TEST 12. - Not used 
+TEST 13. - Gong Test 
+
+TEST 14. - Fault memory - (not for diagnosis) 
+TEST 15 to 18 - Not used 
+TEST 19-Lock/Unlock 
+
+
+21 
+
+E46 Driver Information Systems 
+
+
+Subtests: 
+
+Display changes from “L-ON“ to “L-OFF” every second. To unlock test 
+
+-functions, press the cluster button immediately when it changes to 
+
+19.0 “L-OFF”. Tests are automatically locked when exiting test functions. 
+
+
+Values (simulated) 
+
+L-ON 
+
+L-OFF 
+
+
+Subtests: 
+
+13.0 Activate gong by pressing button (gong response is delayed) 
+
+
+Values (simulated) 
+
+Gong 
+
+
+Subtests: 
+
+11.0 Cluster code 
+
+
+Values (simulated) 
+
+000003 
+
+
+Subtests: 
+
+10.0 US 02 
+
+
+Values (simulated) 
+
+02 
+
+
+Subtests: 
+
+9.0 12.5 volts 
+
+
+Values (simulated) 
+
+125 
+
+
+Subtests: 
+
+8.0-8.3 Hex code, instrument cluster inputs (for engineering use) 
+
+
+Values (simulated) 
+
+XXX 
+
+
+Subtests: 
+
+7.0 
+
+Coolant temp input = 32 C 
+
+7.1 
+
+Outside temperature input = 24.5 C 
+
+7.2 
+
+Engine speed 5,283 RPM 
+
+7.3 
+
+Vehicle speed 58km/H 
+
+
+Values (simulated) 
+
+032 
+
+245 
+
+5283 
+
+058 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Test Functions (20-21) 
+
+TEST 20. Not Used 
+
+
+
+TEST 21. - Input values in hexadecimal form 
+
+Values (simulated) 
+
+Subtests: 
+
+
+Reset 
+
+21.0 
+
+Reset software 
+
+
+22 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+Park Distance Control 
+
+Park Distance Control is a safety/convenience system that is an option on the E46. The 
+system is carried over from the E39 and features the ultra-sonic sensors on the rear 
+bumper only. 
+
+The sensors detect the close proximity to other objects when maneuvering the vehicle in 
+tight spaces (such as parallel parking or parking in narrow garages spaces). 
+
+The driver is warned, through an audible tone (beeping), when the vehicle comes close 
+to another object. As the distance to the object decreases, the beeping frequency 
+increases until a steady tone is produced. As the distance to the object increases, the 
+steady tone will return to a beep and stop when the vehicle moves away from the object. 
+
+The PDC is automatically switched ON when the ignition is switched on, however it does 
+not become active until the vehicle is shifted into reverse. 
+
+
+
+
+4 ULTRA-SONIC SENSORS 
+IN REAR BUMPER TRIM 
+
+
+
+23 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The PDC consists of the following components: 
+
+PDC Control Module 
+
+The PDC control module activates the ultrasonic sensors mounted in the rear bumper 
+cover. After activation, the module monitors the signals coming back through the sensors. 
+Through this signal, the control module is able to determine the distance to any object 
+close to the bumpers of the vehicle. As the vehicle comes close to an object, the control 
+module will activate the acoustic warning through the right rear audio system speaker. 
+
+The PDC control module is mounted in the trunk on the right side above the battery. 
+
+Ultrasonic Sensors 
+
+Mounted in the rear bumper. The sensors are small transmitter/receiver modules that are 
+specifically designed for automotive use. The sensors are limited to the following angles 
+of monitoring: 
+
+• 90° on the horizontal plane 
+
+• 60° on the vertical plane 
+
+
+
+24 
+
+E46 Driver Information Systems 
+
+
+
+
+Transmitting Mode 
+
+The control module sends a 40 Khz signal to the sensor and each sensor is then activat¬ 
+ed in a specific sequence (firing order). The ceramic element of the sensor vibrates and 
+produces an ultrasonic sound wave that is sent out from the bumper. 
+
+Receiving Mode 
+
+If the sound wave contacts an object, the wave is bounced back to the sensor. The 
+returning wave causes the ceramic element to vibrate creating an electrical signal as 
+feedback to the control module. 
+
+The control module determines the distance to the object by the time difference 
+between the sent signal and the received ultrasonic wave signals. 
+
+
+
+25 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Operation 
+
+When KL 15 is switched ON, the PDC system is switched "ON", in the standby mode. 
+The system performs a self-check of the ultrasonic sensors and control electronics. 
+
+When the vehicle is shifted into reverse, the system is activated and the sensors are 
+activated in the predetermined order. 
+
+If an object is detected within the operating range of one the sensors, a signal is sent to 
+the PDC control module and the acoustic warning is generated. At the same time the 
+control module checks the signals from the adjacent sensors to help determine the 
+actual distance to the object. 
+
+As the distance to the object decreases, to approximately 1 V 2 feet, the output acoustic 
+frequency increases until a steady tone is generated. 
+
+As the distance to the object increases the frequency will decrease until the object is out 
+of the monitoring range of the sensor. 
+
+
+
+
+
+26 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+Using an instructor designated vehicle, diagnose the concern indicated by the 
+instructor. Complete this worksheet using the proper “Complaint, Cause and 
+Correction” format. 
+
+Vehicle: Chassis #: Production date: 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+
+27 
+
+E46 Driver Information Systems 
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+Using an instructor designated vehicle, diagnose the concern indicated by the 
+instructor. Complete this worksheet using the proper “Complaint, Cause and 
+Correction” format. 
+
+Vehicle:_Chassis #: _ Production date:_ 
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+
+28 
+
+E46 Driver Information Systems 
+
+
+
+
+Classroom Exercise - Review Question 
+
+1. Why is it important that the instrument cluster and LSZ should NOT be replaced at 
+the same time? 
+
+
+2. What bus systems are connected to the E46 instrument cluster? 
+
+
+3. What is the purpose of the “pictogram” display? 
+
+
+4. What is the “low fuel level” output signal used for? 
+
+
+5. Explain SIAIV processing: 
+
+
+29 
+
+E46 Driver Information Systems 
+
+
+
+Classroom Exercise - Review Questions 
+
+List the OBC functions on the E46 instrument cluster: 
+
+
+
+7. How does the IHKA module receive outside temperature information? 
+
+
+8. What information does the E46 instrument cluster receive from the CAN-Bus? 
+
+
+9. Describe the “gateway”function on the E46 cluster: 
+
+
+10. When does the E46 PDC system become active? 
+
+
+30 
+
+E46 Driver Information Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

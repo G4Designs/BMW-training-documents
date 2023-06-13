@@ -1,0 +1,6701 @@
+Technical training. 
+
+Product information. 
+
+101 General Vehicle Electronics 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+BMW Group University 
+
+Technical Training 
+
+ST1403a 3/1/2014 
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left-hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as a result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2013 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information contained in this document forms an integral part of the technical training of the 
+BMW Group and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: July 2013 
+
+BV-72/Technical Training 
+
+
+
+
+101 General Vehicle Electronics 
+
+Contents 
+
+
+1. Vehicle Electrical System.1 
+
+1.1. Bus overview.1 
+
+1.2. Main bus systems.3 
+
+1.2.1. K-CAN.3 
+
+1.2.2. PT-CAN.5 
+
+1.2.3. FlexRay.6 
+
+1.2.4. D-CAN.7 
+
+1.2.5. Ethernet.8 
+
+1.3. Sub-bus systems.9 
+
+1.3.1. LIN-Bus.9 
+
+1.3.2. Local CAN.11 
+
+1.3.3. USB.11 
+
+1.4. Diagnosis access OBD2.11 
+
+1.5. Installation locations of control units.12 
+
+1.6. Control units.13 
+
+1.6.1. Body Domain Controller.14 
+
+1.6.2. Frontal Light Electronics (FLEL/FLER).16 
+
+1.6.3. Top Rear Side View Camera (TRSVC).17 
+
+1.6.4. Roof function center (FZD).17 
+
+1.6.5. Car Sharing Module (CSM).18 
+
+1.6.6. Park Distance Control (PDC).19 
+
+1.6.7. Parking Maneuvering Assistant (PMA).19 
+
+1.6.8. Integrated automatic heating / air-conditioning (IHKA).20 
+
+1.6.9. Touchbox (TBX).21 
+
+1.6.10. Controller with touch pad (CON).21 
+
+1.6.11. Head unit (HEADUNIT).22 
+
+1.6.12. Telematic Communication Box (TCB).22 
+
+1.6.13. Audio amplifier (AMP).23 
+
+1.6.14. Instrument cluster (KOMBI).24 
+
+1.6.15. Electrical Digital Motor Electronics (EDME).24 
+
+1.6.16. Charging interface module (LIM).25 
+
+1.6.17. Gear selector switch (GWS).26 
+
+1.6.18. Convenience charging electronics (KLE).26 
+
+1.6.19. Hybrid pressure refueling electronic control unit (TFE).27 
+
+1.6.20. Range Extender Digital Engine Electronics (RDME).28 
+
+1.6.21. Range Extender Electrical Machine Electronics (REME).28 
+
+1.6.22. Camera-based driver support systems (KAFAS).29 
+
+1.6.23. Electrical machine electronics (EME).30 
+
+1.6.24. Battery management electronics (SME).31 
+
+1.6.25. Advanced Crash Safety Module (ACSM).32 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+Contents 
+
+
+1.6.26. Electronic Power Steering (EPS).33 
+
+1.6.27. Dynamic Stability Control (DSC).33 
+
+1.6.28. Optional equipment system (SAS).34 
+
+2. Voltage Supply.36 
+
+2.1. Overview of the 12V voltage supply.36 
+
+2.2. System wiring diagram.37 
+
+2.3. Components.38 
+
+2.3.1. Battery.38 
+
+2.3.2. Intelligent battery sensor (IBS).39 
+
+2.3.3. Safety battery terminal (SBK).39 
+
+2.3.4. Integrated supply module.40 
+
+2.3.5. Power distribution box, front.40 
+
+2.3.6. Body Domain Controller (BDC).41 
+
+2.3.7. Power distribution box, passenger compartment.42 
+
+2.3.8. DC/DC converter in the EME.43 
+
+2.3.9. Ground connections.43 
+
+2.4. Terminal control.46 
+
+2.5. Energy management.47 
+
+2.6. Emergency charging.48 
+
+2.7. Diagnosis and programming.48 
+
+2.7.1. Diagnosis.48 
+
+2.7.2. Programming.48 
+
+3. Exterior Lights.49 
+
+3.1. System wiring diagram.50 
+
+3.1.1. LED headlight.50 
+
+3.1.2. LED rear lights.52 
+
+3.2. Lighting, front.53 
+
+3.2.1. LED headlight.53 
+
+3.2.2. High-beam headlight and turn indicator.54 
+
+3.3. Lighting, rear.54 
+
+4. Interior Lighting.56 
+
+4.1. System wiring diagram for interior light without local interconnect network 
+
+bus.57 
+
+4.2. System wiring diagram for the interior light with local interconnect network 
+
+bus.59 
+
+5. Wash/wipe System.62 
+
+5.1. System components.62 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+Contents 
+
+
+5.2. System wiring diagram.65 
+
+5.3. System components.66 
+
+6. Locking and Security Functions.67 
+
+6.1. System wiring diagram.68 
+
+6.2. System components.69 
+
+6.3. Overview of functions.70 
+
+6.4. Central locking system.70 
+
+6.4.1. System wiring diagram.72 
+
+6.4.2. System components.74 
+
+6.5. Comfort Access.76 
+
+6.5.1. System wiring diagram.77 
+
+6.5.2. System components.78 
+
+7. Alarm System.81 
+
+7.1. System wiring diagram.81 
+
+8. Slide/Tilt Sunroof.83 
+
+8.1. System wiring diagram.83 
+
+9. Steering Column Switch Cluster.85 
+
+9.1. System wiring diagram.85 
+
+10. Exterior Mirrors.87 
+
+10.1. System wiring diagram.88 
+
+10.1.1. Exterior mirror without LIN bus connection.88 
+
+10.1.2. Exterior mirror with LIN bus connection.90 
+
+11. Inside Mirror.92 
+
+11.1. System wiring diagram.92 
+
+12. Seat Heating.94 
+
+12.1. System wiring diagram.94 
+
+13. Horn.96 
+
+13.1. System wiring diagram.96 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.1. Bus overview 
+
+
+IS SB 
+
+
+III 
+
+
+
+EEJ0 
+
+IN % 
+5 i ! 
+
+Ill H 
+
+m 
+
+i s \ 
+
+
+1 
+
+
+TE12-0776.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Crash Safety Module 
+
+AMP 
+
+Amplifier 
+
+BDC 
+
+Body Domain Controller 
+
+CON 
+
+Controller 
+
+CSM 
+
+Car Sharing Module 
+
+DSC 
+
+Dynamic Stability Control 
+
+EDME 
+
+Electrical Digital Motor Electronics 
+
+EME 
+
+Electrical Machine Electronics 
+
+EPS 
+
+Electronic Power Steering 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector switch 
+
+HEADUNIT 
+
+Headunit 
+
+IHKA 
+
+Integrated automatic heating / air-conditioning system 
+
+KAFAS 
+
+Camera-based driver support systems 
+
+KLE 
+
+Convenience charging electronics 
+
+KOMBI 
+
+Instrument cluster 
+
+LIM 
+
+Charging interface module 
+
+PDC 
+
+Park Distance Control 
+
+PMA 
+
+Parking Maneuvering Assistant 
+
+RDME 
+
+Range Extender Digital Engine Electronics 
+
+REME 
+
+Range Extender Electrical Machine Electronics 
+
+SAS 
+
+Optional equipment system 
+
+SME 
+
+Battery management electronics 
+
+TFE 
+
+Hybrid pressure refueling electronic control unit 
+
+TBX 
+
+Touchbox 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top Rear Side View Camera 
+
+ZGM 
+
+Central gateway module 
+
+1 
+
+Control units also connected at terminal 15WUP 
+
+2 
+
+Control units with wake-up authorization 
+
+3 
+
+Start-up node control units for starting and synchronizing the FlexRay bus 
+system 
+
+4 
+
+Charging socket at the vehicle 
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+All bus systems in the 101 are known from the other F-series. 
+
+There is no MOST in the 101. 
+
+
+1.2. Main bus systems 
+
+
+1.2.1. K-CAN 
+
+In the 101 the following K-CAN are used: 
+
+• K-CAN2 
+
+• K-CAN3 
+
+• K-CAN4. 
+
+All K-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+The K-CAN with 100 kBit/s data transfer rate is not used in the 101. 
+
+
+3 
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+K-Can termination 
+
+
+
+
+
+® 
+
+n_i 
+
+
+TRSVC 
+
+
+System wiring diagram K-CAN3 
+
+
+4 
+
+
+TE13-0114 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Frontal Light Electronics Left (FLEL) 
+
+2 
+
+Frontal Light Electronics Right (FLER) 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+CAN terminator 
+
+5 
+
+Top Rear Side View Camera (TRSVC) 
+
+
+The CAN-Buses are shown in the overview of the bus systems. The actual physical layout (topology) is 
+shown using the example of the K-CAN3. 
+
+As with most bus systems terminating resistors are also used for termination for the K-CAN to avoid 
+reflections on the data lines. 
+
+The terminating resistors for the termination are located in the 
+
+• Body Domain Controller 
+
+• and CAN terminator. 
+
+All other control units are connected at the CAN terminator without a terminating resistor. 
+
+CAN terminator 
+
+In the CAN terminator the terminating resistor for the corresponding CAN-Bus is installed. The 
+terminating resistor comprises two resistances connected in series, each 60 Ohm. A measuring 
+tap against ground with a resistor and capacitor for the reduction of high-frequency faults is also 
+installed. Ferrite beads are installed for all bus lines in the CAN terminator. Ferrite beads suppress 
+high-frequency faults on the CAN data lines, thus making possible line lengths of up to 5 m in the 
+wiring harness. 
+
+
+1.2.2. PT-CAN 
+
+In the 101 the following PT-CAN are used: 
+
+• PT-CAN 
+
+• PT-CAN2. 
+
+The gateway for the PT-CAN2 is located in the Electrical Digital Motor Electronics (EDME). 
+Both PT-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+5 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.2.3. FlexRay 
+
+
+
+6 
+
+
+TE12-1073 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Power Steering (EPS) 
+
+2 
+
+Dynamic Stability Control (DSC) 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Optional equipment system (SAS) 
+
+5 
+
+Crash Safety Module (ACSM) 
+
+6 
+
+Electrical Digital Motor Electronics (EDME) 
+
+
+The FlexRay is shown in a simplified form in the overview of the bus systems. The FlexRay system 
+wiring diagram shows the actual physical layout (topology). 
+
+The FlexRay has a data transfer rate of 10 MBit/s. 
+
+The control units at the FlexRay are: 
+
+• connected using an additional line at terminal 15WUP 
+
+• or terminal 15N. 
+
+
+FlexRay data bus topology for the 101 
+
+The star coupler with four drivers is located in the Body Domain Controller (BDC). The FlexRay control 
+units are connected to these bus drivers independent of their termination type. 
+
+Bus termination 
+
+As with most bus systems resistors are also used for termination for the FlexRay to avoid reflections 
+on the data lines at both ends of the data lines. The terminating resistors are located in the control 
+units. If only one control unit is connected at a bus driver, the connections at the bus driver and at the 
+control unit also have a terminating resistor. 
+
+Synchronization 
+
+In order to realize the synchronous design of individual functions in networked control units, a 
+common time base is required. As all control units work internally with their own clock generator, 
+the time synchronization must be done via the data bus. The control units measure the period of 
+certain synchronization bits, calculate the mean value and adapt their bus cycle to this value. The 
+synchronization bits are sent in the static part of the bus message. The synchronization starts in the 
+FlexRay after the system start between two control units that are authorised to perform wake-up 
+function (marked with "S" in the bus overview), once the Body Domain Controller has sent a wake- 
+up pulse. When this process is completed, the other control units log on at the FlexRay and calculate 
+their respective difference value. In addition, a mathematical correction of the synchronization is 
+done during operation. It is thus guaranteed that even the slightest time differences do not lead to 
+transmission errors over a longer period. 
+
+
+1.2.4. D-CAN 
+
+The D-CAN for the vehicle diagnosis has a data transfer rate of 500 kBit/s. 
+
+
+7 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.2.5. Ethernet 
+
+The Ethernet access is used for programming the entire vehicle. 
+
+In a 101 with Headunit High the map update for the navigation is also done using the Ethernet 
+interface. 
+
+
+8 
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.3. Sub-bus systems 
+1.3.1. LIN-Bus 
+
+
+
+Overview of local interconnect network bus 
+
+
+9 
+
+
+TE12-1074 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Frontal Light Electronics Left 
+
+2 
+
+Electric fan 
+
+3 
+
+Wiper motor, passenger's side 
+
+4 
+
+Wiper motor, driver's side 
+
+5 
+
+Intelligent battery sensor 
+
+6 
+
+Frontal Light Electronics Right 
+
+7 
+
+Right exterior mirror 
+
+8 
+
+Body Domain Controller 
+
+9 
+
+Front passenger seat module 
+
+10 
+
+Seat occupancy mat 
+
+11 
+
+Pressure/Temperature sensor 
+
+12 
+
+Electric A/C compressor 
+
+13 
+
+Stepper motor, footwell 
+
+14 
+
+Stepper motor, blending flap 
+
+15 
+
+Stepper motor, defrost 
+
+16 
+
+Stepper motor, fresh air/air recirculation function 
+
+17 
+
+Hybrid pressure refueling electronic control unit 
+
+18 
+
+Crash Safety Module 
+
+19 
+
+Blower output stage 
+
+20 
+
+Driver's seat module 
+
+21 
+
+Intelligent Safety button 
+
+22 
+
+Integrated automatic heating / air-conditioning system or integrated heating / 
+air-conditioning regulation 
+
+23 
+
+Control panel for heating/air-conditioning and control panel for radio 
+
+24 
+
+Switch block, driver's door 
+
+25 
+
+Remote control receiver 
+
+26 
+
+Roof function center 
+
+27 
+
+Interior rear-view mirror with automatic anti-dazzle function 
+
+28 
+
+Rain-light-solar-condensation sensor 
+
+29 
+
+Steering column switch cluster 
+
+30 
+
+Operating facility, light switch 
+
+31 
+
+Electrical Digital Motor Electronics 
+
+32 
+
+Left exterior mirror 
+
+33 
+
+Electric heating 
+
+34 
+
+Siren with tilt alarm sensor 
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+Different data rates are used for the local interconnect network bus according to the information 
+required. The data transfer rates of the local interconnect network bus in the 101 range from 9.6 kBit/s 
+to 20.0 kBit/s. 
+
+Examples: 
+
+• 9.6 kBit/s exterior mirror, switch block at driver's door 
+
+• 19.2 kBit/s FLEL, FLER 
+
+• 20.0 kBit/s remote control receiver. 
+
+The Body Domain Controller is designed for the different data rates at the corresponding inputs. 
+
+1.3.2. Local CAN 
+
+In the 101 the following Local Controller Area Networks are available with the corresponding 
+equipment: 
+
+• Local Controller Area Network from the optional equipment system to camera-based driver 
+support systems (KAFAS) 
+
+• Local Controller Area Network from the charging interface module LIM to the charging socket 
+at the vehicle. 
+
+The Local Controller Area Networks have a data transfer rate of 500 kBit/s. 
+
+
+1.3.3. USB 
+
+Depending on the equipment the following USB connections are possible: 
+
+• from the headunit to the Telematic Communication Box (TCB) 
+
+• from the headunit to the telephone base plate 
+
+• from the headunit to the USB plug. 
+
+In vehicles with a Car Sharing Module the CSM is supplied with power via the telephone base plate. 
+
+
+1.4. Diagnosis access OBD2 
+
+The vehicle diagnosis via D-CAN is done using the OBD2 interface. The Ethernet access for the 
+vehicle programming is also located in the OBD2 interface. 
+
+
+11 
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.5. Installation locations of control units 
+
+
+
+Installation locations of control units 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Vehicle Sound Generator (VSG) (Not currently for the US market) 
+
+2 
+
+Frontal Light Electronics Rights (FLER) 
+
+3 
+
+Dynamic Stability Control (DSC) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Integrated automatic heating / air-conditioning system (IHKA) (IHKR is not 
+available for the US Market) 
+
+6 
+
+Instrument cluster (KOMBI) 
+
+7 
+
+Gear selector switch (GWS) 
+
+8 
+
+Roof function center (FZD) 
+
+
+12 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+Index 
+
+Explanation 
+
+9 
+
+Touchbox (TBX) 
+
+10 
+
+Parking Maneuvering Assistant (PMA) or Park Distance Control (PDC) 
+
+11 
+
+Headunit (HEADUNIT) 
+
+12 
+
+Optional equipment system (SAS) 
+
+13 
+
+Charging interface module (LIM) 
+
+14 
+
+Range Extender Electrical Machine Electronics (REME) 
+
+15 
+
+Range Extender Digital Engine Electronics (RDME) 
+
+16 
+
+Top Rear Side View Camera (TRSVC) 
+
+17 
+
+Convenience charging electronics (KLE) 
+
+18 
+
+Electrical machine electronics (EME) 
+
+19 
+
+Amplifier (AMP) 
+
+20 
+
+Telematic Communication Box (TCB) 
+
+21 
+
+Battery management electronics (SME) 
+
+22 
+
+Crash Safety Module (ACSM) 
+
+23 
+
+Controller (CON) 
+
+24 
+
+Hybrid pressure refueling electronic control unit (TFE) 
+
+25 
+
+Electrical Digital Motor Electronics (EDME) 
+
+26 
+
+Camera-based driver support systems (KAFAS) 
+
+27 
+
+Electronic Power Steering (EPS) 
+
+28 
+
+Frontal Light Electronics Left (FLEL) 
+
+
+The Car Sharing Module is connected to the base plate of the eject box instead of a snap-in adapter. 
+
+
+1.6. Control units 
+
+Information on control units 
+
+• which are used for the first time in the 101 
+
+• known control units, which are adapted for the 101. 
+
+
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WMM 
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.6.1. Body Domain Controller 
+
+
+
+Body Domain Controller 
+
+
+The Body Domain Controller (BDC) replaces the control units known from the F30: 
+
+• Front Electronic Module (FEM) and 
+
+• Rear Electronic Module (REM). 
+
+BDC functions 
+
+The Body Domain Controller (BDC) is responsible for the following functions: 
+
+• Gateway 
+
+• Electronic immobilizer 
+
+• Terminal control 
+
+• Comfort Access 
+
+• Central locking system 
+
+• Power Window Regulator 
+
+• Lighting 
+
+• Wash/wipe system 
+
+• Horn 
+
+Other functions: 
+
+• Vehicle data storage 
+
+• Data transfer for Condition Based Service (CBS). 
+
+Fuses in the BDC 
+
+The following components are protected by fuses in the BDM: 
+
+
+14 
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+• Steering column switch cluster (SZL), operating facility for driver assistance systems, 
+operating facility for lights 
+
+• Headlight driver module for LED 
+
+• OBD2 socket, IHKA 
+
+• Outside door handle electronics 
+
+• Power Window Regulator 
+
+• Central locking system 
+
+• Heated rear window. 
+
+
+Relay in the BDC 
+
+The following components are switched by a relay in the BDC: 
+
+• Power window regulators 
+
+• Central locking system 
+
+• Headlight cleaning system 
+
+• Rear wiper. 
+
+
+Activation of relay 
+
+The following relays are activated by the BDC: 
+
+• Heated rear window 
+
+• Horn 
+
+The relays are located above the power distribution box in the passenger compartment. 
+
+Gateway in the BDC 
+
+The central gateway module ZGM is integrated in the BDC. The ZGM is integrated as a module in 
+the BDC in the electrical system architecture 2020. It is viewed as a control unit within a control 
+unit, in that the ZGM in the BDC behaves like an autarkic control unit. The task of the ZGM is to 
+connect all the data bus systems to each other. By connecting them in this way, it is possible to use 
+information from the individual bus systems on a generalized level. The central gateway module is able 
+to implement different protocols and speeds on other bus systems. The programming data for the 
+control units are transmitted by Ethernet to the vehicle via the ZGM. 
+
+LIN controller in the BDC 
+
+The BDC is the gateway for the following components at the local interconnect network bus: 
+
+• Frontal Light Electronics Right 
+
+• Frontal Light Electronics Left 
+
+• Active automatic air flap control 
+
+• Exterior mirror, left 
+
+
+15 
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+• Exterior mirror, right 
+
+• Switch block, driver's door 
+
+• Electrical Digital Motor Electronics 
+
+• Intelligent battery sensor 
+
+• Windscreen wiper 
+
+• Rain-Driving light sensor 
+
+• Interior rear-view mirror with automatic anti-dazzle function 
+
+• Roof function center 
+
+• Remote control receiver 
+
+• Steering column switch cluster 
+
+• Light switch 
+
+• Intelligent Safety button 
+
+• Seat-heating electronics on driver's side 
+
+• Seat-heating electronics on passenger's side 
+
+The following Local Interconnect Network components are connected at the BDC, but are only looped 
+through: 
+
+• Electric heating 
+
+• Electric A/C compressor 
+
+• Integrated automatic heating / air-conditioning system or integrated heating / air-conditioning 
+regulation. 
+
+1.6.2. Frontal Light Electronics (FLEL/FLER) 
+
+
+
+Frontal Light Electronics Left 
+
+
+16 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The control units for the Frontal Light Electronics Left (FLEL) and Frontal Light Electronics Right 
+(FLER) are installed in the left and right headlight for the LED headlight equipment. 
+
+The Frontal Light Electronics includes: 
+
+• The activation of the LED in the corresponding headlight 
+
+• The activation of the stepper motor for the headlight beam throw adjustment 
+
+The control units FLEL and FLER are connected at the K-CAN3 and at the LIN. 
+
+1.6.3. Top Rear Side View Camera (TRSVC) 
+
+
+
+Control unit for reversing camera 
+
+
+The Top Rear Side View Camera (TRSVC) control unit and the actual reversing camera are integrated 
+in the one housing. 
+
+In the 101 no Side View cameras are offered. 
+
+The TRSVC control unit is connected at the K-CAN3. 
+
+1.6.4. Roof function center (FZD) 
+
+
+
+Roof function center 
+
+
+Depending on the vehicle equipment the roof function center (FZD) includes the corresponding 
+components for: 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+• Alarm system 
+
+• Control of the slide/tilt sunroof. 
+
+The FZD is connected at the K-CAN2 and twice at the Local Interconnect Network. 
+
+• Local Interconnect Network from FZD to the BDC and 
+
+• LIN from FZD to the siren with tilt alarm sensor SINE. 
+
+The FZD is not responsible for the control of the interior light. The interior light unit and the FZD 
+electronics are located in the same housing. The control of the interior light is described in chapter 4. 
+
+1.6.5. Car Sharing Module (CSM) 
+
+
+
+Car Sharing Module 
+
+The Car Sharing Module (CSM) is used in the case of rental cars for access and use of the vehicle. 
+The CSM is connected at the K-CAN2 and via USB at the headunit. 
+
+
+18 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.6. Park Distance Control (PDC) 
+
+
+
+
+Park Distance Control 
+
+
+Park Distance Control (PDC) assists the driver when manoeuvring in and out of a parking space. The 
+current distance from an obstruction is indicated by acoustic signals and on a visual display. 
+
+In vehicles with Parking Maneuvering Assistant (PMA) the sensors of the Park Distance Control (PDC) 
+are evaluated by the Parking Maneuvering Assistant control unit. 
+
+The PDC is connected at the K-CAN2. 
+
+1.6.7. Parking Maneuvering Assistant (PMA) 
+
+
+
+
+
+Parking Maneuvering Assistant 
+
+
+The Parking Maneuvering Assistant facilitates parking in gaps between cars parallel to the roadway. 
+
+In a vehicle with PMA all sensors of the Park Distance Control are used. A sensor for the PMA is also 
+available in the bumper panel at the front left and right. Therefore in that case PMA also assumes the 
+entire PDC functions. There is no separate PDC control unit installed. 
+
+
+19 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+The PMA is connected at the K-CAN2. 
+
+1.6.8. Integrated automatic heating / air-conditioning (IHKA) 
+
+
+
+Integrated automatic heating / air-conditioning 
+
+
+The IHKA is optional equipment for the 101. 
+
+The IHKA control unit is a Local Interconnect Network master for the following components of the 
+heating and air-conditioning system: 
+
+• Electric heating 
+
+• EKK 
+
+• Blower output stage 
+
+• Flap motors. 
+
+The information is also transmitted from the audio control panel via Local Interconnect Network to the 
+IHKA control unit. 
+
+The climate control unit transmits the information from the audio control panel via the K-CAN4 to the 
+BDC. 
+
+The IHKA is connected at the K-CAN4. 
+
+
+20 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.6.9. Touchbox (TBX) 
+
+
+
+Touchbox 
+
+
+The Touchbox (TBX) control unit is required for interpreting the contact sensors of the touch controller 
+for the Headunit High. 
+
+The TBX is connected at the K-CAN4. 
+
+1.6.10. Controller with touch pad (CON) 
+
+
+
+Controller with touch pad 
+
+
+For vehicles with optional equipment SA609 Professional navigation, the regular controller with rotary 
+adjuster/knob is replaced by a touch controller with an additional touch control panel above the rotary 
+adjuster/knob. In the touch control panel the customer can input location information for the navigation 
+system or telephone numbers and contact details. In the map operation the map section for example 
+can be moved and enlarged or reduced by finger movement. 
+
+Depending on the national-market version the labeling for navigation differs. 
+
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+• "NAV" for ECE and USA 
+
+• "MAP" for China version. 
+
+The controller with touchpad is connected at the K-CAN4. 
+
+1.6.11. Head unit (HEADUNIT) 
+
+
+Headunit High 
+
+The Headunit High does not have a DVD drive. 
+
+The headunit is connected at the K-CAN4 and at the Body Domain Controller via Ethernet. 
+
+1.6.12. Telematic Communication Box (TCB) 
+
+
+
+
+Telematic Communication Box 
+
+The Telematic Communication Box (TCB) is connected to the Headunit HIGH and is responsible for 
+the following functions: 
+
+
+22 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+• BMW Assist with eCall (emergency-call function) 
+
+• BMW Online 
+
+• BMW Internet using a SIM card integrated in the vehicle (P-SIM) 
+
+• Remote functions (reception and controller) 
+
+• "Text-to-speech" function in Office area 
+
+• BMW TeleServices via P-SIM. 
+
+The TCB is connected at the K-CAN4 and via USB at the headunit. 
+
+
+1.6.13. Audio amplifier (AMP) 
+
+
+
+Audio amplifier 
+
+
+The audio amplifier AMP receives the audio analog signals from the headunit and amplifies these for 
+the speaker. 
+
+The audio amplifier is connected at the K-CAN4. 
+
+
+23 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.14. Instrument cluster (KOMBI) 
+
+
+
+Instrument cluster 
+
+
+The displays of the instrument cluster are shown by a thin-film transistor display. The indicator and 
+warning lights are designed in LED technology. 
+
+The instrument cluster is connected at the powertrain CAN. 
+
+1.6.15. Electrical Digital Motor Electronics (EDME) 
+
+
+
+Electrical Digital Motor Electronics 
+
+The master role for the control of the electric motor in the 101 is assumed by the DME. It is modelled 
+after vehicles with a gasoline engine with "Electrical Digital Motor Electronics" EDME. The EDME has 
+the following functions: 
+
+
+24 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+• Evaluation of the driver's choice (accelerator pedal) 
+
+• Coordination of torque demands 
+
+• Activation of the electrical machine 
+
+• Activation of electric fan 
+
+• Activation of electric fan in the engine compartment 
+
+• Evaluation of the electronic gear selector switch (Shift-by-Wire function) 
+
+• Power management for the high-voltage electrical system 
+
+• Power management for the low-voltage electrical system 
+
+• Activating the electric vacuum pump. 
+
+The EDME is connected to the PT-CAN, PT-CAN2 and FlexRay. 
+
+1.6.16. Charging interface module (LIM) 
+
+
+
+
+
+Charging interface module 
+
+
+The LIM control unit is responsible for the following functions: 
+
+• Coordinating the charging procedure 
+
+• Activation of the LEDs for displaying the charging status 
+
+• Activation of the electric motor for locking the charging socket cover 
+
+• Activation of the electric motor for locking the charging plug. 
+
+The LIM is connected at the PT-CAN and via a Local-CAN at the charging socket at the vehicle. 
+
+
+25 
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.6.17. Gear selector switch (GWS) 
+
+
+
+Gear selector switch 
+
+
+The gear selector switch GWS is used for selecting a drive position. It is positioned in the vehicle at 
+the steering column. The parking lock is activated/deactivated using the P button. The drive position is 
+displayed by means of LED. The START-STOP button is also positioned at the gear selector switch. 
+
+The GWS is connected at the PT-CAN and PT-CAN2. 
+
+
+1.6.18. Convenience charging electronics (KLE) 
+
+
+
+Convenience charging electronics 
+
+
+The convenience charging electronics (KLE) is standard equipment for the US market and 
+enables the charging of the high-voltage battery with AC voltage. 
+
+Charging power with AC voltage: 
+
+• 3.7 kW power EME and 
+
+• 3.7 kW power KLE. 
+
+This gives a maximum charging power of 7.4 kW. 
+
+
+26 
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The KLE enables charging with direct current voltage and a power rating of up to maximum 50 kW. 
+The charging power is dependent on the power of the charging station. 
+
+Note: The charging variants and power are country-dependent. The US market includes the 
+KLE (7.4KW) option as standard in all 101 vehicles. 
+
+The KLE is connected at the PT-CAN2. 
+
+1.6.19. Hybrid pressure refueling electronic control unit (TFE) 
+
+
+
+Hybrid pressure refueling electronic control unit 
+
+
+The control unit for the hybrid pressure refueling electronic control unit TFE is only installed in 
+vehicles with range extender. 
+
+The TFE is required to depressurize the fuel tank before filling. The excess pressure available in the 
+tank is discharged via the carbon canister and the fuel filler flap can then be opened. The activation of 
+the fuel filler flap is done by the hybrid pressure refueling electronic control unit. 
+
+The hybrid pressure refueling electronic control unit is connected at the powertrain CAN. 
+
+
+27 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.6.20. Range Extender Digital Engine Electronics (RDME) 
+
+
+
+Range Extender Digital Engine Electronics 
+
+
+The control unit RDME is installed in a vehicle with range extender. 
+
+The RDME is the DME for the range extender. 
+
+The RDME is connected to the PT-CAN and PT-CAN2. 
+
+1.6.21. Range Extender Electrical Machine Electronics (REME) 
+
+
+
+Range Extender Electrical Machine Electronics 
+
+
+The range extender electrical machine electronics REME is only installed in vehicles with range 
+extender. 
+
+The REME controls the range extender electrical machine. The range extender electrical machine is 
+used to start the rage extender. If the combustion engine is running voltage is generated by the range 
+extender electrical machine and the high-voltage battery is charged via the REME. 
+
+The REME is connected at the PT-CAN2. 
+
+
+28 
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.22. Camera-based driver support systems (KAFAS) 
+
+
+
+Camera-based driver support systems 
+
+
+The control unit camera-based driver support systems KAFAS is required for the following optional 
+equipment: 
+
+• Camera-based cruise control with Stop&Go function 
+
+• Traffic jam assistant 
+
+• Road sign recognition 
+
+• Collision warning 
+
+• Person recognition with city braking function 
+
+• Collision warning with city braking function. 
+
+The camera-based driver support systems control unit is connected to the PT-CAN and to the optional 
+equipment system via a Local Controller Area Network. 
+
+
+29 
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.23. Electrical machine electronics (EME) 
+
+
+
+Electrical machine electronics 
+
+The function of the electrical machine electronics is to activate and control the permanently excited 
+electrical machine in the high-voltage electrical system. This necessitates the use of a bidirectional 
+inverter which converts the high direct current voltage of the high-voltage battery into a three-phase 
+alternating current for the electrical machine. The high-voltage battery is charged again by the 
+alternator operation of the electrical machine. 
+
+The EME also incorporates the DC/DC converter which is responsible for the voltage supply to the 
+12V vehicle electrical system. 
+
+The power electronics for charging with AC voltage at 3.7 kW is also located in the EME. 
+
+The EME is connected to the PT-CAN and PT-CAN2. 
+
+
+30 
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.24. Battery management electronics (SME) 
+
+
+
+Battery management electronics 
+
+The SME is integrated in the high-voltage battery and executes among others the following functions: 
+
+• Monitoring of the state of the lithium-ion battery 
+
+• Monitoring of the high-voltage electrical system for insulation faults 
+
+• Control of the switch contactors for activating the high-voltage system. 
+
+The SME is connected at the PT-CAN2. 
+
+
+31 
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+1.6.25. Advanced Crash Safety Module (ACSM) 
+
+
+
+
+
+Crash Safety Module 
+
+
+
+
+The function of the Crash Safety Module ACSM is to permanently evaluate all sensor signals in order 
+to identify a crash situation. The ACSM evaluates the information from the sensors and then forwards 
+corresponding measures for selective activation of the necessary restraint systems. 
+
+The ACSM records the yaw rate and sends this information on the FlexRay data bus. 
+
+No additional yaw sensors are required for the following systems. 
+
+• Dynamic Stability Control 
+
+• Navigation system. 
+
+The ACSM is connected to the FlexRay. 
+
+
+32 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+
+1.6.26. Electronic Power Steering (EPS) 
+
+
+
+Electronic Power Steering 
+
+
+The Electronic Power Steering supplied with voltage by the 12V vehicle electrical system. 
+
+The steering angle information in the 101 is calculated by the EPS and made available to the other 
+control units via the FlexRay data bus. 
+
+The EPS is connected at the FlexRay. 
+
+1.6.27. Dynamic Stability Control (DSC) 
+
+
+
+Dynamic Stability Control 
+
+
+33 
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The control unit Dynamic Stability Control (DSC) has new functions and adaptations for an electric 
+vehicle. 
+
+New functions: 
+
+• Motor tow-away control for electric motor 
+
+• Function and stabilization during energy recovery. 
+
+• The tire pressure monitoring function (TPMS) is now integrated into the DSC control unit. 
+No separate TPMS control unit is not required, please refer to the “101 Chassis and 
+Suspension” training manual for more information. 
+
+The DSC is connected at the FlexRay. 
+
+1.6.28. Optional equipment system (SAS) 
+
+
+
+Iff 
+
+Optional equipment system 
+
+The optional equipment system control unit provides a variety of driver assistance functions. 
+Possible functions: 
+
+• Collision warning with city braking function 
+
+• Cruise control with braking function 
+
+• Person recognition with city braking function 
+
+• Parking Maneuvering Assistant 
+
+• Camera-based cruise control with Stop&Go function 
+
+• Proactive driving assistant. 
+
+The image information required by the optional equipment system is provided by the camera-based 
+driver support systems. 
+
+
+34 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+1. Vehicle Electrical System 
+
+The optional equipment system is not an element of the standard equipment. It is only installed if 
+the customer orders a corresponding optional equipment. In the 101 there is no Integrated Chassis 
+Management ICM. The data required for the driver assistance functions is made available via the 
+FlexRay. 
+
+Not all possible functions are offered in all national-market versions. 
+
+The optional equipment system is connected at the FlexRay and to a Local Controller Area Network 
+with the camera-based driver support systems KAFAS. 
+
+
+35 
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.1. Overview of the 12V voltage supply 
+
+
+
+Overview of the 12 V voltage supply 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution box, front 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Power distribution box, passenger compartment 
+
+4 
+
+Integrated supply module (only for vehicles with range extender) 
+
+5 
+
+Electrical machine electronics 
+
+6 
+
+Safety battery terminal 
+
+7 
+
+Battery (12 V; 20 Ah; AGM) 
+
+8 
+
+Intelligent battery sensor 
+
+9 
+
+Electronic Power Steering 
+
+10 
+
+Dynamic Stability Control 
+
+
+36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.2. System wiring diagram 
+
+
+
+101 system wiring diagram for voltage supply 
+
+
+37 
+
+
+TE12-1091 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Power Steering 
+
+2 
+
+Electric fan 
+
+3 
+
+Fuses in the power distribution box at the front 
+
+4 
+
+Relay for electric fan 
+
+5 
+
+Dynamic Stability Control 
+
+6 
+
+Safety battery terminal 
+
+7 
+
+12V battery 
+
+8 
+
+Intelligent battery sensor 
+
+9 
+
+Body Domain Controller 
+
+10 
+
+Fuses in the Body Domain Controller 
+
+11 
+
+Crash Safety Module 
+
+12 
+
+Fuses in the power distribution box in the passenger compartment 
+
+13 
+
+Electrical machine electronics 
+
+14 
+
+Integrated supply module (only for vehicles with range extender) 
+
+15 
+
+Battery management electronics 
+
+16 
+
+Blower motor 
+
+17 
+
+Electrical Digital Motor Electronics 
+
+
+2.3. Components 
+
+The voltage supply of the 101 comprises the following components: 
+
+• 12V battery 
+
+• Intelligent battery sensor (IBS) 
+
+• Safety battery terminal (SBK) 
+
+• Integrated supply module (only for vehicles with range extender) 
+
+• Power distribution box, front 
+
+• Power distribution box, passenger compartment 
+
+• DC/DC converter in the electrical machine electronics for supplying the 12V vehicle electrical 
+system with power 
+
+• Ground connections. 
+
+2.3.1. Battery 
+
+For the voltage supply of the 12V vehicle electrical system a 20 Ah AGM battery is used. 
+
+
+38 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+In contrast to a vehicle with a combustion engine, the requirements of the 12V battery in the 101 
+with regard to an engine start are different. In the 101 the job of the 12V battery is only to ensure the 
+powering up of the high-voltage system. What is required of the 12V battery is no longer a minimum 
+SoC to ensure engine starting, but rather a minimum SoC to protect the 12V battery against freezing 
+at temperatures below 0 °C and to power up the high-voltage system. 
+
+The voltage supply of the 12V vehicle electrical system (and also the charging of the 12V battery) is 
+not provide by the conventional alternator, but via the DC/DC converter in the EME. 
+
+2.3.2. Intelligent battery sensor (IBS) 
+
+The IBS records the following data of the 12V battery: 
+
+• Voltage 
+
+• Current 
+
+• Pole temperature. 
+
+The IBS performs the calculation and the evaluation of the information. The results are then forwarded 
+to the superior control units via local interconnect network bus (EDME and BDC). 
+
+2.3.3. Safety battery terminal (SBK) 
+
+The safety battery terminal (SBK) is activated in the event of an accident of corresponding severity. 
+The following lines are separated: 
+
+• Battery positive wire for the electrical machine electronics (EME) 
+
+• Battery positive wire for the integrated supply module (in vehicles with range extender) 
+
+• Terminal 30C for battery management electronics (SME). 
+
+
+Terminal 30C (crash message) 
+
+In the event of a missing signal from terminal 30C, the SME performs a quick shut-down of the high- 
+voltage system. 
+
+The line from the safety battery terminal to the battery management electronics is shown in the 
+wiring diagram. The high-voltage safety connector is located in this line. In a vehicle with the optional 
+equipment convenience charging electronics there is another junction for the convenience charging 
+electronics (KLE). 
+
+
+39 
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+2.3.4. Integrated supply module 
+
+
+
+% 
+
+
+Integrated supply module 
+
+The integrated supply module is only installed in vehicles with range extender. 
+
+The integrated supply module supplies the range extender digital engine electronics and the 12V 
+components of the range extender with voltage. 
+
+2.3.5. Power distribution box, front 
+
+
+
+§ 
+
+Power distribution box, front 
+
+The power distribution box at the front is powered by the 12 V battery. 
+
+The following components are supplied with voltage via the power distribution box at the front and 
+protected accordingly: 
+
+
+40 
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+• Power distribution box, passenger compartment 
+
+• Electronic Power Steering 
+
+• Dynamic Stability Control (valves) 
+
+• Dynamic Stability Control (pump) 
+
+• Electric fan 
+
+• Body Domain Controller. 
+
+
+2.3.6. Body Domain Controller (BDC) 
+
+
+
+Body Domain Controller 
+
+
+The Body Domain Controller (BDC) is responsible for the terminal control:. 
+
+In the 101 there are 2 relays for terminal 30F and 2 relays for terminal 30B. 
+
+There is a relay for terminal 30F in the BDC. 
+
+The following relays in the power distribution box in the passenger compartment are activated by the 
+BDC: 
+
+• Terminal 30F 
+
+• Terminal 30B 
+
+• Terminal 15N. 
+
+The voltage supply and protection of the following components is done by the BDC. 
+
+Components at terminal 30 
+
+• Power distribution box, passenger compartment 
+
+
+41 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+Components at terminal 30F 
+
+• Steering column switch cluster (SZL) 
+
+• Driver assistance system operating facility 
+
+• Operating unit for light 
+
+• OBD2 connection 
+
+• Automatic Integrated heating / air-conditioning (IHKA) 
+
+• Outside door handle electronics. 
+
+The following components are switched by a relay in the BDC and are protected accordingly: 
+
+• Power window regulators 
+
+• Central locking system 
+
+• Horn 
+
+• Heated rear window. 
+
+2.3.7. Power distribution box, passenger compartment 
+
+
+© ® ® 
+
+
+
+Power distribution box, passenger compartment 
+
+Index 
+
+Explanation 
+
+1 
+
+Relay, terminal 30B 
+
+2 
+
+Relay, terminal 30B 
+
+3 
+
+Relay, terminal 15N 
+
+
+The following relays are located in the power distribution box in the passenger compartment: 
+
+
+42 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+• 2 x terminal 30B 
+
+• Terminal 15N 
+
+• Terminal 30F (soldered in the power distribution box). 
+
+There is another relay for terminal 30F in the Body Domain Controller. 
+
+All relays are activated by the BDC. 
+
+2.3.8. DC/DC converter in the EME 
+
+The DC/DC converter for the voltage supply and the charging of the 12V battery is located in the EME. 
+
+
+2.3.9. Ground connections 
+
+
+
+Ground connections 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ground Drive module at the right spring strut 
+
+2 
+
+Ground Life module in the area of the power distribution box in the passenger 
+
+
+compartment 
+
+3 
+
+Ground Drive module at the rear cross member 
+
+4 
+
+Ground Drive module at the front cross member 
+
+
+43 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+Other ground connections can also be located at the Drive module corresponding to the vehicle 
+equipment and national-market version. 
+
+In the 101 the ground connections for the consumers cannot be connected to the body because of the 
+use of carbon for the Life module. The grounding cables of all consumers are connected to ground 
+support points. 
+
+The ground support points are located: 
+
+• Directly at the ground for the Drive module 
+
+• In the case of the Life module via a ground cable at a ground distribution block, which in turn is 
+connected to the Drive module. 
+
+
+Electrical characteristics of carbon 
+
+Carbon is used for the industrial manufacturing of carbon fibers. If these carbon fibers are also 
+introduced to a resin, carbon fiber-reinforced plastic, which is also referred to as CFRP, is obtained. For 
+the sake of simplicity, this product is referred to as "carbon" in this document. 
+
+A differentiation is made between short fibers (0.1 - 1 mm long), long fibers (1 - 50 mm long) and 
+endless fibers (> 50 mm long). The fibers are used for different processing technologies, according to 
+their length. 
+
+The short and long fibers are suitable for fiber spraying. During this process, the fibers are sprayed 
+with a resin in a form. Endless fibers are processed further to obtain rovings (bundles), or other semi¬ 
+finished textile products such as woven fabrics. 
+
+The resin fixes the carbon fibers in the required arrangement and transmits the applied forces to and 
+between the fibers. The material carbon ultimately only exists once the carbon fibers are introduced 
+into the resin. 
+
+
+
+Structure of carbon 
+
+
+44 
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Carbon fiber 
+
+2 
+
+Resin 
+
+
+The electrical and thermal conductivity of the carbon fibers themselves is extremely good. However, as 
+soon as they are introduced into the resin, the resin defines the conductivity properties. The electrical 
+and thermal conductivity is then extremely low as the carbon fibers are encased in resin. The carbon 
+fibers are not covered entirely in resin, but can also be exposed at the component surface. 
+
+The passenger compartment made from carbon is connected to the aluminium frame. The aluminium 
+frame is connected to ground. As the carbon fibers establish contact with this aluminium frame, the 
+passenger compartment has an undefined potential similar to ground. 
+
+A 
+
+If the insulation of a live electrical line becomes damaged as a result of an incident, such as: 
+
+• Accident 
+
+• Crushed cable 
+
+• Improper repair 
+
+and if the electrical conductor touches the carbon passenger compartment, a current may flow 
+through the carbon fiber depending on the circumstances. 
+
+
+With a vehicle voltage of 12 V the current level is in the range of a few amperes. This means a fuse 
+installed for the protection of the electrical line would not activate under certain circumstances. 
+
+The current flow through the carbon fibers would also cause a thermal event at the contact points for 
+the carbon fibers. Due to the good thermal conductivity this thermal event would also spread to other 
+parts/components in the event of continued current flow. The resulting gases are harmful and have an 
+unpleasant odor. 
+
+A_ 
+
+Exercise extreme caution when working on electrical lines. 
+
+Lines or connectors which are not insulated cannot touch the carbon body components. 
+
+In each case follow the general and special information on electrical characteristics of the carbon body 
+in the repair instructions! 
+
+
+45 
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+2.4. Terminal control 
+
+
+
+101 Terminal control 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 30B 
+
+2 
+
+The driving readiness is activated by simultaneously pressing the START- 
+STOP button and the brake pedal 
+
+3 
+
+"Ready to drive" with terminal 15 
+
+4 
+
+The driving readiness is activated by simultaneously pressing the START- 
+STOP button and the brake pedal 
+
+5 
+
+By pressing the START-STOP button when the N gear is engaged the terminal 
+status switches to car wash mode 
+
+6 
+
+When the START-STOP button is pressed the terminal status changes from 
+terminal 15 to terminal R 
+
+7 
+
+The driving readiness is activated by simultaneously pressing the START- 
+STOP button and the brake pedal 
+
+8 
+
+Terminal R 
+
+9 
+
+When the START-STOP button is pressed the terminal status changes from 
+terminal R to terminal 30B. 
+
+
+46 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+10 
+
+When the START-STOP button is pressed the terminal status changes from 
+terminal 15 to terminal 30B. 
+
+11 
+
+Terminal 30 
+
+12 
+
+Vehicle is woken up by a wake-up event 
+
+13 
+
+By pressing the START-STOP button the terminal status switches from 
+terminal 30B to terminal 15. If the START-STOP button is pressed again within 
+
+10 seconds, the following Check Control message "Press brake for engine 
+start" is displayed 
+
+14 
+
+Terminal 15 
+
+
+Terminal 15 is switched off if the vehicle has been locked or the state of charge of the battery is too 
+low. 
+
+The driving readiness is deactivated by pressing the START-STOP button when the vehicle is 
+stationary. The drive position "P" is automatically engaged in the process. The car wash function is an 
+exception to this: If the driver engages the drive position "N" when the driving readiness is switched on 
+and then presses the START-STOP button, the drive position "N" remains engaged and terminal 15 
+remains switched on. 
+
+
+2.5. Energy management 
+
+Functions such as the seat heating or heated rear window require lots of energy and reduce the range 
+of the vehicle. 
+
+The driving programs ECO PRO and ECO PRO+ support the energy-saving consumption of 
+convenience functions. They automatically perform a partial or complete deactivation of these 
+functions. 
+
+ECO PRO 
+
+• Reduction of the heater output or the switched-on period of the exterior mirror, rear window 
+and seat heating. 
+
+• Reduction of the cooling power or heater output of the heating and air-conditioning system. 
+
+• Restriction of the speed to an adjustable maximum value between 90 and 130 km/h. The 
+speed limit can be deliberately exceeded by pressing the accelerator. 
+
+ECO PRO+ 
+
+The following settings are also performed upon activation of ECO PRO +: 
+
+• Deactivation of the cooling power and heater output of the heating and air-conditioning 
+system. Restricted to de-misting windshield. 
+
+• Deactivation of the seat heating. 
+
+• Restriction of the speed to a maximum value of 90 km/h. The speed limit can be deliberately 
+exceeded by pressing the accelerator pedal. 
+
+
+47 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.6. Emergency charging 
+
+It is not possible to operate the vehicle if the high-voltage battery and 12V battery are not charged. 
+
+In order to put the vehicle back into operation, the charging cable for charging the high-voltage battery 
+must be connected. If necessary manually unlock the charging socket cover and connect the charging 
+cable. Emergency charging is started automatically. The charging status is not displayed. 
+
+The 12V battery is charged somewhat after a few minutes. The 12V vehicle electrical system is ready 
+for operation again. The high-voltage system can be started, the high-voltage battery can therefore be 
+charged. The charging status of the high-voltage battery can be displayed again. Continue to charge 
+the vehicle until the state of charge for the desired range is reached. 
+
+An additional AC/DC converter is located in the electrical machine electronics (EME) for the 
+emergency charging function. This supplies the electronics of the EME if the 12V battery is 
+discharged, thus enabling the start-up of the high-voltage system. With an active high-voltage system 
+the 12V battery is charged using the DC/DC converter in the EME by the high-voltage battery. 
+
+
+2.7. Diagnosis and programming 
+
+So that the high-voltage and the 12V battery are not discharged during diagnosis and programming, 
+these have to be charged accordingly. The procedure for charging is different during diagnosis and 
+programming. 
+
+2.7.1. Diagnosis 
+
+For diagnosis work at the vehicle the high-voltage battery can be charged using a charging cable. 
+With terminal 15 switched on the 12V vehicle electrical system is supplied with power via the DC/DC 
+converter and the 12V battery charged. 
+
+2.7.2. Programming 
+
+During programming the 12V battery must be charged using an external 12V charger. 
+
+It is not possible to charge the high-voltage battery via the 12V vehicle electrical system. During 
+programming the high-voltage system is switched off if necessary. 
+
+
+48 
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+The 101 is equipped with LED headlights as standard equipment (for the US market). 
+LEDs are also installed for the side lights and daytime driving lights. 
+
+Incandescent bulbs are installed for the front turn indicator. 
+
+
+49 
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+3.1. System wiring diagram 
+
+3.1.1. LED headlight 
+
+
+
+
+
+
+□ 
+
+
+item wiring diagram for front exterior lights with LED headlights and automatic headlight beam throw adjustment 
+
+
+TE13-0047 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+Index 
+
+Explanation 
+
+1 
+
+High-beam headlight with turn indicator, left 
+
+2 
+
+Headlight, left 
+
+3 
+
+Fuses in the power distribution box at the front 
+
+4 
+
+Headlight, right 
+
+5 
+
+High-beam headlight with turn indicator, right 
+
+6 
+
+CAN terminator 
+
+7 
+
+Fuses in the power distribution box in the passenger compartment 
+
+8 
+
+Body Domain Controller 
+
+9 
+
+Fuse in the Body Domain Controller 
+
+10 
+
+Additional turn indicator, exterior mirror, front passenger side 
+
+11 
+
+Ride height sensor, rear 
+
+12 
+
+Additional turn indicator, exterior mirror, driver's side 
+
+13 
+
+Hazard warning switch 
+
+14 
+
+Rain-light-solar-condensation sensor 
+
+15 
+
+Steering column switch cluster (SZL) 
+
+16 
+
+Light switch 
+
+17 
+
+Ride height sensor, front 
+
+
+51 
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+3.1.2. LED rear lights 
+
+
+© 
+
+
+
+System wiring diagram for rear exterior lights with LED rear lights 
+
+
+52 
+
+
+TE 13*0047 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuse in the power distribution box at the front 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Fuse in the Body Domain Controller 
+
+4 
+
+Tailgate contact 
+
+5 
+
+Rear light, top right 
+
+6 
+
+Rear light, bottom right 
+
+7 
+
+Number plate light, right 
+
+8 
+
+Number plate light, left 
+
+9 
+
+Rear light, bottom left 
+
+10 
+
+Rear light, top left 
+
+11 
+
+Additional brake light 
+
+12 
+
+Interference suppression filter 
+
+13 
+
+Brake light switch 
+
+14 
+
+Steering column switch cluster (SZL) 
+
+15 
+
+Light switch 
+
+16 
+
+Hazard warning switch 
+
+
+3.2. Lighting, front 
+
+3.2.1. LED headlight 
+
+
+
+LED headlight 
+
+Index 
+
+Explanation 
+
+1 
+
+Side lights and daytime driving lights 
+
+2 
+
+Low-beam headlight 
+
+
+LEDs are used for the low-beam headlight, side lights and daytime driving lights (LEDs in icons). 
+
+
+53 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+The control units for the LED headlights, the Frontal Light Electronics Left (FLEL) and Frontal Light 
+Electronics Right (FLER), are installed in the left and right headlight. 
+
+The Frontal Light Electronics includes: 
+
+• The activation of the LEDs in the corresponding headlight 
+
+• The activation of the stepper motor for the headlight beam throw adjustment. 
+
+3.2.2. High-beam headlight and turn indicator 
+
+
+© © 
+
+
+
+High beam headlight/Turn indicator 
+
+Index 
+
+Explanation 
+
+1 
+
+High-beam headlight 
+
+2 
+
+Turn indicator 
+
+
+Bulbs are used for high-beam headlight and turn indicator. 
+The bulbs have the following power: 
+
+
+• High-beam headlight 55 W H7 
+
+• Turn indicator 21 W. 
+
+3.3. Lighting, rear 
+
+The 101 has a two-part rear light, so that the vehicle can also be identified when the tailgate is opened. 
+One part is located in the tailgate, the other in the bumper panel. The following lights in the bumper 
+panel are only active when the tailgate is open: 
+
+• Tail light 
+
+• Brake light 
+
+• Turn indicator. 
+
+54 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+3. Exterior Lights 
+
+
+® ® © 
+
+
+
+Lighting, rear 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Tail light 
+
+2 
+
+Brake light 
+
+3 
+
+Turn indicator 
+
+4 
+
+Tail light/Brake light 1 
+
+5 
+
+Turn indicator 2 
+
+6 
+
+Reverse light 
+
+7 
+
+Rear fog light 
+
+
+^he tail light and brake light in the bumper panel are only active when the tailgate is open. The tail 
+light of the tailgate is switched off when the tailgate is open. 
+
+
+2 The turn indicator in the bumper panel is active when the tailgate is open. 
+LEDs are used for all lights for the rear lighting. 
+
+
+55 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+Depending on the optional equipment selected the 101 has different light elements for the interior 
+light. 
+
+With the interior design packages Mega World (option 7KX), Giga World (option 7KY) and Tera World 
+(option 7KZ) the customer has ambient lighting in the passenger compartment. This includes LED 
+elements at various locations in the passenger compartment. Depending on the selection in the 
+central information display white or orange LEDs are activated for the accent lighting. The brightness 
+of the ambient lighting can also be adjusted via the CID. 
+
+In the 101 the following variants of the interior light are possible: 
+
+• without local interconnect network bus connection (standard equipment) 
+
+• with local interconnect network bus connection (optional equipment). 
+
+
+56 
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+4.1. System wiring diagram for interior light without local 
+interconnect network bus 
+
+
+® 
+
+—ft—ft- 
+
+
+© © (! 
+
+
+
+® 
+
+
+^ ® 
+
+
+r*5> 
+
+i : 
+
+
+
+
+System wiring diagram for interior light without local interconnect network bus 
+
+
+57 
+
+
+TE12-1006 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Glove box switch 
+
+3 
+
+Glove box light 
+
+4 
+
+Fuses in the power distribution box in the passenger compartment 
+
+5 
+
+Luggage compartment light 
+
+6 
+
+Tailgate contact with tailgate lock 
+
+7 
+
+Interference suppression filter 
+
+8 
+
+Rear interior light 
+
+9 
+
+Front interior light unit 
+
+
+The interior light is controlled by the BDC. 
+
+The output stage for the interior lighting is located in the BDC. 
+
+
+58 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+4.2. System wiring diagram for the interior light with local 
+interconnect network bus 
+
+
+
+59 
+
+
+TE12-1007 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lighting, cockpit center 1 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Glove box switch 
+
+4 
+
+Glove box light 1 
+
+5 
+
+Lighting, CID area 
+
+6 
+
+Door pocket lighting, passenger's side 1 
+
+7 
+
+Door contact, front passenger's side, front 
+
+8 
+
+Ground lights for outer door handle on front passenger's side 1 
+
+9 
+
+Inside door handle light on front passenger's side 1 
+
+10 
+
+Lighting for handle on front passenger's side 2 
+
+11 
+
+Vanity mirror light on passenger's side 1 
+
+12 
+
+Footwell light, passenger's side 1 
+
+13 
+
+Rear interior light 
+
+14 
+
+Door contact on front passenger's side, rear 
+
+15 
+
+Lighting for handle on rear passenger's side 2 
+
+16 
+
+Luggage compartment light 
+
+17 
+
+Tailgate contact with tailgate lock 
+
+18 
+
+Interference suppression filter 
+
+19 
+
+Lighting for handle on driver's side, rear 2 
+
+20 
+
+Door contact on driver's side, rear 
+
+21 
+
+Interior light unit, front 3 
+
+22 
+
+Footwell light, driver's side 1 
+
+23 
+
+Vanity mirror light on driver's side 1 
+
+24 
+
+Lighting for handle on front driver's side 2 
+
+25 
+
+Inside door handle light on front driver's side 1 
+
+26 
+
+Ground lights for outer door handle on front driver's side 1 
+
+27 
+
+Door contact, driver's side, front 
+
+28 
+
+Door pocket lighting, driver's side 1 
+
+29 
+
+Fuses in the power distribution box in the passenger compartment 
+
+
+Available with interior design Mega World (option 7KX), Giga World (option 7KY) or Tera World (option 
+7KZ) 
+
+
+60 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+4. Interior Lighting 
+
+
+Available only with interior design Tera World (option 7KZ) 
+
+3 The number of lights and the type of the design varies depending on the vehicle equipment. 
+
+The interior light unit is connected via local interconnect network bus to the Body Domain Controller. 
+The electronics for the interior lights at the front and rear is located in the interior light unit. All other 
+LEDs of the interior light are activated by the BDC. 
+
+
+61 
+
+
+
+101 General Vehicle Electronics 
+
+5. Wash/wipe System 
+
+The 101 is equipped with two windshield wipers and a rear wiper. 
+
+Similar to other BMW models, the following wiper functions are possible: 
+
+• Intermittent wipes 
+
+• Continuous wipe in interval stage 1 
+
+• Continuous wipe in interval stage 2 
+
+• Flick wipes. 
+
+Available as optional equipment for the 101: 
+
+• Wiper nozzle heating (standard) 
+
+• Automatic function via rain-light-solar-condensation sensor. 
+
+5.1. System components 
+
+The 101 uses (for the first time) a windshield wiper system which works in the opposite direction. 
+This takes up significantly less space than a wiper system which mechanism operates in the same 
+direction. 
+
+
+62 
+
+
+
+101 General Vehicle Electronics 
+
+5. Wash/wipe System 
+
+
+
+101 system components of wash/wipe system 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Washer jet, right (with heater) 
+
+2 
+
+Wiper motor, right 
+
+3 
+
+Power distribution box, passenger compartment 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+6 
+
+Instrument cluster (KOMBI) 
+
+7 
+
+Steering column switch at steering column switch cluster (SZL) 
+
+8 
+
+Rear wiper with electric motor 
+
+
+63 
+
+
+TE13-0287 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+5. Wash/wipe System 
+
+
+Index 
+
+Explanation 
+
+9 
+
+Washer fluid level switch 
+
+10 
+
+Wiper motor, left 
+
+11 
+
+Washer jet, left (with heater) 
+
+12 
+
+Electric motor, windshield washer pump 
+
+A 
+
+
+The exact procedure described in the repair instructions must be observed when replacing the wiper 
+motor. 
+
+
+The wiping pattern of the windshield wiper system of the 101 is much different to that of previous 
+BMW vehicles. 
+
+
+
+Comparison of wiping pattern of 101 and F30 
+
+
+Index 
+
+Explanation 
+
+
+A 
+
+Wiping pattern of 101 
+
+
+B 
+
+Wiping pattern of F30 
+
+
+
+64 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+5. Wash/wipe System 
+
+5.2. System wiring diagram 
+
+
+© 
+
+
+
+System wiring diagram for wash/wipe system of 101 
+
+
+65 
+
+
+TE12-1003 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+5. Wash/wipe System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Washer fluid level switch 
+
+2 
+
+Electric motor, windshield washer pump 
+
+3 
+
+Wiper motor, left 1 (Master CU) 
+
+4 
+
+Heated washer jet, left 
+
+5 
+
+Wiper motor, right 
+
+6 
+
+Heated washer jet, right 
+
+7 
+
+Body Domain Controller (BDC) 
+
+8 
+
+Fuses in the power distribution box in the passenger compartment 
+
+9 
+
+Wiper motor, rear 
+
+10 
+
+Steering column switch cluster (SZL) 
+
+11 
+
+Instrument cluster (KOMBI) 
+
+12 
+
+Rain-light-solar-condensation sensor 
+
+
+^he local interconnect network bus connection for the BDC is always established for the wiper motor 
+on the driver's side (Master Control Unit). A101 with left-hand drive is shown here. 
+
+
+5.3. System components 
+
+In the 101 a wiper motor with integrated control unit electronics including two Local Interconnect 
+Network interfaces is used. The wipe request and driving speed is transmitted to the control unit of the 
+wiper motor on the driver's side (master) via Local Interconnect Network by the BDC. Via another local 
+interconnect network bus the master control unit then activates the control unit of the wiper motor on 
+the passenger's side. 
+
+The wiper motor is a 12 V reverse motor with a transmission. The control unit, the wiper motor and the 
+transmission form one replaceable unit. This wiper motor unit comprises: 
+
+• A permanently excited direct current motor with attached reduction gear 
+
+• Control unit electronics with eccentric shaft sensor and suppressor components with 
+attached plug connection. 
+
+The control unit in the wiper motor is able to identify the following faults: 
+
+• Faults in the control unit electronics 
+
+• Short circuits at the motor and sensor system 
+
+• Open lines at the motor and sensor system. 
+
+The control unit in the wiper motor does not have a fault memory. The fault code entry is done in the 
+Body Domain Controller. 
+
+
+66 
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+There are two distinct systems concerned with vehicle access in the 101: 
+
+• Basic access, central locking system 
+
+• Comfort Access (option 322). 
+
+The entire locking and security functions of the 101 is integrated in the BDC. 
+
+
+67 
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.1. System wiring diagram 
+
+
+
+®(E>): 
+
+
+101 system wiring diagram for locking and security functions 
+
+
+68 
+
+
+looi-ziai 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Power Steering (EPS) 
+
+2 
+
+Dynamic Stability Control (DSC) 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Fuse in the power distribution box in the passenger compartment 
+
+5 
+
+Button for central locking system in front passenger door 
+
+6 
+
+Remote control receiver 
+
+7 
+
+Gear selector switch (GWS) 
+
+8 
+
+Ring aerial (transponder coil) 
+
+9 
+
+Interior aerial (front) 
+
+10 
+
+Button for central locking system in the driver's door 
+
+11 
+
+Brake light switch 
+
+12 
+
+Electrical Digital Motor Electronics (EDME) 
+
+
+6.2. System components 
+
+An ID transmitter with a new design was developed for the 101. The data transfer for the vehicle and for 
+the storage of data on the ID transmitter is the same as for current BMW models. 
+
+
+
+101 ID transmitter 
+
+
+69 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Mechanical key for emergency operation 
+
+2 
+
+Free 4th button (factory setting is unlocking of tailgate) 
+
+3 
+
+Unlocking of engine compartment lid 
+
+4 
+
+Locking 
+
+5 
+
+Unlocking 
+
+
+6.3. Overview of functions 
+
+There is no insertion slot installed in the 101. The vehicle can already be started without a key as 
+standard. This function is called "Passive Go" (drive authorization). However, to gain access to the 
+vehicle, it is still necessary to actuate the ID transmitter. 
+
+The following locking and security functions are integrated in the 101 in the Body Domain Controller: 
+
+• Comfort Access 
+
+The optional equipment Comfort Access contains the "Comfort Entry" and "Comfort Exit" 
+functions. The "Passive Go" function comes as standard. 
+
+• Central locking system 
+
+• Power window regulators 
+
+• Sliding/tilting sunroof 
+
+• Terminal control 
+
+• Electronic immobilizer. 
+
+The locking and security functions of the 101 are based on the CAS functions in the F01 and are 
+described in the "Car Access System F01/F02" training material. 
+
+With regard to start enable by the electronic immobilizer (also called Challenge Response), some 
+changes have been made from the F01. What is new is the omission of the CAS bus, because PT-CAN 
+and FlexRay already provide redundancy of data transfer between BDC and EDME. 
+
+In addition to the transmission release in the control unit GWS in the 101 there is also a release of 
+the steering via the Electronic Power Steering. The emergency-start function by stopping the ID 
+transmitter at the ring aerial is already known from the F01. 
+
+
+6.4. Central locking system 
+
+The function of the central locking system of the 101 is based on that of current BMW models. With the 
+introduction of the BDC all relevant functions for the central locking system are handled by one control 
+unit. The function is as follows: 
+
+The radio signal from the ID transmitter is received by the remote control receiver. 
+
+The signal causes the BDC to activate the central locking system and the interior lighting. 
+
+
+70 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+The BDC evaluates the status of all door contacts. In this way, for example, the vehicle can be 
+prevented from being locked while the driver's door is open. 
+
+The status of the central locking system button is also evaluated by the BDC. The BDC activates the 
+central locking system, depending on the status. 
+
+The BDC is responsible for the status recording and activation of the central locking system in the 
+tailgate. 
+
+The activation of the unlocking of the engine compartment lid is also the responsibility of the BDC. 
+
+The activation of the unlocking of the fuel filler flap in vehicles with range extender is done by the 
+hybrid pressure refueling electronic control unit TFE and not by the central locking system. 
+
+
+71 
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+6.4.1. System wiring diagram 
+
+
+
+101 system wiring diagram for central locking system 
+
+
+72 
+
+
+TE12-1004 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electric motor for unlocking the engine compartment lid catch 
+
+2 
+
+Engine compartment lid contact switch in the engine compartment lid catch 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Fuse in the power distribution box in the passenger compartment 
+
+5 
+
+Door contact, central locking system on front passenger's side 
+
+6 
+
+Button for central locking system in door on front passenger's side (only US 
+version vehicles) 
+
+7 
+
+Door contact of central locking system for upper lock on rear passenger's side 
+
+8 
+
+Remote control receiver 
+
+9 
+
+Door contact of central locking system for lower lock on rear passenger's side 
+
+10 
+
+Luggage compartment light 
+
+11 
+
+Tailgate push-button on the outside of the tailgate 
+
+12 
+
+Tailgate contact with tailgate lock 
+
+13 
+
+Interference suppression filter 
+
+14 
+
+Door contact of central locking system for lower lock on rear driver's side 
+
+15 
+
+Door contact of central locking system for upper lock on rear driver's side 
+
+16 
+
+Button for central locking system in the door on the front driver's side 
+
+17 
+
+Door contact, central locking system, driver's side, front 
+
+18 
+
+Tailgate push-button 
+
+19 
+
+Button for engine compartment lid 
+
+
+73 
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+6.4.2. System components 
+
+
+
+101 system components of central locking system 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Remote control receiver 
+
+3 
+
+Power distribution box, passenger compartment 
+
+4 
+
+Button for central locking system in door on front passenger's side (only US 
+version vehicles) 
+
+5 
+
+Door contact, central locking system on front passenger's side 
+
+6 
+
+Door contact of central locking system for lower lock on rear passenger's side 
+
+7 
+
+Door contact of central locking system for upper lock on rear passenger's side 
+
+
+74 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+8 
+
+Luggage compartment light 
+
+9 
+
+Door contact of central locking system for upper lock on rear driver's side 
+
+10 
+
+Interference suppression filter 
+
+11 
+
+Tailgate contact with tailgate lock 
+
+12 
+
+Tailgate push-button on the outside of the tailgate 
+
+13 
+
+Door contact, central locking system, driver's side, front 
+
+14 
+
+Button for central locking system in the door on the front driver's side 
+
+15 
+
+Door contact of central locking system for lower lock on rear driver's side 
+
+16 
+
+Button for engine compartment lid 
+
+17 
+
+Tailgate push-button 
+
+18 
+
+Electric motor for unlocking of engine compartment lid catch 
+
+19 
+
+Engine compartment lid contact switch in the engine compartment lid catch 
+
+
+The engine compartment lid of the 101 can be unlocked from the passenger compartment using a 
+button at the A-pillar and using the ID transmitter. In each case the unlocking is done electrically. The 
+engine compartment lid can be unlocked in the event of a fault using the emergency release. 
+
+A microswitch in the engine compartment lid catch identifies the completely closed engine 
+compartment lid. 
+
+During the journey the unlocking of the engine compartment lid is blocked. If the engine compartment 
+lid was unlocked electrically, the retaining hook, as known from other BMW vehicles, must be unlocked 
+from the hook position. 
+
+
+
+75 
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Unlocking of retaining hook 
+
+2 
+
+Electrical connection at the engine compartment lid catch for microswitch 
+
+3 
+
+Operation of the emergency release for rear trim panel at A-pillar 
+
+4 
+
+Bowden cable for emergency release 
+
+5 
+
+Electric motor for unlocking of engine compartment lid catch 
+
+6 
+
+Retaining hook 
+
+
+6.5. Comfort Access 
+
+The Comfort Access function is integrated in the BDC. 
+
+Comfort Access contains the following functions: 
+
+• Passive Entry (access authorization) 
+
+facilitates access to the vehicle without active use of the ID transmitter 
+
+• Passive Go (drive authorization) 
+
+enables the vehicle to be started when there is a valid ID transmitter in the passenger 
+compartment 
+
+• Passive Exit (locking authorization) 
+
+enables the vehicle to be locked without active use of the ID transmitter. 
+
+The components and functionality of Comfort Access are familiar from the current BMW models. 
+
+
+76 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+6.5.1. System wiring diagram 
+
+
+
+
+
+101 system wiring diagram for Comfort Access 
+
+
+77 
+
+
+TE12-1002 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuse in the Body Domain Controller 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+antenna for Comfort Access under engine compartment lid 
+
+4 
+
+Door contact, front passenger's side 
+
+5 
+
+Outside door handle electronics (TAGE) on front passenger's side 
+
+6 
+
+Remote control receiver 
+
+7 
+
+Antenna for Comfort Access on rear right (in right rear door) 
+
+8 
+
+Comfort Access antenna, bumper, rear 
+
+9 
+
+Comfort Access aerial, luggage compartment 
+
+10 
+
+Antenna for Comfort Access passenger compartment, rear 
+
+11 
+
+Antenna for Comfort Access on rear left (in left rear door) 
+
+12 
+
+Outside door handle electronics TAGE on driver's side 
+
+13 
+
+Interior antenna (front) 
+
+14 
+
+Door contact, driver's side 
+
+
+6.5.2. System components 
+
+For the CA function the BDC activates the antennas for the exterior and passenger compartment. 
+The outside door handle electronics (TAGE) are also read in by the BDC. 
+
+
+78 
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+
+101 system components of Comfort Access 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Antenna for Comfort Access under engine compartment lid 
+
+2 
+
+Remote control receiver 
+
+3 
+
+Body Domain Controller 
+
+4 
+
+Outside door handle electronics TAGE on front passenger's side 
+
+5 
+
+Door contact in the door lock, passenger's side 
+
+6 
+
+Interior antenna (front) 
+
+7 
+
+Antenna Comfort Access passenger compartment, rear 
+
+8 
+
+Antenna for Comfort Access, rear right 
+
+9 
+
+Comfort Access aerial, luggage compartment 
+
+
+79 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+6. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+10 
+
+Comfort Access aerial, bumper, rear 
+
+11 
+
+antenna for Comfort Access, rear left 
+
+12 
+
+Outside door handle electronics (TAGE) on driver's side 
+
+13 
+
+Door contact in the door lock, driver's side 
+
+
+80 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+7. Alarm System 
+
+7.1. System wiring diagram 
+
+
+
+System wiring diagram for alarm system 
+
+
+81 
+
+
+TE13*0044 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+7. Alarm System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine compartment lid contact switch 
+
+2 
+
+Fuse in the power distribution box in the passenger compartment 
+
+3 
+
+CAN terminator 
+
+4 
+
+Door contact, front passenger's side 
+
+5 
+
+Door contact at top of rear passenger's side 
+
+6 
+
+Door contact at bottom of rear passenger's side 
+
+7 
+
+Interference suppression filter 
+
+8 
+
+Tailgate contact with tailgate lock 
+
+9 
+
+Door contact at bottom of rear driver's side 
+
+10 
+
+Door contact at top of rear driver's side 
+
+11 
+
+Roof function center 
+
+12 
+
+LED in the inside mirror 
+
+13 
+
+Door contact, driver's side, front 
+
+14 
+
+Body Domain Controller 
+
+15 
+
+Siren with tilt alarm sensor 
+
+
+The alarm system in the 101 is equipped with an ultrasonic interior movement detector for monitoring 
+the passenger compartment. The ultrasonic interior movement detector (USIS) is fully integrated in 
+the roof function center (FZD). 
+
+The door contacts, engine compartment lid contact switch and the opening of the tailgate are 
+monitored by the Body Domain Controller. As soon as a status changes, the ultrasonic interior 
+movement detector receives this information via the K-CAN2. In the event of an activated alarm 
+system a siren with tilt alarm sensor is activated by the control unit in the event of a break-in. 
+
+The SINE is connected to the FZD via a local interconnect network bus. 
+
+The status of the alarm system is displayed via the LED at the inside mirror. 
+
+
+82 
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+8. Slide/Tilt Sunroof 
+
+8.1. System wiring diagram 
+
+
+© 
+
+
+
+
+
+System wiring diagram for slide/tilt sunroof 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+8. Slide/Tilt Sunroof 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller 
+
+2 
+
+Fuses in the power distribution box in the passenger compartment 
+
+3 
+
+Roof function center 
+
+4 
+
+Electric motor for slide/tilt sunroof 
+
+
+The control and monitoring of the motor of the slide/tilt sunroof is located in the FZD, as is known from 
+other BMW models. 
+
+
+84 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+9. Steering Column Switch Cluster 
+
+9.1. System wiring diagram 
+
+
+
+System wiring diagram for steering column switch cluster 
+
+
+85 
+
+
+TE13-0045 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+9. Steering Column Switch Cluster 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller 
+
+2 
+
+Fuse in the power distribution box in the passenger compartment 
+
+3 
+
+Drop arm, right 
+
+4 
+
+Crash Safety Module (ACSM) 
+
+5 
+
+Drop arm, left 
+
+6 
+
+Steering column switch cluster 
+
+7 
+
+Clock spring 
+
+8 
+
+Touch detection HOD (hands of device) 1 
+
+9 
+
+Switch block, radio/telephone 
+
+10 
+
+Driver's airbag 
+
+11 
+
+Horn button 
+
+12 
+
+Switch block for cruise control 
+
+13 
+
+Instrument cluster 
+
+
+1 For the optional equipment traffic jam assistant a capacitive sensor with relevant electronics HOD 
+(hands of device) detects whether the steering wheel is touched. 
+
+All signals of the buttons and switches of the multifunction steering wheel (MFL) and the steering 
+column switch cluster (SZL) are transmitted via Local Interconnect Network to the Body Domain 
+Controller. There are 2 LIN lines from the steering column switch cluster (SZL) to the Body Domain 
+Controller: 
+
+• LIN from SZL to BDC and 
+
+• LIN from MFL through SZL looped through to BDC. 
+
+
+86 
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+10. Exterior Mirrors 
+
+
+The following exterior mirror variants are possible in the 101: 
+
+• Without LIN bus connection 
+
+• With LIN bus connection. 
+
+
+87 
+
+
+
+101 General Vehicle Electronics 
+
+10. Exterior Mirrors 
+
+10.1. System wiring diagram 
+
+10.1.1. Exterior mirror without LIN bus connection 
+
+
+
+I 
+
+
+item wiring diagram for exterior mirror, basic version 
+
+
+TE13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+10. Exterior Mirrors 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Outside temperature sensor 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Fuse in the power distribution box in the passenger compartment 
+
+4 
+
+Exterior mirror, front passenger's side 
+
+5 
+
+Switch block, driver's door 
+
+6 
+
+Exterior mirror, driver's side 
+
+7 
+
+Instrument cluster 
+
+
+The electric motors of the exterior mirror are activated directly using the mirror adjustment switch. 
+The instrument cluster receives the value of the ambient temperature from the outside temperature 
+sensor and makes this available to the Body Domain Controller. The control and the output stages for 
+the heating of the exterior mirror are located in the Body Domain Controller. The control of the heater 
+output is dependent on the ambient temperature and the switch position of the driving experience 
+switch. 
+
+
+89 
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+10. Exterior Mirrors 
+
+
+10.1.2. Exterior mirror with LIN bus connection 
+
+
+
+System wiring diagram for exterior mirror, high equipment 
+
+
+90 
+
+
+TE13*0042 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+10. Exterior Mirrors 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Outside temperature sensor 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Fuses in the power distribution box in the passenger compartment 
+
+4 
+
+Exterior mirror, front passenger's side 
+
+5 
+
+Electronics in the electrochromic inside mirror 
+
+6 
+
+Switch block, driver's door 
+
+7 
+
+Exterior mirror, driver's side 
+
+8 
+
+Instrument cluster 
+
+
+The instrument cluster receives the value of the ambient temperature from the outside temperature 
+sensor and makes this available via the PT-CAN. The Body Domain Controller evaluates the signal 
+and triggers the activation of the mirror heating via the local interconnect network bus. The control 
+of the heater output is dependent on the ambient temperature and the switch position of the driving 
+experience switch. 
+
+The mirror servomotors are activated by the mirror electronics. The request for adjusting the exterior 
+mirror is received by the mirror electronics via the local interconnect network bus. 
+
+
+91 
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+11. Inside Mirror 
+
+11.1. System wiring diagram 
+
+
+© ® 
+
+
+
+© 
+
+
+System wiring diagram for automatically dipping interior mirror 
+
+
+92 
+
+
+owxmai 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+11. Inside Mirror 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronics in the electrochromic inside mirror 
+
+2 
+
+Roof function center 
+
+3 
+
+Body Domain Controller 
+
+4 
+
+Fuse in the power distribution box in the passenger compartment 
+
+
+In a vehicle with an automatically dipping inside mirror, the inside mirror is connected to the BDC via 
+local interconnect network bus. 
+
+The LED for the alarm system is located at the inside mirror. 
+
+
+93 
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+12. Seat Heating 
+
+12.1. System wiring diagram 
+
+
+
+System wiring diagram for seat heating 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+12. Seat Heating 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller 
+
+2 
+
+Fuses in the power distribution box in the passenger compartment 
+
+3 
+
+Seat heating pad on passenger's side, seat surface 
+
+4 
+
+Seat heating pad on passenger's side, backrest 
+
+5 
+
+Front passenger seat module 
+
+6 
+
+Driver's seat module 
+
+7 
+
+Seat heating pad on driver's side, seat surface 
+
+8 
+
+Seat heating pad on driver's side, backrest 
+
+9 
+
+Heating - A/C control panel 
+
+10 
+
+Integrated automatic heating / air-conditioning system 
+
+
+Signal path for seat heating: 
+
+• The buttons for the seat heating are read in by the control panel of the heating and air- 
+conditioning system. 
+
+• The control unit for the IHKA or integrated heating / air-conditioning regulation sends the local 
+interconnect network bus information on the K-CAN4 
+
+• The BDC receives this information and transmits the corresponding switch-on stage to the 
+respective seat module via local interconnect network bus. 
+
+• The seat module activates the heating mats with the corresponding power. 
+
+The control of the heater output is dependent on: 
+
+• the switch-on stage of the seat heating and 
+
+• the switch position of the driving experience switch. 
+
+
+95 
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+13. Horn 
+
+13.1. System wiring diagram 
+
+
+© 
+
+
+® © 
+-a-s-r-s- 
+
+
+'32 
+
+
+
+
+System wiring diagram for the horn 
+
+
+96 
+
+
+TE 13*0043 
+
+
+
+
+
+
+
+
+
+
+101 General Vehicle Electronics 
+
+13. Horn 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fanfare 
+
+2 
+
+Relay and fusei 
+
+3 
+
+Body Domain Controller 
+
+4 
+
+Steering column switch cluster 
+
+5 
+
+Horn button 
+
+
+-iThe relay for the horn is located above the power distribution box in the passenger compartment. The 
+fuse for the horn is located in the Body Domain Controller. 
+
+Signal path of horn: 
+
+
+The horn button is read in by the steering column switch cluster SZL. 
+
+The SZL sends the information via the local interconnect network bus to the Body Domain 
+Controller 
+
+The Body Domain Controller evaluates the information and activates the relay for the horn. 
+
+
+97 
+
+
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Qualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

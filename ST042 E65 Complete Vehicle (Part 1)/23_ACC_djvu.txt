@@ -1,0 +1,1053 @@
+Table of Contents 
+
+
+Active Cruise Control 
+
+Subject Page 
+
+Purpose of the System .3 
+
+System Components.3 
+
+Sensor-Control Module Unit .4 
+
+Steering Column Stalk Switch .4 
+
+Instrument Cluster Display .5 
+
+System Interfaces .5 
+
+DME.6 
+
+DSC.6 
+
+Steering Angle Sensor .7 
+
+EGS .7 
+
+EMF .7 
+
+Yaw Rate Sensor .7 
+
+Principle of Operation.8 
+
+Radar Sensor.8 
+
+ACC Controller.10 
+
+Operation .10 
+
+Deceleration.11 
+
+Side Visual Range.12 
+
+Lane Prediction.12 
+
+Limitations .12 
+
+Activation Conditions .13 
+
+Operating Modes .14 
+
+Deactivation .14 
+
+Lens Heater .14 
+
+Fault Memory.15 
+
+Alignment.15 
+
+
+Initial Print Date:01/03 
+
+
+Revision Date:03/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model: E65/E66 
+
+Production: Start of Production MY 2003 
+
+
+Objectives: 
+
+After completion of this module you should be able to: 
+
+• Properly operate the ACC system. 
+
+• Explain the operation of the ACC system. 
+
+• Perform the alignment procedure for the ACC Control Unit. 
+
+
+2 
+
+
+ACC 
+
+
+
+
+Updated 
+
+Information 
+
+
+Purpose of the System 
+
+
+Active Cruise Control (ACC) is an extension of conventional cruise control. ACC is a com¬ 
+fort system which assists the driver when traveling on open highways. A radar sensor mon¬ 
+itors the distance, angle and speed of moving objects in front of the vehicle and strives to 
+maintain a fixed distance behind the object. Vehicle ranging and speed control are 
+achieved by means of engine management (Cruise Function of DME) and brake interven¬ 
+tion (DSC). 
+
+^^^The driver can preselect a desired speed (in 5 mph increments) and choose between 4 
+following distances (expressed in time intervals). 
+
+Note: Vehicles with ACC do not have “Normal” Cruise control. If the ACC system fails or 
+enters a fault mode the vehicle does not default to “Normal”Cruise. 
+
+Safety Note: 
+
+ACC is not an impact protection system and CANNOT warn against or prevent 
+collisions. 
+
+The driver must continue to intervene in critical situations. 
+
+System Components 
+
+The ACC system consists of the following components: 
+
+• Sensor-Control Module Unit 
+
+• Steering Column Stalk Switch 
+
+• Instrument Cluster Display 
+
+
+
+3 
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor-Control Module Unit 
+
+The Sensor-Control Module Unit is mounted to the front of the vehicle by means of an alu¬ 
+minum bracket with an intermediate plastic bracket. 
+
+The Control Unit is self contained and assumes control of following distance, speed and 
+acceleration. The ACC control unit communicates with the appropriate modules via the PT- 
+CAN. 
+
+
+The radar sensor, which is contained in the control unit, incorporates a transmitter and 
+receiver. The transmitter frequency is 76-77 GHz and is active at speeds above 20 mph. 
+The sensor shuts down when system voltage is < 10 V or > 17 V, and a fault is stored. 
+
+The ACC control unit is protected against shorts to B+ or B-, polarity reversal and open cir¬ 
+cuits. 
+
+
+Steering Column Stalk Switch 
+
+The Steering Column Stalk Switch for ACC control is located on the lower left of the steer¬ 
+ing column. 
+
+
+The stalk switch allows driver input and control over the following actions: 
+
+
+• Activate System, Store and Increase 
+desired speed. (1) 
+
+• Activate System, Store and Decrease 
+desired speed. (2) 
+
+• Interrupt System operation. (3) 
+
+• Press Button with System active to select 
+stored speed. (4) 
+
+• Select Following distance time interval. 
+
+(1.5,1.8, 2.2, 2.8 seconds) (5) 
+
+
+
+
+4 
+
+
+ACC 
+
+
+
+
+
+
+
+
+Instrument Cluster Display 
+
+The instrument cluster display is responsible for visual indication of ACC operation. 
+
+
+1. Indicator for stored Desired speed. 
+
+2. Indicator for detected vehicle. 
+
+3. Indicator to show selected follow distance. 
+
+4. Digital speed display. 
+
+Note: 
+
+1,2, and 3 are shown when the system is 
+active. 
+
+4 is shown for a short time when the desired 
+speed is input. 
+
+
+
+Vehicle in display is outlined: 
+
+System is active and no vehicle in 
+front is detected. 
+
+
+
+Vehicle in display is solid: 
+
+System is active vehicle in front is 
+detected. 
+
+
+
+Take Over Request 
+
+Vehicle in display is in triangle and 
+Flashes: 
+
+Driver should intervene by braking 
+or taking evasive action as 
+required. ACC cannot set following 
+distance. 
+
+
+System Interfaces 
+
+The following systems interface with the ACC system: 
+
+• DME 
+
+• DSC 
+
+• Steering Angle Sensor 
+
+• EGS 
+
+• Parking Brake 
+
+• Yaw Rate Sensor 
+
+
+5 
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-KL15W 
+
+\ZZ\ • kl.30 
+
+
+KOMBI 
+
+
+
+K-CAN S 
+
+
+LM 
+
+
+
+
+PT-CAN 
+
+
+byte flight 
+
+
+
+KL.30 
+
+
+•1 
+
+
+( I % KL.30 
+
+
+
+DME 
+
+
+EGS 
+
+
+EMF 
+
+
+GRS 
+
+
+DME 
+
+
+The DME interface has the following functions: 
+
+• Controls engine torque based on requests from the ACC control unit. 
+
+• Controls engine speed based on requests from the ACC control unit. 
+
+• Monitors throttle and brake pedal applications for speed control. 
+
+DSC 
+
+Interface functions of the DSC include: 
+
+• DSC provides the ACC control unit with wheel speed information. 
+
+• Communication request for brake application are received by the DSC from the ACC. 
+
+For ACC to be active and operational, the brake system, parking brake and DSC must all 
+be fault free. Pressing the brake pedal or parking brake (EMF) will always deactivate the 
+system. 
+
+6 
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When possible, ACC will decelerate the vehicle by of means of torque or throttle interven¬ 
+tion in the DME. If engine drag torque or engine speed reduction is not sufficient for decel¬ 
+eration the ACC control unit requests the DSC hydraulic unit to build up brake pressure for 
+adjustment of the deceleration. 
+
+If deceleration is triggered by the ACC, the brake lights are activated by the DSC depen¬ 
+dent on a specific pressure or deceleration rate. 
+
+With ACC active, DSC operates in a normal manner. ACC is deactivated in the event of 
+stability safeguarding interventions by DSC. 
+
+The DSC control unit informs the EGS that brake intervention is taking place, so that the 
+EGS control module can downshift the transmission to protect the brakes against over 
+loading. 
+
+Steering Angle Sensor 
+
+ACC receives steering angle position information from the Steering Angle Sensor. 
+
+
+The EGS-ACC interface serves to implement comfort functions only, no safety related func¬ 
+tions are affected. 
+
+The EGS includes special shifting maps to suit the various operating conditions of the ACC. 
+A kick down is triggered on downhill slopes with ACC brake intervention active, to prevent 
+overheating of the brake system. 
+
+When the transmission selector is moved to N, P or R the ACC is deactivated and cannot 
+be activated. 
+
+EMF 
+
+The ACC is deactivated should the parking brake (EMF) become active. 
+
+Yaw Rate Sensor 
+
+The Yaw Rate or rotation rate sensor supplies information concerning vehicle dynamics on 
+to the ACC sensor, through the DSC control unit. 
+
+
+7 
+
+
+ACC 
+
+
+
+Principle of Operation 
+
+ACC is a Comfort Function and NOT a Safety function. 
+
+The driver alone is responsible for the use of the ACC system including: 
+
+• Speed Selection 
+
+• Following Distance 
+
+• Acceptable weather conditions including visibility and road conditions for cruise 
+operation 
+
+The system can be overridden at any time by the driver. Accelerating does not deactivate 
+the system. Braking results in system deactivation. 
+
+All stored information, speed, following distance, are reset with every key activation and in 
+the case of non ACC requested DSC intervention. 
+
+The ACC system controls the following distance and cruise speed when the vehicle is trav¬ 
+eling between 20 mph and 110 mph. 
+
+Radar Sensor 
+
+The Radar Sensor of the ACC system is integrated into the ACC control unit that is mount¬ 
+ed in the front of the vehicle. 
+
+The ACC emits radar waves in order to detect objects, passenger vehicles, trucks, buses 
+and motorcycles. The pulses, emitted every 100ms for 10ms travel at the speed of light. 
+An echo is returned to the ACC control unit when a radar reflecting object is located in the 
+range of the beam. Distance from the object is determined by signal propagation time. (The 
+time difference between when the signal is sent out and received back. 
+
+
+
+8 
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The relative speed difference between the vehicle 
+and the object is determined by the Doppler effect 
+of the Radar. The Doppler effect was named after 
+Christian Doppler, who first came up with the idea 
+in 1842. He thought that the frequency of sound 
+(or in the case of radar, radar waves) waves would 
+change if either the source or the observer was 
+moving. If they were approaching, the frequency 
+would be higher; if they were moving away, the fre¬ 
+quency could be lower. 
+
+There are many everyday examples of the Doppler 
+effect: train whistles, police and fire sirens, race car 
+engines. In every case, there is an audible change 
+in pitch as the source approaches and then pass¬ 
+es an observer. 
+
+One way to visualize the Doppler effect is to think 
+of sound waves as pulses emitted at regular inter¬ 
+vals. Imagine walking forward. Each time you take 
+a step, you emit a pulse. Each pulse in front of you 
+would be a step closer together than if you were 
+emitting them while standing still; each pulse 
+behind you would be a set further apart. The puls¬ 
+es in front of you have a higher frequency than at 
+rest and the pulses behind you have a lower fre¬ 
+quency at rest. 
+
+In order to determine the angle of the object, the measuring range is sensed by three radar 
+beams. The middle beam points straight ahead, the other two beams point 2.5° to the 
+sides. The total horizontal sensing range of the ACC is 8° or +/- 4° from vehicle centerline. 
+The radar beam is capable of reading the entire width of a lane at 120m. 
+
+
+
+9 
+
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Updated 
+
+Information 
+
+
+ACC Controller 
+
+
+The ACC controller receives distance, relative speed and angle information from each 
+object that is detected. The ACC decides whether the DME needs to accelerate, maintain 
+speed or decelerate the vehicle and if DSC intervention is required. These functions are 
+broken into sub components in the ACC. 
+
+• Set Speed Controller 
+
+• Follow Controller 
+
+• Curve Speed Controller 
+
+Set Speed Controller 
+
+This controller passes vehicle speed information on the DME. 
+
+Follow Controller 
+
+This controller decides which object will become the target object. It attempts by way of 
+interventions in the DME and DSC, to set a constant time gap to the leading vehicle. 
+
+Curve Speed Controller 
+
+This controller evaluates inputs so that speed is limited on curves so that the transversal 
+acceleration does not become uncomfortable. It prevents rapids acceleration of the vehi¬ 
+cle when the target object is lost in a curve. (Only if the vehicle’s steering wheel is turned.) 
+
+Operation 
+
+If there is no object in front of the vehicle, the ACC system operates as a normal cruise con¬ 
+trol. The desired speed input by the driver is regulated. 
+
+When an object is detected within the lane the ACC illuminates the object sensed indica¬ 
+tor. If the object being followed is traveling at a slower speed than is set by the cruise con¬ 
+trol, the vehicle speed will be adapted (slowed) through either DME or DSC intervention to 
+maintain the requested follow distance (timed in seconds). 
+
+The distance to the lead object will vary with the time interval chosen by the driver and vehi¬ 
+cle speed. The speed of the vehicle will never exceed the preset cruise request of the dri¬ 
+ver. 
+
+When the object is no longer in front of the vehicle, the preset speed request will be 
+resumed. 
+
+Note: 
+
+The ACC will only detect moving objects. Objects that are stationary (stopped) will 
+be ignored. 
+
+10 
+
+
+ACC 
+
+
+Updated 
+
+Information 
+
+
+
+1.8 seconds 
+
+
+35 MPH 
+
+
+
+1.8 seconds 
+
+
+55 MPH 
+
+
+
+
+Constant interval based on seconds, distance changes based on speed. 
+
+
+To maintain proper follow distance the ACC system must be able to perform the following 
+tasks: 
+
+• Detect lead objects by radar sensing up to a distance of approx. 120m. 
+
+• Measure the distance, angle and relative speed of the lead object. 
+
+• Calculate in advance the presumed vehicle course. 
+
+• Select the relevant lead object for vehicle to object ranging. 
+
+• Adapt the actual vehicle speed to that of the lead object by: 
+
+Accelerating (Maximum acceleration rate 1.2 m/s 2 . 
+
+Decelerating (Maximum deceleration rate 2.0 m/s 2 . 
+
+• Monitor Lateral Acceleration (Maximum lateral acceleration 3.0 m/s 2 . 
+
+Deceleration 
+
+The ACC is only able to make limited relative speed corrections. The Maximum decelera¬ 
+tion rate is 2.0 m/s2 (20% of braking capacity). When the system has reached its func¬ 
+tion limits, the driver is requested to intervene by the flashing indicator. 
+
+
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Side Visual Range 
+
+
+Because of the limited side visual range, the leading object may be lost around curves. The 
+ACC vehicle will not accelerate to the preset requested speed as long as the steering wheel 
+is turned and curve recognition is active. After exiting the curve a time delay is in effect to 
+prevent rapid overtaking of the lead object. 
+
+
+
+
+In order to select the correct lead object for vehicle to vehicle ranging, the ACC must pre¬ 
+dict the future lane or path of the vehicle (ACC vehicle). 
+
+Lead objects are then relevant to a control operation when they are located in the actual 
+lane. Lane prediction is an advance calculation of the actual lane of travel. 
+
+The DSC unit provides vehicle speed and the Yaw sensor driving dynamics for the advance 
+calculation. 
+
+Limitations 
+
+The following limitations are in effect during ACC operation: 
+
+• Operation possible only between the speeds of 20 mph and 110 mph. 
+
+• Maximum deceleration rate 2.0 m/s 2 . 
+
+• Maximum acceleration rate 1.2 m/s 2 . 
+
+• Maximum transversal acceleration rate 3.0 m/s 2 . 
+
+
+
+ACC 
+
+
+
+
+
+
+
+
+
+ACC reaches its limitations in the following situations: 
+
+
+• The sensing range of the radar sensor limits the detection of objects that are traveling 
+in front in different lanes or around curves. 
+
+• An object cutting in results in delayed ACC responses. Do not use ACC on winding 
+roads or if frequent lane changes occur. 
+
+• High speed differences cannot be corrected. 
+
+• ACC cannot brake the vehicle to a complete standstill. The driver must assume control 
+of the vehicle by braking. 
+
+• ACC must only be used when visibility is adequate. 
+
+• If the time gap to the lead object is less than 1 second, especially in the case of the 
+lead object cutting in close to the front of the vehicle, ACC may not sense the lead 
+object in time for intervention, driver intervention is required. 
+
+
+Activation Conditions 
+
+The following preconditions must be met for ACC to become operational: 
+
+• Engine speed >512 RPM 
+
+• No failure of Irreversible faults present in ACC 
+
+• ACC system “ON” 
+
+• Driving Speed > 20 MPH 
+
+• Park, Reverse or Neutral not engaged 
+
+• Parking brake not engaged 
+
+• DSC not active 
+
+
+
+ACC 
+
+
+
+
+Operating Modes 
+
+
+Initialization Mode All the ACC system components are checked after KL15 is active. 
+
+The Radar sensor is checked from 20 km/h. 
+
+
+Passive Mode Activation conditions are satisfied, ACC can be switched on by the 
+
+Stalk Switch. 
+
+
+Standby Mode 
+
+Active Control 
+Mode 
+
+Suspend Mode 
+
+
+ACC can be activated by the driver moving the stalk switch towards 
+the instrument cluster V or towards the steering wheel . 
+
+Normal ACC control mode in which the vehicle is controlled with 
+automatic acceleration or deceleration. 
+
+ACC is not active, speed is controlled by the driver. 
+
+
+To-Standby Mode 
+
+
+Allows a smooth transition to Standby Mode when ACC is deactivat¬ 
+ed by the driver. 
+
+
+Brake only Mode 
+
+
+Failure Mode 
+
+
+Only brake activation is possible, no DME intervention. 
+
+This mode is active under the following conditions: 
+
+-Fault in the DME 
+-Radar Sensor “Blindness” 
+
+-DSC intervention active 
+-Parking Brake Activated 
+
+Mode is terminated by accelerator pedal movement, or ACC 
+deactivation. 
+
+If a malfunction is detected ACC automatically switches directly into 
+failure mode and the system is non-functional. 
+
+
+Deactivation 
+
+The ACC is deactivated in several ways: 
+
+• Raising or lowering of the Stalk Switch 
+
+• Pressing the brake pedal 
+
+• Placing the transmission in Neutral 
+
+• Deactivating the DSC System 
+
+• Failure of one of the subsystems (Automatic Deactivation) 
+
+• Sensor Blindness (Automatic Deactivation) 
+
+• Vehicle speed drops below the minimum operating range (Automatic Deactivation) 
+
+• The DSC is active beyond a preset time threshold (Automatic Deactivation) 
+
+
+Lens Heater 
+
+The lens of the ACC sensor is heated to ensure better operation in winter and adverse con¬ 
+ditions. The heating coil is integrated into the plastic lens body. 
+
+
+
+ACC 
+
+
+
+
+Lens heating is temperature dependent as measured by an internal temperature sensor in 
+the ACC unit. 
+
+Despite the heater it is not possible to prevent sensor “Blindness” in all conditions. 
+
+Faults with the lens heating system are registered in the ACC unit fault memory. 
+
+Fault Memory 
+
+Each module in the ACC system network stores its own faults. Faults that affect ACC oper¬ 
+ation are passed on the ACC control unit for action, ie. deactivation of ACC. 
+
+The ACC control unit stores and acts upon two different types of faults: 
+
+• Irreversible Fault 
+
+ACC itself has detected an irreversible fault or communication is no longer possible with 
+the DME or DSC (via the PT CAN). ACC is inactive until the fault is repaired and cleared. 
+
+• Reversible Fault 
+
+ACC has detected a reversible fault in itself or a partner control unit. If the fault goes 
+away ACC is immediately available for activation. An entry is made in the fault 
+memory. 
+
+Alignment 
+
+It is essential that the sensor be correctly aligned for proper system operation. Horizontal 
+mis-alignment will result in erroneous reaction to objects in a neighboring lane or a delayed 
+reaction to objects in the same lane. 
+
+ACC can compensate for minor horizontal misalignments up to 1 , with slight function 
+impairments. In the event of more serious deviations, ACC will shut down and not be avail¬ 
+able for operation. 
+
+The alignment procedure is only possible with the DISplus or the GT1 and the special tools 
+for ACC adjustment (PN 81 -10-0-021 -292). 
+
+Note: The tool is used in conjunction with other BMW special tools. Refer to SIB 
+B03 01 01. Always refer to the latest bulletins and repair instructions. 
+
+
+
+ACC 
+
+
+
+Review Questions 
+
+1. What does the radar sensor monitor? 
+
+
+2. What is the meaning of the following symbols when displayed in the Instrument Cluster? 
+
+
+
+3. The following distance time intervals are?_ 
+
+4. How does ACC determine if brake application is necessary for proper deacceleration? 
+
+
+5. List the situations in which the ACC may reach its limitations. 
+
+
+
+ACC 
+
+
+
+
+

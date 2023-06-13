@@ -1,0 +1,9639 @@
+Table of Contents 
+
+Byteflight Safety Systems 
+
+Subject Page 
+
+Byteflight Safety Systems .5 
+
+ISIS System Structure.6 
+
+ASE System Structure .7 
+
+Intelligent Safety and Information System (ISIS) .8 
+
+ISIS Components.8 
+
+Central Gateway M odule (ZGM).10 
+
+Safety and Information Module (SIM) .12 
+
+Power supply to the operational safety systems .13 
+
+Power S upply in the event of an impact.13 
+
+ConsumerShutdown.13 
+
+Intelligent Distributor .14 
+
+Intelligent Star Coupler .14 
+
+Message.15 
+
+Synchronization Pulses.16 
+
+Software Reset.17 
+
+System Time.18 
+
+Synchronization of the system time .18 
+
+Synchronization in normal operating mode.18 
+
+Synchronization of new modules .19 
+
+Self Diagnosis of the ISIS .19 
+
+Self Diagnosis of the SIM .19 
+
+Pre-drive Check .20 
+
+Pre-drive Check, Phase 1.20 
+
+Pre-drive Check, Phase 2.20 
+
+Self Diagnosis in Operation .20 
+
+Airbag warning lamp and check control messages.21 
+
+Check Control M essages.22 
+
+Fault Memory .23 
+
+Primary Fault M emory.23 
+
+Shadow M emory .23 
+
+Fault Code M emory Entry.23 
+
+Erasing the Fault Memory.23 
+
+A-pillarSatellite (SASL,SASR) .24 
+
+Sensors .24 
+
+Ignition power circuit self diagnosis .24 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Self diagnosis in normal operation .25 
+
+Left B-pillarSatellite (SBSL) .26 
+
+Sensors .26 
+
+Right B-pillar Satellite (SBSR).28 
+
+Sensors .28 
+
+Driver/Passenger Seat Satellite (SSFA/SSBF).30 
+
+Sensors .30 
+
+Rear Seat Satellite SSH .32 
+
+Rear Headrests .32 
+
+Sensors .32 
+
+Front Door Satellite (STVL/STVR) .34 
+
+Sensors .34 
+
+Vehicle Center Satellite (SFZ).36 
+
+Sensors .36 
+
+Steering Column Switch Cluster(SZL).38 
+
+Advanced Safety Electronics (ASE) .44 
+
+ASE System Components (E85).46 
+
+Safety and Information Module.46 
+
+Left B-pillar Satellite (SBSL) .48 
+
+Right B-pillar Satellite (SBSR).50 
+
+Left and Right Door Satellites (STVL/STVR).52 
+
+B + Cable Monitoring.53 
+
+Battery Cable Monitoring Circuit .54 
+
+Battery Cable Diagnosis .55 
+
+Passenger Airbag Deactivation.56 
+
+Seat Occupancy Detection (SBE) .56 
+
+Passenger Seat Occupancy Detection (OC-3) .57 
+
+ASE System Overview (E60) .60 
+
+ASE Components E60.62 
+
+Safety and Gateway M odule (SGM).62 
+
+Voltage Supply .65 
+
+Power Reserve .65 
+
+StarCoupler.66 
+
+Gateway .66 
+
+Gateway from K-CAN to ASE .66 
+
+Gateway from ASE to K-CAN .67 
+
+Gateway from the ASE to PT-C AN .67 
+
+Gateway from the PT-C AN to the ASE.67 
+
+Gateway from the ASE to the MOST via K-CAN .67 
+
+HistoryMemory .67 
+
+Driver/Passenger Door M odule TM FA/TM BF .68 
+
+B-pillar Satellite Left/Right SBSL/SBSR .70 
+
+Vehicle Center Satellite .72 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Steering Column Switch Center (SZL).73 
+
+Up-Front Sensors .74 
+
+B +Cable Monitoring.75 
+
+Battery Cable Monitoring Circuit.76 
+
+Battery Cable Diagnosis .77 
+
+Passenger Seat Occupancy Detection (OC-3) .78 
+
+Airbag Indicator Lamp .80 
+
+Service Information (E60).81 
+
+Passenger Airbag Module.81 
+
+Battery Cable Diagnosis .81 
+
+Safety BatteryTerminal .81 
+
+Door M odule, Driver's Door/Passenger Door.81 
+
+Up-Front Sensors.81 
+
+Synchronization of New Modules .81 
+
+Passive Safety Components.90 
+
+Driver Front Airbag .90 
+
+Passenger Front Airbag .91 
+
+Knee Airbags .92 
+
+Head Protection Systems .94 
+
+Operation .95 
+
+Active Head Restraint System .96 
+
+Battery SafetyTerminal (BST).98 
+
+BeltTensioning Systems .99 
+
+Front BeltTension Limiter(E65/E66) .99 
+
+Operation.100 
+
+Seatbelt Upper Anchor Position.101 
+
+Rear Seatbelt (End Fitting)Tensioner (E65/E66) .102 
+
+Operation.102 
+
+Front SeatbeltTensioners (E6X vehicles).103 
+
+Seat Belt Buckle Switch .103 
+
+Seat Integrated Belt Systems (SGS) .104 
+
+Seat Occupancy Detection .105 
+
+Principle of Operation.106 
+
+Fuel Pump Cutoff Circuit (E65/E66).106 
+
+Fuel Cutoff After Collision.106 
+
+Emergency Call, US.107 
+
+Manual Emergency Call .107 
+
+Automatic Emergency Call.107 
+
+Breakdown Call.107 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Byteflight Safety Systems 
+
+Model: E65/E66 from SOP f E85 from SOP 
+E60, E63 and E64 from SOP 
+
+Production: All with byteflight 
+
+■BIECTHIIS 
+
+After completion of this module you will be able to: 
+
+• Identify byteflight related passive safety systems 
+
+• Understand the function and operation of passive safety systems 
+with byteflight 
+
+• Diagnose byteflight based passive safety systems 
+
+• Perform service related functions on ASE and ISIS systems 
+
+
+4 
+
+byteflight safety systems 
+
+
+Byteflight Safety Systems 
+
+Since the launch of the E65, many new innovations to passive safety systems have been 
+introduced to the BMW model line. Otherthan MRS systems, there are 2 new passive 
+safety systems which utilize the new byteflight fiber optic technology. 
+
+These new systems are: 
+
+• Intelligent Safety Integration System (ISIS) - used on the E65 and E66 
+
+• Advanced Safety Electronics (ASE) - used on the E85, E60, E63 and E64 
+
+The above systems, which differfrom MRS, use the new byteflight fiberoptic technolo¬ 
+gy. In contrast to M RS, which uses a centrally located control module, the ISIS and ASE 
+systems use byteflight to allow "decentralization" of the system electronics. 
+
+These new systems use remotely located "satellites" to acquire crash data as well as to 
+trigger system components. By moving these satellites closerto potential impact points, 
+the system reaction time is shortened during a collision. 
+
+The byteflight fiber optic network allows forthe sharing of crash data between system 
+components. Fiber optics also improve reliability and increase system communication 
+speed. 
+
+ISIS System with byteflight on E65 
+
+D-Bus 
+
+
+
+cn 
+
+cn 
+
+cn 
+
+cn 
+
+
+
+cn 
+
+cn 
+
+cn 
+
+
+byteftight 
+
+
+5 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISIS System Structure 
+
+
+The byteflight fiber optic network utilizes a "star" structure. This arrangement consists 
+of a centrally located module (SIM) with satellites arranged in a radial pattern. Each of 
+the satellites can communicate with the SIM individually. 
+
+
+The Safety and Information Module (SIM) con¬ 
+tains transmitter/receiver modules (S/E mod¬ 
+ule) for each satellite. Each satellite also con¬ 
+tains a transmitter/receiver module. 
+
+The SIM is also connected via byteflight to 
+the ZGM which acts as a gateway between 
+the K-CAN, PT-CAN and the D-bus. 
+
+
+Example of Star Structure on the ISIS system 
+
+
+3 
+
+Cl 
+
+
+
+This structure allows the following design 
+
+objectives to be achieved: f 
+
+• Earlier and more precise impact detection 
+
+• Improved occupant protection 
+
+• High transmission speed 
+
+• Improved system reliability 
+
+• Fastertrigger decisions 
+
+• Redundant sensor information 
+
+• Software update via bus 
+
+• No Electromagnetic interference 
+
+• M echanical safety switch no longer 
+needed 
+
+• No electrical connection between 
+transmitter and receiver module 
+
+• Optical fibers are lighterthan copper wires 
+
+
+• System can be updated/retrofitted easily 
+
+
+On the ISIS system, the acceleration sensors are integrated into the satellites. The airbag 
+ignition circuits forthe relevant airbag are also contained within the satellite. Each satel¬ 
+lite is installed in various strategic locations throughout the vehicle. This method allows 
+for de-centralization of the system electronics which results in earlier crash detection as 
+well as shorter "reaction" times during impact. 
+
+
+The AS E systems share the same basic structure as the ISIS system, but there are less 
+satellites within the system. 
+
+
+6 
+
+byteflight safety systems 
+
+
+LEM [DU 
+
+
+
+
+
+
+
+
+ASE System Structure 
+
+The ASE system was first introduced with the E85 and then later adapted to the E60, 
+E63 and E64. 
+
+The E85 only uses 4 satellites connected to the SIM . The E85 does not use a separate 
+ZGM, but the SIM carries out some of the ZGM functions. The "ZGM" function of the 
+SIM acts as a gateway between the byteflight and K-Bus. And the instrument cluster 
+(kombi) is used as a gateway to the PT-CAN, K-Bus and D-bus. 
+
+
+ASE System - E85 
+
+
+
+SBBl SBSF« 
+
+
+mVL' !TTVE" 
+
+
+r-T Jbfin 
+
+I IWKMi - 1 
+
+
+
+In comparison to the E85, the E60 has more 
+systems which requires the use of additional 
+satellites. There are 6 satellites used which 
+are connected to the SGM (Safety and 
+Gateway Module). 
+
+The SGM combines the functions of the 
+SIM and ZGM used on the E65. It carries 
+out the gateway function between byte- 
+flight and the D-Bus. The SGM also per¬ 
+forms some additional functions which will be 
+discussed later in this training module. 
+
+The E63 and E64 use a similar structure and 
+share many of the components from the E60. 
+
+
+
+TMFA TMBF 
+
+
+SR 
+
+
+SZL 
+
+
+byteflight 
+
+
+M'W ij;-' 
+
+
+7 
+
+byteflight safety systems 
+
+
+
+
+
+Intelligent Safety and Information System (ISIS) 
+
+
+ISIS Components 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+D 
+
+Central Gateway Module (ZGM) 
+
+23 
+
+Side airbag, front left 
+
+2 
+
+Driver's seat occupancy detection 
+
+24 
+
+Door satellite, front left (STVL) 
+
+3 
+
+Active headrest, driver 
+
+25 
+
+Belt force limiter, right 
+
+D 
+
+Active headrest passenger 
+
+26 
+
+Belt force limiter, left 
+
+5 
+
+Pass, seat occupancy detection 
+
+27 
+
+B-pillar satellite, left (SBSL) 
+
+6 
+
+Seatbelt tensioner, left 
+
+28 
+
+B-pillar satellite, right (SBSR) 
+
+7 
+
+Driver's seat satellite (SSFA) 
+
+29 
+
+Electric fuel pump 
+
+8 
+
+Passenger seat satellite (SSBF) 
+
+30 
+
+Telephone/TCU 
+
+9 
+
+Seatbelt tensioner, right 
+
+31 
+
+Safety battery terminal (BST) 
+
+10 
+
+Seatbelt buckle switch, left 
+
+32 
+
+Side airbag, rear left 
+
+11 
+
+Seatbelt buckle switch, right 
+
+33 
+
+Vehicle center satellite (SFZ) 
+
+12 
+
+Front airbag, driver 
+
+34 
+
+Side airbag, rear right 
+
+13 
+
+Steering column switch cluster (SZL) 
+
+35 
+
+Seat occupancy detection, rear left 
+
+14 
+
+A-Pillar Satellite, Right (SASR) 
+
+36 
+
+Seat occupancy detection, rear right 
+
+15 
+
+Front airbag, passenger 
+
+37 
+
+End fitting tensioner, left 
+
+16 
+
+AITS 1 or 2 (right) 
+
+38 
+
+Plead restraint adjustment motor, rear left 
+
+17 
+
+AITS 1 or 2 (left) 
+
+39 
+
+Plead restraint adjustment motor, rear right 
+
+18 
+
+A-Pillar Satellite, Left (SASL) 
+
+40 
+
+End fitting tensioner, right 
+
+19 
+
+Knee airbag, right 
+
+41 
+
+Rear seat satellite (SSH) 
+
+20 
+
+Knee airbag, left 
+
+42 
+
+Safety and Information Module (SIM) 
+
+21 
+
+Door Satellite, front right 
+
+43 
+
+Instrument Cluster 
+
+22 
+
+Side airbag, front right 
+
+
+
+
+9 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Central Gateway Module (ZGM) 
+
+The ZGM is located in the electronics carrier 
+behind the glovebox. It carries out the task of 
+a gateway between the following: 
+
+• byteflight 
+
+• K-CAN-P 
+
+• D-bus 
+
+• PT-CAN (and wake-up) 
+
+The gateway translates messages between 
+bus systems and controls the flow of data to 
+and from each system. The only connection 
+forthe D-bus is at the ZGM. This means that 
+all diagnostic communication must pass 
+through the ZGM. 
+
+The ZGM also has the ability to determine if a 
+BMW diagnostic tool is connected or an after- 
+market scan tool. This allows access to only 
+the necessary data needed. 
+
+A non-volatile memory is also integrated into 
+the ZGM which can be used to store configu¬ 
+ration, diagnostic and crash data. 
+
+
+Gateway function of ZGM 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+ZGM 
+
+2 
+
+Gateway function 
+
+3 
+
+Diagnosis Bus 
+
+4 
+
+K-CAN-P 
+
+5 
+
+PT-CAN with wakeup line 
+
+6 
+
+byteflight 
+
+
+Location of ZGM and SIM 
+
+(Behind glove box) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central Gateway Module (ZGM) 
+
+2 
+
+Safety and information module (SIM) 
+
+
+10 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZGM Schematic 
+
+
+
+kl:i 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+KL30 
+
+Power Supply (constant B+) 
+
+2 
+
+M icroprocessor 
+
+KL31 
+
+Ground connection 
+
+3 
+
+Data memory 
+
+byteflight 
+
+Optical fiber (bus) 
+
+4 
+
+Driverfor D-bus 
+
+PT-CAN 
+
+Powertrain CAN 
+
+5 
+
+Driverfor K-CAN 
+
+K-CAN 
+
+Body CAN (P) 
+
+6 
+
+Driverfor PT-CAN 
+
+D-Bus 
+
+Diagnostic Bus 
+
+7 
+
+Transmitter/receiver module 
+
+1 
+
+Voltage regulator 
+
+8 
+
+Wake-up logic 
+
+
+11 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Safety and Information Module (SIM) 
+
+SIM E65/E66 
+
+The SIM is located in the electronics carrier 
+behind the glove box and performs 3 main 
+tasks: 
+
+• The satellite power supply and reserve, if 
+the powersupply should fail during an 
+accident. 
+
+• The function of the intelligent star coupler 
+and the main controller for the byteflight 
+bus. 
+
+• Triggering an automatic emergency call 
+by sending a signal to theTCU. 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Linear controller 
+
+9 
+
+Switch 
+
+2 
+
+Linear Controller 
+
+SHDN 
+
+Shutdown 
+
+3 
+
+byteflight master 
+
+S/E 
+
+Transmitter/Receiver module 
+
+4 
+
+Star coupler 
+
+Sl-SX 
+
+Satellites 
+
+5 
+
+Distributor with overcurrent fuses 
+
+ZGM 
+
+Central Gateway Module 
+
+6 
+
+Capacitor 
+
+TEL 
+
+Telephone/TCU 
+
+7 
+
+Switching controller 
+
+KL30 
+
+Terminal 30 
+
+8 
+
+Switching controller 
+
+KL31 
+
+Terminal 31 
+
+
+12 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power supply to the operational safety systems 
+
+The SIM is supplied with voltage via terminal 30 and 31. If the on-board supply voltage is 
+sufficiently high, power is fed to switching controller (8) which routes voltage to the S/E 
+module (4) and switching controller (5). 
+
+The second switching controller (7) is supplied via KL30 and controlled by the micro¬ 
+processor via the SHDN 2 line. The capacitor is charged from KLR. The capacitor 
+charge forms the power reserve. The charge voltage is 400 V. 
+
+Power S upply in the event of an impact 
+
+If the on-board voltage supply falls below approximately 8V, switching controller (7) is 
+immediately operated in the opposite direction. The switching controller generates the 
+voltage which replaces the supply from KL30 until the capacitor is empty orthe on-board 
+voltage supply is restored. The switching controller is controlled by the microprocessor 
+via the SHDN2 line. Atterminal R,the switching controller is switched off again. 
+
+However, there is no defined discharging of the capacitor. 
+
+C onsumer S hutdown 
+
+Switching controller (8), which supplies the voltage to the S/E module and the satellites 
+via switching controller (5), is switched to sleep mode by microprocessor (3) via the 
+SHDN1 signal (shutdown) due to the off-load current. To ensure that the necessary main 
+functions also continue in sleep mode, a 9.8 V linear controller (1), which is in constant 
+operation, is switched in parallel with the switching controller. This voltage supplies the 
+wakeable S/E modules and a downstream 5V linear controller (2). This second linear 
+controller supplies the microprocessor. The wakeable S/E modules are connected to the 
+satellites (SZL,ZGM), which can wake up the byteflight. The otherS/E modules are 
+supplied by the switching controller (8) via switch (9) and are switched off in sleep mode. 
+
+
+Type of Voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9-16 V 
+
+Full function 
+
+
+8-9 V 
+
+Full function, except turning on switching controllers 
+
+
+<8 V 
+
+F ull function from the power reserve for approximately 3 seconds if 
+the voltage was previously greaterthan 9 volts for at least 4 seconds 
+
+
+16-25 V 
+
+Limited function, no destruction, no undefined behavior 
+
+Output voltage 
+at the SIM 
+
+minimum 9.4 V 
+
+All power distribution outputs to the connected satellites carry 
+approximately 80 mA (SZL 120mA) 
+
+
+maximum 9.9 V 
+
+Distributors carry no load, SIM runs internally 
+
+Power Intake 
+
+< 1 mA 
+
+In sleep mode 
+
+
+typ. 1.2 A 
+
+M ax 4 A short term in normal operating mode 
+
+
+typ. 4A max 6A 
+
+Afterthe wake up for 4 seconds while the power reserve is being 
+
+charged 
+
+
+13 
+
+byteflight safety systems 
+
+
+
+
+
+
+Intelligent Distributor 
+
+The intelligent distributor is a system which performs the following tasks: 
+
+• Power supply for each individual satellite 
+
+• Current limitation for each individual satellite 
+
+• Power shutoff for each individual satellite if a fault occurs 
+
+The SIM supplies all of the satellites centrally in order to ensure that the safety system 
+functions reliably. The power must be distributed intelligently so that the system can 
+continue to function smoothly if there is a short circuit or overcurrent on one of the supply 
+lines. 
+
+The distributor integrated into the SIM limits the currentto the satellites to 100 mA on 
+each line. An exception is the satellite forthe steering column switch cluster, for which 
+the current intake is approximately 120 mA, because the steering wheel module must 
+also be supplied. If the current limit is exceeded the power supply is cut. 
+
+It is also possible forthe microprocessor to shut off each individual distributor output and 
+therefore each individual satellite. 
+
+Intelligent Star Coupler 
+
+The transmitter and receiver module is a component which can convert electrical signals 
+into optical signals and transmit them via fiberoptic cables. Each satellite has an S/E 
+module. 
+
+The S/E modules are each connected to the star coupler in the SIM via the byteflight 
+bus. There is also an S/E module for each satellite in the SIM . 
+
+
+
+14 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All of the information transmitted via the byteflight bus takes the form of messages 
+which are sent as pulses of light. The S/E modules in the SIM receive the light pulses 
+from the satellites that are connected to them. In the intelligent star coupler, the mes¬ 
+sages are forwarded to all of the satellites. Data exchange is possible in both directions. 
+
+The S/E modules consist of a light emitting diode (LED) and a photo diode, which are 
+mounted one on top of the other using chip-on-chip technology. This means that both 
+components are connected to the fiberoptic cable in the optimum way. 
+
+The transmitter and receiver module contains the LED forthe driver switching and the 
+receive amplifierforthe converting the optical signals into digital signals. Monitoring of 
+the optical transfer quality is also integrated. 
+
+The satellite is switched off if one of the following faults occurs on one of the fiberoptic 
+cables: 
+
+• No optical signal received in a defined period of time 
+
+• A transmitting diode is sending continuous light 
+
+• Attenuation is too high 
+
+Message 
+
+A data message consists of blocks of data known as bits and bytes. The basic structure 
+of a message is shown in the following diagram: 
+
+
+— 
+
+L*»it - mOns 
+
+ID | LEN | 
+
+DO 
+
+Dll 1 CRCH 1 CRCll 
+
+-Bit 
+
+A 
+
+Start-Sequen2 
+
+-flit Stop 
+
+
+A message always starts with a start sequence, followed by an identifier byte which 
+determines the priority of the message. There is a start bit before every byte and a stop 
+bit after every byte. The next byte is the length of the byte, which gives the number of 
+data bytes. This is followed by a maximum of 12 data bytes and then the checksum. A 
+double stop bit indicates the end of the message. Each device attached to the bus can 
+send messages via the byteflight between synchronization pulses. 
+
+
+15 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Synchronization Pulses 
+
+The byteflight main controller in the SIM emits synchronization pulses every 250ms. 
+Alarm mode is triggered by the length of the synchronization pulse. The length of a syn¬ 
+chronization pulse in alarm status is approximately 2ms. In normal mode, the synchro¬ 
+nization pulse is approximately 3ms. 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Alarm synchronization pulse 
+
+B 
+
+Normal synchronization pulse 
+
+C 
+
+Synchronization pulse 
+
+D 
+
+Message 
+
+Zl-n 
+
+Cycles 
+
+
+The bus main controller must decide when to put the satellites in alarm mode using the 
+available sensor information. When the bus main controller sets alarm mode, all ignition 
+power circuits for the safety system are primed. 
+
+Two separate signals must be transmitted via the byteflight in order to trigger the igni¬ 
+tion output stage. The ignition power circuit high-side switch is controlled by the byte¬ 
+flight alarm mode. The low-side switch is controlled by the microprocessor in the satel¬ 
+lites. The triggering algorithm detects when the low-side switch must be closed using 
+the transmitted message and sensor signals. 
+
+
+16 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following diagram shows an example of an ignition output stage fortriggering the 
+required signal paths: 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Alarm mode pulse 
+
+6 
+
+Microprocessor 
+
+2 
+
+High-side switch 
+
+7 
+
+Satellite 
+
+3 
+
+Ignition capacitor 
+
+S/E 
+
+Transmitter/receiver module 
+
+4 
+
+Igniter pellet 
+
+SIM 
+
+Safety and Information module 
+
+5 
+
+Low-side switch 
+
+
+
+
+
+Software Reset 
+
+The SIM can cut the power supply to individual satellites using the intelligent distributor. 
+This function is used to perform a software reset. The relevant status message is used 
+to monitorthe satellites. The satellite is switched off if one of the following faults is 
+detected by the bus main controller: 
+
+• Internal fault in the satellite 
+
+• Incorrect system time 
+
+• Status message not received 
+
+Depending on the type of fault, the module will try to switch the satellite back on twice 
+after 100 ms. If the fault is not rectified by the power-0 N reset which has been triggered 
+in the satellite module, the satellite remains switched off until the next wake-up in the bus 
+system. 
+
+
+17 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Time 
+
+The system time is used as a reference when storing events, such as faults orthe ignition 
+of pyrotechnic actuators. This allows the events saved in different control units to be 
+classified according to time. 
+
+In the IS IS, the SIM is the bus main controller and therefore responsible for generating 
+synchronization pulses. The SIM is therefore logically also the reference for system time. 
+
+There is a common system time for all equipment attached to the bus in the ISIS. The 
+system time is started by a diagnostic command when the vehicle is manufactured. This 
+process can only be carried out once, it is not possible to reset the system time. 
+
+The time resolution is 250 ms and is triggered by the synchronization pulses on the 
+byteflight. This means that only actual operating time is recorded while the byteflight 
+is active. The maximum time is more than 76,000 hours. 
+
+The time is stored in the microprocessor RAM. An entry is also made in the EEPROM 
+underthe following circumstances: 
+
+• Once an Hour 
+
+• Upon entering sleep mode 
+
+• When the battery is disconnected 
+
+• When the entire system is powered by the power reserve 
+
+Synchronization of the system time 
+
+To ensure that the system time is the same in all modules, it is essential that all of the 
+equipment attached to the bus is synchronized regularly. A distinction must be made 
+between synchronization in normal operating mode and the synchronization of additional 
+modules which are installed in the system as new components. 
+
+Synchronization in normal operating mode 
+
+A system time message is sent by the SIM when the byteflight is restarted after sleep 
+mode and approximately every 16 seconds during operation. 
+
+Because the message has a relatively low priority, it may not be transmitted immediately. 
+This causes an asynchronous time value between the SIM and the satellites. As the SIM 
+knows the time at which the message was sent, it is possible to correct this. 
+
+A second system time message is sent containing the correction value. 
+
+The correct system time is the sum of the values contained in the two system time mes¬ 
+sages. The control units (satellites) do not accept the system time until both system time 
+messages have been received. 
+
+
+18 
+
+byteflight safety systems 
+
+
+
+Synchronization of new modules 
+
+New satellite modules that are installed do not have any system time. The system time is 
+transferred to the module by sending the two system time messages. 
+
+This is only possible if the system time stored in the satellite modules is less than the 
+senttime. If the system time is a module is greaterthan the senttime (i.e. if the module 
+has been transferred from another vehicle), the system time is not accepted and an entry 
+is made in the fault memory. 
+
+If the SIM is replaced, the system time must be re-entered. Because the system time is 
+present on all satellite modules, it must be transferred from there to the SIM. This can be 
+done using the diagnostic interface (DISplus/GT-1). 
+
+The diagnostic calculator calls up the system time from all of the satellites and selects 
+the largest. The diagnostic calculator adds an amount and transfers the result to the SIM 
+as a system time. 
+
+The correction amount compensates forthe delay between when the system time is read 
+from the satellites and when it is entered on the SIM . This avoids error messages being 
+generated by the satellites because the system time transferred by the SIM is smaller 
+than that stored on the satellite. 
+
+Also, when the system time is set, the VIN (chassis #) and the mileage are also trans¬ 
+ferred to the new satellite as well. Failure to set system time will also result in the inability 
+to code the new satellite. 
+
+Self Diagnosis ofthe ISIS 
+
+Self-diagnosis ofthe entire ISIS consists of several parts: 
+
+• Self-diagnosis of the SIM • Pre-drive check, phase 1 
+
+• Pre-drive check, phase 2 • Self-diagnosis in operation 
+
+Self Diagnosis ofthe SIM 
+
+When KLR is switched on, or on wake-up, an internal self-diagnosis ofthe SIM is carried 
+out first. The following components are tested: 
+
+• Test ofthe analog/digital converter 
+
+• Flash test 
+
+• RAM test 
+
+• EEPROM test 
+
+• Test of the watchdog reset 
+
+If a fault occurs during one of these tests, it is recorded in the fault memory. This stops, 
+the program and no communication is possible via the bus. As the instrument cluster is 
+no longer receiving any signals, the airbag warning light (AWL) lights up. 
+
+
+19 
+
+byteflight safety systems 
+
+
+
+Pre-drive Check 
+
+When terminal R is switched on, a self-diagnosis of the overall system, the so-called pre¬ 
+drive check, is carried out. During this period, the system cannot be triggered. This is 
+indicated by activation of the AWL. The total duration of a fault-free pre-drive check is 
+less than five seconds. The pre-drive check is divided into two phases. 
+
+The pre-drive check does not start until the SIM has received the first control unit status 
+report from all modules which it knows from coding and only if no faults have been 
+reported. If it does not receive the status report from a module or if a fault is reported, the 
+powerto the satellite module is switched off. Only then is the pre-drive check started. 
+
+Pre-drive C heck, Phase 1 
+
+In phase 1 of the pre-drive check, the ignition output stages which are controlled by the 
+alarm pulse are tested, with the exception of the high-side transistor. No alarm pulse is 
+generated during phase 1. The sensors are stimulated and tested. Once these tests 
+have been carried out, the result is reported in the control unit status message. An OK 
+message is only sent if all tests have run without any faults. If any faults have occurred 
+during the pre-drive check, these are stored in fault memory. 
+
+Pre-drive C heck, Phase 2 
+
+In phase 2 of the pre-drive check, the alarm path from the SIM to the ignition output 
+stages are tested. The SIM sends an alarm pulse, which is returned after a 30ms delay. 
+Each satellite now sends a status report with an OK message to the SIM . If the alarm 
+mode has not been received correctly, a fault is logged in the fault memory. This com¬ 
+pletes the pre-drive check and the module can now operate in normal mode. 
+
+Forthe control units with ignition output stages in particular, this means that the ignition 
+capacitors can be charged. If all ignition capacitors are fully charged, this is reported to 
+the SIM in the status report. The AWL is switched off when all the modules report full 
+ignition capacitors and no fault is determined. 
+
+Self Diagnosis in Operation 
+
+During operation, the SIM monitors itself continually as far as possible. The contents of 
+the satellite flash memory are checked using a checksum. If a fault is detected, byte- 
+flight communication is stopped and the power supply from the SIM to the satellites is 
+cut. 
+
+The S/E modules allow the optical signal quality to be diagnosed. A warning signal is 
+generated if the optical reception quality does not reach a certain threshold value. If this 
+is the case, communication cannot function without faults. If this warning signal occurs 
+during operation, an entry is logged in the fault memory. 
+
+During operation, byteflight messages are monitored for safety-relevant information. If 
+one of these messages is not received within a set time, an entry is logged in the fault 
+memory. 
+
+
+20 
+
+byteflight safety systems 
+
+
+
+The SIM and all satellites continually check the vehicle identification numbers received 
+via the byteflight against the VIN's entered into the control units. If these do not match 
+or if an entry is missing, the AWL is switched on. This ensures that two control units with 
+potentially incorrect coding data which have been swapped between vehicles do not 
+remain undiscovered. 
+
+The mileage reading is also stored in the SIM. To create a link between system time and 
+the mileage reading, the current mileage reading is stored when the system is synchro¬ 
+nized. 
+
+
+Airbag warning lamp and check control messages 
+
+Various systems can display ISIS faults. 
+
+These include indicator lamps, graphic 
+symbols (pictograms) and check con¬ 
+trol messages. 
+
+The indicator lamps include the AWL 
+and the seat belt indicator lamp. 
+
+
+
+
+The AWL is activated in the pre-drive check and is switched on if any of the following 
+system faults occur: 
+
+• Fault in the self-diagnosis of the SIM • Communication fault in the byteflight 
+
+• Fault during pre-drive check • VIN number is missing or incorrect 
+
+The graphic symbols appear in the information display on the instrument cluster. 
+
+The following symbols are possible: 
+
+The red airbag symbol is activated if 
+there is a fault in the driver/passenger 
+front airbag. The yellow airbag symbol 
+is activated if there are faults in the side 
+or head airbags or in the belt tensioners or belt force limiters. 
+
+The yellow service symbol is activated if there is a fault in the fuel pump. 
+
+In addition, fault messages can also be displayed in the Check Control Module. 
+
+The faults detected by the satellites in the control unitorthe associated peripherals are 
+sent to the SIM as a status report. These messages are transferred from the SIM via the 
+byteflight to the ZGM and via the K-CAN to the information display. 
+
+Activation ofthe AWL, the graphic symbols and the Check Control messages are con¬ 
+trolled by the instrument cluster on the basis ofthe data received from the SIM. 
+
+If the safety-relevant functions in the overall system are operating correctly, the SIM trans¬ 
+mits a message to the instrument cluster at regular intervals, approximately every 200ms. 
+
+If this signal fails for longerthan 2 seconds, the information display indicates this as a fault 
+in the system by illuminating the AWL. 
+
+
+
+21 
+
+byteflight safety systems 
+
+
+Check Control Messages 
+
+
+ID 
+
+Check Control Message 
+
+S upplementary note on the 
+Control Display 
+
+77 
+
+Seat-belt indicator lamp activation 
+
+
+92 
+
+Fault in passenger restraint system 
+
+Protection restricted in the event of an accident. Function 
+of belt tensioners and belt force limiters not ensured. 
+Fasten seat belt notwithstanding. Contact BMW service 
+immediately. 
+
+93 
+
+Driver restraint system fault 
+
+Protection restricted in the event of an accident. Function 
+of belt tensioners and belt force limiters not ensured. 
+Fasten seat belt notwithstanding. Contact BMW service 
+immediately. 
+
+94 
+
+Fault in restraint system, rear left 
+
+Protection restricted in the event of an accident. Function 
+of belt tensioners and belt force limiters not ensured. 
+Fasten seat belt notwithstanding. Contact BMW service 
+immediately. 
+
+95 
+
+Fault in restraint system, rear right 
+
+Protection restricted in the event of an accident. Function 
+of belt tensioners and belt force limiters not ensured. 
+Fasten seat belt notwithstanding. Contact BMW service 
+immediately. 
+
+97 
+
+Fault in safety system 
+
+In the event of an accident, the level of protection is 
+severely restricted. Function of airbags, belt tensioners 
+and belt force limiters not ensured. Referto owner's man¬ 
+ual. Contact BMW service immediately. 
+
+106 
+
+Fault in side airbags, rear left 
+
+The function of the side airbag, rear left is not ensured. If 
+possible do NOT occupy the seat. Contact BMW service 
+immediately. 
+
+107 
+
+Fault in side airbags, rear left 
+
+The function of the side airbag, rear right is not ensured. If 
+possible do NOT occupy the seat. Contact BMW service 
+immediately. 
+
+108 
+
+Driver's front airbag fault 
+
+The function of the driver's front airbag, rear left, is not 
+ensured. Contact BMW service immediately. 
+
+109 
+
+Passengerfront airbag fault 
+
+The function of the passengerfront airbag, rear left, is not 
+ensured. Contact BMW service immediately. 
+
+216 
+
+Fault in fuel pump 
+
+It is possible that the vehicle may breakdown. Contact 
+BMW service immediately. 
+
+
+22 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fault Memory 
+
+The control unit has a fault memory in the EEPROM. The fault memory is divided into a 
+primary fault memory and a shadow memory. 
+
+Primary Fault Memory 
+
+The primary fault memory stores all safety relevant faults, for example if individual airbag 
+functions have to be deactivated. This is indicated by the AWL orthe check control 
+messages. 
+
+Shadow Memory 
+
+The shadow memory stores faults which were detected but which have no impact on the 
+operational reliability of the system. 
+
+FaultCode Memory Entry 
+
+Each fault detected during the self-diagnosis is stored here, but each fault code is only 
+stored once. If the same fault code occurs again, the entry is updated. The control unit 
+can store a maximum of 20 different fault codes. Any faults occurring beyond this are not 
+stored and are lost. 
+
+If all the possible fault code memory spaces are already occupied, any entries that might 
+be present in the shadow memory are overwritten by new entries of the primary fault 
+code memory. 
+
+Erasing the Fault Memory 
+
+The fault memory entries can either be completely or individually erased. Erasing sepa¬ 
+rate faults is used for diagnostic purposes. If several faults are stored, an individual fault 
+can be erased to check whetherthe fault occurs again. 
+
+Notes: 
+
+
+23 
+
+byteflight safety systems 
+
+
+
+A-pillar Satellite (SASL,SASR) 
+
+The left and right A-pillar satellite are practical¬ 
+ly the same. They are installed underthe 
+A-pillartrim in the footwell area. 
+
+Both SASL and SASR are connected to the 
+SIM via byteflight. The satellite power supply 
+is also from the SIM and is buffered by the 
+capacitor. When the byteflight is in sleep 
+mode, the satellite power supply is switched 
+off by the SIM. The software reset is also 
+performed by the SIM . 
+
+The SASL/R controls and monitors the igniter 
+pellets forthe knee airbag and forthe AITS 1 
+forthe driver and passenger head protection. 
+
+If equipped with the optional rear side airbag 
+the AITS is also controlled and monitored by 
+the SASL/R. In addition, the SASR is respon¬ 
+sible forthe control and monitoring of the front 
+passenger airbag. 
+
+Sensors 
+
+An acceleration sensorfor longitudinal acceleration and one for lateral acceleration is 
+incorporated into the SASL and SASR. The sensors provide a voltage as a measured 
+variable. This voltage is a measurement forthe vehicle acceleration. This voltage signal 
+is filtered, magnified, converted and sent as a message. 
+
+The strategic positioning of the acceleration sensors in the vehicle allows the direction 
+and accident severity to be detected in the satellites using detected sensor data. 
+
+The ISIS detects whetherthe accident severity and direction of impact is a head-on, side 
+or rear end collision. 
+
+The greatest possible protection forthe occupants is provided by triggering the relevant 
+pyrotechnic actuators forthe accident using the stored algorithm and in conjunction with 
+the seat occupancy recognition and the seat belt use detection. 
+
+Ignition power circuit self diagnosis 
+
+During the pre-drive check, all of the ignition power circuits are checked. If no faults 
+occur during the check, the ignition capacitors are charged and the satellites are ready 
+fortriggering. 
+
+The check of the high and low side switches takes place with the ignition capacitor dis¬ 
+charged. This prevents any ignition circuitfrom being triggered accidentally if a fault 
+should occur. 
+
+There is no risk of accidental deployment if any otherfaults should occur. The faults are 
+indicated via the AWL and stored in the fault memory. 
+
+
+
+24 
+
+byteflight safety systems 
+
+
+Self diagnosis in normal operation 
+
+In normal operation, there is a permanent check of the ignition power circuits. A fault 
+message is issued, but only when the fault is confirmed over a specific period of time. 
+
+If a short circuit to ground or short to B + is detected, the corresponding ignition capacitor 
+is discharged. 
+
+
+In normal operation, the self diagnosis is restricted to checking the ignition power circuit 
+for short to ground, short to B + and foropen circuits. 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+VS 
+
+Power supply for satellites from SIM 
+
+5 
+
+Passengerfront airbag ignition output stage 
+
+S/E 
+
+Transmitter/receiver module 
+
+6 
+
+Igniter pellet 1st stage for passengerfront airbag 
+
+SASR 
+
+A-pillar satellite, right 
+
+7 
+
+Igniter pellet 2nd stage for passengerfront airbag 
+
+1 
+
+Voltage regulator 
+
+8 
+
+Longitudinal acceleration sensor 
+
+2 
+
+Ignition output stage for AITS 1/2 and knee airbag 
+
+9 
+
+Transverse acceleration sensor 
+
+3 
+
+AITS1/AITS2 igniter pellet 
+
+10 
+
+Microprocessor 
+
+4 
+
+Knee airbag igniter pellet 
+
+
+
+
+25 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Left B-pillar Satellite (SBSL) 
+
+The left B-pillarsatellite is installed in the B-Pillar above the seat belt inertia reel. The 
+SBSL is connected to the SIM via byteflight. The satellite power supply is also from the 
+SIM and is buffered by the capacitor. When the byteflight is in sleep mode, the SBSL 
+power supply is switched off by the SIM which also performs the software reset. 
+
+The SBSL controls and monitors the igniter pellets forthe belt force limiter ofthe seat 
+belt on the driver's side. 
+
+Sensors 
+
+A lateral acceleration sensor is incorporated into the SBSL. And the igniter pellets are 
+diagnosed by ignition IC's and ignited by electrolytic capacitors. The self diagnosis ofthe 
+ignition power circuits during the pre-drive check and in normal operation is the same for 
+all satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+
+26 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SBSL Schematic 
+
+
+
+Index 
+
+Explanation 
+
+VS 
+
+Power supply for satellites from SIM 
+
+S/E 
+
+Transmitter/receiver module 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Ignition output stage for belt force limiter 
+
+3 
+
+Igniter pellet for belt force limiter 
+
+4 
+
+Transverse (lateral) acceleration sensor 
+
+5 
+
+Microprocessor 
+
+
+27 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Right B-pillarSatellite (SBSR) 
+
+The right B-pillar satellite is installed in the B-Pillar above the seat belt inertia reel. The 
+SBSR is connected to the SIM via byteflight. The satellite power supply is also from 
+the SIM and is buffered bythe capacitor. There is an additional KL30 power supply for 
+the operation of the electric fuel pump. When the byteflight is in sleep mode, the 
+SBSR power supply is switched off bythe SIM which also performs the software reset. 
+The power supply to the electric fuel pump is unaffected by this. 
+
+The SBSR controls and monitors the igniter pellets forthe belt force limiter of the seat 
+belt on the passenger's side and the igniter pellet. The SBSR is also responsible forthe 
+igniter circuit of the BST. 
+
+Sensors 
+
+A lateral acceleration sensor is incorporated into the SBSR. And the igniter pellets are 
+diagnosed by ignition IC's and ignited by electrolytic capacitors. The self diagnosis of the 
+ignition power circuits during the pre-drive check and in normal operation is the same for 
+all satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+Electric fuel pump power supply 
+
+6-25 V 
+
+Full function 
+
+Electric fuel pump current 
+consumption 
+
+<50 microamps 
+
+When the fuel pump is switched off 
+
+
+8A 
+
+M ax. current intake by the fuel pump 
+
+
+28 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SBSR Schematic 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+VS 
+
+9V Power supply for satellites from SIM 
+
+4 
+
+Igniter pellet for (BST) 
+
+S/E 
+
+Transmitter/receiver module 
+
+5 
+
+Final stage for fuel pump control 
+
+1 
+
+Voltage regulator 
+
+6 
+
+Electric fuel pump 
+
+2 
+
+Ignition output stage for belt force limiter and 
+safety battery terminal (BST) 
+
+7 
+
+Transverse acceleration sensor 
+
+3 
+
+Igniter pellet for belt force limiter 
+
+8 
+
+Microprocessor 
+
+
+29 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver/Passenger Seat Satellite (SSFA/SSBF) 
+
+The driver and passenger seat satellites are identical. Forthis reason, only one is shown. 
+The satellite is located between the seat runners. It is fitted next to the seat module in a 
+plastic housing. 
+
+The seat satellites are connected to the SIM via byteflight. The satellite power supply is 
+also from the SIM and is buffered by the capacitor. When the byteflight is in sleep 
+mode, the SSFA/SSBF powersupply is switched off bythe SIM which also performs the 
+software reset. 
+
+The SSFA/SSBF controls and monitors the ignition circuits ofthe belt tensioners and the 
+active head restraints. The belt buckles are also monitored by a hall sensor. The hall 
+sensors are identical in design and function to those used in the E38 (from 3/97). The 
+seat occupancy recognition is monitored via an interface in the voltage regulator. 
+
+Sensors 
+
+The SSFA/SSBF contains the seat occupancy electronics. The igniter pellets are con¬ 
+trolled and diagnosed by ignition IC's. The self-diagnosis ofthe ignition power circuits 
+during the pre-drive check and in normal operation is the same for all satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption (SIM) 
+
+typical 80 mA 
+
+In normal operation 
+
+Powersupply (KL30) 
+
+9-16 V 
+
+Full function 
+
+Current consumption (KL30) 
+
+30-100mA 
+
+In normal operating mode 
+
+
+30 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SSFA/SSBF Schematic 
+
+
+Kl .1*1 ij- 
+
+4 sae »■ 
+
+DAT*. SSfc o- 
+- S3E « 
+^ 0- 
+W. 31J— 
+
+
+
+
+-Cf- 
+
+
+
+
+1 , 
+
+V 
+
+
+7 . 
+
+HP 
+
+
+
+
+-o —o- 
+
+
+
+
+s 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+KL30 
+
+Powersupply (KL30) 
+
+1 
+
+Voltage Regulator 
+
+KL31 
+
+Ground connection 
+
+2 
+
+Ignition output stage 
+
++SBE 
+
+Voltage supply for SBE 
+
+3 
+
+Igniter pellet 2nd stage for belt tensioner 
+
+DATA-SBE 
+
+SBE Signal 
+
+4 
+
+Igniter pellet for active headrest 
+
+- SBE 
+
+SBE ground connection 
+
+5 
+
+Interface for seat belt buckle switch 
+
+VS 
+
+9V power supply from SIM 
+
+6 
+
+Belt buckle switch 
+
+S/E 
+
+Transmitter receiver module 
+
+7 
+
+M icroprocessor 
+
+
+31 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rear Seat Satellite SSH 
+
+
+The rear seat satellite is optional and part of the rearside airbag option. The SSH is 
+installed under the rear seat. The SSH is connected to the SIM via byteflight. The 
+satellite power supply is also from the SIM and is buffered by the capacitor. When the 
+byteflight is in sleep mode, the SSH power supply is switched off by the SIM which 
+also performs the software reset. The power supply to the rear seat head restraints 
+remains unaffected. 
+
+
+
+The SSH controls and monitors the ignition power circuits of the end-fitting tensioners 
+and the left/right rearside airbag. The left/right seat occupancy recognition is also ana¬ 
+lyzed by the SSH. The control forthe head restraint height is also integrated. With the 
+option of the comfort seats, the adjustment of the headrests is via the seat module. 
+
+Rear Headrests 
+
+The rear head restraints are extended automatically by an electric motor if the seat occu¬ 
+pancy recognition detects that the seat is occupied and terminal R is on. The head 
+restraints are returned to their original position when terminal R is switched off or if the 
+seat is not occupied. 
+
+Sensors 
+
+The igniter pellets are controlled and diagnosed by ignition IC's. The self-diagnosis of 
+the ignition power circuits during the pre-drive check and in normal operation is the same 
+for all satellites. 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Powersupply (SIM) 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption (SIM) 
+
+typical 80 mA 
+
+In normal operation 
+
+Power supply for head restraint 
+height adjustment 
+
+9-16 V 
+
+Full function 
+
+C urrent consumption for head 
+restraint height adjustment 
+
+30-100mA 
+
+In normal sleep mode 
+
+12A 
+
+
+Maximum current consumption by the head restraint 
+
+
+32 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+SSH Schematic 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+KL30 
+
+Powersupply (KL30) 
+
+5 
+
+Ignition output stage for rear side airbag and left 
+side end fitting tensioner 
+
+KL31 
+
+Ground connection 
+
+6 
+
+Igniter pellet for side airbag, rear left 
+
++SBE 
+
+Voltage supply for SBE 
+
+7 
+
+Igniter pellet for end fitting tensioner, rear left 
+
+DATA-SBE 
+
+SBE Signal 
+
+8 
+
+Output stage for head restraint adjustment, right 
+
++ SBE 
+
+Voltage supply for SBE 
+
+9 
+
+Drive for head restraint adjustment, right 
+
+DATA-SBE 
+
+SBE Signal 
+
+10 
+
+Output stage for head restraint adjustment, left 
+
+- SBE 
+
+SBE ground connection 
+
+11 
+
+Drive for head restraint adjustment, left 
+
+VS 
+
+9V power supply from SIM 
+
+12 
+
+Switch for head restraint height adjustment 
+
+1 
+
+Voltage regulator 
+
+13 
+
+Transmitter/receiver module 
+
+2 
+
+Ignition output stage for rear side airbag 
+and right side end fitting tensioner 
+
+14 
+
+M icroprocessor 
+
+3 
+
+Igniter pellet for side airbag, rear right 
+
+15 
+
+Optional comfort seat electronics 
+
+4 
+
+Igniter pellet for end fitting tensioner, rear 
+right 
+
+
+
+
+33 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Front Door Satellite (STVL/STVR) 
+
+The front door satellites are installed in behind the doortrim attached to the plastic inner 
+carrier. The left and right satellites are the same. The STVL/STVR is connected to the 
+SIM via byteflight. The satellite power supply is also from the SIM and is buffered by 
+the capacitor. When the byteflight is in sleep mode, the satellite power supply is 
+switched off by the SIM which also performs the software reset. The STVL/R also con¬ 
+trols and monitors the igniter pellets forthe frontside airbags. 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Door Satellite 
+
+2 
+
+Door Module 
+
+3 
+
+Measuring port for pressure sensor 
+
+
+Sensors 
+
+A pressure sensor is integrated into the front door satellite. The sensor reacts to an 
+increase in pressure. If there is an impact, the space in the door is significantly reduced 
+by the outer door panel being pushed inward, which causes a considerable increase in 
+pressure. The relative pressure change and rise in pressure overtime are the most 
+important factors forthe crash evaluation. 
+
+The igniter pellets are controlled and diagnosed by ignition IC's. The self-diagnosis of 
+the ignition power circuits during the pre-drive check and in normal operation is the same 
+for all satellites. 
+
+
+34 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STVL/STVR Schematic 
+
+
+VH 
+
+141,31 
+
+
+CTj-tedafij 
+
+
+
+1 
+
+
+
+
+3 
+
+
+Index 
+
+Explanation 
+
+VS 
+
+9 V power supply for the satellites from the SIM 
+
+S/E 
+
+Transmitter receiver module 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Side airbag ignition output stage 
+
+3 
+
+Igniter pellet for side airbag 
+
+4 
+
+Pressure sensor 
+
+5 
+
+Microprocessor 
+
+
+35 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Center Satellite (SFZ) 
+
+The SFZ is located underneath the center console. The SFZ is connected to the SIM via 
+byteflight. The satellite power supply is also from the SIM and is buffered by the capac¬ 
+itor. When the byteflight is in sleep mode, the satellite power supply is switched off by 
+the SIM which also performs the software reset. 
+
+
+
+Sensors 
+
+The SFZ only records sensor data and therefore performs no triggering function. An 
+acceleration sensorfor longitudinal acceleration and one for lateral acceleration are inte¬ 
+grated in the SFZ. The sensors provide a voltage signal as a measured variable. The 
+voltage is a measurement forthe vehicle acceleration. 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+
+36 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+SFZ Schematic 
+
+
+
+§ 
+
+
+Index 
+
+Explanation 
+
+VS 
+
+9 V power supply for the satellites from the SIM 
+
+KL31 
+
+Ground connection 
+
+S/E 
+
+Transmitter receiver module 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Microprocessor 
+
+3 
+
+Longitudinal acceleration sensor 
+
+4 
+
+Transverse acceleration sensor 
+
+
+37 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Column Switch Cluster (SZL) 
+
+All of the components on the steering wheel and the steering column belong to the 
+steering column switch cluster. The SZL is divided into two electronic modules. One of 
+these electronic module is located in the steering wheel and the other is located in the 
+steering column. Both units are interconnected by a spiral spring. 
+
+The SZL is integrated into the LSE and connected to the SIM via byteflight. The satel¬ 
+lite power supply is also from the SIM and is buffered by the capacitor. There is also a 
+terminal 30 for supplying non-safety relevant circuit elements and a KL15 for redundancy. 
+In addition there are also redundant serial data lines to the AGS and light switch cluster. 
+
+The SZL controls and monitors the igniter pellets for the first and second stages of the 
+driver's airbag. It is controlled via the spiral spring between the steering wheel and igniter 
+pellets in the airbag. 
+
+
+
+2J ZJ'S <i ) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+M FL with function keys 
+
+2 
+
+Headlight switch (Main) 
+
+3 
+
+Transmission selector lever 
+
+4 
+
+Wiper switch 
+
+5 
+
+Button for steering wheel heating 
+
+6 
+
+Cruise control system switch 
+
+7 
+
+Button forsteering column adjustment 
+
+
+The components in the steering wheel include: 
+
+• The steering wheel heating unit with temperature sensor 
+
+• Steptronic buttons 
+
+• The horn buttons 
+
+• The left and right multi-function switch blocks 
+
+• The front driver airbag (with igniter pellets) 
+
+• The steering wheel electronics (LRE) 
+
+
+38 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The components in the steering column include: 
+
+• The steering column module with byteflight connection 
+
+• The steering angle sensor 
+
+• The light switch 
+
+• The wiper switch 
+
+• The cruise control switch 
+
+• The transmission selector lever 
+
+• The steering wheel heating button 
+
+• The switch forthe steering wheel lock 
+
+• The switch forthe steering column adjustment 
+
+• The coil springs 
+
+The connection between the two components is the spiral spring which transfers both 
+signals and power. 
+
+
+vS 
+
+
+1x° 
+
+
+£rj4e*vU 
+
+
+a V" 
+
+
+5 
+
+
+
+
+~^sr 
+
+l 
+
+
+S/E 
+
+
+V 
+
+v p 
+
+
+-I I- 
+
+
+
+
+T 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Satellite with steering column electronics 
+
+B 
+
+Steering wheel electronics 
+
+C 
+
+Airbag 
+
+VS 
+
+Power supply for satellites from SIM 
+
+S/E 
+
+Transmitter/receiver module 
+
+KL31 
+
+Ground connection 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Microprocessor 
+
+3 
+
+Coil spring 
+
+4 
+
+Driver's airbag ignition output stage 
+
+5 
+
+Driver's airbag igniter pellet, Stage 1 
+
+6 
+
+Driver's airbag igniter pellet, Stage 2 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.5-11 V 
+
+Full Function 
+
+
+11-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Power intake 
+
+typical 80 mA 
+
+In normal operation 
+
+
+39 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - ISIS 
+
+
+Perform the test module for setting system time. List the correct pathway to access 
+the test module: 
+
+
+Why is it important to set system time? And when should this be done? 
+
+
+Disconnect an instructor designated satellite. Perform complete quick test and 
+follow test module. 
+
+What did the test module conclude as the root cause? 
+
+
+Leaving the satellite disconnected, go to the function selection menu and select 
+"Bus functions"and go to the byteflighttest. Perform "communication test”. 
+
+Once complete go to optical test. 
+
+What tool is recommended for the "optical test"? 
+
+
+Perform all necessary optical tests as per test module. 
+
+What is the maximum allowable attenuation on the byteflight bus? 
+
+
+40 
+
+byteflight safety systems 
+
+
+
+
+
+Workshop Exercise - ISIS 
+
+
+How many repairs are allowed between control modules on byteflight? 
+
+
+Using the proper cables/tools, measure the current consumption of a byteflight 
+satellite. 
+
+What is the observed current? 
+
+
+What is the specified current? 
+
+
+Interrupt the power supply to the satellite (without disconnecting byteflight). 
+What is observed regarding the fault codes in the system pertaining to this fault? 
+
+
+Following the test module for this concern. 
+What is concluded in the test module? 
+
+
+41 
+
+byteflight safety systems 
+
+
+
+
+^ jji C lassroom Exercise - Review Questions 
+
+1. What makes it possible forthe ISIS system to react faster than previous passive 
+safety systems such as MRS? 
+
+
+2. What 2 passive safety systems use byteflight fiber optic technology? 
+
+
+3. On the ISIS system, which component acts as a gateway between the D-bus, 
+K-CAN, PT-CAN and the byteflight! 
+
+
+4. What are the 3 main tasks of the SIM in the ISIS system? 
+
+
+5. What are the three faults that would cause the SIM to cut off power supply to 
+the satellite? 
+
+
+6. What is the typical current consumption of the satellites in the ISIS system? 
+
+
+7. In the ISIS system, which satellite does not contain circuitry fortriggering any 
+ignition circuits? 
+
+
+8. Which ISIS satellite controls the fuel pump? 
+
+
+42 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. 
+
+
+What must be done after the installation of a new satellite module? 
+
+
+10. Into which component are the SZL electronics located? 
+
+
+11. Which satellites are capable of waking the byteflight? 
+
+
+12. Which byteflight satellite controls the rear headrests (if equipped)? 
+
+
+13. Where is the ZGM located on the E65? 
+
+
+Review Notes: 
+
+
+43 
+
+byteflight safety systems 
+
+
+
+Advanced Safety Electronics (ASE) 
+
+The ASE system is a byteflightbase6 passive safety system which utilizes the same 
+technology as ISIS. The system was introduced on the E85 and subsequently fitted to 
+the E60, E63 and E64. 
+
+The technology used in the ASE system offers the same benefits and advantages that 
+ISIS offers. Many of the components used on ASE are carried overfrom ISIS with some 
+noteable differences. 
+
+ASE System Overview (E85) 
+
+
+® <2)^1) -V '-■■■ 
+
+
+
+44 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for E85 System Overview 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Starter 
+
+29 
+
+Battery safety terminal (BST) 
+
+2 
+
+Alternator 
+
+31 
+
+B-pillar satellite, left 
+
+6 
+
+Warning lamp (airbag deactivation) 
+
+32 
+
+Side airbag, driver's side 
+
+7 
+
+DM E control unit (ECM) 
+
+33 
+
+Door satellite, front left 
+
+8 
+
+Instrument cluster 
+
+34 
+
+Front airbag, driver 
+
+9 
+
+General Module (GM5) 
+
+37 
+
+B +cable diagnosis connection (engine comp) 
+
+13 
+
+Emergency call button 
+
+38 
+
+Knee airbag, driver 
+
+14 
+
+Safety and Information Module 
+
+39 
+
+Knee airbag, passenger 
+
+16 
+
+Front airbag, passenger 
+
+40 
+
+B + connection (engine compartment) 
+
+17 
+
+Door satellite, front right 
+
+41 
+
+B +cable diagnosis connection (luggage comp) 
+
+18 
+
+Side airbag, passengerside 
+
+42 
+
+Seat belt tensioner, passenger 
+
+19 
+
+B-pillar satellite, right 
+
+43 
+
+Seat belt tensioner, driver 
+
+22 
+
+Seat occupancy detection 
+
+44 
+
+Passenger airbag , deactivation 
+
+23 
+
+Belt buckle switch, passenger side 
+
+KL30 
+
+Terminal 30 
+
+25 
+
+Buckle switch, driver 
+
+KLR 
+
+Terminal R 
+
+
+The AS E system in the E85 differs considerably from the ISIS system. Most notably 
+there are fewer satellites in the system. There are only 4 satellites connected to the SIM . 
+These include the STVL, STVR, SBSL and SBSR. 
+
+There are some additions to the ASE system as well. Since the E85 is a roadsterwith no 
+back seat, a switch for airbag deactivation has been added to allow the installation of a 
+front child seat if needed (up to 9/2003). The switch, which is actuated using the vehicle 
+key, will deactivate the passengerfront, side and knee airbags. 
+
+Also new forthe E85 is the battery cable monitoring circuit. Since the battery cable on 
+the E85 is routed on the exterior, ratherthan the interior on previous models, there is now 
+a monitoring circuit used. This protects the battery cable from short circuits by activating 
+the BST. This circuit is routed through the SBSL and SBSR. 
+
+Some of the familiar components carried overfromthe ISIS have been modified for use in 
+the E85 ASE system. The SIM, SBSL and SBSR now incorporate acceleration sensors 
+to detect impacts. Previously, in ISIS, these acceleration sensors were distributed to 
+other satellites which are not used on the E85. 
+
+
+45 
+
+byteflight safety systems 
+
+
+
+
+
+ASE System Components (E85) 
+
+
+Safety and Information Module 
+
+
+The SIM is located underthe centerconsole in 
+the E85. The SIM is responsible for the following 
+functions: 
+
+• The satellite power supply. Reserve power 
+supply in the event of a power loss during an 
+accident. (Power reserve 33V) 
+
+• The function of the star coupler (4 S/E mod¬ 
+ules) and the byteflight bus main controller 
+(master) 
+
+• Receives input from passenger airbag deac¬ 
+tivation switch 
+
+
+
+• Acts as gateway between byteflight and 
+K-bus 
+
+
+• Provides crash report for triggering various 
+functions in other systems 
+
+• Actuates warning circuit for "Passenger 
+Airbag Off" lamp in centerconsole 
+
+• Contains lateral and longitudinal acceleration 
+sensors. 
+
+The values are transferred to all the satellites via 
+the byteflight, in the same way as the values 
+measured by the satellites. These measured val¬ 
+ues are used by the algorithms in the satellites. 
+The SIM compares the values and, if the impact 
+is of sufficient severity, it uses the synchronization 
+pulses to initiate alarm mode. 
+
+
+
+The alarm mode places the satellites in a trigger- 
+able state. The actuators required are actuated, 
+depending upon the accident severity and the 
+stored algorithms. 
+
+
+If the passenger airbag deactivation switch is set to "off", the passenger side airbag, knee 
+airbag and passenger side door airbag will not be deployed. 
+
+
+The SIM is centrally mounted and incorporates the lateral and longitudinal acceleration 
+sensors, this allows the SIM to replace the SFZ used in the ISIS. 
+
+
+As far as diagnosis is concerned, the SIM carries out two functions (SIM, ZGM). These 
+functions, although in a common housing, have separate diagnostic addresses and use 
+separate microprocessors. 
+
+
+46 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+SIM Schematic (E85) 
+
+
+A 
+
+S 
+
+
+<5 
+
+© 
+
+© 
+
+
+
+
+T. 
+
+
+AWL j- 
+
+JM 
+
+
+MS45 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Instrument cluster 
+
+13 
+
+Intelligent Distributor 
+
+2 
+
+DM E control unit (ECM) 
+
+14 
+
+Power reserve 
+
+3 
+
+Telematic Control Unit (TCU) 
+
+15 
+
+B-pillar satellite, right 
+
+4 
+
+General Module (GM5) 
+
+16 
+
+B-pillar satellite, left 
+
+5 
+
+Switching controller 
+
+17 
+
+Door satellite, right 
+
+6 
+
+Voltage regulator 
+
+18 
+
+Door satellite, left 
+
+7 
+
+M icroprocessor 
+
+19 
+
+Battery 
+
+8 
+
+Switch for airbag deactivation 
+
+20 
+
+Ignition Switch 
+
+9 
+
+Warning lamp for airbag deactivation 
+
+S/E 
+
+Transmitter/receiver module 
+
+10 
+
+Longitudinal acceleration sensor 
+
+KLR 
+
+Terminal R 
+
+11 
+
+Transverse acceleration sensor 
+
+KL30 
+
+Terminal 30 
+
+12 
+
+Intelligent Star Coupler 
+
+KL31 
+
+Terminal 31 
+
+
+47 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Left B-pillar Satellite (SBSL) 
+
+The SBSL is located at the bottom of the B-pillaron the driver's side of the vehicle. It is 
+connected to the SIM via byteflight. The SBSL is responsible forthe following: 
+
+• Control and monitoring ofthe driver's airbag. 
+
+• Control and monitoring ofthe driver's side door airbag. 
+
+• Control and monitoring ofthe leftside seatbelt tensioner. 
+
+• Control and monitoring ofthe left knee airbag. 
+
+The SBSL also contains a portion ofthe battery cable monitoring circuit (engine com¬ 
+partment connection). 
+
+The SBSL also contains longitudinal and lateral acceleration sensors. The positive and 
+negative acceleration values are provided as continuous voltage values and transferred 
+via the byteflight to the SIM and the other satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.4-10.7 V 
+
+Full Function 
+
+Voltage supply 
+
+10.7-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption 
+
+typical 90 mA 
+
+In normal operation 
+
+
+48 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SBSL Schematic 
+
+
+v’a.aw ■>- 
+
+
+iTj*w.Wgnr 
+
+
+■fcf 
+
+
+£>E 
+
+
+K1 
+
+
+.si r 
+
+
+
+
+
+
+
+J 
+
+ia< 
+
+
+
+'T T TTT! r 
+
+I I- L J I 
+
+
+
+
+
+V 
+
+Z) 
+
+
+vli 1 
+
+
+§ 
+
+T 
+
+
+1 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Voltage regulator 
+
+10 
+
+Igniter pellet, knee airbag 
+
+2 
+
+Microprocessor 
+
+11 
+
+Longitudinal acceleration sensor 
+
+3 
+
+Ignition output, stage 1 
+
+12 
+
+Transverse acceleration sensor 
+
+4 
+
+Front airbag igniter pellet, stage 1 
+
+13 
+
+Battery cable diagnosis connection 
+(engine compartment) 
+
+5 
+
+Front airbag igniter pellet, stage 2 
+
+14 
+
+Belt buckle switch, left 
+
+6 
+
+Ignition output, stage 2 
+
+KL31 
+
+Terminal 31 
+
+7 
+
+Igniter pellet for side airbag 
+
+S/E 
+
+Transmitter/receiver module 
+
+8 
+
+Igniter pellet, belt tensioner left 
+
+VS_SIM 
+
+Voltage supply (from SIM) 
+
+9 
+
+Ignition output, stage 3 (knee airbag) 
+
+
+
+
+49 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Right B-pillarSatellite (SBSR) 
+
+The SBSR is located at the bottom of the B-pillar on the passenger side of the vehicle. 
+It is connected to the SIM via byteflight. The SBSR is responsible forthe following: 
+
+• Control and monitoring of the passengerfront airbag. 
+
+• Control and monitoring of the passenger side door airbag. 
+
+• Control and monitoring of the right side seatbelt tensioner. 
+
+• Control and monitoring of the right knee airbag. 
+
+• Control and monitoring ofthe BST 
+
+• Monitoring ofthe SBE circuit 
+
+The SBSR also contains a portion ofthe battery cable monitoring circuit (luggage com¬ 
+partment connection). 
+
+The SBSR also contains longitudinal and lateral acceleration sensors. The positive and 
+negative acceleration values are provided as continuous voltage values and transferred 
+via the byteflightto the SIM and the other satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+9.4-10.7 V 
+
+Full Function 
+
+Voltage supply 
+
+10.7-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption 
+
+typical 90 mA 
+
+In normal operation 
+
+
+50 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+SBSR Schematic 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Voltage regulator 
+
+11 
+
+Igniter pellet, knee airbag 
+
+2 
+
+Microprocessor 
+
+12 
+
+Longitudinal acceleration sensor 
+
+3 
+
+Ignition output, stage 1 
+
+13 
+
+Transverse acceleration sensor 
+
+4 
+
+Front airbag igniter pellet, stage 1 
+
+14 
+
+Battery cable diagnosis connection 
+(luggage compartment) 
+
+5 
+
+Front airbag igniter pellet, stage 2 
+
+15 
+
+Belt buckle switch, right 
+
+6 
+
+Ignition output, stage 2 
+
+KL31 
+
+Terminal 31 
+
+7 
+
+Igniter pellet for side airbag 
+
+S/E 
+
+Transmitter/receiver module 
+
+8 
+
+Igniter pellet, belt tensioner right 
+
+VS_SIM 
+
+Voltage supply (from SIM) 
+
+9 
+
+Ignition output, stage 3 (knee airbag) 
+
+SBE-IN 
+
+Seat occupancy detection 
+
+10 
+
+Igniter pellet for B ST 
+
+
+
+
+51 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Left and Right Door Satellites (STVL/STVR) 
+
+
+
+The STVL/STVR is located on the right and left hand doors respectively. These satellite 
+provide crash information by sensing the pressure in the door cavity. Upon side door 
+impact, the sudden pressure increase is detected by the sensor. This information is 
+processed and sent to the SIM via byteflight. 
+
+
+1. STVL/STVR 
+
+
+The measured values are also transferred across the byteflight in parallel to the other 
+satellites.T he power supply of the satellite is also from the SIM and it is buffered by the 
+memory backup capacitor. In sleep mode of the byteflight, the powersupply of the 
+STVL/R is deactivated by the SIM . 
+
+The STVL and STVR do not contain any acceleration sensors or ignition circuits. 
+
+
+
+52 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+B + Cable Monitoring 
+
+The E85 B + Battery Cable is routed from trunk area along the underside of the car into 
+the engine compartment. If the cable is damaged in an accident or while driving over an 
+obstacle, the BST is activated, protecting the vehicle from further electrical problems. 
+
+
+
+The battery cable on the E85 is fitted with a low impedance metal mesh. This mesh sur¬ 
+rounds the B +cable insulation and is also covered by an additional insulation. The metal 
+mesh is referred to as the monitoring shield. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Outer insulation 
+
+3 
+
+Battery cable insulation 
+
+2 
+
+Monitoring shield (metal mesh) 
+
+4 
+
+Battery cable (aluminum conductor 120 mm^) 
+
+
+53 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery Cable Monitoring Circuit 
+
+The battery cable is diagnosed by a special circuit between the SBSL and SBSR satel¬ 
+lites. The battery cable diagnosis takes place across the low impedance shield of the bat¬ 
+tery cable (monitoring shield). 
+
+There are connections to the left B-pillar satellite and the right B-pillar satellite at both 
+ends of the shield. This means that there is usually the same voltage at the analog/digital 
+converters in the satellites. If the voltages differ, there is a fault. 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery cable 
+
+4 
+
+Battery 
+
+2 
+
+Monitoring shield (metal mesh) 
+
+5 
+
+Starter 
+
+3 
+
+Battery SafetyTerminal (BST) 
+
+6 
+
+Generator 
+
+
+The monitoring shield consists of a low-impedance metal mesh. A connection cable 
+exits from each end of the monitoring shield (at the safety battery terminal in the luggage 
+compartment and at the battery ground point in the engine compartment). 
+
+The connection at the safety battery terminal in the luggage compartment is connected 
+to the right B-pillar satellite. The second connection cable in the engine compartment is 
+connected to the left B-pillar satellite. 
+
+The satellites contain analog/digital converters that are connected to the microprocessor 
+of the satellite. The connection cables of the battery cable diagnosis are connected to the 
+A/D converters. The right B-pillar satellite contains a pull-up resistor. The left B-pillar 
+satellite contains a pull-down resistor of the same size. 
+
+The voltage supply of the satellite (approx. 10 V) is applied at the pull-up resistor. Ground 
+is applied at the pull-down resistor. 
+
+
+54 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The very low-impedance cable and the resistors of the same size mean that around half 
+the voltage (approx. 5 V) is applied at the A/D converters. 
+
+In the event of a fault, significantly different measured values would result as follows: 
+
+
+State 
+
+Measured value at SBSL 
+
+Measured value at SBSR 
+
+Battery cable OK 
+
+Approximately 5 Volts 
+
+Approximately 5 Volts 
+
+Interruption (open) of B + cable diagno¬ 
+sis connection 
+
+Approximately 0 Volts 
+
+Approximately 10 Volts 
+
+Short circuitto ground 
+
+Approximately 0 Volts 
+
+Approximately 0 Volts 
+
+Short circuit to B + (KL30) 
+
+Approximately battery voltage 
+
+Approximately battery voltage 
+
+
+Every 250 ms, the values are measured, triggered by the synchronization pulse. If the bat¬ 
+tery cable is OK, the values are transferred every 20 ms to the SIM. If a significant devia¬ 
+tion of the values occurs, the new values are transferred immediately. 
+
+In the following cases, the battery cable is cut off by the safety battery terminal from the 
+battery and the alternator is switched off: 
+
+• Shortcircuitto ground (body) 
+
+
+• Short to battery positive 
+
+
+
+B +Cable monitoring connection 
+in engine compartment 
+
+
+Battery cable with monitoring connection 
+
+(note - BST side of cable) 
+
+
+
+1. Monitoring connection 2. Battery cable 
+
+
+If the outer insulation is damaged (e.g. due to friction/scuffing), but the monitoring shield 
+has no connection to ground, the following case could occur: 
+
+Moisture (rain) would mean that the voltage would gradually fall. A short circuitto ground 
+would be detected, but the safety battery terminal would not be triggered. 
+
+The entry "Implausible measured value" is set in the fault code memory. This would be 
+indicated to the driver by the airbag warning lamp. 
+
+Battery Cable Diagnosis 
+
+If the shielding of the battery cable is damaged, the battery cable must be replaced com¬ 
+pletely. It is not permitted to perform repairs to the shielding. 
+
+
+55 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Passenger Airbag Deactivation 
+
+Due to the fact that the E85 is a 2 seat roadster, there is a need to deactivate the passen¬ 
+ger airbag to accommodate children and child seats. A switch has been added to allow 
+this function to be possible. 
+
+The switch, which is actuated by the vehicle key, is located on the right side of the dash¬ 
+board nearthe a-pillar. Access to the switch is only possible with the passenger door 
+open. This prevents any "accidental" or unwanted switch actuation while the vehicle is 
+in motion. 
+
+
+
+The airbag switch is an input to the SIM . Once the SIM detects an "off" request from the 
+switch, the passenger side airbag, door airbag, seatbelt tensioner and knee airbag are 
+deactivated. 
+
+The SIM also activates the "Passenger Airbag Off" indicator light which is located in the 
+center console. The indicator light contains several LED's which are controlled by the 
+SIM. The SIM also monitors the indicator light during the self check. The AWL will be 
+illuminated if any faults are detected. 
+
+SeatOccupancy Detection (SBE) 
+
+As with previous BMW models, the passenger seat is monitored by the SBE system. 
+
+The SBE system in the E85 operates the same as previous SBE systems. The seat 
+"recognition" signal is sentto the passengerside b-pillarsatellite. This configuration is 
+used until 9/2003 production. 
+
+From 9/2003 production, the E85 has adopted the OC-3 seat occupancy recognition 
+system. The airbag off switch has been retained in the event that a passenger may be 
+too close to the deactivation threshold. Due to the factthatthe E85 is a roadster, there is 
+no option of sitting in the rear. The deactivation switch allows the airbag to be shut off 
+when needed. 
+
+
+56 
+
+byteflight safety systems 
+
+
+
+
+PassengerSeatOccupancy Detection (OC-3) 
+
+As of 9/2003, the new occupancy detection system has been added to the E85. 
+
+Current governmental safety regulations make it necessary for the passive safety system 
+to be able to determine the approximate size and weight of the passenger. This enables 
+the system to deactivate the passenger side airbag when traveling with a child or an 
+infant in a child seat. 
+
+To accomplish this, the existing SBE system was subsequently developed into the new 
+"intelligent occupant classifier" (Occupant Classification) or OC-3 system. This was 
+achieved by: 
+
+• Adding a larger number of "force sensitive" resistance elements. 
+
+• Dividing the detection mat into zones which coverthe entire seat area. 
+
+• Using an intelligent electronic analyzer. 
+
+The OC-3 sensor mat is capable of distinguishing between a one-year old child in a child 
+seat and a light person. This is done by analyzing the distribution of weight across the 
+seat. For example, a child in a child seat would be distinguished from a 90 pound adult 
+by the contact pattern. In other words, the contact pattern of a child seat would differ 
+considerably from an adult due to the spacing of the hip bones vs. the child seat "rails". 
+
+
+
+E 
+
+3 
+
+u; 
+
+The OC-3 sensor mat is integrated into the lower seat pad area of the passenger seat. 
+The mat consists of conductors with pressure-dependent resistor elements also known 
+as FSR (Force Sensitive Resistance) elements. 
+
+The conductors are connected to the electronic analyzer. The FSR elements are wired in 
+such a way so that they can be sampled individually. 
+
+
+
+
+57 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+When a mechanical load on a sensor increases, the electrical resistance decreases and 
+the measurement changes accordingly. 
+
+
+
+By analyzing the signals from the individual sensors, the electronic analyzer maps the 
+occupancy of the seat surface and can identify local concentrations of weight. The dis¬ 
+tances between the areas and concentrations of weight indicate whetherthe occupant is 
+small or large. An algorithm is used to compute the weight class and decide whetherthe 
+seat is occupied by a person ora child seat. 
+
+The width between the hip bones is related to the weight of the person. Consequently, 
+the analyzer can distinguish between a light person and a heavy person. 
+
+The electronic analyzer sends a telegram to the SBSR via a dedicated signal line. If the 
+occupant is classified as a child in a child seat, the airbags on the passenger side are 
+deactivated. The SBSR sends a telegram to the the SIM via byteflight and the SIM 
+responds by illuminating the "passenger airbag off" lamp in the center console. 
+
+
+
+58 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^ Classroom Exercise - Review Questions (E85 ASE) 
+
+
+1. What satellites are used on the E85 ASE system? 
+
+
+2. What component acts as a gateway between the K-Bus and byteflight ? 
+
+
+3. What is the voltage of the power reserve of the SIM? 
+
+
+4. In the event of an open circuit of the battery cable monitoring circuit, what voltage 
+would be present at the SBSR? 
+
+
+5. What pyrotechnic devices are triggered by the SBSR? 
+
+
+6. When did the E85 begin to use the OC-3 sensor mat system? 
+
+
+7. Which byteflight satellite is responsible forthe operation of the electric fuel pump 
+on the E85? 
+
+
+8. Which vehicles are equipped with the ASE system? 
+
+
+59 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASE System Overview (E60) 
+
+The ASE system on the E60 is based on the same technology as the E85. Howeverthe 
+E60 uses considerably more components than E85. The ASE system has been adapted 
+for use on the E60. 
+
+The most notable change in the system (as compared to E85 and ISIS), is the SGM. The 
+SGM has the combined functions forthe ZGM and the SIM . This is similarto the E85. 
+Although each of the functions are located in the same housing, the ZGM and SIM have 
+their own diagnostic address. 
+
+
+
+60 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Starter 
+
+21 
+
+Seat belttensionerand buckle switch, Rear right 
+
+2 
+
+Alternator 
+
+22 
+
+Seat occupancy detection 
+
+3 
+
+Servotronic valve (optional) 
+
+23 
+
+Seat belttensionerand buckle switch, passenger 
+
+4 
+
+ECO Valve (AFS only) 
+
+24 
+
+Vehicle center satellite (SFZ) 
+
+5 
+
+Upfront sensors, left and right 
+
+25 
+
+Seat belt tensioner and buckle switch, driver 
+
+6 
+
+Warning lamp (airbag deactivation) 
+
+26 
+
+Active headrest, driver 
+
+7 
+
+DM E control unit (ECM) 
+
+27 
+
+Active headrest, passenger 
+
+8 
+
+Light module 
+
+28 
+
+Seat belttensionerand buckle switch, Rear left 
+
+9 
+
+General Module (GM5) 
+
+29 
+
+Battery safety terminal (BST) 
+
+10 
+
+Multi-audio system controller(M-ASK) 
+
+30 
+
+Side airbag, rear left 
+
+11 
+
+Telematic control unit (TCU) 
+
+31 
+
+B-pillar satellite, left 
+
+12 
+
+Emergency speaker 
+
+32 
+
+Side airbag, driver's side 
+
+13 
+
+Emergency call button 
+
+33 
+
+Door satellite, front left 
+
+14 
+
+Safety and Gateway M odule 
+
+34 
+
+Front airbag, driver 
+
+15 
+
+AITS 2, right 
+
+35 
+
+Steering column switch cluster (SZL) 
+
+16 
+
+Front airbag, passenger 
+
+36 
+
+AITS 2, left 
+
+17 
+
+Door satellite, front right 
+
+37 
+
+Diagnosis connection 
+
+18 
+
+Side airbag, passengerside 
+
+40 
+
+B + connection (engine compartment) 
+
+19 
+
+B-pillar satellite, right 
+
+41 
+
+B +cable diagnosis connection (luggage comp) 
+
+20 
+
+Side airbag , passenger rear 
+
+KL30 
+
+Terminal 30 
+
+
+The E60 also uses new technology for passenger seat occupancy detection. The new 
+OC-3 (Occupant Classification-3) system can detect the approximate size and weight of 
+a passenger or if a baby seat has been installed. 
+
+Also, new up-front sensors are used to further fine tune crash detection. They are locat¬ 
+ed behind the front bumper area. These sensors are accelerometers which are capable 
+of detecting acceleration as well as deceleration. 
+
+Passive knee protection is also added to the driver and passenger side. It consists of 
+reinforced plastic absorbers on the glove box door and lower steering column areas. 
+
+SOS and emergency call capability has also been added. All E60 vehicles will have a 
+TCU installed with GPS capability for location by emergency personnel. 
+
+
+61 
+
+byteflight safety systems 
+
+
+
+
+ASE Components E60 
+
+
+Safety and Gateway Module (SGM) 
+
+The SGM is a combination ofthe SIM (E65) 
+and the ZGM (E65). The SGM performs all of 
+the software functions ofthe ZGM. The func¬ 
+tions and hardware ofthe SIM have been inte¬ 
+grated into the SGM with some new functions 
+added. 
+
+The SGM is located in the module carrier 
+behind the glove box. There are 2 versions of 
+the SGM used in US models. One uses a pur¬ 
+ple connectorwhich is forvehicles without 
+AFS orServotronic. The other has a beige 
+connector and contains the output stages for 
+AFS and Servotronic. 
+
+The SGM performs the following functions: 
+
+• Provides satellite power supply and reserve voltage (60V) if the powersupply should 
+fail during an accident. 
+
+• The function ofthe star coupler and the byteflig ht bus main controller (master). 
+The SGM contains 6 S/E modules. 
+
+• Acts as a gateway between the byteflight, K-CAN, PT-CAN and D-bus. 
+
+• Retains the history memory. 
+
+• Provides crash report (telegram) for trig¬ 
+gering various functions of other systems. 
+
+• Controls and monitors the output stage 
+for the Servotronic valve (optional). 
+
+• Controls and monitors the output stage 
+for the ECO valve (optional). 
+
+SBSL SB-SR 
+
+
+TMFA 7MBF 
+
+
+SF2 SZU 
+
+byteflight 
+
+62 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZGM Internal Components 
+
+
+1) U D V 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+M icroprocessorforZGM 
+
+6 
+
+Switching controller 
+
+2 
+
+Microprocessor for SIM 
+
+7 
+
+Voltage regulator 
+
+3 
+
+byteflight controller 
+
+8 
+
+Transmitter/receiver module 
+
+4 
+
+Star coupler 
+
+9 
+
+Output stage forservotronic valve 
+
+5 
+
+Power reserve 
+
+10 
+
+Output stage for ECO valve 
+
+
+') 
+
+
+
+© © 
+
+
+Index 
+
+Explanation 
+
+1 
+
+RAM (History memory) 
+
+2 
+
+Interface for the up-front sensors 
+
+3 
+
+Distributor for satellite power supply 
+
+
+63 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Safety and Gateway Module Schematic 
+
+
+
+64 
+
+byteflight safety systems 
+
+
+onetrai 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend forSGM Schematic 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Voltage regulator for interfaces 
+
+18 
+
+Telematics Control Unit (TCU) 
+
+2 
+
+Voltage regulator for microprocessor 
+
+19 
+
+Warning lamp for passenger airbag deactivation 
+
+3 
+
+History memory (NVRAM) 
+
+20 
+
+Up-front sensors 
+
+4 
+
+ZGM microprocessor 
+
+21 
+
+Output stage for Servotronic valve 
+
+5 
+
+byteflight controller 
+
+22 
+
+Servotronic valve 
+
+6 
+
+Diagnostic bus interface 
+
+23 
+
+Output stage for ECO valve 
+
+7 
+
+K-CAN interface 
+
+24 
+
+ECO Valve 
+
+8 
+
+PT-CAN interface 
+
+25 
+
+Vehicle center satellite (SFZ) 
+
+9 
+
+Wake-up interface 
+
+26 
+
+B-pillar satellite, right 
+
+10 
+
+Voltage regulator 
+
+27 
+
+B-pillar satellite, left 
+
+11 
+
+Voltage regulator for SIM 
+microprocessor 
+
+28 
+
+Steering column switch cluster (SZL) 
+
+12 
+
+SIM microprocessor 
+
+29 
+
+Doormodule, passenger door (TMBF) 
+
+13 
+
+Switching controller for power reserve 
+
+30 
+
+Door module, driver's door (TM FA) 
+
+14 
+
+Capacitorfor power reserve 
+
+KL30 
+
+Terminal 30 
+
+15 
+
+Distributor 
+
+KL31 
+
+Terminal 31 
+
+16 
+
+Star coupler 
+
+S/E 
+
+Transmitter/receiver module 
+
+17 
+
+Interface for up-front sensors 
+
+
+
+
+Voltage Supply 
+
+The SGM is supplied with voltage via KL30 and KL31. A voltage transformer (10.2V) and 
+an intelligent distributor with over current protection carry voltage to the satellites. If a 
+fault occurs, the distributor can shut off the supply to individual satellites. 
+
+Power Reserve 
+
+At the same time the power reserve is charged. The power reserve consists of a 60 volt 
+capacitor. If the on board supply voltage drops below a defined level, the power reserve is 
+switched on. In this way, the entire functionality of the safety system is maintained for 1 
+second, which is the time it takes to drain the power reserve. 
+
+Note: When performing work on the safety system, always bear in mind that 
+the capacitors will take a few seconds to discharge afterthe battery has 
+been disconnected. The safety system remains capable of deploying an 
+airbag during this period. Always refer to applicable repair instructions 
+and rigidly observe all safety precautions. 
+
+
+65 
+
+byteflight safety systems 
+
+
+
+
+
+StarCoupler 
+
+The star coupler and the 6 S/E modules are powered via a downstream transformer (5V). 
+The same applies forthe two microprocessors. The individual fiberoptic cables to the 
+satellites are connected to the star coupler. The star coupler emits a synchronization 
+pulse every 250ms. The messages to and from the satellites (bi-directional) are trans¬ 
+ferred via the byteflight between these synchronization pulses. 
+
+The satellites accommodate acceleration and pressure sensors. These are the sensors 
+that detect a collision. The sensor data is transmitted from the satellites to the star cou¬ 
+pler. The star coupler distributes the information to all the satellites. In this way, all the 
+satellites have the same information at their disposal. 
+
+The SGM uses the information it receives to recognize the occurrence of a collision. The 
+SGM compares the values with the algorithm in it processor and, if the impact is of suffi¬ 
+cient severity, it uses the synchronization pulse to initiate alarm mode. 
+
+The alarm mode places the satellites in a triggerable state. The actuators required in any 
+given situation are actuated depending upon the accident severity and the algorithms 
+stored in the satellites. 
+
+Gateway 
+
+All the functions of the Central Gateway Module in the E65 are integrated into the SGM . 
+The gateway function is responsible for interconnecting the various bus systems in the 
+E60. 
+
+The E60 uses the byteflight bus, K-CAN, PT-CAN, D-Bus and the MOST. The gate¬ 
+way forthe MOST is in the M-ASK which is connected to the K-CAN. 
+
+The gateway is needed to allow communication across different bus systems. Bus sys¬ 
+tem communication differs in data rate, bandwidth and message structure. Also the 
+gateway allows copper wire bus systems to communicate with optical bus systems. 
+
+All connected buses, with the exception of the diagnostic bus, can wake up the gateway. 
+This differs from the E65, in which the wakeup can also be signalled by the diagnostic 
+lead. This is done by a wake up logic which controls the voltage supply of the module. A 
+non-volatile data memory is also integrated in the ZGM which can be used to store con¬ 
+figuration and diagnostic data. 
+
+As all the systems in the vehicle are networked, the same data can be used for different 
+applications. 
+
+Gateway from K-CAN to ASE 
+
+Information and messages from the ASE system are sent from the K-CAN to the SGM as 
+a message. The following messages are sent: 
+
+• Terminal status (KL30,15, R etc) 
+
+• Odometertotal mileage 
+
+• Chassis number(VIN) 
+
+• Suspension mode (Sport/Comfort) 
+
+
+66 
+
+byteflight safety systems 
+
+
+
+Gateway from AS E toK-CAN 
+
+Messages and information from the byteflight 
+which are destined for other equipment 
+attached to the K-CAN bus are converted to a 
+K-CAN message by the gateway function. The 
+following signals are sent as messages: 
+
+• Check control messages 
+
+• Switch on airbag warning lamp (AWL) 
+
+• Open central locking 
+
+• Switch on interior and hazard warning 
+lights 
+
+• Seat occupancy recognition forSBR func¬ 
+tion 
+
+• Seat-belt status forSBR function 
+
+Gateway from the AS E to PT-CAN 
+
+• Switch off electric fuel pump 
+
+• Switch off generator 
+
+• Status of Servotronic valve 
+
+• Status of ECO valve for AFS 
+
+Gateway from the PT-CAN to the ASE 
+
+• Road Speed 
+
+• Current input for controlling of servotronic valve 
+
+• Current input for controlling of ECO valve 
+
+Gateway from the ASE to the MOST via K-CAN 
+
+• Send emergency call via the MOST 
+
+History Memory 
+
+In the E60, the problem of a dead battery due to parasitic current draw is counteracted by 
+various measures. F irstly all consumers that do not need to be permanently connected 
+to the battery are switched off via a relay (KL30g). In addition, the off-load current is con¬ 
+stantly monitored by the intelligent battery sensor (IBS). 
+
+The bus systems are also monitored. A non-volatile memory (NVRAM) is implemented in 
+the SGM so that the following faulty behaviorcan be logged: 
+
+• Which bus has woken up the entire system 
+
+• Which bus subscriber (module) prevented the bus system from entering sleep mode 
+following the shutdown ofterminal R and the expiration of the run on time (30 min). 
+
+Each entry in the history memory identifies the originator and logs the time of day and the 
+odometer reading. In this way, dependable diagnosis can subsequently be performed. 
+
+67 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver/Passenger Door Module TM FA/TM B F 
+
+The driver/passenger door module is a combination of the door module with the body 
+electronics and the front door satellite. The TM FA/TM BF controls and monitors the igni¬ 
+tion circuits forthe door mounted side airbag. It also detects side-impact collisions using 
+the pressure sensor in the door. 
+
+
+
+Q 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Holes for mounting screws 
+
+5 
+
+Connectorforthe input signals 
+
+2 
+
+Inlet port to pressure sensor 
+
+6 
+
+Connectorforthe outside mirrors 
+
+3 
+
+Connectorforswitch block 
+
+7 
+
+Connectorforthe ASE system (byteflight) 
+
+4 
+
+Connectorfor power supply 
+(load current) 
+
+
+
+
+The door module is installed on the inner door 
+panel above the door handle. 
+
+
+Note: When removing the door module it 
+is important that only the two 
+outerscrews (1) are loosened. The 
+two inner screws (2) should NOT 
+be loosened. These screws hold 
+the housing ofthe doormodule 
+together. Loosening these screws 
+may cause the pressure sensorto 
+operate incorrectly. 
+
+
+
+68 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TMFA/TMBF Schematic 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Microprocessor 
+
+3 
+
+Ignition output stage 
+
+4 
+
+Igniter pellet for side airbag 
+
+5 
+
+Pressure sensor 
+
+6 
+
+Linear controller 
+
+VS_SGM 
+
+Voltage supply from SGM 
+
+KL30 
+
+Terminal 30 (B+) 
+
+KL31 
+
+Terminal 31 (Ground) 
+
+S/E 
+
+Transmitter/receiver module 
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+10.2-10.7 V 
+
+Full Function 
+
+Voltage supply 
+
+10.7-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption 
+
+typical 90 mA 
+
+In normal operation 
+
+
+69 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B-pillar Satellite Left/Right SBSL/SBSR 
+
+The left and right b-pillar satellites are connected to the SGM via byteflight. As on 
+other satellites, the powersupply is provided by the SGM and it is buffered by a capacitor. 
+When in sleep mode, the powersupply of the satellites is deactivated by the SGM . 
+
+Each satellite contains an acceleration sensorfor longitudinal acceleration and one for lat¬ 
+eral acceleration. The sensors provide a voltage as a measured value. These values are 
+made available on a continuous basis and are transferred to the SGM and other satellites 
+
+via byteflight. 
+
+
+SBSL/SBSR E60 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+10.2-10.7 V 
+
+Full Function 
+
+Voltage supply 
+
+10.7-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption 
+
+typical 90 mA 
+
+In normal operation 
+
+
+When the SGM detects a critical range, the alarm mode is by means of the synchroniza¬ 
+tion pulse. The alarm mode places the satellites in a triggerable state. The trigger matrix 
+stored in the satellites activates the necessary actuators depending upon crash severity. 
+
+
+The trigger circuits of the actuators are connected to the ignition final stages in the satel¬ 
+lites and ignited by discharging capacitors. 
+
+The self-diagnosis of the trigger circuits during the pre-drive check is the same for all 
+satellites. 
+
+Battery cable diagnosis is performed by both satellites. Each satellites forms a portion of 
+the battery cable monitoring circuit. One end of the cable connection is located in the 
+engine compartment and is connected to the SBSL. The otherend, which is connected 
+to the SBSR is located in the luggage compartment. 
+
+
+70 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TheSBSL controls and monitors the following trigger circuits: 
+
+• Head airbag AITS II, left 
+
+• Active headrests left and right 
+
+• Side airbag, rear left 
+
+• Seatbelt tensioner, front left 
+
+• Seatbelt tensioner, rear left 
+
+TheSBSR controls and monitors the following trigger circuits: 
+
+• Front airbag, passenger 
+
+• Head airbag AITS, right 
+
+• Side airbag, rear right 
+
+• Seatbelt tensioner, right 
+
+• Seatbelt tensioner, rear right 
+
+The SBSR also receives input from the passenger seat occupancy detection system. 
+The sensor mat has an electronic evaluation unit (analyzer) that sends seat occupancy 
+information via a dedicated signal line. 
+
+The SBSL/SBSR are located low in their respective B-pillars nearthe seatbelt reel. 
+
+
+71 
+
+byteflight safety systems 
+
+
+
+Vehicle Center Satellite 
+
+The SFZ controls and monitors the trigger circuit for the BST. It is located on the trans¬ 
+mission tunnel and connected to the SGM via byteflight. 
+
+As on other satellites, the power supply is provided by the SGM and it is buffered by a 
+capacitor. When in sleep mode, the power supply ofthe SFZ is deactivated by the SGM. 
+
+The SFZ also contains lateral and longitudinal acceleration sensors. These measure¬ 
+ments are provided as voltage values and transferred to the SGM and other satellites via 
+
+byteflight. 
+
+The triggering and monitoring ofthe trigger circuits are the same for all ofthe satellites. 
+
+
+
+Type of voltage 
+
+Voltage 
+
+Function 
+
+Voltage supply 
+
+10.2-10.7 V 
+
+Full Function 
+
+Voltage supply 
+
+10.7-16 V 
+
+Restricted function, diagnosis of ignition circuit not possible 
+
+Current consumption 
+
+typical 90 mA 
+
+In normal operation 
+
+
+72 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+Steering Column Switch Center (SZL) 
+
+The SZL consists of two modules, the Steering Column Electronics (LSE) and the 
+Steering Wheel Electronics (LRE). The two components are connected by a clock spring 
+(ribbon cable). The SZL controls and monitors the two trigger circuits forthe front airbag 
+on the driver's side (steering wheel). 
+
+
+vs 5IM < 
+
+
+Kl.Jfl < 
+
+
+S\ Bus 
+
+m.ai 
+
+
+-SZ 
+
+
+t>- 
+
+
+
+SE 
+
+
+TL 
+
+
+T 
+
+1 
+
+
+1 
+
+
+[t^l 
+
+
+si) 
+
+
+"Y 
+
+4 
+
+
+.V 
+
+
+! — -1 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Voltage regulator 
+
+2 
+
+Microprocessor 
+
+3 
+
+Coil spring 
+
+4 
+
+Igniter pellet for side airbag 
+
+5 
+
+Igniter pellet forfront airbag 1st stage 
+
+6 
+
+Igniter pellet forfront airbag 2nd stage 
+
+VS_SGM (SIM) 
+
+Voltage supply from SGM 
+
+KL30 
+
+Terminal 30 (B+) 
+
+KL31 
+
+Terminal 31 (Ground) 
+
+S/E 
+
+Transmitter/receiver module 
+
+SI_Bus 
+
+byteflight 
+
+
+73 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Up-Front Sensors 
+
+In the US, seatbelts are not a federal requirement. This legislation is on a state-by-state 
+basis. Therefore, adequate provisions must be made to ensure that the airbag can reli¬ 
+ably restrain the occupant in the event of a crash. 
+
+
+
+02 
+
+The up-front sensors were added to "fine-tune" crash detection. The location of the 
+sensors allow the ASE system to detect frontal impacts earlier. Both sensors are identical 
+forthe left and right side. 
+
+Each sensor consists of a longitudinal acceleration sensor and an electronic evaluation 
+unit for signal processing and data transfer. The acceleration sensor is capable of detect¬ 
+ing front as well as rear impacts. The values from the sensors are converted into digital 
+signals and sent to the SGM for analysis. 
+
+The up-front sensors are located behind the bumper reinforcement nearthe engine sup¬ 
+port arms. 
+
+Note: In the event of a crash that triggers the airbags, both up-front sensors 
+must be replaced. Even of no external damage is perceptible, the sensors may 
+be damaged internally. Always referto and comply with the most current and 
+relevant repair instructions. 
+
+
+74 
+
+byteflight safety systems 
+
+
+
+
+
+
+B + Cable Monitoring 
+
+The E60 B + Battery Cable is routed from trunk area along the underside of the car into 
+the engine compartment. If the cable is damaged in an accident or while driving over an 
+obstacle, the BST is activated, protecting the vehicle from further electrical problems. 
+
+
+
+The battery cable on the E60 is fitted with a low impedance metal mesh. This mesh 
+surrounds the B +cable insulation and is also covered by an additional insulation. 
+
+The metal mesh is referred to as the monitoring shield. 
+
+
+1 ' 2 3 4 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Outer insulation 
+
+3 
+
+Battery cable insulation 
+
+2 
+
+Monitoring shield (metal mesh) 
+
+4 
+
+Battery cable (aluminum conductor 120 mm^ 
+
+
+75 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery Cable Monitoring Circuit 
+
+The battery cable is diagnosed by a special circuit between the SBSL and SBSR satel¬ 
+lites. The battery cable diagnosis takes place across the low impedance shield of the bat¬ 
+tery cable (monitoring shield). 
+
+There are connections to the left B-pillar satellite and the right B-pillar satellite at both 
+ends of the shield. This means that there is usually the same voltage at the analog/digital 
+converters in the satellites. If the voltages differ, there is a fault. 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery cable 
+
+4 
+
+Battery 
+
+2 
+
+Monitoring shield (metal mesh) 
+
+5 
+
+Starter 
+
+3 
+
+Battery SafetyTerminal (BST) 
+
+6 
+
+Alternator 
+
+
+The monitoring shield consists of a low-impedance metal mesh. A connection cable 
+exits from each end of the monitoring shield (at the safety battery terminal in the luggage 
+compartment and at the battery ground point in the engine compartment). 
+
+
+The connection at the safety battery terminal in the luggage compartment is connected 
+to the right B-pillar satellite. The second connection cable in the engine compartment is 
+connected to the left B-pillar satellite. 
+
+The satellites contain analog/digital converters that are connected to the microprocessor 
+of the satellite. The connection cables of the battery cable diagnosis are connected to the 
+A/D converters. The right B-pillar satellite contains a pull-up resistor. The left B-pillar 
+satellite contains a pull-down resistor of the same size. 
+
+The voltage supply of the satellite (approx. 10 V) is applied at the pull-up resistor. Ground 
+is applied at the pull-down resistor. 
+
+
+76 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The very low-impedance cable and the resistors of the same size mean that around half 
+the voltage (approx. 5 V) is applied at the A/D converters. 
+
+
+In the event of a fault, significantly different measured values would result as follows: 
+
+
+State 
+
+Measured value at SBSL 
+
+Measured value at SBSR 
+
+Battery cable OK 
+
+Approximately 5 Volts 
+
+Approximately 5 Volts 
+
+Interruption (open) of B + cable 
+diagnosis connection 
+
+Approximately 0 Volts 
+
+Approximately 10 Volts 
+
+Short circuit to ground 
+
+Approximately 0 Volts 
+
+Approximately 0 Volts 
+
+Short circuitto B + (KL30) 
+
+Approximately battery voltage 
+
+Approximately battery voltage 
+
+
+Every 250 ms, the values are measured, triggered by the synchronization pulse. If the bat¬ 
+tery cable is OK, the values are transferred every 20 ms to the SGM. If a significant devia¬ 
+tion of the values occurs, the new values are transferred immediately. 
+
+In the following cases, the battery cable is cut off by the safety battery terminal from the 
+battery and the alternator is switched off: 
+
+• Shortcircuitto ground (body) 
+
+• Short to battery positive 
+
+
+If the outer insulation is damaged (e.g. due to friction/scuffing), but the monitoring shield 
+
+
+
+B +Cable monitoring connection 
+in engine compartment 
+
+
+Battery cable with monitoring connection 
+
+(note - BST side of cable) 
+
+
+
+1. Monitoring connection 2. Battery cable 
+
+
+has no connection to ground, the following case could occur: 
+
+Moisture (rain) would mean that the voltage would gradually fall. A short circuitto ground 
+would be detected, but the safety battery terminal would not be triggered. 
+
+The entry "Implausible measured value" is set in the fault code memory. This would be 
+indicated to the driver by the airbag warning lamp. 
+
+Battery Cable Diagnosis 
+
+If the shielding of the battery cable is damaged, the battery cable must be replaced com¬ 
+pletely. It is not permitted to perform repairs to the shielding. 
+
+
+77 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+PassengerSeatOccupancy Detection (OC-3) 
+
+The new occupancy detection system is a further enhancement ofthe the existing SBE 
+system. Current governmental safety regulations make it necessary for the passive safety 
+system to be able to determine the approximate size and weight ofthe passenger. This 
+enables the system to deactivate the passenger side airbag when traveling with a child or 
+an infant ina child seat. 
+
+To accomplish this, the existing SBE system was subsequently developed into the new 
+"intelligent occupant classifier" (Occupant Classification) or OC-3 system. This was 
+achieved by: 
+
+• Adding a larger number of "force sensitive" resistance elements. 
+
+• Dividing the detection mat into zones which coverthe entire seat area. 
+
+• Using an intelligent electronic analyzer. 
+
+The OC-3 sensor mat is capable of distinguishing between a one-year old child in a child 
+seat and a light person. This is done by analyzing the distribution of weight across the 
+seat. For example, a child in a child seat would be distinguished from a 90 pound adult 
+by the contact pattern. In other words, the contact pattern of a child seat would differ 
+considerably from an adult due to the spacing ofthe hip bones vs. the child seat "rails". 
+
+
+
+The OC-3 sensor mat is integrated into the lower seat pad area ofthe passenger seat. 
+The mat consists of conductors with pressure-dependent resistor elements also known 
+as FSR (Force Sensitive Resistance) elements. 
+
+The conductors are connected to the electronic analyzer. The FSR elements are wired in 
+such a way so that they can be sampled individually. 
+
+
+78 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When a mechanical load on a sensor increases, the electrical resistance decreases and 
+the measurement changes accordingly. 
+
+
+OC-3 Sensor Mat 
+
+
+
+
+By analyzing the signals from the individual sensors, the electronic analyzer maps the 
+occupancy of the seat surface and can identify local concentrations of weight. The dis¬ 
+tances between the areas and concentrations of weight indicate whetherthe occupant is 
+small or large. An algorithm is used to compute the weight class and decide whetherthe 
+seat is occupied by a person ora child seat. 
+
+The width between the hip bones is related to the weight of the person. Consequently, 
+the analyzer can distinguish between a light person and a heavy person. 
+
+
+OC-3 Sensor 
+Mat Schematic 
+
+
+
+
+
+© j) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+FSR elements 
+
+3 
+
+Electronic analyzer 
+
+2 
+
+Output monitoring 
+
+4 
+
+Input monitoring 
+
+
+The electronic analyzer sends a telegram to the SBSR via a dedicated signal line. If the 
+occupant is classified as a child in a child seat, the airbags on the passenger side are 
+deactivated. The SBSR sends a telegram to the the SGM via by teflight and the SGM 
+responds by illuminating the "passenger airbag off" lamp in the overhead panel. 
+
+
+79 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Airbag Indicator Lamp 
+
+The "passenger airbag off" indicator light is located in the front overhead console. This 
+light is controlled via a PWM signal from the SGM based on data from the OC-3 system. 
+
+The lamp contains 2 LED's for redundancy. If one LED fails, a fault code will be stored in 
+the SGM and the AWL will be illuminated. 
+
+
+
+USffljS 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hands free microphone, left 
+
+4 
+
+Emergency call button 
+
+2 
+
+Sunroof switch 
+
+5 
+
+Hands free microphone, right 
+
+3 
+
+Airbag indicator lamp 
+
+
+
+
+80 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information (E60) 
+
+
+Passenger Airbag Module 
+
+If the passenger airbag module is triggered, the supporting tube has to be checked. The 
+forces to which it is exposed are high, and the possibility of the supporting tube deform¬ 
+ing cannot be excluded. Consequently, the supporting tube has to be checked and, if 
+necessary, replaced. 
+
+Battery Cable Diagnosis 
+
+If the shielding of the battery cable is damaged, the battery cable must be replaced com¬ 
+pletely. It is not permitted to repairthe shielding. 
+
+Safety Battery Terminal 
+
+If the safety battery terminal is triggered, the battery cable has to be replaced all the way 
+back to the main adapter point in the luggage compartment. Repair is not intended. 
+
+Door Module, Driver's Door/Passenger Door 
+
+When removing the door module, it is essential to ensure that the two inner screws (2) of 
+the door module are not removed. These screws hold the housing of the door module 
+together and ensure that the pressure sensor is sealed. If the screws are slackened there 
+is a possibility that the pressure sensor will no longer operate correctly. 
+
+Up-Front Sensors 
+
+In the event of a crash that triggers the airbags, the up-front sensors have to be replaced. 
+The sensors might be damaged internally, even though no external damage is percepti¬ 
+ble. Always comply with the instructions in the repair manual when replacing the up-front 
+sensors. 
+
+Synchronization of New Modules 
+
+When new satellite modules are fitted, these modules have no system time. 
+
+Transmission of the two system time telegrams allows the module to adapt the system 
+time. This is only possible when the stored system time in the satellite modules is small- 
+erthan the time sent. 
+
+If the system time in a module is greaterthan the time sent, (Ex. trying a part from anoth¬ 
+er vehicle), the system time is not adopted and an entry is made into fault memory. 
+
+When the SIM or any satellite is replaced, the system time must be entered. As the sys¬ 
+tem time is available in all ASE modules, it can be transferred into the new module. 
+
+This takes place via the Diagnosis Program (Service Functions). To do so, the DISplus 
+/GT1, requests the system time from all satellites and selects the largest. 
+
+The DIS plus/GT 1 add an amount to this time and transmits the result into the new mod¬ 
+ule as the system time. The correction amount compensates for the run time between 
+reading from the satellites and entry into the new module. 
+
+This prevents fault messages from the satellites because the system time transferred by 
+the new module is smallerthan that stored in the satellites. 
+
+
+81 
+
+byteflight safety systems 
+
+
+
+ASE System Overview (E63) 
+
+
+
+
+
+
+
+
+
+"T 
+
+
+82 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview (E63) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Starter 
+
+23 
+
+Seat belt tensioner and buckle switch, passenger 
+
+2 
+
+Alternator 
+
+24 
+
+Vehicle center satellite (SFZ) 
+
+3 
+
+Servotronic valve (optional) 
+
+25 
+
+Seat belt tensioner and buckle switch, driver 
+
+4 
+
+ECO Valve (AFS only) 
+
+29 
+
+Battery safety terminal (BST) 
+
+7 
+
+DM E control unit (ECM) 
+
+31 
+
+B-pillar satellite, left 
+
+8 
+
+Light module 
+
+32 
+
+Side airbag, driver's side 
+
+9 
+
+General Module (GM5) 
+
+33 
+
+Door satellite, front left 
+
+10 
+
+Multi-audio system controller(M-ASK) 
+
+34 
+
+Front airbag, driver 
+
+11 
+
+Telematic control unit(TCU) 
+
+35 
+
+Steering column switch cluster (SZL) 
+
+12 
+
+Emergency speaker 
+
+36 
+
+AITS 2, left 
+
+13 
+
+Emergency call button 
+
+37 
+
+Diagnosis connection 
+
+14 
+
+Safety and Gateway M odule 
+
+38 
+
+Knee Airbag, driver 
+
+15 
+
+AITS 2, right 
+
+39 
+
+Knee airbag, passenger 
+
+16 
+
+Front airbag, passenger 
+
+40 
+
+B + connection (engine compartment) 
+
+17 
+
+Door satellite, front right 
+
+41 
+
+B +cable diagnosis connection (luggage comp) 
+
+18 
+
+Side airbag, passengerside 
+
+KLR 
+
+Terminal R 
+
+19 
+
+B-pillar satellite, right 
+
+KL30 
+
+Terminal 30 
+
+22 
+
+Seat occupancy detection 
+
+
+
+
+The ASE system used on the E63 contains all of the feature from the E60 with the fol¬ 
+lowing changes/additions: 
+
+• The addition of front driver and passenger knee airbags (active knee protection). 
+
+• AITS I head airbag is used 
+
+• B-pillar satellites have been modified for use in the E64. 
+
+
+83 
+
+byteflight safety systems 
+
+
+
+
+
+ASE System Overview (E64) 
+
+
+1 
+
+
+0 
+
+
+
+zj 
+
+
+■V 
+
+I 
+
+
+L 
+
+DME 
+
+tw 
+
+LM 
+
+IKBM 
+
+M-ASK 
+
+- 4? C' -3 
+
+
+
+
+wsr 
+
+r 
+
+-TCU 
+
+
+
+
+84 
+
+byteflight safety systems 
+
+
+TE4I4US 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for AS E System Overview (E64) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Safety and Gateway Module (SGM) 
+
+19 
+
+Seat occupancy detection 
+
+2 
+
+Starter 
+
+20 
+
+Seat belt tensioner and buckle switch, passenger 
+
+3 
+
+Alternator 
+
+21 
+
+Vehicle center satellite (SFZ-R) with URSS 
+
+4 
+
+ECO Valve (AFS only) 
+
+22 
+
+Battery safety terminal (BST) 
+
+5 
+
+Servotronic valve (optional) 
+
+23 
+
+Seat belt tensioner and buckle switch, driver 
+
+6 
+
+DME (ECM) 
+
+24 
+
+Rollover protection system, left 
+
+7 
+
+Light M odule 
+
+25 
+
+B-pillar satellite, left 
+
+8 
+
+Body Base Module (KBM) 
+
+26 
+
+Side airbag, driver's side 
+
+9 
+
+Multi-audio system controller(M-ASK) 
+
+27 
+
+Door satellite, front left 
+
+10 
+
+Telematic control unit(TCU) 
+
+28 
+
+Front airbag, driver 
+
+11 
+
+Emergency speaker 
+
+29 
+
+Steering column switch cluster (SZL) 
+
+12 
+
+Emergency call button 
+
+30 
+
+B + Cable monitorconnection (Engine comp) 
+
+13 
+
+Door module, passenger door 
+
+31 
+
+B + cable junction point (engine compartment) 
+
+14 
+
+Side airbag, passengerside 
+
+32 
+
+Knee airbag, driver 
+
+15 
+
+B +Cable monitor connection (luggage) 
+
+33 
+
+Knee airbag, passenger 
+
+16 
+
+Rollover protection system, right 
+
+KLR 
+
+Terminal R 
+
+17 
+
+Front airbag, passenger 
+
+KL30 
+
+Terminal 30 
+
+18 
+
+B-pillar satellite, right 
+
+
+
+
+The ASE system used on the E64 contains all of the features from the E60/E63 with the 
+following changes/additions: 
+
+• No AITS 
+
+• Rollover Protection System added 
+
+• Seat Integrated Belt System Installed (SGS) 
+
+• SFZ modified with rollover sensor (SFZ-R) 
+
+• Updated SGM to include actuator circuits for RPS rollover bars. 
+
+
+85 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise 
+
+
+Using an instructor designated vehicle, access the electronic analyzer of the OC-3 
+system under the front passenger seat. Using the oscilloscope functions of the 
+DISplus/GT-1, measure the signal from the electronic analyzer to the SBSR. 
+
+
+List the connector/pin/wire color:_ 
+
+Describe the scope pattern and record scope settings below: 
+
+
+Place object or sit on seat and observe changes to scope pattern. 
+Describe changes to scope pattern: 
+
+
+Perform short test on complete vehicle, then access the status pages for the OC-3 
+sensor mat: 
+
+Where are the status pages found? 
+
+
+Using the appropriate fused jumper, ground the data line from the seat occupancy 
+system to the SGM. 
+
+What is observed regarding the status of the following? 
+
+Fault Codes: 
+
+
+Status of "Passenger Airbag OFF" light: 
+
+
+Status requests pages: 
+
+
+86 
+
+byteflight safety systems 
+
+
+
+
+
+Workshop Exercise 
+
+
+Unplug the "Passenger Airbag OFF" light in the overhead console and perform the 
+appropriate test module to diagnose that circuit. 
+
+What is the specified voltage for the lamp circuit in the test module? 
+
+
+Measure the voltage on both sides of the lamp circuit using the oscilloscope. 
+Record observations and scope settings below: 
+
+
+What test cable is used to test the lamp circuit? 
+
+
+What module controls the lamp circuit? 
+
+
+Notes: 
+
+
+87 
+
+byteflight safety systems 
+
+
+
+
+- jji C lassroom Exercise - Review Questions 
+
+1. What component on the E60 ASE system has the responsibilities of the ZGM and 
+SIM used on the E65? 
+
+
+2. What is the difference between Active Knee Protection and Passive Knee 
+protection? 
+
+
+3. What is unique about the door modules (TM FA/TM BF) on the E60 as compared 
+to the E65 door modules? 
+
+
+4. What byteflight component is responsible forthe operation of the fuel pump? 
+
+
+5. What pyrotechnic devices are triggered by the SFZ? 
+
+
+6. Under what circumstances are the up-front sensors to be replaced? 
+
+
+88 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hjj C lassroom Exercise - Review Questions 
+
+
+7. In the E64 where are the "sensing" electronics for rollover protection located? 
+
+
+8. What is different about the seats in the E64? 
+
+
+9. What is the difference between the sensor mat used on the previous passenger 
+seat occupancy detection system and the OC-3 system? 
+
+
+10. What component is responsible fortriggering the "Passenger Airbag OFF'warning 
+light? 
+
+
+Notes: 
+
+
+89 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Passive Safety Components 
+
+The following represents the passive safety components specific to to the vehicles using 
+"byteflight based" passive safety systems including E65, E66, E60, E63, E64 and E85. 
+Model specific components will be pointed out where applicable. 
+
+Driver Front Airbag 
+
+Two-stage "SMART" airbags have been available on BMW models since the 1999 
+model year. 
+
+Depending upon the level of crash severity, both ignition stages are activated at timed 
+intervals. The time difference between ignition intervals determines the deployment 
+force of the airbag. 
+
+
+E65 Driver's side airbag, front view E65 Driver's side airbag, rearview 
+
+
+
+1. Ignition stage 1 2. Ignition stage 2 
+
+
+Driver's airbags are available in the standard or 
+sport configuration depending upon optional 
+equipment. Some airbags are available color 
+matched to the interior. Colors include black, 
+beige, grey or blue. 
+
+These new style airbags use are "clipped" in 
+rather than using screw type fasteners. Refer 
+to the relevant repair instructions for removal 
+and installation. 
+
+
+WARNING 
+
+
+When storing an airbag during repair 
+procedures always place airbag with the 
+BMW emblem facing up. This reduces the 
+danger in the event of a spontaneous 
+deployment. 
+
+
+E60 Driver's side airbag, front/rearview 
+
+
+
+1. Ignition stage 1 2. Ignition stage 2 
+
+
+90 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+Passenger Front Airbag 
+
+The passenger airbag also uses the 2-stage deployment technology. It uses a hybrid 
+method for ignition using a combination of solid fuel and inert gas. The passenger airbag 
+on the newer vehicles (E6X) no longer uses a separate cover on the dash panel. The 
+dash panel has internal perforation that is designed to tear at pre-determined points. 
+
+E65 Dash Panel, passenger side E65 airbag, passengerside 
+
+
+
+This method prevents the airbag from being deflected in the eventthatthe panel does 
+not swing out of the way properly. 
+
+
+E60 oassenaer side airbaa, 
+
+without dash panel installed. E85 passengerside airbag 
+
+
+
+
+91 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knee Airbags 
+
+Introduced on the E65, the knee airbag is a new 
+innovation for BMW models. The knee airbags are 
+installed on the driver and passenger side. 
+
+In the event of a crash, the knee airbags not only sup¬ 
+port the knee, but initiate a controlled forward shift of 
+the upper body. This controlled shift places the 
+upper body in the correct location to allow proper 
+contact with the airbag. 
+
+The driver's side knee airbag is installed in the under 
+dash trim, right below the steering column. The pas¬ 
+senger side knee airbag is part of the glovebox lid. 
+
+
+
+The knee airbag ignition circuit consists of only one stage. Knee airbags are currently 
+available on the E65, E66, E63, E64 and E85. 
+
+
+
+
+92 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Side Airbags 
+
+The side airbags in the doors reduce the risk of occupant injury in the torso region of the 
+body in the case of a side-on crash. The side airbags are folded into an aluminum hous¬ 
+ing with a plastic cover behind the doortrim. In the area of the side airbag in the door 
+trim is a tear seam. 
+
+The side airbags are secured to the inner door panel with 3 screws. The plastic cover 
+has defined breaking points. 
+
+In a side impact of sufficient severity, the side airbag is triggered. The side airbag exits 
+through the split line and deploys between the door and the seat occupants. 
+
+
+
+Side airbag on door panel, E65 Side airbag, typical 
+
+
+
+93 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Head Protection Systems 
+
+New forthe E65 is the Advanced Head Protection System (AHPS) which is an extended 
+head airbag. The ITS Inflatable Tubular Structure familiarfrom other BMW models has 
+been extended by a curtain. 
+
+The E60 and E63 have adopted a similar design referred to as Advanced Inflatable 
+Tubular Structure (AITS). 
+
+There are two versions of the AHPS (or AITS). 
+
+The Advanced HPS I (or AITS I) is forthe head area of the driver and passenger. It runs 
+from the A-pillarto behind the B-pillar, as before. The volume is approx. 12 liters. 
+
+E60 showing AITS II 
+
+
+
+When rear airbags are ordered as an option, there is the 
+Advanced HPS II (AITS ll)for the head area at the front and 
+rear. The AHPS II runs from the A-pillarto the C-pillarand 
+covers the entire side section. The volume is approx. 24 
+liters. 
+
+In conjunction with the side airbags in the front and rear 
+doors, it provides optimum side protection for all passengers. 
+The Advanced HPS prevents the head and other extremities 
+of the occupants from swinging outward. This leads to less 
+severe neck backlash forces and less severe head injuries. 
+
+Advantages of the system: 
+
+• Extended coverage area for side windows front and rear. 
+
+• Protection against glass splinters and penetrating 
+objects. 
+
+• Improved protection area for any size occupants. 
+
+
+E60AITS 
+
+
+
+Index 
+
+
+Explanation 
+
+
+Gas Generator 
+
+
+Igniter Pellet 
+
+
+Retainer Strap 
+
+
+94 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+AHPS I 
+
+
+
+
+Operation 
+
+The Advanced HPS is fitted in the roof zone. 
+
+It consists of a woven tube with an additional 
+curtain wrapped around it. The curtain is 
+secured to the roof frame and is tensioned 
+downward by the woven tube. 
+
+In the event of a side collision, the generator is 
+ignited and the gas flows through the gas 
+injector into the woven tube. The woven tube 
+expands to approx. 130 mm in diameter and 
+its length is reduced. 
+
+Secure fitting of the woven tube on the A-pillar 
+and the C-pillar HPS II oron the roofframe 
+(AHPS I) brings the head airbag into position. 
+
+In the process, the curtain tightens between 
+the side window or pillartrim and the occu¬ 
+pant. 
+
+The high tensioning force in the woven tube 
+pulls the curtain downward, which increases 
+the stability of the curtain. The closed system 
+means that the structural firmness and stability 
+remain for several seconds. This is an advan¬ 
+tage if the vehicle rolls over. 
+
+
+i _ 
+
+
+
+1. Gas generator for AHPS II 
+
+2. Gas generator for AHPS I 
+
+
+95 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Head Restraint System 
+
+One of the innovations introduced on the E65 was the AKS or Active Head Restraint 
+System. The AKS has also been added to the E60 as well. 
+
+AKS is only used on the multifunction (comfort) seat. The basic seat does not need the 
+AKS due to the fact that the position of the occupants head is always in close proximity to 
+the headrest. The comfort seat has an articulated upper backrest which can create a 
+sizeable distance between the head of the occupant and the headrest. 
+
+In a rear collision, the torso of the occupant is accelerated with the vehicle. Howeverthe 
+head, which is not on constant contact with the seat, is susceptible to high g-forces 
+which can lead to cervical vertebrae injuries (whiplash). 
+
+
+Forthis reason, the AKS is designed to reduce the gap between the head restraint and 
+the head to reduce the possibility of whiplash. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+RearView 
+
+5 
+
+Center of Rotation 
+
+B 
+
+Top View 
+
+6 
+
+Piston Rod 
+
+1 
+
+Headrest 
+
+7 
+
+Alternator 
+
+2 
+
+Headrest Guide 
+
+8 
+
+Igniter pellet with connection 
+
+3 
+
+SupportTube 
+
+9 
+
+Mounting points 
+
+4 
+
+Retaining Plate 
+
+10 
+
+Sliding element 
+
+
+The active head restraint system is located in the backrest of the comfort seat. The AKS 
+consists of a support tube, which is fitted on bearings in the backrest. A retaining plate 
+attaches the system firmly to the backrest. 
+
+
+96 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The support tube serves as a fixture forthe head restraint. The adjustment mechanism 
+of the head restraint is also attached to the support tube. 
+
+The adjustment mechanism consists of a retaining plate and a sliding element. The slid¬ 
+ing element is a moveable part connected to the gate located on the support tube. The 
+retaining plate is firmly attached to the backrest. The generator is located between the 
+retaining plate and the sliding element. 
+
+
+
+The generator consists of a casing, plunger, ignition stages and an electrical connection. 
+It is attached to the retaining plate and sliding element by spring clips. 
+
+In the event of a crash, the ignition stage is activated, the solid fuel burns and the gas 
+produced forces out the push rod. The push rod moves out and shifts the sliding ele¬ 
+ment. 
+
+The support tube is pivoted forwards because ofthe slanted, elongated holes in the sup¬ 
+port tube which the sliding element rides in. 
+
+This means that the head restraint attached to the support tube is also moved in the 
+direction of travel. The adjustment range ofthe headrest is approx. 9 degrees. 
+
+Depending on the vertical adjustment ofthe head restraint at the time, different adjusting 
+distances can result. The adjustment ofthe head restraint, measured on the cushion, is 
+approx. 40 mm when the head restraint is retracted (all the way down). 
+
+When the head restraint is fully extended (all the way up), the adjustment is approx. 60 
+mm. 
+
+If the Active Head restraint has been triggered in a crash, only the gas generator needs to 
+be replaced to return the system to normal function. 
+
+
+97 
+
+
+byteflight safety systems 
+
+
+
+
+
+
+Battery Safety Terminal (BST) 
+
+
+The Battery SafetyTerminal (BST) is technically identical to the one used in M RS sys¬ 
+tems. BST is used on all current BM W models including all E6X models. 
+
+If the ISIS system detects a crash of sufficient severity, the ignition stage of the BST is 
+triggered bythe B-pillarsatellite, right (SBSR). 
+
+A small quantity of solid fuel electrically and mechanically cuts the starter and alternator 
+line from the positive terminal of the battery. This prevents possible short circuits in the 
+engine compartment. 
+
+A separate vehicle electrical system connection through the Power M odule ensures that 
+the remaining vehicle circuit retains its function when the BST is triggered. 
+
+This ensures the operation of all the important functions such as lights, hazard warning 
+lights, telephone emergency call, etc. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+B +battery cable 
+
+2 
+
+B+Terminal 
+
+3 
+
+BST connection 
+
+4 
+
+B + cable connection to power distribution 
+
+
+98 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BeltTensioning Systems 
+
+
+Front BeltTension Limiter (E65/E66) 
+
+The belt tension limiters for the driver and pas¬ 
+senger seat are inertia reel seatbelts with adap¬ 
+tive force limitation. 
+
+A gas generator is used to switch from a high 
+degree offeree to a lower degree offeree. This 
+also has to be possible during an accident to 
+achieve a regressive force reduction. The 
+advantage of the adaptive belt tension limiter is 
+the considerable reduction of the load on the 
+chest in the event of a crash. 
+
+
+
+With optimum coordination to the airbag, the 
+kinetic energy of the occupant is reduced 
+evenly across the duration of the crash, thus 
+achieving low occupant load values. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt webbing 
+
+5 
+
+S leeve 
+
+2 
+
+Belt roller 
+
+6 
+
+Locking pawls 
+
+3 
+
+Connecting sleeve 
+
+7 
+
+Housing 
+
+4 
+
+Torsion bar 
+
+
+
+
+99 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operation 
+
+The adaptive force limitation is based on a two-stage torsion bar (stage shaft). The torsion 
+bar consists of the two head ends left and right, the stages and the center head. The belt 
+force is transferred to the seatbelt roller. The seatbelt roller is connected to a sleeve that 
+contains the torsion bar. There is a shaft ring with locking pawls on the sleeve.The lock¬ 
+ing pawls transferthe torque to the torsion bar. 
+
+In the first stage, with the preset high level of force, the torque of the seatbelt roller is 
+transferred via the locking pawls to the center head of the torsion bar. 
+
+If the seatbelt roller is turned relative to the fixed torsion bar, the force is transferred to the 
+thicker part of the torsion bar. This produces the high power level. This is the function of 
+a normal emergency locking retractor. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition 
+
+3 
+
+Shaft ring 
+
+2 
+
+Ratchet ring 
+
+4 
+
+Locking pawls 
+
+
+In the event of a crash, the gas generator is ignited and a plunger moves out, shifting the 
+shaft ring axially. The locking pawls are now no longer held by the sleeve and no longer 
+transfer more torque to the center head of the torsion bar. 
+
+
+The belt force is now passed across the right-hand head end into the stage shaft and 
+runs through the entire torsion bar. The lower diameter on the right-hand side means that 
+the torsion bar is twisted further and thus the force is reduced to a lower level. 
+
+
+100 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt webbing 
+
+5 
+
+S leeve 
+
+2 
+
+Belt roller 
+
+6 
+
+Locking pawls 
+
+3 
+
+Connecting sleeve 
+
+7 
+
+Housing 
+
+4 
+
+Torsion bar 
+
+
+
+
+Seatbelt Upper Anchor Position 
+
+Using new simulation methods with regard to 
+installation and ergonomics, it was determined 
+that there is an optimal area for all occupants 
+to locate the seatbelt upper anchor. 
+
+The anchor point is no longer adjusted auto¬ 
+matically based on seat movement as the sys¬ 
+tem on the previous model. In addition the fit¬ 
+ting is now designed as a roller. The low fric¬ 
+tion power (drag) of the seatbelt increases 
+wearing comfort. 
+
+
+
+101 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+Rear Seatbelt (End F itting) Tensioner (E 65/E 66) 
+
+
+If the rear airbag package is ordered, end fitting 
+tensioners are fitted for the outer rear seats. In the 
+middle, a three-point automatic belt is fitted. (The 
+basic version has 3 three-point automatic belts.) 
+
+The rear end fitting tensioners have the same task 
+as the seatbelt tensioners at the front, that is 
+removing the slack in the belt during the crash as 
+well as early binding of the occupant to the vehicle 
+deceleration (called riding out the crash). 
+
+S ince the space available beneath the rear seat is 
+limited, it meant that a component similarto the 
+front seatbelt tensioner could not be used, a new 
+solution had to be found. 
+
+The belt slack is removed by drawing in the seat- 
+belt strap at the end fitting point. The inertia reel 
+seatbelt forms the upper attachment point, the 
+end fitting tensioner is the lower attachment point. 
+
+
+
+Operation 
+
+The rear seat satellite (SSH) ignites the ignition 
+stage in the event of a crash if the seat has been 
+detected as occupied. 
+
+When the gas generator ignites, the rise in 
+pressure shifts a plunger in the pipe. The cable 
+end is drawn in the pipe in a linear direction by 
+the plunger. The other cable end is wound by 
+a pulley and turns the belt winding shaft. 
+
+A roller coupling blocks the belt winding shaft 
+so that when force is applied into the belt sys¬ 
+tem afterthe tensioning process this can no 
+longer be turned back. The end fitting ten¬ 
+sioners tighten the belt slack at the pelvic area 
+first and then the chest area belt slack. 
+
+The tensioning path is determined by the 
+cable pulley diameter and the usable plunger 
+travel. The maximum tensioning length is 
+approx. 150 mm. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Inertia reel (mechanical) 
+
+2 
+
+Sliding latch plate 
+
+3 
+
+Belt (end fitting) tensioner 
+
+4 
+
+Belt buckle 
+
+
+
+102 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+Front SeatbeltTensioners (E6X vehicles) 
+
+On the E6X vehicles , pyrotechnic seatbelt 
+tensioners are used for the driver and passen¬ 
+ger seat. The principle of the seatbelt lock ten¬ 
+sioner is the same as that used in the 
+E38/E39. 
+
+The seatbelt tensioner has the task in the 
+event of a crash to remove or reduce any belt 
+slack in the pelvic and shoulder region. 
+
+The belt slack comes about mainly due to the 
+motion of the occupants or due to clothing, 
+
+(especially when heavy clothing are worn in 
+the winter). 
+
+This ensures that the occupant is restrained 
+firmly on the seat and prevents "submarining", 
+slipping under a slack seatbelt. 
+
+There is also earlier restraint and thus earlier binding to the vehicle. The seatbelt tension- 
+erforms a unit with the seatbelt buckle. It consists of an ignition stage, generator, plunger 
+and cable. The belt buckle switch is integrated in the seatbelt buckle. 
+
+In the event of a crash of sufficient severity, the gas generator is ignited. The gas spreads 
+and shifts the plunger in the tensioning pipe. The cable connected to the plungerthen 
+pulls the seatbelt buckle downward and the belt slack from the belt system. 
+
+Forthese models, there are the following technical changes. The ignition stage is no 
+longer directly connected onto the gas generator but rather the connection comes out on 
+a cable together with the belt buckle switch cable and is plugged underthe seat. If the 
+seatbelt tensioner needs replacing, the seat does not have to be removed. 
+
+S eat B elt B uc kle S witc h 
+
+The belt buckle switch used in the E6X models is a two-wire Hall switch, as already in 
+use in various models since 3/97. 
+
+The airbags triggering thresholds are different depending on the crash severity and 
+depending on whetherthe seatbelt has been fastened or not. 
+
+The belt buckle switch is located in the seatbelt buckle on the driver and passenger seat. 
+It is used to detect whetherthe seatbelt has been fastened or not. The detection arrives 
+as a signal at the relevant satellites. The detection serves to trigger the pyrotechnic actua¬ 
+tors in the event of a crash,( e.g. seatbelt tensioner, airbags etc.) 
+
+The belt buckle switch also serves to initiate a seatbelt warning in case the vehicle is 
+started without a seatbelt having been fastened. 
+
+
+
+103 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+Seat Integrated Belt Systems (SGS) 
+
+The SGS system is used on vehicles that do 
+not have a b-pillar post. The first vehicle to 
+use the SGS seat was the E31. Currently, the 
+E46 convertible and the E64 use the SGS 
+seat. 
+
+All seat belt attaching points including the 
+upper anchor point are integral to the seat 
+frame. All of the forces in a collision are 
+absorbed by the seat frame and the floorpan. 
+
+The SGS seat allows the best possible seat 
+belt geometry in relation to the occupant. 
+
+The seat belt is wrapped tightly around the 
+occupant irrespective of seat position and 
+body size. This helps reduce the amount of 
+free seat belt length and also further reduces 
+excessive slack. 
+
+The features of the SGS seat are as follows: 
+
+• All of the seat belt attachment points are 
+connected to the seat frame. 
+
+• The inertia reel clamps the seat belt 
+at the closest possible point to the 
+occupant. 
+
+• Optimum protection of occupants in the event of a collision. 
+
+• Seat belt strap is released when the backrest is folded or adjusted. 
+
+• Comfort is maximized by allowing ideal body restraint for any seat setting or 
+body size. 
+
+• Restricted forward displacement of occupant due to additional seat belt strap 
+tensioner. 
+
+• More protection during rear and side impact. 
+
+• No "submarining" effect. 
+
+• Ideal solution forvehicles without b-pillar 
+
+
+
+104 
+
+byteflight safety systems 
+
+
+TCM1MI 
+
+
+
+SeatOccupancy Detection 
+
+In addition to the conventional seat occupancy detection systems, the E65 also utilizes 
+rear occupancy detection. 
+
+Seat occupancy detection mats are installed in the seat cushion of the driver and passen¬ 
+ger seat and if equipped with optional rear airbags, they are also used in the left and right 
+rear seats. 
+
+The sensor mat is identical to the mats used in previous models forthe MRS systems. 
+The sensor system consists of pressure sensors that use an electronic evaluation unit 
+(SBE)to detect whetherthere is weight on the seat. 
+
+When a weight (such as a passenger) is added to the seat, the system recognizes the 
+seat as occupied. The electronic evaluation units of the seat occupation mats are con¬ 
+nected to the relevant satellites. 
+
+(SSFA/SSBF=sensors for front seat, SSH=sensors for rear seat) 
+
+The information regarding seat occupation is required for activation of the following 
+functions: 
+
+• Airbag activation 
+
+• Activation of the seatbelt tensioners and/or end fitting tensioners 
+
+• Triggering the active head restraints 
+
+• Automatic positioning of the rear head restraints 
+
+
+105 
+
+byteflight safety systems 
+
+
+
+Principle of Operation 
+
+
+Fuel Pump Cutoff Circuit (E65/E66) 
+
+Unique to the E65, is the operation of the fuel pump circuit. Ratherthan the conventional 
+method of controlling the fuel pump via a DM E controlled relay, the fuel pump control 
+circuit is now a function of the SBSR satellite. 
+
+The fuel pump is controlled via a PWM signal from the SBSR which allows a variable 
+delivery rate. The variable delivery rate is controlled by a request from the DM E which is 
+based based upon engine requirements. 
+
+
+The advantages of having a fuel pump with a variable delivery rate are: 
+
+• Reduction of fuel tank warming (reduced evaporative emissions) 
+
+• Reduction of power consumption by approximately 50 watts. 
+
+• Increase offuel pump service life. 
+
+• Integration of crash deactivation 
+
+• Elimination of fuel pump relay 
+
+
+PT-CAN 
+
+
+byteflight 
+
+
+DIME 
+
+
+
+
+The SBSR contains additional circuitry forthe power supply of the fuel pump. The SBSR 
+receives signals via byteflight for the operation of the fuel pump. 
+
+The DME determines the fuel volume requirement in liters per hour. The SBSR receives 
+the fuel requirements from the DM E (ECM) via the PT-CAN/byfef//gfit pathway. 
+
+The delivery volume the fuel pump is regulated bythe EKP controller in the SBSR. The 
+EKP controller supplies the fuel pump with PWM control voltage. 
+
+The current consumption (amperage) of the fuel pump is measured bythe EKP 
+controller. The amperage reading helps determine the rotational speed ofthe pump. 
+
+The rotational speed is transmitted to the microprocessor, which calculates the delivery 
+volume ofthe pump. The actual delivery volume is compared to a set of pre-determined 
+values. The fuel pump speed in then regulated using these comparisons. 
+
+Fuel Cutoff After Collision 
+
+If the ISIS system detects a crash of sufficient severity, the fuel pump is shut down to pre- 
+ventthe potential offire. The fuel pump can be re-activated by switching the ignition off 
+and on. 
+
+
+106 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emergency Call, US 
+
+Starting with the introduction of the E60, the vehicle is 
+capable emergency call functions as well as a break¬ 
+down call. The emergency call functions available 
+include the manual emergency call as well as the 
+automatic emergency call in the event of a crash. 
+
+Even if no telephone has been ordered, every vehicle 
+has aTelematic Control UnitTCU, a telephone aerial, a 
+hands-free unit. TheTCU is now GPS capable with 
+electronics for locating the vehicle. 
+
+In orderforthe E65 to be capable of emergency calls, 
+the vehicle must have the handset installed. 
+
+Manual Emergency Call 
+
+The emergency call switch is connected directly to the 
+TCU. Pressing the emergency call switch sets up a 
+voice connection with the provider "Cross Country." 
+
+The voice connection is indicated by a flashing LED in 
+the switch. 
+
+Automatic Emergency Call 
+
+In the event of a crash with corresponding crash severity, the SIM transmits a crash 
+telegram to the TCU (via the K bus). The Global Positioning System informs the TCU of 
+the location of the vehicle. TheTCU places an emergency call, which at the same time 
+contains the location of the vehicle. 
+
+A voice connection is setup with the provider "Cross Country" to obtain more informa¬ 
+tion on the accident (severity of the accident, number of injured) so that rescue opera¬ 
+tions can be initiated. 
+
+Breakdown Call 
+
+The Breakdown call button is in the Central Information Display. Selection can be activat¬ 
+ed by means of the controller. If the breakdown call button is activated, a connection to 
+the BMW Emergency Service of the relevant country is set up. 
+
+
+
+107 
+
+byteflight safety systems 
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, perform complete short test on vehicle. 
+Proceed with diagnosis based on complaint listed below. Complete worksheet using 
+proper format regarding, "Complaint/Cause and Correction". 
+
+
+Vehicle: 
+
+
+Chassis #: Production Date: 
+
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+108 
+
+byteflight safety systems 
+
+
+
+
+
+Workshop Exercise - Diagnosis 
+
+
+Using an instructor designated vehicle, perform complete short test on vehicle. 
+Proceed with diagnosis based on complaint listed below. Complete worksheet using 
+proper format regarding, "Complaint/Cause and Correction". 
+
+
+Vehicle: 
+
+
+Chassis #: Production Date: 
+
+
+Complaint: 
+
+
+Cause: 
+
+
+Correction: 
+
+
+109 
+
+byteflight safety systems 
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. Which vehicles are currently equipped with knee airbags? 
+
+
+2. On what vehicles is the AKS system used on? And why? 
+
+
+3. When storing an airbag, what side should face up? And why? 
+
+
+4. What is different about the "Advanced HPS" (AITS) as compared to the early HPS 
+systems (E38/E39 etc.)? 
+
+
+5. On the E65/E66 equipped with the rear airbag package, which component is 
+responsible for controlling the rear seat belt tensioning systems? 
+
+
+110 
+
+byteflight safety systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6 . 
+
+
+On the E65/E66, describe the exact signal pathway from the DM E to the electric 
+fuel pump: 
+
+
+7. What component triggers the BST on the following vehicles? 
+
+E65/E66 _ 
+
+E60 _ 
+
+E63/E64 _ 
+
+8. What is a "SMART" airbag? 
+
+
+9. Currently, which vehicles are equipped with battery cable monitoring? 
+
+
+10. On vehicles equipped with battery cable monitoring, which two byteflight 
+components are responsible for battery cable diagnosis? 
+
+
+Ill 
+
+byteflight safety systems 
+
+
+

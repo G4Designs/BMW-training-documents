@@ -1,0 +1,1643 @@
+Table of Contents 
+
+E65/66 Comfort Access 
+
+Subject Page 
+
+Introduction to Comfort Access.4 
+
+System Overview .5 
+
+Passive Entry.5 
+
+Unlocking .5 
+
+Passive Go.5 
+
+Starting .5 
+
+Passive Exit.6 
+
+Locking .6 
+
+Special Comfort Access Functions .6 
+
+ID Transmitter Remains in Vehicle .6 
+
+ID Transmitter Remains in Trunk .6 
+
+Engine Start Disable.6 
+
+Starting Engine without ID Transmitter.7 
+
+Check Control M essage,Terminal 15 .7 
+
+Unintentional Wake-up Function .7 
+
+Locking with Engine Running.7 
+
+System Components.8 
+
+Comfort Access Module (CA).10 
+
+Car Access Module (CAS).12 
+
+Electronic Outer Door Handle (TAGE).12 
+
+Electronic Unlock M otor.13 
+
+ID Transmitter.14 
+
+Remote Control Receiver (FBD).14 
+
+Antennas.14 
+
+Footwell Antenna Location.15 
+
+Rear Parcel Shelf Antenna Location .16 
+
+Trunk Antenna Location .17 
+
+Bumper Antenna Location .17 
+
+ID Transmitter/Remote Control.18 
+
+Service Information.19 
+
+CarWash.19 
+
+CBS Data .19 
+
+Door-Selective Unlocking .19 
+
+Missing ID Transmitter .19 
+
+
+Initial Print Date: 03/05 
+
+
+Revision Date: 04/05 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Component Replacement.20 
+
+Diagnosis.20 
+
+Comfort Access Fault Memory .20 
+
+Fault Memory, Electronic Outer Door-Handle.20 
+
+Initialization.20 
+
+Check Control M essages.21 
+
+
+
+
+
+
+
+
+
+E 65/66 Comfort Access 
+
+Model: 750i, 750Li, 760i and 760Li 
+
+
+Production: From March 2005 
+
+IBIICTI1BS 
+
+After completion of this module you will be able to: 
+
+• Familiarize yourself with the components used in the system. 
+
+• Familiarize yourself with the operation of the capacitors in the door handles. 
+
+
+3 
+
+E65/66 Comfort Access 
+
+
+Introduction to Comfort Access 
+
+
+Comfort Access (SA 322) is offered as an option forthe 750i/iL & 760i/iL. 
+
+"Comfort access" is a passive access system. This means the vehicle can be unlocked 
+by grasping the outer door handle, provided the identification transmitter is located within 
+a radius of no more than approx. .5 - 1.5 m from the vehicle. 
+
+With Comfort Access it is sufficient forthe driverto simply carry the identification trans¬ 
+mitter on his/her person in orderto unlock, lock or start the vehicle. 
+
+With this system the operation/functions are distributed among several control modules. 
+Comfort Access system utilizes the same modules that are utilized forthe Central 
+Locking function plus a Comfort Access module specifically for monitoring the systems 
+antennas, activation of the remote receiver and monitor status of the Electronic Outer 
+DoorHandle. 
+
+
+
+4 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+
+With regard to the Comfort Access System the remote control is referred to as an 
+Identification Transmitter since the remote is transmitting ID data to the vehicle without 
+any action being performed by the user (buttons on the remote do not need to be 
+pressed). 
+
+Passive Entry 
+
+Passive Entry enables access to the vehicle without operating the ID Transmitter/remote 
+control. 
+
+Unlocking 
+
+As the customer approaches the vehicle with the ID Transmitter located on his/her per¬ 
+son and places their hand between the door handle and the door panel or depresses the 
+button on the trunk lid, the system "wakes up" and a signal is transmitted via K-TAGE 
+Bus to CAS. CAS in turn requests a verification that a valid ID transmitter is located with¬ 
+in the radius of the transmitting antenna, via K-TAGE Bus to the door modules or antenna 
+located on the rear bumper. 
+
+The request is made by transmitting a signal from the respective doorhandle module or 
+antennas located in the rear bumperto the ID Transmitter, which returns an ID signal that 
+is received by the antenna located on the rear window. 
+
+The signal received by the antenna on the rearwindow is transmitted to the CAS and 
+the ID information is verified. If the ID is valid the door can be unlocked by pulling up on 
+the door handle ortrunk will be unlocked by depressing the button. 
+
+Passive Go 
+
+The passive go function makes it possible to start the vehicle without the ID transmitter 
+being inserted in its holder. 
+
+Note: The vehicle cannot be started without a valid ID transmitter being locat¬ 
+ed in the interior of the vehicle. 
+
+Starting 
+
+Upon entering the vehicle the engine can be started by pressing the start button with the 
+brake pedal depressed, as long as the valid ID transmitter is located in the interior of the 
+vehicle. 
+
+The presence of a valid ID transmitter is determined by the interior antennas and validat¬ 
+ed by the CAS which will release the start enable signal. 
+
+
+5 
+
+E65/66 Comfort Access 
+
+
+
+
+Passive Exit 
+
+
+The passive exit function makes it possible to lock the vehicle without actively using the 
+ID transmitter/remote control. 
+
+Note:The vehicle cannot be unlocked withouta valid identification transmitter 
+within a radius of .5 - 1.5 m from the respective antenna. 
+
+Locking 
+
+On exiting the vehicle the doors can be locked by pressing on the doorhandle, as long as 
+all doors are closed and a valid ID transmitter is determined to be located outside of the 
+vehicle. In the event that the system detects a valid ID transmitter inside the vehicle 
+and/orthe system does not detect the presence of a valid ID transmitter on the outside of 
+the vehicle, the doors will unlock and display a message on the check control display. 
+
+Special Comfort Access Functions 
+
+The Comfort Access System offers additional special functions that are determined by 
+the actions of the user such as: 
+
+ID Transmitter Remains in Vehicle 
+
+If another ID transmitter is detected on the inside of the vehicle and a valid ID transmitter 
+is detected/determined to be located on the outside, then the transmitter located on the 
+inside is ignored/deactivated and the vehicle is secured. Once the vehicle is unlocked 
+again the key that was deactivated is reactivated. 
+
+ID Transmitter Remains in Trunk 
+
+When the trunk lid is closed/locked a status signal is received by the power module which 
+transmits the information to the Comfort Access module . The Comfort Access module 
+starts a search for an ID transmitter in the trunk, if a valid transmitter is located by the 
+antenna in the trunk a signal is sent to the CAS, which in turn transmits a request to the 
+power module to open the trunk. 
+
+In order to lock the trunk with a spare key located inside: 
+
+• It must be determined that a valid ID transmitter is located on the outside of the vehi¬ 
+cle within the radius of the antenna. 
+
+• Valet switch must be active 
+
+Engine Start Disable 
+
+The engine cannot be started if the identification transmitter is located in the luggage 
+compartment of the unlocked vehicle. 
+
+
+6 
+
+E65/66 Comfort Access 
+
+
+
+Starting Engine without ID Transmitter 
+
+The function makes it possible to start the vehicle within 10 s after"engine OFF" without 
+detecting the identification transmitter. This function is intended for cases where the 
+identification transmitter is not detected due to high frequency interference, as an exam¬ 
+ple. 
+
+Check Control Message, Terminal 15 
+
+The Comfort Access System enables terminal selection without the ID transmitter being 
+inserted in its holder. It is possible that terminal 15 is selected by pressing the START- 
+STOP button. A corresponding check control message is shown in the instrument clus¬ 
+ter afterthe door is opened. An audible signal also sounds. 
+
+Note: The battery may be discharged if the driver ignores the warnings 
+and locks the vehicle. 
+
+Unintentional Wake-up Function 
+
+In orderto avoid waking the electronic outer door handle module by touching the outer 
+doorhandle without a valid identification transmitter. The outer door handle module is 
+requested by CAS to send a signal to the ID Transmitter requesting the transmission of a 
+valid/authentication signal. 
+
+If no valid ID transmitter is detected, the electronic outer door handle module receives 
+this information from the CAS and in this case, the electronic outer door handle module 
+remains inactive until a valid identification transmitter is detected. 
+
+Locking with Engine Running 
+
+The vehicle can also be unlocked with the engine running if the engine was started with 
+passive go. When leaving the vehicle, the ID transmitter must also be taken and the vehi¬ 
+cle locked from the outside. 
+
+
+7 
+
+E65/66 Comfort Access 
+
+
+
+System Components 
+
+
+
+Button, tailgate to power module 
+
+K-CAN Periphery 
+
+Aerials 
+
+FBD receiver 
+
+K-TAGE sub-bus 
+
+
+8 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Components 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+B 
+
+Car Access Control Module (CAS) 
+
+12 
+
+Trunk Release/Open Button 
+
+2 
+
+Antenna, Interior, Right Front Footwell 
+
+13 
+
+Trunk Antenna 
+
+3 
+
+DoorModule, PassengerDoor 
+
+14 
+
+Antenna, Rear Parcel Shelf 
+
+B 
+
+Electronic OuterDoor-Flandle, 
+Passenger Door 
+
+15 
+
+Electronic Outer Door-Flandle, 
+
+Rear Door Driver's Side 
+
+5 
+
+Antenna, Interior, Right Rear Footwell 
+
+16 
+
+Door M odule, Rear Driver's Door 
+
+6 
+
+DoorModule, Rear Passenger Door 
+
+17 
+
+Identification Transmitter 
+
+7 
+
+Electronic Outer Door-Flandle, Rear Door 
+PassengerSide 
+
+18 
+
+Electronic Outer Door-Flandle, Driver's Door 
+
+8 
+
+Remote Control Receiver (FBD) 
+
+19 
+
+Antenna, Interior, Left Rear Footwell 
+
+9 
+
+Comfort Access Control Module 
+
+20 
+
+DoorModule, Driver's Door 
+
+10 
+
+Power Module 
+
+21 
+
+Antenna, Interior, Right Front Footwell 
+
+11 
+
+Antennas, Rear Bumper 
+
+
+
+
+9 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Comfort Access Module (CA) 
+
+
+The Comfort Access Module located in the right side of the trunk nearthe Power Module 
+provides the following functions: 
+
+• CAN Bus Interface (K-CAN Periphery & K-TAGE) 
+
+• Electronic Outer Door Handle (TAGE) interface 
+
+• Activation ofthe 8 inductive antennas 
+
+- Initiates scan for ID Transmitter on interior of vehicle using the interior antennas (5) 
+
+- Initiates scan for ID Transmitter in trunk of vehicle using the trunk antenna (1) 
+
+- Initiates scan for ID Transmitter on exterior rear of vehicle using the bumper anten¬ 
+nas (2) 
+
+• Simultaneous activation of Remote Control Receiver (FBD) during scan for ID 
+Transmitters 
+
+• Stores fault memory for Electronic Outer Door Handle (TAGE) and inductive anten¬ 
+nas 
+
+• Diagnostic Gateway for Electronic Outer Door Handles (TAGE) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Comfort Access Module (CA) 
+
+
+10 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+With the introduction of the Comfort Access system the K-CAN Periphery has been 
+extended as shown below: 
+
+
+K-CAN S 
+
+
+K-TAGE 
+
+
+
+TAGE 
+
+
+J TMFAT 
+
+
+1 
+
+TAGE 
+
+r 
+
+L 
+
+■Jtmfah 
+
+
+TMBFH 
+
+
+SMFAH 
+
+
+SMBFH 
+
+
+HKL 
+
+
+PM 
+
+
+CA 
+
+
+K-CAN P 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+CA 
+
+Comfort Access Control Module 
+
+TAGE 
+
+Electronic Outer Door Handle 
+
+CAS 
+
+Car Access System 
+
+TMBFT 
+
+DoorModule, Passenger Door 
+
+HKL 
+
+Trunk Lid Lift 
+
+TMBFTH 
+
+DoorModule, PassengerSide RearDoor 
+
+PM 
+
+Power Module 
+
+TMFAT 
+
+DoorModule, Driver's Door 
+
+SMBF 
+
+Seat Module, PassengerSeat Adjustment 
+
+TMFATH 
+
+DoorModule, DriverSide RearDoor 
+
+SMBFH 
+
+Seat Module, Passenger Side Rear Seat 
+Adjustment 
+
+K-CAN P 
+
+K-CAN PERIPHERY 
+
+SMFA 
+
+Seat M odule, Seat Adjustment 
+
+K-CAN S 
+
+K-CAN SYSTEM 
+
+SMFAH 
+
+Seat Module, Driver Side Rear Seat 
+Adjustment 
+
+K-TAGE 
+
+Sub-Bus, Electronic Outer Door Handle 
+
+
+Note: The K-TAGE Sub-Bus is only looped through the door modules, 
+no exchange of information occurs. 
+
+
+11 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access Module (CAS) 
+
+The CAS is responsible for: 
+
+• Validation/authentication of ID Transmitter data 
+
+• Storing faults regarding ID Transmitter 
+
+• Activation of the validation process from trunk switch or starter switch 
+
+Electronic Outer Door Handle (TAGE) 
+
+The Electronic Outer Door Handles are responsible for: 
+
+• Detection of a pull on the outer door handle via an integrated hall sensor 
+
+• Detection of a push on the outer door handle via an integrated hall sensor 
+
+• Monitoring the capacitive sensor integrated in the door handle to detect the pres¬ 
+ence of a hand between the door handle and the door panel 
+
+• Activation of the transmit antenna located in the handle to provide an activation sig¬ 
+nal to the ID Transmitter 
+
+• Transmission of sensor data by way of the K-TAGE Bus from the doorhandle to the 
+door module (pass through function only) 
+
+On vehicles equipped with Comfort Access the top half of the doorhandle has a chrome 
+insert. 
+
+
+1 
+
+2 
+
+
+3 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Chrome Insert 
+
+2 
+
+Door Handle 
+
+3 
+
+Rest/Zero position (Handle can be pushed in or pulled out approx. 3 mm) 
+
+
+12 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Each Door Handle M odule can be woken-up by pulling or pushing on the handle, when 
+this occurs the status of the handle is transmitted to the door module and then onto the 
+CAS and CA module via the K-CAN Periphery. The door handle also transmits a signal to 
+the ID transmitter requesting it to transmit a validation signal, which is acquired by the 
+remote Receiver antenna in the rear window and forwarded to the CAS for authentication. 
+If the signal is recognized an enable signal is sentfrom the CAS to the respective door 
+handle and the door can be unlocked. 
+
+Each door handle module is connected by a 4-wire connection to a respective door 
+module. 
+
+Electronic Unlock Motor 
+
+Each lock in the vehicles doors incorporates an electric unlock motor. The motor assists 
+in unlocking the locking pawl of the door in a timely manner after authentication of the ID 
+transmitter and the handle being pulled. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Door Lock 
+
+2 
+
+Electric Unlock Motor 
+
+3 
+
+M otorfor Automatic Soft Close 
+
+
+13 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+ID Transmitter 
+
+
+The Remote Control/ID Transmitter is responsible for: 
+
+• Transmission of encrypted high frequency messages 
+
+• Reading/receiving of transmitted signals from inductive antennas 
+
+• Standard remote control functions via push button 
+
+
+Remote Control Receiver (FBD) 
+
+
+Incorporated into the rear window is an antenna that is used to receive the transmitted 
+signal from the remote Control/ID transmitter. The signal is automatically transmitted from 
+the ID transmitter upon relieving a request for validation from one ofthe exterior antennas. 
+
+4 
+
+
+
+Index 
+
+Explanation 
+
+3 
+
+Antenna Amplifier 
+
+F 
+
+8-Pin Connectoron Antenna Amp for wake-up signal for FBD Receiver 
+
+FBD 
+
+Antenna for Remote Control 
+
+KL. 30 
+
+Voltage Supply B + 
+
+KL.31 
+
+Ground 
+
+
+Antennas 
+
+
+On the 7 series a total of 12 antennas are used to monitor/communicate with the ID 
+transmitter. 
+
+• 1 in each Door Handle (4) • 2 on the rear Bumper Cover 
+
+• 1 in each Footwell (4) • 1 on rear Parcel Shelf 
+
+• 1 in the Trunk 
+
+
+14 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The antennas on the interior of the vehicle are inductive air core coil antennas that must 
+be more than 15 mm from the surface that they are mounted to. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Antenna in each Footwell 
+
+2 
+
+Antenna in Rear Parcel Shelf 
+
+3 
+
+Antenna in Trunk 
+
+4 
+
+Antenna Attached to Rear 
+BumperCover 
+
+
+Footwell Antenna Location 
+
+The antennas are embedded in the insulating material located beneath the carpet. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Right Front Footwell 
+
+2 
+
+Left Front Footwell 
+
+
+15 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Right Rear Footwell 
+
+2 
+
+Left Rear Footwell 
+
+
+Rear Parcel Shelf Antenna Location 
+
+The antenna is installed at angle in a holder and secured to the front edge of the rear par¬ 
+cel shelf 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rear Parcel Shelf 
+
+2 
+
+Antenna 
+
+
+16 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TrunkAntenna Location 
+
+The antenna in the trunk is clipped into a housing and secured underneath the rear par¬ 
+cel shelf. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Antenna below Rear Parcel Shelf 
+
+
+BumperAntenna Location 
+
+Two antennas are installed on the inside of the rear bumper cover. 
+
+
+1 2 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Right Rear Bumper Antenna 
+
+2 
+
+Left Rear Bumper Antenna 
+
+
+17 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ID T ransmitter/Remote C ontrol 
+
+The ID transmitter contains the following functions: 
+
+• Incorporates the normal remote control buttons 
+
+• Able to receive signal from transmitting vehicle antennas 
+
+• Signal encryption 
+
+• Transmission of encrypted high frequency information 
+
+• Mechanical Keys 
+
+Since the key does not need to be inserted into the holderto start the vehicle the battery 
+of the remote control/ID Transmitter is no longer chargeable, therefore requiring the bat¬ 
+tery to be replaced. Under "average" usage the the battery may need to be replaced 
+once a year. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Mechanical Key 
+
+2 
+
+Battery 
+
+3 
+
+Battery Cover 
+
+
+18 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+CarWash 
+
+If the vehicle is to be taken through a CarWash the ID transmitter must be inserted into 
+the 'Key" holder slot of the ignition switch while the engine is running in orderto keep 
+the parking gearfrom engaging automatically. 
+
+By inserting the ID transmitter with the engine running and gear engaged the Comfort 
+Access functions are deactivated. If the engine is the switched off via the start/stop but¬ 
+ton the "N" position is automatically engaged. 
+
+CBS Data 
+
+Atthis time the transmission of Condition Based Service (CBS) data to the identification 
+transmitter via the radio interface forthe E65 is not possible. 
+
+In orderto update the CBS data residing in the ID Transmitter, if the Passive Go function 
+is being used (ID Transmitter is not being inserted into the "Key" holder slot on the igni¬ 
+tion switch): 
+
+• Insert the ID Transmitter into the slot of the ignition switch 
+
+• Hold the central-lock rocker switch forapprox.10 seconds in the "Unlock" position 
+
+• An audible gong will indicate that the key data has been updated 
+
+Door-Selective Unlocking 
+
+Door unlocking is performed selectively if "selective unlocking" is coded in the key- 
+memory function (otherwise "global unlocking"). 
+
+To unlock the remaining doors with door-selective unlocking, press the center-lock rock- 
+erswitch into the "Unlock" position. 
+
+Missing ID Transmitter 
+
+If the engine is started and the ID transmitter is removed from the passenger compart¬ 
+ment of the vehicle as a result of a person leaving the vehicle while in possession of the 
+ID Transmitter (driver change, someone is being dropped-off etc.): 
+
+• The engine is not automatically switched-off, as this is not permitted by law 
+
+• A Check Control message appears if a dooris opened and then closed again 
+
+• Once the engine has been switched off, it can be restarted within 10 seconds even 
+if there is no identification transmitter inside the car (i.e. without valid drive autho¬ 
+rization). This is important in the event the engine stumbles/stops on a railroad 
+crossing and there is no identification transmitter inside the car. 
+
+For safety reasons the owner should carry the wallet key. The wallet key in conjunction 
+with the adapter permits drive authorization; this enables the carto be driven even when 
+the identification transmitter is missing. 
+
+
+19 
+
+E65/66 Comfort Access 
+
+
+
+
+Component Replacement 
+
+Despite being of the same design, the front and rear outside doorhandles on the pas¬ 
+senger side are not interchangeable. Each Electronic Outer Door Handle must be 
+installed in the correct installation location (note part numbers) so that the motorfor 
+unlocking the locking pawl (electric opening motor) operates properly. 
+
+In addition, each Electronic Outer Door-Handle has a logical bus address. 
+
+Diagnosis 
+
+Comfort Access Fault Memory 
+
+The following possible faults are stored in the fault memory of the Comfort Access 
+Module: 
+
+• Overvoltage or undervoltage, terminal 30 (functional limits, Comfort Access) 
+
+• Short circuit to positive or open circuit or contact break in relays for all 5 interior 
+antennas, trunk antenna and both bumper mounted antennas 
+
+• Faulty relay coil at all relays, sticking relay contact at all relays with antenna outputs 
+
+• Faulty output stage 
+
+• Excess temperature at output stage 
+
+• Faulty K-bus interface 
+
+• Sticking Hall sensor (TAGE) 
+
+• Faulty capacitive sensor (TAGE) 
+
+Fault Memory, Electronic Outer Door-Handle 
+
+Faults detected by the Electronic Outer Door-Handle are stored in a non-volatile memory 
+which is able to store a maximum of 16 faults. 
+
+The faults are stored in the order in which they occurred. 
+
+Flash programming forthe Electronic Outer Door-Handle is not planned. 
+
+Initialization 
+
+Forthe Comfort Access System, the following components must be initialized after being 
+replaced: 
+
+• Comfort Access Module 
+
+• Electronic Outer Door Handles 
+
+The initialization is triggered by switching ignition to Term R, which results in the CAS 
+transmitting the initialization automatically to the Comfort Access Module. The Comfort 
+Access Module then transmits a signal to the Electronic Outer Door Handles. 
+
+Initialization can also be performed via a test module for Comfort Access Initialization. 
+
+20 
+
+E65/66 Comfort Access 
+
+
+
+
+Check Control Messages 
+
+There are five Check Control Messages that can be displayed pertaining the the Comfort 
+Access system: 
+
+
+Control 
+
+unit 
+
+
+Fixed 
+
+indicator 
+
+lamp 
+
+
+Variable 
+
+indicator 
+
+lamp 
+
+
+Check Control 
+message 
+
+
+Note in 
+
+control display 
+
+
+CAS 
+
+
+CAS 
+
+
+Zi 
+
+KT-9202 
+
+
+Identification trans¬ 
+mitter does not 
+respond! 
+
+
+Identification trans¬ 
+mitter not present or 
+malfunctioning, see 
+Owner's Handbook. 
+
+
+Eh 
+
+
+KT-9164 
+
+
+Identification trans¬ 
+mitter battery flat! 
+
+
+Replace battery of 
+identification trans¬ 
+mitter with integrated 
+key, see Owner's 
+Handbook. 
+
+
+CAS 
+
+
+
+KT-9114 
+
+
+Identification trans- Comfort access 
+
+mitter! deactivated. 
+
+AUTO P is not 
+possible with engine 
+
+
+OFF. 
+
+
+CAS 
+
+
+CAS 
+
+
+
+KT-9114 
+
+
+Take identification 
+transmitter with you 
+when exiting car. 
+
+
+Identification trans¬ 
+mitter in car interior! 
+
+
+Double locking of car 
+not possible. 
+
+Remove identifi¬ 
+cation transmitter 
+from car interior. 
+
+
+
+KT-9114 
+
+
+Identification trans¬ 
+mitter not present! 
+
+
+Identification trans¬ 
+mitter not in vicinity 
+of car, therefore 
+double locking not 
+possible. Carry 
+identification trans¬ 
+mitter with you. 
+
+
+21 
+
+E65/66 Comfort Access 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

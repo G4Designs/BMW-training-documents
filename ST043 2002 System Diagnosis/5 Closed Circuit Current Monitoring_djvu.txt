@@ -1,0 +1,3290 @@
+Table of Contents 
+
+
+Closed Circuit Current Monitoring 
+
+Subject Page 
+
+Introduction .2 
+
+Purpose of the System .3 
+
+Power Supply Circuit .4 
+
+Power Module .5 
+
+Inputs.8 
+
+Outputs.9 
+
+Shut Down Protocol. 10 
+
+Closed-Circuit Current Monitoring 
+
+Normal Sleep Mode.11 
+
+Storage Mode.14 
+
+Check Control Messages. 15 
+
+Workshop Hints 
+
+Closed-Circuit Current Monitoring.16 
+
+Preconditions & General Observations.17 
+
+Closed-Circuit Current Monitoring Procedure.18 
+
+Diagnosing the Power Module with the DISplus/GTI.23 
+
+Battery Replacement Registration.29 
+
+Diagnostic Test Plans.32 
+
+
+Review Questions 
+
+
+33 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Closed Circuit Current Monitoring 
+
+
+Model: E65 - 745i / E66 - 745LI 
+
+Production Date: 11/2001 - E65, 03/2002 - E66 
+
+
+Objectives of The Module 
+
+After Completing this module, you will be able to: 
+
+• Explain what the Power Module uses to calculate the optimum charge voltage. 
+
+• Identify when the battery switch is left in the “OFF” position. 
+
+• Perform the Battery Replacement Registration after replacing a battery. 
+
+• Understand a normal Shut Down Protocol and identify a violation. 
+
+• Identify 2 “visuals” that indicate the vehicle is entering sleep mode. 
+
+• List the final Closed-Circuit Current draw on a “normal” vehicle. 
+
+• Explain what Special Tool #90 88 6 612 310 is used for and demonstrate it’s use. 
+
+
+2 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+Purpose of The System 
+
+
+This module describes the technical changes that have been made to the Power Module 
+relevant to fault codes and diagnostic service procedures. You should be familiar with the 
+basic operation covered in the E65 Complete Vehicle course (ST042). Additional informa¬ 
+tion is now available for: 
+
+• Closed circuit current monitoring 
+
+• Check Control messages 
+
+• Battery replacement 
+
+
+The Power Module ensures that the battery charge level is maintained when the engine is 
+running and when the vehicle is at rest. The Power Module is also responsible for main¬ 
+taining the power supply (in the event of faults in the electrical system) to important vehicle 
+systems by disconnecting lower priority circuits. 
+
+
+Power Module Functions 
+
+• Optimum charging. 
+
+• Load-circuit peak reduction. 
+
+• Shut-down of auxiliary consumer 
+circuits in the event of low voltage. 
+
+• Closed circuit current monitoring. 
+
+• Distribution mode. 
+
+• Automatic electrical system isolation. 
+
+• Load cutout. 
+
+• Electronic fuses. 
+
+
+• Central battery voltage notification. 
+
+• Rear window defogger output. 
+
+• Interior lighting control. 
+
+• Trunk lid and fuel filler flap control. 
+
+• Data memory storage. 
+
+• Emergency-mode functions. 
+
+• Check Control messages. 
+
+• Diagnosis. 
+
+
+System Components 
+
+• Power Supply circuit 
+
+• Fuses 
+
+• Power Module 
+
+- Electronic battery master switch 
+
+- High-current sockets 
+
+- Inputs 
+
+- Outputs connected to electronic battery master switch 
+
+- Outputs not connected to electronic battery master switch 
+
+- Electronic control unit 
+
+
+3 
+
+Closed Circuit Current Monitoring 
+
+
+
+Power Supply Circuit 
+
+The power supply for the general electrical system is controlled by the Power Module. The 
+high amperage fuses in the engine compartment, the alternator and the starter motor are 
+connected directly to the battery and not supplied by the Power Module. 
+
+
+
+—1 
+
+i~»a- m~\ 
+
+p ^iRSTg- _ _ 
+
+
+[linn 
+
+□ "X 
+
+
+110 Ah 
+
+SBSR 
+
+
+420805 
+
+
+4 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+
+
+
+
+
+Power Module - Location and Construction 
+
+The Power Module on the E65 is located on the 
+right-hand side of the luggage compartment. 
+
+
+1. Cover plate 
+
+2. Electronics 
+
+3. Electronic Battery Master switch 
+
+4. Heat sink 
+
+KL 30, KL 30B and KL 30U = High-Current Terminals 
+
+
+Electronic Battery Master Switch 
+
+The electronic battery master switch is made up of 4 MOS-FET output stages (S Bat) and 
+connects the input terminal 30 with the outputs KL 30U and KL 30B on the Power Module. 
+The following functions are controlled by means of the Power Module according to the posi¬ 
+tion of the battery switch: 
+
+• Storage mode • Electronic fuses 
+
+• Closed circuit current monitoring • Automatic electrical system isolation 
+
+
+
+
+High-Current Terminals (RADSOK®) 
+
+New high-current terminals are used in the E65/E66. The high-current terminals are on the 
+input terminal 30 and the outputs terminal 30U and terminal 30B. These contacts are capa¬ 
+ble of carrying current peaks (short term) of 220 A. 
+
+
+5 
+
+Closed Circuit Current Monitoring 
+
+
+Inputs/Outputs 
+
+
+Battery 
+
+
+K-CAN 
+
+Periphery 
+
+
+I 
+
+
+K-CAN P 
+
+
+Wake-up input CAS 1g 
+from CAS 
+
+
+Battery Switch 
+
+
+Interior light 
+switch 
+
+
+External trunk 
+release button 
+
+
+Battery Temp. 
+Sensor 
+
+
+TOEHK 
+
+
+30U 
+
+30B 
+
+HHS 
+
+LM 
+
+DME 
+
+CAS 
+
+DWA 
+
+DWA_NS 
+
+IR 
+
+ZIG 
+
+UFBD 
+
+EC 
+
+PDC 
+
+RLS 
+
+
+
+
+i 
+
+fly sca 1 
+
+
+L 
+
+> 
+
+N 
+
+UlS 
+
+zu_ 
+
+0 
+
+J)TKL 
+
+
+VA D 
+
+
+VA K 
+
+
+Terminal 30 
+outputs 
+
+HHS=Rear window 
+defogger. 
+
+LM=Lamp Module. 
+DME=ECU 
+CAS=Car Access 
+System 
+
+DWA=Alarm C.U. 
+
+DWA NS=Sirene 
+IR=Not used in U.S. 
+
+Terminal 15 
+outputs 
+
+ZIG=Cig. lighter relay 
+UFBD=Universal 
+
+remote control. 
+EC=Electrochromatic 
+mirrors. 
+
+PDC=Park Distance 
+Control. 
+
+Terminal R 
+outputs 
+
+RLS=Rain/Light Sensor 
+
+(IB) Interior 
+Lighting 
+
+(VA-D) 
+
+Consumer 
+
+Isolation 
+
+Circuit/Roof 
+
+(VA-K) 
+
+Consumer 
+
+Isolation 
+
+Circuit/Body 
+
+SCA 
+
+Soft Close 
+Actuator (Trunk) 
+
+ZV 
+
+Central lock 
+Actuator (trunk) 
+
+TKL 
+
+Central lock 
+Actuator (Fuel 
+door) 
+
+
+6 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inputs 
+
+
+Terminal 30 
+
+The battery positive terminal is connected directly to the load input of the Power Module. 
+
+Battery Switch 
+
+The battery switch (BS) offers the vehicle owner and the service department the choice 
+between the settings ON ("closed circuit current monitoring") and OFF ("storage mode"). It 
+is located above the PM on the right hand side of the luggage compartment. 
+
+
+ON OFF 
+
+
+
+Interior Lighting Button 
+
+This controls the interior lighting and is located on the front interior lighting unit. The possi¬ 
+ble settings are "Automatic control", "On", "Off" and “Workshop mode” (hold for 3 sec¬ 
+onds). 
+
+Exterior Trunk Lid Release Button (TOEHK) 
+
+This button is a direct input to the Power Module. The trunk lid is released by means of the 
+button on the outside of the trunk lid. 
+
+Trunk Lock Actuator Switch 
+
+The switch in the trunk lock actuator is used to inform the Power Module as to the position 
+of the lock actuator and to synchronize the SCA. it also controls the luggage compartment 
+lighting, the monitoring of the alarm system and the trunk lid warning light. 
+
+SCA Contact 
+
+This input is used to signal the PM that the SCA has rotated 180° (used to switch off the 
+electric motor). 
+
+15_w (wake-up) 
+
+This is a redundant signal from the Car Access System which wakes up the Power Module. 
+
+Battery Temperature Sensor 
+
+Measures the temperature directly on the battery negative terminal. This information is used 
+for the "optimum charging" function. The measuring range is -25°C to +75°C. 
+
+K-CAN Periphery 
+
+Enables communication with the vehicle network. 
+
+8 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+Outputs Connected to Electronic Battery Master Switch 
+Terminal 30U 
+
+Supplies the fuse box in the luggage compartment. 
+
+Terminal 30B 
+
+Supplies the fuse box in the glove compartment. 
+
+
+
+Outputs Not Connected to Electronic Battery Master Switch 
+
+The following outputs are supplied by the PM separately from the Electronic Battery Master 
+Switch. 
+
+
+• Rear window heater (HHS) 
+
+• Light Module (LM) 
+
+• Car Access System (CAS) 
+
+• DME 
+
+• Alarm system (DWA) 
+
+• Emergency power siren (SINE) 
+
+• Cigarette lighter (ZIG) 
+
+
+• Electrochromatic mirrors (EC) 
+
+• Park Distance Control (PDC) 
+
+• Rain/light sensor (RLS) 
+
+• Interior lighting (IB) 
+
+• Central locking trunk lid drive (ZV) 
+
+• Central locking, fuel filler flap (ZV) 
+
+• Trunk lid Soft Close Motor (SCA) 
+
+
+The advantages of this arrangement are: 
+
+• The exterior lighting can remain on (for safety reasons) even if the Electronic Battery Mas¬ 
+ter switch is off. 
+
+• The alarm system is always armed. 
+
+• No additional fuses and wiring for actuators in nearby locations. 
+
+
+9 
+
+Closed Circuit Current Monitoring 
+
+
+
+Fuses 
+
+The outputs for the rear window heater, KL R and KL 15, are not protected by convention¬ 
+al fuses. They are supplied via a power transistor (MOS-FET) in the Power Module. 
+
+By measuring the current and comparing it with stored threshold levels, the Power Module 
+can detect a short circuit and disconnect the circuit if needed. The outputs for CAS, DWA 
+and DME are protected by internal electronic fuses. 
+
+Shut Down Protocol 
+
+Shut-Down of Consumer Circuits (Sleep mode) 
+
+To prevent battery discharge by consumer items mistakingly left on, the interior lighting cir¬ 
+cuit (IB) and consumer circuits-roof zone (VA-D) are shut off 16 minutes after KL R is 
+switched off. 
+
+The consumer circuit-body (VA-K) remains on longer for the cigarette lighter relay, glovebox 
+lighting, luggage compartment light and the telephone (recharging if plugged in). The VA-K 
+is shut off 60 minutes after KL R is switched off. 
+
+Shut-Down of Auxiliary Consumers 
+
+In order to ensure that the car is capable of starting, the charge level (SoC-State of Charge) 
+of the battery is monitored when the vehicle is at rest. The minimum battery SoC required 
+to ensure that the car can be started again is a calculated value. 
+
+The calculation takes into account the: 
+
+• Battery temperature measured over last few days 
+
+• Engine type 
+
+• Capacity of the battery fitted (110Ah for the 745i). 
+
+The SoC calculation is displayed as a percentage of battery capacity (a fully charged bat¬ 
+tery is considered 80%). If the charge level of the battery gets close to that calculated min¬ 
+imum level as a result of the operation of an auxiliary consumer unit, the Power Module 
+instructs that circuit to switch off. 
+
+Auxiliary consumer circuits are items such as the Control Display, DWA, LM, EGS and IHKA 
+(rest function). There are two modes of operation when shutting down auxiliary consumer 
+circuits: auxiliary consumers with KL R “ON” and auxiliary consumer with ignition off (KL 0). 
+
+
+10 
+
+Closed Circuit Current Monitoring 
+
+
+
+Closed-Circuit Current Monitoring - Normal Sleep Mode 
+
+
+• When the ignition is switched “OFF” (KL 0), the Busses go to sleep in 2 minutes. 
+
+• After 16 minutes, the Power Module sends a signal for the consumer circuits-roof zone 
+(VA-D) shut-down and briefly wakes the Busses. 
+
+• VA-D is switched off and the Busses resume sleep mode. 
+
+• After 60 minutes, the consumer circuit-body (VA-K) is switched off. 
+
+
+The Power Module now assumes closed-circuit current monitoring mode: 
+
+• Cyclic voltage measurement every 5 seconds, cyclic current measurement every 60 sec¬ 
+onds. 
+
+Note: If an operation is performed on the vehicle before 60 minutes has elapsed (central 
+locking, trunk opened), the timer starts again from the beginning. 
+
+• Once the 60 minute period has ended, the closed-circuit current is approximately 30 mA 
+(max. 50 mA). 
+
+• If the closed-circuit current exceeds 80 mA, the Power Module will monitor a 5 minute 
+“waiting period” allowing the vehicle an opportunity to resume the normal 30 mA closed- 
+circuit current. 
+
+• If the excessive current remains after the 5 minute waiting period, a fault code with the 
+current value is stored. The Power Module issues the "Shutdown Counter" message and 
+after 90 seconds, the vehicle's electrical system is shut down (briefly isolated) by the 
+Electronic Battery Master Switch. 
+
+A second attempt is made and if excessive current draw is still present, the Shutdown 
+Counter functions again after 90 seconds to isolate the electrical system. 
+
+The Electronic Battery Master Switch is reconnected under the following conditions: 
+
+• Change ignition from “OFF” to KL R or KL 15 
+
+• Toggling of the Battery Switch (switching back and forth twice within 2 seconds) 
+
+• KL 15 wake-up line (from CAS) 
+
+• External charge detection (> 13.2 V at the Power Module) 
+
+• CAN message relating to activated, legally required electric loads (hazard warning lights) 
+
+
+11 
+
+Closed Circuit Current Monitoring 
+
+
+
+When the signal “15w” from the CAS is detected, the Electronic Battery Master Switch is 
+
+
+closed and the following Check Control message is displayed: 
+
+Check Control Message 
+displayed in KOMBI 
+
+Message displayed in 
+
+Control Display 
+
+Cause 
+
+High standby current! 
+
+High standby current! 
+
+Vehicle electrical accessories 
+are drawing excessive passive-state 
+current. Battery has been disconnected 
+Please contact your BMW center. 
+
+Excessive closed- 
+circuit current draw 
+
+
+
+
+
+MOM 
+
+
+
+
+Closed-circuit current monitoring is automatically cancelled by a message from the Lamp 
+Module that the hazard warning lights are active. 
+
+When KL R is switched off, current monitoring is also immediately activated. Normal cur¬ 
+rent load on the vehicle drops in stages according to the vehicle programming for sleep 
+mode (see chart on the following page). 
+
+If the monitored current is > 120 amps (even as a random spike) , the interior lighting, roof 
+area consumers and body zone consumer circuits are immediately switched off. 
+
+
+Reasons for Electronic Battery Master Switch Disconnection 
+
+The reason for battery disconnection is stored together with the fault code in the Power 
+Module fault memory. Several examples that may be stored are: 
+
+• The battery was disconnected because a current > 120 Amps was measured after 
+switching off KL R. 
+
+Note: The current threshold was increased from 35 Amps to 120 Amps because all four 
+power window motors can be operated simultaneously up to the end stop. 
+
+• The battery was disconnected because an excessively high vehicle closed-circuit current 
+was measured. 
+
+• The battery was disconnected after a 3 week parking period. 
+
+• The battery was disconnected by activation of Storage Mode with the Battery Switch. 
+
+• The battery was disconnected because the battery capacity (SoC) dropped below the 
+start limit with KL R switched on and KL 15 switched off. 
+
+• The battery was disconnected because a short-circuit in KL 30 was detected. 
+
+• The battery was disconnected by a DISplus/GTI diagnostic command. 
+
+
+12 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+
+
+
+
+16 a Closed-Circuit Current Monitoring and Vehicle Sleep Mode 
+
+
+
+13 
+
+Closed Circuit Current Monitoring 
+
+
+25 seconds 16 minutes 60-70 minutes 
+
+
+Storage Mode 
+
+By switching “OFF” the battery switch, the Power 
+Module goes into Storage Mode 30 minutes after 
+terminal R switches off. 
+
+
+
+— 
+
+““ 
+
+
+_n_n_ 
+
+
+“ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OFF 
+
+L_ 
+
+_ 
+
+_ 
+
+_ 
+
+
+_ 
+
+_ 
+
+_ 
+
+_ 
+
+
+
+KT-8288 
+
+
+Before disconnecting, the PM sends out the "Shutdown" signal. After a further 90 seconds 
+the shut down is completed. If the ignition switch is turned to KL R or KL15, a Check 
+Control message is issued which informs the driver that the vehicle is in Storage Mode. 
+
+The following CC message appears: 
+
+
+Check Control Message Message displayed in Cause 
+
+displayed in KOMBI Control Display 
+
+
+Battery switch OFF 
+
+
+
+Battery switch OFF! Battery switch left in 
+
+Re-set battery switch in luggage OFF position, 
+
+compartment to ON, refer to 
+owners manual. 
+
+
+When the signal “15w” or change-over of the battery switch to "closed-circuit current mon¬ 
+itoring" is detected, the Electronic Battery Master Switch is closed. 
+
+The vehicle can still be started and driven in storage mode. All systems remain functional. 
+The CC message remains active. 
+
+When KL R “Off" is active, disconnection is carried out after 30 minutes (as explained 
+above). 
+
+Note: If the battery switch is detected as defective, closed-circuit current monitoring will be 
+activated. 
+
+If no function of any kind is activated over a period of 3 weeks, the battery is disconnected 
+from the vehicle's electrical system to prevent battery discharge. This function is indepen¬ 
+dent of the position of the battery switch. 
+
+
+Electronic Fuse 
+
+If a short circuit current of over 250 A is detected, the Electronic Battery Master Switch is 
+opened. When the wake-up signal “15w” from the CAS is detected, then an attempt is 
+made to close the Electronic Battery Master Switch again. 
+
+This procedure is repeated continually until the short circuit has been eliminated. 
+
+
+14 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+
+
+
+Check Control Messages 
+
+The following are Power Module relevant messages: 
+
+
+Check Control Message 
+
+Message displayed in 
+
+Cause 
+
+displayed in KOMBI 
+
+Control Display 
+
+
+
+Battery switch OFF! Battery switch left in 
+
+Re-set battery switch in luggage OFF position, 
+
+compartment to ON, refer to 
+owners manual. 
+
+High standby current! Excessive closed- 
+
+Vehicle electrical accessories circuit current draw, 
+
+are drawing excessive passive-state 
+current. Battery has been disconnected 
+Please contact your BMW center. 
+
+Recharge Battery! Recharge battery! Battery discharged 
+
+Battery heavily discharged. 
+
+Charge by driving for longer period 
+or by using external charger. 
+
+Battery will be disconnected soon. 
+
+Power module in emergency ! Power module in 
+
+operating mode. Electrical emergency mode 
+
+power supply limited. Please 
+contact the nearest BMW center. 
+
+
+Power Module failure! Power module failure! Power module alive 
+
+Automatic monitoring of signal missing over 
+
+■ battery charge level failure. bus line. 
+
+Please contact the nearest BMW 
+center. 
+
+
+Notes: 
+
+
+
+High standby current! 
+
+
+
+Battery Switch OFF! 
+
+
+
+15 
+
+Closed Circuit Current Monitoring 
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Closed Circuit Current Monitoring For The E65/E66 Electrical System 
+
+In the event that an E65/E66 vehicle has a battery draw and/or the Power Module has faults 
+stored in memory relative to closed circuit current monitoring, the following is provided to 
+assist you in diagnosis. 
+
+Increased closed-circuit currents may occur permanently or occur intermittently, and cause 
+the battery to discharge prematurely. The increase in closed circuit current may be caused 
+by a faulty control module, or by the installation of a non-approved accessory. 
+
+In a situation where a vehicle has compalints due to a discharged battery, for diagnostic 
+purposes it is important not to disconnect the battery. This is because a control module will 
+be reset if the battery is disconnected. Following a reset, the faulty control module may start 
+functioning correctly again, making accurate diagnosis impossible. 
+
+To correctly measure closed-circuit current, measurement adapter Special Tool P/N 90 88 
+6 612 300 should be used. This tool provides a bridge to ground, before the negative bat¬ 
+tery terminal is disconnected, and this prevents the control modules from being reset. 
+
+The additional use of MoDiC adapter Special Tool P/N 90 88 6 612 310 provides a method 
+for current measurements over an extended period of time. 
+
+This procedure should be followed after you have reviewed the Power Module “Principle of 
+Operation” in the beginning of this module. 
+
+
+Tools Required: 
+
+• 50 amp inductive probe for DISplus or MFK1 
+for the MoDIC/GTI. 
+
+• BMW closed circuit current measuring tool 
+# 61 2 300 (4. in diagram). 
+
+• Digital Multimeter capable of measuring up to 
+15 Amps. 
+
+• MoDIC adapter #61 2 310 for recording 
+draws up to 72 hours (3. in diagram). 
+
+
+
+16 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+Preconditions: 
+
+• First, read and understand SIB # 61 08 00 
+
+• Charge the vehicle battery with a BMW recommended (Deutronic) battery charger to 
+obtain a minimum of 12.6 Volts. The battery charger must be disconnected prior to any 
+draw testing. 
+
+• Vehicle charging system must be operating correctly. 
+
+• Ceck for faults and correct any faults that are present. 
+
+• Have a copy of the bus chart ready for reference. Understand the basics in order to 
+“Divide and Conquer” the bus network. 
+
+• Review the power supply wiring diagram to understand the three (3) separate routes that 
+the B+ potential can travel. The B+ lead that feeds the IVM/ECM, starter and generator. 
+This lead has a junction in the luggage compartment and supplies the aluminum ribbon 
+cable to the front of the vehicle. 
+
+The second is the feed from the Power Module 30 B to the front fuse panel in the glove 
+box. Moving the current probe to each individual cable will isolate which circuit has the 
+current draw(s). 
+
+• Review the Vehicle Sleep Mode shut down protocol chart (page 13) to assist with com¬ 
+parisons when diagnosing a faulted vehicle. 
+
+
+Please Review the Following General Observations: 
+
+1. After swithcing the ignition “OFF”, the CAS light remains “ON” for approximately 2 min¬ 
+utes. When the CAS LED goes out, this indicates that the Bus network is sleeping. At 
+this time the current measurement should not be > 800 mA (.8 A). 
+
+2. After approximately 16 minutes the CAS led illuminates for approximately 30 seconds 
+(Bus network is awake). After the CAS LED goes out (Bus network is sleeping), the BZM 
+seat switch lights (left and right) will turn off. At this time the Power Module circuit VA-D 
+roof consumers shut down (hint - leave a map light on as a visual). The current draw is 
+approximately 200 mA (.2 A) at this time. 
+
+3. The remaining time until the vehicle is in “sleep mode” will occur in approximately 44 
+minutes (vehicle dependent). The total time for sleep mode could take up to 70 min¬ 
+utes. 
+
+
+17 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+4. The final closed circuit current draw should be approximately 30 mA (.030 A) or less 
+(normal peaks last for approx. 20 seconds each). These normal peaks are a result of the 
+Instrument Cluster performimg a temperature status check (deminishes in frequency as 
+time goes on). 
+
+5. Always allow the vehicle to go into the sleep mode naturally. Do not use the DISplus/GT 1 
+test module to expedite shut down on the initial diagnosis. This test module can be used 
+after the conformation of failure has occurred and additional testing is required. This will 
+help in speeding up the subsequent diagnosis. 
+
+Closed Circuit Current Monitoring Procedure: 
+
+The following instructions can be supplemented with the HI document in DIS under Power 
+supply Diagnostic Test Plan, entitled "Procedure in event of closed circuit current faults”. 
+There are examples of closed-circuit current violations with additional diagnostic hints. 
+
+1. With the DISplus/GTI, interrogate all control modules with a short test. Correct all faults 
+before proceding with closed circuit diagnosis. This includes reviewing diagnostic 
+queries for the Power Module to analyze reasons for battery disconnects, battery SOC, 
+battery history and basic charging operation. 
+
+2. Disconnect battery charger from the vehicle (remove clamps). 
+
+3. Open the trunk lid and secure the latch mechanism (as if the trunk lid was closed). 
+
+4. Open hood and lift up on the hood pin switch (service position). 
+
+5. To prepare for fuse access, open the glove box door and disable the glovebox light. This 
+will avoid awakening the Power Module later. 
+
+6. Hook up current monitoring tools following this progression: 
+
+If using the DISpius: 
+
+- 50 amp inductive clamp around the B- cable from the battery to chassis ground. 
+Access the BMW Test system “Multimeter screen" , and select the “Current 50A” set¬ 
+ting and “MIN/MAX”. 
+
+Prefered - MoDIC/GTI (when function is available on GT1) 
+
+- 50 amp inductive clamp around the B- cable from the battery to chassis ground. 
+
+- MFK1 connected to Special Tools #61 2 300 and #61 2 310 (as shown on page 16). 
+Follow MoDIC setup instructions per SIB # 61 08 00 (do not plug into MoDIC yet, just 
+have connections ready), do not disconnect the chassis ground at this time. This tool 
+can only handle a current of 10 amps or less and will fail until the vehicle current is 
+safely below this value. 
+
+
+18 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+7. Shut off ignition “KL 0”, remove the remote key from vehicle. Open both front doors and 
+secure rotatory latch (as if the doors were closed), Use a suitable tool and not your fin¬ 
+ger! Be careful not to catch your fingers in the latch, the vehicle may be equipped with 
+Soft Close Automatic (SCA). Activate the remote locking “twice” (to disable the FIS sen¬ 
+sor) and begin to watch for Bus power down. 
+
+8. After the CAS LED goes out (approx. 2 minutes), the current draw should not be > 800 
+mA. The BZM lights will remain on. 
+
+9. After approximately 16 minutes, the CAS LED will illuminate. The current draw will spike 
+to approximately 8 - 9 A for 30 seconds. Then the CAS and BZM lights go out and the 
+current draw will be approximately 200 mA for 60 -70 minutes. Unplug the 50 amp 
+
+clamp lead from the MoDIC and plug in the MFK1 lead, it is now safe to remove the 
+chassis ground and the draw trace will begin if the MoDIC/GTI is used. 
+
+At the 60 -70 minute point (sleep mode), if the closed-circuit current draw is > 30 mA, 
+normal procedures of pulling fuses and disconnecting components will be necessary (as 
+outlined below). Remember to divide and conquer the circuits with the help of the ETM. 
+
+If the closed-circuit current draw remains higher than 30 mA after 60 minutes or never 
+
+drops down to less than 30 mA proceed as follows (the MoDIC/GTI- when function is avail¬ 
+able on GT1, must be used at this point to establish a draw trace): 
+
+10. Remove Fuse 5 from the front fuse box behind the glove compartment (Fuse 5 also 
+powers the BZM, the seat switch lights will go out). Wait 2 minutes (allows CAS to reset) 
+and recheck draw. 
+
+If draw drops down to below 30 ma reinstall Fuse 5 and disconnect 1 MOST bus con¬ 
+sumer at a time (Control Display last - it is the gateway) and install optic jumper (made 
+from parts, available in EPC) wait 2 minutes between each disconnection (allows CAS 
+to reset). 
+
+11. If draw is still present after Fuse 5 removal, remove Fuse 15 to ZGM from front fuse 
+box, this isolates the Byteflight Bus from PT-CAN Bus. 
+
+If draw drops down, then disconnect SIM module behind glove box and reinstall Fuse 
+15. If draw drops after SIM removal then draw is from Byteflight and isolate which Byte- 
+flight module is causing draw. If draw does not drop after SIM removal, the draw is com¬ 
+ing from PT-CAN bus. Disconnect each PT-CAN Bus module until draw is gone. 
+
+12. If removing Fuse 5 and or Fuse 15 do not drop draw below 30 mA, then draw is from 
+K-CAN S and or K-CAN P modules. Disconnect one CAN consumer at a time until 
+draw is gone. 
+
+Note: Please refer to Bus Chart on page 20. 
+
+
+19 
+
+Closed Circiut Current Monitoring 
+
+
+
+
+
+<U O £ 
+ro £ o 
+
+o £ > 
+
+.£2 t3 m 
+
+m £ +; 
+
+... ro ro 
+o „ <d 
+£2 £2 « —l 
+
+3 J u 
+
+u. m j- 3 
+
+_, O o 
+O) I— > v 
+
+£ co g o 
+
+> ° a 05 
+°5_ « 
+
+£ f 4 2 £ 
+
+^NO) 
+DC i: QD 
+
+
+
+C/5 
+
+O 
+
+s 
+
+
+
+
+< 
+
+o 
+
+I 
+
+* 
+
+
+Q. 
+
+Z 
+
+< 
+
+o 
+
+■ 
+
+* 
+
+
+20 
+
+Closed Ciroiut Current Monitoring 
+
+
+Disconnect the SIM Module 
+to isolate the Byteflight Bus. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Closed Circuit Current Monitoring Flow Chart 
+
+
+Key Off = KL”0”, Wait 2 min. is the CAS LED Out? 
+
+
+YES 
+
+Wait for 16 minutes. 
+Is the BZM light out? 
+
+
+
+
+YES 
+
+NO 
+
+
+PM is shutting 
+
+BZM 
+
+
+down wait full 
+
+light not out. 
+
+
+60 min. and 
+
+PM shut down 
+
+
+monitor current 
+
+is not 
+
+
+draw. 
+
+occurring 
+(circuit VA-D). 
+
+
+Is current 
+< 30 mA? 
+
+Review PM 
+operation. 
+
+
+
+Use 
+
+> 
+
+/ X 
+
+Component 
+Activation to 
+
+YES 
+
+NO 
+
+check possible 
+
+OK 
+
+>30 MA 
+
+PM faults. 
+
+
+Isolate current 
+draw. 
+
+
+Remember to 
+use 30U/30B 
+cable to help 
+determine draw 
+(front to rear). 
+
+Check individual 
+circuits that are 
+isolated from 
+30U/30B 
+(LM, DWA, alt, 
+aux. fan, etc). 
+
+
+NO 
+
+Remove Fuse #15 
+powering ZGM. 
+
+Wait 2 Minutes for 
+CAS light to go out. 
+
+
+Is CAS light out? 
+
+
+
+YES 
+
+Fault is in ByteFlight or PT-CAN Bus 
+awakening all Busses. 
+
+Reinstall Fuse #15 and unplug SIM, 
+wait 2 minutes. 
+
+
+NO 
+
+Reinstall Fuse #15. 
+
+Remove Fuse #5 
+wait 2 min. & watch 
+current draw. 
+
+
+Is the light out? 
+
+
+
+YES 
+
+NO 
+
+Fault is in ISIS 
+
+Fault is in the 
+
+circuit. 
+
+PT-CAN. 
+
+Isolate by 
+
+Isolate by 
+
+unplugging 
+
+unplugging 
+
+each Satellite 
+
+each module 
+
+and waiting 
+
+2 min. between 
+
+until isolated. 
+
+each unplug. 
+
+Wait 2 min. 
+between each 
+
+Recheck draw 
+after 1 hour 
+to validate. 
+
+Use PM 
+
+Service Function 
+Shut Down 
+to validate 
+instead of 
+waiting full 
+
+60 miniutes 
+
+module unplug 
+
+
+Note: 
+
+BZM light will not 
+function with Fuse #5 
+out, however CAS 
+light will function. 
+
+
+CAS light out? 
+
+
+
+YES 
+
+NO 
+
+Most Bus 
+
+Reinstall 
+
+concern. 
+
+Fuse #5. 
+
+Unplug 
+
+Remove 
+
+Control Modules 
+
+K CAN-S 
+
+with 2 min. 
+
+Low/Pligh 
+
+wait between, 
+
+wires from 
+
+until isolated. 
+
+CAS XI0318. 
+
+
+Term 13 
+
+
+(green) 
+
+
+Term 14 
+
+
+(green/orange) 
+
+
+
+Is light 
+out in 
+2 min? 
+
+
+
+YES 
+
+NO 
+
+Isolate 
+
+Isolate 
+
+K-CAN P 
+
+K-CAN S 
+
+components 
+
+components 
+
+as outlined 
+
+as outlined 
+
+in previous 
+
+in previous 
+
+steps. 
+
+steps. 
+
+
+21 
+
+Closed Circiut Current Monitoring 
+
+
+
+Sleep Mode with PT-CAN Bus Consumer (example) 
+
+When the closed-circuit current draw remains higher than 30 mA after 60 minutes or never 
+drops down < 30 mA, the MoDIC/GTI (when function is available on GT1) used at this point 
+establishes a draw trace. 
+
+In this example, a consumer stays awake after the 60 -70 minutes. From the peaks you can 
+observe that the closed-circuit current draw is not normal. 
+
+
+
+By removing Fuse #15 to ZGM (in front fuse box), the Byteflight and PT-CAN Bus circuits 
+are isolated and the closed-circuit current draw decreases to a normal value. 
+
+After disconnecting SIM module and reinstalling fuse #15, the draw still exists indicating 
+that it is from PT-CAN bus. 
+
+By disconnecting each PT-CAN Bus module (one at a time), the draw decreased after the 
+Electro-mechanical Parking Brake Control Module (EMF) was unplugged. This component 
+was staying awake and in addition, awoke the entire Bus network. 
+
+
+22 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosing the Power Module with the DISplus/GTI 
+
+After the initial power down protocol in which the vehicle enters “sleep mode” naturally and 
+excessive closed-circuit current draws are present, the DISplus/GTI can be used to expe¬ 
+dite sleep mode for further diagnosis. 
+
+This procedure is found under: 
+
+Service Functions - Body - 
+Voltage and current monitoring. 
+
+• Select <Activate sleep mode>, 
+
+<Power down command> and 
+<Test Plan>. 
+
+
+• Highlight the Test Module and 
+press the green <Arrow> to the 
+right. 
+
+
+The following preconditions must 
+be followed for a successful 
+Power Down: 
+
+• DISplus/GTI connected 
+
+
+• Battery Switch set to “ON” 
+
+• KLR “OFF”, but vehicle must not have 
+gone to sleep yet 
+
+• Remove key 
+
+
+• Battery voltage must be at least 12.5 V 
+and battery charger must be disconnect¬ 
+ed from vehicle 
+
+• This screen prompts you to 
+select <Yes> to send the Power 
+Down command. 
+
+
+
+|H [Ilspgglte ©siM:<§ai) 
+
+
+(Complete vehicle p 
+
+Component and signal information 
+Signal information 
+Service functions 
+Maintenance 
+Drive 
+Chassis 
+Body 
+
+Instrument cluster 
+Heating/air-conditioning systen 
+
+
+Wipe/wash functions 
+Remote control/vehicle key 
+T elecommunication 
+ISIS control modules 
+Headlight cleaning system 
+Auxiliary and independent heatir] 
+MOST network 
+
+
+E 
+
+
+feCaiQ anil aulQuiljilaiirBifaii 
+
+
+Matte atesipmafe 
+
+
+
+Power down command 
+
+
+Note: After the Power Down command is sent, disconnect the OBD diagnostic connector. 
+The Power Down mode is terminated when a Bus is woken. 
+
+
+23 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+
+The inputs/outputs that are part of the Power Module can be diagnosed by Test Modules 
+or status check by the Control Unit Functions of the Diagnosis Program. The outputs can 
+be activated by Component Activation and the power consumption displayed. 
+
+All electronic fuses and the Electronic Battery Master Switch are monitored for short cir¬ 
+cuits/circuit breaks. In the event of a fault, an entry is made in the Power Module fault mem¬ 
+ory and if appropriate, a Check Control message is initiated. 
+
+The “Status” of the Power Module and monitored circuits/components can prove to be very 
+helpful in diagnosing faults and provide an overall state of vehicle “electrical power man¬ 
+agement”. 
+
+• From the DISplus/GTI main menu (after a short test was completed), select <Control unit 
+functions>. 
+
+• Select <Power Module> and highlight Part Functions of the status to be displayed. 
+
+
+Some Power Module status 
+examples to consider are: 
+
+
+• Number of battery disconnections 
+
+
+• Closed-circuit current counter 
+
+• Temperature 
+
+
+• Wake terminal 15 
+
+• Battery switch, switch contact 2 
+
+• Battery switch, switch contact 1 
+
+
+EfaifaBlunffla 
+
+
+©ffiitell ornR taste® 
+Rm&fais 
+
+
+AMP Amplifier 
+AVT Antenna tuner 
+ARS Dynamic Drive 
+ASK Audio system controler 
+SMBF Scat module, passenger 
+BZM Control center, center conso 
+CAS Car Access System 
+CDC Audio CD Changer 
+|x CIM Chassis Integration Modules 
+DSC Stability Control DSC5.7 
+DWA antitheft alarm system 
+SINE Siren and tilt sensor 
+CON Controller 
+EGS transmission control 
+
+
+-Activate outputs, rear lid 
+•Activate outputs, fuel-filler flap 
+Diagnosis requests 
+Load/consumer priorities_ 
+
+
+
+
+
+
+-Pov/cr module, output 
+-Reason for disconnecting battery 
+-Alternator 
+-Battery 
+-Battery statistic 
+-Battery history 
+-Rear lid 
+Interior lights 
+Rear-window defroster 
+
+
+
+
+Lt. lAul'A'i' 
+
+
+Number of battery disconnections 
+
+Closed-circuit current counter 
+
+Temperature 
+
+Wake terminal 15 
+
+Battery switch, switch contact 2 
+
+Battery switch, switch contact 1 
+
+
+1 
+
+61 
+
+22 
+
+On 
+
+Closed 
+
+Open 
+
+
+Notes: 
+
+
+24 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+• By selecting <Power Module, 
+output>, output loads and con 
+sumers with the amperage val¬ 
+ues are displayed. 
+
+This includes the electrical load 
+for the roof and body zone previ¬ 
+ously mentioned. These functions 
+can be activated/deactivated 
+found in: "Activate outputs, elec¬ 
+trical loads”. 
+
+This provides you with information 
+about what circuit of the Power 
+Module is experiencing current 
+draw, normal or excessive. 
+
+
+• By selecting <Reason for dis¬ 
+connecting battery>, this will 
+display why the Power Module 
+switched of the Electronic 
+Battery Master Switch. 
+
+
+Examples of why the Power Module switched off the Electronic Battery Master Switch to 
+disconnect the battery are: 
+
+• Excessive current was measured after switching off KL R. 
+
+• Excessively high vehicle closed-circuit current was measured. 
+
+• A short-circuit in KL 30 was detected. 
+
+• After a 3 week parking period (Stand-time limitation). 
+
+• The battery capacity (SoC) dropped below the Start limit (threatened). 
+
+• By a DISplus/GTI diagnostic command. 
+
+
+3Am^i:rdTg _ 
+
+AMP Amplifier 
+AVT Antenna tuner 
+ARS Dynamic Drive 
+ASK Audio system controller 
+SMBF Seat module, passenger 
+BZM Control center, center conso | 
+CAS Car Access System 
+CDC Audio CD Changer 
+x CIM Chassis Integration Modules 
+DSC Stability Control DSC5.7 
+DWA antitheft alarm system 
+SINE Siren and tilt sensor 
+CON Controller 
+EGS transmission control 
+
+
+-Activate outputs, rear lid 
+-Activate outputs, fuel-filler flap 
+Diagnosis requests 
+- Load/consumer priorities 
+-Power module 
+
+-Reason for disconnecting battery 
+
+-Alternator 
+
+-Battery 
+
+-Battery statistic 
+
+-Batten/ history 
+
+-Rear lid 
+
+-Interior lights 
+
+-Rear-window defroster 
+
+
+t~lL 
+
+VTLmvTnd bi | 
+
+- - v ' < 
+
+jAv.TjIL A- _ 
+
+■ _. r. -, ■-V. — ;jj. j i_ 
+
+
+Current, light module 
+Current, electrical load, body 
+Current, electrical load, roof 
+Current, engine compartment 
+Current, terminal R 
+Current, terminal 30 
+Current, terminal 15 
+Output, light module 
+Output, electrical load, body 
+
+
+©§i®M) raafs fametaB 
+
+
+; IxfliiiKai ii-ite _ 
+
+AMP Amplifier 
+AVT Antenna tuner 
+ARS Dynamic Drive 
+ASK Audio system controller 
+SMBF Seat module, passenger 
+BZM Control center, center conso 
+CAS Car Access System 
+CDC Audio CD Changer 
+j x CIM Chassis Integration Modules 
+DSC Stability Control DSC5.7 
+DWA antitheft alarm system 
+SINE Siren and tilt sensor 
+CON Controler 
+EGS transmission control 
+
+
+-Activate outputs, rear lid 
+-Activate outputs, fuel-filler flap 
+Diagnosis requests 
+- Load/consumer priorities 
+-Power module 
+-Power module, output 
+
+
+-Alternator 
+
+-Battery 
+
+-Battery statistic 
+
+-Battery history 
+
+-Rear lid 
+
+-Interior lights 
+
+-Rear-window defroster 
+
+
+I bnopL’ ater fta 1 ‘M [ 
+
+
+respite 
+
+Cun-ent after tm. R deactivation too high 
+
+Closed-circuit current too high 
+
+Short circuit detected 
+
+Stand-time limitation reached 
+
+Startability threatened 
+
+Term. 30 deactivated by diagnosis 
+
+
+Not disconnected 
+Not disconnected 
+Not disconnected 
+Not disconnected 
+Disconnected 
+Not disconnected 
+
+
+25 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+• By selecting <Alternator>, this 
+will display the charging output 
+that the Power Module desires 
+and receives from the Alter¬ 
+nator. 
+
+
+The Power Module regulates the 
+charge level to the battery based 
+on: 
+
+Optimum Charging 
+
+The battery voltage can fluctuate between 14.0 V and 15.5 V. The optimum charge voltage 
+is set according to the charge level of the battery, the battery temperature and the status 
+of the external lights (higher charging voltage with lights off). The maximum setting is 16 V. 
+
+Temperature-Dependent Battery Charging Voltage 
+
+By using a charging characteristic map stored in the Power Module, the charge voltage of 
+the alternator is adjusted according to the battery temperature. 
+
+The Power Module detects the temperature of the battery and places the instruction 
+"Increase charge voltage" on the K-CAN Periphery. The CAS passes the message on to the 
+K-CAN System bus. The ZGM receives the message. Performing its function as a "gateway 
+control unit", it passes the message on to the PT-CAN. The ECM module receives the 
+request to increase the charge voltage over the PT-CAN. 
+
+The alternator then receives the request to increase the charge voltage via the BSD lead 
+(Bit Serial Data interface). The electronic evaluation unit in the alternator then adjusts the 
+charge voltage accordingly. If the temperature sensor is defective then the charging voltage 
+will be fixed at 14.3 V. 
+
+Increasing Idle Speed to Improve Battery Charging 
+
+In order to drain as little energy as possible from the battery during freezing weather (below 
+34°F) the engine idle speed may be increased. 
+
+This ensures that the battery charge level is kept high. If the charge level falls below the cal¬ 
+culated minimum level for starting, the engine idle speed is increased to 750 rpm. 
+
+The calculation of the minimum level for starting takes in account the temperature and the 
+condition/age of the battery. 
+
+
+aw 
+
+
+CQfcnfarlirTnffla 
+
+
+AMP Amplifier 
+AVT Antenna tuner 
+APS Dynamic Drive 
+ASK Audio system controller 
+SMBF Seat module, passenger 
+BZM Control center, center conso 
+CAS Car Access System 
+CDC Audio CD Changer 
+|x CIM Chassis Integration Modules 
+DSC Stability Control DSC5.7 
+DWA antitheft alarm system 
+SINE Siren and tilt sensor 
+CON Controlcr 
+EGS transmission control 
+
+
+Current, alternator 
+Voltage, alternator, desired 
+Voltage, alternator, specification 
+
+
+TuviTiTT; 
+
+
+[-Activate outputs, rear lid 
+Activate outputs, fuel-filler flap 
+[Diagnosis requests 
+|- Load/consumer priorities 
+Power module 
+-Power module, output 
+-Reason for disconnecting battery 
+
+
+-Battery 
+-Battery statistic 
+-Battery history 
+-Rear lid 
+-Interior lights 
+-Rear-window defroster 
+
+
+
+
+tafeEa afcarEfisE, Mrasl 
+
+
+26 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+• By selecting <Battery>, this 
+will display the battery “state of 
+health” according to the Power 
+Module’s calculation. 
+
+
+The relationship of charge vs: dis¬ 
+charge can be seen here. This is 
+helpful for determining a sulfated 
+battery. 
+
+
+Battery Charge Level Detection 
+
+The Power Module knows what the charge level of the battery is at any time by calculating 
+the battery current when the vehicle is being driven and measuring the discharge current. 
+
+When the vehicle is not in use, the charge level is re-calculated and updated by measuring 
+the closed circuit battery voltage. If the vehicle battery is replaced it must be registered with 
+the Power Module so that the stored values can be deleted and a new calculation started. 
+
+Central Battery Voltage Notification 
+
+The Power Module continuously measures the battery voltage. This information is made 
+available to all other control units via the Bus link. This can be used, for example, to enable 
+continuous running of the sliding/tilting sunroof regardless of battery voltage. 
+
+Central battery voltage notification eliminates the need for individual measurement of bat¬ 
+tery voltage by each control module. 
+
+Data Memory 
+
+The Power Module data memory stores electrical system activity (data) relevant to the vehi¬ 
+cle. That information provides a status read-out of the battery load and life. The data mem¬ 
+ory will be used in future to obtain a load profile of the battery in normal operation that will 
+be analyzed for Condition Based Service. 
+
+Battery Temperature Sensor 
+
+In the event of a defective sensor, a short circuit or an implausible value, the substitute value 
+of 20 °C is assumed. This corresponds to a fixed charge voltage of 14.3 V at the battery. 
+
+Battery capacity (SoC) is calculated using the substitute value. 
+
+
+MW ttpxaSll§ MMomilllllEUlMB 
+
+
+
+C%iaffiaB8 
+
+
+1 AMP Amplifier 
+
+
+-Activate outputs, rear lid 
+
+
+AVT Antenna tuner 
+
+
+-Activate outputs, fuel-filler flap 
+
+tOiEtfav* 
+
+ARS Dynamic Drive 
+
+
+Diagnosis requests 
+
+_ _ 
+
+ASK Audio system controller 
+
+
+- Load/consumcr priorities 
+
+!JMrcssS5B 
+
+SMBF Seat module, passenger 
+
+
+-Power module 
+
+
+BZM Control center, center conso 
+
+
+-Power module, output 
+
+
+CAS Car Access System 
+
+
+-Reason for disconnecting battery 
+
+
+CDC Audio CD Changer 
+
+
+-Alternator 
+
+
+x CIM Chassis Integration Modules 
+
+
+=0S0SI» 
+
+
+DSC Stability Control DSC5.7 
+
+
+-Battery statistic 
+
+
+DWA antitheft alarm system 
+
+
+-Battery history 
+
+
+SINE Siren and tilt sensor 
+
+
+-Rear lid 
+
+
+CON Controller 
+
+
+-Interior lights 
+
+
+EGS transmission control 
+
+
+-Rear-v/indov/ defroster 
+
+
+
+
+
+Temperature 
+
+17 
+
+•c 3 
+
+Current 
+
+-14.6 
+
+A 
+
+Voltage 
+
+12.3 
+
+V 
+
+Charge state 
+
+67.1 
+
+Ah 
+
+Charge, total 
+
+0 
+
+Ah 
+
+Discharge, total 
+
+22 
+
+Ah 
+
+
+
+
+
+27 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+• By selecting <Battery statistic^ 
+
+this will display the time the bat¬ 
+tery has spent in what “state of 
+charge” according to the Power 
+Module’s calculation. 
+
+
+The Power Module determines 
+the battery state of charge (SoC) 
+and the time in the SoC range 
+which is required for: 
+
+
+To ensure that the car is capable of starting, the charge level (SoC) of the battery is moni¬ 
+tored when the vehicle is at rest. 
+
+The minimum battery SoC required to ensure that the car can be started again is a calcu¬ 
+lated value. 
+
+The calculation takes into account the: 
+
+• Battery temperature measured over last few days 
+
+• Engine type 
+
+• Capacity of the battery fitted (110Ah for the 745i). 
+
+The SoC calculation is displayed as a percentage of battery capacity (A fully charged bat¬ 
+tery is considered 80%). 
+
+If the charge level of the battery gets close to that calculated minimum level as a result of 
+the operation of an auxiliary consumer, the Power Module instructs that circuit to switch off. 
+
+
+
+
+
+
+IRaDsSsoB 
+
+M'toisSaiB 
+
+
+AMP Amplifier 
+
+
+-Activate outputs, rear lid 
+
+3 
+
+
+[to Q?j toss ubbeb 13 1 
+
+AVI Antenna tuner 
+
+
+-Activate outputs, fuel-filler flap 
+
+
+
+Cite Sa stag? SD -8® 
+
+ARS Dynamic Drive 
+
+
+Diagnosis requests 
+
+' 
+
+
+HUSH T 3TTTR SEA 
+
+
+ASK Audio system controller 
+
+
+- Load/consumer priorities 
+
+
+
+1133 til StaB E3M3 SEAM 
+
+SMBF Seat module, passengei 
+
+
+-Power module 
+
+
+
+•."ft* ta turn sow B® -m 
+
+BZM Control center, center conso 
+
+
+-Power module, output 
+
+
+
+ftsti. -SWas rang* 
+
+CAS Car Access System 
+
+
+-Reason for disconnecting battery 
+
+
+
+
+
+CDC Audio CD Changer 
+
+
+-Alternator 
+
+
+
+Tins h iras ihm-b tSMSSS IBS! 
+
+x CIM Chassis Integration Modules 
+
+
+-Battery 
+
+
+
+~,Tto IIh sms mb H , 
+
+DSC Stability Control DSC5.7 
+
+
+'VtBmaBOt 
+
+
+
+
+a 
+
+DWA antitheft alarm system 
+
+
+-Batten/ history 
+
+
+
+
+i 
+
+SINE Siren and tilt sensor 
+
+
+-Rear lid 
+
+
+
+
+
+CON Controller 
+
+
+-Interior lights 
+
+
+
+
+
+, EGS transmission control 
+
+
+-Rear-window defroster 
+
+
+
+
+B 
+
+nilasatiKiae siret ntagrrtte 
+
+tJ 
+
+Time in charge range 10-20% 
+
+0 
+
+h 
+
+1 
+
+Time in charge range 20-30% 
+
+0 
+
+h 
+
+
+Time in charge range 30-40% 
+
+0 
+
+h 
+
+
+Time in charge range 40-50% 
+
+0 
+
+h 
+
+
+Time in charge range 50-60% 
+
+0 
+
+h 
+
+
+Time in charge range 60-70% 
+
+2 
+
+h 
+
+
+Time in charge range 70-80% 
+
+0 
+
+h 
+
+
+Time in charge range 80-90% 
+
+0 
+
+h 
+
+
+Time in charge range 90-100% 
+
+0 
+
+h 
+
+a 
+
+
+Notes: 
+
+
+28 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+• By selecting <Battery history>, 
+this will display by day (up to 9 
+days) in what “state of charge” 
+the battery is and was, accord¬ 
+ing to the Power Module’s cal¬ 
+culation. 
+
+
+In addition, the vehicle distance 
+(in km) is displayed that is applied 
+to the present battery. 
+
+
+When the battery is replaced, a 
+reset must be registered to start 
+this calculation as it applies to the 
+replacement battery. 
+
+
+&W8 SfegiMete ©SfflW 
+
+
+AMP Amplifier 
+AVT Antenna tuner 
+ARS Dynamic Drive 
+ASK Audio system controller 
+SMBF Seat module, passenger 
+BZM Control center, center conso 
+CAS Car Access System 
+CDC Audio CD Changer 
+x CIM Chassis Integration Modules 
+DSC Stability Control DSC5.7 
+DWA antitheft alarm system 
+SINE Siren and tilt sensor 
+CON Controller 
+EGS transmission control 
+
+
+Activate outputs, rear lid 
+Activate outputs, fuel-filler flap 
+Diagnosis requests 
+- Load/consumer priorities 
+-Power module 
+-Power module, output 
+-Reason for disconnecting batten/ 
+-Alternator 
+-Battery 
+Battery statistic 
+
+tWrnmrn _ 
+
+•Rear lid 
+
+•Interioi lights 
+
+Rear-window defroster 
+
+
+Kilometer reading 5 days ago 
+Kilometer reading 7 days ago 
+Kilometer reading 8 days ago 
+Kilometer reading 9 days ago 
+
+
+
+Charge state, 
+Charge state 
+Charge state 
+Charge state 
+Charge state 
+Charge state 
+Charge state 
+Charge state 
+Charge state 
+
+
+current 
+
+1 day ago 
+
+2 days ago 
+
+3 days ago 
+
+4 days ago 
+
+5 days ago 
+
+6 days ago 
+
+7 days ago 
+
+8 days ago 
+
+
+
+
+
+©aiMIMfe_ 
+
+Irtiffirifriiaa 
+
+
+
+AMP Amplifier 
+
+
+-Activate outputs, rear lid 
+
+
+[LsE6lkBiaawdtei«HS 
+
+. 
+
+2 
+
+AVT Antenna timer 
+
+
+-Activate outputs, fuel-filler flap 
+
+
+tenl fera-IHKJ*sa**i®ni0 
+
+
+ARS Dynamic Drive 
+
+
+Diagnosis requests 
+
+
+
+
+ASK Audio system controller 
+
+
+- Load/consumer priorities 
+
+
+
+
+
+SMBF Seat module, passenger 
+
+
+-Power module 
+
+
+
+mm ! 
+
+
+BZM Control center, center conso 
+
+
+-Power module, output 
+
+
+
+fatp 
+
+
+CAS Car Access System 
+
+
+-Reason for disconnecting batten/ 
+
+
+mm 
+
+wMee | 
+
+
+CDC Audio CD Changer 
+
+
+-Alternator 
+
+
+
+5 
+
+x CIM Chassis Integration Modules 
+
+
+-Battery 
+
+
+igkflSSD' KSEHlffi: 1 A* SEN 
+
+
+DSC Stability Control DSC5.7 
+
+
+-Battery statistic 
+
+
+Stem®! motar * Aw»» 
+
+
+DWA antitheft alarm system 
+
+
+
+
+ttasSir siita f. !®k 
+
+
+SINE Siren and tilt sensor 
+
+
+-Rear lid 
+
+
+KHanrcfer raidBaz i ism see 
+
+
+CON Controller 
+
+
+-Interior lights 
+
+
+ffflTffirefcp isulfcg g 
+
+
+EGS transmission control 
+
+
+-Rear-v/indow defroster 
+
+
+itemter majlhB B ffiae sees 
+
+U| 
+
+IXt*j*rits ami isatlte 
+
+
+Last battery change 
+
+1968 
+
+km 
+
+
+1 
+
+Second-from-last battery change 
+
+0 
+
+km 
+
+
+
+TNrd-from-last battery change 
+
+0 
+
+km 
+
+
+
+Fourth-from-last battery change 
+
+0 
+
+km 
+
+
+
+Fifth-from-last battery change 
+
+0 
+
+km 
+
+
+
+Sixth-from-last battery change 
+
+0 
+
+km 
+
+
+
+Seventh-from-last battery change 
+
+0 
+
+km 
+
+
+
+Kilometer reading, current 
+
+1968 
+
+km 
+
+
+
+Kilometer reading 1 day ago 
+
+524280 
+
+km 
+
+
+3 
+
+
+Battery Replacement Registration (Must be performed when a battery is replaced) 
+
+This Service Function informs the Power Module that the battery has been replaced. It 
+completes the following operations: 
+
+• Battery capacity is set to a value that is dependent on seasonal temperature. 
+
+• The current odometer reading is stored. 
+
+• Previously stored battery statistics (current, voltage, battery charge level) are deleted. 
+
+• Previously stored temperature statistics are deleted. 
+
+
+29 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+When the "Register battery replacement" is requested, the state of charge (SoC) of the bat¬ 
+tery is not set to 80%, but to a value that is dependent on the seasonal temperature. 
+
+The seasonal temperature is an averaged time based value (over the last few days) for the 
+battery SoC that is required for a successful starting procedure. 
+
+The battery SoC value is set 28% above the SoC calculated from the seasonal tempera¬ 
+ture. The following examples for the SoC after battery replacement are: 
+
+
+Seasonal Temperature SoC Value 
+
+-25 °C 98% 
+
+-10°C 68% 
+
+0 °C 66% 
+
+10 °C 63% 
+
+20 °C 61% 
+
+30 °C 58% 
+
+
+The SoC is maintained at these values until the ignition is switched “OFF” for > 2 hours. The 
+SoC is redetermined during the closed-circuit voltage measurement (conducted after 2 
+hours) and then calculated based on the battery current. 
+
+Note: Central Locking, door changes (open/closed) and interior light status changes must 
+not occur during this time because the timer will restart. 
+
+
+Procedure for Battery Replacement Registration 
+
+
+This procedure is found under: 
+
+Service Functions - Body - 
+Voltage and current monitoring. 
+
+• Select <Battery>, <Register 
+battery replacement and 
+<Test Plan>. 
+
+• Highlight the Test Module and 
+press the green <Arrow> to the 
+right. 
+
+
+- 
+
+i&Wii-LaiLB 
+
+
+StomSfliE *i(to^sn3aEoixsaliafla!I 
+
+mu - rcn n. 
+
+
+Complete vehicle 
+
+Component and signal information 
+Signal information 
+
+Service functions 
+
+Maintenance 
+
+Drive 
+
+Chassis 
+
+Body 
+
+Instrument cluster 
+
+Heatingrair-conditioning systeir 
+
+Wipe/wasti functions 
+
+Remote control/vehide key 
+Telecommunication 
+
+ISIS control modules 
+
+Headlight cleaning system 
+Auxiliary and independent hcatii 
+MOST network 
+
+- 
+
+
+Hit 
+
+_ 
+
+“ 
+
+
+hands’ SdStawratasnratf 
+
+'Ji 
+
+Activate sleep mode 
+
+
+jRegister battery replacement 
+
+
+30 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+
+The screen prompts you to 
+select: 
+
+1. Display battery replacement 
+(as described on page 29) 
+
+2. Register battery replacement 
+
+3. Terminate test module 
+
+
+Select #2. <Register battery 
+replacement:^ and press the 
+green <Arrow> to the right. 
+
+
+
+This screen prompts you to: 
+
+1. Enter battery replacement 
+
+2. Cancel 
+
+
+Note: The battery replacement 
+will be entered in the Power 
+Module in the next test step. 
+
+Warning! The entry cannot be 
+reversed. 
+
+
+
+Again, this Service Function informs the Power Module that the battery has been replaced 
+and completes the following operations: 
+
+• Battery capacity is set to a value that is dependent on seasonal temperature. 
+
+• The current odometer reading is stored. 
+
+• Previously stored battery statistics (current, voltage, battery charge level) are deleted. 
+
+• Previously stored temperature statistics are deleted. 
+
+
+31 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+
+Diagnostic Test Plans 
+
+Based on fault codes, additional 
+diagnostic Test Plans can be 
+found under: Complete Vehicle - 
+Body - Power Supply. 
+
+Test plans are available for: 
+
+
+1. Voltage/current monitoring 
+
+2. Battery 
+
+3. Alternator 
+
+
+mm Hgpsai 
+
+
+
+©■xaMfioiB 
+
+
+
+
+
+
+Complete vehicle 
+
+
+
+
+
+
+
+Ci 
+
+Drive 
+
+Chassis 
+
+Body 
+
+General vehicle electrical systen 
+
+
+
+Charge control 
+
+Load-side peak consumption rcdi 
+Electrical system disconnection 
+Electronic battery master sv/itch 
+
+
+
+
+
+
+
+
+Load deactivation, electronic fuse 
+
+
+
+
+
+Operation 
+
+Display and Information Functio 
+Audio, video, navigation (MOS1 
+Lights 
+
+Heating and air conditioning fun 
+Locking and security functions 
+Safety functions 
+
+Signal and warning functions 
+Seats 
+
+Wipe and wash functions 
+Telecommunication 
+
+Bus functions 
+
+Mirror 
+
+Auxiliary and independent heatii 
+Component and signal information 
+Signal information 
+
+Service functions 
+
+
+
+Battery condition 
+
+Closed-circuit current performanc 
+Battery 
+
+Alternator 
+
+
+
+
+m 
+
+I Voltage/currcnt monitoring 
+
+
+When you select <Voltage/current monitoring>, the Test modules (based on the status dis¬ 
+plays previously covered) available are: 
+
+Charge control - tests the Power Module’s management of battery charging. 
+
+Load-side peak consumption reduction - tests the Power Module’s commands and rea¬ 
+sons to activate the prioritized shutdown of electrical consumers. 
+
+Electrical system disconnection/Electronic battery master switch - tests the Power 
+Module’s commands and reasons to reduce power consumption and disconnect exces¬ 
+sive closed-circiut power consumers based on battery SoC and time. 
+
+Load deactivation, electronic fuse - tests the Power Module’s commands and reasons to 
+open the electronic master switch if a high short circuit current is detected. 
+
+Battery condition - tests the Power Module’s interpretation of the overall battery life. 
+
+Closed-circuit current performance - tests closed-circuit current draws with additional Help 
+Information (HI) documents showing examples of violations that prevent normal power 
+down protocols and procedures to diagnose closed-circuit current faults. 
+
+
+Notes: 
+
+
+32 
+
+Closed Ciroiut Current Monitoring 
+
+
+
+
+Review Questions 
+
+1. What information does the Power Module use to calculate the optimum charge voltage? 
+
+
+2. How would the driver of the vehicle know that the battery switch was in the “OFF” 
+position? 
+
+
+3. What must be performed to the Power Module after replacing a battery? 
+
+
+4. What operations are a result of question 3? 
+
+
+5. During a normal Shut Down Protocol, what consumers are shut off after 60 minutes? 
+
+
+6. What 2 “visuals” indicate to you that the vehicle is continuing to enter sleep mode after 
+the 16 minute period? 
+
+7. What should the final Closed-Circuit Current draw be on a “normal” vehicle? mA 
+
+8. What Bus circuit(s) are isolated when Fuse #15 is removed? 
+
+
+9. What fixed charge voltage would you expexct to measure if the Battery Temperature 
+
+Sensor was defective? V 
+
+10. What is Special Tool #90 88 6 612 310 used for and what does it provide? 
+
+
+33 
+
+Closed Circiut Current Monitoring 
+
+
+

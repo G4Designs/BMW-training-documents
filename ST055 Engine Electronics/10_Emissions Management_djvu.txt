@@ -1,0 +1,7750 @@
+Table of Contents 
+
+
+Emissions Management 
+
+Subject Page 
+
+Introduction .5 
+
+OBD History.5 
+
+OBD I.6 
+
+OBD II .6 
+
+Objectives of OBD II.6 
+
+Emissions Overview .7 
+
+Purpose of the System.7 
+
+What is OBD? .7 
+
+What happens if a problem is detected?.7 
+
+What is the most common problem detected by OBD? .8 
+
+Fuel Filler Cap.8 
+
+Misfire Detection.8 
+
+Engine Misfire Diagnosis .9 
+
+Ignition System.9 
+
+Engine Mechanical Systems.10 
+
+Fuel Quality, Delivery, Injection & EVAPORATIVE Systems .10 
+
+Implausible ECM Control Function or Sensor Input Signals .11 
+
+Misfire Detection.12 
+
+Overview of the National Low Emission Vehicle Program.13 
+
+Emission Reduction Stages .13 
+
+BMW SULEV & PZEV Engines .14 
+
+BMW M56 Engine.14 
+
+BMW N51 Engine .15 
+
+Catalytic Converters.16 
+
+Oxygen Sensors.16 
+
+Fuel Pump System .16 
+
+Fuel Injectors.16 
+
+Secondary Air System .16 
+
+Fuel System .17 
+
+Cooling System .17 
+
+
+Initial Print Date: 03/11 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Monitoring .18 
+
+Permanent Monitoring.18 
+
+Cyclic Monitoring .18 
+
+Drive Cycle.19 
+
+Readiness Code.22 
+
+Readiness Code using the ISTA .22 
+
+OBD II Diagnostic Trouble Codes (DTC).23 
+
+BMW Fault Code .24 
+
+OBD II Fault Memory and Fault Codes.24 
+
+Emission Control Function Monitoring & Comprehensive 
+
+Component Monitoring.25 
+
+OBD II System Information on TIS .26 
+
+Scan Tool Connection .27 
+
+16 Pin Diagnostic Socket .28 
+
+BoardNet 2020 .29 
+
+Emission Management.30 
+
+Malfunction Indicator Light (MIL) .30 
+
+Evaporative Emissions.32 
+
+Exhaust Emissions .32 
+
+Adaptation Values.33 
+
+Oxygen Sensors .34 
+
+Oxygen sensor before catalytic converter.34 
+
+Bosch LSH25 Oxygen Sensor .34 
+
+Bosch LSU Planar Wideband Oxygen Sensor.36 
+
+Bosch LSU ADV (Planar Wideband).37 
+
+Oxygen Sensor after Catalytic Converter .37 
+
+Oxygen Sensor Signals.38 
+
+Direct Oxygen Sensor Heating .39 
+
+Testing the Oxygen Sensor .40 
+
+Catalytic Converter Monitoring.41 
+
+On-Board Refueling Vapor Recovery (ORVR) E9x Vehicles.44 
+
+Ventilation During Engine Operation .45 
+
+Evaporative Leakage Detection (DM-TL).46 
+
+Test Results .48 
+
+Principle of Operation .50 
+
+PHASE 1 - Reference Measurement.50 
+
+PHASE 2 - Leak Detection .51 
+
+Evaporative Emission Purging.52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Carbon Canister.53 
+
+Evaporative Emission Valve.53 
+
+Secondary Air Injection .54 
+
+Secondary Air Injection Monitoring .55 
+
+Secondary Air System.55 
+
+Secondary air pump.55 
+
+Secondary air valve .56 
+
+On-board diagnosis of secondary air system.56 
+
+Misfire Detection.57 
+
+Emission Increase .57 
+
+Catalyst Damage .57 
+
+Ambient Barometric Pressure.58 
+
+Crankcase Ventilation.59 
+
+Crankcase Ventilation (N51 and N52KP) .60 
+
+Crankcase Ventilation (N54).61 
+
+Crankcase Ventilation System Overview (N55) .63 
+
+Naturally Aspirated Mode (N55) .63 
+
+Boost Mode (N55).63 
+
+Crankcase Ventilation System Overview (N54) .69 
+
+Naturally Aspirated Mode (N54) .69 
+
+Boost Mode (N54).69 
+
+Crankcase Ventilation Heating .74 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Management 
+
+Model: All Equipped with OBD II 
+Production: 1995 to Present 
+
+Manufacturer: Bosch and Siemens Engine Control Modules 
+
+
+
+After completion of this module you will be able to: 
+
+• Describe what is required to illuminate the Malfunction Indicator Lamp 
+
+• Access readiness codes using the ISID 
+
+• Understand how a oxygen sensor operates 
+
+• Understand how the DM-TL system operates 
+
+• Test a DM-TL system using a smoke tester 
+
+• Understand how misfire monitoring takes place 
+
+
+4 
+
+Emissions Management 
+
+
+
+
+
+Introduction 
+
+
+OBD History 
+
+As a result of low fuel costs, together with a high standard of living and a dense popula¬ 
+tion, the state of California was affected particularly heavily by air pollution. This spurred 
+the state to pass the most comprehensive and stringent emissions and consumption 
+laws in the world. The automobile manufacturers were reminded of their obligations and 
+this drove them on to comply with the new regulations at enormous expense. 
+
+
+• In continuing efforts to improve air quality, the Environmental Protection Agency 
+(EPA) amended the Clean Air Act in 1990. The Clean Air Act was originally mandat¬ 
+ed in 1970. The Clean Air Act has a direct impact on automobile manufactures 
+whereby they are responsible to comply with the regulations set forth by the EPA. 
+The 1990 amendment of the Clean Air Act set forth all of the changes currently 
+being introduced on vehicles sold in the United States today. 
+
+• In 1967, the State of California formed the California Air Resources Board (CARB) 
+to develop and carryout air quality improvement programs for California’s unique air 
+pollution conditions. Through the years, CARB programs have evolved into what we 
+now know as ON Board Diagnostics and the National Low Emission Vehicle 
+Program. 
+
+• The EPA has adopted many of the CARB programs as National programs and laws. 
+One of these earlier programs was OBD I and the introduction of the “Check 
+Engine” Light. 
+
+• BMW first introduced OBD I and the check engine light in the 1987 model year. 
+This enhanced diagnosis through the display of “flash codes” using the check 
+engine light as well as the BMW 2013 and GT-1. OBD I was only the first step in an 
+ongoing effort to monitor and reduce tailpipe emissions. 
+
+• By the 1989 model year all automotive manufactures had to assure that all individ¬ 
+ual components influencing the composition of exhaust emissions would be electri¬ 
+cally monitored and that the driver be informed whenever such a component failed. 
+
+• Since the 1996 model year all vehicles must comply with OBD II requirements. 
+
+OBD II requires the monitoring of virtually every component that can affect the 
+emission performance of a vehicle plus store the associated fault code and condi¬ 
+tion in memory. 
+
+If a problem is detected and then re-detected during a later drive cycle more than 
+one time, the OBD II system must also illuminate the “Check Engine” Light in the 
+instrument cluster to alert the driver that a malfunction has occurred. However, 
+the flash code function of the Check Engine Light in OBD I vehicles is not 
+a function in OBD II vehicles. 
+
+
+5 
+
+Emissions Management 
+
+
+
+
+• This requirement is carried out by the Engine Control Module (ECM/DME) as well 
+as the Automatic Transmission Control Module (EGS/AGS) and the Electronic 
+Throttle Control Module (EML) to monitor and store faults associated with all com¬ 
+ponents/systems that can influence exhaust and evaporative emissions. 
+
+OBD I 
+
+The essential elements here are that electrical components which affect exhaust emis¬ 
+sions are monitored by the motor-electronics system and an optical warning signal 
+(CHECK ENGINE Light) is issued in the event of an OBD l-relevant malfunction. The cor¬ 
+responding fault can be read out via a flashing code without the aid of a testing device. 
+
+
+OBD II 
+
+Since January 1996, OBD II has been compulsory on all vehicles in the US market. The 
+main difference from OBD I is that not only are the purely electrical components moni¬ 
+tored but also all the systems and processes that affect exhaust emissions and fuel sys¬ 
+tem evaporative emissions. 
+
+
+The operational reliability of the exhaust-treatment system must be guaranteed for 5 
+years and/or 100,000 miles; this is maintained by emission certification. In this case, the 
+data relevant to exhaust/evaporative emissions are read out via a standardized interface 
+with a universal "diagnosis device". If a violation is identified, the vehicle manufacturer in 
+question is legally bound to eliminate the fault throughout the entire vehicle series. 
+
+
+Objectives of OBD II 
+
+• Permanent monitoring of components relevant to exhaust emissions in all vehicles. 
+
+• Immediate detection and indication of significant emission increases over the entire 
+service life of each vehicle. 
+
+• Permanently low exhaust emissions in the field. 
+
+
+
+6 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Overview 
+
+
+Purpose of the System 
+
+What is OBD? 
+
+Today many of the engine’s control systems such as throttle opening, fuel injection, 
+ignition, emissions and performance are controlled by an electronic control module and 
+the related sensors and actuators. The first on-board diagnostic (OBD) systems were 
+developed by the manufacturer as a way to detect problems with the electronic sys¬ 
+tems. 
+
+Beginning with 1994 model year, requirements for OBD systems have been established 
+by the EPA and CARB. The purpose of the OBD system is to assure proper emission 
+control system operation for the vehicle’s lifetime by monitoring emission-related com¬ 
+ponents and systems for deterioration and malfunction. This includes also a check of 
+the tank ventilation system for vapor leaks. 
+
+The OBD system consists of the engine and transmission control modules, their sen¬ 
+sors and actuators along with the diagnostic software. The control modules can detect 
+system problems even before the driver notices a driveability problem because many 
+problems that affect emissions can be electrical or even chemical in nature. 
+
+What happens if a problem is detected? 
+
+When the OBD system determines that a 
+problem exists, a corresponding “Diagnostic 
+Trouble Code” is stored in the control mod¬ 
+ule’s memory. 
+
+The control module also illuminates a yellow 
+dashboard Malfunction Indicator Light indicat¬ 
+ing “Check Engine” or “Service Engine Soon” 
+or displays an engine symbol. 
+
+This light informs the driver of the need for 
+service, NOT of the need to stop the vehicle. 
+
+A blinking or flashing dashboard light indicates 
+a rather severe level of engine misfire. 
+
+After fixing the problem the Fault code is deleted to turn off the light. If the conditions 
+that caused a problem are no longer present the vehicle’s OBD system can turn off the 
+dashboard light automatically. If the OBD system evaluates the component or system 
+three consecutive times and no longer detects the initial problem, the dashboard light 
+will turn off automatically. 
+
+
+Have you seen this light? 
+
+
+
+A short introduction to OBD 
+
+
+7 
+
+Emissions Management 
+
+
+
+
+
+What is the most common problem detected by OBD? 
+
+Fuel Filler Cap 
+
+If the fuel filler cap is not properly closed after refueling, the OBD system will detect the 
+vapor leak that exists from the cap not being completely tightened. 
+
+If you tighten the cap subsequently, the dashboard light should be extinguished within a 
+few days or after deleting the Fault code. This is not an indication of a faulty OBD sys¬ 
+tem. The OBD system has properly diagnosed the problem and accordingly alerted the 
+driver by illuminating the dashboard light. 
+
+Please check the fuel filler cap first when the dashboard light comes on to avoid unnec¬ 
+essary diagnostic time. To check the fuel filler cap turn the cap to the right until you hear 
+a click or the cap reaches the full stop. Make sure that the retaining strap is not caught 
+between the filler pipe and the fuel filler cap. If the light should stay on further in depth 
+evaporative leak diagnosis is required. 
+
+Misfire Detection 
+
+As part of the CARB/OBD II regulations the Engine Control Module must determine if 
+misfire is occurring and also identify the specific cylinder(s). The ECM will determine 
+severity of the misfire event, and whether it is emissions relevant or catalyst damaging 
+(more information is available in the Emission Management section). In order to accom¬ 
+plish these tasks the ECM monitors the crankshaft for acceleration losses during firing 
+segments of cylinder specific firing order. If the signal is implausible an erroneous refer¬ 
+ence mark can be obtained by the ECM which will result in a misfire fault being set. 
+
+Possible causes of cylinder misfire faults (actual field findings): 
+
+• Vehicle ran low or out of fuel 
+
+• Poor fuel quality (ex. water in fuel, customer uses an additive, etc.) 
+
+• Low/high fuel pressure 
+
+• Ignition coil 
+
+• Fouled spark plug(s) 
+
+• Restricted / contaminated fuel injector(s) 
+
+• Crankshaft position sensor 
+
+• Poor combustion due to low compression or high leakage 
+
+• Blocked/restricted Catalyst 
+
+
+8 
+
+Emissions Management 
+
+
+
+
+Engine Misfire Diagnosis 
+
+
+Engine Misfire is the result of inefficient combustion in one or more cylinders. The caus¬ 
+es of Engine Misfire are extensive but can be grouped into the following sub-systems. 
+Consider the charts below as an additional diagnostic aid once ISTA is connected, the 
+correct fault symptom has been chosen and the fault memory has been interrogated. 
+Follow the Test Module as displayed by ISTA. 
+
+
+IGNITION SYSTEM 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+
+Spark Plug: • Incorrect spark plug installed 
+
+• Electrode gap closed or too small 
+
+• Electrode(s) missing 
+
+• Oil or fuel fouled spark plug 
+
+• Ceramic insulation cracked 
+
+
+Secondary • Verify correct spark plug 
+
+Ignition • Replace if necessary 
+
+• Swap with another cylinder 
+
+
+Secondary • Wet or moist due to water infiltration, 
+circuit: (wiring,* High resistance due to corrosion. 
+
+M73-cap, rotor) 
+
+
+• Check water ingress, repair, replace 
+
+• Check resistance value, replace 
+
+
+Ignition 
+
+Coil(s): 
+
+
+• Secondary/Primary Circuits open or shorted. Secondary 
+
+• Housing cracked, damaged. and Primary 
+
+
+• Inspect and replace if necessary 
+
+• Swap with another cylinder 
+
+
+Ignition Coil 
+& Engine 
+Harness 
+Connectors 
+
+
+• Power supply, Primary control and Primary • Look for open, loose connector, 
+
+ground (shunt signal) circuits impaired. Ignition & corrosion, crossed or backed out 
+
+Term 4A feed- pins (also consider ignition unloader or 
+back Preset ECM relay on MY97 and newer cars). 
+Measurements • Determine defective condition, 
+
+repair or replace. 
+
+
+• A secondary ignition oscilloscope display provides vital 
+information about the ignition system’s condition. 
+
+• Follow the precautions in group 12 of the Repair Instructions. 
+
+• Use the following scope patterns as a guideline for ignition 
+system diagnosis. 
+
+
+F+ f i' V J* I - ■ 
+IrrM 
+
+
+
+
+V: W. a: 
+
+
+
+
+■ Iff- i «ih 
+
+VI »»*?■ ^ >* • 1 Hh| I w kjii ■.■»■■■« 
+
+9 w>ch mmh, bi-hv^i r*d iwfc-r-a »«--** kiwq 
+
+LK/rtV HI H'JVFf FK 'IlHfFK WnnHI b-Tv 
+
+L".■V-L-V 1 -n F-i L-.r.r-Fa O.u.% IFA Ji,. 
+
+Hr —r >>r 1 BOTTOMS IMM friWI 
+:jarv vaunmn ira twi 
+
+l-ii,4 — 1 - T ■ ■ Y T - - -1 — L - tm — taH k, j -nkJ 
+
+"bi ij. I id f Ai ud rid -BB La uju^Mia f waJ u isufii 
+
+■ A- unt^wTihniurn^ k i I hi! cl-rr^A I i-bbj idb- 
+
+’M m ■ iB ^ ir. rflhr iwt 
+
+
+k l FH5-11 wv?. 
+
+
+
+
+Evaluation of secondary signal amplitude at idle speed. 
+
+1. Normal Ignition Voltage Peak: Spark Plug is OK 
+
+2. Low Ignition Voltage Peak: Gap too small (defective) 
+
+3. High Ignition voltage peak: Gap too large (defective) 
+
+
+0 
+
+0 
+
+© 
+
+© 
+
+
+
+© 
+
+
+
+NORMAL 
+COMBUSTION 
+PERIOD 
+
+
+
+ONG COMBUSTION 
+- PERIOD (SMALL GAP) 
+
+■‘Him m in*/L 
+
+
+
+
+I HORT COMBUSTION 
+PERIOD (LARGE GAP) 
+
+
+
+9 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENGINE MECHANICAL SYSTEMS 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+
+Pistons, 
+
+• Hole in piston crown, ring(s) broken, 
+
+• Idle Quality - Rough Run- • 
+
+Correct condition as 
+
+Rings, 
+
+valve(s) not seating, valve(s) bent, 
+
+ning Preset. 
+
+required. 
+
+Valves, 
+
+valve spring(s) broken, camshaft lobe 
+
+• Cylinder compression & 
+
+
+Camshaft: 
+
+cracked, etc. 
+
+leakdown tests. 
+
+
+Hydraulic 
+
+• HVA oil bore restricted or blocked. 
+
+• Idle Quality - Rough Run- • 
+
+Always consider 
+
+Valve 
+
+• Engine oil pressure builds up too slow. 
+
+ning Preset. 
+
+mechanical com- 
+
+Actuator 
+
+* Intermittent Misfire Fault - Not 
+
+• Listen to HVA 
+
+ponents when 
+
+(HVA): 
+
+Currently Present. 
+
+• Check Oil Pressure 
+
+diagnosing misfire. 
+
+
+• HVA binding/sticking in bore. 
+
+• Cylinder leakdown • 
+
+Inspect for scoring. 
+
+Vacuum 
+
+• Unmetered vacuum leaks causing a 
+
+• Idle Quality - Rough Run- • 
+
+Correct condition as 
+
+Leaks: 
+
+“lean” operating condition. Possible 
+
+ning Preset. Test for vacuum 
+
+required. 
+
+
+“Excessive Mixture Deviation” 
+
+leaks per Repair Instr. and SIB 
+
+
+
+fault codes. 
+
+on “Crankcase Ventilation”. 
+
+■ 
+
+
+• Interpret Add. & Multiple adaptation values 
+
+
+FUEL QUALITY, DELIVERY, INJECTION & EVAPORATIVE SYSTEMS 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+Fuel (quality): • Contaminated fuel. • Clean fuel system, replace fuel. 
+
+(water, other non combustible). 
+
+
+Fuel Delivery: • Fuel pump delivery pressure low, 
+
+restriction in fuel line to fuel rail or 
+running loss valve. 
+
+• Fuel filter restricted (clogged). 
+
+• Low fuel in tank. 
+
+
+• Check fuel 
+pressure & 
+volume. 
+
+• Check fuel 
+pump power 
+and ground 
+
+
+• Determine restriction/flow reduction, 
+replace component as necessary. 
+
+• Interpret Additive and Multiplicative 
+adaptation values. 
+
+
+Running Loss • Valve stuck in “small circuit” position. 
+
+Valve: 
+
+
+• Check valve • Display “diagnosis requests” in ISTA 
+
+and test valve for proper function, repl¬ 
+ace valve as necessary. 
+
+
+Fuel Injectors: 
+
+
+Leaking fuel injector pintle seats cause 
+rich engine starts with hot ambient 
+temperatures. 
+
+Blocked (dirty) injector(s). 
+
+
+• Ti Preset & • Check injectors for leakage, 
+
+status page. • Swap suspect injector with another 
+
+• Sec Ign scope cylinder, 
+pattern. 
+
+• Inspect injector, replace if necessary. 
+
+
+Fuel Pressure • Regulator defective, causes fluctuation 
+Regulator: in the injected quantity of fuel causing 
+
+mixture adaptation faults. 
+
+
+• Fuel pressure • Check nominal fuel pressure value with 
+
+engine operating under varied speeds. 
+
+
+Evaporative • Defective evaporative system vent 
+System: causing fuel tank collapse and fuel. 
+
+starvation. 
+
+
+• ISTA status, 
+Evap test 
+with press¬ 
+ure tool, 
+purge valve 
+func. test. 
+
+
+• Check the fuel tank condition and vent 
+line. 
+
+• Check Fresh Air Valve on TLEV E36 
+vehicles or LDP/ DM-TL and filter on 
+ORVR vehicles for proper system 
+“breathing”. 
+
+
+10 
+
+Emissions Management 
+
+
+
+
+
+
+
+IMPLAUSIBLE ECM CONTROL FUNCTION OR 
+
+SENSOR INPUT SIGNALS 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+
+Crankshaft 
+Position 
+Sensor or 
+Increment 
+Wheel: 
+
+
+• Implausible signal for misfire detection. • ISTA preset 
+
+• Increment wheel loose or damaged measurement, 
+(internal on M44, M52 and M54, 
+
+external on M62 & M73). 
+
+• Air gap between sensor and wheel. 
+
+• Noticeable at higher rpm. 
+
+
+• Determine defective sensor or 
+increment wheel and replace. 
+
+
+Catalyst • Excessive exhaust back pressure 
+Damaged: (bank specific fault present, more 
+
+noticeable under heavy load and 
+high rpm). 
+
+
+• ISTA preset • Determine catalyst condition, replace 
+measurement or repair as necessary. 
+
+of oxygen 
+sensor. 
+
+• Back pressure test per SIB with Special Tool. 
+
+
+Oxygen • Excessive mixture deviation, 
+
+Sensor: possible vacuum leaks. 
+
+
+• Monitor 
+oxygen 
+sensor 
+signal via 
+ISTA/IMIB. 
+
+
+• Swap sensor from other bank (if app¬ 
+licable) and see if fault transfers to 
+other bank. 
+
+
+Engine • Internal control module fault. 
+
+Control 
+
+Module • Misfire Reprogramming. 
+
+
+• Check fault • Highly unlikely but must be considered, 
+memory. 
+
+• Refer to SIB • Check Model/Prod range - reprogram 
+
+
+When diagnosing a Misfire fault code, Remember: 
+
+“Misfire” is caused by a defect in the internal combustion engine or a defect in 
+the control of the engine operation. 
+
+“Misfire” is the result of improper combustion (variation between cylinders) as 
+measured at the crankshaft due to: 
+
+- Engine mechanical defects; breakage, wear, leakage or improper tolerances. 
+
+- Excessive mixture deviation; air (vacuum leaks), fuel and all the components that deliver 
+air/fuel into the combustion chambers. 
+
+- Faulty ignition; primary, secondary including spark plugs. 
+
+- Faulty exhaust flow; affecting back pressure. 
+
+- Tolerance parameters; ECM programming. 
+
+A Misfire fault code(s) is the “symptom” of a faulty input for proper combustion. 
+When diagnosing a misfire, review the charts to assist you in finding the faulty 
+input. 
+
+
+11 
+
+Emissions Management 
+
+
+
+
+
+
+
+Misfire Detection 
+
+
+As part of the OBD II regulations 
+the ECM must determine misfire 
+and also identify the specific cylin¬ 
+ders), the severity of the misfire 
+and whether it is emissions rele¬ 
+vant or catalyst damaging based 
+on monitoring crankshaft acceler¬ 
+ation. 
+
+In order to accomplish these tasks 
+the ECM monitors the crankshaft 
+for acceleration by the impulse 
+wheel segments of cylinder spe¬ 
+cific firing order. The 
+misfire/engine roughness calcula¬ 
+tion is derived from the differ¬ 
+ences in the period duration of 
+individual increment gear seg¬ 
+ments. 
+
+Each segment period consist of 
+an angular range of 90° crank 
+angle that starts 54° before Top 
+Dead Center. 
+
+
+
+
+SMOOTH RUNNING ENGINE ENGINE MISFIRE DETECTED 
+
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+
+If the expected period duration is greater than the permissible value a misfire fault for the 
+particular cylinder is stored in the fault memory of the ECM. 
+
+Depending on the level of misfire rate measured the ECM will illuminate the "Malfunction 
+Indicator Light”, deactivate the specific fuel injector to the particular cylinder and switch 
+oxygen sensor control to open-loop. 
+
+
+In order to eliminate misfire faults that can occur as a result of varying flywheel toler¬ 
+ances (manufacturing process) an internal adaptation of the flywheel is made. The adap¬ 
+tation is made during periods of decel fuel cut-off in order to avoid any rotational irregu¬ 
+larities which the engine can cause during combustion. This adaptation is used to cor¬ 
+rect segment duration periods prior to evaluation for a misfire event. 
+
+
+If the sensor wheel adaptation has not been completed the misfire thresholds are limited 
+to engine speed dependent values only and misfire detection is less sensitive. The 
+crankshaft sensor adaptation is stored internally and is not displayed via ISTA. If the 
+adaptation limit is exceeded a fault will be set. 
+
+
+12 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview of the National Low Emission Vehicle Program 
+
+
+Emission Reduction Stages 
+
+While OBDII has the function of monitoring for emission related faults and alerting the 
+operator of the vehicle, the National Low Emission Vehicle Program reguires a certain 
+number of vehicles produced (specific to manufacturing totals) currently comply with the 
+following emission stages; 
+
+
+TLEV: Transitional Low Emission Vehicle 
+
+LEV: Low Emission Vehicle 
+
+ULEV: Ultra Low Emission Vehicle. 
+
+SULEV Super Ultra Low Emission Vehicle 
+
+
+Prior to the National Low Emission Vehicle Program, the most stringent exhaust reduc¬ 
+tion compliancy is what is known internally within BMW as HC II. The benefit of exhaust 
+emission reductions that the National Low Emission Vehicle Program provides com¬ 
+pared with the HC II standard is as follows; 
+
+
+TLEV: 
+
+50% cleaner 
+
+LEV: 
+
+70% cleaner 
+
+ULEV: 
+
+84% cleaner 
+
+SULEV 
+
+90% cleaner 
+
+
+Grams/Mile @ 50° F - 
+
+Cold Engine Startup 
+
+Compliance 
+
+Level 
+
+NMHC 
+
+Non-Methane 
+
+Hydrocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.250 
+
+3.4 
+
+0.4 
+
+LEV 
+
+0.131 
+
+3.4 
+
+0.2 
+
+ULEV 
+
+0.040 
+
+1.7 
+
+0.2 
+
+
+Grams/Mile @ 50,000 miles 
+
+Compliance 
+
+Level 
+
+NMHC 
+
+Non-Methane 
+
+Hydrocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.125 
+
+3.4 
+
+0.4 
+
+LEV 
+
+0.075 
+
+3.4 
+
+0.2 
+
+ULEV 
+
+0.040 
+
+1.7 
+
+0.2 
+
+
+Grams/Mile @ 100,000 miles 
+
+Compliance 
+
+Level 
+
+NMHC 
+
+Non-Methane 
+
+Hydrocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.156 
+
+4.2 
+
+0.6 
+
+LEV 
+
+0.090 
+
+4.2 
+
+0.3 
+
+ULEV 
+
+0.055 
+
+2.1 
+
+0.3 
+
+
+13 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PZEV regulations include: 
+
+• Vehicles must meet SULEV tailpipe emissions standard (approx. 1/5 of ULEV stan¬ 
+dards) 
+
+• Vehicles conform to Zero Evaporative Emissions 
+
+• Vehicles subject to extended OBD regulations. 
+
+• Emission relevant components warrantied for 15 years or 150,000 miles 
+
+BMW SULEV & PZEV Engines 
+
+BMW M56 Engine 
+
+The following components are used to achieve SULEV (Super Ultra Low Emission 
+Vehicle) and ZEV Zero Evaporative Emission requirements: 
+
+• Pistons - Revised to change spark travel path 
+
+• Catalytic Converters - Ceramic carriers with high cell density for better 
+“Warm Up” Control 
+
+• Oxygen Sensors - Planar wide band O 2 sensors in front of the cats 
+
+• Vanos - Positioning changed during start up for improved start up and emissions 
+
+• Fuel Pump Control - Revised with raised pressure and more accurate flow control 
+
+• Fuel Injectors - New design for improved fuel flow and higher working pressure 
+
+• Fuel System - All metal fuel system components made of stainless steel 
+
+• Air Intake System - Revised to block HC escape 
+
+• Crankcase Ventilation - Revised 
+
+• Secondary Air System - Mass air flow 
+sensor to monitor secondary air flow 
+
+• Cooling System - Revised to reduce 
+Ozone levels 
+
+
+
+14 
+
+Emissions Management 
+
+
+
+
+
+BMW N51 Engine 
+
+In order to comply with SULEV requirements, the N51 is another variant of the N52 
+engine. There are various measures to meet the EPA/CARB standards, some of which 
+are familiar from the previous SULEV (M56) engine. 
+
+Some of the SULEV measures for the N51 include: 
+
+• Near engine catalyst with additional underbody catalyst 
+
+• Secondary air system 
+
+• Optimized combustion chamber geometry in cylinder head 
+
+• Modified piston crown for lower compression 
+
+• Plastic valve cover with integrated crankcase vent valve 
+and separator (from N52KP) 
+
+• Stainless steel fuel lines with threaded connections 
+
+• Radiator with “Prem-air” coating 
+
+• Throttle system - EGAS08 carried over from N52KP 
+
+• Airbox with Activated carbon filter for EVAP control 
+
+• Purge system pipes are made from “optimized” plastic 
+
+
+
+15 
+
+Emissions Management 
+
+
+
+
+Catalytic Converters 
+
+The catalysts attached in direct proximity to the engine and are equipped with ceramic(s) 
+carriers in high cell density technology. These converters reach operating temperature 
+faster and offer quicker control of exhaust emissions. Vehicles are also equipped with 
+dual downstream converters. 
+
+Oxygen Sensors 
+
+The M56 engine use for Oxygen sensors, two planar broadband sensors upstream of 
+the converter and two sensors downstream. 
+
+The planar broadband sensor reach operating temperature very fast and are able to 
+effect fuel mixtures in approximately 5 seconds. 
+
+Fuel Pump System 
+
+Fuel system operating pressure is increased to 5 Bar. 
+
+The fuel pump is controlled by the Fuel pump control unit, based on engine demand as 
+received from the DME over the Lo-CAN. The fuel pump control unit additionally 
+receives information over the K-Bus, specifically crash information from the MRS. 
+
+Fuel Injectors 
+
+Nozzle diameter of the fuel injectors has been reduced 
+and the installation angle has been changed. The injec¬ 
+tors were also adapted to perform at the higher system 
+operating pressure. 
+
+Injectors screw into the rail and a tap to test pressure 
+readings is NOT provided. 
+
+Secondary Air System 
+
+The secondary air pump has been 
+revised to improve its response time in 
+cold weather starting situations. 
+
+A HFM (Hot Film Air Mass Meter) has 
+been added to the secondary air system 
+to monitor air volume pumped into the 
+exhaust for more accurate control of the 
+NOx emissions. 
+
+
+
+
+16 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+Fuel System 
+
+In order to meet the Zero Evaporative Emission requirement, the fuel system was 
+completely revised. The fuel tank, tank filler neck, charcoal canister, fuel rail and tank 
+ventilation valve are all made of stainless steel. 
+
+When perform repairs on the fuel system, it is imperative that all fitting remain clean and 
+that the proper tightening torques are observed. 
+
+The fuel tank is manufactured of high grade steel and completely coated to meet the 
+requirements of a minimum durability of 15 years. 
+
+The fuel tank can be exchanged only as a complete unit. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Syphon Jet 
+
+2 
+
+Roll over valve 
+
+3 
+
+Fuel Filter 
+
+4 
+
+Electric fuel pump 
+
+5 
+
+Liquid Vapor Separator 
+
+
+Cooling System 
+
+The radiator of SULEV looks similar to the standard radiator. 
+
+The surface of the cooling fins are coated with a special 
+“PremAir” coating. 
+
+The coating consists of multiple porous layers of a catalytic 
+surface. The task of the catalyst coating is to convert Ozone 
+into Oxygen. 
+
+
+
+17 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Monitoring 
+
+
+Within the framework of OBD II, certain components/systems must be monitored once 
+per driving cycle while other control systems (e.g. misfire detection) must be monitored 
+permanently. A "driving cycle" consists of engine startup, vehicle operation (exceeding 
+of starting speed), coasting and engine stopping. 
+
+Permanent Monitoring 
+
+Permanently monitored systems are monitored according to temperature immediately 
+after startup. In the event of malfunctions (e.g. oxygen sensor), the Malfunction Indicator 
+Light will illuminate immediately. 
+
+The following are monitored permanently: 
+
+• Misfire Detection 
+
+• Fuel System (duration of injection) 
+
+• All emission related electrical circuits, components 
+and systems of the ECM, TCM and EML (if equipped). 
+
+Cyclic Monitoring 
+
+Systems monitored once per driving cycle will only result in a fault being registered after 
+the corresponding operating conditions have been completed. Therefore, there is no 
+possibility for checking when the engine is started up briefly and then shut down. 
+
+The following are monitored once per driving cycle: 
+
+• Oxygen Sensor Function 
+
+• Secondary Air Injection System 
+
+• Catalytic Converter Function (efficiency) 
+
+• Evaporative Vapor Recovery System 
+
+Due to the complexity involved in meeting the test criteria within the defined driving 
+cycle, all tests may not be completed within one "customer driving cycle". The test can 
+be successfully completed within the defined criteria, however customer driving styles 
+may differ and therefore may not always monitor all involved components/systems in 
+one "trip". 
+
+
+18 
+
+Emissions Management 
+
+
+
+
+Drive Cycle 
+
+The following diagram shows how a drive cycle is set (test drive) in order for all the sys¬ 
+tems to be monitored once. The test conditions can be created in any desired order 
+after startup. 
+
+
+Vehicle 
+
+Speed 
+
+
+
+Example of a Drive Cycle for Completing all OBD II Relevant Checks: 
+
+1. Engine cold start, idling, approximately 3 minutes. Evaluated: 
+
+• Secondary Air System 
+
+• Evaporative Leak Detection (LDP Equipped Vehicles) 
+
+2. Constant driving at 20 to 30 MPH, approximately 4 minutes. Evaluated: 
+
+• Oxygen Sensors - Achieved “Closed Loop” Operation 
+
+• Oxygen Sensors - Response Time and Switching Time (Control Frequency) 
+
+3. Constant driving at 40 to 60 MPH, approximately 15 minutes (sufficient vehicle coast¬ 
+ing phases included). Evaluated: 
+
+• Catalytic Converter Efficiency 
+
+• Oxygen Sensors - Response Time and Switching Time (Control Frequency) 
+
+4. Engine idling, approximately 5 minutes. Evaluated: 
+
+• Tank-Leak Diagnosis ( DM-TL Equipped Vehicles after KL 15 is switched OFF) 
+
+The diagnostic sequence illustrated above will be interrupted if: 
+
+? \ * The engine speed exceeds 3000 RPM 
+
+— • Large fluctuations in the accelerator pedal position. 
+
+• The driving speed exceeds 60 MPH 
+
+
+19 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+The “Malfunction Indicator Light” (MIL) will be 
+illuminated under the following conditions: 
+
+• Upon the completion of the next con¬ 
+secutive driving cycle where the previ¬ 
+ously faulted system is monitored again 
+and the emissions relevant fault is again 
+present. 
+
+• Immediately if a “Catalyst Damaging” 
+fault occurs (Misfire Detection). 
+
+
+Monitored 
+
+Components 
+
+
+
+Malfunction 
+
+Indicator 
+
+Light 
+
+
+
+The illumination of the light is performed in accordance with the Federal Test Procedure 
+(FTP) which requires the lamp to be illuminated when: 
+
+
+• A malfunction of a component that can affect the emission performance of the 
+vehicle occurs and causes emissions to exceed 1.5 times the standards required 
+by the (FTP). 
+
+• Manufacturer-defined specifications are exceeded. 
+
+• An implausible input signal is generated. 
+
+• Catalyst deterioration causes HC-emissions to exceed a limit equivalent to 
+1.5 times the standard (FTP). 
+
+• Misfire faults occur. 
+
+• A leak is detected in the evaporative system, or “purging” is defective. 
+
+• ECM fails to enter closed-loop oxygen sensor control operation within a specified 
+time interval. 
+
+• Engine control or automatic transmission control enters a "limp home" operating 
+mode. 
+
+• Ignition is on (KL15) position before cranking = Bulb Check Function. 
+
+
+Within the BMW system the illumination of the Malfunction Indicator Light is performed 
+in accordance with the regulations set forth in CARB mail-out 1968.1 and as demon¬ 
+strated via the Federal Test Procedure (FTP). The following page provides several exam¬ 
+ples of when and how the Malfunction Indicator Light is illuminated based on the "cus¬ 
+tomer drive cycle". 
+
+
+20 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DRIVE 
+CYCLE # 1 
+
+DRIVE 
+CYCLE # 2 
+
+DRIVE 
+CYCLE # 3 
+
+DRIVE 
+CYCLE # 4 
+
+DRIVE 
+CYCLE # 5 
+
+i 
+
+* DRIVE 
+CYCLE # 43 
+
+TEXT 
+
+NO. 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT CODE 
+
+ERASED 
+
+MIL 
+
+STATUS 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+
+
+
+
+
+
+1. 
+
+YES 
+
+YES 
+
+OFF 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. 
+
+YES 
+
+YES 
+
+OFF 
+
+NO 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+4. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+L_ 
+
+
+5. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+\ 
+
+1 
+
+k_ 
+
+r 
+
+/ 
+
+6. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+''fault/ 
+
+CODE 
+
+ERASED 
+
+€. - 
+
+V 
+
+OFF 
+
+
+1. A fault code is stored within the ECM upon the first occurrence of a fault in the sys¬ 
+tem being checked. 
+
+2. The "Malfunction Indicator Light” will not be illuminated until the completion of the 
+second consecutive "customer driving cycle" where the previously faulted system is 
+again monitored and a fault is still present or a catalyst damaging fault has occurred. 
+
+3. If the second drive cycle was not complete and the specific function was not checked 
+as shown in the example, the ECM counts the third drive cycle as the “next consecu¬ 
+tive" drive cycle. The "Malfunction Indicator Light” is illuminated if the function is 
+checked and the fault is still present. 
+
+4. If there is an intermittent fault present and does not cause a fault to be set through 
+multiple drive cycles, two complete consecutive drive cycles with the fault present are 
+required for the "Malfunction Indicator Light” to be illuminated. 
+
+5. Once the "Malfunction Indicator Light” is illuminated it will remain illuminated unless 
+the specific function has been checked without fault through three complete consec¬ 
+utive drive cycles. 
+
+6. The fault code will also be cleared from memory automatically if the specific function 
+is checked through 40 consecutive drive cycles without the fault being detected or 
+with the use of either the ISTA and IMIB.. 
+
+Note: In order to clear a catalyst damaging fault (see Misfire Detection) from 
+memory, the condition must be evaluated for 80 consecutive cycles 
+without the fault reoccurring. 
+
+With the use of a universal scan tool, connected to the "OBD" DLC an SAE standardized 
+
+DTC can be obtained, along with the condition associated with the illumination of the 
+
+"Malfunction Indicator Light”. Using the ISTA, a fault code and the conditions associated 
+
+with its setting can be obtained prior to the illumination of the "Malfunction Indicator 
+
+Light”. 
+
+
+21 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Readiness Code 
+
+
+The readiness code provides status (Yes/No) of the system having completed all the 
+required monitoring functions or not. The readiness code is displayed with an aftermar¬ 
+ket Scan Tool or ISTA. The code is a binary (1/0) indicating; 
+
+• 0 = Test Not Completed or Not Applicable - six cylinder vehicles 
+(not ready - V8 and VI2) 
+
+• 1 = Test Completed - six cylinder vehicles (ready - V8 and VI2) 
+
+A "readiness code" must be stored after any clearing of fault memory or disconnection 
+of the ECM. A readiness code of "0" will be stored (see below) after a complete diag¬ 
+nostic check of all components/systems, that can turn on the "Malfunction Indicator 
+Light” is performed. 
+
+The readiness code was established to prevent anyone with an emissions related fault 
+and a "Malfunction Indicator Light” on from disconnecting the battery or clearing the 
+fault memory to manipulate the results of the emissions test procedure (IM 240). 
+
+Interpretation of the Readiness Code by the ECM(s) (SAE J1979) 
+
+
+The complete readiness code is equal to "one" byte (eight bits). Every bit represents 
+one complete test and is displayed by the scan tool, as required by CARB/EPA. For 
+example: 
+
+
+0 = EGR Monitoring (=0, N/A with BMW) 
+1 = Oxygen Sensor Heater Monitoring 
+1 = Oxygen Sensor Monitoring 
+0 = Air Condition (=0, N/A with BMW) 
+
+1 = Secondary Air Delivery Monitoring 
+1 = Evaporative System Monitoring 
+0 = Catalyst Heating 
+1 = Catalyst Efficiency Monitoring 
+
+
+^IW'tH ow 
+
+!YMHT fOR 
+* ric-r—jf*. ririY r 
+;«■ .>■■: ■H r - _ i c 
+
+
+
+mt li-V-lf iJJ-VuL" 
+
+ODC« « >* fflwliu ur-ajt: I 
+■rn, .v 
+
+
+Drive the car in such a manner that all tests listed above can be completed (refer to the 
+drive cycle). When the complete "readiness code" equals "1" (ready) then all tests have 
+been completed and the system has established its "readiness". 
+
+Readiness Code using the ISTA 
+
+The readiness code can be checked with the ISTA. This is particularly helpful in verify¬ 
+ing that “drive cycle” criteria was achieved. A repair can be confirmed before returning 
+the vehicle to the customer by a successfully completed drive cycle. 
+
+
+22 
+
+Emissions Management 
+
+
+
+
+
+
+
+OBD II Diagnostic Trouble Codes (DTC) 
+
+
+The Society of Automotive Engineers (SAE) established the Diagnostic Trouble Codes 
+used for OBD II systems (SAE J2012). The DTC’s are designed to be identified by their 
+alpha/numeric structure. The SAE has designated the emission related DTC’s to start 
+with the letter “P” for Powertrain related systems, hence their nickname “P-code”. 
+
+
+For example: P 0 4 4 0 
+
+
+P-Powertrain, B-Body, C-Chassis 
+
+
+
+DTC Source; 0-SAE, 1 -BMW- 
+
+System; 0-Total System- 
+
+1- Air/Fuel Induction 
+
+2- Fuel Injection 
+
+3- Ignition System or Misfire 
+
+4- Auxiliary Emission Control 
+
+5- Vehicle Speed & Idle Control 
+
+6- Control Module Inputs/Outputs 
+
+7- Transmission 
+
+
+Sequentially numbered 
+fault identifying individual 
+components or circuits 
+(00-99) 
+
+
+• DTC’s are stored whenever the "Malfunction Indicator Light” is illuminated. 
+
+• A requirement of CARB/EPA is providing universal diagnostic access to DTC’s via a 
+standardized Diagnostic Link Connector (DLC) using a standardized tester (scan 
+tool). 
+
+
+DTC’s only provide one set of environmental operating conditions when a fault is 
+stored. This single "Freeze Frame" or snapshot refers to a block of the vehicles 
+environmental conditions for a specific time when the fault first occurred. The infor¬ 
+mation which is stored is defined by SAE and is limited in scope. This information 
+may not even be specific to the type of fault. 
+
+
+23 
+
+Emissions Management 
+
+
+
+
+BMW Fault Code 
+
+
+• BMW Codes are stored as soon they occur even before the "Malfunction Indicator 
+Light” comes on. 
+
+• BMW Codes are defined by BMW, Bosch and Siemens Engineers to provide 
+greater detail to fault specific information. 
+
+• Siemens systems - one set from four fault specific environmental conditions is 
+stored with the first fault occurrence. This information can change and is specific to 
+each fault code to aid in diagnosing. A maximum of ten different faults containing 
+four environmental conditions can be stored. 
+
+• Bosch systems - a maximum of four sets from three fault specific environmental 
+conditions is stored within each fault code. This information can change and is spe¬ 
+cific to each fault code to aid in diagnosing. A maximum of ten different faults con¬ 
+taining three environmental conditions can be stored. 
+
+• BMW Codes also store and displays a "time stamp" when the fault last occurred. 
+
+• A fault gualifier gives more specific detailed information about the type of fault 
+(upper limit, lower limit, disconnection, plausibility, etc.). 
+
+• BMW Fault Codes will alert the Technician of the current fault status. He/she will 
+be advised if the fault is actually still present, not currently present or intermittent. 
+
+The fault specific information is stored and accessible through ISTA. 
+
+• BMW Fault Codes determine the diagnostic output for ISTA. 
+
+OBD II Fault Memory and Fault Codes 
+
+Within the framework of OBD II, a diagnosis of all emission-related components/func¬ 
+tions must take place during driving. Faults will be stored and displayed if necessary. 
+
+For this purpose, the ECM includes OBD II memory. The standardized P codes for 
+malfunctions are stored in this memory. The memory can be read out with the ISTA 
+or a Scantool. 
+
+
+24 
+
+Emissions Management 
+
+
+
+
+Emission Control Function Monitoring & Comprehensive Component 
+Monitoring 
+
+OBD II regulations are based on section 1968.1 of Title 13, California Code of 
+Regulations (CCR), The law set forth in section 1968.1 requires an increased 
+scope of monitoring emission related control functions including: 
+
+• Catalyst Monitoring 
+
+• Heated Catalyst Monitoring 
+(currently used on BMW 750il_ vehicles) 
+
+• Misfire Monitoring 
+
+• Evaporative System Monitoring 
+
+• Secondary Air System Monitoring 
+
+• Air Conditioning System Refrigerant Monitoring 
+(Not applicable for BMW vehicles) 
+
+• Fuel System Monitoring 
+
+• Oxygen Sensor Monitoring 
+
+• Exhaust Gas Recirculation (EGR) System Monitoring 
+(Not applicable for BMW vehicles) 
+
+• Positive Crankcase Ventilation (PCV) System Monitoring 
+(Not required at this time) 
+
+• Thermostat Monitoring (if equipped) 
+
+Monitoring these emission requirements is a function of the ECM which uses “data sets” 
+while monitoring the conditions of the environment and the operation of the engine 
+using existing input sensors and output actuators. 
+
+The data sets are programmed reference values the ECM refers to when a specific mon¬ 
+itoring procedure is occurring. If the ECM cannot determine the environmental and/or 
+engine operating conditions due to an impaired or missing signal, it will set a fault and 
+illuminate the “Malfunction Indicator Light”. 
+
+This input or control signal monitoring falls under another category called 
+“Comprehensive Component Monitoring”. The ECM must recognize the loss or 
+impairment of the signal or component. The ECM determines a faulted signal or 
+sensor via three conditions: 
+
+1. Signal or component shorted to ground. 
+
+2. Signal or component shorted to B+. 
+
+3. Signal or component lost (open circuit). Specific fault codes 
+are used to alert the diagnostician of these conditions. 
+
+
+25 
+
+Emissions Management 
+
+
+
+
+OBD II System Information on TIS 
+
+BMW TIS includes a section with OBD II related information and it is divided into three 
+main categories: 
+
+• Mode $06 Interface Data; features a list of current and previous DME’s for 
+specific on board monitoring test results. 
+
+• OBD II Overview and Drive Cycle; features a brief summary of the Emissions 
+Overview contained in this Reference Manual. 
+
+• OBD II Systems; features a list of current and previous DME’s with information on 
+Fault Codes Conditions with possible fault causes and suggested repair procedures 
+as well as specific OBD II Description information as per DME version. This section 
+is an important tool that can help you in your diagnosis process! 
+
+To access the information contained in the OBD section, access CenterNet, then go to 
+TIS and select the category you wish to browse. 
+
+
+
+Umi 
+
+
+
+
+► ns 
+
+
+o 
+
+
+■ tb.H f, 4J-nil 
+
+
+BMW of North America, LLC 
+
+
+.Vhlil t N I: 
+
+E f i b i rvuAi Ls i : r.ifiii 
+
+iflst JSil' 
+
+r :-arrfLfl EidfeTifrl 
++t -i4r j1rci w ism 
+'iv- 'j'cnjn™ 
+
+Cpc^rjling Flu*J* 
+
+T*ehrti*0a TruSriRlfl 
+■Trjiniij \AiiniY. 
+
+Paris IhTermadari 
+
+i^ilrlirr 
+
+
+flepplr Interm^tfsn 
+
+■f liuds plLT ta = j£ 
+
+Sp&t ial TOdll 
+
+■Spaiiil juds Daiafcue 
+
+E. IM Inter malic-n 
+
+tVrifnu !i> E3 1 
+
+&MW Hunffl-r 
+
+*KK5 Dp .-3 hiliunlkiit 
+
+H<DS AiiETficrri wpcutafelcj 
+
+t F 1H>SS tv BTA VlHSiWl 
+
+
+DCS 
+■O • • 
+
+fc 1 -" in; ■ Pi Qi i! »irln □ 
+W.'I s '.: Tfrfjhf : . 
+
+■' Vt-riirnin Tpniciii.iv 
+
+
+
+
+■ ■. .“T - m 
+
+
+
+k-*™ 
+
+LF . 1 b IT 
+
+
+frfc- 
+
+nw 
+
+
+
+PSi-fl 
+
+f™ 
+
+ui 
+
+
+
+TIS 
+
+
+DEDH Systems inform-stlon- 
+
+i xn i k»t i i ^ i ^ i i ^ i £^1 i^i ji^i i J; 
+
+
+ill* 
+
+1 rp»iv 
+
+1 i Iri -jiJ4. I.1I [ 
+
+
+*** 
+
+hi# ■'liiliaai 
+
+
+nixtfic 
+
+ntJT 
+
+c» 
+
+
+ijv !'! ’ 1 
+
+| yip 
+
+
+EH 
+
+
+
+
+
+Cw 
+
+
+
+iJc<i Iti 
+
+
+Efc 
+
+
+uy mi 
+
+
+
+E'l 
+
+
+
+rf £■ IIJ 
+
+rtu 
+
+m 
+
+
+Mr nil 
+
+
+
+pi:- 
+
+
+
+
+
+F±i 
+
+
+
+in* 
+
+Tp^.r P rCr 
+
+
+■brink 
+
+
+
+1- 
+
+
+
+
+
+•JS-.-1 iti 
+
+U 
+
+M 
+
+
+rfra-d 
+
+TUP* 
+
+
+
+
+
+NHKfi 
+
+*■] 
+
+PJM 
+
+,‘PL* 
+
+
+hrrnri 
+
+MV.V3 
+
+
+
+FIT 
+
+
+
+
+
+
+
+
+‘ IFW : 7 
+
+fKW 
+
+E*7 
+
+
+pwsn 
+
+l/i-i-flyl .. 
+
+
+
+
+
+'Jig' 1 _ 
+
+ur 
+
+
+
+
+
+26 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scan Tool Connection 
+
+
+Starting with the 1995 750il_, soon after on all 1996 model year and later BMW vehi¬ 
+cles, a separate OBD II Diagnostic Link Connector (DLC) was added. 
+
+
+The DLC provides access for an 
+aftermarket scan tool to all emis¬ 
+sion related control systems: 
+
+• ECM - Engine Management 
+Monitored Emissions 
+Functions / Components 
+
+• TCM (AGS/EGS) - 
+Transmission Control 
+
+• EML - Electronic Throttle 
+Control 
+
+This diagnostic communication 
+link uses the existing TXD II cir¬ 
+cuit in the vehicle through a sep¬ 
+arate circuit on the DLC when 
+the 20 pin cap is installed. 
+
+
+DIS/MoDiC 
+COMMUNICATE VIA: 
+
+PIN 15 - RXD (Limited use) 
+PIN 20 - TXD 
+PIN 17 - TXD 
+
+
+
+SCANTOOLS COMMUNICATE VIA: 
+
+PIN 17 - TXD II ONLY 
+(20 PIN CAP INSTALLED) 
+
+
+
+
+
+
+E 
+
+1 OBD II STBODBROIZED 1 ^ 
+
+J I miLT CODES | IhI 
+
+
+
+■ 
+
+,j— 
+
+
+
+
+EML 
+
+CONTROL 
+
+MODULE 
+
+
+
+TRANS 
+
+CONTROL 
+
+MODULE 
+
+
+
+ABS/ASC 
+
+CONTROL 
+
+MODULE 
+
+
+
+
+CONTROL 
+
+MODULE 
+
+
+The DLC Connector bridging cap is marked “OBD II” and is found: 
+
+
+
+E38 and older models have a cosmetic cover and a secured DLC cover. 
+
+
+27 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16 Pin Diagnostic Socket 
+
+Model and Production Date: E46 from 6/00 
+
+E39, E52, E53 from 9/00 
+
+
+For model year 2001 the E39, E46 and E53 will eliminate the 20 pin diagnostic 
+connector from the engine compartment. The 16 pin OBD II connector located inside 
+
+
+the vehicle will be the only diagnosis port. 
+
+The E38 and Z3 will continue to use the 20 
+pin connector until the end of production. 
+
+The 16 pin OBD II connector has been in all 
+BMWs since 1996 to comply with OBD reg¬ 
+ulations requiring a standardized diagnostic 
+port. 
+
+Previously before 2001, only emissions rele¬ 
+vant data could be extracted from the OBD II 
+connector because it did not provide access 
+to TXD (D-bus). 
+
+The TXD line is connected to pin 8 of the 
+OBD II connector on vehicles without the 20 
+pin diagnostic connector. 
+
+
+
+The cap to the OBD II connector contains a bridge that links KL 30 to TXD and TXD II. 
+This is to protect the diagnostic circuit integrity and prevent erroneous faults from being 
+logged. 
+
+The OBD II connector is located in the driver’s footwell to the left of the steering column 
+for E39, E46 and E53 vehicles. 
+
+
+28 
+
+Emissions Management 
+
+
+
+
+Board Net 2020 
+
+
+Vehicles equipped with BN2020 have the following configuration in the OBD II 
+Diagnostic Socket: 
+
+
+Diagnostic socket 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Not assigned 
+
+9 
+
+Engine speed 
+
+2 
+
+Not assigned 
+
+10 
+
+Not assigned 
+
+3 
+
+Ethernet Rx+ 
+
+11 
+
+Ethernet Rx- 
+
+4 
+
+Terminal 31 
+
+12 
+
+Ethernet Tx+ 
+
+5 
+
+Terminal 31 
+
+13 
+
+Ethernet Tx- 
+
+6 
+
+D-CAN High 
+
+14 
+
+D-CAN Low 
+
+7 
+
+Not assigned 
+
+15 
+
+Not assigned 
+
+8 
+
+Ethernet activation 
+
+16 
+
+Terminal 30F 
+
+
+Ethernet connection between the diagnostic socket and ZGM 
+
+
+
+These five lines are routed from the diagnostic socket to the central gateway module 
+(ZGM). 
+
+One of the five lines transmits the activation signal. The remaining four lines are twisted 
+pair and are used for data transmission. 
+
+
+
+For further information please refer to the F01 Reference Manual. 
+
+
+29 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emission Management 
+
+
+Example of IPO for an Emissions Management System 
+
+
+
+One of the main purposes of the ECM is Emissions Management which includes the 
+actuation of several components. In the following pages you will find a generic explana¬ 
+tion on how this system works. For more detailed information please access BMW 
+Training Reference Manuals found on-line. 
+
+The Emissions Management controls evaporative and exhaust emissions. The ECM 
+monitors the fuel storage system for evaporative leakage and controls the purging of 
+evaporative vapors. The ECM also monitors and controls the exhaust emissions by reg¬ 
+ulating the combustible mixture and after treating by injecting fresh air into the exhaust 
+system. The catalytic converter further breaks down the remaining combustible exhaust 
+gases and is monitored by the ECM for catalyst efficiency. 
+
+Malfunction Indicator Light (MIL) 
+
+
+The MIL will be illuminated under the 
+following conditions: 
+
+• Upon the completion of the next 
+consecutive driving cycle where 
+the previously faulted system is 
+monitored again and the emis¬ 
+sions relevant fault is again pre¬ 
+sent. 
+
+• Immediately if a “Catalyst 
+Damaging” fault occurs (see 
+Misfire Detection). 
+
+
+
+30 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The illumination of the light is performed in accordance with the Federal Test Procedure 
+(FTP) which requires the lamp to be illuminated when: 
+
+• A malfunction of a component that can affect the emission performance of the vehi¬ 
+cle occurs and causes emissions to exceed 1.5 times the standards required by the 
+(FTP). 
+
+• Manufacturer-defined specifications are exceeded. 
+
+• An implausible input signal is generated. 
+
+• Catalyst deterioration causes HC-emissions to exceed a limit equivalent to 
+1.5 times the standard (FTP). 
+
+• Misfire faults occur. 
+
+• A leak is detected in the evaporative system, or “purging” is defective. 
+
+• ECM fails to enter closed-loop oxygen sensor control operation within a specified 
+time interval. 
+
+• Engine control or automatic transmission control enters a "limp home" operating 
+mode. 
+
+• Ignition is on (KL15) position before cranking = Bulb Check Function. 
+
+Within the BMW system the illumination of the Malfunction Indicator Light is performed 
+in accordance with the regulations set forth in CARB mail-out 1968.1 and as demon¬ 
+strated via the Federal Test Procedure (FTP). The following page provides several exam¬ 
+ples of when and how the Malfunction Indicator Light is illuminated based on the "cus¬ 
+tomer drive cycle". 
+
+
+31 
+
+Emissions Management 
+
+
+
+
+Evaporative Emissions 
+
+The control of the evaporative fuel vapors (Hydrocarbons) from the fuel tank is important 
+for the overall reduction in vehicle emissions. The evaporative system has been com¬ 
+bined with the ventilation of the fuel tank, which allows the tank to breath (equalization). 
+The overall operation provides: 
+
+• An inlet vent, to an otherwise “sealed” fuel tank, for the entry of air to replace the 
+fuel consumed during engine operation. 
+
+• An outlet vent with a storage canister to “ trap and hold” fuel vapors that are pro¬ 
+duced by the expansion/evaporation of the fuel in the tank, when the vehicle is sta¬ 
+tionary. 
+
+The canister is then "purged" using the engine vacuum to draw the fuel vapors into the 
+combustion chamber. This "cleans" the canister allowing for additional storage. Like any 
+other form of combustible fuel, the introduction of these vapors on a running engine 
+must be controlled. 
+
+The ECM controls the Evaporative Emission Valve which regulates purging of evapora¬ 
+tive vapors. The evaporative system must be monitored for correct purge operation and 
+Leak Detection. 
+
+Exhaust Emissions 
+
+The combustion process of a gasoline powered engine produces Carbon Monoxide 
+(CO), Hydrocarbons (HC) and Oxides of Nitrogen (NOx). 
+
+• Carbon Monoxide is a product of incomplete combustion under conditions of air 
+deficiency. CO emissions are dependent on the air/fuel ratio. 
+
+• Hydrocarbon are also a product of incomplete combustion which results in 
+unburned fuel. HC emissions are dependent on air/fuel ratio and the ignition of the 
+mixture. 
+
+• Oxides of Nitrogen are a product of peak combustion temperature (and temperature 
+duration). NOx emissions are dependent on internal cylinder temperature affected 
+by the air/fuel ratio and ignition of the mixture. 
+
+Control of exhaust emissions is accomplished by the engine and engine management 
+design as well as after-treatment. 
+
+• The ECM manages exhaust emissions by controlling the air/fuel ratio and ignition. 
+
+• The ECM controlled Secondary Air Injection further dilutes exhaust emissions leav¬ 
+ing the engine and reduce the catalyst warm up time. 
+
+• The Catalytic Converter further reduces exhaust emissions leaving the engine. 
+
+
+32 
+
+Emissions Management 
+
+
+
+Adaptation Values 
+
+In order to maintain an “ideal” air/fuel ratio, the engine control module is capable of 
+adapting to various environmental conditions encountered while the vehicle is in opera¬ 
+tion (i.e. changes in altitude, humidity, ambient temperature, ambient pressure, fuel quali¬ 
+ty, etc.). 
+
+The adaptation system can only make slight corrections and can not compensate for 
+large changes which may be encountered as a result of incorrect airflow or incorrect fuel 
+supply to the engine. 
+
+Within the areas of adjustable adaptation, the engine control module modifies the injec¬ 
+tion rate under two areas of engine operation: 
+
+1. During idle and low load mid range engine speeds (Additive Adaptation), 
+
+2. During operation under a normal to higher load when at higher engine speeds 
+(Multiplicative Adaptation) 
+
+These values are displayed in the “Diagnosis Query” section of ISTA and are a helpful 
+diagnostic tool that shows how the system is trying to compensate for a less than ideal 
+initial air/fuel ratio. 
+
+Note: If the adaptation value is greater than “0.0 ms” the Engine Control 
+
+Module is trying to en-richen the mixture. If the adaptation value is less 
+than “0.0 ms” the Engine Control Module is trying to lean-out the mixture. 
+
+
+Diagnosis Request 
+Status 
+
+Explanation 
+
+Additive mixture 
+adaptation (Idle) 
+
+If the value is greater than 0.2ms there is an unmetered air leak or not enough fuel 
+being supplied to the system. 
+
+• The O 2 sensor indicates a LEAN condition 
+
+• The engine control module tries to RICHEN the mixture. 
+
+If the value is less than -0.2 ms there is an air restriction or too much fuel is being 
+supplied to the system. 
+
+• The O 2 sensor indicates a RICH condition. 
+
+• The Engine Control Module tries to LEAN out the mixture. 
+
+Multiplicative mixture 
+adaptation (Part load) 
+
+If the value is greater than 8% there is an unmetered air leak or not enough fuel 
+being supplied to the system. 
+
+• The O 2 sensor indicates a LEAN condition 
+
+• The Engine Control Module tries to RICHEN the mixture 
+
+If the value is less than -8% there is an air restriction or too much fuel being sup¬ 
+plied to the system 
+
+• The O 2 sensor indicates a RICH condition 
+
+• The Engine Control Module tries to LEAN out the mixture 
+
+
+33 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+Oxygen Sensors 
+
+
+Exhaust gas composition before 
+catalytic converter 
+
+
+The oxygen sensor is an indispensable component 
+for controlling and measuring the composition of 
+exhaust gas with the aim of conforming to legally 
+stipulated emission values. This is achieved by mea¬ 
+suring the residual oxygen content in the exhaust 
+gas. 
+
+A fuel-air ratio of 1 kg of fuel to 14.7 kg of air is 
+required for optimum combustion. 
+
+
+
+Oxygen sensor before catalytic converter 
+
+Bosch LSH25 Oxygen Sensor 
+
+The pre-cat Bosch LSH 25 oxygen sensors measure 
+the residual oxygen content of the exhaust gas. The 
+sensors produces a low voltage (0-1000 mV) propor¬ 
+tional to the oxygen content that allows the ECM to 
+monitor the air/fuel ratio. 
+
+The sensors are mounted in the hot exhaust stream 
+directly in front of the catalytic converters. 
+
+The “tip” of the sensor contains a microporous platinum 
+coating (electrodes) which conduct current. The plat¬ 
+inum electrodes are separated by solid electrolyte which 
+conducts oxygen ions. The platinum conductors are 
+covered with a highly porous ceramic coating and the 
+entire tip is encased in a ventilated metal “cage”. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Oxygen sensor upstream 
+of catalytic converter 
+
+2 
+
+Connection to the 
+turbocharger 
+
+3 
+
+Ceramic structure 1 
+
+4 
+
+Catalytic converter outlet 
+funnel 
+
+5 
+
+Ceramic structure 2 
+
+6 
+
+Oxygen sensor after ceramic structure 1 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Solids 0.005% 
+
+2 
+
+NO x 0.1% 
+
+3 
+
+HC 0.2% 
+
+4 
+
+CO 0.7% 
+
+5 
+
+C0 2 14% 
+
+6 
+
+H 2 0 13% 
+
+7 
+
+Oxygen + others 1 % 
+
+8 
+
+N 2 1 % 
+
+
+
+34 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I Hr:* Riuti 
+
+
+Rtad I irro 
+
+
+This assembly is submersed in the exhaust 
+stream. The sensor body (external) has a 
+small vent opening in the housing that 
+allows ambient air to enter the inside of the 
+tip. 
+
+The ambient air contains a constant level 
+of oxygen content (21%) and the exhaust 
+stream has a much lower oxygen content. 
+
+The oxygen ions (which contain small elec¬ 
+trical charges) are “purged” through the 
+solid electrolyte by the hot exhaust gas 
+flow. The electrical charges (low voltage) 
+
+are conducted by the platinum electrodes to the sensor signal wire that is monitored by 
+the ECM. 
+
+
+
+■M LjMPl 
+
+
+! ; HiiaP 
+
+
+If the exhaust has a lower oxygen content (rich mixture), there will be a large ion “migra¬ 
+tion” through the sensor generating a higher voltage (950 mV). 
+
+If the exhaust has a higher oxygen content (lean mixture), there will be a small ion “migra¬ 
+tion” through the sensor generating a lower voltage (080 mV). 
+
+This voltage signal is constantly changing due to combustion variations and normal 
+exhaust pulsations. 
+
+The ECM monitors the length of time the sensors are operating in the lean, rich (includ¬ 
+ing the time of rise and fall) and rest conditions. The evaluation period of the sensors is 
+over a predefined number of oscillation cycles. 
+
+This conductivity is efficient when the oxygen sensor is hot (250° - 300° C). For this rea¬ 
+son, the sensor contains a heating element. This “heated” sensor reduces warm up time, 
+and retains the heat during low engine speed when the exhaust temperature is cooler. 
+
+
+
+35 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bosch LSU Planar Wideband Oxygen Sensor 
+
+Engines equipped with planar wideband oxygen sensors (pre-catalyst) are identified by 
+its planar shape (type of construction) which is more compact and is made up of thin lay¬ 
+ers of zirconium dioxide (Z 1 O 2 ) ceramic films. This modular lamination structure enables 
+the integration of several functions including the heating element which ensures the min¬ 
+imum operating temperature (750 °C) is reached rapidly. 
+
+In contrast to conventional oxygen sensors, the wideband features can measure not only 
+at Lambda=1, but also in the rich and extremely lean range (Lambda=0.7 to complete 
+atmospheric oxygen) very rapidly. 
+
+To operate effectively, the oxygen sensor requires ambient air as the “reference gas” 
+inside the sensor. The ambient air reaches the inside of the sensor through the 
+plug connection and through the harness. The plug connection socket must there¬ 
+fore be protected from contamination (wax, preservatives, engine degreasers, engine 
+washing, etc.). In the event of the oxygen sensor malfunctioning, the connector should 
+always be checked first with regard to contamination and cleaned if necessary. The plug 
+connection must be disconnected and then reconnected to remove any oxidation from 
+the connector pins. 
+
+The pump cell and reference cell are made of zirconium dioxide and each coated with 
+two porous platinum electrodes. They are arranged so that there is a measuring gap of 
+approx. 10 to 50 microns between them. This measuring gap is connected by an inlet 
+opening to the exhaust gas. The pump cell is controlled by the ECM applying voltage to 
+the electrodes to initiate oxygen ion pumping across the porous membrane of the refer¬ 
+ence cell, providing a quicker response time. 
+
+
+Design of broadband oxygen sensor 
+
+
+
+•JJ *) V D V S 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Insulation layer 
+
+2 
+
+Heating element 
+
+3 
+
+Reference air channel 
+
+4 
+
+Inner electrode, reference cell 
+
+5 
+
+Ceramic layer made of Zr02 
+
+6 
+
+Outer electrode reference cell 
+
+7 
+
+Inner electrode, O 2 pump cell 
+
+8 
+
+Diffusion gap 
+
+9 
+
+Porous diffusion barrier 
+
+10 
+
+Exhaust inlet hole 
+
+11 
+
+Ceramic layer made of Zr02 
+
+12 
+
+Outer electrode, O 2 pump cell 
+
+13 
+
+Protective layer 
+
+
+36 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If the exhaust gas content is lean, the pump cell pumps oxygen away from the measuring 
+gap to the outside. The direction of flow is reversed for rich exhaust gas content, then 
+oxygen is pumped from the exhaust gas into the measuring gap. The pump current flow 
+is proportional to the oxygen concentration (lean) or the oxygen requirement (rich). The 
+pump is constantly working to maintain that the gas composition in the measuring gap is 
+constantly at Lambda=1. The required current of the pump cell is evaluated by the ECM 
+as a signal that represents oxygen content in the exhaust gas. 
+
+
+Bosch LSU ADV (Planar Wideband) 
+
+The Bosch oxygen sensor LSU ADV is used as the control sensor before the catalytic 
+converter. The abbreviation LSU stands for “Lambdasonde Universal” and ADV for 
+“Advanced”. The function is similar to that of the LSU 4.9 oxygen sensor and is therefore 
+described in detail in the E71 X6 training material under “N63 engine” available in TIS 
+and ICP. 
+
+
+The oxygen sensor before catalytic converter (LSU ADV) offers the following advantages: 
+
+• High signal stability specially during turbocharged operation due to low dynamic 
+pressure dependence. 
+
+• Increased durability due to reduced pump voltage. 
+
+• Increased accuracy (by a factor of 1.7 compared to LSU 4.9). 
+
+• Ready for operation in < 5 seconds. 
+
+• Greater temperature compatibility. 
+
+• Improved connector with more effective contacting properties. 
+
+The LSU ADV has an extended measuring range, making it possible to measure 
+precisely from lambda 0.65. The new oxygen sensor is ready for operation faster so 
+that exact measured values are available within 5 seconds of start up. 
+
+The higher measuring dynamics of the sensor makes it possible to more effectively 
+determine and control the fuel-air ratio separately for each cylinder. This results in a 
+homogeneous exhaust flow that reduces emissions while also having a favorable effect 
+on long-term emission characteristics. 
+
+
+Oxygen Sensor after Catalytic Converter 
+
+The oxygen sensor after catalytic converter is also known as the monitoring sensor. 
+The familiar Bosch LSF 4.2 monitoring sensor are used in most of our NG engines. 
+
+The voltage range is 0.10 to 1.0 volts. 
+
+
+37 
+
+Emissions Management 
+
+
+
+Oxygen Sensor Signals 
+
+The sensor conductivity is efficient when the oxygen sensor is hot (750° C). For this rea¬ 
+son, the sensor contains a heating element. This reduces warm up time, and retains the 
+heat during low engine speed when the exhaust temperature is cooler. The oxygen sen¬ 
+sor heating elements receive power from the IVM (12 V) and the ground supply is pulse 
+width modulated by the ECM. 
+
+The monitored voltage signal is constantly changing due to combustion variations and 
+normal exhaust pulsations. 
+
+• At a value of Lambda = 1, the pump cell requires approx. 3 mA. 
+
+The oxygen sensor signal voltage is approx. 1.5V 
+The reference cell voltage is approx. 450mV 
+
+• At a Lambda value <1 (rich), the oxygen sensor signal voltage is approx. 0.3V 
+
+• At a Lambda value >1 (lean), the oxygen sensor signal voltage is approx. 4.3V 
+
+If necessary, the ECM will “correct” the air/fuel ratio by regulating the ms injection time. 
+The ECM monitors the length of time the sensors are operating in the lean, rich and rest 
+conditions. The evaluation period of the sensors is over a predefined number of oscillation 
+cycles and pump cell amperage. 
+
+
+38 
+
+Emissions Management 
+
+
+
+Direct Oxygen Sensor Heating 
+
+The oxygen sensor conductivity is efficient when it is hot (600° - 700° C). For this rea¬ 
+son, the sensors contain heating elements. These “heated” sensors reduce warm up 
+time, and retain the heat during low engine speed when the exhaust temperature is cool¬ 
+er. OBD II requires monitoring of the oxygen sensor heating function and heating ele¬ 
+ments for operation. 
+
+The four oxygen sensor heating circuits receive operating voltage from the ECM Relay 
+when KL15 is switched “ON”. Each of the sensors heaters are controlled through sepa¬ 
+rate final stage transistors. 
+
+The sensor heaters are controlled with a pulse width modulated voltage during a cold 
+start. This allows the sensors to be brought up to operating temperature without the 
+possibility of thermal shock. The duty cycle is then varied to maintain the heating of the 
+sensors. 
+
+When the engine is decelerating (closed throttle), the ECM increases the duty cycle of 
+the heating elements to compensate for the decreased exhaust temperature. 
+
+
+
+39 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Testing the Oxygen Sensor 
+
+Testing should be performed using ISTA/IMIB Oscilloscope. List. The scope pattern 
+should appear for a normal operating sensor. 
+
+If the signal remains high (rich condition) the following should be checked: 
+
+• Fuel Injectors 
+
+• Fuel Pressure 
+
+• Ignition System 
+
+• Input Sensors that influence air/fuel mixture 
+
+• Engine Mechanical 
+
+If the signal remains low (lean condition) the following should be checked: 
+
+• Air/Vacuum leak 
+
+• Fuel Pressure 
+
+• Input Sensor that influence air/fuel mixture 
+
+• Engine Mechanical 
+
+A MIXTURE RELATED FAULT CODE SHOULD BE INVESTIGATED 
+| FIRST AND DOES NOT ALWAYS INDICATE A DEFECTIVE OXYGEN 
+^ SENSOR! 
+
+
+40 
+
+Emissions Management 
+
+
+
+
+Catalytic Converter Monitoring 
+
+The efficiency of catalyst operation is deter¬ 
+mined by evaluating the oxygen consumption 
+of the catalytic converters using the pre and 
+post oxygen sensor signals. A properly operat¬ 
+ing catalyst consumes most of the 02 (oxy¬ 
+gen) that is present in the exhaust gas (input 
+to catalyst). The gases that flow into the cata¬ 
+lyst are converted from CO, HC and NOx to 
+C02, H20 and N2 respectively. 
+
+In order to determine if the catalysts are work¬ 
+ing correctly, post catalyst oxygen sensors are 
+installed to monitor exhaust gas content exiting the catalysts. The signal of the post cat. 
+02 sensor is evaluated over the course of several pre cat. 02 sensor oscillations. 
+
+During the evaluation period, the signal of the post cat. sensor must remain within a rela¬ 
+tively constant voltage range (700 - 800 mV). The post cat. 02 voltage remains high 
+with a very slight fluctuation. This indicates a further lack of oxygen when compared to 
+the pre cat. sensor. 
+
+If this signal decreased in voltage and/or increased in fluctuation, a fault code will be set 
+for Catalyst Efficiency and the “Malfunction Indicator Light” will illuminate when the OBD 
+II criteria is achieved. 
+
+
+Good 
+
+Signal 
+
+
+lli 
+
+3 
+
+
+a. 
+
+2 
+
+< 
+
+
+O 
+
+> 
+
+
+PRE POST 
+
+
+
+TIME 
+
+
+
+41 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+On-Board Refueling Vapor Recovery (ORVR) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Overpressure protection valve 
+
+9 
+
+Atmospheric vent line 
+
+2 
+
+Filling vent valve (rollover valve) 
+
+10 
+
+DM-TL (electrical control circuit) 
+
+3 
+
+Operating vent valve 
+
+11 
+
+ECM (DME) 
+
+4 
+
+Ventilation line 
+
+12 
+
+Evaporative emission (purge) control valve 
+
+5 
+
+Mushroom valve (“T” fitting) 
+
+13 
+
+Evaporative emission (purge) line 
+
+6 
+
+Carbon canister 
+
+14 
+
+Intake manifold 
+
+7 
+
+DM-TL (leakage diagnosis pump) 
+
+15 
+
+Engine air filter 
+
+8 
+
+Filter 
+
+16 
+
+M54 engine 
+
+
+The ORVR system recovers and stores hydrocarbon fuel vapor that was previously 
+released during refueling. Non ORVR vehicles vent fuel vapors from the tank venting line 
+back to the filler neck and in many states reclaimed by a vacuum receiver on the filling 
+station’s fuel pump nozzle. 
+
+When refueling an ORVR equipped vehicle, the pressure of the fuel entering the tank 
+forces the hydrocarbon vapors through the Filling Vent Valve (2) and the large tank venti¬ 
+lation line (4) into the Carbon Canister (6). The HC is stored in the Carbon Canister and 
+the system can then “breathe” through the DM-TL (7) and the filter (8). 
+
+
+42 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ventilation continues until the rising fuel level lifts the float in the Filling Vent Valve 
+(2) and closes the outlet. When the ventilation outlet is closed, a pressure cushion (vapor 
+area) is created in the fuel tank. This creates a backup of fuel into the filler neck and the 
+tank is full. 
+
+This leaves a vapor area of approximately 6 liters above the fuel level. This area provides 
+integral liquid/vapor separation. The vapor condensates separate and drain back into the 
+fuel. The remaining vapors exit the fuel tank (when sufficient pressure is present) through 
+the Operating Vent Valve (3) to the Carbon Canister. 
+
+
+
+A small diameter connection to the filler neck is provided by the 
+Mushroom Valve “T fitting” (5). This is necessary for checking the 
+filler cap/neck during Evaporative Leak Testing. 
+
+The Operating Vent Valve is also equipped with a protection float in 
+the event of an “overfill” situation. 
+
+
+43 
+
+Emissions Management 
+
+
+
+On-Board Refueling Vapor Recovery (ORVR) E9x Vehicles 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Fuel Pump 
+
+13 
+
+Fuel Level Sensor 
+
+2 
+
+Feed Line 
+
+14 
+
+Refuelling Line Connection Piece 
+
+3 
+
+Check Valve 
+
+15 
+
+Refuelling Ventilation Line 
+
+4 
+
+Fuel Filter 
+
+16 
+
+Refuelling Ventilation 
+
+5 
+
+Feed Line to Engine 
+
+17 
+
+Left Operation Ventilation Valve 
+
+6 
+
+Fuel Injector 
+
+18 
+
+Right Operation Ventilation Valve 
+
+7 
+
+Pressure Regulator 
+
+19 
+
+Operation Ventilation Line 
+
+8 
+
+Check Valve 
+
+20 
+
+Diagnosis Module for Tank Leakage (DM-TL) 
+
+9 
+
+Left Suction Jet Pump 
+
+21 
+
+Atmosphere Line 
+
+10 
+
+Right Suction Jet Pump 
+
+22 
+
+Carbon Canister 
+
+11 
+
+Initial Filling Valve 
+
+23 
+
+Fuel Tank Vent Valve 
+
+12 
+
+Fuel Baffle 
+
+24 
+
+Digital Motor Electronics 
+
+
+44 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ORVR system recovers and stores hydrocarbon fuel vapors during refueling. When 
+refueling the E90, a downward open adapter (14) is located on the refueling ventilation 
+line (15) in the fuel tank. During the refueling procedure, the air can escape out of the 
+tank via the refueling ventilation line (15) and the fuel filler neck. 
+
+When the fuel level rises up to the opening of the refueling ventilation line, it is closed off 
+and the fuel level increases in the fuel filler neck up to the fuel station pump. The fuel 
+station pump then switches off automatically. 
+
+After the fuel station pump has switched off, an expansion volume (approx. 10 liters) 
+remains above the refueling ventilation line. 
+
+Ventilation During Engine Operation 
+
+The fuel vapors produced in the fuel tank pass: 
+
+• through the operation ventilation valves (17 + 18) 
+
+• through the ventilation line (19), 
+
+• into the carbon canister AKF (20), 
+
+• through the purge air line and 
+
+• through the fuel tank vent valve TEV (22), 
+
+• to the engine intake manifold. 
+
+The two operation ventilation valves are located above the refueling ventilation adapter 
+(14). They are connected by a line. The left operation ventilation valve (17) only has a 
+ventilation function while the right operation ventilation valve (18) additionally has a pres¬ 
+sure holding function (50 mbar). 
+
+The aim of the pressure holding function is to avoid the remaining air of the expansion 
+volume escaping via the carbon canister while refueling (with refueling ventilation line 
+closed). 
+
+
+45 
+
+Emissions Management 
+
+
+
+
+Evaporative Leakage Detection (DM-TL) 
+
+This component ensures accurate fuel system leak 
+detection for leaks as small as 0.5 mm by slightly 
+pressurizing the fuel tank and evaporative compo¬ 
+nents. The DM-TL pump contains an integral DC 
+motor which is activated directly by the ECM. The 
+ECM monitors the pump motor operating current as 
+the measurement for detecting leaks. 
+
+The pump also contains an ECM controlled change 
+over valve that is energized closed during a Leak 
+Diagnosis test. The change over valve is open during 
+all other periods of operation allowing the fuel system 
+to “breath” through the inlet filter. The DM-TL is 
+located under the luggage compartment floor with the 
+Carbon Canister. 
+
+1. In its inactive state, filtered fresh air enters the 
+evaporative system through the sprung open 
+valve of the DM-TL. 
+
+2. When the DME activates the DM-TL for leak 
+testing, it first activates only the pump motor. 
+This pumps air through a restrictor orifice (0.5 
+mm) which causes the electric motor to draw a 
+specific amperage value. This value is equivalent 
+to the size of the restrictor. 
+
+3. The solenoid valve is then energized which seals 
+the evaporative system and directs the pump 
+output to pressurize the evaporative system. 
+
+• A large leak is detected in the evaporative 
+system if the amperage value is not achieved. 
+
+• A small leak is detected if the same reference 
+amperage is achieved. 
+
+• The system is sealed if the amperage value is 
+higher than the reference amperage. 
+
+
+
+
+AIR INLET 
+
+
+
+46 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SSP-SP0000052267 Diagnostic module for fuel tank leakage 
+
+
+
+fh-iX- 
+
+Th#. miLUin hhil-rf! 
+
+
+M z - 
+
+l>0MI Wdk r 
+
+
+To prevent condensation buildup in the DM-TL pump, a heating element is integrated 
+into the housing of the pump. The heating element is ground controlled by the ECM. 
+
+
+47 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test Results 
+
+The time duration varies between 
+30 & 360 seconds depending on 
+the resulting leak diagnosis test 
+results (developed tank pressure 
+“amperage” within a specific time 
+period). 
+
+When the ECM detects a leak, a 
+fault will be stored and the 
+“Malfunction Indicator Light” will 
+be illuminated. Depending on the 
+amperage measurement detected 
+by the ECM, the fault code dis¬ 
+played will be “small leak” or “large 
+leak”. 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Current 
+
+2 
+
+Leak = 0.5mm 
+
+B 
+
+Overpressure 25hPa (25mbar) 
+
+3 
+
+No leak in system (leak <0.5mm) 
+
+C 
+
+Time 
+
+4 
+
+Reference measurement (leak 0.5mm) 
+
+1 
+
+Leak >1mm 
+
+5 
+
+Leakage measurement 
+
+
+48 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Refuelling While a Leak Diagnosis is Taking Place: 
+
+The ECM detects refueling during a leak diagnosis as a 
+result of the pressure drop when the fuel filler cap is opened 
+and the increase pressure while filling the tank is being filled. 
+
+In this case, the leakage diagnosis is interrupted. The sole¬ 
+noid valve in the DM-TL is switched off and the tank pres¬ 
+sure escapes through the activated carbon canister. 
+
+If refueling does not take place immediately after the fuel 
+filler cap has been opened, the system will detect a large 
+leak and the a fault will be stored in the ECM. If refueling is 
+detected in the next driving cycle (increase in fuel level), the 
+fault is cleared. 
+
+The ECM detects refueling from a change in the fuel tank sending unit level. If the filler 
+cap was not properly installed, when the leakage test is performed and leakage is 
+detected; the variable indicator lamp (shown to the right) and the “Please Close Filler 
+Cap” Check Control message will be displayed. 
+
+If the filler cap is correctly installed and leakage is not present the next time the test is 
+performed, the “Malfunction Indicator Light” will not be illuminated. 
+
+Starting with 2002 MY, a heating element was added to the DM TL pump to elimi¬ 
+nate condensation. 
+
+The heater is provided battery voltage when KL_15 is switched “on” and the ECM pro¬ 
+vides the ground path (see page 47). 
+
+
+
+49 
+
+Emissions Management 
+
+
+
+Principle of Operation 
+
+The Evaporative Leakage Detection is performed on the fuel storage system by the 
+DM-TL pump which contains an integral DC motor that is activated by the ECM. The 
+ECM monitors the pump motor operating current as the measurement for detecting 
+leaks. 
+
+The pump also contains an ECM controlled change over valve that is energized closed 
+during a Leak Diagnosis test. The ECM initiates a leak diagnosis test every time the cri¬ 
+teria are met. The criteria is as follows: 
+
+• Engine OFF with ignition switched OFF. 
+
+• ECM still in active state or what is known as “follow up mode” (ECM Relay ener¬ 
+gized, ECM and components online for extended period after key off). 
+
+• Prior to Engine/Ignition switch OFF condition, vehicle must have been driven for a 
+minimum of 20 minutes. 
+
+• Prior to minimum 20 minute drive, the vehicle must have been OFF for a minimum 
+of 5 hours. 
+
+• Fuel Tank Capacity must be between 15 and 85% (safe approximation between 
+1/4 - 3/4 of a tank). 
+
+• Ambient Air Temperature between 4°C & 35°C (40°F & 95°F) 
+
+• Altitude < 2500m (8,202 feet). 
+
+• Battery Voltage - between 10.95 and 14.5 Volts 
+
+PHASE 1 - Reference Measurement 
+
+The ECM activates the pump motor. The 
+pump pulls air from the filtered air inlet and 
+passes it through a precise 0.5 mm reference 
+orifice in the pump assembly. The ECM simul¬ 
+taneously monitors the pump motor current 
+flow. The motor current raises quickly and lev¬ 
+els off (stabilizes) due to the orifice restriction. 
+
+The ECM stores the stabilized amperage value 
+in memory. The stored amperage value is the 
+electrical equivalent of a 0.5 mm (0.020”) leak. 
+
+
+
+
+
+i |C c£ u 
+
+P < 
+
+
+Tank 
+
+
+
+
+C"han[j,*-45w 
+
+
+EJoclrm 
+■Mwnr LDP 
+
+
+u M 
+
+
+
+FVte 1 
+
+frnsh Air 
+
+
+50 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHASE 2 - Leak Detection 
+
+The ECM energizes the Change Over Valve allowing the pressurized air to enter the fuel 
+system through the Charcoal Canister. The ECM monitors the current flow and com¬ 
+pares it with the stored reference measurement over a duration of time. 
+
+Once the test is concluded, the ECM stops the pump motor and immediately de-ener¬ 
+gizes the change over valve. This allows the stored pressure to vent thorough the char¬ 
+coal canister trapping hydrocarbon vapor and venting air to atmosphere through the fil¬ 
+ter. 
+
+
+
+
+51 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Evaporative Emission Purging 
+
+Evaporative Emission Purging is regulated by the 
+ECM controlling the Evaporative Emission Valve. The 
+Evaporative Emission Valve is a solenoid that regu¬ 
+lates purge flow from the Active Carbon Canister into 
+the intake manifold. The ECM Relay provides operat¬ 
+ing voltage, and the ECM controls the valve by regu¬ 
+lating the ground circuit. The valve is powered open 
+and closed by an internal spring. 
+
+The “purging” process takes place when: 
+
+• Oxygen Sensor Control is active 
+
+• Engine Coolant Temperature is > 67° C 
+
+• Engine Load is present 
+
+The Evaporative Emission Valve is opened in stages to moderate the purging. 
+
+• Stage 1 opens the valve for 10 ms (milli-seconds) and then closes for 150 ms. 
+
+• The stages continue with increasing opening times (up to 16 stages) until the valve 
+is completely open. 
+
+• The valve now starts to close in 16 stages in reverse order 
+
+• This staged process takes 6 minutes to complete. The function is inactive for 
+1 minute then starts the process all over again. 
+
+• During the purging process the valve is completely opened during full throttle opera¬ 
+tion and is completely closed during deceleration fuel cutoff. 
+
+Evaporative Purge System Flow Check is performed by the ECM when the oxygen 
+sensor control and purging is active. When the Evaporative Emission Valve is open the 
+ECM detects a rich/lean shift as monitored by the oxygen sensors indicating the valve is 
+functioning properly. 
+
+If the ECM does not detect a rich/lean shift, a second step is performed when the vehi¬ 
+cle is stationary and the engine is at idle speed. The ECM opens and close the valve 
+(abruptly) several times and monitors the engine rpm for changes. If there are no 
+changes, a fault code will be set. 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS FROM 
+CHARCOAL 
+CANISTER 
+
+
+
+
+VAPORS TO VACUUM PORT 
+ON THROTTLE HOUSING 
+
+
+52 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Carbon Canister 
+
+As the hydrocarbon vapors enter the canister, they will be absorbed by the active carbon. 
+The remaining air will be vented to the atmosphere through the end of the canister, DM 
+TL and filter, allowing the fuel tank to “breath”. 
+
+When the engine is running, the canister is "purged" using intake manifold vacuum to 
+draw air through the canister which extracts the HC vapors into the combustion cham¬ 
+ber. 
+
+The Carbon Canister with DM TL and air filter are located at the right rear underside of 
+the vehicle, below the luggage compartment floor. 
+
+
+
+Evaporative Emission Valve 
+
+
+This ECM controlled solenoid valve regulates 
+the purge flow from the Carbon Canister into 
+the intake manifold. The ECM Relay provides 
+operating voltage, and the ECM controls the 
+valve by regulating the ground circuit. The 
+valve is powered open and closed by an inter¬ 
+nal spring. 
+
+If the Evaporative Emission Valve circuit is 
+defective, a fault code will be set and the 
+“Malfunction Indicator Light” will illuminate 
+when the OBD II criteria is achieved. 
+
+If the valve is “mechanically” defective, a drive- 
+ability complaint could be encountered and a 
+mixture related fault code will be set. 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS FROM 
+
+CHARCOAL 
+
+CANISTER 
+
+
+
+Jr 
+
+VAPORS TO VACUUM PORT 
+ON THROTTLE HOUSING 
+
+
+
+53 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary Air Injection 
+
+This system is required to reduce HC and CO emissions while the engine is warming up. 
+Immediately following a cold engine start (-10 to 60°C) fresh air/oxygen is injected 
+directly into the exhaust stream. 
+
+The temperature signal is provided to the ECM by the Air Temperature Sensor in the 
+HFM. 
+
+The ECM provides a ground circuit to activate the Secondary Air Injection Pump Relay. 
+The relay supplies voltage to the Secon-dary Air Injection Pump. 
+
+The single speed pump runs for approximately 90 seconds after engine start up. 
+
+Below -10° Cl the pump is activated briefly to “blow out” 
+
+( { \ any accumulated moisture. 
+
+
+SSP-SP0000017943 Secondary air pump 
+
+
+
+Secondapy &'t (m % v 
+
+
+54 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary Air Injection Monitoring 
+
+The monitoring of Secondary Air is performed 
+by the ECM via the use of the pre-catalyst 
+oxygen sensors. Once the air pump is active 
+and is air injected into the exhaust system the 
+oxygen sensor signals will indicate a lean con¬ 
+dition (up to 16 seconds). 
+
+If the oxygen sensor signals do not change 
+within a predefined time a fault will be set and 
+identify the faulty bank. 
+
+If the additional oxygen is not detected for two 
+consecutive cold starts, the ECM determines 
+a general fault with the function of the secondary air injection system. After completing 
+the next cold start and a fault is again present the "Malfunction Indicator Light” will be 
+illuminated when the OBDII criteria is achieved. 
+
+Secondary Air System 
+
+As on N73 engine, the N74 is equipped with a secondary air system. Blowing additional 
+air (secondary air) into the exhaust gas duct in the cylinder head during the warm-up 
+phase initiates thermal post-combustion that leads to a reduction in the unburned hydro¬ 
+carbons (HC) and carbon monoxide (CO) contained in the exhaust gas. The energy gen¬ 
+erated here heats up the catalytic converter faster in the warm-up phase and increases 
+its conversion rate. The catalytic converter response temperature (light-off temperature) 
+of 300°C is reached only a few seconds after the engine is started. 
+
+What is new is that there is one pressure sensor before each secondary air valve. The 
+function of the secondary air system is monitored by registering the pressure conditions. 
+
+Secondary air pump 
+
+The electrically operated secondary air pump is 
+attached to the cylinder head of cylinder bank 1. 
+
+During the warm-up phase, the pump draws in 
+fresh air from the engine compartment. This is 
+cleaned by the filter integrated in the pump and 
+delivered across the pressure line to the two sec¬ 
+ondary air valves. 
+
+After the engine start, the secondary air pump is supplied with vehicle voltage by the 
+DME via the secondary air pump relay. The switched-on period is about 20 seconds 
+and it depends essentially on the coolant temperature at engine start. It is activated from 
+a coolant temperature of +5°C to +50°C (40°F to 120°F). 
+
+
+
+
+55 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary air valve 
+
+A secondary air valve is bolted onto the rear of each cylinder head. The secondary air 
+valve opens as soon as the system pressure generated by the secondary air pump 
+exceeds the opening pressure of the valve. Secondary air is fed via the secondary air 
+line into the elongated passage of the cylinder head. From the elongated passage, 24 
+tap holes lead to the 12 exhaust ducts where the thermal post-combustion takes place. 
+
+The secondary air valve closes as soon as the secondary air pump switches off, thus 
+preventing exhaust gas from flowing back to the secondary air pump. 
+
+
+
+Secondary Air Valve 
+and Pressure Sensor 
+
+
+On-board diagnosis of secondary air system 
+
+Monitoring takes place with the help of the pressure sensors that are fitted before each 
+of the secondary air valves. The exhaust gas oxygen sensors are also used. 
+
+The overall diagnosis is divided into a rough diagnosis that begins immediately after the 
+secondary air pump starts up and the fine diagnosis that begins around 12 to 14 sec¬ 
+onds after the secondary air injection starts. 
+
+The rough diagnosis uses only the pressure signals. Every fault in the secondary air sys¬ 
+tem is detected if there is a drop below a minimum pressure in the event of a leakage or 
+if a maximum pressure is exceeded when a valve is clogged or jammed closed. However, 
+under certain circumstances, it might not be possible to assign the fault correctly, 
+because the pressure sensors indicate the same pressure due to the connecting line. 
+
+The fine diagnosis uses the exhaust gas oxygen sensor signals in addition to the pres¬ 
+sure signals. The combination of exceeding or falling short of fault thresholds for the 
+pressure and exhaust gas oxygen sensor values means the fault can be precisely 
+assigned to the relevant cylinder bank. The fine diagnosis relies on the oxygen sensor 
+readiness, this is available much later than in naturally aspirated engines due to the heat 
+loss through theturbocharger. 
+
+There is also an electrical diagnosis for the secondary air pump relay and for the pres¬ 
+sure sensors. These indicate the usual electrical faults (line disconnection, short circuit 
+to ground, short circuit to supply voltage). There is an additional mutual plausibility check 
+of the pressure sensors on initialization with ambient pressure. 
+
+
+56 
+
+Emissions Management 
+
+
+
+Misfire Detection 
+
+
+Misfire detection is part of the OBD II regulations the ECM must determine misfire and 
+also identify the specific cylinder(s). The ECM must also determine the severity of the 
+misfire and whether it is emissions relevant or catalyst damaging based on moni¬ 
+toring crankshaft acceleration. 
+
+Emission Increase 
+
+• Within an interval of 1000 crankshaft revolutions, the ECM adds the detected misfire 
+events for each cylinder. If the sum of all cylinder misfire incidents exceeds the pre¬ 
+deter- mined value, a fault code will be stored and the “Malfunction Indicator Light” 
+will be illuminated. 
+
+• If more than one cylinder is misfiring, all misfiring cylinders will be specified and the 
+individual fault codes for each misfiring cylinder, or multiple cylinders will be stored. 
+The “Malfunction Indicator Light” will be illuminated. 
+
+Catalyst Damage 
+
+• Within an interval of 200 crankshaft revolutions 
+the detected number of misfiring events is calcu¬ 
+lated for each cylinder. The ECM monitors this 
+based on load/rpm. If the sum of cylinder misfire 
+incidents exceeds a predetermined value, a 
+“Catalyst Damaging” fault code is stored and the 
+“Malfunction Indicator Light” will be illuminated. 
+
+If the cylinder misfire count exceeds the predeter¬ 
+mined threshold the ECM will take the following mea¬ 
+sures: 
+
+The oxygen sensor control will be switched to 
+open loop. 
+
+The cylinder selective fault code is stored. 
+
+If more than one cylinder is misfiring the fault code for all 
+individual cylinders and for multiple cylinders will be stored. 
+
+The fuel injector to the respective cylinder(s) is deactivated. 
+
+
+
+57 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ambient Barometric Pressure 
+
+
+The Integrated Ambient Barometric Pressure Sensor is part of the ECM and is not ser¬ 
+viceable. The internal sensor is supplied with 5 volts. In return it provides a linear voltage 
+of approx. 2.4 to 4.5 volts representative of barometric pressure (altitude). 
+
+The ECM monitors barometric pressure for the following reasons: 
+
+• The barometric pressure signal along with calculated air mass provides an additional 
+correction factor to further refine injection “on” time. 
+
+• Provides a base value to calculate the air mass being injected into the exhaust sys¬ 
+tem by the Secondary Air Injection System. This correction factor alters the sec¬ 
+ondary air injection “on” time, optimizing the necessary air flow into the exhaust system. 
+
+
+f\ 
+
+INTEGRAL 
+
+BAROMETRIC 
+
+PRESSURE 
+
+SENSOR 
+
+
+
+PROVIDES ADDITIONAL CORRECTION 
+FACTOR FOR FOLLOWING FUNCTIONS 
+
+
+
+58 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation 
+
+
+One of the major changes on the new NG6 engines is that the crankcase ventilation sys¬ 
+tem has been upgraded and improved. This applies to all of the new NG6 versions 
+(N52KP, N51 and N54). 
+
+There are two distinct versions of crankcase ventilation. One type is unique to the N54 
+and the other applies to N51 and N52KP. 
+
+The N52, which is still in production continues to use the “external” crankcase ventilation 
+system with the electrically heated crankcase ventilation valve/cyclone separator. 
+
+Crankcase Ventilation System on N52 
+
+
+
+59 
+
+Emissions Management 
+
+
+
+Crankcase Ventilation (N51 and N52KP) 
+
+The crankcase ventilation system on the N51 and N52KP has been modified as com¬ 
+pared to the N52. The system is integrated into the plastic cylinder head cover. 
+
+The crankcase gases are regulated by a crankcase ventilation valve similar to the design 
+used on the N62. The crankcase vent valve is currently part of the cylinder head cover 
+and is not replaceable as a separate component. 
+
+Oil separation is carried out via a “labyrinth” system and two cyclone separators which 
+are incorporated into the cylinder head cover. By having the system components inte¬ 
+grated into the cylinder head cover, the crankcase gases are heated by the engine rather 
+than an electric heater as on the N52. However, there is still one electric heating ele¬ 
+ment at the manifold inlet. 
+
+Once the liquid oil is separated from the crankcase vapors, the oil is allowed to drain 
+back through check valves back into the engine. 
+
+
+N52KP Cylinder Head Cover (cutaway view) 
+
+
+
+Integrated 
+cyclone separator 
+
+
+Oil drainback valve 
+
+
+Crankcase vent valve 
+
+
+60 
+
+Emissions Management 
+
+
+Crankcase Ventilation (N54) 
+
+Since the N54 is a turbocharged 
+engine, the crankcase ventilation 
+system has to meet certain design 
+requirements. For example, when 
+the engine is in turbocharged mode, 
+the increased manifold pressure 
+should not have an adverse effect 
+on the crankcase venting. This is 
+why, there is no crankcase ventila¬ 
+tion valve in the system. 
+
+The system consists of four small 
+cyclone separators which are inte¬ 
+grated into the plastic cylinder head 
+cover. The flow of crankcase gases 
+is metered through a series of 
+restrictions which control the ulti¬ 
+mate crankcase pressure. 
+
+One of the main operating principles behind the crankcase venting system on the N54 
+is that there are two strategies - one for the turbocharged mode and one for “non-tur- 
+bocharged” operation such as decel. These strategies are dependent upon the intake 
+manifold pressure. 
+
+
+
+N54 Cylinder Head Cover (cutaway view) 
+
+
+
+
+
+cyclone separator 
+
+
+61 
+
+Emissions Management 
+
+
+
+62 
+
+Emissions Management 
+
+
+
+Crankcase Ventilation System Overview (N55) 
+
+The blow-by gasses flow into the settling chamber of the cylinder head cover through an 
+opening located in the rear of the cover. Here, the blow-by gasses are directed through 
+holes on to an impact plate, against which the oil impacts at high speed, and drains off. 
+The blow-by gasses, cleaned of oil, flow via the pressure control valve (depending on the 
+operating mode) through the non-return valves into the inlet pipe upstream of the 
+turbocharger, or via passages in the cylinder head ahead of the intake valves. The sepa¬ 
+rated oil is drained via a return flow duct into the oil pan. 
+
+Naturally Aspirated Mode (N55) 
+
+The standard function can only be used as long as a vacuum prevails in the intake air 
+manifold, i.e. in naturally-aspirated engine mode. 
+
+With the engine operating in naturally-aspirated mode, the vacuum in the intake air mani¬ 
+fold opens the non-return valve (15) in the blow-by duct within the cylinder head cover. 
+This draws off blow-by gasses via the pressure control valve. At the same time, the vac¬ 
+uum also closes the second non-return valve (12) in the duct to the charge air intake 
+pipe. 
+
+The blow-by gasses flow via a distribution rail integrated in the cylinder head cover, 
+through the intake passages (16) in the cylinder head, which lead directly into the intake 
+ports, ahead of the valves. 
+
+Boost Mode (N55) 
+
+As the pressure in the intake air manifold increases in boost mode, blow-by gasses can 
+no longer be introduced via the passages in the cylinder head, otherwise, the boost pres¬ 
+sure could enter the crankcase. A non-return valve (15) in the blow-by channel within the 
+cylinder head cover closes the connection (16) to the intake air manifold. This protects 
+the crankcase from excess pressure. 
+
+The increased demand for fresh air creates a vacuum in the clean air pipe between the 
+turbocharger and intake silencer. This vacuum is sufficient to open the non-return valve 
+(12) and draw the blow-by gasses via the pressure control valve. 
+
+
+63 
+
+Emissions Management 
+
+
+
+Crankcase Ventilation Overview (N55) 
+
+
+Crankcase ventilation system in “decel mode” 
+
+
+
+
+
+
+
+64 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Ambient pressure 
+
+B 
+
+Vacuum 
+
+C 
+
+Exhaust gas 
+
+D 
+
+Oil 
+
+E 
+
+Blow-by gas 
+
+1 
+
+Air cleaner 
+
+2 
+
+Intake manifold 
+
+3 
+
+Impact plates 
+
+4 
+
+Oil return channel 
+
+5 
+
+Crankcase 
+
+6 
+
+Oil sump 
+
+7 
+
+Oil return channel 
+
+8 
+
+Exhaust turbocharger 
+
+9 
+
+Oil drain valve 
+
+10 
+
+Charge air intake line 
+
+11 
+
+Hose to charge air intake line 
+
+12 
+
+Non-return valve 
+
+13 
+
+Pressure regulating valve 
+
+14 
+
+Throttle valve 
+
+15 
+
+Non-return valve 
+
+16 
+
+Passages in cylinder head and cylinder head cover 
+
+
+65 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation System Overview (N55) 
+
+
+Crankcase ventilation system 
+in turbocharged mode (boost mode) 
+
+
+
+
+
+
+
+
+
+
+66 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If a customer complains about high oil consumption and oil is 
+discovered in the turbocharger, it should not be immediately assumed 
+that the turbocharger is defective. If the oil is present in the fresh air 
+pipe (before the turbocharger) then the entire engine should be 
+checked. 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Excess pressure 
+
+B 
+
+Vacuum 
+
+C 
+
+Exhaust gas 
+
+D 
+
+Oil 
+
+E 
+
+Blow-by gas 
+
+1 
+
+Air cleaner 
+
+2 
+
+Intake manifold 
+
+3 
+
+Impact plates 
+
+4 
+
+Oil return channel 
+
+5 
+
+Crankcase 
+
+6 
+
+Oil sump 
+
+7 
+
+Oil return channel 
+
+8 
+
+Exhaust turbocharger 
+
+9 
+
+Oil drain valve 
+
+10 
+
+Charge air intake line 
+
+11 
+
+Hose to charge air intake line 
+
+12 
+
+Non-return valve 
+
+13 
+
+Pressure regulating valve 
+
+14 
+
+Throttle valve 
+
+15 
+
+Non-return valve 
+
+16 
+
+Passages in cylinder head and cylinder head cover 
+
+
+67 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+68 
+
+Emissions Management 
+
+
+
+Crankcase Ventilation System Overview (N54) 
+
+Naturally Aspirated Mode (N54) 
+
+When the engine has low manifold pressure such as in decel, the crankcase vapors are 
+routed through a channel (15) between the cylinder head cover and intake manifold. 
+
+The liquid oil is separated before the channel in the cyclonic separators (3) in the cylinder 
+head cover. The liquid oil returns to the engine via the oil discharge valve (4). 
+
+The channel contains a pressure restrictor (16) which regulates the flow of crankcase 
+vapors. During deceleration, the crankcase vapors (E) are directed via a check valve (14) 
+which is located in the cylinder head cover. The check valve is opened when low 
+pressure is present in the intake manifold (throttle closed). 
+
+Also, a PTC heater has been integrated into the intake manifold inlet. The inlet pipe is 
+connected to the channel (15) and prevent any moisture from freezing at the inlet. 
+
+Boost Mode (N54) 
+
+When in turbocharged mode, the pressure in the intake manifold increases and then 
+closes the check valve (14). Now, a low pressure is present in the charge air suction line 
+(10). This causes a low pressure in the hose (11) leading to the manifold check valve 
+(12). The crankcase vapors (after separation) are directed through the check valve (12) 
+into the charge air suction line (10) and ultimately back into the engine. The check valve 
+(12) also prevent boost pressure from entering the crankcase when the intake manifold 
+pressure is high. 
+
+
+69 
+
+Emissions Management 
+
+
+
+Crankcase Ventilation System Overview (N54) 
+
+
+Crankcase ventilation system 
+
+
+
+
+70 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Overpressure 
+
+7 
+
+Oil sump 
+
+B 
+
+Low Pressure (Vacuum) 
+
+8 
+
+Oil return channel 
+
+C 
+
+Exhaust gas 
+
+9 
+
+Turbocharger 
+
+D 
+
+Liquid oil 
+
+10 
+
+Charge air suction line, bank 2 
+
+E 
+
+Blow-by gases (Crankcase vapors) 
+
+11 
+
+Hose to charge air suction line, bank 2 
+
+1 
+
+Air cleaner 
+
+12 
+
+Check valve, manifold 
+
+2 
+
+Intake manifold 
+
+13 
+
+Throttle valve 
+
+3 
+
+Cyclone separators 
+
+14 
+
+Check valve, charge air suction line 
+
+4 
+
+Oil discharge valve 
+
+15 
+
+Channel to intake manifold 
+
+5 
+
+Venting channel 
+
+16 
+
+Pressure restrictor 
+
+6 
+
+Crankshaft cavity 
+
+
+
+
+71 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation System Overview (N54) 
+
+
+Crankcase ventilation system in 
+“turbocharged mode” 
+
+
+
+
+
+
+
+
+
+
+Early Production: i 
+
+External Passage ! 
+
+Late Production: j 
+Internal Passage 1 
+
+
+
+
+
+
+
+
+
+
+If a customer complains about high oil consumption and oil is 
+discovered in the turbocharger, it should not be immediately assumed 
+that the turbocharger is defective. If the oil is present in the fresh air 
+pipe (before the turbocharger) then the entire engine should be 
+checked. 
+
+
+72 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Overpressure 
+
+7 
+
+Oil sump 
+
+B 
+
+Low Pressure (Vacuum) 
+
+8 
+
+Oil return channel 
+
+C 
+
+Exhaust gas 
+
+9 
+
+Turbocharger 
+
+D 
+
+Liquid oil 
+
+10 
+
+Charge air suction line, bank 2 
+
+E 
+
+Blow-by gases (Crankcase vapors) 
+
+11 
+
+Hose to charge air suction line, bank 2 
+
+1 
+
+Air cleaner 
+
+12 
+
+Check valve, manifold 
+
+2 
+
+Intake manifold 
+
+13 
+
+Throttle valve 
+
+3 
+
+Cyclone separators 
+
+14 
+
+Check valve, charge air suction line 
+
+4 
+
+Oil discharge valve 
+
+15 
+
+Channel to intake manifold 
+
+5 
+
+Venting channel 
+
+16 
+
+Pressure restrictor 
+
+6 
+
+Crankshaft cavity 
+
+
+
+
+
+Be aware that any check valve failure could cause excessive oil con¬ 
+sumption possibly accompanied by blue smoke from the exhaust. 
+
+This should not be mistaken for a failed turbocharger. Always perform 
+a complete diagnosis of the crankcase ventilation system, before 
+replacing any turbocharger or associated components. 
+
+
+73 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation Heating 
+
+Also integrated into the design of the crankcase ventilation is an electric heating system 
+designed to prevent moisture buildup. Moisture buildup can eventually lead to ice at low 
+ambient temperatures leading to malfunctions of the crankcase ventilation. 
+
+The crankcase vent valve and cyclonic separator are also insulated by a protective foam 
+covering to provide additional shelter from low ambient temperatures. 
+
+The PTC heating elements are integrated into the crankcase ventilation valve and hose 
+assemblies. There is a junction point on the intake manifold which provides a connec¬ 
+tion point for the individual heating elements. 
+
+There is also a heating element located on the centrally located port on the intake mani¬ 
+fold. This port is also provided with a separate heating circuit controlled by a PTC 
+thermistor. 
+
+The ECM receives the ambient temperature information from the outside temperature 
+sensor. 
+
+
+SSP-SP0000052251 Oil Supply (Engine Breather Heater) 
+
+
+
+1 
+
+
+1 ■' J ■ 
+
+I '.vj ‘-vt- 
+
+
+
+
+
+
+
+- 
+
+
+Si 
+
+
+
+
+74 
+
+Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

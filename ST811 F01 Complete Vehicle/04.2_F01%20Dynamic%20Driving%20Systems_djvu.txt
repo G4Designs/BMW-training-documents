@@ -1,0 +1,5029 @@
+Table of Contents 
+
+F01 Dynamic Driving Systems 
+
+Subject Page 
+
+Introduction .5 
+
+Integrated Chassis Management (ICM) .5 
+
+History .5 
+
+New Control Units .8 
+
+ICM control unit expansion stages .8 
+
+Expansion stages of VDM control unit.8 
+
+New Evolution Stage in Driving Dynamics Control .9 
+
+Standard Eguipment and Options .11 
+
+System Overview .12 
+
+Installation Locations in the Vehicle .12 
+
+Bus System Overview for Dynamic Driving Systems.14 
+
+Integrated Chassis Management System Circuit Diagram .16 
+
+Driving Dynamics Control System Circuit Diagram .18 
+
+Functions .20 
+
+Integrated Chassis Management .20 
+
+Overview .20 
+
+Signal Provision .21 
+
+Driver Assistance Functions .22 
+
+Signal Provision .22 
+
+Signals from integrated sensor system .22 
+
+Signals from External Sensors .23 
+
+Processing and distribution of signals .26 
+
+Higher-level Driving Dynamics Control .28 
+
+Observation of the Driving Condition .28 
+
+Central Driving Dynamics Control .28 
+
+Coordinated Intervention by the Dynamic Driving Systems .30 
+
+Distributed functions: ICM and actuator control units.34 
+
+Control and Adjustment of Steering.37 
+
+Driver Assistance Functions .38 
+
+Driving Dynamics Control .42 
+
+History .42 
+
+Mode of Action of Driving Dynamics Control in F01/F02 .45 
+
+Networking of Systems .45 
+
+Operation and display .46 
+
+Modes and their effects .51 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Components.54 
+
+ICM Control Unit .54 
+
+Design of the Two Control Unit Versions .54 
+
+Integrated sensor system .57 
+
+Connector .60 
+
+Installation Location .60 
+
+Replacement and Start-up .63 
+
+Removing and installing the ICM control unit .63 
+
+Calibration of the sensors integrated into the ICM .63 
+
+Calibration of the ride-height sensors .64 
+
+Initialization of the Integral Active Steering .65 
+
+Calibration of the steering angle sensor in the steering 
+
+column switch cluster .66 
+
+Start-up, short range radar sensors .66 
+
+Periphery of ICM Control Unit.68 
+
+Bus Systems.68 
+
+FlexRay .69 
+
+Local CAN .69 
+
+Wake-up line .69 
+
+Power Supply .70 
+
+Ride-height Sensors .70 
+
+Design and principle of operation .70 
+
+Versions .70 
+
+Interface with ICM control unit .71 
+
+Driving Dynamics Switch .72 
+
+Valves of Steering Unit .74 
+
+Service Information.75 
+
+What Points must be Observed During Servicing .75 
+
+ICM Control Unit .75 
+
+Diagnosis in the Event of Signal Faults .76 
+
+Sensors in the ICM .76 
+
+Ride-height Sensors .77 
+
+Steering Column Switch Cluster with Ssteering Angle Sensor .. .78 
+
+Integral Active Steering .78 
+
+Displays and Operation .78 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Dynamic Driving Systems 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+■MICTWIS 
+
+After completion of this module you will be able to: 
+
+• Understand Integrated Chassis Management on the new 7-series 
+
+• Understand “Higher Level” driving dynamics control 
+
+
+• Understand the interaction between various chassis dynamics systems 
+
+
+4 
+
+F01 Dynamic Driving Systems 
+
+
+Introduction 
+
+
+Integrated Chassis Management (ICM) 
+
+History 
+
+A central, higher-level driving dynamics control system was first introduced in BMW 
+vehicles several years ago. 
+
+The introduction of the longitudinal dynamics management system in the BMW 3 Series 
+(E9x) was the first step in this direction. The longitudinal dynamics control functions, 
+Dynamic Cruise Control and Active Cruise Control, were integrated into one control unit, 
+the LDM control unit. These integrated functions considerably enhanced the harmony 
+and coordination of drive and brake actuation. 
+
+The Vertical Dynamics Management made its debut in the BMW X5 (E70) with the VDM 
+control unit: the integrated Vertical Dynamics Control (VDC) function controls the 
+adjustable dampers. In contrast to the earlier system, not only ride-level heights and 
+vertical acceleration are used as the input signals. Instead, the higher-level control 
+strategy of the Vertical Dynamics Control takes all signals relevant to driving dynamics 
+into account, including, for example, road speed, and longitudinal and lateral acceleration. 
+
+The VDM control unit also coordinates the Vertical Dynamic Control and Active Roll 
+Stabilization (ARS) functions. Overall, this meant that wheel contact with the road 
+surface was improved and the vertical movement of the body reduced for a wider variety 
+of road situations. 
+
+In addition to the VDM control unit, the BMW X6 (E71) was also eguipped with an ICM 
+control unit that for the first time incorporates both the longitudinal and lateral dynamics 
+control functions. The longitudinal and lateral motion of the vehicle is evaluated centrally 
+in the ICM control unit. 
+
+Following on from this development, the dynamic driving systems Active Steering and 
+Dynamic Performance Control are now used and their interaction is of course also 
+coordinated by the ICM control unit. 
+
+Significant at this stage is the definition of the ICM as the main control unit for the 
+control functions. The actuators on the other hand are activated by control units specially 
+intended for this purpose. 
+
+
+5 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+Evolution stages of Integrated Chassis Management 
+
+
+
+6 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+LDM 
+
+Control unit, Longitudinal Dynamics Management 
+
+DCC 
+
+Dynamic Cruise Control function (cruise control with braking function) 
+
+ACC 
+
+Active Cruise Control function 
+
+VDM 
+
+Control unit, Vertical Dynamics Management 
+
+VDC 
+
+Vertical Dynamics Control function 
+
+ARS 
+
+Control unit or function, Active Roll Stabilization (Dynamic Drive) 
+
+DSC 
+
+Control unit, Dynamic Stability Control 
+
+FDR 
+
+Driving dynamics control function 
+
+ICM 
+
+Control unit, Integrated Chassis Management 
+
+QMVH 
+
+Lateral torque distribution at rear axle (Dynamic Performance Control) 
+
+AL 
+
+Active Steering function 
+
+DSC-SEN 
+
+DSC sensor in the ICM control unit 
+
+FDC 
+
+Driving dynamics control switch 
+
+IAL 
+
+Integral Active Steering function 
+
+
+The red triangles denote interaction between the control units and functions. This is not 
+always purely be an exchange of sensor signals. Control signals and reference values may 
+be also used (for example) to influence the driving dynamics control in the ICM control 
+unit or the Active Roll Stabilization in the VDM control unit. 
+
+
+7 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New Control Units 
+
+Two newly developed control units for dynamic driving systems will also be used in the 
+F01/F02: 
+
+• Integrated Chassis Management (ICM) and 
+
+• Vertical Dynamics Management (VDM). 
+
+Although their names are already familiar from the E70/E71, they differ considerably in 
+their functional range and design. 
+
+A multitude of driving dynamics functions is concentrated in these control units. 
+
+In addition to central signal provision, the essential functions of the ICM control unit are 
+concerned with longitudinal and lateral dynamics. These include the control function for 
+the new Integral Active Steering, for example. 
+
+The vertical dynamics functions on the other hand are incorporated in the VDM control 
+unit: Vertical Dynamics Control in the 2nd generation and Active Roll Stabilization (also: 
+Dynamic Drive). 
+
+Although both control units are standard eguipment, two expansion stages are available 
+in each case, depending on the options fitted to the vehicle. 
+
+ICM control unit expansion stages 
+
+The basic version of the ICM control unit is fitted as standard in the F01/F02. In this case, 
+the vehicle is provided with the Servotronic steering system and cruise control driver 
+assistance function with braking function. 
+
+The high-performance version of the ICM control unit is used if one or both of the follow¬ 
+ing options are ordered by the customer: 
+
+• Integral Active Steering 
+
+• Active Cruise Control with Stop & Go function 
+
+Expansion stages of VDM control unit 
+
+The basic version of the VDM control unit contains the Vertical Dynamics Control func¬ 
+tion. This is included in the standard eguipment of the F01/F02. 
+
+The high-performance version of the VDM control unit is fitted if the customer also orders 
+the option Active Roll Stabilization (ARS). The high-performance version also incorpo¬ 
+rates the output stages reguired for activation of the hydraulic valves in the ARS. 
+
+
+8 
+
+F01 Dynamic Driving Systems 
+
+
+
+New Evolution Stage in Driving Dynamics Control 
+
+The notion of “Integrated Chassis Management” is significantly developed further in the 
+F01/F02. The two main objectives were to improve the performance and interaction of 
+the individual dynamic driving systems. In order to achieve the desired dynamic effect in 
+each road situation, the most suitable actuator can now be selected and activated. It may 
+of course be useful to operate several actuators in tandem. Examples of this are activating 
+the brakes for individual wheels or superimposing a steering angle using Integral Active 
+Steering. 
+
+A further task of the ICM control unit is to make the driving dynamics condition available 
+throughout the entire vehicle through in the form of signals. This is why the DSC sensor 
+in the F01/F02, which was previously fitted separately, has now been integrated into the 
+ICM control unit. 
+
+This means that all systems have access to the same information provided by the ICM 
+control unit. As a conseguence, the potential for errors, particularly in networked systems, 
+is reduced and the system reliability of systems is increased. Further, this simplifies the 
+diagnosis of the interconnected system as the fault code memory entries for the driving 
+dynamics signals are now stored centrally in the ICM control unit and are no longer 
+distributed between many control units. 
+
+
+9 
+
+F01 Dynamic Driving Systems 
+
+
+
+Driving dynamics signals provided by the ICM control unit 
+
+
+
+
+l x , 3y ... 
+
+
+
+© 
+
+DSC 
+
+m 
+
+w 
+
+AL 
+
+>* 
+
+
+HSR 
+
+\ 
+
+
+VDM 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DSC sensor integrated into the ICM control unit 
+
+DSC 
+
+Dynamic Stability Control 
+
+2 
+
+ICM control unit 
+
+AL 
+
+Active Steering 
+
+V 
+
+Road speed 
+
+HSR 
+
+Rear axle slip angle control 
+
+ax 
+
+Longitudinal acceleration 
+
+VDM 
+
+Vertical Dynamics Management 
+
+ay 
+
+Lateral acceleration 
+
+
+
+
+The result for the customer is perfect harmony in terms of vehicle handling - irrespective 
+of the equipment specification and road situation. This uses the possibilities for maximiz¬ 
+ing convenience, agility and stability to the full. 
+
+The customer’s experience of this harmony in terms of vehicle handling is especially 
+enhanced by the new Driving Dynamics Control function. This offers several particu¬ 
+larly distinctive vehicle characteristics that determine how the vehicle handling as a whole 
+is perceived by the driver and passengers. The driver can use the driving dynamics 
+switch to select a characteristic that perfectly matches the specific driving requirement 
+or section of road. 
+
+
+10 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Standard Equipment and Options 
+
+The following table shows the standard equipment and options available for dynamic 
+driving systems. A specific model (750i) has been selected in order to compare the 
+functions and equipment levels of the E65 and F01. 
+
+
+Dynamic Driving System 
+
+E65/E66 
+
+F01/F02 
+
+
+Standard 
+
+Optional 
+
+Standard 
+
+Optional 
+
+Higher Level Driving Dynamics Systems 
+
+
+
+
+
+Integrated Chassis Management 
+
+
+
+• 
+
+
+Driving Dynamics Control 
+
+
+
+• 
+
+
+Longitudinal Dynamics 
+
+
+
+
+
+Dynamic Stability Control 
+
+• 
+
+
+• 
+
+
+Electro-Mechanical Parking Brake (EMF) 
+
+• 
+
+
+• 
+
+
+Lateral Dynamics 
+
+
+
+
+
+Servotronic 
+
+• 
+
+
+• 
+
+
+Integrated Active Steering (IAL) 
+
+
+
+
+• 
+
+Vertical Dynamics 
+
+
+
+
+
+Electronic Damping Control (continuous) EDC-K 
+
+
+• 
+
+
+
+Vertical Dynamics Control 2 (VDC 2) 
+
+
+
+• 
+
+
+Active Roll Stabilization 
+
+• 
+
+
+
+• 
+
+Electronic Height Control 
+
+
+• (E65/66) 
+
+• (F02) 
+
+
+Driver Assistance 
+
+
+
+
+
+Cruise Control (FGR) 
+
+• 
+
+
+
+
+Cruise Control with braking function (DCC) 
+
+
+
+• 
+
+
+Active Cruise Control (ACC) 
+
+
+• 
+
+
+
+Active Cruise Control with Stop and Go (ACC Stop and Go) 
+
+
+
+
+• 
+
+
+11 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+System Overview 
+
+Installation Locations in the Vehicle 
+
+
+Control units, sensors and actuators of the dynamic driving systems in the F01 /F02 
+
+© ©© ® © 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electronic Damping Control satellite, front left 
+
+2 
+
+Ride-height sensor, front left 
+
+3 
+
+Valve for electronic flow rate adjustment of power steering pump (EW) 
+
+4 
+
+Servotronic valve 
+
+5 
+
+Ride-height sensor, front right 
+
+6 
+
+Electronic Damping Control satellite, front right 
+
+7 
+
+Junction box electronics and fuse carrier, front 
+
+8 
+
+Control unit for Vertical Dynamics Management 
+
+9 
+
+Control unit for Integrated Chassis Management 
+
+10 
+
+Buttons for electromechanical parking brake and Automatic Hold 
+
+11 
+
+Driving dynamics switch and DTC button 
+
+12 
+
+Steering column switch cluster with steering angle sensor 
+
+13 
+
+Control unit for Active Steering 
+
+14 
+
+Control unit and hydraulic unit for Dynamic Stability Control 
+
+
+12 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control units, sensors and actuators of the dynamic driving systems in the F01/F02 (2) 
+
+© ® ® 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Control unit and actuating unit for electromechanical parking brake 
+
+2 
+
+Ride-height sensor, rear right 
+
+3 
+
+Electronic Damping Control satellite, rear right 
+
+4 
+
+Control unit for TPMS 
+
+5 
+
+Control unit for electronic ride-height control 
+
+6 
+
+Control unit for rear axle slip angle control 
+
+7 
+
+Actuating unit for rear axle slip angle control 
+
+8 
+
+Ride-height sensor, rear left 
+
+9 
+
+Electronic Damping Control satellite, rear left 
+
+
+Both graphics show the installation locations of the most important control units, sensors 
+and actuators of the dynamic driving systems in the F01/F02. These have been split into 
+two graphics to maintain clarity of overview and not for functional reasons. 
+
+
+13 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Overview for Dynamic Driving Systems 
+
+
+5 
+
+o 
+
+
+
+
+
+
+
+
+14 
+
+F01 Dynamic Driving Systems 
+
+
+FlexRay 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+AL 
+
+Active Steering 
+
+DSC 
+
+Dynamic Stability Control 
+
+EHC 
+
+Electronic ride-height control 
+
+EDC SHL 
+
+Electronic Damping Control satellite, rear left 
+
+EDC SHR 
+
+Electronic Damping Control satellite, rear right 
+
+EDC SVL 
+
+Electronic Damping Control satellite, front left 
+
+EDC SVR 
+
+Electronic Damping Control satellite, front right 
+
+EMF 
+
+Electromechanical parking brake 
+
+ICM 
+
+Integrated Chassis Management 
+
+HSR 
+
+Rear axle slip angle control 
+
+TPMS 
+
+Tire Pressure Monitoring System 
+
+SZL 
+
+Steering column switch cluster with steering angle sensor 
+
+VDM 
+
+Vertical Dynamics Management 
+
+ZGM 
+
+Central gateway module 
+
+
+15 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+Integrated Chassis Management System Circuit Diagram 
+
+
+© 
+
+
+© © 
+
+D -B- 
+
+
+© 
+
+
+
+16 
+
+F01 Dynamic Driving Systems 
+
+
+<1 >30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ride-height sensor, front left 
+
+2 
+
+Servotronic valve 
+
+3 
+
+EW valve 
+
+4 
+
+Ride-height sensor, front right 
+
+5 
+
+Central gateway module 
+
+6 
+
+Steering column switch cluster with steering angle sensor 
+
+7 
+
+Footwell module 
+
+8 
+
+Driving dynamics switch and DTC button 
+
+9 
+
+Fuse for ICM control unit (fuse carrier at front, junction box electronics) 
+
+10 
+
+Integrated Chassis Management 
+
+11 
+
+Local CAN 
+
+12 
+
+DSC sensor in the ICM control unit (longitudinal acceleration, lateral acceleration, yaw rate) 
+
+13 
+
+Redundant DSC sensor in the ICM control unit (lateral acceleration, yaw rate) 
+
+14 
+
+Ride-height sensor, rear left 
+
+15 
+
+Ride-height sensor, rear right 
+
+
+The purpose of the local CAN is to connect the ICM control unit to the radar sensors for 
+the Active Cruise Control with Stop & Go function. 
+
+
+17 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+Driving Dynamics Control System Circuit Diagram 
+
+
+
+18 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module 
+
+2 
+
+Central Information Display 
+
+3 
+
+Fuse for ICM control unit (fuse carrier at front, junction box electronics) 
+
+4 
+
+Central gateway module 
+
+5 
+
+Instrument cluster 
+
+6 
+
+Operating unit for center console with locating lamp 
+
+7 
+
+DTC button 
+
+8 
+
+Driving dynamics switch 
+
+9 
+
+Controller 
+
+10 
+
+Integrated Chassis Management 
+
+
+This system circuit diagram shows the operator control and display elements for the 
+driving dynamics control function. For clarity of overview, the drive and dynamic driving 
+systems upon which the driving dynamics control acts have been omitted. These are 
+described in the Functions section instead. 
+
+
+19 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+Functions 
+
+
+Integrated Chassis Management 
+
+Overview 
+
+With the E71, the notion of a higher-level driving dynamics control system was imple¬ 
+mented for the first time in a standard model. This central function is also referred to as 
+“Integrated Chassis Management” (“ICM” for short) and is integrated in the control unit 
+of the same name in the E71. 
+
+The previous strategy was to use one control unit to perform the control tasks for each 
+main movement direction. This approach was not employed in the E71 or the F01/F02. 
+
+Control units and main movement directions of vehicle 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Longitudinal dynamics 
+
+ICM 
+
+Integrated Chassis Management 
+
+2 
+
+Lateral dynamics 
+
+VDM 
+
+Vertical Dynamics Management 
+
+3 
+
+Vertical dynamics 
+
+
+
+
+As is the case in the E71, the new ICM control unit in the F01/F02 essentially performs 
+the calculations for the control functions that influence the longitudinal and lateral 
+dynamics. The actuators are activated by separate control units (e.g. AS control unit). 
+The functional range of the ICM control unit in the F01/F02 has grown considerably 
+when compared to the E71. 
+
+The Vertical Dynamics Management (VDM) is still responsible for controlling the vertical 
+dynamics. The vertical dynamic control and dynamic drive functions are therefore 
+accommodated in the VDM control unit. Signals that provide information on the current 
+driving situation are obviously exchanged between the ICM and VDM. 
+
+The main focus of this section is to describe the functions of the ICM control unit. 
+
+An introductory overview of these functions is provided in the following illustration and 
+explanation. The functions are dealt with in more depth in the following chapters. 
+
+
+20 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions in the ICM control unit 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Input signals from external sensors 
+
+2 
+
+Integrated Chassis Management 
+
+3 
+
+Output signals (target values at actuators and actuator control units) 
+
+4 
+
+Driver assistance functions 
+
+5 
+
+"Central driving dynamics and steering control" function 
+
+6 
+
+"Sensor signal processing and signal provision" function 
+
+7 
+
+"Driving dynamics control" function 
+
+8 
+
+DSC sensor in the ICM control unit (longitudinal acceleration, lateral acceleration, yaw rate) 
+
+9 
+
+Redundant DSC sensor in the ICM control unit (lateral acceleration, yaw rate) 
+
+
+Signal Provision 
+
+The ICM control unit reads signals from external and also internal sensors. These sensor 
+signals are processed and converted into physical signals that describe the driving 
+dynamics of the vehicle, and are subsequently made available to a large number of sys¬ 
+tems in the vehicle. Examples of these signals are road speed and lateral acceleration. 
+
+The central driving dynamics control system in the ICM firstly evaluates the current dri¬ 
+ving condition and driver's command, also taking the dynamic driving systems installed in 
+the vehicle into account. 
+
+
+21 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+On the basis of this information, the system decides whether or not to intervene in the 
+driving dynamics, and also the extent the intervention. The highly intelligent dynamic 
+driving systems permit slight and barely noticeable interventions as soon as e.g. a 
+tendency towards understeering is detected. 
+
+A coordinator ensures that the most suitable actuator is activated in each case. 
+
+Where several actuators are used simultaneously, a great deal of importance has 
+been placed on ensuring that these interventions are in perfect harmony. 
+
+The driving dynamics control provides the driver with the choice of one of four driving 
+dynamics settings (Normal, Comfort, Sport and Sport+). By making this choice, the driver 
+influences the central driving dynamics control system and therefore all dynamic driving 
+systems and drive train systems. All systems are matched appropriately to every setting 
+and, most importantly, their interaction with each other within one specific setting is also 
+perfectly coordinated. The status of the Dynamic Stability Control is also taken into 
+account thus ensuring that two additional driving dynamics specifications are possible. 
+
+The ICM control unit is also responsible for the Servotronic function including valve actu¬ 
+ation. This steering control function is also influenced by the driving dynamics control. 
+
+Driver Assistance Functions 
+
+The ICM control unit incorporates the “Cruise control with braking” and “Active Cruise 
+Control with Stop & Go” control functions. In addition, the ICM coordinates activation of 
+the vibration actuator in the steering wheel for the “Lane Departure Warning” and “Active 
+Blind Spot Detection” driver assistance functions. 
+
+Signal Provision 
+
+Signals from integrated sensor system 
+
+The sensors that were previously accommodated separately in the DSC sensor are now 
+installed in the ICM control unit. The following variables can be recorded with these 
+sensors. 
+
+• Longitudinal acceleration and pitch of the road or vehicle in the longitudinal direction 
+
+• Lateral acceleration and pitch of road or vehicle in lateral direction 
+
+• Rotational speed around vertical axis (yaw rate) 
+
+The sensor signals are initially referenced to the sensor housing. However, to be useful to 
+the dynamic driving systems, these variables must be referenced to the vehicle coordi¬ 
+nate system. The ICM control unit performs the necessary conversion. A synchronization 
+process is carried out when the ICM control unit is started up during which appropriate 
+correction values are determined and saved. 
+
+
+22 
+
+F01 Dynamic Driving Systems 
+
+
+
+Note: Calibration of the sensors integrated into the ICM control unit is 
+necessary in the following cases: 
+
+• the ICM control unit has been replaced or 
+
+• if requested by the test schedule in the diagnostic 
+system due to a fault code memory entry. 
+
+The calibration must be performed with the vehicle standing on a level 
+surface in the longitudinal and lateral direction. Terminal 15 must be 
+switched on. 
+
+Signals from External Sensors 
+
+The ICM control unit imports the following signals that are important for dynamic driving 
+systems from external sources: 
+
+• Wheel speeds, four signals transmitted via FlexRay from DSC. 
+
+• Ride-level heights, four signals, wired directly to ICM control unit. 
+
+• Steering wheel angle, transmitted via FlexRay from steering column switch cluster. 
+
+• Position of actuators for Active Steering and rear axle slip angle control, transmitted 
+via FlexRay. 
+
+The ICM calculates the actual speed at which the vehicle moves along the driving axis 
+on the road based on the four wheel-speed signals. If dynamic driving systems inter¬ 
+vene and affect the wheel speeds, this is taken into account in the calculation. The status 
+of the ABS control (for example) is also imported in this instance. 
+
+The road speed thus determined for the first time in the F01/F02 is now used as the ref¬ 
+erence for practically all systems in the vehicle. This means that a multiple calculation no 
+longer needs to be performed in many other control units. 
+
+The ICM control unit also derives the following information from the wheel-speed signals: 
+
+• Distance travelled 
+
+• Wheel tolerance check: The marginal differences in wheel speeds (e.g. due to 
+differences in tire diameter) are identified and adjusted by the ICM. 
+
+• Snow chain detection: If snow chains are fitted, the driver can enter this informa¬ 
+tion manually via the Central Information Display. The wheel speeds are also used 
+by the HSR control unit to automatically determine whether snow chains are mount¬ 
+ed on the rear wheels. The result of this identification is transmitted to the ICM 
+control unit via the FlexRay. 
+
+
+23 
+
+F01 Dynamic Driving Systems 
+
+
+
+Although, from a theoretical standpoint, it may be more appropriate to assign the ride- 
+height sensors to the Vertical Dynamics Management, the four ride-height sensors are 
+directly connected to the ICM control unit. 
+
+The ICM control unit imports the analog voltage signals of the ride-height sensors. These 
+are converted into the actual ride-level heights in millimeters. To perform this conversion, 
+the ICM control unit must be able to map the voltage signals it receives to reference val¬ 
+ues as otherwise it will not be able to determine the actual ride-level heights. These ref¬ 
+erence values are determined by means of a synchronization procedure. 
+
+The harmonized ride-level heights are made available by the ICM control unit as bus sig¬ 
+nals. They are imported from: 
+
+• the Vertical Dynamics Management system for the Vertical Dynamics Control and 
+Active Roll Stabilization and also from the 
+
+• footwell module for the headlight-range adjustment function. 
+
+The ride-level heights are not transmitted as bus signals for the purposes of electronic 
+ride-height control (EHC). Instead, an additional direct line connection exists between the 
+ride-height sensors of the rear axle and the EHC control unit. 
+
+The ICM control unit determines the resulting steering lock angle of the front wheels 
+based on the steering wheel angle and location of the Active Steering actuator motor. 
+
+As the rear axle can also be steered, a reliable conclusion regarding the driving dynamics 
+cannot be obtained purely on the basis of the steering angle of the front wheels. This is 
+why the ICM control unit also takes the steering angle of the rear wheels into account. 
+The effective steering angle (of the front and rear wheels) is then determined using 
+both steering angles. 
+
+This is a purely theoretical computing value that indicates the steering lock of the vehi¬ 
+cle’s front wheels that would be reguired to achieve the same vehicle motion if the rear 
+axle could not be steered. The easiest way for all systems in the vehicle to evaluate the 
+data on the steering wheel movement is to use this effective steering angle. 
+
+
+24 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+25 
+
+F01 Dynamic Driving Systems 
+
+
+
+Processing and distribution of signals 
+
+
+
+26 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Ride-height sensors 
+
+10 
+
+Electronic transmission control unit 
+
+2 
+
+Steering column switch cluster 
+with steering angle sensor 
+
+11 
+
+Dynamic Stability Control 
+
+3 
+
+Dynamic Stability Control 
+
+12 
+
+AS control unit 
+
+D 
+
+Wheel-speed sensors 
+
+13 
+
+HSR control unit 
+
+5 
+
+Integrated Chassis Management 
+
+14 
+
+Driving dynamics functions 
+in the ICM control unit 
+
+6 
+
+Footwell module 
+
+15 
+
+DSC sensor in the ICM control unit (longitudinal 
+acceleration, lateral acceleration, yaw rate) 
+
+D 
+
+KAFAS control unit 
+
+16 
+
+Redundant DSC sensor in the ICM control unit 
+(lateral acceleration, yaw rate) 
+
+8 
+
+Instrument cluster 
+
+17 
+
+"Signal processing" function 
+in the ICM control unit 
+
+9 
+
+Engine control system 
+
+
+
+
+The signals from the sensors are processed before being made available in the vehicle 
+via the FlexRay bus system. Specific examples of this have already been referred to 
+above. To formulate this in more general terms, the ICM control unit uses all available 
+sensor signals and several computing models to improve the guality of the signals provid¬ 
+ed. This means that they contain fewer errors and therefore allow the signal “users” (e.g. 
+the dynamic driving systems) to operate with a greater degree of precision. 
+
+A new aspect of the F01/F02 is that the signals are not available to just a few systems in 
+the vehicle. 
+
+In the F01/F02, the signals provided by the ICM are not used exclusively by the dynamic 
+driving systems. The drive control units, driver assistance systems, information systems 
+and body electrical system share the signals, instead of recording or preparing these sep¬ 
+arately. 
+
+Note: This has a distinct advantage when it comes to the diagnosis of signal 
+faults: Faults in all signals described here are stored centrally in the 
+fault memory of the ICM control unit. 
+
+In previous vehicles, it was possible for one signal fault to produce a large number of 
+branches in the test schedule trees. The ICM architecture in the F01/F02 means that the 
+test schedule can guickly pinpoint the ICM control unit in the event of a signal fault. 
+
+The test schedule then shows the effective repair measure in each case. 
+
+
+27 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Higher-level Driving Dynamics Control 
+
+Observation of the Driving Condition 
+
+The Integrated Chassis Management (ICM) control unit calculates the current driving 
+situation from the signals listed below. This essentially means the longitudinal and lateral 
+dynamic driving condition. 
+
+• Wheel speed signals from all four wheels 
+
+• Longitudinal acceleration 
+
+• Lateral acceleration 
+
+• Yaw rate 
+
+The ICM control unit therefore knows how the vehicle is actually moving at this point. 
+
+To be able to optimize the vehicle behavior, the dynamic driving systems reguire informa¬ 
+tion about how the driver wishes the vehicle to move. The driver’s command is deter¬ 
+mined from the following signals: 
+
+• Accelerator pedal angle and current engine torgue and gear ratio 
+
+• Application of the brake pedal and current brake pressure 
+
+• Effective steering angle and steering-angle speed. 
+
+The driving condition and driver’s command are provided both internally and externally by 
+the ICM control unit. The central driving dynamics control acts as a receiver internally in 
+the ICM control unit. The control units of the dynamic driving systems (e.g. DSC) are the 
+external receivers. They receive the driving condition and the driver’s command from the 
+ICM control unit via the FlexRay bus system. 
+
+Central Driving Dynamics Control 
+
+The aim of the interventions by the dynamic driving system is to improve agility and 
+traction. If reguired, they can of course also restore the stability of the vehicle. In previous 
+vehicles, separate systems existed that were designed to do this and although they in fact 
+communicated with each other, they tended to have a more restricted range of tasks. 
+
+The interaction of all systems that ultimately determines the overall driving characteristics 
+was therefore difficult to coordinate. 
+
+The Integrated Chassis Management of the F01/F02 incorporates the central driving 
+dynamics control. This compares the command given by the driver with the actual move¬ 
+ment of the vehicle at that point and therefore determines whether intervention of the 
+dynamic driving system is reguired, and also the extent of the intervention. 
+
+The yawing force is an output variable of the central driving dynamics control system. 
+
+This produces a rotation of the vehicle that is superimposed on the existing movement 
+of the vehicle. 
+
+
+28 
+
+F01 Dynamic Driving Systems 
+
+
+
+This can be used to “readjust” the driving characteristics if the result identified does not 
+match the driver’s command. Classic examples of this are understeering or oversteering 
+driving characteristics. 
+
+A new feature of the ICM installed in the F01 / F02, however, is that the dynamic driving 
+systems are already deliberately activated before a deviation of this nature is identified. 
+The interventions of the dynamic driving systems therefore take place long before the 
+driving characteristics become unstable. 
+
+This produces a far more harmonious effect in the vehicle than would be possible from a 
+conventional chassis design. The vehicle reacts neutrally in many more situations and 
+does not even begin to understeer or oversteer. This new function is possible through the 
+use of extremely precise computing models and new control strategies that can be used 
+to evaluate and influence the driving characteristics. 
+
+
+29 
+
+F01 Dynamic Driving Systems 
+
+
+
+Influencing the driving characteristics using the driving dynamics control system 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Correction of unstable driving characteristics 
+
+B 
+
+Intervention at an early stage to achieve neutral driving characteristics 
+
+1 
+
+Braking intervention at individual wheels in order to correct understeering 
+
+2 
+
+Braking intervention at individual wheels in order to prevent understeering 
+
+3 
+
+Course of an understeered vehicle 
+
+4 
+
+Course of a vehicle with neutral driving characteristics 
+
+M 
+
+Yawing force that acts on the vehicle due to braking intervention 
+(at individual wheels) 
+
+
+Coordinated Intervention by the Dynamic Driving Systems 
+
+The following intervention options for producing the yawing force calculated by the cen¬ 
+tral driving dynamics control system have been available up till now (and will of course 
+remain available) -the corresponding dynamic driving systems are shown in brackets: 
+
+• Individual activation of the wheel brake (DSC) 
+
+• Adjustment of the current engine torgue (ASC+T, DSC, MSR) 
+
+• Adjustment of the steering angle of the front wheels, regardless of the driver’s input 
+(Active Steering). 
+
+
+30 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Possible driving dynamics interventions during understeering 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Prevention of understeering by means of braking at individual wheels 
+
+B 
+
+Prevention of understeering by means of steering intervention at rear axle 
+
+1 
+
+Braking intervention at individual wheels 
+
+2 
+
+Steering intervention at the rear axle 
+
+3 
+
+Course of an understeered vehicle 
+
+4 
+
+Course of a vehicle with neutral driving characteristics 
+
+M 
+
+Yawing force that acts on the vehicle due to braking intervention 
+(at individual wheels) 
+
+
+The option of influencing the lateral dynamics of the vehicle - the rear axle slip angle con¬ 
+trol (HSR) - was available for the first time in the F01/F02. The customer only receives this 
+innovative dynamic driving system in combination with the established Active Steering 
+feature. This option is referred to as “Integral Active Steering”. 
+
+A function referred to as “Actuator coordination” follows the central driving dynamics con¬ 
+trol. This decides which dynamic driving system should be used to produce the yawing 
+force in the specific road situation. 
+
+For example, if the vehicle has a tendency to sharply understeer this can be counteracted 
+by means of selective braking intervention at the back wheel on the inside of the curve. If 
+the vehicle is eguipped with Integral Active Steering, the same objective can be achieved 
+more harmoniously by applying an appropriate steering angle at the rear axle. 
+
+
+31 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As both actuating options are limited, it may also be beneficial to apply both at once. 
+
+If understeering is avoided the driver becomes aware of this due to the considerable 
+increase in agility. 
+
+The F01/F02 is the first instance where genuine functional networking between the inte¬ 
+grated chassis management and Vertical Dynamics Management functions also takes 
+place. This does not simply mean that the ICM records and processes ride-height infor¬ 
+mation and then delivers it to the VDM. 
+
+The ICM also actively controls the Active Roll Stabilization as an integral part of central 
+driving dynamics control in order to influence the self-steering characteristics. As the 
+conventional chassis design already demonstrates, a more rigid anti-roll bar on one axle 
+means that the overall achievable cornering stability on the same axle is lower. The effects 
+of more or less rigid anti-roll bars can be emulated with the aid of the hydraulic motors in 
+the anti-roll bars of the Dynamic Drive. This means that the central driving dynamics con¬ 
+trol of the ICM can selectively influence the degree of available lateral force on one axle 
+via the active anti-roll bars of Dynamic Drive. 
+
+If the vehicle is currently oversteering, the cornering force at the rear axle is insufficient. 
+The roll stabilizing torque at the rear axle tends to reduce in this case. This loss of torque 
+is compensated for by additional cornering stability at the rear axle which helps stabilize 
+the vehicle. 
+
+The activity of the central driving dynamics control in the ICM control unit is summarized 
+in the input/output graphic on the following page. 
+
+
+32 
+
+F01 Dynamic Driving Systems 
+
+
+
+Central driving dynamics control in the ICM 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Input signals from external sensors 
+
+8 
+
+VDM control unit 
+
+2 
+
+Integrated Chassis Management 
+
+9 
+
+Active anti-roll bar 
+
+3 
+
+Dynamic Stability Control 
+
+10 
+
+"Actuator coordination" function 
+
+4 
+
+AS control unit 
+
+11 
+
+"Central driving dynamics control" function 
+
+5 
+
+AS actuating unit 
+
+12 
+
+"Sensor signal preparation" function 
+
+6 
+
+HSR control unit 
+
+13 
+
+DSC sensor in the ICM control unit (longitudinal 
+acceleration, lateral acceleration, yaw rate) 
+
+7 
+
+HSR actuating unit 
+
+14 
+
+Redundant DSC sensor in the ICM control unit 
+(lateral acceleration, yaw rate) 
+
+
+33 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Distributed functions: ICM and actuator control units 
+
+A description of the distribution of tasks between the ICM and the other driving dynamics 
+control units follows using Integral Active Steering as an example. 
+
+
+ICM and actuator control units AS and HSR 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel-speed sensors 
+
+6 
+
+HSR control unit 
+
+2 
+
+Dynamic Stability Control 
+
+7 
+
+HSR actuating unit 
+
+3 
+
+Steering column switch cluster with steering 
+angle sensor 
+
+8 
+
+Integrated Chassis Management 
+
+4 
+
+AS control unit 
+
+9 
+
+DSC sensor in the ICM control unit (longitudinal 
+acceleration, lateral acceleration, yaw rate) 
+
+5 
+
+AS actuating unit 
+
+10 
+
+Redundant DSC sensor in the ICM control unit 
+(lateral acceleration, yaw rate) 
+
+
+34 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Integrated Chassis Management (ICM) is the control unit that performs the calcula¬ 
+tions for higher-level driving dynamics functions of the Integral Active Steering. 
+
+The Integrated Chassis Management uses the current driving situation and the driver’s 
+directional input to calculate the individual setpoint values for the variable steering-trans¬ 
+mission ratio and the Yaw-Rate Control Plus. Once these have been prioritized, the ICM 
+produces a reference value for the AS and HSR control unit respectively. This is a refer¬ 
+ence angle that should be set at the front or rear wheels. 
+
+The AS control unit receives this reference value and has the principal task of controlling 
+the actuating elements in order to achieve the reference value. The AS control unit is 
+therefore purely an actuator control unit. The same applies for the HSR control unit: this 
+is also an actuator control unit. As with the AS control unit, this control unit is purely 
+responsible for implementing the reference steering angle reguested by the ICM. 
+
+This type of task distribution was implemented for the first time with the introduction of 
+the ICM in the E71. The expansions in the F01/F02 mean that 
+
+• the ICM now controls all longitudinal and lateral dynamics systems centrally (AS, 
+HSR and also DSC) and that 
+
+• ICM is the master control unit both in the linear range and also in unstable driving 
+conditions. 
+
+
+35 
+
+F01 Dynamic Driving Systems 
+
+
+
+However, the interface between the Integrated Chassis Management and Dynamic 
+Stability Control is a special case. 
+
+Input/Output: interaction of ICM and DSC 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column switch cluster with steering 
+angle sensor 
+
+7 
+
+Dynamic Stability Control 
+
+2 
+
+Wheel-speed sensors 
+
+8 
+
+"Driving dynamics control" function in DSC con¬ 
+trol unit 
+
+3 
+
+Integrated Chassis Management 
+
+9 
+
+"Actuator control" function 
+
+4 
+
+DSC sensor in the ICM control unit (longitudinal 
+acceleration, lateral acceleration, yaw rate) 
+
+10 
+
+Wheel brake 
+
+5 
+
+"Driving dynamics control" function in the ICM 
+control unit 
+
+11 
+
+Drive 
+
+6 
+
+"Actuator coordination" function 
+
+
+
+
+36 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Dynamic Stability Control also has its own internal driving dynamics controller that 
+normally implements the reference value (reference yawing force) sent from the ICM con¬ 
+trol unit in the F01/F02. This is achieved through braking intervention at individual wheels 
+and also by influencing the input torque. 
+
+The DSC driving dynamics controller is also able to detect an unstable road situation 
+itself using corresponding signals on the driving condition provided by the ICM in which 
+case the stabilizing braking or engine interventions are implemented automatically by 
+DSC. Corresponding feedback is of course also sent to the ICM. In this case, the inter¬ 
+ventions of the driving dynamics control in the ICM are cancelled. 
+
+Control and Adjustment of Steering 
+
+The Servotronic function in the F01/F02 is included in the basic steering and Integral 
+Active Steering (option). This speed-dependent power steering assistance function is 
+implemented by the Servotronic valve at the steering gear. 
+
+The Servotronic valve is always activated from the ICM control unit irrespective of the 
+equipment specification. It follows that the ICM control unit also incorporates the logic of 
+the Servotronic function. 
+
+Again, regardless of the options fitted, the steering system also contains a proportional 
+valve that is also controlled by the ICM control unit. The volumetric flow in the steering 
+hydraulic circuit can be adjusted electronically assisted by this valve which is why it is also 
+referred to as an “electronic volumetric flow adjustment” valve, or EVV valve for short. 
+
+This valve is also controlled by the ICM control unit. The volumetric flow generated by 
+the power steering pump is distributed between a circuit to the steering valve and a 
+bypass circuit according to the level of power steering assistance required. This distribu¬ 
+tion is infinitely variable. The less power steering assistance is required, the more 
+hydraulic oil is diverted to the bypass circuit. Because the hydraulic oil in the bypass cir¬ 
+cuit has no task to perform, this means that the power steering pump consumes less 
+power. In this way, the EVV valve contributes to reducing fuel consumption and C0 2 
+emissions. 
+
+
+37 
+
+F01 Dynamic Driving Systems 
+
+
+
+Input/Output: control of steering by ICM 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Steering column switch cluster 
+
+5 
+
+Servotronic valve 
+
+2 
+
+Wheel speed sensor 
+
+6 
+
+Integrated Chassis Management 
+
+3 
+
+Dynamic Stability Control 
+
+7 
+
+"Steering control" function 
+
+4 
+
+EW valve 
+
+
+
+
+Driver Assistance Functions 
+
+Depending on the equipment specification, two driver assistance functions that act on 
+the longitudinal dynamics of the vehicle can be integrated in the ICM control unit: 
+
+• Cruise control with braking function (Dynamic Cruise Control, DCC) and 
+
+• Active cruise control with stop & go function (ACC Stop&Go). 
+
+
+38 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Adaptive Brake Assistant function is included in the same equipment package as 
+ACC Stop&Go. 
+
+The ACC Stop&Go function has been integrated into the ICM control unit in the 
+F01/F02. This dispenses with the need for a separate LDM control unit. The DCC 
+function that is calculated in the Dynamic Stability Control in the E70, for example, has 
+been accommodated in the ICM control unit of the F01/F02. 
+
+
+Input/Output, driver assistance systems - longitudinal dynamics 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Short range radar sensors (SRR) 
+
+7 
+
+Integrated Chassis Management 
+
+2 
+
+Long range radar sensors (LRR) 
+
+8 
+
+Drive 
+
+3 
+
+Footwell module 
+
+9 
+
+Dynamic Stability Control 
+
+4 
+
+Control panel for driver assistance functions 
+
+10 
+
+Instrument cluster 
+
+5 
+
+Steering column switch cluster 
+
+11 
+
+"DCC" function 
+
+6 
+
+Control panel for DCC or ACC Stop & Go 
+on multi-function steering wheel 
+
+12 
+
+"ACC Stop & Go and Adaptive Brake Assistant" 
+functions 
+
+
+39 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ICM control unit performs an additional important function for the Lane Departure 
+Warning and Active Blind Spot Detection driver assistance systems. As both sys¬ 
+tems warn the driver via a vibration in the steering wheel, a coordinator function is 
+required. This is integrated in the ICM control unit. 
+
+The ICM control unit generates a reference value for the vibration based on the warning 
+requirements for the lane departure warning (KAFAS control unit) and the lane change 
+warning (SWW sensor). The amplitude of the vibration varies depending on what 
+triggered the warning. 
+
+The reference value is transmitted to the steering column switching cluster via the 
+FlexRay bus system then put into effect via the steering wheel module (LRE) or the vibra¬ 
+tion actuator in the steering wheel. 
+
+The Input/Output graphic below is intended as an overview only. 
+
+
+Input/Output, coordination of steering wheel vibration 
+
+
+
+40 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radar sensor, lane change warning 
+
+7 
+
+Steering column switch cluster 
+
+2 
+
+KAFAS control unit 
+
+8 
+
+Steering wheel electronics (LRE) and vibration 
+actuator in steering wheel 
+
+3 
+
+Camera for lane departure warning 
+
+9 
+
+Lane change warning display in door mirror 
+
+4 
+
+Footwell module 
+
+10 
+
+Instrument cluster 
+
+5 
+
+Control panel for driver assistance functions 
+
+11 
+
+Coordination function for steering wheel vibration 
+
+6 
+
+Integrated Chassis Management 
+
+
+
+
+41 
+
+F01 Dynamic Driving Systems 
+
+
+
+Driving Dynamics Control 
+
+
+History 
+
+Control elements are already installed in a number of BMW vehicles that the driver can 
+use to switch individual systems to a sporting mode. This includes the sports setting of 
+the automatic selector lever. In this case, only the shift characteristics of the automatic 
+gearbox are influenced. 
+
+The system behaves in a similar manner when the SPORT button for the Electronic 
+Damping Control or Vertical Dynamics Control (shown below) is used. This only changes 
+the characteristic (hardness) of the shock absorber. 
+
+SPORT button in E70/ E71 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+SPORT button 
+
+2 
+
+Vertical Dynamics Control with electronically 
+adjustable shock absorbers 
+
+
+All other drive and dynamic driving systems therefore be found as it would need to 
+remain in their basic setting. A suitable harmonize the damping action in both sporting 
+compromise for this basic setting must mode and standard mode. 
+
+
+A SPORT button that influences several systems was introduced for the first time in the 
+E85/E86. The corresponding “driving dynamics control” function effects a changeover 
+between a standard mode and a sporting mode in the steering, automatic gearbox and 
+accelerator pedal. This meant it was now possible to coordinate these three systems far 
+more effectively in both modes with the result that the customer now experiences a car 
+that is uncompromisingly tailored to “Sport” in every sense. 
+
+
+42 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+SPORT button 
+
+3 
+
+Automatic transmission 
+
+2 
+
+Accelerator pedal 
+
+4 
+
+Steering 
+
+
+43 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The new driving dynamics control in the F01/ F02 contains two groundbreaking new 
+features when compared to the E85/E86: 
+
+1. All drive and dynamic driving systems installed in the vehicle are comprehensively 
+switched over. 
+
+2. Four settings are available. The status of the Dynamic Stability Control is also taken 
+into account thus ensuring that two additional settings are possible. 
+
+The driving dynamics control is operated via a new driving dynamics switch and the DTC 
+button positioned directly in front of it. 
+
+The changeover operations for many drive and driving dynamics functions are therefore 
+bundled in the driving dynamics control of the F01/F02. The vehicle as a whole then 
+behaves as the driver would expect in accordance with his/her chosen setting. 
+
+This bundling can make the handling characteristics of the vehicle considerably more 
+distinctive and less compromising. 
+
+Conversely, many individual, and also sometimes meaningless, combinations are avoided 
+(example: sports steering combined with comfort-oriented damping). 
+
+
+DTC button and driving dynamics switch 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DTC button 
+
+2 
+
+Driving dynamics switch 
+
+
+44 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+Mode of Action of Driving Dynamics Control in F01/F02 
+
+
+Networking of Systems 
+
+The systems involved in the “driving dynamics control” function are shown in the follow¬ 
+ing Input/Output illustration. 
+
+Input/Output, driving dynamics control 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Controller 
+
+7 
+
+Vertical Dynamics Control with electronically 
+adjustable shock absorbers 
+
+2 
+
+Driving dynamics switch and DTC button 
+
+8 
+
+Active anti-roll bar 
+
+3 
+
+Integrated Chassis Management 
+
+9 
+
+Dynamic Stability Control 
+
+4 
+
+Accelerator pedal 
+
+10 
+
+Instrument cluster 
+
+5 
+
+Automatic transmission 
+
+11 
+
+Central information display 
+
+6 
+
+Steering 
+
+
+
+
+45 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The driver operates the driving dynamics control using the driving dynamics switch and 
+the DTC button. The ICM control unit imports the control signals then determines on the 
+basis of this which new mode the driving dynamics control should adopt. The mode thus 
+determined is transmitted to the relevant drive and dynamic driving systems for imple¬ 
+mentation. These are: 
+
+• The engine control system for the accelerator pedal characteristic. 
+
+• The electronic gearbox control for driving programs and shift speed. 
+
+• The Vertical Dynamics Management system for the Vertical Dynamics Control 
+and Active Roll Stabilization. 
+
+• The Dynamic Stability Control. 
+
+• The ICM control unit itself that controls the power steering assistance (Servotronic) 
+and the steering-transmission ratio (Active Steering). 
+
+The ICM control unit also prompts the display of the relevant mode in the instrument 
+cluster and also in the Central Information Display. In addition to selecting a mode, the 
+driver can use the controller to make further settings. 
+
+Operation and display 
+
+The driver can select the four main modes using the driving dynamics switch. These 
+main modes are designated as follows: 
+
+• Comfort 
+
+• Normal 
+
+• Sport 
+
+• Sport+ 
+
+Afterthe vehicle is started, the driving dynamics control is always in “Normal” mode. 
+When the driving dynamics switch is moved to the “Sport” position, the driving dynamics 
+control initially changes to “Sport” mode and then to “Sport+” mode if this button is 
+pressed again. If the driver moves the driving dynamics switch to the “Comfort” position, 
+the mode changes in the opposite direction, i.e. from “Sport” to “Normal” mode. 
+
+The DTC button provides the driver with two additional modes: 
+
+• Traction 
+
+• DSC off 
+
+
+46 
+
+F01 Dynamic Driving Systems 
+
+
+
+The “Traction” mode can be activated by briefly pressing the DTC button. This works 
+irrespective of which driving dynamics control mode was previously active. “DSC off” is 
+activated by holding the DTC button pressed for longer. The “Traction” and “DSC off” 
+modes can be switched off by pressing the DTC button again. The driving dynamics con¬ 
+trol subseguently returns to “Normal” mode. If the driver instead presses one of the two 
+rocker switches at the driving dynamics switch to deactivate the “Traction” or “DSC off” 
+modes, the driving dynamics control subseguently enters “Sport” or “Comfort” mode 
+(depending on which rocker switch is pressed). 
+
+Each time the driving dynamics switch or DTC button is pressed this immediately 
+prompts a reaction in the instrument cluster display. The changeover to “Sport” mode 
+is shown below. 
+
+
+
+Display of "Sport" mode directly following operation 
+
+
+47 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+After some time, unless the driving 
+dynamics switch is pressed, a more com¬ 
+pact version of the display for the driving 
+dynamics control appears. 
+
+
+
+"Sport" display mode 
+
+
+The two modes “Traction” and “DSC off” 
+present a special case in terms of their dis- Traction display mode 
+play requirements. In addition to the text 
+entry, the yellow DSC indicator and 
+warning lamps must be activated. 
+
+
+"DSC off” display mode 
+
+
+
+
+48 
+
+F01 Dynamic Driving Systems 
+
+
+69EI-90J1 omaoji UC10OJ1 
+
+
+
+Note: New symbols are now used for the yellow DSC indicator and warning 
+lamp and the DTC button. The new DSC symbols used for the first time 
+in the F01/F02 replace the symbols previously used. 
+
+
+
+DSC and DTC symbolic representation 
+
+
+Two different symbols were formerly used for the two states “DTC mode” and “DSC off” 
+and were displayed in the instrument cluster. Since the launch of the F01/F02, only one 
+symbol has been used for both states. 
+
+The new symbols are being gradually introduced in all newly developed vehicles. The 
+reason for this are changes to legislation that reguire automobile manufacturers to pro¬ 
+duce a uniform display format. 
+
+This legislation also specifies that the text message “off” must be displayed as soon as 
+the DSC function is restricted, as is the case in the “Traction” and “Sport+” modes. 
+
+
+49 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+When the DTC button or the driving dynamics switch is pressed, an assistance window 
+appears at the same time as the instrument cluster display in the Central Information 
+Display. The name of the newly selected mode appears there together with an explana¬ 
+tory text. 
+
+
+In the “Sport” mode the driver also has the option of configuring this. Assisted by the 
+controller, the driver can choose whether to apply the “Sport” mode to the drive systems, 
+or the dynamic driving systems or both. 
+
+
+Configuration of the "Sport" mode 
+
+Drive systems 
+
+Chassis and dynamic 
+driving systems 
+
+Drive and chassis (factory setting) 
+
+Sports 
+
+Sports 
+
+Drive only 
+
+Sports 
+
+Normal 
+
+Chassis only 
+
+Normal 
+
+Sports 
+
+
+Assistance window, “Sport” mode 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Text description of the area(s) in which "Sport" mode is applied (shown here: chassis only and/or 
+
+dynamic driving systems) 
+
+2 
+
+Visual description of the area(s) in which "Sport" mode is applied 
+
+3 
+
+Menu for configuration of "Sport" mode 
+
+
+50 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Modes and their effects 
+
+This chapter describes the effects of the individual modes in the drive and dynamic dri¬ 
+ving systems. As the individual systems are switched over together in a coordinated man¬ 
+ner, this lends coherence to the overall behavior of the vehicle. This of course also means 
+that meaningless combinations, such as a sports accelerator pedal characteristic com¬ 
+bined with a highly comfort-oriented automatic gearbox shift program, are avoided and 
+meaningful combinations for the mode are integrated instead. 
+
+This is why when compared to earlier vehicles, the configuration of individual systems 
+can to a great extent now be uncompromisingly tailored to one mode. The driver there¬ 
+fore not only experiences coherent vehicle response characteristics in all modes, he/she 
+will also sense the differences between the individual modes far more acutely. 
+
+The table below demonstrates this, particularly through the comparison between the 
+“Normal” and “Sport” modes. 
+
+
+
+Comfort 
+
+Normal 
+
+Sport 
+
+Sport+ 
+
+Drive systems 
+
+
+Accelerator pedal characteristic 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Shift program, automatic gearbox 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Shift speed, automatic gearbox 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Chassis and dynamic driving systems 
+
+
+Power steering assistance 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Integral Active Steering 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Dynamic Stability Control 
+
+DSC on 
+
+DSC on 
+
+DSC on 
+
+DTC (sports) 
+
+Vertical Dynamics Control 
+
+Comfortable 
+
+Normal 
+
+Sports 
+
+Sports 
+
+Active anti-roll bar 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Sports 
+
+The configuration shown here in “Sport” mode applies for both drive and dynamic driving systems. 
+
+
+If the “Comfort” and “Normal” modes are compared instead, it is evident that the configu¬ 
+ration differs in one dynamic driving system only: the Vertical Dynamics Control. This 
+characteristic of the “Comfort” mode does not happen by chance and takes several 
+peripheral factors into account: 
+
+• Most drive and dynamic driving systems ensure that driving is sufficiently comfort¬ 
+able in the “Normal” configuration; this is something that BMW 7 Series customers 
+would expect. The Servotronic already offers requirement-based power steering 
+assistance with maximum comfort, for example. 
+
+
+51 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+• The “Normal” configuration does not necessarily mean adherence to a single, 
+defined system characteristic. The shift program of the automatic gearbox is only 
+one example of how the current driving condition and driver’s command are taken 
+into account in order to bring the behavior of the relevant system into line with these 
+reguirements. 
+
+• Most drivers relate a desire for greater comfort with the suspension and damping 
+characteristics. This reguirement is particularly relevant when driving on poor or 
+uneven roads. 
+
+This means that the “Comfort” mode also embraces the philosophy of driving dynamics 
+control which is to achieve a coherent vehicle response characteristic that meets the 
+expectations of the driver. 
+
+The “Sport” and “Sport+” modes also differ in terms of the coordination of one specific 
+dynamic driving system: the Dynamic Stability Control. In the “Sport” mode, a decidedly 
+sports-oriented overall vehicle behavior is available to the driver. 
+
+Although it is assumed that many drivers would like to use this “Sport” mode, the DSC 
+remains in normal operating mode and stabilizes the vehicle in a timely manner as 
+reguired. The familiar intervention thresholds (slip, sideslip angle) that the driver has 
+become accustomed to in the “Comfort” and “Normal” modes remain unchanged. This 
+ensures that less proficient drivers are not taken by surprise when the DTC subseguently 
+intervenes in the sportier DTC mode. 
+
+Only once a proficient driver deliberately selects the second sports mode “Sport+” will 
+gentle drifts also become available due to the higher wheel slip and sideslip angle. 
+
+The two additional modes that the driver can select using the DTC button produce the 
+effects on the drive and dynamic driving systems shown below. 
+
+
+
+Normal 
+
+Traction 
+
+DSC off 
+
+Drive systems 
+
+
+
+
+Accelerator pedal characteristic 
+
+Normal 
+
+Normal 
+
+Normal 
+
+Shift program, automatic gearbox 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Shift speed, automatic gearbox 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Chassis and dynamic driving systems 
+
+
+
+
+Power steering assistance 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Integral Active Steering 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Dynamic Stability Control 
+
+DSC on 
+
+DTC 
+
+DSC off 
+
+Vertical Dynamics Control 
+
+Normal 
+
+Normal 
+
+Sports 
+
+Active anti-roll bar 
+
+Normal 
+
+Normal 
+
+Sports 
+
+
+52 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+The "Traction" mode is similar to the familiar DTC mode of the DSC in former BMW 
+vehicles. All other drive and dynamic driving systems remain in their normal configuration 
+which makes its main application clear: the purpose of "Traction" mode is to improve 
+traction, e.g. when driving off on a loose subsurface. Sports driving takes a background 
+role instead as the "Sport+" and "Sport" modes are available for this. 
+
+The stabilizing DSC interventions are switched off in the "DSC off" mode. Only the brak¬ 
+ing interventions that support traction are performed i.e. Electronic Differential Lock 
+Control. 
+
+In this case, most other drive and dynamic driving systems are in the sports configuration. 
+This means that the aim of "DSC off" mode is to support pure driving; a direct bond 
+between the driver, vehicle and road. 
+
+Although initially it may seem astonishing that the accelerator pedal characteristic remains 
+in the normal configuration in both "Traction" and "DSC off" modes, this setting is delib¬ 
+erate. When driving off on a loose subsurface and also when driving in a highly sports-ori- 
+ented manner with the DSC switched off, it is especially important that the driver can 
+apply engine torque extremely sensitively. This is much easier to do using a normal 
+rather than a more sports-oriented accelerator pedal characteristic. 
+
+The sports-oriented accelerator pedal characteristic translates the accelerator pedal angle 
+into a higher torque requirement at the engine. This torque requirement is then also put 
+into effect more quickly by the engine control system. 
+
+As a result, the driver perceives the response characteristics of the drive, and therefore 
+the vehicle, as more sports-oriented. However, the driver cannot use this to apply engine 
+torque sensitively. 
+
+
+53 
+
+F01 Dynamic Driving Systems 
+
+
+
+System Components 
+
+
+ICM Control Unit 
+
+Only the system components that are linked to the new architecture of the dynamic dri¬ 
+ving systems in the F01/F02 are described in this Product Information. In essence, this 
+is the new ICM control unit and the periphery equipment directly connected to this con¬ 
+trol unit. 
+
+Three other Product Information packages are available in which descriptions of the sys¬ 
+tem components for the individual dynamic driving systems are provided: 
+
+• Longitudinal dynamics systems 
+
+• Lateral dynamics systems 
+
+• Vertical dynamics systems 
+
+Design of the Two Control Unit Versions 
+
+An ICM control unit is installed in every F01/ F02. Each ICM control unit contains the 
+following, irrespective of the equipment installed in the vehicle: 
+
+• Two microprocessors 
+
+• A FlexRay controller 
+
+• Output stages for activating valves in the steering system 
+
+• Integrated sensor system for driving dynamics variables (previously: DSC sensor) 
+
+The essential tasks of one of the microprocessors are the calculation of control func¬ 
+tions, communication processing and activation of the output stages. The main task of 
+the second processor is to monitor safety-relevant functions and bring about a system 
+shut down in the event of a fault. 
+
+The other components of the ICM control unit listed above are described in the follow¬ 
+ing chapters. 
+
+Two versions of the ICM control unit exist. The version installed in the vehicle depends 
+on the equipment. 
+
+If the vehicle is equipped with one or both of the following options 
+
+• Integral Active Steering (IAL, SA 2VH) or 
+
+• Active Cruise Control with Stop & Go function, 
+
+the high-performance version of the ICM control unit is installed. 
+
+If neither of these options are installed in the vehicle, the basic version of the ICM control 
+unit is used. The two versions of the ICM control unit are differentiated externally by their 
+part numbers. 
+
+
+54 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+The internal layout of the high-performance version differs from the internal layout of the 
+basic version in the following ways: 
+
+• Larger microprocessor (required to calculate the Integral Active Steering control and 
+active speed control) 
+
+• Redundant sensor system for lateral acceleration and yaw rate (safety requirement 
+for Integral Active Steering). 
+
+The following graphics make these differences clear. 
+
+
+
+ICM control unit, basic version 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Acceleration sensor (longitudinal and lateral acceleration) 
+
+2 
+
+Output stages for Servotronic and EW valves 
+
+3 
+
+Controller for FlexRay connection 
+
+4 
+
+Two microprocessors (basic version) 
+
+5 
+
+Yaw rate sensor 
+
+
+55 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ICM control unit, high-performance version 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Acceleration sensors (1 for longitudinal acceleration, 2 for lateral acceleration) 
+
+2 
+
+Output stages for Servotronic and EW valves 
+
+3 
+
+Controller for FlexRay connection 
+
+4 
+
+Two microprocessors (high-performance version) 
+
+5 
+
+Yaw rate sensors (2x) 
+
+
+56 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Integrated sensor system 
+
+The sensors that were previously accommodated separately in the DSC sensor are now 
+installed in the ICM control unit. 
+
+
+The ICM control unit uses these sensors to calculate variables that provide key informa¬ 
+tion on the vehicle’s dynamic state: 
+
+• Longitudinal acceleration and pitch of the vehicle in the longitudinal direction 
+
+• Lateral acceleration and pitch of the vehicle in the lateral direction 
+
+• Yaw rate. 
+
+DSC sensor integrated into the ICM control unit 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Yaw rate sensor 
+
+2 
+
+Second redundant yaw rate sensor 
+
+3 
+
+Longitudinal and lateral acceleration sensor 
+
+4 
+
+Second redundant lateral acceleration sensor 
+
+
+All sensors integrated into the ICM control unit are known as micromechanical sensors. 
+By applying this principle, the dimensions of these sensors can be reduced to the extent 
+that they can be accommodated in housings that are similar in size to microprocessor 
+housings. The sensors are of course designed on the basis of prevailing stresses in the 
+vehicle (thermal, mechanical). However, when servicing the vehicle, the ICM control unit 
+must be handled with the same degree of care as the familiar DSC sensor. 
+
+Note: The ICM control unit must not be exposed to strong vibrations. The inte¬ 
+grated sensor system will be destroyed if the housing is struck by hard 
+objects, or if the control unit is dropped. The control unit must not be 
+installed in the vehicle in this case. 
+
+
+57 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The longitudinal and lateral acceleration sensors operate according to the capacitive 
+principle. They consist of two electrodes, that mesh in a comb-like form. One of the elec¬ 
+trodes has a unidirectional moving bearing which means that if a force acts on the sensor, 
+the electrode is displaced. This changes the gap between the two electrodes and in turn 
+changes the capacitance which is calculated back to the size of the force applied by 
+means of evaluating circuits. 
+
+Instead of recording the acceleration directly, the sensors record it indirectly by measur¬ 
+ing the force on the sensor element. The force applied may have several causes and the 
+sensor cannot differentiate between these: 
+
+• Inclination of the vehicle or road (e.g. gradient accelerating force) 
+
+• Change in speed (drive or braking force) 
+
+• Cornering (centrifugal force). 
+
+
+Longitudinal forces acting on the vehicle 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+F 1 
+
+Motive force 
+
+0 
+
+Inclination of road 
+
+F 2 
+
+Gradient accelerating force 
+
+
+
+
+In the graphic two longitudinal forces are shown acting on the vehicle: a motive force and 
+a gradient accelerating force. These forces are produced due to the inclination of the 
+road. As a result, a force acts on the vehicle and can be calculated as follows: 
+
+^resulting ~ ^1 - F 2 
+
+
+58 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+Only the resulting force can be measured by the sensor. The measured force is 
+processed in the control unit. The change in road speed is taken into account. 
+
+The actual acceleration of the vehicle and the gradient of the road are the only calculation 
+results provided. 
+
+A similar calculating process is used for the lateral direction. The calculation results 
+produced in this case are the lateral tilt and lateral acceleration of the vehicle. 
+
+The sensor that determines the yaw rate also employs the principle of force measure¬ 
+ment, a principle also used by the acceleration sensors. The yaw rate sensor measures 
+the force that acts on a sensor element oscillating across the direction of rotation. 
+
+The sensor signals are initially referenced to the sensor housing. However, in order to be 
+useful to the dynamic driving systems, these variables must be referenced to the vehicle 
+coordinate system. The ICM control unit performs the necessary conversion. 
+
+A synchronization process is carried out when the ICM control unit is started up during 
+which corresponding correction values are determined and saved. 
+
+Note: Calibration of the sensors integrated into the ICM control unit is 
+necessary in the following cases 
+
+• the ICM control unit has been replaced or 
+
+• if requested by the test schedule in the diagnostic 
+system due to a fault code memory entry. 
+
+The calibration must be performed with the vehicle standing on a level 
+surface in the longitudinal and lateral direction. Terminal 15 must also 
+be switched on. 
+
+
+59 
+
+F01 Dynamic Driving Systems 
+
+
+
+Connector 
+
+The control unit has a 54-pin plug via which the power supply, sensors, actuators and 
+bus systems are connected. 
+
+As is the case with the controller housing, the plug does not have a watertight design. 
+This is The control unit has a 54-pin plug via which not necessary as it is installed on the 
+inside of the vehicle. 
+
+
+
+Installation location of the ICM control unit overview 
+
+
+Installation Location 
+
+The ICM control unit is installed in the center console behind the sensor for the crash 
+safety module. This means that the position of the control unit and its integrated sensor 
+system in the vehicle, near to its center of gravity is ideal from the point of view of driving 
+dynamics. The mounting points on the body are precisely determined and are measured 
+when the vehicle is manufactured and must not be replaced with any other mounting 
+points. 
+
+The housing of the control unit is connected to the metal body of the transmission tunnel 
+with four screws and spacer sleeves made of aluminum. The control unit must be mount¬ 
+ed on the vehicle body free of play as otherwise vibrations may be induced in the control 
+unit housing which would severely impair the operation of the integrated sensor system. 
+
+A secondary task of this mounting is to conduct heat away from the control unit to the 
+body. 
+
+
+60 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+Installation location of the ICM control unit - detail 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Upper section of housing 
+
+4 
+
+Spacer sleeve 
+
+2 
+
+Mounting bolt 
+
+5 
+
+Lower section of housing 
+
+3 
+
+Connector 
+
+
+
+
+For the mounting to be able to perform these tasks, the following points must be 
+observed when mounting and replacing the ICM control unit: 
+
+
+Note: Only screws and spacer sleeves that are in perfect condition may be 
+used. Deformed or damaged fixing elements must not be used. 
+
+The mounting screws in the reamed holes must be tightened first, fol¬ 
+lowed by the other two screws. The tightening torque specified in the 
+repair instructions must be observed without fail. 
+
+A check must then be carried out to make sure the control unit is mount¬ 
+ed securely and free of play. 
+
+To ensure sufficient heat dissipation and to avoid vibrations, the sides 
+and top of the control unit housing must not come into contact with 
+other vehicle components. Instead, the spaces provided around the 
+control unit as part of the engineering design must always remain free of 
+other components. 
+
+
+61 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installation situation of the ICM control unit - detail 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wiring harness, e.g. for rear display 
+
+2 
+
+The compartment on the right next to the ICM 
+control unit must remain unoccupied 
+
+3 
+
+ICM control unit 
+
+4 
+
+The compartment on the left next to the ICM 
+control unit must remain unoccupied 
+
+
+The wiring harness that runs in the center console in particular must never be routed in, 
+or even pushed into, the spaces on either side of the ICM control unit. 
+
+
+62 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Replacement and Start-up 
+
+Removing and installing the ICM control unit 
+
+The ICM control unit performs tasks that are important for many vehicle functions, e.g. 
+provision of sensor signals. If the vehicle were operated without the ICM control unit 
+installed, a large number of vehicle functions would not be available. In the area of dynam¬ 
+ic driving systems, for example, the Servotronic and stabilization functions would no 
+longer be available. In addition, fault code memory entries would inevitably also be gener¬ 
+ated in many control units. 
+
+Note: If the ICM control unit needs to be replaced, the repair instructions must 
+be observed without fail. 
+
+For example, the vehicle battery must be disconnected before removing 
+the control unit and reconnected following the installation. This is the 
+only way to ensure synchronized restarting of the control unit assembly. 
+
+Note: Once the new ICM control unit has been installed, it must be started up 
+with the assistance of the diagnostic system. To do this, the following 
+steps must be carried out (depending on the equipment specification): 
+
+• Calibration of the sensors integrated into the ICM 
+
+• Calibration of the ride-height sensors 
+
+• Initialization of the Integral Active Steering. 
+
+Calibration of the sensors integrated into the ICM 
+
+The signals from the acceleration and yaw rate sensors integrated into the ICM are refer¬ 
+enced to their housing. However, in order to be useful to the dynamic driving systems, 
+these variables must be referenced to the vehicle coordinate system. In order for the ICM 
+control unit to be able to carry out the necessary conversion, it reguires corresponding 
+correction values. These are determined during the one-off calibration procedure and 
+stored in the ICM control unit. 
+
+Note: The instructions of the diagnostic system must be followed precisely 
+
+during calibration of the sensors integrated into the ICM. It is particular¬ 
+ly important for the vehicle to be standing on a surface that is level in 
+both the longitudinal and lateral directions. If this is not the case, incor¬ 
+rect correction values will be determined that may cause the dynamic 
+driving system to malfunction. 
+
+
+63 
+
+F01 Dynamic Driving Systems 
+
+
+
+Calibration of the ride-height sensors 
+
+The measurement signals from the ride-height sensors are evaluated by means of volt¬ 
+age measurement in the ICM control unit. The ICM control unit cannot calculate the actu¬ 
+al ride-level heights in millimeters on the basis of this information alone. To perform this 
+calculation, the ICM control unit must be able to map the voltage signals it receives to ref¬ 
+erence values. This is the only way to establish a relationship between the measurement 
+signals and the actual ride-level heights at the wheels. These reference values are deter¬ 
+mined during a synchronization procedure. 
+
+Note: The ride-height signals in the ICM must be synchronized in the following 
+cases 
+
+• following replacement of the ICM control unit, 
+
+• following replacement of a ride-height sensor or 
+
+• if prompted to do so by the test schedule of the diagnostic system 
+(due to a fault code memory entry in the ICM). 
+
+The synchronization does not have to be carried out if a wheel has 
+been changed. 
+
+Note: The following points must be observed in order to perform the synchro¬ 
+nization using the diagnostic system 
+
+• the air suspension control operations must be blocked (remove fuse 
+for EHC control unit) 
+
+• the ride-level heights must be measured using a tape measure and 
+
+• the rim size must be determined. 
+
+
+The diagnostic system also refers to the ride-level height reference values (design posi¬ 
+tion). These values are used by the diagnostic system and ICM to calculate the reference 
+values for the conversion that are ultimately saved in the ICM control unit. 
+
+The ride-height signals in the EHC control unit (if installed) and the ride-height signals in 
+the ICM control unit must be synchronized together. 
+
+
+64 
+
+F01 Dynamic Driving Systems 
+
+
+
+Initialization of the Integral Active Steering 
+
+The ICM control unit calculates the higher-level control functions for the Integral Active 
+Steering. The output signals of this control function are the reference steering angles, 
+that should be set at the front and rear axle. 
+
+This is performed by the AS and HSR actuator control units together with the actuators. 
+The actual angle set at the front and rear axle is sent to the ICM control unit as acknowl¬ 
+edgement. The control circuit of the driving dynamics control system closes once this 
+information has been received. 
+
+To determine this information correctly, the Integral Active Steering must be initialized. 
+During this initialization procedure, the center of the steering gear at the front axle is 
+determined and the corresponding signal values are stored (for example). 
+
+Note: The Integral Active Steering must be initialized under the following cir¬ 
+cumstances: 
+
+• the ICM, AS or steering column switch cluster control unit has been 
+replaced or 
+
+• the steering angle sensor in the steering column switch cluster has 
+been calibrated or 
+
+• the steering gear has been replaced or 
+
+• if requested by the diagnostic system due to a fault code memory 
+entry in the test schedule. 
+
+During the calibration the diagnostic system issues several prompts to steer from one 
+limit position to the other. The internal combustion engine should be running and the 
+vehicle should be standing on the ground of the workshop when calibration is in 
+progress. These marginal conditions most closely resemble the conditions under which 
+the customer operates the vehicle and deliver the best initialization results. If the front 
+wheels are resting on revolving and sliding supports, or are suspended in mid air if the 
+vehicle is raised, this may lead to unsatisfactory results. 
+
+
+65 
+
+F01 Dynamic Driving Systems 
+
+
+
+Calibration of the steering angle sensor in the steering column switch cluster 
+
+In addition to the signals from the motor-position sensors of the Integral Active Steering, 
+the ICM control unit also imports the signal from the steering angle sensor in the steering 
+column switch cluster. This is used by the ICM to determine the effective steering angle 
+(see “Functions” section). 
+
+This is why it is important that the ICM receives a correctly mapped value from the steer¬ 
+ing angle sensor. 
+
+Note: The steering angle sensor must be calibrated if the steering column 
+
+switch cluster is replaced or reprogrammed. A calibration must also be 
+performed if this is requested in the test schedule of the diagnostic sys¬ 
+tem as the result of a fault code memory entry. 
+
+The steering angle sensor must be calibrated before the ICM can calcu¬ 
+late a correct effective steering angle and make this available via the bus 
+system. 
+
+Note: Once the steering angle sensor has been calibrated, the instructions of 
+the diagnostic system must be precisely followed. 
+
+The vehicle must be standing on even ground during calibration. The 
+steering wheel must be in the straight-ahead position (visually). 
+
+Start-up, short range radar sensors 
+
+If the option “Active speed control with stop & go function” is installed in the vehicle, this 
+will include the necessary radar sensors. 
+
+Although short range radar sensors are intelligent sensors that perform the functions of a 
+control unit they cannot be accessed directly via the diagnostic system. The ICM control 
+unit acts as a “go-between” between the short range radar sensors and the diagnostic 
+system which is why the ICM also controls the start-up process for the short range radar 
+sensors. 
+
+Note: The short range radar sensors for ACC Stop & Go must be started up if 
+one (or both) short range radar sensor(s) is/are replaced. In this instance, 
+the diagnostic system communicates with the ICM control unit. The ICM 
+in turn controls the corresponding functions in the short range radar 
+sensors. 
+
+The installation position and, most importantly, the angle at which they are installed rela¬ 
+tive to the vehicle’s longitudinal axis, are entered in the newly installed short range radar 
+sensors during start-up. A measurement does not need to be carried out in this case. 
+
+The angle entered is the angle predetermined by the construction and the form of the 
+bumper support. 
+
+
+66 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+67 
+
+F01 Dynamic Driving Systems 
+
+
+
+Periphery of ICM Control Unit 
+
+Bus Systems 
+
+ICM control unit with FlexRay, local CAN and wake-up line 
+
+
+
+© 
+
+
+68 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Central gateway module 
+
+8 
+
+FlexRay routing and continuation without termi¬ 
+nating resistor 
+
+2 
+
+Dynamic Stability Control 
+
+9 
+
+Routing of FlexRay with terminating resistor 
+
+3 
+
+Short range radar sensor (SRR), left 
+
+10 
+
+Routing of local CAN without terminating resistor 
+
+D 
+
+Long range radar sensor (LRR) 
+
+11 
+
+Routing of local CAN with terminating resistor 
+
+5 
+
+Short range radar sensor (SRR), right 
+
+W 
+
+ICM control unit can be woken up 
+
+6 
+
+DME/DDE control unit 
+
+WUP 
+
+Wake-up line 
+
+D 
+
+ICM control unit 
+
+
+
+
+FlexRay 
+
+The ICM control unit is connected to the FlexRay controller via the FlexRay bus system. 
+The communication with virtually all partner control units is handled by the microproces¬ 
+sors in the ICM. 
+
+The FlexRay is routed to the ICM control unit (from the central gateway module) and con¬ 
+tinues from there (to the DME/DDE). The ICM control unit is related to the FlexRay, i.e. 
+not an end node. This is why it does not have a terminating resistor for the FlexRay. 
+
+Local CAN 
+
+A further bus system, a local CAN, is connected to the ICM control unit in addition to the 
+FlexRay. This serves the ICM exclusively for the purposes of communication with the 
+active speed control radar sensors. This local CAN therefore performs the same tasks as 
+the sensor CAN in the E6x LCI that connects the LDM control unit to the radar sensors. It 
+transmits information on road users that has been recorded by the radar sensors. 
+
+The local CAN operates in the same way as the PT-CAN with a data transfer rate of 500 
+kBit/s. There are two terminating resistors for the local CAN, each with 120 .. One of 
+these is in the ICM control unit, the second is integrated in the long range radar sensor 
+(LRR). The close range sensors (SRR) are routed to the local CAN via short lines. 
+
+The pins for the local CAN are only connected at the plug of the ICM control unit if it is a 
+high-performance version. 
+
+Wake-up line 
+
+The ICM control unit is also connected to the wake-up line. The ICM control unit can be 
+woken up via the wake-up line. 
+
+
+69 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply 
+
+The only external power supply to the ICM control unit is with terminal 30B. This is made 
+available by the junction box electrical system and the fuse carrier at the front. 
+
+The electronics and integrated sensor system are therefore supplied inside the ICM 
+control unit. Additionally, the ride-height sensors connected to the ICM control unit and 
+the output stages for activation of the valves for the steering unit are also supplied. 
+
+Ride-height Sensors 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connector 
+
+2 
+
+Housing 
+
+3 
+
+Arm (pivoting) 
+
+
+
+
+Design and principle of operation 
+
+The angle of a pivoting arm is converted to a voltage signal via the ride-height sensors. 
+The greater the angle (with reference to a defined starting position), the greater the out¬ 
+put voltage generated by a Hall sensor element. 
+
+Versions 
+
+Four ride-height sensors are installed in every F01/F02 as standard equipment. 
+
+However, the ride-height sensors installed in the vehicle are available in different versions. 
+Different ride-height sensors are used on the left and right of the front axle. 
+
+Different ride-height sensors are also used on the rear axle. The reasons for this in both 
+cases are the available installation space and the starting position. 
+
+
+Double or single-type ride-height sensors are used at the rear axle, depending on 
+whether the vehicle is equipped with electronic ride-height control (EHC). Single-type 
+ride-height sensors are always used at the front axle. 
+
+
+Type of ride-height sensors at the... 
+
+Front axle 
+
+Rear axle 
+
+Without electronic ride-height control 
+
+single 
+
+single 
+
+With electronic ride-height control 
+
+single 
+
+double 
+
+
+70 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interface with ICM control unit 
+
+As shown in the system circuit diagram, each ride-height sensor (irrespective of the ver¬ 
+sion) is connected to the ICM control unit by three lines. The double-type ride-height 
+sensors at the rear axle are also connected to the EHC control unit according to the same 
+principle via three additional lines. 
+
+Power is supplied by the ICM control unit to the ride-height sensor via one of the lines. 
+The sensor uses the second line to deliver its measurement signal (0-5 V DC voltage). 
+The third line is connected to a common ground inside the ICM control unit. 
+
+The measurement signal is evaluated by means of voltage measurement in the ICM con¬ 
+trol unit. The ICM control unit cannot calculate the actual ride-level heights in millimeters 
+on the basis of this information alone. To perform this calculation, the ICM control unit 
+must be able to map the voltage signals it receives to reference values. This is the only 
+way to establish a relationship between the measurement signals and the actual ride-level 
+heights. These reference values are determined during a synchronization procedure. 
+
+Note: The ride-height signals in the ICM must be synchronized in the following 
+cases 
+
+• following replacement of the ICM control unit, 
+
+• following replacement of a ride-height sensor or 
+
+• if prompted to do so by the test schedule of the diagnostic system 
+(due to a fault code memory entry in the ICM). 
+
+The synchronization does not have to be carried out if a wheel has been 
+changed. 
+
+
+71 
+
+F01 Dynamic Driving Systems 
+
+
+
+Driving Dynamics Switch 
+
+
+The driving dynamics switch and DTC button are integral components of the center 
+console operator control unit. 
+
+Installation location of the driving dynamics switch and DTC button 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+DTC button 
+
+2 
+
+Driving dynamics switch, "SPORT" rocker switch 
+
+3 
+
+Driving dynamics switch, "COMFORT" rocker switch 
+
+
+72 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+The new driving dynamics switch consists of two buttons labeled “COMFORT” and 
+“SPORT”. This is a rocker switch that returns automatically to the center position after it 
+is pressed. The center position corresponds to the “no button pressed” status. 
+
+Both buttons of the driving dynamics driving switch are connected directly to the ICM 
+control unit via two lines. The ICM control unit applies a voltage at these lines. Both but¬ 
+tons are connected to the ground via a resistance network. The ICM control unit can 
+determine the following by back-scanning the voltage obtained: 
+
+• whether a button has been pressed and, if so, which of the two buttons, 
+
+• whether breaks in the wiring exist and 
+
+• whether a short to ground has occurred. 
+
+In previous vehicles, the familiar DTC button is connected electrically, e.g. to the IHKA 
+control unit (E70/E71). In the F01/F02 on the other hand, the DTC button is connected to 
+the ICM control unit via an electrical wire. A voltage is applied to this wire by the ICM con¬ 
+trol unit. The DTC button connects to the ground. The ICM control unit can determine by 
+means of voltage measurement whether the DTC button is operated. 
+
+The “Driving dynamics control” function in the ICM control unit evaluates the operation of 
+the driving dynamics switch and DTC button and uses this as the basis for determining 
+the corresponding mode (see “Functions” section). The ICM control unit sends signals 
+via the bus system to inform the driver at the instrument cluster which mode has been 
+set. 
+
+The footwell module supplies power to the center console operator control unit via termi¬ 
+nal 58g for the locating lamp. 
+
+
+73 
+
+F01 Dynamic Driving Systems 
+
+
+
+Valves of Steering Unit 
+
+The proportional valve that adjusts the electronic flow (EVV valve) and the Servotronic 
+valve is activated directly from the ICM control unit. The ICM control unit contains the 
+necessary output stages that are built up using power semiconductors. 
+
+Each valve is connected by two lines to the ICM control unit. The ICM control unit calcu¬ 
+lates the reference values for the aperture of both valves based on the road speed, steer¬ 
+ing angle and steering-angle speed input signals. These reference values are converted 
+to a pulse-width-modulated signal that is applied at the lines leading to the valves. This 
+means that the ICM control unit can change the aperture of the valves at anytime. 
+
+
+Valves of the steering unit 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Power steering pump 
+
+2 
+
+Valve for electronic flow rate adjustment (EVV valve) 
+
+3 
+
+Servotronic valve 
+
+4 
+
+Housing of control valve for hydraulic power steering 
+
+
+74 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+What Points must be Observed During Servicing 
+
+ICM Control Unit 
+
+Note: If the ICM control unit needs to be replaced, the repair instructions must 
+be observed without fail. 
+
+For example, the vehicle battery must be disconnected before removing 
+the control unit and reconnected following the installation. This is the 
+only way to ensure synchronized restarting of the control unit assembly. 
+
+Note: The ICM control unit must not be exposed to strong vibrations. The 
+
+integrated sensor system will be destroyed if the housing is struck by 
+hard objects, or if the control unit is dropped. The control unit must not 
+be installed in the vehicle in this case. 
+
+Note: Only screws and spacer sleeves that are in perfect condition may be 
+used to mount the ICM control unit. Deformed or damaged fixing ele¬ 
+ments must not be used. 
+
+The mounting screws in the reamed holes must be tightened first, fol¬ 
+lowed by the other two screws. The tightening torque specified in the 
+repair instructions must be observed without fail. 
+
+A check must then be carried out to make sure the control unit is 
+mounted securely and free of play. 
+
+Note: Once the new ICM control unit has been installed, it must be started up 
+with the assistance of the diagnostic system. To do this, the following 
+steps must be carried out (depending on the equipment specification): 
+
+• Calibration of the sensors integrated into the ICM 
+
+• Calibration of the ride-height sensors 
+
+• Initialization of the Integral Active Steering. 
+
+
+75 
+
+F01 Dynamic Driving Systems 
+
+
+
+
+Diagnosis in the Event of Signal Faults 
+
+Note: The ICM control unit itself contains sensors that provide the following 
+signals: 
+
+- longitudinal acceleration 
+
+- lateral acceleration 
+
+- yaw rate. 
+
+The wheel-speed signals are recorded and made available by the DSC 
+control unit. The steering wheel angle is determined by the steering 
+angle sensor in the steering column switch cluster. 
+
+The ICM control unit processes all the sensor signals and makes these 
+available in the form of bus signals to other systems in the vehicle. 
+
+If fault code memory entries for these signals exist, the following proce¬ 
+dure is recommended when working through the test schedules: 
+
+Start with the test schedule for the control unit that is providing the sig¬ 
+nals. The most important signal sources for dynamic driving systems are 
+the ICM, DSC and steering column switch cluster. You will be able to get 
+to the root of the fault and eliminate it more quickly using this procedure. 
+
+Instead, the test schedules for the control units that receive these sig¬ 
+nals only contain references to the transmitter control units which 
+means they do not lead directly to the ultimate cause/solution of the 
+fault. 
+
+Sensors in the ICM 
+
+Note: Calibration of the sensors integrated into the ICM control unit is neces¬ 
+sary in the following cases 
+
+• the ICM control unit has been replaced or 
+
+• if requested by the test schedule in the diagnostic system due to a 
+fault code memory entry. 
+
+The calibration must be performed with the vehicle standing on a level 
+surface in the longitudinal and lateral direction. Terminal 15 must also be 
+switched on. 
+
+
+76 
+
+F01 Dynamic Driving Systems 
+
+
+
+Note: The instructions of the diagnostic system must be followed precisely 
+
+during calibration of the sensors integrated into the ICM. It is particular¬ 
+ly important for the vehicle to be standing on a surface that is level in 
+both the longitudinal and lateral directions. 
+
+If this is not the case, incorrect correction values will be determined that 
+may cause the dynamic driving system to malfunction. 
+
+Ride-height Sensors 
+
+Note: The ride-height signals in the ICM must be synchronized in the following 
+cases: 
+
+• following replacement of the ICM control unit, 
+
+• following replacement of a ride-height sensor or 
+
+• if prompted to do so by the test schedule of the diagnostic system 
+(due to a fault code memory entry in the ICM). 
+
+The synchronization does not have to be carried out if a wheel has been 
+changed. 
+
+Note: The following points must be observed in order to perform the synchro¬ 
+nization using the diagnostic system 
+
+• the air suspension control operations must be blocked (remove fuse 
+for EHC control unit) 
+
+• the ride-level heights must be measured using a tape measure and 
+
+• the rim size must be determined. 
+
+The diagnostic system also refers to the ride-level height reference val¬ 
+ues (design position). 
+
+These values are used by the diagnostic system and ICM to calculate the 
+reference values for the conversion that are ultimately saved in the ICM 
+control unit. 
+
+The ride-height signals in the EHC control unit (if installed) and the ride- 
+height signals in the ICM control unit must be synchronized together. 
+
+
+77 
+
+F01 Dynamic Driving Systems 
+
+
+
+Steering Column Switch Cluster with Ssteering Angle Sensor 
+
+Note: The steering angle sensor must be calibrated if the steering column 
+
+switch cluster is replaced or reprogrammed. A calibration must also be 
+performed if this is requested in the test schedule of the diagnostic sys¬ 
+tem as the result of a fault code memory entry. 
+
+The steering angle sensor must be calibrated before the ICM can calcu¬ 
+late a correct effective steering angle and make this available via the bus 
+system. 
+
+Note: Once the steering angle sensor has been calibrated, the instructions of 
+the diagnostic system must be precisely followed. The vehicle must be 
+standing on even ground during calibration. The steering wheel must be 
+in the straight-ahead position (visually). 
+
+Integral Active Steering 
+
+Note: The Integral Active Steering must be initialized under the following cir¬ 
+cumstances 
+
+• the ICM, AS or steering column switch cluster control unit has been 
+replaced or 
+
+• the steering angle sensor in the steering 1 column switch cluster 
+has been calibrated or 
+
+• the steering gear has been replaced or 
+
+• if requested by the diagnostic system due to a fault code memory 
+entry in the test schedule. 
+
+Displays and Operation 
+
+Note: New symbols are now used for the yellow DSC indicator and warning 
+lamp and the DTC button. The new DSC symbols used for the first time 
+in the F01/F02 replace the symbols previously used. 
+
+
+78 
+
+F01 Dynamic Driving Systems 
+
+
+

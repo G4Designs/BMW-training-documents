@@ -1,0 +1,6794 @@
+FI 0 General Vehicle Electronics 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+4 / 1/2010 
+
+V_/ 
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol / sign is used in this document to facilitate better comprehension and to draw 
+attention to particularly important information: 
+
+A_ 
+
+Contains important safety guidance and information that is necessary for proper system functioning 
+and which it is imperative to follow. 
+
+
+Information status and national-market versions 
+
+The BMW Group produces vehicles to meet the very highest standards of safety and quality. Changes 
+in terms of environmental protection, customer benefits and design make it necessary to develop 
+systems and components on a continuous basis. Consequently, this may result in differences between 
+the content of this document and the vehicles available in the training course. 
+
+As a general principle, this document describes left-hand drive European version vehicles. Some 
+controls or components are arranged differently in right-hand drive vehicles than those shown on the 
+graphics in this document. Further discrepancies may arise from market-specific or country-specific 
+equipment specifications. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• in the Owner's Handbook 
+
+• in the integrated service technical application 
+
+Contact: conceptinfo@bmw.de 
+©2009 BMW AG, Munich, Germany 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information in the document is part of the BMW Group technical training course and is intended 
+for its trainers and participants. Refer to the latest relevant BMW Group information systems for any 
+changes/supplements to the technical data. 
+
+Information status: December 2009 
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+Contents 
+
+
+1. Introduction.1 
+
+1.1. Bus diagram.2 
+
+2. Voltage Supply.6 
+
+2.1. Components.6 
+
+2.2. System wiring diagram.7 
+
+2.3. EPS Voltage Supply.8 
+
+2.3.1. System wiring diagram.9 
+
+2.3.2. EPS in conjunction with active steering.10 
+
+3. Car Access System.19 
+
+3.1. System wiring diagram.20 
+
+3.2. Function overview.22 
+
+4. Comfort Access.24 
+
+4.1. System wiring diagram.25 
+
+4.2. Function overview.26 
+
+5. Central Locking System.28 
+
+5.1. System wiring diagram.29 
+
+5.2. Function overview.30 
+
+6. Automatic Soft Close System.32 
+
+6.1. System wiring diagram.33 
+
+7. Power Windows.35 
+
+7.1. System wiring diagram.35 
+
+7.2. Input/output Signals.37 
+
+7.3. Examples of signal paths.38 
+
+7.3.1. Driver's door switch cluster.38 
+
+7.3.2. Power window switch, front passenger's door.39 
+
+7.3.3. Power window switch, rear doors.40 
+
+8. Glass Sunroof.41 
+
+8.1. System wiring diagram.42 
+
+9. Anti-theft Alarm System.44 
+
+9.1. System wiring diagram.45 
+
+10. Automatic Trunk Lid.47 
+
+10.1. System wiring diagram.48 
+
+11. Exterior Lighting.51 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+Contents 
+
+
+11.1. System wiring diagram.52 
+
+11.2. Front Lighting.55 
+
+11.3. Rear Lighting.56 
+
+12. Interior Lighting.58 
+
+12.1. Overview.58 
+
+12.2. System wiring diagram.59 
+
+13. Seats.63 
+
+13.1. Front seats.63 
+
+13.1.1. Seat adjustment.63 
+
+13.1.2. Seat heating.65 
+
+13.1.3. Active seat ventilation.66 
+
+13.2. Seats in the rear passenger compartment.66 
+
+14. Climate Control Systems.68 
+
+14.1. Equipment.68 
+
+14.2. 2-zone IHKA.69 
+
+14.3. 4-zone IHKA.70 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+1. Introduction 
+
+
+The vehicle electrical system of the F10 is based on that of the F01/F02. This training material 
+provides an overview of the following vehicle electrical system topics. 
+
+For more information on the respective topics, refer to the F01/F02 training material available on TIS 
+and ICP. 
+
+
+F10 Topic 
+
+F01/F02 Training Material 
+
+Voltage supply 
+
+F01/F02 Voltage supply 
+
+Car Access System 
+
+F01/F02 Car Access System 
+
+Comfort Access 
+
+F01/F02 Comfort Access 
+
+Central locking system 
+
+F01/F02 Central locking system 
+
+Automatic Soft Close system 
+
+F01/F02 Automatic Soft Close system 
+
+Power window regulators 
+
+F01/F02 Power windows 
+
+Roller sun blinds for side windows 
+
+F01/F02 Power windows 
+
+Glass sunroof 
+
+F01/F02 Slide/tilt sunroof 
+
+Alarm system 
+
+F01/F02 Alarm system 
+
+Luggage compartment lid lift 
+
+F01/F02 Automatic operation of tailgate 
+
+Exterior lighting 
+
+F01/F02 Exterior lights 
+
+Interior lighting 
+
+F01/F02 Interior lighting 
+
+Seats 
+
+F01/F02 Seats 
+
+Heating and air conditioning systems 
+
+F01/F02 Heating and air conditioning systems 
+
+
+1 
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+1. Introduction 
+
+1.1. Bus diagram 
+
+
+
+
+(0 
+
+
+3 
+
+B 
+
+V 
+
+mS 
+
+TW 
+
+
+5 
+
+o 
+
+cr 
+
+E 
+
+s 
+
+B 
+
+E 
+
+
+
+F10 Bus diagram 
+
+
+2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+1. Introduction 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wakeable control units 
+
+2 
+
+Control units authorized to wake up the vehicle 
+
+3 
+
+Startup node control units, for starting up and synchronizing the FlexRay bus 
+system 
+
+ACC-SEN 
+
+Active Cruise Control Sensor 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AL 
+
+Active steering 
+
+AMPH 
+
+Amplifier High (high fidelity amplifier) 
+
+AMPT 
+
+Amplifier Top (top high fidelity amplifier) 
+
+BSD 
+
+Bit-serial data interface 
+
+BCU 
+
+Battery Charge Unit (for auxiliary battery) 
+
+CAS 
+
+Car Access System 
+
+CIC 
+
+Car Information Computer 
+
+CIC Basic 
+
+Car Information Computer Basic 
+
+CID 
+
+Central Information Display 
+
+CON 
+
+Controller 
+
+D-CAN 
+
+Diagnosis on Controller Area Network 
+
+DDE 
+
+Digital Diesel Electronics (Not for US) 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+DVD 
+
+DVD changer 
+
+EDCSHL 
+
+Electronic Damper Control, rear left satellite unit 
+
+EDCSHR 
+
+Electronic Damper Control, rear right satellite unit 
+
+EDC SVL 
+
+Electronic Damper Control, front left satellite unit 
+
+EDC SVR 
+
+Electronic Damper Control, front right satellite unit 
+
+EGS 
+
+Electronic transmission control 
+
+EKPS 
+
+Electronic fuel pump control 
+
+EMF 
+
+Electromechanical parking brake 
+
+EPS 
+
+Electronic Power Steering 
+
+Ethernet 
+
+Cabled data network technology for local data networks 
+
+FD 
+
+Rear display 
+
+FD2 
+
+Rear display 2 
+
+FLA 
+
+High-beam assistant 
+
+FlexRay 
+
+FRM 
+
+Fast, preset and fault-tolerant bus system for use in automotive applications 
+
+Footwell module 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+1. Introduction 
+
+
+Index 
+
+Explanation 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector switch 
+
+HKL 
+
+Luggage compartment lid lift 
+
+HSR 
+
+Rear suspension slip angle control 
+
+HUD 
+
+Head-Up Display 
+
+ICM 
+
+Integrated Chassis Management 
+
+IHKA 
+
+Integrated automatic heating / air conditioning 
+
+JBE 
+
+Junction box electronics 
+
+KAFAS 
+
+Camera-based driver assistance system 
+
+K-Bus 
+
+Body bus 
+
+K-CAN. 
+
+Body controller area network 
+
+K-CAN2 
+
+Body controller area network 2 (500 kBit/s) 
+
+KOMBI 
+
+Instrument cluster 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+Local-CAN 
+
+Local Controller Area Network 
+
+MOST 
+
+Media Oriented System Transport 
+
+MOST port 
+
+NVE 
+
+Media Oriented System Transport port 
+
+Night Vision electronics 
+
+PDC 
+
+Park Distance Control 
+
+PMA 
+
+Parking Maneuvering Assistant Control Unit 
+
+PT-CAN 
+
+Powertrain CAN 
+
+PT-CAN2 
+
+Powertrain controller area network 2 
+
+OBD 
+
+Diagnosis socket 
+
+RSE 
+
+Rear seat entertainment system 
+
+SDARS 
+
+Satellite tuner 
+
+SMBF 
+
+Front passenger seat module 
+
+SMFA 
+
+Seat module, driver 
+
+SWW 
+
+Blind Spot Detection 
+
+SZL 
+
+Steering column switch cluster 
+
+TCU 
+
+Telematics Control Unit 
+
+TPMS 
+
+Tire Pressure Monitoring System 
+
+TRSVC 
+
+Control unit for reversing camera and side view 
+
+ULF-SBX 
+
+Universal interface box 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+1. Introduction 
+
+
+Index 
+
+Explanation 
+
+VDM 
+
+Vertical Dynamics Management 
+
+VM 
+
+Video Module 
+
+VSW 
+
+Video switch 
+
+ZGM 
+
+Central Gateway Module 
+
+
+5 
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+The Voltage supply concept of the FI 0 is based on that of the F01. The components and the structure 
+used are largely the same. 
+
+
+2.1. Components 
+
+Due to the steady increase of electrical functions for comfort, communication and safety in BMW 
+vehicles, the voltage supply is becoming ever more important. 
+
+In the FI 0, two separate power distribution boxes with fuse blocks are installed. The front power 
+distribution box with fuse block is near the glove box and the rear power distribution box with fuse 
+block is on the right-hand side of the luggage compartment. 
+
+The front power distribution box with fuse block forms the junction box together with the junction box 
+electronics (JBE). 
+
+In the graphic below, you can see the layout of the most important components of the voltage supply 
+system in the F10. 
+
+In the FI 0, three main power lines (bolted to on the underbody of the vehicle) are run from the power 
+distribution box on the battery to the engine compartment: 
+
+• One of the main power lines runs via the positive battery terminal to the starter motor and to 
+the alternator. 
+
+• The second line supplies the electronics box in the engine compartment with voltage for the 
+engine electronics. This line is protected by a high-current fuse in the distribution box at the 
+battery. 
+
+• The third line leads to the engine compartment power distribution box. This distribution box 
+supplies the electric fan with power. This line is protected by the high-current fuse in the 
+distribution box at the battery. 
+
+In addition, a battery cable is routed through the vehicle interior to the front power distribution box with 
+fuse block. This line is also protected by a high-current circuit breaker. 
+
+Depending on the model, different line cross sections are used. 
+
+The transfer points for the main power cables are located under the luggage compartment floor. The 
+main power lines on the underbody are laid in a protected area to prevent damage. 
+
+The electromechanical power steering is supplied with voltage differently, depending on equipment 
+and engine. 
+
+For more information on the voltage supply, refer to the F01/F02 "Voltage Supply" training material 
+available on TIS and ICR 
+
+
+6 
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.2. System wiring diagram 
+
+
+
+F10 System wiring diagram for voltage supply 
+
+
+7 
+
+
+TE08-0084 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Starter 
+
+3 
+
+Power distribution box in engine compartment 
+
+4 
+
+Electronics box in the engine compartment 
+
+5 
+
+Positive battery connection point 
+
+6 
+
+Digital Motor Electronics (DME) 
+
+7 
+
+Power distribution box with fuse block in front behind the glove box 
+
+8 
+
+Junction box electronics 
+
+9 
+
+Power distribution box with fuse block, rear right in the luggage compartment 
+
+10 
+
+Transfer point under the luggage compartment floor 
+
+11 
+
+Intelligent battery sensor (IBS) 
+
+12 
+
+Battery 
+
+13 
+
+Safety battery terminal (SBK) 
+
+14 
+
+Power distribution box on the battery 
+
+15 
+
+Integrated Chassis Management (ICM) 
+
+16 
+
+Central Gateway Module (ZGM) 
+
+17 
+
+Car Access System (CAS) 
+
+18 
+
+Crash safety module (ACSM) 
+
+
+2.3. EPS Voltage Supply 
+
+The electromechanical power steering is supplied with voltage differently, depending on equipment 
+and engine. 
+
+In the FI 0, electromechanical power steering is combined for the first time with the active steering 
+planetary gearbox with override function already familiar from the F01. As a result, the steering is 
+implemented completely electrically. 
+
+
+8 
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+2.3.1. System wiring diagram 
+
+
+
+® © 
+
+
+F10 System wiring diagram for basic steering 
+
+
+9 
+
+
+TE09-2243 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+EPS 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Junction box electronics with front power distribution box 
+
+4 
+
+Integrated Chassis Management (ICM) 
+
+5 
+
+Intelligent battery sensor (IBS) 
+
+6 
+
+Battery 
+
+7 
+
+Battery power distribution box 
+
+8 
+
+Steering column switch cluster (SZL) 
+
+9 
+
+Instrument cluster (KOMBI) 
+
+10 
+
+Central Gateway Module (ZGM) 
+
+
+2.3.2. EPS in conjunction with active steering 
+
+Due to the higher weight of the some engines and the higher steering forces associated with the 
+greater front axle load, the power of a 12V steering system is no longer sufficient. For this reason, on 
+FI 0 vehicles with the V8 engine a 24V EPS system will be installed in conjunction with the optional 
+Integral Active Steering equipment. 
+
+The following table tells you when a 24V EPS is installed. 
+
+
+Engine 
+
+EPS voltage supply 
+
+528i 
+
+12V 
+
+535i 
+
+12V 
+
+550i 
+
+24V 
+
+
+EPS with 12V 
+
+Since active steering demands higher forces from the electromechanical steering and due to the 
+higher current necessary, the voltage supply can no longer be implemented as in previous systems. If 
+active steering is used in a vehicle with 12V EPS, the voltage is supplied through a separate positive 
+battery connection point. 
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+
+F10 System wiring diagram EPS with 12V and active steering 
+
+
+11 
+
+
+TE09-2234 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+EPS 
+
+2 
+
+Positive battery connection point 
+
+3 
+
+Capacitor box 
+
+4 
+
+Digital Motor Electronics (DME) 
+
+5 
+
+Junction box electronics with front power distribution box 
+
+6 
+
+Integrated Chassis Management 
+
+7 
+
+Battery power distribution box 
+
+8 
+
+Intelligent battery sensor (IBS) 
+
+9 
+
+Battery 
+
+10 
+
+Safety battery terminal (SBK) 
+
+11 
+
+Steering column switch cluster 
+
+12 
+
+Instrument cluster (KOMBI) 
+
+13 
+
+Central Gateway Module (ZGM) 
+
+EPS with 24V 
+
+
+The higher weight of the V8 engines in the BMW 550i results in a higher front axle load. This in turn 
+causes the power required for the steering system to increase. In conjunction with the active steering, 
+an even higher exertion of force, and therefore an even higher current is required by the steering 
+electrical components. This high current made it necessary to increase the voltage supply of the EPS 
+to 24V. 
+
+This system requires an auxiliary battery, a separator and a charging unit for the auxiliary battery. 
+
+These components are installed in the luggage compartment of the FI 0. 
+
+
+
+FI 0 24V components 
+
+
+12 
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery 
+
+2 
+
+Separator 
+
+3 
+
+Auxiliary battery 
+
+4 
+
+Battery Charge Unit (BCU) (for auxiliary battery) 
+
+
+The battery charging unit (BCU) takes over the monitoring of the state of charge and the charging 
+of the auxiliary battery with an 150W DC/DC converter. It monitors a cable sheathing of the 24V line 
+(isolation) and among various other preconditions; it also switches the relay in the separator with which 
+the auxiliary battery is integrated into the circuit. The EPS is supplied with 24V only after this relay has 
+been switched (closed). In the event of a fault, the EPS can also be operated with 12V. If there is no 
+fault, the relay in the separator is switched (to close the circuit) as of terminal 15. 
+
+
+13 
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+
+© 
+
+
+
+
+F10 System wiring diagram EPS with 24V and active steering 
+
+
+14 
+
+
+TE09-2216 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+EPS 
+
+2 
+
+Digital Motor Electronics (DME) 
+
+3 
+
+Junction box electronics with front power distribution box 
+
+4 
+
+Integrated Chassis Management (ICM) 
+
+5 
+
+Separator 
+
+6 
+
+Battery Charge Unit (BCU) (for auxiliary battery) 
+
+7 
+
+Rear right power distribution box 
+
+8 
+
+Auxiliary battery 
+
+9 
+
+Intelligent battery sensor (IBS) 
+
+10 
+
+Battery 
+
+11 
+
+Battery power distribution box 
+
+12 
+
+Steering column switch cluster (SZL) 
+
+13 
+
+Instrument cluster (KOMBI) 
+
+14 
+
+Central Gateway Module (ZGM) 
+
+
+The 24V line is routed on the vehicle floor. It is surrounded by a cable sheathing (isolation) that is 
+monitored by the battery charging unit. 
+
+The following system wiring diagram details show the various switch situations and the charging of the 
+auxiliary battery. 
+
+
+
+F10 24V operation of the EPS 
+
+
+15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery power distribution box 
+
+2 
+
+Battery 
+
+3 
+
+Intelligent battery sensor IBS. 
+
+4 
+
+Separator (here: 24V operation) 
+
+5 
+
+Battery Charge Unit (BCU) 
+
+6 
+
+Rear right power distribution box 
+
+7 
+
+Auxiliary battery 
+
+In 24V operation, 
+
+the battery and the auxiliary battery are connected in series by the relay in the 
+
+
+separator. As a result, the EPS is operated with 24V. 
+
+
+-EEH 
+
+
+© 
+
+
+
+
+-& 
+
+
+F71 © 
+
+
+
+
+® ® 
+
+
+© 
+
+- 1 •. .,'5 
+
+
+
+
+
+© 
+
+
+© 
+
+
+F10 12V operation in the event of a fault 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery power distribution box 
+
+2 
+
+Battery 
+
+3 
+
+Intelligent battery sensor IBS. 
+
+4 
+
+Separator (here: 12V operation) 
+
+5 
+
+Battery Charge Unit (BCU) 
+
+6 
+
+Rear right power distribution box 
+
+7 
+
+Auxiliary battery 
+
+
+In the event of a fault or before terminal 15, the relay is open and the separator is in the 12V position. 
+The auxiliary battery is no longer connected in series and is no longer in the circuit. 
+
+
+16 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+
+h- 
+
+F10 Charging of the auxiliary battery in 24V operation 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery power distribution box 
+
+2 
+
+Battery 
+
+3 
+
+Intelligent battery sensor IBS. 
+
+4 
+
+Separator (here: 24V operation) 
+
+5 
+
+Battery Charge Unit (BCU) 
+
+6 
+
+Rear right power distribution box 
+
+7 
+
+Auxiliary battery 
+
+
+The auxiliary battery can be charged in 24V operation using the battery charging unit (BCU) for the 
+auxiliary battery. To do so, the charging unit takes the energy it uses for charging the auxiliary battery 
+from the vehicle electrical system via the rear right power distribution box. 
+
+
+The 24V line is routed on the vehicle floor and is surrounded by a cable sheathing that is monitored by 
+the BCU. 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+2. Voltage Supply 
+
+
+© 
+
+
+
+FI 0 24V components and line routing 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery Charge Unit (BCU) (Charging unit for auxiliary battery) 
+
+2 
+
+Separator and auxiliary battery 
+
+3 
+
+Battery 
+
+4 
+
+EPS with active steering 
+
+
+18 
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+3. Car Access System 
+
+The Car Access System used in the FI 0 is the fourth generation of the control unit and the same type 
+as in the F01. The Comfort Access functions are completely integrated into the Car Access System. 
+
+All FI 0 models are equipped with “Passive Go” (drive authorization system) as standard equipment. 
+Drive authorization allows the driver to start the engine without actively using the ID transmitter. Due 
+to the drive authorization (Passive Go), the vehicle does not require any key insertion slot. The ID 
+transmitter only needs to be somewhere inside the passenger compartment for the engine to be 
+started. 
+
+The ID transmitter has a battery with a service life of approximately four years. 
+
+Up to eight ID transmitters can be used for a particular vehicle. 
+
+
+
+F10 ID transmitter 
+
+r- 
+
+Index 
+
+Explanation 
+
+1 
+
+ID transmitter top view 
+
+2 
+
+Unlock Vehicle button 
+
+3 
+
+Lock Vehicle button 
+
+4 
+
+Tailgate unlock button 
+
+5 
+
+Headlight courtesy delay feature or open luggage compartment lid (automatic 
+operation of tailgate, option 316) 
+
+6 
+
+ID transmitter rearview 
+
+7 
+
+Area for ring antenna (transponder coil for emergency start) 
+
+8 
+
+Battery compartment 
+
+9 
+
+ID transmitter release button 
+
+10 
+
+ID transmitter 
+
+
+19 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+3. Car Access System 
+
+3.1. System wiring diagram 
+
+
+
+FI 0 System wiring diagram of Car Access System 
+
+
+20 
+
+
+TE09-2337 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+3. Car Access System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine compartment lid contact switch 
+
+2 
+
+Dynamic Stability Control (DSC) 
+
+3 
+
+Central Gateway Module (ZGM) 
+
+4 
+
+Electronic transmission control (EGS) 
+
+5 
+
+Starter 
+
+6 
+
+Digital Motor Electronics (DME) 
+
+7 
+
+Integrated Chassis Management (ICM) 
+
+8 
+
+Junction box electronics (JBE) and front power distribution box 
+
+9 
+
+Luggage compartment junction box 
+
+10 
+
+Tailgate central double-locking button 
+
+11 
+
+Telematics Control Unit (TCU) 
+
+12 
+
+Interior tailgate button, A-pillar 
+
+13 
+
+Instrument cluster (KOMBI) 
+
+14 
+
+Steering column switch cluster (SZL) 
+
+15 
+
+Central locking button/hazard warning switch 
+
+16 
+
+Brake light switch (BLS) 
+
+17 
+
+Footwell module (FRM) 
+
+18 
+
+Crash safety module (ACSM) 
+
+19 
+
+Comfort Access interior antenna 
+
+20 
+
+Remote control receiver in the diversity module DIV 
+
+21 
+
+Hotel position switch 
+
+22 
+
+Comfort Access interior antenna 
+
+23 
+
+Electric steering lock (not for US) 
+
+24 
+
+START/STOP button 
+
+25 
+
+Ring antenna (transponder coil) 
+
+26 
+
+Car Access System (CAS) 
+
+Kl. 15_1 
+
+Terminal 15 (output 1) 
+
+Kl. 15_3 
+
+Terminal 15 (output 3) 
+
+Kl. 15 WUP 
+
+Terminal 15, wake-up 
+
+Term. 15N 
+
+Terminal 15 after-run 
+
+Kl. 30 
+
+Terminal 30 
+
+Term. 30B 
+
+Terminal 30B, switched 
+
+Kl. 50L 
+
+Terminal 50 load 
+
+CAS bus. 
+
+Car Access System bus 
+
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+3. Car Access System 
+
+
+Index 
+
+Explanation 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+K-CAN2 
+
+Body controller area network 2 
+
+PT-CAN 
+
+Powertrain CAN 
+
+AS_START 
+
+Start/start termination DME 
+
+
+3.2. Function overview 
+
+The Car Access System provides, among other things, the central control unit for accessing and 
+locking the vehicle. Therefore, the Car Access System has full responsibility for central locking. 
+
+The Car Access System incorporates the following functions on the FI 0: 
+
+• Comfort Access 
+
+• Central locking system 
+
+• Power window regulator 
+
+• Glass sunroof 
+
+• Terminal control 
+
+• Electronic immobilizer 
+
+Other functions of the Car Access System include: 
+
+• Vehicle data storage 
+
+• Data transmission for Conditioned Based Service (CBS) 
+
+• Checking plausibility of ID transmitter signals 
+
+The Car Access System enables or disables the execution of a number of functions. However, other 
+control units may be involved in the execution of the function: 
+
+• Junction box electronics 
+
+• Footwell module 
+
+• Roof function center 
+
+• Central locking system 
+
+• Power window regulator 
+
+• Glass sunroof 
+
+For the purposes of communication with other bus users in the vehicle electrical system, the Car 
+Access System is connected via the K-CAN2, the CAS bus and the LIN-Bus. 
+
+The Car Access System analyzes the status of the trunk lid contact switch and broadcasts it for use by 
+the alarm system. 
+
+The Car Access System also analyzes the status of the following buttons and initiates the central 
+locking function: 
+
+
+22 
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+3. Car Access System 
+
+• Central locking system button 
+
+• Open large trunk button on the A-pillar 
+
+• Complete locking of the vehicle with the button in the underside of the open luggage 
+compartment lid. 
+
+The Car Access System provides the power supply for the brake light switch and also analyzes its 
+status. 
+
+For a more detailed description of the Car Access System functions, refer to the F01/F02 "Car Access 
+System" training material available on TIS and ICR 
+
+
+23 
+
+
+
+FI 0 General Vehicle Electronics 
+
+4. Comfort Access 
+
+
+Using Comfort Access, the customer can unlock and open the vehicle without active use of the ID 
+transmitter. Access to the vehicle can be gained from any point. It is important that the ID transmitter 
+be located in the vehicle's immediate vicinity (approx. 1.5 m). It is sufficient to have the ID transmitter 
+somewhere on your person. 
+
+Comfort Access was first introduced on the E65 (03/2002). The system was then gradually introduced 
+on different BMW models. Comfort Access can be ordered as optional equipment (option 322) as 
+part of ZCV Convenience Package (which also includes 316 Power tailgate 323 Soft-close automatic 
+doors. 
+
+The benefits of Comfort Access are: 
+
+• High level of convenience when unlocking and locking the vehicle 
+
+• Convenient and fast access to the vehicle 
+
+• Simple engine start/stop procedure 
+
+• Maximum comfort for the driver. 
+
+Comfort Access in the FI 0 is based on predecessor systems and is adapted to the FI 0. However, the 
+complete function continues to be in the Car Access System, just as in the F01. That is why the FI 0 
+also has no separate Comfort Access control unit. 
+
+The vehicle is unlocked when your hand touches the handle recess of the outer door handle and is 
+opened when you pull the door handle. 
+
+The vehicle can be locked simply by touching sensitive surfaces of the outer door handle. 
+
+For vehicles fitted with the Automatic Soft Close system (option 323), the drive for the Automatic 
+Soft Close system fully closes the vehicle door. You can then lock the vehicle again by subsequently 
+pressing on the sensitive surface of the outer door handle. 
+
+The ID transmitter must be located in the vehicle interior in order for the engine to be started. The 
+engine can now be started by pressing the START-STOP button when the brake pedal is operated and 
+the vehicle is ready to be driven. 
+
+
+24 
+
+
+
+FI 0 General Vehicle Electronics 
+
+4. Comfort Access 
+
+4.1. System wiring diagram 
+
+
+© 
+
+
+
+TAGE 
+
+
+
+
+@ 
+
+
+
+
+m 
+
+
+
+
+F10 System wiring diagram for Comfort Access 
+
+
+25 
+
+
+TE09-2336 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+4. Comfort Access 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Junction Box (JB) 
+
+3 
+
+Front distribution box 
+
+4 
+
+Lock door contact, front-passenger side, front 
+
+5 
+
+Outside door handle electronics (TAGE), front passenger side 
+
+6 
+
+Antenna for Comfort Access, door sill, front-passenger side 
+
+7 
+
+Lock door contact, front-passenger side, rear 
+
+8 
+
+Outside door handle electronics (TAGE), rear passenger side 
+
+9 
+
+Luggage compartment junction box 
+
+10 
+
+Luggage compartment antenna, front-passenger side 
+
+11 
+
+Central locking system button 
+
+12 
+
+Antenna for Comfort Access, bumper 
+
+13 
+
+Tailgate lock 
+
+14 
+
+Luggage compartment lighting 
+
+15 
+
+Storage shelf antenna 
+
+16 
+
+Luggage compartment antenna, driver's side 
+
+17 
+
+Outside door handle electronics (TAGE), rear driver's side 
+
+18 
+
+Lock door contact, driver's side, rear 
+
+19 
+
+Antenna for Comfort Access, door sill, driver's side 
+
+20 
+
+Outside door handle electronics (TAGE), front driver's side 
+
+21 
+
+Lock door contact, driver's side, front and locking cylinder in driver's door 
+
+22 
+
+Car Access System (CAS) with Comfort Access function (CA) 
+
+23 
+
+Antenna for Comfort Access, interior, front 
+
+24 
+
+Antenna for Comfort Access, interior, rear 
+
+K-CAN2 
+
+Body controller area network 2 
+
+
+4.2. Function overview 
+
+Comfort Access is divided into the following functions: 
+
+• Access authorization (Passive Entry) 
+
+• Drive authorization (Passive Go) 
+
+• Locking authorization (Passive Exit). 
+
+ID transmitters are required for Comfort Access to function. 
+An ID transmitter incorporates the following: 
+
+
+26 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+4. Comfort Access 
+
+
+• A battery 
+
+• Remote control function 
+
+• Transponder coil for emergency start function 
+
+• Spare key 
+
+• Receiver unit. 
+
+The driver's door can also be unlocked and locked with the spare key. 
+
+For a more detailed description of the comfort access functions, refer to the F01/F02 "Comfort 
+Access" training material available on TIS and ICR 
+
+
+27 
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+5. Central Locking System 
+
+The central locking system makes it possible to unlock or lock the vehicle. It is fitted as standard 
+equipment and relates to all vehicle doors, the fuel filler flap and the tailgate. 
+
+The central locking can be operated via the following components: 
+
+• ID transmitter 
+
+• Driver's-door lock barrel (door lock) 
+
+• Central locking system button 
+
+• Exterior tailgate button 
+
+• Interior tailgate button in the A-pillar 
+
+• Outer door handle (outside door handle electronics with Comfort Access, option 322) 
+
+• Button in the underside of the open luggage compartment lid for central locking system 
+(automatic operation of tailgate, option 316). 
+
+The FI 0 has no lock in the luggage compartment lid for unlocking with the mechanical or spare key. 
+
+The central locking system in the F10 is based on previous central locking systems used in, for 
+instance, the E70, E90 or F01. 
+
+
+28 
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+5. Central Locking System 
+
+5.1. System wiring diagram 
+
+
+
+F10 System wiring diagram for central locking system 
+
+
+29 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+5. Central Locking System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Car Access System (CAS) 
+
+3 
+
+Central locking system button 
+
+4 
+
+Junction Box (JB) 
+
+5 
+
+Front-passenger-door illuminated entry system 
+
+6 
+
+Door contact, central locking, front passenger door 
+
+7 
+
+Rear, passenger-side illuminated entry system 
+
+8 
+
+Door contact, central locking, rear passenger side 
+
+9 
+
+Rear power distribution box 
+
+10 
+
+Central locking, fuel filler flap 
+
+11 
+
+Central locking button 
+
+12 
+
+Central locking system for tailgate lock 
+
+13 
+
+Automatic Soft Close system drive for luggage compartment lid 
+
+14 
+
+Rear, driver's side central locking system 
+
+15 
+
+Rear, driver's side illuminated entry system 
+
+16 
+
+Hall sensors for lock barrel, door contact, driver's-door central locking system 
+
+17 
+
+Driver's-door illuminated entry system 
+
+18 
+
+Hotel position switch (only vehicles in US version) 
+
+19 
+
+Antenna diversity module with antenna amplifier 
+
+20 
+
+Trunk lid button 
+
+
+5.2. Function overview 
+
+The function of the central locking system is basically divided between two control units. 
+
+The Car Access System has overall control. The Car Access System is aware of the statuses of the 
+central locking system. Therefore it is the Car Access System which causes the unlocking, locking and 
+central deadlocking of the vehicle. 
+
+The junction box electronics execute the request to unlock or lock the vehicle. 
+
+It is possible to unlock and lock the vehicle actively or passively. 
+
+Active means that the vehicle can be opened after it has been unlocked by pressing the button on 
+the ID transmitter. The vehicle can be locked by pressing the Lock button after the doors have been 
+closed. 
+
+A_ 
+
+Note: The vehicle can only be locked with the driver's door closed. 
+
+
+30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+5. Central Locking System 
+
+Passive locking and unlocking requires the optional Comfort Access equipment (option 322). 
+
+Passive means that the vehicle is unlocked when the outer door handle is grasped, provided the ID 
+transmitter is located no more than approx. 1.5 metres away from the vehicle. The locking function is 
+triggered by pressing on the sensitive area on the outer door handle. 
+
+For a more detailed description of the locking functions, refer to the F01/F02 "Central locking system" 
+training material available on TIS and ICR 
+
+
+31 
+
+
+
+FI 0 General Vehicle Electronics 
+
+6. Automatic Soft Close System 
+
+The Automatic Soft Close system (SCA) can be ordered as optional equipment (option 323) on all F10 
+models as part of the ZCV Convenience Package. 
+
+The ZCV Convenience Package also includes, Power tailgate (option 316) and Comfort Access 
+keyless entry (option 322). 
+
+The luggage compartment lid is equipped with the Automatic Soft Close system only in conjunction 
+with the Power tailgate (option 316). 
+
+The Automatic Soft Close system requires the installation of suitable door locks with drives for the 
+Automatic Soft Close system. 
+
+The special feature of the FI 0's Automatic Soft Close system is that the door lock and the drive for the 
+Automatic Soft Close are no longer combined as a single component. The drive for the Automatic Soft 
+Close system is separate and controls the door lock via a Bowden cable, the same as in the F01. 
+
+This means that the lock and the drive can be fitted separately. 
+
+With the Automatic Soft Close system, it is sufficient to press the luggage compartment lid gently into 
+the trunk lid lock. As soon as the locking pawl reaches the pre-locking position, the Automatic Soft 
+Close system fully closes the luggage compartment lid. The locking pawl is then located in the main 
+locking position. 
+
+For more information on the Automatic Soft Close system, refer to the F01/F02 "Automatic Soft Close 
+system" training material available on TIS and ICP. 
+
+
+32 
+
+
+
+©g@EEEEEfc[*] ©©§© 
+
+
+FI 0 General Vehicle Electronics 
+
+6. Automatic Soft Close System 
+
+6.1. System wiring diagram 
+
+
+
+© 
+
+
+
+
+F10 System wiring diagram for Automatic Soft Close system 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+6. Automatic Soft Close System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Junction Box (JB) 
+
+3 
+
+Door contact, central locking system, Hall sensor for front passenger door 
+Automatic Soft Close system 
+
+4 
+
+Front passenger door Automatic Soft Close system (SCA) 
+
+5 
+
+Door contact, central locking system, Hall sensor for rear passenger side 
+Automatic Soft Close system 
+
+6 
+
+Rear passenger side Automatic Soft Close system (SCA) 
+
+7 
+
+Rear power distribution box 
+
+8 
+
+Central locking, luggage compartment lid 
+
+9 
+
+Automatic Soft Close system for luggage compartment lid (only with option 
+
+316) 
+
+10 
+
+Rear driver side Automatic Soft Close system 
+
+11 
+
+Door contact, central locking system, Hall sensor for rear driver's side 
+
+Automatic Soft Close system 
+
+12 
+
+Driver's door Automatic Soft Close system (SCA) 
+
+13 
+
+Door contact, central locking system, Hall sensor for driver's door Automatic 
+
+Soft Close system 
+
+
+34 
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+7.1. System wiring diagram 
+
+
+
+F10 System wiring diagram for power windows 
+
+
+35 
+
+
+TE09-2341 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Car Access System (CAS) 
+
+3 
+
+Junction Box (JB) 
+
+4 
+
+Front distribution box 
+
+5 
+
+Power window motor with front right indirect anti-trap mechanism 
+
+6 
+
+Power window switch, passenger side front 
+
+7 
+
+Power window motor with indirect anti-trap mechanism, rear right 
+
+8 
+
+Power window switch, passenger side rear 
+
+9 
+
+Luggage compartment junction box 
+
+10 
+
+Aerial diversity module with antenna amplifier 
+
+11 
+
+Power window switch, driver's side rear 
+
+12 
+
+Power window motor with indirect anti-trap mechanism, rear left 
+
+13 
+
+Switch block in the driver's door 
+
+14 
+
+Power window regulator with front left indirect anti-trap mechanism 
+
+K-CAN2 
+
+Body controller area network 2 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+KI.30 
+
+Terminal 30 
+
+Term. 30F 
+
+Terminal 30 incorrectly switched 
+
+
+36 
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+7.2. Input/output Signals 
+
+
+
+F10 Power window input/output 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Power window motor, front doors 
+
+3 
+
+Power window motor, rear doors 
+
+4 
+
+Junction box electronics (JBE) 
+
+
+37 
+
+
+TE08-0137 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+
+Index 
+
+Explanation 
+
+5 
+
+Power window switch, driver's side rear/passenger side front and rear 
+
+6 
+
+Outer door handle with Comfort Access (CA) 
+
+7 
+
+Car Access System (CAS) 
+
+8 
+
+ID transmitter 
+
+9 
+
+Switch block in the driver's door 
+
+10 
+
+Lock with door contact 
+
+11 
+
+Driver's-door lock barrel 
+
+K-CAN. 
+
+Body controller area network 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+
+7.3. Examples of signal paths 
+
+The following signal path examples show the paths the signal takes before the power window motors 
+open or close the windows. A requirement is that the Car Access System has issued the enable to 
+operate the power windows. 
+
+7.3.1. Driver's door switch cluster 
+
+When the power window switch for the driver's window or front passenger's window is operated, 
+the signal is routed via the LIN-Bus to the footwell module. The footwell module activates the 
+corresponding power window motor. 
+
+The signal is routed from the driver's door switch cluster via the LIN-Bus to the footwell module when 
+the power window switches for the windows in the rear doors are operated. The footwell module 
+sends the signal via the K-CAN2 to the junction box electronics. The junction box electronics receive 
+the signal and activate the corresponding power window motor. 
+
+
+38 
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+
+
+F10 Driver's door switch cluster 
+
+Index 
+
+Explanation 
+
+1 
+
+Button for exterior mirror adjustment 
+
+2 
+
+Mirror folding button 
+
+3 
+
+Mirror changeover switch 
+
+4 
+
+Power window regulator switch, front left 
+
+5 
+
+Power window regulator switch, front right 
+
+6 
+
+Power window regulator switch, rear left 
+
+7 
+
+Power window regulator switch, rear right 
+
+8 
+
+Safety switch 
+
+
+7.3.2. Power window switch, front passenger's door 
+
+The signal is routed to the junction box electronics when the power window switch in the front 
+passenger's door is operated. 
+
+The junction box electronics sends the signal to the footwell module on the K-CAN2. The footwell 
+module activates the power window motor. 
+
+
+39 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+7. Power Windows 
+
+7.3.3. Power window switch, rear doors 
+
+When the power window switches in the rear doors are operated, the signal is routed to the junction 
+box electronics. The junction box electronics drives the power window motor. 
+
+
+40 
+
+
+
+FI 0 General Vehicle Electronics 
+
+8. Glass Sunroof 
+
+
+The glass sunroof is standard equipment on all F10 models. Several control units are involved in 
+operating the glass sunroof. 
+
+For example, the roof function center (FZD) is linked with the Car Access System (CAS), which enables 
+or disables operation of the glass sunroof. 
+
+The footwell module (FRM) supplies the signal from the door contacts. The Junction Box electronics 
+provide the power supply for the motors via terminal 30. 
+
+The roof function center controls and monitors the motors of the glass sunroof. The function is 
+identical to that of the slide/tilt sunroof of the F01/F02. 
+
+For more information on the operating principle of the glass sunroof, refer to the F01/F02 "Slide/tilting 
+sunroof" training information available on TIS and ICR 
+
+
+i3 
+
+
+
+F10 Roof function center 
+
+Index 
+
+Explanation 
+
+1 
+
+Glass sunroof switch 
+
+2 
+
+Indicator lamp for front passenger airbag deactivation 
+
+3 
+
+Right reading light 
+
+4 
+
+Interior light 
+
+5 
+
+Right reading light button 
+
+6 
+
+Ambient lighting 
+
+7 
+
+Interior light button 
+
+8 
+
+Ambient lighting 
+
+9 
+
+Left reading light button 
+
+10 
+
+Left reading light 
+
+11 
+
+Emergency call button 
+
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+8. Glass Sunroof 
+
+8.1. System wiring diagram 
+
+
+
+F10 System wiring diagram for glass sunroof 
+
+
+© [] tf] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+8. Glass Sunroof 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hall sensors, driver's door lock barrel 
+
+2 
+
+Footwell module (FRM) 
+
+3 
+
+Car Access System (CAS) 
+
+4 
+
+Glass sunroof motor 
+
+5 
+
+Front distribution box 
+
+6 
+
+Roof function center (FZD) with button for glass sunroof 
+
+7 
+
+Sliding trim motor 
+
+8 
+
+Aerial diversity module with antenna amplifier 
+
+K-CAN2 
+
+Body controller area network 2 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+KI.30 
+
+Terminal 30 
+
+
+43 
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+9. Anti-theft Alarm System 
+
+The anti-theft alarm system is standard equipment on all F10 models. As on previous models, the 
+alarm system must be activated. When activated, the alarm monitors the whole of the vehicle interior. 
+
+The alarm system monitors the engine compartment and the vehicle's rest position. So that nothing 
+can be stolen from the luggage compartment, the alarm system monitors opening of the trunk lid. 
+
+The alarm system also signals an attempt to tamper with the vehicle, e.g. cutting the supply line to the 
+emergency power siren. 
+
+An Ultrasonic interior movement detector is integrated in the roof function center. 
+
+The ultrasonic signal passes into the inside of vehicle through apertures in the grille of the roof 
+function center. The emergency power siren with tilt sensor is located near the rear wheel arch. 
+
+For more information on the operating principle of the alarm system, refer to the F01/F02 "Anti theft 
+System" training material available on TIS and ICR 
+
+
+44 
+
+
+
+FI 0 General Vehicle Electronics 
+
+9. Anti-theft Alarm System 
+
+9.1. System wiring diagram 
+
+
+
+FI 0 Alarm system 
+
+
+45 
+
+
+TE09-2343 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+9. Anti-theft Alarm System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hood contact switch 
+
+2 
+
+Car Access System (CAS) 
+
+3 
+
+LED alarm system 
+
+4 
+
+Junction box electronics (JBE) 
+
+5 
+
+Front distribution box 
+
+6 
+
+Door contact, passenger's door 
+
+7 
+
+Door switch, passenger side, rear 
+
+8 
+
+Luggage compartment junction box 
+
+9 
+
+Emergency power siren with integrated tilt sensor (SINE) 
+
+10 
+
+Trunk lock with trunk-lid switch 
+
+11 
+
+Door switch, driver's side, rear 
+
+12 
+
+Door switch, driver's door 
+
+13 
+
+Footwell module (FRM) 
+
+14 
+
+Roof function center (FZD) with ultrasonic interior movement detector (USIS) 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+K-CAN2 
+
+Body controller area network 2 
+
+KI.30 
+
+Terminal 30 
+
+
+The Hall sensors in the doors (6, 7,11,12) are monitored by the footwell module (13). As soon as 
+the status of a Hall sensor changes, the ultrasonic interior movement detector (14) receives that 
+information via the K-CAN2. If the anti-theft alarm system is activated, an alarm is triggered. 
+
+
+The hood contact switch (1) is monitored by the Car Access System (2). If the status changes, an 
+alarm is triggered in the same way. 
+
+Opening of the trunk is monitored by the junction box electronics (4). If the status of the trunk lid 
+contact switch (10) changes, it triggers an alarm. 
+
+
+46 
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+10. Automatic Trunk Lid 
+
+
+The “Power Tailgate” option is offered in the FI 0 as part of the ZCV Convenience Package, which also 
+includes Comfort Access keyless entry and Soft-close automatic doors. 
+
+The automatic operation of the trunk lid improves vehicle access by enabling the luggage 
+compartment lid to be opened or closed automatically at the press of a button. A spindle-driven 
+system is used in the FI 0 for automatic opening or closing of the luggage compartment lid. 
+
+With Comfort Access, it is even possible to open the luggage compartment lid while the vehicle is 
+locked. 
+
+Pressing the outer trunk lid button opens the luggage compartment lid automatically. The only 
+requirement is that a vehicle-specific ID transmitter must be present in the immediate vicinity of the 
+rear end of the vehicle. The trunk lid can also be opened by pressing the button on the ID transmitter. 
+
+An open luggage compartment lid can be closed by pressing the "close trunk lid" button. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Close trunk lid button 
+
+2 
+
+Close and lock trunk lid button (deadlocking) 
+
+
+In connection with Comfort Access, it is now also possible to deadlock the vehicle doors from the 
+trunk lid. The "deadlock" button for this is located in the trunk lid. 
+
+
+47 
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+10. Automatic Trunk Lid 
+
+10.1. System wiring diagram 
+
+
+
+F10 System wiring diagram for automatic operation of trunk lid 
+
+
+48 
+
+
+TE09-2345 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+10. Automatic Trunk Lid 
+
+
+Index Explanation 
+
+
+1 
+
+Central gateway module (ZGM) 
+
+2 
+
+Footwell module (FRM) 
+
+3 
+
+Trunk lid button, A-pillar 
+
+4 
+
+Car Access System (CAS) 
+
+5 
+
+Junction Box (JB) 
+
+6 
+
+Luggage compartment junction box 
+
+7 
+
+Spindle drive motor, right 
+
+8 
+
+Control unit for automatic operation of trunk (HKL) 
+
+9 
+
+Interior trunk lid button and deadlocking button 
+
+10 
+
+Exterior trunk lid button 
+
+11 
+
+Trunk lock with trunk lid contact switch and lock barrel 
+
+12 
+
+Automatic Soft Close system for trunk lid 
+
+13 
+
+Spindle drive motor, left 
+
+14 
+
+Luggage compartment lighting 
+
+15 
+
+Antenna diversity module with antenna amplifier 
+
+K-CAN. 
+
+Body controller area network 
+
+K-CAN2 
+
+Body controller area network 2 
+
+KI.30 
+
+Terminal 30 
+
+Term. 30B 
+
+Terminal 30 basic operation 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+
+The radio signal from the ID transmitter is received by the rear window antenna. The remote control 
+receiver in the antenna diversity module (15) forwards the signal to the Car Access System (4). The 
+Car Access System is the master control unit for the central locking function. 
+
+Once the signal has been successfully verified, the Car Access System issues a command to activate 
+the central locking in the trunk lid. 
+
+The junction box electronics (5) execute the command to activate the central locking system in the 
+trunk lid. The junction box electronics detect the status of the trunk lid contact switch (11) for the 
+automatic operation of trunk lid function. The status of the trunk lid contact switch is sent via the K- 
+CAN to the automatic operation of trunk (8). The status is one of the triggering criteria for trunk lid 
+operation. 
+
+The sensors (13) and (7) in the spindle drives monitor the movement of the trunk lid. If the trunk lid is 
+blocked while being closed, the automatic operation of trunk reverses a little if necessary to remove 
+the obstacle. 
+
+An obstruction to luggage compartment lid movement during the opening procedure causes the trunk 
+lid to stop and it is not reversed. 
+
+
+49 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+10. Automatic Trunk Lid 
+
+
+The control unit for the automatic operation of trunk lid monitors the power consumption of the 
+spindle drive. A rise in current from the trunk lid being blocked results in the lid movement being 
+stopped or reversed. 
+
+
+50 
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+The exterior lights of the FI 0 are based on those of the F01. 
+
+The FI 0 535i and 550i come standard equipped with bi-xenon headlights (option 522). 
+
+The FI 0 528i is equipped with halogen headlights as standard equipment (bi-xenon headlights option 
+522 is available). 
+
+With bi-xenon headlights, the daytime running lights and the side lights are implemented using light- 
+emitting diodes. 
+
+The familiar light switches from the F01 is used on the FI 0. 
+
+The adaptive headlights are available for the FI 0 as optional equipment (option 524). It is installed only 
+in conjunction with bi-xenon headlights (option 522). 
+
+For more information on the exterior lights, refer to the F01/F02 "Exterior lighting" training material 
+available on TIS and ICR 
+
+
+51 
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+11.1. System wiring diagram 
+
+
+
+F10 System wiring diagram for front exterior lights 
+
+
+52 
+
+
+TE09-2346 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Left headlight 
+
+2 
+
+Front fog light, left 
+
+3 
+
+Front fog light, right 
+
+4 
+
+Right headlight 
+
+5 
+
+Right auxiliary turn indicator 
+
+6 
+
+Front distribution box 
+
+7 
+
+Rear power distribution box 
+
+8 
+
+Integrated Chassis Management (ICM) 
+
+9 
+
+Rear ride height sensor (only with option 522) 
+
+10 
+
+Central Gateway Module (ZGM) 
+
+11 
+
+Left auxiliary turn indicator 
+
+12 
+
+Front ride height sensor (only with option 522) 
+
+13 
+
+Car Access System (CAS) 
+
+14 
+
+Hazard warning switch 
+
+15 
+
+Control panel, light switch 
+
+16 
+
+Footwell module (FRM) 
+
+17 
+
+Steering column switch cluster (SZL) 
+
+
+53 
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+
+
+F10 System wiring diagram for rear exterior lights 
+
+
+54 
+
+
+TE09-2347 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central Gateway Module (ZGM) 
+
+2 
+
+Car Access System (CAS) 
+
+3 
+
+Electronic transmission control (EGS) (with automatic transmission) 
+
+4 
+
+Reverse light switch (with manual transmission) 
+
+5 
+
+Rain-light-solar-condensation sensor 
+
+6 
+
+Junction Box (JB) 
+
+7 
+
+Front distribution box 
+
+8 
+
+Rear power distribution box 
+
+9 
+
+Trailer module AHM (Not for US) 
+
+10 
+
+Outer rear light cluster, right 
+
+11 
+
+Inner rear light cluster, right 
+
+12 
+
+Licence plate light 
+
+13 
+
+Inner rear light cluster, left 
+
+14 
+
+Outer rear light cluster, left 
+
+15 
+
+Filter with trap circuit 
+
+16 
+
+Additional brake light 
+
+17 
+
+Footwell module (FRM) 
+
+18 
+
+Control panel, light switch 
+
+19 
+
+Steering column switch cluster (SZL) 
+
+20 
+
+Hazard warning switch 
+
+21 
+
+Brake light switch 
+
+
+11.2. Front Lighting 
+
+The structure of the front headlights can be seen in the following graphic. 
+
+
+55 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+
+
+© 
+
+F10 Front headlight 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Turning light (option 524, only available with bi-xenon) or high beam headlight 
+with halogen headlights 
+
+2 
+
+Bi-xenon low-beam headlight/high beam headlight or low-beam headlight with 
+halogen headlights 
+
+3 
+
+Decorative lighting (light-emitting diodes) 
+
+4 
+
+Side marker light (light-emitting diodes) 
+
+5 
+
+Turn indicator (light-emitting diodes with bi-xenon) 
+
+6 
+
+Parking light/daytime driving lights corona ring (light-emitting diodes, daytime 
+driving light function only with bi-xenon) 
+
+7 
+
+Parking light/daytime driving lights corona ring (light-emitting diodes, daytime 
+driving light function only with bi-xenon) 
+
+
+11.3. Rear Lighting 
+
+The FI 0 has a two-piece rear light. The structure of the rear lights can be seen in the following 
+graphic. 
+
+
+56 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+11. Exterior Lighting 
+
+
+
+F10 Rear light 
+
+Index 
+
+Explanation 
+
+1 
+
+Turn signal indicator light (LEDs) 
+
+2 
+
+Reverse light 
+
+3 
+
+Brake light for Brake Force Display 
+
+4 
+
+Brake light (LEDs) 
+
+5 
+
+Reflector, side marking 
+
+6 
+
+Tail light (LEDs) 
+
+
+57 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+12. Interior Lighting 
+
+12.1. Overview 
+
+The interior lighting of the FI 0 is controlled by the footwell module FRM control unit. 
+
+The footwell module is the central control unit for the interior lighting. All interior lighting outputs of 
+the footwell module are pulse-modulated. This ensures that the interior light functions at a constant 
+brightness level in the event of voltage fluctuations. The pulse width modulation is also used for the 
+"soft ON/soft OFF" function. 
+
+The components for the interior light in the front roof area are integrated in the roof function center 
+and in the sun visors. The footwell lighting is located underneath the dashboard. The rear reading and 
+interior lights are supplied with voltage via the roof function center. 
+
+
+
+F10 Roof function center 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Glass sunroof switch 
+
+2 
+
+Indicator lamp for front passenger airbag deactivation 
+
+3 
+
+Right reading light 
+
+4 
+
+Interior light 
+
+5 
+
+Right reading light button 
+
+6 
+
+Ambient lighting 
+
+7 
+
+Interior light button 
+
+8 
+
+Ambient lighting 
+
+9 
+
+Left reading light button 
+
+10 
+
+Left reading light 
+
+11 
+
+Emergency call button 
+
+
+58 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+12. Interior Lighting 
+
+12.2. System wiring diagram 
+
+The system wiring diagram follows the description below and provides an overview of the full extent of 
+all possible interior light options. 
+
+The following examples describe some switching operations for the interior light. 
+
+The status of the door contact (Hall sensor) in the lock (38) changes, for example, when the door is 
+opened with the vehicle unlocked. The footwell module (1) evaluates the status and sends the request 
+to switch on the interior light. 
+
+At the same time, the door entry lighting (32) for the door that is open and the footwell lights (2, 3) are 
+switched on by the footwell module. The status of the door contact changes again when the vehicle 
+door is closed. The footwell module initiates the procedure to switch off the interior light. 
+
+The luggage compartment lights and the lights in the luggage compartment lid (24, 46) are connected 
+to the voltage supply via terminal 30B. If one of the luggage compartment lids is opened, the status 
+of the tailgate contact switch changes (27). The luggage compartment lights and the luggage 
+compartment lid light are switched on directly via the tailgate contact switch. 
+
+
+59 
+
+
+
+FI 0 General Vehicle Electronics 
+
+12. Interior Lighting 
+
+
+
+
+F10 System wiring diagram for interior light 
+
+
+60 
+
+
+TE09-2350 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+12. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Footwell module (FRM) 
+
+2 
+
+Footwell light, driver's side 
+
+3 
+
+Footwell light, front passenger's side 
+
+4 
+
+Glove compartment switch 
+
+5 
+
+Glove box light 
+
+6 
+
+Junction Box (JB) 
+
+7 
+
+Door contact, front passenger side 
+
+8 
+
+Exterior door handle light, front passenger side 
+
+9 
+
+Ground lights, front passenger side 
+
+10 
+
+Inside door handle light, front passenger side 
+
+11 
+
+Door pocket lighting, front passenger side 
+
+12 
+
+Entrance lighting, front passenger side 
+
+13 
+
+Door entry lighting, front passenger side 
+
+14 
+
+Door switch, passenger side, rear 
+
+15 
+
+Exterior door handle light, passenger side, rear 
+
+16 
+
+Rear, passenger-side illuminated entry system 
+
+17 
+
+Interior door handle light, passenger side, rear 
+
+18 
+
+Door pocket light, passenger side, rear 
+
+19 
+
+Doorway light, passenger side, rear 
+
+20 
+
+Entrance lighting, rear passenger side 
+
+21 
+
+Tailgate contact switch 
+
+22 
+
+Tailgate lock motor 
+
+23 
+
+Lock barrel, tailgate 
+
+24 
+
+Luggage compartment light in tailgate 
+
+25 
+
+Doorway light, driver's side, rear 
+
+26 
+
+Door pocket light, driver's side, rear 
+
+27 
+
+Entrance lighting, rear driver's side 
+
+28 
+
+Interior door handle light, driver's side, rear 
+
+29 
+
+Rear, driver's side illuminated entry system 
+
+30 
+
+Exterior door handle light, driver's side, rear 
+
+31 
+
+Door switch, driver's side, rear 
+
+32 
+
+Door entry lighting, front driver's side 
+
+33 
+
+Door pocket lighting, front driver's side 
+
+34 
+
+Door pocket lighting, front driver's side 
+
+35 
+
+Inside door handle light, front driver's side 
+
+
+61 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+12. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+36 
+
+Ground lights, front driver's side 
+
+37 
+
+Outside door handle light, front driver's side 
+
+38 
+
+Door contact, front driver's side 
+
+39 
+
+Make-up mirror light switch, front driver's side 
+
+40 
+
+Make-up mirror light, front driver's side 
+
+41 
+
+Center console storage compartment light, front 
+
+42 
+
+Make-up mirror light, front passenger side 
+
+43 
+
+Make-up mirror light switch, front passenger side 
+
+44 
+
+Map pocket light, front passenger seat backrest 
+
+45 
+
+Luggage compartment junction box 
+
+46 
+
+Luggage compartment light 
+
+47 
+
+Interior/reading light unit, rear 
+
+48 
+
+Map pocket light, driver's seat backrest 
+
+49 
+
+Interior/reading light unit, front 
+
+50 
+
+Front power distribution box 
+
+KI.30 
+
+Terminal 30 
+
+Term. 30B 
+
+Terminal 30 basic operation 
+
+Kl. 58g 
+
+Terminal 58g 
+
+IB 
+
+Interior lighting control 
+
+
+62 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+13. Seats 
+
+
+The electrical connection of the front seats and the seats in the rear passenger compartment is the 
+same as in the F01. 
+
+For additional information on the seats, refer to the F01/F02 "Seats" training material available on TIS 
+and ICP. 
+
+
+13.1. Front seats 
+
+The following front seat variants are available for the FI 0: 
+
+• 20-way power front Comfort seats with memory (standard) 
+
+• ZAV Active vent seat package 
+
+The available ZAV Active vent seat package includes 
+
+• Multi contour seats (lumbar support) 
+
+• Front ventilated seats 
+
+• Active front seats 
+
+• Heated front seats 
+
+The front seats are largely identical to the front seats in the F07. 
+
+The following table provides an overview of the available optional equipment. 
+
+
+
+Seat adjustment, 
+electrical, with memory 
+(option 459) 
+
+Comfort seat, 
+electrically adjustable 
+(option 456) 
+
+Seat memory 
+
+Standard 
+
+Standard 
+
+Seat heating for driver/ 
+passenger 
+
+Option 494 
+
+Option 494 
+
+Lumbar support for driver/ 
+passenger 
+
+Option 488 
+
+Standard 
+
+Active seat for driver/front 
+passenger 
+
+— 
+
+Option 455 
+
+Active seat ventilation, front 
+
+Option 453 
+
+Option 453 
+
+Ambient light 
+
+Option 4UR 
+
+Option 4UR 
+
+Rear seat entertainment 
+
+Option 6FG 
+
+Option 6FG 
+
+
+13.1.1. Seat adjustment 
+
+With the maximum equipment specification, the FI 0 seats can be adjusted in eight directions. 
+
+
+63 
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+13. Seats 
+
+
+
+« 
+
+
+F10 Maximum seat adjustment, example: comfort seat 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Head rest height adjustment 
+
+2 
+
+Back rest upper section adjustment 
+
+3 
+
+Back rest angle adjustment 
+
+4 
+
+Forward/Back seat adjustment 
+
+5 
+
+Seat height adjustment 
+
+6 
+
+Seat angle adjustment 
+
+7 
+
+Seat depth adjustment 
+
+8 
+
+Back rest width adjustment 
+
+
+64 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+13. Seats 
+
+
+Seat adjustment options 
+
+Seat adjustment, 
+electrical, with memory 
+(option 459) 
+
+Comfort seat, 
+electrically adjustable 
+(option 456) 
+
+Seat height adjustment 
+
+Electrical 
+
+Electrical 
+
+Forward/back seat adjustment 
+
+Electrical 
+
+Electrical 
+
+Seat angle adjustment 
+
+Electrical 
+
+Electrical 
+
+Backrest inclination 
+adjustment 
+
+Electrical 
+
+Electrical 
+
+Head restraint, height 
+adjustment 
+
+Electrical 
+
+Electrical 
+
+Seat depth adjustment 
+
+Manual* 
+
+Electrical 
+
+Backrest width adjustment 
+
+— 
+
+Electrical 
+
+Upper backrest adjustment 
+
+— 
+
+Electrical 
+
+
+
+F10 Switch block for comfort seat adjustment (on the seat) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lumbar support adjustment 
+
+2 
+
+Back rest width adjustment 
+
+3 
+
+Back rest upper section adjustment 
+
+4 
+
+Back rest angle and head rest adjustment 
+
+5 
+
+Forward/back, seat height and angle adjustment 
+
+6 
+
+Seat depth adjustment 
+
+
+13.1.2. Seat heating 
+
+Seat heating can be ordered for the front seats (option 494) for the FI 0. 
+
+
+65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+13. Seats 
+
+
+
+F10 Control panel for integrated automatic heating / air conditioning system 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Seat heating button, driver's seat 
+
+2 
+
+Seat heating button, front-passenger seat 
+
+
+For more information on seat heating, refer to the F01/F02 "Seats" training information available on 
+TIS and ICR 
+
+
+13.1.3. Active seat ventilation 
+
+Active seat ventilation can be ordered for the front seats (option 453) for the FI 0. 
+
+
+
+FI 0 Control panel for integrated automatic heating / air conditioning system 
+
+Index 
+
+Explanation 
+
+1 
+
+Button, active seat ventilation, driver's seat 
+
+2 
+
+Button, active seat ventilation, front-passenger seat 
+
+
+For more information on seat heating, refer to the F01/F02 "Seats" training information available on 
+TIS and ICR 
+
+
+13.2. Seats in the rear passenger compartment 
+
+In the FI 0, a seat bench with backrest in sandwich design is installed as standard, or a seat bench with 
+through-loading system as optional equipment (option 465). 
+
+Highlights 
+
+
+66 
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+13. Seats 
+
+
+• Backrest in sandwich design (only basic seat bench) 
+
+• center armrest (folding) with storage compartment and cup holder 
+
+• center head restraint, folding 
+
+• Backrests, folding 40 %, 60 % or 100 % (only with through-loading system, option 465) 
+The following seat equipment is possible in the rear passenger compartment. 
+
+
+
+Basic seat bench 
+
+Seat bench with 
+through-loading system 
+(option 465) 
+
+Seat heating for rear seats 
+
+Option 496 
+
+Option 496 
+
+Remote control in storage 
+compartment (with rear seat 
+entertainment or rear seat 
+entertainment Professional) 
+
+Option 6FG, option 6FH 
+
+Option 6FG, option 6FFI 
+
+Ski bag 
+
+— 
+
+Standard 
+
+
+Seat heating can be ordered as an option (option 496). 
+
+
+
+Control panel for automatic rear air-conditioning system 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Left seat heating button 
+
+2 
+
+Right seat heating button 
+
+
+67 
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+14. Climate Control Systems 
+
+For the FI 0, 2 versions of the integrated automatic heating / air conditioning system IHKA are 
+available. 
+
+• 2-zone IHKA Climate Control (option 534) 
+
+• 4-zone IHKA Climate Control (option 4NB) 
+
+The following table provides an overview of this of the 2 IHKA systems available: 
+
+
+
+2-zone IHKA 
+
+4-zone IHKA 
+
+Temperature 
+
+Left/right 
+
+Front: left/right 
+
+Rear: left/right 
+
+Air volume 
+
+Left/right 
+
+Front: left/right 
+
+Rear: shared 
+
+Air distribution 
+
+Left/right 
+
+Front: left/right 
+
+Rear: shared 
+
+14.1. Equipment 
+
+
+IHKA 
+
+IHKA 
+
+
+2 zones 
+
+4 zones 
+
+Separate control of 
+temperature, front left/right 
+
+X 
+
+X 
+
+Separate control of amount of 
+air and air distribution, front 
+left/right 
+
+X 
+
+X 
+
+Separate control of 
+temperature, rear passenger 
+compartment left/right 
+
+
+X 
+
+Independent ventilation 
+
+X 
+
+X 
+
+Residual heat utilization 
+
+X 
+
+X 
+
+Anti-misting 
+
+X 
+
+X 
+
+Fresh air and recirculating air 
+filter (microfilter) 
+
+X 
+
+X 
+
+Ionizer to prevent condenser 
+odors 
+
+X 
+
+X 
+
+Individual automatic control 
+with 5 intensity levels 
+
+X 
+
+X 
+
+Solar compensation 
+
+X 
+
+X 
+
+Automatic air recirculation 
+control (including combination 
+
+filter 2 ) 
+
+X 
+
+X 
+
+
+68 
+
+
+
+
+
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+14. Climate Control Systems 
+
+
+
+IHKA 
+
+2 zones 
+
+IHKA 
+
+4 zones 
+
+ALL function (driver's settings 
+are transferred to front 
+passenger side) 
+
+X 
+
+
+ALL function (driver's settings 
+are transferred to front 
+passenger side and left/rear 
+passenger compartment) 
+
+
+X 
+
+Separate IHKA controls in 
+rear passenger compartment 
+(center console) 
+
+
+X 
+
+Comfort nozzle (fresh-air grille 
+on center dashboard) with 
+individual range of adjustment 
+from spot (focused) to diffuse 
+(draught-free) 
+
+
+X 
+
+
+1 A solar sensor takes into account any external light and/or heat sources that affect the climate in the 
+passenger compartment. 
+
+2 A combination of microfilter and carbon filter traps dust and pollen and protects the system against 
+unpleasant odors. 
+
+
+14.2. 2-zone IHKA 
+
+2-zone IHKA is standard equipment for all FI 0 models. 
+
+
+
+F10 Control panel of the 2-zone IHKA 
+
+
+With the 2-zone IHKA you can adjust the amount of air and air distribution separately for the left and 
+right side. 
+
+The driver's current settings for temperature, amount of air and air distribution can be transferred to 
+the front passenger side using the ALL button. 
+
+The system is also equipped with the automatic air recirculation control AUC. This feature blocks the 
+fresh air duct if there are odors or pollutants coming into the vehicle, in this situation, the interior air is 
+then recirculated. 
+
+
+69 
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+14. Climate Control Systems 
+
+The function, operation and structure of the 2-zone IHKA are the same as the IHKA basic version in 
+the F01/F02. For more information on this IHKA, refer to the F01/F02 "Heating and air conditioning 
+systems" training material available on TIS and ICP. 
+
+
+14.3. 4-zone IHKA 
+
+The 4-zone IHKA is available as optional equipment (option 4NB) on all F10 models. 
+
+
+9 
+
+
+u 
+
+1 O J 
+
+i 
+
+
+
+
+I - n 
+
+i • * 
+
+
+5HHE 7 j 
+
+
+fjMk UHU 
+
+> 
+
+o u» W 
+
+
+
+
+FI 0 Control panels for the 4-zone IHKA 
+
+
+o 
+
+r-. 
+
+co 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Front control panel 
+
+2 
+
+Control panel in the rear passenger compartment 
+
+
+In the front of the vehicle, the 4-zone IHKA has the same control panel as the 2-zone IHKA. 
+
+The 4-zone IHKA has an additional control panel in the rear passenger compartment. The rear seat 
+passengers can use this to adjust the temperature separately for the left and right. The amount of air 
+and air distribution can be controlled together for the rear passenger compartment. 
+
+With the 4-zone IHKA, the driver's current settings for temperature, amount of air and air distribution 
+can be transferred to the front passenger side and rear passenger compartment using the ALL button 
+
+
+70 
+
+
+
+
+
+
+
+FI 0 General Vehicle Electronics 
+
+14. Climate Control Systems 
+
+
+
+H 
+
+
+F10 Air ducts and zones of the 4-zone IHKA 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Driver zone 
+
+2 
+
+Front passenger zone 
+
+3 
+
+Right rear passenger compartment zone 
+
+4 
+
+Left rear passenger compartment zone 
+
+
+The function, operation and structure of the 4-zone IHKA are the same as the IHKA High version in 
+the F01/F02. For more information refer to the F01/F02 "Climate Control Systems" training material 
+available on TIS and ICR 
+
+
+71 
+
+
+
+
+
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Handlerqualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

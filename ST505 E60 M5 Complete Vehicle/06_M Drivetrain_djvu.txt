@@ -1,0 +1,6736 @@
+Table of Contents 
+
+
+M Drivetrain 
+
+Subject Page 
+
+History .7 
+
+E60M5.9 
+
+Components .11 
+
+SMG Getrag 247 Gearbox.11 
+
+Powerflow .11 
+
+Gearshift Pattern.11 
+
+Gear Recognition Hall Sensors.12 
+
+Oil Temperature Sensor.12 
+
+Oil Pressure Sensor.12 
+
+Input Speed Sensor.12 
+
+Clutch.12 
+
+Selector Lever.13 
+
+Drivelogic Switch .13 
+
+Steering Angle Sensor.13 
+
+Gearshift Paddles.13 
+
+Longitudinal Acceleration/Gradient Sensor.14 
+
+Wake-Up .14 
+
+Hood Contact Sensors.14 
+
+Door Contact.14 
+
+Engine Speed.14 
+
+Reverse Light .14 
+
+
+Initial Print Date: 05/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Hydraulic System .15 
+
+Pressure Accumulator.18 
+
+Hydraulic Pressure Sensor.18 
+
+Solenoid Valve for the Clutch.18 
+
+Hydraulic Pump with Electric Motor.18 
+
+Hydraulic Temperature Sensor .18 
+
+Pressure Limiter Valve.18 
+
+Regulator Block .18 
+
+Clutch Slave Cylinder .19 
+
+PLCD Sensor .19 
+
+Expansion Tank.19 
+
+Check Valve.19 
+
+Filter.19 
+
+Features .20 
+
+Transmission Ratio of the SMG 3.20 
+
+Drivelogic.20 
+
+In Drive Mode.20 
+
+In Sequential Mode.20 
+
+Special Functions.21 
+
+Tow-Start.21 
+
+Hill Ascent Assistant .21 
+
+Launch Control.21 
+
+Clutch Overload Protection (KUS) .21 
+
+Service Information.22 
+
+Initialization .22 
+
+Clutch Teach-In Function.22 
+
+Teaching in the Axle Difference.22 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Pressure Accumulator Preload .22 
+
+Adaptations.22 
+
+Shift Range Mid-Points.22 
+
+Valve Characteristics.23 
+
+Transmission Characteristics.23 
+
+Longitudinal Acceleration Sensor.23 
+
+M DCT Transmission.24 
+
+Special Features.25 
+
+Principle of Operation.27 
+
+Comparison of the M DCT to the Manual and SMG.28 
+
+System Overview .29 
+
+Operation and Power Flow.30 
+
+Operation.30 
+
+Shifting Operation From 1st to 2nd Gear.31 
+
+System Components.34 
+
+Housing Structure .34 
+
+Internal Structure.35 
+
+Automatic Parking Lock .37 
+
+Emergency Release of Parking Lock.38 
+
+Mechatronics Module.38 
+
+Torque Intervention .40 
+
+LIN-bus Module.40 
+
+M DCT Transmission Sensors.40 
+
+M-Gear Selector Switch (M GWS).42 
+
+Selector Lever Indicator and Function.42 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Selector Lever in the Start Position .43 
+
+Driving Program "S" (Seguential Mode) .43 
+
+Downshifting.44 
+
+Upshifting .44 
+
+Gear Selection "N" Neutral .44 
+
+Gear Selection "R" Reverse Gear.44 
+
+M GWS Shifter Sensor System.45 
+
+Interface to the M DCT.45 
+
+Drivelogic Program Selection .45 
+
+Lubrication System.46 
+
+Pressure and Flow Regulation.46 
+
+Oil-spray Lubrication .47 
+
+Hydraulic Emergency Operation.47 
+
+Two-stage Transmission Oil Cooling.48 
+
+Oil to Coolant Cooling.48 
+
+Oil to Air Cooling .50 
+
+Oil “Warm-up” .50 
+
+Oil “Cooling”.50 
+
+Service Information.51 
+
+Parking Lock.51 
+
+Parking Lock Emergency Release .51 
+
+CarWash.51 
+
+Transmission Oil.51 
+
+M DCT Oil Type.51 
+
+Oil Change Interval .51 
+
+Transmission Oil Cooling .51 
+
+Identifying the Transmission.52 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Service Functions .52 
+
+Clutch Adaptation .52 
+
+Transmission Adaptation .52 
+
+Oil Calibration.53 
+
+Parking Lock Hook Test .53 
+
+Learning the Valves Characteristic Curves .53 
+
+Mechatronic module data synchronization .53 
+
+Possible Fault Messages.54 
+
+High Transmission Oil Temperature.54 
+
+Internal Transmission Faults.55 
+
+Faults Related to Implausible Readings.57 
+
+Variable M Differential.60 
+
+E46 Rear Axle Differential .60 
+
+Variable M-differential Lock.61 
+
+The Pump Unit.61 
+
+Principle of Operation .63 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6 
+
+M Drivetrain 
+
+
+M Drivetrain 
+
+Model: E60 M5, E63/E64 M6 and E9X M3 
+Production: From Start of Production 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand the operation of the M DCT transmission 
+
+• Understand the operation of the SMG 3 and IVI DCT transmission 
+
+• Identify components used in the SMG 3 
+
+• Identify components used in the M DCT transmission 
+
+
+Understand the operation of the M Variable differential 
+
+
+
+
+History 
+
+
+In 1996, BMW M introduced a manual transmission that was 
+capable of shifting gears automatically without the use of a con¬ 
+ventional clutch pedal or mechanical shifter lever. The system 
+was called the SMG I. Derived from Formula 1 racing technology; 
+SMG stands for Sequential Manual Gearbox. 
+
+The U.S. received the first SMG in the 2001 E46 M3. This sys¬ 
+tem was referred to as SMG 2. The six- speed manual gearbox 
+manufactured by Getrag, operated in automated “A” mode and 
+
+
+performed similar to an automatic transmission or in sequential 
+“S” mode, which allows the operator to shift manually through 
+the gears. 
+
+In sequential mode, the driver shifts up and down through the 
+gears by simply operating the shifter lever or a pair of paddle 
+shifters mounted on either side of the steering wheel. Individual 
+gear selection is realized by electrical/hydraulic actuation of both, 
+the gearbox selector forks and the (conventional) clutch assembly. 
+
+
+
+E46 M3 SMG 2 Shift/Clutch Mechanism 
+
+
+M Drivetrain 
+
+7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 
+
+M Drivetrain 
+
+
+Every function of the system is realized via a network of sensors 
+and actuators that are monitored by the SMG 2 and Digital Motor 
+Electronics modules through the use of its own SMG Controller 
+Area Network (CAN) Bus. 
+
+With the development of the E60 M5 and later the E63/E64 M6 
+BMW introduced the SMG 3. This is a seven speed sequential 
+gearbox with Drivelogic referred to as the SMG Getrag 247 
+Gearbox. (See E60 M5 section of M Drivetrain.) 
+
+BMW also offered a ZF version of the SMG 3 gearbox on some 
+non M vehicles like the E46, E60 550i, E64 645i and E85 Z4. 
+
+
+The most exciting and latest version of the sequential gearbox from 
+BMW is the new M Double-Clutch Transmission with Drivelogic 
+(M DCTDrivelogic). Designed by Getrag and introduced in the US 
+with the launch of the E93 M3. This seven speed, double wet 
+clutch transmission takes SMG to the next level. 
+
+M DCT has five driving programs in Automatic Mode and six driv¬ 
+ing programs in Sequential Mode. A new electronic gear selector 
+lever and steering wheel paddle shifters move seamlessly through 
+the pre-selected gears to enjoy uninterrupted drive torque. 
+
+M DCT combines the smoothness and comfort of an automatic 
+with the direct connection to the engine of the manual transmis¬ 
+sion. 
+
+
+K | *. 
+
+Ir4 fe 
+
+
+—Jrzi 
+
+
+
+
+E9X M3 M DCT transmission cut away view 
+
+
+E60 M5 SMG 3 
+
+
+
+
+
+
+
+
+
+
+
+
+E60 M5 
+
+
+The SMG 3 was developed for the M5 and is designated SMG 
+Getrag 247. The E60 M5 and the E63/E64 M6 use the 7-speed 
+sequential M gearbox (SMG 3). 
+
+The SMG 3 is the first sequential M gearbox that has been specif¬ 
+ically developed for automated operation. Previous sequential 
+gearboxes were conventional manual transmissions with an adapt¬ 
+ed hydraulic gearshift unit attached. 
+
+The central gearshift shaft has been replaced by individual selec¬ 
+tor rods. The hydraulic gearshift unit is a part of the gearbox cas¬ 
+ing and is no longer designed as an add-on part. 
+
+
+
+Compared to the SMG 2 the gearshift times have been shortened 
+by 20%. 
+
+Essentially, these shorter gearshift times have been achieved by: 
+
+• The use of individual selector rod operation. 
+
+• The use of carbon fiber friction cones in the synchronizer 
+rings that facilitate shorter synchronization times through their 
+higher load bearing capacity. 
+
+• Redesigning the transmission pinion placement (first gear 
+ainion is not next to second gear pinion - they do not share 
+:he same synchronizer). 
+
+The power is transmitted from the engine to the gearbox via a 
+dual-mass flywheel supplied by “LUK” and a two-disc dry clutch 
+supplied by “Fichtel und Sachs”. 
+
+The system also has the following special features: 
+
+• Launch control 
+
+• Hill ascent assistant 
+
+• Drivelogic 
+
+• Tire teach-in function, 
+
+Initialization procedures (designed to ensure the system functions 
+precisely) may be necessary after performing work on the vehicle 
+that is not directly related to the gearbox. 
+
+
+M Drivetrain 
+
+9 
+
+
+SMG3 gearbox cut away view 
+
+
+
+
+
+
+SMG 3 System Overview 
+
+
+
+
+
+
+
+
+
+
+
+5 
+
+
+
+DSC 
+
+
+
+16 
+
+
+
+
+
+DME 
+
+
+10 
+
+M Drivetrain 
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Light Module 
+
+2 
+
+Car Access System 2 (CAS 2) 
+
+3 
+
+SMG Control Unit 
+
+4 
+
+Sequential M Transmission 
+
+5 
+
+Pump Relay 
+
+6 
+
+Multi-Function Steering Wheel (MFL) 
+
+7 
+
+Longitudinal Acceleration Sensor 
+
+8 
+
+Hood Contact Switch 
+
+9 
+
+Hood Contact Switch 
+
+10 
+
+Selector Lever Indicator 
+
+11 
+
+Door Contact Switch 
+
+12 
+
+Drivelogic Switch 
+
+13 
+
+Brake Light Switch 
+
+14 
+
+Engine Control Module 
+
+15 
+
+Pedal Position Sensor (PWG) 
+
+16 
+
+DSC Control Unit (MK60E5) 
+
+17 
+
+Body Gateway Module (KGM) 
+
+18 
+
+Trailer Module (not for US) 
+
+19 
+
+Rain/Light Sensor (RLS) 
+
+20 
+
+Instrument Cluster 
+
+21 
+
+Head-Up Display 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+SMG Getrag 247 Gearbox 
+
+A special feature of this gearbox is that the main shaft is mounted 
+in three bearing assemblies. The third bearing assembly has been 
+realized by an end shield bolted in the gearbox casing. 
+
+
+
+Pinion Arrangement of the SMG Getrag 247 
+Powerflow 
+
+The diagram below illustrates the powerflow of the gearbox. 
+
+
+Gearshift Pattern 
+
+Besides the gearbox being designed solely for a sequential shifting 
+mechanism, the shift pattern would make it impractical for manual 
+shifting. (A manual shift version of SMG-3 is impossible.) 
+
+
+
+Selector Rods (top view) 
+
+
+
+6 7 5 3 2 4 R 1 
+
+
+2 6 5 R 
+
+
+
+Shift Pattern 
+
+
+M Drivetrain 
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12 
+
+M Drivetrain 
+
+
+Gear Recognition Hall Sensors 
+
+The engaged gear is determined in a contactless arrangement by 
+means of the Hall sensors on the actuators of the individual selec¬ 
+tor rods. The position of the working pistons is detected. 
+
+Oil Temperature Sensor 
+
+The gearbox oil temperature is determined indirectly via the 
+hydraulic oil temperature sensor as both temperatures have a linear 
+deviation with respect to each other. 
+
+The SMG control unit uses this temperature value to operate the 
+electric gear oil pump. 
+
+Oil Pressure Sensor 
+
+The hydraulic pressure sensor is located inside the hydraulic unit. 
+
+It is used to determine operating pressure values. 
+
+Normal operating pressure is 75 Bar (90 bar is only used during 
+the learn-in/adaptation) 
+
+Input Speed Sensor 
+
+The gearbox input speed is determined by a Hall sensor. This sen¬ 
+sor acquires the speed at the tooth flanks of the gear wheel on the 
+countershaft. 
+
+Clutch 
+
+The E60 M5 utilizes a two disc dry clutch setup to transfer power 
+from the engine to the gearbox. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Drive Plate 
+
+2 
+
+Intermediate Plate 
+
+3 
+
+Drive Plate 
+
+4 
+
+Contact Plate 
+
+5 
+
+Formed Spring 
+
+6 
+
+Pressure Plate 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selector Lever 
+
+The tasks of the selector lever are: 
+
+
+The shift speed and therefore the shift hardness are preselected in 
+sequential mode. 
+
+
+• to select the ranges D-N-R 
+
+• to change the operating modes D <-> S 
+
+• to activate launch control 
+
+• to activate the tow start function 
+
+
+The shift points can be influenced by the setting in Drive mode. 
+
+Steering Angle Sensor 
+
+The signal is tapped off from the CAN. This value influences the 
+automatic function of the gearbox (gearshift suppression). 
+
+
+Eight Hall sensors determine the selector lever positions which are 
+sent individually to the transmission control. 
+
+All selector lever positions are based on a redundant design where 
+a sensor switches to ground and the corresponding redundant 
+sensor switches in positive direction to ensure reliable detection 
+even in the case of failure. 
+
+Gearshift Lever 
+
+
+Gearshift Paddles 
+
+The gearshift paddles can be used to perform the following func¬ 
+tions: 
+
+• upshift and downshift (+/-) 
+
+• change of operating mode from "D" to "S" 
+
+• Manual initiation of wheel circumference teach-in function (the 
+hill ascent assistant no longer needs to be activated manually). 
+
+
+
+Drivelogic Switch 
+
+The Drivelogic selector switch can be used to choose between six 
+gearshift programs in sequential mode and five shift programs in 
+Drive mode. 
+
+
+
+Gearshift Paddles 
+
+
+M Drivetrain 
+
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14 
+
+M Drivetrain 
+
+
+Longitudinal Acceleration/Gradient Sensor 
+
+The longitudinal acceleration and gradient values are determined 
+by the longitudinal acceleration sensor in the rightfootwell. This 
+signal is used for the purpose of calculating the gradient. 
+
+For redundancy, the SMG control unit receives the signal from 
+the brake light switch and the brake light test switch. 
+
+The signal from the brake light switch is used for: 
+
+• Shift lock function 
+
+• Brake detection 
+
+• Engine start 
+
+• Disengaging gear 
+
+• DSC activation 
+
+The signal is made available via the CAN. 
+
+Wake-Up 
+
+The SGM control unit assumes standby mode as soon as the vehi¬ 
+cle is unlocked. As a result, the hydraulic unit generates sufficient 
+pressure to disengage the clutch if necessary. 
+
+Hood Contact Sensors 
+
+Two Hall sensors mounted on the hood latches determine the 
+hood status. 
+
+Similar to the E46 M3 eguipped with an SMG gearbox, the driver is 
+warned if the hood is open. The vehicle can only start off if the 
+hood contact status are both closed. If the status cannot be deter¬ 
+mined, the vehicle will not engage into gear. 
+
+
+Door Contact 
+
+Information on the door status is sent via the CAN to the SMG con¬ 
+trol unit. The gear is automatically disengaged when the door is 
+opened. 
+
+This signal should not be confused with the wake-up signal. 
+
+Engine Speed 
+
+For redundancy reasons, this signal is made available via the CAN- 
+bus as well as a hardwire signal. It is used to control the clutch and 
+to establish whether the engine is running. 
+
+Within the safety concept, the engine speed signal is used to mon¬ 
+itor the current status. 
+
+Reverse Light 
+
+The redundant sensor system of the 1/R selector rod detects 
+reverse gear when engaged and correspondingly informs the trans¬ 
+mission control. The transmission control informs the lights switch¬ 
+ing center that reverse gear is engaged. 
+
+
+
+
+Hydraulic System 
+
+A DC motor drives the hydrostatic pump. The pump conveys the 
+hydraulic oil via a nonreturn valve into a pressure system while 
+energy is stored in a hydraulic accumulator. 
+
+The operating pressure is 75 bar. The maximum pressure is 90 bar 
+which is applied only during initialization procedures. 
+
+The maximum shift force is approx. 2,500 N. 
+
+Inside the hydraulic unit are the following components: 
+
+• Pressure Accumulator 
+
+• Hydraulic Pressure Sensor 
+
+• Solenoid Valve for the Clutch 
+
+• Pressure Limiter Valve 
+
+• Regulator Block 
+
+• Clutch Slave Cylinder with PLCD Sensor 
+
+• Expansion Tank 
+
+• Hydraulic Pump with Electric Motor 
+
+• Check Valve 
+
+• Hydraulic Temperature Sensor 
+
+• Filter 
+
+
+SMG with Hydraulic Unit 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hydraulic Unit 
+
+
+M Drivetrain 
+
+15 
+
+
+
+
+
+
+
+
+
+16 
+
+M Drivetrain 
+
+
+SMG 3 Hydraulic System Overview 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Clutch 
+
+2 
+
+Working Piston (R /1) 
+
+3 
+
+Shift Range Valve (R /1) 
+
+4 
+
+Hydraulic Pump 
+
+5 
+
+Working Piston (3 / 5) 
+
+6 
+
+Shift Range Valve (3 / 5) 
+
+8 
+
+Working Piston (2 / 4) 
+
+9 
+
+Shift Range Valve (2 / 4) 
+
+11 
+
+Working Piston (6 / 7) 
+
+12 
+
+Shift Range Valve (6 / 7) 
+
+13 
+
+Proportional Valve 
+
+14 
+
+Proportional Valve 
+
+15 
+
+Proportional Valve 
+
+16 
+
+Pressure Limiter Valve 
+
+17 
+
+Edge-Type Filter 
+
+18 
+
+Electric Motor 
+
+19 
+
+Temperature Sensor 
+
+20 
+
+Pressure Sensor 
+
+21 
+
+Pressure Accumulator 
+
+22 
+
+Clutch Slave Cylinder 
+
+23 
+
+PLCD Sensor 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SMG 3 Hydraulic System Overview 
+
+
+
+
+Q) 
+
+
+J.J 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Hall sensors, selector rod R/1 (redundant) 
+
+2 
+
+Working Piston (R/1) 
+
+3 
+
+Shift Range Valve (R /1) 
+
+4 
+
+Hall sensors, selector rod 5/3 
+
+5 
+
+Working Piston (3 / 5) 
+
+6 
+
+Shift Range Valve (3 / 5) 
+
+7 
+
+Hall sensors, selector rod 2/4 
+
+8 
+
+Working Piston (2 / 4) 
+
+9 
+
+Shift Range Valve (2 / 4) 
+
+10 
+
+Hall sensors, selector rod 6/7 
+
+11 
+
+Working Piston (6 / 7) 
+
+12 
+
+Shift Range Valve (6 / 7) 
+
+13 
+
+Proportional valve 
+
+14 
+
+Proportional valve 
+
+15 
+
+Proportional valve 
+
+16 
+
+Pressure Limiter Valve 
+
+17 
+
+Edge-type filter 
+
+18 
+
+Electric motor with hydraulic pump 
+
+19 
+
+Temperature sensor 
+
+20 
+
+Pressure sensor 
+
+21 
+
+Pressure accumulator 
+
+22 
+
+Clutch slave cylinder 
+
+23 
+
+PLCD sensor 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18 
+
+M Drivetrain 
+
+
+Pressure Accumulator 
+
+The pressure accumulator is fitted on the bottom left of the trans¬ 
+mission. The pressure accumulator supplies enough hydraulic 
+power for the gearshift. 
+
+Hydraulic Pressure Sensor 
+
+The hydraulic pressure sensor is fitted directly to the hydraulic 
+block of the hydraulic control unit. The hydraulic pressure sensor 
+reports the current hydraulic pressure to the SMG control unit. The 
+hydraulic pump is switched on and off accordingly. 
+
+Solenoid Valve for the Clutch 
+
+The solenoid valve for the clutch is used for actuating the clutch 
+slave cylinder. 
+
+Hydraulic Pump with Electric Motor 
+
+The hydraulic pump with electric motor builds up to 90 bar system 
+pressure for the gearshift. The hydraulic pump with electric motor 
+is actuated via the SMG control unit. 
+
+Hydraulic Temperature Sensor 
+
+The hydraulic temperature sensor measures the temperature of the 
+hydraulic fluid at the hydraulic pump. 
+
+The signal is used for actuation of the transmission functions in the 
+SMG control unit. The signal is transmitted by a direct wire from 
+the hydraulic temperature sensor to the SMG control unit. 
+
+
+Pressure Limiter Valve 
+
+The pressure limiter valve prevent the oil pressure in the hydraulic 
+control unit from becoming too high. 
+
+Regulator Block 
+
+The regulator block is installed in the center of the transmission 
+housing close to the clutch housing. 
+
+The regulator block consists of the following components: 
+
+• 4 shift travel valves for actuating the hydraulic shift cylinders 
+
+• 2 pressure control valves for modulation of the shift force 
+
+• 4 hydraulic shift cylinders for moving the shift rods in the longi¬ 
+tudinal axis 
+
+• 4 transmission position sensors for recording the selected 
+gear (shift rod sensor R/1 is designed as a double version.) 
+
+
+
+Clutch Slave Cylinder 
+
+The clutch slave cylinder consists of two pistons and a spring 
+between the two piston elements. 
+
+The second piston is moved hydraulically. The second piston 
+makes it possible to bleed the clutch slave cylinder in installed 
+position without having to open any screws. 
+
+A PLCD sensor (Permanent-magnetic Linear Contactless 
+Displacement) is arranged separately in the housing of the clutch 
+slave cylinder. This sensor determines the exact position of the 
+release piston. 
+
+Clutch Slave Cylinder 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+1 
+
+Housing of Clutch Slave Cylinder 
+
+3 
+
+2 
+
+Pistons 
+
+
+
+Explanation 
+
+PLCD Sensor 
+
+
+PLCD Sensor 
+
+The PLCD sensor essentially consists of a special core made of 
+soft magnetic material. 
+
+The entire length of the core is enclosed by a coil (primary coil) 
+with a further, short evaluator coil at each end. 
+
+A permanent magnet approaching the sensor causes local mag¬ 
+netic saturation and therefore virtual division of the core. 
+
+A voltage, depending on the position of the saturated area, is 
+induced in the evaluator coils when an appropriate alternating cur¬ 
+rent is applied to the primary coil. Conseguently, the length of the 
+virtual parts of the core and therefore the position of the saturated 
+area can be determined in this way. 
+
+The SMG control unit powers the sensor and correspondingly 
+processes, evaluates and converts the signals. 
+
+The alternating voltage necessary for the measurement is supplied 
+by the ASIC (Application Specific Integrated Circuit) integrated in 
+the PLCD sensors. 
+
+Expansion Tank 
+
+The expansion tank ensures that there is always sufficient hydraulic 
+fluid available for the system. 
+
+Check Valve 
+
+The check valve at the outlet to the hydraulic pump prevents the 
+hydraulic pressure from reducing when the hydraulic pump is inac¬ 
+tive. 
+
+Filter 
+
+A filter is installed at the inlet end of the hydraulic pump. The filter 
+prevents impurities from entering the solenoid valve (functional fail¬ 
+ure). It is not necessary to clean the filter. 
+
+
+Drivetrain 
+
+19 
+
+
+
+
+
+
+
+
+
+
+
+
+
+20 
+
+M Drivetrain 
+
+
+Features 
+
+
+Transmission Ratio of the SMG 3 
+
+The SMG 3 is designed as an overdrive gearbox as can be clearly 
+seen in the overview of gear ratios below. 
+
+
+Gear 
+
+Ratio 
+
+Gear 
+
+Ratio 
+
+1st gear 
+
+3.985 
+
+5th gear 
+
+1.159 
+
+2nd gear 
+
+2.652 
+
+6th gear 
+
+1.00 
+
+3rd gear 
+
+1.806 
+
+7th gear 
+
+0.833 
+
+4th gear 
+
+1.392 
+
+Reverse 
+
+3.985 
+
+
+Drivelogic 
+
+Each time you change between the Sequential Mode and the Drive 
+Mode, the driving program last selected in the respective mode is 
+active. The exception to this, is after the first change from the 
+Sequential to the Drive Mode. In this case, driving program 3 
+is active. 
+
+
+In Drive Mode 
+
+Five driving programs, from relaxed 1 to sporty/highly dynamic 
+5 are available for selection. 
+
+In Sequential Mode 
+
+You can choose from six driving program from balanced/dynamic 
+1 to sporty/purist 6. 
+
+Each time the engine is started, driving program 3 is activated. 
+
+The sporty/purist driving program 6 is only available with the DSC 
+Dynamic Stability Control deactivated. When DSC is activated, 
+the system switches from driving program 6 to 5. 
+
+Note: To maintain vehicle stability, always drive with the 
+DSC switched on when possible. 
+
+
+
+Transmission program selection button is located next to the shifter. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Special Functions 
+
+
+Tow-Start 
+
+The following procedure must be implemented to activate this 
+function: 
+
+• With the brake pedal depressed, turn the ignition key to 
+terminal 15, 
+
+• select position "N", 
+
+• tow-start/push-start the vehicle, 
+
+• shift selector lever to "S+" and hold in this position. 
+
+The transmission control engages the gear corresponding to 
+the speed and activates the clutch. 
+
+Hill Ascent Assistant 
+
+Compared to the SMG 2, the hill ascent assistant function has now 
+been automated. 
+
+This means the hill ascent assistant no longer needs to be selected 
+manually with the minus shift paddle on the steering wheel and the 
+brake depressed as was the case with the SMG 2. It is now acti¬ 
+vated automatically when the transmission system recognizes any 
+position other than "N". 
+
+The hill ascent assistant in the SMG 3 is now an active system that 
+makes use of the DSC to control the vehicle via the wheel brakes 
+on uphill/downhill gradients (clutch load reduction). 
+
+Note: Further information on the hill ascent assistant can 
+be found in the Chassis and Suspension Section 
+under "DSC". 
+
+
+
+Hill Hold Feature (similar to regular production E60 - shown) 
+
+Launch Control 
+
+Launch control has been carried over from the E46 M3. 
+
+Clutch Overload Protection (KUS) 
+
+The clutch overload protection function (KUS) protects the clutch 
+from thermal overload. 
+
+The clutch overload protection function makes use of an arithmetic 
+logic in the SMG control unit that can calculate the thermal load of 
+the clutch based on the slip and contact force. 
+
+In the first stage, the clutch overload protection function reduces 
+the slip at the clutch. The customer would refer to this as a "harsh 
+gearshift". 
+
+The anti-jolt function is activated as a further protection measure. 
+As a result, the thermal input at the clutch discs is reduced and the 
+driver's attention is drawn to the overload situation. 
+
+If the temperature continues to increase, a warning is triggered in 
+order to repeatedly draw the driver's attention to the overload situa¬ 
+tion. Start-off in 2nd gear is automatically inhibited when the gear¬ 
+box warning is triggered in order to minimize the clutch slip. 
+
+
+M Drivetrain 
+
+21 
+
+
+
+
+22 
+
+M Drivetrain 
+
+
+Service Information 
+
+Initialization 
+
+As on the SMG 2, the SMG control unit must newly adapt and 
+store various parameters after a component has been replaced in 
+the area of the clutch or gearbox as well as after programming. 
+
+Clutch Teach-In Function 
+
+This function is used to adapt the clutch to the characteristics 
+stored in the control unit. The clutch grab point is taught-in with 
+the engine running. 
+
+The clutch is released, and after the input shaft has stopped, initial¬ 
+ly, the clutch moves quickly close to the grab point and then slowly 
+approaches the grab point. 
+
+This procedure is terminated if a transmission input speed is 
+already measured during the fast approach phase as there is 
+obviously a fault in the system (e.g. bleeding). 
+
+If a valid value is measured during the slow approach of the clutch 
+towards the grab point this value is stored in the SMG control unit. 
+
+Teaching in the Axle Difference 
+
+The teach-in function for the axle difference must be initiated man¬ 
+ually after a change in the dynamic rolling circumference (tire 
+change, snow chains, etc.) of one or several wheels on the vehicle 
+to ensure correct operation of the transmission control system. 
+
+These differences are also adapted automatically but with a con¬ 
+siderable time delay. This function is initiated manually as follows: 
+
+• Vehicle speed between 30 and 150 km/h 
+
+• Transmission in position "N" 
+
+• Brakes not applied 
+
+• Pull both shift paddles on steering wheel for 2 seconds 
+
+
+Pressure Accumulator Preload 
+
+A function for checking the accumulator preload is available for 
+service applications. 
+
+The diagnostic procedure evaluates the time required to discharge 
+the accumulator. The pressure sensor of the hydraulic unit is used 
+to measure the pressure. 
+
+The SMG control unit still measures the time required for filling. If a 
+shorter period of time is required to reach the cutoff pressure this 
+indicates that the nitrogen, which the accumulator must contain as 
+the preload medium, has leaked out of the accumulator. 
+
+The shut-off valve on the pressure accumulator is monitored sepa¬ 
+rately. 
+
+Adaptations 
+
+It is necessary to check the gearbox mechanism after replacing a 
+gearbox, components of a gearbox or the SMG control unit. The 
+following adaptations are provided in the ISTA/GT1 diagnostic 
+equipment. 
+
+The most important adaptations in the gearbox are: 
+
+• Shift range mid-points 
+
+• Valve characteristics 
+
+• Transmission characteristics 
+
+• Longitudinal acceleration sensor offset 
+
+Shift Range Mid-Points 
+
+This function ensures a gear can be disengaged without previous 
+adaptation of the transmission characteristics. 
+
+
+
+
+Valve Characteristics 
+
+The shift range valves in the hydraulic system are designed as pro¬ 
+portional valves. Due to the tolerance scatter in series production, 
+it is necessary to teach in the offset current of these valves. 
+
+The current at which the corresponding selector rod begins to 
+move is determined. This value is stored as the offset current in 
+the SMG control unit. 
+
+The current consumption of the proportional valves is determined 
+in both switching directions. 
+
+Transmission Characteristics 
+
+In this adaptation phase, the selector rods are moved to the end 
+positions and the actual values determined. 
+
+The measured values indicate whether a gear is engaged. 
+
+The selector rod for reverse gear is additionally monitored by a 
+redundant sensor whose values are also stored. 
+
+In addition, the hydraulic pressure is read off at this selector rod 
+and the selector rod is monitored to ensure it remains in the end 
+position. 
+
+Longitudinal Acceleration Sensor 
+
+The measured value of the longitudinal acceleration sensor has a 
+constant offset. This value is determined when the vehicle is at rest 
+in horizontal position and therefore the longitudinal acceleration is 
+zero. 
+
+The actual values are permanently sampled. As soon as a sample 
+value deviates by more than a reference value, external influences 
+are assumed and the adaptation procedure is terminated to ensure 
+no falsified acceleration values are measured during vehicle opera¬ 
+tion. 
+
+
+M Drivetrain 
+
+23 
+
+
+
+24 
+
+M Drivetrain 
+
+
+M DCTTransmission 
+
+
+BMW has introduced the new generation of sequential transmis¬ 
+sions. The M Double-Clutch Transmission with Drivelogic 
+(M DKG) GS7D36SG is available as an option on the entire 
+E9x M3 series and is referred to as M DCT Drivelogic. 
+
+The M double-clutch transmission combines the benefits of a 
+sequential M transmission with that of an automatic. Like the 
+SMG, it can be used in automatic mode "Drive" and in manual 
+mode "Sequential". 
+
+There are 5 Drivelogic programs in automatic “Drive” mode and 
+6 Drivelogic programs in “Sequential” mode. In sequential mode 
+shifting can either be done with the new electronic sports shift 
+lever, exclusive to the BMW M3, or with paddle shifters on the 
+steering wheel. The main characteristic of this system is that 
+
+
+there is no longer an interruption in driving force during the shift¬ 
+ing operation from gear to gear. 
+
+Shifting is controlled by the M DCT electronics and executed by 
+the M DCT hydraulic components. These are combined into one 
+mechatronics module and integrated into the transmission. The 
+M DCT has a dedicated system to directly lubricate all of the rele¬ 
+vant transmission components. The transmission oil temperature 
+is regulated by a special two stage cooling system. 
+
+An electric automatic parking lock has been integrated into the 
+system. Selection of the driving programs and gears are con¬ 
+trolled using the (M GWS) electric gear selector switch. Different 
+driving modes and settings can be selected through the controller 
+and the fifth settings menu of the CID (option dependent). 
+
+
+
+E92M3 with the M Double- 
+Clutch Transmission (M DCT) 
+
+
+
+
+
+Special Features 
+
+M Double-Clutch Transmission features: 
+
+• hydraulically operated double (wet) clutches 
+
+• integrated mechatronics module, that consists of the M DCT 
+electronics and the M DCT hydraulic components 
+
+• internal direct lubrication of key transmission areas and 
+components 
+
+
+• special two-stage oil cooling system 
+
+• new M DCT electronic gear selector switch M GWS 
+
+• automatic parking lock mechanism 
+
+• drive shaft length has been adapted (shortened) to fit the 
+M DCT transmission 
+
+• fully variable M limited-slip differential with a modified gear 
+ratio of 3.154 (without M DCT 3.846) and modified housing 
+cover. 
+
+
+
+M Drivetrain 
+
+25 
+
+
+
+
+
+
+
+
+26 
+
+M Drivetrain 
+
+
+M DCT Applications 
+
+
+Transmission 
+
+Model 
+
+Engine/torque 
+
+Transmittable 
+torque rating 
+
+
+E90 M3 
+
+
+
+GS7D36SG 
+
+E92 M3 
+
+S65B4000 
+
+400 Nm 
+
+520 Nm 
+
+
+E93 M3 
+
+
+
+SMG/DCT History 
+
+
+Series 
+
+Model 
+
+Engine 
+
+Transmission 
+
+Description 
+
+Transmission 
+
+Denomination 
+
+Introduced 
+
+E36 
+
+M3 
+
+S50B32 
+
+1st generation 
+
+Sequential M transmission 
+(Not for US) 
+
+GS6S420BG 
+
+10/1996 
+
+E46 
+
+M3 
+
+S54B32O0 
+
+2nd generation 
+
+Sequential M transmission 
+
+GS6S420BG 
+
+03/2001 
+
+06/2003 
+
+E85 
+
+Z4 
+
+M54B25/30 
+
+Sequential manual 
+transmission 
+
+GS6S37BZ 
+
+04/2003 
+
+E6X 
+
+525i, 530i, 
+
+530i 
+
+M54B25/30 
+
+N52B3000 
+
+Sequential manual 
+transmission 
+
+GS6S37BZ 
+
+09/2003 
+
+E6X 
+
+545i, 645Ci 
+550i, 650i 
+
+N62B44O0 
+
+N62B4801 
+
+Sequential manual 
+transmission 
+
+GS6S53BZ 
+
+09/2003 
+
+E6X 
+
+M5/M6 
+
+S85B5000 
+
+3rd generation 
+
+Sequential M transmission 
+
+GS7S47BG 
+
+09/2005 
+
+E89 
+
+Z4 
+
+N54B3000 
+
+(Non M version) 
+
+Double-Clutch Transmission 
+
+(DCT) 
+
+GS7D36SG 
+
+05/2009 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+The M DCT consists of two sub-transmissions, each with its own 
+clutch. Clutch 1 with sub-transmission 1 and clutch 2 with sub¬ 
+transmission 2. Sub-transmission 1 consists of the gears 1, 3, 5, 7 
+and Reverse while sub-transmission 2 consists of gears 2, 4 and 6. 
+This means that the your next gear is always pre-selected in the 
+other sub-transmission, regardless of whether you are shifting up 
+or down (with the exception of "R"). 
+
+For example, while still in the acceleration phase of the currently 
+selected gear, if on sub-transmission 1 the next logical gear on 
+
+
+sub-transmission 2 is engaged in advance, in a process similar to 
+the Shift Overlap function of an automatic transmission. 
+
+Precise control of the clutches when upshifting will allow the driv¬ 
+ing force to be transferred very quickly and smoothly from sub¬ 
+transmission 1 to sub-transmission 2 without an interruption in 
+driving power. This results in significant benefits not only for the 
+available driving force but also in terms of shift comfort. 
+
+By combining the seamless driving force and comfort of the auto¬ 
+matic with the direct connection to the engine as a manual, M DCT 
+provides the benefits of both transmissions. 
+
+
+
+Simplified drawing of the M DCT functional principle 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Engine S65 
+
+1 
+
+Clutch 1 
+
+B 
+
+Double-clutch transmission 
+
+2 
+
+Sub-transmission 1 
+
+C 
+
+Live axle 
+
+3 
+
+Clutch 2 
+
+
+
+4 
+
+Sub-transmission 2 
+
+
+M Drivetrain 
+
+27 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Comparison of the M DCT to the Manual and SMG 
+
+
+28 
+
+M Drivetrain 
+
+
+
+Diagram showing the driving force of one shift event of 
+M DCT compared to SMG and manual transmissions 
+
+
+
+t 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Driving force 
+
+4 
+
+Manual transmission 
+
+2 
+
+Double-clutch transmission (M DCT) 
+
+t 
+
+Time (one shift event) 
+
+3 
+
+Automated transmission (SMG) 
+
+
+
+
+Note: Smooth gear changing without loss of driving force 
+becomes clear when compared to the previous man¬ 
+ual and SMG transmission 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System 
+
+Overview 
+
+
+
+29 
+
+
+Index 
+
+Explanation 
+
+1 
+
+DSC control unit (Dynamic Stability Control) 
+
+2 
+
+Auxiliary water pump 
+
+3 
+
+M DCT electronics (integrated into the 
+Mechatronics module) 
+
+4 
+
+DME/ECM (Digital Engine Electronics) 
+
+5 
+
+Instrument cluster 
+
+6 
+
+CAS control unit (Car Access System) 
+
+7 
+
+Steering column switch cluster 
+
+8 
+
+Diagnostics interface 
+
+9 
+
+Junction box electronics 
+
+10 
+
+Door contact switch 
+
+11 
+
+Footwell module 
+
+12 
+
+M gear selector switch (M GWS) 
+
+13 
+
+Parking lock electromagnet 
+
+14 
+
+Brake light switch 
+
+15 
+
+Accelerator pedal module 
+
+16 
+
+Drivelogic program selector button 
+
+17 
+
+DSC sensor unit 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30 
+
+M Drivetrain 
+
+
+Operation and Power Flow 
+
+Operation 
+
+The driving force is guided into the transmission by a central input 
+shaft (1) through wet clutches 1 and 2, which are integrated into 
+the transmission. 
+
+Clutch 1 (2) transmits the power to inner input shaft 1 (5). 
+
+Clutch 2 (3) transmits the power to inner input shaft 2 (4). 
+
+The torque is then transferred to the output shaft (8) via the 
+countershaft (6). 
+
+
+The constant gears (7) are always engaged regardless of the gear 
+selected. The countershaft and the output shaft are also always 
+engaged. 
+
+The respective gear pairs are selected via the sliding clutches (9). 
+
+The 7th gear is the direct gear, the sliding clutch connects inner 
+input shaft 1 directly to the output shaft. 
+
+The parking lock (10) is located directly on the output shaft. 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central input shaft with clutch input 
+
+2 
+
+Clutch 1 
+
+3 
+
+Clutch 2 
+
+4 
+
+Inner input shaft 2 
+
+5 
+
+Inner input shaft 1 
+
+6 
+
+Countershaft 
+
+7 
+
+Constant gears 
+
+8 
+
+Output shaft 
+
+9 
+
+Sliding clutches 
+
+10 
+
+Parking lock 
+
+
+
+Schematic Structure of the M DCT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The greater portion of the driving force is still being transferred by 
+clutch 1. The pressure on clutch 1 is still significantly higher than 
+the increasing pressure on clutch 2. 
+
+
+Shifting Operation From 1st to 2nd Gear 
+
+The following is a diagram demonstrating the shifting operation 
+from 1st to 2nd gear with regulated transmission of the driving 
+force between clutch 1 and clutch 2. 
+
+
+2nd gear is already pre-selected, while the driver accelerates in first 
+gear (not shown). During the first phase, clutch 2 begins to engage 
+as clutch 1 begins to disengage. 
+
+
+
+
+
+
+
+
+
+
+M DCT gear shift from 1st to 2nd gear, first phase 
+
+
+M DCT power flow route 1 st gear 
+
+
+M Drivetrain 
+
+31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32 
+
+M Drivetrain 
+
+
+During the second phase, the driving force is distributed propor¬ 
+tionally to clutch 2, which is engaging and clutch 1 which is disen¬ 
+gaging. In this diagram both clutches have nearly the same pres¬ 
+sure. 
+
+
+During the 3rd phase, clutch 2 carries the greater portion of the 
+driving force, while clutch 1 disengages further. The pressure on 
+clutch 2 is now significantly higher than the decreasing pressure on 
+clutch 1. 
+
+
+
+
+
+
+M DCT gear shift from 1st to 2nd gear, second phase 
+
+
+M DCT gear shift from 1st to 2nd gear, third phase 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+During the 3rd phase, clutch 2 carries the greater portion of the 
+driving force, while clutch 1 disengages further. The pressure on 
+clutch 2 is now significantly higher than the decreasing pressure on 
+clutch 1. 
+
+
+
+2nd gear power flow 
+
+
+Note: For further information regarding the power flow of 
+the M DCT transmission refer to the M DCT training 
+material available in TIS and ICP. 
+
+
+M Drivetrain 
+
+33 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34 
+
+M Drivetrain 
+
+
+System Components 
+
+
+Housing Structure 
+
+The GS7D36SG transmission housing consists of three main 
+components: 
+
+• the transmission housing 
+
+• the intermediate case 
+
+• the rear housing cover 
+
+
+The main opening at the front is closed with the clutch cover. The 
+case openings on the right side are closed with the mechatron- 
+ics/hydraulic components cover. The lower openings are closed 
+with the oil sump cover and on the left side with the oil filter cover. 
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmission housing 
+
+2 
+
+Cover for the Mechatronics module 
+or hydraulic components cover 
+
+3 
+
+Intermediate case 
+
+4 
+
+Rear housing cover 
+
+5 
+
+Sump 
+
+6 
+
+Oil filter cover 
+
+7 
+
+Clutch cover 
+
+
+
+M DCT Housing Structure 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Internal Structure 
+
+In the M DCT, driving force is transmitted in gears 1, 3, 5, 7 and R 
+from clutch 1 to inner input shaft 1 and sub-transmission 1. 
+
+
+M DCT Sub-transmission 1 
+
+
+
+In gears 2, 4 and 6 the driving force is transmitted from clutch 2 to 
+inner input shaft 2 and sub-transmission 2. 
+
+M DCT Sub-transmission 2 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Inner input shaft 1 (left) Inner 
+input shaft 2 (right) 
+
+3 
+
+Countershaft 
+
+2 
+
+Output shaft 
+
+4 
+
+Clutch 1 (left) Clutch 2 (right) 
+
+
+M Drivetrain 
+
+35 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36 
+
+M Drivetrain 
+
+
+Clutch 1, clutch 2, input shaft 1, input shaft 2, the countershaft and 
+the output shaft form the total gear set of the double-clutch trans¬ 
+mission. 
+
+
+
+
+s 
+
+f — 1 
+
+■>% 
+
+L 
+
+\y*M 
+
+
+
+
+• b < vu 
+
+
+
+! i i 
+
+i 
+
+P } 
+
+
+M DCT sub-transmission 1 and sub-transmission 2 joined together 
+with selector linkage 
+
+
+The driving force is transmitted from the dual-mass flywheel over 
+the central input shaft and the external double-clutch housing into 
+the M DCT. The oil pump drive gear is connected at this point to 
+the central input shaft. 
+
+
+There are four hydraulically operated selector rods and four sliding 
+clutches, with one selector rod and one sliding clutch for each gear 
+pair 4/6, 2/R, 1/3 and 5/7. Gears 1, 2, 3 and Reverse are eguipped 
+with double taper synchronization and gears 4, 5, 6 and 7 with 
+single taper synchronization. 
+
+Carbon friction material is used for taper friction lining on all gears. 
+The gear set assembly is mounted on three bearings that are even¬ 
+ly distributed along the length of the transmission shafts. 
+
+
+
+M DCT complete gear set 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Inner input shaft 2 
+
+6 
+
+Output shaft 
+
+2 
+
+Selector linkage 
+
+7 
+
+Countershaft 
+
+3 
+
+Intermediate case 
+
+8 
+
+Lubricating pipe 
+
+4 
+
+Inner input shaft 1 
+
+9 
+
+Oil pump (sectional view) 
+
+5 
+
+Constant 
+
+10 
+
+External double-clutch housing 
+(Driving force input) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Parking Lock 
+
+This is the first time that an inte¬ 
+grated automatic parking lock has 
+been used in an M vehicle. 
+
+When the engine is turned off, 
+there is no mechanical connection 
+between engine and drive wheels 
+(clutches are at zero pressure and 
+disengaged). 
+
+
+Index 
+
+Explanation 
+
+1 
+
+External parking lock lever 
+
+2 
+
+Inner parking lock lever 
+
+
+
+There is no parking lock button on 
+the selector lever of the M GWS. 
+
+The parking lock position is deter¬ 
+mined by the M DCT electronics. 
+
+The parking lock is engaged with 
+the use of a parking lock electro¬ 
+magnet. This electromagnet is built into the gear selector switch 
+housing and is activated directly by the M DCT electronics. It 
+transfers its movement (stroke) to a Bowden cable. The parking 
+lock Bowden cable transfers the movement directly to the external 
+parking lock lever on the transmission and then to the inner parking 
+lock lever. 
+
+
+M DCT inner structure of the parking lock mechanism 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Parking lock wheel 
+
+4 
+
+Pressure cone for operating 
+the locking pawls 
+
+2 
+
+Parking lock hydraulic pistons and 
+direction of pressure (red arrow) 
+
+5 
+
+Spring-loaded parking lock pawl 
+
+3 
+
+Magnet for parking lock sensors 
+
+
+
+
+Note: The parking lock Bowden cable does not need to be 
+adjusted. 
+
+
+M Drivetrain 
+
+37 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38 
+
+M Drivetrain 
+
+
+The parking lock disengages hydraulically in the transmission. To 
+engage the parking lock using the electromagnet, the parking lock 
+hydraulic components must be at zero pressure. 
+
+The parking lock will always be automatically engaged once the 
+engine has been turned off, except in "N". 
+
+When in "N", the parking lock is engaged: 
+
+• when vehicle remote control is not in the ignition lock 
+(Comfort Access) 
+
+• when removing the remote control from the ignition lock 
+
+• 30 minutes after the engine has been turned off. 
+
+Note: At the carwash, before stopping the engine you must 
+deliberately shift to "N" and leave the transmitter in 
+the ignition lock. (With Comfort Access it must 
+remain in the car or be inserted in the ignition lock). 
+
+
+Emergency Release of Parking Lock 
+
+In an emergency, the parking lock can be released by operating 
+the emergency release mechanism. This is achieved releasing 
+the mechanical connection between the GWS and M DCT. 
+(See “Service Information”) 
+
+
+CAUTION!!! 
+
+
+If the parking lock is released the 
+vehicle may roll. 
+
+
+Mechatronics Module 
+
+The mechatronics module integrated into the M DCT transmission 
+housing consists of the M DCT electronics and the M DCT 
+hydraulic components. 
+
+The selector rod position sensors are mounted directly on the M 
+DCT electronics. The speed sensors for inner input shafts 1 and 2 
+are integrated in the upper position sensors. 
+
+The parking lock sensors are integrated in the second position 
+sensor from the bottom. 
+
+
+
+M DCT Mechatronics Module 
+
+
+Note: The emergency release is described in detail in the 
+Owner's Manual for the vehicle and in the Repair 
+Instructions. 
+
+
+
+
+
+M DCT Electronic Components 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+M DCT electronics 
+
+2 
+
+Integrated parking lock sensors 
+
+3 
+
+Selector rod position sensors 
+
+4 
+
+Integrated shaft speed sensors 
+
+
+M DCT Hydraulic Components 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Take up shift valve 
+
+2 
+
+M DCT hydraulic components 
+
+3 
+
+Shift cylinders 
+
+
+M Drivetrain 
+
+39 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40 
+
+M Drivetrain 
+
+
+The eight individual gears are engaged by four hydraulic cylinders 
+and four individual selector rods. The selector rod positions are 
+detected without the need for direct contact with the use of the 
+selector rod position sensors. 
+
+
+
+View of selector rod side of M DCT mechatronics module 
+
+
+
+Torque Intervention 
+
+The M DCT mechatronics module sends a torque requirement to 
+the engine control module on the PT-CAN in order to achieve a 
+torque intervention when shifting gear under load or when coast¬ 
+ing. This is negative when upshifting so that the engine speed is 
+reduced. When downshifting the torque intervention is positive, in 
+order to increase the engine speed. Gear shifting is supported by 
+the engine control module through this torque intervention strategy. 
+
+LIN-bus Module 
+
+There is a LIN-bus connection in the M DCT electronics for redun¬ 
+dant communication with the gear selector switch (GWS). 
+
+M DCT Transmission Sensors 
+
+The following sensors are mounted in the transmission and their 
+signals are sent directly to the M DCT electronics: 
+
+• Input shaft 1 speed (Hall) sensor monitors rotation and 
+direction of transmission shaft 1. 
+
+• Input shaft 2 speed (Hall) sensor without rotation direction 
+detection for the transmission shaft 2. 
+
+• Clutch oil pressure (Piezo) sensors for clutch 1 and 2. 
+
+• 3 temperature sensors (NTC), one for the ejected clutch oil 
+and two redundant temperature sensors for the M DCT elec¬ 
+tronics. 
+
+• 4 linear (Hall) sensors monitor the selector rod position. 
+
+• 1 double (redundant) parking lock (Hall) sensor. 
+
+The oil sump temperature is measured using a complex tempera¬ 
+ture map and checked against the temperature of the clutch oil by 
+the M DCT electronics. 
+
+
+M DCT mechatronics module with selector rods installed 
+
+
+
+
+
+©□ 
+
+
+M DCT basic layout with clutches, shafts, M DCT electronics and sensors 
+
+
+
+Note: The engine speed signal is provided from the 
+DME through the PT-CAN to the M DCT elec¬ 
+tronics. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central input shaft 
+
+2 
+
+Clutch 1 
+
+3 
+
+Clutch 2 
+
+4 
+
+Inner input shaft 2 
+
+5 
+
+Inner input shaft 1 
+
+6 
+
+M DCT electronics 
+
+7 
+
+Countershaft 
+
+8 
+
+Constant gearwheel 
+
+9 
+
+Output shaft 
+
+10 
+
+Input engine speed (Hall) sensor 
+
+11 
+
+Gear rotation speed sensor for the 
+inner input shaft 2 (Hall) 
+
+12 
+
+Gear rotation speed sensor with rotation 
+direction detection of inner input shaft 1 (Hall) 
+
+13 
+
+Clutch oil pressure (Piezo) sensors 
+
+14 
+
+Oil temperature sensors (NTC) 
+
+15 
+
+Sliding clutches 
+
+16 
+
+Linear position (Hall) sensors 
+
+17 
+
+Parking lock (Hall) sensor (redundant) 
+
+18 
+
+Parking lock 
+
+19 
+
+Power flow input, output and direction 
+
+
+M Drivetrain 
+
+41 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+42 
+
+M Drivetrain 
+
+
+M-Gear Selector Switch (M GWS) 
+
+The double clutch transmission in the E9x M3 has an M specific 
+gear selector switch. It is operated in a similar way to the one in 
+the E6x M5/M6 with the sequential transmission (SMG). 
+
+
+
+M DCT M Gear Selector Switch (M GWS) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Selector lever 
+
+3 
+
+Drivelogic program selector button 
+
+2 
+
+Button to increase the 
+Drivelogic program 
+
+4 
+
+Button to reduce the 
+Drivelogic program 
+
+
+The M GWS consists of the selector lever with indicator, the hous¬ 
+ing with control module and the external but electrically connected 
+Drivelogic program selector button. 
+
+
+Selector Lever Indicator and Function 
+
+The shift pattern, driving program, gear selection indicator on the 
+selector lever are all similar to that of the E6x M5/M6 with SMG. 
+The main difference is that the selector lever on the gear selector 
+switch in the E9x M3 no longer snaps into the "N" and "R" posi¬ 
+tions, instead it only snaps into "R". 
+
+The M GWS selector lever is self centering as it returns back to its 
+normal starting position on its own, after the driver selects the 
+desired gear. Reverse gear is an exception; because once the 
+shifter lever is moved left and into the "R" position the gear must 
+be manually unselected by the driver. 
+
+The shift pattern, driving program, gear selection indicator on the 
+selector lever are all displayed in red, depending on the position of 
+the selector lever and driving program selected. 
+
+The indicator displays the currently selected driving program and 
+the gear selection options. The indicator consists of the locating 
+light that indicates the shift pattern and the function indicator lamp. 
+These are two different red position LEDs that show the currently 
+selected driving program and the gear selection options. 
+
+The function indicator lamp in the M GWS is controlled by the M 
+DCT electronics. The function indicator lamp is monitored, read 
+back and compared with the required indicator for plausibility. 
+
+In addition to the PT-CAN connection; there is a LIN-bus connec¬ 
+tion built in to the M GWS for redundant communication with the 
+M DCT electronics. 
+
+Note: For further information regarding the M-Gear 
+
+Selector Switch refer to the M DCT training material 
+available in TIS and ICP or the vehicle’s owners man¬ 
+ual. 
+
+
+
+
+
+
+
+
+
+
+
+Selector Lever in the Start Position 
+
+
+Except for when in the position "R", the selector lever always 
+returns to the start position. When starting the engine the parking 
+lock is always engaged and the clutches are both disengaged (zero 
+oil pressure). The engine can be turned on regardless of the gear it 
+was in when it was turned off. 
+
+
+The selector lever indicator is 
+displayed in red when in the start 
+position. Driving program "D" 
+Drive (automatic gear mode) is 
+selected by briefly pushing the 
+selector lever to the right, caus¬ 
+ing the M DCT, when in auto¬ 
+matic gear mode, to change 
+gears automatically into first 
+(second) gear. The selector 
+lever indicator "D/S" option is 
+also displayed in red to indicate 
+the start position. 
+
+
+
+M GWS selector lever during and 
+after starting the engine 
+
+
+The M GWS one-touch function 
+is pushed to the right once to 
+start automatic gear mode 
+
+
+
+Driving Program "S" (Sequential Mode) 
+
+By pressing the selector briefly to the right a second time the M 
+DCT changes from automatic to sequential mode "S". 
+
+If, while driving in 2nd to 6th gear, the driving program "S" is select¬ 
+ed, then in addition to the "D/S", the "+" and will light up in red. 
+
+The driver can now change to the next higher gear by briefly 
+moving the selector lever backwards a notch or downshift by 
+moving it briefly forward a notch. 
+
+A desired gear shift may only be executed within the range of 
+permissible engine speeds. There is no automatic up-shifting 
+once the maximum speed has been reached. 
+
+In automatic “Drive” mode, as soon as the selector lever is moved 
+towards the front, the back or a shift paddle on the steering wheel 
+is activated, the M DCT switches to sequential mode. 
+
+
+
+The M GWS pushed to the right 
+twice to start sequential mode 
+
+
+M Drivetrain 
+
+43 
+
+
+
+44 
+
+M Drivetrain 
+
+
+In sequential mode there are two additional indicators, one for 1 st 
+gear and one for 7th gear. 
+
+
+Downshifting 
+
+In 1 st gear the is no longer lit 
+up in red, because it is no longer 
+possible to downshift. 
+
+
+
+M GWS in sequential mode 
+downshifting 
+
+
+Gear Selection "N" Neutral 
+
+The driver can consciously shift 
+into neutral by pressing the 
+selector lever briefly to the left. 
+
+"N" will light up in red in the 
+selector lever indicator. This is 
+useful for example in a carwash. 
+
+
+Note: At the car wash, before stopping the engine you 
+
+must deliberately shift to "N" and leave the transmit¬ 
+ter in the ignition lock. (With Comfort Access it must 
+remain in the car or be inserted in the ignition lock). 
+
+
+
+Upshifting 
+
+In 7th gear the "+" 
+up in red, because 
+bie to shift higher. 
+
+
+is no longer lit 
+it is not possi- 
+
+
+
+M GWS in sequential mode, upshifting 
+
+
+If the engine is turned on while 
+the selector lever position is in 
+"R", the start position of the 
+selector lever will flash red at one 
+second intervals. This signals 
+the driver that the Reverse gear 
+is selected and that he must first 
+return the shift lever to the (self 
+centering) start position, in order 
+to select a new gear or driving 
+program. 
+
+
+
+Gear Selection "R" Reverse Gear 
+
+When in this shift position, reverse gear is selected and the "R" will 
+light up in red. 
+
+
+
+
+
+
+
+
+
+
+M GWS Shifter Sensor System 
+
+The selector lever position is detected with the use of Hall sensors. 
+These are available mostly in groups of 2 or 4. In total there are 14 
+Hall sensors. This ensures maximum fault handling and diagnostic 
+capacity. 
+
+
+The M GWS wake up is done by a high signal on the PT-CAN 
+wake-up line. 
+
+The M GWS itself has no active wake-up capabilities. The indica¬ 
+tor on the selector Lever is active as soon as bus communication is 
+active on the PT-CAN or the LIN-bus. 
+
+
+M GWS arrangement of Hall sensors for determining the selector lever 
+
+
+
+Interface to the M DCT 
+
+The selector lever position is transmitted through the PT-CAN and 
+a LIN-bus. In the event of a failure of one of the two communica¬ 
+tion lines, a signal is still sent to the M DCT. 
+
+
+Interface 
+
+From 
+
+To 
+
+Message 
+
+PT-CAN 
+
+M GWS 
+
+M DCT 
+
+Operation of the selector lever 
+
+PT-CAN 
+
+M DCT 
+
+M GWS 
+
+Show gearbox data 
+
+LIN-bus 
+
+M GWS 
+
+M DCT 
+
+Operation of the selector lever 
+
+LIN-bus 
+
+M DCT 
+
+M GWS 
+
+Show gearbox data 
+
+
+Drivelogic Program Selection 
+
+The controls and indicators in the vehicle are similar to the SMG 2 
+and SMG 3 vehicles. 
+
+The Drivelogic program switch gives you the option of choosing 
+between six driving programs in sequential mode and five driving 
+programs in drive mode. 
+
+The selected driving program is displayed as a barchart in the 
+instrument cluster. 
+
+In sequential mode the switching speed is affected which has a 
+direct effect on the shifting firmness. 
+
+The sixth shift program can only be selected when the DSC 
+function is de-activated. 
+
+In drive mode the shift points and the shifting speed are affected, 
+as a higher shift program means a higher gear changeover speed 
+and thus a higher shifting speed. 
+
+In addition to the Drivelogic program selection, the shift time is also 
+dependent on the position of the accelerator pedal and how quickly 
+it is operated. 
+
+
+M Drivetrain 
+
+45 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+46 
+
+M Drivetrain 
+
+
+Lubrication System 
+
+
+Pressure and Flow Regulation 
+
+A gear driven pump is integrated into the M DCT transmission and 
+is responsible for circulating the oil through the unit. 
+
+The transmission oil pump is driven by a gear on the drive input 
+side which connects to the center input shaft of the M DCT. 
+
+The engine must be running for the oil pressure to build up. 
+
+
+M DCT oil pump without sealing cover 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Oil pump gears 
+
+4 
+
+M DCT gear oil pump housing 
+
+2 
+
+Oil pressure pipe to 
+the hydraulic control unit 
+
+5 
+
+Drive gear 
+
+3 
+
+Oil return pipe 
+
+6 
+
+Oil intake side (oil supply) 
+
+
+Note: Because transmission oil pressure cannot be built 
+up when the engine is not running, a M DCT vehicle 
+should never be push-started. 
+
+The operating pressure is determined by a regulated control valve 
+depending on the load and the function selected. The system is 
+protected by a pressure relief valve in the pump. 
+
+The pressure is regulated according to the following priorities: 
+
+• Clutch engagement and disengagement 
+
+• Gearchanges 
+
+• Cooling the clutch 
+
+• Lubrication cycle 
+
+The transmission oil pressure should be high enough to: 
+
+• Be able to engage the clutches reliably. 
+
+• Allow the gear selector rod to reach the reguired 
+control shift speed. 
+
+The normal operating pressure range is between 5 and 20 bar, 
+although it can be increased up to 30 bar if necessary to maintain 
+proper transmission operation. 
+
+At maximum shifting force, the pressure reguired to operate the 
+selector rods can be the same as the operating pressure. 
+
+The pressure reguired for the clutches is limited to 18 bar. The 
+clutch is regulated by an integrated proportioning valve. 
+
+Overpressure protection is ensured by a pressure relief valve. 
+
+Clutch cooling is map-controlled using a proportional valve. 
+
+Note: The M DCT Drivelogic transmission has a new long¬ 
+term rated oil, DCT Oil-1, which requires no replace¬ 
+ment unless specified for a repair. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oil-spray Lubrication 
+
+The M DCT transmission applies direct lubrication with the use of 
+an internal lubricating pipe fitted with individual nozzles and aimed 
+at pre-determined areas of the gear train. 
+
+
+M DCT gear set with lubricating pipe 
+
+
+Hydraulic Emergency Operation 
+
+If there is a fault, the M DCT has a hydraulic emergency operation 
+mode. For example, if the power supply fails, the active gear 
+remains selected and the active clutch engaged. This makes it 
+possible to drive to the next possible vehicle storage location or 
+parking area. The clutch disengages only when the engine speed 
+goes below the minimum rpm and then it remains disengaged. 
+
+
+M DCT gear set lubricating pipe 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Inner input shaft 2 
+
+6 
+
+Output shaft 
+
+2 
+
+Selector linkage 
+
+7 
+
+Countershaft 
+
+3 
+
+Intermediate case 
+
+8 
+
+Lubricating pipe 
+
+4 
+
+Inner input shaft 1 
+
+9 
+
+Oil pump (sectional view) 
+
+5 
+
+Constant 
+
+10 
+
+Dual clutch housing and 
+oil pump drive gear 
+
+
+M Drivetrain 
+
+47 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48 
+
+M Drivetrain 
+
+
+Two-stage Transmission Oil Cooling 
+
+Oil to Coolant Cooling 
+
+The M DCT transmission oil cooling circuit consists of an oil to 
+coolant heat exchanger, an oil to air heat exchanger, a transmission 
+oil thermostat and the relevant cooler lines. The oil to coolant heat 
+exchanger is part of the engine cooling system of the vehicle. 
+Mounted on the transmission housing it allows the oil to flow 
+directly from the M DCT into the oil to coolant heat exchanger. 
+
+Engine coolant directly from the cylinder head is pumped to the oil 
+to coolant heat exchanger by the auxiliary coolant pump and then 
+
+
+circulated back to the engine cooling system. The M DCT elec¬ 
+tronics can switch on the auxiliary coolant pump as needed. The 
+auxiliary coolant pump, which is normally used to enhance the effi¬ 
+ciency of the heating system, is used here to warm up the M DCT 
+transmission. This design shortens the warm up time and main¬ 
+tains the transmission oil in the desired operating temperature 
+range. 
+
+After the oil to coolant heat exchanger has brought the temperature 
+of the transmission oil to above 95°C/203°F, an oil thermostat 
+directs the transmission oil to the oil to air heat exchanger located 
+at the front of the vehicle. 
+
+
+
+M DCT Transmission Cutaway Display 
+
+(View of Two Stage Transmission Oil Cooling System) 
+
+
+
+
+
+
+
+
+
+
+
+M DCTTwo Stage Transmission Oil Cooling (view of system components) 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Oil to air heat exchanger 
+
+2 
+
+Oil to coolant heat exchanger 
+
+3 
+
+Coolant supply and return flow to 
+the oil to coolant heat exchanger 
+
+4 
+
+Transmission oil supply and return 
+flow to the oil to coolant heat exchanger 
+
+5 
+
+Transmission oil supply and return 
+flow to the oil to air heat exchanger 
+
+6 
+
+Oil thermostat for oil to air cooling 
+
+
+M Drivetrain 
+
+49 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50 
+
+M Drivetrain 
+
+
+Oil to Air Cooling 
+
+An oil thermostat is used to direct the oil flow through the oil to air 
+heat exchanger. There is a by-pass passage in bore of the oil ther¬ 
+mostat which is located between the supply and the return flow 
+from the oil to air heat exchanger. 
+
+■ Oil “Warm-up” 
+
+When the oil temperature is below 95°C (203°F), the oil by-pass 
+passage is opened by the thermal control valve in the oil thermo¬ 
+stat. Oil flows out of the oil to coolant heat exchanger directly 
+through the oil thermostat and back into the M DOT. This by-pass- 
+es the oil to air heat exchanger completely and allows the system to 
+reach operating temperature. 
+
+
+
+The M DCT oil thermostat closes at an oil 
+temperature below 95 °C 
+
+
+■ Oil “Cooling” 
+
+When the oil temperature is above 95°C (203°F), the oil by-pass 
+passage is closed by the thermal control valve in the oil thermostat. 
+The hot oil is now directed to the oil to air heat exchanger for cool¬ 
+ing before it flows back into the M DCT. 
+
+This design enhances the overall thermal efficiency of the oil to air 
+heat exchanger while maintaining the proper transmission oil oper¬ 
+ating temperature. 
+
+
+
+The M DCT oil thermostat opens at an oil 
+temperature above 95 °C 
+
+
+Note: In the event that the transmission oil temperature 
+increases above the allowable limit, the engine 
+torque is reduced and the maximum rpm is limited 
+as a safety measure. 
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+Parking Lock 
+
+The parking lock Bowden cable does not need to be adjusted. 
+
+Parking Lock Emergency Release 
+
+
+The emergency release is described in detail in the vehicle’s 
+Owner's Manual and in the Repair Instructions. 
+
+Note: Releasing the parking lock using the emergency 
+release can cause a fault code entry in the M DCT 
+electronics. 
+
+
+To manually release the electrical parking lock: 
+
+• Removed the shifter boot is to gain access to the release 
+mechanism. 
+
+
+• Using the screw driver from the vehicle tool kit or (similar tool), 
+unclip the release mechanism cover. 
+
+• Insert the screw driver/tool in the release mechanism to the 
+left of the shifter. 
+
+
+• Move the release toward the rear of the vehicle and observe 
+the shifter indicator light illuminate the “N” position. 
+
+
+
+CAUTION!!! 
+
+
+The vehicle will roll with the emer¬ 
+gency parking lock released. 
+
+
+CarWash 
+
+At the carwash, before stopping the engine, you must actively 
+switch to "N". Vehicles with “Comfort Access” must leave the 
+transmitter in the vehicle or in the ignition lock. 
+
+Transmission Oil 
+
+■ M DCT Oil Type 
+
+"BMW DCT Oil-1" is a long-term oil that was especially designed 
+for the M DCT transmission. 
+
+■ Oil Change Interval 
+
+The M DCT Drivelogic transmission has a new long-term rated oil, 
+DCT Oil-1, which requires no replacement unless specified for a 
+repair. (See SI B 00 01 07) 
+
+Transmission Oil Cooling 
+
+In the event that the transmission oil temperature increases above 
+the allowable limit, the engine torque is reduced and the maximum 
+rpm is limited as a safety measure. 
+
+
+CAUTION!!! 
+
+
+Because system oil pressure cannot 
+be built up when the engine is not 
+running, push starting a M DCT 
+vehicle is not recommended. 
+
+
+M Drivetrain 
+
+51 
+
+
+
+
+
+
+
+
+
+
+52 
+
+M Drivetrain 
+
+
+Identifying the Transmission 
+
+This double-clutch transmission has an "S" as the seventh charac¬ 
+ter of its transmission designation, which stands for Sport gear ratio 
+(e.g. GS7D36"S"G). 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmission designation in accordance 
+with BMW GS 90007 
+
+2 
+
+Subassembly 
+
+3 
+
+BMW item number 
+
+4 
+
+Revision index 
+
+5 
+
+Transmission code 
+
+6 
+
+GETRAG item number 
+
+
+Service Functions 
+
+The following Service Functions are currently available on the 
+BMW diagnostic equipment (ISTA/GT1) for the M DCT 
+transmission: 
+
+• Clutch adaptation 
+
+• Transmission adaptation 
+
+• Oil calibration 
+
+• Parking lock hook test 
+
+• Learning the valves characteristics curves 
+
+• Mechatronic module data synchronization 
+
+Clutch Adaptation 
+
+The Clutch adaptation teaches the clutch engagement points for 
+each clutch and saves the data in the M DCT control module. 
+
+Clutch adaptation should always be performed after the following 
+service procedures: 
+
+• Clutch replacement 
+
+• Mechatronic module replacement 
+
+• Replacing the speed sensor or oil temperature sensor 
+
+• Replacing the oil pump 
+
+• If any work was done to the internal transmission components 
+
+Transmission Adaptation 
+
+The transmission adaptation service function ensures that the 
+neutral positions and mechanical end stops will be learned and 
+saved in the M DCT transmission control module. 
+
+Transmission adaptation should always be performed after the 
+following service procedure: 
+
+• After replacement of the mechatronic module 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oil Calibration 
+
+This service function relates to the control and monitoring of the 
+M DCT transmission oil temperature, which governs the function 
+of specific components and relevant transmission controls. 
+
+The “Oil Calibration” should always be performed after the follow¬ 
+ing service procedures: 
+
+• Clutch replacement 
+
+• Mechatronic module replacement 
+
+• Replacing the speed sensor or oil temperature sensor 
+
+• Replacing the oil pump 
+
+• If any work was done to the internal transmission components 
+
+• After a change or repair of the parking lock linkage 
+
+• If any work was done to the Gear Selector 
+
+
+CAUTION!!! 
+
+
+Transmission oil can exceed the 
+temperature 40°C /104°F. Always 
+exercise caution and follow proper 
+safety procedures. 
+
+
+Parking Lock Hook Test 
+
+This service function tests and operates the parking lock hook with 
+the gear selector. The parking lock will be selected hydraulically 
+and must be held in place with the parking lock hook. 
+
+The “Parking Lock Hook Test” should always be performed after 
+the following service procedures: 
+
+• Clutch replacement 
+
+• Mechatronic module replacement 
+
+• Replacing the speed sensor or oil temperature sensor 
+
+
+• Replacing the oil pump 
+
+• If any work was done to the internal transmission components 
+
+• After a change or repair of the parking lock linkage 
+
+• If any work was done to the Gear Selector 
+
+• Replacing the complete transmission 
+
+Learning the Valves Characteristic Curves 
+
+With this service function the characteristic curves of the valves 
+PV1 and PV2 from the clutch control will be learned and saved in 
+the transmission control module. 
+
+Learning of the valves characteristic curves should always be per¬ 
+formed after completing the following service procedures: 
+
+• Clutch replacement 
+
+• Mechatronic module replacement 
+
+• Replacing the speed sensor or oil temperature sensor 
+
+• Replacing the oil pump 
+
+Mechatronic module data synchronization 
+
+With this service function the mechatronic data of the transmission 
+will be assigned from the old mechatronic module to the new 
+mechatronic module. 
+
+Data synchronization of the mechatronic module should always be 
+performed after completing the following service procedure: 
+
+• Change of the mechatronic module 
+
+
+M Drivetrain 
+
+53 
+
+
+
+
+
+
+
+M 
+
+
+Possible Fault Messages 
+
+The following is an overview of possible fault indicators and the 
+associated Check Control Messages. 
+
+High Transmission Oil Temperature 
+
+There are two transmission oil temperature messages which gen¬ 
+erate appropriate responses: 
+
+1. When the transmission oil temperature has overheated (oil 
+sump or clutch) and in the case of certain valve faults. 
+
+
+Check Control Message 104 
+
+
+Transmission Temperature. 
+Drive Carefully! 
+
+
+
+Information in the CID 
+
+
+Transmission Temperature 
+Risk of transmission overheating. 
+
+Shift program with restricted 
+vehicle operation active. 
+
+Avoid high engine loads. 
+
+
+Reaction: 
+
+The engine torque is reduced. 
+
+The shift program is adjusted to lower the temperature. 
+
+
+Action: 
+
+Check driving profile and environmental conditions. 
+
+Look for a possible fault in the transmission oil cooling system. 
+
+It may be necessary to check the M DCT using BMW Diagnostic Equipment. 
+
+
+54 
+
+Drivetrain 
+
+
+2. When the transmission oil temperature has overheated (oil 
+sump or clutch). 
+
+
+Check Control Message 105 
+
+Information in the CID 
+
+Transmission Temperature K 
+
+Drive Carefully! 
+
+Transmission has Overheated 
+
+Stop and shift the transmission posi¬ 
+tion into “P” after it has cooled down, 
+drive on carefully. 
+
+If overheating re-occurs, visit your near¬ 
+est BMW Service Center to check this. 
+
+Reaction: 
+
+The engine torque is greatly reduced. The current gear remains engaged until 
+you reach a standstill. After reaching a standstill, the parking lock is engaged. 
+
+Action: 
+
+Look for a fault in the transmission oil cooling system. 
+
+Check the M DCT transmission using BMW Diagnostic Equipment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Internal Transmission Faults 
+
+(Implausible sensor, valve readings and limit value 
+
+infringements) 
+
+Check Control Message 368 may be displayed: 
+
+• If Implausible temperature values or a temporary pressure limit 
+reading of negative pressure or overpressure. 
+
+• In the event of an electrical defect with the temperature sen¬ 
+sors (wire open circuit or short circuit). 
+
+• When Implausible input from (engine) speed or sub-transmis¬ 
+sion speed. 
+
+
+Check Control Message 365 may display: 
+
+• In the event that the temperature sensors and pressure sen¬ 
+sors do not detect cooling oil flow, for example, because a 
+valve has jammed while other valve problems or sensor failure 
+are being experienced. 
+
+• With persistent pressure limit infringements. 
+
+• In the event of mechanical selector rod problems or sensor 
+faults (position sensors for the selector rods). 
+
+• Because the temperature measured in the M DCT electronics 
+does not match the value range of the other temperature 
+sensors. 
+
+
+Check Control Message 368 
+
+Information in the CID 
+
+Transmission fault. 
+
+
+Transmission Fault 
+
+The journey can be continued. 
+
+Visit your nearest BMW Service Center 
+to check this. 
+
+Reaction: 
+
+None. 
+
+Action: 
+
+Check the M DCT using BMW Diagnostic Equipment. 
+
+
+Check Control Message 365 
+
+Information in the CID 
+
+Faulty transmission. 
+
+Drive Carefully! 
+
+Transmission Fault 
+
+Emergency program activated. 
+
+Visit your nearest BMW Service Center 
+to check this. 
+
+Reaction: 
+
+A clutch may be blocked. Clutch 1 (the gears R, 1, 3, 5 and 7 can no longer be 
+selected) or clutch 2 (the gears 2, 4 and 6 can no longer be selected). Individual or 
+gear pairs are blocked. 
+
+Action: 
+
+Check the M DCT using BMW Diagnostic Equipment. 
+
+
+M Drivetrain 
+
+55 
+
+
+
+
+
+
+
+
+
+
+
+
+
+56 
+
+M Drivetrain 
+
+
+Check Control Message 254 may display: 
+
+• In the event of a failure of certain control valves. 
+
+
+Check Control Message 254 
+
+Information in the CID 
+
+Faulty transmission. HHBj 
+
+Drive Carefully! 
+
+Transmission Fault 
+
+Reduced acceleration may occur. 
+
+Visit your nearest BMW Service Center 
+to check this. 
+
+Reaction: 
+
+The journey can be continued with limited engine performance. 
+
+Action: 
+
+Check the M DCT using BMW Diagnostics Equipment. 
+
+
+Check Control Message 307 may display: 
+
+• If the transmission oil temperature increases or overheats and 
+the ratio of the oil sump temperature to clutch temperature is 
+implausible. 
+
+• In the event of PT-CAN failure or a communication fault. 
+
+• When there is accelerator pedal fault message or implausible 
+reading. 
+
+
+Check Control Message 307 
+
+Information in the CID 
+
+Faulty transmission. 
+
+Drive Carefully! 
+
+Transmission Fault 
+
+Some functions may be faulty. 
+
+Gear can be engaged without braking. 
+Drive carefully! Visit your nearest BMW 
+Service to check this. 
+
+Reaction: 
+
+Only 2nd and R gears are available. 
+
+Action: 
+
+Check the M DCT using BMW Diagnostic Equipment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Faults Related to Implausible Readings 
+
+(with the brakes, parking lock or gear selector switch 
+
+[GWS]) 
+
+Check Control Message 250 may display: 
+
+
+Check Control Message 302 may display: 
+
+• If the parking lock cannot be engaged electromechanically. 
+
+
+• When there is a fault with the brake light switch or implausible 
+reading. 
+
+• In the event of unrealistic driving conditions, such as excessive 
+deceleration without brake operation. 
+
+• lengthy simultaneous accelerator pedal and brake pedal oper¬ 
+ation, for more than 1 min. 
+
+
+Check Control Message 250 
+
+Information in the CID 
+
+Gear can be engaged with- 
+out braking. 
+
+Important! 
+
+It is still necessary to step on the 
+brakes before shifting into gear. 
+
+The journey can be continued. 
+
+Turn off the engine before leaving the 
+vehicle. 
+
+Have it checked by your BMW Service 
+Center as soon as possible. 
+
+Reaction: 
+
+• If the brake light switch is defective, starting the engine may not be possible. 
+
+Action: 
+
+• Check driving profile, vehicle may need to be checked using BMW Diagnostic 
+equipment. 
+
+
+Check Control Message 302 
+
+
+Information in the CID 
+
+
+Transmission position “P” 
+is not selected. 
+
+
+
+Transmission Position 
+
+Position “P” is not selected. 
+
+Caution! The vehicle may roll in this 
+condition. 
+
+
+Reaction: 
+
+• Inoperative parking lock function, the vehicle must be secured with the hand 
+brake/parking brake when switching off the engine. 
+
+
+Action: 
+
+• Check for proper functioning parking lock electromagnet in the M GWS. 
+
+• Check the routing path of the Bowden cable between the parking lock electro 
+
+magnet in the M GWS and the parking lock lever on the M DC 
+
+• Check for proper functioning parking lock lever on the M DCT. 
+
+• Check M DCT using BMW Diagnostic Equipment. 
+
+
+M Drivetrain 
+
+57 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+58 
+
+M Drivetrain 
+
+
+Check Control Message 175 may display: 
+
+• In the event of a parking lock sensor fault. Check Control Message 541 may display: 
+
+
+Check Control Message 175 
+
+Information in the CID 
+
+Transmission position “P” 
+is faulty. 
+
+Faulty Transmission 
+
+Transmission position “P” may not be 
+possible. 
+
+When at a standstill activate the park 
+ing brake. 
+
+Visit your nearest BMW Service Center 
+to check this. 
+
+Reaction: 
+
+Parking lock may not be selected. 
+
+Action: 
+
+Check if the parking lock is selected. Check the M DCT using BMW Diagnostic 
+Equipment. 
+
+
+• In the event that the parking lock cannot be disengaged 
+hydraulically. 
+
+
+Check Control Message 541 
+
+Information in the CID 
+
+Transmission position “P” 
+is faulty. 
+
+
+
+Faulty Transmission 
+
+To pull away, unlock the parking lock 
+manually, see Vehicle Owner's Manual. 
+
+Visit your nearest BMW Service Center 
+to check this. 
+
+Reaction: 
+
+Parking lock must be disengaged via the emergency release. 
+
+
+Action: 
+
+After emergency release, check the M DCT using BMW Diagnostic Equipment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Check Control Message 394 may display: 
+
+
+Invalid Bus Message 
+
+
+• In the event of a M GWS malfunction. 
+
+
+Check Control Message 394 
+
+Information in the CID 
+
+Selector lever may be 
+faulty. 
+
+|! 
+
+
+Selector Lever is Faulty 
+
+The journey can be continued. 
+
+If necessary repeat gearshift request. 
+
+
+Reaction: 
+
+One or more M GWS functions may be faulty. 
+
+
+Action: 
+
+• Repeat driving program selection on the M GWS or use the gearshift paddles on 
+the steering wheel. 
+
+• Check the M GWS using BMW Diagnostic Equipment. 
+
+
+Check Control Message 419 may display: 
+
+• PT-CAN message, invalid engine torque. 
+
+
+Check Control Message 419 
+
+Information in the CID 
+
+Faulty 
+
+Faulty Drive 
+
+The journey can be continued. 
+
+Reduced acceleration. 
+
+Visit your nearest BMW Service Canter 
+to check this. 
+
+Reaction: 
+
+Clutch is not operating smoothly. Shifting between gears is not smooth. 
+
+Action: 
+
+Check vehicle by using BMW Diagnostic Equipment. 
+
+
+M Drivetrain 
+
+59 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+60 
+
+M Drivetrain 
+
+Variable M Differential 
+
+
+The variable M differential from the E46 M3 is utilized in the E60 
+M5 as well in the E9x M3. The variable, rev-sensing locking 
+differential on the rear axle delivers a key traction advantage, 
+even in very demanding driving situations. 
+
+For example: When the friction coefficients (surface trac¬ 
+tion) for the two drive wheels are very differ¬ 
+ent from each other. 
+
+By utilizing the internal sheer pump, the locking effect between 
+the left and right wheels can be up to 100%. This markedly 
+improves handling and stability, enhancing both safety and driving 
+enjoyment. 
+
+Sporty drivers in particular enjoy the advantages of the differential 
+lock which enhances the positive aspects of rear-wheel drive 
+when driving at higher speeds and on surfaces with poor traction. 
+
+E46 Rear Axle Differential 
+
+The rear axle differential was developed specifically for the E46 
+M3. The rear axle differential is designated “210” (ring gear diam¬ 
+eter in mm). 
+
+The mounting points of the rear axle carrier for the differential 
+have been modified compared to the E46/2. 
+
+The rear axle differential is bolted to the rear axle carrier at two 
+mounting points on the rear axle differential casing. 
+
+The rear axle carrier is connected to the body at the same points 
+as the E46/2. For all BMW vehicles, this mounting arrangement is 
+known as double-flexible rear axle mounting. 
+
+
+The cover of the rear axle differential is made of pressure die cast 
+aluminum. Special arranged cooling fins reduce the temperature 
+of the oil in the differential. 
+
+The technical innovations of the variable M-differential lock devel¬ 
+oped by BMW M in cooperation with GKN Viscodrive GmbH. 
+
+
+
+E46 M3 Differential 
+
+
+
+
+
+Variable M-differential Lock 
+
+To date, torque-sensing limited slip differentials with a constant 
+basic locking torque have been used in M vehicles. The differential 
+lock value for current M vehicles is 25%. However, if traction is very 
+low, e.g. on snow, the advantages with this differential lock concept 
+are limited due to the restricted support torque. 
+
+A variable differential lock was used for the first time in the E46 M3. 
+Compared to the conventional torque-sensing differential lock, the 
+variable M-differential lock is capable of providing traction 
+advantages even under extreme conditions. 
+
+When there is a speed difference between both wheels, a shear 
+pump located on the ring gear side generates a pressure. A work¬ 
+ing piston transmits this controlled pressure on the basis of the 
+differential speed of the drive wheels to the multi-disc clutches so 
+that the drive torque is transmitted to the wheel with the most 
+“grip”. 
+
+
+The pump pressure and locking power increase as the speed 
+difference between the two wheels increase. If the differential 
+speed between both wheels decreases, the pump pressure is also 
+reduced and the locking power diminishes. 
+
+The Pump Unit 
+
+The pump unit is sealed (cannot be dismantled) and is filled with 
+high viscosity silicone oil. 
+
+As a result of the speed difference between the drive wheels, shear 
+forces occur in the silicone oil in the pump unit between a channel 
+filled with silicone oil and a pump disc located above it. 
+
+These shear forces generate a pressure that is dependent on the 
+differential speed of the drive pinions. 
+
+The pressure is built up by a piston (max. 38 bar on E46 M3) that 
+presses the multi-disc clutches together achieving a variable 
+differential lock effect dependent on the differential speed. 
+
+
+
+tlJ 
+
+1C OS 
+
+$00 
+
+_ BOO 
+
+i 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+y' 1 uy 
+
+o eo: 
+
+o SOC 
+Q_ 
+
+o) m 
+E 300 
+
+o 
+
+_3 m 
+m 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2 5 10 15 30 35 -3C 35 Ito 45 50 
+
+Differential Speed (RPM) 
+
+
+M Drivetrain 
+
+61 
+
+
+
+
+
+62 
+
+M Drivetrain 
+
+
+
+Sectional view of a shear pump 
+unit is shown on the right. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Differential Case 
+
+2 
+
+Differential Cover 
+
+3 
+
+Differential Ring 
+
+4 
+
+Inner Disc Carrier 
+
+5 
+
+Displacement Disk Carrier 
+
+6 
+
+Displacement Disk 
+
+7 
+
+Pistons 
+
+8 
+
+Drive Pinion 
+
+9 
+
+Differential Bevel Pinion 
+
+10 
+
+Ball Disk 
+
+11 
+
+Differential Axle 
+
+12 
+
+Thrust Washer 
+
+13 
+
+Differential Piston 
+
+14 
+
+Disc Spring 
+
+15 
+
+Retaining Ring 
+
+16 
+
+Outer Friction Disc 
+
+17 
+
+Inner Friction Disc 
+
+18 
+
+Control Disc 
+
+19 
+
+Four-Lip Ring 
+
+20 
+
+Thrust Washer 
+
+21 
+
+O-Ring 
+
+22 
+
+O-Ring 
+
+23 
+
+Ball 
+
+24 
+
+Countersunk Screw 
+
+25 
+
+Support Ring 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+The conveyor belt model illustrates the functional principle of the 
+shear pump. As the conveyor belt moves, the viscous friction in 
+the laterally sealed shear channel conveys the fluid in the direction 
+of movement. 
+
+
+
+By transferring the operation principle to a rotary system, the con¬ 
+veyor belt becomes a displacement disc driven by the Hub. The 
+shear channel is then a circular groove in the control disk. The con¬ 
+trol disk is located in the pump housing. 
+
+Transfer ports that are connected to outlet holes in the pump hous¬ 
+ing are provided at the ends of the shear channel. 
+
+
+Silicone oil is conveyed through the outlet holes from the equaliza¬ 
+tion chamber (fluid reservoir) into the pressure chamber. Piston 
+exerts a pressure on the friction discs. 
+
+The arrows shown below represent the flow of silicone oil between 
+the displacement disc and the control disc. The silicone oil is trans¬ 
+ferred from the reservoir on the outside of the pump housing to the 
+pressure chamber between displacement discs and the piston. 
+
+The arrangement of the pump elements and specific routing of the 
+silicone oil in a gap between the piston and displacement disc 
+ensures the pressure generated acts on the piston. 
+
+
+
+M Drivetrain 
+
+63 
+
+
+
+
+
+
+

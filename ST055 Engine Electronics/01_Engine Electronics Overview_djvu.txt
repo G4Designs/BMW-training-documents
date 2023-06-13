@@ -1,0 +1,5933 @@
+Table of Contents 
+
+
+Engine Electronics Overview 
+
+Subject Page 
+
+Introduction .5 
+
+Welcome to ST055 Engine Electronics! .5 
+
+Objectives.5 
+
+Engine Electronics Overview.9 
+
+Power Supply Overview.11 
+
+Integrated Voltage Supply Module (IVM) .12 
+
+Principle of Operation .13 
+
+Battery Voltage .14 
+
+Air Management Overview.15 
+
+Accelerator Pedal Position (Pedalwertgeber - PWG).15 
+
+Throttle Valve (EDK).16 
+
+Throttle Motor and Feedback Position .17 
+
+Failsafe Operation - EDK.18 
+
+Idle Air Actuator.19 
+
+Failsafe Operation - Idle Air Actuator .19 
+
+Hot-Film Air Mass Meter (HFM).20 
+
+Air Temperature Signal .21 
+
+Variable Intake Manifold (DISA) .22 
+
+DISA Operation.23 
+
+1st stage - idling/lower engine speed range .23 
+
+2nd stage - medium engine speed range.23 
+
+3rd stage - upper engine speed range .23 
+
+Fuel Management Overview .25 
+
+Fuel Delivery Unit .25 
+
+In the right half of the fuel tank .25 
+
+In the left half of the fuel tank .25 
+
+Fuel Supply .26 
+
+Electric Fuel Pump .28 
+
+Fuel Pump Control .29 
+
+Principle of Operation.30 
+
+Coding and Programming.31 
+
+Fuel Injectors/Fuel Rail .32 
+
+
+Initial Print Date: 03/11 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Crankshaft Position/RPM Sensor (Hall Effect).33 
+
+Intake and Exhaust Camshaft Sensors.33 
+
+Engine Coolant Temperature.34 
+
+Ignition Management Overview .35 
+
+Ignition System Inputs .35 
+
+Ignition Coils.35 
+
+Spark Plugs.35 
+
+Knock Sensors.36 
+
+Crankshaft Position/RPM Sensor (Hall Effect).36 
+
+VANOS Overview.37 
+
+VALVETRONIC Overview.39 
+
+Load Control.40 
+
+WT Motor .41 
+
+Turbocharging Technology Overview.43 
+
+Principles of Operation.43 
+
+Bi-turbocharging .45 
+
+Twin-scroll Turbo System.45 
+
+Emissions Management Overview.47 
+
+Oxygen Sensors .47 
+
+Oxygen sensor before catalytic converter.47 
+
+Oxygen sensor after catalytic converter .48 
+
+Carbon Canister (AKF).48 
+
+Evaporative Emission Valve.49 
+
+Evaporative Leakage Detection (DM-TL).49 
+
+Exhaust Emissions .50 
+
+Electrically Heated Thermostat.51 
+
+Conventional Function .51 
+
+Crankcase Ventilation .53 
+
+Performance Control Overview.55 
+
+Dynamic Cruise Control.55 
+
+Active Cruise Control with Stop & Go function.56 
+
+Exhaust Flap Control .58 
+
+Dynamic Driving Control - “Sport Switch”.58 
+
+Electric Fan.61 
+
+ECM Integrated Temperature Sensor .62 
+
+Alternator Interface .62 
+
+PT-CAN Bus Communication .62 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Engine Electronics Overview 
+
+Model: All 
+Production: All 
+
+V r 
+
+After completion of this module you will be able to: 
+
+• Understand the basics of Engine Electronics 
+
+• Describe the Power Supply for the Fuel Injectors and Ignition Coils 
+
+• Understand the EDK and Idle Air Actuator Operation 
+
+• Explain Why Two Sensors are Used to Monitor Accelerator Pedal Movement 
+
+• List the Inputs Required for Fuel Injector Operation 
+
+• Name the Two Types of Emissions the ECM Controls 
+
+• Understand DM-TL Evaporative Leak Testing 
+
+
+
+4 
+
+Engine Electronics Overview 
+
+
+
+
+
+Introduction 
+
+
+Welcome to ST055 Engine Electronics! 
+
+ST055 Engine Electronics is 5 days in length. 
+
+This handout is representative of selected 6, 8, and 12 cylinder Engine Management 
+Systems.The handout serves two purposes, “stand alone” system reference material 
+for the BMW Technician and a platform for Instructor selected topics. 
+
+Understanding that all of the material pertaining Engine Management can’t be covered 
+in five days, this class will be system based. This approach will ensure that the student 
+comprehends how BMW Engine Management Systems work and thus is able to diag¬ 
+nose them. Nevertheless, BMW Technicians can find detailed information from particu¬ 
+lar Engine Management Systems in former BMW Training Manuals. 
+
+
+Objectives 
+
+
+Familiarize BMW Technicians with an understanding of the current Engine Electronics 
+Systems and transferable diagnostic skills. Perform hands on practicals in the shop to 
+ensure “all” Technicians have participated in diagnosis and component testing. 
+
+Objectives are provided on page 2 of each system to guide you to the key learning 
+points of each module. A final test will be given at the end of the course. 
+
+It is very important to study the content which will assist you with important 
+“on the job” information and successful completion of this course. 
+
+
+As a Mention the following information can be found online... 
+
+
+• Service Information 
+
+Bulletins 
+
+• Technical Training Information 
+
+Courses 
+
+• Repair Information 
+
+Manuals 
+
+• Technician Feedback Systems 
+
+Quality Control Information 
+Reports 
+
+
+
+5 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The chart shown below is a quick reference of BMW Engine Management Systems by 
+application to BMW models, engines and model years. This will help you to get familiar 
+with the systems by identifying the correct version that you are diagnosing. 
+
+
+ENGINE MANAGEMENT CONTROL VERSIONS 
+
+VERSION 
+
+VEHICLE MODEL 
+
+ENGINE 
+
+MODEL YEAR 
+
+M1.2 
+
+E32 / M5 
+
+M70 / S38 
+
+M70= 1988- 1999 
+
+S38 = 1991 - 1993 
+
+Ml.7 
+
+E31 / E32 
+
+M70 
+
+1991 - 1994 
+
+Ml.7 
+
+E30 
+
+M42 
+
+1990- 1993 
+
+Ml.7 
+
+E36 
+
+M42 
+
+1992 - 1995 
+
+Ml.7 
+
+E36 
+
+M42 / DISA 
+
+1995 
+
+Ml.7.1 
+
+E31 
+
+S70 
+
+1991 - 1992 
+
+Ml.7.2 
+
+E36 
+
+M42 /DISA 
+
+1992 
+
+M3.1 
+
+E34 
+
+M50 
+
+1991 - 1992 
+
+M3.1 
+
+E36 
+
+M50 
+
+1992 
+
+M3.3 
+
+E32 
+
+M60 
+
+1993- 1994 
+
+M3.3 
+
+E31 / E34 
+
+M60 
+
+1994 - 1995 
+
+M3.3.1 
+
+E34 / E36 
+
+M50TU 
+
+1993 - 1995 
+
+M5.2 
+
+E36 / Z3 
+
+M44 
+
+1996- 1998 
+
+M5.2 
+
+E31 /E38/E39 
+
+M62 / M73 
+
+1995 - 1997 
+
+MS41.1 
+
+E36 / E39 /Z3 
+
+M52 
+
+1996- 1998 
+
+MS41.2 
+
+E36 M3 
+
+S52 
+
+1996- 1998 
+
+M5.2.1 
+
+E38 / E39 
+
+M62 / M73 
+
+1998- 1999 
+
+MS42 
+
+E46 / E39 /Z3 
+
+M52TU 
+
+1998 - 2000 
+
+MS43 
+
+E46 / E39 / E53 / Z3 
+
+M54 
+
+E46 2001 - 2002 Z3 2001 - 2002 
+E39 2001 - 2003 E53 2001 - 2006 
+
+ME7.2 
+
+E39 / E38 / E53 
+
+M62TU 
+
+1999-2001 
+
+MS S52 
+
+E39 M5 / E52 Z8 
+
+S62 
+
+M5 1999 - 2003 
+
+Z8 2000 - 2003 
+
+MS S54 
+
+E46 M3 
+
+S54 
+
+2001 -2007 
+
+BOSH = M; SIEMENS = MS 
+
+
+6 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENGINE MANAGEMENT CONTROL VERSIONS 
+
+
+VERSION 
+
+VEHICLE MODEL 
+
+ENGINE 
+
+MODEL YEAR 
+
+MS45 
+
+E85 
+
+M54 
+
+2003 - 2006 
+
+MS45 
+
+E83 all except 
+M54B30 AUTO 
+
+M54 
+
+2003 - 2006 
+
+MS54.1 
+
+E83 with M54B30 auto 
+
+M54 
+
+2003 - 2006 
+
+MS45.1 
+
+E46 
+
+M54 
+
+2003 - 2006 
+
+MS45.1 
+
+E46 
+
+M56 SULEV 
+
+2003 - 2006 
+
+ME 9.2 
+
+E65/66 
+
+N62 
+
+2002 - 2003 
+
+ME9.2.1 
+
+E53 / E60 / E63 / E64 / 
+E65 / E66 
+
+N62 
+
+2004 - 2004 
+
+ME 9.2.2 
+
+E53 / E60 / E63 / E64 / 
+E65 / E66 
+
+N62 
+
+2005 - 2007 
+
+MED 9.2.1 
+
+E66 
+
+N73 
+
+2003 - 2006 
+
+ME 9.2.3 
+
+E70 
+
+N62 
+
+2006 - 2010 
+
+MSS65 
+
+M5, M6 (E6x) 
+
+S85 
+
+2006 - 2009 
+
+MSV70 
+
+E90, E91, E92, E93, E60, 
+E70. 
+
+N52 
+
+2004 - 2006 
+
+MSV80 
+
+E82, E88, E90, E91, E92, 
+E93, E60, E70. 
+
+N52KP 
+
+2006- 
+
+MSD80 
+
+E82, E90, E92, E93, E60, 
+E61. 
+
+N54 
+
+2006 - 2008 
+
+MSD81 
+
+E70, E71, E82, E84, E88, 
+E89, E90, E92, E93, F07, 
+F10 
+
+N54 
+
+2008- 
+
+MEVD 17.2 
+
+E82, E88, E90, E91, E92, 
+E93, E60, E70. 
+
+N55 
+
+2010 - 
+
+MSD85 
+
+E70, E71, E72, F01, F02, 
+F04, F07, F10 
+
+N63 
+
+2009- 
+
+MSD85.1 
+
+E70 M / E71 M 
+
+S63 
+
+2009- 
+
+MSD87-12 
+
+F01, F02 
+
+N74 
+
+2009- 
+
+
+BOSH = M; SIEMENS = MS 
+
+7 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 
+
+Engine Electronics Overview 
+
+
+
+Engine Electronics Overview 
+
+
+
+9 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10 
+
+Engine Electronics Overview 
+
+
+
+Power Supply Overview 
+
+
+Example of IPO for a Power Supply System 
+
+
+
+
+ZB ECT 
+
+
+[mm 
+
+L 
+
+
+
+
+I_ M 
+
+
+KL 15 
+
+
+MEMORY 
+POWER 
+
+
+AUX KL 31 
+
+
+MAIN KL 31 
+
+ECM 
+
+RELAY — — 
+
+OPERATING POWER 
+& MONITOR 
+
+
+DME 
+
+
+POWER 
+
+SUPPLY 
+
+
+
+BSD 
+
+
+
+B+ ECM RELAY 
+
+
+
+ALTERNATOR 
+
+
+
+One of the main purposes of the ECM is to 
+control de Power Supply of several compo¬ 
+nents. In the following pages you will find a 
+generic explanation on how this system 
+works. For more detailed information 
+please access BMW Training Reference 
+Manuals found online. 
+
+KL_30 - Battery Voltage: B+ is the main 
+supply of operating voltage to the ECM. 
+
+The power supplies (KL_15 and ECM 
+Relay) are fused to the ECM. The fuses are 
+housed in the Engine Fuse Block located 
+in the Electronics Box. 
+
+
+
+r nM 
+
+
+KL_15 - Ignition Switch. When the ignition is switched “ON” the ECM is informed 
+that the engine is about to be started. KL_15 (fused) supplies voltage to the Engine 
+Control Module Relay and the Fuel Injector Relay. Switching KL_15 “OFF” removes the 
+ECM operating voltage. 
+
+Engine Control Module Relay 
+
+
+ECM Relay Provides the operating Voltage to: 
+
+ECM 
+
+Ignition Coil 
+
+Fuel Injection 
+
+Evaporative Leak Detection Pump 
+
+Idle Air Actuator 
+
+Camshaft Sensor 
+
+Evaporative Emission Valve 
+
+Hot Film Air Mass 
+
+Fuel Pump Relay 
+
+Oxygen Sensor Heaters 
+
+
+Ground: Multiple ground paths are necessary to complete current flow through the ECM. 
+
+
+11 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Integrated Voltage Supply Module (IVM) 
+
+The IVM contains integral relays, replaceable fuses and offers a convenient splice point 
+for harness connections. The IVM serves as a central power supply for Engine 
+Management (including VALVETRONIC), Electronic Transmission (EGS) and Dynamic 
+Stability Control (DSC). This diagram is a partial representation of the IVM for Engine 
+Electronics. (FIX COLORS, AND “COLOR” THE IVM) 
+
+
+
+12 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+When KL_15 is switched “ON” the ECM is ready for engine management. The ECM will 
+activate a ground path to energize the Engine Control Module Relays in the IVM (see 
+diagram on the previous page). 
+
+• The 1st ECM Relay supplies operating voltage through a fuse (in the IVM) to the 
+ECM. 
+
+• The 2nd ECM Relay supplies operating voltage through a fuse (in the IVM) to the 
+Fuel Injectors. 
+
+• The 3rd ECM Relay supplies operating voltage through a fuse (in the IVM) to the 
+Oxygen Sensors. 
+
+
+The IVM receives high amperage voltage supply from 
+fuses. This supply is for the consumers that are con¬ 
+trolled by the IVM internal relays. 
+
+When KL_15 is switched “OFF” the ECM operating 
+voltage is removed. The CAS Module will maintain 
+voltage to the Ignition Coil Relay for a few seconds to 
+maintain ignition coil activation (Emission Optimized - 
+introduced in 2000 MY). 
+
+
+
+The Ignition Coil Relay (4th relay) is energized by the CAS Module which supplies oper¬ 
+ating voltage through a fuse (in the IVM) to the 
+Ignition Coils. 
+
+
+Ground is required to complete the current path 
+through the ECM. The ECM also: 
+
+
+• Internally links a constant ground (1) to the 
+engine sensors. 
+
+• Switches ground (2) to activate components. 
+
+
+
+13 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery Voltage 
+
+Battery Voltage is monitored by the ECM for fluctuations. It will adjust the output func¬ 
+tions to compensate for a lower (6V) and higher (14V) voltage value. For example, the 
+ECM will: 
+
+• Modify pulse width duration of fuel injection 
+
+• Modify dwell time of ignition 
+
+When KL_15 is switched “ON” the ECM is ready for Engine Management. The ECM 
+will activate ground to energize the Engine Control Module Relay. The Engine Control 
+Module Relay supplies operating voltage to the ECM and the previously mentioned 
+operating components. Five seconds after the ignition is switched on and the voltage at 
+the KL_15 input is >9 volts, the ECM compares the voltage to the ECM Relay supplied 
+voltage. If the voltage difference between the two terminals is greater than 3 volts, a fault 
+code will be set. 
+
+When KL_15 is switched “OFF” the ECM operating voltage is removed. The ECM will 
+maintain a ground to the Engine Control Module Relay for a few seconds to maintain 
+ignition coil activation (Emission Optimized) and as long as three minutes to complete 
+the DM-TL test. 
+
+
+14 
+
+Engine Electronics Overview 
+
+
+
+Air Management Overview 
+
+
+Example of IPO for an Air Management System 
+
+
+
+One of the main purposes of the ECM is Air Management which includes the actuation 
+of several components. In the following pages you will find a generic explanation on how 
+this system works. For more detailed information please 
+access BMW Training Reference Manuals found online. 
+
+Air flow into the engine is regulated by the Throttle Valve 
+and/or the Idle Air Actuator. Both of these air “passages” 
+are necessary for smooth engine operation from idle to 
+full load. The Throttle Valve and the Idle Air Actuator are 
+
+electrically controlled. All of the ECM monitoring, 
+processing and output functions are a result of regulated 
+air flow. 
+
+
+Accelerator Pedal Position 
+(Pedalwertgeber - PWG) 
+
+
+
+The Accelerator Pedal Position is monitored by the ECM for pedal angle position and 
+rate of movement. As the accelerator is moved, it provides two variable voltage signals to 
+the ECM that represents accelerator pedal position and rate of movement. 
+
+Dual Hall Sensors are integral in the accelerator pedal module. The ECM compares the 
+two values for plausibility. The module contains internal springs to return the accelera¬ 
+tor pedal to the rest position. 
+
+The ECM will increase the volume of fuel injected into the engine, advance the ignition 
+timing and open the Throttle Valve and/or Idle Air Actuator. 
+
+The “full throttle” position indicates maximum acceleration to the ECM, and in addition to 
+the functions just mentioned, this will have an effect on the air conditioning compressor. 
+
+As the accelerator pedal is released (integral springs), a decrease in voltage signals the 
+ECM to activate fuel shut off if the RPM is above idle speed (coasting). When the 
+Throttle Valve is completely closed, the Idle Air Actuator is opened to maintain engine 
+idle speed. 
+
+
+15 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM monitors the engine idle speed in addition to the accelerator pedal position 
+and throttle position voltage. If the voltage values have changed (mechanical wear of 
+throttle plate or linkage), the ECM will adjust the Idle Air Actuator to maintain the correct 
+idle speed. 
+
+
+The Potentiometers/Hall sensors are non- 
+adjustable because the ECM “learns” the throttle 
+angle voltage at idle speed. If the throttle hous¬ 
+ing/accelerator pedal module is replaced, the 
+adaptations must be cleared and adaptation pro¬ 
+cedure must be performed using ISTA. If this is 
+not performed, the vehicle will not start, or run in 
+“fail-safe” mode. 
+
+If this input is defective, a fault code will be stored 
+and the “Malfunction Indicator and/or EML” Light 
+will be illuminated. Limited engine operation will be 
+possible. 
+
+The ECM provides voltage (5V) and ground for the 
+Hall sensors. As the accelerator pedal is moved 
+from rest to full throttle, the sensors produce a 
+variable voltage signal. 
+
+• Hall sensor 1 (request) 
+
+
+
+• Hall sensor 2 (plausibility) 
+
+
+
+If the signals are not plausible, the ECM will use the lower of the two 
+signals as the requested input. The throttle response will be slower 
+
+and the maximum throttle response will be reduced. 
+
+
+Throttle Valve (EDK) 
+
+The throttle valve plate is electronically operated to reg¬ 
+ulate intake air flow by the ECM. The main characteris¬ 
+tics are: 
+
+• Precision throttle operation, 
+
+• OBD compliant for fault monitoring, 
+
+• DSC and Cruise Control. 
+
+
+
+This integrated electronic throttle reduces extra control modules, wiring, and sensors. 
+Adjusting electronic throttles is not permitted, the throttle assembly must be replaced as 
+a unit. The adaptation values must be cleared and adaptation procedure must be per¬ 
+formed using ISTA. 
+
+
+16 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The throttle assembly for the system is referred to as the EDK: 
+
+• EDK does not contain a PWG, It is remotely mounted (integrated in the accelerator 
+pedal assembly). 
+
+• The accelerator pedal is not mechanically “linked” to the EDK. 
+
+
+Throttle Motor and Feedback Position 
+
+The ECM powers the EDK motor using pulse 
+width modulation (PWM) for opening and clos¬ 
+ing the throttle plate. The throttle plate is also 
+closed by an integrated return spring. 
+
+Two integrated potentiometers provide volt¬ 
+age feedback signals to the ECM as the throt¬ 
+tle plate is opened and closed. 
+
+• Feedback signal 1 provides a signal 
+from 0.5V (closed) to 4.5 V (Full Throttle) 
+
+
+MOTOR 
+
+CONTROL 
+
+
+
+5V 
+
+
+• Feedback signal 2 provides a signal 
+from 4.5V (closed) to 0.5V (Full Throttle) 
+
+Potentiometer 1 is the primary feedback 
+signal of throttle plate position and signal 2 is 
+
+the plausibility cross check through the 
+complete throttle plate movement. 
+
+Total Intake Air Flow Control is performed 
+by the ECM simultaneously operating the EDK 
+throttle control and the Idle Air Actuator. 
+
+The ECM detects the driver’s request from 
+the potentiometers/Hall Sensors monitoring 
+the accelerator pedal position. This value is 
+added to the Idle Air control value and the 
+
+total is what the ECM uses for EDK activation. The ECM then controls the Idle Air 
+Actuator to satisfy the idle air “fill”. In addition, the EDK will also be activated = pre-con 
+trol idle air charge. Both of these functions are utilized to maintain idle RPM. 
+
+
+0V 
+
+
+_ 
+
+
+
+A 
+
+
+. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B 
+
+
+
+
+
+
+
+' 
+
+
+0 % 
+
+
+50% 
+
+
+100 % 
+
+
+The EDK is electrically held at the idle speed position, and all of the intake air is drawn 
+through the Idle Air Actuator. Without a load on the engine (<15%), the EDK will not 
+open until the extreme upper RPM range. If the engine is under load (>15%), the Idle Air 
+Actuator is open and the EDK will also open. 
+
+
+17 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 \ Failsafe Operation - EDK 
+
+When a fault is detected in the system: 
+
+• The EDK provides two separate signals from two integrated potentiome¬ 
+ters (Pot 1 and Pot 2) representing the exact position of the throttle plate. 
+
+• EDK Pot 1 provides the primary throttle plate position feedback. As a 
+redundant safety feature, Pot 2 is continuously cross checked with Pot 1 
+for signal plausibility. 
+
+• If plausibility errors are detected between Pot 1 and Pot 2, the ECM will 
+calculate the inducted engine air mass (from HFM signal) and only utilize 
+the potentiometer signal that closely matches the detected intake air 
+mass. 
+
+- The ECM uses the air mass signaling as a “virtual potentiometer” (Pot 3) 
+for a comparative source to provide failsafe operation. 
+
+- If the ECM cannot calculate a plausible conclusion from the monitored 
+Pots (1 or 2 and virtual 3) the EDK motor is switched off and fuel injec¬ 
+tion cut out is activated (Failsafe operation is not possible). 
+
+• The EDK is continuously monitored during all phases of engine operation. 
+It is also briefly activated/adapted when KL_15 is initially switched on as a 
+“preflight check” to verify it’s mechanical integrity (no binding, appropriate 
+return spring tension, etc). This is accomplished by monitoring both the 
+motor control amperage and the reaction speed of the EDK feedback 
+potentiometers. If faults are detected the EDK motor is switched off and 
+the fuel injection cut off is activated (failsafe operation is not possible). The 
+engine does however continue to run extremely rough at idle speed. 
+
+• When in emergency operation, the engine speed is always limited to 1300 
+RPM by fuel injector cutout, and activation of the “EML” light to alert the 
+driver of a fault. 
+
+• When a replacement EDK is installed, the ECM adapts to the new compo¬ 
+nent (required amperage draw for motor control, feedback pot tolerance 
+difference, etc). This occurs immediately after the next cycle of KL_15 for 
+approximately 30 seconds. During this period of adaptation, the maximum 
+opening of the throttle plate is 25%. 
+
+
+18 
+
+Engine Electronics Overview 
+
+
+
+
+
+Idle Air Actuator 
+
+
+This valve regulates air by-passing the throttle valve to 
+control the engine idle/low speed. 
+
+The valve is supplied with battery voltage from the 
+ECM Relay. The Idle Air Actuator is a two-coil rotary 
+actuator. The ECM is equipped with two final stage 
+transistors which will alternate positioning of the actu¬ 
+ator. 
+
+The final stages are "pulsed" simultaneously by the 
+ECM which provides ground paths for the actuator. 
+The duty cycle of each circuit is varied to achieve the 
+required idle RPM. 
+
+If this component/circuits are defective, a fault code 
+will be set and the “Malfunction Indicator Light” will be 
+illuminated when the OBDII criteria is achieved. 
+
+
+
+I \ Failsafe Operation - Idle Air Actuator 
+
+*_). 
+
+If a fault is detected with the Idle Air Actuator, the ECM will initiate failsafe mea¬ 
+sures depending on the effect of the fault (increased air flow or decreased air 
+flow). If there is a fault in the Idle Air Actuator/circuit, the EDK will compensate 
+to maintain idle speed. The “Malfunction Indicator and/or EML” Light will be 
+illuminated to inform the driver of a fault. 
+
+
+If the fault causes increased air flow (actuator failed open), VANOS and Knock 
+Control are deactivated which noticeably reduces engine performance. 
+
+
+19 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hot-Film Air Mass Meter (HFM) 
+
+
+The air volume input signal is produced electronically 
+by the HFM which uses a heated metal film (180° C 
+above intake air temperature) in the air flow stream. 
+
+The ECM Relay provides the operating voltage. As air 
+flows through the HFM, the film is cooled changing 
+the resistance which affects current flow through the 
+circuit. The sensor produces a 1 -5 volt varying signal. 
+Based on this change the ECM monitors and regu¬ 
+lates the amount of injected fuel. 
+
+The Hot-Film Air Mass Meter (HFM) varies volt¬ 
+age monitored by the ECM representing the mea¬ 
+sured amount of intake air volume. This input is used 
+by the ECM to determine the amount of fuel to be 
+injected. 
+
+The heated surface of the hot-film in the intake air 
+stream is regulated by the ECM to a constant tem¬ 
+perature of 180° C above intake air temperature. 
+
+The incoming air cools the film and the ECM moni¬ 
+tors the changing resistance which affects current 
+flow through the circuit. The hot-film does not require 
+a “clean burn”, it is self cleaning due to the high oper¬ 
+ating temperature for normal operation. 
+
+If this input is defective, a fault code 
+will be set and the “Malfunction 
+Indicator Light” will illuminate when 
+the OBD II criteria is achieved. The 
+ECM will maintain engine operation 
+based on the Throttle Position 
+Sensors and Crankshaft 
+Position/Engine Speed Sensor. 
+
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+
+CONTROL 
+
+MODULE 
+
+
+
+
+The HFM is non-adjustable. 
+
+
+20 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Temperature Signal 
+
+The HFM contains an integral air temperature sensor. This 
+is a Negative Temperature Coefficient (NTC) type sensor. 
+
+This signal is required by the ECM to correct the air vol¬ 
+ume input for changes in the intake air temperature (air 
+density) affecting the amount of fuel injected, ignition tim¬ 
+ing and Secondary Air Injection activation. 
+
+The ECM provides the power supply to the sensor which 
+decreases in resistance as the temperature rises and vice 
+versa. The ECM monitors an applied voltage to the sensor 
+that will vary as air temperature changes the resistance 
+value. 
+
+If this input is defective, a fault code will be set and the “Malfunction Indicator Light” will 
+be illuminated when the OBD II criteria is achieved. The ECM will operate the engine 
+using the Engine Coolant Sensor input as a back up. 
+
+The Air Temperature signal allows the ECM to make a calculation of intake air tem¬ 
+perature. The varying voltage input from the NTC sensor indicates the larger proportion 
+of oxygen found in cold air, as compared to less oxygen found in warmer air. The ECM 
+will adjust the amount of injected fuel because the quality of combustion depends on 
+oxygen sensing ratio. 
+
+The ignition timing is also affected by air temperature. If the intake air is hot the ECM 
+retards the base ignition timing to reduce the risk of detonation. If the intake air is cooler, 
+the base ignition timing will be advanced. The ECM uses this input as a determining fac¬ 
+tor for Secondary Air Injection activation. 
+
+If this input is defective, a fault code will be set and the “Malfunction 
+Indicator Light” will illuminate when the OBD II criteria is achieved. 
+The ECM will maintain engine operation based on the HFM and 
+Engine Coolant Temperature sensor. 
+
+
+
+
+21 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+Variable Intake Manifold (DISA) 
+
+The intake manifold on the N52 uses a three stage differential intake air system (DISA). 
+The air flow through the intake manifold is controlled and re-directed by two DISA actua¬ 
+tor motors. 
+
+Each actuator motor is operated by an electric motor controlled by the Engine Control 
+Module (ECM) via a PWM signal. The PWM signal is at a frequency of 200 Hz. The 
+ECM varies the duty cycle to control the position of the DISA flap. The actuator consists 
+of a flap and motor drive. There are only two positions possible - closed or 
+opened. When activated, the motor moves the flap to each end position. Both actua¬ 
+tors are switched to the closed position at idle. 
+
+
+
+
+The DISA motors are similar in design and operation, but they are not 
+interchangeable. Each actuator assembly has it’s own individual part 
+number. 
+
+
+22 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+DISA Operation 
+
+■ 1st stage - idling/lower engine speed range 
+
+At idle speed and in the lower engine speed range, actuators 1 and 2 are closed. The 
+intake air flows past the throttle valve into the resonance pipe. In the resonance pipe, the 
+intake air mass splits. The air is fed via the collector pipe and resonating pipes into the 
+individual cylinders. In this way, three cylinders are provided with a comparably high air 
+mass. 
+
+2nd stage - medium engine speed range 
+
+In the medium engine speed range, DISA actuator motor 2 is opened. In this case, it is 
+assumed that the inlet valves of the first cylinder are just closing. The gas motion creates 
+a pressure peak at the closing inlet valves. This pressure peak is passed on via the res¬ 
+onating and collector pipes to the in next cylinder in the firing order. This improves the 
+fresh gas filling of the next cylinder to be filled. 
+
+■ 3rd stage - upper engine speed range 
+
+In the upper engine speed range, both DISA actuator motors are opened. In this case, it 
+is assumed that the inlet valves of the first cylinder are just closing. The gas motion cre¬ 
+ates a pressure peak in front of the closing inlet valves. The intake air mass is now fed 
+via the resonating, overshoot and collector pipes. 
+
+
+
+
+
+1 st Stage 
+
+
+2nd Stage 3rd Stage 
+
+
+
+23 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24 
+
+Engine Electronics Overview 
+
+
+
+Fuel Management Overview 
+
+
+Example of IPO for a Fuel Management System 
+
+
+
+One of the main purposes of the ECM is Fuel Management which includes the actuation 
+of several components. In the following pages you will find a generic explanation on how 
+this system works. For more detailed information please access BMW Training 
+Reference Manuals found online. 
+
+Fuel Delivery Unit 
+
+The fuel delivery unit is located inside the fuel tank. It consists of the following: 
+
+In the right half of the fuel tank 
+
+Fuel baffle with electric fuel pump (EKP), right fuel level sensor and right suction jet 
+pump. 
+
+In the left half of the fuel tank 
+
+Fuel filter with pressure regulator, left fuel level sensor and left suction jet pump. 
+
+The components are firmly connected to the respective service cover. When replacing 
+the electric fuel pump, it can be removed from the fuel tank complete with the service 
+cover, fuel baffle, suction jet pump and fuel level sensor. 
+
+
+25 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Supply 
+
+The fuel is delivered from the fuel tank to the engine in the following sequence: 
+
+• From the right half of the fuel tank; 
+
+• through the initial filler valve (11); 
+
+• into the fuel baffle (12); 
+
+• from the electric fuel pump (1); 
+
+• via a T-piece, on the one side, through the check valve (3) into the fuel filter (4); 
+
+• through the feed line (5) in the left-hand service opening to the engine; 
+
+• and, on the other side, via the check valve (8) to the left-hand suction jet pump (9) 
+back into the fuel baffle; 
+
+• parallel from the electric fuel pump to the right-hand suction jet pump (10); 
+
+• and from the right half of the fuel tank into the fuel baffle. 
+
+The fuel filter (4) and pressure regulator (7) are located at the left-hand service opening. 
+The check valve (8) opens at a fuel pressure above 2.5 bar. It ensures the engine 
+receives sufficient fuel before the left suction jet pump cuts into the circuit. 
+
+As an example, on the N52 engine the pressure regulator (7) routes the fuel back into 
+the fuel baffle (12). A 5 bar pressure regulator is used for vehicles with the N52 engine. 
+
+
+26 
+
+Engine Electronics Overview 
+
+
+
+
+N52 Fuel Supply 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Fuel Pump 
+
+13 
+
+Fuel Level Sensor 
+
+2 
+
+Feed Line 
+
+14 
+
+Refuelling Line Connection Piece 
+
+3 
+
+Check Valve 
+
+15 
+
+Refuelling Ventilation Line 
+
+4 
+
+Fuel Filter 
+
+16 
+
+Refuelling Ventilation 
+
+5 
+
+Feed Line to Engine 
+
+17 
+
+Left Operation Ventilation Valve 
+
+6 
+
+Fuel Injector 
+
+18 
+
+Right Operation Ventilation Valve 
+
+7 
+
+Pressure Regulator 
+
+19 
+
+Operation Ventilation Line 
+
+8 
+
+Check Valve 
+
+20 
+
+Diagnosis Module for Tank Leakage (DM-TL) 
+
+9 
+
+Left Suction Jet Pump 
+
+21 
+
+Atmosphere Line 
+
+10 
+
+Right Suction Jet Pump 
+
+22 
+
+Carbon Canister 
+
+11 
+
+Initial Filling Valve 
+
+23 
+
+Fuel Tank Vent Valve 
+
+12 
+
+Fuel Baffle 
+
+24 
+
+Digital Motor Electronics 
+
+
+27 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric Fuel Pump 
+
+The electric fuel pump delivers fuel simultaneously through two separate circuits into a 
+main channel and a secondary channel. 
+
+The main channel is used for conveying fuel to the fuel supply system. The secondary 
+channel supplies the right hand suction jet pump with fuel. 
+
+Channels are located above the pump wheel, in which a helical flow circulation is pro¬ 
+duced by the position of the delivery blades. 
+
+The fuel is thus conveyed from the intake side to the outlet side. An electric fuel pump 
+with increased output is used and has a maximum pressure of 5bar (N52, N54, N55, 
+N63, N74). 
+
+
+
+On Engines with Direct Injection (N54, N55, N63, N73 and N74), this 
+low fuel pressure pump feeds the high fuel pressure pump(s) with 
+maximum pressures typically between 50 and 200bar. 
+
+
+
+
+
+
+(D& 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Suction jet pump 
+
+6 
+
+Intake opening, secondary channel 
+
+2 
+
+Main channel in supply 
+
+7 
+
+Secondary channel to suction jet pump 
+
+3 
+
+Driveshaft from electric motor 
+
+8 
+
+Initial filling valve 
+
+4 
+
+Impeller 
+
+9 
+
+Fuel baffle 
+
+5 
+
+Intake opening, main channel 
+
+
+
+
+28 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Pump Control 
+
+In conventional systems, the electric fuel pump is operated continuously at maximum 
+speed using the highest on-board supply voltage available. The maximum amount of fuel 
+that may be required is made available regardless of the operating conditions. 
+
+The fuel pump control is managed by the EKP module. The fuel pump is a variable 
+speed controlled unit which means the EKP module only supplies the required fuel for 
+engine operation thus eliminating excess fuel delivery. This arrangement also reduces 
+pump wear and running losses are kept to a minimum. 
+
+
+
+In this case, EKP stands for the "Electronic fuel pump control" sys- 
+| tem. The EKP abbreviation is often used to refer to the electric fuel 
+a pump itself. The electronically controlled fuel pump system 
+
+described here is controlled by a control unit called the EKP control 
+unit. The abbreviation EKP is used here to refer to the system as a 
+whole. 
+
+
+29 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+Fuel Management delivers fuel from the tank to the intake ports of the engine. To 
+accomplish this, fuel supply must be available to the fuel injectors. Then the fuel must be 
+injected in the precise amount and at the correct time. The ECM does not directly moni¬ 
+tor fuel supply, although it does control it. The ECM controls and monitors fuel injection. 
+
+The ECM (DME) is connected to the EKP module via the PT-CAN network via a pulse 
+width modulated (PWM) signal according to the fuel quantity required by the ECM. The 
+electric fuel pump in the EKP system is activated as required. The DME calculates the 
+amount of fuel required at the given point in time. The total volume required is transmit¬ 
+ted as a message to the EKP control unit via PT-CAN. 
+
+The EKP control unit controls the electric fuel pump on the basis of mappings so that 
+the electric fuel pump delivers the exact amount of fuel required. 
+
+The EKP control unit converts this message into an output voltage. This output voltage 
+is then used to control the speed of the electric fuel pump. This achieves a delivery 
+which corresponds with the requirements. 
+
+The illustrations shown below are from an E90 and an F10. The EKP module on the E90 
+contains one of the terminating resistors for the PT-CAN. 
+
+F10 Fuel Requirement Signal Path 
+
+
+m 
+
+in 
+
+
+
+K-CAN 
+
+K-CAN2 
+
+PT-CAN 
+
+
+
+
+PT-CAN2 Ethernet / |w| 1 
+
+FlexRay MOST [J] 2 
+
+D-CAN S-CAN \s\ 3 
+
+
+30 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel requirement mappings are stored in the EKP control unit. The fuel requirement 
+mappings are encoded for each specific engine and model. The EKP control unit uses 
+the mappings as the basis on which to calculate the total amount of fuel to be delivered 
+from the following variable: 
+
+• Amount of fuel required by the engine (request from the ECM). This results in a 
+pulse-width modulated output voltage from the EKP control unit. The output volt¬ 
+age of the EKP control unit is the supply voltage for the electric fuel pump. The 
+EKP control unit controls the speed of the electric fuel pump via the supply voltage. 
+The EKP control unit controls the speed by comparing the actual speed with the 
+specification. 
+
+The current speed of the electric fuel pump is calculated as follows: 
+
+The EKP control unit sends the current supply to the fuel pump (pulse-width modulat¬ 
+ed). This voltage is absorbed as a specific ripple due to the individual armature windings 
+of the rotating electric motor. The ripple corresponds with the number of segments in 
+the commutator which corresponds with the number of armature windings in the electric 
+motor. 
+
+The number of waves produced per revolution is equal to the number of existing com¬ 
+mutator segments. 
+
+This means that the EKP control unit can employ a patented procedure - "Ripple 
+Counter" as the basis for calculating the actual speed of the fuel pump using power 
+consumption ripple. 
+
+Coding and Programming 
+
+The data for the electronically controlled fuel pump system is encoded as follows: 
+
+• In the ECM (DME), the engine and model-related characteristic curves for fuel 
+delivery according to requirements. 
+
+• In the EKP control unit: specific characteristic curves for the relevant fuel system 
+
+
+
+Failsafe Operation 
+
+If the fuel quantity requirement from the ECM and/or the EKP rotation speed 
+signal fails, the fuel pump will continue to operate with the greatest delivery rate 
+(100%) when terminal KL_15 is activated. This guarantees fuel supply even if 
+the control signals fail. 
+
+
+31 
+
+Engine Electronics Overview 
+
+
+
+Fuel Injectors/Fuel Rail 
+
+The type of fuel injector depends on the engine design. BMW for the most part utilizes 
+two different configurations: 
+
+• Injectors mounted into the cylinder head spraying fuel into the intake port and; 
+
+• Injectors mounted into the cylinder head spaying fuel directly into the combustion 
+chamber, also known as Direct Injection. 
+
+Furthermore, BMW uses two different types of injectors: 
+
+• Solenoid Injector (in low and high pressure systems) 
+
+• Piezo Injector (only used in high pressure systems) 
+
+In Normally Aspirated (NA) engines like the N52, due to the wider design of the cylinder 
+head, the fuel injectors are not located in the intake manifold as on previous 6-cylinder 
+engines. This is why, as mentioned earlier, the injectors are now mounted into machined 
+bore in the cylinder head. This design allows the injectors to be closely mounted to the 
+intake valves. 
+
+
+
+
+Power supply for the fuel injectors is from Terminal KL_87 of the fuel 
+injector relay. 
+
+The fuel rail is a non-return design which includes a service port for 
+diagnosis. 
+
+
+32 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankshaft Position/RPM Sensor (Hall Effect) 
+
+
+A Hall Sensor provides the crankshaft position and engine speed (RPM) signal to the 
+ECM for fuel pump and Injector operation. 
+
+
+The Hall sensor is supplied with voltage from 
+the ECM. A digital square wave signal is pro¬ 
+duced by the sensor as the teeth of the 
+impulse wheel pass by. The “gap” allows the 
+ECM to establish crankshaft position. 
+
+
+
+The crankshaft position sensor is 
+monitored as part of OBD II 
+requirements for Misfire 
+Detection. If this input is faulty, 
+the ECM will operate the engine 
+(limited driveability) from the 
+Camshaft Sensor input. 
+
+A fault with this input will pro¬ 
+duce the following complaints: 
+
+
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+• Hard Starting/Long Crank Time 
+
+• “Malfunction Indicator Light” 
+
+
+• Driveability/Misfire/Engine Stalling 
+
+
+Intake and Exhaust Camshaft Sensors 
+
+
+"Static" Hall sensors are used so that the 
+camshaft positions are recognized once ignition 
+is on (KL_15) before the engine is started. The 
+main functions of the intake cam sensor are: 
+
+• Cylinder “work cycle” for injection timing; 
+
+• Synchronization; 
+
+• Engine speed sensor (if crankshaft speed 
+sensor fails); 
+
+• VANOS position control of the intake cam. 
+
+
+
+If these sensors fail there are no substitute values, the system will 
+| operate in the failsafe mode with no VANOS adjustment. The 
+«_> engine will still operate, but torque reduction will be noticeable. 
+Use caution on repairs as not to bend the impulse wheels. 
+
+
+33 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The two camshaft sensors are mounted into the cylinder head and monitor the impulse 
+wheels which are bolted to the front of the VANOS units. 
+
+
+
+Power is supplied to the sensors via the engine electronics fuses. 
+Ground is supplied via the ECM. The sensors are hall effect and pro¬ 
+vide the ECM with a 5V square wave signal. 
+
+
+
+Engine Coolant Temperature 
+
+The Engine Coolant Temperature is provided 
+to the ECM from an NTC type sensor located 
+in the coolant jacket of the cylinder head. The 
+sensor contains two NTC elements, the other 
+sensor is used for the instrument cluster tem¬ 
+perature gauge. 
+
+The ECM determines the correct air/fuel mix¬ 
+ture required for the engine temperature by 
+monitoring an applied voltage to the sensor 
+(5V). This voltage will vary (0-5V) as coolant 
+temperature changes the resistance value. 
+
+
+
+
+
+
+t t 
+
+TO INSTRUMENT 
+CLUSTER 
+
+
+COOLANT NTC SENSOR 
+LOCATED ON INTAKE 
+SIDE OF CYLINDER HEAD 
+
+
+If the Coolant Temperature sensor input is faulty, a fault code will be 
+\ set and the ECM will assume a substitute value (80°C) to maintain 
+engine operation. 
+
+
+34 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition Management Overview 
+
+
+Example of IPO for an Ignition Management System 
+
+
+E 
+
+
+AlRMASS SIGNAL 
+
+
+INTAKE 
+AlH TEMP 
+
+
+t 
+
+THROTTLE 
+
+POSITION 
+
+__ 
+
+ENGINE 
+
+
+TEMPERATURE 
+
+
+CRANKSHAFT 
+
+POSITION 
+
+w 
+
+l~X__ SENSOR 
+
+
+
+
+
+IGNITION 
+
+MANAGEMENT 
+
+
+
+M 
+
+
+
+
+One of the main purposes of the ECM is Ignition Management which includes the actua¬ 
+tion of several components. In the following pages you will find a generic explanation on 
+how this system works. For more detailed information please access BMW Training 
+Reference Manuals found on-line. 
+
+Ignition System Inputs 
+
+The ignition system on the engine management system uses several inputs to control 
+ignition functions. Proper ignition timing control is dependent upon inputs such as RPM, 
+throttle position, crankshaft position, air mass and temperature (coolant and intake air) 
+and in our turbocharged engines, intake boost pressure. 
+
+Ignition Coils 
+
+The ignition coils are the familiar “pencil” 
+type. The secondary ignition “boot” and 
+resistor are integrated into the coil hous¬ 
+ing. 
+
+Spark Plugs 
+
+The spark plugs used on BMW Engines are designed by NGK. The 
+plugs use an Iridium center electrode. The center electrode is only 
+0.6 mm thick. The insulator is also redesigned. The new spark plug 
+technology allows for longer service life and improved cold starting. 
+
+Iridium is a precious metal that is 6 times harder 
+and 8 times stronger than platinum, it has a 
+1,200° F higher melting point than platinum 
+and conducts electricity better. 
+
+
+
+
+
+35 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knock Sensors 
+
+
+The knock sensors operate on the piezo 
+electric principle. Vibrations from com¬ 
+bustion events are converted into electri¬ 
+cal signals which are monitored by the 
+ECM. Excessive vibration indicates 
+engine knock which will cause the ECM to 
+retard the ignition timing to retard as nec¬ 
+essary 
+
+Excessive knocking will cause the MIL to 
+illuminate. 
+
+
+
+
+When installing knock sensors, be sure to torque to specification. 
+Under or over-tightening the knock sensors can result is erroneous 
+knock sensor faults or poor engine performance. 
+
+
+Crankshaft Position/RPM Sensor (Hall Effect) 
+
+The crankshaft position sensor provides the ECM with a 5 volt square wave signal. The 
+ECM calculates engine speed (RPM) and crankshaft position for ignition and injection 
+system operation. 
+
+The sensor is supplied with 12 volts from the engine electronics fuses and ground from 
+the ECM. 
+
+The crankshaft position sensor is also monitored for variations in crankshaft speed to 
+determine misfires. 
+
+
+
+36 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VAN OS Overview 
+
+
+Performance, torque, idle characteristics and exhaust emissions reduction are improved 
+by Variable Camshaft Timing. The VANOS system on the N52 is weight optimized and 
+is similar in design to the VANOS on the N62. 
+
+The Vanos units are mounted directly on the front of the camshafts and adjusts the 
+timing of the Intake and Exhaust camshafts throughout the entire spread range from 
+retarded to advanced. The ECM controls the operation of the VANOS solenoids which 
+regulates the oil pressure required to move the VANOS units. Engine Rpm, load and 
+temperature are used to determine VANOS activation. 
+
+
+
+The VANOS mechanical operation is dependent on engine oil pressure applied to 
+position the VANOS units. When oil pressure is applied to the units (via ports in the 
+camshafts regulated by the solenoids), the camshaft hubs are rotated in the drive 
+sprockets changing the position which advances/retards the intake/exhaust camshafts 
+timing. The VANOS system is “fully variable”. When the ECM detects that the 
+camshafts are in the optimum positions, the solenoids maintain oil pressure on the units 
+to hold the camshaft timing. 
+
+The operation of the VANOS solenoids are monitored in accordance with the OBD II 
+requirements for emission control. The ECM monitors the final stage output control and 
+the signals from the Camshaft Position Sensors for VANOS operation. 
+
+Note: Currently all BMW engines feature Double VANOS. 
+
+
+37 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+N55 valve timing diagram 
+
+
+nrim 
+
+
+
+
+
+N54B3000 
+
+N55B30M0 
+
+Intake valve 0 
+
+[mm] 
+
+31.4 
+
+32 
+
+Exhaust valve 0 
+
+[mm] 
+
+28 
+
+28 
+
+Maximum valve lift, intake 
+valve/exhaust valve 
+
+[mm] 
+
+9 . 719.7 
+
+9 . 919.7 
+
+Intake camshaft spread (VANOS 
+adjustment range) 
+
+[°crankshaft] 
+
+55 
+
+70 
+
+Exhaust camshaft spread (VANOS 
+adjustment range) 
+
+[°crankshaft] 
+
+45 
+
+55 
+
+Intake camshaft opening angle 
+(max.-min. spread) 
+
+[°crankshaft] 
+
+125-70 
+
+120-50 
+
+Exhaust camshaft opening angle 
+(max.-min. spread) 
+
+[°crankshaft] 
+
+130-85 
+
+115-60 
+
+Opening period intake camshaft 
+
+[°crankshaft] 
+
+245 
+
+255 
+
+Opening period exhaust camshaft 
+
+[°crankshaft] 
+
+261 
+
+261 
+
+
+Note: The N55 has a larger intake and exhaust VANOS adjustment range as 
+well as larger intake valve lift, and cam duration than the N54 engine. 
+
+
+38 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VALVETRONIC Overview 
+
+
+Since the introduction of the N52, the 6-cylinder engine is now also equipped with the 
+load control system based on the valve timing gear. The VALVETRONIC I system that 
+was used on the 8 and 12-cylinder engines already achieved a substantial increase in 
+efficiency. 
+
+BMW has further developed this concept with the VALVETRONIC II. 
+
+The results of this further development are: 
+
+• Increased engine dynamics 
+
+• Increased efficiency 
+
+• Improved emission values 
+
+
+
+39 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Load Control 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+OT 
+
+Top dead center 
+
+4 
+
+Exhaust valve opens 
+
+UT 
+
+Bottom dead center 
+
+5 
+
+Firing point 
+
+1 
+
+Intake valve opens 
+
+A 
+
+Gain 
+
+2 
+
+Exhaust valve closes 
+
+B 
+
+Loss 
+
+3 
+
+Intake valve closes 
+
+P 
+
+Pressure 
+
+
+The illustration on the left shows the conventional method with the higher loss. 
+
+The reduced loss can be clearly seen in the illustration on the right. The upper area 
+represents the power gained from the combustion process in the petrol engine. 
+
+The lower area illustrates the loss in this process. 
+
+The loss area can be equated to the charge cycle, relating to the amount of energy that 
+must be applied in order to expel the combusted exhaust gasses from the cylinder and 
+then to draw the fresh gasses again into the cylinder. 
+
+
+40 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WT Motor 
+
+As an example, on the N52 engine the WT motor is controlled directly by the ECM. 
+The motor receives power from a relay located in the E-box. 
+
+
+
+41 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+42 
+
+Engine Electronics Overview 
+
+
+
+Turbocharging Technology Overview 
+
+
+Until now, BMW has built a reputation for building 
+high performance engines which are naturally aspi¬ 
+rated. Much research has gone into the develop¬ 
+ment of an efficient engine design which meets 
+not only the expectations of the customer, but 
+complies with all of the current emissions legisla¬ 
+tion. 
+
+Currently, the global focus has been centered 
+around the use of alternative fuels and various 
+hybrid designs. While BMW recognizes these con¬ 
+cerns, there is still much development to be done 
+on the internal combustion engine. Therefore, 
+
+BMW will continue to build some of best internal 
+combustion engines in the world. 
+
+That is why in 2006 BMW introduced the N54 engine as the first turbocharged power- 
+plant in the US market. In addition to turbocharging, the N54 features second generation 
+direct injection and Double-VANOS. 
+
+As far as gasoline engines are concerned, turbocharging has not been in widespread use 
+at BMW, that is until now. As a matter of fact, the last turbocharged BMW production 
+vehicle was the E23 (745i) which was not officially imported into the US. The previous 
+“turbo” model before that was the legendary 2002 tii turbo in the early 1970’s. This 
+2002 tii turbo was also not officially imported into the US. 
+
+Principles of Operation 
+
+The turbocharger consists of a turbine and compressor assembly on a common shaft 
+inside of the turbocharger housing. A turbocharger is driven by waste (exhaust) gasses 
+and in turn drives a compressor which forces air into the engine above atmospheric 
+pressure. This increase pressure allows for an air charge with a greater density. The 
+result is increased torque and horsepower. The turbine and the compressor can rotate at 
+speeds of up to 200,000 rpm and the exhaust inlet temperature can reach max tempera¬ 
+tures of up to 1050°C. 
+
+This increased density during the intake stroke ultimately adds up to the creation of 
+more engine output torque. Of course, this increased density must be accompanied by 
+additional fuel to create the desired power. This is accomplished by engine management 
+system programming to increase injector “on-time” and enhance associated maps. 
+
+The use of an exhaust driven turbocharger is used to create more engine power through 
+increased efficiency. In the case of BMW turbocharged engines, the turbocharger is 
+used in conjunction with direct fuel injection. This provides the best combination of effi¬ 
+ciency and power with no compromise. 
+
+
+
+43 
+
+Engine Electronics Overview 
+
+
+
+
+
+N54 T urbo schematics 
+
+
+
+
+N63 Turbo schematics 
+
+
+
+44 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bi-turbocharging 
+
+A major advantage of the smaller-sized tur¬ 
+bochargers is their low moment of inertia. Even 
+the slightest impetus given by the driver with the 
+accelerator pedal receives a response with an 
+immediate build-up of pressure. The lag typically 
+experienced until now in turbocharged engines - 
+i.e. the time it takes for the turbocharger to attain 
+its power-delivering effect - is thus no longer per¬ 
+ceptible. 
+
+This requirement is met in the N54 engine with 
+two small turbochargers, which are connected in parallel. Cylinders 1,2 and 3 (bank 1) 
+drive the first turbocharger (5) while cylinders 4, 5 and 6 (bank 2) drive the second (2). 
+The advantage of a small turbocharger lies in the fact that, as the turbocharger runs up 
+to speed, the lower moment of inertia of the turbine causes fewer masses to be acceler¬ 
+ated, and thus the compressor attains a higher boost pressure in a shorter amount of 
+time. 
+
+Twin-scroll Turbo System 
+
+The response characteristics of the use of twin- 
+scroll exhaust turbochargers are enhanced when 
+compared to the single-scroll turbos. For example, 
+the S63’s turbocharger turbines are fed through 
+two separate channels within the turbine housing 
+(highlighted red in the graphic). Each of these 
+channels or “scrolls” is always fed by the exhaust 
+pulses from the same two cylinders. 
+
+The layout and cross sections of the turbine impeller and compressor wheels have been 
+correspondingly adapted and are designed for the maximum exhaust inlet operating tem¬ 
+perature of 1020° C (1868° F). 
+
+The specially designed exhaust manifold connects each of the 8 cylinders in sequence 
+according to the exhaust pulses in the firing order. This delivers a uniform flow of exhaust 
+gas to the turbochargers which improves volumetric efficiency by promoting cylinder 
+scavenging. 
+
+Every 180° of crankshaft rotation, one exhaust gas pulse is fed to each turbocharger 
+over the entire ignition sequence (1-5-4-8-6-3-7-2). 
+
+This highly efficient charging concept achieves optimum energy transmission of the 
+exhaust flow to the turbine blades of the turbochargers. The result is the fastest and 
+most direct response characteristics of any turbo engine worldwide. The innovative tech¬ 
+nology is patented by BMW and therefore represents a unique selling point over the 
+competition. 
+
+
+
+
+45 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+46 
+
+Engine Electronics Overview 
+
+
+
+Emissions Management Overview 
+
+
+
+One of the main purposes of the ECM is Emissions Management which includes the 
+actuation of several components. In the following pages you will find a generic explana¬ 
+tion on how this system works. For more detailed information please access BMW 
+Training Reference Manuals found on-line. 
+
+The Emissions Management controls evaporative and exhaust emissions. The ECM 
+monitors the fuel storage system for evaporative leakage and controls the purging of 
+evaporative vapors. The ECM also monitors and controls the exhaust emissions by reg¬ 
+ulating the combustible mixture and after treating by injecting fresh air into the exhaust 
+system. The catalytic converter further breaks down the remaining combustible exhaust 
+gases and is monitored by the ECM for catalyst efficiency. 
+
+Oxygen Sensors 
+
+
+Oxygen sensor before catalytic converter 
+
+The pre-cat oxygen sensors measure the 
+residual oxygen content of the exhaust gas. 
+The sensors produces a low voltage propor¬ 
+tional to the oxygen content that allows the 
+ECM to monitor the air/fuel ratio. 
+
+The sensors are mounted in the hot exhaust 
+stream directly in front of the catalytic con¬ 
+verters. 
+
+Full operational readiness is achieved after 
+10 seconds (LSU 4.2 20 seconds). 
+
+
+
+47 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oxygen sensor after catalytic converter 
+
+The oxygen sensor after catalytic converter is also 
+known as the monitoring sensor. Their purpose is to 
+monitor the pre-cat sensor for proper operation. 
+
+The familiar Bosch monitoring and pre-cat sensors are 
+used in most of our NG engines. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Pre-catalyst sensors 
+
+2 
+
+Post-catalyst sensors 
+
+
+Carbon Canister (AKF) 
+
+The AKF is used to prevent HC vapors from going to the atmosphere. As the hydrocar¬ 
+bon vapors enter the canister, they will be absorbed by the active carbon. The remaining 
+air will be vented to the atmosphere through the end of the canister, DM TL and filter, 
+allowing the fuel tank to “breath”. 
+
+When the engine is running, the canister is "purged" using intake manifold vacuum to 
+draw air through the canister which extracts the HC vapors into the combustion cham¬ 
+ber. 
+
+
+
+
+48 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Evaporative Emission Valve 
+
+This ECM controlled solenoid valve regulates 
+the purge flow from the Carbon Canister into 
+the intake manifold. The ECM Relay provides 
+operating voltage, and the ECM controls the 
+valve by regulating the ground circuit. The 
+valve is powered open and closed by an 
+internal spring. 
+
+
+OPERATING POWER 
+FROM ECM MAIN RELAY 
+
+
+VAPORS FROM 
+
+CHARCOAL 
+
+CANISTER 
+
+
+
+VAPORS TO VACUUM PORT 
+ON THROTTLE HOUSING 
+
+
+
+If the Evaporative Emission Valve Circuit is defective, a fault code will 
+be set and the “Malfunction Indicator Light” will illuminate when the 
+OBD II criteria is achieved. 
+
+
+Evaporative Leakage Detection (DM-TL) 
+
+This component ensures accurate fuel system leak 
+detection for leaks as small as 0.5 mm by slightly 
+pressurizing the fuel tank and evaporative compo¬ 
+nents. The DM-TL pump contains an integral DC 
+motor which is activated directly by the ECM. The 
+ECM monitors the pump motor operating current as 
+the measurement for detecting leaks. 
+
+The pump also contains an ECM controlled change 
+over valve that is energized closed during a Leak 
+Diagnosis test. The change over valve is open during 
+all other periods of operation allowing the fuel system 
+to “breath” through the inlet filter. 
+
+A heating element is integrated in the DM-TL pump 
+to eliminate condensation. The heater is provided 
+battery voltage with “KL15” and the ECM provides 
+the ground path. 
+
+
+FRESH 
+AIR INLET 
+
+
+
+DM-TL 
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+V 
+
+
+V 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+49 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exhaust Emissions 
+
+
+The combustion process of a gasoline powered engine produces Carbon Monoxide 
+(CO), Carbon Dioxide (CO2), Hydrocarbons (HC) and Oxides of Nitrogen (NOx). 
+
+• Carbon Monoxide is a product of incomplete combustion under conditions of air 
+deficiency. CO emissions are dependent on the air/fuel ratio. 
+
+• Carbon Dioxide is a greenhouse gas that traps the earth's heat and contributes to 
+Global Warming. 
+
+• Hydrocarbon are also a product of incomplete combustion which results in 
+unburned fuel. HC emissions are dependent on air/fuel ratio and the ignition of the 
+mixture. 
+
+• Oxides of Nitrogen are a product of peak combustion temperature (and temperature 
+duration). NOx emissions are dependent on internal cylinder temperature affected 
+by the air/fuel ratio and ignition of the mixture. 
+
+Control of exhaust emissions is accomplished by the engine and engine management 
+design as well as after-treatment. 
+
+• The ECM manages exhaust emissions by controlling the air/fuel ratio and ignition. 
+
+• The ECM controlled Secondary Air Injection further dilutes exhaust emissions leav¬ 
+ing the engine and reduce the catalyst warm up time. 
+
+• The Catalytic Converter further reduces exhaust emissions leaving the engine. 
+
+
+
+50 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electrically Heated Thermostat 
+
+Model specific variants of the electrically heated thermostat are equipped on all 
+LEV/ULEV compliant engines. This thermostat allows the engine to run more efficiently 
+than conventional thermostats improving fuel economy. 
+
+
+The ECM also electrically activates the thermostat to lower the engine coolant tempera¬ 
+ture based on monitored conditions. It is both a conventionally functioning and ECM 
+controlled thermostat (two stage operation). The ECM control adds heat to the wax core 
+causing the thermostat to open earlier than it’s mechanical temperature rating providing 
+increased coolant flow. 
+
+COLD COOLANT 
+
+
+Conventional Function 
+
+The thermostat begins to open at 
+103°C. This is at the inlet side of the 
+water pump and represents the tem¬ 
+perature of the coolant entering the 
+engine. Before the 103°C tempera¬ 
+ture is realized, the coolant is circulat¬ 
+ed through the engine block by the 
+water pump. 
+
+After the temperature reaches 103°C 
+it is maintained as the inlet tempera¬ 
+ture by the thermostat. The coolant 
+temperature at the water pump 
+engine outlet is approximately 110°C. 
+The additional 7°C are achieved after 
+
+
+
+the coolant has circulated through the 
+block. 
+
+The operating temperature of the 
+engine will remain within this range as 
+long as the engine is running at part 
+load conditions and the engine 
+coolant temperature does not exceed 
+113°C. 
+
+
+°c 
+
+115 
+
+110 
+
+105 
+
+100 
+
+95 
+
+90 
+
+85 
+
+80 
+
+
+A L 
+
+110°C THERMOSTAT 
+
+_z_ 
+
+- part\ 
+
+FULL LOAD / PART 
+
+- LOAD \ 
+
+/ LOAD 
+
+
+T 85°C THERMOSTAT 
+
+
+-► TIME 
+
+
+COLD COOLANT 
+
+
+
+51 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric thermostat activation is based on the following parameters: 
+
+• Engine temperature > 113°C 
+
+• Radiator Coolant Outlet Temperature 
+
+• Load signal “ti” > 5.8 ms 
+
+• Intake air temp > 52°C 
+
+• Vehicle speed >110 MPH 
+
+When one or more of these monitored conditions is determined, the ECM activates 
+(switched ground) the thermostat circuit. The activated heating element causes the wax 
+core in the thermostat to heat up and open the thermostat increasing coolant circulation 
+through the radiator which brings the engine temperature down. 
+
+The temperature of the coolant at the inlet side of the water pump will drop to approxi¬ 
+mately 85°C and the temperature at the outlet side will drop to approximately 103°C 
+when activated. 
+
+
+COLD COOLANT 
+
+
+
+52 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crankcase Ventilation 
+
+
+The crankcase ventilation system varies according to the engine.The pressure control 
+valve and cyclonic oil separator are commonly used and combined into one unit. 
+
+
+
+Although the crankcase ventilation system and principle of operation remain the same, 
+component location may change. 
+
+The pressure control valve varies the vacuum applied to the crankcase ventilation 
+depending on engine load. The valve is balanced between spring pressure and the 
+amount of manifold vacuum. 
+
+The oil vapors exit the separator labyrinth in the cylinder head cover. The oil vapors are 
+drawn into the cyclone type liquid/vapor separator and regulated by the pressure control 
+valve. 
+
+The oil vapors exit the pressure control valve into the intake manifold. The collected oil 
+will drain back into the oil pan. 
+
+The vapors exit the pressure control valve and are drawn into the intake manifold 
+through a centrally located port. 
+
+For turbocharged engines such as the N54, N55, N63 and N74, two non-return valves 
+are used to prevent the risk of boost pressure being introduced into the crankcase. 
+
+
+53 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As the vapors exit the pressure control valve, they are drawn into the intake manifold. 
+
+At idle when the intake manifold vacuum is high, the vacuum reduces the valve opening 
+allowing a small amount of crankcase vapors to be drawn into the intake manifold. 
+
+At part to full load conditions when intake manifold vacuum is lower, the spring opens 
+the valve and additional crankcase vapors are drawn into the intake manifold. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine Oil Vapors 
+
+2 
+
+Collective Drain Back Oil 
+
+3 
+
+Oil Vapors to the Intake Manifold 
+
+
+
+54 
+
+Engine Electronics Overview 
+
+
+e-1 "-ri 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Performance Control Overview 
+
+
+Example of IPO for a Performance Control System 
+
+
+
+CRUISE CONTROL £ ■; ’ 
+
+
+
+SPORT SWITCH 
+
+OIL 
+
+TEMP 
+
+SENSOR 
+
+
+CLUTCH S WITCH _ 
+
+BKAKL UflHf BHTtfcH 
+i '' SNAKE LhJtfT TEST BWTTCH 
+
+
+
+VEHICLE 
+EEO INPUT 
+
+
+ROLLING CODE 
+
+
+jtjltltl 
+
+
+PERFORMANCE 
+
+CONTROL 
+
+
+AC COMPRESSOR 
+
+
+
+ELECTRIC *AN 
+
+
+OlSptus 
+
+
+OBD \i SCAN TOOL 
+
+
+Dynamic Cruise Control 
+
+The cruise control with braking function was introduced with the BMW 3 Series (E9x). 
+
+It is also referred to as "Dynamic Cruise Control" (DCC). 
+
+Mostly, DCC is a conventional cruise control system with some additional functions. The 
+DCC offers the driver the opportunity to adjust the set speed in small or large incre¬ 
+ments, which is then set and maintained by the system by controlling power output and 
+braking. 
+
+The brakes are also controlled during steep downhill driving if sufficient deceleration is 
+not achieved by engine drag-torque alone. 
+
+Dynamic Cruise Control in vehicles with BN2020 is not computed in the DSC control 
+unit as it is in other vehicles. Instead, it has been integrated into the ICM control unit. 
+
+
+55 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Cruise Control with Stop & Go function 
+
+ACC Stop & Go is largely identical to that in the E6x LCI. ACC Stop & Go extends the 
+operating range of the former ACC system to include low speeds down to a standstill. 
+
+
+
+In other words, speed and distance from the vehicle in front are automatically controlled 
+at those speeds as well. 
+
+ACC Stop & Go will automatically stop the car if necessary and then indicate to the dri¬ 
+ver as soon as it detects that it is possible to start moving again. 
+
+To pull away again, the driver has to acknowledge this message. The pulling-away 
+process is controlled fully automatically by ACC Stop & Go only if the duration of the 
+standstill is very short. 
+
+Thus, ACC Stop & Go provides optimum assistance for the driver not only in moving 
+traffic but also in traffic jams such as are more and more frequently encountered on 
+highways. However, this 
+
+system (in common with ACC) is not intended for use in urban areas for negotiating 
+junctions or traffic lights. 
+
+The functions of ACC Stop & Go differ from those in the E6x LCI in the following areas: 
+
+• Operation and display 
+
+• Behavior in response to driver's intention to get out. 
+
+
+56 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F01 Bus Interface for ACC Stop & Go 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+ZGM 
+
+7 
+
+ICM 
+
+2 
+
+DSC 
+
+8 
+
+FlexRay bus 
+
+3 
+
+Short range radar sensor, left 
+
+9 
+
+FlexRay terminating resistor, DSC and DME 
+
+4 
+
+Long range radar sensor 
+
+10 
+
+Lo-CAN bus termination 
+
+5 
+
+Short range radar sensor, right 
+
+11 
+
+Lo-CAN terminating resistor 
+
+6 
+
+DME 
+
+
+
+
+57 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exhaust Flap Control 
+
+The exhaust flap is designed to 
+reduce noise at idle, low RPM accel¬ 
+eration and while coasting. The 
+exhaust flap is controlled via vacuum 
+actuator. The vacuum actuator is 
+supplied vacuum via the engine dri¬ 
+ven vacuum pump. 
+
+The ECM controls the flap using a 
+vacuum vent valve. 
+
+
+
+As compared to previous vehicles, the system no longer needs a vacuum reservoir. This 
+is due to the fact that the vacuum is not supplied by the engine and not subject to varia¬ 
+tions in intake manifold vacuum. 
+
+The exhaust flap is sprung open and closed by vacuum. The ECM will de-activate the 
+vacuum vent valve in order to open the flap. 
+
+The flap is opened above approximately 2500 RPM. Flap operation is also dependent 
+upon engine load. 
+
+
+Dynamic Driving Control - “Sport Switch” 
+
+A central, higher-level of Driving Dynamics Control system was first introduced in BMW 
+vehicles several years ago. Control elements are already installed in a number of BMW 
+models that the driver can use to switch individual systems to a sporting mode. This 
+includes the sports setting of the automatic selector lever where only the shift character¬ 
+istics of the automatic gearbox are influenced. 
+
+The system behaves in a similar manner when the SPORT button for the Electronic 
+Damping Control or Vertical Dynamics Control (shown right) is used. This only changes 
+the characteristic (hardness) of the shock absorber. 
+
+The first time a SPORT button influenced several systems was in the E85/E86. The cor¬ 
+responding “Driving Dynamics Control” function effects a changeover between a stan¬ 
+dard mode and a sporting mode in the steering, automatic gearbox and accelerator 
+pedal. This meant it was now possible to coordinate these three systems far more effec¬ 
+tively in both modes with the result that the customer now experiences a car that is 
+uncompromisingly tailored to “Sport” in every sense. 
+
+
+58 
+
+Engine Electronics Overview 
+
+
+
+SPORT Button in E70/E71 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+SPORT button 
+
+2 
+
+Vertical Dynamics Control with electronically 
+adjustable shock absorbers 
+
+
+The Driving Dynamics Control has been further improved in vehicles with BN2020 
+(e.g. F01/F02) as it now contains two groundbreaking features when compared to the 
+E85/E86: 
+
+1. All drive and dynamic driving systems installed in the vehicle are comprehensively 
+switched over. 
+
+2. Four settings are available. The status of the Dynamic Stability Control is also 
+taken into account thus ensuring that two additional settings are possible. 
+
+The changeover operations for many drive and driving dynamics functions are therefore 
+bundled in the driving dynamics control The vehicle as a whole then behaves as the dri¬ 
+ver would expect in accordance with his/her chosen setting. This bundling can make the 
+handling characteristics of the vehicle considerably more distinctive and less compromis¬ 
+ing. 
+
+When sport mode is activated, the driving dynamics of the vehicle take on sportier quali¬ 
+ties. The Sport mode (“Sport +” is available in certain models) can be operated via a dri¬ 
+ving dynamics switch located in the center console. The electronic control units switch 
+to more dynamic settings, making the engine more responsive (EDK) with a firmer steer¬ 
+ing strategy (EPS), less body roll (ARS) and a sportier suspension setting (VDM - EDC). 
+
+
+59 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additionally in vehicles equipped with automatic transmission (EGS), BMW’s Double 
+Clutch Transmission (DCT) or Sequential Manual Gearbox (SMG), activating the sport 
+mode shortens gearshift times and makes the gearshift characteristic even more 
+dynamic. 
+
+In certain vehicles the Dynamic Driving Control allows the driver to customize the system 
+it wants to influence: Drive Train, Chassis, and/or Transmission (in addition the dri¬ 
+ver can use the controller to make further settings). 
+
+The Dynamic Driving Control function request is carried over by the DME/ICM (depend¬ 
+ing on the vehicle) through the bus network to the following control modules: 
+
+• ICM - Integral Chassis Management. 
+
+• DME - The engine control system for the accelerator pedal characteristic. 
+
+• EGS/DCT/SMG - The electronic gearbox control for driving programs and 
+
+shift speed. 
+
+• EPS - Power Steering assistance (Servotronic). 
+
+• KOMBI/CID - Display relevant DDC information to the driver. 
+
+• ARS - Active Roll Stabilization varies the stiffness/response characteristic 
+
+of the sway bars. 
+
+• VDM - The Vertical Dynamics Management varies the stiffness/response 
+
+characteristic of the dampers. 
+
+• DSC - DTC is activated in “Sport +”. 
+
+
+DTC button and Driving Dynamics switch 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+DTC button 
+
+2 
+
+Driving Dynamics Switch 
+
+
+60 
+
+Engine Electronics Overview 
+
+
+
+
+
+
+
+
+
+Electric Fan 
+
+
+As usual, the electric fan has its own electronics 
+module and is controlled dependent on engine 
+speed and temperature by a pulse-width modulat¬ 
+ed signal. The pulse duty factor during normal 
+operation (100 Hz) is converted into a speed signal. 
+
+• 7% pulse duty factor wakes the fan electronics 
+
+• 11 % pulse duty factor equates to 33% of the 
+maximum fan speed 
+
+• 93% pulse duty factor equates to the maxi¬ 
+mum fan speed 
+
+• 97% pulse duty factor is a command for self- 
+diagnosis of the fan electronics 
+
+To output the fan after-running command, the output frequency of the DME is reduced 
+to 10 Hz during the latching phase (terminal KL_15 OFF). The fan time and speed are 
+selected based on the pulse duty factor. 
+
+A further new feature is that the DME switches the power supply through terminal 30 via 
+a relay. 
+
+The electric cooling fan is controlled by the ECM for engine cooling system and air con¬ 
+ditioning system requirements. The ECM uses a remote power output final stage 
+(mounted on the fan housing). The electric fan is controlled by a pulse width modulated 
+signal from the ECM. 
+
+The fan (and speed) is activated by the ECM based on: 
+
+• Coolant outlet temperature 
+
+• Catalyst temperature 
+(calculated by the ECM) 
+
+• Vehicle speed 
+
+• Battery voltage 
+
+• Air Conditioning refrigerant pressure 
+
+(calculated by IHKA and sent via the PT CAN bus to the ECM) 
+
+
+
+61 
+
+Engine Electronics Overview 
+
+
+
+ECM Integrated Temperature Sensor 
+
+The E Box fan is controlled by the ECM. The control module con¬ 
+tains an integral NTC temperature sensor for the purpose of moni 
+toring the E box temperature and activating the fan. 
+
+When the internal temperature exceeds 65° C, the ECM provides 
+a switched ground for the E Box fan to cool the E box control 
+modules. 
+
+Alternator Interface 
+
+The alternator communicates data with the ECM via the BSD line (bit-serial data inter¬ 
+face - single wire). This is necessary to allow the ECM to adapt its calculations and spe¬ 
+cific control data to the alternator output. In addition, the ECM controls the following 
+functions: 
+
+• Activation/deactivation of the alternator. 
+
+• Informing the voltage regulator of the nominal voltage value to be set. 
+
+• Controlling the alternator’s load response. 
+
+• Diagnosing the BSD line. 
+
+• Storing alternator fault codes. 
+
+• Activating the charging indicator light in the instrument cluster. 
+
+The charging indicator light operation has not changed from present vehicles. 
+
+PT-CAN Bus Communication 
+
+The ECM provides signals to other “driveline” related modules for torque control, 
+shift quality, diagnosis, safety enhancements, etc. 
+
+
+
+62 
+
+Engine Electronics Overview 
+
+
+

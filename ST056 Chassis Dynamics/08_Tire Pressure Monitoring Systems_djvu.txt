@@ -1,0 +1,3322 @@
+Table of Contents 
+
+Tire Pressure Monitoring Systems 
+
+Subject Page 
+
+Introduction .4 
+
+TREAD Act.5 
+
+System Identification and Terminology.6 
+
+FlatTire Monitoring Systems .7 
+
+FTM System Overview.8 
+
+FTM System Overview (E65/E66).9 
+
+FTM System Overview (5 and 6 Series E6X) .10 
+
+FTM System Overview (E90/E91).11 
+
+FTM System Overview (E85/E83/E53/E46) .12 
+
+System Components .13 
+
+Wheel Speed Sensors.13 
+
+FTM Reset Button .14 
+
+E90 Reset .14 
+
+Soft Key Reset .15 
+
+Warning Lamp.15 
+
+Central Information Display.16 
+
+Check Control Display.17 
+
+FTM Control Module.18 
+
+System Software .18 
+
+FTM System Operation .19 
+
+Spare Tire.20 
+
+System Functions .21 
+
+Self Test .21 
+
+System Reset .21 
+
+Detects Drop in Tire Pressure .21 
+
+Visual and Acoustic Warning .21 
+
+Signal Output .21 
+
+Special Conditions for System Function .22 
+
+Old or Worn Tires .22 
+
+System Reset.23 
+
+Reset Procedure.24 
+
+Vehicles with RPA Button.24 
+
+Vehicles with BC Button (on-board computerfunction) .24 
+
+Vehicles with Central Information Display .24 
+
+Preconditions for Activation .24 
+
+FlatTire Indication .24 
+
+
+Initial Print Date: 3/06 
+
+
+Revision Date: 5/06 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+TPM Systems (up to 2003 production) .25 
+
+TPM System Components .26 
+
+RDC Control Unit.26 
+
+Receiving Antennae.27 
+
+Wheel Transmitter Modules .28 
+
+TPM System Operation.29 
+
+Autumn Warning.29 
+
+Tire Failure Warning.29 
+
+System Reset.30 
+
+TPM Systems (from 9/05).31 
+
+TPM System Overview .32 
+
+TPM System Components .33 
+
+TPM (RDC) Control Unit.34 
+
+Central Receiving Antenna.35 
+
+TriggerTransmitter Modules.36 
+
+Wheel Transmitter Module .37 
+
+Control Display .38 
+
+Instrument Cluster.39 
+
+System Operation .40 
+
+Wheel Management .41 
+
+Control Display Screens.42 
+
+One Tire with Reduced Pressure .42 
+
+Several tires with Reduced Pressure .43 
+
+Workshop Hints.44 
+
+System Reset (Initialization) .44 
+
+Run FlatTireTechnology .46 
+
+RFT Operation.46 
+
+RFT Design.46 
+
+Tire Manufacturer Information.46 
+
+Wheel Construction .47 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tire Pressure Monitoring Systems 
+
+Model: All withTPMS 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Identify BMW Tire Pressure Monitoring Systems 
+
+• Locate and Identify Components ofTPM Systems 
+
+• Diagnose and RepairTPM Systems 
+
+
+3 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+Introduction 
+
+
+According to numerous studies and statistical analysis, many vehicles on the roads today 
+are driving with under-inflated tires. First and foremost, this a safety issue which could 
+ultimately result in catastrophic tire failure (a.k.a. "blowout"). M any "blow-outs" can be 
+traced back to preliminary damage from puncture ora slow loss in tire pressure. 
+
+
+
+In addition to safety issues, under-inflated tires can cause a reduction in fuel economy 
+and overall tire life. Studies by tire manufacturers have shown that tire life can be 
+reduced by 50% when the tires are under-inflated by as little as 20%. 
+
+Therefore the overall consequences of improperly inflated tires include: 
+
+• Increased tire wear resulting in decreased tire service life 
+
+• Impaired vehicle handling 
+
+• Reduction in safety for the vehicle occupants 
+
+• Reduced fuel economy 
+
+Since most tire pressure loss occurs gradually, the driver does not usually perceive the 
+reduced tire pressure. Therefore various systems have been developed to aid the driver 
+by monitoring tire pressure loss and report this information to the driver. 
+
+The intent of this training module is to include all systems which monitortire pressure 
+loss. The first U.S. model BMW to utilize this technology was the E39 M5. Various 
+systems have been in use since that time on some models. 
+
+Recent government legislation now mandates that all light vehicles sold in the U.S. must 
+have a "Tire Pressure Monitoring System" orTPMS. 
+
+
+4 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+TREAD Act 
+
+
+In 2000, there was much media attention surrounding tire safety issues. The leading tire 
+manufacturers were involved with many law suits regarding catastrophic tire failures. 
+These well publicized incidents involved injury and fatalities. 
+
+In response to these issues, the U.S. Congress enacted legislation entitled the 
+"Transportation Recall Enhancement, Accountability and Documentation (TREAD) Act in 
+November of 2000. 
+
+The TREAD Act encompasses many aspects of tire industry issues. The act includes 
+items such as tire labeling requirements, tire testing standards, information on tire safety 
+related recalls etc. There are also provisions for issues on child safety restraints. 
+
+However, the focus of this training module is to train technicians aboutTire Pressure 
+Monitoring Systems (TPMS). TPM systems are also one of the primary components of 
+theTREAD Act. TPM systems allow early detection oftire pressure loss which is not 
+usually detected by the driver until vehicle handling and safety is affected. 
+
+The National Highway Traffic Safety Administration (NHTSA) is the government agency 
+responsible forthe creation and enforcement of the mandates of the TREAD Act. Initially, 
+NHTSA approved the installation of "Indirect"TPM systems. 
+
+IndirectTPM systems monitortire pressure "indirectly” by monitoring the rotational speed 
+of the tire via the wheel speed sensors. The AB S/DSC system can then detect pressure 
+loss by comparing wheel speed information between all 4 tires. Any loss in tire pressure 
+would result in a change in tire diameter and therefore a change in rotational speed. 
+
+The guidelines of theTREAD Act found that "Indirect" TPM systems are ineffective in 
+detecting tire pressure loss until the tire was under-inflated to an unsafe level. Therefore, 
+NHTSA mandated that auto manufacturers install "Direct”TPM systems on all vehicles. 
+
+DirectTPM systems monitortire pressure directly by using pressure sensors at each 
+wheel which report tire pressure and temperature information to relevant vehicle systems. 
+Tire pressure loss is then reported to the driver via an illuminated warning symbol. Direct 
+TPM systems also offerthe capability of monitoring tire pressure when the vehicle is at a 
+standstill. Indirect systems must be driven in orderto collect sufficient data to detect tire 
+pressure loss. 
+
+As perNHTSA guidelines, passenger cars and lighttrucks must have the "Direct"TPM 
+systems installed via a specific timeline from 2005. By 2007, all auto manufacturers must 
+be in 100% compliance. 
+
+Aside from the obvious safety benefits, DirectTPM systems will also assist the driver by 
+maintaining fuel economy and extending tire life. 
+
+This training module will help the technician to diagnose and repair both "Indirect" and 
+"Direct” TPM systems. The first step in the diagnosis the these systems is identification. 
+The following text shows some tips on identifying these systems. 
+
+
+5 
+
+Tire Pressure Monitoring Systems 
+
+
+
+System Identification and Terminology 
+
+In orderto accurately diagnose TPM systems, the system must be properly identified. 
+These systems have had numerous acronyms which are used to describe the various 
+systems. Forthe purposes of this training module, the systems will be broken down into 
+two basic configurations. These are as follows: 
+
+• Systems which monitorwheel speed - These "lndirect"systems will be 
+referred to as Flat Tire Monitoring systems or FTM. FTM systems take advantage of 
+components already installed in the vehicle. The wheel speed sensors, which are 
+already an input to the DSC control unit, are used to monitorwheel speed. When a 
+tire starts to deflate, the overall diameter changes. This affects the rotational speed, 
+which is picked up by the DSC module. The DSC module contains software forthe 
+purpose of calculating the speed changes and reporting the pressure loss to the dri¬ 
+ver via an illuminated indicator or symbol. The only additional components which are 
+installed is the switch for system initialization. Early generation systems used a mod¬ 
+ule which received wheel speed input from the DSC module. 
+
+* Systems which monitor actual tire pressure - These "Direct" systems will be 
+referred to as Tire Pressure Monitoring Systems orTPM systems. TPM systems 
+use wireless sensors which are part of the tire valve stem. These sensors monitor 
+actual tire pressure and send this information to a module via multiple antennae. 
+These systems are preferred due to the fact that the actual tire pressure is moni¬ 
+tored ratherthan by variations in tire rotational speeds. 
+
+There is a simple way to identify the difference between the two systems. On systems 
+which monitor actual tire pressure, the tire valve stem is threaded and has a "hex head" 
+on the valve stem. The systems which monitorwheel speed have conventional rubber 
+valve stems. 
+
+
+TPM System FTM System 
+
+
+
+"Threaded” Valve stem on vehicles which monitor 
+
+actual tire pressure. 
+
+
+"Rubber” Valve stem on vehicles which monitor 
+
+wheel speed. 
+
+
+6 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+FlatTire Monitoring Systems 
+
+
+FTM systems are "indirect" systems which were first used on U.S. models with the 
+introduction of the E39 M5 in 2000. Since that time, FTM systems have been included 
+on most other models including the 7 Series. 
+
+There have been numerous abbreviations and terminology used to describe FTM 
+systems in the past. However, FTM will be used from this point forward to describe 
+those systems which "indirectly" monitortire pressure loss through wheel speed detec¬ 
+tion. 
+
+Some of the past abbreviations include: 
+
+• RDW - is derived from the German term "Reifen Druck Warnung" which means 
+Tire Pressure Warning. This term was used to describe some of the early systems 
+used on the E39 M 5 and E46 M 3. 
+
+• RPA - comes from the German words "Reifen Pannen Anzeige" which translates 
+to Tire Failure (Puncture) Indicator. This abbreviation is most closely associated 
+with the E85, E60 and E46 (from 2001). 
+
+• DDS - This an english based abbreviation for Deflation Detection System. This 
+term is occasionally found when using the diagnostic equipment such as the 
+DISplus/GT-1. 
+
+• DWS - This is also an english abbreviation forthe system used on the Z8 (E52) and 
+it stands for Dunlop Warning System. 
+
+Regardless of the terminology used, the most important concept to understand is the 
+difference between the Direct and Indirect systems. 
+
+
+KL 15 
+
+
+ru~u~i 
+
+runun 
+
+runun 
+
+njnun 
+
+
+KL 31 
+
+
+
+E39 M5 
+(US Model) 
+
+
+
+K BUS 
+
+
+DIS & MoDiC 
+
+
+
+7 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Overview 
+
+
+FTM Systems (Indirect monitoring systems) 
+
+Series 
+
+Chassis 
+
+Option/Date 
+
+System Design 
+
+Deflation 
+
+Warning 
+
+System Reset 
+(initialization) 
+
+3 Series 
+
+E46 
+
+Option from 9/03 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+3 Series 
+
+E46M3 
+
+Standard from SOP 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+3 Series 
+
+E46 (ix) 
+
+Option from 9/01 
+
+System uses 
+separate control unit. 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+3 Series 
+
+E90/E91 
+
+Standard from SOP 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset via Stalk 
+Switch or Controller 
+
+5 Series 
+
+E39 (M5) 
+
+Standard 
+
+System uses 
+separate control unit. 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+5 Series 
+
+E 60/E 61 
+
+Standard 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong and 
+
+CC Message 
+
+Soft Key Reset via 
+CID Menu and 
+Controller 
+
+6 Series 
+
+E 63/E 64 
+
+Standard 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong and 
+
+CC Message 
+
+Soft Key Reset via 
+CID Menu and 
+Controller 
+
+7 Series 
+
+E 65/E 66 
+
+Optional from 9/02 
+Standard from 12/03 
+
+System integrated 
+into CIM 
+
+Yellow telltale + 
+gong and 
+
+CC Message 
+
+Soft Key Reset via 
+CID Menu and 
+Controller 
+
+Z4 
+
+E85 
+
+Standard 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+SAV 
+
+E53 
+
+Standard from 4/04 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+SAV 
+
+E83 
+
+Standard 
+
+System integrated 
+into DSC 
+
+Yellow telltale + 
+gong 
+
+RPA Reset Button 
+
+
+8 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Overview (E65/E66) 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Chassis Integration Module 
+
+6 
+
+Car Access System 
+
+2 
+
+Multi-Audio System Controller 
+
+7 
+
+Safety and Gateway Module 
+
+3 
+
+Kombi 
+
+8 
+
+Wheel Speed Sensors 
+
+4 
+
+Central Information Display 
+
+9 
+
+Dynamic Stability Control 
+
+5 
+
+Controller 
+
+
+
+
+9 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Overview (5 and 6 Series E6X) 
+
+
+
+■* iiiirrvb 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel speed sensors 
+
+6 
+
+Controller 
+
+2 
+
+DSC Control module 
+
+7 
+
+Instrument cluster 
+
+3 
+
+M-ASK orCCC 
+
+8 
+
+SGM (up to 9/05) or KGM (from 9/05) 
+
+4 
+
+Car Access System (CAS) 
+
+9 
+
+Diagnosis line 
+
+5 
+
+Central Information Display (CID) 
+
+
+
+
+10 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Overview (E90/E91) 
+
+
+
+n FC-m 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel Speed Sensors 
+
+7 
+
+Instrument C luster (Kombi) 
+
+2 
+
+DSC Control Module 
+
+8 
+
+Diagnostic Bus 
+
+3 
+
+Central Information Display (CID) 
+
+9 
+
+J unction-box electronics (J BE) 
+
+4 
+
+M-ASK orCCC 
+
+10 
+
+Steering Column Switch Cluster (SZL) 
+
+5 
+
+Controller (CON) 
+
+11 
+
+Turn Signal Stalk Switch 
+
+6 
+
+Car Access System (CAS) 
+
+
+
+
+11 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Overview (E85/E83/E53/E46) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel Speed Sensors 
+
+4 
+
+Diagnostic Bus 
+
+2 
+
+DSC Control Module 
+
+5 
+
+RPA/FTM Reset button 
+
+3 
+
+Instrument C luster (Kombi) 
+
+
+
+
+12 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+FTM systems consist of the following major components: 
+
+• Wheel Speed Sensors 
+
+• FTM Reset Button (used for system reseta.k.a. initialization). 
+
+• Warning Indicator Lamp 
+
+• Check Control Display (E39 M5) 
+
+• Control Display E65/E66 (orCID on 5 and 6 series) 
+
+• FTM (RDW) Control Module (used only on early systems such as E39 M5, E46Xi 
+and E52 Z8) 
+
+Wheel Speed Sensors 
+
+The wheel speed sensors, which are already part of the ABS/DSC system provide 
+information regarding rotational speed variations between wheels. The wheel speed 
+signals are compared to determine the amount of tire pressure loss. 
+
+These sensors vary in design depending upon vehicle. These systems use "active” 
+type sensors which can be hall effect or magneto resistive. 
+
+
+
+13 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+FTM Reset Button 
+
+The reset button (1) is used to initialize 
+(reset) the system. The reset procedure 
+allows the FTM system to "learn" the tire 
+rotational speeds at various vehicle speed 
+ranges. 
+
+The button provides a ground input to the 
+DSC module (orRDW module on early 
+systems). It is located near the center 
+console in the SZM (vehicle dependent). 
+
+The button can be found on the E46, E53, 
+
+E83, E85, E52 and E39 (M5). 
+
+E90 Reset 
+
+The E90 (without CCC) requires the use of 
+the turn signal stalk to reset the FTM 
+system. The reset is in the instrument 
+cluster. 
+
+To reset the FTM system, press button (2) 
+on the turn signal stalk up or down until the 
+appropriate menu is displayed. 
+
+When the correct menu is attained, press 
+the "BC” button (2) to confirm selection. 
+
+Press the BC button for 5 seconds until the menu displays a "checked box" next to the 
+"INIT" indicator. 
+
+
+
+
+14 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Soft Key Reset 
+
+On vehicles which use a Control Display such as E6X or E90/91 with CCC, the FTM 
+system is reset via a "softkey" in the "Vehicle Settings Menu". The controller is used to 
+reset the system when needed. 
+
+
+Komm unrkatiGn 
+
+
+
+Entertain merit 
+
+
+A /£ A BAYERN 3 TMC ©T-ill 2150 
+
+
+Warning Lamp 
+
+Depending upon the vehicle, there will be a yellow FTM indicator lamp in the instrument 
+cluster. The location will vary between models. 
+
+
+
+15 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+Central Information Display 
+
+A fault in the FTM or drop in tire pressure will be indicated by the FTM indicator and 
+warning light in instrument cluster. At the same time, the symbol will light up in the LC 
+display. 
+
+
+
+en rii,i.'ru'.i 
+
+
+BMW Jibin' 
+
+it psiftnppiliy 
+
+
+k JSf Chctk Co-Ttno Vkc-idwnige^ 1 
+
+A ftpirGnnflnnp' vorelch-llg anr.atak 
+
+
+£ ,j Z B AYE H N 3 TP TMC n11:35 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+i—i 
+
+Cluster warning light for FTM 
+
+3 
+
+CC Message "Tire Puncture” 
+
+2 
+
+"Vehicle Setting Menu" 
+
+
+
+
+16 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Check Control Display 
+
+The E39 M5 displayed the CC messages in the instrument cluster matrix display. The 
+tire pressure failure message is displayed here in the event of a tire pressure loss or 
+system malfunction. 
+
+
+
+17 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+FTM Control Module 
+
+The FTM systems on the early vehicles such as the E39 M5, E52 Z8 and E46 AWD 
+utilized a separate control module for the FTM system. The control module received 
+wheel speed input from the DSC module. The wheel speed signals were evaluated in 
+the FTM module. If any faults or rotational irregularities were determined, the FTM mod¬ 
+ule would signal the clustervia the K-bus. 
+
+
+
+
+
+System Software 
+
+The newer FTM systems do not utilize a separate FTM module. The operating software 
+in distributed to other modules (usually the DSC module). The system operating 
+software is located in the following modules: 
+
+• E65/E66 - The software is located in the CIM. TheCIM receives wheel speed input 
+from the DSC. 
+
+• E39 M 5, E52 Z8 and E46 AWD (xi) - The system software is located in the FTM 
+control module. 
+
+• All othervehicles with FTM - The operating software is located in the DSC. 
+
+
+18 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FTM System Operation 
+
+The FT M system is designed to inform the driver of a loss in tire pressure. Rather than 
+monitor actual tire pressure (as direct systems do), the rolling circumference is calculated 
+from the wheel speed signals. When a tire loses pressure, the circumference decreases 
+which corresponds to an increase in wheel speed. The wheel speeds are compared with 
+one anotherforthe purpose of determining rotational irregularities. 
+
+A difference in wheel speed is recognized as a pressure loss. The FTM system can 
+inform the driver after a short drive if there is a possible under-inflated tire. Depending 
+upon the vehicle, the driver is warned via an indicator light in the cluster or by a check 
+control message. A gong will sometimes accompany the warning light as an additional 
+method of alerting the driver. 
+
+When pressure loss from the tire is gradual, the driver may not perceive a problem until 
+the vehicle handling is compromised. The condition is made difficult to visually detect 
+when "Run Flat” tires are used. This is due to the additional sidewall stiffness which can 
+"mask" an under-inflation situation. The FTM system can alert the driver in advance of 
+any pressure loss in the tires. 
+
+The FTM system will detect a drop in pressure below about 30 % ± 10 % of the initial 
+value. The FTM indicator and warning light indicates a drop in tire pressure. The FTM 
+system will indicate this after just a short distance. Usually, after a few minutes, from a 
+certain minimum speed (e.g. 25 km/h) up to the permissible top speed. 
+
+
+w 
+
+so 
+
+C 
+
+0> 
+
+'(/> 
+
+
+
+-a 
+
+a> 
+
+a> 
+
+Q. 
+
+(/) 
+
+Q) 
+
+n 
+
+so 
+
+0) 
+
+tf) 
+
+
+
+o 
+
+To 
+
++■* 
+
+o 
+
++■* 
+
+o 
+
+> 
+
+'-p 
+
+so 
+
+
+
+▲ 
+
+
+20 — 
+15 — 
+
+10 — 
+4 — 
+
+
+TIRE PRESSURE FAILURE WARNING RANGE 
+
+■ 
+
+
+
+
+
+9 62 81 100 118 155 
+
+
+► 
+
+
+Miles per Hour 
+
+
+19 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+During the reset process, the set tire pressure is taken as the initial value forthe current 
+set of tires. If all 4 tires lose pressure at the same rate, the wheel speeds will also change 
+at the same rate. The RPA is unable to detecta uniform drop in pressure in all tires (e.g. 
+due to diffusion = natural loss of airfrom all 4 tires) 
+
+
+
+As per BMW guidelines, the tire pressure should be checked regularly. The owner's 
+manual states at least twice a month and prior to any long trips. Tire pressure information 
+can be found on the tire pressure placard on the b-pillar. There are also tire pressure 
+charts in the owner's manual as well. 
+
+Note: The overall responsibility forthe maintenance of correcttire pressure 
+resides with the driver at all times. 
+
+SpareTire 
+
+When using the "space saver” type spare tire, be aware that the FTM system will not 
+operate properly due to the reduced overall diameter of the spare tire. Have the tire 
+repaired as soon as possible to ensure a high level of driving safety. 
+
+
+20 
+
+Tire Pressure Monitoring Systems 
+
+
+
+System Functions 
+
+The Run Flat Indicator (RPA) comprises the following functions: 
+
+• Self-test 
+
+• Reset (Initialization) 
+
+• Detects drop in tire pressure 
+
+• Visual and acoustic warning 
+
+Self Test 
+
+The RPA performs a self-test when terminal 15 is switched ON. A fault in the RPA is indi¬ 
+cated by the RPA indicator and warning light and by a symbol in the LC display. 
+
+System Reset 
+
+Reset is started manually (e.g. by pressing the RPA button). Then (afterthe journey has 
+started), Initialization will run as a fully automatic calibration sequence. In other words, the 
+circumference of individual tires are recorded and evaluated. 
+
+To allow a drop in tire pressure to be detected, the system considers different speed 
+ranges and driving situations. Taking account of the driving situation means that the 
+system has to be primed for each speed range individually. 
+
+From 09/2004, these speed ranges and driving situations have been combined into 3 
+calibration ranges. This means greater clarity for output via the BMW diagnostic 
+equipment. 
+
+The reset (initialization) phase lasts approximately 5 to 15 minutes forthe individual 
+speed ranges. The end of the reset phase is not indicated. 
+
+Detects Drop in Tire Pressure 
+
+The RPA records the wheel speeds using the wheel-speed sensors from the DSC.The 
+RPA compares the speeds of the individual wheels and computes an average speed. In 
+this way the RPA is able to detecta loss of tire pressure. (In the event of a tire losing pres¬ 
+sure, the tire rolling circumference of the affected tire is also reduced.) 
+
+Visual and Acoustic Warning 
+
+A drop in pressure in one tire of approximately. 30 % ± 10 % from the initial value is indi¬ 
+cated by the RPA indicator and warning light. In addition, an acoustic signal sounds. 
+
+Signal Output 
+
+Depending on the model concerned, either via the instrument cluster, M-ASK orCCC. 
+
+Note: In the event of a DSC malfunction, the FTM system will also register a 
+malfunction. This is due to the fact that the wheel speed sensors are 
+monitored by both the DSC and FTM systems. 
+
+
+21 
+
+Tire Pressure Monitoring Systems 
+
+
+
+Special Conditions for System Function 
+
+The following operating conditions may cause a delay in the warning being given in the 
+event of a drop in tire pressure: 
+
+• Heavy braking 
+
+• Rapid acceleration 
+
+• High rate of lateral acceleration 
+
+• Cornering (in a tight corner) 
+
+• Vehicle speed dropping below a minimum speed (the RPA only responds when a 
+certain minimum speed has been reached) 
+
+• Large difference in slip (between axles or between wheel on one side of vehicle) 
+
+• Initialization not being completed in current speed range (see "Controls") 
+
+• Winter conditions 
+
+The following operating conditions may cause a delay in the warning being given in the 
+event of a drop in tire pressure: 
+
+• Driving with snow chains fitted 
+
+Driving with snow chains may impairthe correct function of the RPA. The system will 
+work as normal again afterthe snow chains have been removed and the vehicle is driven 
+fora few minutes. (The reset process will not need to be repeated) 
+
+Note: Do not perform reset (initialization) when snow chains are fitted. The 
+reset process will be affected by the irregularities caused by the snow 
+chains. 
+
+Old or Worn Tires 
+
+Only install tires with the same tread depth. Avoid fitting tires with greatly different tread 
+depth (from approximately. 2 millimeters) on one axle. The different diameters mean that 
+the correct operation of the FTM system is no longer guaranteed. 
+
+In the following cases, the system will not emit a warning despite a drop in tire pressure 
+being detected: 
+
+• The same amount of pressure is lost in 2 or more tires. 
+
+• Drops in tire pressures caused by diffusion and affecting all 4 tires equally 
+
+• If a tire is damaged with a sudden loss of all pressure (tire blowout, warning is given 
+too late) 
+
+
+22 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+System Reset 
+
+
+The FTM system is reset using the following control elements depending upon vehicle 
+and optional equipment: 
+
+• FTM button (all early vehicles w/o CCC orE9X) 
+
+• On-board computer button on turn-signal/main-beam switch (E90/91/E92 w/o CCC) 
+
+• With iDrive in the Central Information Display (CID) with the controller (all with 
+CCC/NAV) 
+
+Note: It is important to always perform a system reset immediately after 
+
+correcting the tire pressure, especially if a tire is changed orthe wheels 
+are interchanged. Only checktire pressures when the tires are cold. 
+
+Set the tires to the correct pressure before performing Initialization. During Initialization, 
+the set tire pressure is taken as the initial value for the current set of wheels. 
+
+Correct the tire pressures when the tires are cold to prevent the data recorded from being 
+affected by temperature. 
+
+Note: The maintenance of tire pressure is the responsibility of the driver. 
+
+Checktire pressures regularly, at least twice a month and before embarking on lengthy 
+journeys. During reset, the set tire pressure is taken as the initial value for the current set 
+of tires. 
+
+The FTM should be reset during the following scenarios: 
+
+• If tire pressure is changed (tire pressure is corrected or reset) 
+
+• If the position of the tires is changed (change of axles, wheels), even if the tire pres¬ 
+sure is not changed 
+
+• If a tire is changed orthe wheels are interchanged (e.g. old tires for new tires, 
+summertires for winter tires, etc.) 
+
+
+23 
+
+Tire Pressure Monitoring Systems 
+
+
+
+Reset Procedure 
+
+The reset procedure is performed with KL15 ON. The engine can be OFF orON, butdo 
+not drive off. Depending on the vehicle, the FTM is reset as follows: 
+
+Vehicles with RPA Button 
+
+Press and hold the RPA button until the RPA indicator and warning light lights up yellow 
+fora few seconds. Then drive the vehicle through various speed ranges for at least 15 
+minutes. 
+
+Vehicles with BC Button (on-board computerfunction) 
+
+In the on-board computerfunction select "RPA" and "INIT" (LC display) with the rocker 
+switch on the turn-signal/main-beam switch. Press the BC button to confirm. 
+
+Press and hold the BC button for approximately. 5 seconds, until a box with a tick appears 
+behind the "INIT" display.Then drive the vehicle through various speed ranges forat least 
+15 minutes. 
+
+Vehicles with Central Information Display 
+
+Initialization is performed via the Central Information Display (CID) and controller. 
+
+• Select "RPA/FTM" in the "Settings" menu and confirm. 
+
+• Select "Set" and confirm. 
+
+• Then drive the vehicle through various speed ranges forat least 15 minutes. The 
+end of the Initialization phase is not indicated. 
+
+Preconditions for Activation 
+
+The flat tire indicatoris automatically activated when terminal 15 is switched ON.The 
+FTM cannot be switched off manually. 
+
+FlatTire Indication 
+
+A flat tire is indicated as follows: 
+
+• E53, E83, E85 - Yellow FTM indicator and warning light without acoustic signal 
+
+• E60, E61, E63, E64, E65, E66, E90, E91 - Yellow FTM indicator and warning light 
+with acoustic signal 
+
+An FTM system failure is indicated by a yellow FTM indicator and warning light without 
+an acoustic signal. 
+
+
+24 
+
+Tire Pressure Monitoring Systems 
+
+
+
+TPM Systems (up to 2003 production) 
+
+
+TPM systems are "direct"systems which monitor actual tire pressure. The first BMW to 
+use the "direct" system was the early production E65/E66. The system was then 
+referred to as Tire Pressure Control or RDC. The E46 also received an optional version 
+of the RDC type system which was available up to 8/03 production. 
+
+The system is capable of monitoring actual tire pressure when the vehicle is stationary or 
+when being driven. There are transmitters which are part of the valve stem assembly. 
+These transmitters send signals to the RDC control unit via antennae mounted in the 
+wheel well area. 
+
+When the system detects pressure loss, the driver is warned via a Check Control 
+message and an acoustic warning (gong). 
+
+
+
+Note: TheTPM system on these pages were installed on the E65/E66 
+and E46 vehicles as options until 2003 production. The newer 
+(NHTSA mandated)TPM systems from 3/2006 are covered on 
+pages 32 through 47. 
+
+
+25 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TPM System Components 
+
+
+Components of the TPM system differfrom the FTM systems. These components 
+include: 
+
+• RDC Control Unit 
+
+• Receiving Antennae 
+
+• Wheel Transmitter Module 
+
+• Warning Indicator Lamp 
+
+• Control Display (E6X vehicles) 
+
+
+RDC Control Unit 
+
+The RDC control unit is located behind the 
+glove box on both the E65/E66 and the 
+E46. The control unit is connected to the 
+K-CAN bus on the E65/E66 and the K-Bus 
+on the E46. 
+
+The RDC control unit receives input signals 
+from the 4 antennae and monitors the 
+signals for individual pressure and tempera¬ 
+ture information. 
+
+If the inflation pressure of one of the tires 
+(including the spare) falls below the prede¬ 
+termined threshold, the RDC generates a 
+CC warning telegram on the K-CAN (or K- 
+bus on E46). 
+
+
+Operating Frequency 
+
+
+
+The RDC module is designed to operate 
+on a specific operating frequency. It must 
+be matched to the the frequency of the 4 
+antennae. The systems will operate on two 
+possible frequencies - 315 M Hz and 433 
+Mhz. 
+
+The label on the RDC module contains 
+information about the operating frequency. 
+All components including the RDC module, 
+antennae (4) and the 4 wheel transmitter 
+modules must have the same frequency 
+rating in order for the system to operate 
+properly. 
+
+
+
+RDC Module Location on E46 
+
+
+26 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Receiving Antennae 
+
+The system uses 4 antennae located in each 
+of the 4 wheel well areas behind the splash 
+trim. The purpose of the fourantennae is to 
+receive the signals from the wheel mounted 
+transmitters and transferthis information to 
+the RDC control unit. 
+
+There are two possible types of antennae 
+used. The 433 M hz antenna which is black 
+(dark gray) in color and the 315 M hz antenna 
+which is light gray in color. 
+
+
+
+Antenna location in wheel well 
+
+
+433 Mhz Antenna 
+
+
+
+315 Mhz Antenna 
+
+
+
+27 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+Wheel T ransmitter Modules 
+
+The wheel transmitter modules are located inside the 
+tire and attached to the valve stem. The modules 
+contain sensors which monitor pressure as well as 
+temperature. There is also a 3.6 volt, long-life lithium 
+battery which is used to power up the sensor 
+electronics as the internal transmitter circuitry. 
+
+The transmitter modules are active in an energy 
+saving mode even when they are sitting as spare 
+parts on the shelf. 
+
+
+
+Each transmitter module has it's own unique ID code. 
+The ID code is assigned to a position on the vehicle 
+(LR,RR etc.) after a successful initialization has been 
+completed. 
+
+The radio signal transmitted by the wheel modules is 
+received when the tire passes close to the antenna. 
+The transmitter module measures internal tire air 
+pressure every minute. If the air pressure increases 
+by 0.5 bar between measurements, the transmission 
+rate increases to every 0.8 seconds. 
+
+
+
+If the increase in air pressure is detected for approximately 216 seconds, the complete 
+functionality of the transmitter is activated. If the higher pressure continues, the module 
+remains permanently active and measures the air pressure and temperature every 0.3 
+seconds and transmits the information by radio signal every 55 seconds. 
+
+
+At temperatures over 120 degrees Celsius, the transmitter modules are switched off. 
+Once the transmitter module cools below 100 degrees Celsius, operation resumes. 
+
+
+The wheel electronics modules must match the frequency of the antenna and RDC 
+module. If any of these system components are mis-matched,the system will not 
+function correctly. 
+
+
+Note: The valve stem of the spare tire should be pointed to the right rear wheel 
+well. The spare tire is monitored by the RDC module, but not displayed 
+on the screen of the control display. Also, special care should be taking 
+when mounting and dismounting tires from the rims. Damage to the 
+wheel electronics could occur. 
+
+
+28 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+TPM System Operation 
+
+During monitoring, the RDC control module takes the measured temperature and 
+pressure readings to determine a target pressure value. 
+
+If the tire being monitored falls below the required level by 0.2 barfor more than 8 
+minutes, a Check Control Message appears in the instrument cluster after the car is 
+started. The driver is prompted to check tire pressure. 
+
+Autumn Warning 
+
+If the tire temperature is 20 degrees Celsius lowerfor 14 days than the previously 
+measured temperature during the last initialization, the RDC system will also prompt the 
+driverto check tire pressures. 
+
+
+Check Control Message displayed in the Cluster 
+
+Message displayed in Control Display 
+
+Check tire pressures! 
+
+E9 
+
+“Check tire pressure!" Check tire inflation pres¬ 
+sure; referto owner's manual or inflation chart. 
+
+
+When the RDC menu on the control display is activated, the car is shown with the tires 
+highlighted in yellow. The tire pressures must be adjusted and an initialization carried out. 
+
+Tire Failure Warning 
+
+After the temperature calculation, if the monitored tire falls below the specified pressure 
+of 0.4 bar, a CC message will appear on the instrument cluster with an audible warning 
+tone. These warnings will also be set if the monitored tire pressure falls by more than 
+16%. A corresponding CC message will also be shown on the Control Display. 
+
+
+Check Control Message displayed in the Cluster 
+
+Message displayed in Control Display 
+
+Flat tire! Stop vehicle carefully. 
+
+Left front tire is flat, referto owner's manual or 
+contact BMW roadside assistance. 
+
+
+When the RDC menu on the control display is activated, the car is shown with the defec¬ 
+tive tire in red. In the case of a spare tire failure, all of the tires are shown in red. 
+
+Once the tire pressures are restored to the setpoint in the RDC control unit, the tires will 
+return to green in the control display. The CC message is also withdrawn. 
+
+
+29 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+System Reset 
+
+After the tires are replaced, rotated or if their inflation pressures are adjusted, then the 
+wheel transmitter modules must be initialized (reset) using the RDC function in the 
+"Settings" menu ofthe Control Display. 
+
+During initialization the following processes are performed: 
+
+• Individual wheel recognition (Identification of wheel transmitter modules). 
+
+• Wheel position assignment. 
+
+• Plausibility check (setpoint pressures checked). 
+
+• Adoption of setpoint pressures as specified pressures. 
+
+The RDC (TPM) system then learns the wheel transmitter module position. 
+
+The minimum air pressure accepted by the TPM system on during reset is 1.7 bar 
+(or24.7psi). If the tire pressures deviate more than 0.4 bar (6psi) per axle the reset 
+process is rejected after a plausibility check. 
+
+1.3 bar is the lowest pressure detected by the wheel transmitter module. At that point, a 
+tire failure warning will always be issued. 
+
+Complete reset procedure can take up to 30 minutes. Only the actual driving time over 
+6 km/h is taken into account. During initialization, the CC message "Initializing RDC!" is 
+displayed on the Instrument Cluster. 
+
+When the initialization from the Control Display is activated, the wheels appear black and 
+the pressures are not shown. Once initialization is complete, the tires ofthe car on the 
+graphic turn green and pressure values are shown for each tire. 
+
+
+
+30 
+
+Tire Pressure Monitoring Systems 
+
+
+
+TPM Systems (from 9/05) 
+
+
+As perthe TREAD act guidelines, future tire pressure monitoring systems on BMW 
+vehicles will be of the "direct" type. However, there will be some design changes from 
+the first generation "direct" systems. This new system can also be referred to as the 
+"trigger” type system. This is due to the use of trigger transmitter modules which will be 
+explained in more detail later in this section. 
+
+The first models to receive the new systems will be the 5, 6 and 7 series from M arch of 
+2006. TheX3 will also have the new TPM system from March. The 3 series 
+(E90,91,92) as well as the M 5 and M 6 will be equipped with the direct system as well. 
+The Z4 will balance out the module line in October. To be in compliance with the new 
+NHTSA regulations, all new models produced from September of 2007 will use the new 
+system. 
+
+
+
+The main function of the system is to monitorthe tire pressure during vehicle operation. 
+The most important auxiliary function of the system is the option of independently 
+detecting the wheels (vehicle's wheels) mounted on the vehicle and their position. 
+
+The control unit obtains the radio telegrams from the electronic wheel electronic mod¬ 
+ules which are controlled via the trigger transmitters. The system recognizes the vehi¬ 
+cle's own wheels and the mounting position of the wheels by evaluating the trigger loca¬ 
+tion as well as statistical evaluation of the received information. The control unit checks 
+the individual system components. 
+
+The spare wheel is not monitored as the electronic wheel module does not transmit 
+telegrams when stationary (exceptforthe specified post-run phase). 
+
+
+31 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+TPM System Overview 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wheel Electronics 
+
+2 
+
+TriggerTransmitter 
+
+3 
+
+TPM Control Module 
+
+4 
+
+Instrument C luster Display 
+
+5 
+
+Reset (initialization) Button 
+(or via controller with CCC) 
+
+6 
+
+Central Receiving Antenna 
+
+
+32 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TPM System Components 
+
+Components ofthe newTPM system differ somewhat from the early TPM system. The 
+TPM components include: 
+
+• TPM (RDC) Control Unit 
+
+• Central (Digital) Receiving Antenna (1) 
+
+• TriggerTransmitterModules (4) 
+
+• Wheel Electronics Modules (4 +1 for spare - optional) 
+
+• Control Display (E6X vehicles) 
+
+• Instrument Cluster 
+
+
+
+TPM ► 
+
+
+
+
+
+
+\ 
+
+
+Status: TPM active 
+
+
+87.5 FM 
+
+
+TP 
+
+
+33 
+
+Tire Pressure Monitoring Systems 
+
+
+<*->\ 
+
+
+
+
+TPM (RDC) Control Unit 
+
+The TPM control unit processes the information received from the central receiving 
+antenna and compares to the previously learned tire pressure data. When the tire 
+pressure deviates from the specified values, the TPM control unit sends a fault telegram 
+which is indicated in the cluster with a corresponding message in check control. 
+
+The location of the control unit varies depending upon the vehicle application. Refer to 
+the most current ETM for exact location. 
+
+
+
+Note: The new RDC (TPM) module is notcompatible with earlierTPM systems 
+made priorto March 2006. 
+
+
+34 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+Central Receiving Antenna 
+
+The central receiving antenna is a digital antenna which operates on the 433 MHz 
+frequency. The antenna is responsible for receiving the tire pressure information from the 
+wheel electronics modules. This information is then sent to the TPM control module via 
+the LIN interface. 
+
+Antenna location is model dependent. The antenna is waterproof which allows external 
+mounting, usually nearthe center of the vehicle. The LIN bus arrangement ensures that 
+there is no RF wiring inside the vehicle. This eliminates any potential interference from 
+any other systems such as CAS/EWS communication. 
+
+The antenna contains a receiving antenna, RF receiver, a LIN bus interface and a 
+microprocessorfordemodulating and decoding. 
+
+
+
+35 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+T rigger Transmitter M odules 
+
+The trigger transmitter modules are located behind the inner wheel well trim. There is 
+one transmitter at each wheel. The trigger is responsible for sending command signals to 
+the wheel electronics modules. 
+
+The trigger transmitter communicates with the wheel electronics in the 125 KHz range. 
+
+In orderto communicate with the TPM (RDC) module, the trigger transmitters are 
+connected to the LIN bus. 
+
+The trigger transmitter is supplied with B + and ground. The third connection isforthe 
+LIN bus. 
+
+
+
+36 
+
+Tire Pressure Monitoring Systems 
+
+
+Wheel T ransmitter Module 
+
+The wheel transmitter modules are mounted in the tire and wheel assemblies. The 
+module is fitted to the tire valve assembly as on past models. The module is capable of 
+measuring the tire pressure and the temperature. Acceleration is also measured as a 
+means of determining wheel movement for various operating modes. 
+
+The wheel transmitter module transmits information to the central antenna in the 433 
+M Hz range. However, the module receives information and commands from the trigger 
+modules in the 125 KHz range. Therefore, the wheel transmitter module contains the 
+necessary electronics for these two frequency ranges. 
+
+
+
+Electronic assignment of the wheel electronic modules is not carried out until movement 
+is detected. This is to avoid any signals from vehicles in close proximity. Especially 
+vehicles which are equipped with similarTPM systems. 
+
+Data is transmitted to the central receiving antenna via a transmit stage in the wheel 
+transmitter module. The module at each wheel has an individual identifier (ID) which is 
+also transmitted every time data is transmitted. The RF transmission takes place in the 
+433 M Hz range. 
+
+Each electronic wheel module transmits at regular intervals (approximately 30 seconds). 
+Also, when there is a trigger request, the measured values are sent. In addition, the tire 
+temperature is measured at regular intervals. 
+
+When the tire pressure loss exceeds 0.2 bar, the wheel transmitter module will go into a 
+"rapid-transmit mode" immediately. In this case, the wheel transmitter module measures 
+and sends the information from the tire at shorter intervals. 
+
+The measured data are sent from the wheel via a transmit stage in the electronic wheel 
+module. A system with relatively few measured data transmission operations is sufficient 
+fortire pressure monitoring if it additionally features an option for detecting fast pressure 
+loss. The electronic module in the wheel can therefore be designed for minimum current 
+consumption and can be battery operated. 
+
+
+37 
+
+Tire Pressure Monitoring Systems 
+
+
+
+Control Display 
+
+On vehicle equipped with a control display, the tire status is indicated in the TPM menu. 
+The tire pressure status is indicated by the color of the tires in the graphic. The colors 
+are as follows: 
+
+• Green - Tire pressure is OK and matches the learned tire pressure. 
+
+• Yellow - There is a flat tire ora major drop in tire pressure has been detected. 
+
+• All wheels yellow - There is a flat tire ormajortire pressure loss in several tires. 
+
+• Gray - The system cannot detect a flat tire due to a system malfunction or the 
+
+system is currently in reset mode. Also, any RF interference from other 
+devices can cause this situation. 
+
+The system reset is also performed using the controller. 
+
+
+< TPM ► 
+
+>s 
+
+li 
+
+n Rp^PtTPM? 
+
+
+
+Yes ! 
+
+
+
+| No 
+
+jB ^B 
+
+
+
+MJ 
+
+
+Status: TPM active 
+
+
+
+87.5 FM TP 
+
+■ 
+
+■ 
+
+
+
+38 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+Instrument C luster 
+
+The TPM indicator is located in the instrument cluster. The indicator is 
+yellow and alerts the driverto the CC message in the control display. 
+Also, any system malfunction is indicated by a flashing yellow indicator 
+followed by a continuous illumination. 
+
+When this occurs, the tires in the control display will be shown in gray. 
+
+
+
+
+sV 
+
+
+lildKhtLrm ajl 
+
+55 RTi<5hI ims i rhlt-« Inii -H"! 
+
+-Jk VGrtoriHuHta 
+__ 
+
+r>‘ Ejr: 3 i;ellungpfAj _ it£'.« 3 t 
+
+
+TV>-\ rbhruuj] 
+
+ir« Wn j kj 
+
+
+[■I s - Kcniir 
+
+
+iDHES^-nltbStnlll 
+
+
+A Mi r i;hv ViiiiT-- |#wilrr 
+
+
+s®) -i- 
+
+
+s- Clii.-ck Lijnirol ► 
+
+jl Riiirin|jiiiiial^ ■ r.Hliij .11,1.1m, 
+
+
+
+
+
+i,J d rp iMf 91 H 
+
+
+i vsi: 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+TPM warning indicator (yellow) 
+
+3 
+
+CC Message 
+
+2 
+
+Vehicle setting menu 
+
+
+
+
+39 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Operation 
+
+
+The primary responsibility of the new TPM system is to monitortire pressure and warn 
+the driver of impending flat tire situations. This new TPM system is referred to as the 
+"trigger type" system due to the trigger transmitters installed at all four wheel well areas. 
+
+This system differs from the past "direct" systems in a few areas. There is only one 
+centrally located digital receiving antenna. This antenna receives input from all 4 of the 
+wheel electronics modules (5 if the vehicle has a full size spare) located in each tire and 
+wheel assembly. The central digital receiving antenna is connected to the TPM control 
+unit via the LIN bus. 
+
+
+The wheel electronics modules will transmit information when prompted by signals from 
+the triggertransmitters. The triggertransmitters communicate to the wheel electronics 
+overthe 125 KHz frequency. 
+
+In contrast to the past wheel electronics module, the new design has the capability of 
+bi-directional communication. In other words, the wheel electronics not only transmit 
+information but receive information and commands from the triggertransmitter modules. 
+
+
+TPM Control 
+Module 
+
+
+UN-Gu-s 
+
+
+
+LlN-Ekifi 
+
+
+I 
+
+
+
+125 kHz 
+
+TrtgcjB - Tran^Ertiifter 
+sends command k> 
+Whee Electronics 
+MccMe co 
+
+Inkmiattcin. 
+
+
+■ 
+
+
+
+Digital 
+
+Antenna 
+
+
+Wheel 
+
+Electronics 
+
+Module 
+
+
+WlsttH EluuLrunks 
+MotfUlprcaponcis by 
+yfr uJintj t&l&aram li' 
+D\$M Antenna which 
+inductee tne til-iCiro'ir 
+ID. pressure temp 
+inform aUm; 
+
+
+Note: The wheel electronics from the previous system will not work on the 
+new system. 
+
+
+40 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wheel Management 
+
+One of the important functions of the TPM system is the ability to manage wheel 
+locations and properly report the correct wheel location. When the vehicle is NOT in 
+motion, the system has the capability to determine where the wheel electronics are 
+located on the vehicle. Each one of the wheel electronics module has it's own unique 
+electronic ID number which is sent to the central receiving antenna. 
+
+When an electronic wheel module receives at least 2 telegrams in response to a trigger 
+signal, this electronic wheel module is marked as the system wheel. 
+
+The wheel position assignment of an wheel electronics module is also based on the 
+response to the trigger signal. Once the assignment has been determined, the positions 
+are stored in an non-volatile memory (NVRAM). 
+
+Based on the information of the acceleration sensor in the electronic wheel module, a 
+distinction is made between the spare wheel and the remaining road wheels in the road 
+wheel detection module forthe purpose of assisting wheel position assignment. 
+
+In orderto avoid any signal conflictfrom adjacent vehicles (with similarTPM systems), the 
+"learning" procedure is performed only while the vehicle is driving. 
+
+The wheel management function uses a "confirmation phase” to establish whetherthe 
+previous wheel assignment order is still correct or whether any new wheels have been 
+installed or rotated for service. The confirmation phase is necessary so that the system 
+can automatically detect changes in the mounted wheel order. 
+
+The check takes place during vehicle operation (while driving), in orderto rule out any 
+potential signal interference from adjacent vehicles. 
+
+
+41 
+
+Tire Pressure Monitoring Systems 
+
+
+
+Control Display Screens 
+
+OneTire with Reduced Pressure 
+
+The yellow indicator lamp in the instrument cluster is switched on permanently and an 
+audible indication (gong) is additionally sounded as soon as a tire undershoots one of 
+the previously specified warning limits. If the vehicle is equipped with the corresponding 
+option, the test "Low Tire" is additionally shown together with the position in the cluster. 
+If the vehicle is equipped with an control display (M M |), the affected tire is indicated in 
+yellow. The unaffected wheels retain their green color. 
+
+The "LowTire" status means thatdriving safety is no longer ensured.The driver is 
+requested to stop and check the condition of the tire. It is the responsibility of the driver 
+to decide whether he can continue the journey at low speed to the next repair workshop 
+or whether an on-site repair is necessary. 
+
+
+^ TPM ► 
+
+
+
+42 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+Several tires with Reduced Pressure 
+
+The yellow indicator lamp in the cluster is immediately switched on permanently and an 
+audible indication (gong) additionally sounds as soon as several tires undershoot the 
+previously specified warning limits. If the vehicle is equipped with the corresponding 
+option the text "LowTire" is additionally indicated without the position in the instrument 
+cluster. All wheels are now shown in yellow in the M MI. 
+
+If a warning is already in effect, on the occurrence of the second warning event, a posi¬ 
+tion-specific warning is replaced by the nonspecific warning. Each tire failure event is 
+signalled audibly. 
+
+
+
+TPM ► 
+
+
+Reset 
+
+
+
+Status: Tire low! 
+
+87,5 FM 
+
+
+TP 
+
+
+
+i 
+
+
+
+43 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+Workshop Hints 
+
+System Reset (Initialization) 
+
+The TPM system should be reset whenever any changes are made to the tire and wheel 
+assemblies. For example, if a tire is replaced or if the tires are rotated for service. Also, 
+the system should be reset whenever any repairs are made to the TPM system. 
+
+The driver of the vehicle is solely responsible for maintaining the correct tire pressure 
+when in use. As per BMW recommendations, the tire pressure should be checked 2 
+times per month. 
+
+Before system reset (initialization), the technician (or driver) should set the tire pressure 
+to the specified pressure (as dictated by the tire pressure placard in the b-pillar). These 
+pressures are a cold specification and should be set as such. 
+
+Depending on the vehicle, the system reset can be carried out via a button or via the 
+controller (on vehicles with a control display i.e 5, 6 and 7 series). 
+
+
+
+Once the reset mode is initiated, the vehicle must be driven in order to complete the 
+process. This is to ensure that there is no RF interference or erroneous signals from 
+other vehicles which use similarTPM system components. 
+
+During this period, the control display will show the message "Status: Resetting TPM". 
+The tires on the control display will be gray in color until the process in complete. This 
+should take only a few minutes. 
+
+When the reset is complete, the yellow TPM indicator will go out. The tire pressure and 
+temperature values are stored in conjunction with the ID of the wheel electronics. 
+Therefore, the wheel position is stored in the TPM control unit. 
+
+
+44 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+In orderforthe reset procedure to be completed, the tires must be at the minimum 
+allowable pressure which is approximately 1.4 bar (20 psi) to 1.6 bar (23 psi). If the tire 
+pressure is too low, the system will not complete the reset procedure. When complete, 
+the control display will switch to "Status"TPM active" and the tires will switch to green. 
+
+
+< V® TPM ► t 
+
+1 Reset 
+
+
+■■■■■ 
+
+
+
+-_ m 
+
+
+( H 
+
+ll 1 
+
+
+V V 
+
+
+Status: TPM active 
+
+
+87.5 FM 
+
+TP 
+
+■ 
+
+■ 
+
+
+Note: New target pressures are adopted solely byway of Initialization. If a 
+wheel is exchanged and the system is not re-initialized, the newly 
+mounted wheels will be "taught-in" and monitored to the previous 
+target pressures. 
+
+
+45 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+Run FlatTireTechnology 
+
+
+Run FlatTire (RFT) technology has been in development by the tire industry for many 
+years. An RFT tire allows the driverto continue safely in the event of a tire puncture or 
+complete loss ortire pressure. The sidewalls on an RFT tire a specially reinforced to 
+support the vehicle with zero air pressure. 
+
+The RFT tire design maximizes safety and allows the driverto maintain vehicle control in 
+the event of sudden or slow air pressure loss. This also eliminates the need forthe dri¬ 
+verto changes tires in unsafe situations. Therefore, the spare tire and jacking equipment 
+can be deleted from some vehicle. 
+
+The first U.S. model BMW to be equipped with RFT technology was the E52 (Z8). 
+
+The Z4, which has standard RFT, takes advantage of the reduced space requirement. 
+Many current model BMW vehicles have standard RFT orthey are available as an option. 
+
+RFT Operation 
+
+If a slow or sudden pressure loss occurs in a RFT, mobility is maintained due to the 
+additional high temperature rubber reinforcements that strengthen the side wall. 
+
+These reinforcements prevent side wall damage when the tire is deflated and also pro¬ 
+vide support during extreme loads. In addition, the special wheel forthe RFT tires 
+"grips" the tire to maintain sufficient steering, braking and accelerating power. 
+
+RFT Design 
+
+In the illustration to the right shows a comparison 
+between a standard tire and one equipped with RFT self 
+supporting technology. 
+
+Both tires have zero pressure. The non-RFT design (1) 
+shows that the sidewalls will be completely collapsed 
+providing no support. 
+
+The RFT design (2), shows that the side walls will main¬ 
+tain limited support for the vehicle to allow the driverto 
+get to a safe area fora tire replacement or repair. 
+
+Tire Manufacturer Information 
+
+All "Runflat" tires, regardless of brand must carry a specif¬ 
+ic designation to indicate that the tire is a "Runflat" system 
+component. Therefore, the tires will have an "RSC" icon 
+on the sidewall. 
+
+The chart on the opposing page is a breakdown of the 
+various internal designations from the individual tire 
+manufacturers: 
+
+
+
+46 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+Tire Manufacturer 
+
+Abbreviation/Acronym 
+
+Definition 
+
+Bridgestone 
+
+RFT 
+
+Run Flat Tire 
+
+Continental 
+
+SSR 
+
+Self Supporting Runflat 
+
+Dunlop 
+
+DSST 
+
+Dunlop Self Supporting Technology 
+
+Goodyear 
+
+EMT 
+
+Extended MobilityTechnology 
+
+M ichelin 
+
+ZP 
+
+Zero Pressure 
+
+Pirelli 
+
+PTM 
+
+Pirelli Total Mobility 
+
+
+Note: Due to the characteristics of the self-supporting tire design, a tire which 
+is underinflated may not appear to be low on air pressure. Therefore, 
+always verify actual air pressure with a tire gauge. Do not assume that 
+the tire is properly inflated. Check the tire inflation placard in the driver's 
+side doorjamb area for correct inflation pressures. 
+
+
+Wheel Construction 
+
+The wheel design must compatible with the RFT 
+system. A self-supporting tire must be capable of 
+gripping the rim to keep the tire beads intact. The 
+wheels used must be of the "double-hump” design. 
+
+The "double-hump” design features 2 raised areas 
+on the rim to help retain the tire bead. 
+
+These are referred to as EH2 wheels as opposed to 
+the previous "H2” wheels. Standard H2 wheels will 
+accept RFT designed tires but may not retain the tire 
+properly in the event of a failure. This would render 
+the safety features ofthe RFT system useless. 
+
+Note: When the Runflattire is at zero pressure. 
+The vehicle can be driven up to 100 
+miles at a maximum speed of 50 miles 
+per hour. Always referto the vehicle 
+Owner's Manual for specific guidelines. 
+
+
+
+"double-hump" 
+
+
+"EH2" Wheel 
+
+
+47 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. What is the difference between "direct" and "indirect" tire pressure monitoring 
+systems? 
+
+
+2. In accordance with BMW guidelines, how often should the tires' pressure be 
+checked? 
+
+
+3. Where can the correct tire pressure specifications be found? 
+
+
+4. How should the tire pressure be checked? Hot or Cold (Why?) 
+
+
+5. On the earlyTPM (RDC) system, is it important for the RDC control module, 
+wheel electronics and antennae to be the same frequency? (Why?) 
+
+
+48 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+6. What is the difference between the wheel electronics modules from the early 
+TPM system (up to 2003) and the new TPM system (from 3/06)? Are the 
+wheel electronics interchangeable between the two systems? (Why?) 
+
+
+7. What is meant by an "EH2" rim? 
+
+
+8. When is necessary to reset a TPM or FTM system? 
+
+
+9. On the new TPM system (from 3/06), how is the spare tire detected and 
+distinguished from the installed wheels? 
+
+
+10. On the new TPM system (from 3/06), what is indicated in the CIDwhen the 
+wheels are displayed in gray? 
+
+
+49 
+
+Tire Pressure Monitoring Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3923 @@
+Table of Contents 
+
+
+Subject Page 
+
+
+Ignition Management .35 
+
+Principle of Operation.38 
+
+Emissions Management .41 
+
+Evaporative Emissions.41 
+
+Exhaust Emissions.45 
+
+Bosch LSU Oxygen Sensor.46 
+
+Secondary Air Injection.50 
+
+Principle of Operation.53 
+
+Performance Controls .62 
+
+Bi-VANOS.62 
+
+Oil Condition.66 
+
+Electric Cooling Fan.67 
+
+Alternator.68 
+
+Electronic Box Cooling Fan.70 
+
+Comfort Start.70 
+
+Cruise Control.73 
+
+Review Questions .76 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition Management 
+
+
+Ignition Coils: The high voltage supply required to ignite the mixture in the combustion 
+chambers is determined by the stored energy in the ignition coils. The stored energy con¬ 
+tributes to the ignition duration, ignition current and rate of high voltage increase. The Coil 
+circuit including primary and secondary components consists of: 
+
+
+1. Coil Assembly 
+
+2. Insulator Boot 
+
+3. Spark Plug 
+
+4. ECM Final Stage Transistor 
+
+5. Secondary Coil Ground 
+
+
+
+
+Ignition Coil 
+
+
+42 - 04-00 
+
+
+The Coil Assembly contains two copper windings insulated from each other. One winding 
+is the primary winding, formed by a few turns of thick wire. The secondary winding is 
+formed by a great many turns of thin wire. 
+
+
+The primary winding receives battery voltage from the Ignition Coil Relay (in the IVM) which 
+is activated by the CAS Module. The ECM provides a ground path for the primary coil (Coil 
+Terminal 1) by activating a Final Stage transistor. The length of time that current flows 
+through the primary winding is the “dwell” which allows the coil to “saturate” or build up a 
+magnetic field. After this storage process, the ECM will interrupt the primary circuit at the 
+point of ignition by deactivating the Final Stage transistor. The magnetic field built up with¬ 
+in the primary winding collapses and induces the ignition voltage in the secondary winding. 
+
+
+The high voltage generated in the secondary 
+winding is discharged through Coil Terminal 4 
+to the spark plug (insulated by the boot con¬ 
+nector). 
+
+The primary and secondary windings are un¬ 
+coupled, therefore, the secondary winding 
+requires a ground supply (Coil Terminal 4a). 
+
+
+Insulator 
+
+Boot 
+
+
+-t 
+
+
+1 
+
+-1- 
+
+1 
+
+1 
+
+1 
+
+—( 
+
+1- 
+
+1 
+
+1 
+
+1 
+
+4a 
+
+
+
+
+Secondary 
+
+Winding 
+
+
+\UJ 
+
+
+42 - 04-01 
+
+35 
+
+ME 9.2 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+There is an individual ignition circuit and coil for 
+each cylinder on the ME 9.2 system. The ME 
+9.2 uses “pencil type” ignition coils manufac¬ 
+tured by Bremi. The eight individual ignition coils 
+are integrated with the insulated connector 
+(boot). 
+
+The coils are removed by lifting the swivel latch connector retainer to release the wiring har¬ 
+ness, apply a slight twist and lift the assembly upwards. The primary ignition cables are 
+routed on the top of the cylinder head covers. 
+
+
+
+42 - 04-02 
+
+
+Spark Plugs: The spark plugs introduce the ignition energy 
+into the combustion chamber. The high voltage “arcs” across 
+the air gap in the spark plug from the positive electrode to the 
+negative electrodes. This creates a spark which ignites the 
+combustible air/fuel mixture. 
+
+The spark plugs are located in the center of the combustion 
+area (on the top of the cylinder heads) which is the most suit¬ 
+able point for igniting the compressed air/fuel mixture. The 
+correct spark plugs for the ME 9.2 are the NGK BKR6EQUP 
+quad electrode (non-adjustable gap). 
+
+
+
+The Ignition System is monitored by the ECM via the Crankshaft Position/RPM Sensor. If a 
+Misfire fault is present, the ECM will deactivate the corresponding fuel injector for that cylin¬ 
+der. Engine operation will still be possible. 
+
+
+Knock Sensors: These are required to prevent detonation (pinging) from damaging the 
+engine. The Knock Sensor is a piezoelectric sound conductor microphone. The ECM will 
+retard the ignition timing (cylinder selective) based on the input of these sensors. 
+
+
+There are four Knock Sensors bolted to the 
+cylinder heads between cylinders 1 & 2, 3 & 4, 
+5 & 6 and 7 & 8. If the signal value exceeds the 
+threshold, the ECM identifies the “knock” and 
+retards the ignition timing for that cylinder. 
+
+If a fault is detected with the sensor(s), the ECM 
+deactivates Knock Control the ignition timing 
+will be set to a conservative basic setting based 
+on intake air temperature and a fault will be 
+stored. 
+
+
+
+42 - 04-04 
+
+
+36 
+
+ME 9.2 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camshaft Position Sensor (Cylinder Identification): The camshaft sensors (Hall type) 
+inputs allows the ECM to determine camshaft positions in relation to crankshaft position. It 
+is used by the ECM to establish the “working cycle” of the engine for precise ignition tim¬ 
+ing. For details about the sensor, refer to the Fuel Management section. 
+
+
+Accelerator Pedal Position (PWG): As the accelerator pedal is actuated, the ECM 
+advance the ignition timing. The “full throttle” position indicates maximum acceleration to 
+the ECM, the ignition will be advanced for maximum torque. For details about the sensor, 
+refer to the Air Management section. 
+
+
+Hot-Film Air Mass Meter (HFM): The air volume input signal is used by the ECM to deter¬ 
+mine the amount of ignition timing advance. For details about the sensor, refer to the Air 
+Management section. 
+
+
+Air Temperature: This signal allows the ECM to make a calculation of air density. The sen¬ 
+sor is located in the HFM. The ECM will adjust the ignition timing based on air temperature. 
+If the intake air is hot the ECM retards the ignition timing to reduce the risk of detonation. If 
+the intake air is cooler, the ignition timing will be advanced. If this input is defective, a fault 
+code will be set and the ignition timing will be set to a conservative basic setting. For details 
+about the sensor, refer to the Air Management section. 
+
+
+Notes: 
+
+
+37 
+
+ME 9.2 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Ignition Management provides ignition to the combustion chambers with the required volt¬ 
+age at the correct time. Based on the combination of inputs, the ECM calculates and con¬ 
+trols the ignition timing and secondary output voltage by regulating the activation and 
+dwell of the primary ignition circuit. The ECM controls and monitors the primary ignition 
+circuit as well as the secondary ignition output (Misfire Detection). 
+
+The ECM has a very “broad” range of ignition timing. This is possible by using a Direct 
+Ignition System, or sometimes referred to as “Static Ignition System”. Reliability is also 
+increased by having separate individual ignition circuits. 
+
+The Ignition Control is determined by the ECM (load dependent). The ECM will calculate 
+the engine “load” based on a combination of the following: 
+
+The dwell time will be regulated based on battery voltage. When cranking, the voltage is 
+low and the ECM will increase the dwell to compensate for saturation “lag time”. When the 
+engine is running and the battery voltage is higher, the ECM will decrease the dwell due to 
+a faster saturation time. 
+
+The Crankshaft Position/RPM signals the ECM to start ignition in firing order (1-5-4-8-6-3- 
+7-2) as well as providing information about the engine operation. This input is used in com¬ 
+bination with other inputs to determine engine load which advances/retards the ignition tim¬ 
+ing. Without this input, the ECM will not activate the ignition. 
+
+Cold start is determined by the ECM based on the engine coolant temperature and rpm 
+during start up. A cold engine will crank over slower than a warm engine, the ignition tim¬ 
+ing will range between top dead center to slightly retarded providing optimum starting. 
+
+When starting a warm engine, the rpm is higher which results in slightly advanced timing. 
+If the engine coolant and intake air temperature is hot, the ignition timing will not be 
+advanced reducing starter motor “load”. 
+
+
+During cranking, the ECM recognizes the Camshaft 
+Position (compression stroke) and activates the igni¬ 
+tion per cylinder (firing order). 
+
+
+Multiple Ignition Pulses ensure good spark quality dur¬ 
+ing engine start up. The ECM will activate the ignition 
+coils multiple times (1) per 720° of crankshaft revolu¬ 
+tion. 
+
+
+
+38 
+
+ME 9.2 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ignition timing will be progressively advanced assisting the engine in coming up to 
+speed. As the engine speed approaches idle rpm, the timing remains slightly advanced to 
+boost torque. When the engine is at idle speed, minimum timing advance is required. This 
+will allow faster engine and catalyst warm up. The multiple pulsing switches to single pulse 
+when engine speed >1350 RPM (varied with engine temperature). 
+
+The timing will be advanced when the ECM observes low engine rpm and increasing accel¬ 
+erator/air volume inputs (acceleration torque). As the Valvetronic valve lift is increased, the 
+ECM advances the timing based on the engine acceleration request (and at what rate). The 
+ECM will fully advance timing for the “full throttle” position indicating maximum acceleration 
+(torque). 
+
+The Air Flow Volume signal provides the measured amount of intake air volume. This input 
+is used by the ECM to determine the amount of timing advance to properly combust the 
+air/fuel mixture. 
+
+The Air Temperature Signal assists the ECM in reducing the risk of detonation (ping). If the 
+intake air is hot the ECM retards the ignition timing. If the intake air is cooler, the ignition 
+timing will be advanced. 
+
+As the Valvetronic valve lift is decreased, the ECM decreases the ignition timing if the rpm 
+is above idle speed (coasting). This feature lowers the engine torque for deceleration. When 
+the engine rpm approaches idle speed, the timing is slightly advanced to prevent the engine 
+from stalling. The amount of advance is dependent upon the engine temperature and the 
+rate of deceleration. 
+
+
+Emission Optimized - IGNITION KEY OFF 
+
+“Emission Optimized Ignition Key Off” is a programmed feature of the CAS Module. After 
+the CAS Module detects KL 15 is switched “off”, the ignition coil relay (in the IVM) stays 
+active (CAS voltage supply) for two more individual coil firings. This means that just two 
+cylinders are fired - not two revolutions. 
+
+This feature allows residual fuel injected into the cylinders, as the ignition key is switched 
+off, to be combusted as the engine runs down. 
+
+When KL15 is switched “off” the ECM removes the operating voltage from the fuel injec¬ 
+tion relay (in the IVM). The CAS Module will maintain power to the ignition coil relay for a 
+few seconds to maintain ignition coil activation (by the ECM). 
+
+
+39 
+
+ME 9.2 Ignition Management 
+
+
+Knock Control 
+
+
+The use of Knock Control allows the ECM to further advance the ignition timing under load 
+for increased torque. This system uses four Knock Sensors located between cylinders 1 & 
+2, cylinders 3 & 4, cylinders 5 & 6 and cylinders 7 & 8. Knock Control is only in affect when 
+the engine temperature is greater than 35 °C and there is a load on the engine. This will dis¬ 
+regard false signals while idling or from a cold engine. 
+
+Based on the firing order, the ECM monitors the Knock Sensors after each ignition for a 
+normal (low) signal. If the signal value exceeds the threshold, the ECM identifies the “knock” 
+and retards the ignition timing (3°) for that cylinder the next time it is fired. 
+
+This process is repeated in 3° increments until the knock ceases. The ignition timing will be 
+advanced again in increments right up to the knock limit and maintain the timing at that 
+point. 
+
+If a fault is detected with the Knock Sensor(s) or circuits, the ECM deactivates Knock 
+Control. The ignition timing will be set to a conservative basic setting (to reduce the risk of 
+detonation) and a fault will be stored. 
+
+
+
+42 - 04-05 
+
+
+40 
+
+ME 9.2 Ignition Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Management 
+
+
+Evaporative Emissions: The control of the evaporative fuel vapors (Hydrocarbons) from 
+the fuel tank is important for the overall reduction in vehicle emissions. 
+
+The evaporative system has been combined with the ventilation of the fuel tank, which 
+allows the tank to breath (equalization). The overall operation provides: 
+
+• An inlet vent, to an otherwise "sealed" fuel tank, for the entry of air to replace the fuel 
+consumed during engine operation. 
+
+• An outlet vent with a storage canister to "trap and hold" fuel vapors that are produced 
+by the expansion/evaporation of fuel in the tank, when the vehicle is stationary. 
+
+The canister is then "purged" using the engine vacuum to draw the fuel vapors into the 
+combustion chamber. This "cleans" the canister allowing for additional storage. Like any 
+other form of combustible fuel, the introduction of these vapors on a running engine must 
+be controlled. The ECM controls the Evaporative Emission Valve which regulates purging of 
+evaporative vapors. 
+
+
+On-Board Refueling Vapor Recovery (ORVR): The ORVR system recovers and stores 
+hydrocarbon fuel vapor during refueling. Non ORVR vehicles vent fuel vapors from the tank 
+venting line back to the filler neck and in many states reclaimed by a vacuum receiver on 
+the filling station’s fuel pump nozzle. 
+
+When refueling, the pressure of the fuel entering the tank forces the hydrocarbon vapors 
+through the tank refuelling breather hose (24 on the following page) to the liquid/vapor 
+expansion tank and into the active charcoal canister. 
+
+The HC vapors are stored in the active charcoal canister and the system can then “breath” 
+through the DM TL and the air filter. 
+
+
+41 
+
+ME 9.2 Emissions Management 
+
+
+1 
+
+
+2 
+
+
+
+Fuel System 
+
+
+42 - 04-00 
+
+
+1. Air Cleaner 
+
+2. Intake manifold 
+
+3. Engine 
+
+4. Exhaust system 
+
+5. Oxygen Sensor 
+
+6. Evaporative emission valve (TEV) 
+
+7. ECM 
+
+8. Purge vapors 
+
+9. Carbon canister 
+
+10. Fuel tank leak diagnostic module (DM-TL) 
+
+11. Roll-over valve 
+
+12. Dust filter 
+
+13. Service ventilation 
+
+14. Pressure test lead 
+
+15. Fuel tank cap 
+
+
+16. Service vent valve (float valve) 
+
+17. Anti-spitback flap 
+
+18. Surge chamber (fuel pump baffling) 
+
+19. Electric fuel pump (EKP) 
+
+20. Pressure relief valve 
+
+21. Suction jet pump 
+
+22. Fuel tank 
+
+23. Outlet protection valve 
+
+24. Refueling breather 
+
+25. Fuel Filter 
+
+26. Fuel pressure regulator (3.5 bar) 
+
+27. Injection rail 
+
+28. Float valve 
+
+29. Liquid/vapor expansion tank 
+
+30. Filler vent valve 
+
+
+42 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Liquid/Vapor Expansion Tank: Fuel vapors are rout¬ 
+ed from the refuelling breather hose and the Service 
+Ventilation hose to the Liquid/Vapor Expansion Tank (1) 
+located in the right rear fender well. 
+
+The vapors cool when exiting the fuel tank, condense 
+and drain back to the fuel tank. The remaining vapors 
+exit the Liquid/Vapor Expansion Tank to the Active 
+Carbon Canister. 
+
+
+
+Active Carbon Canister: As the fuel vapors enter the 
+canister, they will be absorbed by the active carbon. 
+The remaining air will be vented to the atmosphere 
+through the end of the canister (passing through the 
+DM TL and filter) allowing the fuel tank to “breath”. 
+
+
+42 - 04-01 
+
+When the engine is running, the canister is then "purged" using intake manifold vacuum to 
+draw fresh air through the canister which extracts the hydrocarbon vapors into the com¬ 
+bustion chamber. This cleans the canister for additional storage. The Active Carbon 
+Canister (2) is combined with the DM TL Pump and is located in the right rear fender well. 
+
+
+Evaporative Emission Valve: This ECM controlled solenoid valve (located on the front of 
+the engine) regulates the purge flow from the Active Carbon Canister through the air inlet 
+pipe into the intake manifold. 
+
+The ECM Relay (in the IVM) provides operating 
+voltage, and the ECM controls the valve by reg¬ 
+ulating the ground circuit. The valve is powered 
+open and closed by an internal spring. 
+
+If the Evaporative Emission Valve circuit is 
+defective, a fault code will be set. If the valve is 
+“mechanically” defective, a driveability com¬ 
+plaint could be encountered and a mixture relat¬ 
+ed fault code will be set. 
+
+
+
+42 - 04-02 
+
+
+43 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+1 
+
+
+DMTL (Diagnosis Module - Evaporative Leakage 
+Detection): This component ensures accurate fuel 
+system leak detection for leaks as small as 0.5 mm 
+(.020”) by slightly pressurizing the fuel tank and evapo¬ 
+rative components. The DM TL pump contains an inte¬ 
+gral DC motor which is activated directly by the ECM. 
+The ECM monitors the pump motor operating current 
+as the measurement for detecting leaks. 
+
+The pump also contains an ECM controlled change 
+over valve that is energized closed during a Leak 
+Diagnosis test. The change over valve is open during all 
+other periods of operation allowing the fuel system to 
+“breath” through the inlet filter. The DM TL is located 
+with the Active Carbon Canister. 
+
+
+1. In its inactive state, filtered fresh air enters the evap¬ 
+orative system through the sprung open valve of the 
+DM TL. 
+
+2. When the ECM activates the DM TL for leak testing, 
+it first activates only the pump motor. This pumps air 
+through a restricted orifice (0.5 mm) which causes 
+the electric motor to draw a specific amperage value 
+(20-30 mA). This value is equivalent to the size of the 
+restriction. 
+
+3. The solenoid valve is then energized which seals the 
+evaporative system and directs the pump output to 
+pressurize the evaporative system. 
+
+
+• A large leak is detected in the evaporative system if 
+the amperage value is not achieved. 
+
+• A small leak is detected if the same reference 
+amperage is achieved. 
+
+• The system is sealed if the amperage value is high¬ 
+er than the reference amperage. 
+
+
+
+FRESH _ 
+AIR INLET 
+
+
+DM-TL 
+
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+V V 
+
+
+V 
+
+
+
+FRESH — 
+AIR INLET 
+
+
+DM-TL 
+
+
+
+(Diagnostic Module - 
+Tank Leak detection) 
+
+w V 
+
+
+V 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+r\ r\ 
+
+
+D 
+
+
+IDE ID 
+
+
+
+2 
+
+
+3 
+
+
+44 
+
+ME 9.2 Emissions Management 
+
+
+42 - 04-05 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exhaust Emissions: The combustion process of a gasoline powered engine produces 
+
+Carbon Monoxide (CO), Hydrocarbons (HC) and Oxides of Nitrogen (NOx). 
+
+• Carbon Monoxide is a product of incomplete combustion under conditions of air defi¬ 
+ciency. CO emissions are strongly dependent on the air/fuel ratio. 
+
+• Hydrocarbons are also a product of incomplete combustion which results in unburned 
+fuel. HC emissions are dependent on air/fuel ratio and the ignition of the mixture. 
+
+• Oxides of Nitrogen are a product of peak combustion temperature (and temperature 
+duration). NOx emissions are dependent on internal cylinder temperatures affected by 
+the air/fuel ratio and ignition of the mixture. 
+
+Control of exhaust emissions is accomplished by the engine and engine management 
+
+design as well as after-treatment. 
+
+• The ECM manages exhaust emissions by controlling the air/fuel ratio and ignition. 
+
+• The ECM controlled Secondary Air Injection further dilutes exhaust emissions leaving 
+the engine and reduces the catalysts warm up time. 
+
+• The Catalytic Converter further reduces exhaust emissions leaving the engine. 
+
+
+Oxygen Sensors: The N62 engine is fitted with a total of four oxygen sensors. One planar 
+broadband oxygen sensor (constant characteristic curve), which regulates the fuel-air mix¬ 
+ture, is located upstream (2) of each of the two catalytic converters. The catalytic convert¬ 
+er assemblies are integral with the exhaust manifolds (1). 
+
+
+There is a post catalytic converter sensor (Bosch LSH25) for 
+each cylinder bank positioned downstream of the catalytic 
+converter (3) which monitors the catalyst efficiency. 
+
+This monitoring means that if the exhaust gas concentration is 
+too high, a fault code is stored. The post catalyst sensors can 
+also detect an emission relevant fault in a pre-catalyst oxygen 
+sensor. 
+
+
+
+43 - 02-06 
+
+
+45 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+Bosch LSU Planar Wideband Oxygen Sensor: The N62 engine is equipped with new 
+planar wideband oxygen sensors (pre-catalyst). The sensor is planar shaped (type of con¬ 
+struction) which is more compact and is made up of thin layers of zirconium dioxide (Zr02) 
+ceramic films. This modular lamination structure enables the integration of several functions 
+including the heating element which ensures the minimum operating temperature (750 °C) 
+is reached rapidly. 
+
+In contrast to conventional oxygen sensors, the wideband features can measure not only 
+at Lambda=1, but also in the rich and extremely lean range (Lambda=0.7 to complete 
+atmospheric oxygen) very rapidly. 
+
+To operate effectively, the oxygen sensor requires ambient air as the “reference gas” inside 
+the sensor. The ambient air reaches the inside of the sensor through the plug connection 
+and through the harness. The plug connection socket must therefore be protected from 
+contamination (wax, preservatives, engine degreasers, engine washing, etc.). In the event 
+of the oxygen sensor malfunctioning, the connector should always be checked first with 
+regard to contamination and cleaned if necessary. The plug connection must be discon¬ 
+nected and then reconnected to remove any oxidation from the connector pins. 
+
+
+1. Exhaust gas 
+
+2. Pump cell 
+
+3. Platinum electrode, reference cell 
+
+4. Heating element 
+
+5. Heating element 
+
+6. Reference air gap 
+
+7. Zirconium ceramic layer 
+
+8. Measuring gap 
+
+9. Reference Cell 
+
+10. Platinum electrode, reference cell 
+
+11. Platinum electrode, pump cell 
+
+12. Platinum electrode, pump cell 
+
+
+
+& 
+
+
+
+
+42-04-07 
+
+
+Sensor Element Design 
+
+
+The pump cell (2) and reference cell (9) are made of zirconium dioxide and each coated with 
+two porous platinum electrodes. They are arranged so that there is a measuring gap (8) of 
+approx. 10 to 50 microns between them. This measuring gap is connected by an inlet 
+opening to the exhaust gas (1). The pump cell is controlled by the ECM applying voltage to 
+the electrodes to initiate oxygen ion pumping across the porous membrane of the reference 
+cell, providing a quicker response time. 
+
+
+46 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If the exhaust gas content is lean, the pump cell pumps oxygen away from the measuring 
+gap to the outside. The direction of flow is reversed for rich exhaust gas content, then oxy¬ 
+gen is pumped from the exhaust gas into the measuring gap. The pump current flow is pro¬ 
+portional to the oxygen concentration (lean) or the oxygen requirement (rich). The pump is 
+constantly working to maintain that the gas composition in the measuring gap is constant¬ 
+ly at Lambda=1. The required current of the pump cell is evaluated by the ECM as a sig¬ 
+nal that represents oxygen content in the exhaust gas. 
+
+
+Oxygen Sensor Signals 
+
+The sensor conductivity is efficient when the oxygen sensor is hot (750° C). For this reason, 
+the sensor contains a heating element. This reduces warm up time, and retains the heat 
+during low engine speed when the exhaust temperature is cooler. The oxygen sensor heat¬ 
+ing elements receive power from the IVM (12 V) and the ground sypply is pulse width mod¬ 
+ulated by the ECM. 
+
+The monitored voltage signal is constantly changing due to combustion variations and nor¬ 
+mal exhaust pulsations. 
+
+• At a value of Lambda =1, the pump cell requires approx. 3 mA. 
+
+The oxygen sensor signal voltage is approx. 1,5V 
+The reference cell voltage is approx. 450mV 
+
+• At a Lambda value <1 (rich), the oxygen sensor signal voltage is approx. 0.3V 
+
+• At a Lambda value >1 (lean), the oxygen sensor signal voltage is approx. 4.3V 
+
+
+If necessary, the ECM will “correct” the air/fuel ratio by regulating the ms injection time. The 
+ECM monitors the length of time the sensors are operating in the lean, rich and rest condi¬ 
+tions. The evaluation period of the sensors is over a predefined number of oscillation cycles 
+and pump cell amperage. 
+
+
+Catalytic Converter Monitoring: The efficiency of catalyst operation is determined by 
+evaluating the oxygen storage capability of the ceramic monolyth catalytic converters using 
+the pre and post oxygen sensor signals. 
+
+
+A properly operating catalyst consumes or stores most of the 02 (oxygen) that is present 
+in the exhaust gas (input to catalyst). The gases that flow into the catalyst are converted 
+from CO, HC and NOx to C02, H 2 O and N2 respectively. 
+
+
+47 
+
+ME 9.2 Emissions Management 
+
+
+In order to determine if the catalysts are working correctly, post catalyst oxygen sensors are 
+installed to monitor exhaust gas content exiting the catalysts. The signal of the post cat. 02 
+sensor is evaluated over the course of several pre cat. 02 sensor oscillations. 
+
+
+During the evaluation period, the signal of the 
+post cat. sensor must remain within a relatively 
+constant voltage range (700 - 800 mV). ju 
+
+3 
+
+h 
+
+The post cat. 02 voltage remains high with a si 
+very slight fluctuation. This indicates a further < 
+lack of oxygen when compared to the pre cat. 
+sensor. If this signal decreased in voltage and/or 
+increased in fluctuation, a fault code will be set 
+for Catalyst Efficiency. 
+
+
+
+TIME 
+
+
+42 - 04-08 
+
+
+Bosch LSH 25 Oxygen Sensors: The post catalyst oxygen sensors produces a low volt¬ 
+age (0-1000 mV) proportional to the oxygen content exiting the catalytic converters. 
+
+
+Ambient Air 
+
+
+
+Exhaust 
+
+Stream 
+
+
+42 - 04-09 
+
+
+Oxygen Sensors 
+
+
+1. Electrode (+) 
+
+2. Electrode (-) 
+
+3. Porous Ceramic Coating (encasing electrolyte) 
+
+4. Protective Metal Cage (Ventilated) 
+
+5. Casing 
+
+6. Contact Sleeve 
+
+
+7. External Body (Ventilated) 
+
+8. Contact Spring 
+
+9. Vent Opening 
+
+10. Ouput Lead 
+
+11. Insulator 
+
+12. Exhaust Pipe Wall 
+
+
+48 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The “tip” of the sensor contains a microporous platinum coating (electrodes) which conduct 
+current. The platinum electrodes are separated by solid electrolyte which conducts oxygen 
+ions. The platinum conductors are covered with a highly porous ceramic coating and the 
+entire tip is encased in a ventilated metal “cage”. 
+
+This assembly is submersed in the exhaust stream. The sensor body (external) has a small 
+vent opening in the housing that allows ambient air to enter the inside of the tip. 
+
+The ambient air contains a constant level of oxygen content (21 %) and the exhaust stream 
+has a much lower oxygen content. The oxygen ions (which contain small electrical charges) 
+are “purged” through the solid electrolyte by the hot exhaust gas flow. The electrical 
+charges (low voltage) are conducted by the platinum electrodes to the sensor signal wire 
+that is monitored by the ECM. 
+
+
+
+42 - 04-10 
+
+If the exhaust has a lower oxygen content (rich mixture), there will be a large ion “migration” 
+through the sensor generating a higher voltage (950 mV). 
+
+If the exhaust has a higher oxygen content (lean mixture), there will be a small ion “migra¬ 
+tion” through the sensor generating a lower voltage (080 mV). 
+
+This conductivity is efficient when the oxygen sensor is hot (250° - 300° C). For this reason, 
+the sensor contains a heating element. This “heated” sensor reduces warm up time, and 
+retains the heat during low engine speed when the exhaust temperature is cooler. 
+
+
+49 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary Air Injection: Injecting ambient air into the exhaust stream after a cold engine 
+start reduces the warm up time of the catalysts and reduces HC and CO emissions. The 
+ECM controls and monitors the Secondary Air Injection. 
+
+An Electric Air Pump and Air Injection Valves direct fresh air through internal channels in the 
+cylinder heads into the exhaust ports. 
+
+
+1. Air Intake Duct 
+
+2. Air Cleaner housing with Intake Air Silencer 
+
+3. Intake Pipe with HFM 
+(Hot-Film Air Mass Flow Sensor) 
+
+4. Secondary Air Valves 
+
+5. Secondary Air Pump 
+
+
+
+43 - 04-05 
+
+
+Secondary Air System 
+
+
+Secondary Air Pump (SLP): The electrically-operated secondary air pump is mounted to 
+the vehicle body. The pump draws out filtered fresh air from the air cleaner housing during 
+the warm-up phase and supplies it to the two secondary air injection valves. 
+
+Once the engine has been started, the secondary air pump is supplied with voltage by the 
+Secondary Air Pump Relay (located in front of the glovebox) which is activated by the ECM. 
+It remains switched on until the engine has taken in a certain amount of air. The ON period 
+may be a maximum of 90 seconds and it depends on the following engine operating con¬ 
+ditions: 
+
+
+• Coolant temperature (from -10 °C to approximately 60 °C) 
+
+
+• Ambient air temperature (from the HFM) 
+
+• Engine speed 
+
+
+The power is supplied from the fuse junction 
+(#102 - 50 Amp) located on the right inner fend¬ 
+er of the engine compartment (under the 
+remote charging post) for the relay to energize 
+the SLP. 
+
+
+
+50 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+Non-return Valves (SLV): One non return 
+valve is mounted on each cylinder head. 
+
+
+1. Cylinder Head Lead 
+
+2. Non-return Valve (SLV) 
+
+3. Secondary Air Pump Connection 
+
+
+
+View From Rear of The Cylinder Head 
+
+
+The Non-return valves are opened by the air pressure generated from the secondary air 
+pump. The secondary air is led through a pipe to the secondary air ducts (integral in the 
+cylinder heads) for distribution into the exhaust ports. There are two outlets in each exhaust 
+port next to the exhaust valve guides. 
+
+
+The Non-return valves are sprung closed as soon as the secondary air pump is switched 
+off. This prevents exhaust vapors, pressure and condensation from flowing back to the sec¬ 
+ondary air pump. 
+
+
+Misfire Detection: As part of the OBD II regulations the ECM must determine misfire and 
+also identify the specific cylinder(s), the severity of the misfire and whether it is emissions 
+relevant or catalyst damaging based on monitoring crankshaft acceleration. 
+
+
+In order to accomplish these tasks the ECM monitors the crankshaft for acceleration by the 
+impulse wheel segments of cylinder specific firing order. The misfire/engine roughness cal¬ 
+culation is derived from the differences in the period duration of individual increment gear 
+segments. If the expected period duration is greater than the permissible value a misfire 
+fault for the particular cylinder is stored in the fault memory of the ECM. 
+
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Test system Oscilloscope display 
+
+
+
+IK 
+
+
+Function 
+
+Selection 
+
+Document 
+
+Test 
+
+Module 
+
+
+
+
+Test 
+
+System 
+
+
+
+
+
+
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+
+ENGINE MISFIRE DETECTED 
+
+
+42 - 02-13 
+
+
+51 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Depending on the level of misfire rate measured the ECM will illuminate the "Malfunction 
+Indicator Light”, deactivate the specific fuel injector to the particular cylinder and switch 
+lambda operation to open-loop. 
+
+In order to eliminate misfire faults that can occur as a result of varying flywheel tolerances 
+(manufacturing process) an internal adaptation of the flywheel is made. The adaptation is 
+made during periods of decel fuel cut-off in order to avoid any rotational irregularities which 
+the engine can cause during combustion. This adaptation is used to correct segment dura¬ 
+tion periods prior to evaluation for a misfire event. 
+
+If the sensor wheel adaptation has not been completed the misfire thresholds are limited to 
+engine speed dependent values only and misfire detection is less sensitive. The crankshaft 
+sensor adaptation is stored internally and if the limit is exceeded a fault will be set. 
+
+
+Notes: 
+
+
+52 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Emissions Management controls evaporative and exhaust emissions. The ECM monitors 
+the fuel storage system for evaporative leakage and controls the purging of evaporative 
+fuel. The ECM monitors and controls the exhaust emissions by regulating the combustible 
+mixture and after treating by injecting fresh air into the exhaust system. The catalytic con¬ 
+verters further break down remaining combustible exhaust gases and is monitored by the 
+ECM for catalyst efficiency. 
+
+
+The Evaporative Leakage Detection is performed on the fuel storage system by the 
+DM TL pump which contains an integral DC motor that is activated by the ECM. The ECM 
+monitors the pump motor operating current as the measurement for detecting leaks. 
+
+The DM TL generates a pressure of 20-30 mbar in the fuel tank and evaporative system. 
+The electrical current required for this is calculated by the ECM serves as the indirect value 
+for the tank pressure. 
+
+The DM TL carries out a reference measurement before each measurement. This is per¬ 
+formed by building up a pressure for 10-15 seconds using an internal orifice of 0.5 mm as 
+a reference and the ECM monitors the current required by the pump motor (20-30 mA). 
+
+If a lower pressure is detected in the pressure build-up (low current draw) as compared to 
+the reference measurement, this indicates a leak in the fuel tank/evaporative system. If a 
+higher pressure is detected (higher current draw), the system does not have a leak. 
+
+The pump also contains an ECM controlled change over valve that is energized closed dur¬ 
+ing a Leak Diagnosis test. The ECM only initiates a leak diagnosis test every second time 
+the criteria is met. The criteria is as follows: 
+
+• Engine OFF with ignition switched OFF. 
+
+• ECM still in active state or what is known as “follow up mode” (ECM Relay energized, 
+ECM and components online for extended period after key off). 
+
+• Prior to Engine/Ignition switch OFF condition, vehicle must have been driven for a min¬ 
+imum of 20 minutes. 
+
+• Prior to minimum 20 minute drive, the vehicle must have been OFF for a minimum of 5 
+hours. 
+
+• No faults in the ECM for DM TL / tank venting system. 
+
+
+53 
+
+ME 9.2 Emissions Management 
+
+
+• Fuel Tank Capacity must be between 10 and 90% (safe approximation between 1/4 - 
+3/4 of a tank). 
+
+• Ambient Air Temperature between -7°C & 35°C 
+
+• Altitude < 2500m (8,202 feet). 
+
+• Battery Voltage between 11.5 and 14.5 Volts 
+
+When these criteria are satisfied every second time, the ECM will start the Fuel System 
+Leak Diagnosis Test. The test will typically be carried out once a day ie:, once after driving 
+to work in the morning, when driving home in the evening, the criteria are once again met 
+but the test is not initiated. The following morning, the test will run again. 
+
+
+PHASE 1 - REFERENCE MEASUREMENT 
+
+The ECM activates the pump motor. The pump pulls air from the filtered air inlet and pass¬ 
+es it through a precise 0.5 mm reference orifice in the pump assembly. 
+
+The ECM simultaneously monitors the pump motor current flow. The motor current raises 
+quickly and levels off (stabilizes) due to the orifice restriction. The ECM stores the stabilized 
+amperage value in memory. The stored amperage value is the electrical equivalent of a 0.5 
+mm (0.020”) leak. 
+
+PHASE 2 - LEAK DETECTION 
+
+The ECM energizes the Change Over Valve allowing the pressurized air to enter the fuel 
+system through the Charcoal Canister. The ECM monitors the current flow and compares 
+it with the stored reference measurement over a duration of time. 
+
+The time taken for the measurement is: 
+
+• 60-220 seconds if there are no leaks 
+
+• 200-360 seconds if there is a leak measuring 0.5 mm (small leak) 
+
+• 30-80 seconds if there is a leak measuring over 1 mm (large leak) 
+
+The evaporative emission valve is closed during the measurement. The time taken for the 
+measurement is dependant on how much fuel there is in the tank. 
+
+Once the test is concluded, the ECM stops the pump motor and immediately de-energizes 
+the change over valve. This allows the stored pressure to vent thorough the charcoal can¬ 
+ister trapping hydrocarbon vapor and venting air to atmosphere through the filter. 
+
+
+54 
+
+ME 9.2 Emissions Management 
+
+
+Test Results 
+
+
+The time duration varies between 
+30 & 360 seconds depending on 
+the resulting leak diagnosis test 
+results (developed tank pressure 
+“amperage” within a specific time 
+period). 
+
+When the ECM detects a leak, a 
+fault will be stored and the 
+“Malfunction Indicator Light” will 
+be illuminated. Depending on the 
+amperage measurement detect¬ 
+ed by the ECM, the fault code 
+displayed will be “small leak” or 
+“large leak”. 
+
+
+Current 
+
+
+
+Refuelling While a Leak Diagnosis is Taking Place: The ECM detects refuelling during 
+a leak diagnosis as a result of the pressure drop when the fuel filler cap is opened and the 
+increase pressure while filling the tank is being filled. 
+
+In this case, the leakage diagnosis is interrupted. The solenoid valve in the DM TL is swi¬ 
+tched off and the tank pressure escapes through the activated carbon canister. 
+
+If refuelling does not take place immediately after the fuel filler cap has been opened, the 
+system will detect a large leak and the a fault will be stored in the ECM. If refuelling is 
+detected in the next driving cycle (increase in fuel level), the fault is cleared. 
+
+The ECM detects refueling from a change in the fuel tank 
+sending unit level. If the filler cap was not properly installed, 
+when the leakage test is performed and leakage is detected; 
+the variable indicator lamp (shown to the right) and the 
+“Please Close Filler Cap” Check Control message will be 
+displayed. 
+
+If the filler cap is correctly installed and leakage is not present 
+the next time the test is performed, the “Malfunction Indicator 
+Light” will not be illuminated. 
+
+
+
+42-02-15 
+
+
+55 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Starting with 2002 MY, a heating element was 
+added to the DM TL pump to eliminate con¬ 
+densation. 
+
+The heater is provided battery voltage when 
+KL15 is switched “on” and the ECM provides 
+the ground path. 
+
+
+
+Catalyst Monitoring is performed by the ECM under oxygen sensor closed loop opera¬ 
+tion. The changing air/fuel ratio in the exhaust gas results in lambda oscillations at the pre¬ 
+catalyst sensors. These oscillations are dampened by the oxygen storage activity of the 
+catalysts and are reflected at the post catalyst sensors as a fairly stable signal (indicating 
+oxygen has been consumed). Conditions for Catalyst Monitoring: 
+
+
+Requirements 
+
+• Closed loop operation 
+
+• Engine coolant temperature 
+
+• Vehicle road speed 
+
+• Catalyst temperature (calculated)* 
+
+• Valvetronic position deviation 
+
+• Engine speed deviation 
+
+• Average lambda value deviation 
+
+
+Status/Condition 
+
+YES 
+
+Operating Temp. 
+
+3 - 50 M PH (5 to 80 km/h) 
+350°C to 650°C 
+Steady 
+
+Steady/stable engine speed 
+Steady/stable load 
+
+
+* Catalyst temperature is an ECM calculated value based on load/air mass and time. 
+
+
+Note: The catalyst efficiency is monitored once per trip while the vehicle is in closed loop 
+operation. 
+
+
+56 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As part of the monitoring process, the pre and post 02 sensor signals are evaluated by the 
+ECM to determine the length of time each sensor is operating in the rich and lean range. 
+
+If the catalyst is defective the post 02 sensor signal will reflect the pre 02 sensor signal 
+(minus a phase shift/time delay), since the catalyst is no longer able to store/comsume oxy¬ 
+gen. The catalyst monitoring process is stopped once the predetermined number of cycles 
+are completed, until the engine is shut-off and started again. After completing the next 
+"customer driving cycle" whereby the specific conditions are met and a fault is again set, 
+the "Malfunction Indicator Light” will be illuminated. 
+
+
+Secondary Air Injection Monitoring is performed by the ECM via the use of the pre-cat¬ 
+alyst oxygen sensors. Once the air pump is active and is air injected into the exhaust sys¬ 
+tem the oxygen sensor signals will indicate a lean condition. If the oxygen sensor signals 
+do not change within a predefined time a fault will be set and identify the faulty bank(s). 
+When diagnosing a Secondary Air Injection fault, in addition to the electric air pump and 
+non-return valves always consider the following: 
+
+• Restricted air inlet to the pump. 
+
+• Restricted supply hoses to the non-return valves. 
+
+• Internal restrictions in the cylinder head passages into the exhaust ports. 
+
+
+Misfire Detection is part of the OBD II regulations the ECM must determine misfire and 
+
+also identify the specific cylinder(s), the severity of the misfire and whether it is emissions 
+
+relevant or catalyst damaging based on monitoring crankshaft acceleration. 
+
+Emission Increase: 
+
+• Within an interval of 1000 crankshaft revolutions, the ECM adds the detected misfire 
+events for each cylinder. If the sum of all cylinder misfire incidents exceeds the pre¬ 
+determined value, a fault code will be stored. 
+
+• If more than one cylinder is misfiring, all misfiring cylinders will be specified and the 
+individual fault codes for all misfiring cylinders and for multiple cylinder will be stored. 
+
+Catalyst Damage: 
+
+• Within an interval of 200 crankshaft revolutions the detected number of misfiring 
+events is calculated for each cylinder. The ECM monitors this based on load/rpm. If 
+the sum of cylinder misfire incidents exceeds a predetermined value, a fault code is 
+stored and the “Malfunction Indicator Light” will be illuminated. 
+
+
+57 
+
+ME 9.2 Emissions Management 
+
+
+If the cylinder misfire count exceeds the predetermined threshold the ECM will take the fol¬ 
+lowing measures: 
+
+• The oxygen sensor control will be switched to open loop. 
+
+• The cylinder selective fault code is stored. 
+
+• If more than one cylinder is misfiring the fault code for all individual cylinders and for 
+multiple cylinders will be stored. 
+
+• The fuel injector to the respective cylinder(s) is deactivated. 
+
+
+The Integrated Ambient Barometric Pressure Sensor of the ME 9.2 is part of the ECM 
+
+and is not serviceable. The internal sensor is supplied with 5 volts. In return it provides a 
+linear voltage of approx. 2.4 to 4.5 volts representative of barometric pressure (altitude). 
+
+The ME 9.2 monitors barometric pressure for the following reasons: 
+
+• The barometric pressure signal along with calculated air mass provides an additional cor¬ 
+rection factor to further refine injection “on” time. 
+
+• Provides a base value to calculate the air mass being injected into the exhaust system 
+by the Secondary Air Injection System. This correction factor alters the secondary air 
+injection “on” time, optimizing the necessary air flow into the exhaust system. 
+
+
+
+© 
+
+
+INTEGRAL 
+
+BAROMETRIC 
+
+PRESSURE 
+
+SENSOR 
+
+
+PROVIDES ADDITIONAL CORRECTION 
+FACTOR FOR FOLLOWING FUNCTIONS 
+
+
+m 
+
+
+2 3 
+
+
+
+J® 
+
+
+
+42 - 04-16 
+
+
+58 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Malfunction Indicator Light is illuminated when the OBD system (integral in the 
+ECM) determines that a problem exists and a corresponding “Diagnostic Trouble Code” is 
+stored in the ECM’s memory. The Malfunction Indicator appears both in the instrument clus¬ 
+ter upper center section (fixed) and in the Check Control Display (variable indicator). This 
+light informs the driver of the need for service with a Check Control message displayed. 
+
+After fixing the problem the fault code is deleted to turn off the light. If the conditions that 
+caused a problem are no longer present, the OBD system can turn off the light automati¬ 
+cally. If the OBD system evaluates the component or system three consecutive times and 
+no longer detects the initial problem, the dashboard light will turn off automatically. 
+
+
+The Malfunction Indicator Light will illuminate for the following reasons: 
+
+• Pre-drive check when the ignition is switched on (in the fixed location) 
+
+• Increased emissions (both fixed and variable indicator locations with message dis¬ 
+played) 
+
+• Engine fault - drive with moderation (variable indicator location with message dis¬ 
+played) 
+
+
+Fixed Location 
+
+
+
+
+
+42 - 04-18 
+
+Variable Indicator Location 
+
+59 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+The Malfunction Indicator Light will illuminate with a “half 
+shading” in the variable indicator location for the following rea¬ 
+sons: 
+
+• Engine fault - with reduced power (with message dis¬ 
+played) 
+
+• Engine damage possible! (with message displayed) 
+
+
+
+42 - 04-18 
+
+
+Emissions Diagnosis 
+
+The "BMW Fast" (BMW fast access for service and testing) diagnosis concept is used in 
+the E65 for ME 9.2 ECM. This concept is based on the "Keyword Protocol 2000" (KWP 
+2000) diagnosis protocol defined as part of the ISO 14230 standard. Diagnosis communi¬ 
+cation takes place entirely on the basis of a transport protocol on the CAN bus. The 
+Diagnosis bus is connected to the Central Gateway Module (ZGM). 
+
+
+Vehicle Diagnosis Access Point 
+
+
+The diagnosis tool is connected to the vehicle at the OBD diagnosis connector (On-Board 
+Diagnosis). The connector is located behind a small cover in the drivers side kick panel trim. 
+There is a black plastic cap that bridges KL30 to the D-bus when the connector is not being 
+used. This cap must be removed before installing the diagnosis cable. 
+
+
+The TxD lead is located in pin 7 of the OBD 
+socket and is connected directly to the ZGM. 
+
+The ZGM detects by means of the data 
+transmission speed whether a BMW diagno¬ 
+sis tool (DISplus, MoDiC, GT-1) or an after- 
+market scanner is connected. 
+
+The ECM allows access to different data 
+depending on the diagnosis tool connected. 
+
+
+
+Note: When using an OBD scan tool for diagnosis, the transmission speed is 10.4 KBit/s. 
+
+
+60 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis Bus 
+
+The aim of diagnosis is to enable a Technician to reliably identify a defective component. By 
+the use of appropriate hardware and monitoring software, the microprocessor of the diag¬ 
+nosis tool is able to detect faults in the ECM and its peripherals. 
+
+Faults identified are stored in the fault memory and can be read out using the Diagnosis 
+Program. Data transfer between the vehicle and the diagnosis tool takes place via the 
+Diagnosis bus (D bus). 
+
+The new features of the diagnosis bus are: 
+
+• Faster data transmission speed of 115 kBd. 
+
+• Central diagnosis access point (OBD connector). 
+
+• Single diagnostic cable (TxD II) for the entire vehicle. 
+
+• Omission of the TxDI cable. 
+
+• Access to diagnosis functions requires “Authorization”. 
+
+• Diagnosis protocol "KWP 2000" (Keyword Protocol 2000). 
+
+• Standardized diagnosis structure for all control units. 
+
+
+
+42 - 04-21 
+
+
+The ECM is not directly connected to the OBD diagnostic connector. The OBD diagnostic 
+connector is connected to the ZGM. The ECM is connected to the ZGM (central gateway 
+module) by the PT CAN bus. The ECM is also connected to the Valvetronic control module 
+by the Lo CAN (local) bus. Valvetronic faults are stored in the ECM. 
+
+
+61 
+
+ME 9.2 Emissions Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Performance Controls 
+
+
+Bi-VANOS Control (Variable Camshaft Adjustment) 
+
+Performance, torque, idle characteristics and exhaust emissions reduction are improved by 
+Variable Camshaft Timing (Bi-VANOS). The VANOS units are mounted directly on the front 
+of the camshafts and adjusts the timing of the Intake and Exhaust camshafts from retard¬ 
+ed to advanced. The ECM controls the operation of the Bi-VANOS solenoids which regu¬ 
+lates the oil pressure required to move the VANOS units. Engine RPM, load and tempera¬ 
+ture are used to determine Bi-VANOS activation. 
+
+
+
+42 - 04-00 
+
+The Bi-VANOS mechanical operation is dependent on engine oil pressure applied to posi¬ 
+tion the VANOS units. When oil pressure is applied to the units (via ports in the camshafts 
+regulated by the solenoids), the camshaft hubs are rotated in the drive sprockets changing 
+the position which advances/retards the intake/exhaust camshafts timing. The Bi-VANOS 
+system is “fully variable”. When the ECM detects that the camshafts are in the optimum 
+positions, the solenoids maintain oil pressure on the units to hold the camshaft timing. 
+
+The operation of the VANOS solenoids are monitored in accordance with the OBD II 
+requirements for emission control. The ECM monitors the final stage output control and the 
+signals from the Camshaft Position Sensors for Bi-VANOS operation. 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+Solenoid Valves: The Bi-VANOS solenoid valves are mount¬ 
+ed through the upper timing case front cover. There are two 
+solenoids per cylinder head to control the oil flow to the 
+camshaft ports for the intake and exhaust VANOS units. 
+
+The 4/3 way proportional solenoid valve is activated by the 
+ECM to direct oil flow. The solenoid valve is sealed to the front 
+cover by a radial seal and secured by a retaining plate. 
+
+
+
+Hydraulic Actuation 
+
+
+42 - 02-41 
+
+
+When oil pressure is applied to chamber A, the blades are forced away from the VANOS 
+housing (counterclockwise). The blades are keyed into the hub which results in the hub 
+position being rotated in relation to the housing (with sprocket). The hub is secured to the 
+camshaft which changes the camshaft to sprocket relationship (timing). The example below 
+shows the adjustment procedure together with the pressure progression based on the 
+VANOS unit for the exhaust camshaft. 
+
+
+1. Front View of VANOS 
+Unit 
+
+2. Side View of VANOS 
+Unit 
+
+3. Camshaft Oil Port 
+(Chamber B) 
+
+4. Solenoid Valve 
+
+5. Engine Oil Pump 
+
+6. Supplied Oil 
+(Switched Through 
+Solenoid) 
+
+
+
+7. Supplied Oil Pressure 
+(From Engine Oil 
+Pump) 
+
+
+
+VANOS 
+
+
+During this adjustment chamber B is open (through the solenoid) to allow the oil to drain 
+back through the cylinder head (internal reservoir). 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the solenoid valve switches over, oil pressure is applied to chamber B. This forces 
+the blades (and hub) in a clockwise direction back to the initial position, again changing the 
+camshaft timing. 
+
+
+The example below shows the reset procedure together with the pressure progression 
+based on the VANOS unit for the exhaust camshafts. 
+
+
+1. Front View of VANOS 
+Unit 
+
+2. Side View of VANOS 
+Unit 
+
+3. Camshaft Oil Port 
+(Chamber B) 
+
+4. Solenoid Valve 
+
+5. Engine Oil Pump 
+
+6. Oil Return (Switched 
+through Solenoid) 
+
+
+
+7. Supplied Oil Pressure 
+(From Engine Oil 
+Pump) 
+
+
+
+VANOS 
+
+
+During this adjustment chamber A is open (through the solenoid) to allow the oil to drain 
+back through the cylinder head (internal reservoir). 
+
+
+Camshaft Sensors: The camshaft sensors 
+(Hall effect) are mounted through the cylinder 
+head cover. There are two sensors per cylinder 
+head to monitor the intake and exhaust 
+camshaft positions. The sensors monitor the 
+impulse wheels attached to the ends of the 
+camshafts. 
+
+1. Valvetronic Position Sensor 
+
+2. Intake Camshaft Position Sensor 
+
+3. Exhaust Camshaft Position Sensor 
+
+
+
+42 - 02-48 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The chart below shows the Bi-VANOS unit camshaft adjustment possibilities. The valve lift 
+adjustment has also been incorporated. 
+
+The special feature of Valvetronic is that the air mass drawn in the cylinders can be easily 
+determined by the valve lift and closing time. The air mass can then be limited, thus the 
+term “load control”. 
+
+
+With the help of VANOS, the closing point can be easily selected within a defined range. 
+With valve lift control, the opening duration and cross section of the valve opening can also 
+be easily selected within a defined range. 
+
+
+
+1. Exhaust Valve Open 
+
+2. Exhaust Valve Closed 
+
+3. Intake Valve Open 
+
+4. Intake Valve Closed 
+
+
+Vacuum pump 
+
+The N62 engine requires a vacuum pump for the vacuum assisted brake booster. With the 
+throttle valve open while the car is being driven, additional vacuum is needed. The vacuum 
+pump is driven by cylinders 1 -4 exhaust camshaft via the VANOS unit. The pump is lubri¬ 
+cated through an oil gallery from the cylinder head. 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oil Condition 
+
+
+An oil condition sensor records the exact engine oil level, oil temperature and the condition 
+of the engine oil. Recording the engine oil level protects the engine from having a level 
+which is too low which will result in engine damage. Recording the condition of the oil 
+means that it is possible to determine exactly when an oil change is required. 
+
+
+Oil Condition Sensor (OZS): The electronic condi¬ 
+tion sensor is located in the engine sump mounted to 
+the engine oil pan. 
+
+
+1. Electronic Sensor 
+
+2. Housing 
+
+3. Lower section of the oil sump (inverted view) 
+
+
+The sensor consists of two connected cylinder capac¬ 
+itors. The smaller capacitor (6) records the oil condi¬ 
+tion. Two metal tubes (2+3) act as capacitor electrodes 
+located inside the sensor. The engine oil (4) dielectric is 
+located between the electrodes. 
+
+
+
+42 - 04-06 
+
+
+With increased wear and additive 
+deterioration, the electrical materi¬ 
+al properties of the engine oil 
+change. 
+
+
+1. Housing 
+
+2. Outer metal tube 
+
+3. Inner metal tube 
+
+4. Engine oil 
+
+5. Oil level sensor 
+
+6. Oil condition sensor 
+
+7. Sensor electronics 
+
+8. Oil sump 
+
+9. Temperature sensor 
+
+
+
+
+Oil Condition Sensor 
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The different electrical material properties of the engine oil (dielectric) change the capaci¬ 
+tance of the oil condition sensor. This capacitance value is processed to a digital square 
+wave signal in the evaluation electronics (!) which is integrated in the sensor. This signal is 
+sent to the ECM over the BSD interface as a “statement” about the engine oil condition. 
+The ECM processes this sensor value to calculate the next oil change service. 
+
+
+The engine oil level is determined in the upper section of the sensor (5). This part of the 
+sensor is located on the top of the oil level in the oil sump. As the oil level lowers (dielec¬ 
+tric), the capacitance of the sensor also changes. The sensor electronics process this 
+capacitance value into a digital square wave signal which is also sent over the BSD inter¬ 
+face to the ECM. 
+
+PT'CAN 
+
+
+A platinum temperature sensor (9) is integrated at the 
+base of the oil condition sensor to measure the oil tem¬ 
+perature. The engine oil level, oil temperature and 
+engine oil condition are constantly recorded when volt¬ 
+age is supplied (KL15). The oil condition sensor is sup¬ 
+plied with voltage from the IVM. 
+
+The oil condition sensor electronics performs its own 
+diagnostics. A fault in the OEZS results in a corre¬ 
+sponding error message that is transmitted over the 
+BSD interface to the ECM for fault storage. 
+
+
+Electric Cooling Fan 
+
+
+
+The variable speed electric cooling fan is controlled by the ECM. The ECM uses a remote 
+power output final stage (mounted on the fan housing). The power output stage receives 
+power from the fuse (50 amp) junction located on the right inner fender of the engine com¬ 
+partment (under the remote charging post). The electric fan is controlled by a pulse width 
+modulated signal from the ECM. 
+
+The fan is activated based on the ECM calculation of: 
+
+
+• Coolant outlet temperature (monitored by the Outlet Temperature Sensor in the ther¬ 
+mostat housing) 
+
+• Catalyst temperature 
+
+• Vehicle speed 
+
+• Battery voltage 
+
+• Air Conditioning high side pressure (calculated by IHKA via a bus signal to the ECM) 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alternator 
+
+
+1. Watertight Housing 
+
+2. Rotor 
+
+3. Stator 
+
+4. Seal 
+
+
+Altenator 
+
+Regulation 
+
+
+
+Due to the high power capacity of 180 A, the alternator is cooled by the engine's cooling 
+system to enhance heat dissipation. The brushless Bosch alternator is installed in an alu¬ 
+minum housing which is mounted to the engine block. The exterior alternator walls are sur¬ 
+rounded with circulated engine coolant. The function and design of the alternator is the 
+same as in the M62, with only minor modifications. The BSD interface (bit-serial data inter¬ 
+
+
+face) for the ECM is new. 
+
+
+The alternator can actively communicate with the ECM 
+via the BSD (bit-serial data interface). The alternator 
+conveys data to the ECM. 
+
+PT-CAN 
+
+This is necessary to allow the ECM to adapt its calcu¬ 
+lations and specific control to the alternator output. 
+
+
+The connection with the ECM makes it possible to 
+almost completely equalize the alternator load torque. 
+This supports the engine idling speed control and the 
+battery load balance. 
+
+In addition, the ECM receives information from the 
+Power Module about the battery's calculated temper¬ 
+ature and charge status. This means that alternator 
+output can be adapted precisely to the temperature 
+and load status of the battery which increases the bat¬ 
+tery service life. 
+
+
+U$D 
+
+
+
+dz s 
+
+
+f AUQ 
+
+
+■ (=Mh 
+
+
+
+» 1 
+
+- GKfi 
+
+
+
+
+
+I DSC 
+
+
+
+=GS 
+
+
+| e:ck 
+
+
+42 - 04-08 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM takes on the following functions: 
+
+• Activation/deactivation of the alternator. 
+
+• Informing the alternator regulator of the nominal voltage value to be set. 
+
+• Controlling the alternator's response to load. 
+
+• Diagnosing the data line between the alternator and the ECM. 
+
+• Storing alternator fault codes. 
+
+• Activating the charge indicator lamp in the instrument cluster. 
+
+The charge indicator display strategy has not changed in comparison with the alternators 
+currently in use. Regulating the alternator output is particularly important when activating 
+Valvetronic operating motors. 
+
+A temperature protection function is implemented in the voltage regulator. If the alternator 
+overheats, the alternator voltage is reduced until an appropriate temperature has been 
+reached. 
+
+The ECM can recognize the following faults: 
+
+• Mechanical faults such as blockages or belt drive failure. 
+
+• Electrical faults such as exciter diode defects or over/under voltage caused by regula¬ 
+tion defects. 
+
+• Connection defects between the ECM and the alternator. 
+
+Coil breaks and short-circuits cannot be recognized. The basic alternator function is in 
+operation even if the BSD interface fails. 
+
+
+Note: The alternator regulator voltage is influenced by the ECM - BSD interface. The bat¬ 
+tery charge voltage can therefore be up to 15.5 V, depending on the battery temperature. 
+If a battery charge voltage of up to 15.5 V is measured, the regulator is not faulty. A high 
+charge voltage indicates a low battery temperature. 
+
+
+
+ME 9.2 Performance Controls 
+
+
+Electronic Box Cooling Fan 
+
+
+The E-box develops very high temperatures 
+caused by engine heat and the energy dissipat¬ 
+ed by the control units. The ECM controls an 
+electric cooling fan in the base of the electronic 
+box to draw in cool air from the passenger com¬ 
+partment. 
+
+Since electronic control modules need to oper¬ 
+ate at a reduced temperature, the air tempera¬ 
+ture in the E-box must be kept as low as possi¬ 
+ble. Lower temperatures extend the life expec¬ 
+tancy of electronic control modules. 
+
+
+
+Comfort Start 
+
+The comfort start makes easy engine starting possible 
+because the starter remains automatically activated until the 
+engine is running (rpm signal). Security is enhanced by using 
+the CAS Module with coded keys and the ignition starting but¬ 
+ton (integral). 
+
+
+
+When starting to the engine, the CAS contains the data for the EWS code which is trans¬ 
+ferred to the ECM. The transmission of EWS data between the CAS and the ECM is over 
+the data line D - EWS. Terminal R and terminal 15 is directed by the CAS for all electrical 
+systems. The CAS also activates KL15 WUP (Wake UP) for control modules on the PT- 
+CAN. 
+
+
+When KL15 WUP is activated, the control modules change from the state of rest into the 
+operating condition. During the starting procedure, KL 50L for the comfort starting relay (in 
+the IVM) and KL 50E is switched to the ECM for the starting request. The ECM will activate 
+a ground signal to the comfort starting relay to energize the starter motor. 
+
+The brake light switch is monitored by the ECM for the comfort start feature as well as 
+cruise control. An engine start is possible only if the brake pedal is pressed. For safety rea¬ 
+sons, the CAS monitors both signals of the brake light switch (the actual brake light switch 
+and the brake light test switch). 
+
+The selector lever of automatic transmission must be in position P or N. The position of the 
+selector lever is detected from the direct hardwire signal or via a CAN signal. 
+
+70 
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+Comfort Start - Block Diagram 
+
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Actuation Time of Terminal 50: The monitored actuating times of terminal 50 protects 
+the starter against overloading. The actuation times of terminal 50 are: 
+
+• A maximum of 21 seconds. A repetition is possible immediately. 
+
+• The actuation time is reduced for each repetition by 2 seconds until the minimum 
+actuation time of 3 seconds is reached. 
+
+• If the start/stop button is pressed for longer than the preceding actuation time, the 
+actuation time is increased by 2 seconds again (up to a maximum of 21 seconds). 
+
+
+Switching off the Engine: The vehicle engine is switched off when the vehicle is stopped 
+and the start/stop button is pressed. If the start/stop button is pressed for longer than 2 
+seconds, the vehicle engine is switched off and then the key is automatically released and 
+pushed out with spring pressure ("convenience off"). 
+
+
+Incorrect Operation and "Emergency On": To ensure the safety of the vehicle in the 
+case of an accidental engine shutdown during driving, the "Emergency On" function is 
+available. An engine shutdown during driving can be caused by accidentally pressing the 
+start/stop button (the button must be pressed for at least 1 second or 3 times consecu¬ 
+tively). 
+
+The "Emergency On" function enables the starter to be actuated again without brake oper¬ 
+ation at a vehicle speed above 5 km/h (3 mph). The "Emergency On" function also prevents 
+terminal R from being switched off during driving. 
+
+
+Service Functions: When replacing the ECM and/or CAS Module, the following must be 
+completed: 
+
+The Service Function "DME/DDE - CAS alignment" in the DISplus. After the alignment the 
+two modules are rigidly assigned to each other and the vehicle. 
+
+Note: It is not possible to exchange these control modules with another vehicle for testing 
+purposes. 
+
+
+
+ME 9.2 Performance Controls 
+
+
+Cruise Control 
+
+
+The cruise control (FGR) is a function of the ECM and has multi-speed capability on the 
+E65. This multi-speed function allows the driver to program and store multiple speed set¬ 
+tings which can then be activated as required. 
+
+This means that speed settings such as 30, 50, or 65 mph can be selected directly at the 
+touch of a button without having to drive the vehicle precisely at that speed beforehand. 
+This is a considerable added convenience. Those preset cruise control speeds are pro¬ 
+grammed by the driver in advance and then activated when driving. 
+
+
+1. Preset speeds 
+
+2. Cruise control active: 
+illuminated pointer 
+
+3. Cruise control not active: 
+silhouette pointer 
+
+
+Briefly press/pull the lever to illuminate the cruise control mask in the speedometer. The 
+memory will accept and store up to 6 preset speeds. When the cruise control is not active, 
+the silhouette pointer indicates the last speed at which it was activated. 
+
+When the cruise control is active, the illuminated pointer indicates the speed that is cur¬ 
+rently being maintained. The cruise control can be activated at any speed from approxi¬ 
+mately 20 mph upwards. 
+
+When the ignition is switched OFF, the cruise control is switched off at the same time. 
+Moving the lever up/dn will deactivate the cruise control and delete the mask in the 
+speedometer. The cruise control function is overridden by braking, selecting transmission 
+setting "N" or active DSC intervention. 
+
+
+Speedometer in Instrument Cluster: 
+
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+Cruise Control Lever: The cruise control is 
+operated by the left lower steering column lever. 
+
+When the lever is pressed forward to (but not 
+beyond) the detent, the current road speed is 
+stored and maintained. 
+
+Flicking the lever forwards increases the vehicle 
+road speed by approx. 1 mph at a time. If the 
+lever is pressed and held, the vehicle acceler¬ 
+ates. When the lever is then released, the speed 
+is stored and maintained. 
+
+
+When decelerating, flicking the lever backwards repeatedly reduces the vehicle road speed 
+by approx. 1 mph at a time. When the multi-speed function is activated, the preset speed 
+indicators on the speedometer can be hidden. This is done by pressing and holding the 
+cruise control lever up or down for more than 3 seconds. 
+
+
+
+42 - 04-13 
+
+
+Programming/Deleting Preset Speeds 
+
+Programming of preset speeds should be performed while the vehicle is stationary with 
+KL15 switched “on”. It is also possible to program the preset speeds while driving. 
+However, altering the preset speed also alters the current speed being maintained. 
+
+To program a preset speed, the cruise control lever is pressed forwards or backwards 
+beyond the detent. A pointer then appears on the speedometer that indicates the preset 
+speed. To increase the preset speed, the cruise control lever must be pressed forward to 
+the detent. To reduce the preset speed, the cruise control lever must be pulled backwards 
+to the detent. 
+
+To store the preset speed, the slide switch (in the end of the lever) must be pressed and 
+held in for at least 3 seconds. The stored preset speed is indicated by a pointer on the 
+speedometer. A preset speed is deleted by selecting it using the cruise control lever and 
+then pressing and holding the slide switch in for at least 3 seconds. The speed pointer then 
+disappears. 
+
+Note: The preset cruise control speeds are a Vehicle Memory function. 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+Function 
+
+Activate cruise control accelerate/set 
+Decelerate/set 
+
+Activate multi-speed function 
+
+Select next higher preset speed 
+
+Select next lower preset speed 
+
+Cancel cruise control 
+
+Recall/set/delete preset speeds 
+while cruise control active 
+
+
+Operated By 
+
+Move lever forwards 
+
+Move lever backwards 
+Pressing lever forwards past detent 
+Pressing lever forwards past detent 
+Pressing lever backwards past detent 
+Move lever up/down 
+Press slide switch inwards 
+
+
+Notes: 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+
+1. Describe the Integrated Voltage Supply Module (IVM) for the Fuel Injectors and 
+Ignition Coils: 
+
+
+2. List the three signal operations required to detect Valvetronic Positon. 
+
+
+3. Describe how the Electric Fuel Pump is activated. 
+
+
+4. What type of Ignition Coils are used in the N62? 
+
+5. Where is the Active Charcoal Canister and DM TL located? 
+
+
+6. What are the advantages of the Bosch LSU Planar Wideband Oxygen Sensors? 
+
+
+7. List the functions of the Oil Condition Sensor. 
+
+
+8. Explain the Comfort Start feature. 
+
+
+9. How are the Cruise Control preset speeds programmed and deleted? 
+
+
+
+ME 9.2 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

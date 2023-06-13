@@ -1,0 +1,9212 @@
+Table of Contents 
+
+
+Integrated Service Technical Application 
+
+Subject Page 
+
+Introduction .6 
+
+ISTA Operating Modes.8 
+
+HO Workshop Mode .8 
+
+Online .8 
+
+Offline .8 
+
+TeleServices.8 
+
+Data Exchange with Other Systems .10 
+
+ISPA Broker.10 
+
+JET Stream .10 
+
+Distinguishing Different Makes .10 
+
+General Operation of the ISTA Workshop System .11 
+
+Options for text entry (on-screen keyboard) .13 
+
+Quick System Overview.14 
+
+Starting the ISTA Client.14 
+
+Checking the Operations List .15 
+
+Selecting a Vehicle.16 
+
+Selecting a Diagnostic Connection to the Vehicle.17 
+
+Creating an Operation.19 
+
+Creating a New Operation or Selecting an Existing Operation ... .20 
+
+Perform Vehicle Test .21 
+
+Display Fault Memory .22 
+
+Editing a Test Plan .23 
+
+Running a Procedure.24 
+
+Terminating an Operation.25 
+
+ISTA Menu Structure.26 
+
+Start Mask.27 
+
+Displaying New Items .28 
+
+Identification .29 
+
+Vehicle Selection .29 
+
+Operations List .30 
+
+Filtering the operations list.32 
+
+Vehicle Identification Number .34 
+
+
+Initial Print Date: 04/10 Revision Date: 05/10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Reading Out Vehicle Data .35 
+
+Identification Operation.36 
+
+Reading Out Vehicle Data via the Connection Manager.36 
+
+Basic Features.37 
+
+Incomplete Entry of Basic Features .38 
+
+Operation Information.39 
+
+Operation Details .39 
+
+Vehicle Details.40 
+
+Operations Report .41 
+
+Print operations report or diagnostic report.42 
+
+FBM Reports (FASTA).42 
+
+Vehicle Test.42 
+
+Control Unit Tree.43 
+
+Control Unit Functions.44 
+
+Identification .44 
+
+Diagnostic query.45 
+
+Component activation .46 
+
+Control unit list .47 
+
+Activities .48 
+
+Information Search.48 
+
+Product Structure.48 
+
+Filters.49 
+
+Function Structure.51 
+
+Components and Signals.52 
+
+Text Search .53 
+
+Additional general information on the text search .54 
+
+Assisted Troubleshooting.55 
+
+Fault Memory .55 
+
+Display detail table .57 
+
+Fault Pattern.58 
+
+Selected fault patterns .59 
+
+Service Function.60 
+
+Workshop/operating fluids .61 
+
+Workshop Equipment .61 
+
+Text Search .62 
+
+Measuring Devices.63 
+
+Service Plan .64 
+
+Flit List.64 
+
+Viewing a Document.66 
+
+Text Documents .67 
+
+Wiring Diagrams.68 
+
+Display several documents simultaneously.69 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Whole Screen .70 
+
+Zoom Function .71 
+
+Test Plan .72 
+
+Displaying and Editing a Procedure .75 
+
+Message.75 
+
+Substitute value input .76 
+
+Question.77 
+
+Displaying and editing a procedure in BST mode.78 
+
+Symbol Bar.79 
+
+Start Mask .80 
+
+History list .80 
+
+Administration .81 
+
+Client settings.81 
+
+Language settings.82 
+
+Dealer data.83 
+
+Software status.84 
+
+Connection Manager.85 
+
+Operating Mode .87 
+
+Status Display.88 
+
+Printing .89 
+
+Help Functions .90 
+
+Table of Contents.91 
+
+List of Abbreviations.92 
+
+Units Converter.93 
+
+Minimize Workshop System .94 
+
+Close Operation/application .94 
+
+Operations .95 
+
+Creating an Operation.95 
+
+Identification via operations list .95 
+
+Identification via VIN Entry .96 
+
+Vehicle Identification by Reading Out Vehicle Data.96 
+
+Vehicle Identification via Basic Features .97 
+
+Identification in “TeleServices” Operating Mode.98 
+
+Statuses.98 
+
+New.99 
+
+In progress.99 
+
+Copy of an operation or parallel operation.99 
+
+Interrupted.100 
+
+Terminated.100 
+
+Re-open terminated operation .101 
+
+New operation to be created and opened .101 
+
+Simultaneous access to an ISTA operation .101 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+Time-dependent status change .101 
+
+Workshop PC .101 
+
+ISID in offline mode.101 
+
+TeleServices .102 
+
+Terminating an operation .102 
+
+Abbreviations .105 
+
+Glossary.106 
+
+Fault Messages and Fault Rectification.107 
+
+
+
+
+
+
+
+
+
+
+
+Integrated Service Technical Application (ISTA) 
+
+
+Model: All 
+Production: All 
+
+■BIIBTHBS 
+
+After completion of this module you will be able to: 
+
+• Identify the components of the ISTA System BMW 3rd generation Diagnostic 
+Equipment. 
+
+• Describe the operation and different functions of the ISTA System. 
+
+• Properly utilize the ISTA System to search for technical information related to 
+the repair i.e. wiring diagrams, repair instructions, functional descriptions. 
+
+• Navigate and operate proficiently all aspects of the BMW 3rd generation 
+Diagnostic Equipment. 
+
+• Properly diagnose BMW Group Vehicles using the ISTA System. 
+
+
+5 
+
+ISTA 
+
+
+Introduction 
+
+
+ISTA or the ISTA workshop system consists of several functionally oriented system com¬ 
+ponents that communicate with each other via LAN, WLAN and Internet. The entire sys¬ 
+tem supplies up-to-date diagnostic data and information from BMW headquarters. The 
+primary applications of the terminal devices are powerful diagnostics on the vehicle, with 
+various options for vehicle identification for highly specific information searches and 
+guided troubleshooting. The associated software is a client/server solution known as 
+ISTA. The ISTA client software is installed on the Integrated Service Information Display 
+(ISID) operator devices and the workshop PC. It communicates with the ISTA server soft¬ 
+ware that runs on the Integrated Service Information Server (ISIS). ISID can operate tem¬ 
+porarily offline and then be resynchronized later with the server. In a large dealer organi¬ 
+zation (HO) workshop, several ISIS may be present. 
+
+
+
+
+
+
+
+u 
+
+
+
+
+n f fr if 
+
+wi '-.U R* 
+
+
+
+
+U 
+
+
+__ H 7L .M If 
+
+
+W H 
+
+
+il! 'I~T I. I I I r ■ 4 l it ■'■■a, L 
+
+
+CD. 
+
+
+m- ]« 4 I 
+
+Sol) 
+
+M_ t/ f(r 
+
+
+-X - “T T TIT 
+
+
+
+Note: For more information regarding ISTA, please refer to Dealernet and 
+
+select: Menu>BMW>Aftersales Portal>Service>Workshop Technology 
+and access the ISTA User Manual file. You can also type Workshop 
+Technology in the search engine and that will prompt you to the correct 
+web page. 
+
+
+6 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Integrated Service Information Server (ISIS) 
+
+ISIS is the workshop server. In addition to other applications, the server-specific compo¬ 
+nent of the ISTA software is installed on ISIS. 
+
+The workshop server is connected with BMW AG via an internet link. BMW AG makes 
+the data available via the ISPA Broker and JET stream. 
+
+Integrated Service Information Display (ISID) 
+
+ISID is a mobile tester for workshop use integrated into the workshop network. The 
+scope of delivery consists of a control panel, a base station and accessories. An ISTA 
+client is installed on the ISID. The device can be operated “online” (in conjunction with 
+the ISTA server) or “offline” (temporary interruption of connection with the ISTA server). 
+
+Integrated Measurement Interface Box (IMIB) 
+
+The IMIB is a powerful measuring instrument that is used in the BMW Group dealer orga¬ 
+nization. It contains several measuring units that can simulate the performance of an 
+oscilloscope or a digital multimeter. The IMIB contains adjustable current and voltage 
+sources which can be used as voltage and current supplies. 
+
+You can use the IMIB as a multimeter, even if not connected to ISTA, or execute more 
+complex functions with ISTA. You can establish a link between ISID and IMIB via LAN or 
+WLAN. 
+
+The IMIB can be operated in two modes in conjunction with ISTA: 
+
+• Interactively as a manually adjusted measuring instrument 
+
+• Embedded in test processes as an automated measuring instrument 
+
+With the manually adjusted measuring instrument you can make manual settings in the 
+relevant masks once a connection to the measuring instrument system has been estab¬ 
+lished. The results are displayed in the mask. For additional information, see IMIB section. 
+
+With the guided measuring instrument, the measuring instrument system is automatically 
+adjusted via program instructions in the test seguence. The results are displayed in spe¬ 
+cific masks and evaluated by the program. 
+
+Integrated Communication Optical Module (ICOM) 
+
+ICOM is a communication device and constitutes the diagnostic interface to the vehicle. 
+
+It is connected to the vehicle and can be linked to an ISID via a connection manager. 
+
+Thus ISID can communicate with the vehicle, e.g. for automatic vehicle identification, or 
+for executing test programs. 
+
+Integrated Service Access Point (ISAP) 
+
+ISAP is a communication device (Access Point) for linking WLAN-capable devices to the 
+workshop network. 
+
+
+7 
+
+ISTA 
+
+
+
+Personal Computer (PC) 
+
+You can also install an ISTA client on a PC or a workshop PC, for example. As these 
+devices are fixed, a PC is primarily suitable for information searches. 
+
+Printer 
+
+Approved and standard commercial network printers are used for printing jobs. 
+
+ISTA Operating Modes 
+
+HO Workshop Mode 
+
+In the HO workshop mode, the terminal devices can be operated both “online” (default) 
+as well as “offline”. 
+
+Online 
+
+In this operating mode, the client and the workshop server are located in an HO work¬ 
+shop and are connected via the local workshop network (LAN, WLAN). An online con¬ 
+nection to BMW AG is established. ISTA software can be operated on a mobile ISID 
+and/or a stationary workshop PC. 
+
+The online link not only supports the prompt update of ISTA data and software, but also 
+provides access to data from other systems at BMW headguarters. Data access usually 
+occurs in the background when certain functions are accessed. 
+
+Offline 
+
+In this mode, the client is temporarily separated from the workshop server. For example, 
+this is necessary if the ISID is used on a test drive with the vehicle. The changeover from 
+online to offline mode and back again is performed by the Workshop Management 
+System (WSM). Once the client is online again, the software synchronizes itself automati¬ 
+cally with the workshop server. The same thing happens if the server crashes and is avail¬ 
+able again at a later point in time. 
+
+TeleServices 
+
+In the “TeleServices” operating mode, communication with the vehicle is performed via 
+the mobile phone network (GSM). The vehicle transmits a service call to the central 
+TeleServices switchboard (TSSB) either automatically triggered by Condition Based 
+Service (CBS) scopes or manually by the driver. In the process additional fault memory 
+data and control device information is transmitted in the form of a file. This data is trans¬ 
+mitted to the home dealer of the customer via the TSSB and can be read out there with 
+ISTA. 
+
+This option is only available if the application for ISPA service advice and order control 
+has been installed on ISPA. ISTA is then called up in the “TeleServices” operating mode 
+by the service advisor from the ISPA Client. The first mask that is displayed in ISTA after it 
+is called up in this mode is the fault memory list of the identified vehicle. 
+
+
+8 
+
+ISTA 
+
+
+
+Only limited ISTA functions are available in the “TeleServices” operating mode. No direct 
+link is established with the vehicle at any time. 
+
+
+TeleServices components 
+
+
+
+TeleServices on workshop PC (no current screenshot) 
+
+
+TtcMol Apple 
+
+
+
+MINI Service 
+
+Werkstattsys 
+
+
+
+die r^rjeujj-JeftJfHnen . 
+
+
+After the data has been read out, the “Fault memory” mask is displayed. From here a test 
+plan can be accessed. You can now search for information objects. 
+
+
+9 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Exchange with Other Systems 
+
+
+ISPA Broker 
+
+Score Broker is an online interface with BMW AG. It enables the calling-up of information 
+on technical actions, fault patterns (Customer's own words/Customer's quote, qualified), 
+vehicle details, repair history and vehicle rundown. The information is integrated into the 
+respective masks and requires an online connection of the ISPA Broker to BMW AG. 
+
+(Not yet in US) 
+
+JET Stream 
+
+JET stream is an online interface to BMW AG. It provides updated software (content and 
+system packages) and transmits nonprocedurally defined data to the vehicle description 
+module (FBM) at BMW AG. The information is integrated into the respective masks and 
+requires an online link to BMW AG. 
+
+Distinguishing Different Makes 
+
+The user interface is standardized for the BMW, MINI and Rolls-Royce brands. The vari¬ 
+ous brands - depending on the authorization of the respective business - can be identi¬ 
+fied by the different colors of the active objects in the display. A marked object is thus 
+highlighted on the screen in the respective brand color. Furthermore, depending on 
+authorization level, the brand in the header of the start mask will be displayed as text. 
+
+Colors and logos are listed in the table below: 
+
+
+Brand 
+
+Logo left 
+
+Logo right 
+
+Color 
+
+BMW Group 
+Multi-brand Cealers 
+
+BMW Service 
+
+Workshop System 
+
+MINI Service 
+Workshop 
+
+System 
+
+turquois 
+
+e 
+
+BMW 
+
+BMW Service 
+
+Workshop System 
+
+
+blue 
+
+MINI 
+
+MINI Service 
+
+Workshop System 
+
+
+
+Rolls-Royce 
+
+Rolls-Royce Motorcars 
+
+Service Workshop System 
+
+
+chamois 
+
+
+10 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Operation of the ISTA Workshop System 
+
+The graphic displays on the screen are known as “masks”. These contain information 
+and control functions that enable the user to operate the ISTA workshop system. 
+
+The masks normally have a standard structure. They are divided into the following 
+sections: 
+
+1. Symbol bar 
+
+2. Header 
+
+3. Navigation area 
+
+4. Content range 
+
+5. Comment line 
+
+6. Action line 
+
+
+
+1 
+
+2 
+
+3 
+
+
+4 
+
+
+5 
+
+6 
+
+
+11 
+
+STA 
+
+
+Symbol bar 
+
+The symbol bar is visible in all masks. The functions that can be called via the individual 
+symbols are described in the ISTA Menu Structure Chapter. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Header 
+
+The vehicle identification number and the basic features of the identified vehicle are dis¬ 
+played in the header. The vehicle identification number is only displayed if the vehicle has 
+been identified by entering or reading out its vehicle identification number. 
+
+Navigation area 
+
+You can navigate among the individual functions of the workshop system using the: 
+
+0 main menu (first line) 
+
+0 submenu (second line), and 
+0 tabs. 
+
+The selected menu items or tabs are marked in the appropriate brand color. 
+
+Content range 
+
+This is where you will find further selection options and information. A white arrow point¬ 
+ing up or down identifies the column that is used for sorting a selection list. 
+
+Comment line 
+
+The bottom part of the content range may also contain a comment line in which you will 
+receive additional information. 
+
+Action line 
+
+Various buttons are shown here according to the content range. 
+
+
+12 
+
+ISTA 
+
+
+
+Options for text entry (on-screen keyboard) 
+
+In various masks, it may be necessary to enter text or characters. In general, this can be 
+done using the PC keyboard. By clicking on the “Keyboard” button you can fade in the 
+so-called “on-screen keyboard”. Only keys that are necessary to make valid entries at the 
+respective function step are enabled on the on-screen keyboard. Impermissible charac¬ 
+ters cannot be selected with the on-screen keyboard. 
+
+A second click on the “Keyboard” button hides the on-screen keyboard. 
+
+
+Integrated Service 
+Technical Application 
+
+
+VIN VA200D8 
+
+identification 
+
+Vehicle test 
+
+1 Information 
+
+Guided 
+
+1 search 
+
+troubleshooting 
+
+Product 
+
+fun ebon 
+
+structure 
+
+structure 
+
+
+a! /•] |w <?] 
+
+VaMcIa 3 *90ISAL/320dffA47fT2UUjTIEUR LU2004/11 
+
+
+Workshop / Meacunnfl 
+
+Oparacnp fluids devices 
+
+
+Components 
+and tlpult 
+
+
+’iltc- Default 
+
+Keyboard 
+
+
+Search term: 
+axle 
+
+
+0 Search In the dociatient title 
+0 Search in the docianent 
+O Search for document number 
+
+
+
+
+9 T 
+
+
+Start 
+
+search 
+
+
+On-screen keyboard: Entering search terms 
+
+
+13 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+Quick System Overview 
+
+
+Starting the ISTA Client 
+
+How to start the ISTA Client: 
+
+0 Double-click the symbol on the Windows desktop (if displayed); or 
+
+0 Open the application in the program file by selecting “Start - All Programs - ISTA - 
+ISTA Client”; or 
+
+0 Open the application by selecting the corresponding entry on the central start page 
+on the ISID. 
+
+After selection, the start mask appears a list of news will be displayed. You can set the 
+display period in Administration. 
+
+If the date has changed since the last time the system was activated, the “ISTA usage 
+notes” will be displayed. After reading the note, close the pop up window by clicking the 
+“Continue” button. 
+
+
+
+You can initiate an identification procedure from the start mask. 
+► To initiate an identification procedure for a vehicle: 
+
+0 Select the “Identification” menu 
+
+
+14 
+
+ISTA 
+
+
+
+
+
+
+Checking the Operations List 
+
+Note: In the “Central/online” operating mode (OSS and TeleServices), the 
+“Operations list” tab is not available for technical reasons. Proceed 
+with next section. 
+
+After you have selected the “Identification” menu from the start mask, the workshop sys¬ 
+tem switches to the “Operations list” tab. 
+
+Each identification session generates a “procedure” that is automatically initiated and 
+administered by the workshop system for vehicle identification. At the end of the session 
+an operation is closed via a pop up. The user can thus choose whether he wants to ter¬ 
+minate or interrupt the operation. Depending on the option selected, an operation is con¬ 
+cluded via a pop up, assigned a status (“terminated”, “interrupted”) and entered into the 
+operations list for a certain period. Saved procedures can be reopened from the opera¬ 
+tions list. 
+
+Additional information is available in the “ISTA Menu Structure” section. 
+
+
+Integrated Service ▲ 
+
+Technical Application 
+
+>] 
+
+
+□0 
+
+[ip] 
+
+
+[F 
+
+
+
+P?~ 
+
+Itacij 
+
+
+[X] 
+
+
+VIN: Vthlel#: 
+
+
+Vehicle 
+
+selection 
+
+
+Operation 
+
+information 
+
+
+VIN 
+
+
+Read out 
+vehicle data 
+
+
+Basic features 
+
+
+
+Basic features 
+
+VIN 
+
+Date/time 
+
+Status 
+
+
+E46 / 320d / TOUR / M47 
+
+PE46572 
+
+16104/2008 12:13 
+
+Interrupted 
+
+
+▲ 
+
+E46 / 318i / SAL /M43/TU 
+
+JJS7307 
+
+16/04/2008 12:11 
+
+Interrupted 
+
+
+■ 
+
+E46 / 310i / SAL / M43JT U 
+
+AY27004 
+
+16/04/2008 12:11 
+
+Interrupted 
+
+
+
+E82 / 136is / COUPE f N54 
+
+VE99063 
+
+16/04/2008 1126 
+
+Interrupted 
+
+
+
+E90 /3901/ LIM / N62 
+
+PR23000 
+
+16/04/2008 1082 
+
+Interrupted 
+
+
+
+E91/3101/ TOUR / N46 
+
+KW69004 
+
+16104/2008 1023 
+
+Interrupted 
+
+
+■ 
+
+E32 / 750(1/ LIM f M70 
+
+DC71313 
+
+16/04/2008 10.26 
+
+Interrupted 
+
+
+
+E32 / 750iL / LIM / M70 
+
+DC71313 
+
+16/04/2008 1026 
+
+Interrupted 
+
+
+
+E32 / 750iL / LIM / M70 
+
+DC71313 
+
+16/04/2008 09:37 
+
+Interrupted 
+
+
+
+E4€/318Ci/COUPE/N42 
+
+PK62200 
+
+15/04/2008 11:15 
+
+Interrupted 
+
+
+
+E82 / 19Sis / COUPE f N64 
+
+VE93063 
+
+15/04/2008 11.09 
+
+Interrupted 
+
+
+
+E82 /13Sis / COUPE f N64 
+
+VE99063 
+
+14/04/2008 13 49 
+
+Interrupted 
+
+
+▼ 
+
+Operations filter Default 
+
+
+
+
+
+Filter Set 
+
+operations list standard fitter 
+
+
+
+
+Accept 
+
+
+Operations list 
+
+The selection of an existing procedure is not suitable for the “Short introduction” provided 
+here. Therefore change to the “Read out vehicle data” tab. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selecting a Vehicle 
+
+There are four options for initiating vehicle identification: 
+
+0 by selecting an operation 
+0 by entering a vehicle identification number 
+0 by reading out the vehicle data, or 
+0 by selecting basic features. 
+
+The most reliable way to identify a vehicle is by reading out the vehicle data from a con¬ 
+nected vehicle. 
+
+► How to identify a vehicle by reading out the vehicle data and automatically creating an 
+operation to do this: 
+
+0 Click the “Identification” main menu item in the navigation area. 
+
+0 Select the “Read out vehicle data” tab and follow the instructions provided. 
+
+0 Click the “OK” button. 
+
+
+Integrated Service 
+
+Technical Application 
+
+A 
+
+
+0 
+
+;0B 
+
+
+
+[if 
+
+
+[teLr 
+
+
+? 
+
+
+
+
+x| 
+
+
+VIN: Vehicle: 
+
+
+
+
+Preparations for reading out vehicle data 
+
+After a short interval, the connection manager appears. 
+
+
+16 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selecting a Diagnostic Connection to the Vehicle 
+
+The ISTA communication devices from the HO workshop are entered into the content 
+range of the connection manager. 
+
+► How to select the communication device: 
+
+0 Determine which ICOM is connected to the vehicle to be identified. 
+
+0 Select the appropriate components in the connection manager and click the 
+“Set up connection” button. 
+
+
+
+Connection manager 
+
+
+17 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+After the “Set up connection” button is selected and clicked, the connection will be set 
+up. The tester performs a vehicle identification. To do this, it reads out the vehicle identifi¬ 
+cation number from the vehicle. The progress of the identification procedure is displayed 
+on a progress bar. 
+
+
+Integrated Service 
+Technical Application 
+
+VW: Vehicle: 
+
+
+Identification 
+
+Vehicle test 
+
+Activities 
+
+Service plan 
+
+
+
+
+Vehicle 
+
+Information 
+
+
+
+
+
+
+Operations list 
+
+
+nUMMi 
+
+Bukfe.lur» 
+
+
+• Connect vehicle interface 
+■ Switch on vehicle Ignition. 
+
+
+Identification operation Ju 
+
+Read out vehicle Identification number (V1N)... 
+
+
+
+Identification procedure 
+
+
+18 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating an Operation 
+
+After the identification procedure, the workshop system tries to uniquely assign the oper¬ 
+ation to an existing operation. If this does not succeed, it automatically creates a new 
+operation and switches over directly to the “Operation details” mask. 
+
+If operations with the same identification features are already available in the workshop 
+system, these will be offered for selection in the “Assignment/generation of operation” 
+list. 
+
+
+Assignment/generation of operation u X 
+
+
+Basic features 
+
+VIN 
+
+Date/time 
+
+Status | 
+
+E90 / 320d / SAL / M47/T2 
+
+VA20008 
+
+16/04/2008 13:38 
+
+Terminated 
+
+E90 / 320d / SAL / M47/T2 
+
+VA20008 
+
+15/04/2008 15:33 
+
+Terminated 
+
+E90 / 320d / SAL / M47/T2 
+
+VA20008 
+
+18/04/2008 16:18 
+
+Terminated 
+
+
+Cancel 
+
+
+New 
+
+operation 
+
+
+OK 
+
+
+19 
+
+ISTA 
+
+
+
+
+
+Creating a New Operation or Selecting an Existing Operation 
+
+► How to assign an operation: 
+
+0 Select an existing operation or click the “New operation” button. 
+
+0 Click the “OK” button. 
+
+If no unigue assignment is produced (e.g.: the other operation is open or several suitable 
+operations are available), a corresponding pop up is displayed. 
+
+Additional information is available in “ISTA Menu Structure Chapter” under Operation 
+details (without an online connection to BMW AG). 
+
+
+Integrated Service 
+
+Technical Application 
+
+1 8 i_j ? | 
+
+
+jLxij 
+
+
+
+Vehicle 3‘lE90«AU320dWyU7/T2iAUTlEUR LU2004/11 
+
+
+Operation 
+
+Information 
+
+
+
+Operation details for “Technical actions” and “Customer complaints” reguire an online 
+connection to BMW AG. 
+
+You can specifically search for various types of information via the “Search for informa¬ 
+tion” button. 
+
+You can start the vehicle test by clicking on the “ 
+
+
+20 
+
+ISTA 
+
+
+Perform vehicle test” button. 
+
+
+
+
+
+
+
+
+
+Perform Vehicle Test 
+
+The vehicle test runs automatically the first time for each operation. During the vehicle 
+test, the “Control unit tree” submenu is displayed by default. Alternatively you can switch 
+to the corresponding list of control devices by selecting the ’’Control unit list” entry from 
+the submenu. 
+
+The control unit tree displays the maximum number of control units installed in a vehicle, 
+and their assignments in the respective bus system, in the form of a chart. At the begin¬ 
+ning of the vehicle test, the rectangular symbols are not colored. Non-installed control 
+units in the identified vehicle are shown in gray in the display. Currently processed (or 
+selected) control units are displayed in the color of the mask. 
+
+While the vehicle test is being performed, you can follow its progress on the screen as 
+the displayed symbols are updated in real-time. 
+
+From this mask, you can if required restart the vehicle test or also call up control unit func¬ 
+tions so that you can read out measurements or activate actuating elements. 
+
+Before you can access a test plan you must first display the fault memory. 
+
+► How to view the fault memory: 
+
+0 Wait until the vehicle test is completed. 
+
+0 Click the “Display fault memory” button. 
+
+
+
+I-CW 
+
+
+
+
+rr-c4N 
+
+
+fault memory: Available 
+
+• ECU fipcndrc 
+
+• ECU lot mszmdnj 
+
+ECJ nutfrteil 
+
+Stan Cali up 
+
+vehicle test ECU functions 
+
+
+
+Display 
+fault memory 
+
+
+21 
+
+ISTA 
+
+
+Control unit tree at the beginning of the vehicle test 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Display Fault Memory 
+
+After the vehicle test, go to the “Fault memory” mask. The read-out fault codes and the 
+associated description will be listed. From this mask you can calculate a test plan. 
+
+► How to calculate a test plan: 
+
+0 Click the “Test plan” button. 
+
+
+Integrated Service 
+
+Technical Application 
+
+A 
+
+
+DO 
+
+1 1 
+
+
+
+e oil 
+
+? 
+
+M 
+
+|x 
+
+
+V<N VA20008 Vehicle 3 <«Oi>SAiJ320d/Mi7;T2iAUT<tUR LU2004A11 
+
+
+Vehicle test Activities 
+
+
+information 
+
+Guided 
+
+Service 
+
+Workshop / 
+
+Measuring 
+
+search 
+
+troubleshooting 
+
+
+Operating fluids 
+
+devices 
+
+
+Fault pattern 
+
+
+
+Fault pattern 
+
+
+Mo. of fault memories A N. of fault memories 0 
+
+
+DU 
+
+play 
+
+Start quick 
+
+
+Calculate 
+
+data 
+
+table 
+
+delete 
+
+
+test plan 
+
+
+Service plan 
+
+
+Identification 
+
+
+Display fault memory 
+
+You run the “Start quick delete” function when the guided troubleshooting is completed. 
+You can find details about this function in Fault Memory section. 
+
+
+22 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Editing a Test Plan 
+
+The test plan lists the suspected components and functions. 
+
+The individual suspected components and functions are presented in white lettering 
+against a dark background. Underneath them the appropriate documents and procedures 
+are listed in black lettering against a light background (indicated in the “Type” column 
+with “ABL”). 
+
+Procedures localize a fault and provide advice on rectifying it. 
+
+► How to start a procedure: 
+
+0 Select the reguired procedure from the test plan. 
+
+0 Click the “Display” button. 
+
+
+Integrated Service 
+Technical Application 
+
+
+A 
+
+J- 
+
+□d| 
+
+EH ill 
+
+1® 1 
+
+? 
+
+
+x| 
+
+
+Vehicle 3'ft90/SAU320d^M47/T2/AUTiEUR LU20Q4111 
+
+
+Identification 
+
+Vehicle teat 
+
+Activities 
+
+Service plan 
+
+
+
+1 Note Typi 
+
+Title 
+
+Status 
+
+Priority a 
+
+
+
+
+
+ABL 
+
+BSS12.S0100 M ASK Versorgung 
+
+0 
+
+4 
+
+
+
+
+
+ABL 
+
+B6S12_60100-M-ASK Veraorgung 
+
+O 
+
+5 
+
+
+
+
+
+ABL 
+
+B6690_ttX)0a-Navlgatientsyttem Japan 
+
+o 
+
+6 
+
+
+
+
+
+ABL 
+
+B4612 _60104 • N a v i g atx> n s system 
+
+0 
+
+7 
+
+ABL 
+
+B8612.50006 CCC Navlgetlonsfunhtlen 
+
+o 
+
+7 
+
+ABL 
+
+B6S12_«0100MASK Versorgung 
+
+0 
+
+8 
+
+
+
+
+
+ABL 
+
+B6590_10000-Navigat>cnssystem Japan 
+
+o 
+
+9 
+
+I Ms: 11 Fitter: Default O NrtraiM e Pertorrrec a Mnrnsrd ♦ Carr: 
+
+Back 
+
+Show! Hid. Oii'l»|r.n*ri 
+
+
+Display 
+
+
+Test plan 
+
+
+23 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running a Procedure 
+
+A procedure (service program) is primarily designed to identify the cause of a fault. 
+Further-more, service functions can be performed via procedures. Information can be dis¬ 
+played within a procedure, as well as measurements read out or entered. Furthermore, 
+gueries can be made available via selection screens. 
+
+After a procedure has been carried out, additional information will be added to the test 
+plan, if this turns out to be necessary for further fault search or fault rectification. In the 
+test plan, you can select and start another procedure. 
+
+The following mask gives an example of a guestion with the options “Yes” and “No”. 
+
+
+Integrated Service jl . Z"j 
+
+Technical Application 
+
+[W : Z] [E S [?] M [* 
+
+VIN VA2OO08 Vehicle J'/ESWSAUJWdlMdT/TflAUTJEUR LL0004J11 
+
+B6£90_10000-Navigatlcnssyttem Japan 
+
+a i* 
+
+
+Funktions- 
+
+bdIChftiUllfl 
+
+
+Oata transfer to following control unit faulty: 
+Navigation system Japan 
+
+Chock: 
+
+• Fust for Navigation system Japan 
+
+• Power supply for Navigation system Japan 
+
+ts the fuse OK? 
+
+is the voltage supply OK? 
+
+1 Y«» 
+
+2 Nil 
+
+
+Function 
+
+The . jpjfiKc -®-:ic»- o' Tfis navigation system is .-.w fo- ic».tc ;<arnna rctrs Irfiimseo 
+uf :untf-ii'. alt; and fit mart ,mnj thfc rou*.» 
+
+OPS Navi^atmn Oi hu Potitnnn; Ih* Gd*S n*v»g*tMin ey*t(rr> patfnrto hi 
+
+trantmtr-d Py siteltes Tt* sgrvil: ate received 6y the GPS jo'wI ;n trie vehicle, piece 
+to the n*>iaatun :orrcir.tr as arfcud: and i:natu:o oata Tne navigation co-pjtcr uic: 
+Ca-uA oi«f Xi(t' or tha CPS 'd«i 9 *U:n oyttam u arty fotsfcls «*t«»n vata a in mb’CAa 
+
+hi: nI t>n>l l«n lil*. xtNir«x h inlKijiii.nd i r nil >, luimx •*. i , J , !i'.ni)!ir «iil 
+
+Navigation computer with GPS receiver, hard drive and gyro censor: The -•ap 
+dit-e of ro rus-gsoo’ crmp-tc* Th: nautaaiwn lomptfcrccifbnK the vtclile po:h>on < 
+oara The luire't po-ahon is ;h:**ri in Tf» o'-board rwntot n ths 30 :r 20 r^ap 
+l k M anv -1 t:«wi n‘Imi m :n*ini«li n III* mr»iaiHiii linin' »i Rtfcddoii « mif- rnim ti. 
+on eetectjbie r-te'tj |va mihnwey. *«j mitrrwy. etc ) The cacu^ed *wte t shown n 
+VV-ic th: vehicle i: tic no dit.ea tre -■X'.igjdni c impute- s.ti Ihc OSC 0FAV1. 5Jg*oi ta 
+hem OSC and rf unur .on in a massage via MuS”; 
+
+All vijihl Vttll iTy rrn'.r, kfttwfi <k "« "«jr-in WltilU*, rfutriu lti» DiM^IUn iincll’-f «l 
+
+{e g -*he* tumnj uft er: i t-ij gyre c«nc:r ic hited in fe raeng of th? naviprtcn lon^i 
+
+Brief description of components 
+GPS aerial 
+
+
+fht* Di*j s*nrf ih:hvhi lh« mjniliicf' 
+ntte; in the •rcf-miunted aertil 
+
+
+iltcxUnlr- I h* -lyuix »n» |hx*j*i| " lh* 
+
+
+Measuring 
+
+devices 
+
+
+Keyboard 
+
+
+Example of procedure and “Question” (no current screenshot) 
+
+After the test plan has been completed, you should execute the “Quick delete” function. 
+
+
+24 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminating an Operation 
+
+You can terminate an operation either by: 
+
+0 Clicking the “X” symbol 
+0 Identification of a new vehicle, or 
+
+0 Calling up the start mask via the symbol with the same name. 
+
+
+In any case a dialogue will be displayed, showing options on how to terminate 
+the operation. 
+
+
+Integrated Service 
+T echnk el Appficctfcn 
+
+
+□ 
+
+
+£’ 
+
+
+Vir VA20006 
+
+
+Veh»c ie: 3/E90«/UJ320dYM47/T2JAUTfEUR LU2004H1 
+
+
+
+
+“Close operation” dialogue 
+
+► How to terminate the operation: 
+
+0 Click on the “Start mask” symbol. 
+
+0 For example, select the “Terminate operation” option. 
+
+The procedure will now be included in the operations list. 
+You can if reguired reopen it there. 
+
+
+25 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISTA Menu Structure 
+
+
+For a quick overview and a rapid introduction to ISTA, you will find a brief description 
+of the guided diagnosis in the Introduction Chapter of this training information. 
+
+The following chapter provides more comprehensive overview of the ISTA workshop 
+system's menu structure. This chapter describes the menus, masks, and buttons in 
+detail. 
+
+This section will walk through step by step the operation and different features and 
+functions of the system. 
+
+
+
+26 
+
+ISTA 
+
+
+
+
+
+
+Start Mask 
+
+
+When you access the ISTA workshop system, initially the start mask appears. Once a day 
+a window appears when the system is booted up displaying the “ISTA usage notes”. 
+
+After reading the note, close the pop up window by clicking the “Continue” button. 
+
+
+Service 
+
+TrchncafAppIcrion 
+
+
+A 
+
+
+FI 
+
+
+•» ? IS] Ixl 
+
+
+Nrws 
+
+
+BMW Service 
+
+
+MINI Service 
+
+Workshop Sv 
+
+
+IS I A U 4 M 9 I nilKX 
+
+
+fcii ixl 
+
+
+
+I Hmmirim in IMk app « prmlM In nitfiitrl Ihn pml. HimtUlim nl 
+
+Hnjnml', (nsnlwsmi mil rn(ntr rnrk rhinlwri pMiirh nl tM I MW 
+
+Kmup 
+
+
+
+UV'MMtlU 
+
+
+prr'PQillsIfrs lor the prcptr perftrmance rf rr** s'Tffmivdnrnd work It 4 r-mpriM 
+rankg a: a c-jr meiharlc k wHI k reg.lar k-scrvke traMng. 
+
+Air t special tools must be .sm Mk'oi r. txteptton 
+
+ipi'.i Jist wurk whenever ihey arc memowd in the intwnull;*. 
+
+>11 ivliLks n<h hull i ;iluu LMiiipjiutilx, U<i unuipu'ilru kifuli iiikliULliinii 
+"iisf ti: ujin^htl ntt in *t cmiik buftew •Ixtlmi Mirk Wul uii h i hull villup: 
+cimoiiiMiilk lx miihi.II/ |iiiil«li«Kil HkIivn mvi«i upintfiiin umit#lt«| n tup »ul m|ii 
+iiituiira*ii1 lie |ii*wi xuppt/ In ll*r Iii|IhviIImih icy x lien nnid he <»l 1ml ntt will *ri: jril 
+n]xn>) iinailli'rtnn rwrtvjtinn 
+
+• »/r 1 mp»n ipch-nkigf Repair .ini maintMa'v*n v**irk on me t tfrimg*n f (LUB) *:hiiiM n?t he 
+cerTormefl urrl tf»? tpecllc cutwmrr contact prrton f v ttw tpccllc -«ehck has bwn 
+consulted (sm Cp. Manual;. lmor:pc< hand. may le-ad to ctroeq. damapefasto:. safety 
+risks. 
+
+
+CwdltuK 
+
+
+I ilKplir/ 
+
+
+ISTA usage notes pop up 
+
+
+
+27 
+
+ISTA 
+
+
+ISTA Home page 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the start mask you can: 
+
+0 read new items. 
+
+0 access standard functions via the symbol bar. 
+
+0 access “Identification” main menu and initiate an operation. 
+
+0 access the main menu “Activities” and search for vehicle-specific information. 
+
+When working on a vehicle and going through the main menu using the menu items 
+“Identification”, “Vehicle test”, “Activities” and “Service plan”, you normally work from left 
+to right. 
+
+Displaying New Items 
+
+The content range of the start mask contains a multicolumn listing of news from BMW 
+headguarters. 
+
+The columns have the following meanings: 
+
+0 News: shows the titles of all available news items. 
+
+0 Date: shows the date on which the news item was last edited. When the start mask 
+is opened, the news items are sorted by date, with the most recent entry at the top. 
+You can delete older news items to make the list shorter. 
+
+► How to change the sorting seguence: 
+
+0 Click the column header with an arrow symbol in the start mask. 
+
+► How to change the order using another column: 
+
+0 Click another column header. The arrow symbol jumps to the corresponding column. 
+The new order is retained until you guit the start mask. 
+
+► How to access a news item: 
+
+0 Click a news item. The selection bar jumps to the corresponding line. 
+
+The “Display” button is activated. 
+
+0 Click the “Display” button. The selected news item is displayed. 
+
+0 Click the “Close” button, to return to the start mask. 
+
+
+28 
+
+ISTA 
+
+
+
+Identification 
+
+A vehicle can be identified with any of four approaches. During identification, to assure 
+unique assignment of the diagnostic session, a new procedure will be created or an exist¬ 
+ing one used. 
+
+You can obtain detailed information on administering procedures in the “Background 
+information on the procedure” section. 
+
+Vehicle Selection 
+
+Before you can work with a particular vehicle, you must initiate an operation. The first step 
+is to select the vehicle 
+
+► How to start the vehicle selection: 
+
+0 Click the “Identification” main menu item in the navigation area. If you do this from 
+the start mask and have previously created operations in the workshop, then the 
+“Operation details” tab is automatically selected. If you have selected the 
+“Identification - vehicle selection” menu from an open operation, the workshop sys¬ 
+tem changes over to the “Operation details” tab and displays the “Close operation” 
+query. 
+
+
+Integrated Soraloo 
+
+n 
+
+4 jQ "qT] 
+
+Technical Application 
+
+Id 
+
+If - kJ 
+
+
+V1N VA200G8 
+
+
+ld»nlifitjtion I Vahid 
+
+
+test 
+
+
+.» c 37ES<USAl.f32QdlV447IT2MJTJEUR LL/2D04H1 
+
+
+
+
+
+Status | Abbr 
+
+Control mod-rurt* 
+
+• AL 
+
+Close ope» Jtion , X 
+
+- I__J 
+
+
+▲ 
+
+
+
+■ 
+
+A>1M 
+
+
+
+
+• AMP 
+
+0 I errrmaee ©peramen 
+
+Q Interrupt operation 
+
+
+
+• CCC-ANT 
+
+
+
+• CCC-ASK 
+
+
+| 
+
+• SM8F 
+
+Bogota vehicle handed over to eustetier on# faults 
+
+
+
+• CAS 
+
+»MI p*»«ent n vehicle nu« pe deleted wish the 
+
+'unction “Cult* delete*. 
+
+
+
+• CCC-A 
+
+
+
+
+• CDC 
+
+
+
+
+• CIO 
+
+Cancel OK 
+
+
+
+• DAB 
+
+uignai tunoi 
+
+
+
+• DSC 
+
+Dvranlt StaJillfc# Control MK60 
+
+
+• DMA 
+
+amt theft alirn system 
+
+▼ 
+
+FauKmofior# Available 
+
+• ECU rrjccncra 
+
+=CU nst t:p:na*fl • fcCUrotfttid 
+
+
+
+D*vpUv 
+
+
+--' i 
+
+
+29 
+
+ISTA 
+
+
+“Close operation” dialogue 
+
+0 Decide whether the ongoing operation should be terminated or interrupted. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operations List 
+
+In general, the vehicle identification /operation administration tries to uniquely assign an 
+existing procedure or independently generates a new one. If no unique assignment is 
+produced (e.g.: the other operation is open or several matching operations are available) 
+the “Assignment/New” pop up or even the “Decision Operation/ VIN” pop up is displayed. 
+
+Note: In the “Central/online” operating mode (TeleServices and OSS), the 
+“Operations list” tab is not provided because there is only ever one 
+operation there. 
+
+The operations list is automatically brought to the front when you select the 
+“Identification” menu from the start mask. The prerequisite is that procedures are already 
+available in the “New”, “Interrupted” or “In progress” statuses. Terminated operations do 
+not become visible until the adjustable filter has been set accordingly. 
+
+
+Kegrjtcd ServUt 
+Tachncd Application 
+
+
+A 
+
+
+* no ^ S' X 
+
+
+Vthtalr 
+
+
+IdtrlTcit 
+
+or 
+
+VbHkIb tatt 
+
+1 VahlcJa 
+
+mrornatlan 
+
+
+
+k VK 
+
+Raadout 
+
+vaWcia data 
+
+Basic faaiuraa 
+
+
+
+
+— 
+
+1 Bu<e faaturaa 
+
+W4 
+
+
+
+Stilus 
+
+
+£46 1320d ) TOUR / M47 
+
+PE46C72 
+
+
+16AM/2OO0 12:13 
+
+Imamiptad 
+
+
+▲ 
+
+E46 13181 / SAL (IMVTU 
+
+SJB7W7 
+
+
+16.04/2008 12:11 
+
+Imamiptad 
+
+
+| 
+
+C« 13101 / SAL f MWTU 
+
+AY27004 
+
+
+1MM/2COI12:11 
+
+Imamiptad 
+
+
+
+rw i non t coiipp r nu 
+
+•T90C63 
+
+
+1MM/700I11:29 
+
+imamiptad 
+
+
+
+en i 330i / lim / m»7 
+
+PWXOG 
+
+
+1MM/3C0I 10:» 
+
+Imarnjpraa 
+
+
+
+6*11313. / TOUR ( N46 
+
+KWROUJ4 
+
+
+16.04/3008 10:33 
+
+Intamjptad 
+
+
+■ 
+
+E32 l 75fliL ! LIM i KT70 
+
+OC71313 
+
+
+16.04.%03 10.29 
+
+Imamiptad 
+
+
+
+E32 17B0IL / UM fM70 
+
+OCT 1313 
+
+
+16.04% 03 10.26 
+
+Imamiptad 
+
+
+
+£32 1 790IL / LIM f M7D 
+
+OCT 1313 
+
+
+16.0442003 09.37 
+
+Imor'upwd 
+
+
+
+zm i3i9Ci t coure / N42 
+
+PK6Z2D0 
+
+
+15.04/2001 11:19 
+
+Imamiptad 
+
+
+
+cm i i»n r coupr r wi 
+
+VTWX3 
+
+
+ISA)4/2004 1100 
+
+Intamiptad 
+
+
+
+tta i issii i couptrr MJ4 
+
+
+
+14.04/2001 13:49 
+
+Intamiptad 
+
+
+▼ 
+
+nparitian* Mt»r Da^sutt 
+
+
+
+
+
+
+FIC« 
+
+coa-attort liat inndinJlr* 
+
+
+
+
+
+Adapt 
+
+
+“Operations list” tab 
+
+The operations list shows a table of all previously completed operations depending on 
+the filter settings and the time elapsed. 
+
+
+30 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+The table columns have the following meanings: 
+
+0 Basic features: shows the basic features that are saved with the operation. 
+
+0 Vehicle identification number: shows the vehicle identification number read out of 
+the vehicle. Reading out the vehicle identification number is part of the vehicle iden¬ 
+tification procedure. It can also be automatically determined at a later stage with the 
+identification via Basic features with a vehicle test. 
+
+0 Date/Time: shows the date and time at which the operation was first saved. 
+
+0 Status: shows the status of the operation. A distinction is made among the follow¬ 
+ing statuses: - New operations (new) - Interrupted operations (interrupted) - 
+Ongoing operations (in progress) - Terminated operations (terminated). 
+
+The table is sorted by default according to the “Status” column. 
+
+Note: You can obtain background information on the “Operation” section of 
+this training material. 
+
+
+31 
+
+ISTA 
+
+
+
+Filtering the operations list 
+
+In the “Enter filter criteria” field, you can enter a basic feature, a VIN or a date. To do this 
+use the on-screen keyboard. If you wish to enter several filter criteria, separate them from 
+each other using space characters and/or check one or more selection fields in the 
+“Status” area. 
+
+Confirm the input with the “OK” button. The “Filtering operations list” window closes and 
+the workshop system returns to the operations list. The “Cancel” button closes the win¬ 
+dow without changing the settings. 
+
+
+Integratee Service 
+
+Technical Application 
+
+
+-° B- o 
+
+
+
+Vehicle; 
+
+
+
+tikenng operation* in 
+
+
+
+'*1 71 x 
+
+
+tr*er (titer eritere - 
+
+
+Sucuii: 
+
+0 New 
+
+n InprOfltetS 
+® Interrupted 
+_| T«rninatid 
+
+
+EDCDOIDODIDQOODC 
+
+
+
+iJ 
+
+r f id m: 
+
+ItJUUUU ■ 
+
+
+
+i r nm :i 
+
+nrinriF. 
+
+1 1 
+
+
+
+00 
+
+s 
+
+Cancel 
+
+
+- 1 
+
+
+“Filtering operations list” window 
+
+
+► How to display “terminated” operations in the operations list: 
+
+0 Click the “Filter operations list” button. The “Filtering operations list” window opens. 
+0 Mark the “Terminated” option and click “OK”. 
+
+
+32 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following buttons are available in the action line: 
+
+0 Set standard filter: This button resets the filter to the default settings; no filter crite¬ 
+ria, and only operations with “New”, “In progress”, and “Interrupted” status are dis¬ 
+played in the corresponding sequence. 
+
+0 Accept: Opens the selected operation. If you have selected an operation that has 
+been terminated, a dialogue appears in which you can decide if this operation should 
+be reopened or if a new operation should be created and opened. 
+
+
+Tachnieal Application 
+
+
+Mo**e)Tica!ion 
+
+VaWcJataat 
+
+
+Sarnca plan 
+
+
+
+
+:_i 
+
+
+
+
+
+E92 I7KIL IUMJM7G 
+E32 170WL I UM l M7Q 
+E32 f 75CIL IUM I hITQ 
+E46 ITOCIJ COLPE I M2 
+EB2 1138s / COUPE 1 NG4 
+E82M38*/COUPE JfiM 
+EM I32C* I SALJ M477T2 
+
+
+E« 1320* I SAi. IWA7IT2 
+
+
+E»I32WI SALJ W47IT2 
+
+EM 132MI LM I UM7/T2 
+EK 1 32C-S I SAi .) M47IT2 
+EM r32M f LM IMM7/T3 
+
+Op«r«tcr. r . Uaor dafinad 
+
+
+n/ craala operation 
+
+0 Roopon oalttd op*f Jflon. 
+
+O Nrw operation to created a 
+
+
+iS»\ X 
+
+
+VA2SCO0 
+
+VA230M 
+
+VA2SO06 
+
+
+1M40008 1*37 
+IB.OL’KOS 1509 
+1M4O0QS 17 » 
+
+
+metrrupttd 
+
+KamipMd 
+
+kncomjpMd 
+
+MomjpMd 
+
+Warruptad 
+
+tocorruptad 
+
+Tarnlnxod 
+
+Tarnlnxod 
+
+Tarnlnxod 
+
+Tarriinxod 
+
+Tarninxod 
+
+
+B 
+
+
+“Open/create operation” menu 
+
+
+33 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Identification Number 
+
+If you select the “Identification” menu from the start mask, the “VIN” (Vehicle identifica¬ 
+tion number) tab will be automatically selected. Only the last seven characters are 
+required when entering the vehicle identification number. You can use the on-screen 
+keyboard for making entries. 
+
+
+5»r»io» 
+
+TiCncil Appicaban 
+
+
+IftJ 
+
+
+
+
+
+“Vehicle identification number (VIN)” tab 
+
+
+Confirm the input by clicking the “Accept” button. 
+
+After the vehicle identification number has been entered the ISTA workshop system 
+checks whether an operation with this number already exists. If a corresponding operation 
+exists, you can select it and thus continue or create a new operation. If no suitable opera¬ 
+tion exists, a new operation will be generated automatically. The associated basic features 
+and other identification data will then be read out of the server database. The workshop 
+system changes over to the “Operation details” mask. 
+
+
+34 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reading Out Vehicle Data 
+
+The VIN can be directly read out from the vehicle by using “Read out vehicle data”. 
+First, the prerequisites are displayed. 
+
+
+Integrated Sar«-«ca 
+Techrical Appfoafttn. 
+
+
+?i m x 
+
+
+Identification 
+
+Vphfelttpu 
+
+Acilvidtt 
+
+Sorvwo plan 
+
+Vahicla 
+
+selection 
+
+
+
+
+
+Opatationt li*t VIS 
+
+
+• Connpsr vfhltte Interne*. 
+
+• Switch on vthldo IgMctev 
+
+
+Prerequisites forvehicle identification 
+
+► How to read out vehicle data: 
+
+
+Bite faatu'ea 
+
+
+0 Click the “Read out vehicle data” tab. 
+
+0 Connect a vehicle interface (ICOM) to the vehicle. 
+
+0 Switch on the ignition. 
+
+0 Click the “OK” button. The request begins with checking the existing connection 
+and continues with the vehicle identification via the VIN readout. During this time, 
+progress bar will be displayed on the mask. 
+
+
+
+
+
+
+
+
+Identification Operation 
+
+
+toctpraftfrd Servlet 
+TicMcil AseJicjtion 
+
+
+doudflc adon 
+
+vthiiit rast 
+
+Asdvhlts 
+
+Strvlco plan 
+
+
+
+
+Vttliltl* 
+
+Oparjden 
+
+
+
+
+
+Op^oniNT 
+
+
+Readout 
+
+BntafMam 
+
+I • Connect v»hxl» interface 
+
+
+
+• Smite* on veh«le IgnRIan 
+
+
+flenfltu ttlon odorjoor 
+
+Road «u vthldt kPtrcfkadon number (VIN).. 
+
+
+
+After reading out the VIN the workshop system checks whether an operation with the 
+same VIN is already on the operations list. If this is the case, the operations list will be dis¬ 
+played to select an existing operation. Otherwise a new operation will automatically be 
+created. 
+
+An exceptional case may occur if you have previously selected an existing operation from 
+the operations list and then read out the vehicle data. If the VINs do not match now, the 
+“Decision operation/VIN” pop up will appear. 
+
+Reading Out Vehicle Data via the Connection Manager 
+
+Another option for starting the automatic read out of vehicle data is via the “Connection 
+manager” mask. You can call it up at anytime via the symbol bar. (See “Connection 
+Manager” section.) 
+
+
+36 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Basic Features 
+
+
+If the vehicle identification number is unknown, you can alternatively use the “Basic fea¬ 
+tures” tab. 
+
+
+Integrated Stri de 
+
+Technical Application 
+
+M 
+
+
+1™ ® 
+
+E 
+
+@ IT) 
+
+m 
+
+El 
+
+
+V 1 N: Vehicle 
+
+
+
+Operations Hit 
+
+
+Read ouc 
+vetMie data 
+
+
+Bottc feature* 
+
+Model «or<h 
+
+M^del «ene* 
+
+11 
+
+E designation 
+
+
+Bedy 
+
+
+Sale* cengnton 
+
+
+Engine 
+
+
+NaoenaJ-euraec refiior 
+
+
+Lenhing 
+
+
+Qiirtoi 
+
+
+Model year 
+
+
+Model worrit 
+
+
+
+
+
+Selected h.i«feature* 
+
+
+Model 
+
+8’ 
+
+E designation 
+
+so dr 
+
+TOUR 
+
+Sale* fluignirsn 
+
+82M 
+
+En gine 
+
+HIT 
+
+Nic*nV aiartet vertle-n. 
+EUR 
+
+lenkung: 
+
+LL 
+
+Oiarboi 
+
+MeCH 
+
+Vodol year 
+
+2007 
+
+Model worrit: 
+
+11 
+
+
+
+Undo 
+
+
+Accept 
+
+
+“Basic features” tab 
+
+► How to identify a vehicle via its basic features: 
+
+0 Click the “Identification” main menu. The “VIN” tab will be selected. 
+
+0 Click on the “Basic features” tab. 
+
+0 If required, choose another basic feature from the left-hand “Basic features” selec¬ 
+tion list. 
+
+0 Define the contents for the basic feature by selecting an entry from the central list. 
+
+0 If necessary, repeat the entry with other basic features (the predefined sequence 
+does not have to be observed) or click the “Accept” button. 
+
+After the individual basic features, the workshop system only offers items that are com¬ 
+patible with the previously selected ones. This excludes contradictory entries. 
+
+There is no need to enter all available basic features. However, you must define at least 
+one. The more completely you specify the basic features, the more precisely the work¬ 
+shop system can select the matching documents. 
+
+Note: Without specification of E-designation and in some cases the model year 
+and month, vehicle-specific searches for the function structure, compo¬ 
+nent structure, or service function structure cannot be performed! 
+
+37 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note: It is not possible to manually select the features for security vehicles. 
+Security vehicles can only be identified via the VIN. 
+
+After entering the basic features a check is performed to see whether an operation with 
+the specified features is already present in the operations list and a selection is offered. If 
+the selected basic feature combination is unknown, a new operation is automatically cre¬ 
+ated. 
+
+
+Incomplete Entry of Basic Features 
+
+If you click the “Accept” button without having defined all “Basic features”, a pop up win¬ 
+dow appears containing a system message. Acknowledge the message with “Continue” 
+to end the vehicle selection procedure or return to selection of the basic features with 
+“Cancel”. 
+
+
+System message 
+
+
+
+The basic features have not been completely selected. 
+
+Information displayed below will not relate to specific 
+vehicle. 
+
+
+Cancel 
+
+
+Continue 
+
+
+“System message incomplete entry of basic features” pop up window 
+
+On completion of vehicle identification, the display switches over to the “Operation 
+details” menu. 
+
+
+38 
+
+ISTA 
+
+
+
+
+
+Operation Information 
+
+“Operation information” is automatically accessed after the vehicle identification is com¬ 
+pleted. This is where information on the current operation and the identified vehicle is 
+displayed. 
+
+Operation Details 
+
+If you have completed vehicle selection or if you access the “Identification” menu from an 
+ongoing operation, the workshop system automatically displays the “Operation details” 
+tab. 
+
+This is where you can view general information to identify the vehicle, for example: 
+
+0 Basic features of vehicle 
+
+0 Technical actions on the identified vehicle with status “open”, special defect code 
+and name (title) 
+
+0 Customer statement (customer complaints). 
+
+In the header, you will see the vehicle identification number (“VIN”) and the determined 
+basic features of the vehicle. If you select a vehicle via “Basic features”, the basic features 
+that you entered appear in the header. 
+
+Prerequisites: 
+
+0 Vehicle identification. 
+
+0 Before the “Technical actions” can be displayed, the vehicle identification number 
+must be known and an online connection must be established to BMW headquar¬ 
+ters. 
+
+
+
+39 
+
+ISTA 
+
+
+“Operation information” menu, “Operation details” tab 
+
+
+
+
+
+
+
+
+
+The following buttons are available in the action line: 
+
+0 Perform vehicle test: For manual vehicle identification, this button starts the vehicle 
+test. With automatic vehicle identification, the vehicle test proceeds in the back¬ 
+ground and the button only switches over to the control unit tree. 
+
+Note: For the E21 - E31 Series, the BST mode is called up! 
+
+(for more information see BST mode). 
+
+0 Information search 
+
+Vehicle Details 
+
+You can obtain more detailed information on the selected vehicle by clicking the “Vehicle 
+details" tab, such as series eguipment and special eguipment. This information will be 
+retrieved from a central database and indicates the vehicle status in each case on delivery 
+from the factory. Retrofitted eguipment or installations are not taken into account. Not all 
+information is available for vehicles made before 1992. Therefore valid values cannot be 
+displayed in all fields. Such fields are displayed without a value. 
+
+Prerequisites: 
+
+0 Vehicle identification via “VIN”. 
+
+0 Online connection to BMW AG (via ISPA Broker). 
+
+
+V*vw> |0rtMtr«| Ap# t«r.4lk<' 
+
+
+LaJ * * ;U Ejs} x 
+
+Vthui* X R»**C9» a GErZGiXS ljMM*fTUMKN0Uft ILflOUflO 
+
+
+
+S^fvln 
+
+T •chmsat 
+
+VP. LC313T3 
+
+
+“Operation information” submenu, “Vehicle details” tab (no current screenshot) 
+
+Note: The standard series equipment and special equipment listed in the 
+
+“Vehicle details” mask corresponds to the state of the vehicle as it left 
+the factory and may diverge from the present state of the vehicle! 
+
+
+40 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operations Report 
+
+By clicking the “Operations report” tab you will receive a report on the ongoing operation 
+with the dealer data and the data on the respective vehicle. The report is constantly 
+updated during the execution of the operation. 
+
+
+Integrated Serv*oe 
+
+'»:hni:i ApplctL-an 
+
+virr *c j nmi 
+
+
+s g g 8 u 
+
+a?o«iiva34MtCtt*:uR 11 arasior 
+
+
+VtWok 
+
+lalttban 
+
+
+Operidon 
+
+infomuban 
+
+
+Operation 
+
+details 
+
+
+IOr,||>T 
+
+Stksra AiC Sp.io.o. 
+
+UlPS2<7#ftl(U 103 
+43-190 Mildew 
+
+V#rr»t#«b»p*Trr^fnunrr-r 33000 
+B(!) abk’unnr 3 XK 
+
+ISTA Verging 
+
+Vorgengkldentf'lcr**" 
+
+ISPAOuidt 
+
+vorfjngsbeglrt' MC432C03 flMM* 
+
+
+ra^fTev f I denti cy* er rinaib e titiuMWlKmntr 
+
+F il'fwofld Min 
+F 2 t*rgest«llmjiin«r 
+Mirk#' 
+
+
+A 01 «S 4 
+
+M 4 WPKW 
+
+3‘ 
+
+
+Meter 
+
+Lankung. 
+
+Biujarr: 
+
+1-ML.r# HO: 
+Qefcitrtwegttrecke. 
+
+
+Typicfttttiol: 
+
+V#rkaufib«z»«hnur»g 
+
+ArUriae 
+
+Hubraurr 
+
+Cv.riab# 
+
+I-Siufa W»rl 
+
+
+Syiterr-et^'n 1 2 203 
+Oat aril Li rid 2.010.0 
+
+
+VF71 Lirderiuv'livung: 
+
+320«i 
+
+HECK Kuei**-*lefor«. 
+
+20 
+
+MECH 
+
+KA7 
+
+
+EUR 
+
+WO 
+
+SAL 
+
+
+“Operation information” submenu, “Operations report” tab 
+
+The screen display for the operations reports differs from the printed report because of its 
+colored displays. The following information blocks are contained in the operations report: 
+
+0 Dealer data 
+
+0 Vehicle data 
+
+0 Customer complaints (customer's own words, customer's guote, gualified) 
+
+0 Start of operation (date, time) 
+
+0 First vehicle test 
+
+0 Fault memory data from the first vehicle test 
+
+0 Test plan diagnosis start (first test plan) 
+
+0 Test plan diagnosis end (last test plan) 
+
+0 Information object selected (title, document type, identifier) 
+
+0 Process object selected (title, start, end time stamp, identifier) plus process steps 
+(inputs/outputs, ECU functions, measuring instruments actions) 
+
+0 Vehicle test diagnosis end (last vehicle test) 
+
+0 Fault memory data (last vehicle test) 
+
+41 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+Print operations report or diagnostic report 
+
+► How to print out an operations report: 
+
+0 Click on the “Print” icon. 
+
+0 Select the “Document” option. 
+
+0 Click on the “OK” button. 
+
+FBM Reports (FASTA) 
+
+FBM reports are always automatically produced in the background when an operation is 
+terminated or interrupted (exception: OSS) and forwarded to BMW AG. In offline mode, 
+the FBM reports are not created until the system is synchronized with the server. 
+
+Vehicle Test 
+
+The vehicle test determines the control units installed in the vehicle and their variants, as 
+well as their special equipment. Furthermore the vehicle test reads the diagnostic and 
+service-related data from the control units and generates test plans, which become part 
+of the service procedure. In the first vehicle test within an operation, vehicle-specific 
+FASTA data are determined and logged. 
+
+Prerequisites for the vehicle test: 
+
+0 Vehicle identification 
+
+With manual vehicle identification the primary vehicle test starts by clicking on the 
+“Perform vehicle test” button in the “Operation details” mask. With automatic vehicle 
+identification, the vehicle test runs in the background of the “Operation details” mask. By 
+clicking the “Perform vehicle test” button, the workshop system switches to the “Control 
+unit tree” mask and runs the vehicle test in the foreground. 
+
+If required, for example after repair or modification work, you can restart the vehicle test 
+manually. 
+
+Note: For the E21 - E31 Series, there is no vehicle test available. Clicking the 
+“Perform vehicle test” button in the “Operation details” mask takes you 
+to BST mode. Furthermore, the “Vehicle test” and “Activities - Guided 
+troubleshooting” menus are inactive. 
+
+Note: The “Operation information” submenu, “Repair history” tab function at 
+present is only available in Germany! 
+
+
+42 
+
+ISTA 
+
+
+
+Control Unit Tree 
+
+The “Control unit tree” mask shows the configuration of the control units. While the vehi¬ 
+cle test is running, the symbol of the directly accessed control unitwill be displayed in the 
+color of the mask. The vehicle test identifies the installed control devices and reads out 
+the fault memory and the control device characteristics. 
+
+At the end of the vehicle test, the symbols in the control unit tree indicate the test result 
+by means of the following colors: 
+
+0 Green: control unit is responding 
+
+0 Yellow: control unit is not responding 
+
+0 Gray: control unit is not installed. 
+
+
+
+Control unit tree (after vehicle test) 
+
+► How to repeat the vehicle test: 
+
+0 Click the “Start vehicle test” button. In the “Control unit tree” mask, the control unit 
+symbols are updated again according to the vehicle test just completed. 
+
+► Thus the vehicle test starts automatically behind the “Operation details” mask: 
+
+0 Select “Identification” -> “Vehicle selection” -> “Read out vehicle data” in the navi¬ 
+gation area to perform an automatic vehicle identification. 
+
+0 Continue as described with the “Read out vehicle data” tab. 
+
+
+43 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The buttons in the action line do not become active until after the vehicle test, and have 
+the following functions: 
+
+0 Start vehicle test: repeats the vehicle test. 
+
+0 Call up ECU functions: switches to the “Control unit functions” mask. 
+
+0 Display fault memory: switches to the “Fault memory list” mask. 
+
+Control Unit Functions 
+
+The control unit functions become accessible if at least one vehicle test has been com¬ 
+pleted for the ongoing operation. 
+
+► Flow to call up the control unit functions for a control device: 
+
+0 Click on a control device in the control unit tree; or 
+0 Select a control unit from the control unit list. 
+
+0 Click the “Call up ECU functions” button in the action line. The following control unit 
+functions can be displayed in three different tabs: - Identification - Diagnostic guery - 
+Component activation 
+
+0 Return to the original mask by clicking the “Close” button. 
+
+
+Identification 
+
+The control unit function “Identification” is selected by clicking the “Call up ECU func¬ 
+tions” button. 
+
+
+“Identification” tab 
+
+
+lnt«ar«t*< Sorvko 
+Technical Applkartoo 
+
+
+Control unit function* - TRM 
+
+
+[SI in >: [*?; > l 7 tti 
+
+V«liitl«. yiE9Cl5AL/32D4M47IT2.WU'nEwR LU2004.M1 
+
+
+? 53 
+
+
+
+44 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The “Identification” tab contains the following data: 
+
+0 ECU Name: name of the control unit version. 
+
+0 ECU Status: communication status (“ECU responding”, “ECU not responding”). 
+
+0 ECU Information: this is where the ECU readout specifications are listed. 
+
+The buttons in the action line have the following meanings: 
+
+0 ECU Test: reads the ECU data out again. A progress display keeps you up-to-date 
+with progress. 
+
+0 Close: closes the display of the control unit functions and returns to the original 
+mask. 
+
+Diagnostic query 
+
+Access the diagnostic guery by clicking on the “Diagnostic guery” tab. 
+
+The content range is divided into two sections; The “Control unit functions” table lists the 
+sensors belonging to the control unit and the “Function and status display” area indicates 
+the current signal status. 
+
+Depending on the control unit, several sensor may be combined in groups whose entries 
+you can open by clicking so that you can reach the individual sensors. Multiple selection 
+is possible. 
+
+
+Service 
+
+Ttctwcai Affilcjtlon 
+
+
+a |7] !w gfl |a,| T1 HI x 
+
+
+.. . 3VEttDi«l_a20.ilW<?lTH»JT/EUR LLflflMIl1 
+
+
+
+45 
+
+ISTA 
+
+
+“Diagnostic query” mask 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The buttons in the action line have the following meanings: 
+
+0 Undo all: undoes the entire selection in the table. 
+
+0 Undo: undoes the last selection in the table. 
+
+0 Query status: switches the cyclical update of the display on or off. 
+
+0 Close: closes the display of the control unit functions and returns to 
+the original mask. 
+
+Component activation 
+
+Access the component activation by clicking on the “Component activation” tab. 
+
+The content range is divided into two sections: The “Control unit functions” table lists the 
+actuating elements and the “Function and status display” area indicates the current sta¬ 
+tus of an actuated component. 
+
+Depending on the control unit, several actuating elements may be combined in groups 
+whose entries can be opened by clicking so that you can reach the individual actuating 
+elements. Multiple selection is not possible. 
+
+
+
+“Component activation” mask 
+
+The buttons in the action line have the following meanings: 
+
+0 Undo all: undoes the entire selection in the table. 
+
+0 Undo: undoes the last selection in the table. 
+
+0 Actuate component: displays the associated function name and the execution of 
+the function in the “Function and status display” area. 
+
+0 Close: closes the control unit functions display and returns to the original mask. 
+46 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control unit list 
+
+The control unit list is another way of presenting the control unit tree. You can call up the 
+list by clicking the tab as soon as the first vehicle test is completed and repeat it from the 
+vehicle test. 
+
+The individual columns the following meaning: 
+
+0 Status: This is where the status of communication with the control unit of the vehi¬ 
+cle test is updated. 
+
+0 Abbr.: The abbreviation for the respective control unit. 
+
+0 Control unit name: A short description of the control unit appears at the beginning. 
+When the vehicle test is performed, the control unit name is replaced by a complete 
+description. 
+
+
+inugrxed S»r«t<« 
+Technical Application 
+
+
+A. GE fc£] l9 i£j [H m LH 
+
+Vfhiile 3e90«ALqaJ<llKM7rr2fWJT(EuRLLQ»4/11 
+
+
+
+
+AL 
+
+active iN«fin| 
+
+
+▲ 
+
+
+AHM 
+
+TraMr nodule 
+
+
+■ 
+
+
+AMP 
+
+Aiypltfler 
+
+
+
+
+CCC-AMT 
+
+Aaml tuner 
+
+
+
+
+CCC-ASK 
+
+Audio i|Vin cartrollw 
+
+
+| 
+
+
+SMUT 
+
+Seat nodule, pattenger 
+
+
+
+
+C AS 
+
+CrAcctn S>xten 
+
+
+
+
+CCC-A 
+
+Application* 
+
+
+
+
+CDC 
+
+CD CHangar 
+
+
+
+
+CID 
+
+Centril h/onnitlon Duplay 
+
+
+
+
+DAB 
+
+Dlgral tuner 
+
+
+
+
+DSC 
+
+Dfnent: Stibiily Control MKdO 
+
+
+
+
+DMA 
+
+artti-lhaft aam 
+
+
+▼ 
+
+Fjjf. menory 
+
+Aviilihlc 
+
+• £CUr«sp:n:ra 
+
+• £CUratrc:p^iS*fl • £C r»:t tier 
+
+S'.irt 
+
+vehicle tat9 
+
+Cal up 
+
+
+Display 
+
+t*u»t nemerj 
+
+
+“Control unit list” mask 
+
+The buttons in the action line have the following functions after completion of 
+he vehicle test: 
+
+0 Start vehicle test: repeats the vehicle test. 
+
+0 Call up ECU functions: only active if a control unit is previously selected. 
+Changes over to the “Control unit functions” mask. 
+
+0 Display fault memory: changes over to the “Fault memory” mask. 
+
+
+47 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Activities 
+
+
+Information Search 
+
+Three different structure searches (Product structure, Function structure, Components 
+and signals) and a text search are available in the “Information search” menu. 
+
+Prerequisites: 
+
+0 Vehicle identification. 
+
+
+Product Structure 
+
+In the product structure menu, you can search for information in the main and subgroups. 
+In the left-hand column, the required product group can be selected. The previously 
+selected elements are clearly displayed in the “Selected structure elements” column. 
+
+T u ?; M. |X| 
+
+
+Integrated Servtoe 
+
+Technical Ap pleat on 
+
+[Aj 
+
+j# |>| 
+
+□0 jS? 
+
+VIM vwoooa 
+
+
+• •Mclo yieWlSAi.OTOOlM4;iT7JIAU-»^llP L 1.9004/11 
+
+Idemnaxer 
+
+Vehicle test 
+
+Activr** 
+
+Service plan 
+
+
+rf or nation 
+search 
+
+OulSM 
+
+roubleshooting 
+
+Sorvtco 
+
+function 
+
+vtoraamep / 
+Operating fluids 
+
+Measuring 
+
+devices 
+
+
+Function 
+
+•rructwro 
+
+Conponorxs 
+and tgna« 
+
+Text searth 
+
+
+
+1100 E-*a»n«, porartl 
+
+1111 engine block 
+
+
+11 1 ? cylndor hood urn cover 
+
+
+1113 oil sunp 
+
+1114 houaing tovar 
+
+11II cfjnlcut vMiUdion 
+1121 orankshaft «ht bearing 
+1127 
+
+1123 vibration donpor 
+
+1124 connecting rod with bearing 
+112 b pi»c:«* with ring* and put 
+
+
+
+
+Seiacsod otruclure «i*rv«nto 
+
+
+War grojo 
+
+11 Cnpne 
+
+Subgroup 
+
+1112 cylrdar Nad wlh ccvor 
+
+
+HUr 14 
+
+
+Undo 
+
+all 
+
+
+"I't- Default 
+
+Undo 
+
+
+Start 
+
+•oamth 
+
+
+“Product structure” tab 
+
+
+The elements in the info line have the following functions: 
+
+0 Hits: states how many elements satisfy the present search criteria. If a product group 
+has not been selected, then the number of hits is “0”. 
+
+0 Filter: displays the filter status. If you have not changed the filter setting, then the 
+“Default” status appears; otherwise it is “User-defined”. 
+
+
+48 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+The buttons in the action bar have the following functions: 
+
+0 Undo all and Undo: You may reverse individual or all operating steps so that you can 
+enter new search criteria. 
+
+0 Filter: You can call up a window with which you limit the search to certain time peri¬ 
+ods or information types, e.g. circuit plans or repair instructions . These filter settings 
+are taken into account in the search. 
+
+0 Start search: Start search using the selected criteria. 
+
+► How to search in the product structure: 
+
+0 Select one element in the left-hand selection list. Depending on the item chosen, in 
+some cases further selection lists with additional options will be displayed, via which 
+you can further refine your search criteria. 
+
+0 Further restrict the search criteria in the left-hand list. The previously selected items 
+are clearly shown in the “Selected structure elements” column. 
+
+0 If necessary, you can refine the selection using the “Filters” button. 
+
+0 Click the “Start search” button. 
+
+When the search has been completed, the ISTA workshop system switches over to the 
+“Service plan” and displays the hit list. 
+
+Filters 
+
+The “Filter settings” window can be accessed via “Information search”, “Service func- 
+tion”(See “Test plan”) by clicking the “Filters” button in the respective window. You can 
+change the filter settings for information types and/or define a time slot for the latest 
+update of the documents. 
+
+In the default setting, the information types available in the respective search mode are 
+preselected. These preselected as well as the manually selected information types are 
+marked with a cross. 
+
+
+49 
+
+ISTA 
+
+
+
+Inceg'sTed Scr. it 
+Tfcmctl Apptcafaon 
+
+V^ VA2C0C9 Vehicle J ICW^ALf32WT4iTIT2WJ T «LRLLROO*M1 
+
+
+
+“Filter settings” tab 
+
+The buttons in the action bar have the following functions: 
+
+0 Cancel: the window is closed and the changed filter settings are not adopted. 
+
+The filter status does not change and remains in the previous status (“Default” 
+or “User defined”). 
+
+0 Default settings: resets the filter to the preset values. 
+
+0 Keyboard: displays the on-screen keyboard. 
+
+0 Select all: marks all information types. 
+
+0 Selecting nothing: removes all selections from the information types. 
+
+0 OK: starts the search. 
+
+► How to change the filter settings for information types: 
+
+0 Click on a specific information type that you would like to select or 
+deselect or else click on the buttons “Select all” or “Select nothing”. 
+
+0 Select or deselect individual information types as reguired. 
+
+0 Click the “OK” button. The workshop system adopts the selected filter settings and 
+closes the pop up window. The number of hits is adapted accordingly, the filter sta¬ 
+tus in the information line changes from “Default” to “User defined”. 
+
+
+50 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+► How to define the period for the last update of the information type: 
+
+0 Define a date as the lower limit in the “Time period from:” field. If appropriate, use 
+the on-screen keyboard. The date must comply with the order stated in brackets 
+under “Last date change”. 
+
+0 Define a date as the upper limit in the “Time period to:” field. The date entered has 
+to be later than the one entered in the “Time period from:” field. 
+
+0 Click the “OK” button. The workshop system adopts the selected filter settings and 
+closes the pop up window. The number of hits is adapted accordingly, the filter sta¬ 
+tus in the information line changes from “Default” to “User defined”. 
+
+If you click the “Select nothing” button, then the entered period will be deleted. 
+
+Function Structure 
+
+In the “Function structure” window, you can search on several levels by selecting the 
+
+function groups and functions. 
+
+
+Integrated Service 
+Technical Appli:a?»sr> 
+
+VtN V420COI 
+
+
+M ? 
+
+
+[x| 
+
+
+Vrhi-l* TICWlSM.Q2C4lM47fT2»*;/TaeURlLf2034M< 
+
+
+k*/e*'?r»Jtion 
+
+taarch 
+
+
+Product 
+
+•tructuro 
+
+
+Guided 
+
+trediliihccerg 
+
+
+• e.ei 5 
+
+Slartrochronie irirror 
+
+
+Mirror adjustment 
+
+Mirror netting 
+
+Mirror & voting 
+
+Supply FRM feotwoli module 
+
+Supply JBE .oncilei-box electronics 
+
+Sarrth block drrversdeer 
+
+
+Accrifties 
+
+1 Service plan 
+
+
+Service 
+
+ttorkiKep / 
+□periling retd* 
+
+Measuring 
+
+eevtcae 
+
+1 Cempenercs 
+
+1 and signal* 
+
+Text search 
+
+
+
+1 Seeded itruccur* elenem* 
+
+
+LeveM 
+
+
+I rre 7 
+
+Irtrrer 
+
+Level 5 
+
+Doer nirror 
+Lave* 4 
+Driven tide 
+
+ElectrocnrorNe mere' 
+
+
+HITT 1 
+
+Undo 
+
+
+r i iter Defalt 
+
+Undo 
+
+
+SU'X 
+
+vesren 
+
+
+“Function structure” tab 
+
+
+51 
+
+ISTA 
+
+
+This operation is similar to that for “Product structure”. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components and Signals 
+
+The “Components and signals” tab can be used to search for documents that relate to a 
+specific component or signal. 
+
+
+|Al / m 1^1 HI 1*1 1 ^ [xl 
+
+
+»‘N. VA2C0C8 Vaf in'*. 3 i£50»SALQ2QdlXM7/T2rAUTiEUR LU2DMM* 
+
+
+iarhhc.itinn 
+
+V »h«l» t»«t 
+
+AdU’f>M 
+
+I Nirrc* slan 
+
+
+1 InfortiAton 
+
+Ou4«d 
+
+S«rvit* 
+
+WortiWnep 1 
+
+kWtkiflg 
+
+1 «»»rch 
+
+IroublMhoottng 
+
+funcrkcn 
+
+□panting Hut** 
+
+
+
+
+“Components and signals” tab 
+
+This operation is similar to that for “Product structure”. 
+
+
+52 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Text Search 
+
+As an alternative to a structure search, you can also use a text search. 
+Prerequisites: 
+
+0 Vehicle identification 
+
+
+IntagraM Sorrx 
+Technical Apple icon 
+
+
+VIN VM0M8 
+
+Idorrtttu alien 
+
+V(NcO t»«t 
+
+1 tHf$rm»tton 
+
+1 torch 
+
+Gudort 
+
+irouNdthoMirtc 
+
+Product 
+
+•tructuro 
+
+Funct«on 
+
+•tructuro 
+
+
+A TiP [/] a? |/P| 
+
+V ■ ^ I. a‘.<E«USM.a2CdlM4riT2»i/r>EURLLia>!MI11 
+
+
+a] !? sr [x| 
+
+
+Worxo-cp 1 
+
+
+Mooturng 
+
+
+Opafitji'O rudi M<ie»s 
+
+
+-orrpananta 
+ind (ignili 
+
+
+rliter De*iuh 
+
+Kc\fe«ard 
+
+
+Search tarn: 
+
+turr: :li_-y«r 
+
+® 5 oai<** In the doeunont:** 
+Q Socrc* in Sha decunont 
+
+O StiftMor do:ur*oiununbor 
+
+
+Start 
+
+cosrcii 
+
+
+“Text search”tab 
+
+
+► How to search for information with full text: 
+
+0 Select “Activities” in the main menu. 
+
+0 Select “Information search” in the submenu. 
+
+0 Select the “Text search” tab. 
+
+0 Restrict the search to document titles, documents (texts), or document numbers. 
+
+0 Enter the text string in the “Search term” field. If appropriate, use the on-screen 
+keyboard. If necessary, you can refine the search using the “Filters” button. 
+
+0 Start the search with the “Start search” button. 
+
+Note: When the search has been completed, the ISTA workshop system 
+switches over to the “Service plan” function and displays the hit list. 
+
+
+53 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+Additional general information on the text search 
+
+The text search is not case-sensitive. Entering “Engine” or “engine”, for example, 
+produces the same result in the hit list. 
+
+If several terms are entered and are separated by space characters, then the terms are 
+linked by the operator AND in the search. Only those hits that contain all of the search 
+terms entered are displayed. 
+
+Each search term must contain at least two characters. 
+
+Additional information on the text search in headings 
+
+If you search for the term “Engine” in the title, for example, then all documents whose title 
+includes the term “Engine” will be listed. Furthermore, all documents which have the 
+term anywhere in their title will be added to the hit list, for example “Gasoline engine”, 
+“Engine mounting”, “Electric engine”. 
+
+Additional information on the text search in the document 
+
+If you search in the document for the term “Engine”, for example, only documents that 
+contain this term will be found. Documents containing terms such as “engine mounting” 
+or “gasoline engine” will not be included in the hit list. Numbers will not be taken into 
+account when performing a text search in the document. 
+
+Specific information for individual markets is contained in the data packages in the form 
+of pdf files. These can be displayed in ISTA. It is not possible to perform a text search in 
+these pdf files. Title and document number searches are also supported in these docu¬ 
+ments. 
+
+Additional information on the text search by document number 
+
+For searches by document number, the entered character seguence is only searched at 
+the beginning of the document number. If the search term “123” is entered, then docu¬ 
+ments such as “123456” will appear in the hit list. Documents such as “456123” or 
+“51234” will not appear in the hit list. 
+
+Additional information on text searches by component code and signal name 
+
+In the wiring diagrams codes are used for components and signals such as “A149a” for a 
+control device or “X1108” for a ground connection. The text search can only be used to 
+find these codes in the title. All the documents are displayed in the hit list that contain the 
+entered code in their title, e.g. “A149a” or “X1108”. Searches by component code within 
+the document are not possible. The same applies for searches for engine codes such as 
+“M54”. 
+
+
+54 
+
+ISTA 
+
+
+
+Assisted Troubleshooting 
+
+
+Fault Memory 
+
+The “Fault memory” tab displays the fault memory entries read out from the control units 
+in the vehicle test. 
+
+
+There are several ways to reach this tab: 
+
+0 On completion of the vehicle test in the “Control unit tree” or “Control unit list” tabs 
+by clicking the “Display fault memory” button. 
+
+0 By selecting “Activities” -> “Guided troubleshooting” -> “Fault memory” in the 
+navigation area. 
+
+
+
+“Fault memory” tab 
+
+
+The fault memory list contains the following columns: 
+
+0 Code: The fault code or the fault number appears in hexadecimal form. 
+0 Description: This column contains a description of the fault location. 
+
+
+55 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+The following buttons are available in the action line: 
+
+0 Display detail table: choose a line and then click this button. You will then obtain the 
+detailed information on a fault. If there are several results for the ambient conditions, 
+then only the first and the last information block will be displayed. 
+
+0 Start quick delete: this function is only active after a completed vehicle test. In each 
+identified control unit, the fault memory is deleted and then reread. OBD control 
+units are only deleted if a fault is set in your fault memory. 
+
+0 Display all: adapts the widths of all columns to their maximum text lengths. If you 
+click the button once more, the workshop system sets the columns to their initial 
+widths. If required, a horizontal progress bar is displayed. 
+
+0 Calculate test plan: starts the calculation and display of the test plan with the exist¬ 
+ing fault memory entries and selected diagnostic symptoms. 
+
+
+56 
+
+ISTA 
+
+
+
+Display detail table 
+
+
+lmgr-r id S«r#lit 
+
+T«<hn<4l Ampliation 
+
+
+
+E 
+
+
+v m k'uiraa 
+
+Vohtel 
+
+• TieK4SAU32DA*MTrT2n»LTieL» UJMMH1 
+
+
+
+Fjuk dattlll 
+
+
+
+
+c. ? x | 
+
+
+Corn's! -nr 
+faiit vnccp 
+
+
+Opnartt Siiblrr/ c antral U<jt: 
+
+MBS 
+
+»««tiig cdutv* loU^inj ;onlr«. intornalfwh 
+
+
+nn pr«MM 
+
+f iut cirrontV net ptit't 
+
+
+“Fault details” mask 
+
+The “Fault details” mask contains supplementary descriptions on a fault code: 
+
+0 Control unit: the name of the control unit version will be displayed. 
+
+0 Fault memory: displays the fault code in hexadecimal form and, below this, fault 
+location. 
+
+0 Vehicle data: the fault status as well as details on the ambient conditions will be 
+displayed (if available). 
+
+The buttons in the action line have the following functions: 
+
+0 Update: the detailed information will be reread and displayed. 
+
+0 Close: closes the window and returns to the “Fault memory” mask. 
+
+
+57 
+
+ISTA 
+
+
+
+
+Fault Pattern 
+
+The “Fault pattern” tab can be used to select fault patterns from a functional structure on 
+many levels. They supplement the read-in fault memory entries and are taken into 
+account in test plan calculation. The tab is not active unless the fault memories of the 
+identified vehicle are being read out. You should select the fault patterns independently of 
+the customer's complaints about the vehicle. Otherwise, only the saved faults will be 
+taken into account when the test plan is created. Especially for complaints apart from the 
+vehicle's electric system, the selection of fault patterns is especially important for assuring 
+a successful diagnosis. 
+
+Select “Activities” -> “Guided troubleshooting” -> “Fault pattern” in the navigation area. 
+
+In the left-hand section of the content range, you can select the fault pattern from a hier¬ 
+archical structure then start with the uppermost, most general level and work your way 
+down to an exact description of the fault pattern. On the right side of the mask, the path 
+through the selection levels is logged. 
+
+Define the fault pattern as precisely as possible; otherwise, the test plan generates an 
+unnecessarily high number of test suggestions. 
+
+
+liei^rilM 5 » -.«c• 
+'•chnteil Apsl liana n 
+
+VI . M20M6 
+
+
+si • 2* ■ w lai 14 
+
+Vtfi.l. S‘.EW$ALt32&dlM47<T2Ml/T<EUR LUlSteMI 
+
+
+I? 
+
+
+
+120301 G«nar«l rulfu*rt 
+
+120302 No «nj»*o »iaft postJb* 
+1703CC Oo syttf onflln* r#<pc»*^» 
+
+
+120310 FltKliMlion in «npn« vg«»i « 1 u'inj iccalwtlien 
+
+
+120311 Co",.r«|<onhl|ho' lMntipe-nM 
+
+130216 Prob^m warring or wtttchng elffh* onglno 
+120271 S*afcnp v«n iv»rchnq o f ttio «npn* 
+
+1203*7 MarimOon engine virung after 'surtiw' in rtewmi R 
+
+
+<J3MI Huiluitisn In engn* ip*«d iun-fl accalorallo 
+
+
+Ns cf fauh rr«n 
+
+LWdoNI 
+
+
+II: sf fauh pitto-m 
+
+Aetojl 
+lauh potfjitn 
+
+
+Caculilo 
+Ural sUn 
+
+
+“Fault pattern” tab 
+
+
+58 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following buttons are available in the action line: 
+
+0 Undo all: deletes the existing selection and returns to the uppermost level. 
+
+0 Undo: undoes the last selected step. 
+
+0 Accept fault pattern: the previously selected symptom path (at least one level) is 
+saved as a basis for subseguently calculating the test plan. The tab then returns as 
+the “Undo all” button to the uppermost selection level. The selected fault pattern is 
+then saved when you guit the “Fault pattern” tab. 
+
+0 Display fault patterns: when clicking this button, a pop up appears containing all the 
+previously saved fault patterns. 
+
+0 Calculate test plan: starts the calculation and display of the test plan with the 
+existing diagnostic symptoms. 
+
+Selected fault patterns 
+
+The pop up window in the “Fault pattern” mask shows the previously saved fault 
+patterns. 
+
+
+
+“Fault pattern” tab with “Selected fault patterns” pop up 
+
+The following buttons are available in the action line: 
+
+0 Cancel: the pop up window will be closed; the changes made will not be saved. 
+0 Delete: deletes the selected entry. 
+
+0 OK: the pop up window will close; the changes made will be saved. 
+
+
+59 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+► How to save a fault pattern and include it in the test plan : 
+
+0 Compile the desired fault pattern in the content range by navigating through the 
+available levels and selecting the suitable terms or phrases. 
+
+0 If appropriate, click the “Display fault patterns” button and confirm with “OK”. 
+
+0 Click the “Calculate test plan” button. 
+
+Service Function 
+
+The “Service functions” area covers all service-related jobs. 
+
+You can search for service-relevant jobs under the “Service functions” tab, 
+e.g. when searching a function description. 
+
+Prerequisites: 
+
+0 Vehicle identification 
+
+
+Ireaqraad Sarvlta 
+Tachncal Ajpicjeon 
+
+vr« YAxroa 
+
+
+ffi H > B n fel f H. ® 
+
+V.I.l: J1€SO»SALt»3«ir447rr2VWJTAEUR LUU04I11 
+
+
+iMmlKKO* 
+
+Vatmla Ini 
+
+
+nlo'naliv* 
+
+3uidad 
+
+IrNbukhoriini 
+
+StniM 
+
+Unction 
+
+
+
+A'orkthqpl Wajjunn; 
+
+Opv Jliru Mvcti 
+
+
+
+Stlawrd ftrvMU'* aim* mi | 
+
+Csmunpfcwi calculation 
+
+Lav* 1 
+
+Crka 
+
+ME-CAS 
+
+Leva* 2 
+
+L'«aa» blactrD*i:t 
+
+rw*u«-jii raclrcjitlon 
+
+l avw 3 
+
+Adjirtlntfit h c-l'orr-'. 
+
+Ida >:«•: 
+
+Lavai 4 
+
+HJacw rata a^uctnam 
+
+1 Injatlor utM 
+
+Start j merry 
+
+
+
+
+
+
+
+
+
+
+
+
+
+lift 7 rtn- Dafi.lt 
+
+L T ** "<-■■■ 
+
+
+“Service functions” tab 
+
+This operation is similar to that for “Product structure”. 
+
+
+60 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop/operating fluids 
+
+The search functions in the “Workshop/Operating fluids” area are vehicle-independent (or 
+operation-independent, respectively); you can use these functions without previously hav¬ 
+ing to identify a vehicle. 
+
+Workshop Equipment 
+
+The “Workshop equipment” tab can be used to search for general information on work¬ 
+shop equipment. 
+
+Prerequisites: 
+
+0 None 
+
+
+Irrtgrxrt 
+
+T«chn«4l Ajpl<«3on 
+Vf. »«COM 
+
+
+A] |o?J 5 1 jl : 1 |?i !S| X 
+
+V»Mcll UUUJTISlR LL*D34i1' 
+
+
+V*hlcl» t»« 
+
+AntiWK 
+
+plan 
+
+S.id«d 
+
+trcubitkhottnB 
+
+'tfltlip* 
+
+
+
+
+T 
+
+
+«it mic* 
+
+
+1 kifliil*’ rurtMn 
+
+
+0 
+
+
+1 - fifcW iicrii! ln«> 
+
+Ragitltr *unbnv 
+
+? rest Mubr<cro‘«p 
+
+
+3 -’AIimI ilkjnmnl 
+
+
+* • Wn*ing and clainng 
+
+
+F Body f rr.no 
+
+
+t - lifting (q.<pn«nt 
+
+
+r TvmtanU* 
+
+
+
+
+“Workshop equipment” tab 
+
+This operation is similar to that for “Product structure”. However, no filter functions are 
+available in this case. 
+
+
+61 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Text Search 
+
+You can enter character strings for vehicle-independent information via document title, 
+document contents or document numbers. 
+
+Prerequisites: 
+
+0 None 
+
+
+kUtvited S«i «it« 
+Tnh-itd AppitaCion 
+
+
+Aj I / [op] <? 
+
+■ r.rBaw-TOdftMrrTiMUTjrxm 1iflaMiil 
+
+
+7 rra 
+
+
+•Jt'dfliu)*' 
+
+
+Attfahkt 
+
+par 
+
+
+If/arorUn 
+
+Su4*« 
+
+
+Worktop l 
+
+Upisuilnt 
+
+<4 anti 
+
+rrouelnn«ot 1 -<j 
+
+
+Op*r*lr^ *01 ** 
+
+dtVKK 
+
+tfomtim 
+
+•q.lpTwm 
+
+i " 
+
+Cptfidr* 
+
+*udi 
+
+
+
+"1 
+
+
+SorchMnrr 
+
+
+0 S««h n t-« Mcuninlith 
+0 n ”+ locunMit 
+
+O f M dMUMfllNUVlbtr 
+
+
+,' 1 ll J ll» II* l.» 5 It II s II* II* l : - 1 
+
+
+nrr 'innnrr 'inn 
+
+
+
+nnnnnnnnnnFif; 
+
+
+.! 
+
+DocmmncDDe 
+
+| end 
+
+Ml*-I 
+
+Q 
+
+
+9un 
+
+Hirih 
+
+
+Example of “Text search” tab and “Workshop/Operating fluids” 
+
+► How to search for a random term: 
+
+0 From the displayed options, choose whether you want to search for a document title, 
+document contents, or a document number. 
+
+0 Enter the text or number sequence that you want to look up in the “Search term” 
+field. If appropriate, use the on-screen keyboard. Only part of a longer term has to 
+be entered as search text, e.g. “Doc” for “Document”. 
+
+0 Click the “Start search” button. 
+
+When the search has been completed, the ISTA workshop system switches over to the 
+
+“Service plan” and displays the hit list. 
+
+Note: You can find additional information on the title or document-specific text 
+search in section of this training material. 
+
+
+62 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Measuring Devices 
+
+The measuring devices (Multimeter, Oscilloscope, Signals) are component parts of the 
+ISTA workshop system. The corresponding measuring devices hardware, as well as the 
+periodic measurement data logging, preparation of information, and provision of the 
+results, is performed by the IMIB connected via LAN. 
+
+► How to start the measuring devices: 
+
+0 Call up the measuring devices via the “Activities” -> “Measuring devices” selection 
+in the navigation area. 
+
+0 Choose the “Measuring devices” tab. The “Connection manager” mask appears. 
+
+0 Select the desired IMIB and click the “Set up connection” button. The “Measuring 
+devices” tab will then appear with the preset “Multimeter” preset tab. 
+
+
+Irrtgmrt &«r*W« 
+
+T«CtlfflMl A»p l<a^on 
+
+id] 1 
+
+s 4 8 
+
+?| g i 
+
+111 
+
+
+"1 
+
+X 
+
+
+VW k'AXDM V»Mcli TJ1AUT ICLR LLW34I V 
+
+
+
+VfWtlf 
+
+
+
+
+
+
+
+tfmu 
+
+fttark«hsp l 
+
+V*i«irnp 
+
+
+i»«rf 
+
+treubWthocang 
+
+•jllHo* 
+
+%«rrn) 
+
+divIcM 
+
+
+
+
+“Measuring devices” tab 
+
+
+63 
+
+ISTA 
+
+
+Note: For more information regarding measuring systems refer to the IMIB 
+section of this training material. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Plan 
+
+
+Hit List 
+
+The hit list shows the results of the search performed in the following menus: 
+“Information search” (Chapter 3.4.1), “Service function” (Chapter 3.4.3.1), and 
+“Workshop/Operating fluids” (Chapter 3.4.4). The search criterion entered is stated 
+in the first line. All matching documents are listed under this. You can select and 
+display a document from the hit list. 
+
+
+
+Tnt plan 
+
+
+
+“Hit list” tab 
+
+The individual columns have the following meaning: 
+
+0 Note: provides information about the entry found. 
+
+0 Type: states the information type, e.g. “REP” for “Repair instruction”. All information 
+types are listed in the “Table of types Information filtered” (in the next page). 
+
+0 Title: the first title states the search criterion used to call up the hit list. The remain¬ 
+ing lines contain the titles of the documents found. 
+
+0 Status: shows whether the named document has already been accessed during the 
+operation: - white circle: not accessed - green circle: performed or called up - yellow 
+circle: minimized - black circle: display canceled. 
+
+
+64 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+The buttons in the action list have the following functions: 
+
+0 Back: returns to the previous mask. 
+
+0 Filter: calls up a menu for setting a filter. The filter determines which objects are dis¬ 
+played and which are suppressed. 
+
+0 Display entire: adapts the widths of all columns to their maximum text lengths. If you 
+click the button a second time, the workshop system returns the columns to their 
+initial widths. If reguired, a horizontal progress bar is displayed. 
+
+0 Display: shows the selected document. 
+
+The following table shows the possible information types in the hit list with their 
+abbreviations: 
+
+
+Abbreviation 
+
+Information type 
+
+PRC 
+
+Procedure (service program) 
+
+AZD 
+
+Tightening torque 
+
+EBO 
+
+Installation location 
+
+FEB 
+
+Fault elimination 
+
+FTD 
+
+Vehicle engineering diagnosis 
+
+FUB 
+
+Functional description 
+
+PIB 
+
+Pin assignments 
+
+REP 
+
+Repair instructions 
+
+SBS* 
+
+Operating fluids 
+
+SIT* 
+
+Service Information (Engineering) 
+
+SSP 
+
+Wiring diagram 
+
+STA 
+
+Connector view 
+
+SWS 
+
+(SI) Special tools/equipment 
+
+SI 
+
+Special tools 
+
+TED 
+
+Technical data 
+
+* Only via Workshop/Operating fluids 
+
+
+Table of types of Information filtered 
+
+
+65 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Viewing a Document 
+
+► How to view a document: 
+
+0 Select a line. The corresponding entry is highlighted in color. The “Display” button 
+is active. 
+
+0 Click on the “Display” button. The required document will be displayed. 
+
+
+
+T*ti plan 
+
+
+T*ti plan 
+
+
+N*t* 
+
+rm 
+
+Till# 
+
+A SUKUt 1 
+
+
+
+FTD 
+
+IM7TUV4S7TU Cylndar Hmmd and Piatan* 
+
+O 
+
+
+TED 
+
+PltMfK wttfc Rlnp* and Pin* M47T2 / D2D 
+
+■ 
+
+
+TED 
+
+PIMWH witt’ and Pin* M37T2 1 D23 
+
+o 
+
+
+HEP 
+
+(Urnot-irQ and mvtallrtp »• replacing Ml praton* (M47TU t M4 1 TV| 
+
+0 
+
+
+Hh 4 Fihar DtfiuH O NI aifcii • = »r^ urn! • VIh-ii-m] • P.#i» #4**: 
+
+Sack Hit*™ Display 
+
+Selecting a document for display 
+
+
+66 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+Text Documents 
+
+Besides texts, text documents also contain graphics, photos and cross-references (hyper¬ 
+links). Cross-references appear in blue, underlined lettering; when you click a link, another 
+cross-referenced document is opened. 
+
+A magnifying glass symbol is shown in text documents next to graphics. You can use it to 
+zoom in on the corresponding illustration. 
+
+
+tocegrjted Serviee i| 4 K|j) >, nO S 
+
+Techie*! Apple »tcr J?h _ LCj \SL J=r* L* 
+
+LI B 
+
+? 
+
+’ Jgj 
+
+fx| 
+
+VN: VAK0:« Vehicle: TlEKl5AU320d | M47fT2lM/TJEUR LL/20O4111 
+
+0£P 1123S30 Q«m»»-ng mna minting or repbeing >11 pxtani (M47TU i M47T?) 
+
+
+
+
+txi 1 
+
+
+
+& 
+
+
+Nolle 
+
+Oefore removing pistons. rwrKive caiton deposit* Irom cftnder 
+
+WMlbc 
+
+
+Close 
+
+
+Text document 
+
+0 Close: closes the window and returns to the hit list. 
+
+
+67 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wiring Diagrams 
+
+Sometimes the displayed wiring diagram may contain hyperlinks. These are recognizable 
+as such by their blue lettering. Via hotspots, you can access detailed information such as 
+installation position, connector view or pin assignment for one of the components. The 
+additional information is displayed together with the scaled-down wiring diagram. 
+
+
+nwgratvd Service 
+
+TeehnrtjJ Ajplltxon 
+
+A <1 |> 9? iS>! 
+
+|B: 
+
+HI 
+
+|? 
+
+f" 
+
+x| 
+
+WN VA20CC6 
+
+Ve*-.* . yrEWSAJ32CdiKM7lT2,V»JUTlEURLU2:04l1* 
+
+
+
+
+
+
+REP *126533 Rtmt*ing and imu Ing o- t«p!<c ng <11 piitom (M47TU1 M47T2) 
+
+
+
+
+
+& 
+
+
+mVt . ■ - 
+
+Irv • r*2#fc£ 
+
+
+
+Remove mo;c balancci’ol pomp. 
+
+<OSt3\'jtt<yr 
+
+I kgnten screws according to numbering vequence 
+
+
+: 
+
+
+& 
+
+
+I ff*rw4ing pleaton*. rrmw/f rarbon rrom ryltndiv 
+
+Wa4)i. 
+
+
+Wiring diagram with hotspots and BirdView function 
+
+The action list offers several options for changing the presentations: 
+
+0 Installation: call up a list of wiring diagrams that contain the selected component. To 
+do this selected a component drawing and then click the “Installation” button. A list 
+of wiring diagrams is displayed in a pop up. Here you select and display the desired 
+wiring diagram. 
+
+0 Move: activated during selection. In this mode, you can move the document around 
+the mask. To do this, click the document and drag it in the desired direction. If you 
+click the “Move” button a second time, this function is switched off again. 
+
+0 Zoom in: activated during selection. In this mode, you can magnify the document 
+step-by-step. To do this, click the document; the clicked point will be centered. The 
+“BirdView function” is active from the first magnification level. It facilitates navigation 
+within a wiring diagram. At the top right of the content range, a window appears in 
+which the small scale wiring diagram is displayed. You can then move the sguare, 
+framed in red, in the x and y-directions; the excerpt of the wiring diagram in the con¬ 
+tent range moves accordingly. 
+
+0 Zoom out: zooms out step-by-step from a magnified view until the original size is 
+displayed. 
+
+0 Whole screen: is active when several documents are simultaneously displayed on 
+the screen. It magnifies the view of the active document to fill the entire screen 
+width. 
+
+68 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If you have accessed detailed documents via a hotspot, clicking on this button will close 
+the detailed document and magnify the view of the wiring diagram to the full screen size. 
+
+0 Close: by clicking this button, you return to the hit list. 
+
+Display several documents simultaneously 
+
+Several documents can be displayed in the content range. This option is only available for 
+wiring diagrams and the information that can accessed from them via hotspots. The fol¬ 
+lowing example shows the split display, in which you can switch to the right-hand window 
+between additional documents via the displayed tabs. 
+
+Remember that the functions that can be accessed by using these buttons only apply to 
+the active window. You can see which window is active by the color-coded tab. 
+
+
+
+Displaying several documents simultaneously, for example 
+
+
+69 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Whole Screen 
+
+Via the “Whole screen” button, you can select the active document (tab is highlighted in 
+color) and display over the entire width of the screen. A second click on the "Whole 
+screen" button deactivates the whole screen display mode and returns to the split dis¬ 
+play. 
+
+
+imoflr S4rvic« 4 Q > DO (0 
+
+T««hnlcjl Application 
+
+liD 
+
+
+? 
+
+
+|xj 
+
+VM vahida 7 7E66ISAi.f745iM32.'ftUTlt J»VK02j©6 
+
+| EBO EO EtC 6S 0^13 NB, X13344, X01M6 X010S7 
+
+
+
+
+
+
+
+
+Whole screen example 
+
+
+70 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zoom Function 
+
+You can call up the zoom function by clicking the magnifying glass symbol at the bottom 
+right under the pictures. The magnified image will be displayed in a pop up window. 
+
+
+
+Zoom function example 
+
+
+The window offers the following functions: 
+
+0 Zoom in: Magnifies the view in several steps. After the first click, scroll bars will 
+appear at the bottom and right side of the display window, helping you to adjust the 
+size of the required screen section. 
+
+
+0 Zoom out: Zooms out the picture in several steps back to the original size. 
+
+
+0 OK: Closes the window. 
+
+
+
+71 
+
+ISTA 
+
+
+Zoom in example 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test Plan 
+
+
+When first opened, the “Test plan” tab contains the test plan that has been calculated on 
+the basis of the most recently read fault memory entries and/or selected fault patterns. 
+Components/functions to be examined are presented in the multicolumn table in white 
+lettering; the associated documents and procedures appear below the compo¬ 
+nent/function to be examined in black lettering. 
+
+The information line on the left states the number of hits. The filter status states whether 
+the default setting of the filter has been changed. Next to it, the symbols for process sta¬ 
+tus are explained. 
+
+Clicking the “Calculate test plan" button in the “Fault memory list” mask or in the “Fault 
+patterns” mask will automatically take you to the “Test plan” tab. Provided that at least 
+one fault memory entry and/or fault pattern is present, you can also get to the mask man¬ 
+ually via “Service plan” -> “Test plan” in the navigation area. 
+
+In the standard view, the mask only lists the test suggestions for components/functions to 
+be examined, sorted according to priority. A selected line is highlighted with the mask 
+color. 
+
+
+Intagritea Sarvloa 
+Technical Apphcihan 
+
+
+m A 2 . IA \L 
+
+Vel-ii « 3‘,E60ISAL(320dM47IT2lAUTfEJRLLf2004ri1 
+
+
+liii I? 
+
+
+X 
+
+
+idarKMattan 
+
+Va«cle tut 
+
+Activates Service plan 
+
+
+
+Mole Type 
+
+
+ABL BftS17_M "CU-M-ASK Vereorgung 
+
+
+AIIl tJB*17_«^CO-M-ASK Veraorgung 
+
+
+ABL BG3TO_100CO-Nav*g»tlon*i|'ft*m Jipsn 
+
+
+ABL OG?12JJC*C4 Nsvgst1on*ty?t*rr 
+
+ABL B6312JWOCGCCC NsvIgxiOAsfurklton 
+
+
+ABL B6»12_W'«0 M ASK V«rt»'gtrg 
+
+
+ABL B 659 D_ 10 K 0 Ns*igjtionssfstam Japan 
+
+
+Hri. 11 
+
+Back 
+
+
+Pillar Oaf suit 
+
+rikara 
+
+
+“Test plan” tab in the standard view 
+
+
+Statue P'iorty a 
+
+
+O NotcUrc • =ciur-td • ‘An'nic d • Cancelled 
+
+
+72 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the content range, the following information is displayed in the sortable columns: 
+
+0 Note: A little red sguare signifies that a note about this test suggestion is available 
+from BMW AG. 
+
+0 Type: Information type. For example, “ABL” stands for “Ablauf” (procedure) and indi¬ 
+cates a test program. After selection and clicking the “Display” button, the test pro¬ 
+gram starts by attempting to localize a fault in the operation of the suspected com¬ 
+ponent/function. 
+
+0 Title: Description of the component/function to be checked, possibly with symp¬ 
+toms; title of the document or test program. 
+
+0 Status: The process status is indicated with a circle symbol. An empty or colored 
+circle indicates the following statuses: 
+
+0 Empty: The procedure has not been started or performed yet, or the document has 
+not yet been called up. 
+
+0 Green: Procedure performed or document called up. 
+
+0 Yellow: Minimized. This mode indicates that a procedure is running in the back¬ 
+ground. It can be displayed again via the “Display” button. Only one procedure can 
+be active at a time. It is possible to switch to the “Control unit functions” mask and 
+to start the functions there if the test module currently running is not using the vehi¬ 
+cle interface. 
+
+0 Black: Procedure canceled. 
+
+0 Priority: Priority is graded from 1 in descending order; 1 represents the highest pri¬ 
+ority. The calculated priority figures determine the order of the object in the test plan. 
+A two figure code, is displayed for suspect causes that are generated by a test pro¬ 
+cedure. 
+
+The buttons in the action line have the following functions: 
+
+0 Back: Go back to the previous mask. 
+
+0 Filters: Calls up a menu for setting a filter. The filter determines the information 
+objects that will appear in the test plan and those that won't be displayed. 
+
+0 Display symptoms: When you click this button, the symptoms (fault memory entries 
+with prefixed fault code, fault patterns) appear below the selected compo¬ 
+nent/function to be tested, indented and in small font. When you click a second time, 
+the symptoms are displayed again. 
+
+0 Show/Hide: With this button, you can show or hide the documents and procedures 
+assigned to a component/function to be tested. 
+
+0 Display entire: Use this function to widen or narrow text columns. Selecting the but¬ 
+ton again restores the original status. 
+
+0 Display: With this button, you start a test procedure or display an information object. 
+
+73 
+
+ISTA 
+
+
+
+
+A 0 | \i 
+
+[a£ 
+
+7 
+
+}jtij 
+
+VW» VAMOM 
+
+*•*>« . 3#f Rf.h*^W,*AO»4l»M7rr2jlfcUTltC« 11009*11 
+
+
+
+
+
+
+
+“Test plan” tab with symptoms displayed 
+
+
+► How to start a test procedure: 
+
+0 Select a procedure (Type = “ABL”) in the content area of the “Test plan” mask. 
+
+0 Click the “Display” button. 
+
+► How to display the symptoms for a component/function to be tested: 
+
+0 Select a component/function (white lettering) to be tested in the content range of 
+the “Test plan” mask. 
+
+0 Click the “Display symptoms” button. 
+
+► How to return to the test procedure running in the background: 
+
+0 Select the list entry with the “yellow” status in the content range of the “Test plan” 
+mask. 
+
+0 Click the “Display” button. 
+
+► How to generally suppress the display of documents and procedures: 
+
+0 Select a component/function (white lettering) to be tested in the content range 
+of the “Test plan” mask. 
+
+0 Click on the “Show/Hide” button. 
+
+
+74 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Displaying and Editing a Procedure 
+
+A “procedure” corresponds to a service program that start and runs. A procedure may 
+contain dialogues (messages, questions), measurement instructions and procedure steps 
+with vehicle communication. Depending on the objective, a service program can be used 
+to localize a fault or to execute a service function. The test steps and procedures con¬ 
+tained in the sequence always relate to the performance of a certain task. Examples of 
+some masks are presented below. 
+
+Message 
+
+A message provides you with information and results. Confirm the message with the 
+“Continue” button. 
+
+
+
+flirOak UmgrrKf Tatftvtur 
+
+
+Message example 
+
+
+75 
+
+ISTA 
+
+
+
+
+
+
+
+Substitute value input 
+
+A substitute value must be entered if no measuring instruments are available. In this case, 
+you have to make the measurements with an external instrument and enter the reading 
+into the displayed fields. 
+
+
+Int««r7ted 5crvlc« 
+
+Tachmcai Application 
+
+® « • i/j ai gi b 
+
+l—l 
+
+[r i [x 
+
+Ffi>t-Nr DM59601 
+
+Fahruu*: 7tf R«lh*IEW<lJW746ilN52IAUTlEUR LU2002W6 
+
+
+
+Ersatzwerteingabe 
+
+
+
+L?j|x I 
+
+
+£ rc*fcrw • rt * «■»$* b •; 
+
+t : 
+
+
+Substitute value input example 
+
+
+76 
+
+ISTA 
+
+
+
+
+
+
+Question 
+
+A question may display information and set values. The user has to select a reply from 
+among several options. In this case, the available options are “Yes” and “No”. When you 
+click one of the options, the procedure continues to the next step. 
+
+
+ImogrstoO Sorvtco 
+
+Tochnit Jl Appllc jtJon 
+
+A 13 B) [Z 
+
+S3 
+
+
+ID 
+
+11 
+
+[x| 
+
+VIV VWtKOI 
+
+Vphi.-lr Ttt»WSAi./ 3 «i|tl l Mm?fWjrieURLlf 7004 rl 1 
+
+
+
+
+
+
+EaJ 59 0 _ 13)30 -N j v i g * b o n « • yota m J a p j n 
+
+
+
+
+
+El 
+
+txl 
+
+
+Furfction*- 
+
+b«ict*re!bung 
+
+
+
+
+
+
+
+0«u Uir*rot to foicmtng control L#it louty 
+Nivigrlor tyilotn jjppn 
+
+GAM*. 
+
+- ruM tor hjvigjtiati iyktom Jjptr 
+
+- romor iuppv lot NjvtgiDon syttom Jjp«r 
+
+it cno tuso OK? 
+
+i* tno von*9* tuppry ok? 
+
+
+Function 
+
+T*» >|MmMVo*Arr rt tn iv»/ t>irn h iimi % ml* limit. nr» ItVit 
+
+hVtmMn rlr \ til *ar rrrrKtli) it** mh 
+(iPR Nivlj.rtun ^ImiPii'.tfrti] RjtJmt) Tl» ru*^ ; itro i.tifiwi fhi 1 rt» rt 
+
+hirrrrftrc ty »»t*l (•» Tt# rt)itK in ml tff It# VR .tilt rr ti* fmrj 
+
+Ir iii it'tjni' :rnrit»i .ttlii1iii irclmjtitr uti Tt# rxljitrr rnrfitw .»»#.! 
+fimrt irmtrn r(1w >«PC iit^yiv r-»t*n i* trly pittlK «t#n lt#n K m i rtrrtv 
+ml .♦ Iwr t*T RPR »mi t»» r. trdwi^iiil rjv f.wlinnK ilr >rt ■*nrtrn 
+Nivl|.itlrn r.«nr*utK wttti OPR MMtwir. H»iO tttvi ini ijyri mv.ir Tti n»r 
+itt»iiytti rjsijrtrr rrrrfitii Tl» mljnrr rrirfiiw 'inthu tt# fW.rr 
+it#* Tm r.irwit ffnivr i. itnam m It# rr-trjrc mrlr# n t*» *P. v JO trap 
+T*» siswir iftindtriihm Tin nTft^Kti >'.iiMi*«-Mlrit«miiTiti InmUi ri 
+m Mlirhtl* ntnti i\ 1 t rnrmi>,' 1 rr nniKT/ i*r . Tlr rttiiiln nit! » »ir*r r» 
+UK W* It# »»Wi r l». h#l? i tr Hi ik*i •tv* TfAV * imI tin 
+
+fr-n *»V: mll'lnvtli' r « •n»*ift tttl.VIR*'i 
+
+An trtji li >• rrl~t rrMtt, otat i> im ' t J_i rn r#twv*, r/r«n» In r>T» tyt in r.im w rt 
+i> t wn* nrHu tt* rtr |i Tfh ij,m imw It fttrii *t It# rwti] i* It# nn^jitrn rnrp 
+
+Brief description of components 
+OPS aerial 
+
+
+I *» -t •- bUU v.-|*tvl'i .I||<I t tvilltl 
+IUac nil* uiUwrtMi Mill 
+
+-VAttvaAl jtMaA. < 
+
+
+»Uf U llttipiviti sittviJU In 
+
+
+Example of a question 
+
+
+77 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+Displaying and editing a procedure in BST mode 
+
+Procedures for the E21 - E31 Series are displayed in BST mode. These are service pro¬ 
+grams that were created for the BMW Service Tester (BST) predecessor system and that 
+have their own mask layout. Operation in procedures in BST mode differs from general 
+operation. Other buttons are displayed in the action bar for navigation within the BST 
+procedures. 
+
+
+
+BST procedure (no current screenshot) 
+
+The buttons in the action line have the following functions: 
+
+0 Keyboard: shows or hides the on-screen keyboard. 
+
+0 Back (<): calls up the next procedure step within the BST procedure, 
+o up n : jumps to the next selection item in the screen above. 
+
+0 Down (v): jumps to the next selection item in the screen below. 
+
+0 Continue (>): calls up the next procedure step within the BST procedure. 
+0 Acknowledgement (A): with this button, you can confirm your selection. 
+
+
+78 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+Symbol Bar 
+
+The following table provides an overview of the functions that can be directly accessed 
+via the symbol bar. 
+
+
+Symbols 
+
+Function 
+
+A 
+
+Start r 
+
+nask 
+
+When clicking this symbol, the start mask will be displayed The ISTA 
+workshop system then terminates the ongoing operation (after 
+confirmation). 
+
+a 
+
+Display previous 
+document 
+
+Clicking this symbol takes you to the previous entry in the history list and 
+displays the corresponding document. The symbol is only available if the 
+history list contains a document which has been selected previously. 
+
+|W 
+
+Displa 
+
+histon 
+
+y document 
+i list 
+
+When clicking this symbol, the history list will be displayed. 
+
+y 
+
+► 
+
+Displa 
+
+docun 
+
+y next 
+lent 
+
+Clicking this symbol takes you to the next entry in the history list and the 
+displays the corresponding document. The symbol is only available if the 
+history list contains a document which has been selected previously. 
+
+a 
+
+Administration 
+
+When clicking this symbol, Administration is accessed. 
+
+□B 
+
+□B 
+
+
+Click on this symbol to call up the connection manager. Connections to the 
+vehicle interface or the measuring instrument adapter can be established or 
+disconnectea. This symbol is shown (on left) as "connected" when at least 
+one device is connected to the system. If no connections are available, it is 
+shown as "separatee" (on right). 
+
+> 
+
+Connection manager 
+
+& 
+
+Opera 
+
+ting mode 
+
+Click this symbol to display information on switching between offline and 
+online mode. The status of the symbol reflects the present mode: online 
+(left); offline (right). 
+
+0-J 
+
+Status 
+
+; display 
+
+Click on this symbol to call up the "Status display" window. Here, the status 
+of the connected Device and. where appropriate, the battery status is 
+displayed. 
+
+£i 
+
+Print 
+
+
+Click this symbol to access the "Print" function. 
+
+
+79 
+
+ISTA 
+
+
+
+
+Symbols 
+
+Function 
+
+7 
+
+■ 
+
+Help 
+
+
+Clicking this symbol calls up the "Help" function. 
+
+Minin 
+
+rtize 
+
+Clicking this symbol minimizes the application window. 
+
+|X 
+
+Exit 
+
+
+When clicking this symbol, after a security prompt and the appropriate 
+confirmation the current operation or the ISTA application is exited. 
+
+
+Start Mask 
+
+The start mask is in the home mask for the ISTA workshop system. You can obtain more 
+detailed information on the start mask in Chapter 3.1. 
+
+History list 
+
+While performing an operation, the ISTA workshop system creates a list of all documents 
+accessed during this operation. This list is called the history list. 
+
+
+History 
+
+
+B x 
+
+No. 
+
+Type Title 
+
+Statu 5 | 
+
+1 
+
+FTP Abbreviations Ait models 
+
+• 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cancel Minimised 
+
+saquanca 
+
+Display 
+
+
+The history list 
+
+
+80 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The history list works on the same principle as the history function in a web browser. 
+
+The list adapts to the sequence in which the documents were accessed. The most 
+recent document always appears in the last position. With the “Display previous docu¬ 
+ment” and “Display next document” symbols, you can switch between the documents 
+that have been accessed previously. Clicking the “History list” symbol opens a pop up 
+window in which specific entries from the history list can be selected. 
+
+If you browse back and open another document via a hyperlink, then this new document 
+will be added to the list after the one with the hyperlink and all entries listed below it will 
+be deleted. 
+
+Administration 
+
+You can access “Administration” via the administration symbol in the symbol bar. You can 
+view information on the workshop system and change the settings. 
+
+Client settings 
+
+The “Client settings” tab is displayed by default when “Administration” is opened. Here 
+you can set the language of the workshop system, the brands for which you have autho¬ 
+rization and the display period for news items. The selection applies to the client currently 
+being used. 
+
+
+
+Select iHritfu-ifl** 
+
+O © Eolith 
+
+Select make: 
+
+© Cl MW 
+
+I imit tfcspl»y time period for news: 
+
+O 1 month O 3 months Q B months 0 12 rnunttis 
+
+
+“Client settings” tab 
+
+The buttons in the action line have the following functions: 
+
+0 Cancel: Closes “Administration” without changing the settings. 
+0 OK: Closes “Administration” and saves the selected settings. 
+
+
+81 
+
+ISTA 
+
+
+
+
+
+
+► How to select the display period for News: 
+
+0 Under the “Limit display time period for news” menu point, specify how old the old¬ 
+est news item to be displayed should be. 
+
+0 Confirm your selection by clicking the “OK” button. The “Administration” window is 
+closed and the workshop system returns to the most recently displayed mask. The 
+change to the display period becomes effective the next time that you access the 
+start mask or reboot the workshop system. 
+
+► How to select the brand(s) for which you have authorization: 
+
+0 Click an option in the “Select brand” area. 
+
+0 Click the “OK” button. The “Administration” window is closed. The change to the 
+selected brand(s) becomes effective the next time that you access the start mask or 
+reboot the workshop system. 
+
+► How to change the language of the displays in the workshop system: 
+
+0 Click an option in the “Select language” area. 
+
+0 Click the “OK" button. The “Administration” window is closed. The change to the 
+language becomes effective the next time that you access the start mask or reboot 
+the workshop system. 
+
+Language settings 
+
+The language settings vary from one country to another and are determined in agree¬ 
+ment with the respective market and BMW headguarters. 
+
+
+82 
+
+ISTA 
+
+
+
+Dealer data 
+
+When clicking the “Dealer data” tab, you can view the dealer data. 
+
+The “Security vehicles” line is only displayed if you have security vehicle authorization . 
+
+The data is centrally compiled by BMW. It is not possible to edit the dealer data in ISTA. 
+If necessary, such changes should be carried out via the respective market organization. 
+
+
+Adreoluratlon 
+
+
+
+[uj ?j X 
+
+Client 
+
+m Software «tatu« 
+
+
+Dealer; 
+
+Sale', partner number: 
+
+32«C 
+
+
+
+Dealership number; 
+
+1 
+
+
+
+Narmr 
+
+SVtra AC Sp£C.o 
+
+
+
+Address: 
+
+j.P&zc*yr$fca 103 
+
+
+
+
+*3-103 Mint:* 
+
+
+
+
+Polska 
+
+
+
+Msfen: 
+
+HMW 
+
+
+Cancel 
+
+
+
+OK 
+
+
+“Dealer data” tab 
+
+The buttons in the action line have the following functions: 
+0 Cancel, OK: closes the “Administration” window. 
+
+
+83 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Software status 
+
+When clicking the “Software status” tab, information on the installed software packages 
+will be displayed. The names of the software packages, information on their contents, 
+version number, release date and the package quantity will be shown. 
+
+The “Installed contents packages” and “Installed system packages” option fields switch 
+the display between content/data packages and system packages. 
+
+
+
+“Software status” tab 
+
+The buttons in the action line have the following functions: 
+
+0 Cancel, OK: closes the “Administration” window. 
+
+If the computer has been in operating mode for more than 24 hours when you click the 
+“Software status” “Decentral/Offline” tab, then the ISTA issues a warning that no update 
+test is possible unless a server connection is reestablished. In this case, change the oper¬ 
+ating mode and click the “Software status” tab again. 
+
+
+84 
+
+ISTA 
+
+
+
+
+
+
+Connection Manager 
+
+If you click the “Connection manager” symbol you can independently initiate communica¬ 
+tion between the tester and vehicle (via ICOM). This function is automatically called up 
+before communication with a vehicle is required. 
+
+The devices used in the HO workshop such as ICOM and IMIB are listed in the content 
+range. 
+
+The individual column entries have the following meanings: 
+
+0 Name: The name of the available device will be displayed. 
+
+0 Color: Color coding of the device to facilitate a visual distinction. 
+
+0 Type: Short description of the device. 
+
+0 VIN: Shows the vehicle identification number of the vehicle connected to the 
+respective vehicle interface. 
+
+0 Connection: Shows the connection type (LAN: wire-based workshop network, 
+WLAN: wireless workshop network) 
+
+0 Status: Shows the availability of the communication device. Only those communica¬ 
+tion devices whose status is “free” are displayed. Previously reserved devices do not 
+appear in the list. 
+
+
+
+85 
+
+ISTA 
+
+
+“Connection manager” tab 
+
+
+
+
+
+► How to establish a connection between the tester and vehicle manually: 
+
+0 Click on the “Connection manager” symbol. 
+
+0 Select the vehicle interface (ICOM) that is connected to the vehicle to be diagnosed. 
+
+0 Click the “Set up connection” button. Wait until the connection is established. 
+
+0 Create a new operation or select an existing operation from the operations list. 
+
+After the operation has been created, the “Operation details” mask will be displayed. 
+From here you can search for information or start the vehicle test. 
+
+
+“Identification operation” progress bar 
+
+
+Identification operation 
+
+
+
+Read out vehicle identification number (VIN)... 
+
+
+
+“Assignment/Generation of operation” mask 
+
+Assignment/generation of operation 
+
+3 \S\ 
+
+1 Basic features VIN Datv/tim# 
+
+Status 1 
+
+E90 / 320d I SAL / M47/T2 VA20008 16/0412008 13:38 
+
+In progress 
+
+E90 / 320d / SAL < M47/T2 VA20008 19/04/2008 15:33 
+
+In progress 
+
+E90 / 320d / SAL / M47/T2 VA20008 18/04/2008 16:18 
+
+Terminated 
+
+
+
+
+
+
+
+
+
+
+
+_ New 
+
+Canc *' operation 
+
+OK 
+
+
+After the operation is selected, the “Operation details” mask will be displayed. 
+
+
+86 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating Mode 
+
+A change is for example required if a test run is to be conducted with the vehicle and the 
+tester is to be taken along for other activities, such as the display of status values. In this 
+case, you have to switch from “Online” to “Offline”. 
+
+The operating mode switches to WSM. Only the current status of the ISTA client can be 
+viewed and confirmed in the following pop up. 
+
+
+Operating mode Online/OfFline 
+Current operating mode: Online 
+
+The operating mode can only be 
+changed via the WSM jumpgate. 
+
+
+OK 
+
+“Operating mode Online/Offline” pop up 
+
+
+Note: The change to the “Offline” operating mode must be effected via the 
+WSM. If the device is simply disconnected from the workshop network, 
+then ongoing processes such as data adjustment or updates may be ter¬ 
+minated. This may result in indeterminable conditions on the ISID, up to 
+and including a crash with loss of data. 
+
+
+87 
+
+ISTA 
+
+
+
+
+
+
+Status Display 
+
+When clicking on the “Status display” symbol, a window opens showing the status values 
+of the connected hardware (ISID, ICOM and IMIB) as a color bar diagram with percentage 
+display. The display includes information on the connection guality and the charge status 
+of the batteries. 
+
+The respective bar can appear in the following colors, depending on the percentage 
+value: 
+
+Green: > 75%, Yellow: 25% - 75%, Red (critical): < 25% 
+
+If one of the status displays enters the “critical” range, the “Status display” symbol is 
+colored red. 
+
+Status displays UkJ X 
+
+
+
+OK 
+
+
+“Status display” mask (without ICOM and IMIB) 
+
+
+88 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Printing 
+
+The print function is available in all masks and can be accessed via the “Print” symbol. 
+
+A pop up window with selectable print options appears. 
+
+The “Print screenshot” option is available in all masks and can be used to create a print¬ 
+out of the current mask. Other options depend on the displayed mask. 
+
+Examples of other print options: 
+
+0 Table of contents 
+
+0 List of news items 
+
+0 Hit list 
+
+0 Document 
+
+0 Operation details 
+
+The workshop system automatically uses the standard printer defined by Windows. 
+
+
+Print 
+
+X 
+
+0 Print screenshot 
+
+
+O Print operations list 
+
+
+Cancel 
+
+OK 
+
+
+89 
+
+ISTA 
+
+
+“Print” window, example 
+
+
+
+
+
+
+Help Functions 
+
+You can access a help function via the symbol bar or via the header of a pop up window 
+(except in the case of very small pop up windows) by clicking the help function symbol. 
+Help provides information on screens and functions. No operating instructions are includ¬ 
+ed in the help function. 
+
+The help window can cover parts of the screen. However, it never covers the symbol 
+bar or the header. The “Help” symbol is active when the help window is displayed. 
+
+When the help function is accessed, a help text is always initially displayed that relates 
+to the most recently displayed mask. 
+
+You can access the following other help functions from here: 
+
+0 Table of contents 
+
+0 List of abbreviations 
+
+0 Units converter 
+
+
+
+“Help for mask” tab 
+
+The “Help for mask” tab describes all elements (symbols, buttons, selection lists etc.) of 
+the mask, from which help can be accessed. The “Mask” field (at the top of the content 
+range) displays the name of the corresponding mask, e.g. “Operation details”. Under this 
+you can select an element from the available graphic overview, e.g. “Symbol bar”. The 
+workshop system then displays the appropriate help text. The “Overview” button is acti¬ 
+vated. 
+
+The buttons in the action line have the following functions: 
+
+0 Overview: The workshop system returns from the overview of help functions 
+to the mask. 
+
+0 Close: The help window is closed. 
+
+90 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+You can select the help text for all masks and screen elements of the ISTA workshop sys¬ 
+tem in the table of contents. 
+
+
+Ho Ip 
+
+
+Holp for 
+
+List of 
+
+Units 
+
+Mil 
+
+abbreviation* 
+
+convert*' 
+
+
+ootent ov»rvi*» 
+
+
+Start ptflt 
+Idontlfkatlon 
+
+AcjrvMos 
+Sorvico plan 
+Administration 
+Infarmtfipp tip* * 
+
+
+•i E 
+
+
+Overview 
+
+
+Close 
+
+
+“Table of contents” tab 
+
+
+► How to access a help text from the table of contents: 
+
+0 Click one item in the “Content overview” area. 
+
+0 Depending on the selected area, the help system may be subdivided in further sub¬ 
+sections. 
+
+After selection, the active window shows the appropriate help text. The “Overview” but¬ 
+ton is activated. 
+
+
+91 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+List of Abbreviations 
+
+In the list of abbreviations, you will find alphabetically arranged explanations of all abbrevi¬ 
+ations used on the workshop system. 
+
+In the content range of the mask, the abbreviations for the selected letter will be dis¬ 
+played. The default is the letter “A”. If reguired, select another letter at the top of the 
+content range or scroll the display down with the scroll bar. The “Overview” button is 
+activated. 
+
+
+Help 
+
+
+
+
+dll 
+
+[X 
+
+Table c* 
+contents 
+
+Holp for 
+
+mask converter 
+
+
+
+B 
+
+C 
+
+0 110 
+
+M 1 J K L 
+
+M N 
+
+
+0 P 
+
+Q 
+
+R S T U 
+
+V W X 2 
+
+
+
+•A* 
+
+Shor form 
+
+
+-or-g form 
+
+Dm 
+
+CO QT. 
+
+▲ 
+
+□ 
+
+
+A 
+
+
+Ampere 
+
+Aistheieve cf eteclrtalcjrerl that does net 
+rpanqe ever to* 
+
+
+
+
+AMfc'A 
+
+
+American AssaciaUr c f Motor Veh.-e 
+AdflftHMrttiOr 
+
+Brim MM 
+
+viands! Js InsHute) in ttretcry staNaiCfe 
+
+iTsrnabnaii/ 
+
+
+
+
+A3E 
+
+
+Aij-Vn-pe ;C«-r er 4 
+
+:perathq perrrfcl 
+
+In 3trn 9ry, c» fy s *i *u « uenpral eperain; 
+
+permt rray be eperatec on pcblc npfwavs 
+
+
+
+
+A3S 
+
+
+Ai5-ioc» farakrg system 
+
+&3S prevsrts the wheels h:n locking v»ti*n the 
+tr&r* tfflr rt APS thus? rnarnr^ns thn vnhrli^ 
+
+Lapa.ir.lu be t&tered 
+
+A3i> consists T ^tiee speed senserser 1 he excels, 
+z rnrlrn nnr art rlrrtr-rir. prrivw.o -•-rim vqtos in 
+Ife teak* system ABSnefitlao&sd's beaks free n 
+such a v/y/tha: the wteds are ius‘. yeverted from 
+tlntknq 
+
+A "Atm re larnq n the rstn_Tent cester ndcates an 
+ASStal IT 
+
+34 
+
+
+
+AflS.'AST 
+
+
+S-rUnrv hrd.» vsK\mT wlh A rrrnT'r 
+
+Al ►!({ Tn)B^ .’r* rrt rr<*f\ v: rtyn Ixrrt wih 
+
+34 
+
+w 
+
+
+Overview 
+
+
+
+
+Close 
+
+
+
+“List of abbreviations” tab 
+
+The buttons in the action line have the following functions: 
+
+0 Overview: The workshop system returns to the letter “A”. 
+0 Close: The help window is closed. 
+
+
+92 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Units Converter 
+
+With the units converter, you can convert physical units for various categories 
+(e.g. lengths, volumes, temperatures) into other appropriate unit. 
+
+
+Help 
+
+Table of Help for Lnt of 
+
+contents mask abbreviations 
+
+Input III 1 
+
+Linear measives 
+O Kilometre (km) 
+
+0 Metre (m) 
+
+O Centimetre (cm| 
+
+O Mile |ml.) 
+
+O 
+
+O F0M1R.J 
+© Inch tin.) 
+
+
+
+Keyfccard 
+
+Delete 
+
+Select 
+
+category 
+
+
+“Units converter” tab 
+
+The buttons in the action line have the following functions: 
+
+0 Keyboard: Shows or hides the on-screen keyboard. 
+
+0 Delete: Deletes the entered value. 
+
+0 Select category: Selects a unit category such as length or volume units. 
+
+0 Close: The help window is closed. 
+
+► How to convert physical units: 
+
+0 Click the “Select category” button. A pop up window is opened. It contains a selec¬ 
+tion list of the available categories. 
+
+0 Select the reguired category in the pop up window. The displayed window closes. 
+The selected category is now displayed in the content range. 
+
+0 Select in the unit in the left-hand column into which you want to enter the value. 
+
+0 Select the unit into which the entered value should be converted in the right-hand 
+column. 
+
+0 Enter a value in the “Input” field. If appropriate, use the on-screen keyboard. 
+
+The converted value immediately appears in the “Result” field. 
+
+
+tit x 
+
+
+
+Hcr.ull 2 54 
+
+
+Q Kilometre (km) 
+O Metro <■) 
+
+0 Centimetre (cm) 
+O Mil* (ml ) 
+
+O Yard (yd.) 
+
+O Foot (ft.) 
+
+O loch (In.) 
+
+
+93 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Minimize Workshop System 
+
+When you click the minimize symbol in the symbol bar, the ISTA Application window will 
+be minimized. The ISTA application can be maximized again via the Windows task bar. 
+
+Procedures that are displayed in BST mode cannot be minimized. 
+
+Close Operation/application 
+
+You have various options for closing or interrupting an operation: 
+
+0 Click the “Start mask” symbol in the symbol bar. 
+
+0 Access the “Identification” main menu and begin a new operation by selecting the 
+“Vehicle selection” item in the submenu 
+
+0 Click “X” (Exit) in the symbol bar. In this case, a pop up appears in which you can 
+select whether to exit the operation or the ISTA Application. 
+
+Close operation / application X I 
+
+O Terminate operation 
+O Interrupt operation 
+
+
+Cancel 
+
+Close 
+
+Close 
+
+
+
+rr 1 ■' 
+
+
+“Close operation/application” mask 
+
+► How to exit the ongoing operation: 
+
+0 Click the “X” in the symbol bar. ISTA will prompt a security note. 
+
+0 Select the “Terminate operation” option and click the “Close operation” 
+button to return to the start mask; or 
+
+0 Select “Close application” to close the ISTA workshop system; or 
+
+0 Select “Cancel” to continue the current operation. 
+
+
+94 
+
+ISTA 
+
+
+
+
+
+When exiting the operation, the workshop system switches back to the start mask from 
+where a new identification procedure can be started. 
+
+► How to interrupt the ongoing operation: 
+
+0 Click the “X” in the symbol bar. ISTA will prompt a security note. 
+
+0 Select the “Interrupt operation” option and click the “Close operation” 
+button to return to the start mask; or 
+
+0 Select “Close application” to close the ISTA workshop system; or 
+
+0 Select “Cancel” to continue the current operation. 
+
+When exiting the operation, the workshop system switches back to the start mask from 
+where you can start a new vehicle identification operation. You can open the interrupted 
+operation over the next 14 days from the operations list. It will then be set to the “termi¬ 
+nated” status and no longer appears in the list. 
+
+If you want to display terminated operations in the list, you can change the filter settings 
+accordingly. 
+
+Operations 
+
+All data generated during a vehicle's stay in the workshop are compiled in an operation. 
+These are identification, vehicle and work data. 
+
+An operation is always linked to a specific vehicle by vehicle identification via the VIN. It 
+accompanies the vehicle from the initial identification via the vehicle test, through the 
+diagnosis performed in the workshop and the info search for the repairs, to the conclu¬ 
+sion of the repair and service work. Within an operation, the ISTA only provides informa¬ 
+tion for the identified vehicle. 
+
+Procedures can be terminated or interrupted and continued within a certain period. An 
+operation may also be continued on a different device and even in another language. An 
+ISTA client can, however, only ever process one operation at a time. 
+
+Creating an Operation 
+
+There are several ways to create a new operation. The procedures depend on how the 
+vehicle has been identified. 
+
+Identification via operations list 
+
+If you use the operations list to select an operation whose status is set to “in progress”, 
+then the workshop system copies it after a security check into a new “parallel operation” 
+that it then opens. The parallel operation does not contain the log data of the initial opera¬ 
+tion. If the status of the selected operation is “terminated”, however, then the workshop 
+system opens it directly. 
+
+Multiple simultaneous access to the vehicle is automatically prevented. 
+
+
+95 
+
+ISTA 
+
+
+
+Identification via VIN Entry 
+
+If a VIN has been entered and the workshop system finds an operation record with the 
+same VIN, then it opens the record directly or copies the contents of it into a parallel 
+operation, depending on the status. 
+
+If several operations are available for the same VIN, then the “Assignment/generation of 
+operation” mask appears first. In this mask, you can select and open an existing operation 
+or create a completely new operation. 
+
+Vehicle Identification by Reading Out Vehicle Data 
+
+The workshop system reads out the vehicle data and searches as previously described 
+for a matching existing operation. If it does not find such an operation, it automatically cre¬ 
+ates a new one. 
+
+When the “Read out vehicle data” mask is open, the “Decision Operation/VIN” pop up 
+may also appear 
+
+When an operation is open, you can read out the VIN directly from the vehicle via the 
+connection manager. The workshop system checks whether the open operation matches 
+the vehicle identification. 
+
+If this does not apply, the following pop up appears: 
+
+
+S«rvfce 
+
+Tathnicd Appl<c«Len 
+
+WN Vahids LU3C08ID7 
+
+C«rn«<c*n naniger 
+
+
+
+“Decision Operation/VIN” pop up 
+
+
+Continue with the open operation and separating vehicle connection: 
+
+Select this option if for example you wish to carry out an information search with the exist¬ 
+ing operation and associated vehicle ID number to which the connected vehicle does not 
+belong. In this case, the workshop system separates the communication link to the vehi¬ 
+cle in order to prevent data conflicts. 
+
+96 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+Interrupt operation and continue work with connected vehicle: 
+
+Select this option if you have selected the wrong operation or have not yet closed a previ¬ 
+ous operation. 
+
+Continue with the open operation, maintain vehicle connection and 
+ignore read out VIN: 
+
+Select this option if you have removed the control module in which the VIN is stored from 
+a donor vehicle and installed it in the vehicle to be diagnosed. In this case, the workshop 
+system reads out the VIN of the donor vehicle. 
+
+
+Vehicle Identification via Basic Features 
+
+After the input of the basic features, the workshop system searches for match operations 
+in the operations list. If one or more hits are returned, then the “Assignment/Generation of 
+operation” dialogue appears. In this mask, you can select and open an existing operation 
+and open or create a new operation. The dialogue does not appear if the selected basic 
+feature combination does not appear in the operations. In this case, a new operation is 
+automatically created. 
+
+
+Assignment/generation of operation 
+
+
+X 
+
+
+Basic features VIN 
+
+Date/time Status 
+
+E90 / 320 d / SAL / M477T2 VA20008 
+
+16/04/2008 13:38 In progress 
+
+E90 / 320d / SAL /M477T2 VA20008 15704/2008 15:33 In progress 
+
+E90 / 320 d / SAL I M477T2 VA20008 
+
+18/04/2008 16:18 Terminated 
+
+
+
+
+
+
+
+
+
+
+_ 
+
+
+Cancel 
+
+
+New 
+
+operation 
+
+
+“Assignment/generation of operation” dialogue 
+
+On completion of the vehicle test, the VIN is automatically made available and is retroac¬ 
+tively stored in the operation. The next time the operation is opened via basic features, it 
+will also be displayed. 
+
+
+97 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+Identification in “TeleServices” Operating Mode 
+
+A new operation is always created here. The “TeleServices” operating mode can only be 
+accessed via the “ISPA” application. When the ISTA Client is closed in the “TeleServices” 
+operating mode, the operation is automatically set to the “Terminated” status. 
+
+Statuses 
+
+An ISTA operation can adopt the following statuses: 
+
+0 New 
+0 In progress 
+0 Interrupted 
+0 Terminated 
+
+
+
+98 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+New 
+
+An operation has the “New” status, if the job creation is completed in ISPA (service 
+advice) and the operation has not yet been opened in the ISTA workshop system. 
+
+If an operation is automatically created on an ISTA client as part of a vehicle identification, 
+although this initially has the “New” status, it then switches to the “In progress” status. 
+You cannot interfere with this change. A new operation is only created if the vehicle to be 
+identified cannot be unambiguously assigned to any operations present in the existing 
+operations list. If a matching entry appears in the operations list, a pop up appears 
+(See below). 
+
+
+In progress 
+
+An operation has the “In progress” status for as long as it is in process. In the meantime 
+it is not possible to view the operations list, unless you use a second ISTA client. If you do 
+not have this option, you will have to close the existing operation after vehicle identifica¬ 
+tion before you can switch to the “Operations list”. You will see this concluded operation 
+with the “Interrupted” or “Terminated” status (depending on the selected option). 
+
+From the operations list you can select an operation with the “In progress” status. In this 
+case, the workshop system creates a copy of the original operation. 
+
+
+Copy of an operation or parallel operation 
+
+An “In progress” operation can be opened from 
+the operations list on a second ISTA client or 
+workshop PC. The following pop up appears: 
+
+A copy of an existing operation can also be creat¬ 
+ed and opened, for example to carry out informa¬ 
+tion searches. After the “OK” button is clicked, 
+the “Operation details" mask will be displayed. 
+
+A parallel operation is a copy of the existing oper¬ 
+ation without its expiration dates and has all the 
+same rights. A new identification is not reguired. 
+Once vehicle communication is established, the 
+VIN will be in any case reread and compared to 
+the original VIN. If there is a disparity, a pop up will 
+appear. 
+
+
+Copy operation 
+
+uj X 
+
+The operation is already in progress. 
+
+
+A copy of (he operation is being produced. 
+
+
+Cancel 
+
+OK 
+
+“Copy operation” pop up 
+
+
+99 
+
+ISTA 
+
+
+
+
+
+Interrupted 
+
+The “Interrupted” status is set if “Interrupted” has been selected when closing the opera¬ 
+tion. 
+
+An interrupted operation can be reset to the “In progress” status if you select it from the 
+operations list and execute other functions in the open operation. The operation can con¬ 
+tinue to use the data obtained before the pause. 
+
+
+Copy operation 
+
+S \E\ 
+
+The operation is already in progress. 
+
+
+A copy of the operation is being produced. 
+
+
+Cancel 
+
+OK 
+
+
+Terminated 
+
+An operation is terminated if “Terminated” has been selected when closing the operation. 
+
+A terminated operation can be reset to the “In progress” status if you select it from the 
+operations list or identify the respective vehicle from the start. This may be necessary, for 
+example, if there are further customer complaints or the repair was not successful. In this 
+case, the ISTA workshop system inguires whether the terminated operation should be 
+reopened or whether a new operation should be created: 
+
+
+Copy operation 
+
+3 x] 
+
+The operation is already in progress. 
+
+
+A copy of the operation is being produced. 
+
+
+Canecl 
+
+OK 
+
+
+“Open/create operation” pop up 
+
+
+100 
+
+ISTA 
+
+
+
+
+
+
+
+Re-open terminated operation 
+
+A terminated operation will be opened, using the respective sequence data. 
+
+The operations report will be continued. 
+
+Applications: 
+
+0 The repair was unsuccessful 
+0 There are new customer complaints 
+
+Operations with “Terminated” status are not displayed in the operations list by default. If 
+you wish to select these operations in the list, you can change the filter settings for the 
+operations list. 
+
+New operation to be created and opened 
+
+Use this option if the current operation no longer has anything in common with the old 
+(selected) one either in technical or chronological terms. The workshop system copies 
+the selected operation. A new operations report will be created, however, and the original 
+procedure data will not be used. 
+
+Simultaneous access to an ISTA operation 
+
+An operation cannot simultaneously be processed by several service technicians. A com¬ 
+plete copy of the operation is created so that several service technicians can work on the 
+same operation simultaneously. 
+
+Time-dependent status change 
+
+The time after the operations are removed from the operations list depends on the opera¬ 
+tion status. The “New” and “In progress” statuses are automatically replaced after 7 days 
+with the “Terminated” status. The “Interrupted” status is set to the “Terminated” status 
+after 14 days. Terminated operations are only displayed in the operations list if a filter has 
+been set correspondingly. They can be reedited from this list. Operations with the 
+“Terminated” status are completely deleted from the operations list only after 14 days 
+(exception: if there is a very large number of operations and the reserved memory range 
+on the ISIS is exhausted, then the oldest operations with the “Terminated” status will be 
+deleted before the 14-day period expires. 
+
+Workshop PC 
+
+The operation and its protocol data are always available on the workshop server. The PC 
+is only used in online mode. 
+
+ISID in offline mode 
+
+If you have to switch to the offline mode with the ISID, any open operation must first be 
+interrupted or terminated. This operation will then be transferred to the ISID when you 
+change over to offline operation. This operation is set to the “In progress” status on the 
+ISIS and therefore cannot be simultaneously edited by another user. 
+
+
+101 
+
+ISTA 
+
+
+
+You can edit other vehicles in offline mode. In this case, the operations and the associat¬ 
+ed protocol data are initially generated and saved locally on the ISID. When the device 
+goes online again, it is resynchronized with the workshop server. 
+
+TeleServices 
+
+As far as the user is concerned there is only one possible operation in the “TeleServices” 
+mode. The “Operations list” tab is not available. Operations are automatically created and 
+terminated and will be invisible from the user's point of view. It is not possible to pause. 
+As is usual for all procedures, logs are generated for the FBM. 
+
+Documentation/ISTA User's Manual of 132 
+
+Terminating an operation 
+
+You can close an operation with the following actions: 
+
+0 Exiting the application 
+0 Identifying another vehicle 
+
+(Operations list, VIN, Read out vehicle data, Basic features) 
+
+0 Calling up the start mask 
+
+
+102 
+
+ISTA 
+
+
+
+Scope of Functions for Operator Devices 
+
+
+Menu 
+
+Tele 
+
+Service 
+
+PC workshop 
+online 
+
+ISID 
+
+online 
+
+ISID 
+
+offline 
+
+3.1 Start mask 
+
+
+
+
+
+3.2 Identification 
+
+
+
+
+
+3.2.1 Vehicle selection 
+
+
+
+
+
+3.2.1.1 Operations list 
+
+- 
+
+X 
+
+X 
+
+X 
+
+3.2.1.2 Vehicle identification number 
+
+- 
+
+X 
+
+X 
+
+X 
+
+3.2.1.3 Reading out vehicle data 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.2.1.4 Basic features 
+
+- 
+
+X 
+
+X 
+
+X 
+
+3.2.2 Operation information 
+
+
+
+
+
+3.2.2.1 Operation details 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.2.2.2 Vehicle details 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.2.2.3 Repair history 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.2.2.4 Operations report 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.3 Vehicle test 
+
+
+
+
+
+3.3.1 Control unit tree 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Control unit functions 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Identification 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Diagnostic query 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Component activation 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.3.2 Control unit list 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Control unit functions 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Identification 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Diagnostic query 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Component activation 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.4 Activities 
+
+
+
+
+
+3.4.1 Information search 
+
+
+
+
+
+3.4.1.1 Product structure 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.4.1.2 Function structure 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.4.1.3 Components and 
+signals 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.4.1.4 Text search 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.4.2 Guided troubleshooting 
+
+
+
+
+
+Detail table 
+
+X 
+
+- 
+
+X 
+
+X 
+
+Quick delete 
+
+X 
+
+- 
+
+X 
+
+X 
+
+3.4.2.1 Fault memory 
+
+(X) 
+
+- 
+
+X 
+
+X 
+
+3.4.2.2 Fault pattern 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+103 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scope of Functions for Operator Devices (Cont.) 
+
+
+Menu 
+
+Tele 
+
+PC workshop 
+
+ISID 
+
+ISID 
+
+
+Service 
+
+online 
+
+online 
+
+offline 
+
+3.4.3 Service function 
+
+
+
+
+
+3.4.3.1 Service functions 
+
+X 
+
+- 
+
+X 
+
+X 
+
+3.4.4 Workshop/Operating fluids 
+
+
+
+
+
+3.4.4.1 Workshop equipment 
+
+X 
+
+- 
+
+X 
+
+X 
+
+3.4.4.2 Operating fluids 
+
+X 
+
+- 
+
+X 
+
+X 
+
+3.4.4.3 Text search 
+
+X 
+
+- 
+
+X 
+
+X 
+
+3.4.5 Measuring instruments 
+
+
+
+
+
+3.4.5.1 Multimeter 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.4.5.2 Oscilloscope 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.4.5.3 Signals 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.5 Service plan 
+
+
+
+
+
+3.5.1 Hit list 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.5.2 Test plan 
+
+(X) 
+
+- 
+
+X 
+
+X 
+
+3.6 Symbol bar 
+
+
+
+
+
+3.6.1 Start mask 
+
+- 
+
+X 
+
+X 
+
+X 
+
+3.6.2 Information object 
+forward/History/Back 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.6.3 Administration 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.6.4 Connection manager 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.6.6Status display 
+
+- 
+
+- 
+
+X 
+
+X 
+
+3.6.7 Print 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.6.8Help 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.6.9 Minimize/Maximize 
+
+X 
+
+X 
+
+X 
+
+X 
+
+3.6.10 Close operation 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+
+
+
+
+
+"x" available, "(x)" restricted availability,not available 
+
+
+104 
+
+ISTA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abbreviations 
+
+
+Term 
+
+Explanation 
+
+BST 
+
+BMW Service Tester (former BMW diagnostics system) 
+
+DIS 
+
+Diagnostic and information system 
+
+FBM 
+
+Vehicle description module (repair history and vehicle details) 
+
+VIN 
+
+Vehicle identification number (VIN) 
+
+GSM 
+
+Global System for Mobile Communication 
+
+GT1 
+
+Group Tester 1 
+
+HO 
+
+Dealer organization 
+
+HTML 
+
+Hypertext Markup Language 
+
+ICOM 
+
+Integrated Communication Optical Module 
+
+IMIB 
+
+Integrated Measurement Interface Box 
+
+ISAP 
+
+Integrated Service Access Point 
+
+ISPA 
+
+Integrated Service Processes Application 
+
+ISTA 
+
+Integrated Service Technical Application 
+
+IDES 
+
+Integrated diagnosis development system 
+
+ISID 
+
+Integrated Service Information Display 
+
+ISIS 
+
+Integrated Service Information Server 
+
+LAN 
+
+Local Area Network 
+
+OBD 
+
+On-Board Diagnostics 
+
+OSS 
+
+Online Service System 
+
+PC 
+
+Personal Computer 
+
+PDF 
+
+Portable Document Format 
+
+pdm 
+
+Predefined diagnostic messages 
+
+ECU 
+
+Electronic Control Unit 
+
+SoWu 
+
+Individual equipment for vehicle details 
+
+SVG 
+
+Scalable Vector Graphics 
+
+TA-DB 
+
+Technical Actions - Database 
+
+TSSB 
+
+TeleServices Switch Board (not available in several markets) 
+
+VIN 
+
+Vehicle Identification Number 
+
+WLAN 
+
+Wireless Local Area Network 
+
+WSM 
+
+Workshop system management 
+
+XML 
+
+Extensible Markup Language 
+
+
+105 
+
+ISTA 
+
+
+
+
+
+
+Glossary 
+
+
+Term 
+
+Explanation 
+
+Administration 
+
+Shows and facilitates general settings; shows dealer data and the installed versions of the content and system 
+packages. 
+
+Operating mode 
+
+The operating mode designates the application options for ISTA. 
+
+BST mode 
+
+The BST mode is the name of the mode of the predecessor system for the E21 - E31 Series. The associated 
+diagnostic software has been imported to ISTA. It can also be recognized on an ISTA client by the different lay¬ 
+out of the masks. 
+
+Client 
+
+In this context, a client is an ISTA program section on an operator device (in this case, ISID or workshop PC). It 
+operates according to the client-server system and communicates with ISTA server components (software) 
+located on the server (hardware). 
+
+pdm result 
+
+As part of the TeleServices a vehicle transmits diagnostic data that is compiled in an XML file and transmitted to 
+the TSSB. In addition to the VIN, the file contains a list of the fault memory entries for all control devices. 
+
+Vehicle 
+
+identification 
+
+Contains all functions that are required for vehicle identification via input of a VIN (vehicle identification number), 
+by reading out the VIN from the vehicle, via selection of basic features or vehicle selection from an operations list. 
+
+Vehicle test 
+
+Contains all functions that are required for performance and display of the vehicle test. In the vehicle test the sta¬ 
+tus of the installed control devices is determined and graphically presented. 
+
+Fault pattern 
+selection 
+
+The identified diagnostic symptoms can be selected via the fault patterns. 
+
+Information 
+
+display 
+
+Contains all functions that, as a result of an information search, deliver and display a document. 
+
+Information 
+
+search 
+
+Contains all functions that, as a result of a query, deliver and display a hit list. 
+
+Installation/ 
+
+Update 
+
+Installs and updates the content and system packets in conjunction with other components (WSM, JETstream). 
+
+JET stream 
+
+System for controlling installations and updates on ISIS. 
+
+Measuring 
+
+instruments 
+
+Measurement and signal functions are made available via the measuring instruments. The measuring functions 
+are, on the one hand, intended to measure current, voltage etc., in the vehicle, and on the other, to generate sig¬ 
+nals. Usually additional auxiliaries are required before measuring instruments can be used such as adapters, for 
+example. The measuring instruments are used by instructions from a test program. Furthermore, the user can 
+also use measuring and signal functions independently of a test sequence in the “manually controlled measur¬ 
+ing instruments” mode. In this case, the user must make all settings and evaluations himself. 
+
+Test plan 
+
+The test plan provides a test proposal with the optimum sequence of test objects for selection on the basis of 
+the fault statuses read out from the vehicle and the optionally selected fault patterns. 
+
+ISPA 
+
+Support system for service consultation. May not be used in all markets. 
+
+ISPA Broker 
+
+Interface service for checking data from BMW headquarters, e.g. technical actions. This service is always avail¬ 
+able. It does not depend on installation of ISPA.. 
+
+Control unit 
+functions 
+
+With the aid of the control unit functions, individual control units can be identified, interrogated and actuated. 
+
+Operations 
+
+All work on one vehicle is compiled under one operation. Operations can be created, interrupted, terminated and 
+reported. 
+
+WSM 
+
+The Workshop System Management (WSM) helps to administer ISIS. This is where all administrative tasks are 
+performed. 
+
+
+106 
+
+ISTA 
+
+
+
+
+
+Fault Messages and Fault Rectification 
+
+If a function cannot be performed due to a fault, a pop up with a fault message is dis¬ 
+played. If this pop up is displayed, please proceed as follows: 
+
+0 Execute the desired function again. 
+
+0 If a fault message is issued again, please note the displayed fault code and contact 
+your local administrator. He will initiate suitable measures or send a message (via 
+WSM) to Support. 
+
+If you find faults in an information object in terms of content or technical details, please 
+also report this fault to support (via WSM). Examples of such faults can be a missing 
+description in a set of repair instructions, incorrect wire color in the wiring diagram, or a 
+graphic showing the place of installation that does not correspond to the vehicle in gues- 
+tion or a similar one, for example. 
+
+You can obtain a description of the procedure for reporting faults in the WSM documents. 
+
+If the system needs more than approximately 10 seconds to execute a function, then a 
+progress bar is displayed. With longer process times, the following pop up with options 
+may be displayed: 
+
+System message 
+
+
+System message ' 
+
+
+The service call has exceeded the permitted run time. 
+
+You can choose to continue waiting or exit the 
+program. 
+
+
+Exit 
+
+program 
+
+
+Wait 
+
+
+This is not a fault. The message signals that the execution of the function is ongoing. You 
+can continue the action by selecting “Wait” or close the program with “Exit program”. If 
+no entry is made when a pop up appears, then the operation continues running in the 
+background. 
+
+
+107 
+
+ISTA 
+
+
+
+
+

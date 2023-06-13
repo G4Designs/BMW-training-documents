@@ -1,0 +1,4522 @@
+I 
+
+
+Table of Contents 
+
+E60 General Vehicle Electrical Systems 
+
+Subject Page 
+
+General Vehicle Electrical Systems.5 
+
+General Electrical New Features.6 
+
+KBM (Body Base Module).6 
+
+Door Modules.6 
+
+CAS System.6 
+
+PDC .6 
+
+RDW (FTM).6 
+
+Roller Sunblind.6 
+
+Multifunction Seat.7 
+
+KBM.7 
+
+Power Windows.7 
+
+Components.9 
+
+Switch Block SBFA.9 
+
+LIN Bus .9 
+
+Door Modules.9 
+
+byteflight.10 
+
+SGM.10 
+
+K-CAN .10 
+
+KBM.11 
+
+Power Window Motors.11 
+
+Door Contacts .12 
+
+CAS .12 
+
+Operation.13 
+
+Opening of Passenger Front by Driver .13 
+
+Opening of Rear Window by Driver .13 
+
+Indirect Anti-Trapping .13 
+
+Power Detection.14 
+
+Initialization of Power Windows.14 
+
+Slide/Tilt Sunroof.16 
+
+Slide/Tilt Sunroof Push-Button .16 
+
+Slide/Tilt Sunroof Module .16 
+
+
+Initial Print Date: 08/03 
+
+
+Revision Date: 10/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Slide/TiltSunroof (cont.) 
+
+Car Access System .16 
+
+Functions .17 
+
+Panic Mode .17 
+
+Emergency Operation.17 
+
+Initialization.17 
+
+Central Locking System .18 
+
+Secure Lock (Double Lock).19 
+
+Automatic Locking .20 
+
+Crash Unlock .20 
+
+Power on Status.20 
+
+DWA - Central Lock Interface.20 
+
+Remote Control FBD .20 
+
+Trunk Locking.21 
+
+Hotel Setting.21 
+
+Automatic Relock.21 
+
+Car & Key Memory.22 
+
+Wipe/Wash System .23 
+
+Headlight Cleaning System (SRA).23 
+
+Rain and Light Sensor .23 
+
+Safety and Gateway Module.23 
+
+Body Base Module.23 
+
+Washer Nozzle Heating.23 
+
+Car Access System.26 
+
+Condition Based Service.29 
+
+Manual Update of CBS Data .29 
+
+Manual Update of Fault Memory Data .29 
+
+Antitheft Alarm System.30 
+
+System Functions .30 
+
+Independent Voltage Supply.31 
+
+System Operation.31 
+
+Monitoring of the Vehicle Battery .31 
+
+System Power-Down for Storage.31 
+
+Reverse Polarity Detection .32 
+
+Tilt Sensor .32 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+DWA LED.32 
+
+DWABus .32 
+
+DWA Arming Sequence .32 
+
+CAS Authentication to Prevent Tampering .33 
+
+Forced Disarming.33 
+
+Deletion of Cross-Wise Operation.33 
+
+Bus Monitoring.33 
+
+Park Distance Control PDC .33 
+
+Active Cruise Control .34 
+
+Exterior Lights .35 
+
+Light Switch with Control Panel Unit.35 
+
+Brake Light Switch.38 
+
+Reverse Lights .38 
+
+Brake Force Display.38 
+
+AHL.39 
+
+AHL Control Unit .39 
+
+Function Indicator.40 
+
+Repairs.41 
+
+AHL Control Unit .41 
+
+Replacing SMC .41 
+
+Replace Bi-Xenon Headlights.41 
+
+Diagnosis .41 
+
+Interior Lighting.42 
+
+PWM Control .42 
+
+Consumer Shutdown Terminal .44 
+
+Consumer Shutdown .44 
+
+Roller Sunblind.44 
+
+Seats.45 
+
+Outside Mirrors .46 
+
+Steering Column .50 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model: E60 
+
+Production: Start of Production MY 2004 
+General Vehicle Electrical 
+
+
+Objectives: 
+
+After completion of this module you will be able to: 
+
+• Locate electrical control modules in the car. 
+
+• Explain the operation of the electrical systems. 
+
+• Understand window standardization and initialization. 
+
+• Adjust wiper pressure. 
+
+
+4 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+General Vehicle Electrical Systems 
+
+
+Components and operation of the following electrical systems will be presented: 
+
+
+• KBM 
+
+• Central locking system 
+
+
+• Slide/tilt sunroof 
+
+• Car Access System 
+
+
+• Power windows 
+
+• Wipe/wash system 
+• Anti-theft alarm system • Park distance control • Active cruise control 
+
+• AHL 
+
+• Roller sunblind 
+
+
+• Exterior lighting 
+
+• Interior lighting 
+
+
+
+A 
+
+
+:sb: 
+
+
+SZL 
+
+
+t- ' 
+
+
+byteflight 
+
+
+
+"n 
+
+
+aj | 
+
+
+© 
+
+
+IHKA 
+
+
+
+
+® 
+
+mam 
+
+CAS 
+
+
+
+
+r i 
+
+
+LB 
+
+
+
+
+KBM 
+
+
+
+_ I * ■ 1 • 
+
+< ? 
+
+
+| 
+
+w 
+
+UB 
+
+y_ ■ 
+
+W 
+
+
+i 
+
+
+J1 
+
+■ Mar 
+
+
+
+E60 
+
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Electrical New Features 
+
+KBM (Body Base Module) 
+
+The KBM controls the following functions: 
+
+• Rear Power Windows 
+
+• Central Locking (Rear Doors, Trunk/Tailgate and Fuel Filler Flap) 
+
+• Windshield Wiping/Wash System 
+
+• Interior Lighting 
+
+• Consumer Shutdown 
+
+Door Modules 
+
+The Door Module is integrated into the ASE. It communicates with other vehicle systems 
+via the byteflight. 
+
+The Door Modules contain the following functions: 
+
+• Mirror Adjustment, Heating, Memory, Folding and Lighting 
+
+• Central Locking (Front Doors Only) 
+
+• Front Power Windows (with indirect anti-trapping) 
+
+• Connection to Driver’s Door Switch Block 
+
+• Connection to Passenger’s Door Power Window Switch) 
+
+• Door Entry Lights and Switch Illumination 
+
+• Recording of Front Door Pressure Sensor Information 
+
+CAS System 
+
+The Car Access System (CAS2) is based on the CAS of the E65, however in the E60 the 
+ignitions starter switch and the CAS are two separate components. The E60 CAS is con¬ 
+nected directly to the K-Bus and does not perform any repeater functions. 
+
+PDC 
+
+The signal from the PDC button is forwarded to the PDC Control Unit via the K-CAN. 
+
+RDW (FTM) 
+
+E60 uses RDW (FTM) for low tire warning. Information concerning low tire is based on 
+wheel speed and is received from the DSC. 
+
+Roller Sunblind 
+
+The rear window roller sunblind is controlled from the center console switch panel. The 
+roller sunblinds for the side windows are manually operated. 
+
+
+6 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+Multifunction Seat 
+
+
+The multifunction seat makes it easier to get in and out of the vehicle. The backrest width 
+and seat cushion depth are retracted for this purpose. 
+
+
+KBM 
+
+
+Located in the equipment frame at the glove box, the KBM has 4 electrical connectors 
+
+
+
+CDC (Compact Disc Changer) 
+
+KBM (Body Base Module) 
+
+SGM (Safety and Gateway Module) 
+AHL (Adaptive Headlights) 
+
+Not for USA. 
+
+
+
+02414 01 
+
+
+1 . 
+
+2 . 
+
+3. 
+
+4. 
+
+
+XI3252 
+XI3254 
+XI3253 
+XI3255 
+
+
+(XI3252 54-pin, XI3254 3-pin, XI3253 13-pin, XI3255 6-pin) and an operating voltage 
+range of 9-16 Volts. The KBM is internally protected against shorts to terminal 30 or 31 
+and equipped with reverse polarity protection. 
+
+Power Windows 
+
+The front power windows are activated by the door modules of the respective door. 
+
+The rear power windows are activated by the basic body module KBM. 
+
+The power windows are operated as usual from the switch block in the driver's door (SBFA) 
+and the switches in the other doors. Various safety functions and statutory requirements 
+have been taken into consideration. 
+
+
+7 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fill in the name of the 
+components 
+
+
+1 . 
+
+10 . 
+
+2 . 
+
+11 . 
+
+3 . 
+
+12 . 
+
+4 . 
+
+13 . 
+
+5 . 
+
+14 . 
+
+6 . 
+
+15 . 
+
+7 . 
+
+16 . 
+
+8 . 
+
+17 . 
+
+9 . 
+
+
+
+8 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+
+• Switch block, SBFA 
+
+• LIN Bus 
+
+• Switches, passenger door, front/rear Doors 
+
+• Door modules, driver's door (TMFA)/passenger door (TMBF) 
+
+• byteflight 
+
+• Safety and Gateway Module (SGM) 
+
+• Body controller area network (K-CAN) 
+
+• Basic body module (KBM) 
+
+• Power-window motors with incremental sensor 
+
+• Door contacts of all doors 
+
+• Car Access System (CAS) 
+
+Switch Block SBFA 
+
+All the windows may be operated from the SBFA. The Switch Block passes all 
+window requests to the TMFA via the LIN Bus. 
+
+LIN Bus 
+
+The LIN Bus is a sub bus allowing communication between the TMFA and the 
+SBFA. 
+
+Door Modules 
+
+
+
+The door module contains separate "modules" for the door module 
+electronics and the Advanced Safety Electronics. 
+
+
+The door module is the interface between: 
+
+• Switch block, driver's door 
+
+• Switch, passenger side 
+
+• Door contact 
+
+• Incremental sensor in power-window motor 
+
+• byteflight 
+
+• Power-window motor 
+
+
+The driver's door switch block is linked to the driver's door module by means of an LIN bus. 
+Control of mirror adjustment, heating and front area light is also integrated in the door 
+modules. 
+
+The ASE system is integrated in the Door Modules. The door modules also incorporate the 
+activation system for side air bag deployment. 
+
+
+9 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Door side View of Door Module 
+
+1. Mounting Holes 
+
+2. Input Channel to pressure sensor 
+
+3. Connection for Switch Block 
+
+4. Connection for Power Supply 
+
+5. Connection for Input Signals 
+
+6. Connection for Exterior Mirror 
+
+7. Connection for ASE 
+
+
+Note: 
+
+When removing the door module, only unscrew the two outer screws(l). The inner 
+screws(2) are exclusively for holding the door module housing together. Loosening 
+the inner screws will cause operation of the door module to fail. 
+
+The door module is powered with 10 V from terminal 30. and with 10 V by the SGM. The 
+10 V supply is buffered for the function of the ASE system. When replacing the door mod¬ 
+ule, bear in mind that the capacitor needs a few minutes to discharge. The airbag might be 
+deployed if you replace the door module with the capacitor still charged. 
+
+byteflight 
+
+The byteflight bus system is involved in window operation as a method for door modules 
+to communicate with the SGM. 
+
+SGM 
+
+The SGM converts and forwards messages to/from the byteflight and K-Can. 
+
+K-CAN 
+
+The K-CAN provides a communication path between the SGM, the CAS and the KBM as 
+well as body modules. 
+
+
+10 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+KBM 
+
+
+The KBM receives input from the rear door window switches and the rear door contact 
+switches and provides output to the rear window motors. The KBM also monitors the 
+incremental sensor (hall sensors) in the rear window motors for position, speed and rota¬ 
+tion. 
+
+Additionally the KBM allows also for contact and control of the rear windows through CAN 
+communication with the SGM. 
+
+The KBM provides both power and ground to the rear window motors. 
+
+
+
+Power Window Motors 
+
+The drive mechanism of a power window 
+lift is a cable lift mechanism consisting of: 
+
+• A DC motor 
+
+• A reduction gear with incremental 
+sensor (Hall sensor) 
+
+• Evaluation Circuit 
+
+• A shrouded connection 
+
+
+
+1 2 
+
+
+1. Power window system, front 
+
+2. Power window system, rear 
+
+
+The drive mechanism incorporates two Hall sensors, which are addressed by a magnet 
+wheel mounted on the armature shaft. 
+
+The two Hall sensors and the magnet wheel determine with the aid of the door module or 
+the KBM the direction of rotation, the speed and the position of the window. 
+
+
+11 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Door Contacts 
+
+
+The door contact switches, incorporated in the door latch mechanisms, provide door 
+open/close data to the Door Modules/KBM. 
+
+CAS 
+
+The Car Access System control unit functions as the master for power window functions: 
+
+• Operation by radio remote control key 
+
+• Comfort functions (One-Touch) 
+
+• Central-locking interface 
+
+• Child lock 
+
+• Country-specific programming 
+
+
+© 
+
+
+SBFA 
+
+‘—0-CW3-0— 
+
+
+n 
+
+
+
+
+
+© 
+
+
+© 
+
+
+
+
+PWWO 
+
+© 
+
+
+
+
+© 
+
+© 
+
+TMFA 
+
+
+© 
+
+
+TMBF 
+
+
+
+© 
+
+
+
+ASE 
+
+byteflight 
+
+SGM 
+
+byteflight 
+
+ASE 
+
+
+
+
+
+3 
+
+
+3 
+
+
+
+SBFA 
+
+Switch Passenger Front 
+
+Flail Sensor Drivers Door 
+
+Window Motor Drivers Door 
+
+Door Contact Drivers Door 
+
+TMFA 
+
+SGM 
+
+TBMF 
+
+Flail Sensor Passenger 
+Door Front 
+
+Window Motor Passenger 
+Door Front 
+
+Door Contact Passenger 
+
+Door Front 
+
+CAS 
+
+Window Switch R/R 
+Door Contact R/R 
+Flail Sensor R/R 
+Window Motor R/R 
+KBM 
+
+Window Motor L/R 
+Flail Sensor L/R 
+Door Contact L/R 
+Window Switch L/R 
+
+
+12 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operation 
+
+
+Opening of Passenger Front by Driver 
+
+The signal triggered in the SBFA when the button is pressed is sent via a LIN Bus to the 
+TMFA. The TMFA sends the signal via the byteflight to the SGM. 
+
+The SGM converts the signal and sends it on the K-CAN to the CAS(the master for the front 
+windows). The CAS evaluates the signal and sends a command to the SGM on the K-CAN. 
+The SGM forward the command via the byteflight to the TMBF. 
+
+
+The TMBF receives the command for window movement, and a check signal from the Flail- 
+sensor in the window motor and if necessary calculates indirect trapping protection. The 
+window is then moved per the request. 
+
+
+Opening of Rear Window by Driver 
+
+
+(!) 
+
+/p\ 
+
+byteflight 
+
+© 
+
+K-CAN 
+
+© 
+
+(iy 
+
+
+
+TMFA 
+
+
+SGM 
+
+
+KBM 
+
+
+
+
+
+
+VS223 02310 02 
+
+
+Indirect Anti-Trapping 
+
+Anti-trapping protection is active over the entire window travel in the closing direction. 
+Indirect anti-trapping protection does not eliminate trapping completely but rather restricts 
+it to a maximum permissible trapping force. 
+
+For each subsequent closing operation, the currently required closing force is determined 
+and compared with the stored value. If the difference between the two force values is over 
+the specified trigger threshold, the direction of window movement is reversed immediately. 
+The reversing procedure is country- and function-dependent (emergency mode). 
+
+In order to ensure safe closing of the window glass, the drive mechanisms are briefly oper¬ 
+ated to their full extent when the zero position is reached at the upper stop. 
+
+Power-window anti-trapping protection has been developed in accordance with legal 
+requirements in order to reliably prevent injury to vehicle occupants. When an object is 
+detected in the path of the window, window travel is stopped and the window rolled down 
+slightly. 
+
+Anti-trapping protection is deactivated by the emergency close function (panic mode). The 
+control sequence is divided into two phases. 
+
+
+13 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+Phase 1: 
+
+The closing position is overpressed until the emergency close mode is activated after a spe¬ 
+cific response time. The window is closed at maximum speed and with increased anti-trap¬ 
+ping protection force. Anti-trapping protection remains activated even during emergency 
+closing. If trapping is detected, the window is reversed only a short distance. 
+
+Phase 2: 
+
+The button is released and overpulled again in 4 s. The window is now closed without anti¬ 
+trapping protection with full force. In the event of blocking, the power-window motor is sup¬ 
+plied with power until thermal protection is engaged. 
+
+In the event of faulty anti-trapping protection, there is the option of emergency-closing the 
+windows. 
+
+If fully operational anti-trapping protection cannot be detected, e.g. faulty sensors, auto¬ 
+matic operation is not permitted. 
+
+Power Detection 
+
+The system adapts itself to changes in the weather and environmental influences. The clos¬ 
+ing force is recorded by indirect sensors (Hall sensors) and limited accordingly. 
+
+
+Initialization of Power Windows 
+
+
+Front Windows 
+
+Rear Windows 
+
+On Initial start-up, only the upper window stop has to 
+be learned. For this purpose the window must be held 
+
+The rear windows must be initialized. 
+
+for 500ms at the upper stop position. 
+
+During the initialization the end positions of the window 
+travel are determined by limit runs into the upper win¬ 
+dow seal and to the lower window stop. 
+
+Move window to full closed position and hold for at 
+
+Move window to full closed position and hold for at 
+
+least 500ms. 
+
+least 500ms. 
+
+Move window to lower window stop and hold for 17 
+seconds. 
+
+Move window to full closed and continue to hold the 
+switch in the window closing direction. 
+
+The Window will open the close to confirm proper 
+initialization. 
+
+Note: This procedure is the same as E65. 
+
+
+Learns upper limit 
+
+
+Learns speed, amperage and direction 
+
+
+14 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+Workshop Exercise - Power Windows 
+
+
+1. Remove drivers side door panel. 
+
+2. Scope LIN Bus from switch assembly to door module. 
+
+3. What is the voltage range of the LIN Bus? _ 
+
+4. What happens when the LIN Bus is shorted to B+ or B-? _ 
+
+5. Perform Initialization on front windows. 
+
+6. Perform Initialization on rear windows. 
+
+7. Check the anti-trap feature on both the front and rear windows. 
+
+8. Is the anti-trap closing force approximately the same on both the front and rear? 
+
+9. Is the anti-trap closing force the same for the entire window travel? 
+
+10. Perform the anti-trap test again quickly after performing the test a first time. 
+
+11. Is the closing force the same as on the first test? _ 
+
+Notes: 
+
+
+15 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Slide/Tilt Sunroof 
+
+
+
+1. Car Access System (CAS) 
+
+2. Slide/tilt sunroof module with integrated electronics 
+
+3. Slide/tilt sunroof push-button 
+
+
+
+0250m 
+
+
+1. Slide/Tilt Sunroof Switch 
+
+2. Slide/tilt sunroof module with integrated electronics 
+
+3. CAS 
+
+
+Slide/Tilt Sunroof Push-Button 
+
+The push-button for the slide/tilt sunroof (SHD) switches to ground. The power supply of 
+the push-button features polarity reversal protection and is disconnected from the power 
+supply in the event of overvoltage and in sleep mode. 
+
+Slide/Tilt Sunroof Module 
+
+The SHD module controls and monitors the electric motor and therefore the movement of 
+the slide/tilt sunroof. The commands the driver selects with the push-button are transferred 
+directly to the slide/tilt sunroof module. 
+
+Communication with the vehicle is controlled via the K-CAN. The SHD module receives 
+information relating to terminal 58g via the K-CAN from the light module. The SHD module 
+controls the LEDs of the SHD push-button. Terminal 58g has a clock cycle of 200 Hz for 
+the purpose of dimming the lighting. 
+
+Car Access System 
+
+The CAS contains the master function for auto-remote opening. 
+
+
+16 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Panic Mode 
+
+Panic Mode is triggered by pressing and holding the SHD button in the 2nd notch position. 
+With this function, the sunroof is closed without anti-trap or closing force limitation protec¬ 
+tion. Panic close is possible only at speeds under 16 km/h. 
+
+Emergency Operation 
+
+In Emergency Mode, the sunroof only moves for 750ms at a time. The emergency func¬ 
+tion is only available when the CAS has signaled the SHD control module, “Emergency 
+Mode Enable”, via the K-CAN. 
+
+Emergency operation is active under the following conditions: 
+
+• Coding Invalid 
+
+• Defective Hall-sensor 
+
+• Initialization incomplete 
+
+If initialization is incomplete operation is permitted based on scaling or characteristic curves. 
+With no scaling, movement is allowed only in the direction of the scaling position. 
+
+With no characteristic curve learned, movement is only is the closing direction. 
+
+Initialization 
+
+Initialization of the Sunroof is performed as follows: 
+
+• Press the operating switch to the “Lift” position and hold. 
+
+• After 15 seconds, the sunroof will “Lift”. Continue to hold the switch. 
+
+• After approximately 5 seconds the sunroof will close. Continue to hold the switch. 
+
+• The sunroof will then open completely and close completely. 
+
+• If the switch is released at any time during the procedure the operation must be 
+repeated. 
+
+Note: 
+
+Anti-trapping protection does not function during the initialization process. 
+
+
+17 
+
+E60 General Vehicle Electrical Systems 
+
+
+Central Locking System 
+
+The central locking system ZV involves the actuation/evaluation of the doors, trunk and fuel 
+filler flap. The central locking facilities of the doors are equipped with double lock functions 
+and operate in accordance with the two-motor principle. 
+
+The door modules control the central locking facilities of the front doors. The basic body 
+module controls the central locking in the rear area. 
+
+
+
+bytefSght 
+
+
+
+bytofHght 
+
+
+K-CAN 
+
+
+ASE 
+
+
+
+
+TMBF 
+
+
+
+
+r 
+
+
+'■D 
+
+
+KBM 
+
+
+
+
+
+i— £ —i 
+
+
+
+
+"•@*1 
+
+
+H(M)J 
+
+
+si) 
+
+
+
+
+1. Drivers door lock cylinder, con¬ 
+tact, central locking motors 
+
+2. TMFA 
+
+10 3. SGM 
+
+4. TMBF 
+
+5. Passenger door contact, cen¬ 
+tral locking motors 
+
+6. Remote control 
+
+7. CLT 
+
+8. CAS 
+
+9. KBM 
+
+10. Fuel Filler Flap 
+
+11. Trunk Button, Exterior 
+
+12. Trunk Button, Interior 
+
+13. Trunk locking cylinder, central 
+locking motor 
+
+14. Luggage compartment lighting 
+
+15. Drivers side, rear door 
+
+16. Passenger side, rear door 
+
+
+
+
+
+
+16 
+
+
+02126 02 
+
+
+18 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The central locking system consists of the following control points: 
+
+• Driver's door lock cylinder 
+
+• Center-lock button 
+
+• Remote control key 
+
+• Trunk lock cylinder 
+
+The system can be additionally unlocked via the crash sensor and forced release is possi¬ 
+ble by means of the "key inserted" signal in the CAS. A function is triggered when a status 
+change at the respective input is detected. If several new ZV commands are given while a 
+command is being carried out, only the last command will be subsequently executed. 
+
+The CAS is the central locking master and is responsible for enabling all central locking pro¬ 
+cedures in the vehicle. 
+
+
+The central locking can assume following statuses: 
+
+
+Status 
+
+Explanation 
+
+Unlocked 
+
+All locks are in the unlocked position. Outer and inner door handles are operational. 
+
+Selective Unlocked 
+
+The driver’s door is unlocked. All other locks are in the lock position. 
+
+Locked 
+
+All locks are in the lock position. Outer door handle not operational, inner door handle 
+operational. 
+
+Secured 
+
+All locks are in the lock position. Outer and inner door handles are not operational. 
+
+Opened 
+
+At least one lock is in the unlocked position. 
+
+
+Secure Lock (Double Lock) 
+
+
+The secure lock function (locking of the vehicle from the outside using either the remote or 
+the drivers door lock cylinder) uses a mechanical coupling to uncouple the locking pin of 
+the door from the lock. The vehicle can then no longer be opened by the following actions: 
+
+• Pulling the locking buttons 
+
+• Pulling the inner door handle 
+
+• Pulling the outer door handle 
+
+• Pressing the center-lock button 
+
+Secure lock is only possible: 
+
+• At terminal R off and key not inserted 
+
+• After opening and closing the driver's door or Opening the passenger's door 
+
+No action takes place following the secure lock request when the driver's door is open. 
+
+A secure locked (secured) vehicle cannot be unlocked via diagnosis functions. 
+
+A secure locked (secured) vehicle can be changed to “Lock status” by pressing the cen¬ 
+ter console lock button (CLT). 
+
+
+19 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+The vehicle lock status is changed from secure to unlocked when the CAS recognizes a 
+valid transponder key has been inserted. 
+
+Automatic Locking 
+
+If the system is not yet locked or if a door was opened with the ZV locked, a lock command 
+is executed on exceeding a speed of 16 km/h. 
+
+Crash Unlock 
+
+In the event of a crash, the safety and gateway module (SGM) releases the central locking 
+system (ZV) via the bus network at terminal R or 15. 
+
+The ZV assumes "crash mode" even when the central locking was already unlocked. 
+Crash unlock is disabled when the vehicle status is secure lock. 
+
+Crash mode is released when an unlock/lock request is made. This corresponds to deac¬ 
+tivation of crash mode. 
+
+Power on Status 
+
+The central locking status does not change by disconnecting and reconnecting the supply 
+voltage. There is no reaction if command inputs are active while reconnecting the supply 
+voltage (reset). 
+
+DWA - Central Lock Interface 
+
+The anti-theft alarm system DWA is not an integral part of the central locking system, how¬ 
+ever, it requires commands and signals from this system. The central locking system (ZV) 
+monitors the status of the doors, hood,trunk, fuel filler flap and terminals. The DWA moni¬ 
+tors the tilt alarm sensor NG as well as the ultrasonic interior protection system USIS. 
+
+The DWA is armed by means of any valid ZS command from an authorized control point or 
+via the remote control. An LED provides an optical signal of the DWA status. 
+
+The tilt alarm sensor and interior protection are switched off if a ZS command is initiated 
+within 3 s after initially arming the DWA. 
+
+The luggage compartment is accessible without triggering alarm even when the DWA is 
+armed via the remote control. An alarm is triggered if the lock cylinder on the trunk is oper¬ 
+ated mechanically with the DWA armed. 
+
+Remote Control FBD 
+
+Evaluation of the logic remote control (FBD) signals is integrated in the CAS control unit. In 
+addition to various other functions, the central locking functions that can be coded in the 
+key memory can be selected "personalized" in the CAS control unit. 
+
+It is possible to actuate the central locking by means of a second remote control with the 
+key inserted. 
+
+
+20 
+
+E60 General Vehicle Electrical Systems 
+
+
+Different personalized functions can be selected depending on the type of remote control 
+key used. The functions "selective ZV", "lock as from 16 km/h" as well as "lock after 2 min" 
+can be coded in the CAS. 
+
+The remote control number identifies the key on which the "unlock" button was last 
+pressed. Irrespective of this function, the currently used key is always identified as the con¬ 
+trol point in connection with the "unlock trunk" function. 
+
+Trunk Locking 
+
+The trunk can be unlocked and opened via: 
+
+• Radio remote control FBD 
+
+• External trunk button on boot lid handle 
+
+• Internal trunk button in driver's footwell 
+
+• Lock cylinder on trunk; purely mechanical 
+
+
+Hotel Setting 
+
+The hotel setting is initiated via the lock cylinder of the trunk. The following control points 
+are deactivated when the hotel setting is initiated: 
+
+• Trunk button via remote control 
+
+• Exterior trunk button 
+
+• Interior trunk button 
+
+The trunk remains locked even when the vehicle is unlocked. The hotel setting is indicated 
+to the customer by means of the switch position. 
+
+The push-button on the trunk is therefore only active when the vehicle is unlocked and sta¬ 
+tionary and not when the hotel setting is initiated. 
+
+The interior button is additionally active even when the vehicle is locked but only up to the 
+specified speed threshold. 
+
+The system can always be unlocked via the remote control with the ignition key removed 
+without the hotel setting engaged. 
+
+Automatic Relock 
+
+The central locking unlocks (selective or global, corresponding to coding) when a release 
+command is triggered inadvertently via the remote control. If no door or hood/trunk is 
+opened within 2 min, the central locking reassumes the locked status in connection with 
+the coding "automatic relock." 
+
+
+21 
+
+E60 General Vehicle Electrical Systems 
+
+
+Car & Key Memory 
+
+The central individualization elements are the coding data of the vehicle. Certain codeable 
+functions are enabled for the car memory as part of the individualization procedure. 
+
+In connection with the personalization, individual functions depending on the vehicle key, 
+maximum 4, used to unlock the system, are also controlled for the central locking. 
+Otherwise the central locking operates in accordance with the coded basic setting. 
+
+
+The central locking functions therefore depend on the personalization of the 4 vehicle keys 
+and on the standard coding for the vehicle. 
+
+
+Codeable Key Memory Functions: 
+
+
+Coding 
+
+Description 
+
+Automatic relock 
+
+Relock after 2 min 
+
+Speed Lock 
+
+Lock from 16 km/h 
+
+Selective unlock 
+
+Only the drivers door is unlocked 
+
+
+Codeable Car Memory Functions: 
+
+
+
+02111 
+
+
+Coding 
+
+Description 
+
+Terminal R prohibits Trunk operation 
+
+The trunk is not opened when terminal R is engaged 
+
+Unlock on removing Key 
+
+The vehicle unlocks after the key is removed IF the system was locked via 
+the speed lock or terminal R Lock. 
+
+Cross over operation disabled 
+
+A vehicle locked via the remote can not be unlocked with the key. 
+
+
+22 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wipe/Wash System 
+
+
+The wipe/wash system is a conventional wipe/wash system with reset contact. All 
+wipe/wash functions can be activated with the wiper switch once terminal R is on. The 
+wipe/wash functions are controlled as a function of vehicle speed. 
+
+The rain and light sensor is fitted as standard. 
+
+To reduce noise and wear, the load circuit of the wiper motor has been designed as an 
+external double relay. A power semiconductor is integrated in the body base module (KBM) 
+for the washer fluid pump. 
+
+Headlight Cleaning System (SRA) 
+
+The headlight wipe/wash function is controlled by the KBM. 
+
+Rain and Light Sensor 
+
+If the rain and light sensor should fail or be faulty, the KBM will take control. The KBM will 
+switch to an emergency mode. Emergency mode is a speed-dependent intermittent mode. 
+
+Safety and Gateway Module 
+
+The SGM switches the wiper switch signal from the byteflight to the K-CAN. 
+
+Body Base Module 
+
+The body base module receives all the information that is required for operation of the 
+wipe/wash system. 
+
+The body base module activates the following components: 
+
+• Dual relay module for the wiper motor 
+
+• Relay for the headlight cleaning system 
+
+• Washer fluid pump 
+
+Washer Nozzle Heating 
+
+The IHKA activates the heated jets. 
+
+
+23 
+
+E60 General Vehicle Electrical Systems 
+
+
+Wiper IPO 
+
+
+
+Wiper Schematic 
+
+
+
+
+KI.30 
+
+
+1. SteeringColumn 
+Switch 
+
+2. SZL 
+
+3. RLS 
+
+4. SGM 
+
+5. CAS 
+
+6. KBM 
+
+7. Wiper Motor 
+
+8. Wipe/Wash Relay 
+
+9. Washer Fluid Pump 
+
+10. SRA Relay 
+
+11. SRA Pump 
+
+
+24 
+
+E60 General Vehicle Electrical Systems 
+
+
+02128 02 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Wipers 
+
+
+
+1. Find and print the Repair Instructions for windshield wiper adjustment. 
+
+2. List the special tools required to perform the adjustment 
+
+3. Adjust the wiper arms per the instructions. 
+
+4. Observe new style wiper blades. 
+
+
+Notes: 
+
+
+25 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Car Access System 
+
+
+The CAS of the E60 is based on the CAS of the E65. The internal designation is CAS 2. 
+The following changes have been made compared with the CAS of the E65: 
+
+• Direct connection to the K-CAN 
+
+• Repeater function has been omitted 
+
+• Ignition starter switch and the CAS are 2 separate components 
+
+• Data transfer as part of the Condition Based Service 
+
+
+
+1. 
+
+2 . 
+
+3 . 
+
+4 . 
+
+5 . 
+
+6 . 
+
+
+Light Switch with Control Panel 
+
+Instrument Cluster 
+
+SZL 
+
+CAS 
+
+
+Light Module 
+TMFA 
+
+
+The CAS includes the following functions: 
+
+• Reading in ignition starter switch (ZAS) 
+
+• Transponder authentication 
+
+• Terminal control 
+
+• Electronic immobilizer 
+enable to injection system 
+
+• Master function for central locking system (ZV) 
+
+• Master function for power windows (FH) and slide/tilt sunroof (SHD) 
+
+• Remote control services (FBD) 
+
+• Internal CAS functions 
+
+- Wake-up signals 
+
+- Sleep signals 
+
+• Vehicle functions 
+
+- Personalization 
+
+- Auto encoding of vehicle model/transmitter 
+
+- Vehicle order 
+
+- Total distance recorder 
+
+- Condition Based Service CBS 
+
+- Voltage supply, brake-light switch 
+
+
+26 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+PT-CAN 
+
+
+
+1 . 
+
+2 . 
+
+3. 
+
+4. 
+
+5. 
+
+6 . 
+
+7. 
+
+8 . 
+
+
+KBM 
+
+SGM 
+
+CAS 
+
+DME 
+
+EGS/SMG 
+
+
+Output EWS 
+
+Output Terminal R 
+
+Output Terminal 15 Wake up 
+
+
+9. Output Terminal 15-1 to 15-3 
+
+17. Radio Receiver 
+
+10. Output Terminal 30g Relay 
+
+18. Brake Light Switch 
+
+11. ACC Wake up line 15WUP_RS 
+
+19. Clutch Switch Module 
+
+12. Integrated Power Supply Module 
+
+20. Centerlock Button 
+
+13. Starter 
+
+21. DSC 
+
+14. Hood Contact 
+
+22. Trunk Lock Cylinder 
+
+15. Ignition/Starter Switch 
+
+
+16. Remote 
+
+
+
+27 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - CAS 
+
+
+Vehicle is brought into the shop with a complaint of no start. 
+
+1. Verify the complaint. 
+
+2. Does the engine crank? - 
+
+3. Is the key recognized? - 
+
+What is the quickest way to confirm that the key has been recognized? 
+Where could you find that information in the DiSplus or GT1? _ 
+
+4. Are there any relevant fault codes stored? _ 
+
+5. What pin at the CAS provides the EWS release to the DME? _ 
+
+Check this signal at the DME. 
+
+6. Continue to Diagnose this problem. 
+
+7. Repair the fault. 
+
+8. What pin at the GAS provides the KL50E signal to the DME? _ 
+
+9. What kind of signal is this? (High/low, PWM, Analog...) _ 
+
+10. What pin of the GAS controls the 30g Relay? - 
+
+Is this B+ or B- control of the relay? _ 
+
+11. What pin of the CAS provides power to the brake light switch? _ 
+
+12. What pin of the CAS provides power to the OC3 Mat? _ 
+
+
+28 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Condition Based Service 
+
+The data for Condition Based Service (CBS) is updated during each journey. The fault mem¬ 
+ory data is also updated during each journey. The conditions for this are: 
+
+• Activation of terminal 15, speed exceeded 50 km/h and speed dropped below 30km/h 
+
+• The data is updated after a distance of 10 km has been covered and after speed has 
+dropped below 30 km/h 
+
+Manual Update of CBS Data 
+
+The procedure for transferring current data to the key during servicing is as follows: 
+
+- Insert key in ignition and turn to position "R" 
+
+- Press and hold Centerlock button 
+
+- After 15 s the CBS data will have been transferred to the key 
+
+- Read out the key 
+
+Manual Update of Fault Memory Data 
+
+- Press and hold Centerlock button 
+
+- Insert key in ignition 
+
+- Turn key from position "0" to position "R" 
+
+- After 15 s, the fault memory data will have been transferred to the key 
+
+- Read out the key 
+
+Notes: 
+
+
+29 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Antitheft Alarm System 
+
+The alarm system detects and warns of any attempts to break in or tamper with the 
+vehicle. 
+
+The DWA comprises the following components: 
+
+• Interior sensor with integrated DWA logic 
+
+• Emergency siren with integrated tilt sensor 
+
+• DWA LED 
+
+• Door, Trunk and Hood Switches (fed via K-CAN) 
+
+• Car Access System (CAS) 
+
+• Light module (LM) 
+
+• K-CAN 
+
+• Local DWA bus line leading to emergency siren. 
+
+
+
+
+
+
+
+
+®' 
+
+
+
+CAS 
+
+■ 
+
+— 
+
+® 
+
+LM 
+
+
+■ ^—j 
+
+
+
+
+vD 
+
+
+02651_02 
+
+
+System Functions 
+
+
+1. DWA LED 
+
+2. Interior Motion Sensor (USIS) 
+
+3. DWA Bus 
+
+4. Siren with integrated Tilt Sensor 
+
+5. Hood Contact 
+
+6. CAS 
+
+7. Light Module 
+
+
+The following are monitored: 
+
+• Doors 
+
+• Hood 
+
+• Trunk 
+
+• Vehicle interior 
+
+• Vehicle inclination 
+
+• DWA bus line to the emergency siren 
+
+• Voltage supply for vehicle electrical system 
+
+• Voltage level at the emergency siren 
+
+
+30 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To prevent false alarms, the sensitivity of the DWA can be adapted. For this purpose, the 
+following vehicle conditions are evaluated: 
+
+• Status of auxiliary ventilation 
+
+• Position of power windows 
+
+• Position of slide/tilt sunroof 
+
+The alarm system sends the following status messages: 
+
+• System status via the DWA LED in the passenger compartment 
+
+• Visual arm/disarm via hazard warning lights 
+
+• Audible arm/disarm via an acknowledgement signal from the emergency sirenElectrical/ 
+
+The alarm system outputs the following alarms: 
+
+• Audible alarm via emergency siren 
+
+• Visual alarm via hazard warning lights, dipped headlights, main beam headlights 
+
+Independent Voltage Supply 
+
+Thanks to the independent voltage supply, the emergency siren can issue an alarm even 
+when the vehicle voltage supply is disconnected. The independent voltage supply is pro¬ 
+vided by Li cells. The Li cells are not rechargeable. The status of the batteries can be read 
+out via the diagnostics system. 
+
+System Operation 
+
+Monitoring of the Vehicle Battery 
+
+The emergency siren detects: 
+
+• A drop in voltage from the vehicle battery due to a break in the wiring 
+
+• A voltage > 17 V 
+
+• A voltage drop from a value of 7.5 V to 6.5 V in less than 40 mins 
+
+The emergency siren monitors the B+, GND and DWA bus connection leads. If these leads 
+are cut through, the independent alarm will be issued immediately. 
+
+In accordance with ECE regulations, the emergency siren will not issue an alarm if, as a 
+result of the vehicle being immobile for a long time, the battery is being continually dis¬ 
+charged and the vehicle electrical system voltage drops by 0.5 V/h to 3 V in the process. 
+
+System Power-Down for Storage 
+
+If the emergency siren is disarmed and without an external power supply, the batteries 
+switch to a low power status. Current consumption is then a maximum of 25 pA. 
+
+The electronics return the emergency siren to its normal operating status when the vehicle 
+battery is reconnected. 
+
+
+31 
+
+E60 General Vehicle Electrical Systems 
+
+
+Reverse Polarity Detection 
+
+The reverse polarity detection system detects reverse polarity in the event of the vehicle 
+being jump-started and stores this in its information memory. 
+
+Tilt Sensor 
+
+The tilt sensor monitors the position of the vehicle. It detects and warns of any attempt to 
+steal the tires and wheels or to tow the vehicle away. 
+
+The tilt sensor is integrated in the emergency siren. The tilt sensor is triggered and evaluat¬ 
+ed by the microprocessor used in the emergency siren. The tilt sensor has diagnostic capa¬ 
+bility. 
+
+DWA LED 
+
+As before, the DWA LED is activated directly by the DWA (positive switching). 
+
+DWA Bus 
+
+The DWA bus is a local sub bus with K bus specification. The DWA communicates with the 
+emergency siren and the tilt sensor via the DWA bus. 
+
+DWA Arming Sequence 
+
+Immediately after arming the emergency siren is armed and monitors its voltage supply. 
+The DWA commences line monitoring on the local DWA bus. 
+
+3 s after arming each of the door and tailgate contacts to be monitored is included in the 
+alarm table. Faulty contacts are evaluated as closed, but are not included in the alarm table. 
+The tyre pressure monitoring system is included in the alarm table. 
+
+3 s after centrally locking the vehicle or after locking the last door or tailgate the refer¬ 
+encing phase of the tilt sensor commences. During this period, the ultrasonic sensors are 
+verified for signal plausibility. The sensitivity level is set in accordance with the window and 
+slide/tilt sunroof positions. 
+
+30 s after locking the last door or tailgate the tilt sensor is included in the alarm table upon 
+expiration of its referencing period. 
+
+If no acknowledgement message is received from the tilt sensor within 60 s of arming, this 
+sensor is deleted. If at least one input signal is not in idle state or if a sensor is defective, 
+this is signalled by the flashing LED. 
+
+If the emergency siren does not acknowledge the "arm" command, this is also indicated by 
+the LED. 
+
+
+32 
+
+E60 General Vehicle Electrical Systems 
+
+
+CAS Authentication to Prevent Tampering 
+
+To prevent the DWA from being easily disarmed by the central locking and tailgate status 
+message "Central locking control" using a CAN tool, the CAS authenticates itself with the 
+DWA. ~ 
+
+Each time an unlocked vehicle is locked for the first time, the CAS sends an authentication 
+to the DWA. Any further "locking" signals are then no longer accepted. 
+
+When the system is disarmed, the DWA expects the CAS to again send authentication with 
+the first locking operation. 
+
+The system permits two disarming attempts with the wrong authentication, after which an 
+alarm is issued. 
+
+Forced Disarming 
+
+The DWA is forcibly disarmed if a person located in the vehicle centrally locks the vehicle 
+and then inserts the key into the ignition. The CAS evaluates this action and transmits a 
+"locked" message. The DWA is thus disarmed. 
+
+Deletion of Cross-Wise Operation 
+
+Where cross-wise operation is deleted, the alarm is triggered if the DWA is armed by the 
+remote control and disarmed by the door lock. This occurs because, even though the CAS 
+recognizes when the lock is unlocked, it does not transfer the signal to the K-CAN. The 
+DWA therefore remains armed and triggers the alarm when the door is opened. This func¬ 
+tion is encoded in the CAS. 
+
+Bus Monitoring 
+
+If the DWA detects messages on the local DWA bus that indicate attempts to disarm or 
+tamper with the emergency siren or the tilt sensor, an alarm will be triggered. 
+
+
+Park Distance Control PDC 
+
+The E60 is equipped with the 8-channel PDC system already known from the E65. The 
+PDC button is integrated in the center console switch center SZM. In the E60 the button 
+signal is forwarded via the K-CAN to the PDC control unit. 
+
+The PDC sensors for front and rear introduced in the E65 are used as sensors here. 
+
+For a manual gearbox, the signal for reverse gear is made available by the light module by 
+way of a K-CAN message. 
+
+For an automatic gearbox, the signal for reverse gear is made available by the transmission 
+control unit by way of a K-CAN message. 
+
+
+33 
+
+E60 General Vehicle Electrical Systems 
+
+
+Active Cruise Control 
+
+
+The Active Cruise Control system (ACC) is the same as that in the E65. 
+
+The ACC has the following defining properties: 
+
+- Operated from a steering column stalk 
+
+- Statuses are shown in the instrument cluster display 
+
+- Four selectable increment stages 
+
+- Speed preselection in 1 km/h stages 
+
+- Sheet steel bracket in the E60 with plastic intermediate holder for the sensor control unit 
+
+- Audible instructions to the driver have been omitted 
+
+
+
+02693 02 
+
+
+1. Rear Brake Pressure Sensor 
+
+2. Front Brake Pressure Sensor 
+
+3. DSC 
+
+4. DME 
+
+5. EGS 
+
+6. SZL 
+
+7. SGM 
+
+8. Instrument Cluster 
+
+9. CAS 
+
+10. Trailer Module (Not for U.S.) 
+
+11. Light Module 
+
+12. M-ASK 
+
+13. ACC Control Unit 
+
+
+34 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The exterior lighting is based on the exterior lighting of the E65 and available in the follow¬ 
+ing versions: 
+
+• Basic version with halogen headlights 
+
+• Adaptive cornering light with bi-xenon headlights 
+
+Voltage for all the lights is regulated by the light module. This regulation compensates for 
+fluctuations in vehicle voltage. 
+
+
+Light Switch with Control Panel Unit 
+
+The light switch is remotely mounted from 
+the light module. They are connected by 
+means of a ribbon cable. 
+
+1. Light switch 
+
+2. Instrument Cluster 
+
+3. SZL 
+
+4. CAS 
+
+5. Light Module 
+
+6. TMFA 
+
+
+
+35 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Light System IPO 
+
+
+
+36 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lighting Schematic 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brake Light Switch 
+
+The car access system supplies the brake light switch with voltage. Signals from the brake 
+light switch are used by the Light Module to activate the brake lights. 
+
+The Light Module also supplies the brake signal to other systems via the K-CAN. 
+
+Reverse Lights 
+
+On manual transmission vehicles, the signal is made available via a switch from the gear 
+selector lever. The light module controls the reversing lights accordingly. 
+
+On automatic transmission vehicles, the signal is made available by the transmission con¬ 
+trol unit via the PT-CAN. 
+
+The signals for reverse gear and the brake light are made available to other subscribers by 
+the light module via the K-CAN. 
+
+
+
+Brake Force Display 
+
+The segments of the rear fog light are used as the BFD as of a deceleration of 5 m/sec 2 
+
+Service Information 
+
+In the E60, the light switch contributes to improved protection for the occupants. This 
+increased level of protection is achieved by artificially enlarging the impact surface of the 
+light switch. 
+
+In the event of an accident, a person sitting behind the steering wheel could knock against 
+the light switch with his/her knee for instance. While retaining full functionality, the light 
+switch can be shifted towards the rear. This increases the impact surface about the light 
+switch. After being pressed back, the light switch must be pulled out to move it into the for¬ 
+ward position again. 
+
+
+38 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AHL 
+
+
+The AHL control unit is linked to the following components: 
+
+• Front and rear level sensor 
+
+• Brake pedal switch 
+
+• Steering angle sensor 
+
+• Yaw rate sensor 
+
+• DSC control unit, supplies speed signal 
+
+• Car Access System 
+
+• Safety and gateway module 
+
+• Light module 
+
+• Steering column switch cluster 
+
+• Swivel module for bi-xenon headlights 
+
+• Stepper motor controller 
+
+• Stepper motors for AHL and steering angle sensor (LWR) 
+
+• LIN bus 
+
+AHL Control Unit 
+
+
+The AHL control unit is the master control unit for vertical and horizontal adjustment of the 
+bi-xenon headlights. The stepper motor controllers actuate the stepper motors of the bi¬ 
+xenon headlights. The AHL control unit is installed on the carrier plate behind the glove 
+compartment. 
+
+
+
+39 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+02462.02 
+
+
+Function Indicator 
+
+The function of the AHL is indicated by the FLC LED lighting permanently. A fault in the AHL 
+system is indicated by the FLC LED flashing with the AFIL active. 
+
+The low beam headlight and the headlight vertical aim control (LWR) remain active in the 
+case of fault. The swivel function of the bi-xenon modules is deactivated. 
+
+A reference run is performed during every new start. If a defect is found, the bi-xenon head¬ 
+lights are switched off to ensure oncoming traffic cannot be dazzled. The fog lights are 
+switched on as a substitute 
+function. 
+
+
+40 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Repairs 
+
+
+Various repairs may be necessary during the course of vehicle's service life. As a conse¬ 
+quence of repair work, it may be that the system parts for the AHL are installed with differ¬ 
+ent software and hardware versions. In each case, the replaced components must be 
+adapted to the specific requirements of the vehicle. 
+
+AHL Control Unit 
+
+After replacing an AHL control unit, it is necessary to enter the vehicle identification num¬ 
+ber and to encode the control unit depending on specific vehicle data. 
+
+The complete AHL function will not be operative if adaptation to the vehicle is not per¬ 
+formed. 
+
+Replacing SMC 
+
+After replacing the SMC, it is necessary to enter the vehicle identification number and head¬ 
+light-dependent coding in the SMC control unit. 
+
+The complete AHL function will remain inoperative if this adaptation is not performed. 
+Particular care must be taken when replacing the SMC to ensure that the housing seal of 
+the SMC is fitted correctly. 
+
+Replace Bi-Xenon Headlights 
+
+After replacing the bi-xenon headlights, it is necessary to encode the corresponding SMC 
+depending on the headlights. 
+
+If this adaptation is not performed, the function will appear to be operative but not correct. 
+The swivel range and zero point can vary from vehicle model to vehicle model and the bi¬ 
+xenon headlight can have a different status! 
+
+The headlights must be adjusted and checked. 
+
+Diagnosis 
+
+The AHL system must be set to diagnosis mode in order to perform the following jobs: 
+
+• Read out of relevant bus signals with vehicle stationary 
+
+-Road speed 
+-Yaw rate 
+-Steering angle 
+
+• Checking signal plausibility 
+
+• Checking that conditions for activation are fulfilled 
+
+-Rain and light sensor status 
+-Light switch status 
+
+Missing or non-plausible BUS signals are stored in the form of fault codes in the AHL con¬ 
+trol unit. The types of fault are stored in the SMC. The SMCs are accessed via the AHL con¬ 
+trol unit. 
+
+
+41 
+
+E60 General Vehicle Electrical Systems 
+
+
+Interior Lighting 
+
+
+The interior lights of the E60 are pulse width modulated and automatically controlled by 
+various inputs. 
+
+PWM Control 
+
+
+The output is active from terminal 15 with a permanent clocking in a frequency of 100 Hz. 
+In this way the power output is controlled. From a voltage of 12.8 V the pulse width mod¬ 
+ulation is adjusted in such a way as to provide a power output of 100% as for 12.8 V. 
+
+In the case of voltage drops in the vehicle electrical system of up to 1 V, the pulse width 
+modulation is corrected and thus a constant brightness of the lamps connected at the con¬ 
+sumer shutdown output is ensured. 
+
+Below 12.8 V voltage regulation is no longer corrected. The brightness can fluctuate with 
+the battery voltage level. 
+
+
+
+42 
+
+E60 General Vehicle Electrical Systems 
+
+
+02117 02 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer Shutdown Terminal 
+
+
+Some loads/consumers such as reading, glovebox and luggage compartment lights can 
+remain switched on when the car is stopped. In order to protect the battery, these con¬ 
+sumers are shut down after a drop at terminal R with a delay of 16 mins, or immediately 
+with the diagnosis telegram. 
+
+Consumer Shutdown 
+
+
+Power outputs are made available by the KBM 2 for consumer shutdown. 
+
+• VA 1: 
+
+- Reading lights 
+
+- Vanity lights 
+
+- Boot 
+
+• IB 2: 
+
+- Glovebox light 
+
+
+Roller Sunblind 
+
+
+An electric roller sunblind is 
+available for the rear window 
+of the E60. Mechanical roller 
+sunblinds are also available 
+for the side windows of the 
+E60. 
+
+System Function 
+
+The roller sunblind is operat¬ 
+ed from the switch in the dri¬ 
+ver's side switch block. 
+
+
+
+
+Q2130JS 
+
+
+44 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seats 
+
+
+Seat Variants 
+
+Three different seat versions are available for the E60. 
+
+• Electric basic seat with memory 
+
+• Electric sports seat with memory 
+
+• Multi-function seat with memory 
+
+Provision is also made for the installation of various options: 
+
+• Electric seat heater 
+
+• Seat ventilation system 
+
+• Active seat option 
+
+• Lumbar support option 
+
+Electrical Interfaces 
+
+One 8-pin and one 25-pin connector are used to connect the system to the vehicle elec¬ 
+trical system. The pin assignment of the 10 compartment plug connections has not 
+changed from those for the seats in the E65. The 6 compartment plug connections for the 
+seat modules have not changed either. 
+
+Electric, Sport and Multi-Function Seats 
+
+The signals required for seat adjustment are generated with the aid of the adjustment 
+switches. The signals are forwarded to the center console switch centre (SZM) by means 
+of an interface similar to a K bus. The centre console switch centre then forwards the data 
+to the seat modules via the K-CAN. 
+
+Signals are processed in the seat modules. With the aid of the output stage in the seat 
+modules, the motors in the seat are activated for seat adjustment. 
+
+Seat Heating 
+
+The heating circuits vary depending on the equipment fitted. The multifunction seat and the 
+option seat ventilation system have 4 heating circuits. In a 4 heating circuit system, the 
+backrest and seat cushion each have a rapid-heat area and a secondary heat area. Each 
+heat area is fitted with a temperature sensor. Current is applied to a maximum of two heat¬ 
+ing circuits at any one time. 
+
+Seat variants that are not based on the multi-function seat and that are not fitted with the 
+option seat ventilation system have 2 heat circuits. In a 2 heating circuit system, the back¬ 
+rest and seat cushion each have one heat area. 
+
+Lumbar Support 
+
+The seats are fitted with a pneumatically operated lumbar support adjustment. 
+
+
+45 
+
+E60 General Vehicle Electrical Systems 
+
+
+Active Seat 
+
+
+The active seat is already described in the training material for the E65. To provide support 
+and relieve the strain on the spinal column and back muscles during long journeys, the 
+active seat can be installed in the vehicle. The up and down movement of the seat surface 
+is initiated at the ischiatic tuberosity. 
+
+Entry/Exit Function for the Multi-Function Seat 
+
+There is an entry/exit aid for both the driver and passenger. The entry/exit aid is available in 
+conjunction with the multi-function seat. The entry/exit aid system uses the backrest width 
+(LBV) and seat cushion depth (STV) adjustment functions. 
+
+The backrest width is retracted to allow entry/exit into the vehicle. This creates more space 
+in the area of the backrest. The seat cushion depth is reduced. This creates more space 
+around the seat area. 
+
+Functional Principle 
+
+One example in which the entry/exit aid is activated: 
+
+The customer stops the vehicle. The vehicle is not in gear, the engine is either running or 
+switched off. The vehicle door is opened. The door contact indicates this. The exit aid is 
+activated. The LBV and then the STV are retracted. The customer gets out and the door is 
+closed. The exit aid remains in that position and is used to assist entry when the 
+customer gets back in the car. 
+
+Outside Mirrors 
+
+
+Activation of the wing mirrors is performed by the door modules by means of the local elec¬ 
+tronics in the front doors. All the mirror functions, except for electrochrome wing mirror and 
+mirror heating, are active with terminal R on through to consumer shutdown. 
+
+The mirror functions are controlled exclusively in the door modules, which communicate 
+with each other via the byteflight. All the mirror adjustment functions are served by the 
+adjusting switches in the switch block in the driver's door. 
+
+The following options are available: 
+
+
+__E__ 
+
+• Electrochrome interior rearview and 
+wing mirrors 
+
+
+I 
+
+
+• Electrochrome interior rearview mirror 
+
+3 
+
+r~~M © 
+
+) 
+
+• Light package including front-area * ” 
+
+© 
+
+
+
+© 
+
+lights in wing mirrors 
+
+TMFA 
+
+V 
+
+
+TMBF 
+
+• Wing-mirror memory in conjunction 
+
+
+
+8 
+
+
+
+with seat memory 
+
+
+
+® 
+
+SGM 
+
+
+
+
+46 
+
+E60 General Vehicle Electrical Systems 
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+
+Seat IPO (Typical) 
+
+
+
+byteflight 
+
+
+
+
+SGM 
+
+
+K-CAN 
+
+
+
+
+SZM 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seat Schematic 
+
+
+
+48 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TMFA 
+
+
+
+AON 
+
+
+TMBF 
+
+
+
+02262.02 
+
+
+Steering Column 
+
+The steering column adjustment function is 
+described in the information for the E65. 
+Possible functions of steering column 
+adjustment are: 
+
+• Height adjustment 
+
+• Reach adjustment 
+
+• Entry/exit aid 
+
+• Steering-column memory 
+
+• Motor protection 
+
+
+or 
+
+
+nr 
+
+
+
+System Circuit Diagram 
+
+1. Multi-function steering wheel 
+
+2. Steering column switch cluster (SZL) 
+
+3. Buttons for steering column adjustment 
+and steering wheel heating 
+
+4. Fanfare horn 
+
+5. Fanfare horn 
+
+6. Light Module (LM) 
+
+7. Safety and gateway module (SGM) 
+
+8. Active steering system (AFS) 
+
+K-CAN - Bodyshell CAN 
+F-CAN - Chassis CAN 
+
+
+
+AFS 
+
+
+8 
+
+
+49 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Seats 
+
+
+Vehicle is brought into shop with drivers seat non-operational. 
+
+1. Verify the complaint 
+
+2. Does the passenger seat operate? _ 
+
+3. Perform a short test and note the stored fault codes. 
+
+4. Are either of the seats able to be operated through component activation? 
+
+5. What is the path of the signal from the seat switch to the seat modules? 
+
+6. What is the best place to check the seat switch operation request signal? 
+
+7. What is the problem with the seat? _ 
+
+
+50 
+
+E60 General Vehicle Electrical Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

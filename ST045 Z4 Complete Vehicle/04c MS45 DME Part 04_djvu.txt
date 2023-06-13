@@ -1,0 +1,622 @@
+Table of Contents 
+
+
+MS45 - E85 with M54 Engine 
+
+Subject Page 
+
+
+Performance Controls. 84 
+
+Tools and Equipment.91 
+
+Review Questions. 92 
+
+
+
+
+
+
+Performance Controls 
+
+
+
+
+
+
+
+- £ 
+
+Jf swimn 
+
+curmiiwncii 
+
+Mu-fa .*■ 
+
+IKJPT !WIITTt» . mum aici Hgraai.M 
+
+
+f?i(* 
+
+PEHKHHUUHSE 
+
+1 ir-iiL 
+
+■ v . -H", 
+
+TOPHOH j-rr 
+
+
+
+
+
+MPUL 
+
+4 Vj--' IW«luSjI 
+
+A™ 
+
+
+cue menu* 
+
+—T . _ d|| 
+
+
+
+
+fiuy J itijii KK'n ~tr ^ 
+
+
+
+Dynamic Driving Control (if equipped) 
+
+
+The MS45 ECM contains two different throttle 
+progression functions (Sport and Normal). The 
+Dynamic Driving Control function is selected by 
+pressing the “Sport” button located in the cen¬ 
+ter console (1). 
+
+The switch provides a ground signal (input) to 
+the ECM when pressed. The MS45 activates 
+the sport characteristics for the Electronic 
+throttle control (EDK). This provides an increase 
+in throttle opening and response time over the 
+non-sport position. 
+
+
+
+kt-10288 
+
+
+When this function is activated, the function 
+indicator light in the Sport button is illuminated 
+by the Electric Power Steering (EPS) Control 
+Module. When the ignition is cycled, this func¬ 
+tion resets back to the non-sport function (it 
+must be re-selected by the driver). 
+
+The ECM additionally provides the request for 
+the Dynamic Driving Control function over the 
+PT CAN bus to the following control modules: 
+
+
+
+kt-10057 
+
+
+If equipped: 
+
+• Electronic Power Steering (EPS) • Automatic transmission (EGS) 
+
+• Instrument cluster (Kombi) • SMG 6-speed sequential manual gearbox 
+
+
+Note: Refer to the respective sections for the function influence on these systems. 
+
+
+84 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+Cruise Control 
+
+
+Cruise control functions are activated directly from the stalk 
+(lever) to the ECM. The individual positions (requests) are dig¬ 
+itally encoded and are input to the ECM over a serial data wire. 
+The cruise control operational requirements are BMW “typi¬ 
+cal”. The E85 does not have a “system on" indicator light. 
+
+Cruise Control is integrated into the ECM because of the EDK 
+operation. 
+
+
+
+• The ECM controls vehicle speed by activation of the Electronic Throttle Valve (EDK). 
+
+• The clutch switch disengages cruise control to prevent over-rev during gear changes. 
+
+• The brake light switch and the brake light test switch are input to the ECM to disengage cruise control as well as 
+fault recognition during engine operation of the EDK. 
+
+
+Road speed is input to the ECM for cruise control as well as DSC regulation. The road 
+speed signal for cruise control is supplied by the DSC Control module. 
+
+
+Electric Fan 
+
+The electric cooling fan is controlled by the ECM for engine cooling system and air condi¬ 
+tioning system requirements. The ECM uses a remote power output final stage (mounted 
+on the fan housing). The electric fan is controlled by a pulse width modulated signal from 
+the ECM. 
+
+The fan (and speed) is activated by the ECM based on: 
+
+
+• Coolant outlet temperature 
+
+• Catalyst temperature (calculated by the ECM) 
+
+• Vehicle speed 
+
+• Battery voltage 
+
+• Air Conditioning refrigerant pressure (calculated by IHKA and sent via the PT CAN bus to the ECM) 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+ECM Integrated Temperature Sensor 
+
+
+The E Box fan is controlled by the MS45 ECM. The control module 
+contains an integral NTC temperature sensor for the purpose of mon¬ 
+itoring the E box temperature and activating the fan. 
+
+When the internal temperature exceeds 65° C, the ECM provides a 
+switched ground for the E Box fan to cool the E box control modules. 
+
+
+Alternator Interface 
+
+The alternator communicates data with the ECM via the BSD line (bit-serial data interface 
+- single wire). This is necessary to allow the ECM to adapt its calculations and specific con¬ 
+trol data to the alternator output. In addition, the ECM controls the following functions: 
+
+• Activation/deactivation of the alternator. 
+
+• Informimg the voltage regulator of the nominal voltage value to be set. 
+
+• Controlling the alternator’s load response. 
+
+• Diagnosing the BSD line. 
+
+• Storing alternator fault codes. 
+
+• Activating the charging indicator light in the instrument cluster. 
+
+The charging indicator light operation has not changed from present vehicles. 
+
+EWS III (3.3) 
+
+The electronic driveaway protection system (EWS III) remains unchanged from the current 
+E46 BMW models. 
+
+PT CAN Bus Communication 
+
+The ECM provides signals to other “driveline” related modules for torque control, shift qual¬ 
+ity, diagnosis, safety enhancements, etc. This is covered in the appropriate sections. 
+
+
+
+86 
+
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dual VANOS Control 
+
+
+Performance, torque, idle characteristics and exhaust emissions reduction are improved by 
+Variable Camshaft Timing (VANOS). The VANOS unit is mounted directly on the front of the 
+cylinder head and adjusts the Intake and Exhaust camshaft timing from retarded to 
+advanced. The ECM controls the operation of the VANOS solenoid which regulates the oil 
+pressure required to move the control piston. Engine RPM, load and temperature are used 
+to determine VANOS activation. 
+
+VANOS mechanical operation is dependent on engine oil pressure applied to position the 
+control pistons. When oil pressure is applied to the control pistons (regulated by the sole¬ 
+noids), the pistons move causing the splined adjustment shafts to move. The straight 
+splines slide within the camshaft sleeves. The helical splines rotate the camshaft drive 
+sprockets changing the position in relation to the camshaft position which advances/ 
+retards the intake/exhaust camshaft timing. 
+
+
+
+td 
+
+
+
+135500066 
+
+
+The operation of the VANOS solenoid is monitored in accordance with the OBD II require¬ 
+ments for emission control. The ECM monitors the final stage output control and the signal 
+from the Camshaft Position Sensors for VANOS operation. 
+
+
+87 
+
+
+MS45 Performance Controls 
+
+
+
+
+Dual VANOS consists of the following parts: 
+
+
+• Intake and exhaust camshafts with helical gear insert 
+
+
+• Sprockets with adjustable gears 
+
+
+• VANOS actuators for each camshaft 
+
+
+• 2 three-way solenoid switching valves 
+
+
+• 2 impulse wheels for detecting camshaft position 
+
+
+• 2 camshaft position sensors (Hall effect) 
+
+
+
+When the engine is started, the camshafts are in the “failsafe” position (deactivated). The 
+intake camshaft is in the RETARDED position - held by oil pressure from the sprung open 
+solenoid. The exhaust camshaft is in the ADVANCED position - held by a preload spring in 
+the actuator and oil pressure from the sprung open solenoid. 
+
+After 50 RPM (2-5 seconds) from engine start, the ECM is monitoring the exact camshaft 
+position. The ECM positions the camshafts based on engine RPM and the throttle position 
+signal. From that point the camshaft timing will be varied based on intake air and coolant 
+temperatures. 
+
+88 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The dual VANOS system is “fully variable”. When the ECM detects the camshafts are in the 
+optimum positions, the solenoids are modulated (approximately 100-220 Hz) maintaining 
+oil pressure on both sides of the actuators to hold the camshaft timing. 
+
+CAUTION: The VANOS MUST be removed and installed exactly as described in the Repair 
+Instructions! 
+
+
+NOTE: If the VANOS camshaft system goes to the failsafe mode (deactivated) there will be 
+a noticeable loss of power. 
+
+DEACTIVATED 
+
+
+EXHAUST: Advanced -piston moved in 
+
+
+INTAKE: Retard - piston moved out 
+
+
+
+ACTIVATED 
+
+
+EXHAUST: Advanced - piston moved 
+out 
+
+
+INTAKE: Retard - piston moved in 
+
+
+
+89 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ECM Programming - FLASH Control Modules 
+
+
+The MS45 ECM is a programmable “FLASH” Control Module. The ECM contains a sol¬ 
+dered in FLASH EPROM which can be programmed/updated up to 13 times. The EPROM 
+has basic information always present in it referred to as “resident data”. This resident data 
+gives the EPROM its identification and contains instructions for the programming of the 
+operational maps. When you program, you are inputting operational maps to the ECM such 
+as injection timing and ignition timing, etc. 
+
+Always refer to the latest programming IDC Bulletin for a complete list of FLASH program¬ 
+mable control modules and the latest program highlights. An unprogrammed control mod¬ 
+ule will not allow the engine to start. DME (ECM) FLASH programming is performed with 
+the DISplus/GTI using the latest software. 
+
+Using the “automatic” determination process (preferred method), the GT1 compares the 
+part numbers stored in the FLASH EPROM of the currently installed ECM with a list of pos¬ 
+sible replacement part numbers stored in the DISPIus or GT1 memory. The comparison is 
+done to: 
+
+
+• Display the part number for the replacement programmable control module for that vehicle. 
+
+• Determine if the GT1 can “ recommend” a replacement part number(s) from the list of part numbers stored in 
+memory. 
+
+• Identify a proper replacement program or control module 
+
+
+90 
+
+
+MS45 Performance Controls 
+
+
+
+Tools and Equipment 
+
+
+The DISplus/Gtl as well as a reputable hand 
+held multimeter can be used when testing 
+inputs/components. 
+
+It is best to make the checks at the ECM con¬ 
+nection, this method includes testing the wiring 
+harness. 
+
+The correct Universal Adapter for the MS45 
+application should be used (#90 88 6 121 300). 
+This will ensure the pin connectors and the har¬ 
+ness will not be damaged. 
+
+When installing the Universal Adapter to the 
+ECM (located below the windshield on the pas¬ 
+senger side of the engine compartment), make 
+sure the ignition is switched off. 
+
+NOTE for MS45: Allow at least 3 minutes to 
+elapse after the key was set to the “OFF’ posi¬ 
+tion before disconnecting the ECM/ TOM. 
+
+This will allow sufficient time to complete the DM 
+TL test. Voltage may be present (up to 3 min¬ 
+utes) causing damage to the ECM/TCM if they 
+are disconnected during this time period (arc¬ 
+ing). 
+
+
+
+DISplus 
+
+
+
+GT-1 
+
+16550019 
+
+
+SKE BREAKOUT BOX SET 
+
+
+
+26 
+PIN 
+BOX 
+88 88 6 611 459 
+
+
+m ii in n 
+
+BDBHB 
+
+
+134 PIN 
+SKE 
+
+
+
+26 mTH 
+
+PIN Bit 
+BOX 
+
+88 88 6 611 459 
+
+16550020 
+
+
+VANOS 
+
+The electrical/hydraulic function can be checked 
+“statically” by using the adapter tools and shop 
+supplied regulated compressed air. 
+
+Special Tool # 90 88 6 113 450 adapts regulat¬ 
+ed compressed air to substitute for engine oil 
+pressure required to move the VANOS piston. 
+Special Tool # 90 88 6 126 410 allows battery 
+voltage and ground to activate the solenoid. 
+
+
+
+
+
+135500076 
+
+
+91 
+
+
+MS45 Performance Controls 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+
+1. Describe the Power Supply for the MS45 Fuel Injectors and Ignition Coils: 
+
+
+2. Name the Components of the MS45 Fuel Supply System that are “integral” in the fuel 
+tank: 
+
+
+3. List the inputs required for Fuel Injector operation: 
+
+
+4. Describe the Emission Optimized Function: 
+
+
+5. Name two types of Emissions the ECM controls:._ 
+
+6. What two sensors are used to monitor MS45 accelerator movement? 
+
+7. Why are there two inputs from the Accelerator Module?._ 
+
+
+8. Where is the DM TL located on an E85?__ 
+
+9. Why does the MS45 have multiple ignition pulses? 
+
+10. Flow is the ignition system monitored?_ 
+
+
+92 
+
+
+MS45 Performance Controls 
+
+
+

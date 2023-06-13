@@ -1,0 +1,5380 @@
+Table of Contents 
+
+
+Fuel Management 
+
+Subject Page 
+
+Fuel Management .5 
+
+Principle of Operation.5 
+
+Fuel Requirement Mappings.10 
+
+Speed of the Electric Fuel Pump .11 
+
+Coding and Programming.11 
+
+Fuel Injection Control Monitoring .11 
+
+Fuel Supply .12 
+
+N55 Engine .14 
+
+Fuel supply system .14 
+
+Fuel quantity control .14 
+
+N63 Engine .14 
+
+Fuel Supply System .14 
+
+N63 System Overview .16 
+
+Fuel Tank Breather System And Functions.20 
+
+Non-return Flap .22 
+
+Filler Breather Valve.22 
+
+Pressure Limiting Valve.23 
+
+Fuel Tank Breather System.24 
+
+Direct Injection.25 
+
+Direct Injection Principles .26 
+
+Mixture Formation .27 
+
+Homogeneous Mixture Formation .27 
+
+Stratified Mixture Formation.27 
+
+High Precision Injection (HPI).29 
+
+N54 - High Precision Injection .30 
+
+N63 - High Precision Injection.32 
+
+N74 - High Precision Injection.33 
+
+High Pressure Fuel Injection (HDE).34 
+
+N55 - HDE.34 
+
+High Fuel Pressure Pump.35 
+
+High Pressure Pump Function and Design .37 
+
+N54/N55.37 
+
+N63/N74.38 
+
+Pressure Generation in High-pressure Pump .40 
+
+Hydraulic Circuit Diagram of Fuel System.41 
+
+
+Initial Print Date: 03/11 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Fuel Injectors/Fuel Rail.44 
+
+Piezo Fuel Injectors (HPI) .44 
+
+Injector Design and Function.46 
+
+Injection Strategy.48 
+
+Catalytic Converter Heating Mode.49 
+
+Piezo Element.50 
+
+Injector Adjustment.50 
+
+Injector Control and Adaptation.51 
+
+Injector Adaptation.51 
+
+Optimization .52 
+
+Solenoid Type Fuel Injectors N55 (HDE) .53 
+
+Service Information.55 
+
+HPI/HDE System Service .55 
+
+Fuel System Safety.55 
+
+Fuel Injectors - N55.56 
+
+High Pressure Fuel Injector Valve (HDE) .57 
+
+N55, Actuation Phases of the HDEV5.2 .58 
+
+Fuel Supply and Control Schematic Overview on BN2020 .59 
+
+Workshop Hints.60 
+
+Fuel.60 
+
+Draining the Fuel Tank .61 
+
+Fuel Pump/Pressure Regulator - Testing .61 
+
+Fuel volume must be tested to verify: .62 
+
+Fuel Injectors.62 
+
+Crankshaft Position/RPM Sensor.65 
+
+Crankshaft Sensor (N55) .65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Fuel Management 
+
+
+Model: All 
+Production: All 
+
+IBItBmiE 
+
+After completion of this module you will be able to: 
+
+• Understand and perform a low pressure fuel system test 
+
+• Understand all inputs used in determining the proper fuel injector operation 
+
+• Perform a scope test of fuel injectors 
+
+• Understand how a BMW high pressure fuel system operates 
+
+
+4 
+
+Fuel Management 
+
+
+Fuel Management 
+
+
+Example of IPO for a Fuel Management System 
+
+
+
+Principle of Operation 
+
+One of the main purposes of the ECM is Fuel Management which includes the actua¬ 
+tion of several components. In the following pages you will find a generic explanation on 
+how this system works. For more detailed information please access BMW Training 
+Reference Manuals found online. 
+
+Fuel Management delivers fuel from the tank to the intake ports of the engine. 
+
+To accomplish this, fuel supply must be available to the fuel injectors. Once this is 
+accomplished, the fuel must be injected in the precise amount and at the correct time. 
+The ECM does not directly monitor fuel supply, although it does control fuel supply. 
+
+The Fuel Pump supplies fuel when it receives operating voltage from the Engine 
+Control Module Relay supplying the Fuel Pump Relay. The ECM controls and 
+monitors fuel injection. 
+
+The Fuel Pump will be activated when the ignition (KL_15) is switched “on” and the 
+ECM supplies a ground circuit to activate the Fuel Pump Relay. The Fuel Pump Relay 
+supplies operating power to the in-tank mounted fuel pump. This is a momentary acti¬ 
+vation to “pressurize” (prime) the fuel system. 
+
+The ECM then requires an engine speed signal from the Crankshaft Position/RPM 
+Sensor to maintain continuous Fuel Pump Relay activation. 
+
+If the engine RPM signal is not present, the ECM will deactivate the Fuel Pump Relay. 
+
+The Fuel Injectors will be opened by the ECM to inject pressurized fuel into the 
+engine. The Fuel Injectors receive voltage from the Engine Control Module Relay. The 
+ECM controls the opening by activating the ground circuits. The ECM will vary the dura¬ 
+tion (in milli-seconds) of “opening” time to regulate the air/fuel ratio. 
+
+
+5 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM has the Final Stage output transis¬ 
+tors that switch ground to the injectors. The 
+Injector “triggering” is first established from 
+the Crankshaft Position/RPM Sensor. 
+
+The ECM is programmed to activate the Final 
+Stage output transistors once for every two 
+revolutions of the crankshaft, in two groups 
+(Semi-Sequential Injection). 
+
+The injectors are opened in two groups for 
+every complete “working cycle” of the engine. 
+This delivers the fuel charge for cylinders 1,5,3 
+during one revolution of the crankshaft and 
+cylinders 6,2,4 during the second revolution of 
+the crankshaft. This process enhances fuel 
+atomization during start up. 
+
+
+
+During start up, the ECM recognizes the 
+Camshaft Position (Cylinder ID) input. The 
+camshaft position is referenced to the crank¬ 
+shaft position. It then switches the injection to 
+Full Sequential. This process “times” the 
+injection closer to the intake valve opening for 
+increased efficiency. 
+
+When activated, each injector delivers the full 
+fuel charge at separate times during each 
+engine working cycle. 
+
+
+
+= FUEL INJECTED I I = INTAKE VALVE(S) OPEN 
+
+
+
+If this input is faulty, the ECM 
+will activate the injectors in 
+Parallel to maintain engine 
+operation and set a fault code. 
+
+
+Dyl. 1 
+Dyl.5 
+Dyl.3 
+Dyl.e 
+3yl.2 
+
+
+;yl. 4 ^ 
+
+
+□ 
+
+
+0° 180° 
+
+I = FUEL INJECTED L 
+
+
+360° 540° 720° 
+
+^ = INTAKE VALVE(S) OPEN 
+
+
+6 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+After the engine has been started, the ECM determines the Injector “open” time to 
+maintain engine operation. The ECM will calculate the injection “timing” based on a 
+combination of the following inputs. 
+
+
+• Battery Voltage 
+
+• Throttle Position 
+
+• Air Flow Volume/Mass 
+
+• Air Temperature 
+
+• Crankshaft Position/RPM 
+
+• Camshaft Position (Cylinder ID) 
+
+• Engine Coolant 
+
+• Oxygen Sensor 
+
+Additionally in turbocharged 
+engines the ECM also employs: 
+
+• Boost Pressure Sensor. 
+
+• Charge Air Pressure and 
+Temperature Sensor (Before 
+EDK). 
+
+• Intake Manifold Pressure 
+Sensor (After EDK). 
+
+
+
+The injection millisecond (ms) value will be regulated based on battery voltage. When 
+cranking, the voltage is low and the ECM will increase the ms value to compensate for 
+injector “lag time”. When the engine is running and the battery voltage is higher, the 
+ECM will decrease the injection ms value due to faster injector reaction time. 
+
+Cold starting requires additional fuel to compensate for poor mixture and the loss of fuel 
+as it condenses onto cold intake ports, valves and cylinder walls . The cold start fuel 
+quantity is determined by the ECM based on the Engine Coolant Temperature Sensor 
+input during start up. 
+
+During cranking, additional fuel is injected (in Semi-Sequential) for the first few crank¬ 
+shaft revolutions. After the first few crankshaft revolutions, the injected quantity is 
+metered down as the engine comes up to speed. When the engine speed approaches 
+idle rpm, the ECM recognizes the Camshaft Position and switches to Full Sequential 
+injection. 
+
+When the engine is cold, optimum fuel metering is not possible due to poor air/fuel mix¬ 
+ing and an enriched mixture is required. The Coolant Temperature input allows the ECM 
+to adjust the injection “ms” value to compensate during warm up and minimize the 
+injected fuel at engine operating temperature. 
+
+
+7 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the engine is at idle, minimum injection is required. Additional fuel will be added if 
+the ECM observes low engine rpm and increasing throttle/air volume inputs (acceleration 
+enrichment). As the throttle is opened, the ECM monitors acceleration and rate of move¬ 
+ment. The ECM will increase the volume of injected fuel into the engine by increasing 
+the injection “ms” value. The “full throttle” position indicates maximum acceleration and 
+the ECM will add more fuel (full load enrichment). 
+
+As the throttle is closed, the ECM decreases the injection “ms” value (fuel shut off) if the 
+rpm is above idle speed (coasting). This feature decreases fuel consumption and lowers 
+emissions. When the engine rpm approaches idle speed, the injection “ms” value is 
+increased (cut-in) to prevent the engine from stalling. The cut-in rpm is dependent upon 
+the engine temperature and the rate of deceleration. 
+
+The Hot-Film Air Mass (HEM) signal provides the measured amount of intake air vol¬ 
+ume/mass. This input is used by the ECM to determine the amount of fuel to be injected 
+to “balance” the air/fuel ratio. 
+
+
+The Air Temperature Signal allows the ECM to make an additional calculation of air den¬ 
+sity. The varying voltage input from the NTC sensor indicates the larger proportion of 
+oxygen found in cold air, as compared to less oxygen found in warmer air. The ECM will 
+adjust the amount of injected fuel because the quality of combustion depends on oxygen 
+sensing ratio. 
+
+
+The Crankshaft Position/RPM signals the ECM to start injection as well as providing 
+information about the engine operation. This input is used in combination with other 
+inputs to determine engine load which increases/decreases the injection “ms” value. 
+Without this input the ECM will not activate the injectors. 
+
+
+The Camshaft Position (Cylinder ID) affects the 
+injection timing (Semi-Sequential/Full 
+Sequential). To accomplish this, the ECM con¬ 
+tains six Final Stage output transistors that acti¬ 
+vate the injectors individually. The engine oper¬ 
+ates sufficiently on Semi-Sequential Injection 
+(two groups of three), but more efficiently on 
+Full Sequential Injection (six individual). If one of 
+the fuel injector circuits faulted, the engine can 
+still operate on limited power from the other 
+remaining fuel injector circuits. 
+
+
+
+
+M 
+
+/ ENGINE SPEED 
+
+^ SIGNAL 
+
+_ 
+
+
+# 
+
+CLOSED 
+
+
+
+^ POSITION 
+
+i - 
+
+
+
+
+
+
+
+
+
+
+INJ 
+# 1 
+
+
+INJ 
+
+#2 
+
+
+INJ 
+
+#3 
+
+
+INJ 
+
+#4 
+
+
+INJ 
+
+#5 
+
+
+INJ 
+
+#6 
+
+
+8 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM will selectively deactivate injectors to 
+control maximum engine rpm (regardless of 
+vehicle speed). When the engine speed reach¬ 
+es its “redline”, the injectors will be individually 
+deactivated as required to protect the engine 
+from over-rev. As the engine speed drops 
+below “redline”, injector activation will be 
+resumed. This feature does not protect the 
+engine from a forced over-rev situation such as 
+improperly downshifting a manual transmission 
+equipped vehicle (driver error). 
+
+The ECM will also protect the Catalytic 
+Converter by deactivating the injectors. 
+
+If the ECM detects a “misfire” (ignition, injection 
+or combustion) it can selectively deactivate the 
+Final Stage output transistor for that cylinder(s). 
+
+The injector(s) will not open, preventing 
+unburned fuel from entering the exhaust sys¬ 
+tem. 
+
+The ECM controls the individual injector circuits 
+resulting in deactivation of one or multiples. 
+
+This will limit engine power, but protect the 
+Catalytic Converter. 
+
+
+
+INJ 
+# 1 
+
+
+INJ 
+
+#2 
+
+
+INJ 
+
+#3 
+
+
+INJ 
+
+#4 
+
+
+INJ 
+
+#5 
+
+
+INJ 
+
+#6 
+
+
+
+
+Maximum vehicle speed is also limited by the ECM selectively 
+deactivating the injectors (regardless of engine rpm). 
+
+
+This limitation is based on the vehicle dimensions, specifications 
+and installed tires (speed rating). 
+
+
+9 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM (DME) is connected to the EKP module via the PT-CAN network via a pulse 
+width modulated (PWM) signal according to the fuel quantity required by the ECM. The 
+electric fuel pump in the EKP system is activated as required. The DME calculates the 
+amount of fuel required at the given point in time. The total volume required is transmit¬ 
+ted as a message to the EKP control unit via PT-CAN. 
+
+The EKP control unit controls the electric fuel pump on the basis of mappings so that 
+the electric fuel pump delivers the exact amount of fuel required. 
+
+The EKP control unit converts this message into an output voltage. This output voltage 
+is then used to control the speed of the electric fuel pump. This achieves a delivery 
+which corresponds with the requirements. 
+
+The illustrations shown below are from an E90 and an F10. The EKP module on the E90 
+contains one of the terminating resistors for the PT-CAN. 
+
+F10 Fuel Requirement Signal Path 
+
+
+
+K-CAN 
+
+
+PT-CAN2 
+
+
+Ethernet 
+
+
+
+
+
+
+
+
+
+K-CAN2 
+
+
+FI ex Ray 
+
+
+MOST 
+
+
+
+PT-CAN 
+
+
+D-CAN 
+
+
+S-CAN 
+
+• ••• « 
+
+[1]3 
+
+
+Fuel Requirement Mappings 
+
+Fuel requirement mappings are stored in the EKP control unit. The fuel requirement 
+mappings are encoded for each specific engine and model. The EKP control unit uses 
+the mappings as the basis on which to calculate the total amount of fuel to be delivered 
+from the following variable: 
+
+• Amount of fuel required by the engine (request from the ECM). This results in a 
+pulse-width modulated output voltage from the EKP control unit. The output volt¬ 
+age of the EKP control unit is the supply voltage for the electric fuel pump. The 
+EKP control unit controls the speed of the electric fuel pump via the supply voltage. 
+The EKP control unit controls the speed by comparing the actual speed with the 
+specification. 
+
+
+10 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Speed of the Electric Fuel Pump 
+
+The EKP control unit sends the current supply to the fuel pump (pulse-width modulat¬ 
+ed). This voltage is absorbed as a specific ripple due to the individual armature windings 
+of the rotating electric motor. The ripple corresponds with the number of segments in 
+the commutator which corresponds with the number of armature windings in the electric 
+motor. 
+
+The number of waves produced per revolution is equal to the number of existing com¬ 
+mutator segments. 
+
+This means that the EKP control unit can employ a patented procedure - "Ripple 
+Counter" as the basis for calculating the actual speed of the fuel pump using power 
+consumption ripple. 
+
+Coding and Programming 
+
+The data for the electronically controlled fuel pump system is encoded as follows: 
+
+• In the ECM (DME), the engine and model-related characteristic curves for fuel 
+delivery according to requirements. 
+
+• In the EKP control unit: specific characteristic curves for the relevant fuel system 
+
+
+
+Failsafe Operation 
+
+If the fuel quantity requirement from the ECM and/or the EKP rotation 
+speed signal fails, the fuel pump will continue to operate with the 
+greatest delivery rate (100%) when terminal KL_15 is activated. This 
+guarantees fuel supply even if the control signals fail. 
+
+
+Fuel Injection Control Monitoring 
+
+Fuel Injection Control Monitoring is performed 
+by the ECM for OBD II requirements. Faults 
+with the fuel injectors and/or control circuits 
+will be stored in memory. This monitoring 
+includes: 
+
+• Closed Loop Operation 
+
+• Oxygen Sensor Feedback 
+
+
+When the criteria for OBD II monitoring is ach¬ 
+ieved, the “Malfunction Indicator Light” will be 
+illuminated. 
+
+
+
+These additional corrections are factored into 
+the calculated injection time. If the correction 
+factor exceeds set limits a fault will be stored in 
+memory. 
+
+
+11 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+Fuel Supply 
+
+The fuel is delivered from the fuel tank to the engine in the following sequence: 
+
+• From the right half of the fuel tank; 
+
+• through the initial filler valve (11); 
+
+• into the fuel baffle (12); 
+
+• from the electric fuel pump (1); 
+
+• via a T-piece, on the one side, through the check valve (3) into the fuel filter (4); 
+
+• through the feed line (5) in the left-hand service opening to the engine; 
+
+• and, on the other side, via the check valve (8) to the left-hand suction jet pump (9) 
+back into the fuel baffle; 
+
+• parallel from the electric fuel pump to the right-hand suction jet pump (10); 
+
+• and from the right half of the fuel tank into the fuel baffle. 
+
+The fuel filter (4) and pressure regulator (7) are located at the left-hand service opening. 
+The check valve (8) opens at a fuel pressure above 2.5 bar. It ensures the engine 
+receives sufficient fuel before the left suction jet pump cuts into the circuit. 
+
+As an example, on the N52 engine the pressure regulator (7) routes the fuel back into 
+the fuel baffle (12). A 5 bar pressure regulator is used for vehicles with the N52 engine. 
+
+
+12 
+
+Fuel Management 
+
+
+
+
+Fuel supply system on E9x 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric Fuel Pump 
+
+13 
+
+Fuel Level Sensor 
+
+2 
+
+Feed Line 
+
+14 
+
+Refuelling Line Connection Piece 
+
+3 
+
+Check Valve 
+
+15 
+
+Refuelling Ventilation Line 
+
+4 
+
+Fuel Filter 
+
+16 
+
+Refuelling Ventilation 
+
+5 
+
+Feed Line to Engine 
+
+17 
+
+Left Operation Ventilation Valve 
+
+6 
+
+Fuel Injector 
+
+18 
+
+Right Operation Ventilation Valve 
+
+7 
+
+Pressure Regulator 
+
+19 
+
+Operation Ventilation Line 
+
+8 
+
+Check Valve 
+
+20 
+
+Diagnosis Module for Tank Leakage (DM-TL) 
+
+9 
+
+Left Suction Jet Pump 
+
+21 
+
+Atmosphere Line 
+
+10 
+
+Right Suction Jet Pump 
+
+22 
+
+Carbon Canister 
+
+11 
+
+Initial Filling Valve 
+
+23 
+
+Fuel Tank Vent Valve 
+
+12 
+
+Fuel Baffle 
+
+24 
+
+Digital Motor Electronics 
+
+
+13 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N55 Engine 
+
+■ Fuel supply system 
+
+The fuel pressure sensor sends a voltage signal, corresponding to the system pressure 
+applied between the fuel pump and the high pressure pump, to the engine control unit 
+(DME/ECM). The system pressure (fuel pressure) is determined with the fuel 
+pressure sensor upstream of the high pressure pump. The target pressure is constantly 
+compared to the actual pressure in the DME. 
+
+If the target pressure deviates from the actual pressure, the engine control unit increases 
+or decreases the voltage for the electric fuel pump. This voltage is sent in the form of a 
+message via the PT-CAN to the EKP control unit. 
+
+The electric fuel pump (EKP) control unit converts the message into an output voltage 
+for the electric fuel pump, thus regulating the required delivery pressure for the engine 
+(or high pressure pump). The electric fuel pump is pilot-controlled in the event of signal 
+failure (fuel pressure sensor). Should the CAN bus fail the EKP control unit operates the 
+electric fuel pump with the applied system voltage. The fuel flows via the high pressure 
+line to the fuel rail. The fuel is buffered in the fuel rail and distributed to the fuel injectors. 
+
+■ Fuel quantity control 
+
+The rail pressure sensor measures the current fuel pressure in the rail. The excess fuel is 
+returned to the inlet of the high pressure pump when the quantity control valve in the 
+high pressure pump opens. Vehicle operation is restricted in the event of the high pres¬ 
+sure pump failing. 
+
+The quantity control valve controls the fuel pressure in the rail. The engine management 
+actuates the quantity control valve with a pulse width-modulated signal. Depending on 
+the pulse width, a variable throttle cross section is released, thus providing the quantity 
+of fuel required for the current load status of the engine. It is also possible to reduce the 
+pressure in the rail. 
+
+N63 Engine 
+
+The fuel system on the F01/02 has gone under some design changes as compared to 
+previous models. The familiar fuel tank with divided chambers is still in use. The familiar 
+configuration which features the fuel pump on the right (passenger) side is also retained. 
+
+■ Fuel Supply System 
+
+In order to comply with the regulations regarding evaporative 
+
+emissions, there have been several changes to internal fuel tank components as well as 
+the fuel tank itself. 
+
+
+14 
+
+Fuel Management 
+
+
+
+The fuel supply system has also been modified to eliminate the fuel pressure regulator. 
+The following text summarizes the 
+changes to the fuel supply system: 
+
+• the fuel supply system is now “pressure controlled”. 
+
+• the fuel pressure regulator has been replaced by the 
+“pressure limiting valve” (8). 
+
+• the pressure in the fuel supply system is limited to a maximum of 5.8 bar by 
+the pressure limiting valve (8). 
+
+• the EKPS will control the fuel pump in order to deliver only the amount of fuel 
+required based on information from the fuel pressure sensor (low pressure). 
+
+Due to the nature of the installation space in the vehicle, the fuel tank is divided into two 
+chambers. The fuel supply system has two delivery units that are accommodated in the 
+right and left fuel tank halves. 
+
+In the event of the surge chamber being completely empty, initial fill valve (1) enables 
+fuel to enter the surge chamber during the refueling process. 
+
+Fuel supply system on F01/F02 with N63 engine 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Initial fill valve 
+
+7 
+
+Anti-leak valve 
+
+2 
+
+Intake mesh filter 
+
+8 
+
+Pressure limiting valve 
+
+3 
+
+Fuel pump 
+
+9 
+
+Feed line 
+
+4 
+
+Fuel filter 
+
+10 
+
+Suction jet pump 
+
+5 
+
+Non-return valve 
+
+11 
+
+Suction jet pump 
+
+6 
+
+Suction jet pump 
+
+
+
+
+15 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N63 System Overview 
+
+Fuel passes through suction strainer (2) and enters fuel pump (3) and is then pumped to 
+feed line (9) through fuel filter (4). The fuel pump resides in the surge chamber. 
+
+A pressure limiting valve (8) is integrated into the feed line in the fuel tank. 
+
+Fuel tank on F01 with N63 engine 
+
+
+
+For the first time for a gasoline engine, we are no longer using a pressure regulator. 
+Instead, operation of the electric fuel pump is pressure-regulated. In response to the 
+signal from the low-pressure fuel sensor, the speed of the electric fuel pump is adjusted 
+to achieve the desired delivery pressure upstream of the high-pressure pump. 
+
+A further line branches off downstream of the fuel pump into the left half of the fuel tank 
+and carries fuel from the left half into the surge chamber by way of a non-return valve (5) 
+and suction jet pump (6). 
+
+
+16 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Fuel cap 
+
+P 
+
+Purge air line 
+
+B 
+
+Pressure relief valve 
+
+Q 
+
+Fuel trap 
+
+C 
+
+Non-return flap with pressure relief valve 
+
+R 
+
+Roll-over valve 
+
+D 
+
+Surge chamber 
+
+1 
+
+Initial fill valve 
+
+E 
+
+Fuel tank 
+
+2 
+
+Intake mesh filter 
+
+F 
+
+Service cover 
+
+3 
+
+Electric fuel pump 
+
+G 
+
+Lever-type sensor 
+
+4 
+
+Fuel filter 
+
+H 
+
+Service breather valve with over fueling protec¬ 
+tion 
+
+5 
+
+Non-return valve 
+
+1 
+
+Filler breather valve 
+
+6 
+
+Suction jet pump 
+
+J 
+
+Service breather valve without over fueling pro¬ 
+tection 
+
+7 
+
+Anti-leak valve 
+
+K 
+
+Maximum fill level 
+
+8 
+
+Pressure limiting valve 
+
+L 
+
+Non-return valve 
+
+9 
+
+Feed line 
+
+M 
+
+Carbon canister (AKF) 
+
+10 
+
+Suction Jet pump 
+
+N 
+
+Opening 
+
+11 
+
+Suction Jet pump 
+
+0 
+
+Fuel tank vent valve (TEV) 
+
+
+
+
+The non-return valve (5) prevents fuel from flowing back from the right half to the left half 
+of the fuel tank while the engine is switched off. 
+
+When you switch off the engine, the feed line is depressurized but cannot run dry 
+because, with the system being airtight, no air is able to enter the line. Anti-leak valve (7) 
+prevents the fuel tank from leaking in the event of damage to the lines on the engine or 
+underbody. 
+
+A further line en route to the left half of the fuel tank branches off to another suction jet 
+pump (11), which sucks fuel out of the fuel trap and delivers it to the surge chamber. 
+
+Another line exits the pump carrying fuel pumped from the fuel tank to the surge 
+chamber by suction jet pump (10). 
+
+
+17 
+
+Fuel Management 
+
+
+
+
+
+
+Fuel tank overview on F01 with N63 engine 
+
+
+
+18 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Fuel cap 
+
+P 
+
+Purge air line 
+
+B 
+
+Pressure relief valve 
+
+Q 
+
+Fuel trap 
+
+C 
+
+Non-return flap with pressure relief valve 
+
+R 
+
+Roll-over valve 
+
+D 
+
+Surge chamber 
+
+1 
+
+Initial fill valve 
+
+E 
+
+Fuel tank 
+
+2 
+
+Intake mesh filter 
+
+F 
+
+Service cover 
+
+3 
+
+Electric fuel pump 
+
+G 
+
+Lever-type sensor 
+
+4 
+
+Fuel filter 
+
+H 
+
+Service breather valve with over fueling protec¬ 
+tion 
+
+5 
+
+Non-return valve 
+
+1 
+
+Filler breather valve 
+
+6 
+
+Suction jet pump 
+
+J 
+
+Service breather valve without over fueling pro¬ 
+tection 
+
+7 
+
+Anti-leak valve 
+
+K 
+
+Maximum fill level 
+
+8 
+
+Pressure limiting valve 
+
+L 
+
+Non-return valve 
+
+9 
+
+Feed line 
+
+M 
+
+Carbon canister (AKF) 
+
+10 
+
+Suction Jet pump 
+
+N 
+
+Opening 
+
+11 
+
+Suction Jet pump 
+
+0 
+
+Fuel tank vent valve (TEV) 
+
+
+
+
+19 
+
+Fuel Management 
+
+
+
+
+
+
+Fuel Tank Breather System And Functions 
+
+Fuel tank breather system on F01/F02 with petrol engine 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Fuel cap 
+
+J 
+
+Service breather valve without 
+over fueling protection 
+
+B 
+
+Pressure relief valve 
+
+K 
+
+Maximum fill level 
+
+C 
+
+Non-return flap with pressure relief valve 
+
+L 
+
+Non-return valve 
+
+D 
+
+Surge chamber 
+
+M 
+
+Carbon canister (AKF) 
+
+E 
+
+Fuel tank 
+
+N 
+
+Opening 
+
+F 
+
+Service cover 
+
+0 
+
+Fuel tank vent valve (TEV) 
+
+G 
+
+Lever-type sensor 
+
+P 
+
+Purge air line 
+
+H 
+
+Service breather valve with 
+over fueling protection 
+
+Q 
+
+Fuel trap 
+
+I 
+
+Filler breather valve 
+
+R 
+
+Roll-over valve 
+
+
+20 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel filler cap (A) has an integral pressure relief valve (B) to the protect fuel tank (E) from 
+excess pressure. At the end of the fuel filler neck, there is a non-return flap with a pres¬ 
+sure relief valve (C). The non-return flap prevents fuel from sloshing back into the fuel 
+filler neck. The non-return flap is sealed closed by a spring. In the event of a build-up of 
+pressure in the fuel tank, the pressure relief valve in the non-return flap ensures that the 
+excess pressure can escape through the fuel filler pipe and out of the fuel filler cap 
+through the pressure relief valve. 
+
+The components in the fuel tank are accessible through the service cover (F). The fuel 
+level is detected by the two lever-type sensors (G). 
+
+The surge chamber (D) ensures that the fuel pump never pumps dry. The surge 
+chamber is permanently connected to the fuel tank and cannot be replaced separately. 
+
+The F01/F02 has a whole range of breather valves in the fuel tank. In principle, all of 
+these valves fulfil the breather function, both during vehicle operation and during 
+refueling. 
+
+Despite this, they are named to reflect their main purpose. They are therefore divided 
+into filler valves and service breather valves. The service breather valves have a smaller 
+opening, which means that, during refueling, they alone would not be able to let air 
+escape from the fuel tank fast enough. There are service breather valves with and with¬ 
+out over fueling protection. 
+
+The service breather valves are arranged in such a way that air can still be released even 
+if the vehicle is parked up on one side. 
+
+The filler breather valve is located at a high position. If the fuel level rises to this height 
+during refueling, the valve closes. Air can no longer escape from the fuel tank fast 
+enough, which causes fuel to rise up the filler pipe and switch off the fuel nozzle. 
+
+To enable the release of air to continue, there is a service breather valve located at the 
+highest point. However, the presence of the valve in this location means that the fuel 
+tank could be overfilled in the event of persistent refueling. Consequently, fuel would 
+enter the activated charcoal filter and ultimately flow back out of the opening. To pre¬ 
+vent this, the highest service breather valve is equipped with over fueling protection like 
+the one on the left-hand side of the vehicle (as a safeguard if the vehicle were parked up 
+on one side). 
+
+Fuel that is carried along with the release of air is collected in a fuel trap and pumped 
+back into the surge chamber. 
+
+
+21 
+
+Fuel Management 
+
+
+
+Non-return Flap 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Pressure relief valve open 
+
+B 
+
+Pressure relief valve closed 
+
+1 
+
+Pressure relief valve 
+
+2 
+
+Non-return flap 
+
+3 
+
+Fuel filler pipe 
+
+
+The non-return flap forms a tight seal. A force of approximately 0.15 N is required to 
+open the non-return flap. This force is slightly exceeded during any type of refueling. 
+
+The non-return flap on the F01 is equipped with a pressure relief valve. The purpose of 
+this pressure relief valve is to prevent excessive pressures from building up in the fuel 
+tank. If the pressure in the fuel tank rises to over 150 mbar, the pressure relief valve 
+opens and the pressure is able to escape through the fuel filler pipe and the breather 
+line/pressure relief valve in the fuel cap. 
+
+The pressure relief valve in the non-return flap on the F01 is a new concept because the 
+breather line is not protected by the body along its entire length. In the event of an acci¬ 
+dent, therefore, the breather line could be squeezed closed. 
+
+Filler Breather Valve 
+
+The filler breather valve has several functions. As the name suggests, the valve fulfils the 
+filler-neck breather function. In addition, however, it also performs the service breather 
+function It also has a rollover function. 
+
+The filler breather valve is notable for its large opening, which allows air to escape rapidly 
+from the tank during refueling. If, during refueling, the float of the filler breather valve 
+ascends with the rising fuel level and thereby closes the breather hole, fuel will rise up 
+the fuel filler pipe and switch off the fuel nozzle. 
+
+During vehicle operation, the pressure in the fuel system can rise as a result of the 
+increase in temperature. This pressure is allowed to escape through the filler and service 
+breather valve and the fuel trap. Fuel that is carried along in the process is collected in 
+the fuel trap and sucked back while the fuel pump is in operation. 
+
+
+22 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+■ Pressure Limiting Valve 
+
+The pressure limiting valve is connected to ground by the plug-in contacts on the ser¬ 
+vice cover. This prevents electrostatic charge on the valve. 
+
+The pressure limiting valve keeps fuel pressures in the feed section lower than approxi¬ 
+mately 5.8 bar in the N63 engines 
+
+This prevents excess pressures from building up in the feed line. Excess pressures 
+would otherwise occur if the fuel filter were to become blocked, which would place 
+the feed section of the fuel system under unnecessarily heavy loads. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Connection from 
+electric fuel pump 
+
+4 
+
+Housing 
+
+2 
+
+Anti-leak valve 
+
+5 
+
+Pressure limiting valve 
+
+3 
+
+Connection to fuel filter 
+
+
+
+
+
+23 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Tank Breather System 
+
+The increased demands on the evaporative emission systems require continuous devel¬ 
+opment and improvements. The F01/F02 is no different. One of the first things to 
+notice on the fuel tank is that there is only one service port. Also, the tank is made 
+from two pieces and joined by a plastic “welding” process. 
+
+The only items which are serviceable at this time are the fuel pump, fuel filter and pres¬ 
+sure limiting valve. There are several breather valves installed to help the fuel tank 
+“breathe” during 
+refueling and during operation. 
+
+These valves are therefore divided into filler valves and service breather valves. 
+
+The service breather valves have a smaller opening, which means that, during refueling, 
+they alone would not be able to let air escape from the fuel tank fast enough. 
+
+There are service breather valves with and without over fueling protection. The service 
+breather valves are arranged in such a way that air can still be released even if the vehi¬ 
+cle is parked up on one side. 
+
+The filler breather valve is located at a high position. If the fuel level rises to this height 
+during refueling, the valve closes. Air can no longer escape from the fuel tank fast 
+enough, which causes fuel to rise up the filler pipe and switch off the fuel nozzle. 
+
+To enable the release of air to continue, there is a service breather valve located at the 
+highest point. However, the presence of the valve in this location means that the fuel 
+tank could be overfilled in the event of persistent refueling. 
+
+Consequently, fuel would enter the activated charcoal filter and ultimately flow back out 
+of the opening. To prevent this, the highest service breather valve is equipped with over 
+fueling protection like the one on the left-hand side of the vehicle (as a safeguard if the 
+vehicle were parked up on one side). Fuel that is carried along with the release of air is 
+collected in a fuel trap and pumped back into the surge chamber. 
+
+
+24 
+
+Fuel Management 
+
+
+
+Direct Injection 
+
+
+The term “Direct Injection” refers to a fuel injection system which injects fuel directly 
+into the combustion chamber rather than into the intake manifold. This technology has 
+been around since the 1930’s, but has not been in widespread use until the late 20th 
+century. 
+
+
+The early development of this type of injection system took place in Germany in 1937 
+on an aircraft engine. The first passenger car to run on direct engine was a car called 
+the “Gutbrod” in the early 1950’s. 
+
+
+
+Due to the complexity and cost of the direct injection system, the technology did not 
+take hold. Later, the development of more cost efficient components and the need for 
+a more efficient internal combustion engine, the Dl engine made a comeback in the late 
+1990’s. 
+
+
+The first application of this technology on a BMW was in 2003 on the 760Li (N73 
+Engine). The N73 V-12 engine utilized direct injection with the combination of VAL- 
+VETRONIG and the latest direct injection technology. 
+
+For the 2007 model year, BMW introduced a new 6-cylinder engine with direct fuel 
+injection. The N54, which is turbocharged, uses the second generation of direct injec¬ 
+tion (Dl 2), which is referred to as High Precision Injection (HPI). 
+
+Since then BMW introduced the N55, N63, S63 and N74, all of which incorporate 
+Direct Injection Systems with either Piezo Injectors (HPI; N54, N63, S63, N74) or 
+Solenoid type Injectors (HDEV; N55). 
+
+
+25 
+
+Fuel Management 
+
+
+
+
+
+Direct Injection Principles 
+
+As the name suggest, the direct injection (Dl) system use a fuel injector which sprays 
+fuel directly into the combustion chamber. The fuel injection pressure (N73). The A/F 
+mixture in a Dl engine is formed inside of the combustion chamber. 
+
+In comparison, a manifold injection system sprays fuel into the intake manifold or into the 
+intake port near the intake valve. In this case, the A/F mixture is formed outside of the 
+combustion chamber. The injection pressure on most manifold injection systems is 
+between 3 and 5 bar. 
+
+
+
+The Dl system allows for increased engine efficiency and has several distinct advantages 
+over manifold injection systems: 
+
+
+• The fuel is evaporated and atomized in the combustion chamber, which provides a 
+“cooling effect” on combustion. A cooler combustion chamber allows an increase 
+in air density, which allows for more available oxygen. In addition, cooler combus¬ 
+tion allows for an increase in compression ratio which equates to improved efficien¬ 
+cy and engine power. 
+
+• By injecting the fuel directly into the combustion chamber, there is less possibility 
+for fuel to condense or accumulate on the manifold walls or the back of the intake 
+valve. This results in less fuel needed to achieve the desired A/F ratio. 
+
+• The increased injection pressure causes the fuel droplet size to be reduced. This 
+allows for improved atomization and therefore improved mixture formation. 
+
+
+26 
+
+Fuel Management 
+
+
+
+
+Mixture Formation 
+
+In a conventional (manifold injection) engine, the air fuel mixture is formed outside of the 
+combustion chamber. In contrast, the mixture must be formed inside the combustion 
+chamber in a Dl engine. 
+
+A Dl fuel system has two basic operating concepts: 
+
+■ Homogeneous Mixture Formation 
+
+A homogeneous mixture means that the A/F ratio is stoichiometrically controlled much in 
+the same way as a manifold injection system. This means that the A/F mixture is evenly 
+spread throughout the combustion chamber. One of the primary advantages of this 
+arrangement is that a conventional three-way catalytic converter can be used. Also, the 
+sulfur content of the fuel is not a factor which allows the engine to be used in all global 
+markets. 
+
+/|\ Currently, BMW only uses engines which operate in this mode. 
+t I y The N52, N54, N55, N63 and N74, all operate mostly at Lambda = 1. 
+
+
+H Stratified Mixture Formation 
+
+In the stratified injection method, a homogeneous mixture is only created around the 
+area of the spark plug. A lean (inhomogeneous) mixture exists in the rest on the com¬ 
+bustion chamber. Therefore the overall A/F mixture in the combustion chamber is lean 
+(Lambda > 1). This results in increased combustion chamber temperature, and subse¬ 
+quently increased NOx emissions. The increased NOx requires the use of a DeNOx cat¬ 
+alyst which is not effective when sulfur is present in the fuel. Therefore, sulfur free fuel 
+must be used which is not readily available in all markets. 
+
+
+For the time being, BMW does not have any engines which operate as “stratified 
+charge” engines. 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Manifold injection 
+
+2 
+
+Homogeneous direct injection 
+
+3 
+
+Stratified direct injection 
+
+
+27 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ndi^ 
+
+
+
+-► 
+
+n 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lean, charge stratification 
+
+2 
+
+Lean, homogeneous 
+
+3 
+
+Homogeneous 
+
+Nd 
+
+Engine torque 
+
+n 
+
+Engine speed 
+
+
+As the above chart shows, the use of load stratification (1) is only possible in a limited 
+load and speed range. Over and above this load and speed range, the engines can only 
+be operated in homogeneous mode (2-3). 
+
+Through the deployment of VALVETRONIC, the N73 engine in the middle torque/speed 
+range (1) demonstrates the same consumption advantages as engines of other manu¬ 
+facturers with charge stratification. 
+
+Because large-capacity engines are mainly operated in the lower to middle load and 
+speed range, it is only advisable to use load stratification in these engines. 
+
+Smaller-sized engines are mainly operated in the high load and speed range and thus in 
+homogeneous mode. 
+
+
+
+In the US market, BMW only uses engines that operate in 
+“Homogeneous Mixture Formation”. 
+
+
+28 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Precision Injection (HPI) 
+
+BMW High Precision Injection (HPI) is the latest development of BMW direct fuel injec¬ 
+tion. This is the second generation of direct injection (Dl 2) for BMW. The first genera¬ 
+tion was on the N73 engine in 2003. 
+
+The term “High Precision” refers to the precise metering and directional control of the 
+atomized fuel. Also, the injection process now allows for multiple injection events due to 
+the use of piezo injectors. The HPI system represents a key function in the concept for 
+the most economical use of fuel without compromising performance. 
+
+
+
+Engine 
+
+Compression 
+Ratio [e] 
+
+N52'' 
+
+10.7 
+
+N542 
+
+10.2 
+
+N552 
+
+10.2 
+
+N62'' 
+
+10.5 
+
+N632 
+
+10.0 
+
+NZSl 
+
+11.5 
+
+N742 
+
+10.0 
+
+1 = NA Engine 
+
+2 = Turbocharged Engine 
+
+
+High Precision Injection allows for a more precise metering of the fuel injection process 
+and therefore permits higher compression ratios e.g. 10.2 to 1 in the N54 and N55 (see 
+table). One of the key reasons that makes this possible is the use of the so called “spray 
+guided” injection which cools the air charge and decreases the possibility of unwanted 
+engine knock. 
+
+The operating pressure of the HPI system varies from 50-200 bar. 
+
+
+
+The N52KP and N51 engines continue to use the 
+conventional “manifold injection” system from 
+the N52. 
+
+
+29 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High-precision injection represents the key function in the concept for as economic a 
+use of fuel as possible. The new generation of petrol direct injection satisfies the 
+expectations placed on it with regard to economic efficiency without compromising on 
+the engine's dynamic qualities. 
+
+High-precision injection provides for a more precise metering of mixture and higher 
+compression - ideal preconditions for increasing efficiency and significantly reducing 
+consumption. 
+
+This is made possible by locating the piezo injector (or solenoid type in the N55) central¬ 
+ly between the valves. In this position, the new injector, which opens in an outward direc¬ 
+tion (inward in the N55), distributes a particularly uniform amount of tapered shaped fuel 
+into the combustion chamber. 
+
+BMW HPI spark ignition engines operate according to the spray-directed process. 
+
+
+N54 - High Precision Injection 
+
+Using the N54 engine as an example, the fuel is delivered from the fuel tank by the elec¬ 
+tric fuel pump via the feed line (5) at a “feed” pressure of 5 bar to the high pressure 
+pump. The feed pressure is monitored by the low-pressure sensor (6). The fuel is deliv¬ 
+ered by the electric fuel pump in line with demand. 
+
+The high pressure pump is driven “in-tandem” with the vacuum pump which is driven by 
+the oil pump chain drive assembly. 
+
+The fuel is compressed in the permanently driven three-plunger high-pressure pump (8) 
+and delivery through the high-pressure line (9) to the rail (3). The fuel accumulated 
+under pressure in the rail in this way is distributed via the high-pressure lines (1) to the 
+piezo injectors (2). 
+
+
+
+If the low fuel pressure sensor fails, the electric fuel pump continues 
+to run at 100% delivery with terminal KL_15 ON. 
+
+
+30 
+
+Fuel Management 
+
+
+
+The required fuel delivery pressure is determined by the engine-management system as 
+a function of engine load and engine speed among other variables. The reached pres¬ 
+sure level is recorded by the high-pressure sensor (4) and communicated to the Engine 
+Control Unit. 
+
+Control is effected by the fuel-supply control valve (7) by way of a setpoint/actual-value 
+adjustment of the rail pressure. Configuration of the pressure is geared towards best 
+possible consumption and smooth running of the engine. 
+
+N54 HPI System 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+High-pressure line to injector (6) 
+
+6 
+
+Low-pressure sensor 
+
+2 
+
+Piezo injector 
+
+7 
+
+Fuel supply control valve 
+
+3 
+
+Fuel rail 
+
+8 
+
+Three plunger high pressure pump 
+
+4 
+
+High pressure sensor 
+
+9 
+
+High pressure line (pump to rail) 
+
+5 
+
+Feed line from in-tank pump 
+
+
+
+
+
+200 bar is required only at high load and low engine speed. 
+
+
+31 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N63 - High Precision Injection 
+
+The operation on the N63 engine is similar to that of the N54. 
+
+N63 HPI System 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+High pressure pump (2 x) 
+
+6 
+
+Low pressure sensor 
+
+2 
+
+Volume control valve 
+
+7 
+
+High pressure fuel line 
+
+3 
+
+Piezo-injector 
+
+8 
+
+Fuel rail 
+
+4 
+
+Low-pressure feed from fuel pump 
+
+9 
+
+High pressure fuel line (pump to rail) 
+
+5 
+
+Low pressure feed line 
+
+10 
+
+Rail pressure sensor (2 x) 
+
+
+^ If the low fuel pressure sensor fails, the electric fuel pump continues 
+/ 1\ to run at 100% delivery with terminal KL_1 SON. 
+
+
+200 bar is required only at high load and low engine speed. 
+
+
+32 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N74 - High Precision Injection 
+
+The N74 engine is also equipped with HPI. This second generation direct fuel injection 
+operates in homogeneous operation at all times and has the same structure as on the 
+N63 engine. 
+
+
+N74 HPI System 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Quantity control valve 
+
+6 
+
+High pressure line (rail - injector) 
+
+2 
+
+High pressure pump 
+
+7 
+
+Fuel feed from the electric fuel pump 
+
+3 
+
+High pressure line (pump - rail) 
+
+8 
+
+Fuel pressure sensor 
+
+4 
+
+Rail pressure sensor 
+
+9 
+
+Feed line 
+
+5 
+
+Rail 
+
+10 
+
+Piezo injector 
+
+
+If the low fuel pressure sensor fails, the electric fuel pump continues 
+100% delivery with terminal KL_15 ON. 
+
+200 bar is required only at high load and low engine speed. 
+
+
+33 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Pressure Fuel Injection (HDE) 
+
+
+N55 - HDE 
+
+The high pressure fuel injection system (HDE) is used on the N55 engine. In contrast 
+to high precision injection (HPI), HDE uses solenoid fuel injectors with multi¬ 
+hole nozzles. 
+
+The following overview shows the complete fuel injection system. The system is similar 
+to the N54 fuel injection. Although the same high pressure pump, pressure sensor, and 
+fuel rail are used, the high pressure fuel injection valves are new. The HDE system uses 
+Bosch high pressure solenoid type fuel injection valves with the designation HDEV5.2. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+High pressure line 
+
+2 
+
+Rail 
+
+3 
+
+High pressure line 
+
+4 
+
+Fuel rail pressure sensor 
+
+5 
+
+Solenoid valve fuel injector 
+
+
+34 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Fuel Pressure Pump 
+
+
+The fuel is supplied at a primary pressure of 5 bar by the electric fuel pump from the 
+fuel tank via the supply line to the high pressure pump. The primary pressure is moni¬ 
+tored by the fuel pressure sensor (5). The fuel is delivered by the electric fuel pump cor¬ 
+responding to engine requirements. The same fuel pressure sensor is used in the 
+N54, N55, N63 and N74. 
+
+
+N55 High Fuel Pressure Pump 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Non-return valve for brake booster 
+
+6 
+
+Fuel supply line 
+
+2 
+
+Non-return valve for auxiliary consumers 
+
+7 
+
+Oil pressure sensor 
+
+3 
+
+Knock sensor 
+
+8 
+
+Quantity control valve 
+
+4 
+
+Connection, high pressure line to fuel rail 
+
+9 
+
+High pressure pump 
+
+5 
+
+Fuel pressure sensor 
+
+10 
+
+Vacuum pump 
+
+
+35 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The fuel is pressurized in the permanently driven three-piston high pressure pump and 
+delivered to the fuel rail via the high pressure line. The fuel stored under pressure in the 
+fuel rail is distributed via the high pressure lines to the high pressure fuel injection valves. 
+The required fuel pressure is determined by the engine management as a function of the 
+engine load and engine speed. The pressure level is registered by the rail pressure 
+sensor and sent to the engine control unit. The fuel is regulated by the quantity control 
+valve based on a target/actual value comparison of the rail pressure. The pressure level is 
+configured such to achieve the smoothest running properties with the best possible fuel 
+consumption. 
+
+
+High Fuel Pressure diagram 
+
+
+
+As you can see on the diagram, a pressure of 200 bar is only required 
+at high load and low engine speed. 
+
+
+The high pressure pump is of the same design in the N54 and N55 
+engines. 
+
+
+36 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+High Pressure Pump Function and Design 
+■ N54/N55 
+
+In the N54/N55 the fuel is delivered via the supply passage (6) at the admission pressure 
+generated by the electric fuel pump to the high-pressure pump. From there, the fuel is 
+directed via the fuel supply control valve (4) and the low-pressure non-return valve (2) 
+into the fuel chamber (14) of the plunger-and-barrel assembly. The fuel is placed under 
+pressure in this plunger-and-barrel assembly and delivered via the high pressure non¬ 
+return valve (9) to the high pressure port (7). 
+
+N54/N55 High Pressure Fuel Pump 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Thermal compensator 
+
+8 
+
+Supply passage, pressure limiting valve 
+
+2 
+
+Low pressure non-return valve (check valve) 
+
+9 
+
+High pressure non-return valve (x 3) 
+
+3 
+
+Connection to engine management 
+
+10 
+
+Pendulum disc 
+
+4 
+
+Fuel supply control valve 
+
+11 
+
+Drive flange, high pressure pump 
+
+5 
+
+Return, pressure limiting valve 
+
+12 
+
+Plunger (x 3) 
+
+6 
+
+Supply from electric fuel pump (In-tank) 
+
+13 
+
+Oil filling, high pressure pump 
+
+7 
+
+High pressure port to fuel rail 
+
+14 
+
+Fuel chamber (x 3) 
+
+
+37 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The high-pressure pump is connected with the vacuum pump via the drive flange (11) 
+and is thus also driven by the chain drive, i.e. as soon as the engine is running, the three 
+plungers (12) are permanently set into up-and-down motion via the pendulum disc (10). 
+
+Fuel therefore continues to be pressurized for as long as new fuel is supplied to the 
+high-pressure pump via the fuel-supply control valve (4). The fuel-supply control valve is 
+activated by means of the engine management connection (3) and thereby admits the 
+quantity of fuel required. 
+
+Pressure control is effected via the fuel-supply control valve by opening and closing of 
+the fuel supply channel. The maximum pressure in the high-pressure area is lim¬ 
+ited to 245 bar. If excessive pressure is encountered, the high-pressure circuit is 
+relieved by a 
+
+pressure-limiting valve via the ports (8 and 5) leading to the low-pressure area. 
+
+This is possible without any problems because of the incompressibility of the fuel, i.e. the 
+fuel does not change in volume in response to a change in pressure. The pressure peak 
+created is compensated for by the liquid volume in the low-pressure area. 
+
+Volume changes caused by temperature changes are compensated for by the thermal 
+compensator (1), which is connected with the pump oil filling. 
+
+■ N63/N74 
+
+The fuel is delivered via the supply passage at the admission pressure generated by the 
+electric fuel pump to the high pressure pump. 
+
+From there, the fuel is directed via the volume control valve and the low pressure non¬ 
+return valve into the fuel chamber of the plunger and-barrel assembly. 
+
+The high pressure pump on the N74 is in principle, the same as the one used on the 
+N63 engine. The only difference is that the fuel lines are positioned at a different angle. 
+
+
+N63 
+
+
+
+38 
+
+Fuel Management 
+
+
+The fuel is delivered to the high-pressure pump via the inlet with delivery pressure gen¬ 
+erated by the electric fuel pump. The fuel is then fed via the volume control valve and 
+into the compression chamber of the pump element. In this pump element, the fuel is 
+placed pressurized by a plunger and supplied via the high-pressure non-return valve to 
+the high-pressure connection. 
+
+The high-pressure pump is bolted onto the cylinder head and is driven by the camshaft 
+by a triple cam. This means that, as soon as the engine is running, the triple cam contin¬ 
+uously moves the plunger. Fuel is pressurized until new fuel is delivered via the volume 
+control valve into the high-pressure pump. The volume control valve is activated by the 
+engine management system; it specifies the delivered volume of fuel. Pressure regula¬ 
+tion takes place via the volume control valve in that it is opened or closed by the pump 
+element towards the fuel feed. When the quantity control valve is opened, most of the 
+fuel drawn in by the piston is pressed back into the fuel feed. 
+
+N63/N74 High Pressure Fuel Pump 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Low pressure connection 
+
+3 
+
+Pressure relief valve 
+
+B 
+
+High pressure connection 
+
+4 
+
+Piston 
+
+1 
+
+Equaiization chamber 
+
+5 
+
+Volume control valve 
+
+2 
+
+High pressure non-return valve 
+
+6 
+
+Electrical connection for the 
+volume control valve 
+
+
+39 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The maximum pressure in the high-pressure area is restricted to 245 bar. If the maxi¬ 
+mum high pressure is reached, the high-pressure circuit is relaxed to the low-pressure 
+area by a pressure limiting valve. In this case the pressure peak in the low pressure area 
+is compensated for by the fluid volume in the area and pressure damper in the compen¬ 
+sating chamber. The compensating chamber is integrated into the inlet towards the high 
+pressure pump. 
+
+This set-up ensures that pressure peaks are lowered by connecting and disconnecting 
+the high and low-pressure areas. When the piston generates pressure, fuel flows 
+between the piston and its guide. This is deliberate, as it lubricates the pair of sliding ele¬ 
+ments. On downward movement of the pressure piston, a high pressure would arise at 
+its rear side. This would lead to danger if the fuel is pressed through the sealing of the 
+piston from the pump into the oil circuit of the engine. 
+
+The connection to the compensating chamber means that there is never a higher pres¬ 
+sure behind the piston than in the fuel feed. This prevents pressure fluctuations from 
+being transferred into the low pressure fuel system, as the volume changes in front of 
+and behind the piston are balanced. 
+
+■ Pressure Generation in High-pressure Pump 
+
+The plunger (2) driven by the pendulum disc presses 
+oil (red) into the metal diaphragm (1) on its upward 
+travel. The change in volume of the metal diaphragm 
+thereby reduces the available space in the fuel 
+chamber. The fuel thereby placed under pressure 
+(blue) is forced into the rail. 
+
+Depending on the activation signal, a restrictor cross- 
+section of varying size is opened and the fuel-mass 
+flow required for the respective load point is set. 
+
+There is also the possibility of reducing the pressure 
+in the rail. 
+
+^ The fuel supply control valve controls 
+/|\ the fuel pressure in the rail. It is acti- 
+(-.• -)) vated by the engine management sys¬ 
+tem via a pulsewidth modulated 
+(PWM) signal. 
+
+
+
+Index 
+
+Explanation 
+
+Red 
+
+Oil filling 
+
+Blue 
+
+Fuel 
+
+1 
+
+Metal diaphragm 
+
+2 
+
+Plunger 
+
+
+40 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hydraulic Circuit Diagram of Fuel System 
+
+The volume control valve controls the fuel pressure in the rail. It is activated by the 
+engine management system via a pulse-width modulated (PWM) signal. 
+
+Depending on the activation signal, a restrictor cross-section of varying size is opened 
+and the fuel-mass flow required for the respective load point is set. 
+
+The pressure relief valve additionally provides the option of reducing the pressure in the 
+fuel rail by directing the fuel out of the high pressure system back into the pump ele¬ 
+ment. 
+
+
+N54/N55 Fuel System, Hydraulic Circuit Diagram 
+
+1 , 
+
+
+MSDSQ 
+
+
+i 1 
+
+; I 
+
+! I 
+
+
+vW 
+
+••[T] 
+
+_ 
+
+H 
+
+
+
+
+
+
+
+
+6 . 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Engine control module (MSD80) 
+
+6 
+
+High-pressure pump 
+
+2 
+
+Fuel rail 
+
+7 
+
+Fuel supply control valve 
+
+3 
+
+High pressure sensor 
+
+8 
+
+High pressure pump with non-return valves 
+
+4 
+
+Piezo injectors 
+
+9 
+
+Pressure liming valve with bypass 
+
+5 
+
+Electric fuel pump 
+
+
+
+
+
+41 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N63 Fuel System, Hydraulic Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric fuel pump 
+
+7 
+
+High pressure non-return valve 
+
+2 
+
+Low pressure sensor 
+
+8 
+
+Pressure relief valve 
+
+3 
+
+Engine control module 
+
+9 
+
+Rail 
+
+4 
+
+High pressure pump 
+
+10 
+
+Rail pressure sensor 
+
+5 
+
+Volume control valve 
+
+11 
+
+Piezo-injectors 
+
+6 
+
+High pressure pump element 
+
+
+
+
+42 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N74 Fuel System, Hydraulic Circuit Diagram 
+
+
+@[ 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric fuel pump 
+
+7 
+
+High pressure non-return valve 
+
+2 
+
+Fuel pressure sensor 
+
+8 
+
+Pressure limiting valve 
+
+3 
+
+Engine control unit 
+
+9 
+
+Compensating chamber 
+
+4 
+
+High pressure pump 
+
+10 
+
+Rail 
+
+5 
+
+Quantity control valve 
+
+11 
+
+Rail pressure sensor 
+
+6 
+
+High pressure pump 
+element (piston) 
+
+12 
+
+Piezo injectors 
+
+
+43 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Injectors/Fuel Rail 
+
+The type of fuel injector depends on the engine design. BMW for the most part utilizes 
+two different configurations: 
+
+• Injectors mounted into the cylinder head spraying fuel into the intake port and; 
+
+• Injectors mounted into the cylinder head spaying fuel directly into the combustion 
+chamber, also known as Direct Injection. 
+
+Furthermore, BMW uses two different types of injectors: 
+
+• Solenoid Injector (in low and high pressure systems) 
+
+• Piezo Injector (only used in high pressure systems) 
+
+Piezo Fuel Injectors (HPI) 
+
+It is the outward-opening piezo-injector that renders possible spray-directed direct 
+injection and thus the overall innovations of BMW engines i.e. N54, N63 & N74. Due to 
+the fact that only this component ensures that the injected fuel spray cone remains sta¬ 
+ble, even under the prevailing influences of pressure and temperature in the combustion 
+chamber. 
+
+This piezo-injector permits injection pressures of up to 200 bar and extremely quick 
+opening of the nozzle needle. In this way, it is possible to inject fuel into the combustion 
+chamber under conditions released from the power cycles limited by the valve opening 
+times. 
+
+Piezo Fuel Injecto (HPI) 
+
+
+
+The piezo-injector is integrated together with the spark plug centrally between the inlet 
+and exhaust valves in the cylinder head. This installation position prevents the cylinder 
+walls or the piston crown from being wetted with injected fuel. A uniform formation of 
+the homogeneous air/fuel mixture is obtained with the aid of the gas movement in the 
+combustion chamber and a stable fuel spray cone. 
+
+
+44 
+
+Fuel Management 
+
+
+
+The gas movement is influenced on the one hand by the geometty of the intake 
+passages and on the other by the shape of the piston crown. The injected fuel is swirled 
+in the combustion chamber with the boost air until a homogeneous mixture is available 
+throughout the compression space at the point of ignition. 
+
+
+
+When working on HPI/HDE Fuel Systems it is important to ensure that 
+the ignition coils are not fouled by fuel. The resistance of the silicone 
+material is significantly reduced by heavy fuel contact. This can 
+cause sparkover at the spark-plug head and with it misfires. 
+
+
+• Before making modifications to the fuel system, remove the 
+ignition coils without fail and protect the spark-plug slot 
+against the ingress of fuel with a cloth. 
+
+
+• Before refitting the piezo-injector, remove the ignition 
+coils and ensure conditions of absolute cleanliness. 
+
+• Ignition coils heavily fouled by fuel must be replaced. 
+
+
+45 
+
+Fuel Management 
+
+
+
+■ Injector Design and Function 
+
+The piezo-injector essentially consists of three sub-assemblies. The expansion of the 
+energized piezo-element lifts the nozzle needle outwards from its valve seat. To be able 
+to counter the different operating temperatures with comparable valve lifts, the injector 
+has a thermal compensating element. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Outward opening nozzle needle 
+
+3 
+
+Thermal compensator 
+
+2 
+
+Piezo-element 
+
+
+
+
+The nozzle needle is pressed outwards 
+from its tapered valve seat. This opens up 
+an annular orifice. The pressurized fuel 
+flows through this annular orifice and forms 
+a hollow cone, the spray angle of which is 
+not dependent on the backpressure in the 
+combustion chamber. 
+
+
+
+Do not attempt to clean the 
+injectors in any way. This 
+may result in damage which 
+can effect the spray pattern. 
+
+
+Outward opening injector nozzle needle 
+
+
+
+Any divergence in the spray 
+pattern can cause damage to 
+the spark plug or the engine 
+itself. 
+
+
+46 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+The spray cone (1) of a piezo-injector can diverge during operation (2). Due to the for¬ 
+mation of soot inside the engine, such divergence is perfectly normal and acceptable to 
+a certain extent. If, however, spray divergence reaches the stage where it begins to 
+spray the spark plug wet, the spark plug may incur damage. 
+
+e. 
+
+/ 
+
+■v 
+
+▼ 
+
+> 
+
+> 
+
+P 
+
+r 
+» 
+
+
+3 - -^- 1 
+
+2 - 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Ideal “spray” cone 
+
+3 
+
+Non-permitted divergence of spray cone 
+
+2 
+
+Permitted divergence of spray cone 
+
+
+
+
+
+L Replace the Teflon sealing ring when fitting and removing the piezo¬ 
+injector. This also applies when an injector that has Just been fitted 
+has to be removed again after an engine start. 
+
+A piezo-injector provided with a new Teflon sealing ring should be fit¬ 
+ted as quickly as possible because the Teflon sealing ring could swell 
+up. Please observe the repair instructions and follow without fail. 
+
+When fitting, make sure that the piezo injector is correctly seated. 
+
+The hold-down element for securing the piezo-injectors must rest on 
+both injector tabs, otherwise the necessary force is not applied to the 
+piezo-injector. Do not clean the nozzle-needle tip of the piezo-injec- 
+tor. 
+
+
+47 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+■ Injection Strategy 
+
+Injection of the fuel mass required for the operating situation can take place in up to 
+three individual injections. Which option is used in the relevant operating situation is 
+dependent on engine load and speed. Here, the actual time resulting from the engine 
+speed available for metering the fuel is an important framework quantity. 
+
+A special situation during the operation of any engine is the range in which a high load 
+occurs at low engine speed, so-called "Low End Torque" operation. In this operating 
+situation, the required fuel mass is metered to the engine in three individual injections. 
+
+This results in a highly effective mixture formation which in the final analysis has the 
+effect of both increasing power output and saving fuel. 
+
+
+N54 Injection Strategy 
+
+Md 
+
+
+
+[1/min] 
+
+
+N63 Injection Strategy 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+n 
+
+Engine speed 
+
+2 
+
+Two-time injection 
+
+m 
+
+Torque 
+
+3 
+
+Three-time injection 
+
+1 
+
+One-time injection 
+
+
+
+
+48 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+■ Catalytic Converter Heating Mode 
+
+In order to bring the catalytic converters up to operating temperature as quickly as 
+possible, BMW engines enter a catalyst-heating mode when the engine performs a cold 
+start. In this mode, combustion heat is intentionally introduced into the exhaust train and 
+not used first and foremost to develop power output. 
+
+The point of ignition is moved to 30° (crankshaft degrees) after TDC. The main quantity 
+of the required fuel is injected before TDC and mixed with boost air. The piston is 
+situated after TDC in its downward travel such that the air/fuel mixture is already expand¬ 
+ing again, which reduces the ignitability of the mixture. 
+
+In order to ignite the mixture reliably, a small residual quantity of fuel is injected 25° after 
+TDC and this guarantees an ignitable mixture at the spark plug. This small fuel quantity 
+therefore provides for ignition of the residual charge in the combustion chamber. 
+
+This operating mode is set by the engine-management system after a 
+/f \ maximum period of 60 seconds from engine starting but is terminated 
+^ if the catalytic-converter response temperature is reached earlier. 
+
+
+49 
+
+Fuel Management 
+
+
+
+■ Piezo Element 
+
+The movement of the nozzle needle in the injector is generated no longer by a solenoid 
+coil but rather by a piezo-element. 
+
+A piezo-element is an electromechanical converter, i.e. it consists of a ceramic material 
+which converts electrical energy directly into mechanical energy (force/travel). A familiar 
+application is the piezo cigarette lighter - when a piezo-crystal is pressed, voltage is 
+generated until a spark flashes over and the gas ignites. 
+
+In the case of the piezo-actuator, voltage is generated so that the crystal expands. In 
+order to achieve greater travel, it is possible to design a piezo-element in several layers. 
+
+The actuator module consists of layers of the piezo-ceramic material connected 
+mechanically in series and electrically in parallel. The deflection of a piezo-crystal is 
+dependent on the applied voltage up to a maximum deflection; the higher the voltage, 
+the greater the travel. 
+
+
+
+1 2 3 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Piezo crystal - not energized 
+
+3 
+
+Piezo eiement in iayers (stacked) 
+
+2 
+
+Piezo crystai - energized 
+
+
+
+
+■ Injector Adjustment 
+
+When the injectors are manufactured, a multitude of measurement data is recorded at 
+specific points in the factory. In this way, the tolerance ranges for injector-quantity 
+adjustment are determined and specified in a six-digit number combination. 
+
+Information on the lift performance of the injector is also added for injector voltage 
+adjustment. Injector adjustment is required because of the individual voltage demand of 
+each piezo actuator. An allocation is made to a voltage demand category, which is 
+included in the number combination on the injector. 
+
+These data items are transmitted to the ECM. During engine operation, these values are 
+used to compensate for deviations in the metering and switching performance. 
+
+
+
+When replacing an injector, it is absolutely essentially to carry out an 
+injector adjustment. 
+
+
+50 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+■ Injector Control and Adaptation 
+
+The fuel mass required for the operating situation is injected by the piezo-injector into 
+the combustion chamber. This mass can be influenced by three correcting variables: 
+
+• Rail pressure 
+
+• Injector opening time 
+
+• Injector opening lift 
+
+The injector opening time and the injector opening lift are activated directly at the piezo 
+injector. The opening time is controlled via the “ti” signal and the opening lift via the 
+energy quantity in the activation of the piezo-injector. 
+
+■ Injector Adaptation 
+
+The fuel masses and injection cycles determined from the load/speed map are included 
+in a pilot-control program map. Here, while further framework parameters are taken into 
+consideration, the energy quantities and injector opening times required to activate the 
+injectors are determined. BMW engines can be safely and reliably operated with these 
+program-map values. 
+
+
+51 
+
+Fuel Management 
+
+
+
+
+■ Optimization 
+
+For optimization of: 
+
+• Emission values; 
+
+• Smooth running; 
+
+• Fuel consumption; 
+
+• Power output; 
+
+the controlled variables of energy quantities and injector opening times are continuously 
+monitored. This occurs on a bank-selective basis by way of lambda closed-loop control. 
+
+The residual oxygen in the exhaust gas is measured in each case for cylinder bank 1 and 
+cylinder bank 2. This measurement result is compared with the values expected from 
+the set correcting variables. The result of a deviation is that the injector opening signal is 
+adapted. This adaptation is stored in the control unit and is therefore available for 
+subsequent engine operation. 
+
+However, these stored values are lost when the system is flashed and must be 
+relearned. A further adaptation of the injector activation takes place depending on time 
+and use. This cylinder-selective adaptation involves a check of the residual-oxygen con¬ 
+tent with a conclusion as to the cylinder causing the situation. To this end, it is neces¬ 
+sary for part of the exhaust-gas flow not to be swirled in the turbocharger. For this rea¬ 
+son, the flap of the wastegate valve must be fully opened, i.e. swung out of the exhaust- 
+gas flow. This wastegate-flap position extends beyond its normal opening position in 
+engine operation. Based on the result of this cylinder-selective monitoring, the energy 
+quantity is adapted if necessary to activate the injectors. 
+
+Furthermore, the cylinder-selective adaptation includes, if necessary, an adaptation of 
+the injector opening signal based on smooth running monitoring of BMW engines. 
+
+
+
+Overall adaptation of the injectors is 
+limited to a 15% additional quantity. 
+
+
+52 
+
+Fuel Management 
+
+
+
+Solenoid Type Fuel Injectors N55 (HDE) 
+
+The high pressure fuel injection valve Bosch HDEV5.2 is a solenoid type injector. In con¬ 
+trast to the piezo-electric injectors used on the current BMW engines, the solenoid valve 
+fuel injectors are designed as inward-opening multi-hole valves with highly variable jet 
+angle and form. They operate at a system pressure of up to 200 bar. 
+
+
+CAUTION!!! 
+
+
+Do not open the fuel system if the coolant temperature 
+is above 40°C/104°F. The residual pressure in the high 
+pressure fuel system could cause bodily injury. 
+
+
+It is essential to observe the utmost cleanliness when working on the high pressure fuel 
+system and to follow the proper working procedures described in the repair instructions. 
+Even minute soiling or damage at the thread connections of the high pressure lines 
+could cause leaks. 
+
+
+
+Special tool #13 0 270 must be used to remove the HDEV5.2 high 
+pressure injector valves from the engine. Damage to the injector or 
+the related components may occur otherwise. See the Service 
+Information section in this training material for more information. 
+
+
+Particular care must be taken when working on the fuel system of the 
+N55 engine to ensure that the ignition coils are not wet with fuel. The 
+resistance of the silicone insulating material of the coils is greatly 
+reduced by the contact with fuel. This could result in arcking at the 
+top of the spark plug and misfiring. See the Service Information sec¬ 
+tion and repair instructions for more information. 
+
+
+53 
+
+Fuel Management 
+
+
+
+
+
+The following graphic shows the arrangement of the individual components in the com¬ 
+bustion chamber of the N55. It can be seen that the BMW (spray-guided) high precision 
+injection (HPI) system is not used but rather a Bosch solenoid valve fuel injector with 
+multi-hole nozzle. The fuel injection is specially adapted to the combination of 
+Valvetronic III and turbocharging. For better illustration, a set of valves has been 
+removed in the graphic. 
+
+
+N55, combustion chamber with components 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Valve seat, exhaust valve 
+
+2 
+
+Exhaust valve 
+
+3 
+
+Spark plug 
+
+4 
+
+Fuel Injector 
+
+5 
+
+Intake valve 
+
+6 
+
+Valve seat, Intake valve 
+
+7 
+
+Piston 
+
+
+54 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+HPI/HDE System Service 
+
+Fuel System Safety 
+
+• Working on the fuel system is only permitted after the engine has cooled down. 
+
+The coolant temperature must not exceed 40°C/104°F. This must be observed 
+without fail, otherwise there is a danger of fuel sprayback on account of the residual 
+pressure in the high pressure fuel system. 
+
+• When working on the high pressure fuel system, take particular care to ensure con¬ 
+ditions of absolute cleanliness and follow the work sequences described in the 
+repair instructions. Even the tiniest contaminants and damage to the screw con¬ 
+nections on the high pressure lines can cause leaks. 
+
+• When working on the fuel system of BMW engines, it is important to ensure that 
+the ignition coils are not fouled by fuel. The resistance of the silicone material is 
+significantly reduced by heavy fuel contact. This can cause sparkover at the spark¬ 
+plug head and cause misfires. 
+
+• Before making modifications to the fuel system, remove the ignition coils without 
+fail and protect the spark-plug slot against the ingress of fuel with a cloth. 
+
+• Before refitting piezo-injectors, remove the ignition coils and ensure conditions of 
+absolute cleanliness. 
+
+• Ignition coils heavily fouled by fuel must be replaced. 
+
+
+
+ACHTUNG! 
+CAUTION! 
+ATTENTION ! 
+
+iATENCION! 
+
+SSI 
+
+
+Offnen des Kraftstoffsystems bei Kuhlmitteltemperatur uber 40 °C nicht zulassig. Gefahr von Korperverletzung. Reparaturanleilung beachten. 
+Do not open the luel system if the coolant temperature is above 40 °C/104 °F - risk of injury! Consult the repair manual. 
+
+II est interdil d'ouvrir le systeme d’alimentation en carburant lorsque la temperature du liquide de refroidissement est superieure a 40 °C. 
+Risque de blessure. Respecter les instructions du Manuel de reparation. 
+
+Prohibido abrir el sistema de combustible cuando la temperatura del liquido refrigerante supere los 40 °C. Peligro de lesiones. Consultar el 
+manual de reparaciones. 
+
+76874,7 
+
+
+55 
+
+Fuel Management 
+
+
+
+
+
+
+
+Fuel Injectors - N55 
+
+In order to remove the N55 fuel injectors from the cylinder head, special tool #13 0 270 
+must be utilized. Failure to use the special tool will result in damage to the injectors. 
+
+
+
+There is a new tool #13 0 280 that must be used when replacing the PTFE seals on 
+the tips of the solenoid valve injectors. As with piezoelectric injectors these seals must 
+be replaced if and when the injectors are being re-installed. 
+
+
+
+
+Do not open the high pressure fuel injection system if the coolant 
+temperature is above 40°C . The residual pressure in the high pres¬ 
+sure fuel system could cause bodily injury. 
+
+
+It is essential to follow the repair instructions and observe the utmost 
+cleanliness when working on the high pressure fuel system. Even 
+minute soiling or damage at the connections of the high pressure 
+lines and cause leaks. 
+
+
+56 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Pressure Fuel Injector Valve (HDE) 
+
+The HDEV5.2 solenoid type injector valves used on the N55 engine are a new 
+development. 
+
+1 Booster phase: 
+
+Opening of the HDEV5.2 is initiated in the booster phase by a high booster volta 
+from the DME. The booster phase ends on reaching approximately 10 amps. 
+
+The high current is achieved by a voltage of up to approximately 65 Volt. 
+
+2 Energizing phase: 
+
+In the energizing phase, the HDEV5.2 is completely opened by controlling the 
+current to approximately 6.2 amps. At the end of the energizing phase, the current 
+is reduced to the holding current level of approximately 2.5 amps. 
+
+3 Hold phase: 
+
+The energized HDEV5.2 is kept open by controlling the current at approximately 
+2.5 amps in the hold phase. 
+
+4 Switch off phase: 
+
+The current is switched off at the end of the injection time (in the switch off phase). 
+At least 2 milliseconds elapse between two injection cycles. 
+
+
+57 
+
+Fuel Management 
+
+
+
+N55, Actuation Phases of the HDEV5.2 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+DME actuation signal 
+
+1 
+
+Booster phase 
+
+B 
+
+Current flow HDEV5.2 
+
+2 
+
+Energizing phase 
+
+C 
+
+Voltage at HDEV5.2 
+
+3 
+
+Hold phase 
+
+
+
+4 
+
+Switch off phase 
+
+
+58 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Supply and Control Schematic Overview on BN2020 
+
+ISTA wiring schematic: SSP-BSB-T6109018 Fuel Supply 
+
+
+
+
+© 
+
+
+© 
+
+
+
+
+
+© 
+
+
+© 
+
+
+
+p 
+
+
+l0- 
+
+
+L0. 
+
+
+@ 
+
+
+® n3>- 
+
+
+© 
+
+
+© 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Central Gateway Module 
+
+7 
+
+Junction Box Electronics 
+
+2 
+
+Advanced Crash Safety Module 
+
+8 
+
+Power distribution box, right rear 
+
+3 
+
+Instrument Cluster 
+
+9 
+
+Electric Euel Pump Module 
+
+4 
+
+Car Access System 
+
+10 
+
+Euel level sensor, right 
+
+5 
+
+Fuel pressure sensor 
+
+11 
+
+Electric fuel pump 
+
+6 
+
+Engine Control Module (DME) 
+
+12 
+
+Fuel level sensor, left 
+
+
+59 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+Before any service work is performed on any fuel system related component, always 
+adhere to the following: 
+
+• Observe relevant safety legislation pertaining to your area. 
+
+• Ensure adequate ventilation. 
+
+• Use exhaust extraction system where applicable (alleviate fumes). 
+
+• DO NOT OPERATE THE FUEL PUMP unless it is properly installed in the 
+fuel tank and is submersed in the fuel (fuel lubricates the pump). 
+
+• Always wear adequate protection clothing including eye protection. 
+
+• Use caution when working around a hot engine compartment 
+
+• During fuel system repair that involves “sealing rings”, always replace them 
+with new COPPER rings only. 
+
+• BMW does not recommend any UNAUTHORIZED MODIFICATIONS to the fuel 
+system. The fuel system is designed to comply with strict federal safety and emis¬ 
+sions regulations. In the concern of product liability, it is unauthorized to sell or 
+perform modifications to customer vehicles, particularly in safety related areas. 
+
+• Always consult the Repair Instructions on the specific model you are working on 
+before attempting a repair. 
+
+
+Fuel 
+
+Fuel quality should always be considered when diagnosing a driveability complaint. 
+The type of fuel, proper AKI/PON rating, impurities and moisture are not factored by 
+the ECM. 
+
+Please refer to the Owner’s Manual and following 
+Service Information Bulletins regarding fuel: 
+
+• SI B 13 07 06 Gasoline Quality & Detergent Additives 
+
+• SI B 13 02 10 Fuel Systems 
+
+• SI B 13 02 06 Top TIER Detergent Gasoline in BMW Vehicles 
+
+• SBS 1996-13 06 96 (139) Group 13 (on ISTA>Workshop/Operating fluids) 
+
+
+60 
+
+Fuel Management 
+
+
+
+Draining the Fuel Tank 
+
+In order to remove the fuel tank it must be drained first to avoid fuel spills and handling 
+excessive weight. In some cases depending on the fuel tank dimensions (vehicle specif¬ 
+ic), it is also necessary to drain the fuel tank to replace the sending units and/or fuel 
+pump. 
+
+
+CAUTION!!! 
+
+
+In some vehicles, the sending units/fuel pump is mount¬ 
+ed lower than the top of the fuel tank. A fuel spill will be 
+encountered if the fuel is not drained. 
+
+
+
+Consult the BMW Service Workshop Equipment for the proper evacu¬ 
+ation equipment. The saddle type tank requires an additional step to 
+drain the fuel from the driver side. The evacuation equipment should 
+be attached to the tank compensating hose (arrow) to drain out the 
+remaining fuel. 
+
+
+Fuel Pump/Pressure Regulator - Testing 
+
+The fuel pump should be tested for delivery pressure 
+and volume. Caution when disconnecting fuel hoses 
+because there is the possibility of residual fuel pres¬ 
+sure! Install the fuel pressure adapter and IMIB pres¬ 
+sure sensing lead to the fuel pressure fitting *IMIB 
+starts with atmospheric pressure as the base. 
+
+If the 3.5 (*-i- atmosphere IMIB base starting point) bar 
+fuel pressure is not achieved or bleed off is more than 
+0.5 bar, refer to 
+
+• REP 13 31 032 Check fuel pressure 
+
+• REP 13 31 029 Checking fuel pump delivery 
+pressure (N52) 
+
+• REP 13 31 029 Checking fuel pump delivery 
+pressure (M54) 
+
+for further diagnosis. The Fuel Hose Clamp Tool can 
+be used to isolate bleed off from the pump (non¬ 
+return check valve) or the pressure regulator (restric¬ 
+tion valve). Also verify power supply to the fuel pump. 
+
+
+
+
+
+61 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel volume must be tested to verify: 
+
+• Fuel Pump Output 
+
+• Restrictions are not present in the pump 
+pickup lines/hoses and fuel filter. 
+
+
+Fuel Injectors 
+
+When inspecting the fuel injectors, consider 
+the following: 
+
+• 0-rings should be replaced, lubrication 
+with Vaseline or SAE 90 gear oil for instal¬ 
+lation. 
+
+• Verify the code number (different engine 
+applications) 
+
+• Plastic spacer washer is not damaged 
+
+• Color code of housing (different engine 
+applications) 
+
+Fuel injectors can leak which bleeds off fuel 
+pressure and increases emissions. The injec¬ 
+tors can be tested using the Fuel Injector 
+Leakage Tester. 
+
+The fuel injectors can be cleaned, refer to: 
+
+• SI B 04 07 07 Fuel Injection and 
+Induction System Cleaning 
+
+
+62 
+
+Fuel Management 
+
+
+
+The Fuel Injectors should also be tested using the 
+ISTA for: 
+
+
+
+
+
+
+Resistance 
+Power Supply 
+
+Status Display - Fuel Injection Signal 
+
+ECM Final Stage transistor activation. This test 
+functions is found under the oscilloscope Preset 
+list - “Ti Injection Signal”. Install the Universal 
+Adapter, Diagnostic cable, MFK 2 negative lead 
+to ECM ground and MFK 2 positive lead to the 
+ground activation circuit for the injector. This test 
+is performed with the engine cranking or running. 
+
+
+
+
+63 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When testing fuel pressure, the hand 
+held fuel pressure gage (SWZ 13 3 060) 
+can be used. 
+
+Caution: Residual fuel pressure may be 
+present! 
+
+The IMIB is equipped with a pressure 
+measuring function, found in 
+Measurement testing. The following 
+adapters (Special Tool numbers) will be 
+necessary: 
+
+• SWZ 13 6 051 
+
+• SWZ 13 6 055 
+
+• SWZ 13 6 057 
+These adapters install “inline” in the fuel pressure hose. 
+
+For vehicles equipped with “quick-release” couplings, install special tool (SWZ 13 5 270) 
+between the fuel filter (1) and pressure supply hose (2). This tool will couple to the IMIB 
+Pressure Adapter (3). 
+
+Later production fuel rails are equipped with a threaded adapter fitting (1). 
+
+This threaded adapter fitting allows Adapter (SWZ 13 5 220) to be threaded on to the 
+fuel rail and coupled to the IMIB Pressure Adapter. 
+
+When testing the fuel injectors for leakage, use Special Tool #88 88 5 000 362. Leak 
+testing the fuel injectors is one of the diagnostic steps listed in: 
+
+• SI B 13 08 90 (3096) Long Cranking Times. 
+
+This tool pressurizes the injectors with air and the injector tips are submersed in water. If 
+air bubbles are present, this indicates the leaking injector(s). 
+
+
+
+64 
+
+Fuel Management 
+
+
+
+
+Crankshaft Position/RPM Sensor 
+
+This sensor should be tested using 
+the IMIB for: 
+
+• Power Supply 
+
+• DC Voltage 
+
+• Status Display 
+
+• Oscilloscope Display found 
+under Preset Measurements - 
+“Engine Speed Sensor Signal” 
+
+
+
+SMOOTH RUNNING ENGINE 
+(NOTE SQUARE WAVE SIGNAL) 
+
+
+Crankshaft Sensor (N55) 
+
+The function of the new crankshaft sensor is identical to that of the crankshaft sensors 
+used for the automatic engine start-stop function (MSA). The engine reversal detection 
+is required for the MSA function. (MSA is not currently offered in the US.) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connector 
+
+2 
+
+Dust seal 
+
+3 
+
+Sensor 
+
+
+65 
+
+Fuel Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+66 
+
+Fuel Management 
+
+
+

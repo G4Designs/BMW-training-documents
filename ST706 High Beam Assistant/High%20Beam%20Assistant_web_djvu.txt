@@ -1,0 +1,1377 @@
+Table of Contents 
+
+
+High Beam Assistant 
+
+
+Subject 
+
+
+Page 
+
+
+Introduction .3 
+
+Oncoming Traffic .4 
+
+Preceding Traffic.4 
+
+Various Lighting Situations.5 
+
+Adeguate Light Levels .5 
+
+System Limits.6 
+
+Traffic Signs.6 
+
+Bends and Brow of Hills .6 
+
+
+System Overview .7 
+
+System Components.10 
+
+High Beam Assistant Control Unit.10 
+
+Design of Interior Rear-view Mirror .10 
+
+Image Sensor .11 
+
+Mounting and Connection .12 
+
+Design of Image Sensor.12 
+
+
+Principles of Operation.13 
+
+Electronic Evaluator.14 
+
+Detection of Oncoming and Preceding Traffic .14 
+
+Detection of Street Lamps and Adeguate General Light Levels ...15 
+
+Recognition of Street Lamps.15 
+
+Recognition of Adeguate General Light Levels .15 
+
+Covered Sensor Field .16 
+
+Indications and Operation .17 
+
+Operating Concept.18 
+
+Scenario 1:.18 
+
+Scenario 2:.18 
+
+Scenario 3:.18 
+
+Reactivating: .18 
+
+Service Information.20 
+
+Check Control Indicator.20 
+
+Image Sensor Range .20 
+
+Encoding/programming .20 
+
+Possible Customer Perceptions.21 
+
+
+Initial Print Date: 10/07 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Beam Assistant (FLA) 
+
+Model: E60, E61, E63 LCI, E64 LCI 
+
+
+Production: From 2008 Model Year 
+
+■MICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Understand the operation of the FLA system 
+
+• Identify the components used in the FLA system 
+
+
+• Identify the operating parameters needed for the 
+FLA activation/de-activation 
+
+
+2 
+
+High Beam Assistant 
+
+
+Introduction 
+
+
+The high beam assistant (FLA) assists the driver in the use of the high beam headlight. 
+The high beam assistant will be offered as an option: SA 5AC. 
+
+Corresponding to the traffic situation, the high beam assistant switches the vehicle's 
+high beam headlight on and off, thus relieving the driver of the task of operating the high 
+beam headlight. High beam can still be switched on and off manually as usual. 
+
+Note: The high beam assistant is an assistance function so that the driver 
+always has the option and duty to override the system when the road 
+situation so requires. 
+
+
+Only the high beam of the xenon headlight is controlled on vehicles 
+equipped with the high beam assistant. The halogen high beam head¬ 
+lights are switched on only with the headlight flasher. 
+
+
+The system consists of an image sensor (special camera for detecting light sources in 
+road traffic) and an FLA control unit. High beam and low beam are still switched by the 
+lights module. The lights module determines whether high beam can be switched on 
+based on a range of various input variables. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Image Sensor 
+
+2 
+
+LVDS interface 
+
+3 
+
+FLA Control Unit 
+
+
+The image sensor is located behind the base of the interior rear-view mirror. The FLA 
+control unit is installed directly on the back of the mirror glass in the interior rear-view 
+mirror. 
+
+During operation, the image sensor registers points of light that are subsequently evalu¬ 
+ated in the FLA control unit. The image sensor can distinguish between various parame¬ 
+ters such as light color and light intensity. 
+
+When it determines reasons for deactivating high beam, the FLA control unit sends a 
+deactivation recommendation to the lights module. Otherwise an activation recommen¬ 
+dation is sent. 
+
+The high beam is switched off in following situations: 
+
+• Oncoming/Preceding traffic 
+
+• Street lamps (e.g. urban areas,...) 
+
+• Ambient brightness too high (e.g. twilight,...) 
+
+• Driving speed too low 
+
+
+3 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oncoming Traffic 
+
+In connection with oncoming traffic, the 
+high beam assistant must be able to dis¬ 
+tinguish between reflective traffic signs, 
+other light sources and the headlights 
+of oncoming vehicles. 
+
+The detection range is approximately 
+1000 meters. 
+
+
+Preceding Traffic 
+
+Although the tail lights of preceding 
+vehicles are often illuminated relatively 
+weakly compared to other light sources, 
+the FLA must still be able to reliably 
+detect a vehicle at a distance of approxi¬ 
+mately 400 meters. 
+
+
+
+
+4 
+
+High Beam Assistant 
+
+
+
+
+
+
+Various Lighting Situations 
+
+The FLA sends a switch-on recommen¬ 
+dation to the lights module also in 
+response to many non-specific light 
+sources (traffic signs, road markings, 
+lane demarcation elements, etc.) in the 
+detection range of the high beam assis¬ 
+tant. High beam is switched on and the 
+high beam assistant indicator lamp is 
+activated. 
+
+
+
+Adequate Light Levels 
+
+The high beam assistant sends a switch- 
+off recommendation to the lights module 
+when the vehicle is in surroundings with 
+adequate light and lighting levels. 
+
+Such conditions may be: 
+
+• Daylight 
+
+• Twilight 
+
+• Illuminated places 
+
+• Street lights 
+
+
+
+5 
+
+High Beam Assistant 
+
+
+
+
+
+System Limits 
+
+Under certain conditions, the high beam assistant may send deactivation or activation 
+recommendations to the lights module that may not appear logical to the driver. 
+
+The system can reach its functional limits in following situations: 
+
+• Extremely unfavorable weather conditions (e.g. fog) 
+
+• Poorly illuminated road users (e.g. riders on small motorcycles, cyclists, pedestrians) 
+
+• Individual driving situations (e.g. sharp bends, steep brows and hollows of hills, traffic 
+coming at right angles from left or right) 
+
+Traffic Signs 
+
+Due to their appearance and height, certain traffic 
+signs are very difficult to distinguish from headlights. 
+
+Particularly traffic signs indicating a sharp bend 
+cannot always be interpreted correctly by the high 
+beam assistant. 
+
+Under certain circumstances, the high beam assistant may interpret the reflective red 
+areas in this example as tail lights. 
+
+Bends and Brow of Hills 
+
+In dark conditions, the driver recognizes oncoming vehicles at a distance even before 
+bends and brows of hills. 
+
+The light beam of an oncoming vehicle is already visible before the headlights can be 
+made out. The high beam assistant, on the other hand, can only recognize an oncoming 
+vehicle when the headlights can actually be detected as light sources. 
+
+A bright light on the horizon does not result in the high beam assistant sending a switch- 
+off recommendation. 
+
+
+
+
+6 
+
+High Beam Assistant 
+
+
+
+
+System Overview 
+
+Input/Output - High Beam Assistant 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+FLA Control Unit 
+
+7 
+
+Light Switch 
+
+2 
+
+Footwell Module 
+
+8 
+
+Rain/Light/Solar Sensor 
+
+3 
+
+Instrument Cluster 
+
+9 
+
+Wheel Speed Sensor 
+
+4 
+
+Headlight 
+
+10 
+
+DSC Sensor 
+
+5 
+
+Reverse Gear Switch 
+
+11 
+
+Image Sensor 
+
+6 
+
+Direction Indicator/High Beam Switch 
+
+
+
+
+7 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Schematic - High Beam Assistant 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+High Beam Headlight, Left 
+
+8 
+
+Steering Column Stalk, High Beam Headlight 
+
+2 
+
+High Beam Headlight, Right 
+
+9 
+
+Steering Column Switch Cluster 
+
+3 
+
+Instrument Cluster 
+
+10 
+
+Light Switch 
+
+4 
+
+Housing of Interior Rear-view Mirror 
+
+11 
+
+Footwell Module 
+
+5 
+
+Camera for High Beam Assistant 
+
+K-CAN 
+
+Body CAN 
+
+6 
+
+High Beam Assistant Control Unit 
+
+PT_CAN 
+
+Powertrain CAN 
+
+7 
+
+Junction Box Control Unit 
+
+
+
+
+8 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-CAN Signals at Control Unit of Footwell Module 
+
+In/Out 
+
+Signal 
+
+Source 
+
+Function 
+
+In 
+
+Position “A” 
+
+(Automatic) on light 
+switch 
+
+> Light switch 
+
+> Footwell module 
+
+High beam assistance possible only 
+in Automatic position 
+
+In 
+
+High beam/low beam 
+
+> Steering column stalk, high beam 
+
+> Footwell module 
+
+Activation of high beam assistant 
+system 
+
+In 
+
+Reverse gear 
+
+> EGS 
+
+Deactivation of high beam assistant 
+
+In 
+
+Brightness level of 
+ambient light 
+
+> Rain/light/solar sensor 
+>Roof function Center 
+
+Precondition: activation of high 
+beam headlight 
+
+Out 
+
+High beam headlight 
+on/off 
+
+> High beam 
+
+High beam switched on and off by 
+footwell module 
+
+Out 
+
+Indicator lamp 
+
+> Instrument cluster 
+
+Activation of indicator lamp for high 
+beam assistant 
+
+
+K-CAN Signals at Control Unit for High Beam Assistant 
+
+In/Out 
+
+Signal 
+
+Source 
+
+Function 
+
+In 
+
+Road Speed 
+
+> Wheel speed sensors 
+
+> DSC 
+
+Deactivation of high beam assistant 
+below certain speed 
+
+In 
+
+Yaw Rate 
+
+> DSC Sensor 
+
+> DSC 
+
+Adaptation of detection range when 
+cornering 
+
+In 
+
+Bulb Condition 
+
+> Footwell Module 
+
+Monitoring condition of high beam 
+on/off 
+
+Out 
+
+Switch-on and switch- 
+off recommendation 
+
+> Footwell Module 
+
+Switch-on and switch-off recom¬ 
+mendation to footwell module - 
+footwell module decides whether 
+system is switched on or off 
+
+
+9 
+
+High Beam Assistant 
+
+
+
+
+System Components 
+
+
+High Beam Assistant Control Unit 
+
+Design of Interior Rear-view Mirror 
+
+The entire hardware of the high beam assistant is installed in the interior rear-view mirror. 
+The hardware consists of an image sensor mounted in the mirror base as well as elec¬ 
+tronic evaluator circuitry in the interior rear-view mirror. A special mirror base, on which 
+the image sensor is mounted, is required for the high beam assistant. 
+
+The high beam assistant also consists of a cover for the image sensor and the sensors 
+already installed (rain/driving lights sensor and condensation sensor). 
+
+
+sV & sl> 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+10-pin connector 
+
+5 
+
+FLA control unit 
+
+2 
+
+3-pin connector 
+
+6 
+
+LVDS interface 
+
+3 
+
+K-CAN connector 
+
+7 
+
+Connector for mirror electronics 
+
+4 
+
+Antenna for Remote Control (E64) 
+
+8 
+
+Electronic evaluator for electrochromic mirror 
+
+
+10 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Image Sensor 
+
+The image sensor below the screen print (black area at upper edge of the windscreen) 
+points forward through the windscreen. The sensor field is 15° to the left and right (see 
+graphic) as well as 5° to the top and bottom. 
+
+The center axis of the image sensor must be aligned parallel to the longitudinal axis of the 
+vehicle to ensure the same degree of functional accuracy for each type of vehicle. 
+
+Otherwise, restrictions in the sensor field may result in impaired detection of vehicles in 
+bends and less effective differentiation between vehicles and reflections from road signs. 
+
+The high beam assistant adapts itself within a tolerance of 3°, thus automatically com- 
+
+
+
+11 
+
+High Beam Assistant 
+
+
+
+
+Mounting and Connection 
+
+Connection to the system network is provided by the existing 10-pin connector and an 
+additional 3-pin connector. Both connectors are located in the base of the interior rear¬ 
+view mirror and are secured with a connector holder. The pin assignments of the two 
+connectors are listed in the section "Service information". 
+
+The FLA is firmly connected to the vehicle windscreen by means of the mirror base. 
+
+Without corresponding adaptation in vertical direction, the field of vision of the high beam 
+assistant would vary upward or downward depending on the angle of inclination of the 
+windscreen. 
+
+To compensate for this deviation, different mounting brackets are used corresponding to 
+the type of vehicle. 
+
+The 3-pin connector features a mechanical coding facility which ensures the matching 
+bracket is always used corresponding to the type of vehicle. 
+
+
+Design of Image Sensor 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Image sensor 
+
+2 
+
+PC-board for image sensor 
+
+3 
+
+LVDS connector 
+
+4 
+
+Ground connection 
+
+
+12 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+Principles of Operation 
+
+
+The functions of the high beam assistant (FLA) relevant to the driver are automatic acti¬ 
+vation of the high beam and low beam settings. For this purpose, the high beam assis¬ 
+tant sends a recommendation to switch on or switch off high beam via the K-CAN bus 
+to the lights module. 
+
+This recommendation is always sent (also during daytime driving) at terminal 15 ON. 
+
+The lights module evaluates the switch-on or switch-off recommendation only if the sys¬ 
+tem has been activated by the driver. 
+
+The high beam assistant always switches off high beam before another road user is daz¬ 
+zled. High beam must therefore be switched off at the latest when another road user 
+comes into the range of the light beam of the high beam headlights. 
+
+Operation of the high beam assistant is based on an image sensor with image-process¬ 
+ing software algorithms. 
+
+Light components are registered by a red/white-sensitive image sensor and transferred 
+to the FLA control unit. 
+
+
+The image sensor is located at the base of the interior rear-view mirror with the FLA 
+control unit housed in the mirror. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+RLS sensor 
+
+4 
+
+Indicator for anti-theft alarm system 
+
+2 
+
+FLA control unit in interior rear-view mirror 
+
+5 
+
+Image sensor 
+
+3 
+
+Buttons for UGDO 
+
+6 
+
+Cover 
+
+
+13 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electronic Evaluator 
+
+
+The image sensor transmits the image via a LVDS data link to the microcontroller of the 
+FLA control unit where it is stored in a buffer ready for evaluation. 
+
+In addition to the light signals of the image sensor, the electronic evaluator also evaluates 
+the vehicle speed. 
+
+When the speed drops below 38 km/h, the high beam assistant sends a switch-off rec¬ 
+ommendation to the lights module and dips the high beam headlights. The switch-off 
+recommendation is sent irrespective of other conditions. 
+
+As from a speed of more than 50 km/h, high beam is switched on again as soon as the 
+situation so permits. 
+
+Detection of Oncoming and Preceding Traffic 
+
+The high beam assistant must detect oncoming traffic as soon as possible and dip the 
+high beam headlights. The high beam must be dipped at the latest when the oncoming 
+traffic enters the range of the high beam light beam (see graphic). This corresponds to a 
+distance of approximately 400 m. 
+
+The detection range of the image sensor is approximately 1000 m. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+High beam light 
+
+2 
+
+Detection range of image sensor 
+
+
+14 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detection of Street Lamps and Adequate General Light Levels 
+
+According to European legislation, high beam is to be switched off in urban and non- 
+urban areas that are sufficiently illuminated. There is therefore no regulation reguiring high 
+beam to be switched off in unlit localities. Two methods are necessary to detect suffi¬ 
+ciently lit areas (urban areas are normally lit). 
+
+• Recognition of street lamps 
+
+• Recognition of adeguate general light levels 
+
+Recognition of Street Lamps 
+
+The detection of street lamps is necessary to ensure rapid reaction of the system. Many 
+street lamps indicate a built-up area or a sufficiently lit road. A deactivation recommenda¬ 
+tion is sent when the high beam assistant detects several street lamps in short succes¬ 
+sion. 
+
+Recognition of Adequate General Light Levels 
+
+At night, street lamps, billboards, housing lighting etc. generate relatively high general 
+light levels within built up areas. The driver will normally not reguire high beam to be 
+switched on in such areas. 
+
+These different general light levels between urban and non-urban areas are registered by 
+the image sensor and included in the evaluation process. High beam is switched off as 
+from a certain general light level. The high beam deactivation recommendation is there¬ 
+fore always sent during daytime driving. 
+
+
+15 
+
+High Beam Assistant 
+
+
+
+Covered Sensor Field 
+
+The image sensor is mounted on the mirror 
+retaining fixture such that it covers a range of 5° .,5° 
+
+up and down. The housing of the image sensor 
+is designed such that it adapts to the corre- u o 
+sponding windscreen of the vehicle. 
+
+The high beam assistant recognizes when the sensor field is covered, e.g. by a sticker on 
+the windscreen, soiled lens, snow on windscreen etc. due to the absence of light from 
+the headlight in the lower area of the image. 
+
+The check control message "Sensor field covered" warns the driver when the sensor field 
+is covered. 
+
+The sensor field of the image sensor must be covered for at least 16 seconds at a mini¬ 
+mum speed of 5 km/h in order for a check control message to be sent. 
+
+The high beam assistant cannot detect when 
+only the upper area of the image is covered. A 
+partially covered image sensor, however, can 
+effect operation of the high beam assistant: the 
+high beam assistant no longer detects light 
+sources to their full extent. 
+
+Misinterpretation of the surroundings can result in incorrect switch-on or switch-off rec¬ 
+ommendations. 
+
+
+
+
+16 
+
+High Beam Assistant 
+
+
+
+
+Indications and Operation 
+
+An additional symbol in the instrument cluster signals the active status 
+
+• Symbol ON = FLA active 
+
+• Symbol OFF = FLA inactive 
+
+Operation of the blue high beam indicator lamp remains unaffected. 
+This lamp operates as normal in the instrument cluster. 
+
+
+
+
+
+
+Operating Concept 
+
+The high beam assistant (FLA) is active only under following preconditions: 
+
+• Light switch set to automatic 
+
+• Driving light activated by rain/driving lights sensor 
+
+• Direction indicator/high beam switch flicked once in high beam direction 
+
+The rules for automatically switching the high beam headlights on and off are stored in 
+the light module. The high beam assistant is designed as an "assistance function" so that 
+the driver always has the option and duty to override the system when the road situation 
+so requires. 
+
+The graphic on the following page shows the operation and function of the high beam 
+assistant based on three scenarios. 
+
+Scenario 1: 
+
+The driver has activated the high beam assistant. Low beam is active because the traffic 
+situation does not permit high beam. 
+
+The headlight flasher is operated when the direction indicator/high beam switch is pulled 
+in low beam direction (halogen headlights). 
+
+Scenario 2: 
+
+Irrespective of whether low beam or high beam is activated by the light module, the high 
+beam assistant is deactivated when the direction indicator/high beam switch is pressed in 
+high beam direction. 
+
+Scenario 3: 
+
+The automatic high beam is deactivated when the driver flicks the direction indicator/high 
+beam switch in low beam direction while high beam is switched on. 
+
+Reactivating: 
+
+The high beam assistant is active again as soon as high beam is switched on after these 
+situations. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Light switch set to automatic 
+
+2 
+
+The high beam is active at a corresponding level of darkness 
+
+3 
+
+The high beam assistant is activated as soon as the direction indicator/high beam switch is pressed forward 
+
+4 
+
+Scenario 1 
+
+5 
+
+Scenario 2 
+
+6 
+
+Scenario 3 
+
+7 
+
+Cycle is repeated as from number 3 
+
+
+18 
+
+High Beam Assistant 
+
+
+
+
+
+Operating Concept Flow Chart 
+
+
+
+high beam 
+
+
+low beam 
+
+
+low beam & 
+flash to pass 
+
+
+19 
+
+High Beam Assistant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Information 
+
+
+Check Control Indicator 
+
+The check control indicator can show three different statuses. 
+
+Image Sensor Range 
+
+The range of the image sensor and the incline of the windscreen result in a field of vision 
+on the windscreen (light area) that must always remain clear. 
+
+The high beam assistant may be adversely affected if this area is covered by, for exam¬ 
+ple, stickers, snow and damage (cracks or large-scale stone impact). 
+
+Encoding/programming 
+
+The FLA can be adapted to various types of vehicle and national requirements by means 
+of the coding data in the EEPROM. 
+
+The high beam and low beam characteristics of the automatic function can also be influ¬ 
+enced byway of encoding. The system is encoded and programmed via the OBD inter¬ 
+face in the vehicle and this procedure must be performed after a replacement. 
+
+
+20 
+
+High Beam Assistant 
+
+
+
+
+Possible Customer Perceptions 
+
+If customer complaints are received, corresponding inquiries should be made with the 
+customer before performing any repairs or diagnosis. 
+
+The following customer statements are possible: 
+
+"High beam is not deactivated when... " 
+
+Customer statement: 
+
+"The high beam assistant does not switch off high beam in built-up areas." 
+Possible cause: 
+
+The light levels in the area are too low. High beam remains switched on. 
+
+
+Customer statement: 
+
+"The high beam is not dipped in good time when driving over mountain passes." 
+Possible cause: 
+
+The high beam assistant detects other road users too late or not at all in sharp 
+bends. 
+
+
+Customer statement: 
+
+"High beam is not dipped in response to an oncoming motor scooter." 
+
+Possible cause: 
+
+The high beam assistant does not detect poorly lit vehicles. The high beam assistant 
+also does not detect pedestrians or animals on the road. 
+
+
+Customer statement: 
+
+"High beam is not dipped in time when oncoming traffic approaches over the brow 
+of a hill." 
+
+Possible cause: 
+
+The high beam assistant does not detect higher light levels at the horizon. The high 
+beam assistant does not respond with a switch-off recommendation before the 
+actual headlights of the oncoming traffic are visible. 
+
+
+Customer statement: 
+
+"High beam is not dipped when a vehicle comes out of a side street." 
+
+Possible cause: 
+
+The high beam assistant does not detect vehicles at right angles to the own vehicle. 
+
+
+21 
+
+High Beam Assistant 
+
+
+
+"High beam is not activated when... " 
+
+
+Customer statement: 
+
+"High beam is not switched on while driving slowly." 
+
+Possible cause: 
+
+The high beam assistant sends a switch-on recommendation to the lights module 
+as from a driving speed of approximately 50 km/h. 
+
+
+Customer statement: 
+
+"High beam is switched off in bends." 
+
+Possible cause: 
+
+In tight bends it is possible that the vehicle speed drops below the speed threshold 
+or there are considerable reflections from traffic signs, causing high beam to switch 
+off. 
+
+
+Customer statement: 
+
+"High beam is switched off for no apparent reason." 
+
+Possible cause: 
+
+Highly reflective traffic signs or reflectors of other road users (e.g. trailer parked on 
+side of road). 
+
+
+Other Customer Statements: 
+
+Customer statement: 
+
+"The halogen bulbs for high beam are no longer operable." 
+
+Possible cause: 
+
+The auxiliary headlights with the halogen bulbs are switched on only as headlight 
+flashers in connection with the high beam assistant. On vehicles equipped with the 
+high beam assistant, the high beam is switched on only with the bi-xenon head¬ 
+lights. 
+
+
+22 
+
+High Beam Assistant 
+
+
+

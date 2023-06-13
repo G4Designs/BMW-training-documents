@@ -1,0 +1,2824 @@
+Table of Contents 
+
+E60 Voltage Supply and Bus Systems 
+
+Subject Page 
+
+Voltage Supply and Bus Systems .4 
+
+Voltage Supply.4 
+
+System Components .5 
+
+Ground Points .5 
+
+Battery .6 
+
+Battery Service Information .6 
+
+Battery Cable.6 
+
+Intelligent Battery Sensor.6 
+
+Mechanical Section.7 
+
+IBS Measuring Ranges.8 
+
+Electronic Evaluation Module .8 
+
+IBS Hardware.9 
+
+IBS Software .9 
+
+IBS Charge Management.10 
+
+Closed-Circuit Monitoring.10 
+
+IBS Wake-up .11 
+
+Servicing the IBS .11 
+
+IBS Diagnosis.11 
+
+Voltage Measurement.12 
+
+Current Measurement.12 
+
+Terminal 15 Wake-up Signal Faults.12 
+
+SoC/SoH .12 
+
+State of Charge .12 
+
+State of Health.12 
+
+30g and MPM System Schematic .14 
+
+Terminal 30g Relay .15 
+
+30g Switch On Conditions .16 
+
+30g Switch Off Conditions .16 
+
+
+Initial Print Date: 08/03 
+
+
+Revision Date: 10/03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+Micro-Power Module.16 
+
+Normal Mode.18 
+
+Sleep Mode .19 
+
+Service Information for MPM .19 
+
+Alternator.21 
+
+Digital Motor Electronics .21 
+
+Variable Battery Charging Voltage.22 
+
+Idle Speed Boost.22 
+
+Reducing Peak Loads .22 
+
+Electric Load Cutout.22 
+
+Data Transfer to the IBS.23 
+
+Closed-Circuit Current Diagnosis .23 
+
+Terminal 30g Relay.23 
+
+Bus Systems.25 
+
+K-CAN .25 
+
+K-CAN Changes.25 
+
+MOST.25 
+
+Most Changes .25 
+
+byteflight.25 
+
+byteflight Changes.25 
+
+byteflight Comparison.26 
+
+PT-CAN .26 
+
+Bus system parameters .26 
+
+Subbus Systems .27 
+
+LIN-Bus .27 
+
+LIN-Bus Main Controller.27 
+
+F-CAN .28 
+
+BSD (Bit-Serial Data Interface) .28 
+
+Sub-bus System Parameters .29 
+
+MOST Connector Junction.29 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model: E60 
+
+Production: Start of Production MY 2004 
+Voltage Supply and Bus Systems 
+
+
+Objectives: 
+
+After completion of this module you will be able to: 
+
+• Understand IBS operation. 
+
+• Explain Power Management. 
+
+• Recognize the different bus systems. 
+
+• Diagnose Voltage Supply Faults. 
+
+
+3 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+Voltage Supply and Bus Systems 
+
+Voltage Supply 
+
+
+The voltage supply system on the E60 is similar to that of the E65. The E60, however, is 
+Not fitted with a power module, therefore there is no main power switch. Supply voltage 
+is monitored during both driving and parked conditions to reduce the possibility of unwant¬ 
+ed closed current draws and insure that adequate voltage is available as needed. 
+
+
+The "State of Charge" (SoC) and the "State of Health" (SoH) of the battery are determined 
+continuously with the E60 power management system. 
+
+
+
+Typical Voltage Supply for 6 Cylinder Vehicles 
+
+1. Intelligent Battery Sensor (IBS) 
+
+2. Battery 
+
+3. Ignition/Starter Switch (ZAS) 
+
+4. DME 
+
+5. Alternator 
+
+6. Starter 
+
+
+7. Starter Relay 
+
+8. Rear Power Distribution Box w/ Terminal 30g Relay 
+
+9. Front Power Distribution Box 
+
+10. Car-access System (CAS) 
+
+11. Micro-Power Module (MPM) 
+
+
+4 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+The power supply system consists of the following components: 
+
+• Vehicle Ground Points 
+
+• Battery 
+
+• Battery Cable 
+
+• Intelligent Battery Sensor with ground Lead (IBS) 
+
+• Terminal 30g Relay 
+
+• Micro-Power Module (MPM) 
+
+• DME 
+
+• Car Access System (CAS) 
+
+
+Ground Points 
+
+
+The ground point (GRAV) improves the electro¬ 
+magnetic compatibility (EMC) of the vehicle. 
+Ageing connections between the front end and 
+the remaining car body do not affect the EMC. The 
+contact resistances between the front end and the 
+remaining car body are bridged by 
+means of the ground lead. 
+
+
+
+
+& 
+
+
+& 
+
+
+0 
+
+
+
+
+
+
+© 
+
+
+V9 
+
+
+r-j 
+
+
+
+
+02355_02b 
+
+
+5 
+
+E60 Voltage Supply and Bus Systems 
+
+
+(x (x 
+
+
+
+
+
+
+
+
+
+
+
+
+Battery 
+
+
+The battery size in the E60 depends on the engine and equipment configuration. 
+
+Battery Service Information 
+
+The battery size is coded in the DME. Replacement batteries must be the same capacity 
+rating as the original Battery. 
+
+Particular attention must be paid to the cables and the IBS when replacing a battery. 
+Irreparable damage may occur if the cables and IBS are subjected to high mechanical 
+stress and strain. Refer to service information for the IBS. 
+
+
+As on the E65, the power management system is to be initialized by means of the 
+diagnosis job "Control_battery_replacement_register." Follow the repair instructions. 
+
+
+Battery Cable 
+
+The battery cable is installed on the underside of the vehicle. The battery cable is moni¬ 
+tored by the ASE system as in the E85. Sensor leads are routed from the battery cable to 
+the left and right B Pillar satellites. 
+
+Battery cable size is dependent on engine. Most US vehicles use 120mm 2 aluminum 
+Ribbon cable. 
+
+
+
+
+02415 
+
+Under car Routing of Ribbon Battery Cable 
+
+
+Cross Section Battery Cable w/ Sensor lead 
+
+
+Intelligent Battery Sensor 
+
+The IBS (1) is a mechatronic intelligent battery sensor with its own microcontroller. It 
+constantly measures the following: 
+
+
+• Battery terminal voltage 
+
+• Battery charge/discharge current 
+
+• Battery acid temperature 
+
+
+
+6 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+Installed directly at the negative battery terminal, care should be used when removing and 
+installing the negative battery cable. 
+
+
+The IBS consists of 3 functional elements: 
+
+
+• Mechanical section, 
+
+• Hardware 
+
+• Software 
+
+
+
+Exploded View of IBS 
+
+1. Pole Terminal 
+
+2. Shunt 
+
+3. Spacer 
+
+4. Screw 
+
+5. IBS 
+
+
+1 2 
+
+
+\t> \t> 
+
+
+
+02 
+
+
+
+
+6 
+
+
+IBS Hardware 
+
+1. Copper 
+
+2. Gull Wings 
+
+3. PC Board w/evaluator 
+
+4. Injection Molding 
+
+5. Copper 
+
+6. Mangannin 
+
+
+Mangannin 
+
+A copper alloy resistor of low resistance value, 
+that maintains an extremely constant tempera¬ 
+ture, regardless of current flow. Used as the 
+shunt resistor to measure current flow by the 
+evaluation electronics of the IBS. 
+
+
+Mechanical Section 
+
+
+The mechanical part of the IBS consists of the battery terminal for the negative pole with 
+ground cable. Tasks of the mechanical section of the IBS: 
+
+• Providing electrical contact of the car body with the negative pole of the battery 
+
+• Acceptance of the sensor element for current measurement 
+
+• Acceptance of the hardware 
+
+• Providing sufficient thermal contact between the temperature sensor of the hardware 
+and the negative pole of the battery 
+
+• Providing protection for the sensitive electronic components 
+
+• The battery terminal is the ground connection for IBS 
+
+
+7 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBS Measuring Ranges 
+
+• Voltage 6 V to 16.5 V 
+
+• Current -200 A to +200 A 
+
+• Closed circuit current 0 A to 10 A 
+
+• Starting current 0 A to 1000 A 
+
+• Temperature -40°C to 105°C 
+
+Electronic Evaluation Module 
+
+The electronic evaluation module of the IBS continuously registers the measured data. The 
+IBS uses these data to calculate the following battery indicators. 
+
+• Voltage 
+
+• Current 
+
+• Temperature 
+
+The IBS sends the calculated battery indicators to the DME via the BSD. The IBS calculates 
+changes in battery SoC/SoH based on information received from the DME on the SoC of 
+the battery during the period of time between engine "OFF" and deactivation of the DME 
+relay. After the DME relay has been switched off, the IBS continues to constantly observe 
+the SoC of the battery. 
+
+
+r - ---1 
+
+
+
+02915_02 
+
+
+8 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBS Hardware 
+
+
+IBS Hardware consists of the following: 
+
+• Shunt for current measurement 
+
+• Temperature Sensor 
+
+• Multi-layer pc-board as the electronic circuit including 
+the electronic components. 
+
+IBS Software PC-board of IBS 
+
+The software in the PC-board of the IBS calculates State of Charge and State of Health of 
+the battery and sends the information to the DME. Communication with the DME, which 
+takes place via the BSD, allows the DME to obtain data constantly from the IBS during vehi¬ 
+cle operation. 
+
+The following functions are integrated in the IBS: 
+
+• Continuous measurement of current, voltage and temperature of the battery under all 
+vehicle operating conditions 
+
+• Calculation of battery indicators as basis for SoC and SoH 
+
+• Monitoring of battery charge/discharge current 
+
+• Monitoring of SoC and notification to DME of critical SoC 
+
+• Partial calculation of SoH Based on starter draw 
+
+• Closed-circuit current monitoring in vehicle 
+
+• Data transfer to DME 
+
+• Self-diagnosis 
+
+• Self wake-up capability during sleep mode 
+
+
+
+i 
+
+
+1 
+
+
+
+
+
+
+
+
+: 
+
+- © - 
+
+3 ) 
+
+4 
+
+
+1— G 
+
+D 
+
+
+1 l+l 
+
+
+
+5 / 
+
+
+-©-^-4 
+
+i- 
+
+-El 
+
+
+X 
+
+
+
+
+1. Battery Positive 
+
+2. Battery Negative 
+
+3. Battery Voltage Measurement 
+
+4. Temp Measurement 
+
+5. Current Measurement 
+
+6. IBS 
+
+7. BSD 
+
+8. DME 
+
+
+9 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBS Charge Management 
+
+The IBS continuously manages the charge status of the battery when the key is off. The 
+current SoC is stored in the IBS every 2 hours. 
+
+When the IBS receives the terminal 15 “wake up signal” the DME is updated with the cur¬ 
+rent values of the battery indicators. 
+
+Closed-Circuit Monitoring 
+
+When the vehicle is off the IBS is programmed to wake up every 40 s so that it can update 
+the measured values (Voltage, current, temperature). The measuring time of the IBS is 
+approx. 50 ms. 
+
+The DME reads the history of the measurements on start-up. An entry is made in the fault 
+code memory of the DME if a closed-circuit current draw was present. 
+
+
+
+VS222. 022 12 02 
+
+
+10 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBS Wake-up 
+
+
+When the key is switched off, before the DME enters sleep mode, the DME informs the IBS 
+of the current SoC of the battery. The IBS monitors the SoC and when it drops below the 
+programmed threshold, a wake-up signal is sent to the DME via the BSD. The DME wakes 
+up, obtains information on the current SoC of the battery from the IBS and requests the 
+auxiliary electrical loads to switch off. 
+
+After one wake-up sequence the IBS is prohibited from waking the vehicle again during this 
+key off cycle. The vehicle subsequently reassumes sleep mode. 
+
+Servicing the IBS 
+
+The IBS is very sensitive to mechanical stress and strain. It is serviced as a complete unit 
+with the ground cable. The ground cable also serves as a heat dissipater for the IBS. 
+
+Particular attention should be paid to the following points in service: 
+
+• Do not make any additional connections at the negative terminal of the battery 
+
+• Do not modify the ground cable 
+
+• Do not make any connections between the IBS and the sensor screw 
+
+• Do not use force when disconnecting the ground terminal from the battery 
+
+• Do not pull at the ground cable 
+
+• Do not use the IBS as a pivot point to lever off the ground terminal 
+
+• Do not use the connections of the IBS as a lever 
+
+• Use only a torque wrench as described in the repair manual 
+
+• Do not release or tighten the sensor screw 
+
+A fault code is stored in the DME when the IBS is defective. The DME adopts a substitute 
+value and assumes IBS emergency mode. IBS emergency mode boosts the idle speed in 
+order to sufficiently charge the battery. 
+
+Note: 
+
+The software in the DME and that of the IBS must match. To ensure this require¬ 
+ment it may be necessary to replace the IBS in connection with a software update. 
+
+IBS Diagnosis 
+
+The IBS features a fault code memory that is read out by the DME. Self diagnosis checks 
+the voltage, current, temperature measurement, terminal 15 wake up as well as system 
+errors in the IBS. 
+
+Direct diagnosis of the IBS is not possible, it must be diagnosed through the DME. 
+
+
+11 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+Voltage Measurement 
+
+If the IBS is shorted to ground, a DME fault code will display “Voltage Fault DME ON”. The 
+IBS will be unable to wake up the DME. 
+
+If the IBS is shorted to B+, a DME fault code will display “Voltage fault, DME not ON” and 
+no charging current. The vehicle will NOT enter sleep mode. 
+
+Current Measurement 
+
+Current measurement is a very dynamic process, indicated by the measuring range of mA 
+to kA. 
+
+The fault code “Current Fault” is entered in fault memory when an implausible value is 
+determined during the plausibility check of the various measuring ranges of the IBS. 
+
+Terminal 15 Wake-up Signal Faults 
+
+The IBS recognizes wake-up line faults. The IBS can detect a wake-up line error under the 
+following conditions: 
+
+• DME “ON” 
+
+• Terminal 15 “ON” (voltage high at IBS) 
+
+• Terminal 15 running via BSD 
+
+If Terminal 15 at the IBS and Terminal 15 via the BSD are not equal, a fault is indicated in 
+the BSD line or an IBS Fault. 
+
+The IBS fault may be caused by: 
+
+• Terminal 15 Driver in the IBS has a short to ground 
+
+• Terminal 15 Driver in the IBS has a short to B+ or is defective. 
+
+SoC/SoH 
+State of Charge 
+
+SoC is a calculated condition showing the current charge in the battery. The SoC calcula¬ 
+tions are performed by the DME. SoC is used during key off periods to insure the battery 
+maintains a sufficient charge to start the engine at least one more time. 
+
+State of Health 
+
+SoH tracks the history of the battery in the vehicle. Charge/discharge cycles and times are 
+monitored. SoH helps the DME determine the proper charging rates and anticipated bat¬ 
+tery life. 
+
+The IBS detects vehicle start based on current draw in excess of 200A. The engine run¬ 
+ning signal is made available by the DME via the BSD. Internal resistance of the battery is 
+calculated from the current and voltage dip. These indicators are forwarded to the DME. 
+From this data, the DME the state of health (SoH) of the battery. 
+
+
+12 
+
+E60 Voltage Supply and Bus Systems 
+
+
+Workshop Exercise - IBS 
+
+
+Vehicle has been brought into shop for dead battery. A closed current draw exceeding lim¬ 
+its was found and repaired. However a fault is stored in the DME regarding the IBS. 
+
+The fault is 
+
+1. Interrogate the DME for Faults. What are the faults found? _ 
+
+
+2. How does the IBS communicate with the DME? _ 
+
+3. Perform a pin out of the IBS terminals with the key off and with the key on. 
+
+
+
+Pin 1 
+
+Pin 3 
+
+Key ON 
+
+
+
+Key OFF 
+
+
+
+
+4. Perform the test plan B1362 as outlined in the DISplus. _ 
+
+5. Scope the signal on the line coming from IBS and the line coming from DME. 
+
+
+Why do you get these voltage readings? _ 
+
+6. Monitor voltage (or scope pattern of BSD). Observe BSD entering sleep mode. How 
+long did it take for the BSD line to go to sleep? 
+
+What is the BSD voltage during sleep mode? _ 
+
+7. Lower the terminal 30 input to the IBS through the stimulation mode of the DISplus. 
+
+What happens to the BSD? _ 
+
+8. Why is it important that replacement batteries be the same type and capacity as the 
+factory installed battery? 
+
+
+9. What measurements are performed directly by the IBS? _ 
+
+10. Which control unit calculates the SoC/SoH of the battery while the engine is running? 
+
+
+11. How often is the battery conditioned monitored while the vehicle is “OFF’? 
+
+
+12. How does the IBS signal the DME of significant changes in SoC during “OFF’ 
+time? 
+
+
+13 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30g and MPM System Schematic 
+
+
+CD 
+
+
+
+
+KI.30 
+
+
+
+
+
+
+
+
+14 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminal 30g Relay 
+
+The Terminal 30g Relay prevents increased closed-circuit current consumption by 
+switching off electric loads. 
+
+The switch-off procedure disconnects various electric loads in a defined manner from the 
+vehicle electrical system. This happens approx. 60 min after terminal R "OFF" The deacti¬ 
+vated electric loads are activated again together with terminal 30g "ON." 
+
+The terminal 30g relay is actuated by the car access system. 
+
+
+
+Power to the following control units is managed by the terminal 30g relay: 
+Center console switch center 
+
+Rain and low beam sensor 
+
+Controller 
+
+Central information 
+display 
+
+Slide/tilt sunroof 
+
+Satellite radio 
+
+TOP HiFi amplifier 
+
+Telephone 
+
+Head-up display 
+
+Active cruise control 
+
+Electronic transmission 
+control/SMG 
+
+Dynamic stability control 
+
+Adaptive cornering light 
+
+
+Terminal 30g Relay Location 
+
+
+15 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30g Switch On Conditions 
+
+The switch-on conditions for terminal 30g relay are as follows: 
+
+• Unlock vehicle or 
+
+• Terminal R or 
+
+• Status change of door contacts or of trunk contact or 
+
+• Telephone wake-up line for telematic services or 
+
+• Service applications 
+
+30g Switch Off Conditions 
+
+The switch-off conditions for terminal 30g relay are as follows: 
+
+• 60 min after terminal R "OFF" or 
+
+• Service applications 
+
+• Power Management Switch off 
+
+
+Notes: 
+
+
+16 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Terminal 30g Relay 
+
+
+Vehicle is brought into the shop with a “No Start” condition. 
+
+1. Verify the complaint. 
+
+2. Perform short test on vehicle. 
+
+3. What control modules where not interrogated during the short test? 
+
+
+4. What are the possible causes of this “No Start” condition? 
+
+
+5. Check the status of the Key Recognition, EWS Line release. 
+
+6. Activate starter position while observing status in the CAS. What is the status of the 
+50E and 50 L? 
+
+
+7. Print FB for the 30g Relay. Observe the modules which are supplied power via the 
+
+relay. _ 
+
+8. Is there a module on the list which could cause the no start condition? 
+
+9. Repair fault, perform quick delete and now observe status of 50E and 50L. 
+
+10. How long after terminal R “OFF” is the terminal 30g relay switched off? 
+
+11. Terminal 30g relay is actuated by the _ 
+
+
+17 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Micro-Power Module 
+
+
+In the same way as with terminal 30g, the micro-power module (MPM) facilitates defined 
+deactivation of electric loads. 
+
+The MPM is installed in the spare wheel recess and operates in 3 modes, normal mode, 
+sleep mode and service mode 
+
+
+
+
+02967 02 
+
+
+Block Diagram of MPM 
+
+
+1 . 
+
+Rear Power Distribution 
+
+
+Box 
+
+
+2. 
+
+MPM 
+
+
+3. 
+
+Front Power Distribution 
+
+
+Box 
+
+
+4. 
+
+Electrical Load 
+
+5. 
+
+Electrical Load 
+
+6 . 
+
+Battery 
+
+
+7. 
+
+DME 
+
+
+K-CAN 
+
+Body CAN 
+
+KI.15 
+
+Terminal 15 
+
+KI.15 WUP 
+
+Terminal 15, 
+
+
+
+Wake Up 
+
+
+Normal Mode 
+
+All functions of the MPM are available in normal mode. 
+
+The MPM switches on/off the voltage supply to the electric loads involved in communica¬ 
+tion. Loads are switched on and off only when a fault occurs during the vehicle rest period. 
+The MPM switches the voltage supply on and off in the following control units: 
+
+• Multi-audio system controller M-ASK 
+
+• Car communication computer CCC 
+
+• CD disc changer CDC 
+
+• DVD changer DVD 
+
+The supply voltage is switched on and off by means of a bistable (switchover type) relay. 
+The relay is set to "ON" when it leaves the factory. This type of relay has two positions, On 
+and OFF. When ON voltage is passed from Fuse 57 through the MPM to the above con¬ 
+sumers. When OFF, the connection to F57 is broken. This type of relay does not need 
+power (coil energized) to maintain either switch position. Power is only needed to cause the 
+relay to switch from ON to OFF or OFF to ON. 
+
+18 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Switch on/off conditions for micro-power module 
+
+
+Firs 
+
+Swi 
+
+Poi 
+
+
+
+The MPM communicates with the vehicle through the K-CAN and is supplied power by 
+both a KL 30 and a KL 15. If terminal 30 voltage is lost, operation continues with the volt¬ 
+age supplied by terminal 15, and a fault is registered. 
+
+Sleep Mode 
+
+The MPM assumes sleep mode approx. 1 s after the K-CAN has gone into sleep mode. The 
+current switching status of the relay is stored before the MPM assumes sleep mode. 
+
+The MPM is woken by the terminal 15 signal via the K-CAN or by activation of terminal 15. 
+On waking, the switching status of the relay last stored is reestablished. 
+
+Service Information for MPM 
+
+A fault code is stored in the fault code memory when the MPM disconnects the electric 
+loads from the vehicle electrical system. The following fault codes can be read out in 
+diagnosis: 
+
+• Terminal 15 fault 
+
+• Deactivation with information on the switch-off condition 
+
+The information on the switch-off condition is stored in the info memory: 
+
+• Undervoltage 
+
+• Contact fault of relay contacts 
+
+
+19 
+
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Micro Power Module 
+
+
+Vehicle is brought into shop with the radio not working. 
+
+1. Verify the complaint 
+
+2. Perform short test. Are there any faults stored which could be associated with this 
+
+problem? _ 
+
+3. Which control modules did not respond during the short test? 
+
+4. Which bus or busses do these modules use for communication? _ 
+
+5. What are the pin numbers of the connectors at the TCU that supply power to the TCU? 
+
+Where does the power come from? _ 
+
+6. What are the pin numbers of the M-ASK that provide K-Can communication? _ 
+
+7. If the M-ASK is not recognized during the short test would the OPPS tester be useful? 
+
+8. What fuse supplies power to the M-ASK ? - 
+
+9. Is the fuse OK? _ 
+
+10. What is the voltage source of the fuse? _ 
+
+Print the ETM. 
+
+11. Pin out all terminals of the MPM. 
+
+12. What should the scope pattern be on terminals 3 and 11? - 
+
+13. Is communication possible with the MPM? - 
+
+14. What information is available through Diagnosis Requests? - 
+
+15. Is operation of the MPM possible through component activation? - 
+
+
+20 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alternator 
+
+
+Bosch and Valeo alternators are installed in the E60. The alternators are fitted depending 
+on the type of engine and equipment configuration. They differ with regard to their rating of 
+140 A and 170 A and are aircooled. 
+
+
+Digital Motor Electronics 
+
+
+The power management software is contained in the DME. When the vehicle is at rest, the 
+IBS is partially responsible for power management. 
+
+The tasks of the power management system include: 
+
+• Adaptation of the alternator charging voltage 
+
+• Idle speed boost for increasing the power output of the alternator 
+
+• Reduction of peak loads in the event of a shortfall in coverage provided by the vehicle 
+electrical system 
+
+• Deactivation by means of bus messages of electric loads such telephone, on reaching 
+the start capability limit of the vehicle 
+
+• Closed-circuit current diagnosis 
+
+
+INPUT 
+
+
+OUTPUT 
+
+
+
+DME 
+
+
+5 
+
+
+
+
+v$223jm?2_m 
+
+
+1 . 
+
+Battery Voltage 
+
+7. 
+
+Idle Speed control 
+
+2. 
+
+Current Input 
+
+8. 
+
+Specified Alternator Charging Voltage 
+
+3. 
+
+Temperature Input 
+
+9. 
+
+Deactivation of Electrical Loads 
+
+4. 
+
+5. 
+
+DME 
+
+Power Management 
+
+10. 
+
+Peak Load Reduction 
+
+
+6. EPROM with maps for Voltage,Current and Temp 
+
+
+21 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Variable Battery Charging Voltage 
+
+The variable battery charging voltage on system ensures improved charging management 
+of the battery in unfavorable driving situations. The power management controls the tem¬ 
+perature-dependent voltage for the charging voltage of the alternator via the BSD line. 
+
+Idle Speed Boost 
+
+The idle speed can be increased in situations where the battery does not cover power 
+requirements. When the specified voltage alone is no longer sufficient, the DME boosts the 
+idle speed corresponding to the engine status. 
+
+Reducing Peak Loads 
+
+The peak load of the vehicle electrical system is reduced when there is still a shortfall in 
+battery coverage despite boosting idle speed. 
+
+Peak load reduction is realized by: 
+
+• Reducing power output, e.g. by correspondingly controlling the clock cycles of the rear 
+window defogger 
+
+• If reducing the power output is not sufficient, individual electric loads can be switched 
+off in extreme situations 
+
+Electric Load Cutout 
+
+The electric loads in the E60 are divided into the following categories: 
+
+• Comfort loads, e.g. window defogger, seat heating, steering wheel heating 
+
+Electric loads switch off automatically after engine "OFF." These electric loads can be acti¬ 
+vated again after the vehicle has been restarted. 
+
+• Legally required auxiliary electric loads, e.g. side lights, hazard warning lights 
+
+Legally required auxiliary loads must be operational for a certain period of time after engine 
+"OFF." These legally required electric loads are not switched off even on reaching the start 
+capability limit of the battery. 
+
+• Auxiliary electric loads, e.g. independent ventilation,communication components such 
+as central information display, telephone, telematic services 
+
+Auxiliary loads can be switched on after engine "OFF." The comfort electric loads switch off 
+automatically on reaching the start capability limit of the battery. Switch-off is requested by 
+the DME in the form of a CAN message. 
+
+• System-related afterrunning loads, e.g. electric radiator fan 
+
+System-related afterrunning loads can maintain operation for a defined period of time. 
+
+
+22 
+
+E60 Voltage Supply and Bus Systems 
+
+
+Data Transfer to the IBS 
+
+The following data are transferred via the BSD to the IBS before the DME assumes sleep 
+mode: 
+
+• State of charge of the battery SoC 
+
+• State of health of the battery SoH 
+
+• Outside temperature 
+
+• Available discharge level 
+
+• Terminal 15 wake-up enable 
+
+• Terminal 15 wake-up disable 
+
+• DME close 
+
+Closed-Circuit Current Diagnosis 
+
+A fault code is stored in the DME when the battery current exceeds a defined value during 
+the vehicle rest phase. The vehicle should be analyzed accordingly. 
+
+Terminal 30g Relay 
+
+The terminal 30g relay is actuated by the CAS at an excessively high closed-circuit current 
+or on reaching the start capability limit of the battery. 
+
+
+Notes 
+
+
+23 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D-Bus 
+
+
+
+24 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus Systems 
+
+K-CAN 
+
+K-CAN Changes 
+
+In the E60, the bus systems K-CAN-S and K-CAN-P of the E65 were combined to form the 
+K-CAN. 
+
+The car access system CAS is no longer used as a repeater between K-CAN-S and K- 
+CAN-P. CAS is now only a K-CAN user. The internal designation is CAS 2. 
+
+The instrument cluster and the central information display are now connected to K-CAN. 
+They no longer serve as a gateway between K-CAN-S and MOST. 
+
+The door modules are no longer connected to K-CAN-P but rather to byteflight. 
+
+The controller CON is connected directly to K-CAN and no longer via the centre console 
+switch centre SZM. 
+
+MOST 
+
+Most Changes 
+
+MOST has less users than on the E65. Components such as the instrument cluster and 
+central information display CD are connected to other bus systems. The MOST addition¬ 
+ally features the satellite radio (SDARS). 
+
+A large MOST system extending up to the luggage compartment is installed if the E60 is 
+equipped with a telephone, or Top HiFi system. 
+
+
+byteflight 
+
+byteflight Changes 
+
+The SIM and ZGM functions have been combined in the SGM. The door modules adopt 
+the functions of the front door satellites. 
+
+
+25 
+
+E60 Voltage Supply and Bus Systems 
+
+
+byteflight Comparison 
+
+
+byteflight E65 
+
+byteflight E60 
+
+Central Gateway Module ZGM 
+
+Safety and Gateway Module SGM 
+
+Safety and Information Module 
+
+Combined in SGM 
+
+Steering column switch cluster SZL 
+
+SZL 
+
+Center Satellite SFZ 
+
+SFZ 
+
+A-Pillar Satellite Left SASL 
+
+Not used 
+
+A-Pillar Satellite Right SASL 
+
+Not used 
+
+Front Door Satellite Left STVL 
+
+Driver’s Door Module TMFA 
+
+Front Door Satellite Right STVR 
+
+Passenger’s Door Module TMBF 
+
+B-Pillar Satellite left SBSL 
+
+SBSL 
+
+B-Pillar Satellite Right SBSR 
+
+SBSR 
+
+Driver’s Seat Satellite SSFA 
+
+Not used 
+
+Passenger’s Seat Satellite SSBF 
+
+Not used 
+
+Rear Seat Satellite SSH 
+
+Not used 
+
+
+PT-CAN 
+
+No changes 
+
+
+Bus system parameters 
+
+
+Bus System 
+
+Data 
+
+kBd 
+
+Rate 
+
+MBd 
+
+Bus Structure 
+
+K-CAN 
+
+100 
+
+
+Linear/Two Wire 
+
+PT_CAN 
+
+500 
+
+
+Linear/Two Wire 
+
+byteflight 
+
+
+10 
+
+Star/Fiber Optic 
+
+MOST 
+
+
+22.5 
+
+Ring/Fiber Optic 
+
+D-Bus 
+
+10.5/115 
+
+
+Linear/Single Wire 
+
+
+26 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subbus Systems 
+
+LIN-Bus 
+
+The LIN-bus was developed to provide a standard network for the automobile industry. 
+The LIN-bus is a standardized serial single-wire bus system. The LINbus facilitates fast and 
+simple data transmission. The use of LIN-bus technology reduces the number of lines in the 
+vehicle. 
+
+
+LIN-bus systems in E60 
+
+
+Main Controller 
+
+Server Unit 
+
+IHKA 
+
+Flap Motors and Blower Motor 
+
+Door Module 
+
+Driver’s Switch Block SBFA 
+
+AHL 
+
+Stepper Motor Controller SMC 
+
+
+A typical LIN-bus system includes the following components: 
+
+• 1 Main Controller 
+
+• Several Server Units 
+
+• Single-wire line 
+
+The LIN-bus uses a bi-directional single-wire bus line as the transmission medium. The bus 
+contains only one Main Controller while many server units are possible. The transfer rate 
+on the LIN-bus can be up to 19.2 kBaud. 
+
+The following transfer rates are possible: 
+
+9.6 kBaud for IHKA 19.2 kBaud for other systems 
+
+LIN-Bus Main Controller 
+
+The LIN-bus Main Controller transfers the control unit requests to the server units of the 
+system. The LIN-bus Main Controller controls the message traffic on the bus line. 
+
+LIN-bus server units of the air conditioning systems include: 
+
+• Actuator motors for the air distribution flaps 
+
+• Blower controller 
+
+The LIN-bus server units wait for commands from the LIN-bus Main Controller and 
+communicate with it only on request. 
+
+
+27 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+F-CAN 
+
+
+
+1. DSC Sensor 1 
+
+2. DSC Sensor 2 
+
+3. Active Steering Actuator 
+
+4. SZL 
+
+5. DSC 
+
+6. AFS 
+
+
+VS223 02302 02 
+
+
+The F-CAN enables fast data transfer between the components, e.g.active steering. 
+
+
+BSD (Bit-Serial Data Interface) 
+
+
+
+
+
+DME 
+
+
+02073 02 
+
+
+1. Alternator GEN 
+
+2. Bit-serial data interface BSD 
+
+3. DME 
+
+4. IBS 
+
+
+28 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub-bus System Parameters 
+
+
+Sub-bus 
+
+Data Rate kBd 
+
+Bus Structure 
+
+Components 
+
+BSD 
+
+9.6 
+
+Linear/Single Wire 
+
+DME, IBS, Alternator 
+
+DWA-bus 
+
+9.6 
+
+Linear/Single Wire 
+
+UIS, DWA Siren w/Tilt 
+
+Sensor 
+
+K-bus seat 
+
+9.6 
+
+Linear/Single Wire 
+
+Seat adjustment switch unit, Center 
+Console switch unit 
+
+LIN bus A/C 
+
+9.6 
+
+Linear/Single Wire 
+
+IHKA,AII A/C stepper motors blower 
+motor, PTC 
+
+Lin-bus RDC 
+
+9.6 
+
+Linear/Single Wire 
+
+RDC, Wheel arch antennas 
+
+Lin-bus AHL 
+
+19.2 
+
+Linear/Single Wire 
+
+AHL Control Unit, 
+
+Stepper Motor Controller 
+
+Lin-bus TMFA 
+
+19.2 
+
+Linear/Single Wire 
+
+Door Module, Driver’s Switch Block 
+
+F-CAN 
+
+100 
+
+Linear/Two Wire 
+
+AFS, ARS, Yaw rate sensors 
+SZL,DSC, LWS 
+
+
+MOST Connector Junction 
+
+The MOST connector junction facilitates quick connection of new control units. 
+
+
+
+29 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - Power Management/Bus System 
+
+
+1. What are the power management tasks performed by the DME? 
+
+
+2. Under what conditions (concerning the electrical system) does the DME boost the 
+
+idle? _ 
+
+3. How does the DME determine SoC? 
+
+4. What is the difference is between SoC/SoH? _ 
+
+
+5. How does the IBS detect starter operation? _ 
+
+6. Explain IBS wake-up disable. _ 
+
+7. List the components of a typical LIN-bus system. 
+
+
+8. Name the Bus or sub-bus systems that are two wire busses. 
+
+
+9. What is the purpose of the MOST connector junction? _ 
+
+10. What are some of the symptoms of a failed MOST Bus? 
+
+
+11. What modules are connected to the MOST Bus? 
+
+
+30 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12. Which control module is the gateway from the K-Can to the MOST? _ 
+
+13. How does a short test help in MOST Bus diagnosis? _ 
+
+14. What test plans are available for MOST Bus diagnosis in the DISplus or GT1? 
+
+15. Where is the OPPS connection point located? _ 
+
+What is special about this access point? _ 
+
+16. How is the MOST Bus affected by a blown fuse to the: 
+
+TCU _ 
+
+CD Changer _ 
+
+M-ASK _ 
+
+17. What is the order of light travel in the MOST Bus? _ 
+
+18. Does the MOST Bus respond differently (if faulted) in the E-60 depending on vehicle 
+equipment? 
+
+
+31 
+
+E60 Voltage Supply and Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

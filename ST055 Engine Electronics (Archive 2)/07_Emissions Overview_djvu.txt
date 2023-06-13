@@ -1,0 +1,2928 @@
+Table of Contents 
+
+Emissions Overview 
+
+Subject Page 
+
+Emissions Overview.3 
+
+Purpose of the System.3 
+
+What is OBD? .3 
+
+What is the most common problem detected by OBD? .4 
+
+Fuel FillerCap .4 
+
+M isfire Detection.4 
+
+Engine Misfire Diagnosis .5 
+
+OBD History .8 
+
+OBD I .9 
+
+OBD II .9 
+
+Objectives of OBD II .9 
+
+Overview of the National Low Emission Vehicle Program .10 
+
+Emission Reduction Stages .10 
+
+SULEV.12 
+
+M56 Engine.12 
+
+Catalytic Converters.12 
+
+Oxygen Sensors.12 
+
+Fuel Injectors.13 
+
+Secondary Air System .14 
+
+Fuel System .15 
+
+Cooling System.16 
+
+System Monitoring.17 
+
+Permanent Monitoring .17 
+
+Cyclic M onitoring.17 
+
+Drive Cycle .18 
+
+Example of a Drive Cycle for Completing all OBD II 
+
+Relevant Checks .18 
+
+Readiness Code .21 
+
+Readiness Code using the DISplus/GT-1 .22 
+
+OBD II Diagnostic Trouble Codes (DTC) .23 
+
+ScanTool Connection.24 
+
+20 Pin Diagnostic Socket Deletion .25 
+
+BMW FaultCode (DISplus/GT-1).27 
+
+OBD II Fault Memory and Fault Codes.28 
+
+Emission Control Function Monitoring & Comprehensive 
+Component Monitoring.28 
+
+
+Initial Print Date: 02/01 
+
+
+Revision Date: 09/04 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Overview 
+
+
+Model: All Equipped with OBD II 
+Production: 1995 to Present 
+
+Manufacturer: Bosch and Siemens Engine Control Modules 
+Pin Connector: 88 and 134 Pins 
+
+
+
+After completion of this module you will be able to: 
+
+• Describe What is Required to Illuminate the "Malfunction Indicator" Light. 
+
+• Describe The Difference Between TLEV, LEV ,ULEV, and SULEV. 
+(SULEV - See Service Bulletin at the end of module.) 
+
+• Identify Vehicle Emission Compliance by Production Date. 
+
+• List the Systems/Components that are Permanently M onitored. 
+
+• Access the Readiness Codes using the DISplus/GT-1. 
+
+• Find the DLC Connector Locations in Various BMW Vehicles. 
+
+
+2 
+
+Emissions Overview 
+
+
+
+Emissions Overview 
+
+
+Purpose of the System 
+What isOBD? 
+
+Today many of the engine's control systems such as throttle opening, fuel injection, igni¬ 
+tion, emissions and performance are controlled by an electronic control module and the 
+related sensors and actuators. The first on-board diagnostic (OBD) systems were devel¬ 
+oped by the manufacturer as a way to detect problems with the electronic systems. 
+
+
+Beginning with 1994 model year, requirements for OBD systems have been established 
+by the EPA and CARB.The purpose ofthe OBD system is to assure proper emission 
+control system operation forthe vehicle's lifetime by monitoring emission-related compo¬ 
+nents and systems for deterioration and malfunction. This includes also a check ofthe 
+tank ventilation system for vapor leaks. 
+
+
+The OBD system consists ofthe engine and transmission control modules, their sensors 
+and actuators along with the diagnostic software. The control modules can detect system 
+problems even before the driver notices a driveability problem because many problems 
+that affect emissions can be electrical or even chemical in nature. 
+
+
+What happens if a problem is detected? 
+
+
+When the OBD system determines that a prob¬ 
+lem exists, a corresponding "Diagnostic Trouble 
+Code" is stored in the control module's 
+memory. 
+
+
+The control module also illuminates a yellow 
+dashboard Malfunction Indicator Light indicat¬ 
+ing "Check Engine" or "Service Engine Soon" 
+or displays an engine symbol. 
+
+
+Have you seen this light? 
+
+
+CHECK 
+
+ENGINE 
+
+
+
+
+A short introduction to OBD 
+
+
+This light informs the driver of the need for service, NOT ofthe need to stop the vehicle. 
+A blinking orflashing dashboard light indicates a rather severe level of engine misfire. 
+
+
+After fixing the problem the Fault code is deleted to turn off the light. If the conditions that 
+caused a problem are no longer present the vehicle's OBD system can turn off the dash¬ 
+board light automatically. If the OBD system evaluates the component or system three 
+consecutive times and no longer detects the initial problem, the dashboard light will turn 
+off automatically. 
+
+
+3 
+
+Emissions Overview 
+
+
+
+
+
+
+What is the mostcommon problem detected by OBD? 
+
+
+Fuel FillerCap 
+
+If the fuel filler cap is not properly closed after 
+refueling, the OBD system will detect the 
+vapor leak that exists from the cap not being 
+completely tightened. 
+
+If you tighten the cap subsequently, the 
+dashboard light should be extinguished with¬ 
+in a few days or after deleting the Fault code. 
+This is notan indication of a faulty OBD sys¬ 
+tem. The OBD system has properly diag¬ 
+nosed the problem and accordingly alerted 
+the driver by illuminating the dashboard light. 
+
+
+
+Please check the fuel filler cap first when the 
+dashboard light comes on to avoid unneces¬ 
+sary diagnostic time. To check the fuel filler cap turn the cap to the right until you hear a 
+click orthe cap reaches the full stop. Make sure that the retaining strap is not caught 
+between the filler pipe and the fuel filler cap. If the light should stay on further in depth 
+evaporative leak diagnosis is required. 
+
+
+Misfire Detection 
+
+As part of the CARB/OBD II regulations the Engine Control M odule must determine if 
+misfire is occurring and also identify the specific cylinder(s). The ECM will determine 
+severity of the misfire event, and whether it is emissions relevant or catalyst damaging. In 
+orderto accomplish these tasks the ECM monitors the crankshaft for acceleration losses 
+during firing segments of cylinder specific firing order. If the signal is implausible an erro¬ 
+neous reference mark can be obtained by the ECM which will result in a misfire fault 
+being set. 
+
+Possible causes of cylinder misfire faults (actual field findings): 
+
+• Vehicle ran low or out of fuel 
+
+• Poorfuel quality (ex. water in fuel, customer uses an additive, etc.) 
+
+• Low/high fuel pressure 
+
+• Ignition coil 
+
+• Fouled spark plug(s) 
+
+• Restricted / contaminated fuel injector(s) 
+
+• Crankshaft position sensor 
+
+• Poor combustion due to low compression or high leakage 
+
+• Blocked/restricted Catalyst 
+
+
+4 
+
+Emissions Overview 
+
+
+
+
+
+
+Engine Misfire Diagnosis 
+
+Engine Misfire is the result of inefficient combustion in one or more cylinders. The causes 
+of Engine M isfire are extensive but can be grouped into the following sub-systems. 
+Considerthe charts below as an additional diagnostic aid once the DISplus/GT-1 is con¬ 
+nected, the correct fault symptom has been chosen and the fault memory has been inter¬ 
+rogated. Follow the Test Module as displayed by the DISplus/GT-1. 
+
+
+IGNITION SYSTEM 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+SparkPlug: • Incorrect spark plug installed Secondary • Verify correct spark plug 
+
+• Electrode gap closed ortoo small Ignition • Replace if necessary 
+
+• Electrode(s) missing DIS plus Preset • Swap with another cylinder 
+
+• Oil orfuel fouled spark plug Measurement 
+
+• Ceramic insulation cracked 
+
+Secondary • Wet or moist due to water infiltration. • Check water ingress, repair, replace 
+
+circuit: (wiring, • High resistance due to corrosion. • Check resistance value, replace 
+
+M73-cap, rotor) 
+
+Ignition • Secondary/P rimary Circuits open orshorted. Secondary • Inspect and replace if necessary 
+
+Coil(s): • Housing cracked, damaged. and Primary • Swap with another cylinder 
+
+IgnitionCoil • Powersupply, Primary control and Primary • Look for open, loose connector, 
+
+&Engine ground (shunt signal) circuits impaired. Ignition & corrosion, crossed or backed out 
+
+Harness Term 4A feed- pins (also consider ignition unloader or 
+
+Connectors backPreset EC M relay on MY97 and newer cars). 
+
+Measurements • Determine defective condition, 
+repair or replace. 
+
+• A secondary ignition oscilloscope display provides vital information 
+about the ignition system's condition. 
+
+• Follow the precautions in group 12 of the Repair Instructions. 
+
+• Use the following scope patterns as a guideline for ignition system 
+diagnosis. Use the preset measurement function of DIS plus. 
+
+
+Evaluation of secondary signal amplitude at idle speed. 
+
+1. Normal Ignition Voltage Peak: Spark Plug is OK 
+
+2. Low Ignition Voltage Peak: Gap too small (defective) 
+
+3. H igh Ignition voltage peak: Gap too large (defective) 
+
+
+5 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pistons, • Hole in piston crown, ring(s) broken, 
+
+Rings, valve(s) not seating, valve(s) bent, 
+
+Valves, valve spring(s) broken, camshaft lobe 
+
+Camshaft: cracked, etc. 
+
+Hydraulic • HVA oil bore restricted or blocked. 
+Valve • Engine oil pressure builds up too slow. 
+
+Actuator • Intermittent Misfire Fault - Not 
+(HVA): Currently Present. 
+
+• HVA binding/sticking in bore. 
+
+Vacuum • Unmetered vacuum leaks causing a 
+Leaks: "lean" operating condition. Possible 
+
+"Excessive Mixture Deviation" 
+
+fault codes. 
+
+
+• Idle Quality - Rough Run¬ 
+ning Preset. 
+
+• Cylinder compression & 
+leakdown tests. 
+
+• Idle Quality - Rough Run¬ 
+ning Preset. 
+
+• Listen to HVA 
+
+• Check Oil Pressure 
+
+• Cylinder leakdown 
+
+
+CORRECTION 
+
+
+• Correct condition as 
+required. 
+
+
+■ Always consider 
+mechanical com¬ 
+ponents when 
+diagnosing misfire. 
+
+■ Inspect for scoring. 
+
+
+Idle Quality - Rough Run- • Correct condition as 
+ning Preset. Test for vacuum required, 
+leaks per Repair Instr. and S IB 
+
+on "Crankcase Ventilation". 
+
+■ Interpret Add. & Multiple adaptation values 
+
+
+FUEL QUALITY, DELIVERY, INJ ECTION & EVAPORATIVE SYSTEMS 
+
+
+COMPONENT POSSIBLE CONDITION 
+
+
+Fuel (quality): ‘Contaminated fuel. 
+
+(water, other non combustible). 
+
+Fuel Delivery: • Fuel pump delivery pressure low, 
+restriction in fuel line to fuel rail or 
+running loss valve. 
+
+• Fuel filter restricted (clogged). 
+
+• Low fuel in tank. 
+
+
+Running Loss ‘Valve stuck in "small circuit" position. 
+
+Valve: 
+
+
+Fuel Injectors: 
+
+
+1 Leaking fuel injector pintle seats cause 
+rich engine starts with hot ambient 
+temperatures. 
+
+1 Blocked (dirty) injector(s). 
+
+
+TEST 
+
+
+1 Check fuel 
+pressure & 
+volume. 
+
+1 Check fuel 
+pump power 
+and ground 
+
+1 Check valve 
+
+
+•Ti Preset& 
+status page. 
+
+• Sec Ign scope 
+pattern. 
+
+
+CORRECTION 
+
+
+•Clean fuel system, replace fuel. 
+
+
+Determine restriction/flow reduction, 
+replace component as necessary. 
+Interpret Additive and Multiplicative 
+adaptation values. 
+
+
+• Display "diagnosis requests" in DISplus 
+and test valve for proper function, repl¬ 
+ace valve as necessary. 
+
+Check injectors for leakage. 
+
+Swap suspect injector with another 
+cylinder. 
+
+• Inspect injector, replace if necessary. 
+
+
+Fuel Pressure 
+Regulator: 
+
+
+Evaporative 
+
+System: 
+
+
+1 Regulator defective, causes fluctuation 
+in the injected quantity of fuel causing 
+mixture adaptation faults. 
+
+1 Defective evaporative system vent 
+causing fuel tank collapse and fuel. 
+starvation. 
+
+
+Fuel pressure • Check nominal fuel pressure value with 
+engine operating undervaried speeds. 
+
+
+DISplus status, ‘Check the fuel tank condition and vent 
+Evap test line, 
+
+with press¬ 
+ure tool, • Check Fresh AirValve onTLEV E36 
+
+purge valve vehicles orLDP/DM TL and filter on 
+func.test. ORVR vehicles for proper system 
+
+"breathing". 
+
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+IMPLAUSIBLE ECM CONTROL FUNCTION OR SENSOR INPUT SIG- 
+
+
+COMPONENT POSSIBLE CONDITION TEST CORRECTION 
+
+Crankshaft • Implausible signal for misfire detection. • DIS plus preset • Determine defective sensoror 
+
+Position • Increment wheel loose or damaged measurement. increment wheel and replace. 
+
+Sensoror (internal on M44, M52 and M54, 
+
+Increment external on M 62 & M 73). 
+
+Wheel: • Air gap between sensor and wheel. 
+
+• Noticeable at higher rpm. 
+
+Catalyst • Excessive exhaust back pressure • DIS plus preset • Determine catalyst condition, replace 
+
+Damaged: (bank specific fault present, more measurement or repair as necessary, 
+
+noticeable under heavy load and of oxygen 
+
+high rpm). sensor. 
+
+• Back pressure test per SIB with Special Tool. 
+
+Oxygen • Excessive mixture deviation, • Monitor • Swap sensorfrom other bank (if app- 
+
+Sensor: possible vacuum leaks. oxygen licable) and see if fault transfers to 
+
+sensor other bank, 
+
+signal via 
+DIS preset. 
+
+Engine • Internal control module fault. *Checkfault • Highly unlikely but must be considered. 
+
+Control memory. 
+
+Module • Misfire Reprogramming. *RefertoSIB • Check Model/Prod range - reprogram 
+
+When diagnosing a Misfire fault code, Remember: 
+
+"M isfire" is caused by a defect in the internal combustion engine or a defect in the 
+control of the engine operation. 
+
+"Misfire" is the result of improper combustion (variation between cylinders) as 
+measured at the crankshaft due to: 
+
+- Engine mechanical defects; breakage, wear, leakage orimpropertolerances. 
+
+- Excessive mixture deviation; air (vacuum leaks), fuel and all the components that deliver 
+air/fuel into the combustion chambers. 
+
+- Faulty ignition; primary, secondary including spark plugs. 
+
+- Faulty exhaust flow; affecting back pressure. 
+
+- Tolerance parameters; ECM programming. 
+
+A Misfire fault code(s) is the "symptom" of a faulty input for proper combustion. 
+When diagnosing a misfire, review the charts to assist you in finding the faulty 
+input. 
+
+T 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+OBD History 
+
+As a result of low fuel costs, together with a high standard of living and a dense popula¬ 
+tion, the state of California was affected particularly heavily by air pollution. This spurred 
+the state to pass the most comprehensive and stringent emissions and consumption 
+laws in the world. The automobile manufacturers were reminded of their obligations and 
+this drove them on to comply with the new regulations at enormous expense. 
+
+
+• In continuing efforts to improve air quality, the Environmental Protection Agency 
+(EPA) amended the Clean Air Act in 1990. The Clean Air Act was originally mandat¬ 
+ed in 1970. The Clean Air Act has a direct impact on automobile manufactures 
+whereby they are responsible to comply with the regulations set forth by the EPA. 
+The 1990 amendment of the Clean Air Act set forth all of the changes currently 
+being introduced on vehicles sold in the United States today. 
+
+• In 1967, the State of California formed the California Air Resources Board (CARB)to 
+develop and carryout air quality improvement programs for California's unique air pol¬ 
+lution conditions. Through the years, CARB programs have evolved into what we 
+now know as ON Board Diagnostics and the National Low Emission Vehicle 
+Program. 
+
+• The EPA has adopted many of the CARB programs as National programs and laws. 
+One of these earlier programs was OBD I and the introduction of the "Check 
+Engine" Light. 
+
+• BMW first introduced OBD I and the check engine light in the 1987 model year. This 
+enhanced diagnosis through the display of "flash codes" using the check engine 
+light as well as the BMW 2013 and GT-1. OBD I was only the first step in an ongoing 
+effort to monitor and reduce tailpipe emissions. 
+
+• By the 1989 model year all automotive manufactures had to assure that all individual 
+components influencing the composition of exhaust emissions would be electrically 
+monitored and that the driver be informed whenever such a component failed. 
+
+• Since the 1996 model year all vehicles must comply with OBD II requirements. OBD 
+II requires the monitoring of virtually every component that can affect the emission 
+performance of a vehicle plus store the associated fault code and condition in mem¬ 
+ory. 
+
+If a problem is detected and then re-detected during a later drive cycle more than 
+one time, the OBD II system must also illuminate the "Check Engine" Light in the 
+instrument clusterto alert the driverthata malfunction has occurred. However, the 
+flash code function of the Check Engine Light in OBD I vehicles is nota 
+function in OBD II vehicles. 
+
+
+8 
+
+Emissions Overview 
+
+
+
+• This requirement is carried out by the Engine Control Module (ECM/DM E) as well as 
+the Automatic Transmission Control Module (EGS/AGS) and the Electronic Throttle 
+Control Module (EML)to monitor and store faults associated with all 
+components/systems that can influence exhaust and evaporative emissions. 
+
+OBD I 
+
+The essential elements here are that electrical components which affect exhaust emis¬ 
+sions are monitored by the motor-electronics system and an optical warning signal 
+(CHECK ENGINE Light) is issued in the event of an OBD I-relevant malfunction. The cor¬ 
+responding fault can be read out via a flashing code without the aid of a testing device. 
+
+OBD II 
+
+Since J anuary 1996, OBD II has been compulsory on all vehicles in the US market. The 
+main difference from OBD I is that not only are the purely electrical components moni¬ 
+tored but also all the systems and processes that affect exhaust emissions and fuel sys¬ 
+tem evaporative emissions. 
+
+The operational reliability of the exhaust-treatment system must be guaranteed for 5 
+years and/or 100,000 miles; this is maintained by emission certification. In this case, the 
+data relevant to exhaust/evaporative emissions are read out via a standardized interface 
+with a universal "diagnosis device". If a violation is identified, the vehicle manufacturer in 
+question is legally bound to eliminate the fault throughout the entire vehicle series. 
+
+
+Objectives of OBD II 
+
+• Permanent monitoring of components rel¬ 
+evant to exhaust emissions in all vehicles. 
+
+
+• Immediate detection and indication of sig¬ 
+nificant emission increases overthe entire 
+service life of each vehicle. 
+
+
+• Permanently low exhaust emissions in 
+the field. 
+
+
+
+9 
+
+Emissions Overview 
+
+
+
+
+
+Overview of the National Low Emission Vehicle Program 
+
+Emission Reduction Stages 
+
+While OBD II has the function of monitoring foremission related faults and alerting the 
+operator of the vehicle, the National Low Emission Vehicle Program requires a certain 
+number of vehicles produced (specific to manufacturing totals) currently comply with 
+the following emission stages; 
+
+TLEV: Transitional Low Emission Vehicle 
+
+
+LEV: Low Emission Vehicle 
+
+
+ULEV: Ultra Low Emission Vehicle. 
+
+
+Priorto the National Low Emission Vehicle Program, the most stringent exhaust reduction 
+compliancy is what is known internally within BMW as HC II. The benefit of exhaust 
+
+
+emission reductions that the 
+National Low Emission Vehicle 
+Program provides compared with 
+the HC II standard is as follows; 
+
+TLEV: 50% cleaner. 
+
+
+LEV: 70% cleaner. 
+
+
+ULEV: 84% cleaner. 
+
+
+Grams/Mile at 100,000 miles 
+
+Compliance 
+
+Level 
+
+N M HC 
+
+Non Methane 
+Hyd rocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.156 
+
+4.2 
+
+0.6 
+
+LEV 
+
+0.090 
+
+4.2 
+
+0.3 
+
+ULEV 
+
+0.055 
+
+2.1 
+
+0.3 
+
+
+Grams p er Mile @ 50 F - C old Eng ine Startup 
+
+
+C ompliance 
+Level 
+
+NMHC 
+
+Non Methane 
+Hyd rocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.250 
+
+3.4 
+
+0.4 
+
+LEV 
+
+0.131 
+
+3.4 
+
+0.2 
+
+ULEV 
+
+0.040 
+
+1.7 
+
+0.2 
+
+
+G rams/M ile at 50,000 miles 
+
+Compliance 
+
+Level 
+
+NMHC 
+
+Non Methane 
+Hyd rocarbon 
+
+CO 
+
+Carbon 
+
+Monoxide 
+
+NOx 
+
+Oxide(s) of 
+Nitrogen 
+
+TLEV 
+
+0.125 
+
+3.4 
+
+0.4 
+
+LEV 
+
+0.075 
+
+3.4 
+
+0.2 
+
+ULEV 
+
+0.040 
+
+1.7 
+
+0.2 
+
+
+10 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OBD II Emission Compliance 
+
+
+
+1995 
+
+1996 
+
+1997 
+
+1998 
+
+1999 
+
+2000 
+
+2001 
+
+M44 
+
+E36 
+
+
+HC II 
+
+TLEV 
+
+
+
+1/96 1/97 
+
+M44 
+
+Z3 
+
+HC II 
+
+TLEV 
+
+10/96 1/97 
+
+M 52 
+E36 
+
+TLEV 
+
+10/95 
+
+M52TU 
+
+Z3 
+
+
+TLEV 
+
+
+1/97 
+
+
+9/98 - M52TU 
+
+
+S52, E36, M3 
+Mcoupe, Mroadster 
+
+
+TLEV 
+
+
+9/98 
+
+
+M 54 
+
+
+2.5 LEV 
+
+Z3 
+
+
+3.0 ULEV 
+
+
+10/00 
+
+
+M52TU 
+
+E46 
+
+
+LEV 
+
+
+6/98 
+
+
+M 54 
+
+
+2.5/3.0xi LEV 9/0( 
+
+E46 
+
+
+3.0 ULEV 6/0( 
+
+
+S54 M3 
+
+Mcoupe, Mroadster 
+
+
+LEV 
+
+
+-1-- 1/01 
+
+
+E39 
+
+
+TLEV 
+
+
+LEV 
+
+
+3/96 
+
+
+9/98 - M52TU 
+
+
+M 54 
+
+
+2.5 LEV 
+
+E39 
+
+
+3.0 ULEV 
+
+
+9/00 
+
+
+M62TU 
+E38E39 
+
+
+HC II 
+
+LEV 
+
+1/96 9/98 -M62TU 
+
+M62TU 
+
+E53 
+
+
+LEV 
+
+LEV-Truck 
+
+
+9/99 4/00 
+
+
+M54 3.0 
+E53 
+
+
+ULEV-Truck 
+
+
+4/00 
+
+
+S62 
+M5 Z8 
+
+
+TLEV 
+
+
+9/99 
+
+
+M73TU 
+
+E38 
+
+
+HC II 
+
+
+LEV 
+
+
+1/95 
+
+
+9/98 - M73TU 
+
+
+11 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SULEV 
+
+
+M56 SULEV (Super Ultra Low Emission Vehicle) is available on a limited (by state) basis 
+in the E46/2, E46/3 and E46/4. SULEV models (E46 sedan, coupe and sportwagon all 
+with automatic only) will be sold in California, New York and M assachusetts as 2003 
+models and in Vermont starting in 2004 model year. 
+
+In addition these vehicles are certified as PZEV (Partial Zero Emissions Vehicles). 
+
+
+PZEV regulations include: 
+
+•Vehicles must meet SULEV tailpipe emissions standard (approx. 1/5 of U LEV standards) 
+•Vehicles conform to Zero Evaporative Emissions 
+•Vehicles subject to extended OBD regulations. 
+
+• Emission relevant components warranted for 15 years or 150,000 miles 
+
+
+M56 Engine 
+
+The following components are used to achieve SULEV and Zero Evaporative Emission 
+requirements: 
+
+• Pistons Revised to change spark travel path 
+
+• Catalytic Converters Ceramic carriers with high cell density for better "Warm Up" Control 
+
+• Oxygen Sensors Planarwide band 02 sensors in front of the cats 
+
+• Vanos Positioning changed during start up for improved start up and emissions 
+
+• Fuel Pump Control Revised with raised pressure and more accurate flow control 
+
+• Fuel Injectors New design for improved fuel flow and higher working pressure 
+
+• Fuel System All metal fuel system components made of stainless steel 
+
+• Air Intake System Revised to block HC escape 
+
+• Crankcase Ventilation Revised 
+
+• Secondary Air System Mass airflow sensorto monitor secondary airflow 
+
+• Cooling System Revised to reduce Ozone levels 
+
+
+Catalytic Converters 
+
+The catalysts attached in direct proximity to the 
+engine and are equipped with ceramic(s) carriers 
+in high cell density technology. These converters 
+reach operating temperature faster and offer 
+quicker control of exhaust emissions. Vehicles are 
+also equipped with dual downstream converters. 
+
+Oxygen Sensors 
+
+The M56 engine use for Oxygen sensors, two pla¬ 
+nar broadband sensors upstream of the converter 
+and two sensors downstream. 
+
+The planar broadband sensor reach operating 
+temperature very fast and are able to effect fuel 
+mixtures in approximately 5 seconds. 
+
+
+12 
+
+Emissions Overview 
+
+
+
+
+
+
+
+1 . 
+2 . 
+
+3. 
+
+4. 
+
+5. 
+
+6 . 
+
+Fuel Pump System 
+
+Fuel system operating pressure is increased to 5 Bar. 
+
+
+
+Instrument Cluster 
+DM E 
+D IS plus 
+
+Fuel pump control unit 
+MRS 
+
+Fuel pump 
+
+
+The fuel pump is controlled by the Fuel pump control unit, based on engine demand as 
+received from the DM E overthe Lo-CAN. The fuel pump control unit additionally 
+receives information overthe K-Bus, specifically crash information from the MRS. 
+
+
+
+Fuel Injectors 
+
+Nozzle diameter of the fuel injectors has been reduced and 
+the installation angle has been changed. The injectors were 
+also adapted to perform at the higher system operating pres¬ 
+sure. 
+
+Injectors screw into the rail and a tap to test pressure read¬ 
+ings is NOT provided. 
+
+
+13 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secondary Air System 
+
+
+
+The secondary air pump has been 
+revised to improve its response time in 
+cold weather starting situations. 
+
+A HF M (Hot Film Air M ass M eter) has 
+been added to the secondary air system 
+to monitor air volume pumped into the 
+exhaust for more accurate control of the 
+NOxemissions. 
+
+
+
+mRHi n? 
+
+
+1. DMTL 
+
+2. Pressure Pipe 
+
+3. Charcoal canister 
+
+4. Breather Pipe 
+
+5. Evaporation Line 
+
+6. Fuel Fill Line 
+
+7. FuelTank 
+
+8. Fuel Tank Vent Line 
+
+
+14 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel System 
+
+In order to meet the Zero Evaporative Emission requirement, the fuel system was com¬ 
+pletely revised. The fuel tank, tank filler neck, charcoal canister, fuel rail and tank ventila¬ 
+tion valve are all made of stainless steel. 
+
+
+When perform repairs on the fuel system, it is imperative that all fitting remain clean and 
+
+that the proper tightening torques are 
+observed. 
+
+
+
+The fuel tank is manufactured of high 
+grade steel and completely coated to 
+meet the requirements of a minimum 
+durability of 15 years. 
+
+The fuel tank can be exchanged only as a 
+complete unit. 
+
+
+
+4. 
+
+5. 
+
+
+Electric fuel pump 
+Liquid Vapor Separator 
+
+
+15 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cooling System 
+
+
+
+The radiatorofthe E46 SULEV looks 
+similarto the standard E46 radiator. 
+
+
+The surface of the cooling fins are 
+coated with a special "PremAir" coat¬ 
+ing. 
+
+The coating consists of multiple porous 
+layers of a catalytic surface. The task of 
+the catalyst coating is to convert Ozone 
+into Oxygen. 
+
+
+16 
+
+Emissions Overview 
+
+
+System Monitoring 
+
+Within the framework ofOBD II, certain components/systems must be monitored once 
+per driving cycle while other control systems (e.g. misfire detection) must be monitored 
+permanently. A "driving cycle" consists of engine startup, vehicle operation 
+(exceeding of starting speed), coasting and engine stopping. 
+
+
+Permanent M onitoring 
+
+Permanently monitored systems are monitored according to temperature immediately 
+after startup. In the event of malfunctions (e.g. oxygen sensor), the M alfunction Indicator 
+Light will illuminate immediately. 
+
+The following are monitored permanently: 
+
+• M isfire Detection 
+
+• Fuel System (duration of injection) 
+
+• All emission related electrical circuits, components and systems of the ECM,TCM 
+and EM L (if equipped). 
+
+Cyclic Monitoring 
+
+Systems monitored once per driving cycle will only result in a fault being registered after 
+the corresponding operating conditions have been completed.Therefore, there is no 
+possibility for checking when the engine is started up briefly and then shut down. 
+
+The following are monitored once per driving cycle: 
+
+• Oxygen Sensor Function 
+
+• Secondary Air Injection System 
+
+• Catalytic Converter Function (efficiency) 
+
+• Evaporative Vapor Recovery System 
+
+
+Due to the complexity involved in meeting the test criteria within the defined 
+driving cycle, all tests may not be completed within one "customer driving 
+cycle". The testcan be successfully completed within the defined criteria, 
+howevercustomerdriving styles may differ and therefore may notalways 
+monitor all involved components/systems in one "trip". 
+
+
+17 
+
+Emissions Overview 
+
+
+
+Drive Cycle 
+
+The following diagram shows how a drive cycle is set (test drive) in orderfor all the sys¬ 
+tems to be monitored once. The test conditions can be created in any desired order after 
+startup. 
+
+
+
+Example of a Drive Cycle forCompleting all OBD II Relevant Checks 
+
+1. Engine cold start, idling, approximately 3 minutes. Evaluated: 
+
+• Secondary Air System 
+
+• Evaporative Leak Detection (LDP Equipped Vehicles) 
+
+2. Constant driving at 20 to 30 MPH, approximately 4 minutes. Evaluated: 
+
+• Oxygen Sensors - Achieved "Closed Loop" Operation 
+
+• Oxygen Sensors - Response Time and Switching Time (Control Frequency) 
+
+3. Constant driving at 40 to 60 MPH, approximately 15 minutes (sufficient vehicle 
+coasting phases included). Evaluated: 
+
+• Catalytic Converter Efficiency 
+
+• Oxygen Sensors - Response Time and Switching Time (Control Frequency) 
+
+4. Engine idling, approximately 5 minutes. Evaluated: 
+
+•Tank-Leak Diagnosis (DM TL Equipped Vehicles after KL 15 is switched OFF) 
+
+NOTE:The diagnostic sequence illustrated above will be interrupted if: 
+
+•The engine speed exceeds 3000 RPM 
+
+• Large fluctuations in the accelerator pedal position. 
+
+•The driving speed exceeds 60 M PH 
+
+
+18 
+
+Emissions Overview 
+
+
+
+The "Malfunction Indicator Light" ( MIL) will be illuminated underthe following 
+conditions: 
+
+
+• Upon the completion of the nextcon- 
+secutive driving cycle where the pre¬ 
+viously faulted system is monitored again 
+and the emissions relevant fault is again 
+present. 
+
+• Immediately if a "Catalyst Damaging" 
+fault occurs (M isfire Detection). 
+
+The illumination of the light is performed in 
+accordance with the Federal Test Procedure 
+(FTP) which requires the lamp to be illuminat¬ 
+ed when: 
+
+
+MONITORED 
+
+COMPONENTS 
+
+
+
+• A malfunction of a component that can affect the emission performance of the vehi¬ 
+cle occurs and causes emissions to exceed 1.5 times the standards required 
+
+by the (FTP). 
+
+• Manufacturer-defined specifications are exceeded. 
+
+• An implausible input signal is generated. 
+
+• Catalyst deterioration causes HC-emissions to exceed a limit equivalents 1.5 times 
+the standard (FTP). 
+
+• M isfire faults occur. 
+
+• A leak is detected in the evaporative system, or "purging" is defective. 
+
+• ECM fails to enter closed-loop oxygen sensor control operation within a specified 
+time interval. 
+
+• Engine control or automatic transmission control enters a "limp home" operating 
+mode. 
+
+• Ignition is on (KL15) position before cranking = Bulb C heck Function. 
+
+
+Within the BMW system the illumination of the Malfunction Indicator Light is performed 
+in accordance with the regulations setforth in CARB mail-out 1968.1 and as demon¬ 
+strated via the Federal Test Procedure (FTP). The following page provides several exam¬ 
+ples of when and how the M alfunction Indicator Light is illuminated based on the "cus¬ 
+tomer drive cycle". 
+
+
+19 
+
+Emissions Overview 
+
+
+
+
+
+
+DRIVE 
+CYCLE # 1 
+
+DRIVE 
+CYCLE # 2 
+
+DRIVE 
+CYCLE # 3 
+
+DRIVE 
+CYCLE # 4 
+
+DRIVE 
+CYCLE # 5 
+
+
+* DRIVE 
+CYCLE # 43 
+
+TEXT 
+
+NO. 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT 
+
+CODE SET 
+
+MIL 
+
+STATUS 
+
+FUNCTION 
+
+CHECKED 
+
+FAULT CODE 
+
+ERASED 
+
+MIL 
+
+STATUS 
+
+check] 
+
+engine| 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+CHECK 
+
+ENGINE 
+
+1 . 
+
+YES 
+
+YES 
+
+OFF 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. 
+
+YES 
+
+YES 
+
+OFF 
+
+NO 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+
+
+
+
+
+
+4. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+
+
+
+
+5. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+N 
+
+_ 
+
+1 
+
+r 
+
+/ 
+
+6. 
+
+YES 
+
+YES 
+
+OFF 
+
+YES 
+
+YES 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+ON 
+
+YES 
+
+NO 
+
+OFF 
+
+YES 
+
+'fault/ 
+
+Cfo^E 
+
+ERASED 
+
+€- -> 
+
+OFF 
+
+
+1. A fault code is stored within the ECM upon the first occurrence of a fault in the system 
+being checked. 
+
+2. The "M alfunction Indicator Light" will not be illuminated until the completion of the 
+second consecutive "customer driving cycle" where the previously faulted system is 
+again monitored and a fault is still present or a catalyst damaging fault has occurred. 
+
+3. If the second drive cycle was not complete and the specific function was not checked 
+as shown in the example, the ECM counts the third drive cycle as the "next consecu¬ 
+tive" drive cycle. The "Malfunction Indicator Light" is illuminated if the function is 
+checked and the fault is still present. 
+
+4. If there is an intermittent fault present and does not cause a fault to be set through 
+multiple drive cycles, two complete consecutive drive cycles with the fault present are 
+required forthe "Malfunction Indicator Light" to be illuminated. 
+
+5. Once the "Malfunction Indicator Light" is illuminated it will remain illuminated unless 
+the specific function has been checked without fault through three complete consecu¬ 
+tive drive cycles. 
+
+6. The fault code will also be cleared from memory automatically if the specific function is 
+checked through 40 consecutive drive cycles without the fault being detected or with 
+the use of eitherthe DIS, GT-1 or Scan tool. 
+
+Note: In orderto cleara catalyst damaging fault (see Misfire Detection) from 
+memory, the condition must be evaluated for 80 consecutive cycles without the 
+fault reoccurring. 
+
+With the use of a universal scan tool, connected to the "OBD" DLC an SAE standardized 
+DTC can be obtained, along with the condition associated with the illumination of the 
+"Malfunction Indicator Light". Using the DIS plus or GT-1, a fault code and the conditions 
+associated with its setting can be obtained priorto the illumination of the "M alfunction 
+Indicator Light". 
+
+20 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Readiness Code 
+
+The readiness code provides status (Yes/No) of the system having completed all the 
+required monitoring functions or not. The readiness code is displayed with an aftermar- 
+ketScanTool orthe DISplus/GT-l.The code is a binary (1/0) indicating; 
+
+• 0 =Test Not Completed orNot Applicable - six cylinder vehicles 
+(not ready - V8 and V12) 
+
+• 1 =Test Completed - six cylinder vehicles (ready - V8 and V12) 
+
+
+A "readiness code" must be stored after any clearing of fault memory or disconnection of 
+the ECM. A readiness code of"0" will be stored (see below) after a complete diagnostic 
+check of all components/systems, that can turn on the "M alfunction Indicator Light" is 
+performed. 
+
+The readiness code was established to prevent anyone with an emissions related fault 
+and a "M alfunction Indicator Light" on from disconnecting the battery or clearing the fault 
+memory to manipulate the results of the emissions test procedure (IM 240). 
+
+Interpretation of the Readiness Code by the ECM (s) (SAE J 1979) 
+
+The complete readiness code is equal to "one" byte (eight bits). Every bit represents one 
+complete test and is displayed by the scan tool, as required by CARB/EPA. For example: 
+
+0 = EGR Monitoring (=0, N/A with BMW) 
+
+1 = Oxygen Sensor Heater Monitoring 
+1 = Oxygen Sensor Monitoring 
+0 = AirCondition (=0, N/A with BMW) 
+
+1 = Secondary Air Delivery Monitoring 
+1 = Evaporative System Monitoring 
+0 = C atalyst Heating 
+1 = Catalyst Efficiency Monitoring 
+
+
+
+Drive the car in such a mannerthat all tests listed above can be completed (referto the 
+drive cycle). When the complete "readiness code" equals "1" (ready) then all tests have 
+been completed and the system has established its "readiness". 
+
+
+21 
+
+Emissions Overview 
+
+
+Readiness C ode using the DIS plus/GT-1 
+
+The readiness code can be checked with the 
+DIS plus/GT-1. This is particularly helpful in veri¬ 
+fying that "drive cycle" criteria was achieved. 
+
+A repair can be confirmed before return¬ 
+ing the vehicle to the customer by a suc¬ 
+cessfully completed drive cycle. 
+
+Using an M S43 system for example, the readi¬ 
+ness code is found under "Service 
+Functions" 
+
+
+
+
+Clii“plr 1 r: cfi-ir. c 
+
+Carpanent and ygna matron 
+
+Ser>ic: 
+
+Drivt 
+
+
+EtctT-an ■: Iransmtajinn u Tirol 
+EtftT-sn-; cw irminbiSralinn =■,>: 
+O'-iWi ^ 
+
+HC* 
+
+
+■Lvt-HLI JyjS'UC littFJitt _ 
+
+D^E(P^£| - F.VS-III cniamtion 
+CO 
+
+C- 3 fctl- 3 lhDi|. nJlH* jpflHi] 
+
+C-dkfcrtlkiii. «uurpuort Indeedor 
+
+Read 
+
+Sctpo nboctuil-vil jc comprrsan ic 
+
+
+Fi_nftian tiiit mvcd-Lp ufF-jin pst 
+ftrtTFnttjn C+-1T L punp 
+
+
+• Drive 
+
+• Digital Motor Electronics 
+
+• Diagnostic Function 
+Select "Own Test Plan"«■^ , 
+
+
+OBD II Readiness preconditions and description is shown: 
+
+
+;l£i: 
+
+
+;HC - Ic- C-H 3 a-tl UHhJ Eii: - Tn, f .r i™ , m -«j |P06(ty - F*ri fh<-..l - F*>, 
+CAHtlH IJ'cU KHCJtS 
+
+
+UJVi.ll 
+
+
+
+
+
+
+
+*if i! id 'iJ : dn ■■ i-vyid. •..('ii', 
+
+
+If.I -fS *t' : ■ .A 7 -.' ■ *4* •• . • ■ 
+
+
+V" • Jh | •. 
+
+
+
+
+Lirtain c.p*raEr*g rotiAtkin? irJtlbi rfcldtid I 
+
+ark-.-* ti« angina mmgHWTt | 
+
+i 
+
+Fnr Hnifpurptaai. dnar Tauftmimn^ butorn 1*41' 
+
+drtn. j 
+
+Carry out Inst citvb and cibfe^i dagnasdc 
+fLucbanor JdhlnwlMg iSQ**. 
+
+■'Mh [}?#€ flp'-jtHi* if OK. utitr ail diagrAEtii: 
+furrdforu ari atrind Did: and rrt I’tJf Girfai? ir* 
+
+atorac nltii 'aw ft m Armory- 
+
+
+Examples of functions/components checked are shown below: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OBD II Diagnostic Trouble Codes (DTC) 
+
+The Society of Automotive Engineers (SAE) established the Diagnostic Trouble Codes 
+used for OBD II systems (SAE J 2012). The DTC's are designed to be identified by their 
+alpha/numeric structure.The SAE has designated the emission related DTC's to start 
+with the letter "P" for Powertrain related systems, hence their nickname "P-code". 
+
+
+Forexample: P 0 4 4 0 
+
+
+P-Powertrain, B-Body, C-Chassis 
+
+
+
+DTC Source; 0-SAE, 1-BMW - 
+
+System; 0-Total System - 
+
+1- Air/Fuel Induction 
+
+2- Fuel Injection 
+
+3- Ignition System or Misfire 
+
+4- Auxiliary Emission Control 
+
+5- Vehicle Speed & Idle Control 
+
+6- Control Module Inputs/Outputs 
+
+7- Transmission 
+
+
+Sequentially numbered 
+fault identifying individual 
+components or circuits 
+(00-99) 
+
+
+• DTC's are stored wheneverthe "Malfunction Indicator Light” is illuminated. 
+
+• A requirement of C ARB/E PA is providing universal diagnostic access to DTC's via a 
+standardized Diagnostic Link Connector (DLC) using a standardized tester (scan 
+tool). 
+
+• DTC's only provide one set of environmental operating conditions when a fault is 
+stored. This single "Freeze Frame" or snapshot refers to a block of the vehicles 
+environmental conditions fora specific time when the fault first occurred. The infor¬ 
+mation which is stored is defined by SAE and is limited in scope. This information 
+may not even be specific to the type of fault. 
+
+
+23 
+
+Emissions Overview 
+
+
+
+Scan Tool Connection 
+
+
+Starting with the 1995 750iL, soon after on all 1996 model year and later BMW vehicles, 
+a separate OBD II Diagnostic Link Connector (DLC) was added. 
+
+
+The DLC provides access for an 
+aftermarket scan tool to all emis¬ 
+sion related control systems: 
+
+• ECM - Engine Management 
+Monitored Emissions 
+Functions / Components 
+
+• TCM (AGS/EGS) - 
+Transmission Control 
+
+• EM L - Electronic Throttle 
+Control 
+
+This diagnostic communication 
+link uses the existing TXD II circuit 
+in the vehicle through a separate 
+circuit on the DLC when the 20 
+pin cap is installed. 
+
+
+DIS/MoDiC 
+COMMUNICATE VIA: 
+
+PIN 15-RXD (Limited use) 
+PIN 20 - TXD 
+PIN 17-TXD II 
+
+
+
+CONTROL 
+
+MODULE 
+
+
+The DLC Connector bridging cap is marked "OBD II" and is found: 
+
+
+
+
+NOTE: E38 and older models have a cosmetic coverand a secured DLC cover. 
+
+
+24 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20 Pin Diagnostic Socket Deletion 
+
+
+Model and Production Date: E46 from 6/00 
+
+E39, E52, E53 from 9/00 
+
+
+Formodel year2001 the E39, E46 and E53 will eliminate the 20 pin diagnostic connec- 
+torfrom the engine compartment. The 16 pin OBD II connector located inside the vehicle 
+will be the only diagnosis port. 
+
+
+The E38 and Z3 will continue to use the 20 pin connector until the end of production. 
+
+
+The 16 pin OBD II connector has been in all 
+BM Ws since 1996 to comply with OBD regu¬ 
+lations requiring a standardized diagnostic 
+port. 
+
+Previously before 2001, only emissions rele¬ 
+vant data could be extracted from the OBD II 
+connector because it did not provide access to 
+TXD (D-bus). 
+
+The TXD line is connected to pin 8 of the 
+OBD II connector on vehicles without the 20 
+pin diagnostic connector. 
+
+
+
+
+The cap to the OBD II connector contains a bridge that links KL 30 to TXD and TXD II. 
+This is to protect the diagnostic circuit integrity and prevent erroneous faults from being 
+
+logged. 
+
+
+The OBD II connector is located in the driver's 
+footwell to the left of the steering column for 
+E39, E46 and E53 vehicles. 
+
+
+Special tool 61 4 300 is used to connect to the 
+20 pin diagnostic lead of the DIS until the intro¬ 
+duction of the DIS plus. 
+
+
+25 
+
+Emissions Overview 
+
+
+
+
+Diagnostics via the OBD II Connector 
+
+
+
+26 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BMW Fault Code (DISplus/GT-1) 
+
+
+• BMW Codes are stored as soon they occur even before the "Malfunction Indicator 
+Light" comes on. 
+
+• BMW Codes are defined by BMW, Bosch and Siemens Engineers to provide 
+greater detail to fault specific information. 
+
+• Siemens systems - one set from fourfault specific environmental conditions is 
+stored with the firstfault occurrence. This information can change and is specific to 
+each fault code to aid in diagnosing. A maximum often different faults containing 
+four environmental conditions can be stored. 
+
+• Bosch systems - a maximum of four sets from three fault specific environmental 
+conditions is stored within each fault code. This information can change and is spe¬ 
+cific to each fault code to aid in diagnosing. A maximum often different faults con¬ 
+taining three environmental conditions can be stored. 
+
+• BMW Codes also store and displays a "timestamp" when the fault last occurred. 
+
+• A fault qualifier gives more specific detailed information about the type of fault 
+(upper limit, lower limit, disconnection, plausibility, etc.). 
+
+• BMW Fault Codes will alert the Technician of the current fault status. He/she will be 
+advised if the fault is actually still present, not currently present or intermittent. 
+
+
+The fault specific information 
+is stored and accessible 
+through DISplus/GT-1. 
+
+• BMW Fault Codes deter¬ 
+mine the diagnostic output 
+for BMW DISplus/GT-1. 
+
+
+
+27 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OBD II Fault Memory and FaultCodes 
+
+Within the framework of OBD II, a diagnosis of all emission-related components/functions 
+must take place during driving. Faults will be stored and displayed if necessary. Forthis 
+purpose, the ECM includes OBD II memory. The standardized P codes for malfunctions 
+are stored in this memory. The memory can be read out with the DISplus/GT-1 ora 
+Scantool. 
+
+Emission Control Function Monitoring & Comprehensive Component 
+Monitoring 
+
+OBD II regulations are based on section 1968.1 of Title 13, California Code of 
+Regulations (CCR),The law set forth in section 1968.1 requires an increased scope of 
+monitoring emission related control functions including: 
+
+• Catalyst M onitoring 
+
+• Heated Catalyst M onitoring (currently used on BMW 750iL vehicles) 
+
+• M isfire M onitoring 
+
+• Evaporative System Monitoring 
+
+• Secondary Air System Monitoring 
+
+• Air Conditioning System Refrigerant Monitoring (Not applicable for BMW vehicles) 
+
+• Fuel System Monitoring 
+
+• Oxygen Sensor Monitoring 
+
+• Exhaust Gas Recirculation (EGR) System Monitoring (Not applicable for BMW vehicles) 
+
+• Positive Crankcase Ventilation (PCV) System Monitoring (Not required at this time). 
+
+• Thermostat Monitoring (if equipped) 
+
+Monitoring these emission requirements is a function of the ECM which uses "data sets" 
+while monitoring the conditions of the environment and the operation of the engine using 
+existing input sensors and output actuators. 
+
+The data sets are programmed reference values the ECM refers to when a specific moni¬ 
+toring procedure is occurring. If the ECM cannot determine the environmental and/or 
+engine operating conditions due to an impaired or missing signal, it will set a fault and illu¬ 
+minate the "Malfunction Indicator Light". 
+
+This input or control signal monitoring falls under another category called 
+"Comprehensive Component Monitoring". The ECM must recognize the loss or 
+impairment of the signal orcomponent.The ECM determines a faulted signal orsensor 
+via three conditions: 
+
+1. Signal or component shorted to ground. 
+
+2. Signal or component shorted to B+. 
+
+3. Signal or component lost (open circuit). 
+
+Specific fault codes are used to alert the diagnostician of these conditions. 
+
+28 
+
+Emissions Overview 
+
+
+
+
+Review Questions 
+
+1. What is required to illuminate the "M alfunction Indicator" Light? 
+
+
+2. What are the definitions and differences between TLEV, LEV and ULEV? 
+
+TLEV =_ 
+
+LEV =_ 
+
+ULEV =_ 
+
+3. What is the OBD II Emission Compliance of a: 
+
+E46M3 _ 2001 3.0 Liter E46_ 1997 six cylinder E39 __ 
+
+4. List systems/components which are: 
+
+
+Permanently M onitored Monitored Once per Drive Cycle 
+
+
+
+
+
+5. Under what Operations "heading" (using the DISplus/GT-1) will you access the 
+
+Readiness Code status for an M S43 equipped E46?_ 
+
+6. List the DLC connector locations in the following BMW vehicles: 
+
+
+E38 
+
+Z3 
+
+Z8 
+
+E46 
+
+
+7. What are the three conditions an ECM uses to determine a faulted signal/sensor? 
+
+
+29 
+
+Emissions Overview 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,960 @@
+Table of Contents 
+
+F01 Anti-theft System 
+
+Subject Page 
+
+Introduction .3 
+
+Anti-theft System.3 
+
+System Overview.4 
+
+Anti-theft System Circuit Diagram .4 
+
+Functions.6 
+
+Overview .6 
+
+Activating the Anti-theft System .6 
+
+Deactivating tilt sensor and ultrasonic 
+
+interior movement detector.6 
+
+Deactivating the anti-theft system .7 
+
+Unlocking the trunk .7 
+
+No crosswise operation .7 
+
+Feedback from the Anti-theft System .8 
+
+Feedback via DWA LED .8 
+
+Confirmation from turn signal indicators .8 
+
+Confirmation via the emergency power siren .9 
+
+Comfort Access .9 
+
+Alarm Trigger .10 
+
+Door contacts .10 
+
+Trunk lid switch .10 
+
+Flood .10 
+
+Ultrasonic interior movement detector .11 
+
+Tilt alarm sensor .12 
+
+Self-monitoring of emergency current siren .12 
+
+Line monitoring - DWA bus .12 
+
+Alarm Output .13 
+
+Audible alarm .13 
+
+Visual alarm .13 
+
+Autarkic alarm .13 
+
+Panic mode .14 
+
+Alarm termination.14 
+
+Diagnosis.15 
+
+Ultrasonic interior movement detector alarm memory .15 
+
+
+Initial Print Date: 01/09 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anti-theft System 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+BBIECIIME& 
+
+After completion of this module you will be able to: 
+
+• Understand the anti-theft system used in the F01/F02 
+
+
+2 
+
+F01 Anti-theft System 
+
+
+
+
+Introduction 
+
+
+Anti-theft System 
+
+The anti-theft system is available as an option. The task of the anti-theft system is to 
+indicate unauthorized access to the vehicle by emitting an alarm. The alarm can be trig¬ 
+gered both audibly and visually. To do this, however, the anti-theft system must be acti¬ 
+vated. When activated, the alarm monitors the whole of the vehicle interior. 
+
+In addition the anti-theft system monitors the engine compartment and the vehicle’s rest 
+position. In order that nothing can be stolen from the trunk, the anti-theft system moni¬ 
+tors opening of the trunk lid. 
+
+The alarm also signals an attempt to tamper with the vehicle, e.g. cutting of the supply 
+line to the emergency power siren. 
+
+The anti-theft system’s ultrasonic interior movement detector is entirely integrated in the 
+roof function center. 
+
+The ultrasonic signal passes into the inside of vehicle through apertures in the grille of 
+the roof function center. The emergency power siren and combined tilt sensor is located 
+near the rear wheel arch. 
+
+
+3 
+
+F01 Anti-theft System 
+
+
+
+
+System Overview 
+
+Anti-theft System Circuit Diagram 
+
+
+© 
+
+
+
+
+© 
+
+
+
+4 
+
+5 
+
+
+
+
+© 
+
+
+
+© 
+
+
+
+© 
+
+
+4 
+
+F01 Anti-theft System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Hood switch 
+
+10 
+
+Trunk lock with trunk-lid switch 
+
+2 
+
+Car Access System 4 (CAS4) 
+
+11 
+
+Door contact, rear driver's side 
+
+3 
+
+Anti-theft system (DWA) LED 
+
+12 
+
+Door contact, driver's door 
+
+D 
+
+Junction Box electronics (JB) 
+
+13 
+
+Footwell module (FRM) 
+
+5 
+
+Front power distribution box 
+
+14 
+
+Roof function center (FZD) with ultrasonic 
+interior movement detector USIS 
+
+6 
+
+Door contact, passenger's door 
+
+LIN-Bus 
+
+Local Interconnect Network bus 
+
+D 
+
+Door contact, rear passenger's side 
+
+K-CAN2 
+
+Body CAN2 
+
+8 
+
+Rear power distribution box 
+
+Kl. 30 
+
+Terminal 30 
+
+9 
+
+Emergency power siren with integrated 
+tilt alarm sensor (SINE) 
+
+
+
+
+The anti-theft system on the F01/F02 is equipped with an ultrasonic interior movement 
+detector for monitoring the vehicle interior. The ultrasonic interior movement detector 
+USIS is fully integrated in the FZD. 
+
+The anti-theft system is equipped with an ultrasonic interior movement detector. The 
+ultrasonic interior movement detector has been fully integrated into the FZD. 
+
+The door switches (6, 7, 11, 12, Hall-effect sensors) are monitored by the footwell mod¬ 
+ule (13). As soon as the status of a Hall-effect sensor changes, the ultrasonic interior 
+movement detector (14) receives that information via the K-CAN2. If the anti-theft system 
+is activated, an alarm is triggered. 
+
+The hood switch (1) is monitored by the Car Access System 4 (2). If the status changes, 
+an alarm is triggered in the same way. 
+
+Opening of the trunk lid is monitored by the Junction Box electronics (4). If the status of 
+the trunk-lid switch (10) changes, it triggers an alarm. 
+
+
+5 
+
+F01 Anti-theft System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions 
+
+
+Overview 
+
+When activated, the anti-theft system on the F01/F02 monitors the entire vehicle. The 
+doors and hood/trunk lid, emergency current siren, the vehicle interior and the DWA bus 
+in particular are monitored. The anti-theft system can be activated or deactivated at ter¬ 
+minal 30. It is not possible to activate the anti-theft system when the Terminal R or 
+Terminal 15 signal is present. 
+
+Activating the Anti-theft System 
+
+The anti-theft system is activated when the vehicle is centrally locked. Activation can be 
+triggered by the following components: 
+
+• Driver’s door lock barrel 
+
+• ID transmitter 
+
+• Outside door handle with Comfort Access (sensitive surface) 
+
+After the vehicle has been centrally locked, the emergency power siren is first activated 
+together with the tilt alarm sensor. Then the signals from all door switches, the hood 
+switch and the trunk-lid switch are checked for plausibility. Once the contacts are set, 
+they are then linked to the vehicle monitoring system by the anti-theft system. 
+
+The tilt sensor and the ultrasonic interior movement detector must be adjusted to the 
+vehicle’s situation each time the vehicle is centrally double-locked. This is called initializ¬ 
+ing. The tilt alarm sensor delivers information on the vehicle’s rest position. If this value is 
+plausible, the tilt alarm sensor is included in the vehicle monitoring process. 
+
+The anti-theft system’s ultrasonic interior movement detector monitors the passenger 
+compartment. It therefore takes a little time before the ultrasonic interior movement 
+detector can actively be used for the anti-theft system. The ultrasonic interior movement 
+detector is switched to ‘activated’ approximately 30 seconds after the contacts have 
+been linked to the anti-theft system. 
+
+Note: You should wait approximately one minute before testing the interior 
+motion detector. 
+
+Deactivating tilt sensor and ultrasonic interior movement detector 
+
+It is advisable to deactivate the tilt sensor and ultrasonic interior movement detector in 
+the following situations: 
+
+• Vehicle in tilt-type duplex garage 
+
+• Vehicle on ship transport 
+
+• Vehicle on car transporter 
+
+• Persons or animals in vehicle 
+
+
+6 
+
+F01 Anti-theft System 
+
+
+
+
+Deactivation is performed by centrally double-locking or auto-remote closing the vehicle 
+a second time within 10 seconds of doing so the first time. To acknowledge, the anti¬ 
+theft system LED is lit for 2 seconds. 
+
+Note: The tilt sensor/ultrasonic interior movement detector can be 
+permanently deactivated by coding. 
+
+Deactivating the anti-theft system 
+
+The anti-theft system is deactivated by the “unlock” or “selective unlock” central locking 
+functions. An audible and/or visual signal can be output in connection with deactivating 
+corresponding to the country-specific version. 
+
+If an alarm was triggered during the time when the anti-theft system was activated, the 
+anti-theft system LED flashes for 5 minutes. If a terminal status changes, e.g. if the cen¬ 
+tral locking is unlocked, while the LED is flashing then the LED stops flashing. If the alarm 
+is deactivated while the alarm is active, the deactivate instruction is not acknowledged 
+and the alarm signal is completed. 
+
+Unlocking the trunk 
+
+The tilt alarm sensor and ultrasonic interior movement detector are blanked out if the lug¬ 
+gage compartment is unlocked and opened on an armed vehicle. Loading the vehicle 
+might result in a new vehicle resting position. Initialization of the ultrasonic interior move¬ 
+ment detector and the tilt sensor starts 6 seconds after the trunk is closed again. 
+
+Note: When the trunk is closed, the visual confirmation signal is repeated 
+to indicate to the driver that the trunk is properly closed. 
+
+No crosswise operation 
+
+If crosswise operation is not implemented, an alarm is triggered when the anti-theft sys¬ 
+tem is deactivated. 
+
+This only applies to activating with the ID transmitter and deactivating via the driver’s door 
+lock. The footwell module detects that the vehicle has been unlocked via the driver’s door 
+lock and broadcasts that information via the K-CAN2. 
+
+The Car Access System detects that the driver’s door lock has been unlocked but does 
+not unlock the vehicle. The anti-theft system remains activated and triggers the alarm 
+when the driver’s door is opened. 
+
+This function is coded on the Car Access System. 
+
+
+7 
+
+F01 Anti-theft System 
+
+
+
+Feedback from the Anti-theft System 
+
+When the alarm is activated, the system does not signal confirmation until all doors, the 
+hood and the trunk have been closed. That confirmation may be in the form of a visual or 
+audible signal. If confirmation is by a visual signal, the alarm LED or the hazard warning 
+lights may flash, for example. If the confirmation signal is audible, it is produced by sound¬ 
+ing the emergency power siren, for example. 
+
+Feedback via DWA LED 
+
+The DWA LED serves as an indicator showing the status of the anti-theft system. The 
+roof functions center supplies the DWA LED with signals from the ultrasonic interior 
+movement detector. 
+
+
+DWA Status 
+
+DWA LED 
+
+Deactivated 
+
+OFF 
+
+Activated 
+
+ON 
+
+Armed, but not all contacts closed 
+
+Blinks for 10 seconds, then continues flashing 
+
+Ultrasonic interior motion/tilt sensor OFF 
+
+Lights up for 2 seconds and then remains on 
+
+Alarm triggered 
+
+Flashes for 5 minutes, then continues flashing in bursts 
+
+Deactivating 
+
+Goes out 
+
+Deactivating after alarm 
+
+Flashes for 5 minutes or stops if a terminal status changes 
+(central locking unlocked) 
+
+
+When blinking, the DWA LED is driven at a freguency of 0.5 Hz. The switch-on time is 
+60 milliseconds. When the DWA LED flashes, it is activated at a freguency of 2 Hz. 
+
+Confirmation from turn signal indicators 
+
+Visual confirmation by the turn signal indicators of anti-theft system activation and deacti¬ 
+vation serves as an indication for the vehicle user. 
+
+The feedback is coded specifically to the country and/or vehicle. 
+
+
+DWA Status 
+
+Signal of hazard warning lights 
+
+Activation 
+
+Hazard warning lights flash once 
+
+Deactivation 
+
+Hazard warning lights flash twice 
+
+Activation after “Easy Access” to trunk 
+
+Hazard warning lights flash once after trunk is closed 
+
+Deactivating after alarm 
+
+Hazard warning lights flash four times at double frequency 
+
+
+8 
+
+F01 Anti-theft System 
+
+
+
+
+
+Confirmation via the emergency power siren 
+
+The audible confirmation signal to the vehicle user when activating and deactivating the 
+alarm is individually coded for the country of purchase. 
+
+
+DWA Status 
+
+Signal from siren 
+
+Activation 
+
+Signal tone sounds once 
+
+Deactivation 
+
+Signal tone sounds twice 
+
+Activation with doors open or trunk lid open 
+
+No signal tone, sounds only after closing 
+last door or trunk lid 
+
+
+Comfort Access 
+
+If the vehicle is locked but the trunk is open, it is possible for the ID transmitter to be inad¬ 
+vertently left in the trunk. If the trunk lid is closed in such circumstances, it is automatical¬ 
+ly opened again to prevent the ID transmitter from being locked in. 
+
+In addition to automatically opening the trunk lid, the anti-theft system emits an audible 
+warning. The warning consists of the emergency power siren sounding a two-tone signal 
+three times. The footwell module also activates the visual signal by the hazard warning 
+lights. 
+
+
+9 
+
+F01 Anti-theft System 
+
+
+
+
+Alarm Trigger 
+
+The anti-theft system can be triggered by the following components: 
+
+• Door contacts 
+
+• Trunk lid switch 
+
+• Hood switch 
+
+• Ultrasonic interior movement detector 
+
+• Emergency power siren with integral tilt sensor. 
+
+Door contacts 
+
+The status of the door contacts is evaluated by the footwell module and signalled to the 
+ultrasonic interior movement detector. The status of the individual door contacts is includ¬ 
+ed in the vehicle monitoring system 6 seconds after the status signal “door closed” is 
+issued. This means that an alarm can be triggered via a door that is already closed even if 
+another door contact is still open. 
+
+Trunk lid switch 
+
+The status of the trunk lid switch is analysed by the Junction Box electronics and sig¬ 
+nalled to the ultrasonic interior movement detector. When the trunk lid is closed, the 
+Junction Box electronics receives a low signal (approximately 0 V). If the trunk lid is 
+unlocked when the anti-theft system is activated, the signals from the trunk lid switch, 
+ultrasonic interior movement detector and tilt sensor are initially suppressed. 
+
+The signals are also suppressed if the trunk lid is unlocked using the ID transmitter when 
+the anti-theft system is activated. The trunk lid switch is reinstated as part of the vehicle 
+monitoring system 6 seconds after the lid is closed. Once there are no other doors open 
+and the trunk lid is closed, the initialization procedure for the ultrasonic interior movement 
+detector and the tilt sensor starts. 
+
+Because of the manipulation prevention system, unlocking the luggage compartment 
+with the aid of the mechanical key when the DWA is activated will cause an alarm to be 
+triggered. 
+
+Hood 
+
+The status of the hood switch is analysed by the Car Access System and signalled to the 
+ultrasonic interior movement detector. The status of the hood switch is included in the 
+vehicle monitoring system 6 seconds after the status “hood closed” is signalled. 
+
+The Car Access System interprets a hood switch that is not connected as closed. When 
+the hood is closed, the Car Access System receives a low signal (approximately 0 V). 
+
+
+10 
+
+F01 Anti-theft System 
+
+
+
+Ultrasonic interior movement detector 
+
+The ultrasonic interior movement detector captures and evaluates movements in the 
+vehicle interior. Initialization of the ultrasonic interior movement detector is started 6 sec¬ 
+onds after the hood, trunk lid and the last door have been closed. 
+
+The ultrasonic interior movement detector is operational 30 seconds after the start of ini¬ 
+tialization and is included in the vehicle monitoring system. The ultrasonic interior move¬ 
+ment detector has been integrated into the roof function center. The FZD is connected to 
+the K-CAN2 and DWA bus. ~ 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front of roof function center 
+
+4 
+
+Roof function center connector 
+
+2 
+
+Sensor ultrasound emission grille 
+
+5 
+
+Rear of roof function center 
+
+3 
+
+Funnels for the ultrasonic sensors 
+
+
+
+
+Note: For the ultrasonic interior movement detector to function properly, it is 
+very important that the grille (2) is fitted correctly. The funnels must be 
+touching the grille to prevent/reduce interference between the ultrason 
+ic sensors. The grille must be engaged at the sides and fully located in 
+position in the center. 
+
+
+11 
+
+F01 Anti-theft System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tilt alarm sensor 
+
+The tilt alarm sensor registers the vehicle rest position when it is activated and detects 
+changes in the position, e.g. jacking up the vehicle. The tilt alarm sensor is integrated in 
+the emergency current siren. 
+
+Initialization of the tilt sensor is started 6 seconds after all doors, the trunk lid and the 
+hood are closed. The tilt sensor is ready for operation 60 seconds from the start of initial¬ 
+ization and is then included in the vehicle monitoring system. 
+
+If the tilt alarm sensor detects vehicle movement, a corresponding signal is sent to the 
+ultrasonic interior movement detector. The anti-theft system decides whether the move¬ 
+ment is sufficient to trigger an alarm. 
+
+To ensure a false alarm is not triggered as the result of the vehicle rocking, the angle val¬ 
+ues for the longitudinal and transverse axis are determined every 90 ms. An alarm is trig¬ 
+gered only if the vehicle remains in an inclined position for longer than approximately 
+1.5 seconds. 
+
+Note: Testing the tilt sensor: 
+
+Activate the anti-theft system then wait for one and a half minutes. Then 
+raise the vehicle with a jack at one of the wheels. The alarm should be 
+triggered before the wheel has been raised completely off the ground. 
+
+Self-monitoring of emergency current siren 
+
+A self-monitoring facility that is activated immediately after the anti-theft system has been 
+activated is implemented in the emergency current siren. The emergency current siren 
+monitors its own power supply and detects overvoltage, undervoltage and line break 
+(open-circuit). 
+
+If anyone attempts to manually interfere with the emergency power siren or its supply 
+leads, the emergency power siren will trigger an alarm. At the same time, it reports this 
+alarm to the ultrasonic interior movement detector regardless of whether the DWA bus 
+has been affected. 
+
+Line monitoring - DWA bus 
+
+The ultrasonic interior movement detector and the emergency current siren are connect¬ 
+ed via the DWA bus. As soon as the anti-theft system has been activated, the DWA bus 
+is monitored cyclically every 2 seconds. 
+
+If the anti-theft system does not register with the SINE within 3.2 s, an alarm is initiated. 
+
+The anti-theft system sends a line monitoring reguest on the DWA bus to the emergency 
+current siren. The emergency power siren must respond within 100 ms. If no response is 
+received, the anti-theft system triggers an alarm. The line monitoring facility is also active 
+while the alarm is triggered. 
+
+The anti-theft system in the roof function center measures the system voltage. The line 
+monitoring facility is switched off at a system voltage below 9 V. This avoids false alarms. 
+
+12 
+
+F01 Anti-theft System 
+
+
+
+Alarm Output 
+
+If an alarm criterion is fulfilled with the anti-theft system activated, the alarm is output 
+(triggered) audibly and/or visually corresponding to the country-specific coding. 
+
+
+Audible alarm 
+
+The emergency power siren receives a signal via the DWA bus when the ultrasonic interi¬ 
+or movement detector triggers an alarm. It is fitted in the rear right wheel arch. The emer¬ 
+gency current siren confirms receipt of the alarm reguest and triggers the audible alarm. 
+
+
+
+Emergency power siren on F01/F02 
+
+
+If the alarm reguest is not acknowledged, the anti-theft system will repeat the alarm 
+reguest up to eight times. 
+
+Depending on the country-specific coding of the emergency current siren, an intermittent 
+or interval tone is generated. If the anti-theft system is deactivated, the audible alarm is 
+stopped immediately and without response. 
+
+
+Visual alarm 
+
+Depending on the country-specific version, the following components of the exterior 
+lighting can be activated for the visual alarm: 
+
+•Turn signal indicators 
+
+• Dipped-beam headlights 
+
+• High-beam headlights. 
+
+When the anti-theft system triggers an audible alarm, a visual alarm is simultaneously trig¬ 
+gered for 5 minutes. The anti-theft system sends the reguest for flashing lights to the 
+footwell module via the K-CAN2. In turn, the footwell module activates the components 
+of the exterior lighting system. 
+
+The visual alarm cannot be extended by repeated alarm triggering. 
+
+If the anti-theft system is deactivated, the visible alarm is stopped immediately and with¬ 
+out response. 
+
+
+Autarkic alarm 
+
+If the emergency power siren’s wires are tampered with, it initiates the autonomous alarm. 
+If the DWA bus is also cut through, the ultrasonic passenger-compartment sensor 
+detects this situation by the absence of the reply from the emergency current siren. In 
+turn, the ultrasonic interior movement detector triggers the visual alarm. 
+
+
+13 
+
+F01 Anti-theft System 
+
+
+Panic mode 
+
+Panic mode is a means of attracting attention by triggering an alarm when under threat 
+from the outside or in the event of an accident, for example. 
+
+Panic mode is initiated by pressing the trunk lid button on the ID transmitter. The button 
+must be pressed for longer than 2.5 seconds irrespective of whether the anti-theft sys¬ 
+tem is activated or not. 
+
+The alarm is stopped by pressing any button on the ID transmitter. Panic mode is not 
+stored. On completion of panic mode, the anti-theft system assumes the setting that 
+was selected prior to panic mode. 
+
+Panic mode is at present only coded in US vehicles. 
+
+Alarm termination 
+
+An alarm initiated fortesting purposes or by accident can be stopped by deactivating the 
+anti-theft system. 
+
+
+14 
+
+F01 Anti-theft System 
+
+
+
+Diagnosis 
+
+All information is stored in the non-volatile alarm memory. 
+
+Ultrasonic interior movement detector alarm memory 
+
+The alarm memory of the ultrasonic interior movement detector stores all alarms apart 
+from the autonomous alarm. The alarm memory contains the following information: 
+
+• Cause of alarm trigger 
+
+• Subseguent alarm triggers 
+
+• Date 
+
+• Time 
+
+• Ambient conditions 
+
+- Outside temperature 
+
+- Window position 
+
+- Sunroof position 
+
+- Heating. 
+
+An alarm history is formed from the beginning to the end of the alarm. The manner in 
+which the alarm is ended is also defined. The alarm can be terminated by deactivating it 
+or by allowing it to run its course. The last 10 alarms are stored in the alarm memory. 
+
+Autonomous alarms are stored by the roof function center if the connection between the 
+roof function center and the emergency power siren is in functional order. 
+
+
+15 
+
+F01 Anti-theft System 
+
+
+

@@ -1,0 +1,3191 @@
+Table of Contents 
+
+E70 Energy Management 
+
+Subject Page 
+
+The Energy Circuit in the Vehicle.5 
+
+Power Management .6 
+
+Idle Speed Boost .6 
+
+Charging Voltage Target Value .6 
+
+Emergency Operation.7 
+
+APM Control System .7 
+
+Electric Load Reduction .7 
+
+Fuel Consumption Reduction Measures .8 
+
+Advanced Power Management.9 
+
+Energy Flow.9 
+
+Information Flow.10 
+
+Diagnosis Information .11 
+
+Vehicle in Stationary M ode (terminal R and terminal 30) .12 
+
+Electric Loads in Stationary M ode.12 
+
+Stationary Load Log-off.12 
+
+Terminal 30g and Terminal 30g_f.12 
+
+Terminal 30g and Terminal 30g_f relay .14 
+
+Time-dependent Deactivation .14 
+
+Fault-dependent Deactivation.14 
+
+Terminal 30g_f Relay Switch-on and off Conditions .14 
+
+Continuous Positive .15 
+
+General M easures .16 
+
+Components.17 
+
+Intelligent Battery Sensor (IBS) .17 
+
+J unction Box.19 
+
+Engine Management (Power Management).20 
+
+Transport Mode .21 
+
+Closed-circuit Current.23 
+
+Electrical System and Battery Diagnosis .24 
+
+Energy Management - Diagnosis in Vehicle.25 
+
+E nergy H istory M emory.27 
+
+Memory Cycle .27 
+
+Driving Profile and Stopped Profile .27 
+
+Sleep Blockers .28 
+
+Bus Wake-ups .28 
+
+Intact Vehicle .29 
+
+
+Initial Print Date: 10/06 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Defective Vehicle .30 
+
+Data Record.33 
+
+Sleep Blockers.33 
+
+Number of bus wake-ups, driving profile/stopped profile .33 
+
+Bus Wake-up IDs .34 
+
+Data Record Storage.34 
+
+Ring M emory.35 
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Energy Management 
+
+
+Model: E70 
+
+Production: From Start of Production 
+
+■BIICTItfIS 
+
+After completion of this module you will be able to: 
+
+• Locate and Identify Energy M anagement System Components 
+
+• Understand E70 Energy Management 
+
+
+4 
+
+E70 Energy Management 
+
+
+
+The E nergy C ircuit in the Vehicle 
+
+
+As in the current models, an energy management system is used in the E70 to ensure 
+balanced energy management in the vehicle. 
+
+The energy management functions are integrated in the power management system 
+that is implemented in the form of software in the engine control unit. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Engine 
+
+2 
+
+Alternator 
+
+3 
+
+Intelligent Battery Sensor 
+
+4 
+
+Battery 
+
+5 
+
+J unction Box 
+
+6 
+
+Electrical load (i.e. headlights) 
+
+7 
+
+Engine management with integrated power management 
+
+
+5 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Management 
+
+The power management establishes the control processes in the area of energy 
+management of our vehicles. 
+
+A basic distinction is made between two types of power management: 
+
+• Basic Power Management (BPM) 
+
+• Advanced Power Management (APM) 
+
+Only the advanced power management APM is used in the E70. 
+
+In addition to the main functions of the basic power management, idle speed and of 
+charging voltage target value, this system includes the following expanded functions: 
+
+• Electric load reduction 
+
+• Electric load shut-down 
+
+• Vehicle systems diagnosis 
+
+• Battery diagnosis 
+
+
+Idle Speed Boost 
+
+Despite the alternator operating at maximum, 
+on gasoline engine vehicles the idle speed is 
+increased by up to 200 rpm as soon as 
+current is drawn from the battery. 
+
+Charging Voltage Target Value 
+
+The charging voltage at the alternator is 
+controlled dependent on the temperature. 
+
+The temperature value is made available by the 
+Intelligent Battery Sensor (IBS). 
+
+The power management uses this value as the 
+input variable for calculating the battery tem¬ 
+perature. With the aid of a calculation model, 
+the specified charging voltage is set based on 
+the battery temperature. 
+
+This information is sent to the alternator via 
+the Bit-serial Data Interface (BSD). 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Model- based battery temperature of 
+
+8 degrees Celsius 
+
+2 
+
+Model- based battery temperature of 
+
+15 degrees Celsius 
+
+
+6 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+Emergency Operation 
+
+The APM makes use of emergency operation functions when there is a break in the BSD 
+interface. In this case, the alternator voltage is set to a constant 14.3 V. A fault code 
+"Communication BSD" is entered in the fault code memory of the engine management. 
+
+APM Control System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Advanced Power M anagement 
+
+2 
+
+Idle Speed Boost 
+
+3 
+
+Engine 
+
+4 
+
+Charging voltage target value 
+
+5 
+
+Alternator 
+
+6 
+
+Electrical load reduction 
+
+7 
+
+Electrical loads 
+
+8 
+
+Electrical system and battery diagnosis 
+
+9 
+
+BMW diagnostic system 
+
+10 
+
+Intelligent battery sensor 
+
+11 
+
+Battery data 
+
+
+
+Electric Load Reduction 
+
+When the vehicle is equipped with APM (advanced power management), in addition to 
+increasing the idle speed and the specified charging voltage, the output of various electric 
+loads can be reduced orthe loads can be switched off in orderto reduce the power 
+consumption in critical situations. 
+
+The electric loads are shut down only underthe following two conditions: 
+
+• Battery charge status in critical range 
+
+• Alternator fully utilized 
+
+
+7 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Consumption Reduction Measures 
+
+The following measures are activated underthese preconditions: 
+
+
+Sequence 
+
+Function 
+
+Operation 
+
+Control Unit 
+
+i — 1 
+
+Rear Window 
+
+Clocking 
+
+IHKA 
+
+2 
+
+Seat Heating, rear compartment 
+
+Stage 2 
+
+FKA 
+
+3 
+
+Electrical auxiliary heater, rear compartment 
+
+75 % 
+
+FKA 
+
+4 
+
+Seat heating, front 
+
+Stage 2 
+
+SMBFA 
+
+SMBF 
+
+J B 
+
+5 
+
+Seat heating, rear compartment 
+
+Stage 1 
+
+FKA 
+
+6 
+
+Electrical auxiliary heater, rear compartment 
+
+50 % 
+
+FLA 
+
+7 
+
+Seat heating, front 
+
+50 % 
+
+SMBFA 
+
+SMBF 
+
+J B 
+
+8 
+
+Electrical auxiliary fan, 3rd row seating 
+
+50 % 
+
+IHKA 
+
+9 
+
+Heater blower 
+
+75 % 
+
+IHKA/FKA 
+
+10 
+
+Electrical auxiliary heater, rear compartment 
+
+25 % 
+
+FKA 
+
+11 
+
+Steering wheel heating 
+
+OFF 
+
+FRM/| B 
+
+12 
+
+Electrical auxiliary heater, rear compartment 
+
+OFF 
+
+FKA 
+
+13 
+
+M irror heating 
+
+OFF 
+
+FRM/I B 
+
+14 
+
+Active seat 
+
+OFF 
+
+SM FA 
+
+SMBF 
+
+15 
+
+Steering wheel heating 
+
+OFF 
+
+IHKA 
+
+16 
+
+Electrical auxiliary fan, 3rd row seating 
+
+OFF 
+
+IHKA 
+
+17 
+
+Seat heating, front 
+
+OFF 
+
+
+18 
+
+Seat heating, rear compartment 
+
+OFF 
+
+FKA 
+
+19 
+
+Rear window 
+
+OFF 
+
+IHKA 
+
+20 
+
+Heater blower 
+
+50 % 
+
+IHKA/FKA 
+
+21 
+
+Heated windshield 
+
+OFF 
+
+SM FA 
+
+SMBF 
+
+22 
+
+Heater blower 
+
+25 % 
+
+IHKA/FKA 
+
+
+Note: All measures are implemented in the specified order. 
+
+
+8 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Power Management 
+
+Energy Flow 
+
+During vehicle operation, the mechanical energy of the engine is converted by the 
+alternator into electrical energy and made available to the electric loads. The electric 
+loads receive their power supply mainly via terminal 30g and via terminal 30g_f. 
+
+Certain electric loads are also still supplied directly by terminal 30 or by terminal R. 
+For example, the anti-theft alarm system (DWA) must still remain active when the 
+vehicle is parked. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric loads 
+
+5 
+
+Vehicle battery 
+
+2 
+
+Drive motor 
+
+6 
+
+Control units 
+
+3 
+
+Alternator 
+
+KL30g 
+
+Terminal 30, switched 
+
+4 
+
+Intelligent Battery Sensor 
+
+KL30g_f 
+
+Terminal 30 switched, fault dependent 
+
+
+9 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Information Flow 
+
+The calculations necessary for controlling the energy balance take place in the power 
+management. The idle speed and charging voltage are regulated while the engine is 
+running. The power intake of electric loads with relatively high power consumption is 
+reduced orthe loads are switched off as required. 
+
+Certain electric loads can be switched off when the engine is stationary. This takes place 
+eithertime-controlled via the CAS and the terminal 30g relay or in response to electrical 
+faults via the engine control, junction box and the terminal 30g_f relay. 
+
+
+© 
+
+
+6 J 2 
+
+
+
+5 
+
+
+a 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electrical loads 
+
+4 
+
+Intelligent battery sensor 
+
+2 
+
+Engine 
+
+5 
+
+Vehicle battery 
+
+3 
+
+Alternator 
+
+6 
+
+Control units 
+
+
+10 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis Information 
+
+The control units forthe engine management, junction box and footwell module provide 
+various information forthe purpose of realizing effective diagnosis. Information relating to 
+the status of the vehicle battery is stored in the engine management (engine control). 
+
+Information on the functional sequences in the various bus systems is stored in the 
+junction box. The BMW diagnosis system can access and evaluate this information. 
+
+The BMW diagnosis system features an evaluation software that facilitates assessment of 
+the history values and indicates the cause of problems as the result. 
+
+This result must be assessed by a technician in orderto find the correct cause of the 
+fault. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+BMW Diagnostic system 
+
+4 
+
+Bus systems 
+
+2 
+
+Engine management 
+
+5 
+
+J unction box control unit/Footwell module 
+
+3 
+
+Vehicle battery with IBS 
+
+
+
+
+11 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle in Stationary Mode (terminal R and terminal 30) 
+
+Electric Loads in Stationary Mode 
+
+Certain electric loads may be active even when the closed-circuit current monitoring 
+facility of the power management is already in operation. This is necessary for various 
+reasons: 
+
+• Legally required electric loads, e.g. side lights, hazard warning system 
+
+• Convenience forthe customer, e.g. radio function, telephone 
+
+These electric loads must be excluded from the closed-circuit monitoring system in order 
+to avoid misinterpretation in the power management. Forthis purpose, these electric 
+loads must log in with the power management. 
+
+In turn, the power management recognizes the activity and accepts the higher power 
+consumption when the systems are deactivated, the corresponding control units log off 
+from the power management. 
+
+Stationary Load Log-off 
+
+The power management in the engine control can send a request to switch off the active 
+electric loads in stationary mode depending on the battery charge status and the start 
+capability limit. As a result, the stationary loads must deactivate theirfunctions 
+irrespective of the terminal status and must reach their closed-circuit current within 5 
+minutes. Legally required electric loads are excluded from this function. 
+
+Terminal 30g and Terminal 30g_f 
+
+The E70 is equipped with various relays for switching off the power supply to most 
+control units. There are two terminal 30g relays in the front and rear power distribution 
+boxes. The terminal 30g_f relay in the rear power distribution box is required forthe 
+following optional equipment: 
+
+• Multi-audio system controller 
+
+• Car communication computer 
+
+• Comfort Access 
+
+• Instrument cluster 
+
+• Telephone US/telephone preparation US 
+
+
+12 
+
+E70 Energy Management 
+
+
+
+The relays are controlled by following control units: 
+
+• Terminal 30g_f- activation by the junction box control unit 
+
+The calculation necessary for activating the terminal 30g_f relay takes place in two 
+control units. The following activities are monitored in the junction box control unit: 
+
+- Invalid wake-up procedures within the bus systems 
+
+- Sleep blockers (control units that constantly keep the bus systems active) 
+
+The battery values are constantly read and evaluated in the engine control unit. The relay 
+is also switched off when the starting capability limit of the vehicle battery is reached. 
+
+• Terminal 30g - activation by the CAS 
+
+
+Description 
+
+Explanation 
+
+KL15 
+
+Ignition (position 2) 
+
+KL R 
+
+Accessory (position 1) 
+
+KL 30 
+
+B +Constant 
+
+KL 30g 
+
+B+, time dependent 
+
+KL 30 g_f 
+
+B+, fault dependent 
+
+
+13 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+Terminal 30g and Terminal 30g_f relay 
+Time-dependent Deactivation 
+
+The terminal 30g relay switches off the connected electric loads after 30 minutes. 
+
+The after-running time is extended to 60 minutes if a telephone or auxiliary heating 
+system is installed in the vehicle. The terminal 30g relay is activated by the CAS. 
+
+Fault-dependent Deactivation 
+
+The terminal 30g_f relay is activated by the junction box control unit and switches off the 
+connected electric loads if a fault occurs. The terminal 30g_f relay is a bistable relay. 
+Each switching status is retained even when no power is applied. 
+
+Terminal 30g_f Relay Switch-on and off Conditions 
+
+The terminal 30g_f relay is switched on and off underthe following conditions. 
+
+Terminal 30g_f ON: 
+
+• Vehicle unlocked or 
+
+• Terminal R or 
+
+• Change in status_contact_rear_hatch or change in status_door_contact_FAT/BFT/ 
+FATH/BFTH 
+
+Terminal 30g_f reset takes place: 
+
+• On reaching the upper start capability limit (start capability limit plus bufferfor 
+discharging in stationary mode). 
+
+• When the vehicle does not assume sleep mode for 5 minutes (codeable) after 
+sending the power down command (command for all control units to assume sleep 
+mode) without a switch-on condition being applied. 
+
+• When the vehicle is woken 10 times after switching off terminal 30g without a 
+switch -on condition being applied. An after-running period of 2 minutes applies in 
+this case. 
+
+Terminal 30g_f OFF: 
+
+• Bus activity 10 minutes after reset without a switch-on condition being applied. 
+
+• Vehicle is woken 5 times without a "switch on" condition being applied. 
+
+• "Signal OFF" received. Terminal 30g_f relay is switched off after 2 minutes. 
+
+The terminal 30g_f relay is a bistable relay and is always in the ON state under normal 
+conditions. It switches off the connected electric loads only in the case of fault. Once 
+the terminal 30g_f relay has been switched off, one of the switch-on conditions is 
+necessary in orderto switch it on again. 
+
+
+14 
+
+E70 Energy Management 
+
+
+
+Note: Switching terminal 30g_f results in a reset ofthe instrument cluster. 
+This means the time must be reset again. 
+
+Continuous Positive 
+
+As before, various electric loads are connected directly to terminal 30. The PDC control 
+unit is connected to terminal 15. 
+
+
+0 
+
+r 
+
+
+
+
+Index 
+
+Explanation 
+
+Definition/Function 
+
+1 
+
+IBS 
+
+M onitors voltage, current and temperature 
+
+2 
+
+Vehicle battery 
+
+Supplies powervia the power distribution 
+boxes to the individual loads 
+
+3 
+
+Front power distribution box 
+with terminal 30g relay 
+
+Equipped with one relay for load shutdown (KL30g) 
+
+4 
+
+Rear power distribution box 
+with KL30g and KL30g_f 
+relays 
+
+Equipped with two relays for load shutdown (KL30g and KL30g_f) 
+
+5 
+
+CAS 3 
+
+Responsible for controlling KL30g relay in the power distribution boxes 
+
+6 
+
+J unction Box Control unit 
+
+Responsible for controlling the KL30g_f relay 
+
+7 
+
+Digital Motor Electronics 
+
+Responsible for evaluating the measured data ofthe IBS and requests 
+activation by the junction box control unit as required. When the charge 
+status ofthe battery is low, at "terminal R OFF", the engine management 
+additionally sends a requestto switch off terminal 30g to the CAS. 
+
+
+15 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Measures 
+
+The terminals "load shut-down" and the terminal "interior lighting" are switched off as a 
+general measure when the vehicle is in stationary mode. This occurs only when the 
+vehicle is not locked and secured. These loads are shutdown immediately when the 
+vehicle is locked and secured. 
+
+This measure affects the following electric loads: 
+
+
+Electric Loads 
+
+Terminal 
+
+Interior lighting (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Footwell lighting (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Reading light (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Vanity mirror light 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Terminal R 
+
+Load shut-down 8 minutes after opening door (immedi¬ 
+ately if locked, only on vehicles with Comfort Access) 
+
+Terminal R 
+
+Load shut-down after 2 minutes at poor battery charge 
+status (immediately if locked, only on vehicles with 
+Comfort Access) 
+
+Light (switch position 2 - low beam) 
+
+Load shut-down after "terminal R OFF" and door open 
+
+
+16 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The energy management consists of the following components: 
+
+• Combustion engine 
+
+• Alternator 
+
+• Vehicle battery 
+
+• Intelligent battery sensor (depending on equipment) 
+
+• J unction box 
+
+• Engine management (power management) 
+
+• Loads 
+
+The most important components of the energy management system are described in the 
+following. 
+
+Intelligent Battery Sensor (IBS) 
+
+The intelligent battery sensor has the same scope of functions as the intelligent battery 
+sensor in the predecessor models. 
+
+
+
+<D vD <d) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Ground lead 
+
+3 
+
+BSD Interface 
+
+2 
+
+Connection, B + 
+
+4 
+
+IBS 
+
+
+17 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+The software in the IBS controls the functional procedure and communication with the 
+higher-ranking control unit (engine management). During vehicle operation, the IBS 
+sends data via the bit-serial data interface (BSD) to the engine management. 
+
+Among otherthings, the following main functions are integrated in the IBS: 
+
+• Continuous measurement of the battery current, voltage and temperature under all 
+vehicle operating conditions. When the vehicle is stationary, the measured values 
+are checked cyclically in orderto save power. The IBS is programmed such that it 
+wakes up every 40 seconds. The IBS measurement time is approximately 50 ms. 
+The measured values are entered in the closed circuit histogram in the IBS. 
+
+In addition, the battery charge status (SoC) is partly calculated. The DM E reads out 
+the histogram after restarting the vehicle. A corresponding fault code is entered in 
+the DM E fault code memory in response to a closed-circuit current transgression. 
+The data are transmitted via the bit-serial data interface. 
+
+• Calculation of the battery indicators as the basis forthe charge and health status of 
+the battery. The battery indicators are charge and discharge current, voltage and 
+temperature of the vehicle battery. 
+
+• Balancing of the charge/discharge current of the battery. 
+
+• Continuous monitoring of the battery charge status and making available the 
+corresponding data in the event of insufficient battery power. 
+
+• Calculation of the current progression when starting the engine to determine the 
+battery health status. 
+
+• Closed-circuit current monitoring of the vehicle. 
+
+• Self-diagnosis. 
+
+
+18 
+
+E70 Energy Management 
+
+
+
+J unction Box 
+
+The junction box control unit is responsible forthe fuse of the terminal 30g_f relay and 
+for storing information (history data and fault code entries) in the area of the energy 
+management. As part of vehicle diagnostics, these data can be used to evaluate faults 
+and to analyze the vehicle battery. 
+
+
+
+19 
+
+E70 Energy Management 
+
+
+Engine Management (Power Management) 
+
+The (power management) software for controlling the energy balance is located in the 
+engine management. Based on this control, various electric loads in the vehicle systems 
+network are switched on and off via the CAS control units, relay terminal 30g or via the 
+junction box, relay terminal 30g_f. The power management is additionally responsible for 
+evaluating and storing the IBS data. 
+
+
+
+20 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+Transport Mode 
+
+
+The following functions are switched off and on in the E70 in transport mode: 
+
+• 0 = Function is switched off 
+
+• 1 = Function is switched on or changed 
+
+
+Index 
+
+Function 
+
+Control 
+
+Unit 
+
+Transport 
+
+Mode 
+
+1 
+
+Power window (front passenger's door) 
+
+FRM 
+
+0 
+
+2 
+
+Mirrorheating High (driver's/front passenger's door) 
+
+FRM 
+
+0 
+
+3 
+
+Home lighting 
+
+FRM 
+
+0 
+
+4 
+
+Side light in switch position "A" +"2" (atterminal 0 +R) 
+
+FRM 
+
+0 
+
+5 
+
+Parking light (at terminal 30) 
+
+FRM 
+
+0 
+
+6 
+
+Limiting load shut-down time from 8 minutes to 1 minute (vanity mirror, reading 
+lights, the interior light is also switched off) 
+
+FRM 
+
+«—1 
+
+7 
+
+Pre-sleep mode 
+
+FRM 
+
+0 
+
+8 
+
+Turn-off light 
+
+FRM 
+
+0 
+
+9 
+
+Welcome light 
+
+FRM 
+
+0 
+
+10 
+
+Power window (rear driver's side 
+
+FRM 
+
+0 
+
+11 
+
+Power window (rear passenger's side) 
+
+J B 
+
+0 
+
+12 
+
+Headlight washer system (SRA) 
+
+J B 
+
+0 
+
+13 
+
+Seat heating Low (driver/front passenger) 
+
+J B 
+
+0 
+
+14 
+
+Rear window wiper 
+
+J B 
+
+0 
+
+15 
+
+Rear window washer system 
+
+J B 
+
+0 
+
+16 
+
+M irror heating Low 
+
+J B 
+
+0 
+
+17 
+
+Disconnection terminal 30g_f_l -Eterminal 30g_f_2 after 5 minutes 
+
+J B 
+
+1 
+
+18 
+
+Radio remote control (including rear hatch unlock) 
+
+CAS 
+
+0 
+
+19 
+
+Limitation of terminal 30g - time from 30 min or 60 min to 5 min 
+
+CAS 
+
+1 
+
+20 
+
+Reducing terminal R active time from 16 min to 2 min, irrespective of operating 
+status of door contact 
+
+CAS 
+
+1 
+
+21 
+
+Comfort Access, complete function 
+
+CAS 
+
+0 
+
+22 
+
+Slide/tilt sunroof 
+
+FZD 
+
+0 
+
+23 
+
+Panoramic glass roof 
+
+FZD 
+
+0 
+
+24 
+
+DWA function 
+
+FZD 
+
+0 
+
+25 
+
+Rear window defogger 
+
+IHKA 
+
+0 
+
+26 
+
+Blower; limitation to max. 50 % 
+
+Attention: No limitation when DEFROST button pressed, i.e. 100 % blower 
+output possible. 
+
+IHKA 
+
+1 
+
+27 
+
+Defrost (100 % blower output possible) 
+
+IHKA 
+
+1 
+
+28 
+
+Water pump, water valves, compressor 
+
+IHKA 
+
+0 
+
+29 
+
+E lectric auxiliary heater (PTC) 
+
+IHKA 
+
+0 
+
+30 
+
+Steering wheel heating 
+
+IHKA 
+
+0 
+
+
+21 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Function 
+
+Control 
+
+Unit 
+
+Transport 
+
+Mode 
+
+31 
+
+Auxiliary ventilation function 
+
+IHKA 
+
+0 
+
+32 
+
+Independent ventilation function 
+
+IHKA 
+
+0 
+
+33 
+
+Electric steering column adjustment 
+
+IHKA 
+
+0 
+
+34 
+
+Not used 
+
+IHKA 
+
+0 
+
+35 
+
+Electric auxiliary fan, 3rd row of seats 
+
+IHKA 
+
+0 
+
+36 
+
+Seat heating, rear compartment 
+
+FKA 
+
+0 
+
+37 
+
+Electric auxiliary fan, 2nd row of seats 
+
+FKA 
+
+0 
+
+38 
+
+All rear blowers 
+
+FKA 
+
+0 
+
+39 
+
+Car communication computer Operation +MOST deactivated 
+
+CCC 
+
+0 
+
+40 
+
+M-ASK 2-NAV operation +MOST deactivated 
+
+M-ASK 2- 
+NAV 
+
+0 
+
+41 
+
+CHAM P (all versions) 
+
+CHAMP 
+
+0 
+
+42 
+
+Rear compartment entertainment 
+
+RSE 
+
+0 
+
+43 
+
+Central information display, front 
+
+CID 
+
+0 
+
+44 
+
+Central information display, rear 
+
+CID_R 
+
+0 
+
+45 
+
+Central operating unit 
+
+ZB E_high 
+ZBEJow 
+
+0 
+
+46 
+
+Bluetooth interface 
+
+TCU 
+
+0 
+
+47 
+
+Telematics function 
+
+TCU 
+
+0 
+
+48 
+
+Emergency call function 
+
+TCU 
+
+0 
+
+49 
+
+Telephone control, prevent wake-up of MOST bus 
+
+TCU 
+
+0 
+
+50 
+
+Seat heating High (driver/front passenger) 
+
+SM 
+
+0 
+
+51 
+
+Lumbar support 
+
+SM 
+
+0 
+
+52 
+
+Active seat ventilation 
+
+SM 
+
+0 
+
+53 
+
+Active seat 
+
+SM 
+
+0 
+
+54 
+
+RFK (reversing camera) 
+
+RFK 
+
+0 
+
+55 
+
+Not used 
+
+
+0 
+
+56 
+
+Comfort Access, deactivation of TAGS 
+
+PGS 
+
+0 
+
+57 
+
+Reducing outside temperature measurement 
+
+Kombi 
+
+0 
+
+58 
+
+HUD (Head-up display) 
+
+HUD 
+
+0 
+
+59 
+
+Damper control (valves + compressor) 
+
+EHC 
+
+0 
+
+60 
+
+Idle speed boost (upper idle speed value 
+
+DM E 
+
+1 
+
+61 
+
+Maximum charging voltage (+14.8 Vto 40 °C) 
+
+DM E 
+
+1 
+
+62 
+
+Deactivating IGR function 
+
+DM E 
+
+0 
+
+
+22 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C losed-circuit C urrent 
+
+
+The closed-circuit current on the E70 is approximately 22 mA on fully equipped 
+US vehicles. 
+
+A check control message is sent as from a closed-circuit current value of 80 mA 
+(increased battery discharge when the vehicle is stationary). 
+
+
+Typical closed-circuit progression 
+(vehicle locked) 
+
+
+
+Typical closed-circuit progression 
+(vehicle not locked) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 15 OFF 
+
+2 
+
+Terminal R OFF 
+
+3 
+
+Vehicle is secured 
+
+4 
+
+Start of bus rest phase 
+
+5 
+
+Electric load shutdown after 16 minutes 
+
+6 
+
+KL30g OFF (30 min without or60 min with telephone) 
+
+
+The preceding diagram shows a typical closed circuit current progression in the E70 in 
+connection with the various operating modes in the vehicle electrical system. The actual 
+current values change depending on the vehicle equipment configuration. 
+
+The terminal "load shut-down" (e.g. reading light and vanity mirror light) is switched off 
+corresponding to the terminal status. 
+
+Load shut-down switches off immediately when the vehicle is secured. In all other 
+terminal statuses, terminal "load shut-down" is switched off after an after-running time 
+of 8 minutes. It is activated by the footwell module. 
+
+Note: The closed-circuit current should always be measured if increased 
+current consumption is suspected. 
+
+Even current consumption rates slightly elevated above the normal 
+can discharge the battery at a relatively fast rate. 
+
+
+23 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electrical System and Battery Diagnosis 
+
+Overthe past few years, the energy management of all BMW models has been 
+continuously improved and standardized across the various model series. In terms of 
+energy diagnosis, this also means standardization of testing schedules and displays in the 
+BMW diagnostic system. 
+
+The aim of the diagnostic procedures is to show the causes of a discharged battery as 
+unambiguously as possible. In view of the complexity, especially in the area of energy 
+management, the specific cause of a fault can be shown only partially depending on its 
+nature. 
+
+The acquired energy diagnosis data are shown if the fault cannot be clearly assigned 
+based on the acquired data. The number of bus wake-ups (up to 254) and up to 50 bus 
+wake-up IDs (control unit responsible forthe wake-up procedure) are shown. The bus 
+wake-ups are recorded in the E70 by means of the junction box control unit with a 
+co-processor. 
+
+This information is shown only if a fault is suspected in this area. The revised test module 
+has been available since DIS CD43 formost BMW models. The junction box control unit 
+features a history memory that is also used in the energy diagnosis process. The junc¬ 
+tion box records bus wake-ups of the K-CAN while the vehicle is at rest. Recording the 
+bus wake-ups is a new function, which is integrated in the energy management of the 
+E70. 
+
+The junction box control unit is equipped with a separate controllerforthe purpose of 
+recording the bus wake-ups. This controller is necessary so that the main processorof 
+the junction box control unit can assume sleep mode. 
+
+Power management is retained in full while the expanded diagnostic options are now 
+resident in the history memory. The following overview lists the energy management 
+control procedures forthe E70. Many options are available in the E70 of assessing the 
+energy management in connection with the BMW diagnostic system. 
+
+
+24 
+
+E70 Energy Management 
+
+
+
+Energy Management- Diagnosis in Vehicle 
+
+Various values from the vehicle system network are measured and, in part, also evaluated 
+directly in the vehicle. This information on the battery status or on the behavior of the bus 
+systems can then be subsequently compiled and evaluated in the BMW diagnostic 
+system. The following values are recorded in the vehicle: 
+
+
+Energy management in the E70 
+
+Power management 
+
+History memory 
+
+Closed-circuit current 
+
+Sleep blockers 
+
+State of Charge SoC 
+
+Bus wake-up 
+
+State of Health SoH 
+
+Bus wake-up ID (new) 
+
+
+Driving profile/stopped profile 
+
+
+
+
+Vehicle control while in operation : 
+
+• Electric load shut-down/reduction 
+
+• Alternator voltage 
+
+• Idle speed boost 
+
+Vehicle control while at rest:: 
+
+• Terminal 30g 
+
+• Terminal 30g_f 
+
+• Stationary load management 
+
+
+25 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The data from the energy management are used not only for controlling the energy 
+balance in the vehicle but also for diagnostic and vehicle servicing purposes. 
+
+The following overview shows the data that are displayed in DIS for diagnosis and 
+servicing. 
+
+
+Data acquisition and calculation in energy management for the E70 
+
+Power management 
+
+History memory 
+
+Closed-circuit current 
+
+Sleep blockers 
+
+State of Charge SoC 
+
+Bus wake-up 
+
+State of Health SoH 
+
+Bus wake-up ID (new) 
+
+
+Driving profile/stopped profile 
+
+
+} 
+
+
+Diagnosis and Servicing 
+
+• Display of last 32 closed-circuit current values (measured 120 minutes after 
+"Terminal R OFF" up to next "Terminal R ON") 
+
+• Display of sleep blockers (max. 5 sleep blockers with relative time and km-read- 
+ing) 
+
+• Display of driving profile/stopped profile (miles driven over acquisition period) 
+
+New Displays: 
+
+• Display of number of bus wake-ups (max. 254 bus wake-ups are counted and 
+displayed) 
+
+• Display of bus wake-up IDs (max. 50 bus wake-ups with relative time and 
+km-reading) 
+
+
+26 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Energy History Memory 
+
+The energy history memory enables differentiated evaluation and display of energy 
+diagnosis. For instance, bus wake-ups can be read out and displayed together with 
+their IDs. 
+
+A distinction is made between three definitions when considering the functional principle 
+of the history memory. 
+
+• Memory cycle 
+
+• Data record 
+
+• Ring memory 
+
+Memory Cycle 
+
+One single memory cycle ranges from switching on through to repeated switching on of 
+terminal R. 
+
+The following information is recorded during the memory cycles: 
+
+• Driving profile and stopped profile 
+
+• Sleep blockers 
+
+• Bus wake-up 
+
+- Number of bus wake-ups 
+
+- Bus wake-up ID 
+
+Driving Profile and Stopped Profile 
+
+The driving profile shows the driver's driving characteristics in terms of frequency of 
+certain driving distances (long and short trips). The recording begins as from "KLR-ON" 
+and ends with "KLR - OFF". 
+
+The stopped profile test module contains the data that are stored as from "KLR - OFF" 
+up to "KLR - ON". The stopped profile makes it possible to draw conclusions with regard 
+to the duration of vehicle rest phases. 
+
+The history memory has memory areas for sleep blockers, number of bus wake-ups and 
+bus wake-up IDs. The memory areas comprise ring memories. The relative time and 
+mileage reading generally accompany the memory areas. The corresponding control 
+units are also listed in the area of the sleep blockers and bus wake-up IDs. 
+
+The driving profile is stored in the areaforthe number of bus wakeups. 
+
+
+27 
+
+E70 Energy Management 
+
+
+
+Sleep Blockers 
+
+Control units that do not assume sleep mode are known as sleep blockers. Each control 
+unit signals its readiness to assume sleep mode to the junction box control unit by 
+periodically sending a sleep indication bit. The energy diagnosis testing schedule in the 
+BMW diagnostic system generally interprets this information as an "intact control unit". 
+
+If the "sleep indication bit" is not received, the corresponding control unit is stored in the 
+history memory of the junction box control unit and displayed when working through the 
+"Energy diagnosis" testing schedules. 
+
+Monitoring involves the following procedure: 
+
+• Monitoring of sleep blockers after "Terminal R OFF" 
+
+• Monitoring of sleep blockers after "Terminal 30g OFF" 
+
+- Power-down command and monitoring of sleep blockers 
+
+-Terminal 30g_f reset and monitoring of sleep blockers 
+
+-Terminal 30g_f shut-down and monitoring of sleep blockers 
+
+The fault code memories are checked after each measure. This facilitates allocation 
+that makes it possible to differentiate fault locations with respect to the terminals. 
+
+Note: Customer operating procedures (radio etc. at "Terminal R OFF") 
+can also lead to a fault code entry. 
+
+The wake-up line should be checked especially if several control units 
+from the PT-CAN do not assume sleep mode (at "Terminal R OFF" < 2 V). 
+
+Bus Wake-ups 
+
+Control units that wake up the entire bus system are known as bus wake-ups. Frequent 
+wake-ups by all control units in the bus system places an excessive load on the vehicle 
+battery. 
+
+Bus wake-ups can be caused by defective control units ortheir peripherals. 
+
+Bus wakeups occur, however, also when the vehicle is fully intact. This is due to the fact 
+that a bus system has to be woken in connection with certain functions when the vehicle 
+is at rest, for example: 
+
+• To record the outside temperature 
+
+• To switch off the load shut-down function 
+
+
+28 
+
+E70 Energy Management 
+
+
+
+The junction box control unit registers the bus wake-ups of the K-CAN in the period 
+between "Terminal R OFF" and "Terminal R ON". The following data are stored: 
+
+• Numberof bus wake-ups 
+
+- A maximum of 254 bus wake-ups can be stored 
+
+• Bus wake-up ID 
+
+- The control unit can be identified by the bus wake-up ID. The relative time 
+(comparable with operating hours counter) and the km-reading are also stored. 
+The relative time is made available by the instrument cluster. 
+
+The bus wake-ups can be read out as part of the diagnostic procedure. However, 
+it is not possible to distinguish whetherthe bus wakeup is authorized or unautho¬ 
+rized. Forthis reason, the authorized bus wake-ups are taken into account when 
+assessing the bus wake-ups in the diagnostic procedure. 
+
+Note: It is possible to distinguish between the individual control units only in 
+K-CAN. Outside the K-CAN, a faultcan be assigned to the respective 
+bus systems. 
+
+IntactVehicle 
+
+The "intact vehicle" graphic shows the memory cycle on a fully intact vehicle. All control 
+units and the data bus itself are in sleep mode. No data communication takes place 
+between the individual control units. The entire bus system is woken at certain intervals. 
+
+Responsible forthis are: 
+
+• FRM -TheFRM sends the request to shut down the electric loads after 8 minutes 
+
+only if the vehicle is not locked. Otherwise, the electric loads are switched 
+off immediately when the vehicle is locked and secured. 
+
+• KOM Bl - Whenever the DM E checks the coolant temperature, the outside tempera¬ 
+
+ture is also calculated at this time from the outside temperature sensor and 
+stored in the KOM Bl. 
+
+• CAS - When terminal R is switched on repeatedly. 
+
+
+29 
+
+E70 Engine Management 
+
+
+
+Defective Vehicle 
+
+The "defective vehicle" graphic shows the memory cycle on a defective vehicle. If a fault 
+is present, a distinctly higher number of wakeups will occur in the control unit rest phase. 
+One or several control units sporadically wake up the entire bus system due to unwanted 
+data communication (red). The new options in the junction box control unit make it 
+possible to show the bus wakeups in the BM W diagnostic system. 
+
+The display is activated if the number of bus wakeups amounts to more than 20. 
+
+The BMW diagnostic system is only capable of distinguishing between control units 
+(systems) in terms of faults that occur in the area of the sleep blockers and bus wakeups. 
+More extensive diagnosis must be performed if a component in the peripherals of the 
+control unit is indirectly responsible forthe entry in the fault code memory. 
+
+Replacing the respective control unitwill not remedy the problem in this case. 
+
+Example: 
+
+A defective Hall sensor in the key slot can cause fault code "Sleep blocker CAS" to be 
+entered. The cause is therefore in the input of the control unit that has wake-up 
+capabilities and not in the control unit itself. 
+
+
+History memory - vehicle fully intact 
+
+Cycle - Acquisition of sleep blockers, bus wake-ups and driving profile 
+
+
+Memory eye le 
+
+
+Driving 
+
+profile 
+
+Stopped 
+
+profile 
+
+Driving 
+
+profile 
+
+
+
+
+Terminal R ON 
+
+rr 
+
+Terminal R OFF 
+
+Terminal R ON 
+
+Terminal R OFF 
+
+(T 
+
+- yj - 
+
+
+
+
+Bus wake-ups 
+
+
+— yy - 
+
+
+1 
+
+Sleep blocker 
+
+
+
+
+
+1 
+
+
+
+JB KOMBI KOMBI CAS 
+
+8 min. 40 min. 80 min. 
+
+
+30 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+History memory - vehicle defective 
+
+Cycle - Acquisition of sleep blockers, bus wake-ups and driving profile 
+
+
+u 
+
+
+
+
+Terminal R ON 
+
+
+Terminal R OFF 
+
+
+Memory cycle 
+
+
+Terminal R ON 
+
+
+
+JB KOMBI KOMBI CAS 
+
+8 min. 40 min. 80 min. 
+
+
+Terminal R OFF 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+Memory 
+
+cycle 
+
+M emory cycle 
+
+Bus 
+
+wake-ups 
+
+Bus wake-ups 
+
+Driving 
+
+profile 
+
+Driving profile 
+
+Sleep 
+
+blocker 
+
+Sleep blockers 
+
+Stopped 
+
+profile 
+
+Stopped profile 
+
+KLR 
+
+ON/OFF 
+
+Terminal R ON/OFF 
+
+J B 
+
+J unction box control unit 
+
+CAS 
+
+Car Access System 
+
+Kombi 
+
+Instrument cluster 
+
+
+
+
+31 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Besides unauthorized bus wake-ups, authorized bus wake-ups are also possible. 
+Possible authorized bus wake-ups are defined in the following table. 
+
+
+Control unit 
+
+Possible reasons for wake-ups (authorized bus wakeups) 
+
+Car Access System 
+
+• START-STOP button pressed 
+
+• Remote control/identification transmitter ejected from slot 
+
+• Center lock button pressed 
+
+• Remote control operated 
+
+• Hood contact switch 
+
+• Hotel position switch 
+
+• Front left and front right door handle contact 
+
+• Wake-up line 
+
+J unction box control unit 
+Footwell module 
+
+• Electric load shut-down 
+
+• Rear left and rear right door contact 
+
+• Rear hatch button and rear hatch lock 
+
+• Interior light button 
+
+J unction box control unit 
+
+• Front left and front right door contact 
+
+• Front left door lock 
+
+• Wake-up line 
+
+Instrument cluster 
+
+• Coolant temperature query at DM E 
+
+• Programmed timerfor independent heating function, independent 
+ventilation function and independent climate control elapsed 
+
+Footwell module 
+
+• Hazard warning switch 
+
+CHAMP 
+
+CCC 
+
+• Rotary push button for volume control pressed 
+
+Anti-theft alarm system 
+
+• Audible and visual alarm triggered 
+
+Steering column switch cluster 
+
+• Steering column stalk, left or right direction indicator 
+
+• H ead light flasher 
+
+
+32 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Record 
+
+The history memory is subdivided into 3 memory areas: 
+
+• Memory for sleep blockers 
+
+• Memory for number of bus wake-ups and driving profile/stopped profile 
+
+• Bus wake-up IDs 
+
+Sleep Blockers 
+
+The memory forthe sleep blockers is a ring memory. It can store up to 5 data records. 
+After "Terminal R OFF" or after a bus wakeup, the junction box control unit registers the 
+sleep blockers fora period of 20 minutes. Forthis purpose, the junction box control unit 
+checks via the K-CAN and PT-C AN at 5 minute intervals whether all control units have 
+sent a sleep mode message. 
+
+The corresponding sleep blocker (control unit) is stored, if a control unit has not sent a 
+sleep mode message. Information contained in the data record includes: 
+
+• Control unit that was recognized as a sleep blocker 
+
+• Mileage-reading 
+
+• Relative time 
+
+Numberof bus wake-ups, driving profile/stopped profile 
+
+The number of bus wake-ups as well as the driving profile and stopped profile are stored 
+in the second memory area. A maximum of 254 wake-ups can be counted and shown. 
+
+The data are written to a data record over a period of 168 hours (one week). A new data 
+record is created after this period of time has elapsed. A total of 6 data records can be 
+stored in a ring memory. The oldest data record drops out of the ring memory when a 
+new data record is created. 
+
+The data record contains following information: 
+
+• Numberof bus wake-ups 
+
+• M ileage reading 
+
+• Relative time 
+
+• Driving profile/stopped profile 
+
+
+33 
+
+E70 Energy Management 
+
+
+
+Bus Wake-up IDs 
+
+Bus wake-up IDs are stored in the third memory area. This memory area has capacity for 
+50 entries and is also designed as a ring memory. 
+
+The following information is stored: 
+
+• Control unit that caused the bus wake-up and the CAN-ID 
+
+• M ileage reading 
+
+• Relative time 
+
+The measured values from the energy management are transferred to the corresponding 
+memory modules. Evaluation takes place as soon as a new memory cycle is transferred. 
+The new memory cycle will be stored, if the number of bus wake-ups is greater. 
+
+The data from the previous memory cycle are retained if the number of bus wake-ups is 
+less than the previous memory cycle when a new memory cycle is transferred. 
+
+Data Record Storage 
+
+Each data record has an acquisition period of 7 days. A new data record is generated 
+when the following conditions apply: 
+
+• A period of 7 days has elapsed 
+
+- The 7 day period represents normal vehicle operation. 
+
+• Battery reset 
+
+• Switching off via terminal 30g_f 
+
+-The instrument cluster receives its power supply from terminal 30g_f. Switching 
+off terminal 30g_f causes the relative time to be restarted. A new data record is 
+created every time the relative time is restarted. 
+
+Note: A battery reset and restart of the relative time results in a new data 
+record and therefore in data loss. 
+
+
+34 
+
+E70 Energy Management 
+
+
+
+Ring Memory 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Data record of the first week without K-CAN bus wake-ups 
+
+2 
+
+Data record of the second week without K-CAN bus wake-ups 
+
+3 
+
+Data record of the third week with K-CAN bus wake-ups 
+
+4 
+
+Data record of the fourth week with K-CAN bus wake-up recording 
+
+5 
+
+Data record of the fifth week with K-CAN bus wake-up recording 
+
+6 
+
+Data record of the current week with K-CAN bus wake-up recording 
+
+7 
+
+Current status of K-CAN-bus wake-up recording 
+
+
+35 
+
+E70 Energy Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

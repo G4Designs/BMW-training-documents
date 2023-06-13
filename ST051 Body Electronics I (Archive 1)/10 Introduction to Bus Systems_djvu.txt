@@ -1,0 +1,5811 @@
+Table of Contents 
+
+
+Introduction to Bus Systems 
+
+Subject Page 
+
+Introduction to Bus Systems.3 
+
+Multiplexing .5 
+
+Bus Communication Speeds.7 
+
+Bus System Structure.8 
+
+Bus System Application .9 
+
+Diagnosis Bus (D-Bus) .10 
+
+Diagnostic Connector.11 
+
+Gateways .13 
+
+Controller Area Network (CAN-Bus).14 
+
+CAN-Bus Operation .16 
+
+Terminal Resistors .16 
+
+CAN Communication Protocol.17 
+
+Information and Body Bus (I and K-Bus).18 
+
+Bus System Overview .20 
+
+Troubleshooting the l/K-Bus .21 
+
+Failure of the Bus cable .22 
+
+Failure of one of the control units attached to the l/K-Bus.24 
+
+Failure of the voltage supply to individual modules.24 
+
+Interference in the Bus Cables.24 
+
+Peripheral Bus (P-Bus) .25 
+
+Troubleshooting the P-Bus .27 
+
+M-Bus.28 
+
+Communication Protocol.29 
+
+M-Bus Topology .29 
+
+M-Bus Troubleshooting .30 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introduction to Bus Systems 
+
+Model: All from E38 to Present 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Describe the operation of a basic bus system. 
+
+• Understand how signals and sensor information are shared between 
+control units in a bus system. 
+
+• Identify bus systems currently used in BMW Group vehicles. 
+
+• Understand how bus networking technology is applied in BMW vehicles. 
+
+• Understand diagnostic techniques. 
+
+
+2 
+
+Introduction to Bus Systems 
+
+
+
+
+Introduction to Bus Systems 
+
+
+Up until the introduction of the E31, all of the information transferred between control 
+units was transmitted on dedicated signal lines. As the various electronic systems grew 
+more complex, the size of the wiring harness increased beyond practical limits. 
+
+
+Signals such as engine RPM, coolant temperature, throttle position, road speed etc. each 
+used a dedicated signal line going to the control module that required this information. 
+Each of these lines differed in the method of signal transmission. Some of the methods 
+used were variable duty cycle, switched DC signals and signals with variable frequencies. 
+This created a need for larger and more complex wiring harnesses. 
+
+
+
+Engine Temperature 
+
+
+Engine RPM (TD) 
+
+
+Engine Load (tL) 
+
+
+Injector on Time (ti) 
+
+
+Throttle Position (DKV) 
+
+
+Transmission Range 
+
+
+Torque Reduction (ME) 
+
+
+TCC Lockup Status 
+
+
+
+
+CAN 
+
+
+
+
+
+
+
+A solution to this problem was found by introducing bus networks to BMW Group vehi¬ 
+cles. A bus system uses multiplexing technology similar to that used in the electronics 
+and telecommunications industry. Multiplexing is a system of transmitting several mes¬ 
+sages on the same circuit or channel. 
+
+This technology allows control modules to transfer data bi-directionally at high speed and 
+enables control modules to share sensor information. This also allows control modules to 
+send and receive control commands at a faster rate than with conventional methods. 
+
+
+3 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+With the amount and complexity of features now available in modem vehicles, multiplex¬ 
+ing is a necessary technology. There are numerous benefits to in-vehicle bus networks 
+such as: 
+
+• A reduction in the size of the wiring harness by decreasing the number of interfaces 
+between control units to one or two wires. 
+
+• Greater system reliability by reducing the number of connectors and components. 
+
+• A reduction in the number of redundant sensors by allowing the sharing of sensor 
+information. 
+
+• Reduction of costs for components, assembly and troubleshooting. 
+
+• Flexibility in system configuration for addition of new systems. 
+
+Control module communication using individual signal lines 
+
+
+
+Control module communication using a bus network 
+
+
+
+4 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Multiplexing 
+
+
+Multiplexing relies on the use of digital communication between control units. A digital 
+signal consists of a series of high and low voltage signals which represent “bits” of infor¬ 
+mation. 
+
+Using the example of morse code for explanation, the letters SOS are represented in 
+morse code as three dots - three dashes - three dots. Expressed as an electrical signal 
+SOS would be represented as three short pulses - three long pulses - three short pulses. 
+
+
+
+The basis for digital communication is binary code. Binary code uses only 2 digits - 
+0 and 1. Electrically, 1 is represented by a voltage pulse and 0 is represented by a low 
+voltage signal usually 0 volts. 
+
+In digital communication, each pulse represents a “bit” of data. Eight “bits” of information 
+in a series of pulses makes up one “byte”. A byte represents a character in a line of 
+information (data). 
+
+
+
+"Bits" 
+
+One Byte 
+
+
+8 Bits = 
+
+
+5 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In order to illustrate multiplexing in a vehicle application, an example of a K-Bus circuit will 
+be used. The K-Bus (Body Bus) was introduced in the E38 as a low speed data transfer 
+bus. One of the benefits of multiplexing is sensor sharing. The outside (ambient) tem¬ 
+perature circuit is an example of “sharing” sensor information. 
+
+In the illustration shown below, the ambient temperature sensor is an analog input to the 
+instrument cluster. The temperature information is used by the cluster for the outside 
+temperature display for the driver. The outside temperature information is also needed by 
+the climate control system (IHKA) for temperature control and additional functions. 
+
+In previous models (before bus systems), the IHKA required an additional dedicated out¬ 
+side temperature sensor. Using multiplexing principles, the K-Bus can transfer the tem¬ 
+perature information (as well as additional data) from the cluster to the climate control 
+system which eliminates the need for an additional sensor. 
+
+
+
+Ambient 
+
+Temperature 
+
+Sensor 
+
+
+
+Ai 
+
+( 
+
+dditional Sensor 
+no longer used) 
+
+
+Ambient 
+
+Temperature 
+
+Sensor 
+
+
+
+
+Ambient 
+
+Temperature 
+
+Signal 
+
+
+
+K-Bus 
+
+
+
+
+6 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus Communication Speeds 
+
+Data must be transmitted at high speed in order to make digital communication practical. 
+The speed of these signal is referred to as the data rate (formerly baud rate). Depending 
+on the type of bus network used, data can be transmitted from 9600 bits per second 
+(9.6k/bps) to 500K bits per second (500K/bps). 
+
+Current fiber optic systems can transmit and receive data up to 22.5 M/bps. 
+
+
+Model 
+
+Bus 
+
+Data Rate 
+
+Structure 
+
+E38 
+
+l/K/P Bus 
+
+9.6 K/bps 
+
+Linear 
+
+E38 
+
+CAN 
+
+500 K/bps 
+
+Linear 
+
+E38 
+
+D-Bus 
+
+9.6 K/bps 
+
+Linear 
+
+E65 
+
+K-CAN-S 
+
+100 Kbps 
+
+Linear 
+
+E65 
+
+K-CAN-P 
+
+100 Kbps 
+
+Linear 
+
+E65 
+
+PT-CAN 
+
+500 Kbps 
+
+Linear 
+
+E65 
+
+MOST 
+
+22.5 Mbps 
+
+Ring 
+
+E65 
+
+byteflight 
+
+10 Mbps 
+
+Star 
+
+E65 
+
+Sub-Busses 
+
+9.6 Kbps 
+
+Linear 
+
+
+Depending on the system requirements, bus networks communicate at different speeds. 
+Systems such as powertrain control require a large amount of data to be transferred due 
+to constantly changing values such as RPM, road speed and throttle position etc. 
+Therefore the CAN-Bus (or PT-CAN) operates at 500K/bps. 
+
+Faster communication speeds are required for video and audio signals. Therefore, the 
+MOST-Bus is designed to handle these needs and can communicate at 22.5 M/bps. 
+
+To accurately describe the speed of data transmission the term “bps” (bit per second) is 
+used. This is not to be confused with baud rate. Baud rate refers to the rate that a 
+change of state occurs on a signal line. Any voltage change on the signal line is a change 
+of state, but this does not relate directly to the amount of bits per second. In other words, 
+more that one bit can be transferred per baud. This is dependent upon the type of com¬ 
+munication protocol. 
+
+
+In this course, data communication speed will be referred to as bit per second (bps). 
+
+A “bit” is an abbreviation for binary digit. A bit is the smallest information unit that a com¬ 
+puter can process. A series of 8 bits make up one byte and a series of bytes make up a 
+bus telegram message. 
+
+
+7 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Structure 
+
+There are 3 possible arrangements for bus system structure in BMW vehicles. They are: 
+
+• Linear (or Tree Structure) 
+
+• Ring 
+
+• Star 
+
+The linear bus structure is the most common arrangement. Up until the introduction of 
+the E65, the linear structure was used exclusively. The 2 other bus structures are cur¬ 
+rently used for fiber optic networks. The ring structure is used on the MOST-Bus and the 
+star structure is used on the byteflight system. 
+
+
+
+
+
+
+
+
+
+
+
+Master 
+
+
+
+
+
+
+Star Structure 
+
+
+8 
+
+
+Master 
+
+
+7 
+
+
+
+5 
+
+
+4 
+
+
+Ring Structure 
+
+
+2 
+
+
+3 
+
+
+8 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Application 
+
+
+In the following pages of this course and subsequent courses, all BMW bus systems will 
+be discussed. Starting from the earliest bus networks up to the latest fiber optic net¬ 
+works used today. Below is a listing by model of the major bus networks in use. 
+
+(Some sub busses are not shown) 
+
+
+
+TXD/RXD 
+
+D-Bus 
+
+CAN-Bus 
+
+1-Bus 
+
+K-Bus 
+
+P-Bus 
+
+M-Bus 
+
+K-Can (P&S) 
+
+PT-CAN 
+
+MOST-Bus 
+
+byte flight 
+
+LIN-Bus 
+
+Notes 
+
+E31 
+
+X 
+
+
+X 
+
+X 
+
+
+
+
+
+
+
+
+
+CAN-Bus used on M60, M62 and 
+M73 engines. 
+
+E32 
+
+X 
+
+
+X 
+
+
+
+
+
+
+
+
+
+
+CAN-Bus used on M60 engine. 
+
+E34 
+
+X 
+
+
+X 
+
+
+
+
+
+
+
+
+
+
+CAN-Bus used on M60 engine. 
+
+E36 
+
+X 
+
+
+X 
+
+
+
+
+X 
+
+
+
+
+
+
+CAN-Bus used on M52 engine. 
+M-Bus used from 96 model year. 
+
+E38 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+
+
+
+
+New bus systems introduced in 95 
+model year (D, K, P and M-Bus) 
+
+E39 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+
+
+
+
+1-Bus used on vehicles with high 
+version cluster. 
+
+E46 
+
+X 
+
+X 
+
+X 
+
+
+X 
+
+
+X 
+
+
+
+
+
+X 
+
+LIN-Bus added in 2003 model year 
+(face lift). CAN changed PT-CAN in 
+2000 model year. 
+
+E53 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+
+
+
+
+1-Bus used on vehicles with high 
+version cluster. 
+
+E65/E66 
+
+
+X 
+
+
+
+
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+E65 introduced new bus systems in 
+2002. First BMW to use fiber optics. 
+
+E60 
+
+
+X 
+
+
+
+
+
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+K-CAN S and K-CAN P are com¬ 
+bined into K-CAN. LIN used on 
+IHKA, AHL and driver’s switch block. 
+
+E63/E64 
+
+
+X 
+
+
+
+
+
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+K-CAN S and K-CAN P is combined 
+into K-CAN. 
+
+E83 
+
+
+X 
+
+
+
+X 
+
+
+X 
+
+
+X 
+
+X 
+
+
+X 
+
+E83 Does not use byteflight. 
+LIN-Bus is used on 
+
+
+9 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis Bus (D-Bus) 
+
+The D-Bus is actually the oldest bus system used in BMW vehicles. It is used as a serial 
+communications bus to transmit data between the DISplus or GT-1 and the connected 
+control units for diagnosis purposes. 
+
+The D-Bus was introduced as TXD (and RXD) in 1987. The term D-Bus was adopted 
+with the introduction of the E38 in 1995, however it is still referred to as TXD in the ETM. 
+
+
+
+
+
+
+
+
+FBZV 
+
+©HMD ODD 
+
+DWA 
+
+
+Dowsd’’ 1 ® E)©©r 
+Switchblock/ 
+M®cM® 
+PIM-FTT/SIS 
+
+
+(9k 
+
+
+P®ss®ffii§@ir's 
+®@®ir Module 
+[FM-HT 
+
+
+Seat M®m®ri/ 
+
+
+Sunroof 
+
+
+
+
+©[MTS®®® 
+
+EJ1EOT 
+
+
+
+AMPLIFIER 
+
+
+
+
+
+ABS/ASC5 
+
+
+
+
+
+
+
+The control unit subject to diagnosis is selected by sending a diagnosis telegram to the 
+control unit address. By request from the diagnosis equipment (DISplus/GT-1), the con¬ 
+trol unit will transmit information such as the contents of the fault memory or activate a 
+control unit output. 
+
+
+All modules in the vehicle are not connected directly to the D-Bus, some systems are 
+connected through a gateway such as the IKE or cluster. The gateway handles all diag¬ 
+nostic “traffic” and routes the necessary information to the correct bus system. 
+
+The D-Bus is only active when the DISplus or GT-1 is connected to the diagnostic socket 
+and communicating. Data over the D-Bus operates at a rate of up to 9.6 Kbps (9600 bits 
+per second) on earlier vehicles. The D-Bus on current models (from E65) operates at 
+110 K/bps. 
+
+The D-Bus connects various diagnoseable control units to the DISplus or GT-1 via the 
+diagnostic connector. Earlier vehicles also used a second diagnosis line called RXD to 
+allow the diagnostic equipment to establish communication. RXD is not a bus line but a 
+one way communication link used to wake up the diagnosis of the connected control 
+unit. 
+
+
+10 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnostic Connector 
+
+There have been numerous changes to the diagnostic connector since it’s introduction in 
+1988. Early vehicles until the 2001 model year used the 20-pin diagnostic connector 
+located in the engine compartment. On vehicles equipped with the 20-pin connector, 
+diagnostic communication is carried out through the TXD/RXD interface (D-Bus). 
+
+
+RXD is a 12 volt one-way digital signal which is sent to the module subject to diagnosis. 
+This signal was used to wake-up the control module and initiate diagnostic communica¬ 
+tion. RXD was gradually phased out starting in 1997 (until 2001) and TXD (D-Bus) is 
+now used for all diagnostic communication. 
+
+
+
+
+; TRANS C 
+
+
+
+CONTROL 
+
+
+] 
+
+f MODULE 4 
+
+[ 
+
+L 
+
+11 
+
+-1 
+
+
+CONTROL 
+
+MODULE 
+
+
+The TXD signal line is bi-directional and allows information to be retrieved (such as fault 
+codes) and commands to be carried out (such as component activation). On vehicles 
+equipped with the 20-pin diagnostic connector, TXD is in pin 20 and RXD in pin 15. 
+
+Later control modules (from 1997) no longer required the separate RXD to establish 
+communication, (DS2 protocol) so Pin 15 was removed from the Diagnostic socket of 
+most vehicles. Pin 15 (RXD) was still used in the E38 until the end of production in 2001. 
+
+In 1995, to satisfy the requirements of OBD II, a standardized 16-pin connector was 
+installed inside of all vehicles. Up until 2001, the 16-pin OBD II connector was not used by 
+BMW diagnostic equipment to access diagnosis, it was reserved for aftermarket scan tool 
+usage. The 20-pin connector was eliminated from all BMW vehicles from 2001 and the 16- 
+pin OBD connector is now used exclusively. 
+
+
+11 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TXD II (pin 17) was introduced as a communication line exclusive to DME (ECM), AGS 
+(TCM) and EML. Pin 2 provided a connection to the 16 pin OBD connector via a bridge 
+in the cap of the 20-pin connector. TXD II is technically identical to the D-Bus (TXD). 
+
+Note: On vehicles equipped with both the 20-Pin and 16-Pin OBD connector, 
+the cap on the 20-pin connector must be installed to access diagnostic 
+information from the OBD II connector. 
+
+
+Beginning with the introduction of the E65, TXD has been omitted and TXD II is now 
+used exclusively for diagnostic communication. TXD II is in pin 7 of the 16 pin OBD 
+connector. 
+
+
+
+EML 
+
+CONTROL 
+MODULE 
+
+
+[ ] 
+
+
+TRANS <( 
+CONTROL 
+MODULE 
+
+
+[ ] 
+
+
+ENGINE 
+CONTROL 
+P MODULE 
+
+
+ABS/ASC 
+CONTROL 
+MODULE 
+
+
+CONTROL 
+
+MODULE 
+
+
+12 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gateways 
+
+On some of the early models the D-Bus was connected directly to some modules. 
+Some modules were diagnosed through a gateway module such as the IKE or cluster. 
+For instance as the diagram below shows, modules that are on the I, K and P-Bus must 
+be diagnosed through the IKE. In this case the IKE acts as a “gateway” module. The 
+gateway routes all diagnostic “traffic” to the correct bus system. 
+
+
+
+On newer vehicles such as the E65, the ZGM acts as a gateway and all diagnostic data is 
+routed through this module. 
+
+A gateway allows information to be transferred from one bus system to another. Due to 
+the difference in communication speed, the gateway must “translate” the data and then 
+route the data to the correct network. 
+
+In addition to the above functions, the gateway will also allow data messages with a 
+higher priority to be transmitted first. 
+
+
+
+13 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controller Area Network (CAN-Bus) 
+
+
+The CAN protocol was originally developed by Intel™ and Bosch in 1988 for use in the 
+automotive industry. CAN provides a standardized, reliable and cost-effective communi¬ 
+cations network which allows vehicle manufacturers to combat the increasing size of 
+vehicle wiring harnesses. 
+
+The CAN-Bus was introduced on BMW vehicles in 1993 in the 7 and 5 series vehicles 
+with the M60 engine and automatic transmission. The CAN-Bus connected the DME 
+(ECM) with the EGS (TCM) control units. This network allowed data to be transferred 
+between DME and EGS at rate of up to 500 Kbps (Kilobits per second). 
+
+
+
+As shown in the above picture, the original CAN-Bus network contained only 2 control 
+units or “subscribers”. Since it’s introduction, subscribers on CAN have increased as 
+system needs dictated. 
+
+Beginning with the 1995 model year, new systems were added to the CAN-Bus. The 
+introduction of the E38 750iL necessitated major changes to the CAN-Bus structure. 
+EML and DSC were added as well as DME II for the M73 engine. 
+
+For the 1998 model year, the instrument cluster and the steering angle sensor were also 
+added to expand the signal sharing capabilities of the vehicle. 
+
+
+14 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When introduced, the CAN-Bus consisted of 2 copper wires and a third connection 
+which served as a shield. The shield was needed to protect the CAN-Bus from electrical 
+interference. Since the CAN-Bus uses relatively low voltage (approx 2.5), it is vulnerable 
+to signal interruption from higher voltage circuits or aftermarket systems such as cell 
+phones etc. 
+
+
+Example of CAN-Bus from 95-97 E38 750il_ 
+showing tree structure and “Star Connector 
+
+
+V V V 
+
+
+V V V 
+
+
+V V V 
+
+
+V V V 
+
+
+
+CAN 
+
+BUS STAR 
+CONNECTOR 
+
+
+V V V 
+
+
+
+DME I h 
+
+
+
+BOSCH © 
+
+0 261 200 XXX 
+
+
+
+
+
+rF DSC ~h 
+
+
+
+
+The shield on the CAN-Bus was only used until the 99 model year, after which the entire 
+CAN-Bus network went to twisted pair wiring. Twisted pair configuration allows the same 
+level of interference suppression and creates more flexibility in wiring due to the elimina¬ 
+tion of the extra shielding. 
+
+The two signal wires used in CAN are referred to as CAN-High and CAN-Low. Each wire 
+carries the same information bi-directionally. The two wire configuration is used for 
+redundancy in the event of failure. 
+
+Due to the linear structure of the network, the CAN-Bus is available for other modules in 
+the event of a disconnected or failed control unit. This is referred to as a “Tree” structure 
+with each control unit occupying a branch. 
+
+Currently, the CAN-Bus is used on all BMW vehicles and has been expanded to other 
+systems. The introduction of the E65 brought about new variations of CAN. The new 
+PT-CAN and K-CAN will be discussed in a later module. 
+
+
+15 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAN-Bus Operation 
+
+The primary function of the CAN-Bus is to exchange data at a high transfer rate between 
+CAN subscribers. This is accomplished using two signal lines referred to as CAN-High 
+and CAN-Low. Both of these signal lines transfer the same data at the same time. 
+
+Two signal lines are used for redundancy in the event of a signal line failure. 
+
+Voltage on the CAN-Bus is divided between the two data lines, for an average of 2.5 volts 
+per line. Voltage is measured from each data line to ground. Each module on CAN con¬ 
+tributes to this voltage. 
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Test system Multimeter 
+
+
+
+10 
+
+Measurement 
+
+Function 
+
+
+Measurement 
+
+Connection 
+
+Measurement 
+
+Kind 
+
+Measurement 
+
+Range 
+
+
+
+I 
+
+
+Voltage 
+
+V 
+
+
+Resistance 
+
+Ohm 
+
+
+Temperatue 
+
+°C 
+
+
+Current 
+
+2A 
+
+
+Current 
+
+50A 
+
+
+Current 
+
+1000A 
+
+
+Diode test 
+-l>l- 
+
+
+Pressure 
+
+bar 
+
+
+I 
+
+
+MFK 1 
+
+
+MFK 2 
+
+
+Current probe 
+
+
+Pressue 
+
+Sensor 
+
+
+Temperatue 
+
+Sensor 
+
+
+E 
+
+
+
+
+Effective value 
+
+
+E 
+
+
+Multimeter 
+
+
+Counter 
+
+
+Oscilloscope 
+setting 
+
+
+Stimulators 
+
+
+Preset 
+measurements 
+
+
+Help 
+
+
+Freezeimage 
+
+
+Minimim 
+
+Maximum 
+
+
+Systemvoltagc 
+
+Rotationspeed 
+
+
+2nd 
+
+measuement 
+
+
+Stimulai 
+
+
+CAN-Bus viewed on Multimeter 
+
+
+Print 
+
+
+Change 
+
+
+End 
+
+
+Services 
+
+
+BMW Test system Oscilloscope display 
+
+
+Multimeter 
+
+
+Counter 
+
+
+Oscilloscope 
+
+setting 
+
+
+
+m 
+
+r 
+
+g 
+
+g 
+
+e 
+
+r 
+
+I 
+
+e 
+
+v 
+
+e 
+
+I 
+
+
+Stimulators 
+
+
+Preset 
+
+measurments 
+
+
+Help 
+
+
+Freeze Image 
+
+
+Amplitude 
+Channel A 
+
+
+Amplitude 
+Channel B 
+
+
+Time value 
+
+
+Stimulate 
+
+
+CAN-Bus viewed on Oscilloscope 
+
+
+When viewing the CAN-Bus signals on an oscilloscope, CAN-Low with be approximately 
+2.5 volts. The signal will be “pulled” low during communication. CAN-High will be at 2.5 
+volts, but the signal will be “pulled” high during communication. However, the fact that 
+2.5 volts are present does not indicate that the CAN-Bus is fault free, it just means that 
+the voltage level is sufficient to support communication. 
+
+
+Terminal Resistors 
+
+Two 120 Ohm resistors are used in the CAN-Bus circuit to establish the correct imped¬ 
+ance to ensure fault free communication. A 120 Ohm resistor is installed in two control 
+units of the CAN between CAN-H and CAN-L. Because the CAN is a parallel circuit, the 
+effective resistance of the complete circuit is 60 Ohms. On some vehicles there is a 
+jumper wire that connects the two parallel branches together, others have an internal con¬ 
+nection at the instrument cluster. 
+
+
+The resistance is measured by connecting the appropriate adapter to any of the modules 
+on the CAN and measuring the resistance between CAN-L and CAN-H. The resistance 
+should be 60 Ohms. The CAN-Bus is very stable and can continue to communicate if 
+the resistance on the CAN-Bus is not completely correct; however, sporadic communica¬ 
+tion faults will occur. 
+
+
+16 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The terminal resistors are located in the ASC/DSC control unit and either the instrument 
+cluster or in the DME. 
+
+
+Early 750iL vehicles that used the star connector have a separate external resistor which 
+connect CAN-H and CAN-L together. 
+
+
+Modules which do not have the terminal resistor can be checked by disconnecting the 
+module and checking the resistance directly between the pins for CAN-H and CAN-L. 
+The value at these control units should be between 10 kOhms and 50 kOhms. 
+
+
+
+120 Ohm 
+Terminal 
+Resistor 
+
+
+SPLICE CONNECTIONS 
+FOR TWISTED PAIR CAN 
+
+
+120 Ohm 
+Terminal 
+Resistor 
+
+
+MK 60 
+
+
+INSTRUMENT 
+CLUSTER 
+
+
+GS 20 
+
+
+MS 43.0 
+
+
+CAN Communication Protocol 
+
+The CAN-Bus network uses a unique communication protocol. Bus telegram messages 
+are not “addressed” to the intended receiver (module) as on other bus networks. 
+
+Instead, the content of the message (RPM, TD, Temp,etc) is labeled by an identifier code 
+that is unique throughout the CAN. All of the subscribers receive the message and each 
+one checks the message to see if it is relevant to that particular control unit. 
+
+
+If the message is relevant then it will be processed, if not, it will be ignored. The identifier 
+code also determines the priority of the message. In a case where two control units 
+attempt to send a message over a free bus line, the message with the higher priority will 
+be transmitted first. The protocol of the CAN ensures that no message is lost, but stored 
+by the Master Controller and then re-transmitted later when it is possible. 
+
+
+17 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Information and Body Bus (I and K-Bus) 
+
+Initially the 1-Bus was introduced on the E31 as the information bus. The E31 version of 
+the 1-Bus was used for body electronics and driver information systems. With the intro¬ 
+duction of the E38, the 1-Bus is now referred to as the instrument bus. The K-Bus was 
+added to the E38 along with the 1-Bus. Models without Navigation or IKE will use the 
+K-Bus only. Both of these bus systems are technically identical, the only difference is 
+their use by model. 
+
+The I and K-Buses are a serial communications bus in which all connected control units 
+can send as well as receive information over one wire. From this point forward they will 
+be referred to as the l/K-Bus and differences will be pointed out separately. 
+
+The data transfer rate is approximately 9.6Kbps (bits per second). 
+
+The l/K-Bus is always active when terminal R is switched on. If the bus line is quiet more 
+than 60 seconds, all of the control modules will go into Sleep Mode. 
+
+When receiving messages over the bus line, the control unit first determines if the mes¬ 
+sage is error free before accepting it. 
+
+The information sent over the bus is configured serially. Each message consists of: 
+
+1. Transmitter address (8 bit address) 
+
+• The senders name. 
+
+2. Length of data (number of following message bytes) 
+
+• How long the sender will speak. 
+
+3. Receiver address (8 bit address) 
+
+• Whom the sender wishes to speak to. 
+
+4. Command or Information 
+
+• What the sender wants done. 
+
+5. Detailed description of message (maximum 32 bytes of data) 
+
+• How the sender wants it done. 
+
+6. Summary of transmitted information (checksum) 
+
+• The sender summarizes everything said. 
+
+
+18 
+
+Introduction to Bus Systems 
+
+
+
+The sender of the message then waits (100ms) for an acknowledgement that the mes¬ 
+sage was received. 
+
+All of the connected control units will receive the information, but only the module 
+addressed will accept and react to the data. 
+
+The rules for communication on the bus line are: 
+
+• Only one module speaks at a time. 
+
+• Everybody speaks at the same speed. 
+
+• Messages are acknowledged by the recipient. 
+
+• The message is repeated if the addressed module fails to respond. 
+
+• The Master Controller has priority. 
+
+• Quit sending message after 5 failed attempts. 
+
+Communication between busses - On vehicles equipped with an 1-Bus (E38, E39, 
+E53 High) messages to be sent back and forth between the K-Bus and 1-Bus have to be 
+transferred via a Gateway. This Gateway is the IKE. The IKE determines by the address 
+of the message recipient whether the message needs to be passed along to the other 
+bus. The D-Bus and CAN-Bus also utilize the IKE or KOMBI as a gateway. 
+
+Polling - Each module on the l/K-Bus is informed by a message from the Master 
+Controller as to the ready status of all of the other connected modules. The modules 
+polled are according to the coding of the Master Controller. Every 30 seconds after KL R 
+is switched on, each module on the bus line is polled. 
+
+A message concerning bus subscriber status is updated continuously based on the 
+results of these polls. If a subscriber fails to respond with “device status ready” the 
+Master will try again after 1 second. 
+
+If the module fails to reply again, the Master will assume that the subscriber is defective 
+and send the message “subscriber inactive” to all connected modules. The inactive 
+module will continue to be polled until the key is switched off in case the module resets 
+itself. 
+
+
+19 
+
+Introduction to Bus Systems 
+
+
+
+
+Bus System Overview 
+
+Example of vehicle with I and K-Bus 
+
+
+MRS HD 
+
+
+EWS 33 
+
+
+RDW 
+
+
+IHKA 
+
+
+HIGH 
+
+INSTRUMENT 
+
+CLUSTER 
+
+
+
+DIAGNOSIS BUS 
+
+
+
+FZV 
+
+GM 
+
+III 
+
+DWA 
+
+
+i/i 
+
+3 
+
+■P 
+
+
+MK 3 NAV 
+
+
+Driver's Door 
+Swltchblock/ 
+Module 
+
+« 
+
+
+
+Passenger's 
+Door Module 
+
+PM-FT/S8 
+
+
+
+PM-8T 
+
+Seat Memory 
+
+
+
+Sunr oof 
+
+Module 
+
+
+• 
+
+Module 
+
+PM-SM 
+
+
+PM-SHD 
+
+
+
+
+MFL 
+
+
+RADIO 
+
+
+CMT 7000 
+interface box 
+
+
+
+CDC 
+
+
+
+LCM^? 
+
+
+>— 
+
+DSP 
+
+
+
+
+
+PDC 
+
+
+
+l 
+
+
+= T 
+
+
+OB D II 
+CONNECTOR 
+
+
+Ch 
+
+
+
+LEW 
+
+
+:b 
+
+
+DSC 
+
+
+AGS 
+
+
+i _ 
+
+
+DME 
+
+
+TXD II 
+
+
+
+DIAGNOSIS BUS 
+
+
+20 PIN 
+DIAGNOSTIC 
+CONNECTOR 
+up to 9/00 
+
+
+TXD 
+
+
+Example of vehicle with K-Bus 
+
+
+IHKA 
+
+
+
+K-8US 
+
+
+v'y 
+
+
+
+
+
+BASE INSTRUMENT 
+CLUSTER 
+
+
+
+K-BUS 
+
+
+3 
+
+
+RADIO 
+
+
+= 
+
+=| 
+
+MID 
+
+
+6 - 
+
+
+
+
+
+AMPUFIER 
+
+
+—t 
+
+
+-4- 
+
+
+
+LCM 
+
+
+OBDII 
+CONNECTOR 
+
+
+
+i/i 
+
+■D 
+
+co 
+
+Z 
+
+3 
+
+
+TXD II 
+
+
+
+
+DIAGNOSIS BUS 
+
+
+20 PIN 
+
+DIAGNOSTIC 
+
+CONNECTOR 
+
+
+TXD 
+
+
+DIAGNOSIS BUS 
+
+
+GR II 
+
+
+
+
+ABS/ASC5 
+
+
+AGS 
+
+
+DME 
+
+
+EWS 
+
+
+
+
+MRS 
+
+
+20 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The l/K-Bus consists of a single copper wire. The wire color of the I and K-Bus is uniform 
+throughout the vehicle with: 1-Bus WS/GR/GE and the K-Bus WS/RT/GE (Note: 2001 
+E39s with base Kombi have changed K-Bus wire color to the same as the 1-Bus, 
+WS/GR/GE). 
+
+Due to the linear structure of the network, the l/K-Bus is available for other modules in the 
+event of a disconnected or failed control unit. Just as the CAN-Bus, this is referred to as 
+a “Tree” structure with each control unit occupying a branch. The l/K-Bus provides the 
+diagnostic connection to the control units located on those busses (except IKE/KOMBI). 
+
+Always refer to the ETM to determine the exact wiring configuration and color for a 
+specific model. 
+
+Troubleshooting the l/K-Bus 
+
+The failure of communication on the l/K-Bus can be caused by several sources: 
+
+• Failure of the bus cable. 
+
+• Failure of one of the control units attached to the bus. 
+
+• Failure of the voltage supply to individual modules. 
+
+• Interference in the bus cables. 
+
+The l/K-Bus is active when KL R is switched on, it remains active until 60 seconds after 
+the last message. If the key is switched off (KL30) the bus may be activated for a time by 
+individual users via a “wake-up” message. 
+
+Unlike the CAN-Bus where each control unit (subscriber) provides voltage for communi¬ 
+cation, the l/K-Busses use only determined Main (master) or Stand-by Controllers to sup¬ 
+ply B+for communication. The voltage level on the l/K-Bus must be above 7V. The nom¬ 
+inal value should be close to the system voltage of the vehicle. 
+
+Just like the CAN-Bus, the fact that voltage is present does not mean that the bus is fault 
+free, it just means that the voltage level is sufficient to support communication. 
+
+
+21 
+
+Introduction to Bus Systems 
+
+
+
+Control units that provide operating voltage to the l/K-Bus are: 
+
+On E38 and E39/E53 High version vehicles: 
+
+• The LCM is the Main (master) Controller of the 1-Bus. The IKE and MID/BMBT are 
+Stand-by Controllers. 
+
+• The GM is the Main (master) Controller of the K-Bus. 
+
+On E46, E52 and E39/E53 Base version vehicles: 
+
+• The GM is the Master Controller for vehicles equipped with only the K-Bus. 
+
+• The LCM/LSZ is the Stand-by Controller. 
+
+Failure of the Bus Cable 
+
+The following faults can occur to the l/K-Bus wiring: 
+
+• Short Circuit to B+ 
+
+• Short Circuit to B- 
+
+• Bus line down (open) 
+
+• Defective plug connections (damaged, corroded, or improperly crimped) 
+
+Short Circuit to B+: Modules that send a message see that the message was not 
+received and that the bus remains high. However, subscribers are unable to decide 
+whether the fault is due to a shorted line or a defect in the communication interface. 
+
+The module will repeat its message 5 times before discontinuing and faulting. The mod 
+ule will continue to operate as normal minus any commands that could not be delivered 
+by the bus. 
+
+Short Circuit to B-: The subscribers do not interpret a low bus line as a fault but just as a 
+bus line deactivation. The Master and Standby controllers do detect the short and enter 
+it as a bus fault. (No communication). 
+
+Bus Line Down: The bus line may be open at any of several locations. As long as the 
+Master or Stand-by is still connected, communication can occur with any modules still 
+remaining. The fault situation will be the same as if the disconnected modules were 
+defective themselves. 
+
+Checking the bus line is carried out just like any other wiring. Perform continuity tests 
+between the connections of different modules (all modules disconnected) without forget 
+ting to make sure that the bus has not shorted to ground or another wire. It is recom¬ 
+mended to use the “Wire Test” in “Preset Measurements” which is more sensitive than 
+just a resistance check. 
+
+
+22 
+
+Introduction to Bus Systems 
+
+
+
+If Voltage level and the wire test are O.K. then looking at the communication signal may 
+be useful. In order to get a signal, operate different devices on the l/K-Bus (e.g. 
+MID/MFL) to stimulate conversations. 
+
+The following are some examples of scope patterns that may be observed when check¬ 
+ing the l/K-Bus. 
+
+
+
+Counter 
+
+Oscilloscope 
+
+
+belling 1 
+
+
+Preset 
+
+
+mcMjBmenbi 
+
+
+‘Help | 
+
+
+Pnni 
+
+
+li.mvL 
+
+
+BMW Measuring system Oscilloscope display 
+
+
+A[V| 
+
+
+Chan itclll 
+
+
+im 
+
+
+High Voltage: 
+
+7 volts up to B+ 
+
+
+Low Voltage: 
+0 to 2 volts 
+
+
+Message Time: 
+5 to 30ms 
+
+
+The example shown above is of a correctly operating K-Bus signal. The high portion of 
+the signal is approximately 12 volts. The signal is active when communication is occur¬ 
+ring of the bus. 
+
+
+
+Flat Line at 12 volts Flat Line at 5 volts 
+
+No communication is taking place. The bus may be No output voltage from the Main (master) or standby 
+temporarily off line or shorted to B+. controllers. Bus line may be open or control unit 
+
+may be defective. 
+
+
+23 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Failure of one of the control units attached to the l/K-Bus. 
+
+Each control unit connected to the bus has an integrated communication module that 
+makes it possible for that control unit to exchange information. Failure of a control unit 
+normally triggers a fault code in the other control units connected to the bus. 
+
+As a quick check for the l/K-Bus, activate the four way flashers. The flash indicators must 
+light up in the instrument cluster. Switch on the Radio, and adjust volume using the MFL 
+or MID/BMBT, the volume must change accordingly. 
+
+On High version vehicles press the recirculation button on the MFL, The IHKA should 
+respond to the request. This test checks the gateway link as well as the the I and K-Bus 
+communication. 
+
+If the tests prove O.K, this means that communication on the bus is O.K. Any faults still 
+existing can only be related to faults specific to a control unit or a local l/K-Bus wiring 
+defect to a module. 
+
+There are instances where failures may be software related. A faulted module may para¬ 
+lyze or take down the entire bus. This scenario would be evident by functions not being 
+carried out and and possible faults stored. 
+
+In order to isolate the defective control unit, the control units can be disconnected one at 
+a time. Repeat the bus test after each disconnected control unit. If the disconnected 
+control module is the defective one the faults will only point to communication with that 
+interrupted module and no one else. 
+
+Once the module has been replaced (observing current S.I.Bs) and coded, perform the 
+I or K-Bus Test Module in the Diagnosis Program to ensure that communication is O.K. 
+
+Failure of the voltage supply to individual modules. 
+
+A slowly dropping battery voltage on a vehicle with discharged battery can lead to spo¬ 
+radic communication faults in various control units on the bus. The reason is that not all 
+control units will switch off communication at the same voltage level leaving some mod¬ 
+ules still trying to communicate. Always verify a properly charged battery and charging 
+system and fuses before beginning troubleshooting on the bus. Also, do not forget to 
+check for a proper ground to a control unit, this may not allow the bus to see a signal low 
+(0-2V) 
+
+Interference in the Bus Cables. 
+
+Interference will have a similar effect to shorting or disturbing the bus wiring. Excessive 
+interference created by a defective alternator or aftermarket devices such as cell phones 
+or amplifiers may induce a voltage into the bus line and disrupt communication. This 
+type of interruption may be intermittent and faults may only be stored in some modules 
+and not in others. These faults are often difficult to reproduce. Isolate any aftermarket 
+wiring in the vehicle and see if the fault returns. 
+
+
+24 
+
+Introduction to Bus Systems 
+
+
+
+Peripheral Bus (P-Bus) 
+
+The P-Bus is a single wire serial communications bus that is used exclusively on vehicle 
+that are equipped with ZKE III. These vehicles are the E38, E39 and E53. 
+
+The P-Bus provides the Central Body Electronics system with a low speed bus for use by 
+the General Module (GM) to control various functions. These functions are carried out by 
+various peripheral modules. The peripheral modules are located in areas of the vehicle 
+close to sensors or actuators where wiring the components separately would create an 
+excessively large wiring harness. In some cases (e.g. Sunroof module) these peripheral 
+modules are integrated into an actuator or switch to create one unit. 
+
+The P-Bus is only used within the ZKE system and is very similar in communication pro¬ 
+tocol and speed to the l/K-Bus. The P-Bus is not designed for a rapid exchange of con¬ 
+tinuous information. Instead, the messages on the P-Bus are short control commands. 
+This limited message flow allows for fast reaction time by the Peripheral module, (e.g. a 
+door lock request). 
+
+
+
+In comparison with previous electronic systems, bus networks provide a simple method 
+to operate various body electronic systems. Using the example of a power window cir¬ 
+cuit, the previous methods to operate a window were inefficient. The power window cir¬ 
+cuit carried a large amount of current which required larger gauge wires and heavy duty 
+switches. Window switches were subject to wear from arcing contacts and the wiring 
+size did not allow much flexibility when passing through bulkheads and doorjamb areas. 
+
+A bus network needs less high current circuits and uses a smaller amount of heavy 
+gauge wire. The switches are only used to signal the modules and they do not carry high 
+current. The switches are used to provide a low current ground input signal which 
+increases the life of the switch and improves reliability considerably. 
+
+
+25 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The drivers side window switch is a control unit on the P-Bus. If the driver needs to open 
+the front passenger side window, a signal is sent from the driver’s side switch block mod¬ 
+ule to the passenger side door module. The passenger side door module contains the 
+load circuits for switching the window motor. The passenger side door module will 
+respond to the “window open” telegram from the drivers door switchblock by actuating 
+the switching circuit for the window motor. 
+
+
+Conventional Power Window Circuit 
+
+(Early E36) 
+
+
+
+WINDOW/ 
+
+
+
+
+In addition to simplifying the power window circuit, the bus network also allows functions 
+that were not possible with a conventional power window circuit. For example, the 
+remote operation of the power windows from the key transceiver (convenience open 
+feature). 
+
+The convenience open feature on the E38 operates by a radio freguency signal from the 
+key transceiver. The “open reguest” signal is received by the FBZV module. The FBZV 
+module sends a digital signal to the General Module (GM III). The GM then sends an “open 
+windows and sunroof” telegram over the P-Bus and all 4 windows and sunroof will open. 
+This type of feature is much too complex for a conventional window circuit. The bus net¬ 
+work allows new features like this to be possible. 
+
+
+“I™ 
+
+
+
+FBZV 
+
+RECEIVER 
+
+MODULE 
+
+
+
+E)irDw®ir"@ tS)®@(r 
+SwoteOutetoelk/ 
+
+
+GM III MODULE 
+LOCATED IN CARRIER 
+FORWARD OF GLOVE BOX 
+
+
+
+™=FT/SB 
+
+
+E)@@r Module 
+
+
+
+Seat (Ml@[m)®iT>f 
+Module 
+
+Z' \ 
+
+Smew? 
+
+Module 
+
+
+
+PM-SHD 
+
+
+
+26 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Troubleshooting the P-Bus 
+
+The failure of communication on the P-Bus can be caused by several sources: 
+
+• Failure of the bus cable. 
+
+• Failure of one of the control units attached to the bus. 
+
+• Failure of the voltage or ground supply to individual modules. 
+
+• Interference in the bus cables. 
+
+The P-Bus may be active at anytime following a wakeup call. The GM provides the 
+voltage necessary to support communication. The voltage level of the P-Bus is 12V. 
+
+The Diagnosis of the central body electronics is carried out via the K-Bus. The GM 
+converts diagnosis request from the DISplus into diagnostic mode messages and 
+transmits them the the peripheral modules over the P-Bus. 
+
+Automatic testing of the P-Bus connection is carried out every time the GM communi¬ 
+cates with the diagnosis program (not during a short test). 
+
+Checking the bus line is carried out just like any other wiring. Perform continuity tests 
+between the connections of different modules (all modules disconnected) without forget¬ 
+ting to make sure that the bus has not shorted to ground or another wire. It is recom¬ 
+mended to use the “Wire Test” in “Preset Measurements” which is more sensitive than 
+just a resistance check. 
+
+Troubleshooting of the P-Bus network is carried out the same as the l/K-Bus. 
+
+
+
+Automatic testing of data 
+to the peripheral modules 
+
+
+transmission 
+
+
+Door module, driver's door: 
+
+DATA TRANSMISSION OK 
+
+
+Door module, passenger door: 
+
+DATA TRANSMISSION OK 
+
+Slide/tilt-sunroof module: 
+
+DATA TRANSMISSION OK 
+
+
+Test result: 
+
+
+OK 
+
+
+
+
+
+
+
+27 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M-Bus 
+
+
+The M-Bus is used exclusively in the climate control systems for the control of the 
+“smart:” stepper motors. These stepper motors are used to control various air distribu¬ 
+tion flaps. In previous climate control systems, such as E32/E34, the stepper motors were 
+directly controlled by the climate control module. 
+
+The M-Bus was introduced on the E38 climate control system (IHKA). The M-Bus was 
+also installed on subsequent models equipped with IHKA and IHKR. 
+
+
+The M-Bus communicates with the “smart” stepper motors which contain a processor 
+capable of transmitting and receiving messages. The stepper motor is then operated by 
+final stage transistors located within the stepper motor electronics. 
+
+
+"SMART" STEPPER MOTOR 
+
+
+
+The M-Bus consists of a three wire ribbon cable containing the following wires: 
+
+• Power (B+) 
+
+• Ground 
+
+• Bi-Directional Signal Line 
+
+Each stepper motor on the M-Bus has a unique part number to distinguish it’s location 
+on the climate control housing. The part number corresponds to a unique electronic 
+address on the M-Bus. Since each stepper motor contains a unique electronic address, 
+the motor will only respond specific commands. A stepper motor installed in the wrong 
+location would result in improper operation. 
+
+
+
+28 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Communication Protocol 
+
+Each stepper motor acts as a “subordinate” module, it listens to all data on the bus, but 
+only responds as long as the message is transmitted without errors and recognizes it’s 
+own address. 
+
+The M-Bus protocol differs from the CAN and the l/K/P-Busses in that communication 
+takes place within a framework time of 650 microseconds. 
+
+When the climate control module (IHKA/R) is commanding a change in position of one or 
+more stepper motors, the sequence of data is: 
+
+1 . Start bit - Informs the stepper motors that a command is coming. 
+
+2. Synchro bit - Establishes the message as originating from the IHK control module. 
+
+3. Data Field - The command to move a stepper motor to a particular position. 
+
+4. Address Field - The IHK control unit names the stepper motor the command is 
+
+intended for. 
+
+If the message was received by the stepper motor without error, the stepper motor will 
+carry out the command and transmit it’s acknowledgement which is as follows: 
+
+1 . Synchro Bit - Establishes the message as originating from the stepper motor 
+
+2. Data Field - Status information from the actuator (feedback) 
+
+3. End of Frame - Closes the communication Session 
+
+Communication continues on the M-Bus until the GM send the “go to sleep” command 
+over the K-Bus. 
+
+M-Bus Topology 
+
+The M-Bus consists of a three wire ribbon attached to the climate control housing and 
+connecting all of the “smart” stepper motors in the system. The number of stepper 
+motors depends upon the vehicle model and climate control system (IHKA,IHKR etc.). 
+
+For example, the E38 (shown) with IHKA uses 9 “smart” stepper motors and one motor 
+that is conventionally controlled. The M-Bus is divided into two circuits due to the large 
+number of stepper motors. Other models such as the E39, E46 and E53 only use one 
+circuit for the M-Bus and less stepper motors. 
+
+
+
+- MIXING 
+
+- REAR OUTLET - DEFROST 
+
+- FACE VENT 
+
+- MIXING 
+
+- RECIRCULATING 
+
+- FOOTA/VELL 
+
+
+29 
+
+Introduction to Bus Systems 
+
+
+
+
+M-Bus Troubleshooting 
+
+The failure of communication on the M-Bus can be caused by several sources: 
+
+• Failure of the bus ribbon, e.g. open or shorted. 
+
+• Failure of one of the stepper motors attached to the bus, e.g. shorted to B+ or B-. 
+
+• Failure of the voltage or ground supply to the IHK control unit. 
+
+The M-Bus is active at any time following KLR on. The IHK module provides the voltage 
+necessary to support communication. The voltage level of the M-Bus is 5V, but because 
+status communication occurs at an average 50% duty cycle the observed voltage is 
+approximately 2.5V. The presence of 2.5V means that communication is occurring. 
+
+Checking the M-Bus ribbon is carried out just like any other wiring. Perform continuity 
+tests between the connections of the stepper motors (all motors disconnected) and the 
+control unit without forgetting to make sure that the data line has not shorted to ground 
+or power. 
+
+It is recommended to use the “Wire Test” in “Preset Measurements” which is more sen¬ 
+sitive than just a resistance check. 
+
+If Voltage level and the wire test are O.K, then looking at the communication signal may 
+be useful. 
+
+The following is an example of a scope pattern that may be observed when checking the 
+M-Bus. Notice the very high frequency of the signal at approximately 20 kHz. 
+
+
+Print 
+
+
+Change 
+
+
+Lfi 
+
+
+End 
+
+
+Services 
+
+
+
+
+
+8 
+
+6 
+
+4 
+
+
+0 
+
+
+-4 
+
+-6 
+
+-8 
+
+
+BMW Measuring system Oscilloscope display 
+
+EEL 
+
+
+uruvl 
+
+
+
+Mcmoo 
+
+
+Cunnr2 
+
+
+
+A 
+
+
+< 
+
+
+
+•200 -100 
+_- 150 _ -50 
+
+
+0.0 
+
+
+100 
+
+
+200 
+
+
+50 
+
+
+150 
+
+
+D 
+
+
+US 
+
+
+
+
+I Multimeter 
+
+
+Counter 
+
+
+<11 
+
+
+Oscilloscope 
+| setting_ 
+
+
+
+
+Stimulators 
+
+
+Preset 
+
+measurmertts 
+
+
+Help 
+
+
+Irce/elmogc 
+
+
+B[V] 
+
+V 
+
+
+l l 
+
+
+
+
+
+▲ 
+
+1 
+
+Chonncllt 
+
+16 
+
+8 
+
+
+
+
+r 
+
+f' 
+
+12 
+
+6 
+
+
+Avm 
+
+
+
+i 
+
+
+8 
+
+4 
+
+u 
+
+
+
+
+
+Amplitude 
+
+
+
+a 
+
+Channel A 
+
+4 
+
+
+w 
+
+
+
+
+e 1 
+
+
+0 
+
+0 
+
+r 
+
+Amplitude 
+
+-4 
+
+
+
+Channel H 
+
+-8 
+
+-4 
+
+1 1 
+
+
+e 
+
+1 imcvalue 
+
+V' 
+
+-12 
+
+-6 
+
+
+
+-16 
+
+-8 
+
+e 
+
+
+1 
+
+
+Stimulate 
+
+
+m 
+
+
+30 
+
+Introduction to Bus Systems 
+
+
+
+
+
+Workshop Exercise 
+
+
+Using an instructor designated vehicle, perform “Quick Delete” to ensure that there 
+are no present system faults. 
+
+Using the correct ETM and appropriate test cables, connect oscilloscope the CAN- 
+Bus at the DME (ECM) or other accessible control module. Use MFK 1 and 2 and 
+display both CAN signals on the oscilloscope. 
+
+What is observed regarding the CAN-Bus signals? (voltage levels, frequency etc.) 
+
+
+Using the appropriate fused jumper, ground the CAN- High signal and observe, 
+(fault codes, functionality etc.) 
+
+What is observed when the CAN High signal is disabled? 
+
+
+Using the appropriate fused jumper, ground the CAN- Low signal and observe, 
+(fault codes, functionality etc.) 
+
+What is observed when the CAN Low signal is disabled? Are there any differences 
+between the failures of CAN high and CAN low? 
+
+
+31 
+
+Introduction to Bus Systems 
+
+
+
+
+Workshop Exercise 
+
+Using the multimeter functions of the diagnostic equipment, measure the resistance 
+between CAN High and CAN low. 
+
+What is the resistance observed? 
+
+
+Locate the CAN-Bus terminal resistors in this vehicle and measure the resistance. 
+
+Where are the CAN-Bus terminal resistors located? And what is the resistance? 
+
+
+Remove the CAN-Bus resistors from the circuit (by disconnecting the resistor or 
+module, whichever is appropriate). 
+
+What is observed when the terminal resistors are removed from the circuit? 
+
+(fault codes etc.) 
+
+
+What is the purpose of the terminal resistors? 
+
+
+32 
+
+Introduction to Bus Systems 
+
+
+
+
+
+Workshop Exercise 
+
+
+Using the oscilloscope, connect the the l/K-Bus. 
+
+What is the observed voltage? 
+
+
+Using the appropriate fused jumper, ground the l/K-Bus and observe functions and 
+fault codes. 
+
+What is observed regarding vehicle operation? (fault codes, functionality etc.) 
+
+
+With the l/K-Bus grounded, operate the turn signals. 
+Do the turn signals function properly? Why or Why not? 
+
+
+If the vehicle has a P-Bus, perform the P-Bus test With the DISplus/GT-1. 
+
+Ground the P-Bus and perform the P-Bus test again. 
+
+What is observed regarding the P-Bus test and the operation of the P-Bus and related 
+systems? 
+
+
+33 
+
+Introduction to Bus Systems 
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+
+1. Where are the Terminal resistors located in the CAN-Bus network? What should 
+the measured resistance of the CAN circuit be? How is it checked? 
+
+
+2. Explain the differences of CAN-High and CAN-Low? 
+How can they be distinguished from one another? 
+
+
+3. What is the minimum voltage required at the D-Bus? 
+
+
+4. Why is checking a bus signal with an oscilloscope a practical option? 
+
+
+5. Describe some quick tests that can help to determine if a bus line is currently 
+operating. 
+
+
+34 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+What bus systems use the linear arrangement? 
+
+
+What is the difference between the communication protocol on the CAN-Bus and 
+the l/K-Bus? 
+
+
+What modules are connected to the P-Bus? 
+
+
+What are some of the main advantages (benefits) to bus networks? 
+
+
+On what systems is the M-Bus used? 
+
+
+35 
+
+Introduction to Bus Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

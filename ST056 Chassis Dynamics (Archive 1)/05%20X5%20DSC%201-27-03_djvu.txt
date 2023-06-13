@@ -1,0 +1,2320 @@
+Table of Contents 
+
+
+X5 Dynamic Stability Control 
+
+Subject Page 
+
+Purpose of the System.3 
+
+Components.5 
+
+Integrated Control unit/Hydraulic unit with CAN Interface.6 
+
+Brake Pressure Sensor.6 
+
+Brake Light Switch.6 
+
+Charge pump.7 
+
+Hand Brake Switch.7 
+
+Integrated Rotation Rate/Lateral Acceleration Sensor.8 
+
+DSC Button.9 
+
+HDC Switch (Hill Descent Control).9 
+
+Four wheel speed sensors (Active Hall Effect).9 
+
+Steering Angle Sensor.10 
+
+Brake Fluid Level Switch.11 
+
+DSC Warning Indicator.12 
+
+CAN Interface (DM E/AGS).13 
+
+Principle of Operation.14 
+
+X5 DSC New Functions.27 
+
+Diagnosis.31 
+
+Review Questions.33 
+
+
+Initial Print Date: 1/03 
+
+
+Revision Date 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model: E53 X5 3.0i, 4.4i and 4.6is 
+Production: All from Model Introduction 
+
+Objectives: 
+
+After completion of this module you will be able to 
+Understand X5 DSC operation 
+Identify X5 DSC Components 
+Understand HDC Operation 
+
+
+2 
+
+X5 Dynamic Stability Control 
+
+
+
+
+Purpose of System 
+
+DSC for the X5 
+
+The X5 is equipped with DSC III for its stability control system. The components are the 
+same as the DSC III system (version 5.7) currently installed in the E38/E39 vehicles. 
+However the software and programming are changed to allow for new functions associat¬ 
+ed with all wheel drive and off-road use. 
+
+New/changed functions ofthe DSC III include: 
+
+New Hill Decent Control (HDC) function 
+
+New Differential Brake Control (ABD) function 
+
+Changed traction control function 
+
+Changed ABS function 
+
+The DSC system for the X5 provides all ofthe functions and features ofthe DSC III system 
+currently in the E38/E39 vehicles, these functions/features include: 
+
+M aintaining traction under all driving conditions 
+
+Maintaining the directional Control (Longitudinal Stability) 
+
+Providing Lateral Stability (Correction for oversteer/understeer) 
+
+Providing Corner Braking Control (CBC) 
+
+Providing Dynamic Braking System features of - Dynamic Braking Control and 
+Maximum Braking Control (DBC and MBC) 
+
+Providing Electronic Brake Proportioning (EBV) 
+
+
+3 
+
+X5 Dynamic Stability Control 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+
+KL 30 
+KL 15 
+
+
+Ki- ■-Q.-1 
+
+■,r'- 
+
+■ * . 
+
+DSC 
+
+\ - .■ 
+
+
+■.Ay-v. 
+
+
+DSC SWITCH 
+
+
+
+HDC SWITCH 
+
+
+
+
+
+•—U 
+
+1- 1 
+
+WHEEL 
+
+
+1 1 
+
+1 ' 
+
+SPEED 
+
+
+=□ 
+
+
+1 1 
+
+SENSORS 
+
+
+
+i mm 
+
+
+BRAKE 
+
+PRESSURE 
+
+SENSOR 
+
+
+
+REFERENCE VOLTAGE 
+SIGNAL VOLTAGE 
+
+
+SIGNAL VOLTAGE 
+
+
+ROTATION 
+RATE SENSOR 
+
+
+ELECTRONIC 
+BRAKE LIGHT 
+SWITCH 
+
+
+
+i 
+
+
+TO LCM 
+
+
+
+PARK BRAKE 
+SWITCH 
+
+
+DSC 
+
+
+
+POWER SUPPLY 
+
+
+POWER SUPPLY 
+
+
+PUMP 
+
+
+INLET (4X) 
+
+
+OUTLET (4X) 
+
+
+CHANGEOVER (2x) 
+
+
+PRE-LOAD (2x) 
+
+
+mm — 
+
+"iflMdr 
+
+
+liT 
+
+
+DSCIII 
+
+HYDRAULIC 
+
+UNIT 
+
+
+POWER SUPPLY 
+GROUND 
+SENSOR TEST 
+
+
+
+ROTATION 
+RATE SENSOR 
+
+
+CHARGE PUMP 
+CONTROL 
+
+
+
+STEERING ANGLE 
+SENSOR WITH 
+INTEGRAL MICRO¬ 
+PROCESSOR 
+
+
+CAN 
+
+
+
+
+
+
+EMLllis 
+
+i uuu 
+
+
+WHEEL SPEED X4 
+
+
+EDO 
+
+IKE&DME 
+DIAGNOSIS 
+
+
+
+4 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+The components of the X5 DSC III system are similar to the E39 with Bosch DSC III 5.7. 
+The location of some components is slightly different than the E39. The components are 
+as follows: 
+
+Integrated Control unit/Hydraulic unit with CAN Interface 
+Charge pump 
+
+Tandem Brake M aster Cylinder 
+
+Four wheel speed sensors (Active Hall Effect) 
+
+Steering Angle Sensor 
+
+Integrated Rotation Rate/Lateral Acceleration Sensor 
+
+Brake Pressure Sensor 
+
+Brake Fluid Level Switch 
+Brake Light Switch 
+
+Hand Brake Switch 
+
+DSC Button 
+
+DSC Warning Indicator 
+
+CAN Interface (DME/AGS) 
+
+HDC Switch (Hill Descent Control) 
+
+
+5 
+
+X5 Dynamic Stability Control 
+
+
+
+Components 
+
+Control Module/Hydraulic Unit 
+
+
+The control module is integrated into the 
+hydraulic unit as one compact unit. This 
+reduces the size and wiring required for 
+DSC operation. Additionally the motor 
+relay and valve relay have been replaced 
+by solid state final stages in the control 
+module. The hydraulic unit continues to 
+
+
+use: 
+
+
+Two pre-charge solenoid valves 
+Two changeover solenoid valves 
+Four intake solenoid valves 
+Four outlet solenoid valves 
+One return pump 
+
+
+Brake Pressure Sensor 
+
+
+A brake pressure sensor is installed in the 
+hydraulic unit to determine the degree of pres¬ 
+sure build-up for Dynamic Brake Control. It is 
+installed in the front axle brake circuit. 
+
+The sensor receives its power supply from the 
+DSC control module and produces a linear 
+voltage input signal ranging from 0.5 to 4.5 
+volts depending on how hard the brakes are 
+
+
+applied. 
+
+Brake Light Switch (BLS) 
+
+
+The brake switch is an input to the DSC 
+Module to inform it that the brakes are 
+
+
+being applied. If the signal is received dur¬ 
+ing an ASC regulation then brake regulation 
+
+
+is interrupted. 
+
+
+
+6 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+Pre-Charge Pump (Bosch 5.7) 
+
+The pre-charge pump is located below the 
+master cylinder in the left side of the engine 
+compartment. 
+
+During A5C or DSC regulation with brake inter¬ 
+vention, the DSC control unit activates the pre¬ 
+charge pump. The pump delivers brake fluid at 
+a pressure of 10 to 15 Bar to the front axle cir¬ 
+cuit of the master cylinder. The pressurized 
+fluid also acts on the rear brake circuit of the 
+master cylinder as well. 
+
+The Pre-charge pump ensures that an ade- 
+guate amount of brake fluid is available at the 
+hydraulic unit during brake regulation. 
+
+Handbrake Switch 
+
+The Hand Brake Switch is a ground input to the DSC module. This DSC module will dis¬ 
+continue MSR regulation when the signal is present. 
+
+
+
+DSC 
+
+Module 
+
+
+
+
+
+
+7 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rotation Rate/Transverse Acceleration Sensor 
+
+Located under the center console behind the MRS III control module, the rotation rate and 
+transverse acceleration sensor provides two inputs to the DSC control module. The sensor 
+is isolated from body/chassis vibrations through its rubber mounting. 
+
+For rotational speed, the sensor produces a reference signal of 2.5 volts and a linear volt¬ 
+age signal from 0.7 to 4.3 volts. This linear voltage input signal is used by the DSC control 
+module as the degree of rotational rate (yaw). 
+
+The sensor also produces a linear voltage signal for the lateral acceleration (G-force) that 
+ranges from 0.5 to 4.5 volts. The DSC control module uses this input to determine the side 
+forces acting on the vehicle for DSC regulation. 
+
+
+
+RATE SENSOR/ 
+ACCELERATION SENSOR 
+
+
+
+
+
+
+
+8 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DSC Switch 
+
+
+The system is active whenever the ignition is 
+switched on. When pressed, the switch provides 
+a momentary 12 volt signal to the DSC III control 
+module to switch the system off (DSC indicator in 
+cluster illuminated.) When pressed again, the sys¬ 
+tem switches back on (DSC Indicator in cluster 
+goes off.) 
+
+
+DSC 
+
+
+HDC Switch 
+
+The hill decent control function is activated by 
+pressing the HDC switch located in the centercon- 
+sole. The LED will come on steady when the func¬ 
+tion is in standby and flash when HDC is regulating 
+
+Wheel Speed Sensors 
+
+2 wire Hall Effect Sensor - "Square wave generator". 
+
+
+
+Stabilized 8 volt power supply to hall element on one wire, ground path for sensor 
+through second wire back to control module. Signal is generated by the pulse wheel 
+affecting voltage flow through hall element creating a low of .75 and a high of 2.5 volts. 
+
+
+48 pulse incremental wheel incorporated in wheel bear¬ 
+ing cover for contaminant protection. 48 pulses = one 
+complete wheel revolution. 
+
+Sensors identical to DSC II and ASC V systems. 
+
+Sensors provide immediate vehicle speed recognition. 
+
+
+
+
+9 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steering Angle Sensor (LEW) 
+
+
+The sensor is equipped with a processor 
+and is directly linked to the CAN bus to com¬ 
+municate with the DSC III module. 
+
+
+The Steering angle sensor is mounted at the 
+bottom of the steering spindle (in front of the 
+flex coupling). 
+
+
+
+CAN BUS MICROPROCESSOR 
+
+
+The sensor still utilizes two potentiometers to determine the steering angle and the rate of 
+steering. These are the raw signals the CAN Bus microprocessor utilizes to create the steer- 
+
+
+
+The sensor requires calibration after repairs to the steering or suspension system (found in 
+DIS Service Functions). Once the calibration is completed the sensor now also sends an 
+identification number over the CAN bus to the DSC III module. The ID provides confirma¬ 
+tion in the DSC module that the steering angle sensor is properly calibrated. 
+
+If the ID differs due to component swapping it will not be possible to enter the DSC system 
+for diagnosis. The DIS will request that the steering angle sensor be recalibrated using the 
+service functions. Once complete a new ID number is generated and the DSC III control 
+module and Steering angle sensor are properly mated. 
+
+The DSC III logic checks the plausibility of the steering angle sensor against the other DSC 
+III inputs (front wheel speeds, rotation and lateral acceleration sensors). If battery voltage 
+is interrupted, the current steering wheel rotation is recalculated by the DSC module eval¬ 
+uating the front wheel speeds. 
+
+Replacement steering angle sensors must be ZCS coded when installed in the vehicle prior 
+to the calibration procedure. 
+
+
+10 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+Brake Fluid Level Warning Switch 
+
+
+
+
+IT 
+
+
+
+A new fluid level switch is incorporated into the reservoir cap. 
+With sufficient fluid level the reed contact is closed. 
+
+When level drops below allowable limits, switch opens. 
+
+
+
+Since the normal position is closed, this circuit is monitored 
+for shorts to + and ground. 
+
+
+TheLCM constantly monitors the input. If the ground signal is momentary, the LCM sig¬ 
+nals the Instrument cluster of the condition. The instrument cluster then informs the DSC 
+III control module over the CAN bus. If the signal is received just prior to the activation of 
+the charge pump, the charge pump activation is delayed. 
+
+
+If the signal is present for more then 25 seconds, the LCM issues two I BUS message for 
+the Instrument Cluster: 
+
+
+1. Post "Brake Fluid Level" in the Matrix display 
+
+2. Notify the DSC III via CAN that the Fluid level has been low for more than 25 seconds. 
+
+The DSC III control module immediately switches DSC III functions off and continuously illu¬ 
+minates the DSC indicator in the cluster. 
+
+
+11 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Warning Indicators 
+
+
+
+BRAKE ABS 
+
+
+1/min 
+
+xlOOO 
+
+
+UNLEA i GASOLINE ONLY] 
+
+
+SERVICE 
+
+ENGINE 
+
+SOON 
+
+
+Three warning indicator lamps are arranged in the instrument cluster: 
+
+DSC lamp: Indicates fault in DSC or system disabled by the switch 
+ABS lamp: Indicates a fault in the ABS system. 
+
+ABL"BRAKE" lamp: 
+
+
+This lamp is a general brake warning and illuminates two different colors 
+
+
+Red indicates low brake fluid or hand brake engaged. 
+
+
+Yellow indicates DSC/ABS fault or system disabled by the switch 
+
+
+The DSC and yellow ABL lamp are controlled by the DSC III control unit via the CAN bus. 
+The ABS lamp is controlled directly by the DSC III control unit via hardwire. 
+
+
+12 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAN Interface 
+
+The M K60 is connected to the CAN bus for communication with the AGS, DME control 
+module, Steering Angle Sensor and the Instrument Cluster. 
+
+The CAN bus allows all of the connected control modules to send and receive information 
+and commands. 
+
+Communication with the M K60 includes: 
+
+DME - The DME sends current engine torque. M K 60 commands the DM E to reduce 
+(ASC/DSC) or raise (M SR) engine torque. 
+
+AGS - The M K60 commands the AGS to suppress shifts during regulation. 
+
+LEW - The M K60 receives steering angle information. 
+
+KOMBI - The M K60 commands the instrument cluster to activate or deactivate the 
+warning lamps. 
+
+All four wheels speed signals are sent over the CAN bus for use by other modules. 
+
+
+INSTRUMENT 
+
+
+
+
+13 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+The scope of control for the DSC III is comprised of three systems: 
+
+ABS 
+
+ASC+T 
+
+DSC 
+
+
+Based on signals coming from the various sensors the DSC III will determine which system 
+is best suited to maintain control of the vehicle. 
+
+
+In addition to the three basic systems, there are several sub-functions which are activated 
+during very specific circumstances. The sub-functions are: 
+
+
+CBC 
+EBV 
+M SR 
+ADB 
+DBC 
+MBC 
+
+
+
+MBC- DSC- DBC 
+
+
+The ABS system can prevent wheel lock when braking by comparing the four active wheel 
+speed sensors to the average vehicle speed. If a wheel is locking during braking or has 
+dropped below a speed threshold programmed in the control unit ABS, braking will begin. 
+ABS braking is possible when vehicle speeds are above 12 km/h (7mph). 
+
+The function of ABS for All-Wheel Drive use has an additional variation. During braking on 
+loose surfaces the wedge effect is helpful. Gravel ordirt will build up in front ofthe tire when 
+the wheel is locked, creating an increased braking effect. The system allows the locking of 
+one or both front wheels up to approx. 20km/h (12mph). This "poor road surface logic” 
+does not affect steerability. As soon as the control unit detects steering wheel change, the 
+ABS system regulates normally again. 
+
+
+14 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+ABS regulation has three phases: 
+
+Pressure Build 
+Pressure Hold 
+Pressure Release 
+
+
+Pressure Build already occurs during normal braking, so when ABS first intervenes it will 
+start holding pressure by energizing the Inlet Valve. For example, if the right rear wheel is 
+locking up, both Inlet Valves will be energized, regulating both wheels together. This logic 
+is known as Select Low. Front wheels can be regulated individually as needed to prevent 
+lockup. 
+
+Energizing the Inlet Valve closes the brake fluid passage to the calipers and traps the fluid 
+at the current pressure, thus not allowing the brake pressure to rise any further. 
+
+If the wheel speed does not increase, the Pressure Release phase begins. 
+
+Pressure Release occurs when the control unit energizes the Outlet Valve while continuing 
+
+
+
+to hold the Inlet Valve closed. The trapped brake fluid is released out of the calipers reduc¬ 
+ing braking pressure. 
+
+At the same time the pump is switched on which draws in the released brake fluid and 
+pumps it back into the pressure build-up circuit restoring the volume of brake fluid again in 
+front of the Inlet valve. 
+
+Depending on conditions the ABS system may cycle between these three phases from 3 
+to 12 times a second to prevent wheel lock. 
+
+
+15 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+ABS Sub-functions 
+
+
+Corner Brake Control (CBC) 
+
+CBC can occur if the vehicle is cornering and ABS regulation is not taking place. 
+
+If the control unit detects transverse acceleration in excess of 0.6g and the brakes are 
+applied, CBC prevents a build up in brake pressure to the inside rear wheel. This prevents 
+the vehicle from entering into an unstable situation that can lead to Oversteer. 
+
+The DSC III accomplishes this by closing the Inlet Valve, thus not allowing brake pressure 
+to increase at the brake caliper. 
+
+The difference in braking force between the two rear wheels creates a yaw force that 
+opposes the oversteer and allows the vehicle to handle neutrally. 
+
+
+
+16 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electronic Brake Force Distribution (EBV) 
+
+EBV will adjust brake pressure to the rear axle based on the rate of slow-down of the rear 
+wheels, ensuring even brake force between the front and rear of the vehicle. 
+
+The control unit monitors the wheel speed when the brakes are applied and compares the 
+deceleration rate of the front and rear axle to determine required regulation. 
+
+If the vehicle is moderately to fully loaded, the rear axle will take longer to slow down, rear 
+wheel brakes then can be applied at a higher pressure. 
+
+If the vehicle is lightly loaded, a similar brake pressure would be too great and result in an 
+unstable situation. 
+
+If EBV control intervention is required, the control unit cycles the intake valve on the rear 
+brake calipers to prevent further build-up. 
+
+Benefits of EBV are 
+
+Enhanced braking due to an even distribution of brake force. 
+
+Rear wheel brake size can be increased. 
+
+Front and rear brakes wear at a similar rate. 
+
+
+17 
+
+X5 Dynamic Stability Control 
+
+
+
+Automatic Stability Control (ASC+T) 
+
+A5C prevents unintentional wheel slip of the drive wheels in every situation. 
+
+
+The DSC III control unit determines if the vehicle is loosing traction due to excessive longi¬ 
+tudinal wheel slip based on input from the wheel speed sensors. An ASC regulating 
+sequence is initiated if the wheel slip exceeds the control units stored allowable values. 
+
+
+The DSC III can control longitudinal wheel slip by two means: 
+
+
+Automatic stability Control ASC. Engine Intervention 
+
+
+Automatic Differential Brake ADB. Brake intervention 
+
+
+ASC Engine Intervention 
+
+Engine torque may be reduced by: 
+
+Reducing the throttle opening angle 
+Retarding the ignition 
+
+Canceling individual cylinders by fuel injection cutout. 
+
+The DSC III control unit determines the amount of torque reduction that is 
+necessary and sends the request for regulation to the DM E via the CAN bus 
+
+
+ADB Brake Intervention 
+
+The ADB is an automatic differential lock that improves traction. The slipping wheel is 
+braked by pressure built up in the hydraulic unit. The drive torque can be transferred to the 
+wheel with the greater traction, which can transmit drive power to the road. This function 
+acts much like a limited slip differential. 
+
+Brake intervention is applied to the individual wheel which is loosing traction by 
+regulating the brake calipers in three phases: 
+
+Pressure Build 
+
+Pressure Hold 
+
+Pressure Release 
+
+
+18 
+
+X5 Dynamic Stability Control 
+
+
+
+When brake intervention is necessary, the axle not being regulated must be isolated from 
+the Pressure Build sequence in the hydraulic unit. This is accomplished by closing both 
+Inlet Solenoid Valves for that axle. 
+
+Here is an example of an ADB brake intervention at the left rear wheel: 
+
+The Changeover Valve forthe rearbrake circuit, the right rearand both front Inlet Valves 
+are energized and closed. 
+
+The rear brake circuit Intake Valve is energized and opened. 
+
+The Return/Pressure pump is activated and draws brake fluid through the open Intake 
+Valve from the Master Cylinder (via the Central Valve) and delivers the pressurized fluid to 
+the open Inlet Valve braking the left rear wheel. 
+
+Pressure Hold and Pressure Release are done by cycling the Inlet and Outlet Valves 
+similar to the ABS sequence described previously. 
+
+The drive torque can be distributed to the wheels with high friction coefficients (traction). 
+
+Transversal differential-lock function. 
+
+
+
+COEFFICIENT OF FRICTION 
+
+
+19 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+Longitudinal differential-lock function 
+
+By performing brake intervention at 
+the axle with a low friction coeffi¬ 
+cient, drive torque can be transmit¬ 
+ted to the front wheels. 
+
+
+Longitudinal and transversal 
+differential-lock function 
+
+By performing brake intervention 
+at the diagonally opposing wheels 
+with a low friction coefficient, drive 
+torque can be transmitted to the 
+two wheels with more traction. 
+
+
+
+COEFFICIENT OF FRICTION 
+
+
+
+HIGH I JdA li HIGH 
+
+
+
+
+COEFFICIENT OF FRICTION 
+
+
+20 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASC Sub-function 
+
+
+Engine Drag Torque Reduction (MSR) 
+
+If the vehicle is driven in low gear when coasting down hill, or if there is a sudden shift to a 
+lower gear, the wheels may be slowed down by the engine braking effect to rapidly. This 
+could result in an unstable situation. 
+
+If the front wheels are turning faster than the rear wheels the DSC III control unit signals the 
+DM E via the CAN bus to raise the engine torque. DM E cancels fuel cut-off and allows the 
+engine speed to increase, this allows the drive wheels to accelerate to match the speed of 
+the non-driven wheels. 
+
+
+MSR regulation is cancelled if the brake pedal or hand brake is applied. 
+
+
+Dynamic Stability Control (DSC) 
+
+
+With the introduction of DSC systems, lateral dynamics were taken into account for the first 
+time. The DSC III system will initiate a DSC regulation sequence if the control unit detects 
+a difference between the drivers desired turning angle and the actual rotation angle of the 
+vehicle. The control unit determines vehicle stability based on: 
+
+
+Steering wheel angle 
+Wheel speed 
+
+Transverse acceleration forces 
+
+
+Rotation angle and speed (yaw) 
+
+Once the control unit determines that the vehicle is in an unstable situation, it also 
+identifies whether it is oversteering or understeering. This distinction is important because 
+it determines which control strategy should be used to help stabilize the vehicle. 
+
+DSC regulation consist of: 
+
+Engine intervention 
+
+Engine and brake intervention (any wheel) 
+
+Brake intervention 
+
+
+21 
+
+X5 Dynamic Stability Control 
+
+
+
+Understeer 
+
+Understeer occurs when the driver wishes to turn a corner, but despite the front wheels 
+being turned in the direction of the curve, the vehicle continues its forward track. This 
+occurs when the front wheels no longer have sufficient lateral locating force (traction). 
+
+
+The DSC III can identify the situation and initiate a corrective action based on engine torque 
+reduction followed by a controlled brake intervention sequence if needed. 
+
+Engine torque reduction is carried out by the DM E from a request by the DSC via the CAN 
+bus. The DM E sends the torque reduction confirmation back to the DSC. 
+
+Brake intervention is carried out by the DSC III hydraulic unit if the driver is not actively 
+braking. An example of a brake intervention at the inside rear wheel is as follows: 
+
+All Inlet Valves are closed except for the right rear inlet. 
+
+Intake Valve for rear circuit is opened. 
+
+Both Changeover Valves are closed. 
+
+Return pump operated. 
+
+
+3 vehicle UNDERSTEER CORRECTION 
+
+COMESOUT 
+
+
+OF TURN 
+SUCCES- 
+FULLY 
+
+
+WITH DSC III 
+
+
+1. VEHICLE APPROACHES TURN: 
+
+- Driver steers into turn 
+
+- Brakes are applied 
+
+
+
+WITHOUT 
+DSC III 
+
+
+- regulated brake slows 
+wheel down (and helps to 
+reduce vehicle speed). Wheel on 
+outside of curve speeds up due to power transfer thru differential. 
+Vehicle pivots in favor of curve. Combined, this forces the vehicle into the turn. 
+
+
+22 
+
+X5 Dynamic Stability Control 
+
+
+J ust as an ASC regulation, DSC brake intervention carries out: 
+Pressure Build 
+Pressure Hold 
+Pressure release 
+
+
+LOW BRAKE 
+FLUID SIGNAL 
+
+
+
+23 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oversteer 
+
+
+Oversteer occurs when the driver wishes to turn a corner and the tail of the vehicle slides 
+outward, leading the turn. This is caused by the rear tires loosing traction and not being 
+able to hold against the centrifugal force acting upon the vehicle. 
+
+The DSC III can identify the situation and initiate a corrective action based on engine torque 
+reduction followed by a controlled brake intervention sequence if needed. 
+
+Engine torque reduction is carried out by the DM E from a request by the DSC via the CAN 
+bus. The DM E sends the torque reduction confirmation back to the DSC. 
+
+
+3. VEHICLE COMES 
+OUT OF TURN 
+SUCCESFULLY 
+
+WITH DSC III 
+
+
+OVERSTEER CORRECTION 
+
+
+1. VEHICLE APPROACES TURN AT HIGH RATE OF SPEED: 
+- Driversteers into turn and applies brakes to slow down. 
+
+
+
+2D. The torque reduction and rear brake regulation 
+should stabilize the vehicle at this point. If not 
+the left front wheel has a high degree of lateral 
+locating force and is momentarily regulated. 
+
+This action deliberately causes the wheel to shed 
+a calculated degree of it's locating force. This 
+counteracts oversteer yaw at this wheel and also 
+aids in slowing the vehicle down to correct it. 
+
+
+2B. Driver tries to compensate by oversteering which 
+diminishes lateral locating force even further. 
+Simultaneously, rear of car starts to slide out. 
+
+2C. DSC III determines an OVERSTEER condition. 
+Engine torque is reduced via CAN Bus signalling. 
+Outside rear wheel is momentarily regulated to 
+counteract severe yaw angle (also helps to reduce 
+drive torque further.) 
+
+
+24 
+
+X5 Dynamic Stability Control 
+
+
+
+DSC Sub-functions 
+Dynamic Brake System (DBS) 
+
+DBS is designed to assist the driver in emergency braking situations by automatically 
+increasing pressure to the vehicles brake system. This allows the vehicle to stop in the 
+shortest distance possible. DBS was first available in 1999 Bosch DSC III 5.7 systems. 
+
+The DBS system contains two functions: Dynamic Brake Control and Maximum Brake 
+Control. DBS functions are programmed into the DSC III control unit and require no addi¬ 
+tional hardware over conventional DSC. 
+
+Dynamic Brake Control (DBC) 
+
+The DBC function is designed to provide an increase in braking pressure up to the ABS 
+threshold during rapid (emergency) braking situations. The DSC III control unit monitors the 
+inputs from the brake light switch and the brake pressure sensor. The triggering criteria for 
+activation of DBC is, how rapidly is the brake pressure increasing with an application of the 
+brake pedal. The triggering conditions are: 
+
+Brake light switch on. 
+
+Brake pressure in the master cylinder above threshold. 
+
+Brake pressure build-up speed above threshold. 
+
+Vehicle road speed above 3mph (5km/h). 
+
+Pressure sensor self test completed and sensor not faulted. 
+
+Vehicle traveling forward. 
+
+Not all of the wheels in ABS regulation range. 
+
+If the threshold for DBC triggering is achieved, the DSC III control unit will activate a 
+pressure build-up intervention by activating the pre-charge and return pump. The pressure 
+at all wheels is increased up to the ABS regulation point. This ensures that the maximum 
+brake force is applied to the vehicle. 
+
+During DBC the rear axle is controlled with Select-Low logic and the front wheels are 
+regulated individually. DBC will continue until: 
+
+The driver releases the brake pedal. 
+
+Brake pressure falls below threshold. 
+
+Vehicle road speed below 3mph. 
+
+DBC will also be switched off if a fault occurs in with any of the necessary input sensors. 
+A fault in DBC will illuminate the "BRAKE” (ABL) lamp yellow to warn the driver, depending 
+on the failure the DSC lamp may be illuminated as well. 
+
+
+25 
+
+X5 Dynamic Stability Control 
+
+
+
+Maximum Brake Control (MBC) 
+
+The M BC function is designed to support driver initiated braking by building up pressure in 
+the rear brake circuit when the front wheels are already in AB5 regulation. 
+
+The additional braking pressure is designed to bring the rear wheels up to the ABS 
+regulation point shortening the stopping distance. The M BC function is triggered when the 
+brakes are applied more slowly than the threshold needed for a DBC regulation. The trig¬ 
+gering conditions are: 
+
+Both front wheels in ABS regulation. 
+
+Vehicle road speed above 3mph (5km/h). 
+
+DBC and pressure sensor initialization test successful. 
+
+Vehicle traveling forward. 
+
+Rear wheels not in ABS regulation. 
+
+If the threshold for M BC triggering is achieved, the DSC III control unit will activate a 
+pressure build-up intervention by activating the return pump. The pressure at the rear 
+wheels is increased up to the ABS regulation point. This ensures that the maximum brake 
+force is applied to the vehicle. 
+
+The M BC function will be switched off if: 
+
+Front wheels drop out of ABS regulation. 
+
+The driver releases the brake pedal. 
+
+Brake pressure falls below threshold. 
+
+Vehicle road speed below 3mph. 
+
+MBC will also be switched off if a fault occurs in with any of the necessary input sensors. 
+A fault in M BC will illuminate the "BRAKE” (ABL) lamp yellow to warn the driver, depending 
+on the failure the DSC lamp may be illuminated as well. 
+
+
+26 
+
+X5 Dynamic Stability Control 
+
+
+
+X5 DSC New Functions 
+
+Hill Descent Control 
+
+
+Hill Decent Control (HDC) is designed for off road use to automatically slow the vehicle and 
+maintain a steady speed on steep gradients. This function allows the driver to focus on 
+steering and controlling the vehicle without having to use the brakes to slow the vehicle. 
+
+
+HDC is activated manually through the push button switch located in the center switch 
+panel located in the console. When activated, the vehicle’s speed is held to approximately 
+5 M PH by the DSC system pulsing the brakes to maintain the speed. 
+
+
+The following conditions must be met before the HDC will activate: 
+
+
+Push button pressed - LED "ON” 
+Vehicle speed: <25 MPH 
+Accelerator pedal pressed <15% 
+Downhill driving recognized 
+
+
+Downhill is recognized from the vehicle's speed and engine load from the engine control 
+module. The accelerator pedal and engine load signals are passed overthe CAN bus to the 
+DSC control module. 
+
+
+The HDC switch can be pressed at speeds < 37M PH and the LED will come on to indicate 
+standby mode. However the system will not activate until the vehicle's speed is below 25. 
+
+The driver can accelerate with HDC active up to approximately 20% engine load. The HDC 
+will stop regulating as long as the driver is requesting a speed increase. If the vehicle's 
+speed is > 37 M PH, the HDC function is automatically switched OFF. 
+
+
+
+27 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+Automatic Differential Braking 
+
+
+On dry pavement with no wheel slip, the vehicle’s driving torque is split 68% rear and 32% 
+front through the planetary gear differential transfer case. 
+
+
+If one ormore wheels spin orslip, the DSC will activate a regulation process and the brakes 
+on the effected wheel(s) will be pulsed. The driving torque will be distributed through the dif¬ 
+ferential to the remaining wheels with a good coefficient of friction 
+
+
+The driving torque will be applied through the differential as follows: 
+
+
+Three wheels - with one wheel spinning. 
+
+On two diagonal wheels with two wheels spinning on different axles. 
+One axle only with two wheels spinning on the same axle. 
+
+
+Once the spin or slip is under control, the drive torque will again be applied to all wheels. 
+
+
+
+28 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Traction Control 
+
+
+The traction control feature of the DSC III on the X5 cannot be switched OFF with the DSC 
+switch. Pressing the button will only switch off the dynamic stability control function of the 
+DSC. 
+
+The traction control feature is needed at all times to provide anti-spin control especially 
+when driving the vehicle off road. The DSC warning lamp in the instrument cluster will still 
+come on when the system is switched off manually or there is a fault in the system. 
+
+Off road traction control or HDC regulation places an additional load on the brakes. To pre¬ 
+vent overheating of the brakes and rotors, the temperature of the rotors is calculated over 
+time from the road speed and amount of brake application. If the temperature of one or 
+
+more rotors goes above 600° C, the traction control or HDC function forthat wheel will be 
+
+cancelled temporarily. Once the temperature of the rotor goes below 500° C, the traction 
+application will be re-activated. 
+
+
+The normal braking function (including ABS) is always active at any temperatures. 
+
+
+Off-Road ABS Control Module Programming 
+
+The programming forABS regulation have changed to allow a higherthreshold forABS reg¬ 
+ulation when driving off-road in loose gravel or dirt. A locked wheel is more effective in slow¬ 
+ing or stopping the vehicle because of the wedge that is built up in front of the tire. 
+
+
+The programming in the DSC control module allows one or both front wheel(s) to lock up 
+to a speed of 12 M PH as long as the vehicle is traveling straight ahead. If the DSC control 
+module receives a signal from the steering angle sensor indicating a turn, ABS regulation 
+will activate to prevent the lock and allow the vehicle to be steered. 
+
+
+30 
+
+Braking Systems 
+
+
+
+Diagnosis 
+
+The following diagnostic functions are available using the DISplus or GT-1 
+
+
+Control Unit Functions: 
+
+Expert mode diagnosis available 
+at any time during troubleshoot¬ 
+ing. To enter: press the Control 
+Unit Functions button at the 
+right lower corner of the screen. 
+
+The contents are: 
+
+• Identification 
+
+• Delete Fault Memory 
+
+• Read Fault Memory 
+
+• Component Activation 
+
+• Status queries (requests) 
+
+
+
+Service Functions: 
+
+Provides access to specialized test modules 
+used as post repair procedures. To enter: 
+Function Selection 
+Service Functions 
+Chassis 
+
+Dynamic Stability Control 
+The contents are: 
+
+Connection Speed Sensor: A test to 
+verify the proper wiring to the wheel 
+speed sensors 
+
+Connection Brake Lines: A test to 
+verify the proper brake pipe connections 
+to the hydraulic unit. 
+
+Adjustment Functions: Test modules 
+to initialize certain components after 
+repair work is performed 
+Steering Angle Sensor 
+Lateral Acceleration Sensor 
+Pressure Sensors 
+
+
+Test Modules: Faults with the M K60 system can be diagnosed using fault or symptom driven test 
+modules. To begin diagnosis: 
+
+• Perform the Quick Test. 
+
+• Select Vehicle Symptom from the Symptom Selection page. 
+
+• Select Test Module from Test Plan page. 
+
+• Press the Test Schedule Button. 
+
+Test Modules are configured in the E46 diagnosis concept. 
+
+
+31 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+Coding 
+
+
+Coding must be performed after replacement 
+of the DSC III control module or the steering 
+angle sensor. ZCS coding is found in the 
+Coding and Programming selection from the 
+start screen or when pressing the Change 
+button. Follow on-screen instructions for 
+initialization of components after completing 
+the coding process. 
+
+
+Adjustment Functions 
+
+
+
+Adjustment (initialization) of certain components is required when: 
+
+
+Replacing the DSC III Control Unit. 
+
+
+Replacing/Re-coding the Steering Angle Sensor. 
+Replacing Rotation/Lateral Acceleration Sensor. 
+
+
+Steering Angle Sensor 
+
+The steering angle sensor requires an offset adjustment afterthe sensor has been replaced, 
+coded or after repairs to the steering or suspension system. The offset adjustment informs 
+the steering angle sensor processor of the straight ahead position of the front wheels. 
+
+The adjustment is performed by completing the Test Module found in Service Functions. 
+Once the adjustment is complete, the sensorsends an identification numberoverthe CAN 
+bus to the DSC control unit. The ID provides confirmation that the steering angle sensor is 
+coded and has successfully completed the adjustment procedure. 
+
+Special Tools 
+
+
+Special Tools available for the Bosch DSC III 5.7 consist of: 
+
+
+42 Pin V-Cable 34 5 240 
+
+
+
+W34 5 240 
+
+
+60 Pin Break-Out-Box 
+
+
+
+32 
+
+X5 Dynamic Stability Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+review Questions 
+
+1. Desribe the operation of the DSC button on the X5 DSC III system 7 
+
+
+2. Describe the activation criteria for HDC: 
+
+
+3. What type of wheel speed sensors are used in the X5 DSC III system 7 
+
+
+4. What is the difference in ABS control logic for the X5 DSC III in comparison to the 2wd 
+models 7 
+
+
+5. What service procedures are required when replacing a steering angle sensor 7 
+
+
+6. Describe the operation of the "Automatic Differential Lock" function. 
+
+
+33 
+
+X5 Dynamic Stability Control 
+
+
+
+Review Questions 
+
+7. List the various sensors used to detect oversteer/understeer in the DSC III systems. 
+
+
+8. What is the purpose of the DBS sub-function 7 
+
+
+9. What is the handbrake input signal used for 7 
+
+
+10. What is the criteria for M BC activation 7 
+
+
+11. Briefly explain Corner Braking Control (CBC): 
+
+
+34 
+
+X5 Dynamic Stability Control 
+
+
+

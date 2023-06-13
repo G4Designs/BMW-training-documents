@@ -1,0 +1,11410 @@
+Technical training. 
+
+Product information. 
+
+G05 General Vehicle Electronics 
+
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1831 9/1/2018 
+
+V_/ 
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status: July 2018 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+The information contained in the training course materials is solely intended for participants in this 
+training course conducted by BMW Group Technical Training Centers, or BMW Group Contract 
+Training Facilities. 
+
+This training manual or any attached publication is not intended to be a complete and all inclusive 
+source for repair and maintenance data. It is only part of a training information system designed to 
+assure that uniform procedures and information are presented to all participants. 
+
+For changes/additions to the technical data, repair procedures, please refer to the current information 
+issued by BMW of North America, LLC, Technical Service Department. 
+
+This information is available by accessing TIS at www.bmwcenternet.com. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application 
+
+• Aftersales Information Research (AIR) 
+
+The information contained in this manual is not to be resold, bartered, copied, or transferred 
+without the express written consent of BMW of North America, LLC (“BMW NA”). 
+
+©2018 BMW of North America, LLC 
+
+The BMW name and logo are registered trademarks. All rights reserved. 
+
+
+
+
+G05 General Vehicle Electronics 
+
+Contents 
+
+
+1. Introduction.1 
+
+2. Bus Systems.2 
+
+2.1. Bus overview.2 
+
+2.2. Main bus systems.4 
+
+2.2.1. K-CAN.4 
+
+2.2.2. PT-CAN.5 
+
+2.2.3. FlexRay.6 
+
+2.2.4. Ethernet.7 
+
+2.2.5. D-CAN.10 
+
+2.3. Sub-bus systems.10 
+
+2.3.1. LIN bus.10 
+
+2.3.2. Local CAN.22 
+
+2.3.3. USB.23 
+
+3. Control Units.24 
+
+3.1. Installation locations of control units.24 
+
+3.2. Gateway.26 
+
+3.2.1. Body Domain Controller (BDC).26 
+
+3.3. Control units on the Ethernet.29 
+
+3.3.1. Head unit.29 
+
+3.3.2. Receiver Audio Module (RAM).29 
+
+3.3.3. Booster.30 
+
+3.3.4. Top Rear Side View Camera (TRSVC).31 
+
+3.3.5. Camera-based driver assistance systems (KAFAS).32 
+
+3.3.6. Front radar sensor (FRS).33 
+
+3.3.7. Front radar sensor long range (FRSF).33 
+
+3.3.8. Optional equipment system (SAS).34 
+
+3.4. Control units on the K-CAN2.35 
+
+3.4.1. Trailer module (AHM).35 
+
+3.4.2. Roof function center (FZD).36 
+
+3.4.3. Tailgate function module (HKFM).37 
+
+3.4.4. Seat modules.37 
+
+3.4.5. Seat pneumatics modules.38 
+
+3.5. Control units on the K-CAN3.39 
+
+3.5.1. Frontal Light Electronics.39 
+
+3.5.2. Parking Manoeuvring Assistant (PMA).40 
+
+3.5.3. HRSNR lane change warning (SWW).41 
+
+3.6. Control units on the K-CAN4.42 
+
+3.6.1. Controller (CON).42 
+
+3.6.2. Integrated automatic heating/air conditioning (IHKA).42 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+Contents 
+
+
+3.6.3. Telematic Communication Box (TCB 2).43 
+
+3.7. Control units on the K-CAN5.44 
+
+3.7.1. Remote control receiver (FBD).44 
+
+3.7.2. Near Field Communication (NFC) with wireless charging station 
+
+(WCA).44 
+
+3.8. Control units on the Ethernet.45 
+
+3.8.1. Active Cruise Control (ACC).45 
+
+3.8.2. Rear view camera (RFK).46 
+
+3.9. Control units on the PT-CAN.46 
+
+3.9.1. Digital Motor Electronics (DME).46 
+
+3.9.2. Instrument cluster (KOMBI).47 
+
+3.9.3. Night vision electronics (NVE).47 
+
+3.10. Control units on the PT-CAN2.48 
+
+3.10.1. Electronic transmission control (EGS).48 
+
+3.10.2. Gear selector switch (GWS).48 
+
+3.10.3. Power Control Unit (PCU).49 
+
+3.11. Control units on the FlexRay.50 
+
+3.11.1. Advanced Crash Safety Module (ACSM).50 
+
+3.11.2. Dynamic Stability Control (DSCi).50 
+
+3.11.3. Electric active roll stabilization.51 
+
+3.11.4. Electronic Power Steering (EPS).52 
+
+3.11.5. Rear axle slip angle control (FISR).52 
+
+3.11.6. Transfer box.53 
+
+3.11.7. Vertical Dynamic Platform (VDP).53 
+
+3.12. Control units on the local CAN.54 
+
+3.12.1. Front radar sensor, short-range sensor.54 
+
+4. Voltage Supply.55 
+
+4.1. Overview of voltage supply.55 
+
+4.1.1. System wiring diagram, version 1.55 
+
+4.1.2. Dual storage system, system wiring diagram, version 2.57 
+
+4.2. Components.59 
+
+4.2.1. Overview of luggage compartment.59 
+
+4.2.2. Overview of engine compartment.60 
+
+4.2.3. Battery.61 
+
+4.2.4. Intelligent battery sensor.61 
+
+4.2.5. Safety battery terminal.62 
+
+4.2.6. AGLR alternator.62 
+
+4.2.7. Integrated supply module.63 
+
+4.2.8. Power distribution box, front right.63 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+Contents 
+
+
+4.2.9. Power distribution box, front left.64 
+
+4.2.10. Power distribution box, rear.64 
+
+4.2.11. Body Domain Controller.65 
+
+4.2.12. PCU with vehicle electrical system assistance measure.65 
+
+5. Terminal Control.67 
+
+5.1. Introduction.67 
+
+5.2. Vehicle conditions.67 
+
+5.3. Power supply terminals.71 
+
+5.4. Partial network operation.72 
+
+5.4.1. Prerequisites for partial network operation.72 
+
+5.4.2. Prerequisites of control units for partial network operation.72 
+
+6. Exterior Lighting.73 
+
+6.1. Versions.73 
+
+6.2. Front exterior lights.73 
+
+6.2.1. System wiring diagram.74 
+
+6.2.2. Adaptive Full LED headlights.75 
+
+6.2.3. BMW laserlight.76 
+
+6.3. Rear exterior lights.77 
+
+6.3.1. System wiring diagram.77 
+
+6.3.2. Rear light.79 
+
+6.4. KAFAS.80 
+
+6.4.1. System wiring diagram.80 
+
+6.5. Ground lighting.81 
+
+6.6. Light carpet.81 
+
+6.7. Trailer lighting.81 
+
+6.7.1. System wiring diagram.82 
+
+7. Wash/Wipe System.84 
+
+7.1. System wiring diagram.84 
+
+8. Alarm System.86 
+
+8.1. System wiring diagram.86 
+
+9. Power Window Regulator.88 
+
+9.1. System wiring diagram.88 
+
+10. Electric Steering Column.90 
+
+10.1. System wiring diagram.90 
+
+11. Interior Lighting.92 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+Contents 
+
+
+11.1. Ambient lighting.92 
+
+11.1.1. System wiring diagram.93 
+
+11.2. Speaker illumination.95 
+
+11.2.1. System wiring diagram.96 
+
+12. Door Mirror.98 
+
+12.1. Exterior mirror High.98 
+
+12.1.1. System wiring diagram.98 
+
+13. Seats.100 
+
+13.1. Front seats.100 
+
+13.1.1. Memory sports seat, driver's side, front.100 
+
+13.1.2. Multi-contour seat, front.102 
+
+13.2. Electric seats, rear passenger compartment.104 
+
+13.2.1. Electric seats with seat heating, rear passenger compartment.104 
+
+13.3. Massage.106 
+
+13.3.1. Seat massage, both front seats.107 
+
+14. Panorama Roof.109 
+
+14.1. System wiring diagram.109 
+
+15. Steering Column Switch Cluster.Ill 
+
+15.1. System wiring diagram.Ill 
+
+15.2. SZL.112 
+
+16. Locking and Security Functions.113 
+
+16.1. Comfort Access 2.0.113 
+
+16.1.1. System wiring diagram.113 
+
+16.2. Central locking system.116 
+
+16.2.1. System wiring diagram.117 
+
+16.2.2. Function.118 
+
+16.3. Upper section of tailgate.119 
+
+16.3.1. System wiring diagram.119 
+
+16.4. Tailgate lower section.121 
+
+16.4.1. System wiring diagram.121 
+
+16.5. Automatic Soft Close system.123 
+
+16.5.1. System wiring diagram.123 
+
+17. Interior Mirror.125 
+
+17.1. System wiring diagram.125 
+
+18. Passive Safety System.126 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+Contents 
+
+
+18.1. System overview.126 
+
+18.1.1. System wiring diagrams.126 
+
+18.2. Functions.132 
+
+18.2.1. System monitoring functions.132 
+
+18.3. System components.133 
+
+18.3.1. Advanced Crash Safety Module.133 
+
+18.3.2. Sensors and switches.133 
+
+18.3.3. Actuators.139 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+1. Introduction 
+
+
+The Service Pack 2018 vehicle electrical system is used in the G05. The technology and the design of 
+the 2018 vehicle electrical system is described in the Product Information "ST1856 General Vehicle 
+Electronics 2018", as in also features in other BMW Group vehicles. Adaptations and changes to 
+the vehicle electrical system and also be found in the Product Information "ST1856 General Vehicle 
+Electronics 2018". 
+
+
+1 
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+2.1. Bus overview 
+
+
+
+Bus overview 
+
+
+2 
+
+
+TE 18-8286.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Advanced Crash Safety Module 
+
+AHM 
+
+Trailer module 
+
+BDC 
+
+Body Domain Controller 
+
+Booster 
+
+Hi-fi booster 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DME2 
+
+Digital Engine Electronics 2 
+
+DSC 
+
+Dynamic Stability Control 
+
+DCS 
+
+Driver Camera System 
+
+EARSH 
+
+Electric active roll stabilization rear 
+
+EARSV 
+
+Electric active roll stabilization front 
+
+EGS 
+
+Electronic transmission control 
+
+EHC 
+
+Electronic ride height control 
+
+EPS 
+
+Electromechanical Power Steering 
+
+FBD 
+
+Remote control receiver 
+
+FLER 
+
+Frontal Light Electronics Right 
+
+FLEL 
+
+Frontal Light Electronics Left 
+
+FRS 
+
+Front radar sensor 
+
+FRSF 
+
+Front radar sensor long range 
+
+FZD 
+
+Roof function center 
+
+GWS 
+
+Gear selector switch 
+
+GHAS 
+
+Regulated rear axle differential lock 
+
+HKFM 
+
+Tailgate function module 
+
+HRSNL 
+
+Rear radar sensor short range left 
+
+HRSNR 
+
+Rear radar sensor short range right 
+
+HSR 
+
+Rear axle slip angle control 
+
+HEADUNIT 
+
+Head Unit 
+
+IHKA 
+
+Integrated automatic heating/air conditioning 
+
+KAFAS 
+
+Camera-based driver assistance systems 
+
+KOMBI 
+
+Instrument cluster 
+
+NFC 
+
+Near Field Communication 
+
+NVE 
+
+Night Vision Electronics 
+
+PCU 
+
+Power Control Unit 
+
+PMA 
+
+Parking Manoeuvring Assistant 
+
+RAM 
+
+Receiver Audio Module 
+
+
+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+RFK 
+
+Rear view camera 
+
+RSE 
+
+Rear Seat Entertainment 
+
+SAS 
+
+Optional equipment system 
+
+SMBF 
+
+Front passenger seat module 
+
+SMFA 
+
+Driver's seat module 
+
+SMBFH 
+
+Seat module, front passenger's side, rear 
+
+SMFAH 
+
+Seat module, driver's side, rear 
+
+SPNMVL 
+
+Seat pneumatics module front left 
+
+SPNMVR 
+
+Seat pneumatics module front right 
+
+SRSNVL 
+
+Side radar sensor short range front right 
+
+SRSNVR 
+
+Side radar sensor short range front left 
+
+TCB 
+
+Telematic Communication Box 
+
+TRSVC 
+
+Top rear side view camera 
+
+VDP 
+
+Vertical Dynamic Platform 
+
+VIP 
+
+Virtual Integration Platform 
+
+VTG 
+
+Transfer box 
+
+WCA 
+
+Wireless charging station 
+
+ZGM 
+
+Central Gateway Module 
+
+1 
+
+Start-up node control units for starting and synchronizing the FlexRay bus 
+system 
+
+2 
+
+Control units authorized to perform wake-up function 
+
+3 
+
+Control units also connected at terminal 15WUP 
+
+
+2.2. Main bus systems 
+
+2.2.1. K-CAN 
+
+A number of K-CAN bus systems are used in the G05. 
+
+K-CAN bus systems: 
+
+• K-CAN2 
+
+• K-CAN3 
+
+• K-CAN4 
+
+• K-CAN5 
+
+• K-CAN6 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+The control units on the K-CAN5 are not displayed in the bus overview by the BMW diagnosis system. 
+Diagnosis is performed via the Body Domain Controller. 
+
+All K-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+2.2.2. PT-CAN 
+
+Two versions of the PT-CAN are used in the G05. 
+
+PT-CAN bus systems: 
+
+• PT-CAN 
+
+• PT-CAN2 
+
+The gateway for the PT-CAN2 is located in the DME. 
+
+Both PT-CAN data buses have a data transfer rate of 500 kBit/s. 
+
+
+5 
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+2.2.3. FlexRay 
+
+
+
+
+
+
+i 
+
+• 
+
+acsy 
+
+ii 
+
+
+FlexRay overview 
+
+
+
+6 
+
+
+TE18-0503.2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME1) (only 8-cylinder engine) 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Regulated rear axle differential lock (GHAS) 
+
+4 
+
+Electric active roll stabilization rear (EARSH) 
+
+5 
+
+Rear axle slip angle control (HSR) 
+
+6 
+
+Vertical Dynamic Platform (VDP) 
+
+7 
+
+Advanced Crash Safety Module (ACSM) 
+
+8 
+
+Optional equipment system (SAS) 
+
+9 
+
+Dynamic Stability Control (DSC) 
+
+10 
+
+Electronic Power Steering (electromechanical power steering) (EPS) 
+
+11 
+
+Digital Motor Electronics (DME1) (only 6-cylinder engine) 
+
+12 
+
+Electric active roll stabilization front (EARSV) 
+
+13 
+
+Digital Motor Electronics (DME2) (only 8-cylinder engines) 
+
+
+The FlexRay overview includes all engine versions and optional equipment. The DME1 (no. 1) is 
+present for 6-cylinder engines. On 8-cylinder engines the DME2 (no. 13) and DME1 (no. 1) are 
+present. The terminating resistors for line termination are located in the control units and in the Body 
+Domain Controller. 
+
+The FlexRay has a data transfer rate of 10 MBit/s. 
+
+
+2.2.4. Ethernet 
+
+Two different Ethernet versions of the are used. Thus, in the G05, the variant with 5 lines (4 data lines 
+and 1 activation line) is used for the OBD2 interface to the Body Domain Controller. Diagnosis and 
+programming of the connected control units are performed via the Ethernet. 
+
+The second variant is already familiar from the G12 and is used as 2-wire OABR Ethernet (Open 
+Alliance BroadR-Reach). 
+
+Control units on the 2-wire OABR Ethernet: 
+
+• Camera-based driver assistance systems (KAFAS) 
+
+• Top Rear Side View Camera (TRSVC) 
+
+• Head Unit High (HU-H) 
+
+• Rear Seat Entertainment (RSE) 
+
+• Optional equipment system (SAS) 
+
+• Telematic Communication Box 2 (TCB2) 
+
+• Receiver Audio Module (RAM) 
+
+• Front radar sensor long range (FRSF). 
+
+
+7 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+The standard "Open Alliance BroadR-Reach" (OABR Ethernet) has been specially developed as a new 
+data transmission layer for use in vehicles. OABR Ethernet only requires an unshielded twisted two- 
+wire connection. OABR Ethernet supports bidirectional 100 MBit/s communication between 2 nodes. 
+This means that both nodes can simultaneously send and receive at a data transfer rate of 100 MBit/ 
+s. OABR Ethernet requires point-to-point networking. This means that the bus system is not split up 
+between multiple nodes, as is the case e.g. with the CAN (Controller Area Network). Instead, Ethernet 
+switches are used for the connection of further nodes. Today, Ethernet switches are integrated in the 
+following control units: Body Domain Controller (BDC), head unit (HU), optional equipment system 
+(SAS), top rear side view camera (TRSVC). 
+
+A 
+
+A wake-up line may be required for control units that are only connected to the Ethernet and are not 
+additionally connected to a K-CAN. 
+
+
+Control units on the Ethernet cannot be woken up via the bus. Instead, the control units are activated 
+via the wake-up line or switched directly via terminal 15. 
+
+
+8 
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+System wiring diagram, Ethernet 
+
+
+
+Ethernet topology 
+
+
+9 
+
+
+IE17-2255 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Front radar sensor long range (FRSF) 
+
+2 
+
+Front camera 
+
+3 
+
+Camera-based driver assistance systems 
+
+4 
+
+Body Domain Controller 
+
+5 
+
+Exterior mirror camera, right 
+
+6 
+
+Rear view camera (RFK) (single camera without KAFAS) 
+
+7 
+
+Rear view camera 
+
+8 
+
+Booster 
+
+9 
+
+Receiver Audio Module (RAM) 
+
+10 
+
+Telematic Communication Box (TCB) 
+
+11 
+
+Rear Seat Entertainment (RSE) 
+
+12 
+
+Exterior mirror camera, left 
+
+13 
+
+Head Unit High (HU-H) 
+
+14 
+
+Instrument cluster (KOMBI) 
+
+15 
+
+Driver Camera System (DCS) 
+
+16 
+
+Top Rear Side View Camera (TRSVC) 
+
+17 
+
+Optional equipment system (SAS) 
+
+
+2.2.5. D-CAN 
+
+The D-CAN is still needed for control units which do not have an Ethernet connection for diagnosis. 
+The D-CAN has a data transfer rate of 500 kBit/s. 
+
+Diagnosis and programming of the connected control units are performed via the D-CAN. 
+
+
+2.3. Sub-bus systems 
+
+The sub-bus systems on the one hand relieve the load on the main bus systems and on the other hand 
+do not require a high data transfer rate. 
+
+
+2.3.1. LIN bus 
+
+For a better overview, the LIN buses are divided up between several wiring diagrams for the G05. 
+
+
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+LIN bus in the area of the doors 
+
+
+
+<S>- 
+
+
+c« 
+
+
+LIN bus overview in the area of the doors 
+
+
+
+11 
+
+
+TE18-09M 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Exterior mirror, front passenger side 
+
+3 
+
+Memory seat, front passenger's side 
+
+4 
+
+Power window electronics, passenger's side front 
+
+5 
+
+Power window electronics, passenger’s side rear 
+
+6 
+
+Non-contact tailgate opening 
+
+7 
+
+Power window electronics, driver’s side rear 
+
+8 
+
+Power window electronics, driver's side front 
+
+9 
+
+Memory switch, driver’s side front 
+
+10 
+
+Switch block, driver's door 
+
+11 
+
+Exterior mirror, driver's side 
+
+
+12 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+LIN bus for engine electrical system and voltage supply 
+
+
+
+
+-<§> © 
+
+O © 
+
+
+
+© 
+
+
+
+LIN bus overview for engine electrical system and voltage supply 
+
+
+13 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Air damper control 
+
+2 
+
+Electric fan 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Power Control Unit (PCU) 500 W 
+
+5 
+
+Power distribution box, rear right 
+
+6 
+
+Intelligent Battery Sensor (IBS) 
+
+7 
+
+Alternator 
+
+8 
+
+Digital Motor Electronics (DME) 
+
+
+14 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+LIN bus for roof function center 
+
+
+
+® 
+
+
+
+
+
+
+-<S>- 
+
+
+
+
+® 
+
+
+
+LIN bus overview for roof function center 
+
+
+15 
+
+
+TE18-09JO 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rain-light-solar-condensation sensor 
+
+2 
+
+Inside mirror 
+
+3 
+
+Roof function center (FZD) 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+Sliding roofliner motor 
+
+6 
+
+Interior lighting, rear 
+
+7 
+
+Siren with tilt alarm sensor (SINE) 
+
+
+16 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+LIN bus for steering column switch cluster and operating units 
+
+
+<?> 
+
+
+013 
+
+<M>- 
+
+
+c« 
+
+
+
+i 
+
+
+4 
+
+
+4 
+
+
+(?) 
+
+
+
+
+
+
+n 
+
+_ 
+
+
+y 
+
+
+
+
+
+I 
+
+. m 
+
+
+
+
+iM-fika 
+
+
+LIN bus overview for steering column switch cluster and operating units 
+
+
+17 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Wiper motor 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Operating unit, center console 
+
+4 
+
+Audio operating facility 
+
+5 
+
+Hazard warning switch/intelligent Safety button 
+
+6 
+
+Touch detection (Hands-Off Detection) 
+
+7 
+
+Steering wheel module 
+
+8 
+
+Multifunction steering wheel buttons, right 
+
+9 
+
+Steering column adjustment 
+
+10 
+
+Steering column switch cluster (SZL) 
+
+11 
+
+Operating unit for light 
+
+
+LIN bus for integrated automatic heating/air conditioning system 
+
+The LIN bus overview shows the integrated automatic heating/air conditioning system (IHKA) with the 
+maximum possible LIN bus components. Depending on the version of the IHKA, any components not 
+required are omitted. 
+
+
+18 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+O 
+
+
+
+21 
+
+20 
+
+(If) 
+
+18 
+
+«’» 
+
+
+« » 
+
+ii 
+
+® 
+
+IO 
+
+16 
+
+<£)- 
+
+17 
+
+-©- 
+
+u 
+
+12 
+
+11 
+
+10 
+
+
+
+
+-©- 
+
+1 1 
+
+
+7 8 • 
+
+h© <§> <§> 
+
+
+
+LIN bus overview for integrated automatic heating/air conditioning system 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Auxiliary heating 
+
+2 
+
+Air freshener (not for US) 
+
+3 
+
+Ioniser (not for US) 
+
+4 
+
+Blower motor 
+
+5 
+
+Body Domain Controller (BDC) 
+
+6 
+
+Operating unit, rear passenger compartment 
+
+7 
+
+Stepper motor for blending flap, right rear passenger compartment 
+
+8 
+
+Stepper motor for blending flap, left rear passenger compartment 
+
+9 
+
+Stepper motor for blending flap, right 
+
+10 
+
+Stepper motor for blending flap, left 
+
+11 
+
+Stepper motor for air distribution, right rear passenger compartment 
+
+12 
+
+Stepper motor for air distribution, left rear passenger compartment 
+
+13 
+
+Stepper motor for footwell, right 
+
+14 
+
+Stepper motor for footwell, left 
+
+15 
+
+Stepper motor for stratification, right 
+
+16 
+
+Stepper motor for stratification, left 
+
+17 
+
+Stepper motor for ventilation, right 
+
+18 
+
+Stepper motor for ventilation, left 
+
+19 
+
+Stepper motor for defrost function 
+
+20 
+
+Stepper motor for air recirculation function 
+
+21 
+
+Stepper motor for fresh air 
+
+22 
+
+Electric auxiliary heater 
+
+23 
+
+Operating unit, air conditioning 
+
+24 
+
+Touch control box in the center grille 
+
+25 
+
+Integrated automatic heating/air conditioning (IHKA) 
+
+
+20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+LIN bus for ambient lighting 
+
+
+
+
+A* A* 
+t T T 
+
+I - ? - f 
+
+^ Tp 2p 
+
+© 
+
+© 
+
+© 
+
+
+S5* 
+
+® 
+
+
+
+Si 
+
+© 
+
+
+
+
+Si* Si* 
+
+
+• jr 
+
+rfr 
+
+® 
+
+® ® 
+
+© 
+
+
+Si Si* 
+
+
+
+
+
+® ® 
+
+
+LIN bus overview for ambient lighting 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Driver's seat, lighting, backrest, left 
+
+3 
+
+Driver's seat, lighting, backrest, bottom left 
+
+4 
+
+Front passenger seat, lighting, backrest, left 
+
+5 
+
+Front passenger seat, lighting, backrest, bottom left 
+
+6 
+
+Contour line lighting, instrument panel, passenger's side, bottom right 
+
+7 
+
+Contour line lighting, instrument panel, passenger's side, middle right 
+
+8 
+
+Contour line lighting, instrument panel, passenger's side, top right 
+
+9 
+
+Contour line lighting, instrument panel, driver's side, top left 
+
+10 
+
+Contour line lighting, instrument panel, driver's side, bottom left 
+
+11 
+
+Sky Lounge panorama roof lighting, rear left 
+
+12 
+
+Sky Lounge panorama roof lighting, rear left 
+
+13 
+
+Sky Lounge panorama roof lighting, rear right 
+
+14 
+
+Sky Lounge panorama roof lighting, rear right 
+
+15 
+
+Sky Lounge panorama roof lighting, front right 
+
+16 
+
+Sky Lounge panorama roof lighting, front left 
+
+
+2.3.2. Local CAN 
+
+The local CAN is often used if two control units are to be directly connected to each other. 
+
+Up to 4 different connections can be used, depending on the vehicle equipment. 
+
+Local CAN connections: 
+
+• Electronic transmission control (EGS) to gear selector switch (GWS). 
+
+• Camera-based driver assistance system (KAFAS) to front radar sensor. 
+
+• Optional equipment system (SAS) to side radar sensor short range front right and left. 
+
+• Optional equipment system (SAS) to rear radar sensor short range right and left. 
+
+The control units on the local CAN are not displayed in the bus overview by the BMW diagnosis 
+system. Diagnosis takes place via the corresponding primary control unit. 
+
+The local CAN has a data transfer rate of 500 kBit/s. 
+
+
+22 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+2. Bus Systems 
+
+2.3.3. USB 
+
+Different USB interfaces are provided in the G05 depending on the vehicle equipment. 
+
+USB interfaces: 
+
+• Type A in the center console. 
+
+• Type C in the center armrest. 
+
+• Type C charging only 2 x in the backrests. 
+
+• Type C 2 x in the Rear Seat Entertainment control panel (from 11/18). 
+
+A charge current of max. 1.5 A is available via the USB port in the center console. 
+
+A charge current of max. 3 A is available via the USB port in the center armrest and via all the other 
+USB ports in the rear passenger compartment. 
+
+A_ 
+
+Detailed information on USB interfaces can be found in the Product Information G05 Infotainment and 
+Infotainment 2018. 
+
+
+23 
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.1. Installation locations of control units 
+
+
+18 19 20 
+
+
+10 
+
+
+* 
+
+
+
+
+
+r & 
+
+ma 
+
+> 
+
+Y 
+
+% 
+
+\ k 
+
+0 
+
+
+22 
+
+
+23 
+
+
+* 
+
+
+1 
+
+
+25 
+
+
+24 
+
+
+26 
+
+
+48 
+
+
+V 
+
+
+V' 
+
+
+27 
+
+
+47 
+
+
+36 
+
+
+35 
+
+
+34 
+
+
+33 
+
+
+31 
+
+32 
+
+
+30 
+
+
+29 
+
+
+28 
+
+
+46 
+
+(4 
+
+G05 Installation locatio 
+
+w \ i!B 37 
+
+38 
+
+“; A 39 
+
+S 40 a 
+
+41 
+
+5 44 43 42 
+
+ns of control units 
+
+Index 
+
+
+Explanation 
+
+1 
+
+
+Rear radar sensor short range left (HRSNL) 
+
+2 
+
+
+Receiver Audio Module (RAM) 
+
+3 
+
+
+Booster 
+
+4 
+
+
+Electric active roll stabilization rear (EARSH) 
+
+5 
+
+
+Telematic Communication Box (TCB) 
+
+6 
+
+
+Rear axle slip angle control (HSR) 
+
+7 
+
+
+Regulated rear axle differential lock (GHAS) 
+
+8 
+
+
+Driver's seat module, rear (SMFAH) 
+
+9 
+
+
+Seat pneumatics module front left (SPNMVL) 
+
+10 
+
+
+Driver's seat module (SMFA) 
+
+
+24 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+Index 
+
+Explanation 
+
+11 
+
+Electronic ride height control (EHC) 
+
+12 
+
+Roof function center (FZD) 
+
+13 
+
+Camera-based driver assistance systems (KAFAS) 
+
+14 
+
+Instrument cluster (KOMBI) 
+
+15 
+
+Optional equipment system (SAS) 
+
+16 
+
+Control unit for rearview camera and SideView (TRSVC) 
+
+17 
+
+Dynamic Stability Control (DSC/VIP) 
+
+18 
+
+Wireless charging station (WCA/NFC) 
+
+19 
+
+Digital Motor Electronics (DME) 
+
+20 
+
+Side radar sensor short range front left (SRSNVL) 
+
+21 
+
+Frontal Light Electronics Left (FLEL) 
+
+22 
+
+Electric active roll stabilization front (EARSV) 
+
+23 
+
+Front radar sensor (FRS)/Front radar sensor long range (FRSF) 
+
+24 
+
+Side radar sensor short range front right (SRSNVR) 
+
+25 
+
+Frontal Light Electronics Right (FLER) 
+
+26 
+
+Digital Engine Electronics 2 (DME2) 
+
+27 
+
+Electronic Power Steering (EPS) 
+
+28 
+
+Body Domain Controller (BDC)/Central Gateway Module (ZGM) 
+
+29 
+
+Night vision electronics NVE 
+
+30 
+
+Integrated automatic heating/air conditioning (IHKA) 
+
+31 
+
+Electronic transmission control (EGS) 
+
+32 
+
+Head unit (HU-H) 
+
+33 
+
+Advanced Crash Safety Module (ACSM) 
+
+34 
+
+Front passenger seat module (SMBF) 
+
+35 
+
+Transfer box 
+
+36 
+
+Seat pneumatics module front right (SPNMVR) 
+
+37 
+
+Controller (CON)/Gear selector switch (GWS) 
+
+38 
+
+Rear Seat Entertainment (RSE) 
+
+39 
+
+Seat module, passenger's side rear (SMBFH) 
+
+40 
+
+Remote control receiver (FBD) 
+
+41 
+
+Vertical Dynamic Platform (VDP) 
+
+42 
+
+Parking Manoeuvring Assistant (PMA) 
+
+43 
+
+Power Control Unit (PCU) 
+
+44 
+
+Rear radar sensor short range right (HRSNR) 
+
+
+25 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+Index 
+
+Explanation 
+
+45 
+
+Tailgate function module (HKFM) 
+
+46 
+
+Trailer module (AHM) 
+
+47 
+
+Selective Catalytic Reduction (SCR) (not for US) 
+
+48 
+
+Rear view camera (RFK) 
+
+
+3.2. Gateway 
+
+3.2.1. Body Domain Controller (BDC) 
+
+^ I 
+
+Body Domain Controller (BDC) 
+
+BDC functions: 
+
+• Gateway 
+
+• Electronic immobilizer 
+
+• Terminal control 
+
+• Central locking system 
+
+• Exterior lights 
+
+• Power windows 
+
+• Horn 
+
+• Interior light 
+
+
+
+26 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+• Wash/wipe system 
+
+• Vehicle data storage 
+
+• Data transfer for Condition Based Service (CBS). 
+
+Fuses in the BDC 
+
+• Audio operating facility 
+
+• Operating facility for assist systems 
+
+• Operating unit for light 
+
+• Power windows 
+
+• Heated rear window 
+
+• Tailgate function module 
+
+• Integrated automatic heating/air conditioning 
+
+• OBD2 interface 
+
+• Power Control Unit 
+
+• Rain-light-solar-condensation sensor 
+
+• Steering column switch cluster 
+
+• Telematic Communication Box 
+
+• Outside door handle electronics 
+
+• Vertical Dynamic Platform (electronics) 
+
+• Central locking system. 
+
+Relay in the BDC 
+
+• Terminal 30F 
+
+• Power window regulator 
+
+• Central locking system 
+
+• Heated rear window 
+
+Gateway in the BDC 
+
+The central gateway module (ZGM) is integrated in the BDC. It is viewed as a control unit within a 
+control unit. The task of the central gateway module is to connect all the main bus systems to each 
+other. By connecting them in this way, it is possible to use information from the individual bus systems 
+on a generalized level. The central gateway module is able to implement different protocols and 
+speeds on other bus systems. The programming data for the control units is transmitted by Ethernet 
+to the vehicle via the ZGM. 
+
+The BDC is the gateway for many components on the LIN bus. 
+
+
+27 
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+LIN bus components: 
+
+• Exterior mirror, left and right 
+
+• Switch block, driver's door, front passenger door 
+
+• Steering column switch cluster 
+
+• Light switch 
+
+• Intelligent Safety button 
+
+• Audio operating facility 
+
+• Inside mirror 
+
+• Rain-light-solar-condensation sensor 
+
+• Roof function center (interior lighting) 
+
+• Comfort seat, rear passenger compartment, left and right 
+
+• Electric steering column adjustment 
+
+• Wiper 
+
+• Operating unit, center console 
+
+• Power distribution box, rear. 
+
+Wake-up function in the BDC: 
+
+• Battery charging unit 
+
+• Intelligent battery sensor 
+
+• Electric fan 
+
+• Active air flap control 
+
+• Digital Motor Electronics. 
+
+The BDC assumes only the wake-up function for the control units listed under wake-up function. 
+The primary and gateway function remains with the engine control. 
+
+
+28 
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.3. Control units on the Ethernet 
+
+3.3.1. Head unit 
+
+
+
+Head unit 
+
+
+On the G05, the head unit can be operated by touch at the CID in addition to operation via the 
+controller. In the case of optional equipment with BMW gesture control, selected functions can also be 
+operated by means of gestures. 
+
+3.3.2. Receiver Audio Module (RAM) 
+
+The Receiver Audio Module (RAM) is a control unit and part of the infotainment system. The Receiver 
+Audio Module (RAM) is an audio amplifier with integrated tuners and an integrated sound processor. 
+The Receiver Audio Module (RAM) also contains Active Sound Design (ASD), and therefore an 
+additional control unit is not required. 
+
+
+29 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+
+Receiver Audio Module (RAM) 
+
+The Receiver Audio Module (RAM) comes in a variety of versions and power levels. 
+
+Versions and power levels: 
+
+• RAM BASIC 
+
+• RAM MID 
+
+• RAM HIGH 
+
+Depending on the number and power of the speakers, a booster, to which the audio data are streamed 
+via an Ethernet connection, is additionally installed. 
+
+3.3.3. Booster 
+
+An additional booster is installed, depending on the audio variant. Normally there is no booster 
+for stereo and hi-fi. However, if an outside speaker is required for the outside sound on a vehicle, 
+depending on the engine version, a booster is installed. For "Harman Kardon Surround Sound system" 
+and "Bowers & Wilkins Diamond Surround Sound system" (SA 6F1) the corresponding booster is 
+installed. 
+
+
+30 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+
+Booster variants 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Booster for Harman Kardon Surround Sound system 
+
+2 
+
+Booster for Bowers & Wilkins Diamond Surround Sound system 
+
+
+The booster is available in different versions and power levels, depending on the audio variant. 
+The power output stages for the corresponding speakers are located in the booster. 
+
+The booster is connected via Ethernet to the Receiver Audio Module (RAM). 
+
+
+3.3.4. Top Rear Side View Camera (TRSVC) 
+
+
+
+Installation location, Top Rear Side View Camera (TRSVC) 
+
+The Top Rear Side View Camera control unit receives the picture information from the cameras in 
+order to show the "bird's-eye view". 
+
+
+31 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+Connected cameras: 
+
+• Front camera 
+
+• Exterior mirror camera, left 
+
+• Exterior mirror camera, right 
+
+• Rear view camera 
+
+The cameras are connected to the TRSVC via Ethernet. 
+
+3.3.5. Camera-based driver assistance systems (KAFAS) 
+
+
+
+
+
+Installation location, camera-based driver assistance systems (KAFAS) 
+
+
+The highest expansion stage of the camera-based driver assistance systems (KAFAS) 
+contains 6 assistance functions. 
+
+Available assistance functions: 
+
+• Active Cruse Control with Stop&Go function 
+
+• Traffic Jam Assistant 
+
+• Speed Limit Information 
+
+• Collision Warning 
+
+• Daytime Pedestrian Protection 
+
+• Frontal Collision Warning with City Collision Mitigation. 
+
+
+32 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.3.6. Front radar sensor (FRS) 
+
+
+
+Installation location, front radar sensor (FRS) 
+
+The front radar sensor (FRS) supplies the input data for: 
+
+• Collision Warning 
+
+• Daytime Pedestrian and Cyclist Protection 
+
+• Dynamic Cruise Control with braking function 
+
+• Active Cruse Control with Stop&Go function 
+
+
+3.3.7. Front radar sensor long range (FRSF) 
+
+
+
+Front radar sensor long range (FRSF) 
+
+
+33 
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The front radar sensor long range (FRSF) is installed with the optional equipment 
+Driving Assistant Professional. 
+
+
+3.3.8. Optional equipment system (SAS) 
+
+
+
+
+
+Optional equipment system (SAS) 
+
+The optional equipment system (SAS) control unit provides a variety of driver assistance functions. 
+The SAS does not have any installed sensors. The information needed for the functions is made 
+available by the corresponding control units and sensors. The SAS activates the control units 
+necessary for the corresponding function. 
+
+Possible functions: 
+
+• Collision warning with city braking function 
+
+• Dynamic Brake Control 
+
+• Person recognition with city braking function 
+
+• Parking Manoeuvring Assistant 
+
+• Extended Traffic Jam Assist 
+
+• Camera-based cruise control with Stop&Go function 
+
+• Proactive driving assistant 
+
+• Steering and lane control assistant including traffic jam assistant 
+
+• Lane change warning 
+
+• Collision warning with city braking function 
+
+• Distance information 
+
+• Dynamic Cruise Control with braking function 
+
+• Speed limit 
+
+
+34 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+• Lane departure warning 
+
+• Crossing traffic warning 
+
+• Speed Limit Assist 
+
+The image information required by the optional equipment system is provided by the camera-based 
+driver support systems. 
+
+3.4. Control units on the K-CAN2 
+
+3.4.1. Trailer module (AHM) 
+
+
+
+Trailer module (AHM) 
+
+The trailer module is responsible for: 
+
+
+Supply and control for the trailer lighting 
+
+
+35 
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.4.2. Roof function center (FZD) 
+
+
+
+Roof function center (FZD) 
+
+
+Depending on the vehicle equipment the roof function center FZD includes the corresponding 
+components for: 
+
+• Alarm system 
+
+• Control, slide/tilt sunroof 
+
+• Gesture recognition camera 
+
+• Emergency call button. 
+
+On vehicles with BMW gesture control the gesture recognition camera is installed in the FZD. The 
+gesture recognition camera is not shown as a control unit by the BMW diagnosis system. Diagnosis 
+takes place via the FZD. The gesture recognition camera is connected to the PT-CAN4. As a result, 
+the bus signals do not have to be forwarded to another CAN bus by the Body Domain Controller. 
+
+The FZD is not responsible for the control of the interior light. The interior light unit and the FZD 
+electronics are located in the same housing. 
+
+
+36 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.4.3. Tailgate function module (HKFM) 
+
+
+
+Tailgate function module (HKFM) 
+
+
+The control unit for the tailgate function module (HKFM) is responsible for control of the tailgate lift. 
+
+3.4.4. Seat modules 
+
+
+
+
+
+Seat module 
+
+The following seat modules are present corresponding to the vehicle equipment: 
+
+• Driver's seat module (SMFA) 
+
+• Front passenger seat module (SMBF) 
+
+
+37 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The seat modules are responsible for actuation of the servomotors in the corresponding seat. 
+Depending on the equipment, there may be 2 identical seat modules installed in the vehicle. Encoding 
+of the control units takes place by connection to the wiring harness. The control unit is assigned 
+correspondingly in the vehicle depending on the additional ground encoding. 
+
+
+3.4.5. Seat pneumatics modules 
+
+
+K 
+
+
+Seat pneumatics module back right (SPNMHR) 
+
+The following seat pneumatics modules are present corresponding to the vehicle equipment: 
+
+• Seat pneumatics module front left (SPNMVL) 
+
+• Seat pneumatics module front right (SPNMVR) 
+
+The seat pneumatics modules are responsible for the massage function in the corresponding seat. 
+Depending on the equipment, there may be 2 identical seat pneumatics modules installed in the 
+vehicle. Encoding of the control units takes place by connection to the wiring harness. The control unit 
+is assigned correspondingly in the vehicle depending on the additional ground encoding. 
+
+
+
+38 
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.5. Control units on the K-CAN3 
+
+
+3.5.1. Frontal Light Electronics 
+
+
+
+Frontal Light Electronics Right and Left 
+
+
+The control units Frontal Light Electronics Right (FLER) and Frontal Light Electronics Left (FLEL) are 
+installed in the corresponding headlight. 
+
+
+The Frontal Light Electronics includes: 
+
+
+LED activation in the corresponding headlight 
+Activation of the turn indicators 
+
+Activation of the stepper motor for the headlight beam throw adjustment 
+Actuation of the fans 
+
+
+39 
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.5.2. Parking Manoeuvring Assistant (PMA) 
+
+
+
+The PMA control unit performs the corresponding functions, depending on equipment: 
+
+
+• Park Distance Control (PDC) 
+
+• Park Assistant 
+
+• Parking Manoeuvring Assistant Plus. 
+
+
+Park Distance Control (PDC) assists the driver when manoeuvring in and out of a parking space. 
+The current distance from an obstruction is indicated by acoustic signals and on a visual display. 
+
+The Parking Manoeuvring Assistant performs parking in parking spaces. 
+
+
+40 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.5.3. HRSNR lane change warning (SWW) 
+
+
+
+Lane change warning (SWW) 
+
+Both lane change warning HRSNL left and HRSNR right control units are shown in the graphic. The 
+rear radar sensor short range right (HRSNR) is a further development of lane change warning (SWW). 
+Both control units can now be read out individually by way of diagnosis with the BMW diagnosis 
+system. 
+
+
+• Driving Assistant (SA 5AT) 
+
+The SWW primary control unit is the HRSNR and it is also used for diagnosis of the additional control 
+units connected to the local CAN. The lane change warning HRSNL (secondary) control unit is 
+required for the lane change warning. 
+
+The following control units are additionally required for the optional equipment Driving Assistant Plus: 
+
+• Radar sensor, front left 
+
+• Radar sensor, front right 
+
+
+41 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.6. Control units on the K-CAN4 
+
+3.6.1. Controller (CON) 
+
+
+
+Controller (CON) 
+
+On the G05 a controller with a touchpad is used. 
+
+3.6.2. Integrated automatic heating/air conditioning (IHKA) 
+
+
+
+The integrated automatic heating/air conditioning system (IHKA) is standard equipment in the G05. 
+
+
+42 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.6.3. Telematic Communication Box (TCB 2) 
+
+
+4 
+
+
+
+Telematic Communication Box (TCB 2) 
+
+
+The 2nd-generation Telematic Communication Box (TCB) is installed in the G05. The Telematic 
+Communication Box (TCB 2) is connected directly to the roof-mounted aerial and is responsible for the 
+following functions: 
+
+• BMW ConnectedDrive services (incl. BMW Assist with eCall (emergency call function)) + 
+
+BMW Online 
+
+• BMW Internet using a SIM card integrated in the vehicle (P-SIM) 
+
+• Remote functions (reception and controller) 
+
+• "Speech-to-text" function in Office area 
+
+• BMW Teleservices via P-SIM 
+
+• WLAN hotspot via P-SIM. 
+
+
+43 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+3.7. Control units on the K-CAN5 
+
+3.7.1. Remote control receiver (FBD) 
+
+
+jgj 
+
+
+
+Remote control receiver 
+
+
+The control unit remote control receiver FBD is responsible for communication of the remote control 
+services. It receives the data of the wheel electronics for the tire pressure control. 
+
+The control unit for the remote control service is not shown in the bus overview by the BMW diagnosis 
+system ISTA. Diagnosis is performed via the Body Domain Controller. 
+
+3.7.2. Near Field Communication (NFC) with wireless charging station (WCA) 
+
+
+
+NFC with WCA 
+
+
+In the G05 the WCA is installed in the center stack storage compartment. 
+
+
+44 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The control unit Near Field Communication NFC is required for Near Field Communication in the 
+vehicle. 
+
+The NFC control unit and the WCA are not shown in the bus overview by the BMW diagnosis system 
+ISTA. Diagnosis is performed via the Body Domain Controller. 
+
+A_ 
+
+Further information on the wireless charging station (WCA) can be found in the Product Information 
+"General Vehicle Electronics 2018". 
+
+
+3.8. Control units on the Ethernet 
+
+3.8.1. Active Cruise Control (ACC) 
+
+
+
+Active Cruise Control (ACC) 
+
+The control unit for active cruise control for ACC Stop&Go contains a radar-based sensor (FRS) for 
+sensing the area in front of the vehicle. Both the near and far ranges are monitored by one sensor. 
+
+
+45 
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.8.2. Rear view camera (RFK) 
+
+
+
+Rear view camera 
+
+On vehicles with a rear view camera without other cameras a rear view camera on the Ethernet is used. 
+
+
+3.9. Control units on the PT-CAN 
+
+3.9.1. Digital Motor Electronics (DME) 
+
+
+
+
+Digital Motor Electronics DME and DME2 
+
+The DME control units are pictured in the graphic. The DME control unit is located on the left side in 
+the direction of travel. 
+
+The DME is responsible for the control of the combustion engine. In addition, the DME is the gateway 
+between PT-CAN and PT-CAN2. 
+
+
+46 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The DME control unit is installed for 6-cylinder gasoline engines. 
+
+The DME2 control unit is installed in addition to the DME control unit for 8-cylinder engines. 
+
+3.9.2. Instrument cluster (KOMBI) 
+
+
+
+Instrument cluster (KOMBI) 
+
+Exclusively the multifunctional instrument display is used in the G05. 
+
+3.9.3. Night vision electronics (NVE) 
+
+
+
+Night vision electronics (NVE) 
+
+
+The control unit Night Vision Electronics receives picture information from the Night Vision camera. 
+The picture information is transmitted via Color Video Blanking Signal to the HEAD UNIT and can then 
+be displayed on demand in the CID, instrument cluster and Head-Up Display. 
+
+
+47 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.10. Control units on the PT-CAN2 
+
+3.10.1. Electronic transmission control (EGS) 
+
+
+
+Electronic transmission control (EGS) 
+
+
+The control unit for electronic transmission control is installed directly in the automatic transmission. 
+
+3.10.2. Gear selector switch (GWS) 
+
+
+
+Gear selector switch (GWS) 
+
+The gear selector switch GWS is used for selecting a drive position. 
+
+
+48 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The bus connection is realized via the PT-CAN2 and additionally via a local CAN to the electronic 
+transmission control (EGS) unit. 
+
+3.10.3. Power Control Unit (PCU) 
+
+
+
+PCU 
+
+
+The Power Control Unit is required: 
+
+
+For charging the auxiliary battery 
+
+For supplying the vehicle electrical system from the auxiliary battery. 
+
+
+The Power Control Unit (PCU) contains a DC/DC converter with a power of 500 W. 
+
+The preconditions for the direction of the energy management are calculated from the use of the 
+vehicle. The auxiliary battery is charged by the PCU when the engine is running. When the combustion 
+engine is not running, e.g. automatic engine start-stop function, the PCU supplies energy from the 
+auxiliary battery to the vehicle electrical system. 
+
+
+49 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.11. Control units on the FlexRay 
+
+3.11.1. Advanced Crash Safety Module (ACSM) 
+
+
+
+
+Crash Safety Module (ACSM) 
+
+The ACSM records the yaw rate and sends this information on the FlexRay data bus. 
+
+The function of the Crash Safety Module (ACSM) is to permanently evaluate all sensor signals in order 
+to identify a crash situation. The ACSM evaluates the information from the sensors and then forwards 
+corresponding measures for selective activation of the necessary restraint systems. 
+
+No additional yaw sensors are therefore required for the other systems. 
+
+3.11.2. Dynamic Stability Control (DSCi) 
+
+
+
+
+Dynamic Stability Control (DSCi) 
+
+
+50 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+DSCi consists of 2 integrated control units, the Dynamic Stability Control and the Virtual Integration 
+Platform. 
+
+The DSCi control unit and the DSCi hydraulic control unit are screwed together. The DSCi control unit 
+can be replaced individually to reduce servicing costs. The functions of the tire pressure control (RDC) 
+and the electric parking brake are integrated in the DSCi control unit. 
+
+3.11.3. Electric active roll stabilization 
+
+
+
+Electric active roll stabilization front (EARSV) 
+
+
+
+Electric active roll stabilization rear (EARSH) 
+
+Electric active roll stabilization rear (EARSH), Electric active roll stabilization front (EARSV). 
+
+The Electric active roll stabilization control units are installed directly in the corresponding actuator. 
+
+
+51 
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.11.4. Electronic Power Steering (EPS) 
+
+
+
+4 
+
+% 
+
+
+Electronic Power Steering (EPS) 
+
+The Electronic Power Steering (electromechanical power steering) is supplied with 12 V. 
+
+The steering angle information is determined by the EPS and made available to the other control units 
+via the FlexRay bus. 
+
+3.11.5. Rear axle slip angle control (HSR) 
+
+
+
+Rear axle slip angle control (HSR) 
+
+
+The control unit for slip angle control is responsible for steering the rear axle. 
+
+
+52 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+3.11.6. Transfer box 
+
+
+
+Transfer box 
+
+The control unit for the transfer box controls the clutch in the transfer box on vehicles with xDrive. 
+
+
+3.11.7. Vertical Dynamic Platform (VDP) 
+
+
+
+Of 
+
+
+
+Vertical Dynamic Platform (VDP) 
+
+The control unit for the vertical dynamic platform is required for the following equipment: 
+• Dynamic Damper Control 
+
+
+53 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+3. Control Units 
+
+
+The VDP control unit has the following tasks: 
+
+• Controlling the valves in the shock absorbers 
+
+• Sensing the ride heights of the vehicle through the ride height sensors. 
+
+
+3.12. Control units on the local CAN 
+
+The control units on the local CAN are not shown in the bus overview by the BMW diagnosis system 
+ISTA. Diagnosis takes place via the corresponding primary control unit. 
+
+3.12.1. Front radar sensor, short-range sensor 
+
+
+
+Radar sensor right (RSR) and radar sensor left (RSL) 
+
+
+The control units for radar sensor front right (RSR) and radar sensor front left (RSL) are installed at the 
+front right and front left of the vehicle for the optional equipment Driving Assist Plus. 
+
+
+54 
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.1. Overview of voltage supply 
+
+
+4.1.1. System wiring diagram, version 1 
+
+
+
+Voltage supply, version 1 
+
+
+55 
+
+
+1104 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME) 
+
+2 
+
+Power distribution box, front left 
+
+3 
+
+Alternator 
+
+4 
+
+Starter motor 
+
+5 
+
+Power distribution box, engine compartment 
+
+6 
+
+Remote positive terminal, auxiliary battery, engine compartment 
+
+7 
+
+Auxiliary battery, engine compartment 
+
+8 
+
+Power distribution box, engine compartment 
+
+9 
+
+Power distribution box, vehicle interior, right 
+
+10 
+
+Body Domain Controller (BDC) 
+
+11 
+
+Advanced Crash Safety Module (ACSM) 
+
+12 
+
+Power distribution box, rear right 
+
+13 
+
+Intelligent Battery Sensor (IBS) 
+
+14 
+
+Battery 
+
+15 
+
+Fuse in the rear power distribution box, battery, rear 
+
+16 
+
+Safety battery terminal 
+
+17 
+
+Fuse in the power distribution box, (PCU) 
+
+18 
+
+Power Control Unit (PCU) 500 W 
+
+19 
+
+Power distribution box, vehicle interior, left 
+
+
+56 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.1.2. Dual storage system, system wiring diagram, version 2 
+
+
+
+
+
+
+
+
+p 
+
+
+-B- 
+
+
+- 
+
+
+
+
+Voltage supply, version 2 
+
+
+57 
+
+
+117-22582 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Starter motor 
+
+3 
+
+Power distribution box, engine compartment 
+
+4 
+
+Auxiliary lithium ion battery, engine compartment 
+
+5 
+
+Power distribution box, vehicle interior, right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Power distribution box, rear right 
+
+8 
+
+Fuse in the rear power distribution box, battery, rear 
+
+9 
+
+Safety battery terminal 
+
+10 
+
+Battery 
+
+11 
+
+Intelligent Battery Sensor (IBS) 
+
+12 
+
+Crash Safety Module (ACSM) 
+
+13 
+
+Power distribution box, front left 
+
+14 
+
+Digital Motor Electronics (DME) 
+
+
+58 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.2. Components 
+
+
+4.2.1. Overview of luggage compartment 
+
+
+
+Battery 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution box, battery, right 
+
+2 
+
+Power distribution box, rear 
+
+3 
+
+Power Control Unit (PCU) 500 W 
+
+4 
+
+Power distribution box, battery, middle 
+
+5 
+
+Safety battery terminal 
+
+6 
+
+Battery 
+
+
+The vehicle battery in the G05 is an AGM battery with 90 Ah or 105 Ah. The battery variant depends 
+on the engine version, optional equipment. 
+
+
+59 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.2.2. Overview of engine compartment 
+
+
+
+Auxiliary battery, engine compartment 
+
+Index 
+
+Explanation 
+
+a 
+
+Version 1, AGM auxiliary battery 60 Ah 
+
+b 
+
+Version 2, lithium ion auxiliary battery 10 Ah 
+
+1 
+
+Power distribution box, engine compartment 
+
+2 
+
+Auxiliary AGM battery, engine compartment 60 Ah 
+
+3 
+
+Remote positive terminal, auxiliary battery, engine compartment 
+
+4 
+
+Jump start terminal point 
+
+5 
+
+Capacitor 
+
+6 
+
+Power distribution box, engine compartment 
+
+7 
+
+Auxiliary lithium ion battery, engine compartment 10 Ah 
+
+8 
+
+Remote positive terminal, 10 Ah battery 
+
+9 
+
+Jump start terminal point 
+
+10 
+
+Capacitor 
+
+
+The auxiliary battery in the engine compartment of the G05 is an AGM battery with 60 Ah or a 10 Ah 
+lithium ion battery. The battery variant is dependent on the optional equipment active roll stabilization 
+(ARS). 
+
+
+60 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+
+4.2.3. Battery 
+
+AGM batteries are used for the voltage supply in the G05. 
+
+There may be 2 batteries of different sizes in the vehicle, depending on the engine version and the 
+vehicle equipment: 
+
+• AGM starter battery in the luggage compartment with 90 Ah or 105 Ah 
+
+• Auxiliary AGM battery in the engine compartment with 60 Ah 
+
+• Lithium ion auxiliary battery in the engine compartment with 10 Ah 
+
+An auxiliary battery in the engine compartment is used to provide assistance for the vehicle electrical 
+system. On vehicles with electric active roll stabilization, the two anti-roll bar actuators are also 
+supplied with power by this battery. 
+
+The dual storage system is used in vehicles without active roll stabilization; a 10 Ah lithium ion battery 
+is installed parallel to the AGM battery. 
+
+The dual storage system is used for the first time in the US market. 
+
+A_ 
+
+Detailed information on the battery and the dual storage system can be found in the document 
+"General Vehicle Electronics 2018" 
+
+
+4.2.4. Intelligent battery sensor 
+
+The IBS records the following data of the 12V battery: 
+
+• Voltage 
+
+• Current 
+
+• Pole temperature. 
+
+The IBS performs the calculation and the evaluation of the information. The results are then forwarded 
+via the LIN bus to the higher-level control units (Electrical Digital Motor Electronics and Body Domain 
+Controller). 
+
+
+61 
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+
+4.2.5. Safety battery terminal 
+
+
+
+Safety battery terminal 
+
+
+The safety battery terminal (SBK) is activated in the event of an accident of corresponding severity. 
+The voltage supply to the positive battery connection point in the engine compartment is interrupted 
+and the consumers connected to this are de-energized. The safety battery terminal is installed in the 
+power distribution box next to the battery. 
+
+4.2.6. AGLR alternator 
+
+Alternators with increased efficiency (active alternator power regulation) are used in the G05. The 
+increase in alternator efficiency is achieved by reducing the losses in the rectifier. The loss-causing 
+diodes are replaced by actively activated MOSFET transistors. A reduction in fuel consumption is 
+achieved by increasing the efficiency. 
+
+Different alternators are used depending on the engine type and vehicle equipment. 
+
+Versions: 
+
+• Bosch with 180 A and 250 A for 6-cylinder engine 
+
+• Valeo with 250 A for 8-cylinder engine 
+
+
+62 
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.2.7. Integrated supply module 
+
+
+& 
+
+
+
+Integrated supply module 
+
+
+The engine control and its components are supplied with a 12 V voltage via the integrated supply 
+module. 
+
+4.2.8. Power distribution box, front right 
+
+
+
+
+
+Power distribution box, front right 
+
+A relay for terminal 30B is installed in the front right power distribution box. 
+
+Consumers are supplied with terminal 30, terminal 30B and terminal 15N and provided with 
+corresponding fuse protection by the front right power distribution box. Terminal 15N is supplied from 
+the front power distribution box by the rear power distribution box. 
+
+
+63 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+4.2.9. Power distribution box, front left 
+
+
+
+Power distribution box, front left 
+
+
+A relay for terminal 30B is installed in the front left power distribution box. 
+
+Consumers are supplied with terminal 30 and terminal 30B and provided with corresponding fuse 
+protection by the front left power distribution box. 
+
+4.2.10. Power distribution box, rear 
+
+
+
+Power distribution box, rear 
+
+
+64 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+The following relays are installed in the rear power distribution box: 
+
+• 2 relays, terminal 30F 
+
+• 2 relays, terminal 30B 
+
+• Relay, terminal 15N 
+
+• Relay for rear window heating 
+
+All relays are of bi-stable design. The relays are activated by the Body Domain Controller via the LIN 
+bus. The hard-wired terminal 30B relays of the two front power distribution boxes are activated via the 
+rear power distribution box. 
+
+4.2.11. Body Domain Controller 
+
+The Body Domain Controller (BDC) is responsible for the terminal control. 
+
+A terminal 30F relay is installed in the BDC. 
+
+A number of consumers are supplied with terminal 30 and terminal 30F and provided with 
+corresponding fuse protection via the BDC. 
+
+4.2.12. PCU with vehicle electrical system assistance measure 
+
+
+
+PCU 
+
+
+Modern vehicles have a high energy consumption due to the many electrical consumers. As a result, 
+there is a high demand on the battery, particularly in phases in which the combustion engine is not 
+running and the alternator supplies no energy (e.g. engine start-stop phases). 
+
+In order to protect the vehicle battery, a DC/DC converter is installed in the Power Control Unit (PCU) 
+and an auxiliary battery in the engine compartment in the G05. 
+
+
+65 
+
+
+G05 General Vehicle Electronics 
+
+4. Voltage Supply 
+
+The preconditions for the direction of the energy management are calculated from the use of the 
+vehicle. When the engine is running the auxiliary battery is charged from the conventional vehicle 
+electrical system. During the phases in which the combustion engine is not running, e.g. automatic 
+engine start-stop function, the energy is supplied from the auxiliary battery into the conventional 
+vehicle electrical system. 
+
+The Power Control Unit (PCU) contains a control unit which is connected to the PT-CAN2 and a DC/ 
+DC converter with a power of 500 W. 
+
+In vehicles with the electric active roll stabilization equipment this is supplied by the AGM 60 Ah 
+auxiliary battery in the engine compartment. 
+
+
+66 
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+5.1. Introduction 
+
+The terminal control in the G05 is identical to the terminal control of the G12. In the G05, the vehicle 
+is always in the right condition from the point of view of the customer. The terminals are controlled 
+via a customer-oriented condition management. The terminal control is dependent on the vehicle 
+conditions. 
+
+
+5.2. Vehicle conditions 
+
+The G05 vehicle may be in the following conditions: 
+
+• PARKING 
+
+• RESIDING 
+
+• DRIVING 
+
+The different vehicle functions are possible depending on the relevant conditions. 
+
+PARKING 
+
+• Customer not in the vehicle. 
+
+• Vehicle secured or not used for a certain time. 
+
+• Vehicle functions cannot be operated. 
+
+RESIDING 
+
+• Customer in the vehicle. 
+
+• No driving readiness. 
+
+• Functions that are relevant when the vehicle is stationary can be operated. 
+
+DRIVING 
+
+• Customer in the vehicle. 
+
+• Driving readiness established. 
+
+• All functions are available. 
+
+The vehicle conditions are changed by condition management, taking into account the customer 
+behavior. Additional information is also evaluated that may help to determine the vehicle condition, 
+e.g.: 
+
+• Door opening. 
+
+• Door closing. 
+
+• Operations in the vehicle. 
+
+
+67 
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+
+The following diagram shows the changes between the vehicle conditions: 
+
+
+1 2 
+
+
+
+6 5 4 3 
+
+
+Vehicle conditions 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition PARKING 
+
+B 
+
+Transitional condition with stationary functions 
+
+C 
+
+Vehicle condition RESIDING 
+
+D 
+
+Transitional condition for establishing driving readiness, 
+ending driving readiness or Check/Analysis/Diagnosis 
+
+E 
+
+Vehicle condition DRIVING 
+
+1 
+
+Unlock vehicle 
+
+2 
+
+Press start/stop button + brake pedal 
+
+3 
+
+Press START-STOP button 
+
+4 
+
+Locks vehicle 
+
+5 
+
+No activity of a vehicle user detected for 10 min 
+
+6 
+
+Extended press 
+
+
+68 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+
+Detailed overview of vehicle conditions. 
+
+
+
+Overview of vehicle conditions 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Vehicle condition DRIVING 
+
+B 
+
+Vehicle condition RESIDING 
+
+C 
+
+Vehicle condition PARKING 
+
+a 
+
+Transitional condition for ESTABLISHING/ENDING DRIVING READINESS, 
+CHECK/ANALYSIS/DIAGNOSIS 
+
+b 
+
+Transitional condition with STATIONARY FUNCTIONS 
+
+
+1 Operation of start/stop button + brake pedal + valid remote control or valid ID 
+
+transmitter in the vehicle interior 
+
+69 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+
+Index 
+
+Explanation 
+
+2 
+
+Driving readiness established, terminal 15N (terminal 50) 
+
+3 
+
+Operation of start/stop button (three times within 0.8 s) + valid remote control 
+or valid ID transmitter in the vehicle interior 
+
+4 
+
+Terminal 15N 
+
+5 
+
+Operation of start/stop button + selector lever in Neutral 
+
+6 
+
+Undoing driver's seat belt (v < 0.1 km/h, driver's door opened, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+7 
+
+Door contact change (v < 0.1 km/h, driver's seat belt undone, selector lever 
+not in Neutral, brake not pressed, low beam off, no OBD communication, no 
+diagnosis mode, no assembly mode) 
+
+8 
+
+Press start/stop button + vehicle is stationary or press start/stop button for at 
+least 1 s + driving speed >10 km/h or press start/stop button at least three 
+times within 4 s + driving speed >10 km/h 
+
+9 
+
+Press START-STOP button 
+
+10 
+
+Terminal 30B 
+
+11 
+
+Unlock vehicle 
+
+12 
+
+Residing interaction or stationary function interaction 
+
+13 
+
+Locks vehicle 
+
+14 
+
+No customer interaction for 10 minutes 
+
+15 
+
+Extended press of head unit media button 
+
+16 
+
+Terminal 30F 
+
+
+Automatic switch-off 
+
+
+A 
+
+E3 .*ii 20AY 10*45 
+
+Tailgate 
+
+The vehicle is automatically switched off 
+
+Comfort access 
+
+
+E Lock automatically 
+
+
+E Lock after pulling away 
+
+
+E Unlock at end of journey 
+
+
+E Switch off after door opening 
+
+
+*” for loek/untock 
+
+
+
+Automatic switch-off 
+
+
+Switch off after door opening. 
+
+In the menu "Doors/Keys", an immediate change from the vehicle condition RESIDING to the vehicle 
+condition PARKING can be activated. 
+
+If this option is activated, the system will immediately change to the vehicle condition PARKING 
+when the driver's door is opened. The omission of the after-running period in the vehicle condition 
+RESIDING saves energy. 
+
+
+70 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+5.3. Power supply terminals 
+
+Control units in the vehicle must be supplied with power only when they are needed. The following 
+terminals are used in the G05: 
+
+• Terminal 15N 
+
+• Terminal 30B 
+
+• Terminal 30F 
+
+• Terminal 30. 
+
+Terminal 15N supplies control units which are needed only when driving and which may be needed to 
+safely end a journey. After-run of 5 s starts at the transition from DRIVING to RESIDING. 
+
+Terminal 30B is used to supply control units that are needed in the stationary mode in the condition 
+RESIDING and for stationary functions where the customer is not in the vehicle. An after-run of 
+6 minutes starts at the transition from RESIDING to PARKING, and terminal 30B is then switched off. 
+
+Terminal 30F is used to supply control units which must perform functions in PARKING condition. 
+Terminal 30F is normally switched on in PARKING condition, but may be switched off due to faults in 
+the vehicle electrical system. Terminal 30F is switched off with an after-running period of 1 minute if a 
+fault is detected. 
+
+Terminal 30 control units (e.g. alarm system) are always supplied with voltage and are also not 
+switched off in the event of a fault. 
+
+
+
+Terminal 30F 
+
+Terminal 30B 
+
+Terminal 15N 
+
+PARKING, vehicle 
+electrical system not 
+OK (fault in vehicle 
+electrical system) 
+
+off 
+
+off 
+
+off 
+
+PARKING, vehicle 
+electrical system OK 
+
+one 
+
+off 
+
+off 
+
+Stationary functions 
+(customer not in 
+vehicle) 
+
+one 
+
+one 
+
+off 
+
+RESIDING 
+
+one 
+
+one 
+
+off 
+
+DRIVING 
+
+one 
+
+one 
+
+one 
+
+
+Testing-analysis-diagnosis (PAD) mode 
+
+The vehicle condition testing-analysis-diagnosis is still present for diagnosis. All terminals are 
+switched on in this mode. This ensures that diagnosis can be performed with all control units. This 
+vehicle condition is displayed in the BMW diagnosis system ISTA. 
+
+Activation of the PAD mode: 
+
+• Operation of the start/stop button (three times within 0.8 s) + valid remote control or valid ID 
+transmitter in the vehicle interior 
+
+• By the BMW diagnosis system ISTA. 
+
+
+71 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+5. Terminal Control 
+
+The PAD mode is exited by pressing the start/stop button or by closing the diagnosis with BMW 
+diagnosis system ISTA. 
+
+
+5.4. Partial network operation 
+
+Today's premium vehicles contain up to 70 control units with well over 100 micro controllers which are 
+networked with each other. However, depending on the current vehicle condition or the vehicle user 
+requirement, not all comfort and assistance systems may always be needed. 
+
+It is possible to save energy, relieve the load on the battery and also prolong the battery life by targeted 
+deactivation and activation on control units which are not needed, so-called selective partial network 
+operation. 
+
+If functions are not used or needed when driving, e.g.: 
+
+• Seat adjustment 
+
+• Trailer lighting (no trailer attached) 
+
+The corresponding control units can be switched off. 
+
+In vehicles with combustion engine, the electrical energy consumption is indirectly linked to the fuel 
+consumption via the alternator. As a result, selective deactivation of control units that are not currently 
+needed can contribute to reducing fuel consumption and thus also CO 2 emissions. 
+
+
+5.4.1. Prerequisites for partial network operation 
+
+The partial network primary in the Body Domain Controller calculates a partial network status on 
+the basis of the current vehicle condition and the required functions. The control units that are not 
+required are switched off by means of the corresponding bus messages. 
+
+5.4.2. Prerequisites of control units for partial network operation 
+
+Different transceivers are used in order to realize partial network operation in control units. These 
+transceivers are able to evaluate and interpret messages. This control unit remains switched off as 
+long as any bus communication takes place without a valid wake-up event for the corresponding 
+control unit being present. If a valid wake-up event for the corresponding control unit is sent on the 
+bus, the transceiver can activate the voltage regulator of the micro controller and the control unit starts 
+up. The control unit is switched off by deactivation of the voltage regulator. 
+
+
+72 
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+6.1. Versions 
+
+The following exterior light versions are offered for the G05: 
+
+• Adaptive Full LED headlight (standard all models) 
+
+• BMW laserlight optional all models (SA 5AZ). 
+
+The G05 no longer features a turning light switch. 
+
+The new light operating unit comprises only buttons. 
+
+
+
+The low-beam headlight is automatically switched on when the system recognizes that it is dark, even 
+in the OFF mode and when driving readiness is activated (country-specific). 
+
+
+6.2. Front exterior lights 
+
+Headlight versions for the G05: 
+
+
+
+i i 
+
+
+Headlight versions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Adaptive Full LED headlights 
+
+2 
+
+BMW Laserlight 
+
+
+73 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+6.2.1. System wiring diagram 
+
+
+
+74 
+
+
+06C0 8131 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Left headlight with Frontal Light Electronics Left (FLEL) 
+
+2 
+
+Left fog light 
+
+3 
+
+Right fog light 
+
+4 
+
+Right headlight with Frontal Light Electronics Right (FLER) 
+
+5 
+
+Ride height sensor, front right 
+
+6 
+
+Fuses in the power distribution box, front right 
+
+7 
+
+Body Domain Controller (BDC) 
+
+8 
+
+Fuse in the Body Domain Controller 
+
+9 
+
+Turn indicator on exterior rearview mirror, right 
+
+10 
+
+Ride height sensor, rear right, CAN terminator 
+
+11 
+
+Fuse for rear right power distribution box 
+
+12 
+
+Ride-height sensor, rear left 
+
+13 
+
+VDP control unit 
+
+14 
+
+Turn indicator on exterior rearview mirror, left 
+
+15 
+
+Light switch 
+
+16 
+
+Hazard warning switch/intelligent Safety button 
+
+17 
+
+Steering column switch cluster (SZL) 
+
+18 
+
+Instrument cluster (KOMBI) 
+
+19 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+20 
+
+Ride height sensor, front left 
+
+
+All headlight versions and turn indicators are fitted exclusively with LEDs. 
+
+
+6.2.2. Adaptive Full LED headlights 
+
+
+1 2 
+
+
+
+5 4 3 
+
+
+Adaptive Full LED headlights 
+
+
+75 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Low-beam headlight/High-beam headlight 
+
+2 
+
+Turn indicator 
+
+3 
+
+Side lights and daytime driving lights 
+
+4 
+
+Side lights and daytime driving lights 
+
+5 
+
+Cornering light 
+
+
+On the adaptive LED headlight the low-beam headlight and high-beam headlight are in the same 
+reflector. 
+
+
+6.2.3. BMW laserlight 
+
+
+1 2 3 
+
+
+
+(V) (Y) 
+
+6 5 4 
+
+BMW laser light 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Low-beam headlight 
+
+2 
+
+Turn indicator 
+
+3 
+
+Low-beam headlight 
+
+4 
+
+High beam 
+
+5 
+
+Side lights and daytime driving lights 
+
+6 
+
+High beam 
+
+7 
+
+Side lights and daytime driving lights 
+
+8 
+
+Cornering light 
+
+
+The manufacturer of Laser Light II is the company Automotive Lighting. 
+
+
+76 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+6.3. Rear exterior lights 
+
+
+6.3.1. System wiring diagram 
+
+
+
+Rear exterior lights 
+
+
+77 
+
+
+TE1&-0512. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Digital Motor Electronics (DME) 
+
+2 
+
+Future Brake System (IB) 
+
+3 
+
+Electronic transmission control (EGS), fuses 
+in the power distribution box, front right 
+
+4 
+
+CAN terminator 
+
+5 
+
+Fuse, front right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Fuse in the Body Domain Controller 
+
+8 
+
+Rear light cluster, right outer 
+
+9 
+
+Rear fog light, right (not for US) 
+
+10 
+
+Rear light cluster, right inner 
+
+11 
+
+Number-plate light, right 
+
+12 
+
+Number-plate light, left 
+
+13 
+
+Rear light cluster, left inner 
+
+14 
+
+Rear fog light, left (not for US) 
+
+15 
+
+Rear light cluster, left outer 
+
+16 
+
+Interference suppression filter 
+
+17 
+
+Additional brake light 
+
+18 
+
+Operating unit for light 
+
+19 
+
+Hazard warning switch/intelligent Safety button 
+
+20 
+
+Steering column switch cluster (SZL) 
+
+21 
+
+Instrument cluster (KOMBI) 
+
+22 
+
+Rain-light-solar-condensation sensor (RLSBS) 
+
+
+78 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+6.3.2. Rear light 
+
+
+2 
+
+
+
+J, p 
+
+5 4 3 
+
+
+
+Rear light 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Tail light 
+
+2 
+
+Brake light 
+
+3 
+
+Turn indicator 
+
+4 
+
+Reversing light 
+
+5 
+
+Side marker light 
+
+
+79 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+6.4. KAFAS 
+
+On vehicles with camera-based driver assistance systems (KAFAS), the function of the high-beam 
+assistant is performed by KAFAS. 
+
+
+
+KAFAS camera 
+
+
+Index 
+
+Explanation 
+
+A 
+
+KAFAS Mid 
+
+B 
+
+KAFAS High 
+
+
+6.4.1. System wiring diagram 
+
+
+
+80 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+High-beam assistant (FLA) 
+
+2 
+
+Fuse for front right power distribution box 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Fuse in the Body Domain Controller 
+
+5 
+
+Operating unit for light 
+
+6 
+
+Steering column switch cluster (SZL) 
+
+7 
+
+Instrument cluster (KOMBI) 
+
+8 
+
+CAN terminator 
+
+A 
+
+Detailed information on the KAFAS camera can be found in the document "General Vehicle Electronics 
+2018" 
+
+
+6.5. Ground lighting 
+
+The ground lighting is integrated in the corresponding door modules. The LEDs of the ground lighting 
+are activated directly by the Body Domain Controller (BDC). 
+
+
+6.6. Light carpet 
+
+The light source is integrated in the side sill so that it is invisible for the customer. The function can be 
+realized in a very small installation space through the use of a multi-lens array system. A very flat angle 
+of radiation is also possible. The graphic is superposed several times by the multi-lens array system 
+and is therefore insensitive to dirt contamination. The light carpet is activated by the Body Domain 
+Controller (BDC). 
+
+
+6.7. Trailer lighting 
+
+
+81 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+6.7.1. System wiring diagram 
+
+
+© 
+
+
+© 
+
+
+
+
+Trailer lighting 
+
+
+82 
+
+
+TC1B-0513 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+6. Exterior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Instrument cluster (KOMBI) 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+CAN terminator 
+
+4 
+
+Exterior mirror, front passenger side 
+
+5 
+
+Fuse in the Body Domain Controller 
+
+6 
+
+Trailer module (AHM) 
+
+7 
+
+Button for trailer tow hitch 
+
+8 
+
+Motor for trailer tow hitch 
+
+9 
+
+Trailer socket 
+
+10 
+
+Additional brake light 
+
+11 
+
+Interference suppression filter 
+
+
+Vehicles with a trailer coupling are equipped with a trailer module AHM. The trailer module is 
+responsible for the following functions: 
+
+
+Light control for trailer 
+Monitoring the trailer power circuits 
+
+Control and monitoring of the fully automatic trailer tow hitch. 
+
+
+83 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+7. Wash/Wipe System 
+
+7.1. System wiring diagram 
+
+
+
+Wash/wipe system 
+
+
+84 
+
+
+IttBOWI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+7. Wash/Wipe System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Outside temperature sensor 
+
+2 
+
+Washer fluid level sensor 
+
+3 
+
+Washer pump for Night Vision camera 
+
+4 
+
+Motor for window washer pump, windscreen and rear window 
+
+5 
+
+Fuses in the power distribution box, front right 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Fuse, BDC 
+
+8 
+
+Fuse, rear right 
+
+9 
+
+Wiper motor, tailgate 
+
+10 
+
+Steering column switch cluster (SZL), wiper motor 
+
+11 
+
+Instrument cluster (KOMBI) 
+
+12 
+
+Rain-light-solar-condensation sensor 
+
+13 
+
+Wiper motor 
+
+14 
+
+Heated washer jet, left 
+
+15 
+
+Heated washer jet, center 
+
+16 
+
+Heated washer jet, right 
+
+
+The wiper motor is a 12 V motor with gearing. The control unit, the wiper motor and the transmission 
+form one replaceable unit. This wiper motor unit comprises: 
+
+
+• A permanently excited direct current motor with attached reduction gear 
+
+• Control unit electronics with eccentric shaft sensor and suppressor components with 
+attached plug connection. 
+
+The control unit in the wiper motor is able to identify the following faults: 
+
+• Faults in the control unit electronics 
+
+• Short circuits at the motor and sensor system 
+
+• Open lines at the motor and sensor system. 
+
+The control unit in the wiper motor does not have a fault memory. The fault code entry is effected in 
+the Body Domain Controller (BDC). 
+
+The heated washer jets are activated by the Body Domain Controller. 
+
+The Body Domain Controller is also responsible for actuation of the window washer pumps and 
+evaluation of the washer fluid level switch. 
+
+
+85 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+8. Alarm System 
+
+8.1. System wiring diagram 
+
+
+u 
+
+
+
+
+Alarm system 
+
+
+
+86 
+
+
+TE18-1214 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+8. Alarm System 
+
+
+Index Explanation 
+
+
+1 
+
+Hood contact switch 
+
+2 
+
+Fuse for front right power distribution box 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Door contact, front passenger side, front 
+
+5 
+
+CAN terminator 
+
+6 
+
+Door contact on front passenger side, rear 
+
+7 
+
+Fuse for rear right power distribution box 
+
+8 
+
+Siren with tilt alarm sensor 
+
+9 
+
+Tailgate contact switch in the tailgate lock 
+
+10 
+
+Door contact on driver's side, rear 
+
+11 
+
+Roof function center (FZD) 
+
+12 
+
+LED in the interior mirror 
+
+13 
+
+Door contact, driver's side, front 
+
+The alarm system in the G05 is equipped with an ultrasonic interior movement detector for monitoring 
+the vehicle interior. The ultrasonic interior movement detector (USIS) is fully integrated in the roof 
+function center (FZD). 
+
+The door contacts, engine compartment lid contact switch and the opening of the tailgate are 
+monitored by the Body Domain Controller. As soon as a status changes, the ultrasonic interior 
+movement detector receives this information via the K-CAN2. If the alarm system is activated, the siren 
+
+
+with tilt alarm sensor is activated by the control unit in the event of a break-in. 
+
+The siren with tilt alarm sensor (SINE) is connected via a local LIN bus to the roof function center. 
+The status of the alarm system is displayed via the LED at the interior mirror. 
+
+
+87 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+9. Power Window Regulator 
+
+9.1. System wiring diagram 
+
+
+
+Power window regulator 
+
+
+88 
+
+
+TE18-07I2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+9. Power Window Regulator 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuses in the power distribution box, front right 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Power window motor, passenger's side 
+
+4 
+
+Power window switch, front passenger side, front 
+
+5 
+
+Power window motor, passenger's side rear 
+
+6 
+
+Power window switch, front passenger side rear 
+
+7 
+
+Switch, side window roller sun blind, rear right 
+
+8 
+
+Fuses in the power distribution box, rear right 
+
+9 
+
+Switch, side window roller sun blind, rear left 
+
+10 
+
+Remote control receiver (FBD) 
+
+11 
+
+Power window switch driver's side, rear 
+
+12 
+
+Power window motor, driver's side rear 
+
+13 
+
+Switch block, driver's door 
+
+14 
+
+Power window motor, driver's side front 
+
+
+89 
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+10. Electric Steering Column 
+
+10.1. System wiring diagram 
+
+
+
+i 
+
+-& 
+
+
+UN«« 
+
+
+
+(*: 
+
+
+Electric steering column 
+
+
+90 
+
+
+It 18 0936 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+10. Electric Steering Column 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuse for front right power distribution box 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Steering column switch cluster (SZL) 
+
+4 
+
+Steering column adjustment button 
+
+5 
+
+Memory switch 
+
+6 
+
+Electronics for steering column adjustment 
+
+7 
+
+Motor for electric steering column adjustment, height 
+
+8 
+
+Motor for electric steering column adjustment, vertical 
+
+
+91 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+11.1. Ambient lighting 
+
+The Body Domain Controller controls the ambient lighting that includes 11 predefined, selectable light 
+designs. 
+
+The Sky Lounge panorama roof is available as optional equipment and an enhancement of the ambient 
+lighting. It can be activated with six different colors. 
+
+3 LED modules are installed on either side of the panorama roof for the ambient lighting. The light 
+design, special functions and brightness can be selected via the controller. The selected design is 
+displayed on the CID. 
+
+Some functions additional functions can be implemented for alerts using the ambient lighting: 
+
+• The ambient lighting can change the colors as a warning, e.g. when a door is opened. 
+
+• In the event of an incoming call, the ambient lighting can indicate this visually. 
+
+• Welcome/Goodbye dimming is also available as a further function. 
+
+
+92 
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+11.1.1. System wiring diagram 
+
+
+® . (*)■■ 4 
+
+-ft- -ft- -ft- 
+
+
+
+
+(S) ® ® 
+
+-ft- -ft- -ft- 
+
+m 
+
+
+®j hft- 
+
+
+-ft- 
+
+
+43 
+
+
+
+
+-b- 
+
+
+i 
+
+
+IF i 
+
+
+n m » 
+
+-ft-ft- -ft- 
+
+
+1L 
+
+
+4 : 
+
+
+i 
+
+
+-E3- 
+
+
+
+IM-fca 
+
+
+
+"f 
+
+
+-fti® 
+
+1 
+
+
+li n 
+
+-r- 
+
+NB® 
+
+
+
+T Mi 
+
+■■ T 
+
+
+ii 
+
+— *4 w) 
+
+(rt _ HI 
+
+
+H# 
+
+
+4 z 
+
+® 
+
+
+IT M 
+
+
+fi=4 
+
+
+® 
+
+
+® 
+
+
+-4 
+
+
+® 
+
+
+
+
+
+11 
+
+
+© ® ® 
+-$—[3—$- 
+
+
+JU 
+
+
+Ml) Ml) Ml) 
+
+-fl- 
+
+
+
+
+
+
+-B- 
+
+-B- 
+
+
+® 
+
+
+Interior lighting, ambient lighting 
+
+
+93 
+
+
+TEiB-tsar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ambient lighting, instrument panel, top 
+
+2 
+
+Lighting, instrument panel, left 
+
+3 
+
+Lighting, instrument panel, middle 
+
+4 
+
+Lighting, instrument panel, right 
+
+5 
+
+Fuses in power distribution box, front right 
+
+6 
+
+Body Domain Controller (BDC), lighting, center stack 
+
+7 
+
+Lighting, storage compartment, door, passenger's side, front right 
+
+8 
+
+Lighting, door opener, passenger's side, front right 
+
+9 
+
+Lighting, power window switch, passenger's side, front right 
+
+10 
+
+Contour line lighting, door, passenger's side, front right 
+
+11 
+
+Lighting, storage compartment, door, passenger's side, rear right 
+
+12 
+
+Lighting, door opener, passenger's side, rear right 
+
+13 
+
+Lighting, power window switch, passenger's side, rear right 
+
+14 
+
+Contour line lighting, door, passenger's side, rear right 
+
+15 
+
+Fuses, power distribution box, rear right 
+
+16 
+
+Panorama glass roof, rear 
+
+17 
+
+Sky Lounge panorama roof lighting, front right 
+
+18 
+
+Sky Lounge panorama roof lighting, front left 
+
+19 
+
+Sky Lounge panorama roof lighting, rear left 
+
+20 
+
+Sky Lounge panorama roof lighting, rear left 
+
+21 
+
+Sky Lounge panorama roof lighting, rear right 
+
+22 
+
+Sky Lounge panorama roof lighting, rear right 
+
+23 
+
+Center console, lighting 
+
+24 
+
+Center console, accent lighting, left 
+
+25 
+
+Center console, accent lighting, right 
+
+26 
+
+Driver's seat, lighting 
+
+27 
+
+Driver's seat, lighting, backrest, left 
+
+28 
+
+Driver's seat, lighting, backrest, bottom left 
+
+29 
+
+Front passenger seat, lighting 
+
+30 
+
+Front passenger seat, lighting, backrest, right 
+
+31 
+
+Front passenger seat, lighting, backrest, bottom right 
+
+32 
+
+Contour line lighting, door, driver's side, rear left 
+
+33 
+
+Lighting, door opener, driver's side, front left 
+
+34 
+
+Lighting, power window switch, driver's side, front left 
+
+35 
+
+Contour line lighting, door, driver's side, front left 
+
+
+94 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+36 
+
+Contour line lighting, door, driver's side, front left 
+
+37 
+
+Lighting, door opener, driver's side, rear left 
+
+38 
+
+Lighting, power window switch, driver's side, rear left 
+
+39 
+
+Contour line lighting, door, driver's side, rear left 
+
+40 
+
+Footwell light, front left 
+
+41 
+
+Contour lines, instrument panel 
+
+42 
+
+Contour line lighting, instrument panel, bottom right 
+
+43 
+
+Contour lines, instrument panel, right 
+
+44 
+
+Footwell light, front right 
+
+
+RGB (red, green, blue) LED modules are used for the ambient lighting. 
+
+
+The ambient lighting is controlled via a separate LIN bus. The individual LED modules are connected 
+via a local interconnect network bus. The LED modules are connected in series to the LIN bus around 
+the vehicle. 
+
+If the LIN bus is interrupted at a certain point or the micro controller on the LED is faulty, then further 
+light transmittance is interrupted at this point. A search for the fault must be carried out at the location 
+where the last LED illuminates. 
+
+11.2. Speaker illumination 
+
+In a vehicle with a Bowers & Wilkins audio system, the lighting for the speaker trims is activated via the 
+Receiver Audio Module (RAM). 
+
+LED modules are used for the speaker cover lighting. 
+
+The lighting is controlled via a local LIN bus by RAM to the LED modules of the speaker trims. 
+
+
+95 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+11.2.1. System wiring diagram 
+
+
+
+96 
+
+
+IEIB0388 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+11. Interior Lighting 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Mid-range speaker, roof, front left 
+
+2 
+
+Lighting for center speaker 
+
+3 
+
+Mid-range speaker, front center 
+
+4 
+
+Tweeter, front center 
+
+5 
+
+Head Unit High 
+
+6 
+
+Mid-range speaker, roof, front right 
+
+7 
+
+Fuses in the power distribution box, front right 
+
+8 
+
+Body Domain Controller (BDC), lighting 
+
+9 
+
+Tweeter, door, passenger's side, front right 
+
+10 
+
+Lighting, trim, tweeter, door, passenger's side 
+
+11 
+
+Lighting, trim, tweeter, door, passenger's side 
+
+12 
+
+Mid-range speaker, door, passenger's side, front right 
+
+13 
+
+Bass speaker, right 
+
+14 
+
+Mid-range speaker, roof, rear right 
+
+15 
+
+Tweeter, door, passenger's side, rear right 
+
+16 
+
+Lighting, trim, mid-range speaker, door, passenger's side, rear 
+
+17 
+
+Mid-range speaker, door, passenger's side, rear right 
+
+18 
+
+Tweeter, D-pillar, passenger's side, rear right 
+
+19 
+
+Mid-range speaker, D-pillar, passenger's side, rear right 
+
+20 
+
+Fuses in the power distribution box, rear right 
+
+21 
+
+Fuse, battery distributor, rear 
+
+22 
+
+Booster (hi-fi) 
+
+23 
+
+RAM (Receiver Audio Module) 
+
+24 
+
+Mid-range speaker, D-pillar, passenger's side, rear left 
+
+25 
+
+Tweeter, D-pillar, passenger's side, rear left 
+
+26 
+
+Speaker for outside sound 
+
+27 
+
+Mid-range speaker, door, driver's side, rear left 
+
+28 
+
+Lighting, trim, mid-range speaker, door, driver's side, rear 
+
+29 
+
+Tweeter, door, driver's side, rear left 
+
+30 
+
+Mid-range speaker, roof, rear left 
+
+31 
+
+Bass speaker, left 
+
+32 
+
+Mid-range speaker, door, driver's side, front left 
+
+33 
+
+Lighting, trim, mid-range speaker, door, driver's side 
+
+34 
+
+Lighting, trim, tweeter, door, driver's side 
+
+35 
+
+Tweeter, door, driver's side, front left 
+
+
+97 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+12. Door Mirror 
+
+12.1. Exterior mirror High 
+
+12.1.1. System wiring diagram 
+
+
+
+Exterior mirror High 
+
+
+98 
+
+
+§ <$><$> S W© 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+12. Door Mirror 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Outside temperature sensor 
+
+2 
+
+Fuses in the power distribution box, front right 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Exterior mirror, front passenger side 
+
+5 
+
+Switch block, driver's door 
+
+6 
+
+Exterior mirror, driver's side 
+
+7 
+
+Instrument cluster (KOMBI) 
+
+8 
+
+Inside mirror 
+
+
+The instrument cluster receives the value of the ambient temperature from the outside temperature 
+sensor and makes this available via the PT-CAN. The Body Domain Controller evaluates the signal 
+and triggers the activation of the mirror heating via the local interconnect network bus. The control 
+of the heater output is dependent on the ambient temperature and the switch position of the driving 
+experience switch. 
+
+The mirror servomotors are activated by the mirror electronics. The request for adjusting the exterior 
+mirror is received by the mirror electronics via the local interconnect network bus. 
+
+
+99 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+13.1. Front seats 
+
+13.1.1. Memory sports seat, driver's side, front 
+
+
+
+100 
+
+
+118-1203 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuses in the power distribution box, front right 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Exterior mirror, front passenger side 
+
+4 
+
+CAN terminator 
+
+5 
+
+Motor, longitudinal seat adjustment 
+
+6 
+
+Motor, seat angle adjustment 
+
+7 
+
+Motor, seat height adjustment 
+
+8 
+
+Motor, backrest angle adjustment 
+
+9 
+
+Motor, head restraint height adjustment 
+
+10 
+
+Driver's seat module SMFA 
+
+11 
+
+Valve block, backrest width adjustment 
+
+12 
+
+Seat pneumatics module pump 
+
+13 
+
+Valve block, lumbar-support adjustment 
+
+14 
+
+Switch, seat adjustment 
+
+15 
+
+Seat heating pad, backrest 
+
+16 
+
+Seat heating pad, seat surface 
+
+17 
+
+Memory switch 
+
+18 
+
+Switch block, driver's door 
+
+19 
+
+Exterior mirror, driver's side 
+
+20 
+
+Integrated automatic heating/air conditioning (IHKA) 
+
+
+101 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+
+13.1.2. Multi-contour seat, front 
+
+The following wiring diagram shows the seat on the driver's side. The passenger's side is identical but 
+reversed left-to-right. 
+
+
+
+Multi-contour seat, front, driver's side 
+
+
+102 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated automatic heating/air conditioning (IHKA) 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Exterior mirror, front passenger side 
+
+4 
+
+Fuses in the power distribution box, front right 
+
+5 
+
+CAN terminator 
+
+6 
+
+Motor, longitudinal seat adjustment 
+
+7 
+
+Motor, seat angle adjustment 
+
+8 
+
+Motor, seat height adjustment 
+
+9 
+
+Motor, backrest angle adjustment 
+
+10 
+
+Motor, head restraint height adjustment 
+
+11 
+
+Motor, seat depth adjustment 
+
+12 
+
+Motor, backrest head adjustment 
+
+13 
+
+Motor, backrest width adjustment 
+
+14 
+
+Motor, backrest width adjustment 
+
+15 
+
+Motor, active seat ventilation, seat surface 
+
+16 
+
+Motor, active seat ventilation, seat surface 
+
+17 
+
+Motor, active seat ventilation, seat surface 
+
+18 
+
+Motor, active seat ventilation, seat surface 
+
+19 
+
+Motor, active seat ventilation, backrest surface 
+
+20 
+
+Motor, active seat ventilation, backrest surface 
+
+21 
+
+Motor, active seat ventilation, backrest surface 
+
+22 
+
+Motor, active seat ventilation, backrest surface 
+
+23 
+
+Driver's seat module (SMFA) 
+
+24 
+
+Seat pneumatics module pump 
+
+25 
+
+Valve block, lumbar-support adjustment 
+
+26 
+
+Seat heating pad, backrest 
+
+27 
+
+Seat heating pad, seat surface 
+
+28 
+
+Switch, seat adjustment 
+
+29 
+
+Switch block, driver's door 
+
+30 
+
+Memory switch 
+
+31 
+
+Exterior mirror, driver's side 
+
+
+103 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+13.2. Electric seats, rear passenger compartment 
+
+13.2.1. Electric seats with seat heating, rear passenger compartment 
+
+
+1 
+
+
+
+Electric seats, rear passenger compartment 
+
+
+104 
+
+
+O'Blli 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuse, front right 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Seat adjustment switch, rear right 
+
+4 
+
+CAN terminator 
+
+5 
+
+Switch, through-loading facility, right 
+
+6 
+
+Seat module, rear right 
+
+7 
+
+Switch, seat folding, right 
+
+8 
+
+Motor, backrest angle adjustment, right 
+
+9 
+
+Switch, convenient entry, right 
+
+10 
+
+Motor, longitudinal seat adjustment, right 
+
+11 
+
+Motor, convenient entry, right 
+
+12 
+
+Microswitch, end position, convenient entry, right 
+
+13 
+
+Seat heating pad, seat surface, passenger’s side rear 
+
+14 
+
+Switch, backrest emergency release, right 
+
+15 
+
+Seat heating pad, backrest, passenger’s side rear 
+
+16 
+
+Fuse, rear right 
+
+17 
+
+Rear function module 
+
+18 
+
+Switch, longitudinal seat adjustment, in luggage compartment 
+
+19 
+
+Seat heating pad, backrest, driver’s side rear 
+
+20 
+
+Switch, backrest emergency release, left 
+
+21 
+
+Seat heating pad, seat surface, driver’s side rear 
+
+22 
+
+Microswitch, end position, convenient entry 
+
+23 
+
+Motor, convenient entry, left 
+
+24 
+
+Microswitch, end position, convenient entry 
+
+25 
+
+Motor, longitudinal seat adjustment, left 
+
+26 
+
+Switch, convenient entry, left 
+
+27 
+
+Motor, backrest angle adjustment, left 
+
+28 
+
+Switch, seat folding, left 
+
+29 
+
+Seat module, rear left 
+
+30 
+
+Switch, through-loading facility, left 
+
+31 
+
+Seat adjustment switch, rear left 
+
+32 
+
+Memory switch 
+
+
+105 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+13.3. Massage 
+
+8 different massage functions in the backrest and seat cushion are available to activate or relax 
+muscles. This allows the back muscles to be relaxed and the strain on the spinal discs to be relieved. 
+The 8 programs are divided into 3 categories: 
+
+• Mobilization. 
+
+• Relaxation. 
+
+• Vitalization. 
+
+In the case of mobilization , the strain on the spine is relieved by targeted body movements. 
+
+In the relaxation program, the muscles are relaxed by massage. 
+
+The vitalization program is made up of both mobilization and relaxation. The combination of movement 
+and massage ensures relaxation and recuperation particularly on long journeys. 
+
+
+106 
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+13.3.1. Seat massage, both front seats 
+
+
+
+Seat massage, both front seats 
+
+
+s □ □ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+13. Seats 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Fuse for front right power distribution box 
+
+3 
+
+CAN terminator 
+
+4 
+
+Switch block, front passenger door 
+
+5 
+
+Switch, lumbar support, front passenger seat 
+
+6 
+
+Seat pneumatics module front right 
+
+7 
+
+Seat pneumatics module pump, front passenger seat 
+
+8 
+
+Seat pneumatics module pump, driver's seat 
+
+9 
+
+Seat pneumatics module front left 
+
+10 
+
+Switch, lumbar support, driver's seat 
+
+11 
+
+Switch block, driver's door 
+
+
+108 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+14. Panorama Roof 
+
+14.1. System wiring diagram 
+
+
+
+Panorama roof 
+
+
+109 
+
+
+TE18-0710 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+14. Panorama Roof 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Motor, slide/tilt sunroof 
+
+2 
+
+Roof function center (FZD) 
+
+3 
+
+Fuses in the power distribution box, front right 
+
+4 
+
+Body Domain Controller (BDC) 
+
+5 
+
+CAN terminator 
+
+6 
+
+Sliding roofliner motor 
+
+
+110 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+15. Steering Column Switch Cluster 
+
+15.1. System wiring diagram 
+
+
+
+
+
+
+Steering column switch cluster 
+
+
+in 
+
+
+1E180941 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+15. Steering Column Switch Cluster 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Fuse in the Body Domain Controller 
+
+3 
+
+Fuse for front right power distribution box 
+
+4 
+
+Multifunction steering wheel buttons, right 
+
+5 
+
+Touch detection (Hands-Off Detection) 
+
+6 
+
+Shift paddle, right 
+
+7 
+
+Steering column switch, right 
+
+8 
+
+Advanced Crash Safety Module (ACSM) 
+
+9 
+
+Steering column switch cluster (SZL) 
+
+10 
+
+Steering column switch, left 
+
+11 
+
+Driver's airbag 
+
+12 
+
+Shift paddle, left 
+
+13 
+
+Steering-wheel heating button 
+
+14 
+
+Steering wheel heating 
+
+15 
+
+Vibration motor 
+
+16 
+
+Steering wheel module 
+
+17 
+
+Horn button 
+
+18 
+
+Multifunction steering wheel buttons, left 
+
+19 
+
+Instrument cluster (KOMBI) 
+
+
+15.2. SZL 
+
+
+
+Steering column switch cluster (SZL) 
+
+
+All signals of the buttons and switches of the multifunction steering wheel (MFL) and the steering 
+column switch cluster (SZL) are transmitted via LIN to the Body Domain Controller (BDC). The turn 
+signal/high beam switch on the G05 engages mechanically in the corresponding position when 
+operated. The return is mechanical via the steering wheel. 
+
+
+112 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.1. Comfort Access 2.0. 
+
+
+16.1.1. System wiring diagram 
+
+
+
+Comfort Access 2.0 
+
+
+113 
+
+
+TE17-22S9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuses in the power distribution box, front right 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Fuse in the Body Domain Controller 
+
+4 
+
+Switch in door lock, front passenger door 
+
+5 
+
+CAN terminator 
+
+6 
+
+Outside door handle electronics (TAGE), front passenger door 
+
+7 
+
+Comfort Access aerial, side sill, right 
+
+8 
+
+Switch in door lock of rear passenger door 
+
+9 
+
+Outside door handle electronics (TAGE), rear passenger door 
+
+10 
+
+Fuses in the power distribution box, rear right 
+
+11 
+
+Luggage compartment light, right 
+
+12 
+
+Tailgate function module (HKFM) 
+
+13 
+
+Control unit for contactless tailgate opening 
+
+14 
+
+Sensor at bottom for contactless tailgate opening 
+
+15 
+
+Sensor at top for contactless tailgate opening 
+
+16 
+
+Button for closing tailgate 
+
+17 
+
+Tailgate contact switch in the tailgate lock 
+
+18 
+
+Button for tailgate 
+
+19 
+
+Acoustic warning device for tailgate activation 
+
+20 
+
+Luggage compartment light, left 
+
+21 
+
+Comfort Access aerial, luggage compartment 
+
+22 
+
+Outside door handle electronics (TAGE), rear driver's side door 
+
+23 
+
+Remote control receiver (FBD) 
+
+24 
+
+Switch in door lock of rear driver's side door 
+
+25 
+
+Comfort Access aerial, side sill, left 
+
+26 
+
+Comfort Access aerial, vehicle interior 
+
+27 
+
+Outside door handle electronics (TAGE), driver's door, with Near Field 
+Communication (NFC) 
+
+28 
+
+Switch in door lock of driver's door 
+
+29 
+
+Wireless charging station with control electronics for Near Field 
+
+Communication 
+
+30 
+
+Power window electronics, driver's side front 
+
+31 
+
+Comfort Access aerial, vehicle interior 
+
+
+114 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+A_ 
+
+Detailed information on Comfort Access 2.0 can be found in the document "General Vehicle 
+Electronics 2018" 
+
+
+115 
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.2. Central locking system 
+
+
+116 
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.2.1. System wiring diagram 
+
+
+© 
+
+
+
+Central locking system 
+
+
+117 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fuses in power distribution box, front right, hotel position switch (dependent 
+on national-market version) 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Door lock, front passenger door 
+
+4 
+
+Central locking button, front passenger door (depending on the national- 
+market version) 
+
+5 
+
+Integrated power window electronics, front passenger door 
+
+6 
+
+Door lock, passenger's side, rear 
+
+7 
+
+Fuse in the rear power distribution box 
+
+8 
+
+Servodrive for fuel filler flap 
+
+9 
+
+Tailgate contact switch in the tailgate lock 
+
+10 
+
+Automatic Soft Close drive 
+
+11 
+
+Button for closing tailgate 
+
+12 
+
+Remote control receiver (FBD) 
+
+13 
+
+Door lock, driver's side, rear 
+
+14 
+
+Integrated power window electronics, driver's door 
+
+15 
+
+Central locking button, driver's door 
+
+16 
+
+Door lock, driver's door 
+
+17 
+
+Switch block, driver's door 
+
+18 
+
+Button for opening tailgate 
+
+
+16.2.2. Function 
+
+The function of the central locking system of the G05 is based on that of current BMW models. All 
+functions relevant for the central locking system are controlled by the Body Domain Controller. The 
+function is as follows: 
+
+• The radio signal from the ID transmitter is received by the remote control receiver. 
+
+• The signal causes the BDC to activate the central locking system and the interior lighting. 
+
+• The BDC evaluates the status of all the door contacts, the tailgate and the hotel position 
+switch. 
+
+• The status of the central locking system button is also evaluated by the BDC. The BDC 
+activates the central locking system, depending on the status. 
+
+• The BDC is responsible for activation of the central locking system and the drive for soft-close 
+automatic in the tailgate. 
+
+• Activation of fuel filler flap unlocking is also performed by the BDC. 
+
+
+118 
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.3. Upper section of tailgate 
+16.3.1. System wiring diagram 
+
+
+
+119 
+
+
+TG1841Q2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Instrument cluster (KOMBI) 
+
+2 
+
+Fuses in the power distribution box, front right 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Fuse in the Body Domain Controller 
+
+5 
+
+CAN terminator 
+
+6 
+
+Fuses in the rear power distribution box 
+
+7 
+
+Tailgate lift drive, right 
+
+8 
+
+Tailgate function module HKFM 
+
+9 
+
+Acoustic warning device for tailgate activation 
+
+10 
+
+Button for tailgate 
+
+11 
+
+Button for closing tailgate (inner) 
+
+12 
+
+Tailgate lift drive, left 
+
+13 
+
+Remote control receiver (FBD) 
+
+14 
+
+Switch block, driver's door 
+
+15 
+
+Button for opening tailgate, driver's door 
+
+16 
+
+Power window motor, driver's side front 
+
+
+120 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.4. Tailgate lower section 
+
+16.4.1. System wiring diagram 
+
+
+
+w 
+
+-I J 
+
+
+■ CD —■ 
+
+■ t V ■ — vjca 
+
+CD ■ 
+
+CD ~ ” 
+
+CD ‘ttjo 
+
+
+
+G05 Wiring diagram, lower section of tailgate 
+
+
+121 
+
+
+TGI 8 0099 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller 
+
+2 
+
+CAN terminator 
+
+3 
+
+Power distribution box, rear right 
+
+4 
+
+Tailgate function module 
+
+5 
+
+Automatic Soft Close drive, right 
+
+6 
+
+Tailgate lock, right 
+
+7 
+
+Spindle drive, lower section of tailgate 
+
+8 
+
+Door lock, tailgate, top 
+
+9 
+
+Automatic Soft Close drive, tailgate upper section 
+
+10 
+
+Tailgate push-button 
+
+11 
+
+Tailgate lock, left 
+
+12 
+
+Automatic Soft Close drive, left 
+
+A 
+
+Detailed information on the tailgate can be found in the document "G05 Complete Vehicle" 
+
+
+122 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+16.5. Automatic Soft Close system 
+16.5.1. System wiring diagram 
+
+
+
+Automatic Soft Close system 
+
+
+123 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+16. Locking and Security Functions 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Body Domain Controller (BDC) 
+
+2 
+
+Switch in door lock, front passenger door 
+
+3 
+
+Automatic Soft Close drive, front passenger door 
+
+4 
+
+Switch in door lock of rear passenger door 
+
+5 
+
+Automatic Soft Close drive, rear passenger door 
+
+6 
+
+Fuses in the power distribution box, rear right 
+
+7 
+
+Tailgate contact switch in the tailgate lock 
+
+8 
+
+Automatic Soft Close drive, tailgate 
+
+9 
+
+Automatic Soft Close drive, rear driver's-side door 
+
+10 
+
+Switch in door lock of rear driver's side door 
+
+11 
+
+Automatic Soft Close drive, driver's door 
+
+12 
+
+Switch in door lock of driver's door 
+
+
+124 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+17. Interior Mirror 
+
+17.1. System wiring diagram 
+
+
+
+Inside mirror 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Inside mirror 
+
+2 
+
+Body Domain Controller 
+
+3 
+
+Fuse for front right power distribution box 
+
+4 
+
+Roof function center (FZD) 
+
+
+The interior mirror is connected with the Body Domain Controller via LIN bus. 
+The LED for the alarm system is located at the interior mirror. 
+
+
+125 
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+The passive safety system of the G05 is based on the objectives and characteristics of current BMW 
+models. The passive safety system fulfils all legislative requirements worldwide. 
+
+The restraint systems ensure that the risk of injury is reduced. 
+
+A 5th generation Advanced Crash Safety Module (ACSM) is used as the central airbag control unit for 
+the passive safety system in the G05. 
+
+
+18.1. System overview. 
+
+18.1.1. System wiring diagrams 
+
+To carry out repairs on the passive safety system, please always use the wiring diagram specified in 
+the diagnosis system. 
+
+
+126 
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+System wiring diagram 
+
+
+
+
+
+- ® 
+
+
+U 
+
+® 
+
+
+« 
+
+4 ' ^ 
+
+4° (J)Z 
+
+
+ca= 
+
+
+
+
+®®® 47 
+
+
+
+
+43 
+
+
+12 
+
+
+* 
+
+4® : 
+
+® ® 
+
+II. @® 
+
+® « 
+
+
+T 
+
+
+
+
+
+
+
+
+
+® 
+
+=u 
+
+
+
+
+: ® " 
+
+: ® ” 
+
+: ® ® __ 
+
+s B3 
+
+
+
+
+
+
+
+1 
+
+
+" 
+
+
+
+
+» ® 
+
+
+n® 
+
+
+-B- 
+
+-B- 
+
+
+
+
+
+
+
+® 
+
+
+^’ 4 
+J l ’* 
+
+
+® is 
+
+
+: ® » 
+
+
+G05 System wiring diagram 
+
+
+127 
+
+
+TE18-06S5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic Stability Control (integrated DSCi) 
+
+2 
+
+Airbag front sensor, left 
+
+3 
+
+Instrument cluster KOMBI 
+
+4 
+
+Roof function center (FZD) 
+
+5 
+
+Switch for front passenger airbag deactivation (not US) 
+
+6 
+
+Front passenger airbag 
+
+7 
+
+Airbag front sensor, right 
+
+8 
+
+Fuses in power distribution box, front right 
+
+9 
+
+Knee airbag, front passenger 
+
+10 
+
+Body Domain Controller (BDC) 
+
+11 
+
+Flead airbag, right 
+
+12 
+
+Airbag sensor, door, right (pressure) 
+
+13 
+
+Reversible electromotive reel, front passenger (REMA) 
+
+14 
+
+Acceleration sensor, B-pillar on right 
+
+15 
+
+Seat occupancy mat (not US) 
+
+16 
+
+Adaptive belt force limiter, passenger's side 
+
+17 
+
+Seat occupancy mat, CIS mat 
+
+18 
+
+Automatic tensioner, front passenger 
+
+19 
+
+Seat-position sensor, front right 
+
+20 
+
+End fitting pretensioner, front right 
+
+21 
+
+Crash-active head restraint, front passenger 
+
+22 
+
+Side airbag, front passenger 
+
+23 
+
+Seat belt buckle switch, front passenger 
+
+24 
+
+Side airbag, rear right 
+
+25 
+
+Electronic fuel pump control 
+
+26 
+
+Seat belt, rear right (with reel pretensioner 
+depending on national-market version) 
+
+27 
+
+Seat belt buckle switch, rear right 
+
+28 
+
+Safety battery terminal SBK 
+
+29 
+
+Seat belt buckle switch, rear center 
+
+30 
+
+Telematic Communication Box 2 (TCB2) 
+
+31 
+
+Seat belt buckle switch, rear left 
+
+32 
+
+Seat belt, rear left (with reel pretensioner 
+depending on national-market version) 
+
+33 
+
+Side airbag, rear left 
+
+34 
+
+Seat belt buckle switch, driver 
+
+128 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+Index 
+
+Explanation 
+
+35 
+
+Side airbag, driver's side 
+
+36 
+
+Crash-active head restraint, driver 
+
+37 
+
+End fitting pretensioner, front left 
+
+38 
+
+Seat-position sensor, front left 
+
+39 
+
+Automatic tensioner, driver 
+
+40 
+
+Adaptive belt force limiter, driver's side 
+
+41 
+
+Acceleration sensor, B-pillar on left 
+
+42 
+
+Reversible electromotive reel, driver (REMA) 
+
+43 
+
+Advanced Crash Safety Module (ACSM) 
+
+44 
+
+Airbag sensor, door, left (pressure) 
+
+45 
+
+Head airbag, left 
+
+46 
+
+Knee airbag, driver 
+
+47 
+
+Driver's airbag 
+
+
+129 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+System overview of US version 
+
+
+
+G05 system overview for vehicles in US version 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, right 
+
+2 
+
+Lithium ion battery* (if installed) 
+
+3 
+
+Body Domain Controller (BDC) 
+
+4 
+
+Knee airbag, front passenger 
+
+5 
+
+Switch for front passenger airbag deactivation (not for US) 
+
+6 
+
+Airbag sensor, door, right (pressure) 
+
+7 
+
+Front passenger airbag 
+
+8 
+
+Acceleration sensor, B-pillar on right 
+
+9 
+
+Automatic tensioner, front passenger 
+
+10 
+
+Seat belt buckle switch, front passenger 
+
+11 
+
+Side airbag, front passenger 
+
+130 
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+Index 
+
+Explanation 
+
+12 
+
+Roof function center (FZD) 
+
+13 
+
+Crash-active head restraint, front passenger 
+
+14 
+
+Head airbag, right 
+
+15 
+
+Side airbag, rear right 
+
+16 
+
+Seat belt, rear right (with reel pretensioner 
+depending on national-market version) 
+
+17 
+
+Power distribution box, luggage compartment 
+
+18 
+
+Telematic Communication Box 2 (TCB2) 
+
+19 
+
+Safety battery terminal SBK 
+
+20 
+
+Seat belt buckle switch, rear center 
+
+21 
+
+Seat belt buckle switch, rear right 
+
+22 
+
+Electronic fuel pump control 
+
+23 
+
+Central information display CID 
+
+24 
+
+Crash Safety Module (ACSM) 
+
+25 
+
+Seat belt, rear left (with reel pretensioner 
+depending on national-market version) 
+
+26 
+
+Side airbag, rear left 
+
+27 
+
+Head airbag, left 
+
+28 
+
+Seat belt buckle switch, rear left 
+
+29 
+
+Crash-active head restraint, driver 
+
+30 
+
+Side airbag, driver's side 
+
+31 
+
+Automatic tensioner, driver 
+
+32 
+
+Acceleration sensor, B-pillar on left 
+
+33 
+
+Seat belt buckle switch, driver 
+
+34 
+
+Driver's airbag 
+
+35 
+
+Airbag sensor, door, left (pressure) 
+
+36 
+
+Instrument cluster KOMBI 
+
+37 
+
+Knee airbag, driver 
+
+38 
+
+Dynamic Stability Control (integrated DSCi) 
+
+39 
+
+Airbag front sensor, left 
+
+
+*The lithium ion battery has an integrated battery isolating relay, which also switches off if the safety 
+battery terminal (SBK) is triggered. 
+
+
+131 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+
+Lithium ion battery 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery isolating relay 
+
+
+18.2. Functions. 
+
+
+18.2.1. System monitoring functions 
+
+Deactivation of airbags 
+
+Provision is made in US versions of the vehicles for the airbag to be deactivated automatically in order 
+to satisfy the regulations of the National Highway Traffic Safety Administration NHTSA. When the child 
+seats listed in the regulation are occupied by a child this must lead to deactivation of the airbag. 
+
+To do so, a seat occupancy mat is used on the front passenger seat for the purpose of occupancy 
+detection and classification of occupants in the front passenger seat. A Capacitive Interior Sensing 
+mat (CIS mat) is used in the G05. 
+
+The CIS mat is made up of two elements: A sensor wire, which runs parallel to the seat heating in 
+the seat cushion, and an evaluation unit. The CIS mat measures the capacity and ohmic resistance 
+between the sensor wire (anode) and the vehicle ground (cathode) at a frequency of 120 kHz. The 
+CIS mat determines from the change in capacity and resistance whether the front passenger seat is 
+occupied by an adult or a child in a child seat. 
+
+The deactivation of the front passenger airbag, the side airbag and knee airbag on the passenger's 
+side is signalled by the indicator lamp for front passenger airbag deactivation. 
+
+
+132 
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+The indicator lamp for front passenger airbag deactivation in the roof function center lights up if a 
+child seat with child, for e.g. a child restraint system that has been tested in accordance with the 
+NHTSA regulations and is holding a small child, was detected on the front passenger seat or if the 
+front passenger seat is unoccupied. 
+
+
+18.3. System components. 
+
+18.3.1. Advanced Crash Safety Module 
+
+The Advanced Crash Safety Module (ACSM) in the G05 is located centrally in the vehicle under the 
+center console between the two front seats. The central sensor system is integrated in the Advanced 
+Crash Safety Module (ACSM). 
+
+
+
+G05 Crash Safety Module ACSM 
+
+
+The ACSM 5 of the G05 is a bus user in the FlexRay. The sensor data of the central sensor system 
+which was previously provided by Integrated Chassis Management (ICM) can be transmitted directly 
+by the Crash Safety Module (ACSM) via FlexRay. 
+
+
+18.3.2. Sensors and switches 
+
+Lateral and longitudinal acceleration sensor 
+
+The lateral and longitudinal acceleration sensors assist with the identification of head-on crashes, 
+side-on crashes and rear-end crashes. 
+
+
+The airbag sensor consists of a longitudinal acceleration sensor and a lateral acceleration sensor. 
+The acceleration sensors measure in X and Y direction the positive and negative acceleration. The 
+resultant from the X and Y signals is decisive in identifying the direction of the crash. The airbag 
+
+
+133 
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+sensors assist with the identification of head-on, side-on and rear-end crashes. The airbag sensors 
+on the left and right are of identical design and are allocated by way of mechanical encoding during 
+installation. 
+
+
+
+G05 Lateral and longitudinal acceleration sensor 
+
+
+Door airbag sensor (pressure) 
+
+Pressure sensors are installed in the driver's and front passenger doors on the G05. The pressure 
+sensors in the doors are now no longer attached with a bolt as was previously the case, but instead are 
+screwed into the bracket (inner door panel) and the electrical connections and plug connections can 
+only be connected once the relevant sensors have been installed. 
+
+Side crashes are identified with the assistance of the airbag sensors. In addition to the lateral 
+acceleration values that are present, the pressure in the door cavity also increases in the event of a 
+side-on crash. 
+
+The airbag sensors in the doors are used to verify the plausibility of the acceleration signals from 
+the B-pillar airbag sensors and the Advanced Crash Safety Module (ACSM) when a side-on crash is 
+detected. The airbag sensors are situated in the inner panel of the doors and measure the pressure 
+increase in the event of a side-on collision. In the event of a side-on collision at the door the outer skin 
+is pushed inwards. The door interior is reduced in size and the inner pressure increases. This pressure 
+change is measured by the airbag sensors. The airbag sensor also includes electronics, in addition 
+to the pressure sensor, that digitize the pressure readings and transmit them cyclically to the Crash 
+Safety Module (ACSM). The data transfer is effected analog to the airbag sensors in the B-pillars. The 
+pressure readings are evaluated in the Advanced Crash Safety Module (ACSM). 
+
+
+134 
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+
+G05 Door airbag sensor (pressure) 
+
+
+Airbag front sensor 
+
+Two front sensors are installed in the front area of the engine support in the US version of the vehicles. 
+The measured values are forwarded to the Advanced Crash Safety Module (ACSM) where they are 
+evaluated. 
+
+The airbag front sensors on the left and right assist with the identification of a head-on crash. 
+
+The sensors deliver additional information to the Advanced Crash Safety Module (ACSM) on the 
+characteristics and severity of the collision. Each sensor contains an acceleration sensor for recording 
+the deceleration, signal processing technology and electronics for data transfer. The measured values 
+are sent in the form of a message to the Advanced Crash Safety Module (ACSM) and are used in the 
+calculation of the algorithm. 
+
+
+135 
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+
+G05 Airbag front sensor 
+
+
+Sensors in the ACSM 
+
+In the G05, the central sensor system is integrated in the Crash Safety Module (ACSM). The Crash 
+Safety Module (ACSM) contains a longitudinal and lateral acceleration sensor, a vertical acceleration 
+sensor and a roll rate sensor for impact detection. The Crash Safety Module (ACSM) also includes a 
+longitudinal and lateral acceleration sensor and a yaw sensor for the driving dynamics control. 
+
+The sensor data for impact detection is evaluated in the Crash Safety Module (ACSM) and helps to 
+identify side-on, rear-end or head-on crashes and assists with roll-over detection. The sensor data not 
+yet evaluated for the driving dynamics control is sent to the DSC control unit via FlexRay where it is 
+processed. 
+
+
+136 
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+
+G05 Crash Safety Module (ACSM) 
+
+
+Emergency call button 
+
+The emergency call button is located in the roof function center. 
+
+
+
+G05 Roof function center FZD with emergency call button 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Emergency call button 
+
+
+137 
+
+
+
+
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+
+Front passenger airbag deactivation 
+
+On the US version of vehicles, the capacitive interior sensing mat (CIS mat) is fitted in the front 
+passenger seat. The CIS mat detects whether the front passenger seat is occupied by an adult or a by 
+child in a child seat. The deactivation of the front passenger airbag, the side airbag and the knee airbag 
+on the passenger's side is signalled by the indicator light for front passenger airbag deactivation. 
+
+Indicator lamp for front passenger airbag deactivation 
+
+In the G05, the indicator lamp for front passenger airbag deactivation is located in the roof function 
+center. The indicator lamp for front passenger airbag deactivation in the European and US versions 
+of the vehicles is identical. With the European version of the vehicles the indicator lamp for front 
+passenger airbag deactivation is activated and lights up yellow if the front passenger airbag and the 
+side airbag on the front passenger side have been deactivated by the switch for front passenger 
+airbag deactivation. In the US version of the vehicles, the indicator lamp for front passenger airbag 
+deactivation is automatically activated if the CIS mat detects a small child in a child seat or if the front 
+passenger seat is unoccupied. 
+
+
+
+G05 Indicator lamp for front passenger airbag deactivation 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Indicator lamp for front passenger airbag deactivation 
+
+
+Seat-position sensors 
+
+In accordance with the US legal requirement (FMVSS208), a height identification for the person in 
+the driver and front passenger seat must be effected. This height identification is effected via the 
+adjustment travel of the forward/back seat adjustment. In US-version vehicles, the exact position is 
+identified using the seat-position sensors for the driver and front passenger seats. 
+
+The job of the seat-position detector is to distinguish between a relatively small person and a person 
+of normal height within the lengthways adjustment range of the seat. This detection is another 
+technical feature aimed at increasing the safety of the occupants. The deployment of the two airbag 
+stages is then adjusted to the driver's/front passenger's seat position. 
+
+
+138 
+
+
+
+
+
+
+G05 General Vehicle Electronics 
+
+18. Passive Safety System 
+
+The seat-position detector takes the form of a 2-wire hall effect sensor and is supplied with power via 
+the Crash Safety Module (ACSM). The current level of the seat-position sensor changes depending on 
+the seat position. 
+
+18.3.3. Actuators 
+
+Overview 
+
+The following actuators are installed in the G05: 
+
+• Two-stage driver's airbag 
+
+• Two-stage front passenger airbag 
+
+• Knee airbag, front left and right 
+
+• Head airbag, left and right 
+
+• Crash-active head restraint, front left and right 
+
+• Side airbag, front left and right 
+
+• Side airbag, rear left and right 
+
+• Belt tensioner with adaptive force limiter 
+
+• Safety battery terminal 
+
+In addition, the following indicator lights inform the vehicle occupants about the condition of the safety 
+systems: 
+
+• Airbag indicator light 
+
+• Seat belt warning light 
+
+• Indicator lamp for front passenger airbag deactivation. 
+
+The familiar three-point seat belts are used as the seat belt systems for all seats in the G05. 
+
+For further information, please refer to the Product Information "G01 Passive Safety System". 
+
+
+139 
+
+
+
+
+
+
+
+
+

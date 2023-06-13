@@ -1,0 +1,6022 @@
+Table of Contents 
+
+Power Management 
+
+Subject Page 
+
+Introduction .5 
+
+Model Overview.7 
+
+Power Management .8 
+
+Adaptation of the Alternator Charging Voltage .9 
+
+Idle Speed Increase .9 
+
+Reducing Peak Loads .9 
+
+Electrical Load/consumer Deactivation .10 
+
+Closed-circuit Current Diagnosis.10 
+
+Battery Charge Management.10 
+
+Battery - state of Health .11 
+
+Data Transfer to the IBS .11 
+
+Transport Mode .11 
+
+Electrical System and Battery Diagnosis .13 
+
+Stationary Cycle.13 
+
+Closed-circuit Current .15 
+
+Closed-circuit Current Measurement.16 
+
+Closed Circuit Current Measurment with the IMIB .17 
+
+Energy Management Systems .21 
+
+Energy Management with Power Module .22 
+
+Optimum Charging.23 
+
+Detection of state of charge of battery .23 
+
+Temperature-Dependent Battery Charging Voltage .24 
+
+Idle Speed Increase.24 
+
+Peak Load Reduction.24 
+
+Load/consumer Deactivation.25 
+
+Load/consumer Deactivation in Event of Undervoltage .25 
+
+Deactivation of stationary loads/consumers .25 
+
+Closed-circuit Current Monitoring.26 
+
+Distribution Mode.26 
+
+Electronic Fuse.27 
+
+Rear Window Heater .27 
+
+Interior Lighting.27 
+
+Trunk Lid and Fuel Tank Flap Control.28 
+
+Anti-theft Alarm System .28 
+
+Information Memory.28 
+
+
+Initial Print Date: 07/10 
+
+
+Revision Date: 06/11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Emergency Mode Functions .28 
+
+Battery temperature sensor .28 
+
+Battery switch .28 
+
+Terminal 15_w.28 
+
+Bus Communication .28 
+
+Energy Management with Micro-Power Module.29 
+
+Intelligent Battery Sensor .29 
+
+Functional Principle of IBS .30 
+
+Charge Management by the IBS.31 
+
+Terminal 15 Wake-up.32 
+
+Terminal 30g Relay (E6x) - Time Dependent .32 
+
+Switch-on and switch-off conditions of terminal 30 g relay ... .33 
+
+Service Mode .34 
+
+Micro-power Module with Bistable Relay .35 
+
+Integration in the K-CAN.35 
+
+Normal mode .36 
+
+Sleep mode.37 
+
+Energy Management with Junction Box.38 
+
+Basic Power Management .38 
+
+BPM charging voltage specification .39 
+
+APM (Advanced Power Management).39 
+
+APM charging voltage specification.40 
+
+Effect of Outside Temperature .41 
+
+Battery Regeneration .41 
+
+Emergency Operation .41 
+
+Electric Load Reduction .42 
+
+Class A Electrical Devices .42 
+
+Class B Electrical Devices .43 
+
+Electric load reduction.44 
+
+Energy Flow.44 
+
+Information Flow.45 
+
+Vehicle in Stationary Mode (terminal R and terminal 30) .46 
+
+Electric Loads in Stationary Mode .46 
+
+Stationary Load Log-off .46 
+
+Terminal 30g and Terminal 30g_f.46 
+
+General Measures (E70).49 
+
+Continuous Positive.49 
+
+System Components.50 
+
+Components .50 
+
+Intelligent Battery Sensor (IBS) .50 
+
+Wake-up Function .52 
+
+Commissioning .53 
+
+Junction Box Module .54 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Engine Management (Power Management) .54 
+
+Terminal Control.55 
+
+Terminal 30g and terminal 30g_f.56 
+
+Time-dependent Shutdown (terminal 30g).56 
+
+Fault-dependent Shutdown (terminal 30g_f) .57 
+
+New Terminal Designation .57 
+
+Terminal 15N .59 
+
+Terminal 30B .59 
+
+Terminal 30F .60 
+
+FOx Terminal Control .61 
+
+Terminal Relays .62 
+
+General Measures (FOx) .63 
+
+Power Supply Schematics.64 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Management 
+
+Model: All 
+
+Production: All 
+
+IBIICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Understand the purpose of the Energy Management System. 
+
+• Locate and Identify Energy Management System Components. 
+
+
+• Describe the different Energy Management systems currently used 
+in BMW vehicles. 
+
+
+• Perform closed-circuit current diagnosis. 
+
+
+4 
+
+Power Management 
+
+
+Introduction 
+
+
+The power supply of most current BMW vehicles is a combination of hardware and soft¬ 
+ware that ensures the necessary power for all the vehicle systems. 
+
+Essentialy it can be divided into two major functions: 
+
+• Energy management 
+
+• Power management 
+
+The energy management system ensures that sufficient starter motor current is always 
+available and monitors the vehicle even when the engine is off. Energy management 
+includes all the components in the vehicle that generate, store and consume energy. 
+The data for the energy management is distributed across a number of control modules. 
+
+Power management is a subsystem of the energy management. The power manage¬ 
+ment is run from the engine control module Digital Engine Electronics or Digital Diesel 
+Electronics (DME or DDE). While the vehicle is being driven, the power management 
+regulates the power output of the alternator as well as the battery charging. 
+
+For more information regarding Power Supply components refer to the Power Supply 
+section of this training material. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Engine 
+
+5 
+
+Junction box 
+
+2 
+
+Alternator 
+
+6 
+
+Electrical load/consumers 
+
+3 
+
+Inteligent battery terminal 
+
+7 
+
+Engine management - 
+power management 
+
+4 
+
+Battery 
+
+
+
+
+5 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vehicle's electrical system basically consists of an energy storage device (battery), an 
+energy generator (alternator) and a large number of electrical loads (electrical/electronic 
+devices). Electrical energy is taken from the battery in order to start the engine via the 
+starter (electric load). Once the engine is running, the alternator supplies current which, in 
+the ideal case, is sufficient to supply all electric loads and charge the battery. If the cur¬ 
+rent reguirement of the connected electrical loads is higher than the current supplied by 
+the alternator, the system voltage will drop to the level of the battery voltage and the bat¬ 
+tery will be discharged. 
+
+
+
+The task of the vehicle electrical system is to provide electrical energy for the vehicle and 
+all its functions. Priority is given to maintaining the starting capability of the vehicle. The 
+purpose of the energy management system is to ensure and balance the energy in the 
+vehicle under all operating conditions. 
+
+The main component of every energy management system is the power management 
+software in the engine control unit (DME/DDE). The task of the power management soft¬ 
+ware is to control the flow of energy in the vehicle. 
+
+The alternator is designed to supply current to all electrical loads and charge the battery. 
+If the alternator is not able to supply sufficient current to the electrical loads the additional 
+current reguirement is taken from the battery. 
+
+
+
+6 
+
+Power Management 
+
+
+
+Model Overview 
+
+
+The energy management systems described here are installed in the models listed 
+below. 
+
+
+Models 
+
+Charge voltage 
+increase 
+
+Idle speed 
+increase 
+
+IBS 
+
+Power 
+
+module 
+
+Micro-power 
+
+module 
+
+Junction 
+
+box 
+
+E52 
+
+Yes 
+
+Yes 
+
+
+
+
+
+E53 
+
+Yes 
+
+Yes 
+
+
+
+
+
+E60/E61 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+Yes 
+
+
+E63/E64 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+Yes 
+
+
+E65/E66 
+
+Yes 
+
+Yes 
+
+
+Yes 
+
+
+
+E82/E88 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+E83 
+
+Yes 
+
+Yes 
+
+
+
+
+
+E85 
+
+Yes 
+
+Yes 
+
+
+
+
+
+E86 
+
+Yes 
+
+Yes 
+
+
+
+
+
+E89 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+E90 BPM 
+
+Yes 
+
+Yes 
+
+
+
+
+Yes 
+
+E90 APM 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+E70/E71 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+F01/F02 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+F07 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+FI 0 
+
+Yes 
+
+Yes 
+
+Yes 
+
+
+
+Yes 
+
+
+7 
+
+Power Management 
+
+
+
+
+
+
+Power Management 
+
+The main component of every energy management system is the power management 
+software in the DME/DDE. The power management is a subsystem of the energy man¬ 
+agement system that controls the flow of energy in the vehicle. 
+
+The power management system regulates the power consumption of some of the most 
+important electrical devices and the power output of the alternator while the vehicle is 
+being driven. 
+
+The power management functions are carried out by the engine management control 
+module (DME). In most current BMW vehicles the IBS is partially responsible for power 
+management when the vehicle is at rest. 
+
+The tasks of the power management system include: 
+
+• Adaptation of the alternator charging voltage. 
+
+• Idle speed boost for increasing the power output of the alternator. 
+
+• Reduction of peak loads in the event of a shortfall in coverage provided by the vehi¬ 
+cle electrical system. 
+
+• Deactivation by means of bus messages of electric loads such telephone, on reach¬ 
+ing the start capability limit of the vehicle. 
+
+• Closed-circuit current diagnosis. 
+
+© 
+
+DME 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+DME (Digital Motor Electronics) 
+
+6 
+
+Stationary load/consumer deactivation 
+
+2 
+
+Power management 
+
+7 
+
+Peak load reduction 
+
+3 
+
+EPROM with stored curves 
+
+8 
+
+Temperature input T 
+
+4 
+
+Idle-speed control 
+
+9 
+
+Current input 1 ± 
+
+5 
+
+Specified charging voltage 
+for the alternator 
+
+10 
+
+Battery voltage U 
+
+
+8 
+
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adaptation of the Alternator Charging Voltage 
+
+In unfavorable road situations, such as e.g. urban traffic or traffic jams, the variable battery 
+charging voltage ensures a better battery charge balance. 
+
+The power management controls the specified voltage for the charging voltage of the 
+alternator via the BSD line. 
+
+The specified voltage is dependent on: 
+
+• The battery temperature 
+
+• The current consumption of the vehicle 
+
+The battery charging voltage is controlled as a function of temperature. In this way, the 
+battery uses less water during the charging procedure and does not degas as guickly at 
+higher outside temperatures. 
+
+Idle Speed Increase 
+
+If the specified voltage on its own is no longer sufficient and the battery is showing a 
+deficit, the DME increases the idle speed up to 200 rpm (FOx). 
+
+Criteria for increasing idle speed are: 
+
+• Alternator fully utilized 
+
+• State of battery charge is low 
+
+Reducing Peak Loads 
+
+The peak load of the vehicle electrical system is reduced when there is still a shortfall in 
+battery coverage despite boosting idle speed. 
+
+Peak load reduction is realized by: 
+
+• Reducing power output, e.g. by correspondingly controlling the clock cycles of the 
+rear window defogger. 
+
+• If reducing the power output is not sufficient, individual electric loads can be 
+switched off in extreme situations. 
+
+
+9 
+
+Power Management 
+
+
+
+Electrical Load/consumer Deactivation 
+
+The loads/consumers can be categorized as follows: 
+
+• Comfort loads/consumers, e.g. heated window, seat heating, steering wheel heating. 
+
+-These loads/consumers switch off automatically after engine "OFF" and can be 
+activated again after the vehicle has been restarted. 
+
+• Stationary loads/consumers reguired by law, e.g. side lights, hazard warning lights, 
+must be operational after engine "OFF" for a specific length of time. 
+
+- Legally reguired stationary loads/ consumers are not switched off even on reaching 
+the start capability limit of the battery. 
+
+• Other stationary loads/consumers, e.g. independent heating, independent ventila¬ 
+tion, central information display, telephone, telematic services. 
+
+- Other stationary loads/consumers can be switched on after engine "OFF." The 
+comfort electric loads/consumers switch off automatically on reaching the start 
+capability limit of the battery. Switch-off is reguested by the DME in the form of a 
+CAN message. 
+
+• System-related afterrunning loads/ consumers, e.g. electric radiator fan. 
+
+- System-related afterrunning loads/ consumers can maintain operation for a defined 
+period of time. 
+
+
+Closed-circuit Current Diagnosis 
+
+A fault code is stored in the DME/DDE when the battery current exceeds a defined value 
+during the vehicle rest phase. 
+
+Battery Charge Management 
+
+There are two "counters" in the power management module. One counter is responsible 
+for the battery charge and the other for the battery discharge level. The state of charge of 
+the battery SoC is formed by the difference between the charge acceptance and draw 
+levels. The power management module receives the corresponding data from the IBS via 
+the BSD line. 
+
+The power management module calculates the current SoC value on restarting the 
+vehicle. 
+
+
+10 
+
+Power Management 
+
+
+
+Battery - state of Health 
+
+When the vehicle is started, the battery terminal voltage and the starting current of the 
+starter are measured by the IBS. 
+
+The starting current and voltage dip determined during the start phase are transferred via 
+the BSD line to the DME/DDE. From these data, the power management module calcu¬ 
+lates the state of health (SoH) of the battery. 
+
+Data Transfer to the IBS 
+
+The following data are transferred via the BSD line (or LIN Bus depending on model) to 
+the IBS before the DME goes into sleep mode: 
+
+• State of charge of the battery (SoC) 
+
+• Outside temperature 
+
+• Available discharge level 
+
+• Terminal 15 wake-up enable 
+
+• Terminal 15 wake-up disable 
+
+• DME close 
+
+
+Transport Mode 
+
+Indication of Battery Condition 
+
+The batteries in vehicles coming off the production line are adeguately charged so that 
+SOC > 80% (SOC - “State of charge”). However, since several days or weeks can pass 
+between the time the vehicle comes off the production line and when it is delivered to the 
+customer, the battery will have discharged to a greater or lesser degree. Therefore, every 
+battery must be charged according to the recharging calendar. 
+
+The F01/F02 is the first model on which it is possible to display the charge level of the 
+battery when the new car is being transported. When production or transport mode is 
+activated, a Check Control message is generated that provides a guick indication of the 
+battery condition. 
+
+
+11 
+
+Power Management 
+
+
+
+Note: If the SOC has dropped to less than 35%, the indication continues to be 
+displayed on the instrument cluster until the battery is replaced and a 
+change of battery is registered. 
+
+
+Battery 
+
+condition 
+
+
+Display on 
+instrument cluster 
+
+
+Audible signal 
+
+
+Battery condition OK 
+
+
+OK 
+
+
+Action 
+
+
+SOC 60% to 100% 
+
+
+Battery is discharged. 
+SOC 35% to 60% 
+
+
+
+Battery charge level is 
+very low. 
+
+SOC less than 35% 
+
+
+
+No sound 
+
+
+No action necessary. 
+
+
+No sound 
+
+
+Charge battery. 
+
+
+Double gong 
+
+
+Replace battery. 
+
+
+Note: When transport mode is reset, there is no indication on the instrument 
+cluster of the battery charge level. 
+
+Note: If the vehicle is delivered with the red Check Control message “Battery 
+charge level very low” active, it is essential that the low battery charge is 
+recorded as transport damage on the delivery note. 
+
+In such cases, the test module “Energy diagnosis” must be carried out to establish the 
+cause. Replace the battery before handing over the vehicle to the customer and register 
+the change of battery using the service function. 
+
+~ If a vehicle is delivered with the yellow Check Control message “Charge 
+j! battery”, this should also be recorded on the delivery note. The battery 
+must then be charged once and an energy diagnosis carried out. 
+
+
+12 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+Electrical System and Battery Diagnosis 
+
+Over the past few years, the energy management of all BMW models has been continu¬ 
+ously improved and standardized across the various model series. In terms of energy 
+diagnosis, this also means standardization of testing schedules and displays in the BMW 
+diagnostic system. 
+
+The aim of the diagnostic procedures is to show the causes of a discharged battery as 
+unambiguously as possible. In view of the complexity, especially in the area of energy 
+management, the specific cause of a fault can be shown only partially depending on its 
+nature. The acguired energy diagnosis data are shown if the fault cannot be clearly 
+assigned based on the acguired data. 
+
+Power management is retained in full while the expanded diagnostic options are now resi¬ 
+dent in the history memory. 
+
+In FOx vehicles the ZGM monitors the vehicle status, registers inhibited sleep mode or 
+unauthorized wake-up after Terminal 30B is switched off and reguests a reset or shut¬ 
+down of Terminal 30F by a bus message to the JBE. 
+
+The originator and reason for wake-up (unauthorized wake-up) are stored as additional 
+information in the ZGM fault memory. The driving profile for the last 5 weeks is stored in 
+the JBE energy history memory. The energy history memory is referred to for energy 
+diagnosis purposes. 
+
+Stationary Cycle 
+
+After the engine has been turned off, the battery undertakes the task of supplying electri¬ 
+cal loads with current. The number of electrical loads that can be activated with the igni¬ 
+tion turned off is limited in order not to excessively discharge the battery. Only a few func¬ 
+tions are available such as the radio, exterior/interior lights, hazard warning lights or 
+renewed engine start. Functions such as the seat heating, rear window defogger, air con¬ 
+ditioning etc. cannot be activated. 
+
+Several control units are disconnected from the power supply after a specific period of 
+time so that the battery is not permanently subjected to load. This is known as "Sleep 
+Mode" or the rest state of the control units. For example, the radio or the interior lighting 
+are switched off automatically after a certain period of time. Exceptions include control 
+units that are responsible for the functions reguired by law, e.g. exterior lighting. 
+
+
+13 
+
+Power Management 
+
+
+
+I [mA] 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal R “OFF” 
+
+3 
+
+telephone shutdown 
+
+2 
+
+Electric load deactivation 
+
+
+Electronic ride-height control 
+
+
+In order to protect the battery, ideally the battery should be disconnected from the electri¬ 
+cal system after shutting down and locking the vehicle. This, however, is not possible as 
+the antitheft alarm system, for instance, must remain in operation or the control unit for 
+unlocking the vehicle (CAS) must receive current at all times. Consequently, this means 
+that electrical energy is constantly taken from the battery while the vehicle is stationary 
+and a small current, the so-called closed-circuit current, flows. The number of control 
+units that are supplied with current via terminal 30 (continuous positive) is kept to a mini¬ 
+mum so that a maximum closed-circuit current of 80 mA is not exceeded in BMW vehi¬ 
+cles. This measure ensures the battery does not suffer exhaustive discharge even over 
+longer periods of time. 
+
+A fault code is stored in the DME/DDE if the battery current exceeds a value of 80 mA 
+during the vehicle rest phase. The energy management initiates automatic shutdown if 
+some control units cannot assume sleep mode after a certain period of time. 
+
+
+14 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Closed-circuit Current 
+
+Although for most models a closed circuit current reading below 50mA is prefered, a 
+Check Control message is generated (raised battery discharge rate when parked) if a 
+closed-circuit current level of >80 mA is detected. 
+
+
+Note: The closed-circuit current should always be measured if increased cur¬ 
+rent consumption is suspected.Even power consumption levels only 
+slightly above normal can cause relatively rapid battery discharge. 
+
+The graph below shows the typical closed-circuit current progression on the F01/F02 
+associated with the various electrical system statuses. The actual current values change 
+depending on the vehicle equipment configuration. 
+
+The terminal “load shut-down” (e.g. reading or 60 minutes with light and vanity mirror 
+light) is switched off corresponding to the terminal status. 
+
+Load shut-down switches off immediately when the vehicle is secured. In all other termi¬ 
+nal statuses, the load shut-down terminal is switched off after an overrun period of 8 min¬ 
+utes. It is activated by the footwell module. 
+
+
+i [A] * 
+
+10-...A 
+
+6...A 
+
+200-..jtiA 
+
+921mA 
+
+
+1 2 
+
+
+p 
+
+l/l 
+
+
+1 
+
+
+
+
+30 t[min] 
+
+
+
+Typical closed-circuit current progression 
+for double-locked vehicle on F01 /F02 
+
+
+Typical closed-circuit current progression for 
+unlocked vehicle on F01/ F02 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 15N off 
+
+2 
+
+Terminal R off 
+
+3 
+
+Vehicle is secured (locked) 
+
+4 
+
+Start of bus rest phase 
+
+5 
+
+Electrical load shutdown after 8 minutes 
+
+6 
+
+KL30 B OFF (30 minutes w/o phone or 60 min with phone ) 
+
+
+
+The Maximum current draw recorded in the above graphs is 9-21 mA 
+after 30 min which is normal for the F01 withaTCU. For further infor¬ 
+mation, please reference SI B61 08 00 Closed Circuit Measurement. 
+
+
+15 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Closed-circuit Current Measurement 
+
+Increased closed-circuit currents may occur permanently or intermittently and cause the 
+battery to discharge prematurely. The increase in closed-circuit current may be caused by 
+a faulty control unit, or by the installation of a non-approved accessory. 
+
+In a situation where a vehicle has broken down due to a discharged battery, for diagnostic 
+purposes it is important not to disconnect the battery. This is because a control unit will 
+be reset if the battery is disconnected. Following a reset, the faulty control unit may start 
+functioning correctly again, making accurate diagnosis impossible. 
+
+To correctly measure closed-circuit current, the 50-amp clip-on probe (previously used 
+with the MIB) can now be used in conjunction with the IMIB (Integrated Measurement 
+Interface Box) to properly diagnosis closed-circuit current problems over an extended 
+period of time. Connect the 50-amp clip-on probe directly to the IMIB Measurement 
+input 3 (green socket). Refer to SI B04 35 09 for information about the IMIB. 
+
+Note: Refer to the Battery Service Information section in this training material 
+for more information on Closed Circuit Current measurement and to 
+SI B61 08 00. 
+
+
+Vehicle 
+
+Closed circuit current measurement 
+
+E36, Z3 
+
+30 milliamps after 16 minutes 
+
+E46 
+
+40 milliamps after 16 minutes 
+
+E60, E61, E63, E64 
+
+40 milliamps after 60-70 minutes 
+
+E65, E66 
+
+40 milliamps after 60-70 minutes 
+
+E53 
+
+40 milliamps after 16 minutes 
+
+E70, E71, E72 
+
+40 milliamps after 60-70 minutes with TCU (30 minutes without TCU) 
+
+E83 
+
+40 milliamps after 16 minutes 
+
+E82, E88 
+
+40 milliamps after 60-70 minutes with TCU (30 minutes without TCU) 
+
+E90, E91, E92, E93 
+
+40 milliamps after 60-70 minutes with TCU (30 minutes without TCU) 
+
+E85 
+
+40 milliamps after 16 minutes 
+
+E89 
+
+40 milliamps after 60-70 minutes with TCU (30 minutes without TCU) 
+
+E52 
+
+50 milliamps after 16 minutes 
+
+F01, F02, F07, FI 0 
+
+7-21 milliamps after 30 minutes 
+
+
+Note: When performing a Closed Circuit Current measurement always consult 
+the individual vehicle specifications all vehicle models may be different. 
+(See closed circuit current measurement chart) 
+
+
+16 
+
+Power Management 
+
+
+
+Closed Circuit Current Measurment with the IMIB 
+
+This technique with an IMIB is particularly suitable for extended measurements, and pro¬ 
+vides a graphical readout of recorded measurements overtime. It is recommended for sit¬ 
+uations where the use of a multimeter provided insufficient information for problem diag¬ 
+nosis. 
+
+1. The IMIB can be accessed from any ISID within the workshop. 
+
+2. Select "Activities". 
+
+3. Select "Measuring devices". 
+
+4. Select from the "Level 1" column, "Measuring devices", and then "OK". 
+
+5. From the "Connection manager" screen, select the free IMIB and "Set up 
+connection". 
+
+6. The "Measures devices" screen opens on the "Multimeter" tab. 
+
+7. Select the "Oscilloscope" tab. 
+
+8. Highlight the "CHI" tab to activate channel 1. 
+
+9. Under channel 1, "Source", scroll with the arrows to select "Clip-on probe 50A". 
+
+10. Make sure that clip-on probe is not connected to the battery cable, and acknowl¬ 
+edge the pop-up message with "OK". 
+
+11. Change the "A/Div" setting to "1 A". 
+
+12. Under the "Time" selection box, change the "Time/Div" setting based on the 
+number of measurements needed (5 ms to 200 s). The longer times should be 
+selected when performing the measurement over an extended period. 
+
+13. Select "CH 1" under "Cursor" to monitor the actual readings. 
+
+14. Select "Record" if performing long term measurements. 
+
+15. After performing the measurement, select "Record" again; the display will change 
+to "Compress" and display the recorded data on the 1 screen. 
+
+^ For further information regarding Closed-circuit Current 
+<_•_ Measurement refer to SI B61 08 00 available in ISTA. 
+
+
+17 
+
+Power Management 
+
+
+
+
+Closed circuit current monitoring using the IMIB and the “Clip-on probe 50A or 100A” 
+
+
+Integrated Service 
+T cchnical Application 
+
+VtN: 
+
+
+m <J 
+
+Vehicle: 
+
+
+
+
+
+
+m 
+
+
+Mukjmetw 
+
+
+
+
+Signals 
+
+
+Ref Cur 2 9197 A 
+DiH Cur ? 9705 A 
+A Cur -0 0088 A 
+
+
+I 0 00 ms 
+
+in n 00 Hr 
+
+t/T 0 00 % 
+
+At fiDOO 00 mi; 
+
+
+
+7 1 Save settings 
+
+
+[Cunor 
+
+
+Coupled 
+
+
+| Display 
+
+•«»« 
+
+
+Refer enc Different 
+
+Time 
+
+
+Record Cr<mprvM Sign.*! 
+
+
+
+
+
+CM t 
+
+Source 
+
+
+IM 111 Roc 99 
+
+
+[3 “ 
+
+
+Coupling 
+
+OMD AC 
+
+
+Prot>« 2 
+
+0 
+(Iff ha! 
+
+0 
+
+0 
+
+*0 « sr 1 
+
+V/Div 
+
+-L 
+
+1NV 
+
+Coupling 
+
+| ONO 
+
+
+
+4 fi 
+
+► 
+
+T imo/Div 
+
+IQ 
+
+> 
+
+T rigger 
+
+Source 
+
+
+4k 
+
+Position 
+
+▼ 
+
+4 • Ml 
+
+▼ 
+
+
+Slope 
+
+
+!■! 
+
+
+Out measuring 
+devices 
+
+
+(1) Select channel 1 or 2. 
+
+(2) Change the “Source” to “Clip-on probe 50A or 100A” (confirm calibration prompt). 
+
+(3) Set “A/DIV” to “10A”. 
+
+(4) Change the “Time/DIV” in the “Time” box to “1 s” to start (the value can be 
+changed if longer recording time is needed). 
+
+(5) Select the “Cursor” for the channel selected, 1 or 2. 
+
+(6) Once the measurement is started, press the “Record” button to start monitoring. 
+
+(7) Select “Save settings” to save the configuration setup (can be loaded back up at a 
+later time). 
+
+
+18 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Integrated Service 
+
+I ec hnlc al Appltcabon 
+
+
+0 M ® H OB H [E 
+
+|5B| 
+
+
+VIN VFT9372 
+
+Vehicle: 
+
+17E827COUPE/128I/N51/AUTO/USA LEFT HAND DFUVE/2009/8 
+
+
+
+
+Multimeter 
+
+Signals 
+
+
+
+
+
+
+Save settings 
+
+
+Load / 
+delete setting 
+
+
+Quit measuring 
+
+devices 
+
+
+(8) Select the “Record” button to stop recording. 
+
+(9) Select the “Compress” button to start analyzing the recorded signal. 
+
+(10) Change the “Time/DIV” in the “Time” box to the value which makes the signal 
+easier to view glitches. 
+
+(11) Change the “Position” in the “Time” box to scroll through the signal. 
+
+(12) The white bar along the top of the display indicates the part of the entire signal 
+being viewed. 
+
+(13) The cursor(s) may be moved to display the value of different parts of the display. 
+
+
+19 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20 
+
+Power Management 
+
+
+
+Energy Management Systems 
+
+Depending on the vehicle and the requirement, the functions available in the power 
+management module are modified with various further components. This results in dif¬ 
+ferent energy management solutions for BMW vehicles. 
+
+The following table provides an overview of the different energy management systems 
+and their functions. 
+
+
+Function 
+
+BPM 
+
+PM 
+
+MPM 
+
+JB 
+
+Charging voltage increase 
+
+X 
+
+X 
+
+X 
+
+X 
+
+Idle speed increase 
+
+X 
+
+X 
+
+X 
+
+X 
+
+Load/consumer deactivation, load 
+
+
+X 
+
+X 
+
+X 
+
+Load/consumer deactivation, fault 
+
+
+
+X 
+
+X 
+
+Peak load reduction 
+
+
+X 
+
+X 
+
+X 
+
+Closed-circuit current monitoring, partial 
+
+
+X 
+
+
+
+Closed-circuit current monitoring with IBS 
+
+
+
+X 
+
+X 
+
+Battery diagnosis 
+
+
+X 
+
+X 
+
+X 
+
+
+Legend: 
+
+BPM= Basic Energy Management (E53) 
+
+PM = Power Module (E65-E66) 
+
+MPM = Micro-power Module (E60-E64) 
+
+JB = Junction Box (E82, E88, E89, E9x, E7x, FOx) 
+
+Note: Energy management for the E83, E85 and E86 is built into the DME 
+and is taken from the E46. 
+
+The following chapter provides an overview of the different energy management systems 
+and their functions. 
+
+The following systems are discussed: 
+
+• Energy management with power module 
+
+• Energy management with micro-power module 
+
+• Energy management with junction box 
+
+
+21 
+
+Power Management 
+
+
+
+
+
+Energy Management with Power Module 
+
+The functions listed below are integrated in the power module and form part of energy 
+management for the BMW E65/E66. 
+
+Power module in luggage compartment, rear right 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery switch 
+
+4 
+
+Power module 
+
+2 
+
+Battery positive cable 
+
+5 
+
+Terminal 30B 
+
+3 
+
+Terminal 30U 
+
+
+
+
+Features: 
+
+• Optimum battery charging 
+
+• Load-side peak reduction 
+
+• Deactivation of stationary loads/consumers 
+
+• Load/consumer deactivation 
+
+• Closed-circuit current monitoring 
+
+• Distribution mode 
+
+• Automatic electrical system disconnection 
+
+• Electronic fuse 
+
+
+22 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+• Central battery voltage specification 
+
+• Heated rear window 
+
+• Interior lights 
+
+• Trunk lid and fuel tank flap control 
+
+• Information memory 
+
+• Limp home properties 
+
+• Check Control message 
+
+• Diagnosis 
+
+Optimum Charging 
+
+The battery voltage can vary between 14 V and 15.5 V. The optimum charging voltage is 
+set by the power module as a function of the state of charge of the battery, the battery 
+temperature and the lamp resistance. The maximum charging voltage is 16 V. 
+
+Detection of state of charge of battery 
+
+The power module detects the state of charge of the battery at all times by calculating 
+the battery current while the vehicle is moving and by measuring the discharge current. 
+When the vehicle is stationary, the state of charge is recalculated by means of a closed- 
+circuit voltage measurement at the battery and adopted. 
+
+Data flow, power module/alternator 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+CAS (Car Access System) 
+
+4 
+
+Alternator 
+
+2 
+
+ZGM (central gateway module) 
+
+5 
+
+Power module 
+
+3 
+
+DME (Digital MotorElectronics) 
+
+BSD 
+
+Bit-serial data Interface 
+
+
+23 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Temperature-Dependent Battery Charging Voltage 
+
+By using a charging characteristic map stored in the PM, the charge voltage of the gener¬ 
+ator is adjusted according to the battery temperature. The previus diagram shows the 
+communication path necessary for the Power Module to inform the generator to increase 
+or decrease charge voltage output.The alternator charging voltage is set as a function of 
+the battery temperature using the charging curve stored in the power module. 
+
+The power module detects the temperature of the battery and sends the message 
+"Charging voltage increase" to the K-CAN PERIPHERALS. The CAS forwards the mes¬ 
+sage to the K-CAN SYSTEM. 
+
+The central gateway module receives the message and forwards it to the PT-CAN. The 
+Digital Motor Electronics receives the request to increase the charging voltage via the 
+PTCAN. 
+
+The alternator receives the request to increase the charging voltage via the BSD line. 
+
+The electronic evaluation unit in the alternator sets the requested charging voltage. 
+
+Idle Speed Increase 
+
+As little energy as possible is drawn from the battery in the interests of improving the 
+charge balance. The idle speed is increased early in order to prevent an increased draw 
+of energy. This ensures that the battery has a higher state of charge. 
+
+If this drops below the calculated start capability of the battery, the idle speed is increased 
+to 750 rpm. 
+
+Peak Load Reduction 
+
+Load-side peak reduction If while the engine is running a battery discharge (in spite of 
+increased idle speed) is detected, loads/consumers are reduced or deactivated in stages 
+in accordance with a priority table. 
+
+These loads/consumers are: 
+
+• Heated rear window 
+
+• Seat heating 
+
+• Heater fan (without defrost function) 
+
+• Steering wheel heating 
+
+• Mirror heating 
+
+• Wiper console heating 
+
+
+24 
+
+Power Management 
+
+
+
+Load/consumer Deactivation 
+
+In order that the battery is not discharged in the event of a permanent activation of loads/ 
+consumers, a central load/consumer deactivation is performed 16 minutes after terminal 
+R off. 
+
+These loads/consumers are: 
+
+• IB (Interior lights) 
+
+• VA_K (Load/consumer deactivation, body area) 
+
+• VA_D (Load/consumer deactivation, roof area) 
+
+Load/consumer Deactivation in Event of Undervoltage 
+
+In the event of an undervoltage due to high loads, the power module transmits a mes¬ 
+sage to increase idle speed and for load/consumer deactivation after the voltage drops 
+below 10.5 V (for 5 seconds). Load/consumer deactivation is conducted in accordance 
+with the priorities stored in the power module. 
+
+The power outputs of the power module are deactivated at the same time. 
+
+These loads/consumers are: 
+
+• IB (Interior lights) 
+
+• VA_K (Load/consumer deactivation, body area) 
+
+• VA_D (Load/consumer deactivation, roof area) 
+
+Deactivation of stationary loads/consumers 
+
+In order to safeguard the start capability of the vehicle, the state of battery charge is 
+also monitored when the vehicle is stopped. 
+
+A minimum state of charge is determined is order to guarantee start capability. 
+
+This is dependent on: 
+
+• The measured temperature of the last few days 
+
+• The engine type 
+
+• The capacity of the installed battery 
+
+If the state of charge approaches this limit value because a stationary load/consumer 
+is active, the power module prompts this load/ consumer to switch itself off. 
+
+The following are stationary loads/consumers: 
+
+• CD (Color Display) 
+
+• DWA (Anti-theft alarm system) 
+
+• LSZ (Light switch center) 
+
+• EGS (Electronic transmission control) 
+
+• IHKA (Integrated automatic heating/air conditioning) 
+
+25 
+
+Power Management 
+
+
+
+Closed-circuit Current Monitoring 
+
+The closed-circuit current monitoring function is activated in the power module when the 
+battery switch is set to ON. 
+
+The power module switches to the closedcircuit current monitoring function at terminal 0 
+after 60 minutes. Closed-circuit current monitoring begins again if an action on the vehi¬ 
+cle (e.g. central locking, open rear lid) occurs before a period of 60 minutes has elapsed. 
+
+After this period has elapsed the closed-circuit current must not exceed 80 mA. If howev¬ 
+er the closed-circuit current is higher than 80 mA, the message "Shutdowncounter" is 
+sent by the power module after 5 minutes. After a further 90 seconds disconnection of 
+the vehicle electrical system is completed for 5 seconds. 
+
+Disconnection is repeated if the closed-circuit current after reactivation is still higher than 
+80 mA. 
+
+If the closed-circuit current is still higher than 80 mA, permanent disconnection is per¬ 
+formed by the electronic battery master switch. 
+
+The fault (incl. boundary conditions and the reason for the increased closed-circuit cur¬ 
+rent) is set in the power module's fault memory. 
+
+When the terminal 15_w signal is detected, the electronic battery master switch is closed 
+and a Check Control message "Increased closed-circuit current" is displayed. 
+
+Closed-circuit current monitoring is cancelled by the message Side lights ON and hazard 
+warning lights. The loads/consumers required by law must not be deactivated. 
+
+Distribution Mode 
+
+By repositioning the battery switch, the power module switches to the Distribution mode 
+function 30 minutes after terminal R off. Prior to disconnection the message "Shutdown" 
+is sent by the power module. Disconnection is completed after a further 90 minutes. 
+
+After ignition lock position terminal R ON a Check Control message is sent which alerts 
+the driver that the vehicle is in Distribution mode. The message "Battery switch OFF" 
+appears. 
+
+The electronic battery master switch is closed when the terminal 15_w signal is detected 
+or by repositioning the battery switch to "closedcircuit current monitoring". 
+
+Note: The vehicle can also be started and driven in Distribution mode. All the 
+systems are operational. The Check Control message remains active. 
+With terminal R Off, disconnection is initiated again after 30 minutes, 
+as described above. 
+
+
+26 
+
+Power Management 
+
+
+
+Electronic Fuse 
+
+The electronic battery master switch is opened when a short-circuit current in excess of 
+250 A is detected. Only after the terminal 15_w wake-up signal from the CAS is detected 
+is an attempt made to close the electronic battery master switch. 
+
+The procedure is repeated until the short circuit is eliminated. 
+
+Central battery voltage specification The power module measures the battery voltage 
+continuously. This voltage is made available to all the other electronic control units via 
+their bus connection. This facilitates for example a continuous operation of the slide/tilt 
+sunroof irrespectively of the battery voltage. 
+
+There are no individual measurements of the individual control units with central battery 
+voltage specification. 
+
+Rear Window Heater 
+
+The electronic output stage of the heated rear window in the power module is activated 
+by a K-CAN message from the IHKA control unit "Heated rear window ON" output. 
+
+Interior Lighting 
+
+The interior lights are divided into three outputs (groups). 
+
+• IB (Interior lights) 
+
+• VA_K (Load/consumer deactivation, body area) 
+
+• VA_D (Load/consumer deactivation, roof area) 
+
+The interior lights are controlled by the power module. 
+
+VA_Kand VA_D are switched as a function of the corresponding ON/OFF contacts. 
+
+
+27 
+
+Power Management 
+
+
+
+Trunk Lid and Fuel Tank Flap Control 
+
+The power module controls the functions of the body electronics in the area of the rear lid: 
+
+• Trunk lock actuator 
+
+• Trunk lid Soft Close Automatic 
+
+• Fuel tank flap locking 
+
+The necessary software, such as e.g. switchon times and repeat interlocks, is integrated 
+in the power module. 
+
+Anti-theft Alarm System 
+
+The power module is used to monitor the rear lid via the SCA contact of the anti-theft 
+alarm system. 
+
+Information Memory 
+
+Vehicle-related data are stored in the information memory. These data make it possible to 
+indicate the status of the load and service life of the battery. The information memory can 
+be read out by way of diagnosis. 
+
+Emergency Mode Functions 
+Battery temperature sensor 
+
+A substitute value of 20 °C is accepted in the event of an open circuit, a short circuit or 
+an implausible value. This corresponds to a fixed charging voltage of 14.3 V at the battery. 
+
+The battery capacity can now only be calculated under limited conditions. 
+
+Battery switch 
+
+The system switches to closed-circuit current monitoring if the battery switch is fault-free. 
+
+Terminal 15_w 
+
+The following signals prevent deactivation of the power module without terminal 15_w: 
+
+• Terminal 15 (via CAS bus connection) 
+
+• Vehicle speed > 2 km/h via DSC bus connection (Dynamic Stability Control) 
+
+• System voltage > 13.2 V (PM central voltage specification) 
+
+Bus Communication 
+
+If bus communication is not possible, all information is "frozen." 
+
+
+28 
+
+Power Management 
+
+
+
+Energy Management with Micro-Power Module 
+
+The energy management system with the micro-power module is used in the E60, E61, 
+E63, E64. Energy management has the same basic functions as power management in 
+the DME. 
+
+Energy management with the micro-power module differs from the E65 power module 
+system in the following details: 
+
+• Permanent monitoring of the charge/discharge current by the intelligent 
+battery sensor. (IBS) 
+
+• Terminal 15 wake up 
+
+• Load/consumer deactivation timecontrolled by terminal 30g relay 
+
+• Load/consumer deactivation faultcontrolled by micro-power module 
+
+• Closed-circuit current diagnosis and violation of fault storage 
+
+Intelligent Battery Sensor 
+
+The intelligent battery sensor IBS is a mechatronic component. The IBS with its own 
+microcontroller which continually measures the following parameters: 
+
+• Battery terminal voltage 
+
+• Battery charge/discharge current 
+
+• Battery acid temperature 
+
+The IBS is located directly on the battery negative terminal and is used on all current 
+BMW vehicle. 
+
+The intelligent battery sensor (IBS) is part of the power management system. The IBS is 
+used to determine precisely the "state of charge" (SoC) and the "state of health" (SoH) 
+of the battery. 
+
+
+Measuring ranges of IBS 
+
+Voltage 
+
+6 V to 16.5 V 
+
+Current 
+
+-200 A to + 200 A 
+
+Closed-circuit current 
+
+0 A to 1000 A 
+
+Starting current 
+
+0 A to 1000 A 
+
+Temperature 
+
+-40 °C to 105 °C 
+
+
+29 
+
+Power Management 
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Intelligent battery sensor 
+
+2 
+
+Ground cable 
+
+3 
+
+Bit-serial data interface (BSD) 
+
+4 
+
+Connection B+ 
+
+
+Functional Principle of IBS 
+
+
+► 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery voltage measurement 
+
+5 
+
+Digital Motor Electronics DME 
+
+2 
+
+Battery temperature measurement 
+
+6 
+
+Current measurement (voltage drop at shunt) 
+
+3 
+
+Microcontroller in IBS 
+
+7 
+
+Negative pole of battery 
+
+4 
+
+Bit-serial data interface 
+
+8 
+
+Positive pole of battery 
+
+
+30 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The software in the IBS controls the process and communication with the DME (Digital 
+Motor Electronics) control unit. The IBS sends the data via the bit-serial data interface 
+(BSD) to the DME. The following functions are integrated in the IBS: 
+
+• Continuous measurement of the battery current, voltage and temperature under all 
+vehicle operating conditions. 
+
+- When the vehicle is stationary, the measured values are interrogated cyclically 
+every 40 s to save power. The measuring period of the IBS is approx. 50 ms. The 
+measured values are entered in the closed-circuit current histogram in the IBS. 
+
+• The state of battery charge (SoC) is partly calculated. 
+
+- The DME/DDE reads out the closedcircuit current histogram after the vehicle is 
+restarted. A corresponding entry is made in the fault code memory of the DME if a 
+closedcircuit current infringement is determined. 
+
+• The IBS sends the data via a bit-serial data interface to the DME. 
+
+• Calculation of the battery indicators as the basis for the state of charge (SoC) and 
+state of health (SoH) of the battery. 
+
+- The battery indicators are charge and discharge current, voltage and temperature 
+of the vehicle battery. 
+
+• Balancing of the charge and discharge currents of the battery. 
+
+• Permanent monitoring of the state of battery charge. 
+
+-Transmission of date in the event of a deficit. 
+
+• Calculation of the current progression when starting the engine to determine the 
+state of battery health. 
+
+• Closed-circuit current monitoring of the vehicle. 
+
+Charge Management by the IBS 
+
+The IBS continuously balances the state of battery charge even when the vehicle is sta¬ 
+tionary. 
+
+The current SoC is stored in the IBS every 2 hours. 3 locations are reserved in the mem¬ 
+ory for this purpose. The first entry is made at location 1, locations 2 and 3 are overwrit¬ 
+ten every 4 hours. 
+
+From terminal 15 "On" the DME/DDE updates the value to the current values of the bat¬ 
+tery indicators. 
+
+
+31 
+
+Power Management 
+
+
+
+Terminal 15 Wake-up 
+
+
+
+Kl. 30 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Intelligent battery sensor 
+
+2 
+
+Digital Motor Electronics DME 
+
+3 
+
+Car Access System CAS 
+
+
+Before the DME assumes sleep mode, it informs the IBS of the current SoC of the 
+battery. The IBS sends the wake-up signal when the available SoC is used up. 
+
+The DME obtains information on the current SoC of the battery from the IBS. 
+
+The IBS informs the DME when the SoC of the battery is critical. 
+
+The DME requests the stationary electrical loads/consumers to switch off. 
+
+The DME no longer permits the IBS to wake the vehicle. 
+
+The vehicle subsequently reassumes sleep mode. 
+
+The wake-up function only applies when the vehicle is at rest. 
+
+
+Terminal 30g Relay (E6x) - Time Dependent 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Input signals, terminal 30g "ON/OFF" 
+
+4 
+
+Load/consumer 
+
+2 
+
+CAS (Car Access System) 
+
+KI.30 
+
+Terminal 30, load 
+
+3 
+
+Terminal 30g relay 
+
+
+
+
+32 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In order to ensure a proper energy balance and battery start capability, specific stationary 
+loads/consumers are deactivated by the terminal 30g relay after a prespecified period of 
+time. 
+
+
+The terminal 30g relay is activated by the Car Access System CAS and effects a defined 
+deactivation of loads/consumers. 
+
+The terminal 30g relay is installed in the power distribution box in the luggage compart¬ 
+ment. 
+
+Switch-on and switch-off conditions of terminal 30 g relay 
+
+The switch-on conditions are: 
+
+• Unlock vehicle 
+
+• Terminal R "ON" 
+
+• Auto-remote closing via remote control 
+
+• Status change of door contacts or of rear lid contact 
+
+• Telephone wake-up line for telematic services 
+
+• Service application 
+
+The switch-off conditions are: 
+
+• 60 minutes after terminal R "OFF" 
+
+• Service application 
+
+Terminal 30g switch-on/switch-off conditions 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 30 g relay "ON" 
+
+4 
+
+Terminal R "ON" 
+
+2 
+
+OFF 
+
+5 
+
+OFF 
+
+3 
+
+ON 
+
+6 
+
+Terminal 30 g relay "OFF" 
+
+
+33 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The terminal 30 g switch-off procedure disconnects various electrical loads/ consumers 
+in a defined manner from the vehicle electrical system. This happens approx. 60 minutes 
+after terminal R "OFF." 
+
+The deactivated loads/consumers are activated again together with terminal 30g "ON." 
+The following loads/consumers are deactivated: 
+
+• Center console switch center 
+
+• Rain and driving lights sensor 
+
+• Controller 
+
+• Central information display 
+
+• Slide/tilt sunroof 
+
+• Tyre pressure control 
+
+• Satellite radio 
+
+• TOP HiFi amplifier 
+
+• Telephone 
+
+• Flead-up display 
+
+• Active cruise control 
+
+• Electronic transmission control 
+
+• Dynamic Stability Control 
+
+• Adaptive directional headlights 
+
+Service Mode 
+
+The BMW diagnosis system can be used to place the vehicle in sleep mode in the work¬ 
+shop within 5 secs, by means of the Power Down command. 
+
+This is necessary in order to carry out a guick and continuous closed-circuit current with¬ 
+out waiting for the normal deactivation time to elapse (60 mins.). 
+
+
+34 
+
+Power Management 
+
+
+
+
+Micro-power Module with Bistable Relay 
+
+As with the terminal 30g relay, the micropower module enables a defined deactivation 
+of loads/consumers in the event of a fault, i.e. excessive closed-circuit current. 
+
+Deactivation only takes place with the vehicle at rest when a fault occurs in the 
+communication area. 
+
+The following faults trigger deactivation: 
+
+• Excessive closed-circuit current in the event of a critical SoC 
+
+• Number of K-CAN wake-up procedures exceeded 
+
+• Undervoltage 
+
+• Vehicle does not go into sleep mode. 
+
+
+Integration in the K-CAN 
+
+The micro-power module is connected to the K-CAN. 
+
+The micro-power module detects 3 operating states, 
+namely normal mode, sleep mode and service mode. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery 
+
+2 
+
+DME (Digital Motor Electronics) 
+
+3 
+
+Front power distribution box 
+
+4 
+
+Micro-power module 
+
+5 
+
+Rear power distribution box 
+
+BSD 
+
+Bit-serial data interface 
+
+K-CAN 
+
+Body CAN 
+
+KI.15 
+
+Terminal 15 
+
+KI.15 WUP 
+
+Terminal 15, wake-up 
+
+
+35 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Normal mode 
+
+All functions of the micro-power module are available in normal mode. 
+
+The micro-power module switches OFF/ON the voltage supply to all the loads/con¬ 
+sumers involved in communication. 
+
+These loads/consumers are: 
+
+• M-ASK (Multi-Audio System Controller) 
+
+• CCC (Car Communication Computer) 
+
+• CDC (Compact Disc Changer) 
+
+• DVD changer 
+
+The supply voltage is switched on and off by means of a bistable relay. The relay is set to 
+"ON" when it leaves the factory. The switchon condition has priority over the switch-off 
+condition. 
+
+The switch-on conditions are: 
+
+• Creation for the first time of the supply voltage at the 
+micro-power module "First Switch to Power" 
+
+• Locking/unlocking 
+
+• Terminal R "ON" 
+
+• Terminal R 15 "ON" 
+
+• Changes in status of door contacts or of trunk lid contact 
+
+• Bus activity 
+
+The switch-off conditions are: 
+
+• Excessive closed-circuit current in the event of a critical SoC 
+
+• Signal "Stationary loads/consumers OFF" by DME 
+
+• Undervoltage < 9 V for a time period > 60 seconds 
+
+• Number of K-CAN wake-up procedures exceeded 
+
+• Bus activity after 60 minutes in spite of the vehicle having stopped, 
+i.e. the vehicle cannot go into sleep mode after terminal R "OFF". 
+
+
+36 
+
+Power Management 
+
+
+
+The relay disconnects the loads/consumers from the vehicle electrical system with a 5- 
+minute delay. This delay allows the respective loads/consumers to sign off from the elec¬ 
+trical system. The switch-off procedure is interrupted if a switch-on condition applies dur¬ 
+ing this 5-minute period. 
+
+Special cases for switch-off conditions: 
+
+• The loads/consumers have already been disconnected from the 
+vehicle electrical system 
+
+• The vehicle door is opened without the vehicle being started 
+
+• Bus activity 
+
+Sleep mode 
+
+The micro-power module goes into sleep mode approx. 1 second after the K-CAN has 
+gone into sleep mode. 
+
+The current switching status of the relays is stored before the micro-power module goes 
+into sleep mode. 
+
+The micro-power module is woken by the terminal 15 signal via the K-CAN or by activa¬ 
+tion of terminal 15. 
+
+On waking, the switching status of the relay last stored is reestablished. 
+
+
+37 
+
+Power Management 
+
+
+
+Energy Management with Junction Box 
+
+Introduced with the E90 the Energy Management System with Junction Box uses an 
+energy management function that is similar to that used in the E60 Micro Power Module 
+System to ensure balanced power/energy distribution in the vehicle. The system was 
+further developed for use in the E70 and it is currently part of the BN2020 in the FOx 
+vehicles. This training material discusses all three systems with emphasis on FOx vehi¬ 
+cles. 
+
+The energy management functions in vehicles with junction boxes are executed in the 
+power management system of the DME (See chart on page 21 of this chapter). 
+
+The IBS provides exact information regarding the condition of the battery such as actual 
+voltage, current and internal temperature to the DME.This allows for greater flexibility in 
+regulating loads and also provides additional diagnostic functions with regard to energy 
+consumption. 
+
+There are two different systems, depending on the vehicle eguipment specifications: 
+
+• BPM (Basic Power Management) 
+
+• APM (Advanced Power Management) 
+
+The BPM is identical to the basic energy management in other BMW vehicles. 
+
+The BPM is installed without a IBS. 
+
+
+There are two different operating modes: 
+
+• Vehicle operation (terminal 15) 
+
+• Vehicle stationary (terminal R and terminal 30) 
+
+Basic Power Management 
+
+This variant features only idle speed increase and charging voltage specification. 
+
+
+Basic power management 
+A i 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Basic power management 
+
+2 
+
+Idle speed increase 
+
+3 
+
+Combustion engine 
+
+4 
+
+Charging voltage specification 
+
+5 
+
+Alternator 
+
+
+38 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BPM charging voltage specification 
+
+The BPM controls the voltage at the alternator depending on the temperature. The input 
+variable here is the outside temperature. This input variable is used in the power manage¬ 
+ment system to calculate the battery temperature. 
+
+Charging voltage increase 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Normal charging voltage 
+
+2 
+
+Increased charging voltage 
+
+
+APM (Advanced Power Management) 
+
+The APM is used if an IBS is installed in the vehicle. 
+
+
+Advanced Power Management 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Advanced Power Management 
+
+2 
+
+Idle speed increase 
+
+3 
+
+Combustion engine 
+
+4 
+
+Charging voltage specification 
+
+5 
+
+Alternator 
+
+6 
+
+Consumption reduction 
+
+7 
+
+Load/consumer 
+
+8 
+
+Electrical system and battery diagnosis 
+
+9 
+
+BMW diagnosis system 
+
+10 
+
+Intelligent Battery Sensor 
+
+11 
+
+Battery data 
+
+
+Note: Most current US vehicles use the 
+Advanced Power Management 
+system. 
+
+
+39 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following functions are integrated in both management systems: 
+
+• Idle speed increase 
+
+• Charging voltage specification 
+
+In addition to the main functions of basic power management (idling speed and reguired 
+battery charge voltage), APM also incorporates the following extended functions: 
+
+• Electric load reduction 
+
+• Electric load shut-down 
+
+• Vehicle systems diagnosis 
+
+• Battery diagnosis. 
+
+As is the case with energy management with the micro-power module, an IBS (intelligent 
+battery sensor) is installed for APM. 
+
+
+APM charging voltage specification 
+
+With APM the outside temperature is not used to calculate the battery temperature. Here 
+the battery temperature is measured directly with the IBS. 
+
+The power management uses this value as the input variable for calculating the battery 
+temperature. With the aid of a calculation model, the specified charging voltage is set 
+based on the battery temperature. 
+
+This information is sent via the BSD line to the alternator. 
+
+
+The reguired battery charge voltage is determined 
+according to outside temperature and IGR function 
+in most current FOx vehicles. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Model-based battery temperature of 8 °C 
+
+2 
+
+Model-based battery temperature of 19 °C 
+
+3 
+
+Emergency operation 
+
+
+15 
+
+u;i 
+
+143 
+
+14.7 
+
+14.6 
+
+145 
+
+14.4 
+
+143 
+
+143 
+
+14.1 
+
+14 - 
+
+
+
+
+
+Cl) 
+
+
+
+
+
+
+
+
+
+
+
+
+1 
+
+s 
+
+
+1 ® 
+
+
+-10 0 10 20 30 40 50 
+
+°C 
+
+
+Voltage regulation on alternator on F01/F02 
+
+
+40 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Effect of Outside Temperature 
+
+The required battery charge voltage function ensures electrochemically optimum battery 
+charging by adjusting the battery charge voltage according to temperature. Since the 
+current absorbed by a cold battery is lower, the voltage for charging must be higher than 
+for a warm battery. 
+
+Conversely, if that higher voltage were constantly used to charge a warm battery, there 
+would be a risk of gas formation. Therefore, the charge voltage is regulated on the alter¬ 
+nator according to temperature. The current battery temperature is measured by the 
+intelligent battery sensor (IBS) attached directly to the battery negative terminal and sig¬ 
+nalled to the engine management module (DME) via the LIN bus. 
+
+The power management uses this value as the input variable for calculating the battery 
+temperature. With the aid of a calculation model, the specified charging voltage is set 
+based on the battery temperature. This information is sent to the alternator via the bit- 
+temperature of serial data interface (BSD). 
+
+Battery Regeneration 
+
+In order to ensure the availability of IGR Low, a certain level of unused capacity must 
+always be retained in the battery. That is implemented by means of IGR High and IGR 
+Medium. For the battery, that means that it is never fully charged. If a battery were not 
+fully charged over a long period or were left fully discharged, sulphation could occur. 
+Sulphation causes a battery to prematurely age, thereby reducing the usable proportion 
+of its rated capacity. To prevent that occurring, the required battery charge voltage func¬ 
+tion performs a battery regeneration cycle in the course of which the battery is fully 
+charged. 
+
+On vehicles with IGR function, regular battery regeneration phases are maintained in 
+order to protect the battery against premature aging and loss of capacity due to cyclic 
+discharge and sulphation. That involves the battery being fully charged using the maxi¬ 
+mum permissible charge voltage taking account of ambient conditions (temperature, 
+charge level). 
+
+Emergency Operation 
+
+The APM makes use of emergency operation set to a constant 14.3 V. A fault code func¬ 
+tions when there is a break in the LIN “Communication LIN” is entered in the fault inter¬ 
+face. In this case, the alternator voltage is code memory of the engine management. 
+
+
+41 
+
+F01 Energy Management 
+
+
+
+Electric Load Reduction 
+
+In order to reduce the power consumption in critical situations, not only can the idling 
+speed be increased and the required charge voltage raised, the power of various non- 
+essential electrical devices can be reduced or they can be switched off altogether. 
+
+That prevents the battery being discharged. 
+
+The electrical devices (that consume power when the engine is running) are subdivided 
+into two classes. 
+
+• Class A 
+
+A reduction of the power consumption or shut-down of these devices is only notice¬ 
+able to the driver to a limited degree or after a delay. Individual Class A devices are 
+only switched off or have their power consumption reduced under the following 2 
+conditions: 
+
+- Battery charge status in critical range 
+
+- High load on alternator. 
+
+• Class B 
+
+A reduction of the power consumption or shut-down of these functions is immedi¬ 
+ately noticeable to the driver. Individual Class B devices are only switched off or have 
+their power consumption reduced under the following condition: 
+
+- Battery charge status in critical range. 
+
+Class A Electrical Devices 
+
+The following measures are taken for Class A devices under the conditions specified 
+above: 
+
+
+Sequence 
+
+Function 
+
+Operation 
+
+Control unit 
+
+1 
+
+Rear window defogger 
+
+Clocking 
+
+IHKA 
+
+2 
+
+Seat heating, rear 
+
+Stage 2 
+
+SM FAH SM BFH JB 
+
+
+Electric auxiliary heater, rear 
+
+75% 
+
+FKA 
+
+
+Seat heating, front 
+
+Stage 2 
+
+SM FASM BF JB 
+
+
+Seat heating, rear 
+
+50% 
+
+SM FAH SM BFH JB 
+
+4 
+
+Electric auxiliary heater, rear 
+
+50% 
+
+FKA 
+
+R 
+
+Seat heating, front 
+
+50% 
+
+SMFASMBF JB 
+
+J 
+
+Seat heating, rear 
+
+Stage 1 
+
+SM FAH SM BFH JB 
+
+
+Electric auxiliary heater, rear 
+
+25% 
+
+FKA 
+
+u 
+
+Steering wheel heating 
+
+50% 
+
+SZL 
+
+
+Electric auxiliary heater, rear 
+
+OFF 
+
+FKA 
+
+7 
+
+Mirror heating 
+
+OFF 
+
+FRM/JB 
+
+
+Washer-jet heating 
+
+OFF 
+
+JB 
+
+8 
+
+Steering wheel heating 
+
+OFF 
+
+SZL 
+
+q 
+
+Seat heating, front 
+
+OFF 
+
+SMFASMBF JB 
+
+ZJ 
+
+Seat heating, rear 
+
+OFF 
+
+SM FAH SM BFH JB 
+
+
+42 
+
+Power Management 
+
+
+
+
+
+
+Sequence 
+
+Function 
+
+Operation 
+
+Control unit 
+
+10 
+
+Rear window defogger 
+
+OFF 
+
+IHKA 
+
+11 
+
+Top-HiFi system or BMW individual 
+high end audio system 
+
+Maximum 30 A power con¬ 
+sumption after engine started 
+
+Top HiFi High End Audio 
+
+
+All measures are implemented in the specified order. 
+
+
+Class B Electrical Devices 
+
+The following measures are taken for Class B devices under the conditions specified 
+above: 
+
+
+Sequence 
+
+Function 
+
+Operation 
+
+Control unit 
+
+
+Top-HiFi system or BMW individual 
+
+Maximum 30 A power con¬ 
+
+Top HiFi High End Audio 
+
+1 
+
+high end audio system 
+
+sumption in general 
+
+
+
+Heater fan, front and rear 
+
+75% 
+
+IHKA FKA HKA 
+
+2 
+
+Heater fan, front and rear 
+
+50 
+
+IHKA FKA HKA 
+
+3 
+
+Heater fan, front and rear 
+
+25% 
+
+IHKA FKA HKA 
+
+
+All measures are implemented in the specified order. 
+
+Once the battery charge level is outside the critical range, the functions are fully available 
+
+again. 
+
+Note: While shut-down of individual devices or reduction of their power con¬ 
+sumption is active, the displays remain active (LEDs remain on). 
+
+Note: If devices have their power consumption reduced or are switched off, 
+a fault memory entry is registered and the history memory records the 
+duration, odometer reading, and the function concerned. 
+
+
+43 
+
+Power Management 
+
+
+
+
+
+Electric load reduction 
+
+In vehicles with APM, in addition to increasing the idle speed and the charging voltage 
+specification, it is also possible to deactivate various loads/consumers to reduce power 
+consumption. 
+
+Load/consumer deactivation is performed under the following two conditions: 
+
+• State of battery charge in critical range 
+
+• Alternator fully utilized 
+
+Energy Flow 
+
+During vehicle operation, the mechanical energy of the engine is converted by the alter¬ 
+nator into electrical energy and made available to the electric loads. The electric loads 
+receive their power supply mainly via terminal 30g and via terminal 30g_f. 
+
+Certain electric loads are also still supplied directly by terminal 30 or by terminal R. For 
+example, the anti-theft alarm system (DWA) must still remain active when the vehicle is 
+parked. 
+
+Current flow during vehicle operation 
+
+
+
+□ 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric loads 
+
+5 
+
+Vehicle battery 
+
+2 
+
+Drive motor 
+
+6 
+
+Control units 
+
+3 
+
+Alternator 
+
+Kl.30g 
+
+Terminal 30, switched 
+
+4 
+
+Intelligent Battery Sensor 
+
+Kl.30g_f 
+
+Terminal 30 switched, fault dependent 
+
+
+44 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Information Flow 
+
+The calculations necessary for controlling the energy balance take place in the power 
+management. The idle speed and charging voltage are regulated while the engine is run¬ 
+ning. The power intake of electric loads with relatively high power consumption is 
+reduced or the loads are switched off as reguired. 
+
+Certain electric loads can be switched off when the engine is stationary. This takes place 
+either time-controlled via the CAS and the terminal 30g relay or in response to electrical 
+faults via the engine control, junction box and the terminal 30g_f relay. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electrical loads 
+
+4 
+
+Intelligent Battery Sensor 
+
+2 
+
+Engine 
+
+5 
+
+Vehicle battery 
+
+3 
+
+Alternator 
+
+6 
+
+Control units 
+
+
+45 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle in Stationary Mode (terminal R and terminal 30) 
+
+Electric Loads in Stationary Mode 
+
+Certain electric loads may be active even when the closed-circuit current monitoring 
+facility of the power management is already in operation. This is necessary for various 
+reasons: 
+
+• Legally required electric loads, e.g. side lights, hazard warning system 
+
+• Convenience for the customer, e.g. radio function, telephone 
+
+These electric loads must be excluded from the closed-circuit monitoring system in order 
+to avoid misinterpretation in the power management. For this purpose, these electric 
+loads must log in with the power management. 
+
+In turn, the power management recognizes the activity and accepts the higher power 
+consumption when the systems are deactivated, the corresponding control units log off 
+from the power management. 
+
+Stationary Load Log-off 
+
+The power management in the engine control can send a request to switch off the active 
+electric loads in stationary mode depending on the battery charge status and the start 
+capability limit. As a result, the stationary loads must deactivate their functions 
+irrespective of the terminal status and must reach their closed-circuit current within 5 
+minutes. Legally required electric loads are excluded from this function. 
+
+Terminal 30g and Terminal 30g_f 
+
+The system is equipped with various relays for switching off the power supply to most 
+control units. There are two terminal 30g relays in the front and rear power distribution 
+boxes. The terminal 30g_f relay in the rear power distribution box is required for the 
+following optional equipment: 
+
+• Multi-audio system controller 
+
+• Car communication computer 
+
+• Comfort Access 
+
+• Instrument cluster 
+
+• Telephone US/telephone preparation US 
+
+
+46 
+
+Power Management 
+
+
+
+
+The terminal 30g relay switches off the connected electric loads after 30 minutes. 
+
+The after-running time is extended to 60 minutes if a telephone or auxiliary heating 
+system is installed in the vehicle. The terminal 30g relay is activated by the CAS. 
+
+The terminal 30g_f relay is activated by the junction box control unit and switches off the 
+connected electric loads if a fault occurs. The terminal 30g_f relay is a bistable relay. 
+
+Each switching status is retained even when no power is applied. 
+
+The relays are controlled by following control units: 
+
+• Terminal 30g_f - activation by the junction box control unit 
+
+The calculation necessary for activating the terminal 30g_f relay takes place in two 
+control units. The following activities are monitored in the junction box control unit: 
+
+- Invalid wake-up procedures within the bus systems 
+
+- Sleep blockers (control units that constantly keep the bus systems active) 
+
+The battery values are constantly read and evaluated in the engine control unit. The relay 
+is also switched off when the starting capability limit of the vehicle battery is reached. 
+
+• Terminal 30g - activation by the CAS 
+
+
+Description 
+
+Explanation 
+
+KL15 
+
+Ignition (position 2) 
+
+KLR 
+
+Accessory (position 1) 
+
+KL 30 
+
+B+ Constant 
+
+KL 30g 
+
+B+, time dependent 
+
+KL 30 g_f 
+
+B+, fault dependent 
+
+
+Note: Switching terminal 30g_f results in a reset of the instrument cluster. 
+This means the time must be reset again. 
+
+Note: For more information regarding terminals and relays, refer to the 
+Terminal Control section of this training material. 
+
+
+47 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+30g/30g_f relays wiring diagram 
+
+
+
+Index 
+
+Explanation 
+
+Definition/Function 
+
+1 
+
+IBS 
+
+Monitors voltage, current and temperature 
+
+2 
+
+Vehicle battery 
+
+Supplies power via the power distribution 
+boxes to the individual loads 
+
+3 
+
+Front power distribution box 
+with terminal 30g relay 
+
+Equipped with one relay for load shutdown (KL30g) 
+
+4 
+
+Rear power distribution 
+box with KL30g and 
+KL30g_f relays 
+
+Equipped with two relays for load shutdown (KL30g and KL30g_f) 
+
+5 
+
+CAS 3 
+
+Responsible for controlling KL30g relay in the power distribution boxes 
+
+6 
+
+Junction Box Control unit 
+
+Responsible for controlling the KL30g_f relay 
+
+7 
+
+Digital Motor Electronics 
+
+Responsible for evaluating the measured data of the IBS and requests 
+activation by the junction box control unit as required. When the charge 
+status of the battery is low, at "terminal R OFF", the engine management 
+additionally sends a request to switch off terminal 30g to the CAS. 
+
+
+48 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Measures (E70) 
+
+The terminals "load shut-down" and the terminal "interior lighting" are switched off as a 
+general measure when the vehicle is in stationary mode. This occurs only when the 
+vehicle is not locked and secured. These loads are shut down immediately when the 
+vehicle is locked and secured. 
+
+This measure affects the following electric loads: 
+
+
+Electric Loads 
+
+Terminal 
+
+Interior lighting (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Footwell lighting (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Reading light (front and rear) 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Vanity mirror light 
+
+Load shut-down after 8 minutes (immediately if locked) 
+
+Terminal R 
+
+Load shut-down 8 minutes after opening door (immedi¬ 
+ately if locked, only on vehicles with Comfort Access) 
+
+Terminal R 
+
+Load shut-down after 2 minutes at poor battery charge 
+status (immediately if locked, only on vehicles with 
+Comfort Access) 
+
+Light (switch position 2 - low beam) 
+
+Load shut-down after "terminal R OFF" and door open 
+
+
+Continuous Positive 
+
+As before, various electric loads are connected directly to terminal 30. The PDC control 
+unit is connected to terminal 15. 
+
+Note: For more information regarding terminals and relays, refer to the 
+Terminal Control section of this training material. 
+
+
+49 
+
+Power Management 
+
+
+
+
+System Components 
+
+
+Components 
+
+The components of the energy management system are: 
+
+• Engine 
+
+• Alternator 
+
+• Vehicle battery 
+
+• Intelligent battery sensor 
+
+• Junction box module 
+
+• Engine management (power management) 
+
+• Loads 
+
+The most important components of the energy management system are described 
+in the following. 
+
+Intelligent Battery Sensor (IBS) 
+
+The intelligent battery sensor has a similar range of functions to the intelligent battery 
+sensor on previous models. A new feature is data transmission between the IBS and the 
+engine management module via LIN bus and the wake-up function of the IBS. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Battery negative terminal 
+
+2 
+
+IBS 
+
+3 
+
+Battery negative lead 
+
+
+50 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+The intelligent battery sensor (IBS) is a mechatronic component for monitoring the 
+battery condition. The description “intelligent” indicates that the IBS has an integral 
+microprocessor. That microprocessor performs the computation and assessment of 
+time-critical measured variables. 
+
+The power supply for the IBS is provided by a separate lead from the power distribution 
+box on the battery. The data from the IBS is passed to the higher-level control units 
+(DME) via the LIN bus. If necessary, the IBS can wake up the Junction box module via a 
+separate lead. 
+
+IBS in vehicle network 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Battery positive lead 
+
+5 
+
+Junction box module 
+
+2 
+
+Power supply for IBS 
+
+6 
+
+ECM (DME) 
+
+3 
+
+IBS 
+
+7 
+
+Battery negative lead 
+
+4 
+
+Wake-up line 
+
+LIN 
+
+Local Interconnect Network bus 
+
+
+51 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following physical battery variables are registered by the IBS: 
+
+• Current 
+
+• Voltage 
+
+• Terminal temperature. 
+
+Among other things, the following main functions are integrated in the IBS: 
+
+• Continuous measurement of the battery current, voltage and temperature under all 
+vehicle operating conditions. 
+
+• Calculation of the battery indicators as the basis for the charge and health status of 
+the battery. The battery indicators are charge and discharge current, voltage and 
+temperature of the vehicle battery. Alongside calculation of the battery indicators, 
+preliminary computation of the battery charge level (“state of charge”, SOC) is also 
+carried out. 
+
+• Balancing of the charge/discharge current of the battery. 
+
+• Continuous monitoring of the battery charge status and making available the corre¬ 
+sponding data in the event of insufficient battery power. 
+
+• Calculation of the current progression when starting the engine to determine the 
+battery health status. 
+
+• Closed-circuit current monitoring of the vehicle. 
+
+• Self-diagnosis 
+
+Wake-up Function 
+
+When the vehicle is in idle mode, the IBS continuously records the data relevant to the 
+battery indicators. The IBS is programmed to wake up every 14 seconds in order to 
+update the measured data by taking new readings. The time required to take the read¬ 
+ings is approximately 50 milliseconds. The measured data is stored on the IBS in the 
+memory for recording the closed-circuit current. 
+
+The wake-up function applies only when the vehicle is in idle mode. If the IBS detects a 
+wake-up trigger, the Junction box module is woken up by a PWM signal. The IBS is 
+directly connected to the Junction box module via a separate lead. 
+
+
+The pulse duty factor indicates the reason for the wake-up: 
+
+
+Pulse duty factor 
+
+Reason for wake-up 
+
+20% 
+
+Starting capacity, limit 1 
+
+40% 
+
+Starting capacity, limit 2 
+
+60% 
+
+Raised closed-circuit current 
+
+
+52 
+
+Power Management 
+
+
+
+
+
+A wake-up due to raised closed-circuit current can take place up to three times. 
+
+Depending on the vehicle status and reason for the wake-up, the Junction box module 
+performs one of the following actions: 
+
+• Wakes up the vehicle so that the DME can send shut-down commands to 
+electrical devices that are operating while the vehicle is in parked mode 
+
+• Resets Terminal 30F (without waking up the vehicle) 
+
+• Switches off Terminal 30F (without waking up the vehicle). 
+
+A fault memory entry is registered in each case. 
+
+Commissioning 
+
+The IBS is fully functional as soon as it has been fitted to the battery terminal (screwed to 
+the grounding point and connected to the signal leads), i.e. it can immediately detect the 
+basic variables, current, voltage and temperature. 
+
+However, the variables derived from those readings for the purposes of power manage¬ 
+ment, i.e. battery condition, starting capacity, etc., must first be recalculated and, there¬ 
+fore, there is a time lag before they are available. 
+
+When the engine is restarted, the DME reads off the closed-circuit current progression. 
+
+If it diverges from the defined closed-circuit current progression, a fault is registered in the 
+DME fault memory. 
+
+In the period between “Engine OFF” and when the DME main relay is switched off, the 
+IBS is informed by the DME as to the maximum charge that can be drawn from the bat¬ 
+tery on the basis of ensuring that the engine can be reliably restarted. After the DME 
+main relay is switched off, the IBS continually checks the battery charge level (SOC) and 
+the closed-circuit current. 
+
+
+Note: For more information regarding energy management components refer 
+to the Power Supply section of this training material. 
+
+
+53 
+
+Power Management 
+
+
+
+Junction Box Module 
+
+
+The Junction box module (JBE) is responsible for switching the Terminal 30F relay and 
+for storing information (history data and fault memory entries) related to energy manage¬ 
+ment. As part of vehicle diagnostics, these data can be used to evaluate faults and to 
+analyse the vehicle battery. 
+
+
+
+Engine Management (Power Management) 
+
+The (power management) software for controlling the energy balance is located in the 
+engine management. On the basis of that control algorithm, various electrical devices in 
+the vehicle’s electrical system are switched off by the CAS control unit via the Terminal 
+30B relay or by the Central Gateway Module and engine management module via the 
+Terminal 30F relay. The power management is additionally responsible for evaluating and 
+storing the IBS data. 
+
+
+54 
+
+Power Management 
+
+
+
+Terminal Control 
+
+
+The terminals are switched on and off by turning the key in the ignition lock 
+(if equipped). 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Terminal 0 
+
+2 
+
+Terminal R 
+
+3 
+
+Terminal 15 
+
+4 
+
+Terminal 50 (engine start) 
+
+
+On vehicles without an ignition lock, the terminals are switched on and off by pressing 
+the Start-Stop button. The identification transmitter (remote control) must be inserted 
+and locked in its holder. The vehicle then automatically receives the terminal status ter¬ 
+minal R ON. 
+
+
+Terminal control on vehicles with Start-Stop button 
+
+
+
+
+
+
+
+The terminals can now be switched with the START-STOP button in the following order: 
+
+• Terminal R (1) 
+
+• Terminal 15 (2) 
+
+• Terminal R (3) 
+
+• Terminal 0 (4) 
+
+
+55 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This sequence is only possible when the brake pedal is not pressed on automatic trans¬ 
+mission vehicles and the clutch pedal on manual transmission vehicles. As soon as the 
+brake or clutch pedal is depressed, the engine will start the next time the START-STOP 
+button is pressed. 
+
+On vehicles equipped with comfort access, the identification transmitter needs only to be 
+located in the vehicle interior and not necessarily inserted in the holder. 
+
+The identification transmitter is detected via the interior aerial. Provided the vehicle was 
+shut down correctly, the terminal switching procedure start with the status terminal 0. The 
+terminals can now be selected one after the other by pressing the START-STOP button. 
+
+Terminal 30g and terminal 30g_f 
+
+Depending on the vehicle and system, there may be more terminals in the junction box 
+for power supply: 
+
+• Terminal 30g and 
+
+• Terminal 30g_f 
+
+These terminals are switched by relays in the junction box. 
+
+The terminal 30g relay is always installed. 
+
+The terminal 30g_f relay is installed only when one of the following options is ordered: 
+
+• M-audio system controller (MASK) 
+
+• Car communication computer (CCC) 
+
+Time-dependent Shutdown (terminal 30g) 
+
+The terminal 30g relay switches off the connected electrical loads after 30 minutes. 
+
+The afterrunning time is extended to 60 minutes if a telephone is installed in the vehicle. 
+The terminal 30g relay is activated by the car access system. In the most current vehicles 
+control units such as the CID (central information display), DSC (dynamic stability control), 
+CON (controller) are supplied with voltage via this terminal. 
+
+
+56 
+
+Power Management 
+
+
+
+Fault-dependent Shutdown (terminal 30g_f) 
+
+The terminal 30g_f relay is controlled by the junction box control unit and switches off the 
+connected electric loads (MASK or CCC) if a fault occurs. The terminal 30g_f relay is a 
+bistable relay. Each switching status is retained even when no power is applied. 
+
+The terminal 30g_f relay is switched on and off under the following conditions. 
+
+Terminal 30g_f ON at: 
+
+• Unlock vehicle or 
+
+• Terminal R or 
+
+• Change in contact status (rear lid and doors) 
+
+Terminal 30g_f OFF at: 
+
+• Receiving the "Signal OFF" message. Terminal 30g_f relay is switched 
+off after 5 minutes. 
+
+• Bus activity for 60 minutes with no switch on condition applicable. 
+
+• Vehicle is woken 30 times with no switch on condition applicable. 
+
+The terminal 30g_f relay is a bistable relay and is always switched on under normal condi¬ 
+tions. It switches off the connected electric loads only in the case of fault. Once the ter¬ 
+minal 30g_f relay has been switched off, one of the switch-on conditions is necessary in 
+order to switch it on again. 
+
+New Terminal Designation 
+
+As of the introduction of the F01/F02 (Boardnet 2020 platform) new designations for 
+some of the terminals where implemented. A distinction is also made between logical 
+terminals and power supply terminals. 
+
+The logical terminals are: 
+
+• Terminal R 
+
+• Terminal 15 
+
+• Terminal 50 
+
+
+Note: All Boardnet 2020 FOx vehicles are based on the F01 Terminal Control. 
+
+
+57 
+
+Power Management 
+
+
+
+The logical terminals do not serve as power supply terminals; instead, they represent a 
+status. They are activated/deactivated by pressing the START-STOP button. Their status 
+is signalled to the control units by means of a bus message. 
+
+The power supply terminals are: 
+
+• Terminal 30 
+
+• Terminal 15N 
+
+• Terminal 30B 
+
+• Terminal 30F 
+
+
+Terminal 
+
+Description 
+
+Terminal 15 
+
+Terminal 15N 
+
+Terminal R 
+
+Radio setting 
+
+Terminal 30 
+
+Continuous positive 
+
+Terminal 30g 
+
+Continuous positive, time dependent 
+
+Terminal 30g_f 
+
+Continuous positive, fault dependent 
+
+
+The table below details the previous and new terminal designations. 
+
+
+Previous 
+
+New 
+
+Terminal 15 
+
+Terminal 15N 
+
+Terminal 30g 
+
+Terminal 30B 
+
+Terminal 30g_f 
+
+Terminal 30F 
+
+
+58 
+
+Power Management 
+
+
+
+
+
+
+
+Terminal 15N 
+
+Terminal 15N is used to supply power to control units and components that are only 
+intended to be active when the vehicle is being driven, e.g. PDC. 
+
+The letter “N” stands for “Nachlauf”, meaning “overrun”. The power supply Terminal 15N 
+is switched on and off by means of the logical Terminal 15. The overrun time after 
+Terminal 15N is switched off is 5 seconds. That time is required so that the control units 
+have enough time to save their data. While Terminal 15N is active, Terminal 30B and 
+Terminal 30F are also active. 
+
+Terminal 30B 
+
+Terminal 30B supplies power to control units and electrical components 
+that are required when the driver is present. 
+
+The letter B stands for “Basic mode”. 
+
+Terminal 30B is activated by: 
+
+• Pressing the buttons on the radio remote control 
+
+• Unlocking/locking/double-locking the vehicle 
+
+• Pressing the START-STOP button 
+
+• Change of door switch status, change of trunk switch status, 
+change of side-window position 
+
+• Bus message 
+Regular deactivation by: 
+
+• Vehicle double-locked and tailgate closed (one minute overrun) 
+
+• Vehicle not double-locked or tailgate open (30 minutes overrun) 
+
+Other possible deactivation triggers: 
+
+• Upper starting capacity limit reached (one minute overrun) 
+
+• “Powerdown”: diagnosis command for purposes of measuring 
+closed-circuit (10 seconds overrun) 
+
+• Transport mode (one minute overrun) 
+
+While Terminal 30B is active, Terminal 30F is also active. 
+
+
+59 
+
+Power Management 
+
+
+
+Terminal 30F 
+
+Terminal 30F supplies power to control units and electrical devices that are also required 
+when the driver is not present but which can be switched off in the event of a fault. 
+
+Use: all control units that are not supplied by Terminal 15N or Terminal 30B, are not 
+responsible for vehicle access and do not have to meet a legal requirement for permanent 
+operation. 
+
+The letter “F” stands for “Fault”. 
+
+Terminal 30F is activated by: 
+
+• Pressing the buttons on the radio remote control. 
+
+• Unlocking/locking/double-locking the vehicle. 
+
+• Pressing the START-STOP button. 
+
+• Change of door switch status, change of tailgate 
+switch status, change of side-window position. 
+
+• Bus message. 
+
+In the event of a fault (closed-circuit current too high, bus wake-up, sleep-mode inhibitor, 
+start capacity limit reached) Terminal 30F is reset for 10 seconds. 
+
+Terminal 30F is not reset or switched off if at least one of the following conditions is met: 
+
+• Terminal 30B active. 
+
+• Parking lights switched on. 
+
+• Side lights switched on. 
+
+• Flazard warning lights switched on. 
+
+• If an extended overrun time for Terminals 30B and 30F is demanded by a service 
+message from any of a number of control units. Example: when the engine is warm, 
+it can be necessary for the electric fan to run on for up to 11 minutes after the vehi¬ 
+cle is parked and locked. In order for the electric fan to be operated, the engine man¬ 
+agement module must be supplied with power. Since the overrun time in that case is 
+only three minutes (that is currently the short overrun time for Terminal 30B, not one 
+minute), the DME requests the appropriate extension byway of a bus message 
+when the engine is switched off. 
+
+• “Sticking relay” detected. 
+
+Terminal 30F is switched off if Terminal 30B is off and at least one of the following 
+conditions is met: 
+
+• Starting capacity limit reached. 
+
+• Another 10 bus wake-ups have occurred afterTerminal 30F reset. 
+
+• Unexplained bus activity afterTerminal 30F reset. 
+
+• Violation of closed-circuit current limit detected afterTerminal 30F reset. 
+
+
+60 
+
+Power Management 
+
+
+
+FOx Terminal Control 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+START-STOP button pressed and brake pedal oper¬ 
+ated —> Terminal 50 is activated and engine starts 
+
+8 
+
+Pressing the START-STOP button toggles termi¬ 
+nal status between Terminal 15 and Terminal 0. 
+
+2 
+
+Engine running (Terminal 50 > Terminal 15) 
+
+9 
+
+Terminal 0 
+
+3 
+
+START-STOP button pressed and brake pedal oper¬ 
+ated —> Engine starts. 
+
+10 
+
+Pressing the START-STOP button changes the 
+terminal status from Terminal R to Terminal 0. 
+
+4 
+
+If selector lever is in position “N” and the engine is 
+stopped by pressing the START-STOP button, 
+Terminal 15 remains on for 15 minutes. 
+
+11 
+
+Change from Terminal R to Terminal 0 if more 
+than 8 minutes elapsed or vehicle is locked or 
+starting capacity limit reached. 
+
+5 
+
+Terminal 15 
+
+12 
+
+START-STOP button briefly pressed 
+—> Engine stops. Terminal R. 
+
+6 
+
+Terminal R 
+
+13 
+
+START-STOP button pressed and brake pedal 
+operated —> Engine starts. 
+
+7 
+
+Terminal 15 OFF when vehicle is locked or starting 
+capacity limit reached. 
+
+
+
+
+61 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terminal Relays 
+
+The FOx vehicles have various relays for switching off the power supply to most control units. 
+
+
+Location 
+
+Relay 
+
+Connection 
+
+Controlled by: 
+
+Front fuse box 
+
+KL 15N 
+
+Soldered 
+
+CAS 
+
+Front fuse box 
+
+KL 30B 
+
+Plugged in 
+
+CAS 
+
+Front fuse box 
+
+KL30F (bistable) 
+
+Soldered 
+
+ZGM/DME 
+
+Rear fuse box 
+
+KL 15N 
+
+Soldered 
+
+CAS 
+
+Rear fuse box 
+
+KL 30B 
+
+Plugged in 
+
+CAS 
+
+Rear fuse box 
+
+KL30F (bistable) 
+
+Soldered 
+
+ZGM/DME 
+
+
+The Junction box module controls the bistable relays for Terminal 30F but receives the 
+request from the central gateway module (ZGM) or IBS. 
+
+• ZGM: If sleep mode inhibited or on occurrence of unauthorized wake-up. 
+
+ZGM monitors the vehicle status and registers inhibited sleep mode or 
+unauthorized wake-up after Terminal 30B is switched off. 
+
+• IBS: If closed-circuit current limit violated or starting capacity limit reached. 
+
+The computation for activating the Terminal 30F relay takes place on two control units. 
+The ZGM monitors the following activities: 
+
+• Invalid wake-up procedures within the bus systems. 
+
+• Sleep blockers (control units that constantly keep the bus systems active). 
+
+The ECM (DME) continuously reads and assesses the battery data. The relay is also 
+switched off when the starting capability limit of the vehicle battery is reached. 
+
+The Terminal 30F relay is a bistable relay and is always in the ON state under normal con¬ 
+ditions. It switches off the connected electric loads only in the case of fault. Once the 
+Terminal 30F relay has been switched off, one of the switch-on conditions must be met 
+before it can be switched on again. 
+
+Note: More information on this topic can be found in the Reference Information 
+on the CAS. 
+
+
+62 
+
+Power Management 
+
+
+
+
+General Measures (FOx) 
+
+The terminals "load shut-down" and the terminal "interior lighting" are switched off as a 
+general measure when the vehicle is in stationary mode. This occurs only when the vehi¬ 
+cle is not locked and secured. These loads are shut down immediately when the vehicle 
+is locked and secured. This measure affects the following electric loads: 
+
+
+Electric loads 
+
+Terminal 
+
+Interior lighting (front and rear 
+
+Load shut-down after 8 minutes (immediately if double locked) 
+
+Footwell lighting (front and rear) 
+
+Load shut-down after 8 minutes (immediately if double locked) 
+
+Reading light (front and rear) 
+
+Load shut-down after 8 minutes (immediately if double locked) 
+
+Vanity mirror light 
+
+Load shut-down after 8 minutes (immediately if double locked) 
+
+
+Note: For more information regarding Terminal Control and the Car Access 
+System (CAS) refer to the EWS/CAS section of this training material. 
+
+
+63 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+Power Supply Schematics 
+
+
+E65 Power Supply 
+
+
+
+
+
+
+
+
+
+64 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+DME (Digital Motor Electronics) 
+
+2 
+
+Alternator 
+
+3 
+
+Starter 
+
+4 
+
+Jump start terminal point 
+
+5 
+
+Fuse carrier, engine compartment 
+
+6 
+
+Main fuse 
+
+7 
+
+Battery 
+
+8 
+
+Fuse carrier, luggage compartment 
+
+9 
+
+Power module 
+
+10 
+
+Temperature sensor 
+
+11 
+
+Battery switch 
+
+12 
+
+CAS (Car Access System) 
+
+13 
+
+ZGM (Central Gateway Module) 
+
+14 
+
+SIM 
+
+15 
+
+SBSR 
+
+16 
+
+Fuse carrier, glove box 
+
+17 
+
+Battery Safety Terminal (BST) 
+
+
+65 
+
+Power Management 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+7 
+
+Intelligent Battery Sensor 
+
+2 
+
+Starter 
+
+8 
+
+Micro-power module 
+
+3 
+
+Front power distribution box 
+
+9 
+
+CAS (Car Access System) 
+
+4 
+
+Rear power distribution box 
+
+10 
+
+DME (Digital Motor Electronics) 
+
+5 
+
+Battery Safety Terminal 
+
+11 
+
+DME main relay 
+
+6 
+
+Battery 
+
+
+
+
+66 
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E90 Power Supply 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Front power distribution box 
+
+8 
+
+CAS (Car Access System) 
+
+2 
+
+Junction Box 
+
+9 
+
+Starter 
+
+3 
+
+Battery Safety Terminal 
+
+10 
+
+Alternator 
+
+4 
+
+Battery 
+
+KI.30 
+
+Continuos positive 
+
+5 
+
+Intelligent Battery Sensor 
+
+Kl.30g_f 
+
+Switch positive, fault dependent 
+
+6 
+
+Rear power distribution box 
+
+Kl.30g 
+
+Switch positive, time dependent 
+
+7 
+
+DME (Digital Motor Electronics) 
+
+KI.15 
+
+Ignition 
+
+
+67 
+
+
+Power Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E70 Power Supply 
+
+
+r 
+
+
+© 
+
+ID 
+
+
+DME 
+
+
+© 
+
+
+BSD 
+
+
+68 
+
+Power Management 
+
+
+
+
+°—E3- 
+
+
+-& 
+
+
+°—EEh 
+
+
+o Q- 
+
+
+
+
+
+-& 
+
+
+0 —EEI- 
+
+
+
+
+0 —EEh 
+
+
+-& 
+
+
+-& 
+
+
+
+
+° □ 
+
+
+
+rrr 
+
+
+
+
+JT01 
+
+
+
+r&| 
+
+
+
+"1 1-1 
+
+KI.30 
+
+5 1_1 
+
+D 1_1 
+
+3 1-1 
+
+
+KL 15 
+
+3 1_1 
+
+3 I-1 
+
+J 1_1 
+
+
+
+
+
+r&] 
+
+
+rB] 
+
+
+
+KD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Front distribution box, behind glove compartment 
+
+2 
+
+Rear distribution box, right hand side of luggage compartment 
+
+3 
+
+Safety battery terminal 
+
+4 
+
+Vehicle battery 
+
+5 
+
+Intelligent battery sensor (IBS) 
+
+6 
+
+Distribution box, on battery 
+
+7 
+
+Car Access System 3 (CAS 3) 
+
+8 
+
+Junction box control unit (JBE) 
+
+9 
+
+Digital Motor Electronic (DME) 
+
+10 
+
+Alternator 
+
+11 
+
+Starter 
+
+KL30 
+
+Continuous B+ (battery power) 
+
+KL30g_f 
+
+Switched positive (fault dependent) 
+
+KL30g 
+
+Switched positive, time dependent 
+
+KL15 
+
+Ignition ON 
+
+DME 
+
+DME main relay 
+
+BSD 
+
+Bit-serial data interface 
+
+K-CAN 
+
+Body CAN 
+
+PT-CAN 
+
+Powertrain CAN 
+
+
+69 
+
+Power Management 
+
+
+
+
+F01/F02 System Circuit Diagram 
+
+
+
+70 
+
+Power Management 
+
+
+LW-ftjB 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Alternator 
+
+2 
+
+Starter 
+
+3 
+
+Power distribution box in engine compartment 
+
+4 
+
+Electronics box 
+
+5 
+
+Positive battery terminal 
+
+6 
+
+DME Digital Motor Electronics; DDE Digital Diesel Electronics 
+
+7 
+
+Front fuse carrier, behind the glove compartment 
+
+8 
+
+Junction box electronics 
+
+9 
+
+Rear fuse carrier, on the right-hand side of the luggage compartment 
+
+10 
+
+Transfer point on the luggage compartment floor 
+
+11 
+
+Intelligent battery sensor IBS 
+
+12 
+
+Vehicle battery 
+
+13 
+
+SBK safety battery terminal 
+
+14 
+
+Distribution box on the battery 
+
+15 
+
+ICM Integrated Chassis Management 
+
+16 
+
+ZGM central gateway module 
+
+17 
+
+Car Access System CAS 
+
+18 
+
+ACSM crash safety module 
+
+KL30 
+
+Continuous positive 
+
+30 
+
+KL30B 
+
+Terminal 30 basic operation 
+
+KL30F 
+
+Terminal 30 fault switched 
+
+KL 15N 
+
+Terminal 15 overrun 
+
+LIN-bus 
+
+Local Interconnect Network bus 
+
+K-CAN 2 
+
+Body controller area network 2 
+
+
+71 
+
+Power Management 
+
+
+
+
+
+
+72 
+
+Power Management 
+
+
+

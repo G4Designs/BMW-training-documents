@@ -1,0 +1,1710 @@
+Table of Contents 
+
+
+Lighting Systems 
+
+Subject Page 
+
+Light Check Module (LCM).3 
+
+Lamp Control and Monitoring.5 
+
+Bulb Ratings .6 
+
+LCM Input Signals.6 
+
+Brake Light Switch.7 
+
+Dimmer .7 
+
+Light Switch Illumination.7 
+
+Emergency Operation.8 
+
+LCM III .8 
+
+Replacement Lighting .9 
+
+Output Voltage Limiting Function .9 
+
+Follow Me Home Lighting.9 
+
+Xenon Headlight Systems.10 
+
+LWR .11 
+
+Version Identification.11 
+
+Headlight Replacement Parts.11 
+
+Xenon High Intensity Discharge Bulbs .12 
+
+Phases of Bulb Operation .12 
+
+Functional Description.12 
+
+Xenon Bulb Monitoring.13 
+
+Headlight Beam Throw Control (LWR).14 
+
+LWR Components.15 
+
+LWR Control Module - E38, E39 and E53 Vehicles.15 
+
+Level Sensors .15 
+
+Headlight Adjustment Stepper Motors .16 
+
+Functional Description .16 
+
+Headlight Alignment .16 
+
+LWR Diagnosis.16 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lighting Systems 
+
+
+Model: E38, E39 and E53 
+
+Production: Start of Production MY 2004 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand the operation of LCM. 
+
+• Locate and Identify components of the lighting system. 
+
+• Diagnose lighting system concerns. 
+
+• Understand Xenon lighting systems. 
+
+
+2 
+
+Lighting Systems 
+
+
+
+
+Light Check Module (LCM) 
+
+Upon the initial introduction of the E38 in 1995, the lighting system was controlled by the 
+Lamp Module (LM). The LM worked in conjunction with the Check Control Module 
+(CCM) to control and monitor exterior lights. 
+
+From 9/95 production, the LM and CCM were combined to form the Light Check Module 
+(LCM). The new LCM provides a cost savings by combining the two functions into one 
+processor. 
+
+It is installed in the right kick panel where the LM of the 95 E38 was installed. Both ver¬ 
+sions of instrument clusters use the LCM for processing Check Control data and control¬ 
+ling the exterior lighting functions of the vehicle. The LCM communicates with other 
+modules over the “I” and “K” busses. 
+
+Functions of the LCM include: 
+
+• Monitoring of all check control inputs 
+
+• Formation and output of check control messages or signals 
+
+• Control of all vehicle external lighting 
+
+• Monitoring of all external lighting for operation 
+
+• Instrument panel illumination dimming (KL 58g) signal 
+
+• Control of instrument cluster indicator lights - for high beam, turn signal and fog light 
+indicators. 
+
+For proper operation of the check control and lamp control functions, the LCM must be 
+coded with the Central Coding Key (ZCS) if replacement is required. 
+
+LCM 
+
+
+
+3 
+
+Lighting Systems 
+
+
+
+
+
+
+The LM/LCM reduces a number of components that were used in the past. 
+
+The LM/LCM replaces: 
+
+• Numerous relays 
+
+• Flasher unit 
+
+• Crash control unit (relay) 
+
+• Cold check relay 
+
+• Dimmer 
+
+The LCM transmits and receives status information concerning light operation. It also 
+communicates to the IKE when turn signal, high beam, and fog light indicators need to 
+be activated. 
+
+The LCM is informed by ZKE when a crash has occurred or the alarm was tripped for 
+headlight / flasher activation. 
+
+When reverse is selected, the LCM is signaled to turn on the back-up lights. All of this 
+communication takes place over the Bus system. 
+
+
+
+
+
+
+
+HIGH CLUSTER CONFIGURATION 
+
+
+BASE CLUSTER CONFIGURATION 
+
+
+4 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lamp Control and Monitoring 
+
+Lamp control and monitoring on the E39 and E53 follow the E38 in design and function. 
+All exterior lighting is controlled by the LCM. It contains transistor power output stages for 
+activating the lights. This eliminates the need for fuses and relays previously used for this 
+purpose. 
+
+The LCM receives the input reguest for light illumination from the various switches and 
+data inputs from other control modules. The LCM then switches the power output 
+stages ON for lamp activation. 
+
+Other control modules that communicate with the LCM include: 
+
+• IKE over the l/K bus for turn signal, high beam and fog lamp indicator illumination. 
+
+• The ZKE for crash alarm indication. 
+
+• The AGS (EGS) control module for back up lamp activation. 
+
+All exterior lighting is monitored (both hot and cold) by the LCM. When the monitored 
+value exceeds an acceptable level (high or low) the LCM generates and sends the signal 
+to the IKE or base instrument cluster for check control display. This monitoring takes 
+place in timed cycles. 
+
+• Hot monitoring takes place from the LCM by monitoring the current flow through the 
+output stages. The current flow is determined by looking at the voltage drop of the 
+circuit. 
+
+• Cold monitoring takes place by the LCM by briefly switching the lights ON using a 
+small amount of current. The LCM uses this to measure the voltage drop of the 
+circuit. The small amount of current is not enough to cause the lights to illuminate. 
+
+Note: Due to the hot and cold monitoring of the lamp circuits, it is important 
+that the lamps used are of the correct wattage. Incorrect or substandard 
+bulbs can affect voltage drop and therefore possibly set erroneous check 
+control messages. 
+
+HOT MONITORING COLD MONITORING 
+
+
+
+
+5 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bulb Ratings 
+
+The chart below shows the wattage rating of some of the exterior lamps. In order for the 
+bulb monitoring circuits to function correctly, the proper wattage ratings must be 
+considered. The chart should only be used for reference. The proper rating can be found 
+in technical data Group 63. 
+
+The Low beam Xenon headlight systems are not cold monitored, however current can be 
+measured when switched on to allow for Hot monitoring to be functional. 
+
+
+Bulb 
+
+Wattage Rating 
+
+Hot monitored 
+
+Cold monitored 
+
+Low Beam (non Xenon 
+
+65 
+
+X 
+
+X 
+
+High Beam 
+
+55 
+
+X 
+
+X 
+
+Foglight 
+
+55 
+
+X 
+
+X 
+
+Front side marker 
+
+5 
+
+X 
+
+X 
+
+Blinkers 
+
+21 
+
+X 
+
+
+Blinker indicators 
+
+5 
+
+
+
+Tail lights 
+
+5 
+
+X 
+
+X 
+
+License plate lights 
+
+10 
+
+X 
+
+X 
+
+Brake lights 
+
+21 
+
+X 
+
+X 
+
+Backup lights 
+
+21 
+
+X 
+
+X 
+
+
+LCM Input Signals 
+
+Input signals to the lighting module are from the following switches: 
+
+• Park / low-beam light switch 
+
+• High-beam/headlight flash switch 
+
+• Turn signal switch 
+
+• Fog light switch 
+
+• Hazard switch 
+
+• Brake light switch 
+
+• Dimmer control 
+
+These inputs are ground switched except for the brake light switch. 
+
+
+6 
+
+Lighting Systems 
+
+
+
+Brake Light Switch 
+
+Brake light switch is now a hall-effect transmitter with three connections. The first con¬ 
+nection is power, supplied from KL R, with the second being ground. The third connec¬ 
+tion is the signal wire to the LCM. 
+
+The electronic brake light switch eliminates the need for the brake test switch. If the 
+brake switch or it’s circuits fail, the brake lights will be permanently on from KL R. 
+
+The signal wire from the electronic brake light switch is active when the brakes are 
+applied sending a 12 volt signal to the LCM. When the brake light switch is in the rest 
+position, there is a small digital signal of approximately lOOmv present on the signal line. 
+If this signal is interrupted, the LCM will switch the brakes lights on as a safety measure. 
+
+
++ ELECTRONIC 
+
+
+
+Brake pedal down - Brake pedal up = Signal Low 
+
+Signal High y* 
+
+◄- 
+
+Dimmer 
+
+The LCM controls the KL 58g circuit (instrument cluster, LCD, and switch back lighting). 
+The KL58g signal is a pulse width modulated signal which is an output of the LCM as 
+well as a signal output over the bus line. 
+
+The dimmer input to the LCM on early models is via a potentiometer. Later models use 
+an electronic dimmer which uses a pulse-width modulated signal to the LCM. 
+
+Light Switch Illumination 
+
+A separate circuit is used to back light the symbol of the light switch. The symbols are 
+fully illuminated when KL R is switched on and the lights are off. After the lights have 
+been turned on, the switch back lighting is reduced to the same intensity as KL 58g. 
+
+
+7 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emergency Operation 
+
+If there is a failure of the LCM processor, an emergency circuit is activated within the 
+LCM. This will allow the following lights to function for driving safety: 
+
+• Side marker/tail lights 
+
+• Low-beam lights 
+
+• Brake lights 
+
+• Turn signals 
+
+In emergency operation the following lights will not operate: 
+
+• Dimming control (full bright) 
+
+• Hazard lights 
+
+• High-beam lights 
+
+• Headlight flash 
+
+• Fog lights 
+
+• Back-up lights 
+
+The l-Bus/K-Bus communication to the LM will also be interrupted. 
+
+LCM III 
+
+From 9/98 production, the new LCM III was introduced with increased feature and 
+functions. The module itself has been redesigned with new semi-conductor final stages 
+that produce less heat in operation. This allows for the elimination of the protruding heat 
+sink found on the previous LCM. 
+
+
+
+8 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+The total scope of function and features has been expanded to improve comfort and 
+safety for the driver and passengers. Features and functional changes include: 
+
+• Replacement lighting for the parking lights 
+
+• Limiting of output voltage to the lamps 
+
+• Follow Me Home lighting (delayed exit) 
+
+Replacement Lighting 
+
+The LCM can use substitute bulbs for various lights if a failure should occur, for example: 
+
+• Front parking lights - If one of the parking lamps should fail, the LCM will illumi¬ 
+nate the turn signal bulb on the affected side. The lamp will be dimmed by the LCM 
+so that the intensity is the same as the parking lamp. 
+
+• Rear tail lights - If one of the rear tail lights should fail, the LCM will switch on the 
+brake lamp on the affected side. The lamp will be dimmed to the intensity of the tail 
+lamp. 
+
+Output Voltage Limiting Function 
+
+The output voltage applied to the parking and tail lamps is regulated to increase the life of 
+the lamps. If the voltage at the LCM increases over 12.5 volts, the LCM will reduce the 
+voltage to 12 volts. 
+
+Follow Me Home Lighting 
+
+This is a convenience feature which provides lighting for the driver and passengers to 
+leave their vehicle and enter their home. 
+
+This feature is switched on by pulling the headlight flasher switch after the headlights and 
+ignition have been switched off. This feature is switched off after a coded time delay or 
+by switching the ignition on. 
+
+
+9 
+
+Lighting Systems 
+
+
+
+Xenon Headlight Systems 
+
+
+In order to improve night time driving visibility, Xenon headlight systems were developed 
+for the automotive industry. Xenon technology is also referred to as High Intensity 
+Discharge lighting or HID. 
+
+For BMW vehicle Xenon technology was first introduced to the US market in 1993 on the 
+E32 750iL. Since this time Xenon technology has evolved and spread throughout the 
+model lineup. 
+
+The first thing noticed about Xenon lamps is the blue/white appearance of the headlights. 
+
+There are numerous benefits to Xenon headlights and these include: 
+
+• Longer bulb life - typically the xenon bulbs will last from 3 to 5 times longer than 
+conventional halogen bulbs. 
+
+• Increased light output - Xenon headlights produce 2.5 to 3 times more light (lumens) 
+than halogen headlights. 
+
+• Blue/white light - The blue/white light emitted from Xenon headlights simulates a 
+natural daylight appearance as opposed to the yellowish light from halogen bulbs. 
+The light color of a light source is measured in color temperature (do not confuse 
+with thermal temperature). Color temperature is measured in Kelvins (K). The 
+higher the number, the whiter the light appears to be. 
+
+- Natural daylight = 4,500 to 5000 K 
+
+- Xenon headlights = 4,000 to 4,500 K 
+
+- Halogen headlights = 3,200 K (yellow) 
+
+• Better driving visibility - the combination of higher lumens and color temperature 
+provides a superior lighting source. The beam is wider and brighter in front of the 
+vehicle than conventional halogen bulbs improving safety and driver comfort. 
+
+
+XENON HALOGEN 
+
+
+
+10 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LWR 
+
+
+On vehicles equipped with Xenon headlights systems, it is necessary to prevent the light 
+beam from affecting oncoming traffic. The Headlight Beam Throw Control (LWR) system 
+is used to adjust the headlights horizontally (on a vertical plane). The is accomplished by 
+using stepper motors in the headlight assembly. 
+
+The stepper motors are controlled by the LWR control module based on inputs from front 
+and rear mounted ride level sensors. 
+
+As the vehicle suspension is loaded by driving or by passengers and cargo, the LWR 
+module corrects the headlight position. This ensures the optimum headlight adjustment. 
+
+Version Identification 
+
+Xenon systems on BMW vehicles are supplied by two manufacturers - Bosch and Hella. 
+These systems vary between models. 
+
+The first version system on the E38 is referred to as Generation 2.1 an can be identified 
+by the flat bottom edge on the headlight housing. 
+
+The Generation 3 system has been introduced on the 1999 model year E38 and can be 
+identified by the rounded (scalloped) edge of the headlight assembly. 
+
+Headlight Replacement Parts 
+
+In previous model years, individual replacement parts were not available for headlight 
+assemblies. This was due to the Federal Motor Vehicle Safety Standards (FMVSS) relat¬ 
+ing to the pitting or corrosion of the reflector components in non-sealed beam headlight 
+assemblies. 
+
+
+BMW has submitted corrosion test data for headlight components which have passed the 
+FMVSS providing the availability of headlight assembly spare parts. This approval has 
+been given for all Bosch headlight assemblies (including halogen). 
+
+
+Vehicle 
+
+Model 
+
+Model 
+
+Year 
+
+Manufacturer/Version 
+
+LWR 
+
+(Yes/No) 
+
+Individual 
+replacement 
+parts availability 
+
+E32 (750il_) 
+
+93-94 
+
+Hella (Light & Control module) 
+
+Generation 1 
+
+No 
+
+No 
+
+E38 (750il_) 
+
+95-98 
+
+Bosch (Light & Control module) 
+
+Generation 2.1 
+
+No 
+
+Yes 
+
+E38 (All) 
+
+99-01 
+
+Bosch (light) and Hella (control module) 
+Generation 3 
+
+Yes 
+
+Yes 
+
+E39 (All) 
+
+99-02 
+
+Hella 
+
+Generation 3 
+
+Yes 
+
+No 
+
+E46 
+
+99- 
+
+Bosch Light and Control Module 
+
+Yes 
+
+Yes 
+
+
+11 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Xenon High Intensity Discharge Bulbs 
+
+Xenon bulbs are identified as D2-S. Xenon bulbs 
+illuminate when an arc of electrical current is 
+established between two electrodes in the bulb. The 
+xenon gas sealed in the bulb reacts to the electrical 
+excitation and head generated by the current flow. 
+
+The distinct blue/white light is the result of the xenon 
+gas reacting to the controlled current flow. 
+
+Phases of Bulb Operation 
+
+• Starting phase - the bulb requires an initial high 
+voltage pulse of 18-25kV to establish the arc. 
+
+• Warm up phase - Once the arc is established, the power supply to the bulb is 
+regulated to 2.6 amps generating a lamp output of 75 watts. This is the period of 
+operation where the xenon gas begins to brightly illuminate. The warm up phase 
+stabilizes the environment in the bulb ensuring continual current flow across the two 
+electrodes. 
+
+• Continual phase - once the warm up phase is completed, the system switches to a 
+continuous mode of operation. The supply voltage for the bulb is reduced and the 
+operation power required for continual bulb illumination is reduced to 35 watts which 
+is less than a conventional halogen bulb. 
+
+Functional Description 
+
+To regulate the power supply to the bulbs, additional components are required. The 
+xenon control modules (1 per light) receive operating power from the LCM when the 
+headlights are switched on. 
+
+The xenon control modules provide the regulated power supply to illuminate the bulbs 
+through their phases of operation. The igniters establish the electric arcs. Integral coils 
+generate the initial high voltage starting pulses from the control module provided starting 
+voltage. Thereafter they provide a closed circuit for the regulated power output from the 
+
+
+
+
+i 
+
+i 
+
+
+
+
+LEFT 
+
+IGNITER 
+
+
+RIGHT 
+
+IGNITER 
+
+
+
+12 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Xenon Bulb Monitoring 
+
+Xenon bulb function is monitored by the LCM. The bulbs are only “hot” monitored. Cold 
+monitoring is not possible since the lighting control module is not in direct control of the 
+xenon bulb. For this reason cold monitoring for low beam headlights is encoded off in the 
+lighting control module for Xenon headlight equipped vehicle. 
+
+The lighting control module detects xenon bulb failure via a reduction in current flow to 
+the xenon control module. When a bulb fails, the xenon control module’s current con¬ 
+sumption drops to 60mA indicating unsuccessful xenon bulb illumination. The lighting 
+control module then posts the appropriate matrix display message or LED illumination in 
+the Check Control Pictogram display. 
+
+
+Xenon Headlight Assembly Components 
+
+
+
+13 
+
+Lighting Systems 
+
+
+
+
+Headlight Beam Throw Control (LWR) 
+
+Overview 
+
+LWR automatically adjusts the vertical positioning of the headlights to maintain optimum 
+headlight beam positioning for maximum driving visibility and to prevent undue glare for 
+oncoming motorists. The system compensates for vehicle load angle changes (ie: dimin¬ 
+ishing reserve of gasoline in fuel tank during a long journey, overloaded cargo weight, 
+etc.) 
+
+LWR has been available on BMW vehicles in other markets for quite some time. Starting 
+with the 1999 model year all US market vehicles with Xenon Lights incorporate LWR as 
+standard equipment. LWR is not available with standard halogen headlights. 
+
+LWR monitors the vehicle’s loaded angle via two hall effect sensors mounted to the front 
+and rear suspension members. When an adjustment is necessary, LWR simultaneously 
+activates two stepper motors (one in each headlight assembly). 
+
+The stepper motors drive a threaded rod that moves the lower edge of the headlight 
+carrier plate forward and backward (depending on driven direction). The upper edge of 
+the headlight carrier plate is fixed on a pivot. The pivoting movement adjusts the vertical 
+position of the headlight beam. 
+
+
+NORMALLY LOADED VEHICLE 
+
+
+
+OVERLOADED VEHICLE (EXAGGERATED) 
+
+
+
+14 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LWR Components 
+
+LWR Control Module - E38, E39 and E53 Vehicles 
+
+The LWR control module is located in the electronics carrier forward of the glovebox. 
+The control module connects to a single, 26 pin, yellow harness connector. The control 
+module has diagnostic capabilities and communicates with the DISplus/GT-1 via the 
+K-Bus - IKE gateway to the D-Bus. 
+
+
+
+Level Sensors 
+
+LWR monitors two hall effect level sensors to determine vehicle load angle. The sensors 
+are mounted to a fixed point on the suspension carriers of the front and rear axles. 
+
+A lever is connected to the moving suspension member which changes the sensors 
+output linear voltage signal as the suspension moves up and down. 
+
+
+
+Note: E39 sport wagon vehicles with EHC have a dual output sensor at the 
+right rear location. This sensor shares the same housing as the EHC 
+systems right rear level sensor. 
+
+
+15 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Headlight Adjustment Stepper Motors 
+
+One stepper motor is located inside each headlight assembly. The 4 wire stepper motors 
+are controlled by the LWR control electronics to change the vertical headlight position. 
+
+
+
+Functional Description 
+
+The E38/E39 LWR system comes on-line when the lights are switched on. The LWR 
+control electronics then cycles the stepper motors through their full range of motion and 
+stops at a default position. 
+
+The control electronics monitors the level sensor input signals to determine the vehicles 
+load angle and adjusts the beam position accordingly. As the vehicle is driven it continu¬ 
+ally monitors the level sensor signals and if necessary updates the headlight beam posi¬ 
+tions every 25 seconds on the E46 or momentarily on the E38/E39 system. 
+
+Abrupt fluctuations of the sensor signals are filtered to prevent unnecessary adjustment 
+as well as monitoring road speed and brake pedal application as correction factors. 
+
+Headlight Alignment 
+
+The procedure for aligning Xenon Headlights with LWR is the same as conventional halo¬ 
+gen bulb systems with one additional step. Wait at least 30 seconds for the LWR to 
+cycle and adjust to it’s calculated position. 
+
+LWR Diagnosis 
+
+The LWR control module of the E38/E39 is diagnosable using the DISplus/GT-1. 
+
+The headlights must be switched on in order to start diagnosis. 
+
+
+16 
+
+Lighting Systems 
+
+
+
+
+LWR IPO 
+
+
+
+LEFT 
+
+HEADLIGHT 
+
+STEPPER 
+
+MOTOR 
+
+
+RIGHT 
+
+HEADLIGHT 
+
+STEPPER 
+
+MOTOR 
+
+
+
+
+FRONTAXLE LEVEL SENSOR 
+
+
+
+REAR AXLE LEVEL SENSOR 
+
+
+
+PROCESSED RIGHT FRONT 
+WHEEL SPEED SIGNAL 
+
+
+
+
+
+
+
+◄ 
+
+
+
+
+LEFT 
+
+HEADLIGHT 
+
+STEPPER 
+
+MOTOR 
+
+
+
+RIGHT 
+
+HEADLIGHT 
+
+STEPPER 
+
+MOTOR 
+
+
+17 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+n Classroom Exercise - Review Questions 
+
+
+1. What components does the LCM replace as compared to previous models? 
+
+
+2. What is the difference between the LM and LCM? 
+
+
+3. Explain “Cold Monitoring” of the lamp circuits: 
+
+
+4. How does the LCM detect brake light switch failure? 
+
+
+5. Why are Xenon bulbs NOT cold monitored? 
+
+
+18 
+
+Lighting Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+What is the purpose of LWR? 
+
+
+What is new about the LCM III? 
+
+
+What functions does the LCM perform when a crash input is received? 
+
+
+What are the differences between a Halogen Lamp and a Xenon Lamp? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

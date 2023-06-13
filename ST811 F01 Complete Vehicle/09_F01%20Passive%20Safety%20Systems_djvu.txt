@@ -1,0 +1,3453 @@
+Table of Contents 
+
+
+F01 Passive Safety Systems 
+
+Subject Page 
+
+Introduction .5 
+
+Model Overview.6 
+
+System Overview .7 
+
+F01/F02 Bus System Overview .7 
+
+ACSM3 System Circuit Diagram .10 
+
+System Functions.12 
+
+Crash-relevant Functions.13 
+
+Evaluating the Sensor Signals .13 
+
+Crash and Rollover Detection .14 
+
+Detecting a crash and determining the triggering 
+
+times and the order .15 
+
+Triggering the output stages of the firing circuits.15 
+
+Output of Crash Telegram .16 
+
+Crash Entries .16 
+
+Emergency Call Functions .17 
+
+Manual emergency call .17 
+
+Automatic emergency call .17 
+
+System Monitoring Functions.18 
+
+System Self-test (Pre-drive check) .18 
+
+Indication of System Operability .18 
+
+Cyclic Monitoring .18 
+
+Fault Indication and Fault Code Storage .19 
+
+Fault Output (Diagnosis) .19 
+
+Deactivating the Front Passenger Airbag.20 
+
+OC3 Mat .20 
+
+Passenger Airbag OFF light .21 
+
+Electric Motor Driven Reel .22 
+
+System Circuit Diagram for Electric Motor Driven Reel .23 
+
+Design and Function of the Electric Motor Driven Reel .25 
+
+Electric motor driven reel, not working .26 
+
+Electric motor driven reel in operation .27 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+System Components.28 
+
+Driver Airbag.28 
+
+Front Passenger Airbag .28 
+
+Crash Safety Module .29 
+
+Sensors and Switches .30 
+
+Central Sensor .30 
+
+Rollover Detection .31 
+
+Digital data transmission by means of current interface .31 
+
+Up-Front sensor.32 
+
+OC3 Mat .32 
+
+B-Pillar Sensor .33 
+
+Door Pressure Sensor.33 
+
+Seat Belt Buckle Switches .34 
+
+Actuators .35 
+
+Adaptive Driver Airbag, with Active Vent .35 
+
+Vent Valve .36 
+
+Adaptive front passenger airbag with active vent valve.38 
+
+Knee Airbags.39 
+
+Curtain/Plead Airbag .40 
+
+Seat-integrated Side Airbag .42 
+
+Seat Belt Pretensioner .43 
+
+Automatic seat belt tensioner with adaptive force limiter.44 
+
+Active Plead Restraint .48 
+
+Triggering in the event of a rear-end collision .49 
+
+Safety Battery Terminal .50 
+
+Airbag Warning Lamp .50 
+
+Passenger Airbag OFF light .51 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject 
+
+
+Page 
+
+
+
+Passive Safety Systems 
+
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+■MICTWIS 
+
+After completion of this module you will be able to: 
+
+• Describe the ACSM3 system of the F01/F02 
+
+• Describe the function of the ACSM3 system of the F01/F02 
+
+• Identify the components of the ACSM3 system of the F01/F02 
+
+
+4 
+
+F01 Passive Safety Systems 
+
+
+Introduction 
+
+
+The F01/F02 passive safety system aims towards the objectives and characteristics of 
+the E65/E66. The passive safety system fulfils all legislative requirements. 
+
+Extensive measures were taken on the body and on the occupants safety and protection 
+systems. The passive safety system includes not only the restraint systems, but also a 
+special body structure which offers a defined crash performance. In the event of an acci¬ 
+dent, the forces introduced are reduced in a defined manner and therefore have less on 
+an impact on the occupants. 
+
+The restraint systems ensure that the risk of injury is further reduced. 
+
+The third generation ACSM is used as the central airbag control unit for the passive 
+safety system on the F01/F02. It differs from the previous crash safety modules in 
+having a sensor system placed in position. 
+
+The ACSM III provides up to 32 ignition outputs. 
+
+
+
+BMW safety concept with safety passenger cell and airbag systems in the example of an E60 
+
+
+5 
+
+F01 Passive Safety Systems 
+
+
+
+
+Model Overview 
+
+
+The passive safety system ACSM, the replacement system to the byteflight, is already 
+used on the following models. 
+
+
+Model series 
+
+Model 
+
+Used as of 
+
+Variant 
+
+E60 
+
+5 Series Saloon 
+
+09/2005 
+
+ACSM 1 
+
+E61 
+
+5 Series Touring 
+
+09/2005 
+
+ACSM 1 
+
+E63 
+
+6 Series Coupe 
+
+09/2005 
+
+ACSM 1 
+
+E64 
+
+6 Series Convertible 
+
+09/2005 
+
+ACSM 1 
+
+E85 
+
+Z4 Roadster 
+
+01/2006 
+
+ACSM 1 
+
+E86 
+
+Z4 Coupe 
+
+05/2006 
+
+ACSM 1 
+
+E88 
+
+1 Series Convertible 
+
+04/2008 
+
+ACSM 2 
+
+E70 
+
+X5 SAV 
+
+11/2006 
+
+ACSM 2 
+
+E71 
+
+X6 SAC 
+
+04/2008 
+
+ACSM 2 
+
+E93 
+
+3 Series Convertible 
+
+03/2007 
+
+ACSM 2 
+
+F01 
+
+7 Series Saloon 
+
+11/2008 
+
+ACSM 3 
+
+F02 
+
+7 Series Saloon long version 
+
+11/2008 
+
+ACSM 3 
+
+
+6 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview 
+
+F01/F02 Bus System Overview 
+
+
+
+aao- 
+
+
+2 
+
+
+0 
+
+
+2 
+
+Q 
+
+
+2 
+
+w 
+
+3 
+
+
+□ 
+
+
+a 
+
+< 
+
+2 
+
+
+0 
+
+
+tn 
+
+s 
+
+
+2 
+
+UJ 
+
+
+
+O 
+
+
+3 
+
+O 
+
+K 
+
+
+
+
+o 
+
+o 
+
+
+ll 
+
+X 
+
+a 
+
+c 
+
+
+
+X 
+
+® .c 
+® o» 
+
+
+si 
+
+z> 
+
+
+
+I 1 i i 
+
+
+z 
+
+o 
+
+o 
+
+
+a 
+
+o 
+
+
+o 
+
+X 
+
+
+L) 
+
+> 
+
+n: 
+
+
+i:; 
+
+•^11 II 
+1 i f 
+
+
+la] 
+
+
+I I S 
+
+x x a 
+
+
+$ 
+
+
+3 
+
+o 
+
+
+2 
+
+x 
+
+
+a 
+
+N 
+
+
+O 
+a 
+m a 
+
+
+
+7 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for F01/F02 Bus System Overview 
+
+
+Index 
+
+Explanation 
+
+ACSM 
+
+Crash Safety Module (Advanced Crash Safety Module) 
+
+AL 
+
+Active steering system 
+
+CAS 
+
+Car Access System 
+
+CIC 
+
+Car Information Computer 
+
+CID 
+
+Central information display 
+
+CON 
+
+Controller 
+
+DME 
+
+Digital Motor Electronics 
+
+DSC 
+
+Dynamic Stability Control 
+
+DVD 
+
+DVD changer 
+
+EDCSHL 
+
+Electronic damper control, rear left satellite 
+
+EDCSHR 
+
+Electronic damper control, rear right satellite 
+
+EDC SVL 
+
+Electronic damper control, front left satellite 
+
+EDC SVR 
+
+Electronic damper control, front right satellite 
+
+EGS 
+
+Electronic transmission control 
+
+EHC 
+
+Electronic ride-height control 
+
+EKPS 
+
+Electrical fuel pump control 
+
+EMA LI 
+
+Electrically motorized reel, left, (seat belt) 
+
+EMARE 
+
+Electrically motorized reel, right, (seat belt) 
+
+EMF 
+
+Electromechanical parking brake 
+
+FD 
+
+Rear compartment display 
+
+FD2 
+
+Rear display 2 
+
+FKA 
+
+Rear compartment heating/air conditioning system 
+
+FLA 
+
+High-beam assistant 
+
+FRM 
+
+Footwell module 
+
+FZD 
+
+Roof functions Center 
+
+GWS 
+
+Gear selector lever 
+
+HiFi 
+
+HiFi amplifier 
+
+HKL 
+
+Luggage compartment lid lift 
+
+HSR 
+
+Rear-axle drift angle control 
+
+HUD 
+
+Head-up display 
+
+ICM 
+
+Integrated Chassis Management 
+
+IHKA 
+
+Integrated automatic heating/air conditioning 
+
+JBE 
+
+Junction box electronics 
+
+KAFAS 
+
+Camera-based driver assistance systems 
+
+KOMBI 
+
+Instrument cluster 
+
+NVE 
+
+Night Vision electronics 
+
+PDC 
+
+Park Distance Control 
+
+TPMS 
+
+Tire Pressure Monitoring System 
+
+
+8 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for F01/F02 Bus System Overview (cont.) 
+
+
+Index 
+
+Explanation 
+
+OBD 
+
+Diagnosis socket 
+
+RSE-Mid 
+
+Rear seat entertainment 
+
+SDARS 
+
+Satellite tuner 
+
+SMBF 
+
+Passenger's seat module 
+
+SMBFH 
+
+Rear passenger seat module 
+
+SMFA 
+
+Driver's seat module 
+
+SMFAH 
+
+Rear module on driver' seat side 
+
+SWW 
+
+Lane change warning 
+
+SZL 
+
+Steering column switch cluster 
+
+TCU 
+
+Telematics control unit 
+
+TOP-HIFI 
+
+Top-HiFi system 
+
+TRSVC 
+
+Control unit for rearview camera and Side View (Top Rear Side View Camera) 
+
+ULF-SBX High 
+
+Interface box - high (USB / audio interface) 
+
+VDM 
+
+Vertical dynamics management (central control unit for electronic damper control) 
+
+VSW 
+
+Video switch 
+
+ZGM 
+
+Central gateway module 
+
+
+9 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACSM3 System Circuit Diagram 
+
+
+
+
+10 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central gateway module 
+
+2 
+
+Up-Front sensor, left 
+
+3 
+
+Instrument cluster 
+
+4 
+
+Car Access System 
+
+5 
+
+Crash safety module 
+
+6 
+
+Up-Front sensor, right 
+
+7 
+
+Door pressure sensor, left 
+
+8 
+
+Front airbag, driver 
+
+9 
+
+Coil spring for airbag 
+
+10 
+
+Knee airbag, driver 
+
+11 
+
+Passenger Airbag OFF light 
+
+12 
+
+Knee airbag, passenger 
+
+13 
+
+Front airbag, passenger 
+
+14 
+
+Door pressure sensor, right 
+
+15 
+
+Flead airbag, left 
+
+16 
+
+B-pillar sensor, left 
+
+17 
+
+Adaptive belt force limiter, driver 
+
+18 
+
+Belt contact, driver 
+
+19 
+
+Seat belt pretensioner, driver 
+
+20 
+
+Side airbag, driver's side 
+
+21 
+
+Active head restraint, driver 
+
+22 
+
+Central sensor with rollover detection 
+
+23 
+
+Belt contact, passenger 
+
+24 
+
+Seat belt pretensioner, front passenger 
+
+25 
+
+OC3 mat 
+
+26 
+
+Active head restraint, passenger 
+
+27 
+
+Side airbag, passenger side 
+
+28 
+
+Head airbag, right 
+
+29 
+
+B-pillar sensor, right 
+
+30 
+
+Adaptive belt force limiter, passenger 
+
+31 
+
+Telematics Control Unit for emergency call 
+
+32 
+
+Safety battery terminal 
+
+
+11 
+
+F01 Passive Safety Systems 
+
+
+
+
+System Functions 
+
+
+The function of the ACSM is to permanently evaluate all sensor signals in order to detect 
+a crash situation. As a result of the sensor signals and their evaluation, the Crash Safety 
+Module identifies the direction of the crash and the severity of the impact. 
+
+Also included is information on the occupants and whether they have their seat belts 
+fastened or not. From this information, measures are taken to selectively trigger the nec¬ 
+essary restraint systems. 
+
+The crash safety module monitors the system itself and indicates that the system is 
+ready for operation when the airbag warning lamp (AWL) goes out. 
+
+If a fault occurs during operation, this is stored in a fault memory, which can then be read 
+out for diagnostic purposes. 
+
+If a crash situation is detected, this is communicated to the other users in the bus-sys¬ 
+tem network by way of a bus signal. The relevant control units respond to this signal by 
+executing their own activities according to the severity of the crash. 
+
+The activities include: 
+
+• Opening the central-locking system 
+
+• Activating the hazard warning flashers 
+
+• Switching on the interior lighting 
+
+• Deactivating the fuel pump 
+
+• Switching off the auxiliary heating 
+
+• Automatic emergency call. 
+
+A function of ACSM is the seat belt reminder function, which uses optical and acoustic 
+signals to remind the driver and front passenger to fasten their seat belts. 
+
+The functions of the ACSM are divided into: 
+
+• Crash-relevant functions 
+
+• System monitoring functions 
+
+• Additional comfort functions. 
+
+
+12 
+
+F01 Passive Safety Systems 
+
+
+
+
+Crash-relevant Functions 
+
+The Crash Safety Module must fulfill the following crash-relevant functions: 
+
+• Evaluating the sensor signals 
+
+• Crash and rollover detection 
+
+• Determining the triggering times and order 
+
+• Triggering the output stages of the firing circuits 
+
+• Output of a crash telegram for other users in the bus system network 
+
+• Crash documentation 
+
+• Emergency call functions. 
+
+Evaluating the Sensor Signals 
+
+The sensors serve to detect and verify front-end, side-on and rear-end impact as well as 
+a rollover. 
+
+The sensor signals are transmitted straight to the crash safety module and are evaluated 
+there. 
+
+
+13 
+
+F01 Passive Safety Systems 
+
+
+
+Crash and Rollover Detection 
+
+In addition to the longitudinal acceleration sensor and lateral acceleration sensor the cen 
+tral sensor also incorporates rollover detection. Rollover detection consists of a rate of 
+yaw sensor and two low-g sensors. One low-g sensor measures in the Y direction, the 
+second sensor in the Z direction. 
+
+Additional airbag sensors are mounted in the B-pillars. These each consist of a longitudi 
+nal acceleration sensor and a transverse acceleration sensor. 
+
+Together with the transverse acceleration sensor in the central sensor, the transverse 
+acceleration sensors serve to detect side-on crashes. Pressure sensors are also used in 
+the front doors to detect side-on crashes. 
+
+Together with the longitudinal-acceleration sensor in the central sensor, the longitudinal- 
+acceleration sensors serve to detect front-and rear-end crashes. 
+
+There are two airbag up-front sensors for front-end crash detection. They are located on 
+the front area of the engine side members. 
+
+
+ACSM Sensor system 
+
+
+
+
+
+
+
+14 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+Detecting a crash and determining the triggering times and the order 
+
+The Crash Safety Module uses the values transmitted by the sensors to determine the 
+direction and severity of the crash. The threshold values of two independent sensors 
+must be exceeded in order to detect a crash. In the case of a front-end crash, for example, 
+the relevant high acceleration values from the B-pillar satellite and from the longitudinal 
+acceleration sensor must be detected in the crash safety module. Triggering the output 
+stages of the firing circuits 
+
+Based on the acceleration values and crash severity and direction, an algorithm deter¬ 
+mines the triggering (firing) points and the order of the restraint systems to be activated. 
+
+A possible imminent rollover is also detected and the appropriate protection systems are 
+activated. 
+
+Triggering the output stages of the firing circuits 
+
+The firing-circuit output stages are only triggered if the airbag algorithm detects that the 
+threshold has been exceeded via different sensors, e.g. the airbag sensor in the B-pillar 
+and the central sensor. 
+
+The crash safety module is powered by the Car Access System 4 (CAS4) using terminal 
+30b. At terminal 30b the crash safety module is in energy-saving mode, which means it is 
+active at the bus and can also transmit the belt status to the EMA controller. Airbag func¬ 
+tionality is blocked and only ready for operation at terminal 15 on completion of the sys¬ 
+tem self-test. 
+
+The firing capacitors, which also serve as an energy reserve, are charged up by a switch¬ 
+ing controller. These capacitors make the firing energy available in the event of a crash. If 
+the voltage supply is interrupted during a crash, the firing capacitors serve briefly as an 
+energy reserve. 
+
+The output stages of the firing circuits consist of a high-side and a low-side power circuit- 
+breaker. The high-side power circuit-breaker controls the firing voltage, while the low-side 
+power circuit-breaker switches to ground. The output stages of the firing circuits are con¬ 
+trolled by the microprocessor. 
+
+The high-side and low-side power circuit-breakers also serve the purpose of checking 
+the firing circuits during the system self-test. 
+
+
+15 
+
+F01 Passive Safety Systems 
+
+
+
+Output of Crash Telegram 
+
+In the event of a collision involving triggering of the restraint systems, the Crash Safety 
+Module sends a crash telegram to the users in the bus-system network. Parallel to this, 
+the TCU is informed via a direct single-wire line to transmit an emergency call. 
+
+As a result, the respective control units perform the following functions depending on the 
+crash severity: 
+
+
+Function 
+
+Control Unit 
+
+Switch off electric fuel pump 
+
+Digital Motor Electronics DME 
+
+Switch off the auxiliary heating 
+
+Integrated automatic heating and air conditioning system IHKA (Not for US) 
+
+Release central locking 
+
+Junction box electronics JBE 
+
+Switch on hazard warning lights 
+
+Footwell module FRM 
+
+Switch on interior lights 
+
+Footwell module FRM 
+
+Transmit emergency call (only 
+when airbag triggered) 
+
+Telematics Control Unit TCU 
+
+
+Crash Entries 
+
+In the event of a collision where one or more actuators are triggered, a crash entry is 
+stored in a non-erasable memory. After three crash entries, a non-erasable fault entry is 
+stored in the fault memory with the instruction to replace the crash safety module. 
+
+Note: The three crash entries could also be stored during the course of an 
+accident. Each crash entry is assigned a system time. 
+
+The electronic control unit remains capable of firing even after three crash entries. 
+
+The crash entries cannot be erased and serve the purpose of subsequent device diagnosis. 
+A maximum of three crash entries can be stored. The control unit must then be replaced. 
+
+
+16 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emergency Call Functions 
+
+The emergency call functions are country-dependent and are available to customers in 
+countries with BMW ASSIST infrastructure. This means an appropriate service provider 
+with a call Center must be available. Another precondition for being able to make an 
+emergency call is the availability of a telephone network. 
+
+With BMW ASSIST, the customer has a manual and an automatic emergency call as well 
+as other functions. 
+
+A manual and an automatic emergency call function is provided as standard. 
+
+Furthermore, the driver has the option of activating a breakdown call. Irrespective of 
+whether the customer orders a telephone or not, each vehicle is eguipped with a 
+telematics control unitTCU, a telephone antenna, an emergency antenna, a handsfree kit 
+and a GPS antenna for determining position. 
+
+Manual emergency call 
+
+The manual emergency call is intended for customers to reguest help guickly if they are 
+present when an accident occurs without being involved themselves. 
+
+The emergency-call button is located in the roof function Center. The emergency call 
+button is connected directly to the TCU. 
+
+Pressing the emergency-call buttons establishes a voice connection with the relevant 
+country provider. The voice connection is indicated by a flashing LED in the switch. 
+
+Automatic emergency call 
+
+The crash safety module sends a crash telegram to the TCU in the event of an accident 
+of corresponding crash severity. The TCU places an emergency call, which at the same 
+time contains the location of the vehicle. 
+
+Parallel to this, attempts are made to set up a voice connection with the vehicle occu¬ 
+pants to obtain more information on the accident (severity of the accident, number of 
+injured) so that further rescue operations can be initiated. 
+
+
+17 
+
+F01 Passive Safety Systems 
+
+
+
+System Monitoring Functions 
+
+The Crash Safety Module must execute the following system monitoring functions: 
+
+• System self-test (pre-drive check) 
+
+• Indication of system operability 
+
+• Cyclic monitoring 
+
+• Fault indication and fault code storage 
+
+• Fault output (diagnosis) 
+
+• Seat belt reminder function 
+
+• Deactivation of the front passenger front airbag, the knee airbag 
+and side airbag in via the seat-occupancy detector. 
+
+
+System Self-test (Pre-drive check) 
+
+ACSM performs a system self-test as from terminal 15. The airbag warning lamp is acti¬ 
+vated for approximately 5 seconds during the system self-test. 
+
+
+When the system self-test is concluded and no 
+fault has been found, the airbag warning lamp 
+goes out and the system is ready for operation. 
+
+
+Indication of System Operability 
+
+ACSM system operability is indicated by the 
+airbag warning lamp (AWL) going out in the 
+instrument cluster. 
+
+
+
+Airbag warning lamp 
+
+
+Cyclic Monitoring 
+
+Once the system self-test has been successfully concluded and the system is ready for 
+operation, a cyclic monitoring procedure is performed for fault monitoring purposes. 
+Cyclic monitoring serves the purpose of internal diagnosis of the ECU and the overall 
+airbag system. Cyclic monitoring is carried out for as long as the system is at terminal 15. 
+
+
+18 
+
+F01 Passive Safety Systems 
+
+
+Fault Indication and Fault Code Storage 
+
+The crash safety module has a non-volatile fault memory. The airbag warning lamp indi¬ 
+cates any entry in the fault memory. 
+
+A distinction is made between internal and external faults when entering the fault code. 
+
+Events such as triggering of an airbag or seat belt pretensioner are also stored in the fault 
+memory. 
+
+Note: The entry of a triggered restraint system in the fault memory does not 
+mean that the restraint system was defective in the crash situation, 
+rather it only means that the restrain system is not available for further 
+triggering. 
+
+Fault Output (Diagnosis) 
+
+With the aid of the ISTA diagnostic system, the fault memory can be read out via the 
+diagnostic interface. After rectifying the faults or after replacing the triggered 
+components, the fault memory can be cleared with the diagnosis command “Clear fault 
+memory”. 
+
+Note: The cleared fault code memory entries are transferred to the past events 
+memory. A maximum of 15 faults can be stored in the past events memo¬ 
+ry. When another entry is added, the first entry is deleted. The past 
+events memory is set up as a ring memory and can only be read out by 
+the development department. The past events memory is not available to 
+the Service department. 
+
+
+19 
+
+F01 Passive Safety Systems 
+
+
+
+Deactivating the Front Passenger Airbag 
+
+US law requires that specified child seats tested to specifications with a child roughly one 
+year old on the front passenger seat be automatically detected and the passenger airbags 
+be deactivated. 
+
+In order to meet legislative requirements, the OC3 mat (Occupant Classification OC) was 
+developed. 
+
+OC3 Mat 
+
+The OC3 mat (Occupant Classification) detects a child seat specified in accordance with 
+NHTSA and which is occupied on the basis of the pressure per unit area and disables the 
+passenger airbag. 
+
+The OC3 mat consists of conductors in a pressure-sensitive resistance grid, so-called 
+FSR elements (Force Sensitive Resistance). The conductors are connected to the elec¬ 
+tronic evaluation unit. 
+
+The FSR elements are wired in such a way that they can be sampled individually. When 
+the mechanical load on a sensor element increases electrical resistance decreases and 
+the measurement current changes accordingly. 
+
+
+
+OC3 Mat 
+
+
+20 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+By analysing the signals from the individual sensors, the analyzer can map the occupancy 
+of the seat surface and identify local concentrations of weight. The relationship between 
+the areas and the load points indicates whether there is a person ora child seat holding a 
+small child present. 
+
+A ) Q J 
+
+The electronic evaluation unit of the OC3 
+
+
+mat sends a telegram via the LIN-bus to the 
+Crash Safety Module. 
+
+The front passenger airbags (front and side 
+airbags) are disabled when a child seat with 
+small child is detected. The crash safety 
+module activates the passenger airbag OFF 
+indicator lamp in the roof function Center. 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Surface imprint of a person 
+
+B 
+
+Surface imprint of a child seat 
+
+
+
+Example of various surface imprints 
+
+
+Passenger Airbag OFF light 
+
+The passenger airbag OFF light in the roof console comes on when the child restraint 
+system has detected a small child on the front passenger’s seat. Furthermore, the pas¬ 
+senger airbag OFF lamp lights up when the seat is not occupied by a person. 
+
+The brightness of this light is controlled by automatic regulation of the display lighting. 
+
+Note: The Passenger Airbag OFF light is activated if the OC3 mat detects a 
+child seat with a child approximately one-year old or if the front passen¬ 
+ger seat is not occupied. 
+
+
+21 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric Motor Driven Reel 
+
+Debuting in the F01/F02, an electric motor driven reel (EMA) is used for the seat belt. 
+
+The electric motor driven reel is paired with the multifunction seat. 
+
+The electric motor driven reel reduces seat belt slack when fastening the seat belt using 
+low retracting force as soon as the doors are closed. Removing the belt slack ensures 
+that the seat belt fits the driver or front passenger. Thus better restraining action can be 
+provided in the event of a crash. 
+
+Another advantage of the electric motor driven reel is the pre-tensions to the occupants 
+before a possible accident with increased retracting force, thus also reducing the inci¬ 
+dence of slipping out of the belt and the risk of submarining. 
+
+The dynamic driving control sensors in the ICM (Integrated Chassis Management) record 
+data such as longitudinal acceleration and lateral acceleration, yaw rate, etc. The ICM 
+passes on the data via the PT-CAN to the two EMA control units. The DSC also delivers 
+information such as speed and brake pressure. The ACSM sends a message about the 
+status of the belt contact to the two EMA control units. 
+
+From this data, the EMA control units calculate whether there is a critical driving situation, 
+e.g. vehicle oversteer and as a result activates the electric motor, which pretensions the 
+seat belt. 
+
+If there is now an accident with correspond¬ 
+ing severity, the belt tensioner is also trig¬ 
+gered and the seat belt fastened securely to 
+the occupants. 
+
+The pre-tensions of the seat belt can reduce 
+the force on the occupants in the event of an 
+accident. 
+
+
+1 -® 
+
+Seat belt with electric motor driven reel 
+
+
+Index 
+
+Explanation 
+
+1 
+
+EMA control unit 
+
+2 
+
+Electric motor 
+
+3 
+
+Automatic reel 
+
+4 
+
+EMA drive unit 
+
+
+
+22 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram for Electric Motor Driven Reel 
+
+
+
+23 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus signals 
+
+
+In/out 
+
+Information 
+
+Source/sink 
+
+Function 
+
+In 
+
+Terminal control 
+
+CAS > EMA LEI EMA Rl 
+
+Status terminal 30b 
+
+In 
+
+Vehicle speed 
+
+DSC > EMA LEI EMA Rl 
+
+Vehicle speed 
+
+In 
+
+Braking torque 
+
+DSC > EMA LEI EMA Rl 
+
+Emergency braking detection 
+
+In 
+
+Yaw speed 
+
+ICM > EMA LEI EMA Rl 
+
+Detection of skidding tilt 
+
+In 
+
+Steering angle effective at 
+the front axle 
+
+ICM > EMA LEI EMA Rl 
+
+Steering effort 
+
+In 
+
+Longitudinal acceleration 
+
+ICM > EMA LEI EMA Rl 
+
+Acceleration 
+
+In 
+
+Lateral acceleration 
+
+ICM > EMA LEI EMA Rl 
+
+Lateral acceleration 
+
+In 
+
+Accelerator pedal angle 
+
+DME > EMA LI/ EMA RE 
+
+Driver power request 
+
+In 
+
+Belt contact status 
+
+ACSM > EMA LEI EMA Rl 
+
+Information whether the 
+seat belt is fastened 
+
+In 
+
+Door contact 
+
+FRM > EMA LEI EMA Rl 
+
+Information whether the doors are closed 
+
+
+24 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Design and Function of the Electric Motor Driven Reel 
+
+The electric motor driven reel is an extension of the functions of the existing automatic 
+reel. The F01/F02 front automatic seat belt reels are also equipped with a pyrotechnic 
+devices that operate the adaptive force limiters, as on E65/E66. The adaptive force lim¬ 
+iters work independently from the (EMA) electric motor driven reels. 
+
+The electric motor driven reel essentially consists of an electric motor, a drive unit and a 
+coupling, which establishes the connection to the automatic reel. 
+
+Components of the electric motor driven reel 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric motor 
+
+4 
+
+Ring gear 
+
+2 
+
+Drive unit 
+
+5 
+
+Automatic reel 
+
+3 
+
+Belt shaft 
+
+
+
+
+25 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric motor driven reel, not working 
+
+The following image shows the design of the drive unit in detail (A). The locking pawls are 
+retracted. 
+
+Image (B) shows the drive unit with ring gear. The ring gear and the belt shaft can rotate 
+freely. The seat belt can be pulled out or rolled up. 
+
+
+
+Drive unit with separate components (A) and freely rotatable ring gear (B) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Drive gear for the electric motor 
+
+3 
+
+Worm gear 
+
+2 
+
+Drive gear for the drive shaft 
+
+4 
+
+Drive wheel with coupling 
+
+
+26 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electric motor driven reel in operation 
+
+When the driver or front passenger fastens their seat belt or there is a critical driving situa¬ 
+tion in terms of driving dynamics, the electric motor is activated and moves the drive 
+shaft using the worm gear. 
+
+The worm gear turns the drive wheel with the coupling. The locking pawls move out and 
+engage in the ring gear (C). 
+
+The ring gear, which is located on the belt shaft, drives the belt shaft (D). The seat belt is 
+rolled up on the belt shaft and thereby shortened. This tensions the seat belt to the occu¬ 
+pants. 
+
+
+
+Locking pawls move out (C) and the ring gear turns the belt shaft (D). 
+
+
+27 
+
+F01 Passive Safety Systems 
+
+
+
+System Components 
+
+
+Driver Airbag 
+
+In conjunction with the seat belt, the driver’s front 
+airbag is designed to reduce the risk of serious 
+injury to the driver’s head or thorax during a head- 
+on collision. The front airbag for the driver’s side 
+is located in the hub cushion of the steering 
+wheel. The driver front airbag is eguipped with a 
+gas generator. 
+
+The airbag is triggered depending on the severity 
+of the crash. 
+
+
+Front Passenger Airbag Dnver airbag 
+
+In conjunction with the seat belt, the front passenger front airbag, just as the driver front 
+airbag, is designed to reduce the risk of serious injury to the passenger’s head or thorax 
+during a head-on collision. The front passenger front airbag is located under the dash¬ 
+board. 
+
+Inflation of the front passenger airbag breaks the dashboard at defined points and opens 
+two flaps, which are connected to the dashboard by means of fabric tapes. The passen¬ 
+ger airbag opens in the direction of the windshield. The passenger airbag emerges in an 
+upward direction and is supported on the windshield and on the instrument panel. 
+
+
+
+
+Front passenger airbag with pyrotechnically activated vent valve 
+
+Note: The F01/F02 uses driver and passenger airbags with pyrotechnically 
+activated vent valves which are explained under the “Actuators” section 
+of this training material. 
+
+
+28 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+Crash Safety Module 
+
+The crash safety module in US vehicles is identical to vehicles for the rest of the world. It 
+is adapted to the law and country-specific requirements by programming and coding. 
+
+With ACSM3 Crash Safety Module is now integrated into the PT-CAN. 
+
+There are no sensors located in the crash safety module. 
+
+
+
+Crash safety module 
+
+The crash safety module has a new installation location for the F01/F02 is behind the 
+glove compartment. 
+
+
+
+Crash safety module installation location 
+
+
+29 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+Sensors and Switches 
+
+All of the following sensors and switches were used on the previous ACSM systems with 
+the exception of the Central Sensor, its functions where integrated inside the crash safety 
+module: 
+
+• Central sensor 
+
+• Up-front sensor 
+
+• OC3 mat 
+
+• B-pillar sensor 
+
+• Door pressure sensor 
+
+• Seat belt buckle switches 
+
+• Emergency call button 
+
+
+Central Sensor 
+
+The central sensor is located centrally in the vehicle on the transmission tunnel. 
+
+In addition to the longitudinal acceleration sensor and lateral acceleration sensor, the cen¬ 
+tral sensor has also been extended to incorporate rollover detection. 
+
+The longitudinal and lateral acceleration sensors detect positive and negative vehicle 
+acceleration in a measuring range of 0-100 g.The longitudinal and lateral acceleration 
+sensors detect acceleration in the event of a head-on, side or rear-end collision. 
+
+
+
+30 
+
+F01 Passive Safety Systems 
+
+
+Rollover Detection 
+
+Rollover detection is provided by a rate of yaw sensor and two additional low-g sensors. 
+The low-g sensors act in Y and Z directions. 
+
+There are different factors which can cause a car to overturn or roll over. 
+
+The most common causes are: 
+
+• The car hits a ramp (e.g. a crash barrier) on one side or the vehicle tilts due to the 
+terrain. The car rotates about its longitudinal axis as a result of the high angular 
+velocity. 
+
+• The car skids sideways off the road surface and its wheels become buried in soft 
+soil. The kinetic energy could be sufficient to upend and overturn the car. 
+
+• The car skids sideways off the road into the kerb and is upended. 
+
+The crucial factors which determine whether the car overturns are not just the angle of 
+rotation but also the angular velocity or angular acceleration at which the car is set into 
+the roll. All these vehicle movements can also occur after a front-end, side-on or rear-end 
+crash. 
+
+The two Low-g sensors have a small measuring range of 0-2 g and can therefore detect 
+small accelerations and decelerations with great accuracy. 
+
+For example, when the vehicle skids sideways off the road surface and buries itself with 
+its wheels in soft ground. 
+
+The sensors provide a voltage as measured variable. This voltage is a measure for the 
+acceleration and is converted directly into digital signals in the sensor. The digital values 
+are sent to the crash safety module for evaluation. The crash safety module evaluates the 
+signals from the two Low-g sensors and the rate of yaw sensor. The results are compared 
+with the stored algorithm. If the processor detects that a rollover situation is imminent, the 
+seat belt pretensioners and the head airbags are triggered. 
+
+The sensor cluster is connected via a four-wire lead. A current interface which transfers a 
+special report is used so that for the five sensors, this saves on six leads. This interface is 
+also used for the other airbag sensors, so that, here too, savings can be made on leads 
+and thereby weight. 
+
+Digital data transmission by means of current interface 
+
+The recorded acceleration values of the micro-mechanical acceleration sensors are con¬ 
+verted in an ASIC (Application Specific Integrated Circuit) into digital signals. With the aid 
+of a data telegram, the digital signals are transmitted unidirectionally to the Crash Safety 
+Module. 
+
+The signals are transmitted via a current interface, which supplies the electronic circuitry 
+with voltage. 
+
+
+31 
+
+F01 Passive Safety Systems 
+
+
+
+The electronic circuitry receives a voltage level of approximately 5-10 mA via the current 
+interface. The level rises at a step of 20 mA when a data telegram is transmitted so that 
+only two lines per measurement channel are required. 
+
+The transmitted data is evaluated in the crash safety module. 
+
+Up-Front sensor 
+
+The airbag up-front sensors in the front area of the 
+side member on the left and right sides serve to 
+detect a head-on collision. They deliver additional 
+information on the progress and severity of the col¬ 
+lision to the crash safety module. 
+
+Each airbag up-front sensor consists of an acceler¬ 
+ation sensor for recording the deceleration, a signal 
+conditioner and an ASIC for data transmission. 
+
+The measured values are sent in the form of a data 
+telegram to the crash safety module and are used 
+in the calculation of the algorithm. 
+
+
+
+OC3 Mat 
+
+
+US legislation stipulates that the use of a child restraint system tested by NHTSA and 
+holding a small child on the front passenger seat must be detected automatically and the 
+front passenger airbag disabled. 
+
+
+The OC3 mat can detect an occupied child seat 
+tested in accordance with the regulation (NHTSA 
+FMVSS 208) on the basis of the pressure per unit 
+area and disable the passenger airbag (front and 
+side airbag). The passenger airbag OFF light 
+comes on when a child restraint system tested in 
+accordance with NHTSA and holding a small child 
+was detected on the front passenger’s seat. 
+
+
+
+Note: NHTSA FMVSS 208 stands for National Highway Traffic Safety 
+Administration Federal Motor Vehicle Safety Standard 208 
+
+
+32 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+B-Pillar Sensor 
+
+The B-pillar airbag sensor consists of a longitudinal acceleration sensor and a transverse 
+acceleration sensor. 
+
+
+
+The acceleration sensors measure both the acceleration and the deceleration in the 
+X and Y directions. The resultant from the X and Y signals is the definitive factor in deter¬ 
+mining the direction of the impact. 
+
+
+The B-pillar airbag sensors serve the purpose of 
+detecting head-on, side and rear-end collisions. 
+
+
+The B-pillar airbag sensors on the left and right are 
+of identical design and are allocated by way of 
+mechanical coding during installation. 
+
+
+Door Pressure Sensor 
+
+The airbag sensors in the front doors serve the purpose of verifying the plausibility of the 
+acceleration signals from the B-pillar airbag sensors and the central sensor during side 
+crash detection. 
+
+The airbag sensors are situated in the inner panels of the front doors and measure the 
+increase in pressure in the event of a side-on impact. 
+
+In the event of a side-on impact with the door, the outer door panel is pressed inward, 
+thus reducing the inner door space and increasing the pressure. This change in pressure 
+is measured by the airbag sensors. 
+
+The airbag sensor also includes an electronic mod¬ 
+ule, in addition to the pressure sensor, which digi¬ 
+tizes the pressure values and transmits them cycli¬ 
+cally to the Crash Safety Module. The data is trans¬ 
+mitted in the same way as the B-pillar airbag sen¬ 
+sors. 
+
+The pressure values are evaluated in the crash 
+safety module. 
+
+
+
+33 
+
+F01 Passive Safety Systems 
+
+
+Seat Belt Buckle Switches 
+
+The seat-belt buckle switches signal whether the 
+seat belts are fastened or not. The signals from the 
+seat belt buckle switches are transmitted to the 
+Crash Safety Module and are used for triggering the 
+reguired restraint systems and for the seat belt 
+reminder function. 
+
+The seat belt buckle switch is located in the seat 
+belt buckles of the driver’s and front passenger’s 
+seat. 
+
+The seat-belt buckle switch is designed as a two- 
+wire Hall-effect switch. The crash safety module 
+powers the Hall switch via a current interface. The 
+current intake of the switch varies depending on 
+whether the seat belt is fastened or not. The seat 
+belt buckle switch is permanently monitored as 
+from terminal R “ON”. 
+
+
+
+34 
+
+F01 Passive Safety Systems 
+
+
+Actuators 
+
+The crash safety module is used in to control the following actuators: 
+
+• Adaptive driver airbag 
+
+• Adaptive front passenger airbag 
+
+• Driver/front-passenger side knee airbag 
+
+• Curtain (head) airbags, left and right 
+
+• Side airbag, integrated in the left and right front seats 
+
+• Front seat belt pre-tensioner, front left and right 
+
+• Automatic seat belt tensioner with adaptive force limiter 
+
+• Active head restraint, front left and right 
+
+• Safety battery terminal 
+
+The following warning lamps are additionally activated: 
+
+• Airbag warning lamp AWL 
+
+• Seat belt mannikin 
+
+• Passenger Airbag OFF light (POL) 
+
+Adaptive Driver Airbag, with Active Vent 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Gas generator with exhaust vents 
+
+2 
+
+Actuator for vent valve 
+
+
+Driver airbag without airbag 
+
+
+35 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+Driver airbag, rear, without retaining plate 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of the squib for 
+
+The active vent valve 
+
+2 
+
+Connection of the squib 
+for the first stage 
+
+3 
+
+Connection of the squib for 
+the second stage 
+
+
+Vent Valve 
+
+Airbags with pyrotechnically activated vent valve are used for the first time in a BMW vehi¬ 
+cle on the F01/F02. 
+
+This measure serves to adapt the hardness of the airbag in possible accident scenarios 
+with small persons or persons sitting close to the steering wheel. 
+
+On the basis of the crash severity, belt status and seat position information, the crash 
+safety module decides whether the vent valve is activated or not. 
+
+The vent valve is an exhaust vent incorporated into the airbag, which is closed by an 
+arrester band. The arrester band ends in a cylinder, in which there is a blade. In the event 
+of triggering, the blade is pushed in the cylinder by the pyrotechnical actuator and the 
+arrester band is cut through. 
+
+Due to the airbag inner pressure, the exhaust vent opens outwards and the hardness of 
+the airbag is controlled by the gas venting. 
+
+
+36 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+Activation of the active vent valve 
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Vent valve is closed by arrester band 
+
+3 
+
+Cylinder 
+
+B 
+
+Squib triggered, blade is deployed 
+
+4 
+
+Piston with blade 
+
+C 
+
+Blade cuts through retaining strap 
+and vent valve opens 
+
+5 
+
+Squib 
+
+1 
+
+Retaining strap 
+
+6 
+
+Squib connection 
+
+2 
+
+Housing 
+
+
+
+
+The active vent valve is normally activated for smaller, lighter occupants. 
+
+If the system, (due to the seat position) detects a heavy occupant, a reduction of the 
+airbag pressure is not desirable. 
+
+In this case, the active vent valve remains closed and is activated at a later stage for 
+disposal firing, when the occupant is no longer in contact with the airbag. 
+
+
+37 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vent valve remains closed Vent valve is opened 
+
+
+
+Normally heavy occupant Small, light occupant 
+
+
+Adaptive front passenger airbag with active vent valve 
+
+
+© ®© ® ® 
+
+
+
+Front passenger airbag, two-stage with vent valve 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Cover for airbag 
+
+4 
+
+Actuator for active vent valve 
+
+2 
+
+First stage squib 
+
+5 
+
+Inflator assembly 
+
+3 
+
+Airbag housing 
+
+6 
+
+Second stage squib 
+
+
+38 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knee Airbags 
+
+The knee airbags on the driver’s side and front-passenger side are designed to control 
+the forward movement of the occupant in the event of a head-on impact. 
+
+In the event of a collision in which the driver or front passenger are not wearing seat belts, 
+the knee airbag provides support to protect the knees. This initiates a controlled forward 
+displacement of the upper body, which is cushioned by the deployment on the corre¬ 
+sponding airbag. 
+
+A knee airbag on the driver and front passenger side are standard eguipment for the 
+F01/F02. 
+
+The knee airbag is designed as a single-stage airbag with inflator assembly. The volume 
+is approximately 20 liters/ 5.2 Gallons. 
+
+The gas generator is triggered in the event of a crash of sufficient severity and the result¬ 
+ing gas fills the airbag. 
+
+When occupant’s knees make contact with the airbag, the load is distributed over the 
+area of the airbag, thus supporting the occupant. 
+
+The knee support results in a controlled forward displacement of the upper body that is 
+taken up and absorbed by the airbag. 
+
+The knee airbag on the driver’s side is located below the steering column in the footwell 
+trim while the knee airbag on the passenger side is located in the footwell trim. 
+
+
+
+F01/F02 driver's side knee airbag, 
+
+
+Note: The driver and front passenger knee airbags are also triggered by occu¬ 
+pants wearing seat belts, though at a higher crash severity than if the 
+seat belts are not fastened. 
+
+
+39 
+
+F01 Passive Safety Systems 
+
+
+
+F01/F02 passengers side knee airbag 
+
+
+
+Curtain/Head Airbag 
+
+On the F01/F02, the curtain airbag for the driver and front passenger side is used 
+as head airbag. 
+
+The head airbag extends from the A-pillar to the C-pillar and covers the entire side 
+section at the level of the side windows. 
+
+It deploys between the occupants, windows and pillar trim panels. 
+
+The system features: 
+
+• Extended coverage for front and rear windows. 
+
+• Reduction of the risk of glass splinters and objects entering the vehicle. 
+
+• Optimized coverage even for different sizes of occupant. 
+
+
+The curtain airbag is housed folded up in the roof frame. It consists of the inflator assem¬ 
+bly and the curtain. 
+
+In the event of a side impact or of a rollover, the inflator assembly is triggered and a 
+valve to the pressure tank is opened. The stored gas flows through the gas lance into 
+the curtain. 
+
+
+40 
+
+F01 Passive Safety Systems 
+
+
+
+Installation location of the curtain airbags on the F01/F02 
+
+
+The head airbag is set in the correct position by its mounting on the A-pillar and on the 
+C-pillar. In addition, the curtain deploys between the side windows, pillar trim panels and 
+the occupants. 
+
+The structural strength and stability is preserved for several seconds by the closed sys¬ 
+tem. 
+
+In connection with the side airbag in the front seat, it provides optimum protection for the 
+occupants in the event of side impact. 
+
+The head airbag reduces the movement of the head and other occupant extremities 
+towards the outside during a side impact. This results in lower neck shear forces as well 
+as bending moments in the cervical vertebrae. It additionally prevents direct contact with 
+the side structure or the obstacle thus reducing the risk of head injuries. 
+
+
+41 
+
+F01 Passive Safety Systems 
+
+
+Seat-integrated Side Airbag 
+
+The seat-integrated side airbags are mounted on the F01/F02 for the purpose of achiev¬ 
+ing optimum interior functionality, an appealing design while satisfying high safety 
+requirements. 
+
+The side airbags are folded, together with the inflator assembly (gas generator) in a plas¬ 
+tic housing. The airbag module is secured into the backrest and concealed by the rear 
+panel. 
+
+The side airbag is triggered in response to a sufficiently strong impact from the side. The 
+side airbag emerges between the seat backrest and the rear panel and inflates between 
+the door and occupant. 
+
+The air cushion between the door and occupant provides controlled impact damping and 
+therefore reduces the load on the occupant. 
+
+
+
+Note: It is important that no additional seat covers are fitted as they would 
+greatly impair or even immobilize the airbag function. 
+
+
+42 
+
+F01 Passive Safety Systems 
+
+
+
+Seat Belt Pretensioner 
+
+The task of the pyrotechnical seat belt tensioner is to minimize the seat belt slack in the 
+pelvis and shoulder areas in the event of a crash, thereby improving the restraining action. 
+
+The seat belt catch pretensioners are located on the driver’s and front passenger seats. 
+The seat belt catch tensioners are triggered in the event of a head-on or rear-end crash 
+and on vehicles with rollover sensor in the event of a rollover. 
+
+In the event of a crash of sufficient severity, the squibs in the seat belt catch tensioner are 
+triggered by the crash safety module. The seat belt buckle is connected by means of a 
+steel cable to the piston in the tensioning tube. If the squib is triggered, gas pressure is 
+created, which moves the piston in the tensioning tube. At this, the seat belt buckle is 
+pulled down by the cable and the seat belt is tensioned. 
+
+
+Seat belt pretensioner 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt buckle switch 
+
+2 
+
+Connection for the squib 
+
+3 
+
+Tensioning tube with piston 
+
+
+43 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+Automatic seat belt tensioner with adaptive force limiter 
+
+The belt force limiter on the F01/F02 works according to the same principle as on the 
+one used on the E65/E66. 
+
+For the driver and front passenger, an automatic reel with adaptive force limitation is 
+mounted. With the aid of a gas generator, there is a changeover from a high to a low 
+power level during the impact, in order to reduce the restraining forces. 
+
+With optimally tuning in connection with the airbag, the kinetic energy of the occupant is 
+more uniformly reduced over the duration of the impact. Thus lower occupant stress val¬ 
+ues are achieved. 
+
+F01/F02 adaptive belt force limiter 
+
+
+
+The adaptive force limitation is based on a two-step torsion bar (step shaft). The torsion 
+bar consists of the two head ends at left and right, the step and the central head. 
+
+The belt force is transmitted through the seat belt webbing to the belt reel. The belt roller 
+is joined to a sleeve, in which the torgue bar is fitted. There is a shaft ring with locking 
+pawls on the sleeve. The locking pawls transmit the torgue to the torsion bar. 
+
+In the first stage, the belt force is transmitted from the seat belt strap on the belt roller via 
+the locking pawls to the central head of the torsion bar. If the belt roller is rotated relative 
+to the fixed torsion bar, the force is transmitted to the thicker part of the torsion bar. The 
+high force level is thus set. 
+
+In the event of an impact with corresponding severity, the gas generator is ignited and a 
+piston driven out which rotates the ratchet ring, thus moving the shaft ring axially. 
+
+
+44 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt webbing 
+
+5 
+
+Torsion bar (central head) 
+
+2 
+
+Belt roller 
+
+6 
+
+Sleeve 
+
+3 
+
+Locking pawls 
+
+7 
+
+Locking pawl 
+
+4 
+
+Sleeve 
+
+8 
+
+Housing 
+
+
+45 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ignition process 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition 
+
+3 
+
+Shaft ring 
+
+2 
+
+Ratchet ring 
+
+4 
+
+Locking pawls 
+
+
+The locking pawls are now no longer held by the sleeve. Therefore no more torgue acts 
+on the center head of the torsion bar. 
+
+The belt force is now introduced into the step shaft via the right-hand head end, and thus 
+passes through the complete torsion bar. Because of the smaller diameter of the right- 
+hand side, the torsion bar is rotated further, and thus the force is degraded to a lower 
+level. 
+
+
+46 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Force flow with lower force level (stage 2) 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Seat belt webbing 
+
+5 
+
+Sleeve 
+
+2 
+
+Belt roller 
+
+6 
+
+Locking pawls 
+
+3 
+
+Connecting sleeve 
+
+7 
+
+Housing 
+
+4 
+
+Torsion bar 
+
+
+
+
+47 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Active Head Restraint 
+
+Used on previous BMW vehicles since 09/2007, Active head restraint are now installed on 
+the F01/F02. 
+
+This is the version with pyrotechnical actuator and spring elements for adjustment. 
+
+There are two versions of active head restraints, depending on the seat option installed. 
+
+The memory seat (1) is designed for manual headrest adjustment. 
+
+In order to offer as much convenience as possible, the front section of the head restraint 
+can be pulled forward or pushed backward approximately 30 mm. It is a two-stage adjust¬ 
+ment. This allows for three different positions for the head restraint depth adjustment. 
+
+
+
+(1) : Manually adjustable head restraint on the memory seat. 
+
+(2) : Fixed head restraint on the multifunction seat 
+
+
+On the multi-function seat, (2) the headrest is adjusted by means of the headrest adjust¬ 
+ment. 
+
+The active head restraint reduces the load on the cervical vertebrae in the event of a rear- 
+end collision by reducing the distance between the head and the head restraint before 
+the occupant moves backwards. This reduces the risk of injury to the cervical vertebrae. 
+
+In the event of a rear-end impact, the front section of the head restraint, driven by a 
+spring, is moved towards the front by up to 60 mm within a very short space of time. Even 
+before the head is jerked backwards due to the rear-end impact, the active head restraint 
+reduces the distance to the head. The reduced distance contributes to increasing the sta¬ 
+bilizing and securing function of the head restraints. 
+
+
+48 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+Triggering in the event of a rear-end collision 
+
+The crash safety module detects via sensors whether a rear-end collision has occurred. 
+
+If there is an appropriately severe crash, the active head restraints are triggered. This can 
+even occur in the case of a slight rear-end collision. 
+
+If the crash safety module detects a massive rear-end collision, other safety components, 
+such as e.g. the belt tensioner and the safety battery terminal are also activated. 
+
+The crash safety module deploys the active head restraint, by igniting the head restraint 
+actuator squib. The actuator releases the head restraint spring force by activating the 
+release plate. This enables the front section of the head restraint to be moved towards 
+the front by means of a spring. 
+
+The head restraint drive springs are only locked again once the pyro-actuator has been 
+replaced. 
+
+Note: If the active head restraints have been triggered, the pyro-actuators 
+
+must be replaced in the workshop. For more information please refer to 
+the repair instructions available in ISTA and TIS. 
+
+Active head restraint, left, normal position, Active head restraint, right, after triggering 
+
+
+
+® ® © 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Head restraint support 
+
+3 
+
+Head restraint drive 
+
+2 
+
+Front section of the head restraint 
+
+
+
+
+49 
+
+F01 Passive Safety Systems 
+
+
+
+
+
+
+
+
+
+
+
+
+Safety Battery Terminal 
+
+The safety battery terminal is triggered at different thresholds when the Crash Safety 
+Module detects a front-end, side-on or rear-end crash of sufficient severity. The connec¬ 
+tion between battery and starter/ alternator cable is then separated by pyrotechnical 
+teams. The safety battery terminal is located directly at the positive terminal of the battery. 
+
+Despite the safety battery terminal being pressed 
+off, it is guaranteed that all consumers relevant to 
+safety such as hazard warning lights, interior light¬ 
+ing and telephone will continue to be supplied 
+with voltage. 
+
+
+Safety battery terminal 
+
+
+
+Airbag Warning Lamp 
+
+The airbag warning lamp (AWL) is located in the instrument cluster. ACSM system oper¬ 
+ability is indicated by the AWL lighting up and then going out in during the predrive 
+check. The AWL is controlled by means of a signal from the ACSM to the instrument 
+cluster on the PT-CAN. The instrument cluster receives a signal on a cyclical basis. If the 
+signal fails to materialize, the AWL is activated. 
+
+
+
+Airbag warning lamp 
+
+
+50 
+
+F01 Passive Safety Systems 
+
+
+Passenger Airbag OFF light 
+
+In the F01/F02, the passenger airbag OFF lamp is located at the front of the roof function 
+center FZD next to the interior lights. 
+
+The Passenger Airbag OFF light is activated if the OC3 mat detects a child seat with a 
+child approximately one-year old or if the front passenger seat is not occupied. 
+
+The brightness of the Passenger Airbag OFF light is regulated by the automatic display 
+lighting. 
+
+
+
+Roof function center with passenger airbag OFF light 
+
+
+51 
+
+F01 Passive Safety Systems 
+
+
+

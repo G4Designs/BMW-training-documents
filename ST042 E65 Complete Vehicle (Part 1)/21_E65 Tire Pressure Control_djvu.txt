@@ -1,0 +1,401 @@
+Table of Contents 
+
+
+TIRE PRESSURE CONTROL (RDC) 
+
+
+Subject Page 
+
+Introduction.3 
+
+System Overview.3 
+
+Components 
+
+RDC Control Unit.4 
+
+Receiving Antennas.4 
+
+Wheel Transmitter Modules.5 
+
+Principle of Operation 
+
+Initialization.6 
+
+Tire Pressure Monitoring.7 
+
+Tire Failure Warning.8 
+
+Self Diagnosis.8 
+
+Review Ouestions.9 
+
+
+Initial Print Date: 10/01 
+
+
+Revision Date: 11/01 
+
+
+
+
+
+
+
+
+
+
+
+
+
+TIRE PRESSURE CONTROL (RDC) 
+
+Model: E65 - 745i 
+
+Production Date: 11/2001 - Start of Production 
+
+
+Objectives: 
+
+After completing this module you should be able to: 
+
+• Recognize the components used in the RDC system. 
+
+• Explain when the initialization process is necessary. 
+
+• Understand the different criteria the RDC uses to distinguish a poorly inflated tire from 
+a flat tire. 
+
+
+2 
+
+Tire Pressure Control (RDC) 
+
+
+
+
+Introduction 
+
+
+RDC is an available option for the E65. The system monitors the tire inflation pressures, 
+both when the vehicle is being driven and when it is stationary. 
+
+An electronic transmitter module mounted inside each tire measures the tire pressure and 
+temperature at regular intervals and transmits the information by radio frequency to the 
+RDC control unit. 
+
+The driver is warned with a Check Control message of a tire that needs inflation or a pos¬ 
+sible flat tire. 
+
+System Overview 
+
+
+
+
+3 
+
+Tire Pressure Control (RDC) 
+
+
+KT-7875 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+RDC Control Unit 
+
+The RDC control unit is located behind the glove box on the equipment carrier above the 
+ZGM. 
+
+
+
+The RDC control unit is responsible for monitoring the individual pressures and tempera¬ 
+tures of the tires (including the spare). If one of the tires inflation pressure falls below a spe¬ 
+cific threshold then the RDC generates a CC warning and telegrams it over the K-CAN-S. 
+
+
+The Instrument Cluster displays the check control warning icon and text message accord¬ 
+ing to the message sent. The Control Display is informed by the Instrument Cluster of the 
+required extended message. 
+
+
+Receiving Antennas 
+
+The RDC antennas are located behind the 
+splash shield of each of the four wheel houses. 
+
+
+The antennas receive the radio signals from the 
+RDC transmitters and pass the signals along a 
+shielded cable to the RDC control unit. 
+
+
+
+
+4 
+
+Tire Pressure Control (RDC) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wheel Transmitter Modules 
+
+The transmitter modules are located inside the tire 
+attached to the valve stem. The modules contain a 
+pressure and temperature sensor, a long life 3.6V 
+lithium battery and a radio transmitter. 
+
+• Operating frequency for the U.S. : 315Mhz 
+
+• Battery life: 5 to 7 years 
+
+
+
+The transmitter modules are active in an energy saving mode even when they are sitting as 
+spare parts on the shelf. 
+
+
+Each transmitter module has it’s own unique I.D. code. The I.D. code is assigned to a posi¬ 
+tion on the vehicle (Right rear, left front etc.) after a successful initialization has been com¬ 
+pleted. 
+
+
+The radio signal transmitted by the wheel modules is received when the tire passes close 
+to the antenna. The valve stem of the spare tire should be pointed towards the right rear 
+wheel house because the spare is also included in the monitoring (although it is not dis¬ 
+played on the CD). 
+
+
+The wheel transmitter module measures its ambient air pressure every minute. If the air 
+pressure increases by 0.5 bar between measurements , the transmission rate increases to 
+every 0.8 seconds. 
+
+
+If the increase in air pressure is detected for approximately 216 seconds, the full function¬ 
+ality of the wheel module is activated. If the higher pressure then continues, the module 
+remains permanently active and measures the air pressure and temperature every 0.3 sec¬ 
+onds and transmits the information by radio signal every 55 seconds. 
+
+At temperatures over 120°C the transmitter modules are switched off. Once the transmit¬ 
+ter cools to below 110°C operation resumes. 
+
+
+5 
+
+Tire Pressure Control (RDC) 
+
+
+
+Principle of Operation 
+
+Initialization 
+
+After the tires are replaced, rotated or if their inflation pressures are adjusted, then the wheel 
+transmitter modules must be initialized using the RDC function in the “Settings” menu of the 
+Control Display. 
+
+During initialization the following processes are performed: 
+
+
+• Individual wheel recognition (Identification of wheel transmitter modules). 
+
+• Wheel position assignment. 
+
+• Plausibility check (setpoint pressures checked). 
+
+• Adoption of setpoint pressures as specified pressures. 
+
+The RDC then learns the wheel transmitter module position. 
+
+The minimum air pressure accepted by the RDC on initialization is 1.7 bar (24.7psi). If the 
+tire pressures deviate more than 0.4 bar (6psi) per axle the initialization is rejected after a 
+plausibility check. 
+
+1.3 bar is the lowest pressure detected by the wheel transmitter module. At that point, a 
+tire failure warning will always be issued. 
+
+Complete initialization can take up to 30 minutes. Only the actual driving time over 6 km/h 
+is taken into account. During initialization, the CC message “Initializing RDC!” is displayed 
+on the Instrument Cluster. 
+
+
+Check Control Message Message displayed in 
+
+displayed in KOMBI Control Display 
+
+
+Initializing RDC! 
+
+
+
+“Initializing RDC!” RDC tire 
+pressure monitor not available 
+for 15 to 30 min. System is 
+temporarily unable to detect 
+flat tires. 
+
+
+6 
+
+Tire Pressure Control (RDC) 
+
+
+
+
+
+When the initialization from the Control Display is activated, the wheels appear black and 
+the pressures are not shown. 
+
+
+
+KT-8983 
+
+Once initialization is complete, the tires of the car on the graphic turn green and pressure 
+values are shown for each tire. 
+
+Tire Pressure Monitoring 
+
+During monitoring, the RDC control unit takes the measured temperature and pressure and 
+determines a target pressure value. 
+
+If the tire pressure being monitored falls below the required level by 0.2 bar for more than 
+8 minutes, a CC message appears on the instrument cluster after the car is started. The 
+driver is prompted to to check the tire pressure. 
+
+• “Autumn warning”: If the tire temperature is 20°C lower for 14 days than the 
+
+temperature was when the RDC was last initialized the RDC will also warn the driver to 
+check the tire pressures. 
+
+
+Check Control Message 
+displayed in KOMBI 
+
+Message displayed in 
+
+Control Display 
+
+Check tire pressures! 
+
+“Check tire pressures!” Check 
+tire inflation pressures; refer to 
+owners manual or inflation chart. 
+
+
+When the RDC menu on the Control Display is activated, the car is shown with yellow tires. 
+The tire pressures must be adjusted and an initialization carried out. 
+
+
+7 
+
+Tire Pressure Control (RDC) 
+
+
+
+
+
+
+Tire Failure Warning 
+
+
+If a tire being monitored falls below the specified level by 0.4 bar after temperature calcula¬ 
+tion or 16% of the inflated pressure then a CC message appears on the instrument cluster 
+with an audible warning tone. A message also appears on the Control Display. 
+
+
+Check Control Message 
+displayed in KOMBI 
+
+Message displayed in 
+
+Control Display 
+
+Flat tire! stop vehicle 
+
+Left front tire is flat, refer to 
+
+carefully 
+
+owners manual or contact 
+
+[0 
+
+BMW Roadside assistance. 
+
+
+When the RDC menu on the Control Display is activated, the car is shown with the defec¬ 
+tive tire in red. In the case of a spare tire failure, all wheels are shown in red. 
+
+Once the tire pressures are restored to the setpoint in the RDS control unit the tires of the 
+car graphic in the Control Display return to green and the Check Control message is with¬ 
+drawn. 
+
+See the chapter “E65 Instrument cluster” for details on additional Check Control messages. 
+
+
+8 
+
+Tire Pressure Control (RDC) 
+
+
+
+
+
+
+Review Questions 
+
+
+1. Where are the transmitters and antennas located for the RDC system? What is the 
+operating frequency for the U.S.? 
+
+
+2. What conditions cause the wheel transmitter units to go from energy saving mode to full 
+functionality? 
+
+
+3. When adjusting tire pressures on a vehicle equipped with RDC, what is the maximum 
+difference between tires of the same axle allowed by the system? 
+
+
+4. When is initialization of the RDC system necessary? Explain briefly what the system is 
+doing during the learning process. 
+
+
+9 
+
+Tire Pressure Control (RDC) 
+
+
+

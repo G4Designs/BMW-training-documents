@@ -1,0 +1,2587 @@
+Table of Contents 
+
+F01 Active Blind Spot Detection System 
+
+Subject Page 
+
+Introduction .3 
+
+System Overview .5 
+
+Bus System Overview.7 
+
+System Schematic Circuit Diagram .9 
+
+System Functions.11 
+
+Detecting Road Users .12 
+
+Setting the Necessity for a Warning .12 
+
+Switching the System On and Off.13 
+
+Informing and Warning .14 
+
+Coordinating the Activation of the Vibration Actuator.15 
+
+Blind Spot Detection from the Customer’s Perspective .16 
+
+No Necessity for a Warning .16 
+
+Information.17 
+
+Warning - Lane Change Zone.18 
+
+Warning - Blind Spot Area .19 
+
+System Components.20 
+
+Radar Sensors .20 
+
+Common Features of the Master and SWW2 .20 
+
+Special Features of the SWW2 Radar Sensor .27 
+
+Special Features of the Master Radar Sensor (SWW) .27 
+
+Bus Connections .28 
+
+Voltage Supply .28 
+
+Calibrating the Radar Sensors.30 
+
+Reasons for calibration .30 
+
+Special Situations and Fault Statuses .31 
+
+Blindness.31 
+
+Errors in the sensor alignment.31 
+
+Rear damage.32 
+
+Damage to the bumper trim.32 
+
+Damage to supporting parts .33 
+
+Display and Control Elements.33 
+
+LIN-bus Connections.34 
+
+Warning Light in the Driver's Door Mirror .35 
+
+Vibration Actuator in the Steering Wheel .35 
+
+Instrument Cluster .37 
+
+
+Initial Print Date: 01/09 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Blind Spot Detection System 
+
+Model: F01/F02 
+
+Production: From Start of Production 
+
+BBIICTIMIS 
+
+After completion of this module you will be able to: 
+
+• Describe the Active Blind Spot Detection System in the F01/F02 
+
+• Describe the function of the Active Blond Spot detection System of the 
+F01/F02 
+
+• Identify the components of the Active Blond Spot detection System of the 
+F01/F02 
+
+
+2 
+
+F01 Active Blind Spot Detection System 
+
+
+Introduction 
+
+
+Active Blind Spot Detection is a new BMW system. It is being introduced for the first 
+time in the F01/F02 7 Series . The system is designed to assist the driver in making lane 
+change maneuvers by monitoring traffic at the rear and sides of the vehicle. Using two 
+radar sensors it detects vehicles traveling in the rear and along side our vehicle and 
+warns the driver of the position of any unseen vehicles around him traveling in his 
+“Blind Spot”. 
+
+
+
+Typical traffic scenario with the Active Blind Spot Detection system 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Fast approaching vehicle on the left-hand neighboring lane 
+
+2 
+
+Vehicle in the left-hand neighboring lane travelling at the same speed 
+
+3 
+
+Your own vehicle, with the intention of changing lanes to the left 
+
+4 
+
+Blind spot area (left/right) 
+
+5 
+
+Vehicle in the right-hand neighboring lane travelling at a faster speed 
+
+6 
+
+"Lane change zone" 
+
+
+3 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The active blind spot detection system can detect traffic situations that could be 
+dangerous if your vehicle changes lanes. The driver is informed and warned in two 
+stages. 
+
+These kinds of traffic scenarios arise, for example, when distant vehicles rapidly approach 
+from behind. They are then in the "lane change zone" shown in the graphic. 
+
+These kinds of situations are difficult for the driver to judge, especially after dark. The 
+radar sensors work completely independently of the light conditions. 
+
+A second danger can arise if other vehicles are in the blind spot area. The driver can only 
+be aware of them if he is particularly careful and cautious. However, If he has a lapse of 
+attention, he may not see vehicles in this area. 
+
+The radar sensors of the active blind spot detection system detect other vehicles in the 
+neighboring lanes right up to about the middle of your own vehicle. The system can 
+therefore offer the driver valuable assistance in this situation as well. 
+
+The first stage of detection is called "information" and it is provided as soon as the sys¬ 
+tem is switched on and a hazardous lane change situation is present. The information is 
+provided by activating warning lights in the door mirrors. 
+
+If the driver intends to make a lane change and uses the turn signal stalk to indicate this, 
+a second, more intense stage will then be issued, the "warning". 
+
+The corresponding warning light then flashes with high intensity and the steering wheel 
+starts to vibrate. The driver must cancel the lane change and if necessary steer back into 
+his own lane to avoid a dangerous situation. 
+
+
+Note: The US marketing term for Lane Change Warning System (SWW) is 
+
+Active Blind Spot Detection. These two systems are one and the same 
+and are not to be confused with Lane Departure Warning. 
+
+
+4 
+
+F01 Active Blind Spot Detection System 
+
+
+
+System Overview 
+
+The Active Blind Spot Detection system is available as an option on the F01/F02. 
+
+
+
+Components of the Active Blind Spot Detection system in the F01/F02. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Driver's door mirror 
+
+2 
+
+Steering column switch cluster 
+
+3 
+
+Steering wheel with steering wheel module and vibration actuator 
+
+4 
+
+Junction box electronics and front fuse carrier 
+
+5 
+
+Front passenger door mirror 
+
+6 
+
+Integrated Chassis Management control unit 
+
+7 
+
+Operating unit for driver assistance systems 
+
+8 
+
+Central gateway module 
+
+9 
+
+Footwell module 
+
+
+5 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components of the Active Blind Spot Detection system in the F01/F02 (rearview of the vehicle) 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Chassis Management control unit 
+
+2 
+
+Rear fuse carrier in the luggage compartment 
+
+3 
+
+Bracket for shielding the right-hand radar sensor 
+
+4 
+
+Right-hand master radar sensor 
+
+5 
+
+Rear bumper deformation elements 
+
+6 
+
+Center guide 
+
+7 
+
+Bracket for shielding the left-hand radar sensor 
+
+8 
+
+Left-hand SWW2 radar sensor 
+
+
+6 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Overview 
+
+
+
+Bus system overview of the Active Blind Spot Detection system in the F01/F02 
+
+
+7 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Overview Legend 
+
+
+Index 
+
+Explanation 
+
+ASP_BF 
+
+Front passenger door mirror 
+
+ASP_FA 
+
+Driver's door mirror 
+
+BE_FAS 
+
+Operating unit for driver assistance systems 
+
+FRM 
+
+Footwell module 
+
+ICM 
+
+Integrated Chassis Management 
+
+LRE 
+
+Steering wheel module 
+
+SWW 
+
+Master radar sensor for the Active Blind Spot Detection system 
+
+SWW2 
+
+SWW2 radar sensor for the Active Blind Spot Detection system 
+
+SZL 
+
+Steering column switch cluster 
+
+ZGM 
+
+Central gateway module 
+
+
+8 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Schematic Circuit Diagram 
+
+
+
+System circuit diagram for the Active Blind Spot Detection system in the F01/F02 
+
+
+9 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Schematic Circuit Diagram Legend 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Central gateway module 
+
+2 
+
+Vibration actuator 
+
+3 
+
+Steering wheel module 
+
+4 
+
+Steering column switch cluster 
+
+5 
+
+Fuse for the driver/front passenger door mirrors (front fuse carrier, junction box electronics) 
+
+6 
+
+Warning light in the driver's door mirror 
+
+7 
+
+Footwell module 
+
+8 
+
+Operating unit for driver assistance systems 
+
+9 
+
+Warning light in the front passenger door mirror 
+
+10 
+
+Integrated Chassis Management 
+
+11 
+
+(Not for US) 
+
+12 
+
+Fuse for the radar sensors in the Active Blind Spot Detection system 
+(rear fuse carrier in the luggage compartment) 
+
+13 
+
+SWW2 radar sensor for the Active Blind Spot Detection system 
+
+14 
+
+Master radar sensor for the Active Blind Spot Detection system 
+
+
+10 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Functions 
+
+
+Blind Spot detection system input/output 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radar sensor (SWW2) 
+
+8 
+
+Steering wheel module and vibration actuator 
+
+2 
+
+Radar sensor (master) 
+
+9 
+
+Driver's door mirror 
+
+3 
+
+Not for US 
+
+10 
+
+Front passenger door mirror 
+
+4 
+
+Steering column switch cluster 
+
+11 
+
+Instrument cluster 
+
+5 
+
+Footwell module 
+
+12 
+
+"Active Blind Spot Detection 
+control unit function" 
+
+6 
+
+Operating unit for driver assistance systems 
+
+13 
+
+"Steering wheel vibration coordination" function 
+
+7 
+
+Integrated Chassis Management 
+
+
+
+
+11 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detecting Road Users 
+
+Both (master and SWW2) radar sensors are used to detect road users. They operate 
+independently of each other in their own respective areas of detection. 
+
+First, the position of the road users who have been detected is determined in a 
+longitudinal and lateral direction. Based on this, they are assigned a lane. In doing so a 
+distinction is made between your own lane, the neighboring lanes on the right and left 
+and other neighboring lanes that are further away. 
+
+if road users are in your "lane change zone", their approaching speeds to your own 
+vehicle are recorded. 
+
+If, instead, a road user is in your blind spot, it is sufficient that you are aware of their 
+presence. His exact position or speed in such cases is not critical for the warning to be 
+issued. 
+
+Setting the Necessity for a Warning 
+
+The necessity for a warning is determined by the master radar sensor (SWW). To do 
+this, it uses the data which it has collected about road users itself, as well as information 
+from the SWW2 radar sensor. 
+
+For the blind spot detection system, only the road users on the immediately neighboring 
+lanes on both sides are relevant. In contrast, road users in your own lane and on other 
+more distant lanes do not pose a danger when you are making a lane change. 
+
+The distance and approaching speed of road users in your lane change zone, i.e. of 
+vehicles immediately behind your own vehicle, is a decisive factor as to whether a warning 
+is issued or not. The time remaining for cancelling a lane change maneuver is calculated 
+using the distance (in a longitudinal direction) and their approaching speed. If this time 
+drops below a threshold value for any one of the detected road users, the system decides 
+that it is necessary to give a warning. 
+
+Road users in the blind spot lead to a minimal amount of time being calculated for 
+cancelling a lane change. This is why their exact position or speed relative to your own 
+vehicle only has secondary importance. The mere presence of a road user in the blind 
+spot therefore leads to the necessity for a warning. 
+
+
+12 
+
+F01 Active Blind Spot Detection System 
+
+
+
+The blind spot detection system must, of course, also be able to detect transitions from 
+the lane change zone into the area of the blind spot and vice versa. A further challenge 
+for the system is to determine the beginning and the end of the warning necessity when 
+a vehicle in the neighboring lane is slowly overtaken by your own vehicle. 
+
+Vehicles that are overtaken very guickly cause the necessity for a warning to be 
+suppressed or at least to end guickly. 
+
+In order to depict what the system is doing as reliably as possible to the driver, more than 
+just the current measured values from the radar sensors are used, in particular in these 
+special situations. In addition, the position and speed history of the other road users is 
+taken into account. For example, based on a mathematical model, the system determines 
+the point when an overtaking vehicle leaves the blind spot area and no longer poses a 
+danger. 
+
+The master-radar sensor sends the result of the calculation as to whether the necessity 
+for a warning is present or not, to the ICM control unit. 
+
+Switching the System On and Off 
+
+How the Active Blind Spot Detection system behaves with regard to the driver is ulti¬ 
+mately controlled by the Integrated Chassis Management. 
+
+This includes: 
+
+• Switching it on and off 
+
+• Checking the operating conditions 
+
+• Checking for faults 
+
+• Distinguishing between information and a warning. 
+
+A button on the operating unit for the driver assistance systems is used to switch it on 
+and off. The ICM control unit receives the signal by keystroke from the footwell module. 
+
+The ICM control unit permits it to be switched on only if no fault is present in the inter¬ 
+connected system and all operating conditions are satisfied. 
+
+If the ICM control unit carries out the driver's reguest to switch it on, the function 
+illumination on the button is switched on as visual feedback. This is also controlled 
+by the Integrated Chassis Management and is executed by the FRM. 
+
+
+13 
+
+F01 Active Blind Spot Detection System 
+
+
+
+If the request to switch it on cannot be carried out, the function illumination remains off. 
+The status (switched on or off) remains key specific regardless of power cycles. If the 
+Active Blind Spot Detection system is on in the current driving cycle, it will be on in the 
+next driving cycle from the start. 
+
+If, after switching on the Active Blind Spot Detection, one of the operating conditions is 
+infringed or a fault occurs, it is automatically deactivated. In such a case, the driver would 
+not be able to tell if only the function illumination had switched off. Therefore, a Check 
+Control message is issued (see the section entitled "system components"). 
+
+Informing and Warning 
+
+The system can only generate information or a warning reliably, if the road speed is 
+greater than 50 km/h (31 mph). The function will work at speeds under 50 km/h (31 
+mph), but not with the high quality and reliability required by BMW. In order not to com¬ 
+promise on the satisfaction of discerning BMW customers, no information or warnings 
+are issued at speeds below 50 km/h (31 mph). 
+
+Information is the first stage of assistance that the driver receives from the Active Blind 
+Spot Detection system. The idea is to discreetly make the driver aware of a danger that 
+could arise if he were to change lanes. Information is produced by discreetly illuminating 
+a yellow triangle-shaped warning light in the housing of the door mirror. The warning light 
+is only activated on the side of the vehicle where the necessity for a warning has been 
+detected by the master radar sensor. 
+
+Thanks to this concept, the system provides assistance to the driver as early as the 
+preparation phase of a lane change maneuver. The driver can glance briefly in the 
+direction of the door mirror at any to collect information from the Active Blind Spot 
+Detection system as to whether or not a danger exists regarding a lane change. 
+
+The discreet manner of the information, on the other hand, does not cause annoyance if 
+the driver wishes to continue to drive straight ahead without making a lane change. 
+
+The ICM control unit sends a bus signal that contains a warning request indicating in 
+which door mirror the warning light should light up and with which intensity. In the 
+process, the ICM control unit selects an intensity that is dependent on the surrounding 
+brightness. To do this, it reads a bus signal from the rain/ lights/solar/condensation sensor 
+and evaluates it. 
+
+The warning request from the ICM control unit travels via the central gateway module to 
+the footwell module, where the signal is routed to the door mirror(s) concerned. 
+
+
+14 
+
+F01 Active Blind Spot Detection System 
+
+
+
+The information is issued to the driver in all cases where all of the following conditions 
+have been satisfied: 
+
+• The Active Blind Spot Detection system is switched on 
+
+• The road speed is above 50 km/h (31 mph) 
+
+• The master radar sensor has detected a necessity for a warning. 
+
+The second stage, the warning, should, in comparison, be significantly more prominent 
+than the information. It should reach the driver guickly and directly, if he is still intending to 
+make a lane change despite an impending dangerous situation. 
+
+The warning is issued, if the following conditions have been satisfied 
+
+• The conditions for information have been satisfied: 
+
+• The turn signal is switched on the side of the vehicle where the master radar sensor 
+detected a necessity for a warning. 
+
+The steering column switch cluster issues the signal about the status of the turn signal 
+via the FlexRay to the ICM control unit. 
+
+The only difference in the criteria for information and a warning is thus the status of the 
+turn signal. The rear traffic situation or your own driving conditions do not influence it. 
+
+The visual aspect of the warning is generated by the respective warning light flashing with 
+a high light intensity. In addition, the steering wheel begins to vibrate and this produces a 
+haptic and very direct warning signal to the driver. 
+
+Note: If the driver changes lanes without using the turn signal, he will only 
+
+receive the information discreetly from the Active Blind Spot Detection 
+system. The Active Blind Spot Detection system only sends out the more 
+intensive warning, if the driver has switched on the turn signal when he 
+intends to make a lane change. 
+
+
+Coordinating the Activation of the Vibration Actuator 
+
+Like the blind spot detection, the lane departure warning (KAFAS control unit) also uses 
+the vibration actuator to produce a warning signal for the driver. For this, the systems use 
+different amplitudes of vibration. 
+
+This is why these must be a coordinator function for controlling the vibration actuator. 
+This is integrated into the ICM control unit. 
+
+Using the FlexRay bus system, the coordinated setpoint for the vibration is 
+communicated to the steering column switch cluster and executed via the steering 
+wheel module (LRE) and the vibration actuator in the steering wheel. 
+
+
+15 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Blind Spot Detection from the Customer’s Perspective 
+
+In this section, example situations are used to explain how the Active Blind Spot 
+Detection system behaves in different traffic scenarios. The emphasis here is not on the 
+technology, but rather on how the customer perceives the system. In all example situa¬ 
+tions it is assumed that the driver has switched on the Active Blind Spot Detection sys¬ 
+tem and that the road speed of your own vehicle is above 50 km/h (31 mph). 
+
+
+
+Traffic scenario without the a need for a warning 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Your own vehicle with blind spot detection 
+
+B 
+
+Faster vehicle in the left-side neighboring lane outside of the lane change zones 
+
+a 
+
+Lane change zone 
+
+b 
+
+Blind spot area 
+
+1 
+
+Turn signal OFF 
+
+2 
+
+Warning light in the driver's door mirror OFF 
+
+3 
+
+Warning light in the front passenger door mirror OFF 
+
+4 
+
+Steering wheel not vibrating 
+
+
+No Necessity for a Warning 
+
+Although another vehicle in the left-hand lane is approaching your own vehicle, neither 
+information or a warning is generated. Even if the driver were to carry out a lane change 
+with his own vehicle, this would not result in a dangerous situation. The time it would take 
+for the other vehicle to reach your own vehicle is considerable. 
+
+A sufficient distance will be maintained by accelerating your own vehicle slightly or by a 
+slight deceleration of the other vehicle. There is no necessity at all for the driver to be 
+informed by the Active Blind Spot Detection system. 
+
+
+16 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Information 
+
+
+
+Traffic scenario with information from the blind spot detection system 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Your own vehicle with blind spot detection 
+
+B 
+
+Faster vehicle in the left-side neighboring lane within the lane change zone 
+
+C 
+
+Equally fast vehicle as our own, in the right-side neighboring lane within the lane change zone 
+
+a 
+
+Lane change zone 
+
+b 
+
+Blind spot area 
+
+1 
+
+Turn signal OFF 
+
+2 
+
+Warning light in the driver's door mirror lights up with low intensity 
+
+3 
+
+Warning light in the front passenger door mirror OFF 
+
+4 
+
+Steering wheel not vibrating 
+
+
+The vehicle in the left-hand neighboring lane is already in the lane change zone. Because 
+it is still approaching your own vehicle at a high speed, the time the driver would have to 
+cancel a lane change maneuver is short. The blind spot detection system detects the 
+necessity for a warning. Because the driver in his own vehicle does not show any specific 
+intention of making a lane change, only the information and not the warning is issued. 
+
+The vehicle in the right-side neighboring lane is at a some what shorter distance from 
+your own vehicle than the vehicle in the left side neighboring lane. It is travelling at the 
+same speed as your own vehicle. The distance to your own vehicle is therefore not 
+decreasing. Thus, there is no necessity for a warning on the right-hand side. 
+
+Only the warning light in the driver's door mirror lights up and it does this with 
+low intensity. 
+
+
+17 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Warning - Lane Change Zone 
+
+
+
+Traffic scenario with a warning from the blind spot detection system 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Your own vehicle with blind spot detection 
+
+B 
+
+Faster vehicle than our own, in the left-side neighboring lane within the lane change zone 
+
+C 
+
+Equally fast vehicle as vehicle B, in the right-side neighboring lane within the lane change zone 
+
+a 
+
+Lane change zone 
+
+b 
+
+Blind spot area 
+
+1 
+
+Left turn signal ON 
+
+2 
+
+Warning light in the driver's door mirror flashes with high intensity 
+
+3 
+
+Warning light in the front passenger door mirror lights up with low intensity 
+
+4 
+
+Steering wheel is vibrating 
+
+
+The vehicle in the left-hand neighboring lane is in the lane change zone and is 
+approaching your own vehicle. There is a necessity for a warning therefore on the left- 
+hand side. 
+
+Because the driver intends to make a lane change to the left, he has switched on the left 
+turn signal. A lane change maneuver is therefore imminent. In order to attract the 
+attention of the driver guickly and directly, a left-side warning is produced. This means 
+the warning light in the driver's door mirror flashes brightly and in addition the steering 
+wheel vibrates. 
+
+The vehicle in the right-side neighboring lane is also approaching your own vehicle at this 
+point. Therefore, the necessity for a warning also exists on the right-hand side. However, 
+because the driver has not switched on the right turn signal, information is issued to this 
+side, but no warning. 
+
+
+18 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Warning - Blind Spot Area 
+
+
+
+Traffic scenario with vehicles in the blind spot 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Your own vehicle with blind spot detection 
+
+B 
+
+Vehicle in the left-side neighboring lane in the blind spot area 
+
+C 
+
+Vehicle in the right-side neighboring lane in the blind spot area 
+
+a 
+
+Lane change zone 
+
+b 
+
+Blind spot area 
+
+1 
+
+Right turn signal ON 
+
+2 
+
+Warning light in the driver's door mirror lights up with low intensity 
+
+3 
+
+Warning light in the front passenger door mirror flashes with high intensity 
+
+4 
+
+Steering wheel vibrates 
+
+
+Both the vehicle in the left-hand and the vehicle in the right-side neighboring lanes are in 
+the blind spot area. Therefore, the necessity for a warning exists on both sides, indepen¬ 
+dently of how quickly they are travelling. 
+
+The driver intends to make a lane change to the right and therefore switches on the right 
+turn signal. This causes the right-side warning to be produced. The warning light in the 
+front passenger door mirror flashes brightly and the steering wheel vibrates. 
+
+Information is issued on the left-hand side, but no warning. 
+
+
+19 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+
+Radar Sensors 
+
+Two radar sensors are fitted in the vehicle for the Active Blind Spot Detection system. 
+The two parts are different, although visually they look the same. 
+
+There is a master sensor that is always fitted in the rear of the vehicle on the right-hand 
+side, as well as a SWW2 that is fitted in the rear left-hand side. 
+
+The identical features of the master and SWW2 will be introduced first. Then the special 
+features and differences between the master and SWW2 will be described. 
+
+Common Features of the Master and SWW2 
+
+The sensors of the Active Blind Spot Detection system work according to the RADAR 
+principle (radio detection and ranging). They have some features in common, but also 
+some differences in comparison with the short-range radar sensors for the ACC Stop & 
+Go function. These are listed in the following table. 
+
+
+Characteristic 
+
+Radar sensors of the blind 
+spot detection system 
+
+Short-range radar sensors for 
+ACC Stop & Go 
+
+Modulation method 
+
+LF MSK (linear frequency 
+modulation shift keying) 
+
+PD (pulse doppler) 
+
+Mid-range transmission 
+frequency 
+
+24 GHz 
+
+24 GHz 
+
+Bandwidth 
+
+100 MHz 
+
+> 1 GHz 
+
+Distance measurement 
+
+Based on the propagation 
+time of one chirp * 
+
+Based on pulse propagation time 
+
+Measurement of the relative speed 
+
+Based on frequency shift 
+(doppler effect) 
+
+Based on phase difference 
+(doppler effect) 
+
+Angle measurement 
+
+Ratio of two phase values (two 
+simultaneous measurements) 
+
+Ratio of two phase values 
+(two successive measurements) 
+
+Transmission output 
+(typical maximum value) 
+
+Approximately 40 mW (typical), 
+approximately 100 mW (maximum) 
+
+Approximately 0.08 mW (average), 
+approximately 100 mW (single pulse) 
+
+Range (dependent on type 
+of object measured) 
+
+At least 50m, up to 70m 
+
+At least 10m, up to 20m 
+
+Horizontal angular width of beam 
+
+Approximately -70° to +80° 
+
++/-40 0 
+
+Vertical angular width of beam 
+
+Approximately +/-6.5° 
+
+Approximately 20° 
+
+* Characteristic signal segment with changing frequency 
+
+
+20 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The RADAR principle offers basic advantages with regard to the detection reliability of 
+road users in poor weather conditions. Only when it is exposed to extreme conditions, for 
+example heavy rain or snow, can a reduction in its range occur. If the sensors detect a 
+particularly extreme situation, this status is signalled, so that the function can be switched 
+off and the driver informed. 
+
+Both sensors have the functionality of control units. This means that they are compatible 
+with diagnostics and can be programmed and coded. 
+
+The sensors are fitted in the rear of the vehicle above the bumper bracket. They are fitted 
+to a large plastic component that is referred to as the "center guide". From the outside 
+the sensors are not visible, because they are hidden by the bumper trim. 
+
+
+i) '2,1 I ( 4 j, . :s 
+
+
+
+Overview and installation location of the radar sensors 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Detection zone of the SWW2 
+
+6 
+
+Symmetrical axis of the SWW2 
+
+2 
+
+SWW2 
+
+7 
+
+Symmetrical axis of the master 
+
+3 
+
+Center guide 
+
+8 
+
+Vehicle longitudinal axis 
+
+4 
+
+Master 
+
+9 
+
+Horizontal angular width of beam 
+
+5 
+
+Detection zone of the master 
+
+
+
+
+21 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+As you can see from the graphic, the detection zones of the two sensors overlap. The 
+data on road users that have been detected can therefore not be evaluated separately 
+from each other (for the left and right side of the vehicle). Instead the data is first collected 
+from both sensors and evaluated. Then a decision is made whether the driver must be 
+warned or not. 
+
+A detailed view of the installation locations of the master and SWW2 can be seen in the 
+following: 
+
+
+Installation location of the master 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radar sensor for Active Blind Spot 
+Detection (master) 
+
+3 
+
+Center guide 
+
+2 
+
+Mounting bolts 
+
+4 
+
+Wiring harness connector 
+
+
+22 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The fixtures for the sensors do not permit any mechanical adjustment. Instead of the sen¬ 
+sors being mechanically adjusted (as is the case with the long-range area sensor in the 
+ACC), they are calibrated using software. When this is done, the actual installation posi¬ 
+tion and above all the alignment of the center axes of the sensors are determined and 
+stored in the sensors. For details please see the section entitled "Calibrating the radar 
+sensors". 
+
+
+Installation location of the SWW2 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Radar sensor for Active Blind Spot 
+Detection (SWW2) 
+
+3 
+
+Center guide 
+
+2 
+
+Mounting bolts 
+
+4 
+
+Wiring harness connector 
+
+
+23 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Radar sensor shield 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Radar sensor (SWW2) 
+
+2 
+
+Bracket for shielding 
+
+3 
+
+Deformation element 
+
+
+Two brackets are fitted to the deformation element of the rear bumper that act as a shield 
+for the radar sensors. This prevents malfunctions when processing radar signals that 
+could be caused, for example, by reflections from the road surface. The material used for 
+the bracket was specially selected for this intended use. Therefore, in the event of dam¬ 
+age to the brackets, they must be replaced with the correct new part. 
+
+Emergency repair using a different plastic part is not permitted. Both radar sensors have a 
+similar structure. The connector and the electronics board are located on the lower sec¬ 
+tion of housing. It is used both for electrical shielding and for dissipating heat. 
+
+The board always has a signal processor. This evaluates the radar signals and uses them 
+to generate a list of the objects detected by the sensor. The list contains the distance to 
+each object in a longitudinal and lateral direction and the relative speed. In addition, infor¬ 
+mation is supplied about whether the object is in the blind spot area. 
+
+The radar front-end (radome) is used to generate and send radar waves. Of course, the 
+receive circuit is also integrated in it. Sending and receiving is carried out via a planar 
+antenna. The radar waves are transformed into the reguired shape using the so-called 
+radome. 
+
+
+24 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+The plastic radome therefore determines exactly the extent of the detection zone of the 
+sensors. The bumper trim also influences the shape of the detection zone. Calibration 
+must therefore always be done with the bumper trim mounted. If done without the 
+bumper trim, different values are assigned to the measured distances. The measuring 
+result would be distorted and the warning for the driver inappropriate. 
+
+The radome and the lower section of housing are cemented together. Repairs to the 
+inside of the sensor are not intended. If the test plan of the diagnostic system reguests it, 
+then the sensor must be merely replaced in its entirety. 
+
+Side view of the radar sensors 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Outside view of the SWW2 
+
+3 
+
+Lower section of housing, master 
+
+B 
+
+Outside view of the master 
+
+4 
+
+Connector 
+
+C 
+
+Inside view of the SWW2 
+
+5 
+
+Pressure-compensating element, SWW2 
+
+D 
+
+Inside view of the master 
+
+6 
+
+Mounting eye for the SWW2 
+
+1 
+
+Radome 
+
+7 
+
+Mounting eye, master 
+
+2 
+
+Lower section of housing, SWW2 
+
+8 
+
+Pressure-compensating element, master 
+
+
+25 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+On one side of the lower section of housing, there is an element for producing pressure 
+compensation both on the master and the SWW2. This element contains a membrane 
+with a teflon coating that is permeable to air and moisture. However, water in liquid form 
+can not permeate the membrane. Pressure compensation is required, because the sen¬ 
+sors heat up considerably during operation as a result of electronic power conversion. 
+
+Both sensors have an identical looking connector. Even the mechanical encoding of the 
+connector on both sensors is identical. However, the pins are wired differently for master 
+and SWW2. This is why they should only be connected to the intended wiring harness. 
+
+How can you distinguish between master and SWW2 then? 
+
+Upper and lower section of the radar sensors for the blind spot detection system 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+A 
+
+Upper section of the SWW2 
+
+D 
+
+Lower section of the master 
+
+B 
+
+Upper section of the master 
+
+1 
+
+Labelling "SWW2" 
+
+C 
+
+Lower section of the SWW2 
+
+2 
+
+Labelling "master" 
+
+
+26 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The mounting eyes of the lower housing sections on the master and SWW2 are located 
+in different positions. The fixtures for the mounting bolts on the "Center guide" are appro¬ 
+priately positioned. This ensures that the master is mounted only on the right and the 
+SWW2 on the left. Only after installation is complete is it recommended to connect the 
+wiring harness to the sensors. 
+
+You can also differentiate between the sensors by using the part number and by the 
+labelling on the lower section of the housing. 
+
+Special Features of the SWW2 Radar Sensor 
+
+The SWW2 only provides information about the road users in its detection zone. This is 
+why the SWW2 contains only one signal processor for controlling the radar front-end and 
+for evaluating the radar signals. A CAN controller is used to send the data to the master. 
+
+The signal processor is also capable of executing the self-diagnostics of the sensor. If 
+SWW2 faults are detected, they are stored in its own EEPROM. They are also transferred 
+to the master and stored there in its fault code memory. 
+
+Special Features of the Master Radar Sensor (SWW) 
+
+The master performs the same basic tasks as the SWW2 with regard to recording and 
+evaluating data from road users. In addition, the master calculates whether a traffic sce¬ 
+nario exists that could be dangerous in the event of a lane change. This calculation is 
+based on data about the road users detected and the state of motion of your own vehicle. 
+If such a situation is detected, the master sends a corresponding signal via FlexRay to the 
+ICM control unit. In addition, the master uses the same path to send signals about the 
+status of both sensors, for example to determine whether they are functioning correctly or 
+there is a fault. 
+
+The master executes self-diagnostics in the same way as the SWW2. If, in the process, it 
+detects a fault within itself or a fault is registered by the SWW2, an entry is made in the 
+fault code memory of the master. This makes it possible to read faults with the SWW2 
+during servicing, even though the diagnostic system is only communicating with the 
+master and as a result is only accessing its fault code memory. 
+
+The master contains in addition to the signal processor a further microprocessor for this 
+purpose. This also carries out communication via the FlexRay controller with partner con¬ 
+trol units, and with the ICM control unit in particular. 
+
+
+27 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Bus Connections 
+
+The sensors for Active Blind Spot Detection are connected with two bus systems: 
+
+• The master (SWW) is connected to the FlexRay and to the local CAN. 
+
+• The SWW2 radar sensor is only connected with the local CAN. 
+
+The SWW2 uses the local CAN to transmit the data of all of the road users it has detect¬ 
+ed to the master. The sensors also utilize the local CAN to exchange internal system sta¬ 
+tus and control signals. 
+
+The local CAN is physically set up like the PTCAN and therefore works at a bit rate of 
+500 kBit/s. Master and SWW2 each have one of the two terminal resistors, each with 
+120 Q. 
+
+The FlexRay represents the interface between the sensors and the whole vehicle. In this 
+way, the sensors, or to be exact, the master sensor, receives the data about the state of 
+motion of the vehicle (e.g. the road speed and yaw rate). 
+
+The master uses this interface to send information about whether the necessity for a 
+warning exists to the ICM control unit. 
+
+The FlexRay is routed to the master and is fitted there with a terminating resistor. The 
+master is therefore a terminal node in the FlexRay network. 
+
+A detailed description of new features in the FlexRay network can be found in the F01 / 
+F02. bus systems training material in ICP and TIS. 
+
+Voltage Supply 
+
+The SWW sensors are supplied with power via a common fuse with terminal 15. The 
+fuse is located in the rear fuse carrier (in the luggage compartment). The voltage supply is 
+routed to the master and from there to the SWW2. 
+
+The wake-up line is therefore not reguired on the SWW sensors. 
+
+Note: During the overrun of terminal 15 the SWW sensors save important data 
+in the integrated EEPROM. This includes, for example, fault code memo¬ 
+ry entries and values calculated during calibration. This data is perma¬ 
+nently stored and available again for the next driving cycle. It is therefore 
+important to wait for the overrun from terminal 15 when work is carried 
+out on the SWW sensors, before disconnecting the voltage supply (con¬ 
+nector, battery). 
+
+
+28 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Bus systems and voltage supply to the radar sensors of the blind spot detection system 
+
+
+
+Q 
+
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+SWW2 radar sensor 
+
+5 
+
+FlexRay feed line with a 
+terminating resistor 
+
+2 
+
+Master sensor 
+
+6 
+
+Voltage supply feed line 
+(terminal 15 and ground) 
+
+3 
+
+Feed line and continuation of the 
+voltage supply (terminal 15 and ground) 
+
+7 
+
+Fuse for SWW sensors (rear fuse carrier 
+in the luggage compartment 
+
+4 
+
+Local CAN feed line with a 
+terminating resistor 
+
+
+
+
+29 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Calibrating the Radar Sensors 
+
+The calibration process is carried out with use of the ISTA diagnostic system. 
+
+Calibration is performed for both sensors of the Active Blind Spot Detection system 
+successively. 
+
+Reasons for calibration 
+
+The radar sensors of the Active Blind Spot Detection system measure the position and 
+speed of road users approaching from the rear. This measurement is taken by the sensor 
+housing as a reference value. In order to make a decision as to whether the driver should 
+be warned or not, the measured data must be related to the vehicle's coordinate system. 
+For this the exact location of the sensors must be known. 
+
+The installation location of the sensors is principally specified by the position of the 
+retaining bore in "center guide". However, the sensor may be incorrectly aligned during 
+installation or as a result of the tolerances of supporting parts. This applies in particular 
+to the angle formed by the sensor axis and the vehicle longitudinal axis. If the deviation 
+between the actual angle and the angle specified in the design is too large, this would 
+interfere with the proper functioning of the Active Blind Spot Detection system. Warnings 
+would either be omitted or be produced inappropriately. 
+
+The radar sensors must always be calibrated after the following: 
+
+• At least one of the radar sensors has been replaced. 
+
+• The bumper trim has been replaced. 
+
+• Repair work to the supporting parts has been carried out (e.g. to the "center guide"). 
+
+• The test plan of the diagnostic system reguests this due to a fault code memory 
+entry. 
+
+
+Note: For more information regarding the Active Blind Spot Detection radar 
+calibration process refer to the ISTA Diagnostic System. 
+
+
+30 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Special Situations and Fault Statuses 
+
+Communication faults and internal control unit faults are not dealt with here in detail. 
+Problem resolution is carried out in the same manner as with other control units, i.e. with 
+the assistance of the test plan in the diagnostic system. 
+
+Instead, the emphasis here is on the statuses which apply specifically to the radar 
+sensors of the Active Blind Spot Detection system. The material presented here should 
+facilitate the diagnostics. 
+
+Blindness 
+
+"Blindness" here is used to denote heavy interference with the radar sensors, in which 
+they no longer are able, for example, to detect road users at the required range. Blindness 
+can also cause incorrect or omitted warnings. 
+
+The radar sensors contain a function which enables it to detect this status during 
+operation. In this case, the master sends a bus signal to the ICM and the Active Blind 
+Spot Detection system is then deactivated. The driver is informed about this by a Check 
+Control message. The blindness status is documented with an entry in the fault code 
+memory for a subsequent workshop visit. 
+
+Possible causes of the blindness status are: 
+
+• The sensor is covered by a sticker or by a bicycle carrier at the rear. 
+
+• Deformation (dents) in the bumper trim, even if for instance it has been repaired 
+with plastic filler. 
+
+• Incorrect vertical alignment of the sensors (e.g. upwards) through a deformation 
+of the supporting parts. 
+
+• Extremely thick covering of snow/slush on the bumper trim. 
+
+Errors in the sensor alignment 
+
+In the radar sensors of the Active Blind Spot Detection system, a function is calcu¬ 
+lated that can detect sensor alignment errors when the vehicle is in motion. This 
+function monitors the data about detected objects as it is processed. 
+
+If the detected sensor alignment error is within a range that is still tolerable, the function 
+compensates for the error. This means the data about the detected road users is correct¬ 
+ed by the known value. If a sensor alignment error that is too large is detected, the proper 
+functioning of the Active Blind Spot Detection system is no longer possible. The master 
+then sends a signal to the ICM and the Active Blind Spot Detection system is switched 
+off. The driver is informed about this by a Check Control message. 
+
+
+31 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Reasons for deactivating the system due to detected sensor alignment errors include: 
+
+• A new radar sensor was installed without being calibrated (detected immediately). 
+
+• The sensor is covered by a sticker or by a bicycle carrier. 
+
+• Mechanical damage to the rear of the vehicle with deformation of the supporting 
+parts (e.g. the "Center guide"). 
+
+• Deformation (dents) in the bumper trim, even if for instance it has been repaired with 
+plastic filler. 
+
+Some of the reasons given here could also apply to the "blindness" status. 
+
+For example, depending on the extent of the deformation of the bumper trim, 
+this can result in blindness. 
+
+This kind of deformation can distort the radar signals in such a way that the sensors 
+detect a sensor alignment error. 
+
+Rear damage 
+
+Two kinds of damage are plausible which reguire different repair measures: 
+
+• Damage exclusively to the bumper trim in the area where the sensor is installed. 
+
+• Additional deformation of the bumper bracket or other supporting parts. 
+
+Damage to the bumper trim 
+
+Of course only damage in the area where the radar waves are emitted from the sensors 
+are relevant. If the bumper trim is deformed there, scratched extensively or it has an 
+uneven thickness due to repairs to the plastic, can interfere with the proper functioning 
+of the radar sensors. Bumper stickers placed over the area can also cause radar interfer¬ 
+ence. 
+
+These situations may result in a reduced range, the omission of warnings or the incorrect 
+production of a warning. 
+
+In the event of this kind of damage, you must ensure that the sensor installed behind the 
+bumper trim has not been damaged in anyway. 
+
+The repair entails restoring the original position and the original shape of the bumper trim 
+to ensure proper system operation. 
+
+
+Note: The US marketing term for Lane Change Warning System (SWW) is 
+
+Active Blind Spot Detection. These two systems are one and the same 
+and are not to be confused with Lane Departure Warning. 
+
+
+32 
+
+F01 Active Blind Spot Detection System 
+
+
+
+Damage to supporting parts 
+
+If a supporting part (e.g. the bumper bracket or the trunk trim fitted to the "Center guide") 
+is deformed, the sensors for the Active Blind Spot Detection system are probably no 
+longer correctly aligned. This leads to the omission of warnings or that warnings are 
+incorrectly produced. 
+
+Your first option is to attempt a calibration. To do this, the bumper trim must be mounted. 
+If the calibration is performed successfully, the misalignment was so small that it could be 
+compensated for in the calibration (using software). 
+
+If the calibration produces a deviation in the sensor alignment that is larger than specified 
+by the design, the "center guide" must be correctly realigned. Because the "center 
+guide" acts as a carrier for the sensors, aligning the "Center guide" also repositions the 
+sensors correctly. This process is described in detail in the Repair Instructions. 
+
+Based on the spacers that act as gauges, the correct alignment can be restored. In any 
+case, after this kind of body repair, the sensors will have to be calibrated. 
+
+
+Display and Control Elements 
+
+
+Operating unit for driver assistance systems 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Function illumination 
+
+2 
+
+Active Blind Spot Detection button 
+
+
+33 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIN-bus Connections 
+
+
+ASP_FA ASP_BF 
+
+
+BE_FAS ^ 
+
+FRM 
+
+
+LIN bus connections at the footwell module 
+
+
+Index 
+
+Explanation 
+
+ASP_FA 
+
+Driver's door mirror 
+
+ASP_BF 
+
+Front passenger door mirror 
+
+BE_FAS 
+
+Operating unit for driver assistance systems 
+
+FRM 
+
+Footwell module 
+
+
+The operating unit for the driver assistance systems is fitted with a button that can switch 
+the Active Blind Spot Detection system on and off. 
+
+The operating unit is connected via the LIN bus to the footwell module (FRM). A bus 
+signal from the FRM to the ICM is used to inform that the button has been pressed. 
+
+The ICM only permits the Active Blind Spot Detection to be switched on, if the system is 
+working faultlessly. Only then does it send a positive response via a bus signal to the 
+FRM, to activate the function illumination on the button. 
+
+If instead there is a fault with the system, the function illumination remains off despite 
+being pressed. The driver will then know that the system is not available. 
+
+
+34 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+Warning Light in the Driver's Door Mirror 
+
+There is a triangular-shaped warning light in the left and right door mirror. This lights up 
+two-dimensionally and can be activated in different intensities. 
+
+The ICM sends a reguest together with the reguested intensity to the footwell module. 
+
+Using the LIN bus, the request is passed on to the electrical system of the respective 
+door mirrors. Amplitude-modulated control is used to light up the LEDs in the door mirror. 
+
+Vibration Actuator in the Steering Wheel 
+
+The vibration actuator is housed in the six o'clock spoke of the steering wheel. It has the 
+task of causing the steering wheel to vibrate. 
+
+The Lane Departure Warning and Active Blind Spot Detection systems use this vibration, 
+in order to alert the driver of dangerous situations. In both systems, the warning is execut¬ 
+ed by vibrating the steering wheel. 
+
+The steering wheel module that controls the vibration actuator is also housed in the 
+interior of the steering wheel. This produces an alternating voltage that causes the 
+vibration actuator to oscillate. The frequency of the alternating voltage is not changed 
+during operation. It is designed so that oscillations from the vibration actuator fit perfectly 
+to the overall steering wheel system. 
+
+The amplitude of the alternating voltage can be changed using the steering wheel 
+module. Therefore, you have the option of different systems with varying oscillating 
+amplitudes available to you for the warning. 
+
+
+Steering wheel with vibration actuator 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Steering wheel module (LRE) 
+
+2 
+
+Vibration actuator 
+
+
+35 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+The E6x LCI is already equipped with the driver assistance system called lane departure 
+warning which has already used steering wheel vibration to warn the driver in a similar 
+way. Here a vibration motor is used as the vibration actuator. An unbalance mass is 
+located on the shaft. If the vibration motor is activated, the unbalance mass rotates and 
+thus produces the vibrations. 
+
+The vibration actuator in the F01/F02 has undergone a significant advancement in 
+comparison with the vibration motor. Instead of the unbalance motor, a structural 
+element is used that only oscillates in a longitudinal direction. For this reason, it is known 
+as a "longitudinal oscillator". This active principle has the advantage that the vibrations are 
+only induced in this one direction. The vibration actuator is built into the steering wheel so 
+that the direction of its oscillations corresponds with the direction of rotation of the steer¬ 
+ing wheel. This provides an ideal expression of the warning and the driver is made imme¬ 
+diately aware that he must use the steering wheel to avert the dangerous situation. In 
+addition, this principle to a large extent avoids unwanted side-effects such as noises or 
+oscillations that could be transferred in other directions to the body. 
+
+The two brackets connect the vibration actuator with the steering wheel. However, the 
+brackets on the vibration actuator are not screwed to the case, but to the coil carrier. 
+
+Exploded view of the Vibration actuator 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Left bracket 
+
+6 
+
+Coil 
+
+2 
+
+Left case section 
+
+7 
+
+Electrical connection 
+
+3 
+
+Permanent magnet 
+
+8 
+
+Spring 
+
+4 
+
+Spring 
+
+9 
+
+Right case section 
+
+5 
+
+Coil carrier 
+
+10 
+
+Right bracket 
+
+
+36 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This means the coil carrier is fixed in place. The permanent magnet can move instead. It 
+is set into an oscillating motion in the direction shown, when alternating voltage is applied 
+to the coil. The longitudinal movement of the permanent magnet is transferred to both 
+case sections due to its length. This is why the case sections also have a long slot in the 
+electrical connection area to the coil. The springs ensure that the case sections do not hit 
+against their end positions and therefore prevent noises. 
+
+The reguest to activate the vibration actuator is sent from the Integrated Chassis 
+Management over the FlexRay to the steering column switch cluster (SZL). The SZL 
+guides this reguest via LIN bus further to the steering wheel module (LRE). 
+
+LIN bus subscribers at the 
+steering column switch cluster 
+
+
+LRE 
+
+
+Index 
+
+Explanation 
+
+LRE 
+
+Steering wheel module 
+
+SZL 
+
+Steering column switch cluster 
+
+
+Instrument Cluster 
+
+There are no function displays for the Active Blind Spot Detection system in the instru¬ 
+ment cluster (different to the lane departure warning). Instead Check Control messages 
+are displayed in the instrument cluster, when the Active Blind Spot Detection system is 
+not available. A distinction is made between two possible causes: 
+
+
+
+
+Active Blind Spot Detection deactivated 
+(due to functional peripheral factors such 
+as, blindness) 
+
+
+Active Blind Spot Detection failure 
+(due to real faults or defects with components) 
+
+
+37 
+
+F01 Active Blind Spot Detection System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38 
+
+F01 Active Blind Spot Detection System 
+
+
+

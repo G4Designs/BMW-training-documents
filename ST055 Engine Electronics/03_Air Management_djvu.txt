@@ -1,0 +1,1863 @@
+Table of Contents 
+
+
+Air Management 
+
+Subject Page 
+
+Air Management.3 
+
+Accelerator Pedal Position (Pedalwertgeber - PWG).3 
+
+Throttle Valve (EDK) .6 
+
+Throttle Motor and Feedback Position .6 
+
+Failsafe Operation - EDK.9 
+
+Idle Air Actuator.10 
+
+Failsafe Operation - Idle Air Actuator .11 
+
+Hot-Film Air Mass Meter (HFM).12 
+
+HFM on NG6 Engines.13 
+
+Air Measurement with HFM.14 
+
+“Virtual” Air Measurement without HFM.15 
+
+Air Temperature Signal .16 
+
+Variable Intake Manifold (DISA) .17 
+
+Fully Variable DISA.17 
+
+Two Stage DISA.18 
+
+Variable Intake Manifold (DISA) .19 
+
+DISA Actuators.20 
+
+DISA Operation.21 
+
+1st stage - Idling/lower engine speed range .21 
+
+2nd stage - medium engine speed range.21 
+
+3rd stage - upper engine speed range.21 
+
+Workshop Hints.23 
+
+Air Management .23 
+
+Grankcase Ventilation System .23 
+
+Accelerator Pedal Position (PWG) .23 
+
+Throttle Valve (EDK).23 
+
+Hot-Film Air Mass Meter (HFM).24 
+
+Idle Air Actuator.24 
+
+Air Temperature Signal .25 
+
+
+Initial Print Date: 03/11 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Management 
+
+Model: All 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand how different intake manifolds and air intake systems function 
+
+• Understand how the Air System influences Engine Management 
+
+• Be able to test the Mass Air Flow system 
+
+• Be able to test the throttle assembly and the inputs that affect the throttle 
+
+• Understand EDK and Idle Air Actuator operation 
+
+
+2 
+
+Air Management 
+
+
+
+
+Air Management 
+
+
+Example of IPO for an Air Management System 
+
+
+
+One of the main purposes of the ECM is Air Management which includes the actuation 
+of several components. In the following pages you will find a generic explanation on how 
+this system works. For more detailed information please access BMW Training 
+Reference Manuals found online. 
+
+
+Air flow into the engine is regulated by the Throttle Valve 
+and/or the Idle Air Actuator. Both of these air “passages” 
+are necessary for smooth engine operation from idle to 
+full load. The Throttle Valve and the Idle Air Actuator are 
+
+electrically controlled. All of the ECM monitoring, 
+processing and output functions are a result of regulated 
+air flow. 
+
+Accelerator Pedal Position 
+(Pedalwertgeber - PWG) 
+
+
+
+The Accelerator Pedal Position is monitored by the ECM 
+for pedal angle position and rate of movement. As the accelerator is moved, it provides 
+two variable voltage signals to the ECM that represents accelerator pedal position and 
+rate of movement. 
+
+
+Dual Hall Sensors are integral in the accelerator pedal module. The ECM compares the 
+two values for plausibility. The module contains internal springs to return the accelera¬ 
+tor pedal to the rest position. 
+
+The ECM will increase the volume of fuel injected into the engine, advance the ignition 
+timing and open the Throttle Valve and/or Idle Air Actuator. 
+
+The “full throttle” position indicates maximum acceleration to the ECM, and in addition to 
+the functions just mentioned, this will have an effect on the air conditioning compressor. 
+
+As the accelerator pedal is released (integral springs), a decrease in voltage signals the 
+ECM to activate fuel shut off if the PPM is above idle speed (coasting). When the 
+Throttle Valve is completely closed, the Idle Air Actuator is opened to maintain engine 
+idle speed. 
+
+
+3 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ECM monitors the engine idle speed in addition to the accelerator pedal position 
+and throttle position voltage. If the voltage values have changed (mechanical wear of 
+throttle plate or linkage), the ECM will adjust the Idle Air Actuator to maintain the correct 
+idle speed. 
+
+
+The Potentiometers/Hall sensors are non-adjustable because the ECM “learns” the 
+throttle angle voltage at idle speed. If the throttle housing/accelerator pedal module is 
+replaced, the adaptations must be cleared and adaptation procedure must be performed 
+using ISTA. If this is not performed, the vehicle 
+not start, or run in “fail-safe” mode. 
+
+
+If this Input is defective, a fault code will be 
+stored and the “Malfunction Indicator and/or 
+EML” Light will be Illuminated. Limited engine 
+operation will be possible. 
+
+The ECM provides voltage (5V) and ground for 
+the Hall sensors. As the accelerator pedal is 
+moved from rest to full throttle, the sensors 
+produce a variable voltage signal. 
+
+• Hall sensor 1 (request) 
+
+• Hall sensor 2 (plausibility) 
+
+
+
+
+If the signals are not plausible, the ECM will use the lower of the two 
+signals as the requested input. The throttle response will be slower 
+and the maximum throttle response will be reduced. 
+
+
+4 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The pedal position sensor is monitored by checking each individual sensor circuit 
+
+and comparing the two pedal values. Monitoring is active as soon as the sensors receive 
+voltage (KL15). The ECM decides what operating mode the pedal position sensor is to 
+assume. 
+
+• Pedal position sensor fully operable. 
+
+• Failure of one pedal position sensor 
+(maximum engine speed is limited). 
+
+• Failure of both pedal position sensors 
+(engine speed limited to 1500 rpm). 
+
+
+
+5 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Throttle Valve (EDK) 
+
+The throttle valve plate is electronically oper¬ 
+ated to regulate intake air flow by the ECM. 
+
+The main characteristics are: 
+
+• Precision throttle operation, 
+
+• OBD compliant for fault monitoring, 
+
+• DSC and Cruise Control. 
+
+This integrated electronic throttle reduces extra control modules, wiring, and sensors. 
+Adjusting electronic throttles is not permitted, the throttle assembly must be replaced as 
+a unit. The adaptation values must be cleared and adaptation procedure must be per¬ 
+formed using ISTA. 
+
+The throttle assembly for the system is referred to as the EDK: 
+
+• EDK does not contain a PWG, It is remotely mounted (integrated in the accelerator 
+pedal assembly). 
+
+• The accelerator pedal is not mechanically “linked” to the EDK. 
+
+
+
+Throttle Motor and Feedback Position 
+
+The ECM powers the EDK motor using pulse width modulation (PWM) for opening and 
+closing the throttle plate. The throttle plate is also closed by an integrated return spring. 
+
+Two integrated potentiometers provide voltage feedback signals to the ECM as the 
+throttle plate is opened and closed. 
+
+• Feedback signal 1 provides a signal from approx. 0.5V (closed) to approx. 4.5 V 
+(Full Throttle) 
+
+• Feedback signal 2 provides a signal from approx. 4.5V (closed) to approx. 0.5V 
+(Full Throttle) 
+
+
+Potentiometer 1 is the primary feedback signal of throttle plate position and signal 
+is the plausibility cross check through the complete throttle plate movement. 
+
+
+MOTOR 
+
+CONTROL 
+
+
+ELECTRIC THROTTLE 
+
+
+
+\ 
+
+\ 
+
+
+POT1 SIGNAL 
+POT2 SIGNAL 
+POT POWER 
+GROUND 
+
+
+
+6 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Total Intake Air Flow Control is performed 
+by the ECM simultaneously operating the EDK 
+throttle control and the Idle Air Actuator. 
+
+The ECM detects the driver’s request from the 
+potentiometers/Hall Sensors monitoring the 
+accelerator pedal position. This value Is added 
+to the Idle Air control value and the total Is what 
+the ECM uses for EDK activation. The ECM 
+then controls the Idle Air Actuator to satisfy the 
+idle air “fill”. In addition, the EDK will also be 
+activated = pre-control idle air charge. Both of 
+these functions are utilized to maintain idle 
+RPM. 
+
+
+
+The EDK is electrically held at the idle speed position, and all of the intake air is drawn 
+through the Idle Air Actuator. Without a load on the engine (<15%), the EDK will not 
+open until the extreme upper RPM range. If the engine Is under load (>15%), the Idle 
+Air Actuator is open and the EDK will also open. 
+
+
+
+Vehicles equipped with VALVETRONIC, e.g. N52, N55, 
+will only use the EDK in certain operating conditions. 
+
+
+7 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All variants of the NG6 engines receive the new EGAS 08 throttle by SiemensA/DO. 
+The new throttle uses a plastic throttle valve and magneto-resistive feedback to the 
+ECM. 
+
+
+The previous system used a potentiometer, whereas the new 
+
+throttle uses a “contactless” system featuring magneto-resistive technology which is 
+
+familiar from the eccentric shaft sensor on Valvetronic systems. 
+
+The magneto-resistive sensors are integrated into the housing cover. The sensors are 
+also non-wearing. 
+
+
+For plausibility, the one sensor outputs the analog signal in the range from 0.3 to 4.6 V 
+and the other sensor inverts it again from 4.6 to 0.3 V. 
+
+
+Conseguently, the contact force is 10 times greater than that of a conventional plug con¬ 
+nector 
+
+
+
+It is possible to twist the connector before plugging it in. 
+This can cause damage to the harness and connector. 
+
+
+8 
+
+Air Management 
+
+
+^/|\ Failsafe Operation - EDK 
+
+When a fault is detected in the system: 
+
+• The EDK provides two separate signals from two integrated potentiometers (Pot 1 
+and Pot 2) representing the exact position of the throttle plate. 
+
+• EDK Pot 1 provides the primary throttle plate position feedback. As a redundant 
+safety feature, Pot 2 is continuously cross checked with Pot 1 for signal plausibility. 
+
+• If plausibility errors are detected between Pot 1 and Pot 2, the ECM will calculate 
+the inducted engine air mass (from HEM signal) and only utilize the potentiometer 
+signal that closely matches the detected intake air mass. 
+
+- The ECM uses the air mass signaling as a “virtual potentiometer” (Pot 3) for a 
+comparative source to provide failsafe operation. 
+
+- If the ECM cannot calculate a plausible conclusion from the monitored Pots (1 
+or 2 and virtual 3) the EDK motor is switched off and fuel injection cut out is 
+activated (Failsafe operation is not possible). 
+
+• The EDK is continuously monitored during all phases of engine operation. It is also 
+briefly activated/adapted when KL_15 is initially switched on as a “preflight check” 
+to verify it’s mechanical integrity (no binding, appropriate return spring tension, etc). 
+This is accomplished by monitoring both the motor control amperage and the reac¬ 
+tion speed of the EDK feedback potentiometers. If faults are detected the EDK 
+motor is switched off and the fuel injection cut off is activated (failsafe operation is 
+not possible). The engine does however continue to run extremely rough at idle 
+speed. 
+
+• When in emergency operation, the engine speed is always limited to 1300 PPM by 
+fuel injector cutout, and activation of the “EML” light to alert the driver of a fault. 
+
+• When a replacement EDK is installed, the ECM adapts to the new component 
+(required amperage draw for motor control, feedback pot tolerance difference, etc). 
+This occurs immediately after the next cycle of KL_15 for approximately 30 sec¬ 
+onds. During this period of adaptation, the maximum opening of the throttle plate 
+is 25%. 
+
+
+9 
+
+Air Management 
+
+
+
+
+Idle Air Actuator 
+
+
+This valve regulates air by-passing the throttle 
+valve to control the engine idle/low speed. 
+
+The valve is supplied with battery voltage from the 
+ECM Relay. The Idle Air Actuator is a two-coil 
+rotary actuator. The ECM is equipped with two 
+final stage transistors which will alternate position¬ 
+ing of the actuator. 
+
+The final stages are "pulsed" simultaneously by 
+the ECM which provides ground paths for the 
+actuator. The duty cycle of each circuit is varied to 
+achieve the required idle RPM. 
+
+If this component/circuits are defective, a fault 
+code will be set and the “Malfunction Indicator 
+Light” will be Illuminated when the OBD II criteria Is 
+achieved. 
+
+
+
+
+
+
+
+The Idle Air Actuator is controlled by the ECM modulating the ground signals (PWM at 
+100 Hz) to the valve. By varying the duty cycle applied to the windings, the valve can be 
+progressively opened, or held steady to maintain the idle speed. 
+
+The ECM controls the Idle Air Actuator to supply the necessary air to maintain idle 
+speed. When acceleration is requested and the engine load is low (<15%), the actuator 
+will also supply the required air. 
+
+The basic functions of the idle speed control are: 
+
+• Control the initial air quantity (air temp <0° C, EDK is simultaneously opened). 
+
+• Variable preset idle based on load and Inputs. 
+
+• Monitor RPM range intake for each preset position. 
+
+• Vacuum Limitation 
+
+• Smooth out the transition from acceleration to deceleration. 
+
+
+Under certain engine operating parameters, the EDK throttle control and the Idle Air 
+Actuator are operated simultaneously. This includes all Idling conditions and the transi¬ 
+tion from off Idle. As the request for load Increases, the idle valve will remain open and 
+the EDK will supply any additional air volume required to meet the demand. 
+
+
+10 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Failsafe Operation - Idle Air Actuator 
+
+If a fault is detected with the Idle Air Actuator, the ECM will initiate failsafe mea¬ 
+sures depending on the effect of the fault (increased air flow or decreased air 
+flow). If there is a fault in the Idle Air Actuator/circuit, the EDK will compensate 
+to maintain idle speed. The “Malfunction Indicator and/or EML” Light will be 
+illuminated to inform the driver of a fault. 
+
+If the fault causes increased air flow (actuator failed open), VANOS and Knock 
+Control are deactivated which noticeably reduces engine performance. 
+
+
+11 
+
+Air Management 
+
+
+
+Hot-Film Air Mass Meter (HFM) 
+
+
+The air volume input signal is produced electronically 
+by the HFM which uses a heated metal film (180° C 
+above intake air temperature) in the air flow stream. 
+
+The ECM Relay provides the operating voltage. As air 
+flows through the HFM, the film is cooled changing 
+the resistance which affects current flow through the 
+circuit. The sensor produces a 1 -5 volt varying signal. 
+Based on this change the ECM monitors and regu¬ 
+lates the amount of injected fuel. 
+
+The Hot-Film Air Mass Meter (HFM) varies volt¬ 
+age monitored by the ECM representing the mea¬ 
+sured amount of intake air volume. This input is used 
+by the ECM to determine the amount of fuel to be 
+injected. 
+
+The heated surface of the hot-film in the intake air 
+stream is regulated by the ECM to a constant tem¬ 
+perature of 180° C above intake air temperature. The 
+incoming air cools the film and the ECM monitors the 
+changing resistance which affects current flow 
+through the circuit. The hot-film does not require a 
+“clean burn”, it is self cleaning due to the high oper¬ 
+ating temperature for normal operation. 
+
+
+
+ECM 
+
+MAIN 
+
+RELAY 
+
+
+
+CONTROL 
+
+MODULE 
+
+
+
+
+
+If this input is defective, a fault code 
+will be set and the “Malfunction 
+Indicator Light” will illuminate when 
+the OBD II criteria is achieved. The 
+ECM will maintain engine operation 
+based on the Throttle Position 
+Sensors and Crankshaft 
+Position/Engine Speed Sensor. 
+
+
+The HFM is non-adjustable. 
+
+
+
+12 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HFM on NG6 Engines 
+
+The HFM on all new NG6 engines has been upgraded to a digital HFM. The output of 
+the sensor is a digital signal in which the duty cycle responds to changes In air mass. 
+
+The Siemens SIMAF GT2 Hot-Film air Mass meter is used in several BMW engines. 
+
+This sensor is equipped with planar metal resistors on glass. Based on the tried and test¬ 
+ed sensor technology used in the SIMAF GT1 for more than 15 years, the SIMAF GT2 
+represents a further-development and optimization with higher vibration resistance, 
+improved accuracy (at all operating temperatures), and lower sensitivity to air pulsations 
+and water. 
+
+The output of the sensor is converted to a digital signal. This eliminates the need for sig¬ 
+nal conversion in the ECM. The signal corresponds proportionally to changes in air 
+mass. 
+
+Hot-film air mass meter 
+
+
+
+
+The N54 engine uses a virtual HFM. The signal is “calculated” in the 
+ECM from various parameters such as engine speed, intake air tem¬ 
+perature, throttle position etc. 
+
+
+13 
+
+Air Management 
+
+
+
+
+
+
+Air Measurement with HFM 
+
+
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Measurement of intake air 
+temperature and air mass 
+
+5 
+
+Residual 02 content in 
+exhaust gas 
+
+2 
+
+Throttle valve position 
+
+6 
+
+Intake manifold vacuum 
+
+3 
+
+Intake manifold 
+
+7 
+
+Engine speed 
+
+4 
+
+Intake valve lift (from VVT) 
+
+8 
+
+Injection Timing 
+
+
+14 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Virtual” Air Measurement without HFM 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Intake air temperature 
+
+6 
+
+Intake manifold vacuum 
+
+2 
+
+Throttle valve position 
+
+7 
+
+Engine speed 
+
+3 
+
+Intake manifold 
+
+8 
+
+ECM (DME) with characteristic 
+map for air mass calculation 
+
+4 
+
+Intake valve lift (VVT if equipped) 
+
+9 
+
+Injection Timing 
+
+5 
+
+Residual 02 content in exhaust 
+(02 sensor) 
+
+
+
+
+^ The HFM is non-adjustable and tampering is not permitted. A faulty 
+§ Hot-Film Air Mass Sensor can produce the following complaints: 
+
+
+• Difficult To Restart When Engine Is Hot. 
+
+• Engine Starts Then Stalls. 
+
+• “Malfunction Indicator Light” Illuminated. 
+
+• Engine Starts and Runs Only With Accelerator Pedal 
+Depressed. 
+
+
+15 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Temperature Signal 
+
+The HFM contains an integral air temperature sensor. 
+
+This is a Negative Temperature Coefficient (NTC) type 
+sensor. This signal is required by the ECM to correct the 
+air volume input for changes in the intake air temperature 
+(air density) affecting the amount of fuel injected, ignition 
+timing and Secondary Air Injection activation. 
+
+The ECM provides the power supply to the sensor which 
+decreases in resistance as the temperature rises and vice 
+versa. The ECM monitors an applied voltage to the sen¬ 
+sor that will vary as air temperature changes the resis- Ti *.■ 
+
+tance value. 
+
+If this input is defective, a fault code will be set and the “Malfunction Indicator Light” will 
+be illuminated when the OBD II criteria is achieved. The ECM will operate the engine 
+using the Engine Coolant Sensor input as a back up. 
+
+The Air Temperature signal allows the ECM to make a calculation of intake air tem¬ 
+perature. The varying voltage input from the NTC sensor indicates the larger proportion 
+of oxygen found in cold air, as compared to less oxygen found in warmer air. The ECM 
+will adjust the amount of injected fuel because the quality of combustion depends on 
+oxygen sensing ratio. 
+
+The ignition timing is also affected by air temperature. If the intake air is hot the ECM 
+retards the base ignition timing to reduce the risk of detonation. If the intake air is cooler, 
+the base ignition timing will be advanced. The ECM uses this input as a determining fac¬ 
+tor for Secondary Air Injection activation. 
+
+If this input is defective, a fault code will be set and the “Malfunction 
+Indicator Light” will illuminate when the OBD II criteria is achieved. 
+The ECM will maintain engine operation based on the HFM and 
+Engine Coolant Temperature sensor. 
+
+
+
+
+16 
+
+Air Management 
+
+
+
+
+Variable Intake Manifold (DISA) 
+
+
+Fully Variable DISA 
+
+In the N62 engine, the infinitely variable differential intake air system (DISA) intake man¬ 
+ifold is operated by turning the rotor in the intake manifold. 
+
+Adjustments to the intake manifold are carried out by the ECM controlling a drive unit. 
+The drive unit is mounted on the rear of the intake manifold. 
+
+The drive unit consists of a 12V DC electric motor with worm gears and an integral 
+potentiometer for the intake manifold position feedback. 
+
+The drive unit is equipped with a 5-pin connector. 
+
+
+
+
+If the drive unit fails, the system remains in its current position. 
+The driver may notice a loss in power. 
+
+
+17 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Two Stage DISA 
+
+The previous fully variable intake system is no longer used in the N62TU engine. A new 
+two-stage intake system (DISA) is used instead. The previous intake manifold was made 
+from magnesium; the new intake is manufactured from glass fiber reinforced plastic. 
+
+There are two servomotors which provide a 2-stage (long/short) function of the intake 
+manifold runners. Due to the increased displacement and engine power, the fully vari¬ 
+able intake system is no longer required. 
+
+The 12V servomotors are actuated by the ECM via a PWM signal. While the sliding 
+sleeves are open (power setting), the servomotors are actuated with a 5 % PWM signal 
+in order to hold the sleeves in their open position. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Servomotor, cylinder bank 1 
+
+2 
+
+Differential Pressure Sensor 
+
+3 
+
+Servomotor, cylinder bank 2 
+
+4 
+
+Bores for fuel injectors 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Long Intake Passage 
+
+2 
+
+Short Intake Passage 
+
+3 
+
+Directional movement of sliding sleeves 
+
+
+
+18 
+
+Air Management 
+
+
+■ Fixed intake manifold ■ Two stage DISA 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Variable Intake Manifold (DISA) 
+
+The intake manifold on the N52 uses a three stage differential intake air system (DISA). 
+The air flow through the Intake manifold Is controlled and re-directed by two DISA actua¬ 
+tor motors. 
+
+Each actuator motor is operated by an electric motor controlled by the Engine Control 
+Module (ECM) via a PWM signal. The PWM signal is at a frequency of 200 Hz. The 
+ECM varies the duty cycle to control the position of the DISA flap. The actuator consists 
+of a flap and motor drive. There are only two positions possible - closed or 
+opened. When activated, the motor moves the flap to each end position. Both actua¬ 
+tors are switched to the closed position at idle. 
+
+
+
+
+
+The DISA motors are similar in design and operation, but they are not 
+interchangeable. Each actuator assembly has it’s own individual part 
+number. 
+
+
+19 
+
+Air Management 
+
+
+
+
+
+
+DISA Actuators 
+
+Together with the drive, the DISA valve (flap) 
+forms one unit. The DISA valve is driven by an 
+electric motor and a gear mechanism. 
+
+The electronic control is integrated in the DISA 
+actuator. The DISA actuator is driven by a pulse 
+width-modulated signal from the DME. 
+
+There are only two possible positions: The 
+valves (flaps) can either be closed or opened, i.e. 
+when activated, the motor moves the valve to 
+the respective end position. 
+
+
+
+
+
+•(trim 
+" • 
+
+
+•MXfi 
+
+H. 
+
+
+20 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DISA Operation 
+
+■ 1st stage - idling/lower engine speed range 
+
+At idle speed and in the lower engine speed range, actuators 1 and 2 are closed. The 
+intake air flows past the throttle valve into the resonance pipe. In the resonance pipe, the 
+intake air mass splits. The air is fed via the collector pipe and resonating pipes into the 
+individual cylinders. In this way, three cylinders are provided with a comparably high air 
+mass. 
+
+■ 2nd stage - medium engine speed range 
+
+In the medium engine speed range, DISA actuator motor 2 is opened. In this case, it is 
+assumed that the inlet valves of the first cylinder are just closing. The gas motion creates 
+a pressure peak at the closing inlet valves. This pressure peak is passed on via the res¬ 
+onating and collector pipes to the in next cylinder in the firing order. This improves the 
+fresh gas filling of the next cylinder to be filled. 
+
+■ 3rd stage - upper engine speed range 
+
+In the upper engine speed range, both DISA actuator motors are opened. In this case, it 
+is assumed that the inlet valves of the first cylinder are just closing. The gas motion cre¬ 
+ates a pressure peak in front of the closing inlet valves. The intake air mass is now fed 
+via the resonating, overshoot and collector pipes. 
+
+
+
+
+
+1 St Stage 
+
+
+2nd Stage 3rd Stage 
+
+
+
+21 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DISA N52KP and N51 
+
+
+As far as the air management system on the N52KP and N51 engines 
+is concerned, the previous intake manifold system on the N52 is car¬ 
+ried over. Depending upon application, the engines will use the 
+3-stage DISA or the single stage (no DISA) intake manifold. 
+
+
+For more information on the DISA system refer to the previous 
+training material in the training course “ST501 - New Engine 
+Technology”. 
+
+
+22 
+
+Air Management 
+
+
+
+Workshop Hints 
+
+
+Air Management 
+
+Unmetered air leaks can be misleading when diagnosing faults causing “Malfunction 
+Indicator Light’Vdriveability complaints. Use the Smoke Machine to help you find leaks. 
+
+
+Crankcase Ventilation System 
+
+
+A fault in this system can often “mislead” diagnosis. This type of fault can produce: 
+
+Please refer to the following Service Information Bulletins for details on the Crankcase 
+Ventilation System: 
+
+• Mixture/misfire detected codes 
+
+
+• Whistling noise 
+
+• Performance/driveability complaints 
+
+Accelerator Pedal Position (PWG) 
+
+The Throttle Position Sensors can be tested 
+with the following methods: 
+
+• ISTA Status Page (approx.. 0.5V. to 4.5V) 
+
+• IMIB Oscilloscope - Select from the 
+Present measurement which requires tak¬ 
+ing the measurement with the ECM and 
+the Universal Adapter connected to the 
+circuit as shown on the right). 
+
+
+
+Throttle Valve (EDK) 
+
+Two integrated potentiometers provide volt¬ 
+age feedback signals to the ECM as the throt¬ 
+tle plate is opened and closed. 
+
+• Feedback signal 1 provides a signal 
+from approx. 0.5V (closed) to approx. 4.5 
+V (Full Throttle) 
+
+• Feedback signal 2 provides a signal 
+from approx. 4.5V (closed) to approx. 0.5V 
+(Full Throttle) 
+
+
+
+23 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hot-Film Air Mass Meter (HFM) 
+
+This component is non-adjustable and tampering is not permitted. 
+
+A faulty Hot-Film Air Mass Sensor can produce the following complaints: 
+
+• Difficult To Restart When Engine Is Hot. 
+
+• Engine Starts then Stalls. 
+
+• “Malfunction Indicator Light” Illuminated. 
+
+• Engine Starts and Runs Only With Accelerator Pedal Depressed. 
+
+The Hot-Film Air Mass Sensor can be tested with the following methods: 
+
+• ISTA Fault Code and Component Testing. 
+
+• ISTA Status Page 
+
+• IMIB Oscilloscope-which requires taking the measurement with the ECM 
+and the Universal Adapter connected to the circuit (engine running). 
+
+Visually inspect the sensor for damaged, missing or blocked screens. 
+The screens affect air flow calibration. Also inspect the sealing rings 
+
+_ 1) where the sensor inserts in the air filter housing and intake boot. 
+
+Ensure the pin connections are tight. 
+
+
+Idle Air Actuator 
+
+
+• The Idle Air Actuator Valve and air circuit 
+(passage ways)should be checked for 
+physical obstructions. Visually inspect the 
+sealing gasket, mounting bracket and air 
+hose clamps. 
+
+
+
+
+
+B+» 
+
+
+• The resistance of the valve winding should 
+be checked. 
+
+• The ECM output and Idle Speed Control 
+Valve operation can be tested by 
+“Component Activation” on ISTA. 
+
+• The Pulse Width Modulation ground out¬ 
+puts from the ECM can be tested using 
+the IMIB Oscilloscope. 
+
+
+
+• Consult Technical Data for specified idle 
+speed. 
+
+
+
+If the valve is blocked or contaminated, 
+an HFM fault code can also be present. 
+
+
+24 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Air Temperature Signal 
+
+
+The HFM contains an integral air temperature 
+sensor. NTC sensors decrease in resistance as 
+the temperature rises and vice versa. The ECM 
+monitors the sensor voltage which varies as 
+temperature changes the resistance value. For 
+example, as temperature rises: 
+
+• Resistance through the sensor decreases. 
+
+• Voltage drop across the sensor decreases. 
+
+• Input signal voltage also decreases (5-OV). 
+This sensor should be tested using: 
+
+• ISTA Diagnostic Query 
+
+
+
+¥ 
+
+
+
+
+'A 
+
+
+T 
+
+
+Iff 
+
+
+• IMIB Multimeter (ohms) 
+
+
+25 
+
+Air Management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26 
+
+Air Management 
+
+
+

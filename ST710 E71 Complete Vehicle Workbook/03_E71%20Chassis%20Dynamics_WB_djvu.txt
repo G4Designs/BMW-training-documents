@@ -1,0 +1,4534 @@
+Table of Contents 
+
+
+E71 Chassis Dynamics Workbook 
+
+Subject Page 
+
+Introduction .5 
+
+System Overview.6 
+
+Bus System Overview .7 
+
+System Overview - Dynamic Performance Control .8 
+
+System Circuit Diagram for Dynamic Performance Control without Active Steering .10 
+
+System Circuit Diagram for Dynamic Performance Control with Active Steering .11 
+
+System Components.12 
+
+Rear Differential with Superimposing Gear Units.12 
+
+Construction of the Superimposing Gear Units.14 
+
+Multi-plate Clutch and Ball Ramp.14 
+
+Electric Motors.16 
+
+Sensor System.17 
+
+Motor Position Sensor .17 
+
+Oil Temperature Sensors .17 
+
+Electric Motor Temperature Sensor.18 
+
+Mechanical Interfaces.19 
+
+Bus Systems .22 
+
+QMVH Control Unit .24 
+
+Design .24 
+
+Operation.25 
+
+ICM Control Unit.26 
+
+
+Initial Print Date: 04/08 Revision Date: 05/08 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Active Steering .27 
+
+Active Steering Control Unit .27 
+
+ARS .28 
+
+Control Unit.28 
+
+Active Anti-roll Bar.28 
+
+EMF.29 
+
+Principles of Operation.31 
+
+Integrated Chassis Management (ICM) .31 
+
+Monitoring the Vehicle Status .32 
+
+Coordinated Intervention by the Dynamic Driving Systems .32 
+
+Active Steering in the ICM Network .33 
+
+ICM Interfaces .34 
+
+Instrument Cluster.34 
+
+Engine Control Module.34 
+
+Dynamic Performance Control.36 
+
+Distribution of the Drive Torgue (xDrive w/o DPC).36 
+
+Distribution of the Drive Torgue (xDrive w/ DPC).37 
+
+Fixed Distribution of the Drive Torgue with Conventional Rear Differential .38 
+
+Distribution of the Drive Torgue by the Rear Differential with Mechanical Locks (limited-slip differential).38 
+
+Variable Distribution of the Drive Torgue in the Rear Differential with Superimposing Gear Units.38 
+
+A - Torgue Transfer Under Traction .38 
+
+B - Torgue Transfer During Coasting.39 
+
+C - Overrunning: Negative Torgue in the Propeller Shaft.39 
+
+Improved Traction.40 
+
+Accelerating Out of Corners .40 
+
+Driving off on Surfaces with Varying Friction Coefficients.40 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents 
+
+
+Subject Page 
+
+Increased Agility.42 
+
+Greater Directional Stability .43 
+
+Operating Modes and Displays.44 
+
+Normal Mode .44 
+
+Break-in Phase.45 
+
+Wear Over the Service Life .45 
+
+Driving Off with a Limited Steering Angle Signal .45 
+
+Excessive Temperature.46 
+
+System Not Available .47 
+
+Dynamic Performance Control in the ICM network.48 
+
+Service Information.50 
+
+Running-in Phase.50 
+
+Driving Off with a Limited Steering Angle Signal.50 
+
+Excessive Temperature .50 
+
+QMVH Unit.50 
+
+Electric Motors.50 
+
+Control Unit.51 
+
+ICM Control Unit.51 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4 
+
+E71 Chassis Dynamics Workbook 
+
+
+Chassis Dynamics 
+
+Model: E71 
+
+Production: From Start of Production 
+
+
+
+After completion of this module you will be able to: 
+
+• Identify the new components utilized in the dynamic driving system for the E71. 
+
+• Explain the purpose, function, and location of all the dynamic driving system control units. 
+
+• Explain the operation of the QMVH read differential. 
+
+• Explain the benefits to utilizing the QMVH read differential. 
+
+• Identify service concerns for the new QMVH rear differential. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introduction 
+
+
+In the E70, the BMW Group introduced a new generation of 
+dynamic driving systems that have now been comprehensively 
+developed and enhanced in theX6 (E71). The regulating strategy 
+of the individual systems, consistently subdivided into longitudinal, 
+lateral and vertical dynamics, forms the basis for the wide variety 
+of driving dynamics functions. 
+
+In the X6, the BMW Group has developed a complementary drive 
+and dynamic driving system that enables a distinct increase in 
+agility, stability and traction, as well as an increase in safety, with¬ 
+out compromising dynamics or efficiency. 
+
+The complete package in the X6 includes the dynamic driving 
+systems: 
+
+• Dynamic Drive 
+
+• Vertical Dynamic Control 
+
+• Adaptive Drive 
+
+• Electronic Height Control 
+
+• Dynamic Stability Control 
+
+• Active Steering 
+
+• xDrive 
+
+• Dynamic Performance Control 
+
+All these functions enable the highest degree of dynamic driving 
+performance through intelligent interaction between the systems. 
+The slogan "The Ultimate Driving Machine" is more than just an 
+integrated policy behind the development of each BMW vehicle. 
+
+
+
+In the E71, Dynamic Performance Control forms an integral part of 
+the standard eguipment and complements xDrive and Dynamic 
+Stability Control, serving as an additional module to increase 
+active safety and enhance the brilliant driving dynamics. As an 
+option, the E71 customer can also order BMW innovations in the 
+field of dynamic driving systems, e.g. Active Steering. When com¬ 
+bined and interlinked in the E71, these individual modules create 
+superior driving dynamics for more intense and safer enjoyment of 
+the Ultimate Driving Machine. 
+
+
+E71 Chassis Dynamics Workbook 
+
+5 
+
+
+
+
+
+6 
+
+E71 Chassis Dynamics Workbook 
+
+
+System Overview 
+
+Chassis Dynamics Components in the Vehicle 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic stability control 
+
+2 
+
+EDC satellite, front right 
+
+3 
+
+EHC air supply unit 
+
+4 
+
+ARS control unit 
+
+5 
+
+DSC sensor 
+
+6 
+
+ARS valve block 
+
+7 
+
+ICM control unit 
+
+8 
+
+Air spring, rear right 
+
+9 
+
+EDC satellite, rear right 
+
+10 
+
+EHC control unit 
+
+11 
+
+VDM control unit 
+
+12 
+
+QMVH control unit 
+
+13 
+
+Electromechanical parking brake 
+
+14 
+
+Transfer box control unit 
+
+15 
+
+EDC satellite, rear left 
+
+16 
+
+Air spring, rear left 
+
+17 
+
+ARS hydraulic motor, rear axle 
+
+18 
+
+Rear differential with superimposing gear units [QMVH] 
+
+19 
+
+SZL with steering angle sensor 
+
+20 
+
+Transfer case 
+
+21 
+
+AL control unit 
+
+22 
+
+EDC satellite, front left 
+
+23 
+
+Power steering pump 
+
+24 
+
+ARS hydraulic motor, front axle 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bus System Overview 
+
+
+
+osc- 
+
+ahs - -t 
+
+
+
+The diagram shows the control units and bus systems that are related for the dynamic 
+driving systems. 
+
+One of the differences between the E71 and the E70 is that a new control unit known 
+as Integrated Chassis Management (ICM) has been introduced. This ICM coordinates 
+longitudinal and lateral dynamic control functions, which include the familiar Active 
+Steering and the new Function Dynamic Performance Control [with QMVH], The 
+ICM-CAN has been introduced as a new bus system especially for the ICM system 
+network. It connects the ICM, AL and QMVH control units. 
+
+
+Index 
+
+Explanation 
+
+AL 
+
+Active Steering 
+
+ARS 
+
+Active anti-roll bar 
+
+DME 
+
+Digital Engine Electronics 
+
+DSC 
+
+Dynamic stability control 
+
+DSC.SEN 
+
+DSC sensor 
+
+EDCSHL 
+
+EDC satellite, rear left 
+
+EDCSHR 
+
+EDC satellite, rear right 
+
+EDC SVL 
+
+EDC satellite, front left 
+
+EDC SVR 
+
+EDC satellite, front right 
+
+EGS 
+
+Electronic transmission control unit 
+
+EHC 
+
+Electronic Height Control 
+
+EMF 
+
+Electromechanical parking brake 
+
+ICM 
+
+Integrated Chassis Management 
+
+JB 
+
+Junction box 
+
+KOMBI 
+
+Instrument cluster 
+
+QMVH 
+
+Lateral torque distribution on the rear axle 
+
+SZL 
+
+SZL with steering angle sensor 
+
+VDM 
+
+Vertical Dynamics Management 
+
+VGSG 
+
+Transfer box control unit 
+
+ICM-CAN 
+
+Integrated Chassis Management 
+
+
+E71 Chassis Dynamics Workbook 
+
+7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 
+
+E71 Chassis Dynamics Workbook 
+
+
+
+System Overview - Dynamic Performance Control 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Dynamic stability control 
+
+2 
+
+DSC sensor 
+
+3 
+
+Transfer case 
+
+4 
+
+SZ steering column switch cluster 
+
+5 
+
+ICM control unit 
+
+6 
+
+Rear differential with superimposing gear units 
+
+7 
+
+QMVH control unit 
+
+8 
+
+Transfer box control unit 
+
+9 
+
+Superimposing gear unit, right 
+
+10 
+
+Angle drive with differential 
+
+11 
+
+Superimposing gear unit, left 
+
+
+This second diagram of the system overview focuses in particular on the new dynamic driving system, Dynamic Performance Control. 
+With Dynamic Performance Control, a new system network will be introduced in the form of the Integrated Chassis Management. 
+This will result in changes that affect the interaction of the dynamic driving systems. 
+
+The Active Steering is particularly affected by this, which is why the two eguipment variants with/without Active Steering are both 
+explained in the following pages. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E71 Chassis Dynamics Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JBksm. 
+
+
+10 
+
+E71 Chassis Dynamics Workbook 
+
+
+System Circuit Diagram for Dynamic Performance Control without Active Steering 
+
+
+© 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Chassis Management 
+
+2 
+
+Digital Motor Electronics/Digital Diesel Electronics 
+
+3 
+
+Dynamic stability control 
+
+4 
+
+Junction box 
+
+5 
+
+DSC sensor 
+
+6 
+
+Transfer box control unit 
+
+7 
+
+Steering column switch cluster with steering angle sensor 
+
+8 
+
+Instrument cluster 
+
+9 
+
+EW valve 
+
+A 
+
+Lateral torque distribution on the rear axle 
+
+B 
+
+Temperature sensor for the transmission oil 
+in the superimposing gear unit, right 
+
+C 
+
+Temperature sensor for the electric motor 
+in the superimposing gear unit, right 
+
+D 
+
+Electric motor in the superimposing gear unit, right 
+
+E 
+
+Motor position sensor in the superimposing gear unit, right 
+
+F 
+
+Motor position sensor in the superimposing gear unit, left 
+
+G 
+
+Electric motor in the superimposing gear unit, left 
+
+H 
+
+Temperature sensor for the electric motor 
+in the superimposing gear unit, left 
+
+1 
+
+Temperature sensor for the transmission oil 
+in the superimposing gear unit, left 
+
+
+An electronically controlled bypass valve (EVV) is fitted on all variants of the E71 in order to control the volumetric flow in the 
+hydraulic circuit for the power steering. It is actuated by the ICM control unit. 
+
+If Active Steering is not fitted, the ICM-CAN is routed directly from the ICM control unit to the QMVH control unit. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Circuit Diagram for Dynamic Performance Control with Active Steering 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Chassis Management 
+
+2 
+
+Digital Motor Electronics/Digital Diesel Electronics 
+
+3 
+
+Dynamic stability control 
+
+4 
+
+Junction box 
+
+5 
+
+DSC sensor 
+
+6 
+
+Transfer box control unit 
+
+7 
+
+Steering column switch cluster with steering angle sensor 
+
+8 
+
+Instrument cluster 
+
+9 
+
+EW valve 
+
+A 
+
+Lateral torque distribution on the rear axle 
+
+B 
+
+Temperature sensor for the transmission oil in the superimposing gear unit, right 
+
+C 
+
+Temperature sensor for the electric motor in the superimposing gear unit, right 
+
+D 
+
+Electric motor in the superimposing gear unit, right 
+
+E 
+
+Motor position sensor in the superimposing gear unit, right 
+
+F 
+
+Motor position sensor in the superimposing gear unit, left 
+
+G 
+
+Electric motor in the superimposing gear unit, left 
+
+H 
+
+Temperature sensor for the electric motor in the superimposing gear unit, left 
+
+1 
+
+Temperature sensor for the transmission oil in the superimposing gear unit, left 
+
+a 
+
+Active Steering 
+
+b 
+
+Solenoid lock 
+
+c 
+
+Active Steering electric motor 
+
+d 
+
+Active Steering motor position sensor 
+
+e 
+
+Servotronic valve 
+
+
+The topology of the ICM-CAN bus system differs greatly between the two variants with/without Active Steering. If Active Steering is fitted, 
+the ICM-CAM is routed from the ICM control unit to the AL control unit. The ICM-CAN is picked up in the AL control unit and forwarded 
+to the QMVH control unit. 
+
+
+E71 Chassis Dynamics Workbook 
+
+11 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12 
+
+E71 Chassis Dynamics Workbook 
+
+
+System Components 
+
+
+Rear Differential with Superimposing Gear Units 
+
+For Dynamic Performance Control, a rear differential is used that 
+essentially consists of a conventional rear differential, supplement¬ 
+ed by superimposing gear units on the left and right. 
+
+The only difference is the welded connection of the ring gear and 
+pinion gear (previously bolted). 
+
+The two superimposing gear units are practically identical in 
+terms of their structure, but differ slightly in terms of their detail. 
+For example, the electric motors and planetary trains on the left or 
+the right are different. 
+
+This rear differential also has three oil reservoirs, subdivided in a 
+similar way to in the picture, which are vented by a common duct. 
+
+
+Design of the rear differential with superimposing gear units 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Superimposing gear unit, left 
+
+B 
+
+Angle drive with differential 
+
+C 
+
+Superimposing gear unit, right 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+There are therefore three filler plugs and three drain plugs on this 
+rear differential. 
+
+In the center part (angle drive with differential gear), the standard oil 
+(hypoid oil) is used and, in the left and right superimposing gear 
+units, a special ATF is used. 
+
+Longlife oils are provided as standard in the rear differential with 
+superimposing gear units. There are some exceptions dependent 
+on the service life/use of the unit. 
+
+All three reservoirs have a common vent on the top of the transmis¬ 
+sion case. 
+
+Note: The angle when the rear differential unit is removed 
+and reinstalled must be no more than 45°. This could 
+potentially cause the two types of oil to cross con¬ 
+taminate through the common vent. 
+
+
+Oil reservoirs of the rear differential with superimposing gear units 
+
+
+
+® ® ® 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Filler plug for the left superimposing gear unit 
+
+2 
+
+Filler plug for the angle drive with differential gear 
+
+3 
+
+Vent 
+
+4 
+
+Filler plug for the right superimposing gear unit 
+
+5 
+
+Drain plug for the right superimposing gear unit 
+
+6 
+
+Drain plug for the angle drive with differential gear 
+
+7 
+
+Drain plug for the left superimposing gear unit 
+
+
+E71 Chassis Dynamics Workbook 
+
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14 
+
+E71 Chassis Dynamics Workbook 
+
+
+Construction of the Superimposing Gear Units 
+
+The two superimposing gear units essentially consist of an actua¬ 
+tor (electric motor), transmission gearing, a ball ramp, a multi-plate 
+clutch and a planetary gear set. In contrast to standard planetary 
+gear sets, this one does not contain a ring gear. 
+
+(D ® (2) 4 5 
+
+
+
+3 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electric motor drive pinion 
+
+2 
+
+Transmission gears 
+
+3 
+
+Ball-ramp pressure plate 
+
+4 
+
+Ball-ramp drive gear 
+
+5 
+
+Multi-plate clutch assembly 
+
+6 
+
+Planet carrier 
+
+7 
+
+Planetary gear 
+
+8 
+
+Inner sun gear 
+
+9 
+
+Outer sun gear 
+
+10 
+
+Motor position sensor 
+
+11 
+
+Right electric motor 
+
+
+Multi-plate Clutch and Ball Ramp 
+
+The multi-plate clutch and the ball ramp are designed in such a 
+way that they are always de-energized if there is fault in the electric 
+motor. In this event, the pressure spring assemblies now take on 
+an important role between the ball ramp and the support plates. 
+
+The pressure spring assemblies open the multi-plate clutch via the 
+ball ramp and the freely rotating electric motor and hold it fully 
+open. This ensures, among other things, that the loss oftorgue 
+distribution is established in the event of a fault. 
+
+Construction of the multi-plate clutch 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Plate carrier 
+
+2 
+
+Friction plate 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exploded view of the multi-plate clutch 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Transmission gears 
+
+2 
+
+Left electric motor 
+
+3 
+
+Ball guide ring 
+
+4 
+
+Pressure spring assemblies 
+
+5 
+
+Plate carrier 
+
+6 
+
+Friction plate 
+
+7 
+
+Support plate 
+
+8 
+
+Ball-ramp pressure plate 
+
+9 
+
+Balls (4x) 
+
+10 
+
+Ball-ramp drive gear 
+
+11 
+
+Ball bearing for left output shaft 
+
+
+
+E71 Chassis Dynamics Workbook 
+
+15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16 
+
+E71 Chassis Dynamics Workbook 
+
+
+Electric Motors Left electric motor 
+
+These are three-phase asynchronous motors. 
+
+The three-phase voltage is generated by the QMVH control unit. 
+
+This creates a rotating electromagnetic field around the metallic 
+rotor which generates torque in the rotor. 
+
+An asynchronous-motor design was selected because it guaran¬ 
+tees a high level of power with a simple construction. 
+
+Furthermore, the shaft of an asynchronous motor can be moved 
+freely when the phase voltage is switched off. This is an integral 
+part of the safety concept, because the phase voltage is switched 
+off in the event of a fault. 
+
+
+The left and right electric motors have different constructions. The 
+phase voltage and temperature sensor connectors (2) are also 
+coded differently. This will prevent the two motors from being 
+mixed up or incorrectly connected. 
+
+The two electric motors are connected to the superimposing gear 
+units via the screw connections for the motor mounting (4). The 
+electric motors thus have contact with the oil supply for the super¬ 
+imposing gear units. 
+
+Because the bearing (6) is not sealed, not only the pinion but also 
+the entire rotor for the electric motor rotate in the oil. For this rea¬ 
+son, the following housing seals are fitted to the electric motors: 
+
+• Sealing ring (5) 
+
+• Sealing ring at the join with the motor position sensor (not 
+shown) 
+
+• Seal at the connector for the phase voltage and temperature 
+sensor (2), see the Sensor system section. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Motor position sensor connector 
+
+2 
+
+Connector for phase voltage and temperature sensor 
+
+3 
+
+Screw connection for bearing cap 
+
+4 
+
+Screw connection for motor mounting 
+
+5 
+
+Seal 
+
+6 
+
+Bearing 
+
+7 
+
+Electric motor pinion 
+
+
+Note: Please refer to Service Information section for 
+important procedures to follow when replacing 
+motors. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor System 
+
+The following sensors, integrated in the Dynamic Performance 
+Control components, are therefore an integral part of the system. 
+
+• Temperature sensors for the electric motors. 
+
+• Temperature sensors for the superimposing gear unit 
+transmission oil. 
+
+• Motor position sensors. 
+
+There is one of the sensors mentioned above for each superim¬ 
+posing gear unit and each electric motor. 
+
+Motor Position Sensor 
+
+The motor position sensor is located on the rear of the electric 
+motor (the side opposite the pinion). The sensor is identical to the 
+one used for the Active Steering actuating motor. The sensor thus 
+works according to the magnetoresistive principle and transmits 
+the data digitally to the QMVH control unit via a two-wire line. 
+
+
+Oil Temperature Sensors 
+
+The two sensors for determining the temperature of the transmis¬ 
+sion oil in the two superimposing gear units are arranged symmet¬ 
+rically on the two sides. 
+
+Connector and sensors for the transmission oil temperature 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connector for the left transmission oil temperature sensor 
+
+2 
+
+Connector for phase voltage and temperature sensor for the left electric motor 
+
+3 
+
+Connector for the left motor position sensor 
+
+4 
+
+Connector for the right transmission oil temperature sensor 
+
+
+E71 Chassis Dynamics Workbook 
+
+17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+18 
+
+E71 Chassis Dynamics Workbook 
+
+
+Electric Motor Temperature Sensor 
+
+The temperature sensor for the electric motor is located in the 
+immediate vicinity of the connector through which the electric 
+motor is supplied with the phase voltage. 
+
+The temperature sensor for the electric motor (1) is a temperature- 
+dependent resistor. The QMVH control unit measures the resist¬ 
+ance and thus determines the temperature that is present in the 
+electric motor. In the diagram, you can see the sealant (2) that was 
+mentioned earlier which seals the housing to the connector. This 
+prevents oil from escaping at this location. At the same time, the 
+sealant performs the task of a heat conductor, so that the tempera¬ 
+ture sensor is exposed to practically the same temperature as the 
+rest of the components of the electric motor. 
+
+
+Temperature sensor for the electric motor 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Temperature sensor for the electric motor 
+
+2 
+
+Sealant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mechanical Interfaces 
+
+The rear differential with superimposing gear units for Dynamic 
+Performance Control is bolted onto the rear axle carrier in the same 
+way as the conventional rear differential. 
+
+The propeller shaft is fixed to the rear differential with a double nut 
+as on the E70. 
+
+The output shafts are fitted in different ways on the E71 and E70. 
+
+On the E70, the output shafts are inserted in the rear differential. 
+
+On the E71, the actual output shafts are bolted to the output shaft 
+flange. 
+
+The heat conduction and protective plate (5) shown in the diagram 
+has the following tasks: 
+
+• Protects the connectors on the electric motors from stone 
+impact. 
+
+• Diverts heat from the exhaust system so that it does not heat 
+up the rear differential too much. 
+
+
+Fitting of the left output shaft in the E71 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Rear differential with superimposing gear units 
+
+2 
+
+Output shaft flange 
+
+3 
+
+Bolting of output shaft to output shaft flange 
+
+4 
+
+Output shaft 
+
+5 
+
+Heat conduction and protective plate 
+
+
+E71 Chassis Dynamics Workbook 
+
+19 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20 
+
+E71 Chassis Dynamics Workbook 
+
+
+
+Workshop Exercise - QMVH Rear Differential 
+
+
+Using an instructor designated mockup or vehicle, answer the questions below. 
+
+Locate the filler and drain plugs on the QMVH unit. Make a triangle around the filler plugs and circle the drain plugs. 
+
+
+Side View 
+
+
+Bottom View 
+
+
+RearView 
+
+
+
+How many drain/filler plugs are there? Why? 
+
+
+Description 
+
+Quantity on Unit 
+
+A Fill Plug 
+
+
+0 Drain Plug 
+
+
+
+Does the oil in the left/right (superimposing gear section) of the 
+unit have to be replaced? If so, when? 
+
+
+Section of Rear 
+Differential 
+
+Type of Fluid 
+
+BMW Part Number 
+
+QMVH 
+
+Superimposing 
+
+Gears 
+
+
+
+Conventional 
+
+Differential 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - QMVH Rear Differential (continued) 
+
+
+
+
+Why is it important to remember that the QMVH unit is actually 
+three components in one when servicing the oil? 
+
+
+
+What is the function of item number 4 in the diagram above? 
+
+
+When replacing the QMVH unit, what precautions must be taken 
+with reference to the vent lines on the unit? 
+
+
+Examine the electronic motors on the QMVH rear differential. 
+Are they interchangeable? 
+
+□ Yes □ No 
+
+
+E71 Chassis Dynamics Workbook 
+
+21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22 
+
+E71 Chassis Dynamics Workbook 
+
+
+Bus Systems 
+
+The dynamic driving systems communicate via the usual bus sys¬ 
+tems, such as the Powertrain CAN (PT-CAN) and the Chassis CAN 
+(F-CAN). 
+
+The F-CAN still performs the function of transmitting pure sensor 
+signals. The signals from the DSC sensor and the steering wheel 
+sensor in the steering column switch cluster have top priority. 
+Despite the fact that the PT-CAN and F-CAN work at a high bit rate 
+of 500 kbps, they would have been overloaded by the signals from 
+the new ICM and QIVMH control units. For this reason, a new sub¬ 
+bus, the ICM-CAN, has been introduced. 
+
+The ICM-CAN is a sub-bus for the dynamic driving systems and 
+connects the ICM, AL and QMVH control units. It is a two-wire bus 
+on which data is transmitted at 500 kbps. The two terminating 
+resistors, each with 120 Q, are located in the ICM and QMVH con¬ 
+trol units. 
+
+The ICM-CAN cabling in the vehicle varies considerably between 
+the two variants with/without Active Steering. 
+
+If Active Steering is fitted, the ICM-CAN is routed from the ICM 
+control unit to the AL control unit. The ICM-CAN is picked up in 
+the AL control unit and forwarded to the QMVH control unit. 
+
+If Active Steering is not fitted, the ICM-CAN line is routed directly 
+from the ICM control unit to the QMVH control unit. 
+
+These control units use the ICM-CAN to exchange setpoint values 
+and actual values, as well as status signals. These signals are only 
+reguired locally for implementing the Dynamic Performance Control 
+and Active Steering functions. 
+
+In contrast, signals that the dynamic driving systems exchange with 
+other control units are still transmitted via the PT-CAN. The PT- 
+CAN is also the bus system via which the ICM, AL and QMVH con¬ 
+trol units communicate with the diagnostic system. 
+
+
+The ICM control unit does not therefore perform the function of a 
+diagnostics gateway. 
+
+
+Layout variants for the ICM-CAN in the E71 
+
+
+® 
+
+
+
+
+
+E71 Chassis Dynamics Workbook 
+
+23 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Without Active Steering 
+
+B 
+
+With Active Steering 
+
+1 
+
+Integrated Chassis Management 
+
+2 
+
+Lateral torque distribution on the rear axle 
+
+3 
+
+ICM-CAN terminating resistor 
+
+4 
+
+Active Steering 
+
+5 
+
+ICM-CAN (picked up and forwarded) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24 
+
+E71 Chassis Dynamics Workbook 
+
+
+QMVH Control Unit 
+
+Design 
+
+The QMVH control unit is fitted at the rear right of the luggage 
+compartment. 
+
+As you can see from the following diagram, it is a dual-processor 
+control unit. Power semiconductors are also integrated in the con¬ 
+trol unit which function as output stages. 
+
+Each processor is responsible for controlling one of the electric 
+motors. In addition, each processor monitors the computed results 
+of the other in order to meet the high safety requirements. The out¬ 
+put stages can be separated before a fault has any critical effects. 
+
+The output stages are used to generate the phase voltages and 
+transport the energy required to control the electric motors. 
+
+Because the electric motors are three-phase asynchronous 
+motors, the three phases must be operated with alternating volt¬ 
+age. The phases are generated by high-frequency pulsing of the 
+DC voltage present in the vehicle electrical system. 
+
+The high-frequency pulsing creates the risk that electromagnetic 
+interference will be emitted. This would have a detrimental effect 
+on radio reception, because the associated aerials are located near 
+to the installation location of the QMVH control unit. 
+
+
+QMVH control unit without housing cover 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Output stages from power semiconductors 
+
+2 
+
+Two processors 
+
+3 
+
+Pin socket [right superimposing gear unit] 
+
+4 
+
+Pin socket [vehicle electrical system] 
+
+5 
+
+Pin socket [unassigned] 
+
+6 
+
+Pin socket [left superimposing gear unit] 
+
+
+For this reason, the lines along which the electric motor phases are 
+actuated are shielded. The ground connection is located on the 
+connector for the QMVH control unit. 
+
+
+There is also an ground connection from the wiring harness to the 
+rear axle carrier. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The two outer pin sockets (3) and (6) are used to connect the 
+wiring harnesses that lead to the superimposing gear units. 
+
+Pin socket (4) connects the control unit to the vehicle electrical 
+system: the supply voltage, PT-CAN and ICM-CAN are connected 
+here. 
+
+Pin socket (5) is not assigned and remains unused. 
+
+Operation 
+
+The QMVH control unit receives a request from the ICM control 
+unit to transfer a certain amount of torque to the left or right rear 
+drive wheel. The control unit must convert this setpoint value into 
+phase voltages for the electric motor to be actuated. The following 
+calculation steps are required for this: 
+
+• Deciding which superimposing gear unit needs to be activat¬ 
+ed. The side that should receive more of the available torque 
+must be activated. 
+
+• Converting the torque to be transferred into a braking force at 
+the superimposing gear unit. 
+
+• Determining the necessary adjustment path of the plates from 
+the braking force that the plate assembly must generate. 
+
+• Calculating the motor rotation angle to achieve the required 
+adjustment path of the plates. 
+
+• Determining the amplitude and progression of the three phase 
+voltages. 
+
+During the adjustment process, the QMVH control unit uses the 
+motor position sensor to measure whether and how far the electric 
+motor has already moved. Once the calculated specified angle is 
+reached, the actuation is changed so that the rotational angle 
+achieved is maintained. A motor position regulation therefore takes 
+place. The regulation principle is similar to that for Active Steering. 
+
+
+The QMVH control unit also carries out monitoring functions. This 
+allows faults in the electronics and in the actuating elements to be 
+detected which cause the function to be deactivated. In the event 
+of a fault, the lines to the electric motors are disconnected. They 
+are then de-energized and can no longer execute undesirable 
+adjustment processes. 
+
+The multi-plate clutches also open, so that a previously active 
+torque transfer is withdrawn. 
+
+The rear differential (and therefore the entire system) thus behaves 
+like a conventional differential in the event of a fault. 
+
+As well as detecting faults, the QMVH control unit also monitors 
+the signals from the temperature sensors on the rear differential. 
+
+A protective function is thus implemented, which reduces the actu¬ 
+ating element controls if the temperature is too high. This is intend¬ 
+ed to counteract any further heating (see also the Functions sec¬ 
+tion). Both the temperatures in the electric motors and the temper¬ 
+atures of the transmission oils in the two superimposing gear units 
+are taken into consideration. 
+
+
+E71 Chassis Dynamics Workbook 
+
+25 
+
+
+26 
+
+E71 Chassis Dynamics Workbook 
+
+
+ICM Control Unit 
+
+
+Installation location of the ICM control unit 
+
+
+The ICM control unit is installed on the transmission tunnel (6). 
+
+The lower section of the housing is bolted to the bodywork using 
+spacer sleeves (5). The upper section of the housing has a ribbed 
+structure for better heat dissipation. The ICM control unit has only 
+one pin socket, which is used to make contact with the supply 
+voltage, the bus systems and the control lines. 
+
+The ICM control unit only contains output stages for the steering 
+proportional valve (EVV - electronically controlled bypass valve) and 
+the Servotronic valve. 
+
+The ICM control unit is connected to three bus systems: the 
+PT-CAN, the F-CAN and the new ICM-CAN. 
+
+The ICM control unit makes calculations that have a decisive influ¬ 
+ence on the vehicle behavior. This results in both high safety 
+reguirements and a need for a large calculating capacity. For these 
+two reasons, the ICM control unit is equipped with two processors. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lower section of housing 
+
+2 
+
+Upper section of housing 
+
+3 
+
+Connector 
+
+4 
+
+Mounting bolt 
+
+5 
+
+Spacer sleeve 
+
+6 
+
+Transmission tunnel 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Active Steering 
+
+Virtually all of the components of Active Steering in the E71 are 
+identical to those in the E70. To be precise, 
+
+• the electric motor with motor position sensor, 
+
+• the proportional valve (electronically controlled bypass valve, 
+EVV) and 
+
+• the Servotronic valve are identical in the two vehicle models. 
+The AL control unit has a different construction in the E71 
+and is only designed as an actuating control unit. 
+
+Active Steering Control Unit 
+
+The AL control unit is located at the front left in the A-pillar exten¬ 
+sion under the wheel arch trim. 
+
+It is a dual-processor control unit. Power semiconductors are also 
+integrated in the control unit which function as output stages. The 
+dual-processor concept was selected in order to meet the high 
+safety requirements. 
+
+The output stages (2), consisting of power semiconductors, are 
+used to generate the phase voltages and transport the energy 
+required to control the actuating motor. 
+
+Because this is a three-phase synchronous motor, the three phas¬ 
+es must be operated with alternating voltage. 
+
+The phases are generated by high-frequency pulsing of the DC 
+voltage present in the vehicle electrical system. For this reason, 
+shielding is also used here. The shielding connects the electric 
+motor to ground via the wiring harness to the body work. 
+
+Connector (3) accommodates signal lines between the control unit 
+and actuating element for Active Steering. These are the control 
+lines to the solenoid lock and the signal lines for the motor position 
+sensor. 
+
+
+Load is supplied to Active Steering via the connector (4). This DC 
+voltage is converted into the phase voltages by the output stages in 
+the control unit and sent to the electric motor at connector (5). 
+
+Connector (6) contains the contacts via which the control unit is 
+supplied with power and those for connecting the two bus sys¬ 
+tems, PT-CAN and ICM-CAN. 
+
+Active Steering control unit without housing cover 
+
+
+£ 
+
+
+
+'Vi ® ® ( 3 ) 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Processors 
+
+4 
+
+Connector [voltage supply] 
+
+2 
+
+Output stages 
+
+5 
+
+Connector [phase voltages] 
+
+3 
+
+Connector [signal lines] 
+
+6 
+
+Connector [vehicle interface] 
+
+
+Note: The control units of the E70 and E71 cannot be 
+interchanged. 
+
+
+E71 Chassis Dynamics Workbook 
+
+27 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28 
+
+E71 Chassis Dynamics Workbook 
+
+
+ARS 
+
+At SOP for the E71 in April 2008, certain alterations will also be 
+made simultaneously in the E70. 
+
+Key modifications to the ARS: 
+
+• Discontinuation of the additional ARS lateral acceleration 
+sensor 
+
+• Discontinuation of the two pressure-relief valves on the front 
+axle oscillating motor 
+
+• Discontinuation of the two exterior pulsation dampers on the 
+front axle oscillating motor. 
+
+Control Unit 
+
+The ARS control unit is located in the vehicle interior near the right- 
+hand A-pillar. 
+
+The ARS control unit is supplied with power via terminal 30 and is 
+protected by a 10 A fuse. The ARS control unit is activated exclu¬ 
+sively by the Car Access System (CAS) on a CAN wake-up line 
+after "ignition ON". 
+
+A vehicle authentication process takes place when the system is 
+started. This compares the vehicle identification number from CAS 
+with the vehicle identification number which is encoded in the ARS 
+control unit. 
+
+Then the ARS control unit's hardware and software are checked. 
+
+All outputs (valve solenoids and sensors) are subjected to a com¬ 
+prehensive check for short circuits and circuit breaks. If there is a 
+fault, the system switches the actuators to a safe driving mode. 
+
+The ARS control unit switches off if there is undervoltage or over¬ 
+voltage. 
+
+The ARS control unit learns the offset for the steering angle and 
+the lateral acceleration during start-up and during driving. 
+
+
+Active Anti-roll Bar 
+
+The oscillating motor and the oscillating motor housing are joined 
+by one half of the anti-roll bar. 
+
+The active anti-roll bar consists of the oscillating motor and the 
+anti-roll bar halves fitted to the oscillating motor, with press-fitted 
+roller bearings for their connection to the axle carriers. The use of 
+roller bearings ensures optimum comfort thanks to better response 
+and reduced control forces. 
+
+A thin coating of grease on the roller bearing does not impair the 
+function of the active anti-roll bar. 
+
+Similarly, a totally new inner pulsation damping system is intro¬ 
+duced, which is integrated into the construction of the oscillating 
+motor shaft. This eliminates the need for the two pressure relief 
+valves on the front motor. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Oscillating motor housing 
+
+2 
+
+Inner pulsation damping system 
+
+3 
+
+Oscillating motor shaft 
+
+
+
+
+
+
+
+EMF 
+
+
+Similarly to the E70 , the E71 is fitted as standard with an electro¬ 
+mechanical parking brake (EMF). On E71 and E70 vehicles pro¬ 
+duced from 10/07, this dynamic emergency brake and parking 
+brake is complemented by the automatic hold function which func¬ 
+tions the same as on the E65/E66. 
+
+The Automatic Hold button is located in the center console. 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+EMF button 
+
+2 
+
+Automatic hold function button 
+
+
+E71 Chassis Dynamics Workbook 
+
+29 
+
+
+
+
+
+
+
+
+
+
+30 
+
+E71 Chassis Dynamics Workbook 
+
+
+
+Workshop Exercise - ICM-CAN 
+
+
+Using an instructor assigned E71 vehicle, pin out the ICM-CAN and answer the following questions. 
+
+
+1) Using the workbook or system wiring diagram, fill in the 
+missing modules of the ICM-CAN. 
+
+
+
+2) Disconnect all the connections to the QMVH control unit and 
+measure the resistance between ICM-CAN High and ICM-CAN 
+Low. Circle the best possible answer. 
+
+60Q 100Q 120Q 240Q 
+
+
+3) In which control modules are the terminal resistors located for 
+the ICM-CAN? Circle the best possible answer. 
+
+QMVH 
+
+ICM 
+
+AL/AFS 
+
+DSC 
+
+
+4) Where are the following control units located? 
+
+QMVH _ 
+
+ICM _ 
+
+AL/AFS _ 
+
+
+5) Locate the QMVH Control Module and pin out the ICM-CAN. 
+Draw the oscilloscope pattern displayed in the in the space 
+provided below. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principles of Operation 
+
+
+Integrated Chassis Management (ICM) 
+
+A new feature in the E71 is the continuation of the concept of a 
+higher-level dynamic driving control with Integrated Chassis 
+Management. 
+
+The introduction of the ICM control unit is rather secondary. Of 
+more significance, is the fact that all the dynamic driving systems 
+in the vehicle can be coordinated in a more harmonized way using 
+the ICM. 
+
+The previous approach of using one control unit for each main 
+direction of movement has not been applied in the E71. Instead, 
+the ICM control unit coordinates both longitudinal and lateral 
+dynamic processes. In concrete terms, this means that Active 
+Steering and the new Dynamic Performance Control function are 
+controlled by the ICM. 
+
+However, this does not mean that the ICM has exclusive decision¬ 
+making powers over the type and degree of the intervention of all 
+the dynamic driving systems. One reason for this is that the DSC 
+and xDrive systems used in the E70 are to be largely adopted in 
+the E71. The E71 therefore shares the following similarities with 
+the E70: 
+
+• If the vehicle needs to be restabilized when it is in its limit 
+range, the DSC calculates the need for the brakes to be 
+applied and applies them. This is also the case in the E71 
+despite the coordination function of the ICM. 
+
+• The DSC calculates the longitudinal distribution of the drive 
+torque for xDrive and transmits the setpoint value to the 
+transfer case control unit. There, the drive torque is distrib¬ 
+uted between the front and rear axles through activation of 
+the multi-plate clutch. 
+
+
+The DSC therefore remains the determining control unit in the 
+E71 when it comes to stabilizing the vehicle's behavior in the limit 
+range. In this case, the DSC sends commands to the ICM to 
+cease control by Dynamic Performance Control. However, while 
+the vehicle is stable, the ICM has full decision making authority 
+over the activation of Dynamic Performance Control. 
+
+The Active Steering functions (in particular the yaw-rate control) 
+are not affected by this withdrawal of control. They continue to be 
+implemented even if the vehicle's behavior is unstable, because 
+they help to stabilize it. 
+
+The Vertical Dynamics Management (VDM) is still responsible for 
+controlling the vertical dynamics. Signals regarding the current 
+driving situation are naturally exchanged between the ICM and 
+VDM. 
+
+
+E71 Chassis Dynamics Workbook 
+
+31 
+
+
+
+
+32 
+
+E71 Chassis Dynamics Workbook 
+
+
+Monitoring the Vehicle Status 
+
+The Integrated Chassis Management (ICM) control unit calculates 
+the current driving situation from the signals listed below. This 
+refers only to the longitudinal and lateral dynamic driving status. 
+
+• Wheel speed signals from all four wheels 
+
+• Longitudinal acceleration 
+
+• Lateral acceleration 
+
+• Yaw rate 
+
+The ICM control unit thus knows how the vehicle is actually moving 
+at that moment. 
+
+To be able to optimize the vehicle behavior, the dynamic driving 
+systems reguire information about how the driver wishes the vehi¬ 
+cle to move. The driver's command is determined from the follow¬ 
+ing signals: 
+
+• Accelerator pedal angle, current engine torgue and gear ratio 
+
+• Application of the brake pedal and current brake pressure 
+
+• Steering angle 
+
+The ICM control compares the driver's command and the current 
+actual movement of the vehicle and calculates whether intervention 
+from the Active Steering and Dynamic Performance Control sys¬ 
+tems is necessary and what form this should take. 
+
+Coordinated Intervention by the Dynamic Driving Systems 
+
+Intervention by dynamic driving systems that operate in the longitu¬ 
+dinal and lateral directions have the following objectives: 
+
+• To optimize the rotational motion of the vehicle about the ver¬ 
+tical axis by effecting a yaw moment. This will increase the sta¬ 
+bility and/or the agility, depending on the driving situation. 
+
+• To improve the traction of the vehicle. 
+
+
+The Integrated Chassis Management allows these objectives to be 
+achieved to a greater extent. The ICM acts as a coordinator and 
+distributes the tasks to one or more systems. 
+
+To date, the following options have been available (and continue to 
+be) for intervention to achieve the objectives stated above. The cor¬ 
+responding dynamic driving systems are indicated in brackets: 
+
+• Individual application of the wheel brakes (ASC+T, DSC) 
+
+• Adjustment of the current engine torgue (ASC+T, DSC, MSR) 
+
+• Distribution of the drive torgue between the rear and front 
+axles (xDrive) 
+
+• Adjustment of the steering angle of the front wheels, regard¬ 
+less of the driver's input (Active Steering). 
+
+In the E71, a further option for improving the traction and optimiz¬ 
+ing the rotational motion is available for the first time. The Dynamic 
+Performance Control allows the drive torgue to be distributed in a 
+controlled way between the driven rear wheels. 
+
+The coordinated interventions by the systems with the help of the 
+Integrated Chassis Management bring about several advantages. 
+
+In some driving situations, it can prevent more than one system 
+providing the same intervention. 
+
+For example, systems such as Dynamic Performance Control act 
+as an enhancement to xDrive before the unstable driving situation 
+even occurs. This happens without the driver being aware of it and 
+avoids further intervention by Active Steering or Dynamic Stability 
+Control. 
+
+
+Active Steering in the ICM Network 
+
+The functions of Active Steering that are perceptible to the cus¬ 
+tomer in the E71 are identical to those in the E70. Active Steering 
+also provides: 
+
+• a variable steering-transmission ratio that changes according 
+to the vehicle's road speed and 
+
+• Yaw-Rate Control Plus (GRR+), which is used to stabilize 
+steering interventions, not only when the vehicle is oversteer¬ 
+ing, but also when it is being braked on surfaces with various 
+friction coefficients. 
+
+Just some of the parameters have been specifically adapted for the 
+new E71 vehicle type. 
+
+The distribution of the functions between the control units and 
+thus their interaction have changed. This is due to the new ICM 
+control unit network in the E71. 
+
+The Integrated Chassis Management is the control unit in which 
+the higher-level dynamic driving functions for Active Steering are 
+calculated. As already described, the current driving situation is 
+analyzed. The input variables for this are provided by: 
+
+• the steering column switch cluster (steering angle and steer¬ 
+ing-angle speed), 
+
+• the DSC sensor (yaw rate, lateral acceleration and longitudinal 
+acceleration) and 
+
+• Dynamic Stability Control (wheel speeds) In addition, the dri¬ 
+ver's directional input is analyzed using the steering angle and 
+the steering-angle speed (both signals from the steering col¬ 
+umn switch cluster). 
+
+
+Active Steering IPO 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Chassis Management 
+
+6 
+
+Servotronic valve 
+
+2 
+
+SZL with steering angle sensor 
+
+7 
+
+Active Steering (control unit) 
+
+3 
+
+DSC sensor 
+
+8 
+
+Active Steering (actuator) 
+
+4 
+
+Dynamic stability control 
+
+9 
+
+Instrument cluster 
+
+5 
+
+Proportional valve (EW) 
+
+10 
+
+Engine control system (DME) 
+
+
+E71 Chassis Dynamics Workbook 
+
+33 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34 
+
+E71 Chassis Dynamics Workbook 
+
+
+The Integrated Chassis Management uses the current driving situ¬ 
+ation and the driver's directional input to calculate the individual 
+setpoint values for the variable steering transmission ratio and the 
+Yaw-Rate Control Plus. Once these have been prioritized, the ICM 
+provides a resulting setpoint value. This is a specified angle to 
+which the front wheels should be adjusted. 
+
+The Active Steering control unit receives this setpoint value and 
+has the principal task of controlling the actuating elements such 
+that the setpoint value is achieved. The Active Steering control unit 
+is therefore purely an actuating control unit. This is the main differ¬ 
+ence from the previous implementation of Active Steering. There, 
+the control unit not only controlled the actuators, but also calculat¬ 
+ed the higher-level regulating functions. 
+
+In order to ensure that the setpoint value is applied, Active Steering 
+control unit reads the signal from the motor-position sensor. This 
+additional steering angle for Active Steering is also communicated 
+to the ICM control unit and then to the DSC control unit. 
+
+To remain consistent with the E70, the DSC control unit in the E71 
+also calculates the cumulative steering angle from the steering 
+angle and the Active Steering steering angle. 
+
+The DSC control unit provides the cumulative steering angle to the 
+other control units via the PT-CAN. 
+
+All variants of the E71 eguipped with Active Steering automatically 
+receive the Servotronic function. This function is controlled by the 
+ICM control unit. 
+
+All variants of the E71 steering system also contains a proportional 
+valve that is also controlled by the ICM control unit. The valve is 
+known as an electronically controlled bypass valve (EVV). 
+
+The volumetric flow generated by the power steering pump is dis¬ 
+tributed between the steering valve and a bypass valve according 
+to the level of power steering assistance reguired. This distribution 
+is infinitely variable. 
+
+
+The less power steering assistance reguired, the more hydraulic 
+fluid is diverted to the bypass circuit. Because the hydraulic fluid in 
+the bypass circuit has no task to perform, it means that the power 
+steering pump consumes less power. In this way, the proportional 
+valve has a hand in reducing fuel consumption and C02 emissions. 
+
+ICM Interfaces 
+
+The ICM control unit has two further interfaces with partner control 
+units for the Active Steering function. These are: 
+
+• Instrument cluster 
+
+• Engine control system 
+
+Instrument Cluster 
+
+If the ICM control unit detects a fault in the Active Steering system 
+(faulty input signal, faults in the control unit or in the Active Steering 
+actuator), it activates the usual steering warning lamp and the asso¬ 
+ciated Check Control message. This reguest is implemented by 
+the instrument cluster. 
+
+Engine Control Module 
+
+If there is a high level of steering activity, in particular at low road 
+speeds, the cooling reguirement in the hydraulic system increases. 
+
+To prevent overheating, the ICM control unit can ask for the speed 
+of the electric fan to be increased. This reguest is sent via the PT- 
+CAN to the engine control system, because the latter directly con¬ 
+trols the electric fan. 
+
+
+
+Classroom Exercise - Component Functions and Operation 
+
+
+Using the workbook material, please complete the following table: 
+
+
+Component or Function 
+
+Module responsible for Logic or Processing 
+
+Module responsible for Actuation or Output 
+
+EDC 
+
+
+
+AL/AFS 
+
+
+
+DPC/QMVH 
+
+
+
+xDrive 
+
+
+
+DSC 
+
+
+
+ASC 
+
+
+
+ABS 
+
+
+
+MSR 
+
+
+
+Automatic Hold 
+
+
+
+EW 
+
+
+
+Servotronic 
+
+
+
+ARS 
+
+
+
+EHC 
+
+
+
+Total Steering Angle 
+
+
+N/A 
+
+
+E71 Chassis Dynamics Workbook 
+
+35 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36 
+
+E71 Chassis Dynamics Workbook 
+
+
+Dynamic Performance Control 
+
+
+Longitudinal distribution of the drive torque byxDrive 
+
+
+Distribution of the Drive Torque (xDrive w/o DPC) 
+
+The BMW xDrive all-wheel-drive system regulates the variable dis¬ 
+tribution of the drive torque between the front and rear axles, result¬ 
+ing in a longitudinal distribution of the drive torque. In the current 
+xDrive generation, the distribution is performed by an adjustable 
+multi-plate clutch. xDrive helps to improve the traction and stability 
+of the vehicle. 
+
+In the situation shown, the distribution of the drive torque byxDrive 
+is the standard distribution. 40% is distributed to the front axle and 
+60% to the rear axle. 
+
+The front and rear axle transmissions distribute the drive torque 
+equally to both sides. In terms of driving force, 20% is available at 
+each front wheel and 30% at each rear wheel. 
+
+This distribution is appropriate for driving in a straight line. 
+
+Because the drive torque is equal at the left and right wheels, any 
+differing friction coefficients on the left and right are not initially 
+factored in (of course, ASC+T will intervene if one or more wheels 
+are threatening to spin as a result). 
+
+
+20% 
+
+40% 
+
+60% 
+
+30% 
+
+
+
+
+
+30% 
+
+
+30% 
+
+
+xDrive 
+
+
+20% 
+
+
+20% 
+
+
+20% 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Drive torque distributed by xDrive 
+
+2 
+
+Driving force at the wheel 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Distribution of the Drive Torque (xDrive w/ DPC) 
+
+Dynamic Performance Control now also enables infinitely variable 
+distribution of the drive torque between the wheels on the rear axle. 
+Instead of a longitudinal distribution, as provided by xDrive, 
+
+Dynamic Performance Control provides a lateral distribution of the 
+drive torque. That is why, in technical documentation, the term "rear 
+axle lateral torque distribution" often appears as a synonym for the 
+sales designation "Dynamic Performance Control". 
+
+A new rear differential developed on the basis of a conventional dif¬ 
+ferential allows the torque flow to and from the wheels to be con¬ 
+trolled. 
+
+This means that not only can stability and traction be further 
+increased, but the vehicle's agility can also be improved. 
+
+The combination of the xDrive and Dynamic Performance Control 
+systems is able to further improve the vehicle behavior under accel¬ 
+eration and on surfaces with different friction coefficients on the left 
+and right. Lets assume that the right rear wheel is on dry asphalt 
+and the left rear wheel is on snow. In addition to the longitudinal 
+distribution of the drive torque by xDrive, Dynamic Performance 
+Control allows the drive torque to be distributed between the rear 
+wheels. In this situation, the majority of the drive torque will be 
+transmitted to the right rear wheel, because the left rear wheel can 
+only generate relatively little driving force due to the low friction 
+coefficient. This can avoid ASC+T having to intervene by applying 
+the brakes. 
+
+The uneven distribution of the torque at the rear wheels has a sec¬ 
+ond effect that is also used by Dynamic Performance Control. 
+
+Torque (M) is generated about the vertical axis of the vehicle. This 
+means that the rotational motion of the vehicle about the vertical 
+axis when cornering can be intentionally influenced. You can use 
+this effect to turn the vehicle harder into a corner or to dampen the 
+rotational movement. 
+
+
+Longitudinal distribution by xDrive, 
+
+lateral distribution by Dynamic Performance Control (QMVH) 
+
+
+20% 
+
+40% 
+
+60% 
+
+15 % 
+
+
+20 % 20 % 
+
+
+
+20 % 
+
+
+xDrive 
+
++ 
+
+QMVH 
+
+
+45% 
+
+
+15% 45% 
+
+
+□►© [J^© 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Drive torque distributed by xDrive 
+
+2 
+
+Driving force at the wheel 
+
+3 
+
+Drive torque distributed by Dynamic Performance Control 
+
+M 
+
+Torque about the vertical axis of the vehicle (= yaw moment) 
+
+
+E71 Chassis Dynamics Workbook 
+
+37 
+
+
+
+
+
+
+
+
+38 
+
+E71 Chassis Dynamics Workbook 
+
+
+Fixed Distribution of the Drive Torque 
+with Conventional Rear Differential 
+
+A conventional rear differential consists of an angle drive and a dif¬ 
+ferential gear and always distributes the drive torgue egually (50:50) 
+to both sides. Different rotational speeds are balanced out. 
+
+The different gear ratios for the various vehicle models are achieved 
+by the different number of teeth on the drive pinion and crown gear. 
+
+Distribution of the Drive Torque by the Rear Differential 
+with Mechanical Locks (limited-slip differential) 
+
+A open/conventional differential has two beneficial features: 
+
+
+Variable Distribution of the Drive Torque in the Rear 
+Differential with Superimposing Gear Units 
+
+The new rear differential with superimposing gear units abolishes 
+this fixed torgue distribution by the differential gear. The differential 
+gear is supplemented by a superimposing gear unit on each side. 
+These provide a second additional path along which the drive 
+torgue can be transmitted. 
+
+In all three load situations: 
+
+• traction, 
+
+• coasting and 
+
+
+• The speed of the drive wheels can differ from each other 
+because of the different distances they cover when cornering. 
+
+• The drive torgue is always distributed egually to both drive 
+wheels and does not therefore generate any yawing. 
+
+These benefits are counterbalanced by a major disadvantage if the 
+tire-road adhesion is different at the two wheels. The propelling 
+forces that are to be transferred to the road are then limited to the 
+lower of the two potential adhesion levels at the drive wheels. 
+
+If the adhesion ratio is unfavorable on one side, it means that a 
+vehicle (without electronic dynamic driving system) would not be 
+able to move off. The drive torgue would be converted into useless 
+rotational acceleration for the wheel with the lower potential adhe¬ 
+sion level, while the higher potential adhesion of the second drive 
+wheel remains unexploited. 
+
+Selectable and self-locking rear differentials are fitted in order to 
+eliminate this disadvantage of the differential gear. 
+
+
+• overrun 
+
+the BMW Dynamic Performance Control system allows the torgue 
+to be ideally distributed between the two rear wheels. 
+
+
+A - Torque Transfer Under Traction 
+
+The traction load situation means that the engine is generating 
+a positive drive torgue. In this respect, the functions of the BMW 
+Dynamic Performance Control hardly differ from those of the com¬ 
+petition. The BMW system can transfer up to 1,800 Nm of drive 
+torgue from one wheel to the other. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lateral distribution of the torque 
+
+2 
+
+Left rear wheel 
+
+3 
+
+Propeller shaft 
+
+4 
+
+Activated superimposing gear unit 
+
+5 
+
+Right rear wheel 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The competitive advantage of the BMW system becomes clear in 
+other load situations. 
+
+B - Torque Transfer During Coasting 
+
+During coasting, there is no drive torque (0 Nm). 
+
+When there is power being transmitted between the engine and 
+transmission, this occurs when the engine torque is exactly equal 
+to the loss torques. It also occurs if the driver disconnects the 
+power transmission between the engine and the gearbox (selector 
+lever in the neutral position). 
+
+There is then zero torque at the input to the rear differential. In con¬ 
+trast to the competitors' systems, Dynamic Performance Control 
+can also bring about torque transfer in this load situation. If a wheel 
+is to receive positive torque, an equal amount of negative torque 
+will occur at the other wheel. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lateral distribution of the torque 
+
+2 
+
+Left rear wheel 
+
+3 
+
+Propeller shaft 
+
+4 
+
+Activated superimposing gear unit 
+
+5 
+
+Right rear wheel 
+
+
+C - Overrunning: Negative Torque in the Propeller Shaft 
+
+If the engine is delivering negative torque, e.g. during overrun fuel 
+cut-off, this is known as overrunning. Even in this case, Dynamic 
+Performance Control allows torque transfer, i.e. a negative torque 
+can also be distributed asymmetrically to the two wheels. The 
+torque transfer can even be increased to such an extent that there 
+is an extremely large negative torque at one wheel and a slight pos¬ 
+itive torque at the other wheel. 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Lateral distribution of the torque 
+
+2 
+
+Left rear wheel 
+
+3 
+
+Propeller shaft 
+
+4 
+
+Activated superimposing gear unit 
+
+5 
+
+Right rear wheel 
+
+
+
+E71 Chassis Dynamics Workbook 
+
+39 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40 
+
+E71 Chassis Dynamics Workbook 
+
+
+Improved Traction 
+
+Accelerating Out of Corners 
+
+Dynamic Performance Control enables improved cornering traction 
+by adapting the torque distribution to the potential adhesion 
+between each tire and the road. 
+
+The vehicle can be accelerated out of the corner more quickly 
+without impairing directional stability. 
+
+The rolling motion of the vehicle when cornering generates differ¬ 
+ent wheel contact forces. The contact forces at the wheels on the 
+outside of the corner are greater than those at the wheels on the 
+inside of the corner. 
+
+
+- xDrive 
+
+In this situation, the xDrive system distributes the drive torque 
+equally to the front and rear axles. The front and rear axle transmis¬ 
+sions transfer the drive torque evenly to the left and right sides. 
+
+The front and rear wheels on the left-hand side cannot, however, 
+transfer any driving force to the icy road. ASC+T applies the brakes 
+to the left wheels, converting their proportion of the drive torque 
+into heat. The entire proportion of the drive torque transferred to 
+the wheels on the right-hand side (25% each) is available for accel¬ 
+eration. 
+
+In effect, then, 50% of all the torque generated for pulling 
+away is efficiently utilized. 
+
+
+Therefore, the maximum forces that can be transferred to the road 
+are greater at the wheels on the outside of the corner than at the 
+wheels on the inside of the corner. Dynamic Performance Control 
+has an ingenious way of using this effect. If the driver accelerates 
+while cornering, more drive torque is distributed to the rear wheel 
+on the outside of the corner than to the rear wheel on the inside of 
+the corner. In this way, the adhesion potential of the rear wheels is 
+better exploited. Overall, the vehicle can make use of a greater drive 
+torque to accelerate in the corner. 
+
+Driving off on Surfaces with Varying Friction Coefficients 
+
+The improved traction when pulling away will be particularly notice¬ 
+able to the driver when the road surface has various friction coeffi¬ 
+cients. This mixture of friction coefficients makes the variable distri¬ 
+bution of the drive torque between the individual wheels more evi¬ 
+dent. 
+
+Dynamic Performance Control distributes the drive torque to the 
+side where more power can be transferred. 
+
+Lets look at a situation where the vehicle is pulling away with differ¬ 
+ent friction coefficients on the left and right sides to compare the 
+basic principles for torque distribution in xDrive and Dynamic 
+Performance Control. 
+
+
+
+25% 
+
+
+25°y 
+
+
+25% 
+
+
+25<» 
+
+
+
+
+
+
+25% 
+
+
+xDrive 
+
+
+25% 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Drive torque distributed by xDrive 
+
+2 
+
+Driving force at the wheel 
+
+3 
+
+Driving force not available due to braking by ASC+T 
+
+
+
+
+
+
+
+
+
+- xDrive with DPC 
+
+The combination of the two systems, xDrive and Dynamic 
+Performance Control, further improves the already good pulling 
+away performance on surfaces with various friction coefficients. 
+Dynamic Performance Control detects that the left rear wheel is 
+threatening to spin using the wheel speed signals (in a similar 
+way to ASC+T). Instead of ASC+T reducing the drive torgue by 
+applying the brakes, Dynamic Performance Control diverts virtually 
+all of the drive torgue at the rear axle to the right rear wheel. 
+
+Because a QMVH differential is only used on the rear axle, the 
+torgue distribution at the front wheels remains unaffected. ASC+T 
+still needs to apply the brakes here to prevent the left front wheel 
+from spinning. 
+
+There is now a total of 75% of the drive torque available for 
+pulling away (50% at the right rear wheel, plus 25%at the 
+right front wheel). 
+
+Particularly on surfaces with various friction coefficients, a vehicle 
+with Dynamic Performance Control will have more tractive force at 
+its disposal and will thus be able to accelerate harder than a vehicle 
+that is only eguipped with xDrive. By laterally distributing the drive 
+torgue, Dynamic Performance Control therefore improves traction 
+when pulling away. 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Drive torque distributed by xDrive 
+
+2 
+
+Driving force at the wheel 
+
+3 
+
+Driving force not available due to braking by ASC+T 
+
+4 
+
+Drive torque distributed by Dynamic Performance Control 
+
+
+E71 Chassis Dynamics Workbook 
+
+41 
+
+
+
+
+
+
+
+
+42 
+
+E71 Chassis Dynamics Workbook 
+
+
+Increased Agility 
+
+The intelligent interaction between the mechatronic systems, DSC 
+and xDrive, guarantees excellent traction and stability. 
+
+However, there is a certain conflict of objectives, which generates 
+more stability at the expense of agility. 
+
+Dynamic Performance Control, which is also a mechatronic system, 
+is a logical enhancement to DSC and xDrive, because it can pro¬ 
+vide an infinitely variable distribution of the drive torgue between 
+the left and right wheels on the rear axle. This is pretty much 
+regardless of how much input torgue there is. 
+
+The conflict between stability and agility is therefore resolved for 
+the first time. 
+
+Increased agility can be perceived in the following dynamic benefits: 
+
+• Smaller steering angle reguirement 
+
+• Less of a tendency to understeer 
+
+The vehicle responds more sensitively to steering input. With 
+asymmetric drive torgue distribution at the rear axle, Dynamic 
+Performance Control effects an optimum yaw moment. 
+
+This controlled additional torgue about the vertical axis of the vehi¬ 
+cle makes it more "willing" to turn corners and reduces the amount 
+of steering input reguired. 
+
+
+Increased agility in cases of understeer 
+
+
+
+Less steering effort means greater steering comfort, reduced 
+understeer and more precise steering through corners. 
+
+
+
+
+
+
+
+
+
+Greater Directional Stability 
+
+As well as the considerably increased responsiveness of the vehicle 
+with less steering input, any oversteer can also be noticeably con¬ 
+trolled by the distribution of torque. 
+
+Dynamic Performance Control increases vehicle safety by appropri¬ 
+ately damping the rotational motion of the vehicle about the vertical 
+axis. 
+
+At the first sign of instability, e.g. oversteer, the drive torque at the 
+rear axle is diverted to the wheel on the inside of the corner, thus 
+preventing the rear of the vehicle from kicking out. 
+
+As soon as the vehicle is dynamically stable again, the torque 
+distribution by xDrive also returns to the basic 40:60 distribution. 
+
+If the directional stability still remains close to the limit, DSC will 
+of course also intervene. In this way, the various dynamic driving 
+systems work together, coordinated by the Integrated Chassis 
+Management, to achieve a common objective and to complement 
+each other. 
+
+The result is, for example, more easily controlled vehicle behavior 
+when you need to take evasive action. 
+
+
+Increase in directional stability for the example of oversteer 
+
+
+
+Index 
+
+Explanation 
+
+1 
+
+Entering the corner, threatening to oversteer 
+
+2 
+
+Torque distribution, oversteer eliminated 
+
+
+E71 Chassis Dynamics Workbook 
+
+43 
+
+
+
+
+
+
+44 
+
+E71 Chassis Dynamics Workbook 
+
+
+Operating Modes and Displays 
+Normal Mode 
+
+The Dynamic Performance Control functions cannot be switched 
+on and off. The system is available once the engine is switched on. 
+
+Evidently, no torque is transferred in gear R because the vehicle is 
+stationary and no power is being transmitted to the wheels. 
+However, in gears N and R, the system can affect torque transfer. 
+
+The driver will get a new functional display for Dynamic 
+Performance Control, which can be called up as one of the on¬ 
+board computer screens and make permanently visible in the 
+instrument cluster. If the display for Dynamic Performance Control 
+was active last time the vehicle was driven, it will automatically 
+appear again the next time the vehicle is driven. 
+
+Due to legal requirements, the vehicle's odometer reading must 
+always be displayed for a fixed time after the engine is started. For 
+this reason, a small symbol for Dynamic Performance Control 
+appears when the engine is started with the odometer reading 
+underneath it. This small symbol is also displayed if the driver 
+switches to the Dynamic Performance Control screen from 
+another on-board computer screen. 
+
+After a few seconds, the symbol is switched to full size for better 
+legibility. It shows the drive train and the vehicle wheels from above, 
+as well as the current torque distribution by xDrive and Dynamic 
+Performance Control. 
+
+The amount of torque at a wheel is shown by the number of narrow 
+segments. Together, the segments form a bar, the length of which 
+is a measurement of the amount of torque at the wheel. In this 
+view, only positive values are possible. If the torque drops to a value 
+of 0 Nm, the segments disappear completely from the wheel con¬ 
+cerned. Negative values are also displayed like this and so cannot 
+be clearly indicated. 
+
+
+A few typical examples of the display with the full-size symbol are 
+shown below. 
+
+
+
+Dynamic Performance Control display with 
+small symbol and odometer reading 
+(displayed upon engine startup) 
+
+
+Dynamic Performance Control display with 
+standard longitudinal distribution (front/rear) 
+and even lateral distribution (left/right) 
+
+
+Dynamic Performance Control display with 
+longitudinal distribution biased to the rear 
+and even lateral distribution (left/right) 
+
+
+Dynamic Performance Control display with 
+standard longitudinal distribution (front/rear) 
+and lateral distribution biased to the right 
+
+
+
+Break-in Phase 
+
+There are no different or additional running-in instructions for the 
+rear differential with superimposing gear units than those that 
+already exist for the conventional rear differential. Nor is there any 
+diminished or reduced functionality due to the new rear differential. 
+
+Wear Over the Service Life 
+
+Notable wear occurs to two system components of the rear differ¬ 
+ential: the multi-plate clutches and the transmission oil in the 
+superimposing gear units (see also the System components sec¬ 
+tion). There are mathematical models for these two components 
+that either compensate for the wear or monitor for impermissibly 
+high values. 
+
+Continuous wear to the multi-plate clutches is offset by appropriate 
+control of the electric motors. Constant adaptation processes run¬ 
+ning in the background determine the position of the electric 
+motors at which there is no torque transfer. The last detected "zero 
+position" during a driving cycle is saved in the QMVH control unit 
+and is available as the start value for the next driving cycle. 
+
+Wear to the multi-plate clutches can be compensated for through¬ 
+out their entire service life. This is ensured by their design and the 
+configuration of the electric motor adjustment range. 
+
+Frictional wear and loading due to high temperatures also age the 
+transmission oil in the superimposing gear units. For this reason, a 
+wear algorithm is calculated that takes account of the following vari¬ 
+ables: 
+
+• Age of the transmission oil in the superimposing gear units 
+
+• Number of times a superimposing gear unit has been actuated 
+
+• Temperature of the transmission oil in the superimposing 
+gear units 
+
+
+If the vehicle is driven with a normal or even a dynamic driving 
+style, the transmission oil can be used for the entire service life of 
+the vehicle without requiring changing. The result of the wear algo¬ 
+rithm remains in the permissible range. 
+
+Only if the vehicle is driven with an extremely sporty driving style 
+might it become necessary to change the transmission oil during 
+the vehicle's lifetime. The wear algorithm then generates a fault 
+code memory entry. The diagnostic system uses this fault code 
+memory entry to suggest a transmission oil change. 
+
+Please note that when we talk here about transmission oil and 
+changing it, we are only referring to the two reservoirs of the super¬ 
+imposing gear units. 
+
+The oil in the differential is a service life supply, as before. 
+
+Driving Off with a Limited Steering Angle Signal 
+
+The steering angle sensor in the steering column switch cluster 
+(SZL) is only able to measure the relative steering angle directly. 
+
+Its measuring range is between -180° and +180°. 
+
+The absolute steering angle can be calculated from the relative 
+steering angle by counting the steering-wheel turns. This informa¬ 
+tion is lost if the SZL not supplied with voltage (e.g. if the battery 
+is disconnected). When the vehicle is subsequently started, only 
+the relative steering angle is available initially. The SZL uses the 
+signals from the wheel-speed sensors to determine the information 
+about the steering-wheel rotation when first pulling away. 
+
+The following situation can be particularly problematic for all-wheel 
+drive vehicles. The SZL was disconnected from the voltage supply. 
+The vehicle is started on a snow covered road, for example. The 
+driver depresses the accelerator pedal forcefully to pull away caus¬ 
+ing all the wheels to spin and requiring ASC+T to brake them 
+again. 
+
+
+E71 Chassis Dynamics Workbook 
+
+45 
+
+
+46 
+
+E71 Chassis Dynamics Workbook 
+
+
+In this situation, the SZL may not be able to immediately determine 
+the information about the steering wheel rotation. It is not possible 
+again until the slipping stops. In the meantime, the full functions of 
+Dynamic Stability Control and Dynamic Performance Control are 
+not available. 
+
+
+Excessive Temperature 
+
+Excessive temperature can occur in the two electric motors or in 
+the transmission oil in the superimposing gear units. Excessive 
+temperature can cause damage to components or unduly high 
+levels of wear. 
+
+
+During this transition period, the driver is informed of the limited 
+availability of the stability control systems by the DSC warning lamp 
+and a Check Control message. 
+
+However, in this case, it is not a question of a fault, but a temporary 
+unavailability of the systems. In the event of a complaint, the cus¬ 
+tomer should be informed of this possibility. 
+
+
+The following measures are applied to prevent this. 
+
+Degradation of the torque transfer as a function of temperature 
+
+
+
+Index 
+
+Explanation 
+
+MT 
+
+Percentage performance of the required torque transfer by DPC 
+
+A 
+
+Normal operation without driver information 
+
+T 
+
+Temperature of the electric motors and/or the transmission oil in the QMVH 
+
+B 
+
+Restricted operation with driver information 
+
+
+Note: The system is able to detect a "sporty driving style". 
+If it does so, the temperature threshold is temporarily 
+increased by approximately 25°C. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The temperature of the electric motors and the transmission oil in 
+the two superimposing gear units is measured. The signals from 
+the temperature sensors are analyzed by the QMVH control unit. 
+
+In the first temperature range, the QMVH control unit makes avail¬ 
+able the full amount of torgue transfer (M T1 = 100%). If the limit 
+value Tt is exceeded, the QMVH control unit reduces the torque 
+transfer performance. 
+
+In the example shown, the transmission oil in one superimposing 
+gear unit has temperature T 2 . The torque transfer is then reduced 
+to M T2 = 80%. If the Integrated Chassis Management requires a 
+torque transfer of 1,000 Nm, only 800 Nm is provided by the 
+QMVH control unit. 
+
+
+The reduced performance is reported back to the ICM control unit, 
+so that it can be taken into consideration for the higher-level 
+dynamic driving control. The reduced work of the superimposing 
+gear units reduces the input of frictional heat, thereby preventing 
+further heating. 
+
+
+The driver is not informed of the limited function of Dynamic 
+Performance Control until the vehicle handling is markedly altered 
+by the reduction in torque transfer. This threshold is marked as M T3 
+in the diagram. The relevant display - see below - is not activated 
+until this point. 
+
+
+
+xDrive and/or DPC not available 
+
+
+System Not Available 
+
+If xDrive or Dynamic Performance Control (or both) is not available, 
+the function display is dimmed. Because the customer does not 
+then benefit from the large bar display, the display is also switched 
+to the smaller symbol size. 
+
+
+The driver cannot determine whether xDrive or Dynamic 
+Performance Control is causing the fault in the system using only 
+the dimmed function display. The distinction can be made using 
+the associated Check Control message. 
+
+A failure of Dynamic Performance Control has a similar effect to the 
+failure of Dynamic Stability Control. Driving stability is limited. 
+
+
+Therefore, if there is a system fault in Dynamic Performance 
+Control, the same Check Control symbol is used as for DSC. An 
+instruction in the Central Information Display asks the driver to drive 
+carefully. In addition to this Check Control message, the fixed warn¬ 
+ing lamp in the instrument cluster is constantly lit yellow. 
+
+
+
+Display in the event of a DPC system failure 
+
+
+The Check Control symbol for a fault in the xDrive system shows 
+the customer that all-wheel drive is no longer available. 
+
+
+4x4! 
+
+
+Check Control symbol for xDrive fault 
+
+
+E71 Chassis Dynamics Workbook 
+
+47 
+
+
+
+
+48 
+
+E71 Chassis Dynamics Workbook 
+
+
+Dynamic Performance Control in the ICM network 
+
+The ICM control unit's monitoring of the driving situation can be 
+used for both systems (AL/AFS and DPC). The interpretation of the 
+directional input at the steering wheel by the driver is also of use for 
+the two systems. For the Dynamic Performance Control system, 
+the engine torgue reguested by the driver and the torgue provided 
+at the transmission output are also analyzed. The ICM control unit 
+therefore reads the relevant signals from the engine control system 
+and the electronic transmission control system. 
+
+A particular feature in the ICM network is the xDrive system, which 
+is used to help control the longitudinal distribution of the drive 
+torgue. 
+
+As in the all-wheel-drive vehicles already available on the market, 
+the DSC control unit in the E71 continues to calculate the setpoint 
+value for the distribution of the drive torgue between the front and 
+rear axles. The transfer case control unit applies this setpoint value 
+and feeds back the actual value of the torgue distribution. In the 
+E71, it is no longer only the DSC control unit that receives this sig¬ 
+nal, but also the ICM control unit, so that the drive torgue available 
+at the rear axle can be determined. 
+
+Using the current driving situation, the driver's input and the drive 
+torgue available at the rear axle, the Integrated Chassis 
+Management calculates a setpoint value for the QMVH control unit. 
+This specifies how much drive torgue should be transferred from 
+which rear wheel to the other and is sent via the ICM-CAN. 
+
+The QMVH control unit has the task of implementing this setpoint 
+value by energizing the actuating elements. In doing so, it must first 
+detect which side, i.e. which of the two superimposing gear units, 
+needs to be energized. This should occur on the side on which the 
+greater drive torgue should be applied. 
+
+The QMVH control unit in the E71 is purely an actuating control 
+unit, in a similar way to the Active Steering control unit. 
+
+
+Dynamic Performance Control IPO 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Integrated Chassis Management 
+
+6 
+
+Rear axle lateral torque distribution 
+
+2 
+
+SZL with steering angle sensor 
+
+7 
+
+QMVH rear differential 
+
+3 
+
+DSC sensor 
+
+8 
+
+Instrument cluster 
+
+4 
+
+Dynamic stability control 
+
+9 
+
+Electronic transmission control 
+
+5 
+
+Transfer box control module 
+
+10 
+
+Engine control system (DME) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In order to ensure that the setpoint value is applied, the QMVH 
+control unit reads the signals from the motor position sensors. 
+There is also motor position control for Dynamic Performance 
+Control in the same way as for Active Steering. 
+
+The QMVH control unit uses the motor position to determine the 
+drive torgue that is actually transferred and transmits this informa¬ 
+tion back to the ICM control unit. 
+
+The interface between the ICM control unit and the instrument 
+cluster serves to activate the function displays and to indicate fault 
+statuses. See the "Operating modes and displays" section. 
+
+
+E71 Chassis Dynamics Workbook 
+
+49 
+
+
+50 
+
+E71 Chassis Dynamics Workbook 
+
+
+Service Information 
+
+
+Running-in Phase 
+
+There are no different or additional running-in instructions for the 
+rear differential with superimposing gear units than those that 
+already exist for the conventional rear differential. 
+
+Driving Off with a Limited Steering Angle Signal 
+
+If the steering column switch cluster (SZL) has been disconnected 
+from the voltage supply, only the relative steering angle can initially 
+be measured. The SZL does not calculate the absolute steering 
+angle using the wheel speed signals for calibration until the vehi¬ 
+cle has been driven for a few meters. 
+
+Until this point, only limited functions of the Dynamic Stability 
+Control and Dynamic Performance Control dynamic driving sys¬ 
+tems are available. The driver will not normally notice this phase. 
+
+A Check Control message is only issued if the driver pulls away 
+sharply on a surface with low friction immediately after the engine 
+has been started. However, there is not a technical fault. Once the 
+steering angle sensor has been calibrated with the wheel speeds, 
+all functions of the dynamic driving systems are automatically 
+available again. 
+
+Excessive Temperature 
+
+Excessive temperature can occur in the electric motors or in the 
+transmission oil in the superimposing gear units. This can cause 
+damage to components or unduly high levels of wear. To prevent 
+this, the reguested torgue transfer is only implemented to a 
+reduced extent if excessive temperature is detected. 
+
+This reduction happens without the driver noticing. A Check 
+Control message is not issued until the vehicle's behavior is 
+
+
+noticeably altered by the reduction. A careful driving style will 
+automatically result in the components being cooled, so that the 
+full functionality is soon available again. 
+
+The system is able to detect a "sporty driving style". If it does so, 
+the temperature threshold is temporarily increased by approxi¬ 
+mately 25°C. 
+
+QMVH Unit 
+
+The angle when the rear differential with superimposing gear 
+units is removed and refitted must be no more than 45° due to 
+risk of the oils mixing together through the common vent. 
+
+Electric Motors 
+
+The following must be observed when one or both of the electric 
+motors are being replaced: 
+
+• When an electric motor is removed, small guantities of oil 
+may escape. This volume of oil is so small in relation to the 
+overall volume that it is not necessary to top up the trans¬ 
+mission oil. 
+
+• Only the correct left/right motor may be used for the 
+replacement. Identify the electric motor correctly using the 
+Electronic Parts Catalogue. 
+
+• Following the replacement of one or two new electric 
+motors, a set-up process must be started using the diag¬ 
+nostic system. This will transfer data from the motor position 
+sensor to the QMVH control unit. 
+
+
+
+
+Control Unit 
+
+The QMVH control unit continuously calculates wear data for the 
+transmission oil and multi-plate clutches during normal operation. 
+The control unit also reconciles the control unit data with the fitted 
+electric motors. 
+
+A digital interface with the motor position sensors is used for this 
+purpose. This results in the following particularities if the QMVH 
+control unit needs to be replaced during the course of a repair. 
+
+Before The QMVH control unit is removed, all data regarding the 
+status of the rear differential with superimposing gear units must 
+be read out, if possible, using the diagnostic system. 
+
+Once the new QMVH control unit has been fitted, programmed 
+and coded, the diagnostic system must be used to work through a 
+set-up procedure. 
+
+During this, the data that was previously read out regarding the sta¬ 
+tus of the rear differential with superimposing gear units will be 
+written to the new control unit. The control unit will also be set to a 
+mode which restarts all adaptation processes, so that perfect inter¬ 
+action between the control unit and the superimposing gear units 
+can be established as soon as possible. 
+
+ICM Control Unit 
+
+When the ICM control unit is coded, the vehicle identification num¬ 
+ber is written to the control unit. This means that a simple 
+exchange between two vehicles does not provide a solution to a 
+fault. Following the programming or replacement of an ICM control 
+unit, coding must therefore be carried out. This is part of the set-up 
+process conducted by the diagnostic system. 
+
+During normal driving, the ICM control unit carries out calibration 
+processes on the sensor signals. The offset of the steering wheel 
+angle is determined in this way, for example. Values of this type are 
+reguired for the higher-level dynamic driving regulation. Following 
+
+
+the programming or replacement of an ICM control unit, these cali¬ 
+bration processes must be explicitly initiated. The diagnostic sys¬ 
+tem has a corresponding Service function. 
+
+The actual calibration process does not take place until the next 
+trip. The sensor signals cannot be calibrated to each other until the 
+dynamic situations actually occur. This process takes place in the 
+background, so that the customer will not realize it is happening. 
+
+As you were already able to see from the bus overview and the dis¬ 
+tributed functionality, the ICM control unit is not an independent 
+control unit. Instead, it is in a close network with the QMVH and 
+AL control units and, of course, the DSC. All these control units 
+use similar or identical sensor signals (e.g. wheel speeds, yaw rate, 
+steering wheel angle). Take this background information into con¬ 
+sideration when performing diagnostics on the dynamic driving 
+systems, for example, do not only check the fault memories of the 
+individual control units, but the fault memories of all the control 
+units in the network. 
+
+
+E71 Chassis Dynamics Workbook 
+
+51 
+
+
+52 
+
+E71 Chassis Dynamics Workbook 
+
+
+
+Workshop Exercise - Service Functions for Dynamic Performance Control 
+
+
+Using an instructor designated vehicle, run a short test on an E71 and complete the following questions. 
+
+
+Diagnostic Software 
+Version A 
+
+
+In the Service Functions section of the Function Selection; Under 
+which major heading does the QMVFI system appear? 
+
+Circle the correct major group below. 
+
+Maintenance 
+
+Drive 
+
+Chassis 
+
+Body 
+
+Vehicle Information 
+
+Does the sub group appear as QMVFI? If not what is the sub group 
+for QMVFI called in the diagnostic software? 
+
+
+Run the test plan for oil replacement. 
+
+How does a technician know that the oil for the QMVH system 
+must be replaced? 
+
+
+Run the test plan for Startup QMVH. 
+
+What are the two options given? 
+
+m 
+
+[21 
+
+
+What options are given under option [2]? 
+
+What test plans are available under for the QMVH system? 
+
+Write them in the spaces provided below. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

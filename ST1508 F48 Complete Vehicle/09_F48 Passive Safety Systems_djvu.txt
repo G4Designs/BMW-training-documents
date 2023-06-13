@@ -1,0 +1,1867 @@
+
+Technical training. 
+
+Product information. 
+
+F48 Passive Safety Systems 
+
+
+BMW Service 
+
+
+Edited for the U.S. market by: 
+
+BMW Group University 
+
+Technical Training 
+
+ST1508 8/1/2015 
+
+\ _ / 
+
+
+
+
+
+
+
+
+General information 
+
+
+Symbols used 
+
+The following symbol is used in this document to facilitate better comprehension or to draw attention 
+to very important information: 
+
+A 
+
+Contains important safety information and information that needs to be observed strictly in order to 
+guarantee the smooth operation of the system. 
+
+
+Information status and national-market versions 
+
+BMW Group vehicles meet the requirements of the highest safety and quality standards. Changes 
+in requirements for environmental protection, customer benefits and design render necessary 
+continuous development of systems and components. Consequently, there may be discrepancies 
+between the contents of this document and the vehicles available in the training course. 
+
+This document basically relates to the European version of left-hand drive vehicles. Some operating 
+elements or components are arranged differently in right-hand drive vehicles than shown in the 
+graphics in this document. Further differences may arise as a result of the equipment specification in 
+specific markets or countries. 
+
+Additional sources of information 
+
+Further information on the individual topics can be found in the following: 
+
+• Owner's Handbook 
+
+• Integrated Service Technical Application. 
+
+Contact: conceptinfo@bmw.de 
+©2015 BMW AG, Munich 
+
+Reprints of this publication or its parts require the written approval of BMW AG, Munich 
+
+The information contained in this document forms an integral part of the technical training of the 
+BMW Group and is intended for the trainer and participants in the seminar. Refer to the latest relevant 
+information systems of the BMW Group for any changes/additions to the technical data. 
+
+Information status: June 2015 
+
+BV-72/Technical Training 
+
+
+
+
+F48 Passive Safety Systems 
+
+Contents 
+
+
+1. Introduction.1 
+
+1.1. The hidden protector.1 
+
+2. System Overview.2 
+
+2.1. System wiring diagrams.2 
+
+2.1.1. System wiring diagram for US version.3 
+
+2.2. System overview of US version.5 
+
+3. Functions.7 
+
+3.1. Functions of Advanced Crash Safety Module.7 
+
+3.2. Crash-relevant functions.8 
+
+3.2.1. Evaluating the sensor signals.8 
+
+3.2.2. Impact detection for US version of vehicles.8 
+
+3.2.3. Trigger time and trigger sequence.9 
+
+3.2.4. Activation of the ignition circuit output stages.9 
+
+3.2.5. Sending the crash message.10 
+
+3.2.6. Crash documentation.10 
+
+3.2.7. Emergency call function.10 
+
+3.2.8. Vehicles with Intelligent eCall.11 
+
+3.3. System monitoring functions.11 
+
+3.3.1. System self test.12 
+
+3.3.2. Display of system operability.12 
+
+3.3.3. Cyclic monitoring.12 
+
+3.3.4. Fault display and fault storage.12 
+
+3.3.5. Output of faults (diagnosis).12 
+
+3.3.6. Acoustic and visual seat belt warning.12 
+
+3.3.7. Deactivating the airbag.13 
+
+4. System Components.14 
+
+4.1. Advanced Crash Safety Module.14 
+
+4.2. Sensors and switches.14 
+
+4.2.1. Lateral and longitudinal acceleration sensor, B-pillar.15 
+
+4.2.2. Door airbag sensor (pressure).16 
+
+4.2.3. Airbag front sensor.17 
+
+4.2.4. Sensors in the ACSM.18 
+
+4.2.5. CIS mat.18 
+
+4.2.6. Seat belt buckle switch.19 
+
+4.2.7. Emergency call button.19 
+
+4.2.8. Seat-position sensors.20 
+
+4.3. Actuators.20 
+
+4.3.1. Overview.20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+Contents 
+
+
+4.3.2. Driver's airbag.21 
+
+4.3.3. Front passenger airbag.22 
+
+4.3.4. Knee airbag.23 
+
+4.3.5. Flead airbag.24 
+
+4.3.6. Side airbag.25 
+
+4.3.7. Belt tensioner with adaptive force limiter.26 
+
+4.3.8. Airbag indicator light.27 
+
+4.3.9. Seat belt warning light.27 
+
+4.3.10. Indicator lamp for front passenger airbag deactivation.28 
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+1. Introduction 
+
+1.1. The hidden protector 
+
+The passive safety system of the F48 is based on the objectives and characteristics of current BMW 
+models. The passive safety system fulfils all legislative requirements worldwide. 
+
+The restraint systems ensure that the risk of injury is reduced. 
+
+The 4th generation Advanced Crash Safety Module (ACSM) is used as the central airbag control unit 
+for the passive safety system in the F48. In comparison to other current series, with the passive 
+safety system of the F48 the central sensor system is integrated in the ACSM control unit and not in 
+the Integrated Chassis Management (ICM). This is possible with the F48 as the ACSM is located in the 
+center of vehicle. 
+
+The ACSM4 of the F48 is connected to the FlexRay instead of previously in the PT-CAN. The sensor 
+data of the central sensor system, which was previously provided by the ICM, can be transmitted 
+directly by the ACSM via FlexRay to the DSC. The DSC processes the sensor data and makes it 
+available to other bus users. 
+
+
+1 
+
+
+
+F48 Passive Safety Systems 
+
+2. System Overview 
+
+2.1. System wiring diagrams 
+
+The following bus overview shows an overview of the vehicle circuit structure of the F48 and 
+incorporation of the ACSM in the Flexray. 
+
+
+2 
+
+
+
+F48 Passive Safety Systems 
+
+2. System Overview 
+
+
+2.1.1. System wiring diagram for US version 
+
+
+
+
+
+
+© 
+
+W8 
+
+
+
+F48 system wiring diagram for passive safety in US-version vehicles 
+
+
+3 
+
+
+909Z-E131 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, left 
+
+2 
+
+Instrument cluster (KOMBI) 
+
+3 
+
+Indicator lamp for front passenger airbag deactivation in roof function center 
+
+4 
+
+Airbag front sensor, right 
+
+5 
+
+Dynamic Stability Control (DSC) 
+
+6 
+
+Body Domain Controller (BDC) 
+
+7 
+
+Airbag sensor, door, right (pressure) 
+
+8 
+
+Head airbag, passenger's side 
+
+9 
+
+Acceleration sensor, B-pillar, right 
+
+10 
+
+Adaptive belt force limiter, passenger's side 
+
+11 
+
+Side airbag, passenger's side 
+
+12 
+
+Electronic fuel pump control (EKPS) 
+
+13 
+
+Telematic Communication Box (TCB) 
+
+14 
+
+Belt tensioner, passenger's side 
+
+15 
+
+CIS mat 
+
+16 
+
+Seat-position sensor, passenger's side 
+
+17 
+
+Seat belt buckle contact, passenger's side 
+
+18 
+
+Seat belt buckle contact, driver's side 
+
+19 
+
+Seat-position sensor, driver's side 
+
+20 
+
+Belt tensioner, driver's side 
+
+21 
+
+Side airbag, driver's side 
+
+22 
+
+Adaptive belt force limiter, driver's side 
+
+23 
+
+Acceleration sensor, B-pillar, left 
+
+24 
+
+Head airbag, driver's side 
+
+25 
+
+Airbag sensor, door, left (pressure) 
+
+26 
+
+Advanced Crash Safety Module (ACSM) 
+
+27 
+
+Clock spring 
+
+28 
+
+Driver's airbag, two-stage 
+
+29 
+
+Knee airbag, driver's side 
+
+30 
+
+Knee airbag, passenger's side 
+
+31 
+
+Front passenger airbag, two-stage with active vent valve 
+
+
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+2. System Overview 
+
+
+2.2. System overview of US version 
+
+
+
+F48 System overview for US-version vehicles 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Airbag front sensor, right 
+
+2 
+
+Body Domain Controller (BDC) 
+
+3 
+
+Front passenger airbag, two-stage with active vent valve 
+
+4 
+
+Airbag sensor, door, right (pressure) 
+
+5 
+
+Instrument cluster (KOMBI) 
+
+6 
+
+Belt tensioner and adaptive belt force limiter, passenger's side 
+
+7 
+
+Indicator lamp for front passenger airbag deactivation in roof function center 
+
+8 
+
+Acceleration sensor, B-pillar, right 
+
+9 
+
+Driver's airbag, two-stage 
+
+10 
+
+Side airbag, passenger's side 
+
+11 
+
+Head airbag, passenger's side 
+
+12 
+
+Head airbag, driver's side 
+
+13 
+
+Telematic Communication Box (TCB) 
+
+14 
+
+Side airbag, driver's side 
+
+
+5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+2. System Overview 
+
+
+Index 
+
+Explanation 
+
+15 
+
+Acceleration sensor, B-pillar, left 
+
+16 
+
+Belt tensioner and adaptive belt force limiter, driver's side 
+
+17 
+
+Seat belt buckle contact, passenger's side 
+
+18 
+
+Seat belt buckle contact, driver's side 
+
+19 
+
+Seat-position sensor, driver's side 
+
+20 
+
+Seat-position sensor, passenger's side 
+
+21 
+
+Airbag sensor, door, left (pressure) 
+
+22 
+
+Advanced Crash Safety Module (ACSM) 
+
+23 
+
+Clock spring in the steering column switch cluster 
+
+24 
+
+Knee airbag, driver's side 
+
+25 
+
+Knee airbag, passenger's side 
+
+26 
+
+Airbag front sensor, left 
+
+
+6 
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+3.1. Functions of Advanced Crash Safety Module 
+
+The function of the Advanced Crash Safety Module is to permanently evaluate all sensor signals in 
+order to identify a crash situation. As a result of the sensor signals and their evaluation, the Advanced 
+Crash Safety Module identifies the direction and the severity of the crash. 
+
+The ACSM evaluates the information from the sensors and then forwards corresponding measures for 
+selective activation of the necessary restraint systems. 
+
+The Advanced Crash Safety Module monitors the system itself and indicates when it is ready for 
+operation by switching off the airbag indicator light. 
+
+If an error occurs during operation this is stored in a fault memory and can be read out for diagnosis 
+purposes. 
+
+If a crash situation is detected, a crash message is sent to the other bus users in the data bus network 
+as notification. The relevant control units respond to this signal by executing their own activities 
+according to the severity of the crash. 
+
+The activities include: 
+
+• Opening the central locking system 
+
+• Activating the hazard warning light 
+
+• Switching on the interior light 
+
+• Making an emergency call 
+
+An additional function of the Advanced Crash Safety Module is the acoustic seat belt warning that 
+reminds the driver and front passenger using visual and acoustic signals to fasten their seat belts. 
+
+Seat belt buckle switches are used to identify whether the driver and/or the front passenger have their 
+seat belts fastened. Information on occupancy of the front passenger seat is also included for the 
+acoustic seat belt warning. Furthermore, for vehicles in the US version the position of the driver and 
+the front passenger seat is monitored. 
+
+The functions of the Advanced Crash Safety Module generally belong to one of the following areas: 
+
+• Crash-relevant functions 
+
+• System monitoring functions 
+
+• Additional convenience functions 
+
+
+7 
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+3.2. Crash-relevant functions 
+
+The Advanced Crash Safety Module must fulfil the following crash-relevant functions: 
+
+• Evaluating the sensor signals 
+
+• Impact detection 
+
+• Determining actuators to be activated 
+
+• Specifying the trigger time and trigger sequence 
+
+• Activation of the ignition circuit output stages 
+
+• Sending the crash message to all bus users 
+
+• Crash documentation 
+
+• Emergency call function 
+
+3.2.1. Evaluating the sensor signals 
+
+The sensors serve to identify and verify front-end, side-on and rear-end crashes and also as roll-over 
+detection. 
+
+The sensors are located in the ACSM or are directly connected to the Advanced Crash Safety Module 
+where their signals are evaluated and processed. 
+
+3.2.2. Impact detection for US version of vehicles 
+
+The US version of the vehicles is equipped with the following sensors: 
+
+• one lateral and one longitudinal acceleration sensor in the B-pillars (green) 
+
+• one airbag sensor to monitor the pressure in each of the front doors (blue) 
+
+• one lateral and one longitudinal acceleration sensor in the ACSM (yellow) 
+
+• one yaw rate sensor in the ACSM (yellow) 
+
+• one vertical acceleration sensor in the ACSM (yellow) 
+
+• one airbag front sensor beside the headlights (red) 
+
+The airbag front sensors assist with the identification of a head-on crash and its corresponding 
+severity. 
+
+
+8 
+
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+
+
+F48 Sensors in US version of vehicles 
+
+
+3.2.3. Trigger time and trigger sequence 
+
+The Advanced Crash Safety Module uses the values transmitted by the sensors to determine the 
+direction and severity of the crash. 
+
+In the case of a head-on crash, for example, corresponding high acceleration values from the 
+longitudinal acceleration sensors in the rear doors and ACSM respectively must be detected. 
+
+An algorithm determines the severity and direction of the crash based on the accelerations. 
+
+This information is used to assist calculation of the trigger times and sequence in which the 
+restraint systems are activated. 
+
+A possible imminent rollover is also detected and the appropriate protection systems are activated. 
+
+3.2.4. Activation of the ignition circuit output stages 
+
+The Advanced Crash Safety Module is supplied in the BDC with terminal 30B. The Advanced Crash 
+Safety Module is in offline mode with terminal 30B. This means that it is active on the data bus and can 
+perform all diagnostic functions. Activation of the ignition circuits is blocked and is only enabled as of 
+terminal 15 once the system self-test is complete. The Advanced Crash Safety Module is also ready 
+for ignition, even with the logical terminal R. 
+
+The ignition capacitors are recharged via a switching controller. These ignition capacitors make the 
+firing energy available in the event of a crash. If the voltage supply is interrupted during a crash, the 
+ignition capacitors serve briefly as an energy storage device. 
+
+The ignition circuit output stages consist of a high-side and a low-side power switch. The high-side 
+power switch connects the ignition voltage, while the low-side power switch connects to the ground. 
+The ignition circuit output stages are controlled by a microcontroller. 
+
+
+The high-side and low-side power switches also serve to check the ignition circuits during the system 
+self-test. 
+
+
+9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+
+3.2.5. Sending the crash message 
+
+In the event of a collision involving activation of the restraint systems, the Advanced Crash Safety 
+Module sends a crash message to the bus users in the data bus network. 
+
+The activation of the Telematic Communication Box is connected parallel via a direct single-wire 
+connection. 
+
+As a result, the respective control units perform the following functions depending on the crash 
+severity: 
+
+
+Function 
+
+Control unit 
+
+Switch off electric fuel pump 
+
+Digital Motor Electronics (DME) or 
+via electronic fuel pump control (EKPS) 
+
+Release central locking system 
+
+Body Domain Controller (BDC) 
+
+Switch on hazard warning lights 
+
+Body Domain Controller (BDC) 
+
+Switch on interior light 
+
+Body Domain Controller (BDC) 
+
+Make emergency call 
+
+Telematic Communication Box (TCB) 
+
+
+3.2.6. Crash documentation 
+
+In the event of a collision where one or more actuators are activated, a crash entry is stored in a 
+non-erasable memory. After five crash entries, a non-erasable fault entry is stored together with the 
+information that the five crash messages have been saved. The airbag indicator light also lights up 
+continuously. 
+
+A 
+
+The five crash entries could also be stored during the course of an accident. Each crash entry is 
+assigned a system time. The control unit remains ignitable even after five crash entries. The crash 
+entries cannot be erased and serve the purpose of subsequent device diagnosis. A maximum of five 
+crash entries can be saved. The control unit must then be replaced. 
+
+
+3.2.7. Emergency call function 
+
+The emergency call functions are country-specific and are available to customers in countries with 
+ConnectedDrive Services infrastructure. A prerequisite for an emergency call is an active SIM card in 
+the Telematic Communication Box and the availability of a mobile phone network. 
+
+The emergency call button is connected directly to the Telematic Communication Box. 
+
+The manual emergency call allows the driver to request assistance in the event of a medical 
+emergency. 
+
+The functions of the emergency call have been modified with the realignment of the ConnectedDrive 
+Services. The next chapters provide detailed information on which functions the F48 receives with 
+Intelligent eCall (SA 6AC). 
+
+
+10 
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+
+3.2.8. Vehicles with Intelligent eCall 
+
+The Intelligent eCall (SA 6AC) always includes the option of a manual or automatic emergency call 
+(voice call and data transmission). A voice contact is initiated and data, such as the current position, is 
+transmitted. The emergency call is made to a BMW Call Center or an emergency coordination center, 
+depending on the national-market version. 
+
+The Advanced Crash Safety Module sends a message to the Telematic Communication Box in the 
+event of an accident with corresponding crash severity. The Telematic Communication Box makes an 
+emergency call. 
+
+With this automatic emergency call, the presumed number of people in the vehicle and sensor data, 
+among other things, are transmitted to the BMW Call Center, in order to identify the severity of the 
+crash. 
+
+The information about the accident available at the call center can be forwarded to the emergency 
+coordination center. The emergency coordination center can then initiate appropriate measures. 
+
+Attempts are made at the same time to establish a voice contact with the occupants of the vehicle in 
+order to obtain more detailed verbal information about the accident (e.g. condition of occupants). 
+
+The following tables provides information on which functions are available in the case of an emergency 
+call with Intelligent eCall: 
+
+
+Equipment 
+
+Manual emergency call 
+
+Automatic emergency call 
+
+Intelligent eCall (SA 6AC) 
+
+• Voice call (BMW Call 
+
+• Voice call (BMW Call 
+
+
+Center) 
+
+Center) 
+
+
+• Data transfer 
+
+• Data transfer (location) 
+
+
+(location). 
+
+• Sensor data 
+transmission. 
+
+
+If, for various reasons, a connection to the BMW Call Center cannot be established, the emergency call 
+is automatically forwarded to the emergency coordination center. 
+
+
+3.3. System monitoring functions 
+
+The Advanced Crash Safety Module has the following system monitoring functions: 
+
+• System self-test (pre-drive check) 
+
+• Display of system operability 
+
+• Cyclic monitoring 
+
+• Fault display and fault storage 
+
+• Output of faults (diagnosis) 
+
+• Acoustic and visual seat belt warning 
+
+• Deactivation of the front passenger airbag, side airbag and knee airbag on 
+the passenger's side and the knee airbag in the US version of the vehicles. 
+
+
+11 
+
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+
+3.3.1. System self test 
+
+The Advanced Crash Safety Module performs a system self test from terminal 15. The airbag indicator 
+light is activated for roughly five seconds during the system self test. 
+
+Once the system self test is complete and no faults have been identified, the airbag indicator light 
+goes out and the system is ready to operate. 
+
+3.3.2. Display of system operability 
+
+The airbag indicator light in the instrument cluster goes out to indicate that the Advanced Crash Safety 
+Module (ACSM) is ready for operation. 
+
+3.3.3. Cyclic monitoring 
+
+Once the system self-test has been successfully concluded and the system is ready for operation, 
+a cyclic monitoring procedure is performed for fault monitoring purposes. This cyclical monitoring 
+serves the internal diagnosis of the control unit and overall airbag system. Cyclical monitoring takes 
+place continuously from terminal 15. It is also continued when the logical terminal R is reached. 
+
+3.3.4. Fault display and fault storage 
+
+The Advanced Crash Safety Module has a non-volatile fault memory. The airbag indicator light lights 
+up to indicate a fault entry. 
+
+Events, such as the activation of an airbag or belt tensioner, are also stored in the fault memory. 
+
+A 
+
+If the fault memory contains the entry that the restraint system has been activated, this only means 
+the ignited restraint system is not available for further activation and not that it malfunctioned during 
+the crash. 
+
+
+3.3.5. Output of faults (diagnosis) 
+
+The fault memory can be read out via the diagnostic interface with the assistance of the Integrated 
+Service Technical Application (ISTA) in the BMW diagnosis system. After rectifying the faults or after 
+renewing activated components, the fault memory can be cleared with the diagnosis command 
+"Clear fault memory". 
+
+3.3.6. Acoustic and visual seat belt warning 
+
+An acoustic and visual seat belt warning is a standard feature of all vehicles equipped with the 
+Advanced Crash Safety Module. The Advanced Crash Safety Module records whether or not the 
+driver or front passenger have fastened their seat belts. If they have not, an acoustic and visual 
+warning is output to remind them to fasten their seatbelts. Both seat belt buckle switches are 
+monitored separately. 
+
+
+12 
+
+
+
+
+F48 Passive Safety Systems 
+
+3. Functions 
+
+3.3.7. Deactivating the airbag 
+
+
+Provision is made in US versions of the vehicles for the airbag to be deactivated automatically in order 
+to satisfy the regulations of the National Highway Traffic Safety Administration (NHTSA). When the 
+child seats listed in the regulation are occupied by a child this must lead to deactivation of the airbag. 
+
+To do so, a seat occupancy mat is used on the front passenger seat for the purpose of occupancy 
+detection and classification of occupants in the front passenger seat. In the F48 a capacitive interior 
+sensing floor mat (CIS floor mat) is used. 
+
+The CIS mat is made up of two elements: A sensor wire, which runs parallel to the seat heating in 
+the seat cushion, and an evaluation unit. The CIS mat measures the capacity and ohmic resistance 
+between the sensor wire (anode) and the vehicle ground (cathode) at a frequency of 120 kHz. 
+
+The CIS mat determines from the change in capacity and resistance whether the front passenger 
+seat is occupied by an adult or a child in a child seat. 
+
+The deactivation of the front passenger airbag, the side airbag and knee airbag on the passenger's 
+side is signalled by the indicator lamp for front passenger airbag deactivation. 
+
+The indicator lamp for front passenger airbag deactivation in the roof function center lights up if a 
+child seat with child, for e.g. a child restraint system that has been tested in accordance with the 
+NHTSA regulations and is holding a small child, was detected on the front passenger seat or if the 
+front passenger seat is unoccupied. 
+
+
+13 
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.1. Advanced Crash Safety Module 
+
+The Advanced Crash Safety Module is accommodated in a housing with two sockets. 
+
+The wiring harness is connected via one of the sockets. An additional socket is provided for the 
+cockpit wiring harness. 
+
+
+
+F48 Advanced Crash Safety Module 
+
+The ACSM in the F48 is located centrally in the vehicle under the center console between the two 
+front seats. 
+
+The central sensor system was able to be integrated in the ACSM thanks to the central position 
+of the ACSM. 
+
+4.2. Sensors and switches 
+
+The following sensors and switches are installed: 
+
+• Lateral and longitudinal acceleration sensors in ACSM 
+
+• Yaw rate sensor in the ACSM 
+
+• Vertical acceleration sensor in the ACSM 
+
+• Lateral and longitudinal acceleration sensors in the B-pillars 
+
+• One airbag sensor in each of the front doors for pressure 
+
+• One airbag front sensor beside the headlights 
+
+• CIS mat with occupant classification 
+
+• Seat belt buckle switch 
+
+• Seat-position sensor, driver's side 
+
+• Seat-position sensor, passenger's side 
+
+• Emergency call button 
+
+
+14 
+
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+
+4.2.1. Lateral and longitudinal acceleration sensor, B-pillar 
+
+The lateral and longitudinal acceleration sensors in the B-pillars assist with the identification of front- 
+end crashes, side-on crashes and rear-end crashes. 
+
+The B-pillar airbag sensor consists of a longitudinal acceleration sensor and a lateral acceleration 
+sensor. The acceleration sensors measure both the acceleration and the deceleration in the X and Y 
+directions. The resultant from the X and Y signals is decisive in identifying the direction of the crash. 
+
+
+
+15 
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.2.2. Door airbag sensor (pressure) 
+
+For vehicles in US version, pressure sensors are installed in the driver and front passenger doors. 
+Side-on crashes are identified with the assistance of the airbag sensors. In addition to the lateral 
+acceleration values that are present, the pressure in the door cavity also increases in the event of a 
+side-on crash. 
+
+The airbag sensors in the doors serve to verify the plausibility of the acceleration signals from the 
+B-pillar airbag sensors and the ACSM when a side-on crash is detected. The airbag sensors are 
+situated in the inner panel of the doors and measure the pressure increase in the event of a side-on 
+collision. In the event of a side collision with the door, the outer skin is pressed inward, thus reducing 
+the door interior and increasing the inner pressure. This pressure change is measured by the airbag 
+sensors. The airbag sensor also includes electronics, in addition to the pressure sensor, that digitise 
+the pressure readings and transmit them cyclically to the Advanced Crash Safety Module (ACSM). 
+The data transfer is performed by the airbag sensors in the B-pillars. The pressure readings are 
+evaluated in the Advanced Crash Safety Module (ACSM). 
+
+
+
+F48 Door airbag sensor (pressure) 
+
+
+16 
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.2.3. Airbag front sensor 
+
+Two airbag front sensors are installed beside the headlights. The measured values are forwarded to 
+the Advanced Crash Safety Module (ACSM) where they are evaluated. 
+
+The airbag front sensors on the left and right assist with the identification of a head-on crash. 
+
+They deliver additional information to the Advanced Crash Safety Module on the characteristics and 
+severity of the collision. Each sensor contains an acceleration sensor for recording the deceleration, 
+signal processing technology and electronics for data transfer. The measured values are sent in the 
+form of a message to the Advanced Crash Safety Module (ACSM) and are used in the calculation of 
+the algorithm. 
+
+
+
+F48 airbag front sensor 
+
+
+17 
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.2.4. Sensors in the ACSM 
+
+In the F48, the central sensor system is integrated into the ACSM control unit. The ACSM contains a 
+longitudinal and lateral acceleration sensor, a vertical acceleration sensor and a yaw rate sensor (only 
+US-version vehicles). The ACSM also includes a longitudinal and lateral acceleration sensor and a yaw 
+sensor for the driving dynamics control. 
+
+The sensor data for impact detection are evaluated in the ACSM and help identify side-on, rear-end or 
+head-on crashes and assists with roll-over detection. The sensor data not yet evaluated for the driving 
+dynamics control is sent to the DSC control unit via FlexRay, where it is processed. 
+
+
+
+F48 Advanced Crash Safety Module 
+
+
+4.2.5. CIS mat 
+
+In the US version of vehicles, the capacitive interior sensing mat (CIS mat) is fitted in the front 
+passenger seat instead of the seat occupancy mat. The CIS mat can detect whether the front 
+passenger seat is occupied by an adult or a child in a child seat. The deactivation of the front 
+passenger airbag and side airbag and knee airbag on the passenger's side is signalled by the 
+indicator lamp for front passenger airbag deactivation. 
+
+
+18 
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.2.6. Seat belt buckle switch 
+
+The seat belt buckle switches are located in the seat belt buckles of the driver and front passenger 
+seat. 
+
+The seat belt buckle switch detects whether the seat belt buckle tongue is in the seat belt buckle. 
+The Advanced Crash Safety Module supplies power to the sensors and performs the evaluation. 
+
+From terminal 15, the seat belt buckle switch is permanently monitored and used for the visual and 
+acoustic seat belt warning and also to determine which restraint systems are triggered. 
+
+
+
+F48 Seat belt buckle switch 
+
+
+4.2.7. Emergency call button 
+
+The emergency call button is located in the roof function center. 
+
+
+
+F48 roof function center with emergency call button in European version 
+
+
+19 
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.2.8. Seat-position sensors 
+
+In accordance with the US legal requirement (FMVSS208), a height identification for the person in 
+the driver and front passenger seat must be assessed. This height identification is performed via the 
+adjustment travel of the forward/back seat adjustment. In US-version vehicles, the exact position is 
+identified using the seat-position sensors for the driver and front passenger seats. 
+
+The job of the seat-position detector is to distinguish between a relatively small person and a person 
+of normal height within the lengthways adjustment range of the seat. This detection is another 
+technical feature aimed at increasing the safety of the occupants. The deployment of the three airbag 
+stages is then adjusted to the driver's/front passenger's seat position. 
+
+The seat-position detector takes the form of a 2-wire hall effect sensor and is supplied with power via 
+the ACSM control unit. The current level of the seat-position sensor changes depending on the seat 
+position. 
+
+
+4.3. Actuators 
+
+4.3.1. Overview 
+
+The following actuators are installed in the F48: 
+
+• Two-stage driver's airbag 
+
+• Two-stage driver's airbag with active vent valve 
+
+• Knee airbag on front left and right 
+
+• Flead airbag on left and right 
+
+• Side airbag on front left and right 
+
+• Belt tensioner with adaptive force limiter 
+
+In addition, the following indicator lights inform the vehicle occupants about the condition of the safety 
+systems: 
+
+• Airbag indicator light 
+
+• Seat belt warning light 
+
+• Indicator lamp for front passenger airbag deactivation 
+
+The familiar three-point seat belts are used as the seat belt systems for all seats in the F48. 
+
+
+20 
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.2. Driver's airbag 
+
+The purpose of the driver's airbag is to reduce the risk of injury to the driver in combination with the 
+seat belt when a front-end crash occurs. The driver's airbag is located in the steering wheel impact 
+plate. The driver's airbag is equipped with a gas generator. 
+
+A two-stage gas generator is installed in the US-version of vehicles, which can be used to activate the 
+stages at short or long time differences, depending on the severity of the crash detected and taking 
+into consideration the seat position. 
+
+
+;; 
+
+
+
+F48 Driver's airbag in US version of vehicles 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition squib, level 1 
+
+2 
+
+Ignition squib, level 2 
+
+
+21 
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.3. Front passenger airbag 
+
+The purpose of the front passenger airbag is to reduce the risk of injury to the front passenger in the 
+event of a front-end crash. The front passenger airbag is located in the instrument panel. When the 
+front passenger airbag expands, the instrument panel tears open at defined points. 
+
+A two-stage gas generator is installed in the US-version of vehicles, which can be used to activate the 
+stages at short or long time differences, depending on the severity of the crash detected and taking 
+into consideration the seat position. 
+
+Furthermore, the front passenger airbag in the US version of the vehicles features an active vent valve. 
+
+
+
+F48 Front passenger airbag in US version of vehicles 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ignition squib for active vent valve 
+
+2 
+
+Ignition squib, level 1 
+
+3 
+
+Ignition squib, level 2 
+
+
+22 
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.4. Knee airbag 
+
+The US standards (laws) contain requirements on the passive restraint of occupants (without seatbelt). 
+This is why in the US version of the vehicles a knee airbag is also required on the driver's side and 
+passenger's side to control the forwards displacement of the occupant(s) in the event of a head-on 
+crash. 
+
+
+
+F48 Knee airbag in US version of vehicles 
+
+
+23 
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.5. Head airbag 
+
+Head airbags are installed in the F48 to protect the occupants' heads in the event of a side collision. 
+
+The head airbag extends from the A-pillar to the C-pillar and covers the entire area of the side 
+windows. It expands between the occupants and side structure. 
+
+System features: 
+
+• Extended covered area across all front and rear side windows. 
+
+• Protection of occupants from glass splinters. 
+
+• Covered area for different-sized occupants optimized. 
+
+
+
+F48 Head airbag 
+
+
+24 
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.6. Side airbag 
+
+As with all current BMW models, the side airbag at the front ignites out of the front seat backrest. 
+
+The side airbags and gas generators are located in a plastic housing, airbag module. 
+
+This is installed in the front seat backrest and is concealed by the seat cover. 
+
+If activated, the side airbag emerges outwards from the backrest frame and spreads between the side 
+structure and occupant. 
+
+A_ 
+
+It is important to ensure that no additional seat covers are fitted as they would greatly impair the 
+function of the side airbag, or even immobilise it altogether. 
+
+
+
+F48 Seat with side airbag 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Side airbag 
+
+
+25 
+
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.7. Belt tensioner with adaptive force limiter 
+
+
+
+F48 Belt tensioner with adaptive force limiter 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Connection of ignition squib, belt tensioner 
+
+2 
+
+Connection of ignition squib, adaptive force limiter 
+
+
+A belt tensioner with adaptive force limiter for the driver and front passenger is built into the US 
+version of the vehicles. The gas generator-assisted belt tensioner ensures that the seat belt strap is 
+reeled in to reduce belt slack prior to forwards displacement of the occupants. 
+
+The adaptive force limiter switches from a high level force to a low level force depending on the 
+position of the seat with the assistance of a gas generator in order to reduce the retaining force of the 
+seat belt during the crash depending on the size of the occupant. The further forward the seat is, the 
+earlier the changeover takes place. 
+
+When optimally harmonised with the airbag, it ensures the kinetic energy acting on the occupants is 
+more evenly dissipated for the duration of the head-on collision. Thus lower occupant stress values are 
+achieved. 
+
+
+26 
+
+
+
+
+
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.8. Airbag indicator light 
+
+The airbag indicator light is located on the instrument cluster. The airbag indicator light lights up then 
+goes out during the pre-drive check to signal readiness of the Advanced Crash Safety Module and 
+passive safety systems. The airbag indicator light is controlled via a message on the FlexRay from the 
+Advanced Crash Safety Module via the Body Domain Controller (BDC) to the instrument cluster. 
+
+The instrument cluster receives a message cyclically. If the message remains off, the airbag indicator 
+light is activated. 
+
+
+
+F48 Airbag indicator light 
+
+
+4.3.9. Seat belt warning light 
+
+A visual and audible warning is issued if the seat belt is not fastened or is unbuckled during the 
+journey. 
+
+
+
+F48 Seat belt warning light 
+
+
+The status of the seat belt contacts in the seat belt is visible for a short period in the instrument cluster 
+TFT display during starting 
+or if a contact is changed. 
+
+
+27 
+
+
+F48 Passive Safety Systems 
+
+4. System Components 
+
+4.3.10. Indicator lamp for front passenger airbag deactivation 
+
+The indicator light for the front passenger airbag deactivation is located in the roof function center. It is 
+automatically activated if the CIS floor mat detects a small child in a child seat or if the front passenger 
+seat is not occupied. 
+
+The brightness of the indicator lamp for front passenger airbag deactivation is controlled via the 
+automatic brightness control of the display illumination. 
+
+
+
+F48 roof function center with indicator lamp for front passenger airbag deactivation in US version 
+
+
+28 
+
+
+
+
+Bayerische Motorenwerke Aktiengesellschaft 
+Qualifizierung und Training 
+RontgenstraBe 7 
+
+85716 UnterschleiBheim, Germany 
+
+

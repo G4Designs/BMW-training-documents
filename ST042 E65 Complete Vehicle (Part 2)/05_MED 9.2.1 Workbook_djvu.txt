@@ -1,0 +1,3540 @@
+Table of Contents 
+
+
+MED 9.2.1 Engine Management System 
+- Workbook 
+
+Subject Page 
+
+MED 9.2.1 
+
+Objectives of the Module.2 
+
+Purpose of the System.3 
+
+System Components.4 
+
+Principle of Operation.7 
+
+Power Supply 
+
+Integrated Voltage Supply Module.8 
+
+Local-CAN bus.10 
+
+Air Management 
+
+Auxiliary Air Flaps..12 
+
+Intake Manifold Pressure Sensors.12 
+
+Fuel Management 
+
+Fuel Supply.14 
+
+High Pressure Injection System.16 
+
+Direct Injection System Control.25 
+
+Emissions Management 
+
+Bosch LSU Planar Wideband Oxygen Sensor..27 
+
+
+Performance Controls 
+
+Exhaust Flap. 
+
+
+29 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MED 9.2.1 Engine Management System 
+
+Model: E66 - 760Li 
+Production Date: MY 2003 
+Manufacturer: Bosch 
+
+Pin Connector: 134 Pins - 5 Modular Connectors per Control Module 
+
+
+This intent of this workbook is to assist you with diagnosis and testing in addition to the 
+detailed information found in the the latest Diagnosis and TIS of the DISplus/GTI. 
+
+This section will be instructor led for a brief review of the MED 9.2.1 Engine Management 
+System. You are encouraged to use this workbook with the latest Diagnosis and TIS infor¬ 
+mation to make notes during diagnosis and testing of the new/unique components of the 
+MED 9.2.1 system. This will be valuable to you as supplementary information or a memo¬ 
+ry refresher when performing diagnosis in the future. 
+
+Note: For more in depth and detailed information about the MED 9.2.1 Engine Management 
+System, refer to the ST047 2003 Systems Diagnosis training manual. 
+
+For additional and updated information, always refer to: 
+
+www. bmwcenternet. com 
+
+- Diagnosis and TIS information/updates 
+
+- Service Information Bulletins 
+
+- DCS messages 
+
+
+Objectives: 
+
+
+After completion of this module you will 
+
+be able to test and diagnose the following: 
+
+• Integrated Voltage Supply Module 
+
+• High Pressure Injection System 
+
+• Local-CAN bus 
+
+• Direct Injection System Control 
+
+• Auxiliary Air Flaps 
+
+• Bosch LSU Planar Wideband Oxygen Sensor 
+
+• Intake Manifold Pressure Sensors 
+
+• Exhaust Flap 
+
+
+2 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+MED 9.2.1 
+
+Purpose of the System 
+
+The MED 9.2.1 system manages the following functions: 
+
+
+
+
+MED 9.2.1 
+ECM 1 
+
+
+
+© n 
+
+
+
+
+MED 9.2.1 
+ECM 2 
+
+
+
+4_4 
+
+
+
+A \ 
+
+i A 
+
+A A 
+
+
+J 
+
+
+
+
+
+
+
+Emissions: 
+
+• Secondary Air Injection 
+
+• Pre and Post Catalyst Oxygen Sensing 
+
+• Oxygen Sensor Heating 
+
+• Misfire Detection 
+
+• Evaporative Purge Control/Leak Testing 
+
+• Malfunction Indicator Light 
+
+
+Performance Controls: 
+
+• Bi-VANOS 
+
+• Oil Condition 
+
+• Electric Cooling Fan 
+
+• MAP Thermostat 
+
+• Alternator 
+
+• E-Box Cooling Fan 
+
+• Comfort Start 
+
+• Cruise Control 
+
+• A/C Compressor (high engine load) 
+
+• Exhaust Flap 
+
+
+The basic engine management inputs, processes and outputs are not included in this work¬ 
+book because they have not changed, refer to the ST055 Engine Electronics hand out for 
+details. Some components and functions are the same as the ME 9.2 Engine Management 
+System found in the E65/E66. Refer to the ST042 E65 Part 2 hand out for details. 
+
+
+3 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Components 
+
+
+MED 9.2.1 Engine Control Modules - New Features: This Bosch Engine Management 
+System is introduced for more stringent emission requirements as well as reducing fuel 
+consumption and increasing driving performance. Flash EEPROMs (additional 1 MB flash 
+memory) are used as the storage medium for program data, fault code memory as well as 
+the adaptation values. 
+
+
+The 134 pin MED 9.2.1 ECMs are manu¬ 
+factured by Bosch to BMW specifica¬ 
+tions. The ECM is the SKE (standard 
+shell construction) housing and uses 5 
+modular connectors. 
+
+For testing, use the Universal Adapter 
+Set (break-out box) Special Tool: # 90 88 
+
+6 121 300 
+
+
+
+The ECMs work in combination with the 
+Valvetronic Control Module. The N73 
+engine has a total of 5 control modules 
+to manage the engine functions: 
+
+
+1. MED 9.2.1 ECM 2 - overall engine management 
+
+2. MED 9.2.1 ECM 1 - overall engine management 
+
+3. Valvetronic Control Module - intake valve lift 
+
+4. High pressure fuel injector control module 
+(HDEV) - activates injector group for one bank 
+
+
+
+5. High pressure fuel injector control module 
+(HDEV) - activates injector group for one bank 
+
+
+D-BUS 
+
+
+
+These modules are located in the elec- 
+
+
+tronic box in the engine compartment 
+
+
+— DME1 - 
+
+- EMF 
+
+together with the Integrated Voltage 
+
+Supply Module (6). 
+
+
+— DME2 ■ 
+
+
+The ECM controls an electric cooling fan 
+
+Vr. viTtron lc 1 
+
+- 
+
+- GRS 
+
+in the base of the electronic box to draw 
+in cool air from the passenger compart- 
+
+IHDEV1 
+
+EDC-K - 
+
+- DSC 
+
+ment. 
+
+HDEV2 — 
+
+ACC - 
+
+- EGS 
+
+
+4 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MED 9.2.1 ECM 1 Inputs - Processing - Outputs 
+
+
+\,mmm 
+
+
+
+CAS 
+
+
+31 
+
+
+ACCELERATOR 
+PEDAL MODULE 
+
+
+
+MAP 
+
+SENSOR 
+
+
+
+VALVETRONIC 
+
+CONTROL 
+
+MODULE 
+
+
+
+RAILPRESSURE SENSOR 
+
+
+AIRMASS 
+
+SIGNAL 
+
+
+
+COOLANT 
+TEMPI, 
+SENSOR 
+
+
+_ 
+
+n 
+
+
+KNOCK 
+
+SENSOR 
+
+3x 
+
+
+
+RPM 
+
+SENSOR 
+
+
+
+PRE & POST 
+CAT CONV. 
+0„ SENSOR 
+
+
+
+
+
+^ MONITORING ^ < ^3 
+
+
+
+
+
+Camshaft 
+Shaft Sensor 
+(2x) 
+
+
+u 
+
+
+
+
+EBJ 
+
+DMTL 
+
+
+(j 
+
+
+RADIATOR OUTLET 
+TEMPERATURE 
+SENSOR 
+
+
+
+ROLLING CODE 
+
+
+JUT-rLTL 
+
+
+KL 50 E 
+
+
+CAS 
+
+
+
+CRUISE CONTROL 
+
+
+
+DRAKE LIGHT 
+SWITCH 
+
+
+DSC 
+
+
+
+
+
+
+GENERATOR 
+
+
+
+
+ENGINE 
+OIL SENSOR 
+
+
+
+N 
+
+
+MED 9.2.1 
+ECM 1 
+
+
+POWER 
+
+SUPPLY 
+
+
+AIR 
+
+MANAGEMENT 
+
+
+FUEL 
+
+MANAGEMENT 
+
+
+IGNITION 
+
+MANAGEMENT 
+
+
+INTEGRAL 
+
+BAROMETRIC 
+
+PRESSURE 
+
+SENSOR 
+
+
+PROVIDES ADDITIONAL CORRECTION 
+FACTOR FOR FOLLOWING FUNCTIONS 
+
+
+EMISSION 
+
+MANAGEMENT 
+
+
+
+PERFORMANCE 
+
+MANAGEMENT 
+
+
+
+CAS 
+
+
+-tt I 
+
+
+
+
+ELECT*! C THTWTTLE 
+
+
+AUXILARY 
+AIR FLAP 
+SOLENOID 
+
+
+ECCENTRIC 
+
+SENSOR 
+
+
+VALVETRONIC 
+
+CONTROL 
+
+MODULE 
+
+
+P '! 
+
+
+
+
+
+VALVETRONIC RELAY 
+
+
+HDEV 
+
+
+FUEL INJECTORS 
+
+(8X) 
+
+
+ZGM 
+
+
+SIM 
+
+
+SBSR 
+
+
+p \ FUEL 
+PUMP 
+
+
+
+■N. 
+
+
+Fuel Shutoff Valve 
+
+
+Fuel Quantity 
+Control Valve 
+
+
+SECONDARY 
+AIR PUMP 
+RELAY 
+
+
+
+IGNITION COIL 
+CONTROL (6x) 
+
+HEATED THERMOSTAT 
+
+
+
+
+
+°2 
+
+SENSOR 
+
+HEATING 
+
+
+
+Jl 
+
+
+
+EVAP. EMISSION VALVE 
+
+
+DMTL 
+
+
+CHECK 
+
+ENGINE 
+
+LIGHT 
+
+
+
+CLOSE 
+
+FILLER 
+
+CAP 
+
+
+
+EXHAUST FLAP 
+SOLENOID 
+
+
+E-BOX FAN 
+
+
+VAN OS 
+
+(2x) 
+
+
+. [>—• 
+
+
+
+
+
+■ ■" 
+
+
+; 
+
+
+TRANSMISSION 
+
+AC COMPRESSOR 
+
+
+
+
+
+STARTER 
+
+
+IVM 
+
+
+LOCAL CAN 
+
+
+PT-CAN 
+
+
+S 
+
+
+
+AJUX. FAN 
+MOTOR 
+
+
+ISO 9141 PROTOCOL 
+
+
+ODD n 
+
+
+HI 
+
+
+
+DISplus 
+
+
+GT-1 
+
+
+5 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MED 9.2.1 ECM 2 Inputs - Processing - Outputs 
+
+
+
+
+IVM 
+
+
+B+ 
+
+
+-as 
+
+CAS 
+
+
+
+
+ELECTHiC THMmf 
+
+
+
+AUXILARY 
+AIR FLAP 
+SOLENOID 
+
+
+
+HDEV 
+
+
+FUEL WJECTORS 
+(8X) 
+
+
+
+
+
+
+Fuel Quantity 
+Control Valve 
+
+
+Fuel Shutoff Valve 
+
+
+I 
+
+IGNITION COIL 
+■ CONTROL (6x) 
+
+
++ + 
+
+
+
+EVAP. EMISSION VALVE 
+
+
+
+
+ECM1 
+
+
+6 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+The ME 9.2 Engine Management System from the N62 engine provides the basis for the 
+MED 9.2.1 Engine Management System. 
+
+The main distinguishing features of the MED 9.2.1 are: 
+
+• Extended computer capacity (additional 1 MB flash) 
+
+• Modified oxygen sensor chip which permits detailed diagnosis of the oxygen sensors 
+
+• One MED 9.2.1 control module for each cylinder bank 
+
+• Power is supplied to the high pressure fuel injectors for each cylinder bank by a high 
+pressure fuel injector control module (HDEV) 
+
+• Omission of DISA and variable intake manifold activation (N62) 
+
+• Three knock sensors for each cylinder bank 
+
+• Activation of the auxiliary air flaps in the air cleaner housing 
+
+• Rail pressure sensor 
+
+• Fuel quantity control valve 
+
+An MED 9.2.1 control module is used for each cylinder bank. Both control modules are 
+the same design and are classified into ECM 1 and ECM 2 by the programming. ECM 1 
+receives the input signals from a sensor or switch: 
+
+• Accelerator pedal module 
+
+• Oil condition sensor 
+
+• Alternator 
+
+• Coolant temperature 
+
+• Oil pressure 
+
+ECM 1 transmits these signals via the Local-CAN bus to ECM 2. All further input signals 
+are transmitted directly to the control module responsible for the relevant cylinder bank (see 
+overview pages 5 and 6). 
+
+Output signals which relate to not just one cylinder bank (e.g. electric fuel pump or exhaust 
+flap) are transmitted by ECM 1 to the corresponding actuators. The crankshaft sensor sig¬ 
+nal is transmitted simultaneously to both control modules. 
+
+The MED 9.2.1 regulates the injected fuel quantity. For this purpose, the MED 9.2.1 
+receives the rail pressure sensor signals and regulates this pressure with the fuel quantity 
+control valve according to the value defined by the program map. This ensures that a 
+defined quantity of fuel is injected over the injection period. 
+
+
+7 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+Integrated Voltage Supply Module (IVM) 
+
+The IVM contains integral relays, replaceable fuses and offers a convenient splice point for 
+harness connections. The IVM serves as a central power supply for Engine Management 
+(including Valvetronic), Electronic Transmission and DSC. This diagram is a partial repre¬ 
+sentation of the IVM for Engine Electronics. 
+
+
+
+47-04-04 
+
+
+8 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. What pin and connector number of ECM 1 and ECM 2 supplies ground to the ECM 
+(main) relays? 
+
+ECM 1 ECM 2 
+
+2. What fuse(s) (numbers) supply operating voltage from relay 1 to the ignition coils of: 
+
+Cylinder bank 1-6 Cylinder bank 7-12 
+
+3. if fuse 005 from relay 3 were defective, what control modules would be affected? 
+
+
+4. Relay 5 supplies operating voltage to what components? 
+
+
+5. What type of signal is found on pin 26 (X60204) of ECM 2? 
+
+Is this signal an input or output? 
+
+Where does this signal originate? 
+
+What is the voltage value? 
+
+Does ECM 1 receive this signal? 
+
+6. What type of signal is found on pin 7 (X60201) of ECM 2? 
+
+Is this signal an input or output? 
+
+Where does this signal originate? 
+
+What is the voltage value? 
+
+Does ECM 1 receive this signal? 
+
+
+9 
+
+
+MED 9.2.1- Workbook 
+
+
+
+Indirect Signals and Wiring 
+
+The ECMs are not directly connected to the OBD diagnostic connector. The OBD diag¬ 
+nostic connector is connected to the ZGM. Both ECMs are connected to the ZGM (cen¬ 
+tral gateway module) by the PT-CAN bus. ECM 2 is also connected via the Local-CAN bus 
+to ECM1. The ECMs are also connected to the Valvetronic control module and HDEV con¬ 
+trol modules by the Local-CAN bus. Valvetronic faults are stored in the ECMs. 
+
+The ECMs are classified into ECM 1 and ECM 2 by the wire harness connections (color 
+coded) and location. ECM 1 receives the input signals from a sensor or switch and trans¬ 
+mits these signals via the Local-CAN bus to ECM 2. All further input signals are transmit¬ 
+ted directly (via hardwire harness) to the control module responsible for the relevant cylin¬ 
+der bank. 
+
+Output signals which are required for both cylinder banks are transmitted by ECM 1 to the 
+corresponding actuators. The crankshaft sensor signal is transmitted simultaneously to 
+both control modules. 
+
+
+D-BUS 
+
+
+
+Local-CAN PT-CAN 
+
+
+KT-9715 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PT-CAN 
+
+1. What are the circuit descriptions of the three wires that make up the PT-CAN bus? 
+
+
+2. Record the voltage levels on the PT-CAN bus (high and low) using the DISplus scope as 
+shown - when the bus is: 
+
+Inactive - high low Active - high low 
+
+
+Notes on setup: 
+
+
+IVurl 
+
+
+J I nd n I st ™ | 
+
+
+(Intpri 
+
+
+
+
+A lU-taT? 
+
+
+BMW Test system Oscilloscope display 
+
+
+5,0 
+
+4.0 
+
+5,0 
+
+2*0 
+
+1.0 
+
+0.0 
+
+- 1.0 
+
+■ 2.0 
+
+-3.0 
+
+
+
+
+
+
+
+
+►j- 'MV| v 
+
+▲ 
+
+
+
+
+-H-+ 
++ + + 
+
+++*#* 
+
+5.0 
+
+4.0 
+
+3.0 
+
+2.0 
+
+1,0 
+
+0,0 
+
+
+USD 
+
+
+4.0 
+
+3,0 
+
+2.0 
+
+1.0 
+
+0 
+
+- 1.0 
+
+- 3.0 
+
+- 4.0 
+
+
+T 
+
+r 
+
+i 
+
+i! 
+
+e 
+
+r 
+
+
+
+
+-1.0 Ojo 
+
+yQ -i. 
+
+0. D 
+
+□ u 
+
+2.0 
+
+i _vt 
+
+
+IN 
+
+ms 
+
+
+
+
+
+
+
+LIU 
+
+County | 
+
+IteillOMift 
+
+Slimulalor* | 
+
+
+
+111 ' ■ 
+
+Eldp 
+
+
+
+\inrlithJL' 
+( - i.JIIMl'1 H 
+
+
+\ll idHin.lv 
+(hjMFwHi 
+
+
+! iilkv.il'iL' 
+
+
+Milhlihik- 
+
+
+E 
+
+
+47 002 
+
+
+Local-CAN 
+
+1. What are the circuit descriptions of the two wires that make up the Local-CAN bus? 
+
+
+2. Record the voltage levels on the Local-CAN bus (high and low) using the DISplus scope 
+- when the bus is: 
+
+Inactive - high low Active - high low 
+
+3. What pin and connector numbers did you test the Local-CAN bus circuit on ECM 1 ? 
+
+Pins Connector 
+
+4. Are you able to test the Local-CAN bus for resistance? Value: 
+
+11 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+Air Management 
+
+Auxiliary Air Flaps: Each air cleaner housing incorporates an auxiliary air flap in its side 
+wall. The auxiliary air flaps supply the engine with enough air volume to attain the maximum 
+performance. The auxiliary air flaps are closed in the lower rpm ranges so that only cooler 
+ambient air is drawn in for hot idling and stop and go driving. 
+
+The auxiliary air flaps are actuated by vacuum diaphragms which are located inside the air 
+cleaner housings. Both diaphragms are supplied with vacuum from a common solenoid 
+valve. 
+
+The auxiliary air flaps are fully opened by the 
+ECM: 
+
+• In driving position “D” with kickdown 
+operation from 3500 rpm 
+
+• In driving position “S” from 3000 rpm 
+and simultaneous full load recognition. 
+
+10-15% additional air is drawn in from the engine compartment when the auxiliary air flaps 
+are open. It is not necessary to draw in additional cold air from outside the engine com¬ 
+partment since the engine compartment is adequately ventilated at full load. 
+
+
+
+Intake Manifold Pressure Sensors: The pressure sensors (one per bank) are located in 
+the back of intake manifold (1 peizo-electric). The voltage supply from the ECMs is 5 V. The 
+varying resistance of the sensors is dependent on manifold pressure. The output voltage 
+signal is processed by the ECMs. The intake manifold pressure is calculated by the ECMs 
+and is compared with the ambient pressure (internally measured in ECM 1). 
+
+A minimum intake manifold vacu¬ 
+um of 50 mbar is required for the 
+fuel tank evaporative purge func¬ 
+tion. 
+
+This vacuum is set by the elec¬ 
+tronic throttle valves (4) and mon¬ 
+itoring with the intake manifold 
+pressure sensors. 
+
+Shown to the right is the intake 
+manifold (upside down) with both 
+sensors (1). 
+
+12 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auxiliary Air Flaps 
+
+
+1. What are the pin and connector numbers at the ECM (1 or 2) for the auxiliary air flap 
+vacuum solenoid? 
+
+2. Is there a Test Plan available for the auxiliary air flaps? 
+
+3. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the “Messages and Results"? 
+
+Is there a “Component Activation” feature for the auxiliary air flaps? 
+
+
+Intake Manifold Pressure Sensors 
+
+1. What are the pin and connector numbers at the ECM (1 or 2) for the pressure sensors? 
+
+Pins Connector 
+
+2. Is there a Test Plan available for the pressure sensors? 
+
+3. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the “Messages and Results”? 
+
+4. What is the value at idle speed? mbar 
+
+5. What is the voltage value at pin 2 (X60103) of ECM 1 at: 
+
+Idle speed 2000 rpm 
+
+6. With the ignition off, unplug the electronic throttle valve (on the bank you are testing). 
+Restart the engine and check the value at idle speed. mbar 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+Fuel Management 
+
+
+1 2 345678 9 
+
+
+
+24 23 22 21 20 
+
+
+KT-9780 
+
+
+1. Air cleaner 
+
+2. Intake manifold 
+
+3. Engine 
+
+4. Exhaust system 
+
+5. Oxygen sensor 
+
+6. Evaporative emission valve (TEV) 
+
+7. Purge vapors 
+
+8. MED 9.2.1 ECM 
+
+9. Carbon Canister 
+
+10. Fuel tank leak diagnostic module (DM TL) 
+
+11. Roll-over valve 
+
+12. Liquid/vapor expansion tank 
+
+13. Dust filter 
+
+14. Service ventilation 
+
+15. Pressure test lead 
+
+16. Fuel tank filler cap 
+
+14 
+
+
+17. Filler vent valve 
+
+18. Service vent valve (float valve) 
+
+19. Anti-spitback flap 
+
+20. Surge chamber (fuel pump baffling) 
+
+21. Electric fuel pump (EKP) 
+
+22. Pressure relief valve 
+
+23. Suction jet pumps 
+
+24. Fuel Tank 
+
+25. Outlet protection valve 
+
+26. Service vent valve (float valve) 
+
+27. Refueling breather 
+
+28. Leakage line 
+
+29. Fuel pressure regulator (6 bar) 
+
+30. Fuel filter 
+
+31. High pressure fuel pump (HDP) 
+
+32. Fuel rails 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Supply System: For the N73 engine, minor modifications have been made to the fuel 
+supply system to adapt it to the direct injection system. The additional features are: 
+
+• Leakage line 
+
+• Electric fuel pump with increased delivery 
+
+The N73 in tank electric fuel pump is a roller cell type (EKP Bosch 3.1) with an increased 
+delivery pressure of 6 bar. This pressure is required to adequately supply the high pressure 
+fuel pumps. 
+
+Fuel Supply System Components: 
+
+• Fuel tank (24) 
+
+• Surge chamber (20) 
+
+• Fuel pump (21) 
+
+• Two suction jet pumps (23) 
+
+• Outlet protection valve (25) 
+
+Internal Tank Fuel Circuit Operation 
+
+The fuel pump supplies fuel from the surge chamber via the fuel filter (located next to the 
+frame rail under the driver’s floor) to the high pressure fuel pumps (HDP). The fuel pump 
+always pumps more fuel than the engine requires in all operating conditions. The fuel pres¬ 
+sure regulator built into the fuel filter adjusts the pressure to 6 bar and feeds the excess fuel 
+in the return flow back into the tank. 
+
+The pressure regulator valve in the return flow sets a return pressure of 1.0 - 1.5 bar. This 
+pressure prevents fuel vapor locks in the return flow and also ensures operation of the two 
+suction jet pumps. 
+
+The fuel flows from the pressure regulator valve on to an intersection point where the fuel 
+return flow is split. Some of the fuel flows through the suction jet pump in the left half of 
+the tank via the internal fuel line to the surge chamber. The suction jet pump acts like a 
+venturi tube which draws the fuel from the left half of the tank into the right half. 
+
+The other amount of diverted fuel flows via the second internal fuel supply directly to the 
+right half of the tank and to the second suction jet pump. This pumps the fuel from the right 
+half of the tank into the surge chamber to ensure that the surge chamber is always filled 
+with enough fuel in all driving conditions and takes full advantage of the reserve capacity. 
+
+
+• Pressure relief valve (22) 
+
+• Internal tank fuel lines 
+
+• Fuel filter with fuel pressure regulator (30&29) 
+
+• High pressure fuel pump (HDP) 
+
+• Fuel rails with injection valves (32) 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+High Pressure Injection System: A BMW gasoline direct injection system is used for the 
+first time in the N73 engine series. Each fuel rail is supplied with fuel by a high pressure 
+pump (HDP), which is driven via a bucket tappet by a triple lobe cam on the exhaust 
+camshaft. 
+
+The two high pressure pumps are supplied with fuel by the electric fuel pump (EKP), which 
+is located in the fuel tank. The high pressure fuel injectors are connected to a pressure rail 
+(accumulator) for each cylinder bank. The two rails are not interconnected. 
+
+
+
+KT-9612 
+
+
+1. Supply line 
+
+2. High pressure pumps 
+
+3. High pressure lines 
+
+4. Fuel rail (7-12) 
+
+5. Fuel rail (1-6) 
+
+
+6. High pressure fuel injectors 
+
+7. Rail pressure sensors 
+
+8. Pressure limiting valves 
+
+9. Leakage line 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Pressure Pumps: A single cylinder high pressure pump is used for each cylinder 
+bank. The pumps are mounted on the cylinder heads and driven via bucket tappets by 
+triple cam lobes on the exhaust camshafts. Each pump has three connecting lines: feed 
+line, high pressure line and leakage line. 
+
+
+1. Feed line 
+
+2. Inlet valve 
+
+3. High pressure chamber 
+
+4. Outlet valve 
+
+5. High pressure line 
+
+6. Pump plunger 
+
+7. Annular plunger groove 
+
+8. Feed area channel 
+
+9. Sealing ring 
+
+10. Fuel quantity control 
+valve 
+
+11. Diaphragm 
+
+12. Pressure attenuator 
+
+13. Mounting flange 
+
+14. Leakage line 
+
+
+1 5 4 11 12 2 3 10 
+
+
+
+14 13 8 9 7 6 8 
+
+
+KT-9698 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel is delivered to each high pressure pump through the feed line at a pressure of 6 bar 
+from the electric in tank fuel pump via a T-branch. In the pump, the fuel passes through 
+the inlet valve (2) into the high pressure area (3). 
+
+As the pump plunger is forced up by the camshaft, the fuel is pressurized (up to 120 bar) 
+in this area. The pressurized fuel is then forced out through the high pressure line to the 
+fuel rail. The outlet valve (4) prevents back flow from the rail into the high pressure pump. 
+
+Due to the extreme pressure on and around the plunger shaft, a small amount of fuel (max. 
+1 litre per hour) flows past the plunger shaft against the sealing ring (9). This also serves 
+as lubrication for the plunger shaft. The sealing ring provides a seal between the fuel side 
+of the pump and the engine oil at the pump drive. 
+
+To relieve the pump pressure (up to 120 bar) at the sealing ring, the pressure is reduced in 
+two stages, at which point the fuel returns through the leakage line to the tank. The pump 
+pressure is reduced down to 6 bar at the annular groove (7) because it is connected by a 
+channel (8) to the feed area of the pump. The fuel flow from this channel is regulated by 
+the fuel quantity control valve (MSV). 
+
+Below the annular groove, some fuel flows past the pump plunger against the sealing ring. 
+At this point the fuel pressure is virtually reduced to atmosheric pressure, which is sufficient 
+to return the fuel through the leakage line to the tank. 
+
+
+Fuel Quantity Control Valves (MSV): The fuel quantity control valve (10) is installed in the 
+high pressure pump to regulate the fuel delivery rate as required based on load and engine 
+rpm. This valve opens a channel from the high pressure chamber (3) to the feed area allow¬ 
+ing excess fuel to return to the feed area. 
+
+When the pump plunger is at it’s lowest position, the valve is energized closed by the ECM. 
+The valve is de-energized as soon as the injection pressure calculated by the ECM is 
+reached during the upwards travel of the pump plunger. The valve is now opened to allow 
+excess fuel to return to the feed area. This switching is repeated three times per camshaft 
+revolution because the drive cam for the pump has three lobes. 
+
+The pulsations generated in the pump during the process are absorbed by the pressure 
+attenuator spring (12). The pressure attenuator is sealed by a diaphragm (11) from the 
+pump feed area. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+In Tank Electric Fuel Pump 
+
+1. Request the Test Plan for the in tank electric fuel pump. What can cause faults in the 
+fuel supply control? 
+
+
+2. Select #4 “Fault in electric fuel pump”. When the Test Plan requests you to check the 
+wires and power supply to the fuel pump, can you find a quicker way to confirm this? 
+
+
+3. Is there a “Component activation” for the in tank electric fuel pump? 
+If yes, how can you confirm that it is operating? 
+
+
+High Pressure Pump with Fuel Quantity (volume) Control Valve 
+
+1. Is there a Test Plan available for the high pressure pump/fuel volume control valve? 
+
+2. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the fuel volume control valve? 
+
+3. What are the pin and connector numbers at the ECM (1 or 2) for the fuel volume control 
+
+valve? Pin Connector 
+
+
+4. Record the voltage value at this pin with the engine not running (ignition on). V 
+
+Engine running at idle speed. V 
+
+
+5. Record the frequency at this pin with the engine running at idle speed. Hz 
+
+at 2000 rpm. Hz 
+
+
+6. Use the MFK 2 cable to observe a scope pat¬ 
+tern from the same pin and record that pat¬ 
+tern on the right (engine at idle speed). 
+
+Hint: Start out with a scope setting of 10Hz 
+at 50 V for MFK 2 (Channel B). 
+
+Increase the engine speed to 2000 rpm and 
+observe pattern. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Rails (pressure accumulator): The fuel 
+is stored in the fuel rail at a pressure between 50 
+and 120 bar for distribution to the fuel injectors. 
+The fuel rail connects to the injectors through 
+brass coupling connections. 
+
+Due to length and position compensation 
+between the rail and the fuel injectors, brass 
+coupling connections are used in order that the 
+fuel injector O-ring can float inside this coupling. 
+
+
+
+Pressure Limiting Valves: Each fuel rail contains an integral pressure limiting valve (1 
+below). This valve opens from a pressure of 125 bar to prevent damage to the injection 
+system. The outlet of this valve is connected by a line to the high pressure pump fuel feed 
+line. The valve can open briefly: 
+
+• When no fuel is required by the fuel injectors (fuel cutoff when vehicle is coasting) 
+
+or 
+
+• During the afterheating (hot soak) phase when the hot engine is turned off. 
+
+
+
+1 
+
+2 V r> 
+
+1P1 ') 
+
+
+
+
+
+,«* . * ■ - 
+
+
+
+\f ' , -■— 
+
+
+
+
+DSC00632 
+
+
+Rail Pressure Sensors: Each fuel rail incorporates a rail pressure sensor (2 above). The 
+sensor is a pressure dependent resistor and the voltage (5 V) is supplied by the ECM. The 
+increasing system pressure alters the sensor resistance. 
+
+According to the fuel pressure applied, the rail pressure sensor outputs a varying voltage 
+signal as the rail pressure increases from 0.5 V (0 bar) to 4.5 V (140 bar). If the rail pres¬ 
+sure sensor malfunctions, the fuel quantity control valve (on the HDP) is activated with a 
+back up function (set value) by the ECM. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+Fuel (rail) Pressure Sensor 
+
+1. What type of sensor is this? 
+
+2. Is there a Test Plan available for the fuel pressure sensor? 
+
+3. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the fuel pressure sensor? 
+
+4. What are the pin and connector numbers at the ECM (1 or 2) for the fuel pressure sen¬ 
+sor? Pin Connector 
+
+5. Record the voltage value at this pin with the engine not running (ignition on). V 
+
+Engine running at idle speed. V 
+
+Engine speed at 2000 rpm. V 
+
+6. Shut the engine off and turn the ignition back on “KL15” (engine not running). Observe 
+the voltage value at this pin for approximately one minute. What did you observe? 
+
+
+7. If the pressure limiting valve is defective, could the answers to questions 5 and 6 (above) 
+indicate this? 
+
+
+Additional notes: 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+Return Shut-off Valve: The return shut-off valve prevents a pressure drop in the system 
+while the engine is stopped and is located in the leakage line. When the engine is started, 
+the valve is energized after a slight delay to prevent a pressure drop in the feed area of the 
+high pressure pump (cavitation). 
+
+While the engine is running, this valve is sup¬ 
+plied with system voltage (from the ECM Main 
+Relay) and activated by the ECM providing a 
+ground path which allows leakage fuel to return 
+to the tank. 
+
+
+1. High pressure pump 
+
+2. Leakage line 
+
+3. Return shut-off valve 
+
+
+
+Pressure Damper Vent Valve: The Pressure Damper Vent Valve provides a controlled 
+outlet for fuel/vapors that accumulate in the Pressure Attenuator (damper) chamber in the 
+top of each High Pressure Pump. This is a 3/2 way electrically controlled valve (KL15 from 
+the IVM, ground path provided by ECM 1) that provides: 
+
+
+• A circuit for fuel to return to the fuel tank when energized (KL15 on) or 
+
+• A circuit for fuel vapors to vent into the evaporative system when de-energized (KL15 off) 
+
+
+
+
+HDEV 
+
+
+HDEV 
+
+
+IVM 
+
+
+ECM 1 
+
+
+PRtSSUE DAMPER 
+VENT VALVE 
+
+
+RETURN Ll ME 
+{TO FUEL TANK} 
+
+
+LEAKEAGE LIME FROM 
+RETU RM SHU T OFF VA LVE 
+
+
+EVAPORATIVE LINE 
+(TO EVAPORATIVE 
+E M IOM VALVE) 
+
+
+EVAPORATIVE LINE 
+
+T FRO M ACTIVE CHAR COAL CAN I5TE R) 
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the engine is running, a slight amount of fuel may accumulate in the Pressure 
+Attenuator upper chambers due to natural leakage through the internal diaphram (extreme 
+pressure). This fuel (circuit) is returned to the fuel tank by combining with the Leakage Line 
+of the Return Shut-off Valve. The Pressure Damper Vent Valve provides a passage to com¬ 
+bine these two circuits when the ignition is switched on (KL15) and isolates the Evaporative 
+Emission circuit. 
+
+When the engine is not running, fuel vapors remain in these chambers and is routed into 
+the Evaporative Emission circuit. This is accomplished by Pressure Damper Vent Valve 
+blocking the passage from the Return Shut-off Valve (KL15 off) and opening a passage to 
+the circuit leading from the Active Charcoal Canister to the Evaporative Emission Valve. 
+
+
+High Pressure Fuel Injectors (HDEV): The high pressure fuel injectors are designed 
+essentially the same as conventional fuel injectors. They are secured by a taper in the cylin¬ 
+der head and sealed by a Teflon ring against the combustion chamber. 
+
+The O-ring seals the top of the injector and floats inside the brass coupling connections on 
+the fuel rail. Each fuel injector incorporates a single hole nozzle with a spray angle of 70° 
+to the piston crown. 
+
+
+1. Electrical connection 
+
+2. Solenoid coil 
+
+3. Fuel inlet port 
+
+4. Pressure spring 
+
+5. Nozzle needle 
+
+6. Single hole nozzle 
+
+
+
+To open the high pressure fuel injector, the nozzle needle is lifted off its seat when the sole¬ 
+noid coil is energized. Due to the high injection pressure (up to 120 bar), the pressure 
+spring is designed to accommodate a pressure force of 30 newtons (5 newtons for con¬ 
+ventional fuel injectors). The pressure spring forces the nozzle needle onto its seat during 
+closing with sufficient contact pressure. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Return (flow) Shut-off Valve 
+
+1. Is there a Test Plan available for the return flow shut off valve? 
+
+2. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the return flow shut off valve? 
+
+3. What are the pin and connector numbers at the ECM (1 or 2) for the return flow shut off 
+
+valve? Pin Connector 
+
+4. Measure and record the resistance value of this valve. ohms 
+
+5. Record the voltage value at this pin with the engine not running (ignition on). V 
+
+Engine running at idle speed. V 
+
+Engine speed at 2000 rpm. V 
+
+6. Shut the engine off. Wait ten seconds and restart the engine. Observe the voltage value 
+at this pin while the engine cranks and starts. What did you observe? 
+
+
+High Pressure Fuel Injectors (HDEV) 
+
+1. What is the resistance value of a high pressure fuel injector? ohms 
+
+
+Visual identification of the high pressure fuel injector: 
+
+
+1. Teflon ring (combustion chamber seal) 
+
+2. Taper (seats against cylinder head) 
+
+3. O-ring (brass coupling seal in fuel rail) 
+
+
+Additional notes: 
+
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Direct Injection System Control 
+
+
+A high pressure fuel injector control module (HDEV) is used for each cylinder bank and is 
+located in the engine compartment E box. The HDEV control module is supplied with sys¬ 
+tem voltage from the ECM main relay (in the IVM). Data is transmitted from the ECMs to 
+the HDEV control modules for each high pressure fuel injector via the Local-Can bus. The 
+HDEVs activate the injectors individually. 
+
+Note: The high pressure fuel injectors are activated by the HDEV control modules with a 
+voltage of 100 V and energized during the opening period with approx. 85 V. 
+
+
+
+DME 
+
+
+HDEV 
+
+CONTROL 
+
+MODULE 
+
+
+LO CAN H 
+
+LO CAN L 
+PEVZ1 
+
+«--*»«■ mm ‘ 
+
+P EVZ2 
+
+KL 15 & KL 31 
+
+
+IVM 
+
+
+Partial circuit of ECM (DME) 1 
+with two injectors shown 
+
+
+FUEL INJECTOR 1 
+
+
+FUEL INJECTOR 2 
+
+
+HDEV Control Modules: The HDEV control modules contain pulse width modulated final 
+output stages with high performance capacitors to transform the system voltage up to 85 
+to 100 volts. Current flows in the output stages up to a specific cutoff value. This cutoff 
+creates an induced voltage, e.g. 85 V, which is then charged to the high performance 
+capacitors (boosters). The high pressure fuel injectors are actuated by this capacitor with 
+2.8 to 16 amps of current. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Pressure Fuel Injector Control Module (HDEV) 
+
+1. Is there a Test Plan available for the HDEV? 
+
+2. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the HDEV injector output? 
+
+3. What are the pin and connector numbers at the ECM (1 or 2) for the fuel injector output 
+
+request? Connector Pins 
+
+
+4. Record the voltage value at one of these pins with: 
+The engine not running (ignition on). V 
+Engine running at idle speed. V 
+
+Rev engine up to 2000 rpm. V 
+
+
+5. What are the pin and connector numbers at the HDEV (1 or 2) for the output control of 
+one of the fuel injectors? Connector Pins 
+
+
+Ask the Instructor for assistance: 
+
+
+voltage 
+
+
+ground 
+
+
+6. Using the around pin of this fuel injector at the HDEV, record the voltage value with: 
+The engine not running (ignition on). V 
+Engine running at idle speed. V 
+
+Rev engine up to 2000 rpm. V 
+
+
+7. Use the MFK 2 cable to observe a scope 
+pat¬ 
+tern from the same pin and record that pat¬ 
+tern on the right (engine at idle speed). 
+
+Hint: Start out with a scope setting of 10Hz 
+at 100 V for MFK 2 (Channel B). 
+
+
+
+
+r, [VJ 
+
+A 
+
+
+
+■T 
+
+- 
+
+
+
+A 
+
+
+
+
+
+
+
+
+
+
+
+A 
+
+A 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+X 1 
+
+
+
+
+
+
+
+
+
+
+
+T 
+
+▼ 
+
+◄_ M 
+
+fflS 
+
+
+T 
+
+
+
+
+tiw-Lsi jj 
+
+Caunier 
+
+
+JSkJ 
+
+
+
+
+
+
+Increase the engine speed to 2000 rpm and 
+observe pattern. 
+
+HDEV activation (sample shown to the right): 
+
+1. Premagnetization time 
+
+2. Booster phase 
+
+3. Starting current phase 
+
+4. Holding current phase 
+
+26 
+
+
+12 3 4 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissions Management - N73B60 Low Emission Vehicle (LEV) 
+
+
+Oxygen Sensors: The N73 engine is fitted with a total of four oxygen sensors. One pla¬ 
+nar broadband oxygen sensor (constant characteristic curve), which regulates the fuel-air 
+mixture, is located upstream of each of the two catalytic converters. The catalytic converter 
+assemblies are integral with the exhaust manifolds. 
+
+
+There is a post catalytic converter sensor 
+(Bosch LSH25) for each cylinder bank posi¬ 
+tioned downstream of the catalytic converter 
+which monitors the catalyst efficiency. 
+
+This monitoring means that if the exhaust gas 
+concentration is too high, a fault code is 
+stored. The post catalyst sensors can also 
+detect an emission relevant fault in a pre-cat¬ 
+alyst oxygen sensor. 
+
+
+
+N73 Oxygen Sensors 
+
+
+Bosch LSU Planar Wideband Oxygen Sensor: The N73 engine is equipped with planar 
+wideband oxygen sensors (pre-catalyst). The sensor is planar shaped (type of construc¬ 
+tion) which is more compact and is made up of thin layers of zirconium dioxide (Zr02) 
+ceramic films. This modular lamination structure enables the integration of several functions 
+including the heating element which ensures the minimum operating temperature (750 °C) 
+is reached rapidly. 
+
+In contrast to conventional oxygen sensors, the wideband features can measure not only 
+at Lambda=1, but also in the rich and extremely lean range (Lambda=0.7 to complete 
+atmospheric oxygen) very rapidly. 
+
+The pump cell and reference cell are made of zirconium dioxide and each coated with two 
+porous platinum electrodes. They are arranged so that there is a measuring gap between 
+them. This measuring gap is connected by an inlet opening to the exhaust gas. The pump 
+cell is controlled by the ECMs applying voltage to the electrodes to initiate oxygen ion 
+pumping across the porous membrane of the reference cell, providing a quicker response 
+time. 
+
+The pump current flow is proportional to the oxygen concentration (lean) or the oxygen 
+requirement (rich). The pump is constantly working to maintain that the gas composition in 
+the measuring gap is constantly at Lambda=1. 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+Bosch LSU Planar Wideband Oxygen Sensor 
+
+1. Is there a Test Plan available for the LSU oxygen sensor? 
+
+2. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the LSU oxygen sensor? 
+
+List the status that apply to the oxygen sensor: 
+
+
+3. Using the DISplus voltmeter, connect MFK2 to the full circuit of the oxygen sensor. 
+
+(for example: pin 13 to pin 20 at ECM 1 of LSU bank 1). Start engine and allow warmup. 
+
+Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Under the “Part 
+Functions” column for the LSU oxygen sensor, select: Oxygen-sensor control, Oxygen¬ 
+sensor controller, Lambda value, Additive lambda adaptation and Multiplicative lambda 
+adaptation - now select “Display”. 
+
+Ask the Instructor for assistance: 
+
+4. With the engine running and the voltmeter displayed, introduce a vacuum leak. 
+
+
+With the Minimum/Maximum feature selected, observe the voltage value and reconnect 
+the hose. 
+
+What is the minimum? V maximum? V 
+
+5. Slowly disconnect the hose and allow the engine to run for approximately 1-2 minutes. 
+Under the “Part Functions” column for the LSU oxygen sensor, record the values for: 
+
+Oxygen-sensor control Additive lambda adaptation 
+
+Oxygen-sensor controller Multiplicative lambda adaptation 
+
+Lambda value 
+
+Caution: Do not conduct this test for longer than 5 minutes! (allow engine to cool) 
+
+6. What do the values from question 5 indicate? 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+Performance Controls 
+
+
+Exhaust Flap: The 12.6 liter rear silencer (4) is fitted with an exhaust flap to keep noise to 
+a minimum at engine idle speed and low rpm. The flap provides exhaust efficiency based 
+on two effects: 
+
+• Minimization of the cross section (slight back pressure) and the outlet noise level at low 
+exhaust flow rates 
+
+• Large cross-section with low backpressure at high speeds and loads 
+
+
+The exhaust flap is opened allowing additional flow when: 
+
+• The transmission gear is engaged and 
+
+• The engine speed is approximately above 1,500 rpm 
+
+
+
+A vacuum controlled diaphragm (2 - actuator mounted on the silencer) opens and closes 
+the exhaust gas flap. The vacuum is supplied from the camshaft driven vacuum pump. 
+
+The exhaust flap is opened with vacuum, and is sprung closed by the actuator (when vac¬ 
+uum is not present). The procedure is carried out using a solenoid valve (1) which is elec¬ 
+trically controlled by the ECM and located in the left rear luggage compartment (below the 
+light assembly). 
+
+
+
+MED 9.2.1- Workbook 
+
+
+
+
+
+
+
+
+
+
+
+
+Exhaust Flap 
+
+1. Select Control Unit Functions (MED 9.2.1), Diagnosis Requests. Is there a status under 
+the “Part Functions” column for observing the “Messages and Results”? 
+
+Is there a “Component Activation” feature for the exhaust flap? 
+
+2. Is there a Test Plan available for the exhaust flap? 
+
+3. If so, does the engine need to be run? Why? 
+
+4. What are the pin and connector numbers at the ECM for the exhaust flap solenoid acti¬ 
+vation? 
+
+Pin Connector 
+
+5. Which ECM controls the exhaust flap (1 or 2)? 
+
+
+Additional notes: 
+
+
+
+MED 9.2.1- Workbook 
+
+
+

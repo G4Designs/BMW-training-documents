@@ -1,0 +1,607 @@
+Table of Contents 
+
+
+MOST Bus Diagnostics 
+
+Subject Page 
+
+MOST Bus Diagnosis.3 
+
+CCC/MASK.3 
+
+Diagnosis Excessive Temperature .3 
+
+Control Module Resets.3 
+
+MOST Configuration .4 
+
+Same Sequence .4 
+
+Different Sequence.4 
+
+Store Configuration .5 
+
+Ring Break Diagnosis .6 
+
+Stability Check .6 
+
+MOST Control Unit Supply .6 
+
+E65 MOST Bus Diagnosis.7 
+
+Fault Symptoms E65.7 
+
+Creating Images.8 
+
+Non-Digitized Area.8 
+
+Telephone E65.9 
+
+Audio .9 
+
+byteflight.10 
+
+Diagnosis.10 
+
+Light Attenuation.10 
+
+
+Initial Print Date: 02/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOST Bus Diagnostics 
+
+
+Model: All 
+
+Production: All 
+
+IBIECTn/IS 
+
+After completion of this module you will be able to: 
+
+• Diagnose the MOST Bus using module resets 
+
+• Store the sequence of the MOST Bus 
+
+• Diagnose the E65 MOST Bus 
+
+
+2 
+
+MOST Bus Diagnostics 
+
+
+MOST Bus Diagnosis 
+
+The MOST network uses a ring bus for data communication between the various mod¬ 
+ules. Signal transmission is by means of a fiber-optic cable. Data transmission on the ring 
+bus takes place in one direction only. On the the MOST ring, messages can only be 
+transmitted provided the bus ring complete and fully functional. 
+
+If for example the power supply or the diode of a control module is defective, the MOST 
+bus in non-operational and no communication is able to take place. Exceptions are the 
+gateway control module (CCC or MASK) and the HUD control module. 
+
+CCC/MASK 
+
+E60 series vehicles are fitted with either the CCC or the MASK. Either of these control 
+modules are the interface between the MOST bus and the K-CAN. 
+
+To diagnose the CCC or MASK: 
+
+• CCC (Car Communication Computer) all the control modules with the abbreviation 
+CCC must be selected (e.g. CCC-GW). 
+
+• MASK (Multi Audio System Controller) all the control modules the the abbreviation 
+MASK must be selected (e.g. MASK-GW). 
+
+Diagnosis Excessive Temperature 
+
+If a control module becomes too hot, this control module switches off for up to 10 min¬ 
+utes. This switches the ENTIRE MOST bus down for 10 minutes. After the control 
+module cools down it (and the MOST bus) is functional again. 
+
+If this fault, “Deactivation excess temperature”, is stored in the CCC (or MASK) and any 
+of the other MOST control modules there are two possibilities: 
+
+• If the fault is ONLY in the CCC (MASK), then this module is responsible for the 
+MOST bus shut down. 
+
+• If the fault is stored in the CCC (MASK) and one or more other control modules on 
+the MOST bus, the most likely cause of MOST bus failure is the other control mod¬ 
+ule. However, this does not rule out the possibility that the CCC (MASK) is also 
+defective. 
+
+Control Module Resets 
+
+Using the DISplus or GT1 a Test Plan may be run to check number of control module 
+resets for each control module on the MOST bus. 
+
+A control module with 0 (zero) resets has performed no reset, is not installed in the vehi¬ 
+cle, or can not be found with the diagnostic equipment. 
+
+The control module with the highest number of resets is the most probable cause of a 
+fault with the MOST bus. 
+
+
+3 
+
+MOST Bus Diagnostics 
+
+
+
+Below is an example of a readout from the DISplus or GT1: 
+
+
+Head-Up Display 15 
+
+CD Changer 0 
+
+Headset Interface 0 
+
+Amplifier 0 
+
+Video Module 0 
+
+Telephone 0 
+
+Satellite Radio 0 
+
+Nav System Japan 0 
+
+MASK (or CCC) 15 
+
+
+Note: Resets at a rate of less than 10 may be normal for a control module. When 
+the number of resets is less than 10, this is only an indication on the possible 
+cause of a fault. The control module should generally NOT be replaced with 
+less than 10 resets. 
+
+MOST Configuration 
+
+On the E60, certain control units are always arranged in the same order. 
+
+Other control units, on the other hand, can be connected in a different sequence. 
+
+Same Sequence 
+
+Depending on the equipment configuration, the multi-audio system controller/car com¬ 
+munication computer is always followed by the CDC, HUD and then the MOST bus ter¬ 
+minal. 
+
+Different Sequence 
+
+The sequence can change as from the MOST bus terminal. Possible control units 
+include: 
+
+- Top HiFi amplifier 
+
+- Telephone 
+
+- Video module 
+
+From the MOST bus terminal, the fibre-optic cable is routed back via the flash plug to the 
+multi-audio system controller/car communication computer. 
+
+
+4 
+
+MOST Bus Diagnostics 
+
+
+
+Store Configuration 
+
+On the E60, the sequence of control units in the MOST system network is identical in 
+the front area of the vehicle. All control units located in the luggage compartment can be 
+connected to the MOST bus terminal in any arbitrary order so that the sequence of the 
+control units can change. 
+
+Diagnosis on the MOST bus is only possible over a known sequence of control units in 
+the MOST When storing the MOST ring configuration, the control units are written in 
+their installed sequence to a registration file. It is first necessary to check whether com¬ 
+munication on the MOST bus is possible (stability check). 
+
+The configuration is automatically restored after replacing or retrofitting a control unit in 
+the MOST system network. This takes place after programming/encoding with CIP so 
+that the control unit sequence is up-to-date. 
+
+The "Store configuration" function is not activated automatically when the control units 
+sequence is changed manually in the area of the luggage compartment (e.g. accident 
+damage repair). 
+
+MOST control unit sequence, E60 
+
+ccc 
+
+M-ASK FS 
+
+CDC 
+
+
+HUD 
+
+
+04219.03 
+
+
+
+
+TEL 
+
+
+TOP-HIFI 
+
+
+VM 
+
+
+
+5 
+
+MOST Bus Diagnostics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ring Break Diagnosis 
+
+Ring break diagnosis is already known from the E65. During ring break diagnosis on the 
+E65, the voltage supply is interrupted directly at the battery. 
+
+Contrary to the E65, restart of the MOST users on the E60 is realized via "Transport 
+mode." The following relays are switched off: 
+
+• Relay 1 MPM 
+
+• Terminal 30g 
+
+These relays supply voltage to all control units in the MOST system network. On activat¬ 
+ing transport mode, the relays are switched off and the voltage supply interrupted. 
+
+After the relays have been switched on again and the control units started up, the multi¬ 
+audio system controller/car communication computer can detect the control units that still 
+have communication capabilities and evaluate the results. Consequently, the BMW diag¬ 
+nosis system specifies a nodal point that provides an indication of the interruption on the 
+MOST bus. 
+
+The functional description in the BMW diagnosis system provides detailed information on 
+determining the nodal position on the MOST bus. 
+
+Stability Check 
+
+On the E60, the antenna tuner and the audio system controller are located in one unit. 
+The radio is still operable in the stereo and in the HiFi system in the event of a communi¬ 
+cation fault in the MOST system network. The stability check module was introduced for 
+the purpose of checking the MOST bus in such cases. 
+
+Effective operation of the MOST bus on the E60 can be checked with the stability check 
+function. 
+
+MOST Control Unit Supply 
+
+The "MOST control unit supply" module makes available schematic circuit diagrams and 
+information on the power supply of the MOST control units so that specific information is 
+quickly available as required. 
+
+
+6 
+
+MOST Bus Diagnostics 
+
+
+
+E65 MOST Bus Diagnosis 
+
+Fault Symptoms E65 
+
+Particularly when carrying out troubleshooting in the MOST system network it is impor¬ 
+tant to know the precise significance of visible and audible symptoms. With this informa¬ 
+tion it is possible to locate and correct faults much faster. 
+
+The starting point for locating faults should always be to pose detailed questions relating 
+to the fault to the customer. This information can then be used to formulate initial consid¬ 
+eration before the BMW diagnosis system is connected. 
+
+The following information should be available to the technician: 
+
+• When does the fault occur? E.g. already during engine start or while driving? 
+
+• Since when does the fault occur? 
+
+• Does the fault depend on temperature? When cold, hot or after longer period of 
+vehicle operation? 
+
+• Do several functions fail simultaneously? If so, which? 
+
+• Is the fault still present after shutting down and restarting the vehicle? 
+
+• Was something switched on or off immediately before the fault occurred? 
+
+• Is it necessary to enter the telephone PIN after restarting the system? 
+
+• Does the radio/CD need to be switched on separately after restarting the system? 
+
+• How often does the system fail? 
+
+• How long does audio failure last? 
+
+• Can a loud clicking noise be heard in connection with the fault? 
+
+• Is the system OK again after switching terminal 15 off and on? 
+
+• What was shown on the main screen and in the assistance window? 
+
+• Does the control display fail? 
+
+• Is the display white or black or does it flicker in connection with the fault? 
+
+• Can a status line still be seen? 
+
+• What is shown after resetting the MOST bus (last menu, basic menu/start menu, 
+BMW logo)? 
+
+• Does the CD changer make a noise after audio failure? 
+
+
+7 
+
+MOST Bus Diagnostics 
+
+
+
+
+In addition, various factors that could also cause malfunctions in the system should be 
+clarified: 
+
+• What control units have already been replaced? 
+
+• Did the fault symptom change after replacing control units? 
+
+• Was the light intensity reduced for the control units? 
+
+• Were the plug connections at the MOST control units checked? 
+
+• Was another or new road DVD inserted? 
+
+• What road DVD was used? 
+
+• Was something retrofitted on the vehicle or a repair carried out? 
+
+• To what CIP status (integration stage) does the vehicle correspond? 
+
+• Were other-make parts retrofitted in the electrical systems? 
+
+Based on the information provided by the customer and after examining any changes 
+in the system it may be possible to determine faults already at this stage. 
+
+Why are these statements important? Examples from visual applications: 
+
+Creating Images 
+
+The control display (CD) contains two control units, i.e. the CD gateway that establishes 
+the connection to the other bus systems and the CD graphics stage that builds up the 
+graphics in the control display. Not all images in the CD are created by the CD graphics 
+stage. All basic menus, submenus and the status line are created by the graphics stage 
+(blue). The map is presented by the navigation computer via RGB lines (red). 
+
+Consequently: 
+
+If only the map is not displayed but the rest, e.g. the on-board computer, is still visible and 
+if other menus can still be selected via the controller, in all probability the fault will be in 
+the area of the navigation system. 
+
+Important: The navigation map can also be displayed on the left-hand side. 
+
+Non-Digitized Area 
+
+A road map DVD, on which an area is not completely digitized can cause the navigation 
+screen to turn green. 
+
+Self-Burnt DVDs 
+
+A self-burnt or faults road map DVD can cause the navigation computer to crash. Also a 
+defective computer can trigger a reset of the navigation system, indicating "Initialization 
+running" in the control display. 
+
+
+8 
+
+MOST Bus Diagnostics 
+
+
+
+
+Telephone E65 
+
+The telephone AF is routed via the MOST bus in the form of light signals to the ASK. The 
+light is converted in the ASK and the AF is output from the speakers by means of a hard¬ 
+wired electrical signal. 
+
+The microphone is connected via copper cables directly to the telephone control unit. 
+Even if an SVS is installed, it does not have anything directly to do with hands-free tele¬ 
+phone operation. 
+
+SVS is activated when voice commands are executed. The cause of a fault in hands-free 
+operation should be sought in the area of the microphone, telephone and ASK. 
+
+If the telephone PIN is necessary after failure of the MOST bus, this indicates that the 
+telephone control unit triggered a reset and in all probability the fault can be rectified by 
+replacing the telephone control unit. 
+
+If the MOST bus is blocked, a telephone conversation via the cordless keypad handset 
+should still be possible provided the telephone itself is not defective. 
+
+Audio 
+
+The two models E60 and E65 differ considerably in the area of the audio systems. These 
+design differences necessitate different assessment methods for the purpose of locating 
+faults. 
+
+The ASK is responsible for audio output on the E65. If the vehicle is equipped with a 
+Top HiFi amplifier, the audio signal is sent in the form of a light signal from the audio 
+source to the Top HiFi amplifier and forwarded to the speakers as an electrical signal. 
+
+Some of the speakers are activated directly by the ASK and some by the Top HiFi amplifi¬ 
+er (LOGIC 7). 
+
+If the E65 is equipped with a HiFi amplifier, the sound information is transferred hard¬ 
+wired to the amplifier. 
+
+In connection with the Top HiFi system on the E60, all sound signals are routed from the 
+multi-audio system controller/car communication computer in the form of light signals to 
+the Top HiFi amplifier. 
+
+No sound signals are transmitted along fibre-optic cables in connection with the stereo 
+and HiFi systems. The multi-audio system controller/car communication computer itself is 
+responsible for the control of the speakers. 
+
+
+9 
+
+MOST Bus Diagnostics 
+
+
+
+by tef light 
+
+As already in the E65 and E85, the byteflight is used in the safety system on the 
+E60/E63. The system was adapted to the specific requirements of the vehicle. 
+
+The star-shaped arrangement of the satellites about the SGM (safety and gateway mod¬ 
+ule) is a characteristic feature for the byteflight. The data are transmitted by means of light 
+signals. 
+
+Diagnosis 
+
+In addition to the test options: fault code memory check, diagnosis check and component 
+activation, this system can also be used to measure the light attenuation to ensure com¬ 
+plete operability of the light section. 
+
+Light Attenuation 
+
+The maximum permissible light attenuation in the byteflight is -20 dB. Values between 
+-3 dB and -8 dB are normally measured in the system. Different methods of contacting 
+must be used depending on the light section to be measured in the system. 
+
+
+
+
+ZGM 
+
+
+K-CAN-System 
+
+Module 
+
+
+
+10 
+
+MOST Bus Diagnostics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - MOST Bus 
+
+
+Install the light attenuation device in the MOST Bus at the Logic 7 amplifier. 
+One device should be installed in each fiber optic cable going into the Logic 7. 
+
+
+Set up the OPPS (or OPS) to measure the attenuation of the the light going into 
+the Logic Seven. 
+
+Measure the attenuation of the inbound cable. _ 
+
+With the attenuation device begin to increase the attenuation. Watch the readings. 
+At what db does the sound stop? _ 
+
+Return the attenuation device to the base setting. 
+
+Now measure the attenuation of the fiber optic cable leaving the Logic 7. 
+
+What is the attenuation. _ 
+
+With the attenuation device begin to increase the attenuation. Watch the readings. 
+At what db does the sound stop? _ 
+
+Why is this different? _ 
+
+How is this helpful in diagnosing MOST Bus problems. _ 
+
+
+Perform MOST Bus Analysis. 
+
+Which module reset number indicates a problem? 
+What would be the solution? _ 
+
+
+11 
+
+MOST Bus Diagnostics 
+
+
+
+

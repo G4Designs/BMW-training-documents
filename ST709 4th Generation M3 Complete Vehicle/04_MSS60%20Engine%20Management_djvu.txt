@@ -1,0 +1,1191 @@
+Table of Contents 
+
+
+MSS60 Engine Management System 
+
+Subject Page 
+
+MSS60 Engine Control System .3 
+
+On-Board Connection.4 
+
+Ion Current Combustion Monitoring.6 
+
+Simplified Basic Layout of Ion Current Monitoring .7 
+
+Fuel Supply System.10 
+
+MSS60 Fuel Supply System Circuit Diagram .11 
+
+Cooling System.12 
+
+Cooling System Circuit Diagram.13 
+
+Function/control of the Electric Fan.14 
+
+Fan Operation .14 
+
+"Wake-up" Function.14 
+
+Interface Diagnosis Function .15 
+
+Overrun Reguest .15 
+
+Fan Self-diagnosis and Fault Signal .15 
+
+
+Initial Print Date: 1/08 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSS60 Engine Management System 
+
+Model: E90 M3, E92 M3 
+
+
+Production: 2/2008 
+
+■bjicihhs 
+
+After completion of this module you will be able to: 
+
+• Identify the digital motor electronics control module version 
+
+• Identify the improvements made to the ionic current monitoring system 
+
+• Identify and explain the purpose of the components used in the fuel system 
+
+• Identify and explain the purpose of the components used in the cooling system 
+
+
+2 
+
+MSS60 Engine Management System 
+
+
+
+
+
+MS360 Engine Control System 
+
+
+The S65 features a revised engine control system, the MSS60, which is based on the 
+MSS65 in the S85 engine. 
+
+This engine control system is designed for engine speeds of up to 9,000 rpm. 
+
+These engine control units belong to the latest generation and are characterized by an 
+extremely high data processing capability, processing millions of calculations per second. 
+
+The main functions are described in the product information for the E60 M5. 
+
+The following is a description of the areas of the system that differ from the MSS65. 
+
+
+
+3 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+On-Board Connection 
+
+
+
+4 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index for On-Board Connection 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Electrical cooling fan 
+
+2 
+
+Alternator 
+
+3 
+
+Starter 
+
+4 
+
+Control valve in the air conditioning compressor 
+
+5 
+
+Oil condition sensor 
+
+6 
+
+Secondary air pump relay 
+
+7 
+
+Injection nozzle supply relay 
+
+8 
+
+Engine control unit MSS60 
+
+9 
+
+OBD2 diagnosis connector (TD output from MSS60 and D-CAN to JB) 
+
+10 
+
+Junction box (JB) and distribution box (SV) 
+
+11 
+
+Evacuating pump relay for brake servo action 
+
+12 
+
+High-current circuit breaker (250 A) 
+
+13 
+
+Safety battery terminal (SBK) 
+
+14 
+
+AGM battery. 
+
+15 
+
+Intelligent battery sensor (IBS) 
+
+16 
+
+Electric fuel pump control unit 
+
+17 
+
+IHKR/IHKA control unit 
+
+18 
+
+Multiple restraint system (MRS5) 
+
+19 
+
+Clutch module (KS) 
+
+20 
+
+Brake light switching module 
+
+21 
+
+Instrument cluster 
+
+22 
+
+Car Access System (CAS3) 
+
+23 
+
+Dynamic Stability Control (DSC) 
+
+
+5 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ion Current Combustion Monitoring 
+
+
+The ion current combustion monitoring is also used in the MSS60 for knock identifica¬ 
+tion and misfiring identification. In principle, the method of action is identical to the S85 
+and its MSS65. 
+
+The S85 has two ion current monitoring devices, each of which covers a whole cylinder 
+bank. In the S65, the electronic ion current system is integrated into each ignition coil 
+and the ion current monitoring devices are not required. 
+
+During ignition, the measurement current is stored in a capacitor integrated in the 
+ignition coil, and after ignition, is available at the spark plug electrode. In the S65, the 
+ion current measurement and evaluation is also performed exclusively by the MSS60. 
+
+The functional range of the ion current electronics has been further refined. There is 
+no longer a need for two measurement control lines, and the ignition current and the 
+ion current measurement signal have been combined into a single transmission route 
+(separate in the S85). 
+
+For the purposes of smoothing the voltage and electromagnetic compatibility, an 
+"ignition suppression capacitor" is installed in the wiring harness of each cylinder bank 
+(in the S85 this is in the ion current control device). This is electrically connected using 
+terminal 87 and the vehicle earth. 
+
+The same spark plugs are used as in the S85 (basic value approx. 60,000 km). 
+
+
+Note: If the ignition suppression capacitor is defective, this can lead to 
+faults in the communications and/or audio electronics when the 
+engine is running. 
+
+For design reasons, the firing order 1 -5-4-8-7-2-6-3 is used in the S65, 
+instead of the firing order 1 -5-4-8-6-3-7-2 more commonly employed in 
+BMW V8 engines until now. 
+
+
+6 
+
+MSS60 Engine Management System 
+
+
+
+
+Simplified Basic Layout of Ion Current Monitoring 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Microcontroller ignition 
+
+8 
+
+Output amplifier of the ion 
+current measurement signal 
+
+2 
+
+Output amplifier of the ignition signal 
+
+9 
+
+Ignition coil with integrated ion 
+current electronics 
+
+3 
+
+Ion current input amplifier 
+
+10 
+
+Ignition output stage 
+
+4 
+
+Digital signal processor for ion 
+current measurement signal 
+
+11 
+
+Capacitor for storing measured flow 
+
+5 
+
+MSS60 Engine control system 
+
+12 
+
+Zener diode for limiting the measured voltage 
+
+6 
+
+Ignition suppression capacitor 
+(one per cylinder bank for 4 cylinders) 
+
+13 
+
+Primary and secondary coil 
+
+7 
+
+Input amplifier for ignition signal 
+
+14 
+
+Spark plugs 
+
+
+7 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following diagrams show the ion current curve (bottom) in relation to the develop¬ 
+ment of combustion pressure (top). This curve is used for the evaluation of combustion 
+guality and the identification of misfiring. 
+
+
+
+Combustion curve (top) and 
+ionic current (bottom) 
+
+
+Index 
+
+Explanation 
+
+1 
+
+Ionic current maximum by 
+induction of ignition coil 
+
+o 
+
+Ionic current maximum due to ignition 
+
+tL 
+
+(flame front directly in area of spark plugs) 
+
+Q 
+
+The ionic current progression is 
+
+
+a function of the pressure curve 
+
+
+MSS60 Representation of normal combus¬ 
+tion and combustion knock 
+
+
+Index 
+
+Explanation 
+
+A 
+
+Ionic current (mA) 
+
+B 
+
+Section of measuring window 
+
+1 
+
+Normal combustion (no knocking) 
+
+2 
+
+Combustion knock 
+
+
+Depending on the engine load, the level of the ionic current generated at the spark plug 
+lies in the range 50-500 pA and is only measured by the electronic system in the mA 
+range. 
+
+Combustion knock is identified in the ionic current measurement signal in the form of 
+oscillations within a defined measuring window. The measuring window is after position 
+3 of the above diagram. 
+
+
+8 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuel Supply System 
+
+
+A separate control unit is used for the electric fuel pump (EKP-SG). The EKP control sig¬ 
+nals from the MSS60 are produced via a dedicated CAN bus (LoCAN) (M5: PWM sig¬ 
+nal). The EKP control unit is made ready for operation by the MSS60via the input termi¬ 
+nal 87. The load current is controlled via a relay at the terminal 30g by CAS3. 
+
+In the event of a crash that reaches the relevant threshold value, the MRS5 reguests an 
+interrupt to the fuel supply via the K-CAN connection to CAS3. 
+
+There is now only one fuel pump (the M5 has two). This has a three-phase motor, which 
+ensures sufficient torgue across the whole pump speed range. The pump speed is used 
+to provide the reguired fuel pressure of 3-6 bar, depending on the engine operating 
+state. 
+
+A fuel pressure sensor sends its signal to the MSS60. The fuel pressure sensor is locat¬ 
+ed behind the inner fenderwell. 
+
+If the pressure sensor fails or there is a fault in the CAN bus and in the engine emer¬ 
+gency program, the fuel pump is operated at full speed. In this process, the pressure is 
+limited to 6 bar by the mechanical pressure sensor. 
+
+The signals from both tank fill level sensors are sent to the junction box and are forward¬ 
+ed to the instrument cluster via the K-CAN, where they are evaluated and displayed. 
+
+
+10 
+
+MSS60 Engine Management System 
+
+
+
+
+MSS60 Fuel Supply System Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Engine control unit MSS60 
+
+7 
+
+Fuel tank 
+
+2 
+
+Junction box 
+
+8 
+
+Multiple restraint system 5th generation (MRS5) 
+
+3 
+
+Electric fuel pump control unit 
+
+9 
+
+Car Access System 3rd generation (CAS3) 
+
+4 
+
+Fuel pump with three-phase motor 
+
+10 
+
+Instrument cluster 
+
+5 
+
+Tank fill level sensor, right 
+
+11 
+
+Fuel pressure sensor 
+
+6 
+
+Tank fill level sensor, left 
+
+
+
+
+11 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cooling System 
+
+
+In the E92 M3, an electric fan is installed (as in the E70), which initially reaches a maxi¬ 
+mum output of 850 Watts. The fan is activated by the MSS60 via a pulse width-modu¬ 
+lated signal (PWM signal) with a frequency of 100-300 Hz for fan operation, wake-up 
+function, and interface diagnosis function. 
+
+A frequency of 10 Hz is used for overrun requests. 
+
+The signal voltage is approximately the same as the on-board supply voltage. The follow¬ 
+ing cycle ratio specifications (in %) refer to the "low" proportion of the signal period. 
+
+The cooling fan power supply is produced using a 100 A high-current circuit breaker in 
+the luggage compartment distributor and a high-voltage relay near the front passenger 
+footwell. The relay is control by terminal 30g (CAS). 
+
+The performance of the cooling fan depends on the coolant temperature, the IHKA 
+request, the intake air temperature, the calculated exhaust gas temperature downstream 
+from the catalytic converter, and the request by the generator (overheating protection). 
+
+The control valve in the air conditioning compressor and the coolant pressure sensor 
+are electrically connected to the junction box (JB). The IHKA/IHKR can use the K-CAN 
+connection to evaluate the pressure and send the appropriate control requests for the 
+control valve in the air conditioning compressor to the JB. A resulting load torque for 
+the torque correction and an electric fan speed request are also sent to the MSS60 via 
+the K-CAN. 
+
+The junction box only activates the control valve in the air conditioning compressor 
+following release by the MSS60. The MSS60 adapts the idle speed control accordingly 
+and activates the electric fan. 
+
+The switching state of the coolant level switch is also transmitted to the junction box 
+and evaluated by the instrument cluster via the K-CAN connection. If there is insufficient 
+coolant, a corresponding warning is sent to the driver. 
+
+
+12 
+
+MSS60 Engine Management System 
+
+
+
+
+Cooling System Circuit Diagram 
+
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Electric fan (850 W) 
+
+7 
+
+Junction box 
+
+2 
+
+Coolant level switch 
+
+8 
+
+Electric fan relay 
+
+3 
+
+Coolant temperature sensor 
+
+9 
+
+High-current circuit breakers 
+
+4 
+
+Control valve in the air conditioning 
+
+10 
+
+IHKA 
+
+5 
+
+Coolant pressure sensor 
+
+11 
+
+Instrument cluster 
+
+6 
+
+MSS60 Engine control system 
+
+
+
+
+13 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Function/control of the Electric Fan 
+
+Fan Operation 
+
+The adjusted fan speed increases in a linear fashion as the cycle ratio increases. 
+
+The rated speed (n Nom ) in the M3 is the same as the maximum number of revolutions 
+(2,400 rpm). 
+
+The engine speed of the M3 is controlled in a linear relationship with the cycle ratio 
+(10-91 %), starting with 800 rpm (1/3 of n Nom ) up to 2,400 rpm. 
+
+Note: In the E6x M5/M6 (600 W fan), an additional unregulated increase in 
+engine speed to at least 2,700 rpm (n max ) is produced, from a 92% to 
+95% cycle ratio. 
+
+"Wake-up" Function 
+
+If they are in sleep mode, the fan electronics can be "woken" by a PWM signal 
+(100-300 Hz) with a cycle ratio of 5-9%. In the E92 M3, in normal operation, the 
+waking is triggered by activation of the terminal 30g with "Ignition ON". 
+
+
+14 
+
+MSS60 Engine Management System 
+
+
+Interface Diagnosis Function 
+
+An interface diagnosis is triggered by the MSS60 and used to check the interface. 
+
+The MSS60 sends a PWM signal (100-300 Hz) for approx. 1 second with a cycle ratio 
+of 96-99%. 
+
+If the interface is intact, the fan electronics for confirming the PWM signal cable are set 
+to "low" for 2.5-3 seconds (M5 fan 1 -1.5 s). 
+
+Overrun Request 
+
+If an overrun of the fan is reguired after "Ignition OFF", approximately 7 seconds after 
+"Ignition off", the MSS60 emits a PWM signal with a freguency of 10 Hz for at least 3 
+seconds. At the issued cycle ratio, the electrical fan system detects at which speed 
+and for what duration the overrun should occur. 
+
+The cycle ratio is between 15 and 85% in 5% increments. 
+
+It contains the information displayed in the following graphic: 
+
+• Engine speeds of 35, 45 or 50% of the rated speed. 
+
+• Run-on time of 3-11 minutes in increments of 2 minutes. 
+
+
+
+Index 
+
+Explanation 
+
+A 
+
+Percentage of rated speed 
+
+B 
+
+Overrun in minutes 
+
+1 
+
+Cycle ratio in percent 
+
+
+Fan Self-diagnosis and Fault Signal 
+
+The electronic fan system performs an internal diagnosis procedure. If a fault is detected, 
+fan operation is continued as far as possible, if necessary at reduced power. 
+
+The following faults lead to a diagnosis message: 
+
+• Engine is blocked 
+
+• A fault has occurred in the electronic fan system, which means that fan operation 
+is permanently restricted or impossible. 
+
+In response to the fault message, the electronic fan system changes the PWM signal 
+to "low" for at least 5, to a maximum of 7 seconds. 
+
+Note: A fault message is issued with a delay of approx, one minute, since 
+the electronic fan system first executes a triple internal test cycle. 
+
+
+15 
+
+MSS60 Engine Management System 
+
+
+
+
+
+
+
+
+

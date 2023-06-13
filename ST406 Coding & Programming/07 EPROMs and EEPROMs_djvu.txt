@@ -1,0 +1,895 @@
+Table of Contents 
+
+EPROMs &EEPROMS 
+
+Subject Page 
+
+Introduction .3 
+
+Engine Control Module EPROM Programming .3 
+
+M3.1 Engine Control Modules .3 
+
+M3.3 & M3.3.1 Engine Control Modules .4 
+
+Engine Control Modules Flash (EEPROM) Programming.5 
+
+Transmission EPROMS.6 
+
+Transmission Control Module Flash (EEPROM) Programming_6 
+
+When is EPROM Replacement and/or Programming Necessary? . .7 
+
+How is a Replacement EPROM or Control Module Determined.7 
+
+DME/ECM EPROM .7 
+
+TCM.7 
+
+Programming Procedure.8 
+
+Determination Process for DME EPROM .8 
+
+Automatic Determination .9 
+
+Manual Determination .9 
+
+Review Questions.10 
+
+
+Initial Print Date: 12/04 Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EPROMs & EEPROMs 
+
+
+Model: E31/32/34/36/38/39 
+Production: All 
+
+IBIICTIWIS 
+
+After completion of this module you will be able to: 
+
+• Identify Engine & Transmission Control Modules for which EPROMs can be 
+replaced 
+
+• Understand why EPROM’s do not always need to be replaced 
+
+
+• Explain what “Flash” programming means 
+
+
+• Determine what EPROM or replacement part number needs to be installed 
+
+
+• Understand the replacement procedure 
+
+
+2 
+
+EPROMs & EEPROMs 
+
+
+Introduction 
+
+Early Engine and Transmission Control Modules used EPROMs (Electrically 
+Programmable Read Only Memory device) to store operational programs and operating 
+data specific for the application that they were used for. Since the operating program and 
+associated data is installed at the factory during the vehicle assembly process updates 
+could not be provided for vehicles once they were programmed and left the factory floor. 
+
+In order to install a new or updated program (DME orTCM) the module needed to be 
+replaced. Eventually it became possible to replace EPROMs and/or update them which 
+dramatically reduced the cost of updating a module and a vehicle. 
+
+Engine Control Module EPROM Programming 
+
+With the introduction of M3.X & DME/ECM control modules it was no longer necessary 
+to replace the entire control module in order to install updated engine operating programs 
+and/or data. 
+
+
+
+DME/ECM Version 
+
+Vehicle Application 
+
+
+M3.1 
+
+E36 - 325i/is (up to 8/92) 
+
+
+E34 - 525i (up to 8/92) 
+
+M3.X 
+
+
+E31 - 840Ci (9/93-12/95) 
+
+M3.3 
+
+E32 - 740i/iL (9/92 - 8/94) 
+
+
+E34 - 530i/it & 540i (3/93 -12/95) 
+
+
+
+E38 - 740i/iL (9/94 - 12/95) 
+
+
+M3.3.1 
+
+E36 - 325i/is & M3 (as of 9/92) 
+
+
+E34 - 525i/it (as of 9/92) 
+
+
+M3.x engine control modules allow EPROMs: 
+
+• To be removed & replaced 
+
+• Programmed or updated depending on control module version 
+
+M3.1 Engine Control Modules 
+
+Beginning with M3.1 DME/ECM control modules, BMW introduced the ability to program 
+an EPROM using BMW diagnostic equipment. On the M3.1 control module the original¬ 
+ly installed EPROM needs to be removed from the control module and a new partially 
+blank EPROM installed in order to update the existing control module. 
+
+
+3 
+
+EPROMs & EEPROMs 
+
+
+
+
+For the M3.1 systems the replacement EPROM that is installed does not contain all the 
+data necessary for the engine to operate, it is a “basic” EPROM that only contains some 
+basic data referred to as “resident data” which helps identify the module and allows the 
+diagnostic eguipment to determine what program and associated data needs to be 
+installed/loaded. 
+
+For specific information refer to EPROM replacement SI B12 08 95(4274). 
+
+
+M3.3 & M3.3.1 Engine Control Modules 
+
+As later versions of engine control modules (M3.3 & M3.3.1) were introduced it was not 
+always necessary to replace the EPROM in order to perform an update to the module. 
+The EPROMs installed on the newer systems are larger and allow additional information 
+to be loaded without having to install a new EPROM. In the event that the size of the 
+update exceeds the space available on the installed EPROM or an update was previously 
+performed, then the installed EPROM will need to be replaced. For specific information 
+refer to EPROM replacement SIB 12 08 95(4274) 
+
+
+For the M3.3 & M3.3.1 systems the replacement EPROM that is installed does not con¬ 
+tain all the data necessary for the engine to operate, it is a “basic” EPROM that only con¬ 
+tains some basic data referred to as “resident data” which helps identify the module and 
+allows the diagnostic eguipment to determine what program and associated data needs 
+to be installed/loaded. 
+
+4 
+
+EPROMs & EEPROMs 
+
+
+JMMliM 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11 
+
+0 110 
+
+011 0 
+
+11 011 
+
+111 
+
+100 101 010 x 
+
+oc 
+
+)0 101 
+
+ioo r 
+
+0 110 
+
+110 
+
+110 001 101/ 
+
+iv 
+
+0 110 
+
+011 0 
+
+11 011 
+
+111 
+
+100 101 oio\ 
+
+oc 
+
+)0 101 
+
+O 
+
+O 
+
+0 110 
+
+110 
+
+110 001 101\ 
+
+
+
+_RESERVED FOR UPDATES/ 
+
+
+ijuuuuuuuLjuuyuff 
+
+
+BEFORE UPDATE 
+
+
+THE UPDATE CANCELS THE OLD FUNCTIONS 
+CHARACTERISTICS AND ADDS THE 
+UPDATED FUNCTION TO THE EPROM 
+
+
+,iumnjifmflnnnnn v 
+
+
+
+AFTER UPDATE 
+
+
+RESIDENT 
+
+DATA 
+
+
+
+BASIC STATE 
+
+
+RESIDENT 
+
+DATA 
+
+
+& ALL REQUIRED PROGRAMS 
+
+
+
+
+01 u 
+
+
+
+
+
+
+r" 
+
+" — - 
+
+r\ 
+
+110 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+oioy 
+
+\000 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+101/ 
+
+/l 10 
+
+110 
+
+011 
+
+011 
+
+011 
+
+111 
+
+100 
+
+101 
+
+01 o\ 
+
+)ooo 
+
+101 
+
+100 
+
+110 
+
+110 
+
+110 
+
+110 
+
+001 
+
+10l\ 
+
+
+
+
+
+— - 
+
+
+
+
+
+
+
+
+
+
+PROGRAMMED 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engine Control Modules Flash (EEPROM) Programming 
+
+At the end of 1995 new variations of DME/ECM control modules were introduced that no 
+longer contained a removable EPROM but instead contained a soldered in EEPROM. An 
+EEPROM is an Electrically Erasable Programmable Read Only Memory device, which 
+means that programs & data stored on the chip can be electrically erased and replaced 
+with new/revised programs or data. In order to erase the data on the chip a short duration 
+low level voltage/charge is applied to a pin on the EEPROM and the stored data is erased, 
+hence the name “Flash”. Once the data is erased new data is loaded. 
+
+By using a newer technology, these control modules have the ability to be updated a total 
+of 13 times before they need to be replaced. 
+
+Theoretically an EEPROM can be erased and reprogrammed more than 13 times, BMW 
+set the number to 13, since a point will be reached where the update being installed may 
+no longer be compatible with the hardware of the installed module which could result in 
+erroneous operation. If the program is not compatible with the hardware version of the 
+module, the program used to determine the correct update for the module will indicate 
+that the module will need to be replaced before the update can be performed. 
+
+The reference to Flash programming is a result of the technology used to erase the 
+EEPROM prior to installing a new program and or data. 
+
+The control modules listed identify when EEPROMs were first introduced into the 
+DME/ECM: 
+
+
+DME/ECM Version 
+
+ENGINE 
+
+Vehicle Application 
+
+M5.2 
+
+M44 
+
+E36 - 318i/iA (as of 12/95) 
+
+E36 - Z3 (as of 1/96) 
+
+M62 
+
+E39 - 540i/iA (as 3/96) 
+
+E38 - 740iLA (as of 12/95) 
+
+E31 - 840iCA (as of 1/96) 
+
+MS41.1 
+
+M52 
+
+E36 - 328i/iA (as of 10/95) 
+
+E39 - 528i/iA (as of 2/96) 
+
+MS 41.2 
+
+S52 
+
+E36-M3 (as of 1/96) 
+
+
+Refer to SIB 12 05 96 for information pertaining to programming FLASH control 
+modules. 
+
+The utilization of EEPROMs within the Engine Management Systems continues to 
+be used today, and has expanded into other control modules as well. 
+
+
+5 
+
+EPROMs & EEPROMs 
+
+
+
+
+Transmission EPROMS 
+
+
+Beginning with vehicles produced in the early 1990’s the Transmission EPROM can be 
+replaced on some vehicles in order to address customer complaints that would normally 
+be addressed by having to replace the Transmission Control Module (TCM). Service 
+EPROMs are available for the following systems: 
+
+
+TCM Version 
+
+Engine 
+
+Application 
+
+EGS 1.27 
+
+M70B50 
+
+E31 -850iA (1/90-9/91) 
+
+EGS 1.29 
+
+M70B50 
+
+E31 - 850iA (9/91 -12/91) 
+
+EGS 4.16 
+
+M42B18 
+
+E36 - 318iA/isA/iCA/itA (12/92 - 12/95) 
+
+M50B25 
+
+E36 - 325iA/iSA/iCA (10/91 - 9/95) 
+
+E34 - 525iTA/iA (9/90 -12/95) 
+
+EGS 7.30 
+
+M60B30 
+
+E34 - 530iA (3/93 - 8/93) 
+
+AGS 7.32 
+
+M60B30 
+
+E34 - 530iA (9/93 - 6/95) 
+
+EGS 9.20 
+
+M60B40 
+
+E34 - 540iA (3/93 - 8/93) 
+
+E32 - 740iA/iLA (9/92 - 9/94) 
+
+E31 - 840CiA (9/93 - 9/94) 
+
+AGS 9.22 
+
+M60B40 
+
+E34 - 540iA (9/93 - 5/96) 
+
+E38 - 740iA/iLA (9/94 - 5/95) 
+
+E38 - 750iLA (1/95 - 6/95) 
+
+
+Refer to SI B24 04 96 for additional information pertaining to Transmission EPROM 
+Application. 
+
+Refer to SI B24 05 95 for information pertaining to Transmission Control Module 
+EPROM Replacement. 
+
+Transmission Control Module Flash (EEPROM) Programming 
+
+The introduction of newer generation Transmission Control Modules introduced with the 
+M44, M52 and M62 engines at the end of 1995, brought with it the ability to “flash”pro- 
+gram this module as well. By being able to electrically erase and install a new program 
+and or data stored on the EEPROM, it no longer becomes necessary to replace the chip 
+to get an updated transmission program installed. 
+
+The technology used on the Transmission Control module is the same as explained in the 
+section “Engine Control Module Flash (EEPROM) Programming”. 
+
+
+6 
+
+EPROMs & EEPROMs 
+
+
+
+
+When is EPROM Replacement and/or Programming Necessary? 
+
+The program and or data of an engine or transmission control module only needs to be 
+updated or replaced if: 
+
+• The control module is replaced with a non programmed/basic module. 
+
+• A Service Action, Recall or customer concerns have resulted in the release of a 
+new/updated program or revised operational data. 
+
+The programming procedure of the diagnostic equipment will identify if: 
+
+• a DME EPROM needs to be replaced or can be updated 
+
+• a control module (DME or Transmission) can still be programmed or needs to be 
+replaced if the reprogramming limit of 13 times has been reached 
+
+How is a Replacement EPROM or Control Module Determined? 
+
+DME/ECM EPROM 
+
+As mentioned previously on the M3.1 Engine Control Modules the EPROM needs to be 
+replaced whenever an update is to be performed. On M3.3 and M3.3.1 Control Modules 
+the EPROM’s for these modules generally have enough additional space to add/load one 
+update. However, if the update that needs to be installed is too large, then the installed 
+EPROM needs to removed and a Basic EPROM reinstalled. The diagnostic equipment 
+(DISolus. GT1 or SSS) contains a program within CIP that will determine the part number 
+of the replacement EPROM or control module that needs to be installed. 
+
+For some control module variations there is more than one replacement EPROM avail¬ 
+able. 
+
+Example: An M3.1 DME has three different hardware versions: 
+
+Bosch Hardware Number 0 261 200 402 
+Bosch Hardware Number 0 261 200 403 
+Bosch Hardware Number 0 261 200 405 
+
+This requires three different replacement EPROM’s, however one EPROM is not neces¬ 
+sarily specific to one hardware version. 
+
+TCM 
+
+Regarding the replacement EPROM for Transmission Control Modules there are specific 
+Service Bulletins which identify various situations that can be addressed by replacing the 
+EPROM in the control module. The replacement transmission EPROM does not require 
+any type of programming after being installed, as it already contains all the program and 
+operational data. 
+
+If an early version Transmission Control Module, for vehicles prior to 1996 model year, is 
+replaced it generally also does not need to have the EPROM replaced as the required 
+program is already installed. 
+
+
+7 
+
+EPROMs & EEPROMs 
+
+
+
+Programming Procedure 
+
+Within CIP is a procedure that requires the selection of the model/series whenever a/an: 
+
+• EPROM needs to be updated/replaced 
+
+• EEPROM needs to be updated 
+
+• Control module needs to be replaced 
+
+Then select “Programming” - “DME Programming” or “EGS Programming” and follow 
+the steps given in the respective SIB. 
+
+
+
+Workshop Exercise - SIB Look-up 
+
+
+Detailed information pertaining to updates and replacements is provided in: 
+
+SI B12 08 95(4274) - DME EPROM replacement 
+SI B12 08 94(4117) - M50 DME EPROM Update 
+SI B12 07 94(4116) - M50 DME Programming Update, 
+
+SI B12 09 94(4132) - M60 DME EPROM Update 
+
+SI B 12 0795(4273) - M60 DME EPROM Needs Replacement 
+
+SI B12 05 96- Programming Flash Control Modules (DME) 
+
+SI B2404 96- EPROM Replacement Application Chart 
+SI B24 05 95 - EGS/AGS EPROM Replacement 
+
+Plus additional situation/complaint specific Service Bulletins available on the TIS website. 
+
+Determination Process for DME EPROM 
+
+In the event a DME EPROM, a control module or the program of a control module needs 
+to be updated or replaced the program contained within CIP will provide the information 
+necessary to perform the specific task. A program within CIP is used to determine the 
+correct replacement part numbers (EPROM, Control Module or software update) to be 
+installed. 
+
+For earlier production vehicles there are two ways to perform this process: 
+
+• “automatic” determination 
+
+or 
+
+• “manual” determination. 
+
+The automatic determination is the preferred method as it is faster and mistakes made 
+during data entry into the tester are avoided. For newer production vehicles that utilize 
+EEPROMs/Flash programming the determination process is done automatically as part of 
+determining a measures plan (refer to CIP section or more information). 
+
+8 
+
+EPROMs & EEPROMs 
+
+
+
+
+Automatic Determination 
+
+In order to determine which EPROM needs to be installed there is a special procedure 
+that is executed as part of the “Exchange EPROM” process. The procedure will “auto¬ 
+matically” determine the correct replacement EPROM or control module part number, 
+based on the “Basic part number” and “Programmed part number” stored on the 
+installed EPROM, if the EPROM is not damaged. 
+
+The procedure is run automatically if “YES” is selected for the answer to the question “Is 
+old EPROM still installed. 
+
+During the automatic determination process the tester compares the part numbers 
+stored in the EPROM of the currently installed DME control module with a list of possible 
+replacement part numbers contained in the program of the tester. 
+
+The comparison is done to determine if the tester can "recommend" a replacement 
+EPROM or control module part number. 
+
+Manual Determination 
+
+If the EPROM is damaged then the “Basic part number” and “Programmed part number” 
+indicated on the label of the control module that is located on the cover of the module 
+must be entered “manually” via the touch screen on the tester so that the replacement 
+part numbers can be determined. 
+
+This procedure is followed if “NO” is selected for the answer to the question “Is old 
+EPROM still installed?” 
+
+During a manual determination you will need to: 
+
+• Enter the part number for a basic (programmable) control module. 
+
+• Enter the VIN number of the vehicle. 
+
+• Enter the part number of a programmed control module 
+
+Once the correct numbers are entered, the tester searches a “master list” for the proper 
+replacement part number and will display either that part number or the message "no 
+substitute found." 
+
+Regardless of which process is used if the replacement part does not match the part 
+number displayed and "expected" by the program on the tester, programming will not 
+occur. You need to obtain the proper replacement part. 
+
+At no time during the determination or programming process should you turn off the igni¬ 
+tion, disconnect the control module or tester/interface. 
+
+Once the EPROM is programmed by way of the “Automatic” or “Manual” determination 
+process it contains the operating program for the engine and the associated operational 
+data or characteristic maps. In the event a basic replacement control module is installed, 
+the EPROM installed in the control module will be programmed in the same manner. 
+
+Note: The EPROM in a basic replacement module does not need to be replaced 
+since it only contains the “resident data” and nothing else. 
+
+
+9 
+
+EPROMs & EEPROMs 
+
+
+
+Review Questions 
+
+1. Do EPROMs always need to be replaced in an Engine Control Module? 
+
+
+2. What does “Flash” programming mean? 
+
+
+3. Why does BMW limit the number of times a control module containing/using a 
+EEPROM can be reprogrammed? What is the BMW limit? 
+
+
+10 
+
+EPROMs & EEPROMs 
+
+
+
+Review Questions 
+
+1. What is the purpose of a ZCS code in a vehicle? 
+
+
+2. Where is the ZCS code stored in a vehicle? 
+
+
+3. How can you determine what modules in the vehicle are codeable via the ZCS 
+code? 
+
+
+4. What is the purpose of a Vehicle Order what information does it contain? 
+
+
+5. When was the VO structure introduced? 
+
+
+6. Which models utilize a VO structure? 
+
+
+7. How can the VO information of a vehicle be accessed? 
+
+
+14 
+
+Vehicle Coding Information 
+
+
+

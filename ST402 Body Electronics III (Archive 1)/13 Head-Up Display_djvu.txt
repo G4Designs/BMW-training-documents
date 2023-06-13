@@ -1,0 +1,1447 @@
+Table of Contents 
+
+
+Head-Up Display (HUD) 
+
+Subject Page 
+
+Head-Up Display.3 
+
+Advantages of the Head-Up Display .3 
+
+HUD System Overview.4 
+
+Components.5 
+
+HUD Display.6 
+
+Windshield.8 
+
+HUD Switch .9 
+
+Principle of Operation .10 
+
+Mirrors.11 
+
+Eyebox .12 
+
+HUD Image Layout.13 
+
+HUD Function and Operation.14 
+
+Switch-on Response.14 
+
+Projection of virtual image in front of the vehicle.14 
+
+Automatic adaptation of display brightness.14 
+
+Prioritization of Displays.15 
+
+Operation .15 
+
+Switch-on Conditions.15 
+
+Workshop Hints.16 
+
+Test Functions .16 
+
+Enabling and disabling the test functions .16 
+
+Replace Windshield.17 
+
+Replace Rain/Light Sensor .17 
+
+Replacing Head-Up Display.17 
+
+Setting Head-Up Display (Adjustment).18 
+
+Image Defects .19 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Head-Up Display 
+
+
+Model: E60, E61, E63, and E64 
+Production: Start of Production MY 2004 
+
+■micnnis 
+
+After completion of this module you will be able to: 
+
+• List the advantages of the HUD 
+
+• Name the components of the HUD 
+
+• Explain HUD operation 
+
+• Perform HUD self test 
+
+• Align HUD with special tools 
+
+
+2 
+
+HUD 
+
+
+Head-Up Display 
+
+The HUD, now available on the E60, E61, E63 and E64, is used to display relevant 
+information needed for driving the vehicle. The information is displayed as a virtual image 
+on the windshield. The image is projected into the driver’s field of vision which creates 
+the illusion that the image is at the front edge of the hood. 
+
+The relevant driving information is still available in the instrument cluster and CID. 
+
+
+
+Depending on the eguipment installed in the vehicle, this virtual image contains informa¬ 
+tion that is of relevance to the driver, such as: 
+
+• Cruise control FGR 
+
+• Active Cruise Control ACC 
+
+• Navigation 
+
+• Check Control messages 
+
+• Road speed 
+
+The size of the virtual image is approximately. 200 mm x 100 mm. 
+
+The HUD of the E60 and E61 are identical. Due to the angle of the the windshield on the 
+E63 and E64, the HUD is slightly modified. The mounting position in the instrument 
+panel and the mirrors in the HUD unit are altered to allow integration of HUD into the 6 
+series. 
+
+Advantages of the Head-Up Display 
+
+The virtual image in the driver's field of vision allows the driver to concentrate more on 
+the road ahead than previously. Driving is thus rendered less fatiguing. For example, the 
+driver switches his vision between the instrument cluster and road traffic less freguently. 
+This makes driving more relaxing, the eyes do not have to re-focus as freguently. 
+
+3 
+
+HUD 
+
+
+
+
+HUD System Overview 
+
+
+
+0310CL03 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legend for System Overview 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Power distribution, rear 
+
+9 
+
+Rain and Light Sensor (RLS) 
+
+2 
+
+HUD Switch 
+
+10 
+
+Controller 
+
+3 
+
+Light Module (LM) 
+
+11 
+
+Instrument Cluster 
+
+4 
+
+Active Cruise Control (ACC) 
+
+12 
+
+Central Information Display (CID) 
+
+5 
+
+Safety and Gateway Module (SGM) 
+
+13 
+
+M-ASKorCCC 
+
+6 
+
+Dynamic Stability Control (DSC) 
+
+14 
+
+Head-up Display (HUD) 
+
+7 
+
+Digital Motor Electronics (DME) 
+
+15 
+
+Head-Up Display Projection Image 
+
+8 
+
+Steering Column Switch Cluster (SZL) 
+
+16 
+
+
+
+Components 
+
+The HUD system is comprised of the following components: 
+
+• Head-up Display unit 
+
+• Windshield 
+
+• HUD Switch 
+
+The following components are networked together for Head-up display functions: 
+
+• Light Module (LM) - The light module controls and monitors all vehicle lights. 
+Information is received and transmitted via the K-CAN. 
+
+The LM provides the terminal 58g signal via K-CAN. The LM also transmits the 
+dimmer signal to the HUD. 
+
+• Safety and Gateway Module (SGM) - The SGM provides the gateway between 
+the relevant bus systems for HUD operation. The SGM also provides the means for 
+diagnosis via the D-Bus/SGM pathway. 
+
+• Digital Motor Electronics (DME) - The HUD receives signals from DME regard¬ 
+ing cruise control or ACC. The signals are provided via the K-CAN and PT-CAN. 
+
+• Car Access System (CAS) - The CAS provides inputs relating to terminal status, 
+the HUD is operational when KL15 is switched ON. 
+
+• Rain/Light Sensor (RLS) - The RLS has been slightly modified to ensure optimal 
+ambient brightness of the virtual image. The viewing angle of the RLS has been 
+altered to view the area closer to the virtual image. This allows the ambient light near 
+the virtual image to be monitored. This information is provided to HUD via the 
+K-CAN. 
+
+
+5 
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+• Instrument Cluster - The instrument cluster provides vehicle road speed and 
+check control messages via the K-CAN. 
+
+• Cruise Control/Active Cruise Control - The cruise control or ACC sends the 
+selected driving speed (set speed), distance (ACC), object detection (ACC), 
+regulation display (ACC), and the transfer prompt (ACC) via the K-CAN. 
+
+• Steering Column Switch Cluster (SZL) - The SZL sends the Cruise Control or 
+ACC reguests from the stalk switch via the byteflight I SGM/K-CAN pathway to the 
+HUD. 
+
+• M-ASK/CCC - The navigation information is sent to the HUD. This includes the 
+next road, driving direction arrow, distance to intersection and the bar gauge. These 
+signals are sent via the MOST bus pathway. 
+
+HUD Display 
+
+The head-up display is installed above the steering column in the instrument panel. 
+
+The key components of the head-up display are: 
+
+• 4 mirrors - The 4 mirrors ensure that the contents of the projection display appear 
+at the distance and in the size reguired, and that deformations caused by the wind¬ 
+shield are largely compensated for. 
+
+• Light source - The light source is the back lighting of the projection display. This 
+light source is a number of colored LEDs laid out in rows over a certain area. 
+
+The light source is actuated by the electronic circuitry in the head-up display, which 
+also controls the brightness of the display content. 
+
+• Projection display with cover panel - The projection display with TFT 
+technology (TFT = thin-film transistor) is used to show the display contents. The 
+projection display is activated by the electronic circuitry of the head-up display. 
+
+A cover panel protects the projection display when it is switched off. 
+
+A stepper motor folds the cover panel out of or into the beam. The stepper motor is 
+actuated by the electronic circuitry in the head-up display. 
+
+• Electronic circuitry - The electronic circuitry has the task of evaluating and pro¬ 
+cessing incoming image information, generating display content, and the activation 
+of the projection light source and the stepper motor for the cover panel. 
+
+The electronics include a temperature sensor which protects the head-up display from 
+overheating. The projection light source is switched off if the temperature exceeds 
+approximately 105°C. 
+
+A power supply in the head-up display provides the light source with a voltage of 42 volts, 
+transformed from the on-board supply voltage. 
+
+A 12-pin connector on the head-up display creates the connection to the vehicle electri¬ 
+cal system. 
+
+The MOST data bus is connected to the head-up display via a 2-pin connector. 
+
+6 
+
+HUD 
+
+
+
+
+03093.03 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+HUD finisher 
+
+12 
+
+Light well 
+
+2 
+
+Cover glass 
+
+13 
+
+Fixture, TFT projection display 
+
+3 
+
+Housing frame 
+
+14 
+
+TFT projection display 
+
+4 
+
+Curved mirror 
+
+15 
+
+Shutter 
+
+5 
+
+Flat mirror (glass) 
+
+16 
+
+Main board, activation of LEDs 
+
+6 
+
+Mounting points, front bulkhead 
+
+17 
+
+Housing frame 
+
+7 
+
+Adjusting device 
+
+18 
+
+Curved mirror 
+
+8 
+
+Curved mirror 
+
+19 
+
+Secondary board, activation of shutter 
+
+9 
+
+LED power supply 
+
+20 
+
+Housing section 
+
+10 
+
+Heat sink 
+
+21 
+
+Housing 
+
+11 
+
+LED array 
+
+
+
+
+The image is formed on the projection display and is illuminated by the light source. The 
+curved mirrors and the flat mirror determine the shape and the size of the projected 
+image. 
+
+If the projected image is not level, this can be corrected by turning the projection display 
+with the flexible shaft. 
+
+The virtual image appears to float in the air at the end of the hood, approximately. 2.2 
+meters away from the observer. The size of the virtual image is approximately. 20 x 10 
+cm (width x height). 
+
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windshield 
+
+The windshield is a "special" windshield and is an integral component vital to projecting 
+the displays. The outer and inner glass panes are connected to a plastic film, which is 
+wedge-shaped over the entire length of the windshield. 
+
+The wedge-shape prevents double displays (ghosts) of the HUD by positioning both 
+images one above the other. The wedge tip points downward and starts at a distance 
+of approximately. 10 cm to the bottom edge of the windshield. 
+
+The end of the wedge is located at approximately. 2/3 windshield height. In the top third 
+of the windshield, the plastic film runs parallel to the outer and inner glass panes. The 
+thickness of the wedge tip is 0.8 mm. The thickness of the end of the wedge is 1 mm. 
+
+
+
+f\ 
+
+1 FRANKFURTER 
+|ring 
+
+\ 
+
+]f@@m 
+
+160 
+
+
+
+Example of “double image” from use of improper 
+windshield 
+
+
+If a non-specified (normal) windshield is used, the image is reflected on both the outer 
+and inner glass panes. Overlapping causes the image to be displayed twice. The plastic 
+wedge in the windshield places the images of the outer and inner pane over each other 
+thus preventing double displays (ghosts). 
+
+
+8 
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+HUD Switch 
+
+The HUD switch is located next to the headlight switch. 
+
+
+
+The switch provides two possible functions dependent upon the length of time that the 
+switch is pressed: 
+
+• Pressing the button for less than 10 seconds, switches the Head-up display on or 
+off. 
+
+• Pressing the button for more than 10 seconds, activates the test functions for ser¬ 
+vice personnel. 
+
+• Once the test functions are accessed, the additional functions can be activated by 
+briefly pressing the button. 
+
+• To re-activate the head-up display, press the button again and hold it for longer than 
+two seconds. 
+
+The HUD switch is a direct input to the HUD unit. The switch is resistance coded allow¬ 
+ing the HUD to identify button faults. 
+
+
+9 
+
+HUD 
+
+
+
+
+Principle of Operation 
+
+The HUD can be compared to a projection device. An LED field is required as the light 
+source for the purpose of projecting the HUD information. The image content is created 
+by the TFT projection display. 
+
+The TFT projection display can be compared to a filter which admits or blocks light. An 
+optical imaging element determines the shape and size of the HUD images. The image 
+is projected onto the windshield and appears freely suspended over the road surface. 
+
+
+
+FRANKFURTER 
+
+RING 
+
+
+500 m 
+
+i_, 
+
+km/h \ 
+
+
+
+
+
+n 
+
+
+FRANKFURTER 
+
+RING 
+
+500 m 
+
+
+160 km/h \ 
+
+=C3 
+
+
+<=5 
+
+2 
+
+
+1 
+
+03207_03 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+LED array 
+
+6 
+
+Curved mirror 
+
+2 
+
+TFT projection display 
+
+7 
+
+Windshield 
+
+3 
+
+Curved mirror 
+
+8 
+
+Observer’s point of vision 
+
+4 
+
+Curved mirror 
+
+9 
+
+Projected image 
+
+5 
+
+Flat mirror (glass) 
+
+
+
+
+10 
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mirrors 
+
+The HUD incorporates 4 mirrors. These mirrors reflect the display content onto the 
+windshield. Three of the mirrors are curved. These mirrors adapt the display content 
+onto the screen. 
+
+This flat mirror determines the size and distance of the HUD projection. The curved 
+mirrors are made of plastic while the flat mirror is made of glass. 
+
+The projected HUD image content appears at a distance of approximately 2.2 meters 
+(7.2 feet) from the eye. 
+
+
+4 
+
+
+
+03102.03 
+
+
+Index 
+
+Explanation 
+
+Index 
+
+Explanation 
+
+1 
+
+Head-up display 
+
+3 
+
+Projected image 
+
+2 
+
+Windshield 
+
+4 
+
+Projection distance 
+
+
+11 
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+Eyebox 
+
+The eyebox is the movement space in which the driver can move without his view 
+of the image in the HUD being impaired. 
+
+The freedom of movement within the eyebox is roughly: 
+
+• 130 mm horizontally 
+
+• 90 mm vertically 
+
+Outside the eyebox limits the image in the HUD is no longer clearly visible. 
+
+
+1 FRANKFURTER 
+RING 
+
+500 m 
+
+JT (FRANKFURTER 
+A | RING 
+
+1 500m 
+
+Jf I FRAN' 
+
+A Bring 
+
+1 500 
+
+»/h 
+
+160 km/h \ 
+
+160 km/h 
+
+
+i) 
+
+3 . 
+
+
+
+1. Point of vision inside the eyebox HUD - image OK 
+
+2. Point of vision displaced to the left HUD - image distorted to the left 
+
+3. Point of vision displaced to the right HUD - image distorted to the right 
+
+
+I r500m 
+
+160 km/h \ 
+
+FRANKFURTER 
+RING 
+
+500 m ij 
+
+160 km/h \ 
+
+■ FRANKFURTER 
+RING 
+
+500 m 2 j 
+
+
+
+
+
+
+03553_03 
+
+
+1. Point of vision inside the eyebox - HUD image OK 
+
+2. Point of vision displaced downward - HUD image distorted downward 
+
+3. Point of vision displaced upwards - HUD image distorted upwards 
+
+
+12 
+
+HUD 
+
+
+HUD Image Layout 
+
+The HUD background color is transparent. 
+
+Symbols (such as e.g. warning symbols) are specified by the individual control units. 
+
+This color specification is adopted for the display in the HUD. 
+
+Two dimensional symbols are used for optimum visibility and legibility. 
+
+The colors are: 
+
+• Orange as the standard color 
+
+• Red or yellow for warning messages 
+
+• Green for the set speed 
+
+The 4 colors are generated by the layout of the LED’s and the corresponding actuation of 
+the LED’s by the electronic circuitry of the Head-up display. 
+
+The size of the virtual image display range is approximately. 20 x 10 cm (width x height). 
+To make the contents of the display easier to read, the display range is divided into an 
+upper section and a lower section. Navigation instructions and Check-Control messages 
+are displayed in the upper section. Speed-related information is displayed in the lower 
+section. 
+
+
+1. Current road speed 
+
+2. Navigation instructions consisting of: 
+
+• Driving direction arrow 
+
+• Bar graph 
+
+• Next road 
+
+• Distance to next intersection 
+
+3. Set speed 
+
+4. Object detection and distance set (ACC) 
+
+
+|» I FRANKFURTER 
+
+A Iking 
+
+U U500 m 
+
+< _ 
+
+160 km/h 140 
+
+
+TI203031 
+
+
+The signals used to generate the image in the head-up display are input from the corre¬ 
+sponding control units, e.g. multi-audio system controller (M-ASK) via the K-CAN and 
+MOST data buses to the electronic circuitry in the head-up display. The electronic circuit¬ 
+ry evaluates the incoming signals and forwards the prepared image information to the 
+components in the head-up display. 
+
+
+13 
+
+HUD 
+
+
+
+
+HUD Function and Operation 
+
+The head-up display comprises the following functions: 
+
+• Switch-on response 
+
+• Projection of virtual image in front of the vehicle 
+
+• Automatic adaptation of display brightness 
+
+• Prioritization of displays 
+
+Switch-on Response 
+
+The head-up display is partially operational when terminal R is switched ON. This means: 
+
+• The projection display is initialized but information is not yet displayed. 
+
+• The head-up display is able to communicate with other bus-elements via the MOST 
+and K-CAN data buses. 
+
+The head-up display is operational when terminal 15 is switched ON. This means: 
+
+• The light source is switched on when the button for switching the head-up display 
+on and off is pressed. 
+
+• The projection display cover panel is folded out of the beam by the stepper motor. 
+
+• The automatic adaptation of the display brightness is activated. 
+
+Projection of virtual image in front of the vehicle 
+
+The head-up display projects a virtual image, i.e. an image that appears to hang in mid-air 
+without a fixed image carrier (e.g. projection screen or similar). The image is generated on 
+the projection display in the head-up display and is projected forwards through the wind¬ 
+shield to a point in front of the bonnet. 
+
+The virtual image is approximately 20 x 10 cm (width x height) and can only be seen from 
+the driver's side. 
+
+Automatic adaptation of display brightness 
+
+The automatic adaptation of display brightness prevents major sudden changes in the 
+brightness of the head-up display when the vehicle moves between different ambient 
+lighting conditions (e.g. from light to dark and from dark to light when driving through a 
+tunnel). 
+
+The automatic adjustment of the display brightness depends on; 
+
+• the ambient lighting conditions, 
+
+• the brightness adjustment setting, 
+
+• the dimmer setting for instrument lighting (only when the lights are on). 
+
+14 
+
+HUD 
+
+
+
+The surrounding brightness (day, night, twilight, sunshine, etc.) is recorded by the 
+rain/light sensor. The value of the brightness adjustment (difference between base setting 
+and individually set display brightness) is stored in the head-up display. When the lighting 
+is switched on (terminal 58g, lights ON) the brightness of the head-up display is also 
+influenced by the dimmer setting of the instrument lighting. 
+
+Prioritization of Displays 
+
+The information in the head-up display is classified according to priority (= importance for 
+the driver). Displays with low priority are overwritten by displays with higher priority. 
+
+
+Priority 
+
+Function 
+
+1 
+
+Warnings from Active Cruise Control (ACC) 
+
+2 
+
+Check Control Messages 
+
+3 
+
+Test functions 
+
+4 
+
+Navigation Instructions 
+
+
+Operation 
+
+The head-up display is controlled using the following control elements: 
+
+• Button for switching head-up display on and off 
+
+• Dimmer for instrument lighting 
+
+• Controller for selecting brightness of head-up display in the CID 
+
+Switch-on Conditions 
+
+The conditions required to switch the head-up display on are: 
+
+• Terminal 15 switched on 
+
+• Button for switching head-up display on and off switched on 
+
+
+15 
+
+HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Hints 
+
+The following general information is provided for service staff: 
+
+• Test functions 
+
+• Replace windshield 
+
+• Replace rain/light sensor 
+
+• Replace head-up display 
+
+• Set head-up display 
+
+Test Functions 
+
+The test functions are useful fortroubleshooting without the DISplus/GT-1. 
+
+The test functions are displayed in the head-up display. 
+
+Note: Test function replaced when driving. At road speeds greater than 5 km/h, 
+a warning given by the Active Cruise Control or a Check-Control mes¬ 
+sage will replace the test function. 
+
+When terminal R or terminal 15 is ON, the test functions will be called up if the button for 
+switching the head-up display is pressed and held for more than 10 seconds. When the 
+first test function is displayed, other test functions can be activated by briefly pressing the 
+button. 
+
+Enabling and disabling the test functions 
+
+Some test functions are not freely accessible, but rather have to be enabled. 
+
+Enabling is only possible in the test function "Enable". 
+
+An Enabling is effected by entering the sum of the last 5 digits of the vehicle identifica¬ 
+tion number. 
+
+Test functions are disabled again when they are ended. 
+
+A test function is, e.g. the system test, which comprises the following sequence: 
+
+• The projection display cover panel is folded out of the beam. 
+
+• The light source lights up with maximum brightness. 
+
+• A series of test patterns appears in the head-up display to check for optical errors. 
+The test patterns make it possible to test readability (focus) and color reproduction. 
+
+Test patterns contain: Lines, colors, characters and symbols 
+
+• The light source is deactivated. 
+
+• The projection display cover panel is folded into of the beam. 
+
+16 
+
+HUD 
+
+
+
+The test functions are terminated by the following conditions: 
+
+• Terminal R OFF 
+
+• Button pressed for longer than 2 seconds 
+
+• Test function "Reset" called up 
+
+Replace Windshield 
+
+Important: A special windshield is needed for the head-up display! 
+
+When changing the windshield, please note that vehicles eguipped with FIUD reguire a 
+special windshield. 
+
+This windshield is marked with the letters "HUD" at the bottom right edge. 
+
+Replace Rain/Light Sensor 
+
+Important: When replacing the rain/light sensor, use only the rain/light sensor for the 
+head-up display! 
+
+The head-up display reguires a special rain/light sensor so that the display brightness can 
+be adjusted optimally. 
+
+Replacing Head-Up Display 
+
+A faulty HUD must be completely replaced. A new HUD must be adjusted once it has 
+been installed. The CID must be removed for this adjustment work. 
+
+This adjustment is performed at a screw on the supporting tube. This screw incorporates 
+an eccentric which serves to adjust the angle of the HUD in relation to the windshield. 
+
+A special tool is reguired for adjustment. 
+
+
+17 
+
+HUD 
+
+
+
+Setting Head-Up Display (Adjustment) 
+
+There is a 2-piece adjustment tool (62 11 20) 
+for setting the head-up display. 
+
+62 11 20 consists of: 
+
+1. Projection gauge (62 1121) 
+
+2. Adjustment spanner (62 11 22) 
+
+Note: The central information display must be 
+removed to adjust the head-up display. 
+
+To access the head-up display adjusting 
+screw with the adjustment tool, the CID must 
+be removed. 
+
+Access to the flexible shaft is also only possi¬ 
+ble once the CID has been removed. 
+
+The projection gauge is engaged on the retainers of the sun visors. 
+
+With the DISplus orGT-1, the test pattern for setting is called up and projected by the 
+projection display through the windshield and onto the scale of the projection gauge. 
+
+1. Screw for height adjustment 
+
+2. Flexible shaft 
+
+
+
+
+The head-up display can only be adjusted vertically using the adjustment spanner on the 
+adjusting screw. 
+
+If the projected image is not level, this can be corrected by manually turning the projec¬ 
+tion display with the flexible shaft (as of 12/2003). 
+
+Important. Rotate the flexible shaft in a clockwise direction only! 
+
+Rotate the flexible shaft in a clockwise direction only, as otherwise the display adjustment 
+may break. 
+
+
+18 
+
+HUD 
+
+
+
+
+
+Image Defects 
+
+Incorrect installation of the HUD or of the windshield may result in faulty HUD projections. 
+
+The incidence of light onto the windshield or into the HUD in an inconvenient situation 
+causes the image to fade. Excessive heat in the HUD will also cause the image to fade. 
+
+
+
+
+HUD image showing distortion for improper 
+installation or adjustment 
+
+
+* I FRANKFURTER 
+
+> | FRANKFURTER 
+
+/ Irin§ 
+
+f Iring 
+
+1 Df00m 
+
+1 D500m 
+
+160 ^ 'r 
+
+160 km/h / \ N 
+
+
+HUD image showing “double image” from incorrect “Normal” HUD image 
+
+windshield or incorrect windshield installation 
+
+
+
+
+
+03107_03 
+
+HUD image showing excessive heat or incidental light 
+
+
+19 
+
+HUD 
+
+
+
+
+
+
+
+
+^j ji Classroom Exercise - Review Questions 
+
+1. What information is displayed on HUD? 
+
+
+2. What vehicles are currently available with HUD? 
+
+
+3. What are the three main components of the HUD system? 
+
+
+4. What is different about the RLS in HUD equipped vehicles? 
+
+
+5. What special tools are needed to make adjustments to HUD? 
+
+
+20 
+
+E63/64 HUD 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workshop Exercise - HUD Adjustment 
+
+
+Using an instructor designated vehicle, perform the following adjustment procedures 
+on the Head-up Display (HUD). Using Web TIS access the repair instructions for the 
+HUD adjustment. 
+
+Access the HUD test functions. 
+
+Describe the method/pathway for accessing the HUD test functions: 
+
+
+Activate the System Test. 
+
+What is the access number for the tests (sum of VIN)? 
+
+
+What can be found in the system tests? 
+
+
+How can the correct windshield be identified? 
+
+
+Using the DISplus/GT 1, perform a short test on the HUD. Perform the HUD adjust¬ 
+ments as specified by the repair instructions. 
+
+Note: Do not activate longer than 30 minutes to avoid overheating of the HUD! 
+Deactivate Test Picture as soon as the adjustment is complete. 
+
+What component(s) must be removed for HUD adjustment? 
+
+
+What special tools are needed for the HUD adjustment? 
+
+
+How many adjustments are possible on the HUD? 
+
+
+21 
+
+HUD 
+
+
+

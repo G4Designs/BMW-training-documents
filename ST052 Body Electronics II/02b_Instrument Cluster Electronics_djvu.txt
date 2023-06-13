@@ -1,0 +1,2842 @@
+Table of Contents 
+
+
+Instrument Cluster Electronics 
+
+Subject Page 
+
+Purpose of the System .3 
+
+Components.4 
+
+Indicator Lamps .4 
+
+LC Displays.4 
+
+Analog Instruments.5 
+
+Principle of Operation .8 
+
+Dynamic Digital Inputs .8 
+
+Distance Signal (Road Speed) .8 
+
+Engine Speed Signal .9 
+
+Injection Signal .9 
+
+Transmission Interface.9 
+
+Dimmer Signal.9 
+
+Analog Input Signals.10 
+
+Battery Voltage .10 
+
+Fuel Tank Level.10 
+
+Photo Transistor .10 
+
+Coolant Temperature.10 
+
+Outside Temperature Sensor.10 
+
+Digital Input Signals.11 
+
+Steering Column Switch.11 
+
+Brake Pad Wear Sensors.11 
+
+Oil Pressure Switch .11 
+
+Parking Brake Switch.11 
+
+Trip Odometer Reset.11 
+
+Power Supply .11 
+
+Output Signals.12 
+
+Redundant Data Storage .13 
+
+BCTest Functions (IKE E38, E39, E53).14 
+
+Check Control.18 
+
+Check Control Priority Groups .19 
+
+CC Display Procedures .20 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument Cluster Electronics (IKE) 
+
+Model: E38, E39, E53 
+
+
+Production: All from start of production. 
+
+
+
+After completion of this module you will be able to: 
+
+• Understand IKE operation 
+
+• Recognize production changes to IKE 
+
+• Understand IKE gateway function 
+
+• Understand inputs and outputs of the IKE 
+
+• Understand how redundant data is stored. 
+
+
+2 
+
+Instrument Cluster Electronics 
+
+
+
+
+Purpose of the System 
+
+
+The instrument cluster is the main driver information display unit. The instrument cluster 
+is made up of the IKE and a display unit. This type of cluster is known as the 
+“high version”. 
+
+The “high version” cluster is used on the E38 as a standard feature and the E39 and E53 
+as an option. 
+
+
+
+The instrument cluster incorporates the five familiar analog gauges along with indicator 
+lights, warning lights and Liquid Crystal Displays. 
+
+
+When introduced, the IKE was mounted externally on the cluster and was replaced as a 
+separate part. The IKE was connected to the cluster via a 46-pin ribbon cable. The 
+external IKE was eliminated in vehicles from 9/97 and the IKE is now integrated into the 
+cluster housing. If the early version requires replacement the integrated IKE will replace 
+the earlier version. 
+
+
+The IKE functions as a gateway between the 
+D, I and K-Busses. The CAN bus was also 
+added from 9/97. 
+
+The IKE contains all of the processing elec¬ 
+tronics for the Instrument Cluster and On- 
+Board Computer. The Instrument Cluster is 
+merely a display unit and performs no process¬ 
+ing. On Board Computer data can be dis¬ 
+played in the MID or the matrix display in the 
+cluster. 
+
+
+46-pin Ribbon Cable 
+
+
+
+High Cluster Early Version to 9/97 
+
+
+There is also an EEPROM in the IKE for stor¬ 
+age of the Central Coding Key (ZCS). 
+
+
+3 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Components 
+
+Although there a no serviceable parts in the instrument cluster (except bulbs), there are 
+numerous features which make up the instrument cluster. Currently, the IKE is integrated 
+into the cluster housing and none of the gauges or LCD displays are replaceable. When 
+the cluster or IKE needs replacement, the entire cluster must be replaced. 
+
+Indicator Lamps 
+
+
+All the indicator/warning lights are LEDs and not replaceable. Critical warning indicators 
+use two LEDs for a safety margin. There are five conventional bulbs for the back lighting 
+of the LCD which can be replaced if necessary. 
+
+LC Displays 
+
+The LC displays are in the lower portion of the instrument cluster. They displays are used 
+to make the driver aware of important information such as check control messages, service 
+intervals, outside temperature, transmission range etc. 
+
+The LCD provides: 
+
+
+• 6 digit total mileage 
+
+• 4 digit trip mileage 
+
+• Manipulation DOT 
+
+• Outside temperature display 
+
+
+20 digit read-out with reminder arrows 
+Service Interval Indicator 
+Automatic transmission selector position 
+Automatic transmission driving program 
+
+
+(□□□□□ — ll 
+
+
+OIL SERVICE 
+
+L. 
+
+INSPECTION 
+
+
+12 3H56 ""'"222.H ‘I^O'F j|PRFIDS32 
+
+► 20 DIGIT READOUT ◄ ! D 
+
+
+When KLR is switched on, mileage and temperature are displayed. All displays are illumi¬ 
+nated from KL15. The back lighting intensity of the LCD’s is dependent on available light 
+and is controlled by a photo-transistor in the lower left corner of the cluster. When the park¬ 
+ing lights are switched on, the dash mounted dimmer wheel controls the intensity of the 
+back lighting. 
+
+Service Interval Indicator (SIA) 
+
+The Service Interval Indicator up to 96 models uses the SIA II processing as in the past 
+models. The models from 96 uses the SIA III processing which uses the miles traveled 
+and the “ti” signal to calculate service intervals. The reset of Service Indicator is carried 
+out with the reset tool on early models up to 9/00. Later models (from 9/00) are reset 
+through the instrument cluster test functions (reset mode). 
+
+4 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+Total Mileage/Trip Mileage 
+
+Mileage can be displayed with the key off for 25 seconds if the trip meter button is pressed. 
+Total mileage is stored in non-volatile memories of the IKE and LM to protect against loss. 
+
+Automatic Transmission Selector Position/Driving Program 
+Up to 9/97- The selector lever position and driving program are signaled to the IKE from 
+the EGS control module over a single wire circuit. The only driving program indicator in the 
+cluster on US/CDN cars will be the “M”. 
+
+From 9/97- The selector lever position and driving program are sent from the EGS control 
+module to the IKE via the CAN-Bus. 
+
+
+
+
+I 
+
+
+ONE WAY DATA SIGNAL 
+
+- Selector Position 
+
+- Program Indication 
+
+- Fault Lamp/Matrix display 
+
+
+Analog Instruments 
+
+
+Analog instruments are controlled by the IKE from signals it receives over separate inputs 
+or by data received on the CAN-Bus. 
+
+The needle of the coolant temperature gauge is centered if coolant temperature is 
+between 75°C-110°C. Early models received temperature signals from a dual NTC 
+sensor. Later models obtained coolant temperature from CAN. 
+
+The fuel economy indicator returns to its starting point when road speed is reduced to 
+5 mph and doesn’t move again until road speed is above 8 mph. 
+
+Certain indicator/warning lights are illuminated momentarily when KL15 is switched on as 
+a pre-drive check. The indicators will switch off after 2 seconds or within 1 second after 
+the engine starts. 
+
+
+5 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E38 IKE l-P-0 Chart (as introduced to 9/97) 
+
+
+
+KLR 
+
+
+KL 15 
+
+
+KL 50 
+
+
+FUEL LEVEL SENSOR 1 
++ 
+
+
+
+
+ENGINE COOLANT 
+TEMP 
+
+ENGINE OIL TEMP 
+
+
+S.l. RESET 
+
+
+AIR 
+
+
+
+AMBIENT AIR TEMP 
+INSTRUMENT PANEL BUTTON 
+
+
+
+CHECK CONTROL 
+BUTTON 
+
+
+PHOTO TRANSISTOR VARIED DC SIG. 
+
+
+
+BC STALK CONTROL 
+
+
+LM KL 58g 
+
+
+Ti 
+
+
+TD 
+
+
+ONE WAY DATA SIG. 
+
+BRAKE PAD 
+
+
+
+
+
+
+WEAR 
+
+SENSORS 
+
+
+
+
+LEFT REAR 
+WHEEL SPEED 
+SENSOR 
+
+
+
+ABS 
+
+
+
+ASC 
+
+
+MRS 
+
+
+CHECK ENGINE (DME) 
+
+
+CHARGING (FROM ALTERNATOR) 
+
+
+ENGINE OIL PRESSURE 
+
+
+GR II (Cruise Control) ON 
+
+
+PARKING BRAKE ON 
+
+
+BRAKE FLUID LEVEL 
+
+
+46 PIN 
+
+RIBBON 
+
+CONNECTOR 
+
+
+S2 - SEPARATE 
+CONNECTOR FOR 
+INDICATOR 
+CONTROL 
+
+
+
+
+(AE) Instrument Cluster 
+
+- Gauge Drivers 
+
+- LED Drivers 
+
+- LCD Drivers 
+
+
+6 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E38 IKE l-P-0 Chart (from to 9/97) 
+
+
+KLR 
+
+
+
+
+KL15 
+
+
+KL 50 
+
+
+FUELLEVELSENSOR 1 
++ 
+
+
+SENSOR2 
+
+
+
+
+ENGINE OIL PRESSURE 
+
+
+S.l. RESET 
+
+
+AIR 
+
+
+
+AMBIENTAIR TEMP 
+INSTRUMENTPANEL BUTTON 
+
+
+
+CHECKCONTROL 
+BUTTON 
+
+
+PHOTOTRANSISTORVARIED DC SIG. 
+
+
+
+BC STALK CONTROL 
+
+
+PARKING BRAKE ON 
+
+
+
+
+
+
+
+BRAKE PAD 
+
+
+nruiTL^ 
+
+
+WEAR 
+
+SENSORS 
+
+
+ruum*. 
+
+
+LEFTREAR 
+
+WHEELSPEED 
+
+SENSOR 
+
+
+
+DIAGNOSIS BUS 
+(RXD & TXD) 
+
+
+
+BUS 
+
+
+
+
+K BUS 
+
+
+K 
+
+
+CAN BUS 
+
+
+rmnn*. 
+
+
+SPEED SIGNAL "A" 
+
+
+GONG 
+
+
+
+CAN TERMINALEND 
+
+
+7 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principle of Operation 
+
+
+Information is received and processed by the IKE. This information (data) is sent to the 
+cluster via the following types of inputs: 
+
+
+• Dynamic digital inputs - which consist of signals with a variable duty cycle or fre¬ 
+quency. 
+
+• Digital inputs - which are on/off type signals. These are usually ground inputs from 
+control units used to activate warning lamps. 
+
+• Analog inputs - which are variable voltage signals. Examples of analog signals bat¬ 
+tery voltage, fuel tank sending units and temperature sensors. 
+
+
+Bus signals - Such as I, K, D and CAN-Bus. The CAN-Bus replaced some of the 
+above signal inputs from 9/97. 
+
+
+Example of Dynamic Digital Inputs 
+
+(before 9/97) 
+
+
+
+
+rmrui 
+
+
+LEFT REAR 
+WHEEL SPEED 
+SENSOR 
+
+
+r~ u ~ 
+
+
+
+
+I n 
+
+
+
+
+
+Ti 
+
+
+td 
+
+
+
+ONE WAY DATA SIGNAL 
+
+- Selector position 
+
+- Program 
+
+- Fault Lamp 
+
+
+< 
+
+z 
+
+0 
+
+CO 
+
+0 
+
+
+Q 
+
+I- 
+
+I 
+
+0 
+
+l 
+
+z 
+
+0 
+
+< 
+
+m 
+
+
+A 
+
+
+t 
+
+
+CO 
+
+3 
+
+CO 
+
+z 
+
+
+- LCM 
+
+
+Dynamic Digital Inputs 
+
+
+Distance Signal (Road Speed) 
+
+Up to 9/97 - This information is supplied to the IKE by the ABS/ASC+T or DSC control 
+module with a square-wave signal. Pulses from the left-rear wheel speed hall sensor are 
+used to produce this dynamic digital signal. The IKE processes this for the cluster display 
+and provides a speed signal output on the I / K-Busses. 
+
+From 9/97 - The left rear wheel speed signal is sent by the DSC module to the IKE via 
+the CAN-Bus. 
+
+8 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engine Speed Signal 
+
+Up to 9/97 - The TD signal is produced by the DME and sent to the IKE. Excessive 
+engine speed events are stored in the IKE and can be read out through DIS. Engine 
+speed is transmitted over the l/K-Buses. 
+
+From 9/97 - The TD signal is produced by the DME and sent to the IKE via the CAN-Bus. 
+
+Injection Signal 
+
+Up to 9/97 - The DME supplies the signal (ti) via a dedicated signal line. The IKE 
+processes this signal for for fuel consumption evaluation. 
+
+From 9/97 - The DME send the ti signal to the IKE via the CAN-Bus. 
+
+Note: On vehicles from 9/97 the wiring for the ti and TD signal may still be pre¬ 
+sent in the wiring harness but the IKE is programmed to only accept the 
+signals from the CAN-Bus. 
+
+Transmission Interface 
+
+Up to 9/97 - This single-wire is a serial one-way interface that provides the IKE with 
+selector lever position, driving program and the fault message. This information is also 
+sent to other control units over the l/K-Buses. 
+
+
+
+
+ONE WAY DATA SIGNAL 
+
+- Selector Position 
+
+- Program Indication 
+
+- Fault Lamp/Matrix display 
+
+
+
+
+From 9/97 - The IKE receives the selector lever position, driving program and the fault 
+message from the CAN-Bus. 
+
+Dimmer Signal 
+
+This is a pulse-width modulated signal from terminal 58, of the Lamp Control Module. It 
+is used to control back lighting of instruments and the LCD and is also transmitted to the 
+l/K-Buses. 
+
+
+9 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analog Input Signals 
+
+
+
+i n i i 
+
+
+
+Battery Voltage 
+
+The system voltage is also monitored by the IKE and sets a fault if it exceeds 16 volts. 
+
+Fuel Tank Level 
+
+Two lever action sensors are wired in parallel to the IKE. The two variable resistor inputs 
+are processed by the IKE and used to operate the fuel gauge. The low level contact has 
+been eliminated. Therefore, the reserve light is controlled by the IKE from the sensor 
+inputs. 
+
+Photo Transistor 
+
+A variable voltage signal, that is dependent on ambient light, is used for back lighting of 
+the LC display. 
+
+Coolant Temperature 
+
+A NTC sensor is used by the IKE to measure coolant temperature. The CCM also 
+receives this information over the l-BUS. 
+
+Outside Temperature Sensor 
+
+A NTC sensor is used by the IKE to measure outside temperature for display in the clus¬ 
+ter. Other systems that require outside temperature receive this information on the l/K 
+Buses. 
+
+10 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Digital Input Signals 
+
+
+
+Steering Column Switch 
+
+As in previous systems, this switch is used to call up BC functions into the cluster matrix. 
+
+Brake Pad Wear Sensors 
+
+The same system that has been used in earlier models is carried over into the E38. 
+
+Oil Pressure Switch 
+
+This status is transmitted to the CCM over the l-BUS. The CCM compares the switch 
+status with engine speed to evaluate oil pressure. IKE can store faults with the oil pres¬ 
+sure switch and circuit. 
+
+Parking Brake Switch 
+
+Switch status is transmitted to the CCM for evaluation. 
+
+Trip Odometer Reset 
+
+The left button on the cluster is used to reset the trip mileage if the key is on and display 
+mileage if the key is off. 
+
+Power Supply 
+
+The normal power-up and KL 50 inputs to the IKE processor: 
+
+• Terminal R 
+
+• Terminal 15 
+
+• Terminal 50 
+
+Various functions are dependent on the ignition switch positions. 
+
+11 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Output Signals 
+
+
+
+K-BUS: 
+
+LCM 
+
+IHKA 
+
+GM 
+
+
+SPEED SIGNAL "A" 
+
+GONG 
+
+
+
+LOW FUEL LEVEL 
+(MISFIRE DETECTION) 
+
+
+
+
+Speed Signal “A” - The vehicle speed is made available to control modules that require 
+a precise speed value. The ABS/ASC+T wheel speed input is reduced by a factor of 5:1 
+to produce a speed signal “A” that these control modules can process as an input. 
+
+Gong Outputs T1, T2, T3 - the gong outputs are the same as E32. 
+
+• T1 - Activates memo (hourly reminder). 
+
+
+• T2 - Activates the tone for the freeze warning. 
+
+
+• T3 - Activates the tone for check control functions. 
+
+
+• T1-T2 - Activated simultaneously produces the tone for code and limit functions. 
+
+
+12 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Redundant Data Storage 
+
+
+In previous models, total odometer mileage 
+ad service interval data was stored on on a 
+coding plug. With the introduction of the 
+E38, electronic data is now stored redun¬ 
+dantly in the IKE and LM (LCM). A coding 
+plug is no longer necessary, due to the 
+redundant storage. 
+
+This specific information is: 
+
+• Vehicle ID number 
+
+• Total mileage 
+
+• Service Interval information 
+
+
+
+To guard against the loss of specific vehicle information, it is stored in both the IKE and 
+the lamp module (LCM). 
+
+This data is compared each time KL15 is switched on. If the data check reveals a mis¬ 
+match, the manipulation DOT is illuminated. 
+
+Because of this redundant storage feature, the following points must be noted: 
+
+1. If the vehicle ID number is not the same in both modules, the manipulation DOT is 
+activated and there is no data exchange between the IKE and LCM. All functions of 
+both modules will continue to work (car can be test driven). 
+
+2. Data is only accepted from the LCM by the IKE if the ID number is the same and the 
+IKE is at 0 miles. 
+
+3. The vehicle ID number is input into a module by way of the DIS tester and only 
+accepted if the mileage recorder in the module is at 0 miles. 
+
+4. The LCM mileage data can only be over written with a higher mileage and is updat¬ 
+ed every 60 miles (100 km). 
+
+5. If the distance differs by more than 120 miles (200 km) and the ID numbers are the 
+same, the IKE stores a data transfer fault. 
+
+6. If the 1-Bus link to the LCM faults, the IKE stores this fault and continues to record 
+the mileage driven.The condition that controls the redundant date exchange and 
+allows only new components to be used as replacement. 
+
+If the IKE from another car is used fortesting purposes, test driving the car should be avoid¬ 
+ed if possible. If the vehicle is test driven, the IKE will record mileage and this mileage will 
+be added to total mileage of the original car. 
+
+Note: When the IKE and LCM require replacement, do not replace at the same 
+time. Perform coding and data transfer procedures after replacing each 
+of the components individually. Failure to do this will result in an odome¬ 
+ter reading of 0 miles. 
+
+13 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BC Test Functions (IKE E38, E39, E53) 
+
+The BC test functions are used to check inputs, outputs and functions of the IKE. There 
+are 21 possible test steps. With the exception ofTest #1„ #2, and #19, all other tests 
+are locked but can be released through test #19. 
+
+The test functions are displayed in the instrument cluster. Test number 01 is called up by 
+pressing the CC button for 10 sec. The same activation can be initiated by pressing and 
+holding the CC button while switching on the ignition. 
+
+
+
+
+123HS6 
+
+
+
+
+♦12.0'F 
+
+
+^ TEST NUMBER 01 4 
+
+
+Each time the CC button is pressed, the next test number is displayed. 
+
+After selecting a test number, the information from the test is posted by pressing the trip 
+odometer reset button. Several tests have sub-functions which are called up by pressing 
+the reset button while in the test. 
+
+Unlocking test functions: 
+
+• Call up test #19 - This is automatically done if attempting to enter a locked test 
+
+• Using the trip meter reset button enter by pressing the sum of the last 5 digits of the 
+chassis number, example: VIN GB11111,-1+1+1+1+1 =5, press the reset button 5 
+times. 
+
+• Confirm entry by pressing the CC button. 
+
+The test function can be cancelled by switching the ignition off or pressing the CC button 
+for approximately 2 seconds. 
+
+14 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test No. 01 
+
+The IKE supplies the following data, which appears on the 20 digit cluster matrix display: 
+
+• Vehicle Identification number = FGSTNR: GB11111 
+
+• K value = K: 4739 
+
+• BMW part number: Bmwtnr. 13809873 
+
+• Encoding, diagnosis and bus index: Cl: 01 Di: 01 bi:01 
+
+• IKE production date: dat: 52/94 
+
+• HW/SW number: hw: 40sw:80 
+
+• Motor: zyl:8 m:6 s:400 
+
+• ROM Date: ROM; 23.08.96 
+
+Test No. 02 
+
+The following displays and instruments are activated (system test): 
+
+• Speedometer, tachometer, coolant temp gauge, fuel gauge. 
+
+• LC displays (segment test) 
+
+• Indicators and Warning Lights 
+
+This test can only be called up with the vehicle at a standstill, 
+engine turned off, with KL R or 15 switched on. 
+
+Test No. 03 
+
+The following SI data can be displayed: 
+
+• SI km since last reset: si km: 1250 
+
+• SI automatic transmission kilometers: SI-GETR - km 23300 
+
+Test No. 04 
+
+Momentary Fuel Consumption is displayed: 
+
+• VBR: 0.0 LI 00km 
+VBR: 0.0 l/h 
+
+Test No. 05 
+
+This function shows the range calculation data: 
+
+• Range at measured fuel consumption: RW-vbr: 19.5 1/100 km 
+
+
+15 
+
+Instrument Cluster Electronics 
+
+
+
+
+Test No. 06 
+
+In this function, the fuel tank volume for the right and left half of the fuel tank and the cur¬ 
+rent total tank volume are shown in the Instrument Cluster matrix display. 
+
+This enables the function of the float level sensors to be checked. 
+
+Display: tnk 29.5/34.2/63.7L 
+
+TNKANZ 60.2L PHASE 1 
+
+The first numerical value in line 1 shows the contents of the left half of the fuel tank, the 
+second, the volume of the right half of the tank. The third value is the current total value. 
+If a level sensor is defective, it’s value reverts to 0. 
+
+Line 2 shows the current average value (displayed value) for the contents of the fuel tank. 
+The numerical value after the word phase refers to the valid computed number. 
+
+Phase 1 : Regular computing method by way of sensors (both sensors OK). 
+
+Phase 2: Calculation in progress from TKVA signal (sensor faulted) 
+
+Phase 3: Fuel tank contents cannot be computed, fuel gauge reads 0 (at least one 
+
+sensor is faulted). 
+
+Test No. 07 
+
+Momentary coolant temperature, ktmp: 076°C 
+Momentary engine speed: N:5238 u/min 
+
+Test No. 08 
+
+Momentary Road Speed V: 085 KM/H 
+
+Test No. 09 
+
+Battery voltage (terminal 30) Ub: 12.5 v 
+
+Test No. 10 
+
+Preset national market codes list. The number is encoded in the IKE with the central 
+code key 
+
+Display: usa 02 
+
+Test No. 11 
+
+The unit code is entered in the EEPROM by the DIS after IKE has been installed and 
+can be read out by means of test function 11. 
+
+Test No. 12 
+
+This test function shows the data for computing the vehicle’s estimated time of arrival. 
+
+• Average speed for calculating arrival time: vank: 029.7 km/h 
+
+• Current arrival time: ank: 13.04 
+16 
+
+Instrument Cluster Electronics 
+
+
+
+Test No. 13 
+
+This test function enables the gong to be tested, Display: gong? 
+
+• After confirming by pressing the trip odometer reset button, the four audible 
+warning signals are triggered off once in succession. 
+
+• GongTI (Memo signal) 2.0s 
+
+• Gong T2 (Outside temperature) 1.5 s. 
+
+• Gongs T1 and T2 (LIMIT/CODE warning) 1.5 s 
+
+• Gong T3 (Check Control Gong) 
+
+Test No. 14 
+
+This function shows the contents of the fault memory in a hexadecimal code. 
+
+Display: DIAG: D7 81 033 
+
+Test No. 15 
+
+Not assigned to any test function. 
+
+Test No. 19 
+
+Procedure for unlocking the BC test functions. 
+
+Test No. 20 
+
+BC consumption value correction factor. This test adjusts the correction factor for the 
+consumption value displayed in the MID. The production line installed value is 1000. 
+
+The value ranges from 750 to 1250. 
+
+To adjust the correction factor press the trip meter reset button once for a reduction of 1. 
+For each press of the reset button the value decreases by 1 until it reaches 750. After 
+750 the number will reset to 1250 and begin to count down again. 
+
+To accept the set correction factor press the CC button. 
+
+The consumption correction factor (VK) is calculated from the actual amount of con¬ 
+sumed fuel (VBR 1ST) and the displayed value (VBR ANZ): 
+
+VK = (Actual MPG / Displayed MPG) X 1000. 
+
+Test No. 21 
+
+This function resets the software at the IKE. This reset is necessary after replacing for 
+example one of the fuel tank level sensors. Otherwise the damping function in the soft¬ 
+ware will prevent the actual value from being shown only after a long time duration. 
+
+Display: reset ? 
+
+If the test is terminated without a software reset, the ignition switch must be turned back 
+to “0” or the CC button pressed. 
+
+17 
+
+Instrument Cluster Electronics 
+
+
+
+Check Control 
+
+
+When the check control system was introduced on the E38, the Check Control Module 
+(CCM) was a self-contained unit up until 9/95 production. E38 models from 9/95 
+production used a check control module which was integrated in the LCM. 
+
+
+The E39 and E53 vehicles used the integrated 
+CCM from the start of production. 
+
+The early version CCM is located in the electri¬ 
+cal carrier in front of the glove box. 
+
+This module collects and evaluates all check 
+control data, including messages from the 
+Lamp Control Module (LM or LCM). 
+
+When the driver needs to be informed of a 
+problem, the CCM signals the IKE over the 
+l-BUS. The IKE will then post the message in 
+the instrument cluster matrix display. 
+
+
+ABS/ASC+T 
+
+
+
+SPLICE BLOCK 
+
+CCM 
+RELAYS 
+
+
+
+
+/•p 
+
+jV A - 
+
+=N A N 
+
+1# 
+
+
+1 
+
+1 1 
+
+itv M 
+
+1 1 
+
+SLMI 
+
+
+
+GM III 
+
+
+CCM 
+
+
+
+
+
+
+
+► 
+
+
+)UCC 
+J I J u 
+
+
+u c 
+
+I I L 
+
+
+miles! “| ”| 
+
+• ICC 
+
+
+1/ 
+11 
+
+
+CO MTRO 
+
+
+
+OK 
+
+
+◄ 
+
+
+The text and operation of the E38 check control has been changed to improve message 
+interpretation and reliability, for example: 
+
+• Gong Operation Pre-E38 - Gong with every new display 
+
+E38 - Only activated for first display in group 
+Advantage: Reduce driver’s irritation. 
+
+• Display Pre-E38 - “Owner’s Handbook” used repeatedly 
+
+E38 - “Owner’s Handbook” phrase deleted. Actual text for 
+situation with recommended action. 
+
+Advantage: Driver can assess situation without having to 
+refer to the Owner’s Manual. 
+
+18 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Check Control Priority Groups 
+
+All the warning messages fall into one of four priority groups. 
+
+Priority Group PI 
+
+Faults that directly affect the safety or operation of the car and the drive should be 
+addressed immediately. The text is displayed with a flashing arrow on the right and left 
+sides. 
+
+
+
+Priority Group P2 
+
+Faults that do not affect vehicle’s safety or operation directly and the driver need not 
+respond to immediately. These messages are displayed only once when the fault occurs 
+and have to be called up again with the CC button. 
+
+
+
+Priority Group P3 
+
+These faults are shown when the key is turned on before a trip. The faults in P3 are 
+mainly fluid levels which are not assigned to P2. The lights on reminder is a Priority 3 
+item. With the key in position 0 with the light switch On initiates this reminder. 
+
+
+
+► ■ ■ ■■■■■ ■■■ ■■■ ■ ■■■ ■■■ ■ ■ ■■■■■ ■■■ ■■■ ■ ■ A 
+
+m m u ■■■■■ ■■■■■■■■ ■■■■ ^ 
+
+b a « ■ h n ■ ■ ■■■■■■■■ ■ ■ ■ ■ 
+
+■ ■ ■■■■■ ■ ■ ■■■ ■■■■■ ■■■ ■■■ ■ ■ ■ ■■■ ■■■ ■ ■ ^ 
+
+
+Special Warnings 
+
+These are top priority messages and won’t be overridden when displayed. Seat belt/igni¬ 
+tion key in lock with door open are some of these messages. 
+
+
+
+When the key is switched off, all registered check control faults are displayed.The lan¬ 
+guage of the check control messages is set with the central coding key.. 
+
+
+19 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CC Display Procedures 
+
+
+Special Displays 
+
+These messages will overwrite all other displays. If more than one special display request 
+is received by the CCM, the one with the highest priority will be delivered. 
+
+PI Group 
+
+PI displays remain posted as long as the fault is present. If several PI warnings have 
+been received by the CCM, they are displayed one after another in 3 second intervals. 
+
+P2 and P3 Groups 
+
+The messages in both groups are displayed when KL15 is switched on for a maximum of 
+twenty three (23) seconds and P3 messages are not displayed after the trip is started. 
+
+P2 and P3 warning that have been registered by the CCM can be recalled during the trip 
+by pressing the CC button. 
+
+Reminder Symbol “> < “ 
+
+The “+” symbol is no longer used. If more than one PI check control message is pre¬ 
+sent, the reminder symbol “> < “ is illuminated permanently. If a P2 or P3 message is 
+extinguished, the reminder symbol informs the driver that a CC message has been post¬ 
+ed. The symbol will flash when a new PI warning is recognized. 
+
+CC Button 
+
+Check control messages can be recalled, for up to 3 minutes, after the ignition is 
+switched off using the CC button. 
+
+The highest priority message is displayed first with following messages in a priority 
+descending order. After the lowest message has been displayed, pressing the CC button 
+will clear the matrix. 
+
+“Check Control OK” is posted when the CC button is pressed and there are no warning 
+message present. 
+
+Steering Column Switch (LSS) 
+
+Pressing the steering column switch will clear 
+the matrix display if low priority messages are 
+being posted. This will allow the display to be 
+utilized for other information. 
+
+Gong 
+
+The warning gong is activated by the IKE 
+when the CCM sends the proper data over 
+the I Bus. The gong is activated only when 
+higher priority warnings are posted. 
+
+
+
+20 
+
+Instrument Cluster Electronics 
+
+
+
+Check Control Priority Chart 
+
+
+CCM DISPLAY 
+
+GONG 
+
+PRTY 
+
+SCOPE OF MONITOR 
+
+OPERATING CONDITIONS 
+
+
+
+
+Release Parking Brake 
+
+©V 
+
+Pi 
+
+Warning displayed above 3 MPH 
+
+Door open with ignition 
+key in position KL 15 
+
+
+P2 
+
+Warning displayed when a door is open or opened above 3 MPH. 
+
+Trunk Open 
+
+©V 
+
+P2 
+
+Warning displayed above 3 MPH when trunk opens or was left open prior to 
+pulling away. Displayed once only. 
+
+Stop! Engine oil pressure 
+
+©V 
+
+PI 
+
+Warning displayed oil pressure has fallen below safe level. 
+
+Coolant Temperature 
+
+©V 
+
+PI 
+
+Warning displayed when coolant rises above maximum temperature 
+
+Check Brake Lights 
+
+Check low-beam headlights 
+Check high-beam headlights 
+Check parking lights 
+
+Check front fog lights 
+
+Check license plate lights 
+
+©V 
+
+P2 
+
+The LM monitors certain vehicle lights and circuits. When a fault is detected 
+the CCM is notified to post a display. 
+
+Check brake pads 
+
+
+P2 
+
+Warning issued when brake pad wear limit is reached. 
+
+Lights on? 
+
+©Y 
+
+P3 
+
+Warning displayed when key is in position 0 if driver's door is opened with 
+light switch on. 
+
+Ignition key in lock 
+
+©Yr 
+
+S 
+
+Warning is displayed when key is left in ignition switch in position R or 0. 
+
+Please Fasten Seatbelt 
+
+©Y 
+
+S 
+
+Warning is displayed for a 6 second period after "Ignition on" with seatbelt 
+fastened or not. If seatbelt is fastened the intermittent gong is switched off. 
+
+Remote Battery 
+
+
+S 
+
+When remote key battery voltage drops below 4.5 volts 
+
+FLUID LEVELS 
+
+
+
+
+Check Brake Fluid 
+
+©Yr 
+
+PI 
+
+Warning is displayed when brake fluid is too low. 
+
+Check engine oil level 
+
+
+P2 
+
+Warning is displayed when the engine oil level is too low. The E38 is equipped 
+with a new electronic oil level sensor. (see E38 Complete Vehicle for function 
+and operational description). 
+
+Check coolant level 
+
+
+P2 
+
+Warning is displayed when coolant level is too low. The warning is only posted 
+when the ignition key is first turned on. 
+
+Add washer fluid 
+
+©Yr 
+
+P2 
+
+Warning is displayed when washer fluid level is low. This warning is displayed 
+at any time the level becomes low to provide an early warning 
+
+NOTE: The fluid level warnings are monitored in 25 second intervals. 
+
+This time interval prevents false displays from occuring due to bumpy roads, fluid sloshing, etc. 
+
+CONTROL SYSTEM FAULT DISPLAYS 
+
+
+Emergency transmission 
+operating program 
+
+©Y 
+
+P2 
+
+If a fault occurs in the AGS control system Check control displays the 
+message. The message is orriginated from the AGS CM to IKE over a one 
+way serial data line. From there IKE notifies the CCM over the 1 Bus. 
+
+EEPROM IKE 
+
+
+S 
+
+When IKE and LM data differ (for testing purposes). 
+
+
+21 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+1 . 
+
+
+Classroom Exercise - Review Questions 
+
+The IKE provides a “Gateway” between which bus systems? 
+
+
+
+2. What is meant by the integrated IKE? 
+
+
+3. What is the “one way” data signal? 
+
+
+4. How are the fuel tank sensors connected to the instrument cluster? How does this 
+differ from previous models (E36,E34 etc.) 
+
+
+22 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Exercise - Review Questions 
+
+What is the difference between the CCM and LCM? 
+
+
+What type of check control messages are considered priority 1 ? 
+
+
+Why should the IKE and LCM NOT be replaced at the same time? 
+
+
+What is the “correction factor” used for? 
+
+
+23 
+
+Instrument Cluster Electronics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

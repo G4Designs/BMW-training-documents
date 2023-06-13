@@ -1,0 +1,6927 @@
+Table of Contents 
+
+Coding, Individualization & Programming 
+
+Subject Page 
+
+Fundamentals of Coding and Programming.4 
+
+What is Coding?.4 
+
+What is Programming? .5 
+
+What is the Purpose of Coding and Programming?.6 
+
+Where is Data Stored in a Control Module?.8 
+
+EPROM (Electrically Programmable Read Only Memory) .8 
+
+EEPROM (Electrically Programmable Read Only Memory).9 
+
+What is needed to Code and Program? .9 
+
+Vehicle Coding Information.11 
+
+Introduction.11 
+
+ZCS Structure .12 
+
+ZCS Stored Location in Vehicle.14 
+
+Accessing ZCS Information Label .15 
+
+Vehicle Order.16 
+
+Control Modules Flash (EEPROM) Programming.20 
+
+Determination Process for DME EEPROM .20 
+
+Coding, Individualization & Programming.21 
+
+Introduction.21 
+
+Integration Levels.22 
+
+Measures Plan .23 
+
+Initial CIP Screen.24 
+
+CIP Main Selection Screen .25 
+
+Control Module Replacement Yes/No.26 
+
+CIP Functions - If No (Non MOST-Bus Vehicles with VO) .27 
+
+CIP Functions - If No (MOST-Bus Vehicles).29 
+
+Control Module Selection - Programming - Update Software.30 
+
+Control Module Selection - Programming - Special Measures.31 
+
+Retrofits.32 
+
+Management .34 
+
+Management - Reports.35 
+
+Management - Application - Test & Version.36 
+
+Vehicle.38 
+
+Vehicle - Vehicle Order .39 
+
+Vehicle - Initialization .40 
+
+
+Initial Print Date: 12/04 
+
+
+Revision Date: 05/06 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subject Page 
+
+Vehicle - Service Function .42 
+
+Vehicle - Complete Encoding .43 
+
+CIP Functions - If Yes.44 
+
+CKM - Individualization (Vehicle & Key Memory) .45 
+
+ZCS Coding Procedure .48 
+
+Coding Control Modules that Store the ZCS .48 
+
+Manual Input of ZCS Data .49 
+
+Automatic Coding Procedure.55 
+
+Retrofit .59 
+
+Conversion.59 
+
+
+
+
+
+
+
+
+
+
+
+
+Coding, Individualization & Programming (CIP) 
+
+Model: All 
+Production: All 
+
+
+
+After completion of this module you will be able to: 
+
+• Distinguish between Coding & Programming 
+
+• Understand the importance of Coding & Programming 
+
+• Understand where data is stored in a Control Module 
+
+• Understand the purpose of CIP and what it means 
+
+• Program/update installed modules 
+
+• Access retrofit functions 
+
+• Access Individualization functions 
+
+• Access ZCS functions 
+
+
+3 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+Fundamentals of Coding and Programming 
+
+
+What is Coding? 
+
+
+It is a process utilized by BMW, which groups system specific operating requirements 
+(Data) together and then assigns a label/code to each of these groups of data. The 
+various groups of data are all pre-loaded into system specific “codable” control modules, 
+along with a basic set of operating instructions (Program). 
+
+
+Types of operating requirements: 
+
+• Nominal values of device input signals (0.25V to 2.5V, 5W - 25W,...) 
+
+• Type of device input signal (PWM, square wave, analog ...) 
+
+• Operational parameters (device activation/deactivation time,...) 
+
+• Market specific operations (02 Sensors, Fuel Type, Emission Control,...) 
+
+• Country Specific Regulations (U.S., Canada, Japan, UK, ECE,...) 
+
+• Powertrain Configurations (Manual, Auto, Diesel,...) 
+
+
+BEFORE CODING 
+
+
+AFTER CODING 
+
+
+
+
+Coding allows a specific 
+set of data already present 
+in the module to be selected. 
+
+
+
+[ 
+
+
+The procedure of assigning one specifically labeled group of data to the operating 
+program of a specific control module/component is referred to as “coding”. 
+
+
+A “codable” control module has a basic operating program already installed along with 
+several specific variations of operating data. The coding process allows a specific set of 
+operating data to be assigned to the basic operating program of that module/component, 
+with respect to its specific application. 
+
+
+4 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Coding can be performed for some systems/components: 
+
+• Selecting customer specific system operational settings from a list of available fea¬ 
+tures (VKM) 
+
+• Automatically by selecting a specific coding process available via ZCS Coding or CIP 
+using the DISplus/GTI/SSS. 
+
+• By using a coded ground wire to a module. 
+
+• Determined at the factory. 
+
+Note: Codable control modules/components are system specific, which means 
+that not all control modules are codable. 
+
+What is Programming? 
+
+It is a process utilized by BMW to load application/system specific operating instructions 
+(Program) into a module/component which already has the systems operating require¬ 
+ments (Data) installed, plus it can be used as a means of updating data and operating 
+instructions previously installed in a control module. 
+
+
+BEFORE PROGRAMMING 
+
+
+AFTER PROGRAMMING 
+
+
+
+
+Programming loads control 
+functions instructions into 
+a specific control module. 
+
+
+
+Basic programmable control modules have a pre-defined set of operating data already 
+installed which allows the module to be fairly generic until a specific operational program 
+is installed. 
+
+Programming of system control modules is performed using a DISplus/GTI/SSS. 
+
+
+5 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note: Programmable control modules are system specific and not all control 
+modules are programmable using workshop equipment like the 
+DISplus,GT1 or SSS. The ability to program a module is limited to the 
+number of times it has already been programmed and the hardware 
+version of the control module itself. 
+
+What is the Purpose of Coding and Programming? 
+
+As a global manufacturer, BMW must design a large variety of control modules to meet 
+numerous vehicle requirements pertaining to issues such as: 
+
+• Country Specific Regulations (U.S., Canada, Japan, UK, ECE,...) 
+
+• Vehicle Equipment Level (Phone, Navigation, HiFi, IHKA, IHKR,...) 
+
+• Vehicle Powertrain Configurations (Manual, Auto,...) 
+
+• System Specific Operating Requirements (Nominal values, type of input signal,...) 
+
+By using Coding and/or Programming, the large variety of control modules needed can be 
+reduced to a smaller number of model specific hardware variations. 
+
+Codable control modules contain: 
+
+• A common operating program 
+
+• A large number/variety of specific operating data groups 
+
+In order to use this type of control module it must first be CODED to ensure that the 
+operating data specific to that vehicle/model application is used by the operating program 
+of the control module. 
+
+Programmable control modules contain: 
+
+• The required/specific operational data 
+
+• No operating program 
+
+In order to use this type of control module it must first be PROGRAMMED to ensure that 
+the operating program specific to the vehicle/model application is used. 
+
+Prior to the availability of Coding and Programming in the workshop this task could only 
+be performed at the factory. 
+
+Initially the factory installed Control Module(s) with a common operating program or data 
+into vehicles and as theses vehicles reached various points in the assembly process the 
+control modules were updated with the required operating data or program specific to 
+the application for that particular vehicle. Since replacement parts always need to be 
+available, parts inventory needed to contain all variations of preprogrammed control 
+modules installed in all varieties of vehicles that were manufactured. This was not a big 
+problem in the early years, when the variety/quantity of models was smaller. 
+
+
+6 
+
+Coding, Individualization & Programming 
+
+
+As the number of control modules and the complexity of the various systems installed 
+into vehicles increased, the number of modules that needed to be stored in parts invento¬ 
+ry began to increase as well. Eventually this led to the stocking of hundreds of different 
+control modules that were either pre-programmed or pre-coded for a specific application 
+and model, but only differed slightly in the way they were coded or programmed. 
+
+Pre-programmed and pre-coded control modules always needed to be available in the 
+event a control module failed once the vehicle left the factory floor, since this was the only 
+place programming & coding procedures could be performed. In order for repairs to be 
+made quickly, dealers were required to maintain a stock of several varieties of control 
+modules, since technicians could only remove the failed module and installed a new pre¬ 
+programmed or pre-coded module into the vehicle. 
+
+As a result of having to maintain a very large inventory of pre-programmed and pre-coded 
+control modules in parts inventory, it was decided to make coding and eventually pro¬ 
+gramming available in BMW workshops. 
+
+
+
+The following advantages have occurred since programming and coding can be per¬ 
+formed in the workshop: 
+
+• Fewer control module hardware versions are needed (only need basic control 
+modules) 
+
+• Lower parts and inventory costs 
+
+• Able to update software in a control module without having to replace the module 
+(Re-Code/ Re-Program to address service Measures) 
+
+• Ability to add special equipment features to existing control modules (DWA, Day 
+Time Running Lights,...) 
+
+• Customization of vehicle operation (Conversions, VKM, A/C,...) 
+
+
+7 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The means by which coding or programming information is provided to a control module 
+varies and is determined by the vehicle, model year and type of module(s) installed. 
+
+BMW currently uses the following methods to perform Coding or Programming: 
+
+• Coding Plug 
+
+• DME variant Coding 
+
+• Coding Code 
+
+• Central Coding Key (ZCS) or Vehicle Order (VO) 
+
+• EPROM Programming 
+
+• Flash Programming 
+
+• Vehicle and Key Memory (VKM) 
+
+Where is Data Stored in a Control Module? 
+
+
+The control modules used in our vehicles store data/information on one of the following: 
+
+• EPROM (Electrically Programmable Read Only Memory) 
+
+• EEPROM (Electrically Erasable Programmable Read Only Memory) 
+
+in essence these devices are similar to the hard drive of the PC (Personal Computer) that 
+many of us use daily to store the images and documents/files of information. 
+
+
+EPROM (Electrically Programmable Read Only Memory) 
+
+An EPROM is a computer memory chip that can be electrically programmed, however 
+this chip cannot be erased using normal means. 
+
+In order to erase data that is stored on the chip it must be removed from the device and 
+exposed to UV lighting for a specific time period. An EPROM has what is commonly 
+called a “window” on the top portion of the chip usually located underneath a protective 
+label, it is this area that must be exposed to UV light of a certain intensity for a specific 
+time period in order to erase the information stored on it. 
+
+
+BMW does not currently utilize EPROMS on current vehicles. 
+
+EPROM IN CONTROL MODULE 
+: 
+
+
+DME 
+
+
+1738735 000 
+
+
+UBAHJG314PG 
+
+
+
+
+1748645 
+
+
+
+
+
+
+I i I i I i li I i Ml i li li I i 11 lil ■ I 
+
+
+INJECTION TIME, •IGNITION TIMING, 
+■PURGE VALVE CONTROL MAP, 
+
+■A/C COMPRESSOR CONTROL, 
+■FUEL PUMP RELAY CONTROL, 
+
+■CAN COMMUNICATION LOGIC, 
+
+■ OPERATING PROGRAM 
+■ETC, ETC... 
+
+
+8 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EEPROM (Electrically Erasable Programmable Read Only Memory) 
+
+An EEPROM is a computer memory chip that can be electrically programmed and 
+electrically erased, thereby not requiring the chip to be removed from the module or 
+exposed to light. In general this chip is not easily removable from the device it is 
+installed into (it is usually soldered in its place. 
+
+Since the entire process of programming and erasing is done electronically this device 
+is commonly referred to as “Flash Programmable”. 
+
+During the programming process the following type of information may be loaded into 
+the control module depending on the specific application or update that needs to be 
+installed: 
+
+• Characteristic Maps (Ex. Ignition, Injection, Purge Control, DSC Regulation,...) 
+
+• Control Constants/ Operational Data 
+
+• Operational Program 
+
+• Control Module Identification Information (Ex. Hardware Number, Program Number, 
+Date of Modification,...) 
+
+At this moment, modules with EEPROMS can only be flash programmed (“flashed”), 
+can only 14 times total. If the module has to be programmed a 15 th time, it has to be 
+replaced. 
+
+What is needed to Code and Program? 
+
+In order to code or program a vehicle or control in the workshop, specific equipment and 
+special software is required such as a DISplus, GT1 and an SSS which must all be con¬ 
+nected to a network and have the must current version of CIP (Coding, Individualization & 
+Programming) installed. CIP is the software program that contains all the latest data and 
+program information to allow control modules to be updated to the latest level to address 
+customer concerns and implement service solutions. 
+
+With the release of CIP 14.0 and the implementation of Progman (see Progman section 
+for additional information) the DISplus and GT1 will only be capable of performing vehicle 
+diagnosis and activation/initiation of a Coding, Individualization or Programming task 
+through the SSS. A special program management tool (Progman) will only allow the 
+DISplus and GT1 to act as remote terminals to the SSS (regarding Coding, 
+Individualization & Programming), which means that the SSS will be the single supplier of 
+Coding, Individualization and Programming information to a vehicle and its respective 
+control modules. 
+
+
+9 
+
+Coding, Individualization & Programming 
+
+
+Review Questions 
+
+1. What happens when a control module is coded? 
+
+
+2. What happens when a control module is programmed? 
+
+
+3. What advantage is there by allowing workshops/centers to code and/or program 
+control modules? 
+
+
+4. What component(s) stores data in a control module? 
+
+
+10 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Coding Information 
+
+
+Introduction 
+
+As part of an ongoing process to reduce the need for country, model and option specific 
+control modules, BMW utilizes a multi digit vehicle coding structure referred to as a 
+Central Coding Key (ZCS). 
+
+The Central Coding Key (ZCS) is a unique 37 digit code that contains specific model, 
+country variation and individual equipment/option information for a vehicle. 
+
+
+GM 16430000P 
+SA 0000422005009CC0U 
+VN 000001El16K 
+
+
+During the manufacturing process of a vehicle, the ZCS code is created to identify the 
+specific vehicle being built and to properly code the control modules installed during the 
+assembly process once the vehicle reaches the end of the line. To ensure that the ZCS 
+code can be retrieved once the vehicle leaves the factory it is stored in two control mod¬ 
+ules, the cluster and the EWS. 
+
+ZCS is often referred to as a “key” since it is able to automatically “unlock” or ’’activate” 
+specific functions of a new control module or can be used to recode a used control 
+module to be compatible with the specific vehicle it has been installed into. With the 
+introduction of the E31 the ZCS information was used for the first time as a coding key 
+for replacement vehicle control modules, this ensured that the replacement modules 
+would be coded to the required specification of the vehicle. 
+
+These codeable modules have no limit as to the number of times that they can be 
+recoded. 
+
+
+11 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+ZCS Structure 
+
+
+The 37 digit structure of the ZCS is subdivided 
+into three segments. The segments represent 
+specific information about the vehicle. 
+
+Each segment ends with a checksum “digit”. 
+
+A checksum is utilized by the coding software to 
+detect unacceptable/erroneous manually entered 
+coding information. 
+
+The information/digits of the ZCS code reflects the options installed in the vehicle and 
+should never be changed manually unless it is necessary for special recoding functions 
+such as: 
+
+• Canadian market vehicle being moved to the US 
+
+• Retrofit installation of an accessory system (ie. alarm or satellite radio) 
+
+For extreme cases; If a modification needs to be made to the ZCS structure and there is 
+no information available in a service bulletin then the Technical Hotline should be con¬ 
+tacted for assistance by submitting a PUMA case, requesting a modified ZCS code. 
+
+Each portion of the ZCS provides specific information regarding that vehicle: 
+
+GM (Grundmerkmale) - Identifies the “Basic Features” of the vehicle and contains 9 dig¬ 
+its that are used to describe: 
+
+• Vehicle type (R50, R52, R53 ...) 
+
+• Specific body style of the vehicle (Convertible, Coupe ...) 
+
+• Country specific coding identification (US, UK, ECE ...) 
+
+• Unique equipment that affects the basics of the vehicle (with 
+sunroof, without sunroof, wheel size ...) 
+
+• Basic language variant (English, Spanish, German ...) 
+
+SA (Sonderausstattungs) - Identifies the “Special Equipment” of the vehicle and contains 
+
+17 digits that describe what features/functions are installed in 
+the vehicle, such as: 
+
+• Power Windows or Manual windows 
+
+• Power Door Locks or Manual Door Locks 
+
+• Power Sunroof or Manual Sunroof 
+
+• Power Convertible Top or Manual Convertible Top 
+
+• Satellite Pre-wire 
+
+The SA segment is configured to provide a total of 64 possible number combinations 
+(option groups) for all series vehicles worldwide. The information is modified whenever a 
+new component/accessory is added to the vehicle via a retrofit coding procedure. 
+
+
+GM 16430000P 
+SA 0000422005009CC0U 
+VN 000001 El16K 
+
+
+12 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+VN (Versionsnummer) - Identifies the “Version Number” of the vehicle and contains 11 
+
+digits that are used to describe: 
+
+• Series specific coding data that are not reflected in the GM or 
+SA segments. This includes, model year dependent data, 
+software and hardware versions of the control modules 
+installed, coding instructions, etc. 
+
+The VN is displayed as 40 possible combinations of digits. A deliberate change in the 
+VN will result in erroneous coding data being used when recoding a module or coding a 
+replacement module which will affect the proper operation of a control module(s) coded 
+with an incorrect VIN. 
+
+
+FOUR DIGIT PORTION REPRESENTS VEHICLE BODY AND SPECIFIC BODY EQUIPMENT 
+(COUPE, SEDAN, ROADSTER, SUNROOF, ETC,) 
+
+There are 4096 possible combinations of digits per model. 
+
+
+GM 
+
+
+r~ 
+
+
+/- -\ / \ 
+
+LCHECK 
+( DIGIT 
+
+
+
+
+
+
+
+
+
+
+N 
+
+
+V 
+
+I 
+
+
+VEHICLE TYPE COUNTRY SPECIFIC CODING ID 
+
+
+LANGUAGE VARIANT 
+
+
+SPECIAL EQUIPMENT THAT 
+DIRECTLY AFFECTS BODY 
+
+
+SA 
+
+v ^ 
+
+
+The SA segment is configured to provide a total of 64 possible number CHECK 
+
+combinations for all series vehicles worldwide. The number combinations DIGIT 
+
+
+are special equipment option packages. 
+
+
+VN 
+
+x -v- 
+
+The VN is displayed as 40 possible CHECK 
+combinations of digits. DIGIT 
+
+
+13 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZCS Stored Location in Vehicle 
+
+The ZCS is stored in the vehicle to simplify the coding procedures when a module needs 
+to be recoded or a replacement module needs to be coded. Depending on the vehicle, 
+the ZCS information is stored in the following locations: 
+
+
+Vehicle 
+
+Model 
+
+Module 
+
+Vehicle 
+
+Model 
+
+Module 
+
+E31 
+
+All 
+
+EKM 
+
+E39 
+
+All 
+
+Instrument Cluster/EWS 
+
+E32 
+
+All 
+
+Instrument Cluster 
+
+E38 
+
+All 
+
+Instrument Cluster/EWS 
+
+E34 
+
+All 
+
+Instrument Cluster 
+
+E46* 
+
+All 
+
+Instrument Cluster/LSZ 
+
+E36 
+
+318i/is 
+325i/is 
+M3 
+
+Instrument Cluster 
+
+E52 
+
+All 
+
+Instrument Cluster/LSZ 
+
+E36 
+
+318ti 
+
+Z3 
+
+EWSII 
+
+As of 9/98: 
+
+Instrument Cluster/EWS 
+
+E53 
+
+All 
+
+Instrument Cluster/LSZ 
+
+
+* The E46 switched to a Vehicle Order (VO) data structure in 9/01. 
+
+
+The procedure to code control modules that utilize the ZCS information can be per¬ 
+formed via the DISplus/GT 1 or SSS using Progman with CIP 15.0 or higher and access¬ 
+ing the “Codierung ZCS/FA” function. Always reference service bulletins for information 
+regarding the latest coding version and any possible software errors. 
+
+When coding a ZCS codable control module the coding program in CIP automatically 
+searches the stored location, based on the VIN, and codes the selected module accord¬ 
+ing to the information provided in the ZCS code. 
+
+On later production vehicles the ZCS information began to be stored in two locations, 
+referred to as redundant data storage, this insures that the information is always available 
+in the event the primary device storing the data fails. 
+
+Note: On early production vehicles without redundant data storage, if the mod¬ 
+ule being coded or recoded is the module that stores the ZCS informa¬ 
+tion, then the vehicles ZCS information must be obtained from the label 
+located on the vehicle or electronically accessed from the module and 
+printed out then entered manually via the input screen on DISplus/GTI 
+or SSS. 
+
+
+For vehicles with redundant data storage the coding of the module stor¬ 
+ing the data is performed automatically using the information stored in 
+the “back up” module. 
+
+
+14 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Accessing ZCS Information Label 
+
+On earlier production vehicles the ZCS label is affixed to the 
+
+
+vehicle in a specific location depending on the model: 
+
+■■■ ■ ■ ■■ ■■ ■■■ ■ ■■■ 
+
+■ ■■■■ ■ ■■■■■■ 
+
+1 1 I...I U-I In s 1 1 ”...S 
+
+• E36 - Under rear seat; center area or next to left send¬ 
+ing unit of fuel tank. 
+
+■■■ ■ ■ ■■■ ■■■ ■■■ ■■■ ■■ 
+
+rm s :i"■!;nnnn p 
+
+• Z3 Roadster - In Trunk; under carpet on floor, forward 
+of tool kit. 
+
+q □ n fi fl fs fs r c i ■-! fi R 1 v 4 n l'"l 1 1 1 
+
+[■■[ u u u u u u u h y u 
+
+• E31/32/34 - In fuse box cover 
+
+0 
+
+• E38 - In E-Box cover 
+
+
+
+Note: As of 9/98 production the ZCS label was eliminated from the vehicle. 
+Some older vehicles will have identification labels containing an AM 
+segment, this information is not needed for coding or recoding a control 
+module on that vehicle. 
+
+
+15 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle Order 
+
+In 9/01 the ZCS vehicle data structure on the E46 was replaced with what is referred to 
+as the Vehicle Order (VO) or Fahrzeugauftrag (FA). The vehicle order structure is utilized 
+on all new models introduced/produced as of 9/01. such as E65/66, E60, E63/64, E83, 
+E85 etc. Models such as E36, E39, E52, and E53 produced after 9/01 continued to be 
+manufactured using the ZCS structure until production of the model is complete. 
+
+
+Vehicle Order for E46 as of 9/01 Production: 
+
+
+Vehicle Id entitle- 
+
+
+E-Wort: 
+
+521,522,534,550,639, 
+
+ation number; 
+
+
+
+645, E5Q,G El ,674,692, 
+
+KW17732 
+
+
+
+010, B23,0 32,045,0 53, 
+
+
+
+
+8? 6,925,926,99 2,3 02, 
+
+Vehic e order: 
+
+
+HO-Wart: 
+
+Vehicle order and 
+
+
+
+633L, 
+
+vehicle identifies- 
+
+Model series: 
+
+E46 
+
+
+tion number are 
+
+Type des. code: 
+
+EV33 
+
+
+stored in 
+
+Time criterion; 
+
+0904 
+
+SA: 
+
+KGMBI 
+
+Paint code: 
+
+a a DO 
+
+1 C A,2 05,2 10,2 40,249, 
+
+
+Upholstery code; 
+
+N6SW 
+
+279,354,403,411 B 431 , 
+
+
+Assbly. no.: 
+
+
+438,441,459,465,473, 
+
+
+
+
+400,494,495,502,52 0, 
+
+
+
+Vehicle Order for New Models as of 9/01 Introduction: 
+
+
+
+Date / time: 
+Model series: 
+Vehicle ID number 
+Vehicle order: 
+
+
+Vehicle data status 
+
+
+10.11.2004/ 13:31 
+EGD 
+
+
+WBANA53584B848D13 
+
+
+EGDJM2D3*NA53%D475&LCBA$1CA$205$248$2RA 
+$3 0 2$313$ 35 4$4033 415$ 416$ 43 0$431$43 8$ 441 
+$442$459$4G5$473S488$494$502$534$540$EG3 
+$GO5$BO3$BZD$B38$645$67B$B84$597$705$B1S 
+$3£3$05O$853$07G$8SP$82G$892-B1 1 0+K.G38+QI11 
++0112 
+
+
+EOE0-D4-09-5O4 
+
+
+I a rget data status: EDE0-D4-09-5O4 
+
+
+16 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The vehicle order format contains information pertaining to the production of a specific 
+vehicle such as: 
+
+Series Type - (E46, E65, E60, etc.) 
+
+Time Criterion - Identifies date the options/hardware equipment available for installation 
+
+into the vehicle was standardized/”locked”. This information does not 
+refer to the production date of the vehicle. A problem with coding or 
+programming may occur if a module or option based on a newer or 
+older time criterion date is installed into the vehicle. 
+
+Model Code (Basic Type) - Base level from which the vehicle is “created/built”. 
+
+Paint Code - Identifies the color of the vehicle at time of production. 
+
+Upholstery Code - Identifies the type of upholstery installed in the vehicle at time of 
+
+production. 
+
+Assembly Number - Identifies the programmed part number for powertrain (Not used) 
+
+E-Wort - Identifies additions/options added to the vehicle that are not part of standard 
+SA codes/options 
+
+HO-Wort - Identifies options installed at Center/Dealer using 3 digit option code 
+
+(Currently not used.) 
+
+Installed Option/SA Codes - Listing of accessories & equipment options installed in 
+
+the vehicle. 
+
+The information contained in the vehicle order is used to identify the module(s)/system(s) 
+that are/should be installed in the vehicle and also what if any control modules need to be 
+updated if a new system/option is added or removed to/from the vehicle to ensure proper 
+compatibility with the devices installed in the vehicle. The information contained in the 
+vehicle order such as installed options, is modified whenever a new component (mod¬ 
+ule/system) is installed and coded to the vehicle. If the new component is not properly 
+coded to the vehicle the SA listing is not updated and problems can be encountered 
+whenever a measures plan for the vehicle is created, vehicle needs to be recoded or 
+VKM/Individualization functions are to be modified. 
+
+A listing of the components that need to be updated is provided whenever a measures 
+plan is generated (refer to CIP module for additional information). 
+
+
+17 
+
+Coding, Individualization & Programming 
+
+
+Example: Information contained in the VO of an E60 
+
+
+
+Date / time: 
+Model series: 
+Vehicle ID number: 
+Vehicle order: 
+
+
+Vehicle data status 
+
+
+10,11.2004 / 13:31 
+EGD 
+
+
+WBANA53584B848D13 
+
+
+EGDJM2D3 *NA 5 3% D475&.L C B A$ 1C A$205$243$ 2 R A 
+$302$319$354$4033415$ 416$ 43 Q$431$438$ 441 
+$442$4S9$485$473$488$494$ 5 02$534$540$EG3 
+$605$509$5ZD$G38$l545$Ej7l5$694$597$785$818 
+$8Z9$85O$859$07G$0SP$8Z5$8B2-B110+KG38+OI11 
+
+
++0112 
+
+
+E0GQ-D4-Q9-504 
+
+
+I arget data status: EOGQ-Q4-09-5O4 
+
+
+Series Type: 
+Time Criterion: 
+
+
+Model Code: 
+
+
+Paint Code: 
+
+
+E60 
+
+Identified as 1203 indicates the date (month/year) that the list of 
+available options/hardware available for installation into the vehicle 
+was standardized!”locked". Although the vehicle referenced was 
+produced in 6/04 the time criterion of 1203 is still valid and indi¬ 
+cates that no changes were made to the available option pack¬ 
+ages/hardware available for installation into that specific model 
+since 1203. 
+
+Identified as NA53 indicates the vehicle and engine type plus pro¬ 
+vides information pertaining to the country the vehicle was built for 
+(i.e. LH or RH drive). If an automatic transmission is installed it will 
+be considered an NA63, however the model code contained in the 
+VO will always reflect the base level which is a manual transmis¬ 
+sion vehicle. 
+
+Identified as 0475 indicates the color of the vehicle at time of pro¬ 
+duction. 
+
+
+Upholstery Code: Identified as LCBA indicates the type of upholstery installed in the 
+
+vehicle at time of production. 
+
+Installed Option/ 
+
+SA Codes: Listing of accessories & eguipment options installed in the vehicle 
+
+1CA - Selection COP relevant vehicles 
+205 -Automatic transmission 
+248 - Steering Wheel Heating 
+2RA - LT/ALY wheels 
+
+
+18 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+1. What is the purpose of a ZCS code in a vehicle? 
+
+
+2. Where is the ZCS code stored in a vehicle? 
+
+
+3. How can you determine what modules in the vehicle are codeable via the ZCS 
+code? 
+
+
+4. What is the purpose of a Vehicle Order what information does it contain? 
+
+
+5. When was the VO structure introduced? 
+
+
+6. Which models utilize a VO structure? 
+
+
+7. How can the VO information of a vehicle be accessed? 
+
+
+19 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Modules Flash (EEPROM) Programming 
+
+
+An EEPROM is an Electrically Erasable Programmable Read Only Memory chip that 
+is soldered onto the circuit board of a control module. This signifies that programs & 
+data stored on the chip can be electrically erased and replaced with new/revised 
+programs or data. 
+
+In order to erase the data on the chip a short duration low level voltage/charge is applied 
+to a pin on the EEPROM and the stored data is erased, hence the name “Flash”. Once 
+the data is erased new data is loaded. 
+
+By using a this technology, control modules have the ability to be updated a total of 13 
+times before they need to be replaced. 
+
+Theoretically an EEPROM can be erased and reprogrammed more than 13 times, BMW 
+set the number to 13, since a point will be reached where the update being installed 
+may no longer be compatible with the hardware of the installed module which could 
+result in erroneous operation. If the program is not compatible with the hardware version 
+of the module, the program used to determine the correct update for the module will 
+indicate that the module will need to be replaced before the update can be performed. 
+
+The reference to Flash programming is a result of the technology used to erase the 
+EEPROM prior to installing a new program and or data. 
+
+The utilization of EEPROMs started with Engine Management Systems and has 
+expanded into other control modules. 
+
+Determination Process for DME EEPROM 
+
+The CIP program is used to determine the correct replacement part numbers (Control 
+Module or software update) to be installed. 
+
+For modules that utilize EEPROMs/Flash programming the determination process is 
+done automatically as part of determining a measures plan. 
+
+
+20 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+Coding, Individualization & Programming 
+
+
+Introduction 
+
+With the introduction of the E65 in 2001, BMW not only introduced a vehicle loaded 
+with the latest technology but also introduced a new way of performing vehicle coding 
+and programming. In order to code and program an E65, a software program commonly 
+referred to as CIP was introduced. The acronym CIP stands for Coding, Individualization 
+& Programming and with the introduction of Progman & CIP 15.0 it has become the 
+sole software tool for coding and programming vehicles. 
+
+Initially CIP was developed for use on the E65/E66 and newer models but has since 
+been expanded to include all vehicles produced prior to the introduction of the E65 that 
+utilize a an SGC/UNIX programming structure. 
+
+The intention of the CIP program is to insure that whenever a module is updated or 
+replaced it will still be compatible with all the other modules installed in the vehicle 
+(equipped with a MOST bus). Since all of the communication between the various mod¬ 
+ules installed in a vehicle is over a bus network structure, it is very important that all of 
+the installed modules be able to communicate with each other without problems. 
+
+To ensure compatibility/seamless integration between control modules, the CIP software 
+reads out the part numbers of all the control modules installed in the vehicle as well as 
+the software levels of the respective modules. The information from the various installed 
+modules is then cross referenced against a “master reference list” to determine if a mod- 
+ule(s) needs to be updated and how this update will effect the other installed modules. 
+Once this cross reference process is started it can result in additional issues such as: 
+
+• If the software level in a selected module is updated will the hardware of the module 
+still be able to function correctly. 
+
+• If the software to be installed is not going to be compatible with the installed hard¬ 
+ware then the module will need to be replaced. 
+
+• If updated software is installed in the selected module will this have any impact on 
+any other installed modules and will they need to have the software updated or will 
+the hardware need to be updated in additional modules in order to install the 
+revised software. 
+
+Example: A desktop computer originally built with a Pentium I, 75 Mhz processor 
+
+using Windows 95 is not able to operate using Windows 2000. In order to 
+operate with Windows 2000 this old desktop computer needs to upgraded 
+with new hardware. However, a desktop computer designed to operate with 
+Windows 2000 can be updated to Windows XP without having to upgrade 
+the hardware of the computer. 
+
+
+21 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+All hardware devices that utilize software/programs to operate can only have the installed 
+software updated a certain number of times before the operating capacity of the installed 
+hardware is exceeded and no longer compatible, this results in the device no longer being 
+able to function. In order for these devices to continue to operate the installed 
+hardware/control modules will need to be updated, which is what happens in our vehicles 
+or desktop computers over time. 
+
+Specific information pertaining to coding and programming with CIP are provided in 
+
+SIB 09 05 01. 
+
+Integration Levels 
+
+All new models produced as of the E65 have a minimum allowable software level, based 
+on production date, which is referred to as an integration level or data status. The inte¬ 
+gration level defines the software level that all the control modules installed into a particu¬ 
+lar model, at time of production, must be at in order to ensure compatibility. Once an 
+integration level for a specific production period is defined/“locked”, the modules installed 
+in those vehicles can not be updated beyond that level. 
+
+The Integration level or data status for vehicles equipped with a most bus is provided in 
+the “Status report” or “Measures plan” as shown below. 
+
+Vehicle data status: E060-04-09-503 
+
+Target data status: E060-04-09-555 
+
+If the vehicle data status and target data status are not the same, this indicates that some 
+of the installed control modules need to be updated to bring the vehicle up to the latest 
+level. 
+
+If the software levels were not locked it would be quite complex to track all software and 
+hardware variations for all models through all production ranges. It would be extremely 
+difficult to determine what software and hardware level is compatible with each module 
+installed in a specific vehicle(s) and exactly what needs to be updated if one module is 
+updated or replaced, therefore a limit or locked point must be define for specific produc¬ 
+tion periods by model. 
+
+Example: MY2002 vehicles can not be programmed with software that is assigned to 
+
+MY2003 vehicles since the defined integration level for each Model Year is 
+different. Similarly Windows 2000 can not be installed & operated on a com¬ 
+puter originally developed to run with Windows 95. 
+
+Information contained in this module is for reference as a user guide, more detailed infor¬ 
+mation can be obtained from the respective Service Information Bulletins 
+
+SI B09 05 01 & SI B09 03 98. 
+
+
+22 
+
+Coding, Individualization & Programming 
+
+
+Measures Plan 
+
+
+A measures plan is generated by CIP to identify what if any control modules need to be 
+updated in order to bring a vehicle up to the latest integration level or data status. The 
+measures plan also identifies the part number of the old/installed programmed control 
+module and also what the new part number will be after the update is performed. 
+
+
+
+-r‘ - 
+
+Hkirdohi 
+
+
+CnnttcJ module SELECTION 
+
+
+FI 
+
+
+Select measures plan. 
+
+D ate 1 fctiKia: 
+
+Fl.lE2[][]4Al£aa 
+
+Model asries: 
+
+Eed 
+
+Vrihklf rl) number. 
+
+WB ANA7G5E5BB1 3B7d 
+
+Vehicle order 
+
+EED JG9D O'k A70AO7A 1.CAftj 1 CA$2G5$20a£2CF 
+$3?]Z$S1 9$3&4$ 403343B$43 qqi t^4Z$459 
+
+$46B$fl73*^B0^B^BOE$6a0$K2$EE-rtS3'lte« 
+
+$563iEa5$E[H£GEEflGaB$G45$&7G$E0aEE9^97 
+
+I78Sl;ei 3S6E3S 85KE3S3$e76S92SS 99£i-Bi 1 0 
+
+1-K633 
+
+yeMcie date status; 
+
+E060—D^l—DB—ED3 
+
+Target data status: 
+
+E0t0-0^-09-5E5 
+
+e. Program CAS 
+(VlaDIAGflUSJ 
+
+cm p%«% ito. proipr- erti rood. New part m PK»iar, rtrl rood 
+
+69GD97a G9BS32B 
+
+Program occ-gw/m-ask-gw 
+feiaDIAGBUSij' 
+
+Old pdi’t mo. p’O^r drl iiiKpd. New peii no. prog r. ty\ mod. 
+
+695525-3 ' 59BDGGG 
+
+
+3. PiDg-am DME/DDE 
+
+
+Olm part r«o. p< oyr ctrJ mmd. fctew p.ujt mo pro-gr, ■cUfI rood 
+
+
+
+
+
+- - — - .. . « 
+
+
+
+
+~ - - 
+
+
+
+Uptime software 
+
+
+
+
+Printorc’p.p.y out the m 93urea 
+
+
+By accepting the defined plan all modules that are listed will be updated “automatically”. 
+
+
+Important!!! 
+
+
+Whenever a measures plan is defined it should always be 
+printed out before proceeding in order to document the 
+work performed, by attaching it to the repair order. 
+
+
+Note: An all inclusive status report or measures plan is only generated for vehi¬ 
+cles equipped with a MOST-bus, to ensure compatibility. For all other 
+vehicles a measures plan is generated only for the module selected to be 
+updated (i.e. DME, TCU, EGS...) no evaluation of the other modules in the 
+vehicle is made. 
+
+
+23 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Initial CIP Screen 
+
+
+i - 
+
+
+CfP 
+
+
+_ 
+
+
+
+
+
+
+Coding 
+
+Individualization 
+
+Programming 
+
+
+MorffiS series SFl FC2TION 
+
+
+1 Senas 
+
+
+
+
+— 
+
+
+3 Series 
+
+
+3 Senes 
+
+
+£ Seiles 
+
+
+
+7 Senes 
+
+
+9 Silica 
+
+
+
+... 
+
+
+
+
+
+From the initial CIP screen select the model for which a coding or programming sess 
+is to be performed. 
+
+
+24 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP Main Selection Screen 
+
+
+
+Ki GRCEH: 
+
+
+
+
+Mcnhi Series StlECTlUN 
+
+
+
+Coding 
+
+Fndivid:J?jli7aUon 
+
+Programming 
+
+
+
+Selection of CIP functions/options: 
+
+
+Termin. CIP - End the CIP program and return to Progman home screen 
+
+Load SW - Load software function to be selected if: 
+
+• Control module has been replaced 
+
+• Retrofit process is to be carried out 
+
+• Vehicle software is to be updated 
+
+• Coding/programming of one or more module(s) is to 
+be performed 
+
+
+CKM - Vehicle and Key Memory/Individualization allows various driver selec¬ 
+table features (such as drive way locking, seat memory, central lock¬ 
+ing/unlocking, daytime running lights etc.) to be coded to the 
+vehicle or individual keys. 
+
+Management - Provides the ability to: 
+
+• Display the current version of CIP installed 
+
+• Print previously performed Service Measure Reports 
+
+• Run a test on the software currently installed on system (SSS) 
+
+Vehicle - Allows access to: 
+
+• Vehicle Order 
+
+• Initialization 
+
+• Service Functions 
+
+• Complete vehicle coding 
+
+
+25 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Module Replacement Yes/No 
+
+
+Lortd isoftwiirs 
+
+
+E£3 
+
+W3AAAI(P0!PfliWCW97 
+2fl71 Jem 
+
+
+
+[ Ciange 
+
+
+
+
+Hsi^e conti o! m&dulc-s beei* leplaccd on Siis cur? 
+
+Fgi retrofit pttss At?, 
+
+
+
+At this screen information is needed to determine which path is to be followed. 
+
+Answer “Yes” if: 
+
+• A previously installed control module has been replaced. 
+
+Answer “No” if: 
+
+• No control module(s) has been replaced but an update on one or more modules 
+needs to be performed. 
+
+• A retrofit needs to be performed on the vehicle (such as installation of CD player, 
+ULF, phone cradle installation, activation of bluetooth, etc...). 
+
+• A control module for a new svstem/accessorv is installed as part of a retrofit installa- 
+tion. 
+
+
+26 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP Functions - If No (Non MOST-Bus Vehicles with VO) 
+
+
+
+Select the module to be reprogrammed 
+Or 
+
+Select “Retrofits” if an accessory 
+function/feature is to be added or deleted. 
+
+
+
+Ch^| Lnl nuI lf Mki l,', i- j'U ■,TrI JI .;ll 'j-jii ■- i 
+fllrpArrc.TK.'V 
+
+* Mcpnr3fTKfTlpfcpn:rrtcnj 
+
+ifpp-^rinnl: Ato - ire ripbicimDiri. Cif h» ta be festnri^d. 
+
+
+
+Example: DME/DDE was selected on previ¬ 
+ous screen. 
+
+Programming is selected if: 
+
+• Checking for availability of updated soft¬ 
+ware for selected control module. 
+
+• It is known that updated software is 
+available for the selected control mod¬ 
+ule. 
+
+
+* Llprirring 1f:n ipertw*™ rtp mn^iiti pJh-. 
+
+
+Replacement is selected if a module was 
+
+
+replaced. 
+
+
+^Trlpiii .1 1 n inifi- Irr' rt.+.I J i 1 rirr~ 1 1 n ir iLr « ■ ■ - n. p! ivlh iitiA h n-.i: 11 in ;■■■ nm 
+
+
+EWS is selected if: 
+
+• Alignment of EWS & DME must be per¬ 
+formed 
+
+
+
+Example: Programming was selected on 
+previous Screen. 
+
+Upon selecting “Update software” a mea¬ 
+sures plan will be generated that is specific 
+to the module selected. 
+
+
+27 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LH 
+
+V.H ii ii/rtlllil.'i-jJC X r 
+7i,'l i rt 
+
+
+
+Co*-.. iii-i i£ SEL EGTIDM 
+
+
+mnainTFiE pljin. 
+
+nrtr. , ‘aTE: 
+
+OMZ.-KIHrH.5-J 
+
+huwtrl ii- 1 rs: 
+
+m 
+
+
+
+VHi i v a.Jhi 
+
+J-B Ji: .5 
+
+t-* 1 ] r -:ct 4MH ■ zfon&zrcaz i m zhstokm 
+
+■ IStt: 
+
+i : -i :■ ■ 
+
+
+Ci rt ft-, pi pfiKp :■■■ vwvi kjfnrLur: ii prr.jr ,-iii r^wl 
+
+Ml-iQ 
+
+
+
+
+
+i\r r-r.i! 
+
+
+Pmri'irL-ifv/rt il Ih" rtpihri; 
+
+
+A measures plan for the selected 
+system/module is displayed. 
+
+A measures plan identifies the programmed 
+part number for the control module(s) 
+installed: 
+
+• “Old part no. progr. Ctrl, mod.” - indicates 
+p/n for software currently installed. 
+
+• “New part no. progr. Ctrl, mod.” - indicates 
+the p/n if the module is updated, by 
+accepting the displayed measures plan the 
+module will be updated to the new num¬ 
+ber and software. 
+
+Note: The “update” does not need to be 
+performed if the two part num¬ 
+bers are the same. 
+
+
+On vehicles without a MOST-Bus, a “Measures plan” provides information on updates 
+that are available for the selected control module. By selecting accept, only the module 
+listed in the measures plan will be updated. 
+
+
+Note: Prior to selecting accept, printout a copy of the measures plan and 
+attach it to the repair order to document the work performed. 
+
+
+Important!!! 
+
+
+If the measures plan identifies any control modules that will 
+need to be replaced exit CIP. 
+
+
+For additional information pertaining to programming using CIP refer to SI B090501. 
+
+
+28 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP Functions - If No (MOST-Bus Vehicles) 
+
+
+
+After selecting “No” CIP evaluates the 
+installed control modules to determine if any 
+updates are required. 
+
+
+
+3Cilu> n yurt. 
+
+
+n-rth ! d*r :■ jj; 
+
+HMIk4i: 10: 
+
+HUB runs- 1 : 
+
+MCi ElWl-M-W-SD 
+
+I r-jri In EI«l-iM-[tt- 5 aa 
+
+
+Fokowinij :1rl mail R EvihH I:h'*hii Ii:- rfip 
+
+
+h*H|lumJBil in 
+
+
+Cu aid ei 
+
+fti! V. s^tfi CVfW 1 -W‘MYV, 
+
+-KSW 
+
+CCJC:--wr^vi T?W »’■ M M-'HOfifo-tfil 
+
+
+
+
+EL 
+
+
+ri^ Till- ^l' 174 - 
+
+uii 
+
+i.:i L'J'.UI ■'>. qid.EE Eiynai' 
+
+■ E K-iiV|My Mf’W WT3S< 
+
+
+Still P P i". ■ ■ -1 - 
+
+
+IThkhI i. trl:i: 
+
+
+
+
+
+Once the evaluation is completed and CIP 
+determines that there are updates available a 
+“Status report” is generated. 
+
+Note: Status report is similar to a mea¬ 
+sures plan. 
+
+The status report identifies the control mod¬ 
+ules for which an update is available and also 
+indicates if the module will need to be repro¬ 
+grammed or replaced. 
+
+Information is also provided indicating the 
+current programmed part number and also 
+what the number should be after an update 
+is performed. 
+
+
+
+r",KAl*VIK?5*fc! J| >4 
+
+
+
+Cartid mad.kSELECTION 
+
+
+::rlr-l :r4Tt j n^iin v> hr pnc-nqi^ri 
+1 ChR r 5W 
+
+q vfumftng med* 
+
+* ftfc rng n tt i; p r r-j m rfc 
+
+* vihKlc n-odc 
+
+t. Srcfc 
+
+* " EfTT'il Cf£ 
+
+* Cance'ttlEM ofciKiwrt: operaflD* 
+
+
+
+PWiit ■ r«nril ™ mIjI' his rTpr-irilrri rn-rrri^ 
+
+Wfc*:CwilnJ Hi>lil: nifii k 
+
+Hi ll Sill IE 1 ihlllilVLL.I 
+
+
+I-.. 1 
+
+
+iiDcrtiTTi.H.rjiATci'j 
+
+
+ICrlfwHK 
+
+
+If “Cancel update” is selected or if CIP 
+determines that there are no updates need¬ 
+ed or available for the vehicle then the 
+“Control module selection” screen is dis¬ 
+played. 
+
+For additional information pertaining to pro¬ 
+gramming using CIP refer to SI B09 05 01. 
+
+
+29 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Module Selection - Programming - Update Software 
+
+
+
+Cortis) moduli*SELECTION 
+
+
+From the “Control module selection” screen 
+specific control modules can be selected for 
+reprogramming. 
+
+Or 
+
+
+
+jEijJ-tct ir-ntri tv- r:: n hP hr prune 
+
+
+1 Cllh' 
+
+
+* 
+
+
+vprJ?tn-[| 
+
+t cpmng rorfc 
+Vehicle vponrlra rude 
+
+
+l. =ndt 
+
+* 'EfTTlfl Cl# 
+
+* Cane dfean*i erf curort operatic* 
+
+
+
+lErlrwMic 
+
+
+Select “Retrofits” if an accessory 
+function/feature is to be added or deleted 
+
+
+WjIt ■ rrnr-Ei Midi If his rrpp-krilrri rormi^ 
+
+V^i^i-Cifiirsl tn-l 4 t BL'iiie c-roer^ipj. 
+
+R *4 iV^iCnl Mil It IIP! ivLh,i[.|nLXi n Istviusliit. .U :?i. t-s 
+
+
+
+
+Z-jff.-.'-i mad Jo SEL ECT 10 N 
+
+
+
+Fill Li! miliI j -.kL". :-pz^il'^iVI Jlzi>eI LiiL-fioni.i 
+
+ffoffimnwrin/ 
+
+■ HM'Jircp^rrt prcipTi'Titcm 
+
+iinpci't.int: Mia* t T e r:pfesctmcrt CHH ho.-: he be- rmtnrtHl 
+
+
+
+
+
+Example: DME DDE is selected on the 
+previous screen. 
+
+By selecting “Programming” the software 
+of the selected module can be updated or a 
+measures plan for all installed modules can 
+be obtained and updated. 
+
+
+[/V'TlVF 
+
+* EncDtfhg th:- tftabren l cford redds- 'Ah rissjeiamt 
+
+
+'■?f In i iiil-i rmlyr -u- I’S.P -Hi- ::ml m. iL> i - tsni rl wih suwa Pi u-.i: ii in £v ii-m 
+
+
+
+
+
+
+LO.k:.:- module SELECTION 
+
+
+<. 'iid'j V j-: |- !j lV l- 
+
+m llprlrrlnrj t-n qIatt-hh: rml-.-n^uu -juh rump rrlft 
+
+rmmTf pim 
+
+N$ht ■ ur^iir n i>-hv;n c g-i?-^ rodkip* bo g-sattw n 
+
+fH- mey suit's plrr 
+3 f*nsi 
+
+* Updttlnfl ■- 1 Oil v 1 :u eirttht Cu:^ d -‘■LC-uIl '.Ui n:i|L 
+rfuamrA 
+
+linp-sclun!. r :Jkv- j|.'L'-jLiI iiil-uw.il iicrV ii 4 il ICC! 
+
+
+
+’■■ VIr11 il n nnlr 4 nr p-ii^iiiTiii] nU- 1 K'i$ «g|nl nir.it* r r anrpl rtti amvA li iiilH^iiIsh rr i tii 
+
+
+By selecting “Update Software” a mea¬ 
+sures plan will be generated that will indicate 
+what updates if any are available not only for 
+the DME but for all modules installed in the 
+vehicle. 
+
+
+30 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lorei-y mfltfultSELECTION 
+
+
+e 
+
+■■ ■ ,— ■■■■■ .j 
+
+Srt-irl mHmuniR plan 
+
+UWeltW Zn.UIED*-hl.H 
+
+ll-j.lk lillll C kL s 
+
+ftHchti mvi*r WflWfcTTmfcTFTJ 
+
+M(4 «* r ( « «»w t» /Wf * l C *B fc^SSW « M«3P 
+
+MJ'VMir "'%-B* -1 -s S - 3 - - ■■ 5 -: > 13 - -' 3 - -Si 
+V ! ■'■ ? :■?:■"!' " V S P T : ^’-T-i 
+
+■ i r --^- - : -p- •-• 1 -"‘-- L -' 1 -' . ..•'• ••'' 
+
+1 ’FWlEt!: !H^ 1 IMEr>MMTri!-aTHL _ 4 lliD 
+
+*K|» 
+
+■,-:ii: c ljd ii#u. LiXJ :*.-..■ vj. 
+
+I■ ■ «.<•■ iiiii lUfiri. :|i»z 
+
+I I-e;?t7,C"5 C4e prt he, Fre-v-:lr1 i-e-1 Uta pin m p'sjr. rw: ni:. 
+
+1 1 a Uw]fej!ll ESS^T 
+
+
+&. KELI^--. r4Wt ^ijiKili, flt-^ -Mil » ■-1 I LA j-.n ir'i p jjJI. Cl" ilj[ 
+
+)•>■ weevil i' ■:■■ a »■■>:■ 
+
+a ftllrty.rhr.TCf_a |ro» HlTl PM nfl «*■!■■■ 
+
+
+ilr-r-tpl 
+
+
+Pmrnrrsjv/n-- pJ lh® rfjqhkr i ii . rr l |. an 
+
+
+
+
+A “Measures plan” provides information on 
+updates that are available for all installed 
+control modules. By selecting accept, all 
+modules listed in the measures plan will be 
+updated. 
+
+Note: Prior to selecting accept printout 
+a copy of the measures plan and 
+attach it to the repair order to 
+document the work performed. 
+
+
+Important!!! 
+
+
+If the measures plan identifies any 
+control modules that will need to be 
+replaced exit Cl P. 
+
+
+L'.KAteVJWS*:! M '4 
+
+
+
+I 
+
+
+
+L'iUj'lOt 
+
+n Llprinlnri -.-n nr-n±-qS -n^iTHiri vjh rc-mp rri r 
+rnw^^f pJn - . 
+
+■ 1 /rtfnr n fi-vh-.rn r- rndd®* rrw'? bo c-yuric n 
+
+fto m-rapjPM pf?n 
+
+TCBGur: 
+
+* Uii'iiiipi^i *(f\ 1:w tihftwfe Cu-^ -A l JLA ii:^l 
+
+nuamrib 
+
+linpocl jii!. r :Jkv- j|.> l--j k11 iiil-uv.il n'd* -kL>:iii hi Ivu ICC! 
+
+
+CodM module SEL ECT 10 N 
+
+
+
+■-■j-1 r■ ■ i.il n nciL-- p4*gn vniiq rifl-TiW ciml nvr.it> rr cnnrrl Afh any, a n iiilH^iHvh rr i tii 
+
+
+Important!!! 
+
+
+The “Special Measures” function is 
+only to be used in the event that a con¬ 
+trol module(s) can not be programmed 
+during the “Update Software” process 
+that is executed as a result of a devel¬ 
+oped “Measures plan”/“Status report” 
+or specific instructions are given in a 
+Service Information Bulletin which 
+require the use of special measures to 
+update a module. 
+
+
+Control Module Selection - Programming - Special Measures 
+
+In the event that a control module(s) can not be programmed successfully the information 
+will appear next to the specific module(s) in the final report, which is generated upon 
+completion of an update or “Measures plan”. 
+
+
+31 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Retrofits 
+
+
+
+Select “Retrofits” to view a list of func¬ 
+tions/features that can be modified or 
+installed. 
+
+
+jEijJ-c-ct :nrrtri tyt "s: n hr prcrci^ri 
+
+
+1 Chir 
+
+
+i Pi" 5 1 / 
+
+■ 
+
+
+vprJ?tn-|i 
+
+t/arRign“^ t cprmng mrfc 
+VihKki ■cpcnrlra rode 
+
+
+?. £rrt 
+
+* 'mnr Cl# 
+
+* Ci n: on erf qht*s t m»raH r* 
+
+
+
+
+Vfalr ■ rinrsi h?s rrpp^rilFri r(imrl^i 
+
+VfttttttfC’BflilJ H£-l4l: HL'IIM trosmrf. 
+
+hEf l ..'i’ll! pin it i dk mi liki.iLrlnLIr >,lilivius|B..v.l£ clduir l-s. 
+
+
+
+I;-IimIiIIiii- SELECTION 
+
+
+SeIclI I SU-E^llllty 
+
+
+= tjgS£jBjjS& 
+
+
+
+
+The initial screen displays information per¬ 
+taining to: 
+
+- Airbag activation/deactivation 
+
+- Telematics On/Off 
+
+- Language (setting control display/moni¬ 
+tor language) 
+
+- Maintenance interval - reset/checking 
+
+- USA-Canada conversion 
+
+
+- Retrofits - listing accessories installed or 
+available for installation. 
+
+
+
+
+By selecting “Retrofits” on the previous 
+screen a list of accessory systems available 
+for installation is obtained. 
+
+Note: Some of the items listed may not 
+be available as retrofits for US 
+vehicles. Please refer to ASAP 
+portal on Centernet for more 
+information. 
+
+
+32 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LN 
+
+v.HrnifrtiJiii.’irjJcn r 
+7 in bn 
+
+
+
+Rclr-cllffing EELEGTIuH 
+
+
+ES 
+
+
+Riptnlil I ■■■ ipihI h-i: 'eiiihi- hn: U-rifr/ adiclcd 
+
+Tlii YHhicIi aitdtr k during Hi» jnquAn^F 
+
+Cu'^’iH yMt wnlnae ■u’llf i“ : di l i-jIivIiV.iu kjx o ub-:ii'J-. fillip ii !■ ■■• cul. 
+cHlirMJD tCTTina.'H tK bf MC'Jj r, tfft CWDCV, 
+
+
+
+
+
+LI 
+
+
+..Is. 
+
+
+.i-1111 ii- 
+
+
+fljncp-i 
+
+
+
+Example: ULF was selected on previous 
+screen. 
+
+If this system/module is installed the vehicle 
+order will be modified to reflect the addition 
+of this module/accessory to the vehicle by 
+selecting “Continue”. 
+
+
+33 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Management 
+
+
+
+“Management” can be selected from the 
+main/initial CIP screen. 
+
+
+
+
+Modti SL-.iui 5EL ECT1GN 
+
+
+Or 
+
+“Management” can be selected from the 
+Main CIP Selection screen. 
+
+
+
+Coding 
+
+Individ unJiftiilipn 
+Programming 
+
+
+
+By selecting “Management” the following functions can be accessed: 
+
+• Print previously performed Service Measure reports 
+
+• Display the current version of CIP installed 
+
+• Run a test on the software currently installed on the system (SSS) 
+
+
+34 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Management - Reports 
+
+
+
+LN 
+
+v.P'fi.v'irtr r tfc-w.” r 
+
+VI.' I Hi 
+
+
+" ;aj -I- 
+
+5 I ■ _- : LJrf crT! v-dR 'jui 
+
+
+
+M.inri flu mi ni: 
+
+
+:;rlr-l rvjn’^jrtmrrrl 
+1 ChR-py 
+
+* ^pr^-J-ing TSI*) 
+
+* Lend Kltwpi nperatwi m«#c 
+
+* vcNcfc op^iHlra rode 
+
+?. 'endt 
+
+* CanZCt’lGT tft QDEnbDr 
+
+* “tiPHi C L ° 
+
+
+
+To access the most recently generated mea¬ 
+sures plans select “Reports”. 
+
+
+
+The 16 most recently generated measures 
+plans can be accessed/viewed. 
+
+NOTE: The reports are not specific to 
+the vehicle currently connected 
+but are a cumulative listing of 
+vehicles recently 
+connected/accessed using CIP 
+via a specific SSS. 
+
+
+35 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Management - Application - Test & Version 
+
+
+
+The “Application” function provides the abili¬ 
+ty to: 
+
+• Run a system test 
+
+• Determine information regarding the ver¬ 
+sion of CIP currently installed 
+
+
+
+Select “Test” if system files are to be 
+checked. 
+
+
+1 Chft- 
+
+
+inrgv 
+
+* Lend nltwpt aptraltgi 
+
+* VDt»Kte e^iHlra rmlE- 
+
+
+endt 
+
+* CanLCtMOT rrt puzntny 
+
+* Tfimfi 
+
+
+■ 
+
+
+
+- 
+
+
+
+
+By selecting the “Start” button a brief test 
+of the system files will be performed. 
+
+
+M^naticmc-nc 
+
+
+
+"ht- r 't .'|E Nei Lt5y*^i- -4 ta C*= i L'uik-J .villi dit CIF irtttAiftv IlvI 
+
+
+TIi y jjiulm d ju Liiii tiLc il'.-li i i -i-’iilt*. 
+
+Si:,L:r ySTwrte :j iLm“ the p-vu*<l.f< 
+
+
+
+
+
+
+■ 
+
+
+
+
+
+CTM Ii I p ij- iy rr id tpi irr.' i'ir-nl 
+
+
+36 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By selecting “Version” installed application 
+information will be displayed. 
+
+
+1 
+
+
+irrgv 
+
+m C<M 
+
+
+•:pr-rj-Tf*g 
+
+Lend KltwM npcrsir'v mo* 
+VGfrtCfc -SpOiHlPa n-QiJC' 
+
+
+2 . 
+
+* Can-rtfkfinn Pt ODznbw 
+■■ t-fimn CL - ? 
+
+
+
+
+A list of the various files/applications installed 
+as well as their software levels is displayed. 
+
+
+37 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle 
+
+
+
+Coding 
+
+Inditfid uttl^ali'pn 
+Pfogra mrni ng 
+
+
+
+“Vehicle” can be selected from the main 
+CIP selection screen to access additional 
+functions: 
+
+- Vehicle order 
+
+- Initialization 
+
+- Service functions 
+
+- Complete encoding 
+
+
+38 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle - Vehicle Order 
+
+
+
+By selecting “Vehicle order” the ability to 
+adapt/modify the vehicle order can be 
+accessed. 
+
+
+Ytihficld 
+
+
+-I Hirhi? Imrtnn 
+
+
+1 
+
+
+iri-gr/ 
+
+* '::<M 
+
+
+:prJT-tng rnsjrtj 
+
+Lend Kltvm npcraTTfl 
+
+cpwr.ing mo* 
+
+
+
+2 -. ewt 
+
+* Cnnzctouj'i urt rmEnbor 
+
+* tfrmti Ci^ 
+
+
+
+Note: Changing the vehicle order may 
+affect vehicle operation. 
+Modifying the vehicle order 
+should only be performed when 
+directed to do so by the Technical 
+Hotline, Service Information 
+Bulletin or Aftersales Installation 
+Instructions. 
+
+
+
+Selection of “Adapt VO” provides the abili¬ 
+ty to install a modified Vehicle Order file. 
+
+
+
+a rtjs CMfliwr wtylfttK-riare «ppraprtea( nttnirttuu itc r ncrl 
+
+Miuhil 
+
+UEfc I'jEk: dii: Lullu'i Pdht. 
+
+
+r:-.rlm ir 
+
+
+
+
+
+Before selecting “Continue” a floppy disk 
+(1.44) containing the modified/new vehicle 
+order must be inserted into the disk drive of 
+the SSS. 
+
+Note: The modified VO file is obtained 
+from the Technical Hotline by submit¬ 
+ting a PUMA case requesting a modi¬ 
+fied VO, the PUMA case should indicate 
+what accessory/feature needs to be 
+added or removed. The modified file 
+will be sent via E-mail and must be 
+copied on to a 1.44” floppy disk. Do not 
+attempt to open the received file on a 
+PC, as this may corrupt the data con¬ 
+tained in the file. 
+
+(Refer to SI B 09 05 01) 
+
+
+39 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle - Initialization 
+
+
+VANkk 
+
+
+
+
+Yi:htl* 
+
+
+SrlE-^l nr-irlr Imrtrm 
+
+
+1 CtlH' 
+
+
+i|i _ 5V 
+
+* WM 
+
+
+■JfHTBfrnfl rp^rM 
+
+LCHd SOttvn np[rsT.-.j n^rfc 
+Wnreign'^c-T cpwr.ing mo* 
+
+
+
+The “Initialization” function provides 
+access to three different functions: 
+
+• Start system time - Used to synchronize all 
+modules contained on the vehicles byte- 
+flight bus. 
+
+• Delete fault memory 
+
+• CAS or EWS calibration 
+
+
+2. ires 
+
+* CSniCfr.ign nt rurn^rt GDZnbEi" 
+■■ T-fimn CL-? 
+
+
+
+
+Yttfcla 
+
+
+By selecting “Delete fault memory” the 
+
+fault memory of all installed control modules 
+will be cleared. 
+
+
+$ ril'd hrv-l;!? tuii^nn 
+
+
+1 CtiR- 
+
+
+'TiSV 
+
+* ^pr^-j-ing rriijrtf 
+
+* Loud sffttwn npcraTfl mo* 
+■ WrmgD-xrr: Gpcfr.ing mo* 
+
+
+
+2 . 
+
+* tan:cteio'i of wt ooznbor 
+■ T-eimn CL-? 
+
+
+
+
+LH 
+
+v.h ri ahvm i i hirjKi i r 
+
+21?1 tn 
+
+
+in my. 
+
+
+$ 
+
+
+YtMck 
+
+
+
+
+■F . 
+
+
+F In id report 
+
+
+l,Mifidrr- ®l££ 
+
+VWKd 
+
+V A Eh I> W13I-: ^s./.AKiyc^C'K'.V 
+
+llr+ ^Wn ^ IV.-WViyrt .mm,-. . 1***1 
+
+if fria-optwi M. 
+
+
+I mah 
+
+
+I'if nmntpiiffDiii i iinlml 
+
+
+
+Displays a report pertaining to the clearing of 
+the fault memory on all installed modules. 
+
+
+40 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By selecting “EWS adjustm.” or “CAS 
+Calibration” the rolling code tables can be 
+initialized. 
+
+
+1 Cinr 
+
+
+1IT5V 
+
+* WM 
+
+
+OfHFlfrng rp^rM 
+LCHd SPttwn np[rsT.-.j 
+Wnreign'^c-T cpwr.ing mo* 
+
+
+i. =rot 
+
+* Cinicfrng'' nt rut-n^rt rjsiznbci - 
+■■ t-fimfi CL-? 
+
+
+
+
+By selecting “Yes” the calibration/initializa¬ 
+tion of the rolling code tables in the DME 
+and CAS or EWS modules will be carried 
+out. 
+
+
+41 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle - Service Function 
+
+
+The “Service function” feature provides 
+access to various calibration functions. 
+
+
+
+Vtlfcla 
+
+
+:irlc-I ir-irlr Imhnn 
+
+
+1 Qir- 
+
+
+hi ■q pr^rj-ing rri^rif 
+
+* L'lMd JSHVTT np[ra-jr.j 
+
+* cpwr-ingi irrfr 
+
+
+
+t. £r*jt 
+
+* Cantsffaflnn nt nrn^t nnmbpr 
+
+
+
+
+Selecting “LWS” will provide the ability to 
+calibrate the steering angle sensor. 
+
+
+
+RMM_FHU , i Rflt l Hi*i: , :ni|i | _in 
+
+
+"^c■ -tfEc; ns ontfc- mus-1 be cnfraiH rrtiei iiF□ v»ig |pw 
+R[-p4fe[Efr?»i at rtitfritp a _ gk: shisai 
+
+- R^jil: :e--e ■: cl' DSC control mz-i-fc 
+
+- >juiL u-i MMilng iicefiirtp 
+
+- Working uii i .'juiihj i■ i i hurt uxl 
+
+
+
+
+
+By selecting “Continue” the process to 
+calibrate the steering angle sensor will be 
+carried out. 
+
+
+42 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vehicle - Complete Encoding 
+
+
+
+
+LM 
+
+YUfeJt 
+
+JO 
+
+v.h m ruPdiT] is 1,1 r*e -i r 
+
+J 
+
+
+7S,'l tn 
+
+
+
+
+
+“Complete encoding” provides the ability 
+to code/recode all control modules installed 
+in the vehicle. 
+
+
+'W-I:l? iinrtnn 
+
+
+1 Chrr 
+
+
+i iTffW 
+
+* LCHd SOHVXE np[r< v-i m 
+4 Mn^SD^OT cpw?.ingi IP5* 
+
+
+
+l. end: 
+
+* CanzctMoi trt ooznbE* - 
+■ t-fimn CL-? 
+
+
+
+
+Vur.-.l'j 
+
+
+Recoding all the installed control modules 
+may result in in the loss of initialization or 
+system settings such as radio station presets 
+or seat/mirror memory. 
+
+
+
+
+Vw start ccdi'fl.UK entre nAkte ^ili -te -lolHwhft t.nEiior! 
+
+Cento modi4 inriiil zaosn s matt « e::ivlf-INi actlMi .Please- rate to Hk 
+
+:-ipciiJ ng SI - FethrimJ 
+
+
+
+
+I-’-' ■ p r.-I'lV'.-' hli- >• - P V«I hSLT 'F j - ihr 1(4 
+
+
+
+LH 
+
+■>p r i'i ,v d sii t c i>*i r w ~ r 
+
+71,'1 Hi 
+
+
+Shield Lodr^ art ire emcrc ch-' be sinned na-v? 
+
+
+
+
+
+n 
+
+
+u 
+
+
+YtfUdti 
+
+
+
+
+
+CiF rrilhi >rviEFii n %i<, k.in-llriinrjvirvirm n Eir, :eL‘ i irrr.luirlv %-i-h f.mw* 
+
+
+By selecting “Yes” all installed control mod¬ 
+ules will be recoded based on the informa¬ 
+tion contained in the Vehicle Order. 
+
+
+43 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP Functions - If Yes 
+
+
+
+After selecting “Yes” on the Yes/No selec¬ 
+tion screen a determination/check of all 
+installed control modules is performed. 
+
+
+
+Upon completing a check of the installed 
+control modules, a list highlighting the 
+installed control modules is displayed. 
+
+Select the control module(s) that were 
+replaced and select continue. 
+
+
+After selecting the replaced module(s) and selecting continue a measures plan will be 
+generated which compares the integration levels (actual vs. target) for not only the mod¬ 
+ules replaced but for all installed modules as well. If any of the installed control modules 
+do not match the target level they will be updated along with the replacement modules. 
+
+
+For additional information pertaining to programming replacement modules refer to 
+
+SIB090501. 
+
+
+44 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CKM - Individualization (Vehicle & Key Memory) 
+
+
+
+Cud my 
+
+IndlvltiuaHzatKcn 
+Prog ramming 
+
+
+The CKM feature contained in CIP (for models produced as of the E65) provides the abil¬ 
+ity to “customize” certain vehicle and key functions to meet the specific preferences of 
+the customer. It is important to note that the functions/features that can be “customized” 
+vary depending on model, equipment level and vehicle software level. 
+
+
+Upon selecting “CKM” a check of the current vehicle and key settings is made and dis¬ 
+played. The displayed settings list should be printed out and provided to the customer in 
+order for them to select how the available functions should be set . The CKM function 
+contained within CIP allows settings for both vehicle and keys to be made directly, the 
+older version separates the key settings from the vehicle setting as different functions. 
+
+
+
+Efc- Uimnry 
+
+
+Kflji' P.Jrtmnry 
+
+
+On older vehicles the Car Memory and Key 
+Memory settings can be accessed via the 
+SGC/UNIX function (refer to Progman 
+Module and the section pertaining to 
+accessing CIP Functions for 
+E31/E32/E34/E36/E38/E39/E46/E52/E53). 
+
+
+fnJMi £<$1 ii 
+
+
+SLiVrtGEMLMtjflO 
+
+
+FrtOeMMUtKWlG 
+
+
+fl.EV3i.tlcH twS Cfjjf 
+
+
+fi&QLEJCH EW5 DEE 
+
+
+Detailed information pertaining to CKM configuration is available in SI B09 03 98. 
+
+
+45 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^UniLIiOri QJ<3 LiP4 
+
+
+Upon selecting “CKM” a check of the cur¬ 
+rent vehicle and key settings is made. 
+
+
+E-k Cm i. KS-V Wtwry ;i ft be ns rend oui 
+
+
+
+
+Once the check is complete the current set¬ 
+ting are displayed and can be printed out. 
+
+
+C^r&KAgi Memnrr Xi 
+
+
+
+
+
+LT>".E 
+
+IJK 
+
+
+Q! 
+
+
+re EC.'K 
+
+
+
+
+
+
+4d 
+
+
+
+t> 
+
+V 
+
+
+n 
+
+
+
+
+&K If 3 :it s I rw ft rff t l>i nrr,- inin^ 
+
+&$iill[JOT I VI-R5iing ri- i(i;.\ bir. 
+
+
+Changes to the current settings can be 
+made by selecting the preferred function. 
+
+Note: Some preference settings can be 
+made that are specific to the key 
+being used. 
+
+
+46 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- la -rK| 
+
+
+BUM 
+
+
+
+
+■ r ;< -ml wrcd-V ft 
+
+
+LM 
+
+lvh ri rifdii] is v i r «." i r 
+
+V J .■ I Lm 
+
+
+WVinfrlri rw Pi ■■>■,, L'rnrp.i irnnp.. 
+
+K | •'-rttpg r>< ty L-ir; 
+
+
+-I + 
+
+
+=:“ 1 U_ LJ-r -rn -—11 -:■&■. 
+
+
+
+
+
+furiLik-n jpDBu 
+
+
+•! 5 iilv- A -C-?i;.vT^.i“- 
+
+
+
+
+bMHil B M? 
+
+
+
+t .--rr riF f.ir 
+
+
+!U ibndirl ■rnJunn 
+
+
+
+The factory default setting are identified by a 
+“factory” symbol. 
+
+To except/code the new setting to the vehi¬ 
+cle or key select “Encode car”. 
+
+
+
+To lock the changes to the vehicle and/or 
+keys select “Save”. 
+
+By selecting back additional changes can be 
+selected or the function aborted. 
+
+
+Snre-ns*^ «t Cm t KcyMefran, 
+
+
+
+■i.-Tj'i- 
+
+
+u 
+
+
+■ .h r r 
+
+
+
+
+Once the new values are stored/set a final 
+report showing the new setting will be dis¬ 
+played. The report will also show if the 
+effected modules did or did not accept the 
+changes. 
+
+
+47 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZCS Coding Procedure 
+
+The ZCS coding procedure can currently be performed with the DISplus using DIS CDs 
+until DIS CD 42 is released at which time all SGC/Unix coding and programming func¬ 
+tions will be available only via Progman using the GT1 orSSS. 
+
+There are two methods of encoding replacement control modules: 
+
+• Manual input of ZCS 
+
+• Automatic ZCS retrieval and coding 
+
+Coding Control Modules that Store the ZCS 
+
+On earlier production vehicles when replacing a control module that stores the ZCS code 
+(i.e Kombi?lnstrument Cluster) the information must be entered manually in order to code 
+the replacement module. The ZCS code from the label located in the vehicle or a print¬ 
+out of the code stored in the module to be replaced must be entered into the new mod¬ 
+ule. 
+
+The control modules that store the ZCS and require manual input are: 
+
+• IKE-E38 
+
+• EKM-E31 
+
+• Instrument Cluster - E32/34 (After 9-91) & E36 (except 318ti and Z3 Roadster) 
+
+• EWS II - 318ti & Z3 Roadster 
+
+Note: As long as the defective EWS II control module can communicate with 
+the coding equipment, automatic encoding is possible. 
+
+On later production vehicles where the ZCS information is stored in two modules, redun¬ 
+dant data storage, the ZCS information to code the replacement module can be obtained 
+from the second/backup module. 
+
+Vehicles which have redundant ZCS data storage are: 
+
+• E36 (Z3) - Instrument Cluster & EWS II as of 9/98 
+
+• E39 - Instrument Cluster & EWS II 
+
+• E46 - Instrument Cluster & LSZ 
+
+• E53 - Instrument Cluster & LSZ 
+
+Note: E46 changed from ZCS to a Vehicle Order (VO/FA) vehicle data structure 
+in 9/01. 
+
+
+48 
+
+Coding, Individualization & Programming 
+
+
+Manual Input of ZCS Data 
+
+
+
+Model WfTCE SELECTION 
+
+
+Coding 
+
+-ndividu.il: rail on 
+Frggrnrnrnlng 
+
+
+
+From Progman establish a connection to the 
+interface connected to the vehicle and 
+access CIR 
+
+To perform the procedure from CIP 
+the Model series must be selected 
+
+(3 series, 7 series...). 
+
+Then select the body (E32, E36 ...). 
+
+
+
+Select “Codierung ZCS/FA”. 
+
+Then advance screen to the right two times 
+to enter the vehicle series selection screen. 
+
+
+Cife- i-limu-y 
+
+I V jLf.VA\ AP» '-All 1L. * 
+
+Kifljf M^rnnry 
+
+■::s:chi iuahc: ii 
+
+SLU^LMlASUIUIS 
+
+ApAlfclCH hWt-D*AE 
+
+'.BGLEICH EftS DDE 
+
+
+
+
+LttEf-ithsft; 
+
+
+The version ID page is displayed. 
+
+Make sure it is the most up-to-date version 
+of the software for the encoding procedure. 
+
+
+
+ftita 
+
+
+Press the right arrow. 
+
+
+
+49 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select vehicle series (i.e “E36 Series”). 
+
+
+
+LLcUu'Juft 
+
+l U |»n.- 
+
+: f:j sail 
+j EJHirt* 
+
+s 
+
+tETJWi'tt 
+
+I FT !■ T-cr* ? 
+
+JtLSni 
+
+II Sci SOffttCi i 
+
+
+► 
+
+
+
+
+Select “Recoding”. 
+
+Then advance screen to the right. 
+
+
+
+
+
+LLcLjli idiii*l 
+
+
+Displays control modules that are ZCS 
+codable. 
+
+Example: 
+
+
+ili-jCtvZ5 
+
+■ < ivw i.Ti^rTri r^i 
+
+
+iSiDHRfsL 
+
+ik 
+
+II 
+
+wanrsc 
+
+
+Select “KOMBI”. 
+
+
+NtfE 
+
+
+► 
+
+
+
+50 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select “Yes” to recode KOMBI. 
+
+
+
+
+
+
+
+Eflff 
+
+
+UWjErKMft 
+
+
+i earrf 
+
+ft >: lr P r 
+
+Tin pi prn 1 
+
+
+
+Follow the instructions given on screen. 
+
+
+
+
+
+Chassis number of vehicle is displayed. 
+
+Select “Yes” to accept VIN. 
+
+Select “No” if VIN needs to be changed. 
+
+When installing a new module the last 7 
+digits of the VIN will need to be entered. 
+
+
+
+51 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Follow the instructions given on screen. 
+
+
+
+
+[ 
+
+
+GIF 
+
+
+Ei£- 
+
+
+
+Chassis number of vehicle is displayed, enter 
+VIN using touch screen pad or the keyboard 
+on an SSS. 
+
+
+Ucber5:h-v J - 
+
+
+
+Select “Yes” to accept VIN. 
+
+Select “No” if VIN needs to be 
+changed/corrected. 
+
+When installing a new module the last 7 
+digits of the VIN will need to be entered. 
+
+
+
+GIF 
+
+
+
+
+Current ZCS code is displayed 
+Select “YES” to accept current code 
+
+
+Ubbcrtch^fe 
+
+
+ip* ifTlK*- 
+
+owm 4: vt'i ix-wi 
+VTH -HHIPFEEKI 
+
+
+
+Select “No” to change the ZCS data 
+
+When installing a new module the ZCS code 
+of the vehicle will need to be entered. The 
+information can be obtained from: 
+
+• ZCS print out of old module before 
+removal 
+
+• ZCS label located in vehicle 
+
+
+
+52 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iJcber-s:h 
+
+KL-iiSi 
+
+C 1 ■ L*L* ■ TJ 
+S ! .^TI 
+
+
+n-ri-c- 1 : 
+mi xi 
+
+
+ll»T 
+
+
+
+
+If the ZCS code must be changed follow the 
+instruction given on screen and enter the 
+required information exactly as indicated on 
+the ZCS label or printout of ZCS code 
+before removal of module. 
+
+
+
+GIF 
+
+
+Ei£- 
+
+
+Ucbtreihv 1 : 
+
+
+a/ 
+
+
+
+
+
+
+
+
+
+tsnnn 
+
+
+
+Vcd 
+
+Hu 
+
+
+Confirm or enter new GM information. 
+
+
+
+Ubbcrtch^fe 
+
+
+
+Confirm or enter new SA information. 
+
+
+
+53 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ik L li iduPl 
+
+
+Confirm or correct ZCS information. 
+
+
+L\K i-f 
+
+r-j 
+
+Vh KttFFlUHft 
+
+vixacpi 
+
+HtMtfT* 
+
+
+
+A. 
+
+
+
+
+
+
+r.'i-cj 
+
+Ski 
+
+iHzarcrcMiqv 
+
+
+Vi?!l 
+
+No 
+
+
+► 
+
+
+Select “Yes” to begin the coding process 
+for the installed/selected module. 
+
+Upon completion of the coding process print 
+out a copy of the ZCS information displayed 
+and attach it to the repair order to be main¬ 
+tained with vehicle file. 
+
+Switch ignition off for 10 seconds, then 
+check for proper system operation. 
+
+
+
+54 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Coding Procedure 
+
+When a control module is replaced that does not store the ZCS code , the replacement 
+module is coded automatically using the ZCS code, stored in the Kombi, EWS or LSZ. 
+
+
+
+From Progman establish a connection to the 
+interface connected to the vehicle and 
+access CIR 
+
+To perform the procedure from CIP 
+the Model series must be selected 
+
+(3 series, 7 series...). 
+
+Then select the body (E32, E36 ...). 
+
+
+Select “Codierung ZCS/FA”. 
+
+Then advance screen to the right two times 
+to enter the vehicle series selection screen. 
+
+
+Huncwy 
+
+~ | W-.VA *» / .'] ‘j.'.TXS 'i. — 
+
+K'flv MirmnrY 
+•v.ijCAt in.i±*:: y TKn ii 
+
+Stl^lNLASUIlLS 
+
+AF&LfelCH HWS- D*4E 
+ABQLEJCH EtK DDE 
+
+
+55 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The version ID page is displayed. 
+
+
+
+UfebcrKh ft 
+
+
+I 
+
+
+Eit 
+
+
+
+Make sure it is the most up-to-date version 
+of the software for the encoding procedure. 
+
+
+scr-'i 
+
+Fiy|CTnjf 
+VJra c™ [VO). 
+
+VMi'jbl ■: Jim 
+
+
+
+Press the right arrow. 
+
+
+
+
+Select vehicle series (i.e “E36 Series”). 
+
+
+Uc here: I rift 
+
+
+iFsiiiii 
+Z'EETSaHi 
+lEHhii 
+Jca-SEIH 
+E LjCSni 
+
+■ [ a 1 ■: [i 
+
+:• e-% . ii 
+
+lEsas-rti 
+l Eli**** 
+
+vj iJp l-:r>Tr.+r:^ 
+
+
+
+
+Li:btr-s:M--.ft 
+
+
+
+Select “Recoding”. 
+
+Then advance screen to the right. 
+
+
+
+
+56 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iJeber-5:lr - 1 ' 
+
+
+
+
+> ;>Hirorizrc. 4 V| 
+
+
+K EV, j 
+:i J-pi,'--:; 
+ECDWkl. 
+
+-I u=.il 
+
+» ►+ e-« =. 
+
+H *?MVK- 
+
+
+Displays control modules that are ZCS 
+codable. 
+
+Example: 
+
+Select “ZVN ll/GM (ZKEIV)”. 
+
+
+
+
+
+Confirm module selection. 
+
+
+UcbtrsEh-v 1 : 
+
+
+
+
+CIF 
+
+“ 
+
+
+, I, • ;~~ 
+
+
+
+
+
+UcbETKhift 
+
+
+If a replacement module is to be installed 
+install it now. 
+
+
+i 
+
+cr 1 ^ 
+
+pf 
+
+urirV 
+lid pi 5n--c:> 
+
+
+
+57 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIP 
+
+Edb 
+
+
+
+
+
+Ui Lli pidiifH 
+
+
+Select “Yes” to begin coding or recoding 
+the selected module. 
+
+
+nmv 
+
+r.'kr 
+
+i.::r 
+
+
+► 
+
+
+
+
+CIP 
+
+Edb 
+
+
+
+
+
+U.LLlHJl.rt 
+
+
+Coding/recoding process of selected module 
+is complete, follow the instructions given. 
+
+
+ntH rv 
+
+T*.i :ipib iis.i; 
+-ill.-a eii 
+
+Tl*I 
+
+••‘•if II IKXTti? 
+Tic: ^UtVET. 
+
+■ Sri-1 IT.EI'-Jdl 
+L»93b z-’-iia 
+
+
+
+
+
+58 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additional ZCS Coding Functions 
+
+
+
+LtefrertcSwff 
+
+
+I FSKfitiirtg 
+
+
+i Ref rcrt 
+
+3 Prsplif# CKXiiiQ 
+
+-and code 
+ibr printout 
+
+4 Cnnweratan 
+
+
+
+Retrofit 
+
+The retrofit function allows options or accessory equipment to be added after the vehicle 
+is manufactured. 
+
+By selecting to install a new option/accessory from the list of available retrofits for the spe¬ 
+cific vehicle, the ZCS information will be updated to reflect the addition of the new option 
+or accessory that was installed. Updating of the ZCS information will ensure that the new 
+component is recognized and able to communicate with the other modules in the vehicle. 
+
+Conversion 
+
+The conversion function allows specific features of certain control modules/systems to be 
+modified, similar to the way lndividualization(Vehicle & Key Memory) is used on newer 
+models to “customize” a vehicle. 
+
+
+59 
+
+Coding, Individualization & Programming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

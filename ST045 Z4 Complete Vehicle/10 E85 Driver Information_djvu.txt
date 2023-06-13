@@ -1,0 +1,1645 @@
+Table of Contents 
+
+
+E85 Driver Information 
+
+
+Subject 
+
+
+Page 
+
+
+Instrument Cluster.4 
+
+System overview.4 
+
+Instrument-cluster plug connection.5 
+
+New system features/modifications .5 
+
+System Components.6 
+
+Display areas .6 
+
+Instrument-cluster lighting.6 
+
+Instrument Cluster Power Supply.7 
+
+Undervoltage detection.7 
+
+Coolant temperature gauge .7 
+
+Fuel gauge .7 
+
+Indicator Lamps .7 
+
+LC Display .12 
+
+Program and Gear Display.12 
+
+Acoustic generators .12 
+
+Seat Belt Reminder.13 
+
+Setting Buttons .13 
+
+
+System functions.13 
+
+Bus network.13 
+
+Instrument cluster as gateway .14 
+
+On-board computer .14 
+
+On-board computer display in navigation-system on-board monitor . .14 
+Redundant data storage (RDA).15 
+
+
+Notes for Service.15 
+
+Test functions.15 
+
+Test function 19 .15 
+
+Unlocking test functions.16 
+
+Locking test functions.16 
+
+Terminating test functions.16 
+
+Overview of test functions.16 
+
+Visual system test.17 
+
+
+Initial Print Date: 08/02 
+
+
+Revision Date: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagnosis 
+
+
+17 
+
+
+Car & key memory.17 
+
+SIA IV service interval indicator.18 
+
+Review Questions .19 
+
+
+2 
+
+
+Driver Information 
+
+
+
+
+
+
+
+Model: E85 
+
+Production: Start of Production MY 2003 
+
+
+Objectives: 
+
+After completion of this module you should be able to: 
+
+• Explain the inputs into the Instrument Cluster. 
+
+• Identify the Indicator Lights and Warning Symbols in the Cluster. 
+
+• Perform the Lock/Unlock and Self Test of the Cluster. 
+
+• Change Car & Key Memory Setting in the Cluster. 
+
+
+3 
+
+
+Driver Information 
+
+
+
+
+Instrument Cluster 
+
+
+The instrument cluster in the Z4 has a sporty appearance in line with a roadster. The instru¬ 
+ment cluster is very compact. The needle instruments are integrated in 2 housing attach¬ 
+ments. The two needle instruments for the speedometer and the tachometer are thus the 
+predominant visual features. 
+
+The needle instruments for the fuel gauge and the coolant temperature gauge are integrat¬ 
+ed in the tachometer. The speedometer incorporates an LC display, which shows e.g. 
+the total mileage (odometer), the trip distance (trip odometer), the time, the on-board com¬ 
+puter functions and the SIA service interval indicator. 
+
+Between the large needle instruments are the indicator and warning lamps and the program 
+and gear display. The program and gear display is only featured in vehicles with automatic 
+transmissions and SMG sequential manual gearboxes. 
+
+The instrument cluster is the central gateway in the bus network. 
+
+System overview 
+
+
+
+
+1. Parking Brake Switch 
+
+2. Brake Pad Wear Sensors 
+
+3. Coolant Level Switch 
+
+4. DSC Control Unit 
+
+5. Oil Pressure Switch 
+
+6. Turn Signal Switch 
+
+7. Starter Terminal 30H 
+
+8. Reverse Light Switch (Manual Trans Only) 
+
+9. Instrument Cluster 
+
+10. Ground Supply Terminal 31 
+
+11. Fuse Box 
+
+12. Outside Temperature Sensor 
+
+13. Fuel Tank Sensor 1 
+
+14. Fuel Tank Sensor 2 
+
+15. PT-CAN Bus 
+
+16. K-Bus 
+
+17. D-Bus 
+
+
+
+4 
+
+
+Driver Information 
+
+
+
+1. Brake Pad Wear Sensor (LF) 
+
+2. DME 
+
+3. DSC 
+
+4. Outside Temperature Sensor 
+
+5. Coolant Level Switch 
+
+6. Oil Pressure Switch 
+
+7. Instrument Cluster 
+
+8. Turn Signal Switch 
+
+9. Reverse Light Switch (Manual Trans Only) 
+
+10. Fuse Box 
+
+11. Parking Brake Switch 
+
+12. Fuel Tank Sensor 1 
+
+13. Fuel Tank Sensor 2 
+
+14. Brake Pad Wear Sensor (RR) 
+
+
+Instrument-cluster plug connection 
+
+The 26-pin plug connection is located on the 
+reverse side of the instrument cluster. 
+
+
+New system features/modifications 
+
+The main feature of the instrument cluster in the Z4 is its new design: 
+
+• The indicator and warning lamps between the needle instruments. The coolant 
+temperature gauge and the fuel gauge are integrated in the tachometer. 
+
+• Additional indicator and warning lamps (e.g. Electric Power Steering EPS) are 
+integrated. 
+
+• The automatic gearbox or Sequential Manual Gearbox SMG has a liquid-crystal display 
+for indicating the gear. 
+
+• The instrument cluster of the Z4 has a gateway function between the bus systems (as 
+in the E46) K bus, PT-CAN bus and diagnosis bus. 
+
+• The lighting of the instrument cluster is controlled by means of the K bus. 
+
+• The instrument cluster has a modified voltage supply with undervoltage detection. 
+
+• The acoustic alarms and test functions have been expanded. 
+
+5 
+
+
+
+
+Driver Information 
+
+
+
+
+
+
+
+System Components 
+
+
+The instrument-cluster system comprises the following components: 
+
+• Needle instruments 
+
+• Indicator and warning lamps 
+
+• LC display 
+
+• Program and gear display for automatic gearbox and SMG Sequential Manual Gearbox 
+
+• Acoustic generator for outputting acoustic alarms 
+
+• Acoustic generator for outputting turn-signal flasher rate 
+
+• Two setting buttons, integrated in instrument cluster 
+
+• Connected components which serve to activate the displays/ indications in the instru¬ 
+ment cluster (see system overview/system schematic) 
+
+
+Display areas 
+
+The instrument cluster is divided 
+into the following display areas: 
+
+• Needle instruments 
+
+• Indicator and warning lamps 
+
+• LC display 
+
+• Program and gear display for 
+automatic gearbox and SMG 
+Sequential Manual Gearbox 
+
+
+
+Instrument-cluster lighting 
+
+
+The speedometer and the tachometer are illuminated by slit light between the dial face and 
+the graduated dial. The brightness of the dial-face, needle and display illumination (dim¬ 
+ming) is determined by the LSZ light switch center. The lights ON signal is transmitted from 
+the LSZ light switch center to the instrument cluster (via the K bus). The dimming signal is 
+also transmitted via the K bus. The LSZ evaluates the following input signals to control dim¬ 
+ming: 
+
+• Dimmer (knurl in light switch center) 
+
+• Photoelectric cell for ambient brightness (in light switch center) 
+
+
+Because the dimming signal is sent via the K bus, there is no need for terminal 58g. 
+
+
+6 
+
+
+Driver Information 
+
+
+
+
+Instrument Cluster Power Supply 
+
+An integrated power supply unit (switching controller) delivers the supply voltage to the 
+instrument cluster. The lighting of the instrument cluster is therefore not dependent on the 
+vehicle electrical system and no fluctuations in brightness can occur in the event of distur¬ 
+bances in the electrical system. 
+
+Undervoltage detection 
+
+The instrument cluster incorporates an undervoltage-detection facility. Undervoltage detec¬ 
+tion is performed in the instrument cluster with the aid of a comparator (software-based 
+voltage comparison). 
+
+Note: 
+
+Overvoltage in the electrical system is also detected. In the event of a system voltage > 16 
+volts, it is possible for: 
+
+• Inputs and outputs to be deactivated 
+
+• Indicator and warning lamps to be deactivated or dimmed for the duration of the over 
+voltage 
+
+Coolant temperature gauge 
+
+In the event of coolant overtemperature, a warning sound is issued when the red indicator 
+and warning lamp lights up. The signal is delivered by the DME via the PT-CAN bus. 
+
+Fuel gauge 
+
+The indicator lamp is activated when the fuel reserve drops below a threshold coded at the 
+plant (standard = 8 liters). 
+
+Indicator Lamps 
+
+There are a total of 24 indicator and warning lamps in the instrument cluster of the new Z4. 
+The following two lamps are new additions to the established lamps: 
+
+• Indicator lamp for EPS: The Electric Power Steering system is used in the new Z4 for 
+the first time. 
+
+• Indicator lamp for lamp monitoring: This lamp indicates lamp failure in the headlights, 
+rear lights and brake lights and is activated by the light switch center. 
+
+The instrument cluster receives input signals through the following channels: 
+
+• Via the K bus 
+
+• Via the PT-CAN bus 
+
+• Directly from the sensors 
+
+
+7 
+
+
+Driver Information 
+
+
+
+| Symbol Color Meaning Activated By Active From Pre-Drive Check 
+
+Terminal 
+
+
+
+
+
+Green 
+
+LVS Turn 
+Signal 
+
+LSZ (K bus) 
+
+Terminal R 
+
+Green 
+
+Turn-signal 
+flasher, right 
+
+LSZ (K bus) 
+
+Terminal R 
+
+Red 
+
+Battery 
+charge 
+(Terminal 61) 
+
+DME (PT-CAN 
+bus) 
+
+Terminal 15 
+
+Blue 
+
+Main 
+
+beam/light 
+
+signal 
+
+LSZ (K bus) 
+
+Terminal R 
+
+Red 
+
+Red 
+
+Low oil pressure 
+switch 
+
+Terminal 15 
+
+Yellow 
+
+Low oil level 
+
+DME (PT-CAN 
+BUS) 
+
+Terminal 15 
+
+Yellow 
+
+ABS Inactive 
+
+DSC via sperate 
+line 
+
+Terminal 15 
+
+
+
+1 s yellow and then 
+1 s red 
+
+
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Color 
+
+Meaning 
+
+Activated By 
+
+Red 
+
+General brake 
+warning light: 
+Parking brake. 
+
+Handbrake 
+
+Switch 
+
+Red 
+
+Low brake-fluid 
+level 
+
+DSC (PT-CAN 
+bus) 
+
+Red 
+
+EBV inactive 
+
+DSC (PT-CAN 
+bus) 
+
+Yellow 
+
+DBC Inactive 
+
+DSC (PT-CAN 
+bus) 
+
+Yellow 
+
+Brake-lining 
+wear 
+
+Brake-lining 
+wear sensors 
+and algorithm in 
+instrument clus¬ 
+ter 
+
+Green 
+
+Front fog lamps 
+
+LSZ (K Bus) 
+
+Yellow 
+
+Fuel reserve 
+
+Fuel-tank sensor 
+and algorithm in 
+instrument clus¬ 
+ter 
+
+
+Terminal 
+
+
+Terminal 15 
+
+
+and 
+
+terminal 58 
+
+
+1 s yellow and then 1 s 
+red (if Coded) 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@! 
+
+0 ) 
+
+
+5 
+
+
+Color 
+
+Meaning 
+
+Yellow 
+
+Electric 
+
+Power 
+
+Steering EPS 
+
+Yellow 
+
+System failure 
+or during ini¬ 
+tialization 
+
+Red 
+
+Tire-pressure 
+
+loss 
+
+Red 
+
+Airbag 
+
+Red 
+
+Fasten seat 
+belts 
+
+Yellow 
+
+Check 
+
+Control (lamp 
+fault) 
+
+Yellow 
+
+Gearbox 
+
+limp-home 
+
+program 
+
+
+Activated By Active From 
+Terminal 
+
+
+Pre-Drive Check 
+
+
+
+
+
+ASE (K bus) Terminal R 
+
+
+
+LSZ (K bus) Terminal 15 
+
+
+
+1 s yellow and then 1 s red 
+(if coded) 
+
+
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predrive Check 
+
+
+The Predrive Check is a test of important indicator and warning lamps. In the Predrive 
+Check, these indicator and warning lamps are activated for 2 seconds with terminal 15 ON. 
+All the indicator and warning lamps are deactivated at the end of the Predrive Check. 
+
+LC Display 
+
+The LC display is located between the speedometer and the tachometer. With terminal 15 
+OFF, run-on operation is possible provided the SMG is still transmitting CAN telegrams. 
+
+The LC display is integrated in the speedometer. It has been adapted to the E85 instrument 
+cluster and operates in the same way as that of the E46. 
+
+
+
+
+LC Display 
+
+
+Program and Gear Display 
+
+1. Program Mode 
+
+2. Drive Position 
+
+
+Program and Gear Display 
+
+In cars fitted with an automatic gearbox (5HP19) or an SMG Sequential Manual Gearbox, 
+the program and gear display is featured in a separate LC display. 
+
+
+
+Acoustic generators 
+
+Depending on the incident, the acoustic alarms 
+are output once or intermittently. 
+
+The following acoustic alarms are new: 
+
+• Coolant overtemperature 
+
+• Fuel-reserve threshold 
+
+
+1. Acoustic Relay 
+
+2. Internal Speaker 
+
+
+12 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+Seat Belt Reminder 
+
+
+The seat-belt reminder for USA is activated with terminal 15 ON if the seat-belt contact is 
+not closed. The acoustic alarm is intermittent and lasts for max. 6 seconds. After this time 
+has elapsed, only the indicator and warning lamp remains lit. 
+
+Setting Buttons 
+
+
+
+2 setting buttons are 
+located between the 2 
+large needle instruments. 
+
+1. S/R for Set/Reset 
+
+2. Clock 
+
+
+The left button (S/R for Set/Reset) is used to reset the trip odometer reading, to call up the 
+test functions and to call up the reset menu for the service interval indicator. 
+
+The right button (clock symbol) is used to set the time and to switch the service interval 
+indicator (remaining distance/service date or vice versa). (To set clock, press and hold but¬ 
+ton #2 until hour flashes, then tap to change hour, press and hold again until minutes 
+appear.) 
+
+System functions 
+
+Bus network 
+
+The instrument cluster is the central gateway (interface) for the bus network: 
+
+The bus systems PT-CAN bus, K bus and diagnosis bus and the byteflight are intercon¬ 
+nected in the instrument cluster. 
+
+The byteflight is connected via the Safety and Information Module SIM (= gateway) to the 
+K bus. 
+
+
+13 
+
+
+Driver Information 
+
+
+
+K-Bm 
+
+
+
+
+
+
+JH1W 
+
+
+DM5 
+
+EW5 HI 
+
+
+RA0*0 
+
+Did 
+
+IHKS 
+
+
+
+
+
+IMS 
+
+
+FIS 
+
+PDC 
+
+
+CDC 
+
+WAV 
+
+
+
+
+
+
+
+EZV1 
+
+CVWI 
+
+
+HIFI 
+
+VM 
+
+
+
+
+
+
+
+SM 
+
+LSZ 
+
+TEL 
+
+
+
+STYL” STVH 
+
+
+PT-CAN 
+
+
+LW5 
+
+
+DEC 
+
+□ME 
+
+ECS 
+
+SMQ 
+
+
+ecsflBCn 
+
+
+KWT’iDW 
+
+
+Instrument cluster as gateway 
+
+
+
+The instrument cluster is the interface between K bus, PT-CAN bus and diagnosis bus. The 
+instrument cluster communicates with other control units in the car via the K bus (single¬ 
+core) or the PT-CAN bus (two-core). 
+
+
+On-board computer 
+
+
+The on-board computer functions are the same as those of the E46. A new feature in the 
+E85 is the possibility of combining time and outside temperature in the display depending 
+on the equipment specification. 
+
+On-board computer display in navigation-system on-board monitor 
+
+In cars equipped with the High navigation system, the on-board computer functions are 
+displayed in the pop-up on-board monitor (Central Information Display CID). 
+
+The "Distance to junction" navigation data is displayed in parallel in the instrument cluster. 
+
+Settings (e.g. units or reset) which are made at the navigation system controls using the 
+rotary pushbutton are sent by bus telegram to the instrument cluster. 
+
+The date can be set at the navigation-system controls. The date is administered in the 
+instrument cluster and shown in the onboard monitor. 
+
+
+14 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+Redundant data storage (RDA) 
+
+The kilometer reading/mileage and the data of the SIA service interval indicator are stored 
+redundantly in the following control units: instrument cluster, LSZ light switch center and 
+EWS electronic immobilizer.The above-mentioned data are thus retained when the control 
+units are replaced. 
+
+Notes for Service 
+
+
+Test functions 
+
+
+The test functions are used by service mechanics to check the coding. They also provide 
+help in troubleshooting without the diagnostic tester. 
+
+The test functions are only shown in the instrument-cluster LC display. 
+
+The test functions are activated by pressing the left setting button in the instrument cluster 
+(S/R, 5 seconds) with terminal R or terminal 15 ON. In addition, the test functions can still 
+be called up by pressing the left setting button (S/R for Set/Reset) in the instrument cluster 
+with simultaneous activation of terminal R. 
+
+The test functions are shown in the odometer and trip-odometer display areas in the top 
+line of the display. 
+
+The display of the on-board computer function is retained in the bottom display line. 
+
+
+
+E85 Test Functions 
+
+Test 7.1 Outside temperature (24.9°C) 
+
+
+Test function 19 
+
+Only the first two test functions are freely accessible. All further test functions are locked 
+from the third test function. The lock can only be removed by means of test function 19. 
+
+In test function 19, the display switches in intervals of 1 second from L_on to L_oFF (Lock 
+on and Lock off). The test functions are unlocked or locked by pressing the left setting but¬ 
+ton (S/R for Set/Reset). 
+
+
+15 
+
+
+Driver Information 
+
+
+
+Unlocking test functions 
+
+If while L_oFF is displayed the left setting button (S/R for Set/ Reset) in the instrument clus¬ 
+ter is pressed, the test functions remain unlocked or are unlocked. The display jumps to 
+test function 0. 
+
+Locking test functions 
+
+If while L_on is displayed the left setting button (S/R for Set/Reset) in the instrument clus¬ 
+ter is pressed, the test functions remain locked or are locked. The test functions must oth¬ 
+erwise always be locked by means of the test function 19. 
+
+Note 
+
+The test functions are always locked after a terminal has been changed. 
+Terminating test functions 
+
+The test functions are terminated by terminal R OFF. With terminal R ON, the test functions 
+are exited by: 
+
+• Pressing the left setting button (S/R for Set/Reset) for longer than 5 seconds 
+
+• Calling up the test function 21 
+
+Overview of test functions 
+
+
+_tEST_0_ 
+
+ExitTest Functions 
+
+_tEST_6._ 
+
+Fuel Level 
+
+_tEST_10. 
+
+CAN Monitor 
+
+_tEST_1 
+
+Info roll 
+
+_ tEST _ 6.0 
+
+Tank Sensors L/R in 1 
+
+_ tEST_10.0 
+
+DSC 
+
+_ tEST _ 1.0 
+
+Vin Last 5 
+
+_tEST_6.1 
+
+Avg Sum Tank Sensors 
+
+_tEST_10.1 
+
+DME 
+
+_tEST_1.1 
+
+K-Number 
+
+_tEST_6.2 
+
+Fuel Gauge in Liters 
+
+2JESTC10.2 
+
+DME 4 
+
+_tEST_1.2 
+
+BMW Part No. 
+
+tEST^.l 
+
+Display Values 
+
+_tEST_11. 
+
+Not Used 
+
+_ tEST _ 1.3 
+
+Coding Indexes 
+
+_ tEST _ 7.0 
+
+CoolantTemp °C 
+
+_tEST_12. 
+
+Not Used 
+
+_ tEST _ 1.4 
+
+Date of manufacturer 
+
+_ tEST _ 7.1 
+
+Outside Temp 
+
+_tEST_13. , 
+
+AccousticGenerator 
+
+_ tEST _ 1.5 
+
+HW/SW Status 
+
+_ tEST _ 7.2 
+
+Engine RPM 
+
+_ tEST _ 13.0 
+
+Trigger Single Sound 
+
+_ tEST _ 1.6 
+
+EEPROM CheckStatus 
+
+_ tEST _ 7.3 
+
+Vehicle Speed 
+
+tEST 14. 
+
+Not Used 
+
+_ tEST _ 1.7 
+
+CAN Index 
+
+_tEST_8._ 
+
+ADC Values 
+
+tEST I 5. 
+
+I/O Ports Processor 
+
+_tESTW2./ 
+
+Visual Test System 
+
+_ tEST _ 8.0 
+
+ADC System Voltage 
+
+_tEST_16.- 
+
+Fault Memory 
+
+_tEST _ 2.0 
+
+Cluster Self Test 
+
+_tEST _ 8.1 
+
+ADC Tank Sensors L/R 
+
+_ tEST _ 16.0 
+
+Number of Faults 
+
+_tEST_3._ 
+
+SIA Information 
+
+_tEST_8.2 
+
+ADC Brake Sensors 
+
+_tEST_17._ 
+
+Not Used 
+
+rtEST_3.1 
+
+Liters SIA 
+
+_tEST_8.3 
+
+ADC Temp Sensor 
+
+_tEST_18._ 
+
+Not Used 
+
+_tEST03.2 
+
+Days SIA 
+
+tEST 9. 
+
+System Voltage 
+
+_tEST_19. 
+
+Lock 
+
+tESTL4.“ 
+
+Fuel Consumption 
+
+T/tEST _ 9.0 
+
+System Voltage 
+
+_ tEST _ 19.0 
+
+Lock on/off 
+
+_ tEST _ 4.1 
+
+Consumption LVIOOkm 
+
+_tEST _ 9.1 
+
+Voltage Power Supply 
+
+_tEST_20._ 
+
+Not Used 
+
+hUESTC4.2 
+
+Consumption LVHour 
+
+T/tEST _ 9.2 
+
+ADC Brake Sensors 
+
+_tEST_21. 
+
+Software Reset 
+
+_tEST_5.~ 
+
+Range 
+
+UtEST _ 9.3 
+
+ADC Temp Sensor 
+
+_ tEST _ 21.0 
+
+Reset Cluster 
+
+rtEST_5.0 
+
+Range L/IOOkm 
+
+
+
+
+
+htES-TjS.I 
+
+Range current km 
+
+
+
+
+
+
+16 
+
+
+Driver Information 
+
+
+
+Visual system test 
+
+In the visual system test, all the indica¬ 
+tor lamps and lights - with the excep¬ 
+tion of the ABS warning lamp - are acti¬ 
+vated briefly. The needle instruments 
+are moved from the lower to upper stop 
+and back again. 
+
+
+Diagnosis 
+
+Component replacement and trial replacement There are three possible combinations for 
+replacing the instrument cluster/light switch center: 
+
+• Instrument cluster faulty, light switch center OK 
+
+• Light switch center faulty, instrument cluster OK 
+
+• Light switch center and instrument cluster must be replaced 
+
+Simultaneous replacement of the light switch center and the instrument cluster must be 
+avoided. The odometer reading will be lost. In principle it is also possible to carry out a trial 
+replacement of the instrument cluster/light switch center. 
+
+Car & key memory 
+
+There are different car-memory functions for the E85 with regard to the display of units in 
+the instrument cluster. 
+
+
+
+Car memory 
+
+Setting 
+
+Explanation 1 
+
+Distance 
+
+km 
+
+mis 
+
+The clock must be reset after the 
+unit display has been changed. 
+
+[Time 
+
+12 h 
+
+24 h 
+
+AM/PM is also displayed in 12 h mode. 
+
+Temperature 
+
+Degrees Celsius 
+
+Degrees fahrenheit 
+
+
+Basic setting Ice Warning 
+
+Active/not active 
+
+Active: If the outside temp drops below 
+approx. +3°C the acoustic ice warning 
+is issued. The outside-temp displayed 
+flashing for several sec. Display reverts 
+back. 
+
+
+
+Not Active: If the outside temp drops 
+below +3°C:(Acoustic 
+warning,Permanent Display) 
+
+
+17 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+SIA IV service interval indicator 
+
+
+The present SIA IV is the service interval indicator to be found in the current E46. 
+Diagram of reset routine for service interval indicator. 
+
+
+18 
+
+
+
+Buhon yj-i ic-r 
+■ 5 second; 
+
+
+:'r r r.I rfHliK 
+
+
+Hi nj 
+
+
+Sct/tc uji-i 
+'mil ntwl| 
+
+
+D 4 -lay EaivKfl 
+jLUllS. uiB. 
+
+,ii i H: 
+
+
+F iinJinl f, 
+
+
+E111>-11 " 11111 S' 
+
+
+DspQr 3*:l 
+Ka I ns ■ta r 
+imena 
+
+
+Dsplif dm 
+E imj^hai 
+
+
+FdfllVW KJIII .« 
+
+
+ralua 
+
+|«lhre«IJ 
+
+
+E^IIX FVCi-HMT 
+
+
+Fh-iji ir^ -III 
+
+LUjHtoi 
+
+
+Ml, .1, .>1] 
+Oil! I> 
+iHurdg 
+
+
+D:p^|i 
+Enq SIA 
+fc* 2 Sercn 
+
+
+.+ 
+
+1 
+
+
+K«P Ifrt 
+pipiwjpnd 
+
+'i’iiii n-L II (Ft 
+
+L A 
+
+
+
+( * > 
+
+Tan Funcwn 
+
+\ J 
+
+
+
+1-dLu FJhIh 
+
+... R uiii 
+
+Ih'iiiiuI lfi OFF 
+
+
+Driver Information 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review Questions 
+
+1. Are the Brake Pad Warning Sensors wired in Series or Parallel to the Instrument 
+Cluster? 
+
+2. How is the instrument panel illumination controlled on the Z4? 
+
+3. What functions does the left button on the instrument cluster (S/R) perform? 
+
+4. Which vehicle bus systems are connected directly to the instrument cluster? 
+
+5. In what locations are the mileage and SIA information stored redundantly? 
+
+6. Why must simultaneous replacement of the instrument cluster and LSZ be avoided? 
+
+7. At what approximate fuel level is the Low Fuel Indicator Lamp activated? 
+
+8. How do you know which lamp is defective if the Lamp Monitoring Indicator lamp is on? 
+
+9. What are the possible meanings of this warning symbol if it is displayed in RED? 
+
+
+
+19 
+
+
+Driver Information 
+
+
+

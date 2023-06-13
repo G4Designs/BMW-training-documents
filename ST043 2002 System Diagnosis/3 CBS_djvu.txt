@@ -1,0 +1,1226 @@
+Table of Contents 
+
+
+Condition Based Service - CBS 
+
+
+Subject Page 
+
+Introduction 2 
+
+Purpose of the System 3 
+
+Principle of Operation 3 
+
+Service Indications 5 
+
+Resetting Service Items 
+
+- Using the Instrument Cluster 8 
+
+Setting/Resetting Service Items 
+
+- Using the DISplus/GTl 10 
+
+CBS Handover Inspection.10 
+
+CBS Correction Tester Data.15 
+
+CBS Reset.16 
+
+CBS Correction Vehicle Data.19 
+
+Review Questions 20 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Condition Based Service - CBS 
+
+
+Model: E65 - 745i / E66 - 745Li 
+
+Production Date: 11/2001 - E65, 03/2002 - E66 
+
+
+Objectives of The Module 
+
+After Completing this module, you will be able to: 
+
+Describe the sensor based service items. 
+
+List the internally calculated service items. 
+
+Identify the service indications. 
+
+Demonstrate how to extract Condition Based Service information from the Control 
+Display. 
+
+Properly program the State and Emission Inspection dates using the Control Display 
+and the DISplus/GTl. 
+
+Reset Condition Based Service and maintenance items using the DIS plus/GTl. 
+
+
+2 
+
+
+CBS 
+
+
+
+
+Condition Based Service (CBS) 
+
+
+Purpose of the System 
+
+The current Service Interval Indicator systems (SIA3 and SIA4) determine maintenance 
+intervals based on fuel consumption, which is done to assess the need to change the 
+engine oil. The main determining factor for the maintenance interval currently is the condi¬ 
+tion ofthe engine oil. Other maintenance needs, including the replacement of wearand tear 
+items, are arranged to coincide with due engine oil changes. 
+
+On the E65/E66, BMW is measuring the need for maintenance of several critical compo¬ 
+nents besides the engine oil, and independently ofthe engine oil. This would theoretically 
+afford us the ability to bring a vehicle in for service whenever one ofthe measured compo¬ 
+nents requires maintenance or replacement. However, customers would be inconvenienced 
+because the maintenance intervals would be dramatically reduced. 
+
+Condition Based Service (CBS - furtherdevelopment of SIA)strikes a compromise between 
+too frequent maintenance and too rigid intervals which call for the replacement of mainte¬ 
+nance items that may still have substantial useful life left. The objective is to furnish eco¬ 
+nomical maintenance by pmviding the ideal service for individual vehicles. 
+
+
+Principle of Operation 
+Sensor Based CBS Service Items 
+
+The trend in the vehicle service business is to lengthen service intervals and reduce replace¬ 
+ment of maintenance items. Additional measures have been taken to keep the vehicles in 
+a roadworthy and comfortable condition. 
+
+Usage dependent maintenance of select wear and tear items is detected by physical and 
+virtual sensors. This means that, in cases where the wear is not measured directly, the ser¬ 
+vice due date will be determined by using auxiliary variables such as mileage, vehicle per¬ 
+formance, temperature, etc. 
+
+Sensors built into certain components and control module algorithms take even more 
+detailed account of the various conditions of vehicle use. The remaining times for selected 
+maintenance tasks as well as any dates for State and/or Emissions Inspections (determined 
+by the state in which the vehicle is registered) are individually displayed. 
+
+
+3 
+
+CBS 
+
+
+
+CBS determines the current and future maintenance requirements. The current status of 
+Service items determined by CBS are shown in the Control Display. This data can also be 
+read from the vehicle key by using the Key Reader, as the vehicle's current service status is 
+automatically saved in the ignition key every time the key is used to operate the vehicle. 
+
+Three sensors detect the following wear conditions: 
+
+Engine oil (sensor) 
+
+M icrofilter (virtual sensor) 
+
+Front and rear brake linings (sensor as reference point) 
+
+The instrument cluster collects the values from the wear detection control modules and 
+manages the internally defined service schedule. Data exchange is carried out on the bus 
+systems. 
+
+Internal Calculation of CBS Service Items 
+
+For certain wear and tear items, sensors are not needed by the Condition Based Service. 
+The wear items that are calculated and managed internally by the instrument cluster are: 
+
+Brake fluid Visual and functional checks (vehicle check) 
+
+Coolant Official State Safety and/or Emissions Inspections 
+
+Spark plugs 
+
+The maintenance of these items is performed at fixed intervals. The residual wear or the 
+remaining time to next service is calculated by the instrument cluster using the travel/time 
+parameters of: mileage, current date and internal distance counter. When a service item is 
+due, it is shown in the instrument cluster or the Control Display. 
+
+Note: The internal distance counter plays a particular role. Unlike the Time/Date, this 
+counter cannot be set by the driver. 
+
+However, battery down times (battery cut off by the distribution switch) also stop the trip 
+distance counter which leads to longer time based service intervals. This will dismpt the 
+CBS volumes for engine oil, microfilter, brake fluid and coolant 
+
+To correct this, the internal counter status must be reset by the DISplus/GTl. The wear 
+dependent items internally calculated by the instrument cluster are stored in the instrument 
+cluster and in the CAS control module (redundancy). 
+
+Note: The instrument cluster and the CAS must not be replaced simultaneously, otherwise 
+all current oil maintenance schedule data will be lost. 
+
+4 
+
+
+CBS 
+
+
+
+Service Indications 
+
+
+Regarding CBS, there are three different service indicators: 
+
+Service need display (SBA) in the instrument cluster (base of speedometer) 
+
+Check Control display in the instrument cluster (base of tachometer) 
+
+CBS indicator in the Control Display 
+
+Service Need Display (SBA) 
+
+The Service Need Display is the evolution of the SIA4 Service Interval display. When KL15 
+is "ON," the Service Need Display appears under the speedometer in the instrument clus¬ 
+ter for 10 seconds in the place where the fuel tank level is normally displayed. 
+
+The first line corresponds to the mileage depen¬ 
+dent service items. It specifies the mileage when 
+the next service is due. If the mileage is exceed¬ 
+ed (service overdue), it appears with a minus 
+sign. 
+
+The second line corresponds to the time depen¬ 
+dent service items and is displayed by a clock 
+symbol. It specifies the weeks/months/years 
+when the next service is due. If the service is 
+overdue, it appears with a minus sign. 
+
+The actual service item (with additional information) can be viewed in the Control Display. 
+
+
+
+42 - 15-01 
+
+
+Check Control Message 
+
+
+The CBS produces a Check Control message that indicates the brake lining wear at the 
+front or rear axle. When the brake linings are worn, this is shown as follows: 
+
+
+The general brake warning lamp and the vari¬ 
+able control lamp come on in the instrument 
+cluster. 
+
+The variable control lamp shows the symbol 
+of a car on a lifting platform. 
+
+
+
+A brief Check Control message appears: "Service, see Vehicle menu." For more detailed 
+information, the user can access the Control Display. 
+
+
+5 
+
+CBS 
+
+
+
+
+
+CBS Indicator in the Control Display 
+
+
+The Control Display provides additional informa¬ 
+tion on service and maintenance procedures by 
+selecting the "OB data" menu. 
+
+
+After releasing the Controller or returning to the 
+central position, the "On-board data" menu 
+appears. 
+
+
+
+Turn the Controller to the left until the bottom left 
+button is highlighted (vehicle symbol). 
+
+
+Confirm your selection by pressing the 
+Controller. 
+
+
+
+42 - 15-02 
+
+
+The CBS menu appears with the service items 
+
+
+The Control Display shows a list of selected ser¬ 
+vice and maintenance procedures, as well as 
+legally-mandated official inspections. 
+
+
+Now you will see a service road in the Control 
+Display. The service and maintenance proce¬ 
+dures are displayed in different colors: 
+
+Green: No service is currently required 
+
+Yellow: Service deadline is approaching 
+
+Red: Service deadline has already passed 
+
+
+
+42 - 15-03 
+
+
+(Check 
+
+
+Spark plugs 
+
+
+S BC 
+
+
+42-15-U4 
+
+
+
+The service items highlighted in red with the highest priority appear in the bottom part of 
+the display. 
+
+
+6 
+
+CBS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You can scroll through the list of service and maintenance procedures from top to bottom 
+by turning the Controller from right to left. You can leave the list of service items by press¬ 
+ing the button with the Up arrow symbol. 
+
+The service and maintenance items are: 
+
+
+1. Engine oil 
+
+2. Front brake pads 
+
+3. Rear brake pads 
+
+4. Ventilation system microfilter 
+
+
+5. Brake fluid 
+
+6. Coolant 
+
+7. Spark plugs 
+
+8. Vehicle check 
+
+
+9. State Inspection 
+10. Emissions Inspection 
+
+
+To display the service and maintenance item information in the Control Display, turn the 
+Controller to select the item and confirm your selection by pressing the Controller. 
+
+For the "Spark plugs" service and maintenance 
+item, for example, the following information 
+appears: 
+
+1. Service due 9000 mis, Have your BMW Center replace 
+the spark plugs. 
+
+2. Button with arrow symbol 
+
+
+You can exit this menu by pressing the button with the arrow symbol at the bottom left. The 
+lowest menu automatically closes after a short time (timeout) if you do not touch the con¬ 
+troller. In the same way, you can access the full text for each service item. 
+
+
+r --- 111 1 1 i 
+
+
+Service 9000 mis 
+
+Have spark plugs replaced by your 
+BMW center. 
+
+
+
+42 - 15-05 
+
+
+To Enter and View Official Emissions and Vehicle Inspections Deadlines 
+
+
+If the E65 customer lives in a state which 
+requires regular State and/or Emissions 
+Inspections, these must be programmed into 
+the vehicle's Condition Based Service System 
+using the Controller as follows: 
+
+Select "Emissions Inspection" or "State inspec¬ 
+tion" and confirm your selection by pressing 
+"down" on the controller. 
+
+
+
+7 
+
+
+CBS 
+
+
+
+
+
+
+
+
+
+
+
+Turn the Controller to select an inspection date 
+for entry. 
+
+Confirm the inspection date. The first part of the 
+date entry is activated - here month. 
+
+Turn the Controller to reset. Press the Controller 
+to store and move to the next entry - here year. 
+
+The system adopts the date when you store 
+your entry. Press the Controller to select "CON¬ 
+FIRM". 
+
+
+i 
+
+
+Next emissions test 
+
+n .2000 
+
+
+
+42-15-07 
+
+
+Note: This function is only available if the time in 
+the Control Display has been correctly set. 
+
+When the deadline for the next emissions or 
+state vehicle inspection is approaching, the 
+remaining distance and time will appear briefly 
+in the base of the speedometer when the igni¬ 
+tion is switched on "KL15" (as shown on the 
+right). 
+
+
+
+42-15-08 
+
+
+Resetting Service Items - Using the 
+Instrument Cluster 
+
+
+When one or more service and maintenance 
+items has been performed, these items must be 
+reset (to the full service interval). This is 
+achieved via the instrument cluster or DIS plus. 
+
+To reset a service item using the instrument 
+cluster, press the reset button (1) on the top left 
+side of the instrument clusterfor > 10 seconds. 
+
+
+
+KT-9270 
+
+
+This brings you directly to Reset mode 
+
+
+Notes: 
+
+
+
+
+
+
+
+
+
+
+A 4-line menu appears in the speedometer. At the top is the Back function, then the first 
+three service and maintenance items sorted by priority. In addition, the residual wear or the 
+remaining time are specified (possibly with a minus sign). 
+
+
+The "!" symbol means thatyou can resetthis service and maintenance item, while a "0" indi¬ 
+cates it is not able to be reset (the first 20% of the service interval is protected against pre¬ 
+mature/accidental reset). 
+
+
+1. Service items (in the speedometer) 
+
+2. Resettable service item (in the tach¬ 
+ometer) 
+
+a. Back 
+
+b. Vehicle Check 
+
+c. Micro filters 
+
+d. Brake fluid 
+
+e. Back 
+
+f. RESET Vehicle Check 
+
+
+
+KT-8988 
+
+
+You can scroll through the service and maintenance items by pressing the reset button or 
+the lower axial (FAS) button on the turn signal/high beam switch. When you have selected 
+a service item, press the reset button for a few seconds to display a 2-line menu in the 
+tachometer. 
+
+
+The Back function is at the top and the resettable service and maintenance item is below 
+it. Now select the service and maintenance item with the reset button (or the axial button) 
+and press the reset button again for a few seconds. 
+
+In a third menu line, the system confirms that the reset was successful. The whole interval 
+for the service operation is highlighted in the Service Need Display. 
+
+
+Notes: 
+
+
+9 
+
+CBS 
+
+
+
+
+
+
+
+
+
+Setting/Resetting Service Items - Using the DISplus/GTl 
+
+
+E65/E66 Vehicle Preparation and Maintenance Requirements settings of CBS are per¬ 
+formed using the DISplus/GTl. This also includes programming the phone numbers forthe 
+customer's preferred BMW center and BMW of North America's Customer Relations into 
+the BMW ASSIST menu of the Control Display. Refer to SIB #84 14 01. 
+
+
+CBS Handover Inspection 
+
+The CBS handover inspection is 
+for the deletion of past data in the 
+vehicle and reconfiguring the 
+vehicle for latest data (updating 
+after a service). 
+
+The CBS resetting procedure is 
+found under: Service Functions - 
+Maintenance - CBS. 
+
+Select the CBS handover inspec¬ 
+tion and press <Test Plan>. 
+Highlight the procedure bar and 
+press the <Green Arrow > to the 
+right. 
+
+
+
+The CBS handover inspection 
+includes: 
+
+1. Check status, telephone numbers 
+
+2. Check status, vehicle inspection * 
+
+3. Check status, exhaust emission * 
+
+4. Check Tester data 
+
+5. Write trip odometer 
+
+6. Write data 
+
+7. Enter date of first registration 
+
+8. Activate/deactivate Emission test * 
+
+9. Activate/deactivate vehicle (State - 
+Safety) Inspection * 
+
+10. Deactivate transport mode 
+
+
+
+*Set to coincide with the customer's state requirements 
+
+
+10 
+
+CBS 
+
+
+
+
+
+1. The first step involves the status of telephone numbers if the customer has the E65 
+
+CPT8000 telephone installed. For additional details refer to SIB #84 14 01 
+
+When installing an E65 telephone and priorto customer delivery, the customer's local BMW 
+dealer telephone number and the BMW Customer Relations (or Assistance) telephone 
+number should be programmed into the vehicle in order to enable all features of the B M W 
+mobile phone. 
+
+Note: The Roadside Assistance and the SOS/Emergency telephone numbers are prepro¬ 
+grammed into the Telematics Control Unit (TCU). 
+
+The programming of these telephone numbers is carried out in two parts. The first part pro¬ 
+grams the numbers to the DISplus, the second part transfers the numbers to the telephone 
+handset (if the handset is used in another vehicle, the numbers go with the phone). Unless 
+the numbers are changed for any reason, programming the numbers to the DISplus is nor¬ 
+mally a "one time" procedure. These numbers are retained in the DIS tester for future tele¬ 
+phone installations. 
+
+
+
+The BMW dealer telephone number can be entered here or changed later on in the CBS 
+correction, Tester data. 
+
+Note: When entering a number, the "+" should preface an international phone number only. 
+
+
+11 
+
+
+CBS 
+
+
+
+
+2 . & 3. This screen allows you to 
+check the current Vehicle 
+Inspection(s) due date, or it may 
+be necessary to reset to coincide 
+with the customer's state require¬ 
+ments. 
+
+If a customer desires, the Vehicle 
+Inspection due dates can be 
+deactivated. 
+
+4. The next step is vital to syn¬ 
+chronize the correct time and 
+date from the DISplus/GTl with 
+the vehicle. 
+
+
+
+The internal vehicle trip odometer 
+and vehicle data (5. & 6.) are 
+coordinated with the internal 
+Tester data. 
+
+This is importantfortime/distance 
+based service items that are man¬ 
+aged by the instrument cluster. 
+
+If this is found to be incorrect, go 
+back to the Administration page 
+of DISplus/GTl (main menu) and 
+reset the current date and time. 
+
+
+
+Notes: 
+
+
+12 
+
+
+CBS 
+
+
+
+
+
+7. The first date of registration 
+must be entered here. This will 
+provide helpful verification for 
+future service and warranty con¬ 
+cerns. 
+
+
+
+By selecting <Yes>, the first of 
+three screens is shown on the 
+right. 
+
+This screen prompts you to input 
+the numerical day of registration 
+(1-31). 
+
+The second screen prompts you 
+to input the numerical month of 
+registration (1-12). 
+
+The third screen prompts you to 
+input the numerical year of regis¬ 
+tration (last 2 digits of the year, for 
+example: 02 for 2002). 
+
+
+
+Notes: 
+
+
+13 
+
+CBS 
+
+
+
+
+
+
+
+8. This screen will activate/deacti¬ 
+vate the displayed Emission 
+Inspection date. 
+
+This will allow you to provide the 
+"next" date that the Emission 
+Inspection will be due as shown in 
+the 5BA (base of the speedome¬ 
+ter) and Control Display. 
+
+If a customer desires, the Vehicle 
+Emission Inspection due date can 
+be deactivated. 
+
+
+The first of two screens is shown 
+on the right. 
+
+This screen prompts you to input 
+the numerical month of the next 
+Emission Inspection (for example: 
+
+08 for August). 
+
+The second screen prompts you 
+to input the numerical year of the 
+next Emission Inspection (last 2 
+digits of the year, for example: 04 
+for 2004). 
+
+The following is a repeat of the 
+above procedure (inputting) 
+
+reg a rd ing S tate Inspection 
+
+9. This step will activate/deactivate the displayed State Inspection date. This will allow you 
+to provide the "next" date that the State Inspection will be due as shown in the SBA (base 
+of the speedometer) and Control Display. If a customerdesires, the Vehicle State Inspection 
+due date can be deactivated. 
+
+The first of two screens will be shown. This screen prompts you to input the numerical 
+month of the next State Inspection. The second screen prompts you to input the numeri¬ 
+cal year of the next State Inspection (same process as the Emission Inspection). 
+
+14 
+
+
+
+
+CBS 
+
+
+
+
+
+
+
+
+
+
+
+
+10. This procedure is necessary 
+for deactivating the Transport 
+mode and must be performed 
+before the vehicle is delivered to 
+the customer. 
+
+Many of the E65/E66 features 
+(unnecessary during transporting) 
+are "locked out". This includes: 
+limited window operation (driver's 
+side only), radio, Control Display, 
+interior lights, a/c, etc. 
+
+Select <Yes> to terminate 
+Transport mode and the vehicle 
+will resume normal operation. 
+
+
+
+CBS Correction Tester Data 
+
+The CBS correction tester data allows "guick access" to create or change the basic data 
+(stored in the tester) forthe CBS handover inspection. When the CBS handover inspection 
+is carried out, the changed data in the tester is automatically transferred to the vehicle. The 
+procedure is found under: Service Functions - Maintenance - CBS correction, Tester data. 
+
+The CBS correction tester data includes: 
+
+
+1. Change telephone numbers 
+
+- Mobile Service 
+
+- Customer Hotline 
+
+- Local Dealer 
+
+2. State Inspection presettings 
+
+- Display/activate State Inspection 
+(interval) 
+
+- Display/deactivate State Inspection 
+
+
+3. Emission Inspection preset¬ 
+tings 
+
+- Display/activate Emission Inspection 
+(interval) 
+
+
+
+15 
+
+CBS 
+
+
+- Display/deactivate Emission Inspection 
+
+
+
+
+
+CBS Reset 
+
+
+The CBS Reset procedure provides resetting of the individual Condition Based Service 
+items The items that require a reset depend on the individual vehicle usage Whenoneor 
+more service and maintenance items has been performed, these items must be reset. This 
+was previously shown using the instrument cluster. 
+
+Using the DISplus/GTl, the CBS Reset sets the selected service and maintenance items to 
+100% (full service interval) and displays a service counterto indicate how many times these 
+items have been reset. The procedure is found under: Sen/ice Functions - Maintenance - 
+CBS reset. 
+
+Select the CBS Reset and press <Test Plan>. Highlight the procedure bar and press the 
+<Green Arrow > to the right. 
+
+
+The first step is vital to synchro¬ 
+nize the correct time and date 
+from the DISplus/GTl with the 
+vehicle. 
+
+
+The internal vehicle trip odometer 
+and vehicle data are coordinated 
+with the internal Tester data. 
+
+
+This is important for time/dis¬ 
+tance based service items that 
+are managed by the instrument 
+cluster. 
+
+
+
+After accepting by pressing <Yes> or <No> and entering corrections to the date and time, 
+select the <Green Arrow > to the right. 
+
+If this is found to be incorrect, go back to the Administration page of DISplus/GTl (main 
+menu) and reset the current date and time. 
+
+
+Note: The original values of the individual CBS service and maintenance items are deleted 
+during the reset procedure. 
+
+16 
+
+CBS 
+
+
+
+
+This screen displays the following service and maintenance items: 
+
+Usage dependent wear and tear items are monitored by physical and virtual sensors. In 
+cases where the wear is not measured directly, the service due date will be determined by 
+using auxiliary variables such as mileage, vehicle performance, temperature, etc. 
+
+1. CBS reset selection 1 
+
+- Reset engine oil 
+
+- Reset microfilter 
+
+- Reset front brakes 
+
+- Reset rear brakes 
+
+- Reset vehicle check 
+
+
+
+Certain wear and tear items are calculated and managed internally by the instrument clus¬ 
+ter (time and mileage) for Condition Based Service. 
+
+2. CBS reset selection 2 
+
+- Reset spark plugs 
+
+- Reset brake fluid 
+
+- Reset coolant 
+
+- Correction Vehicle State Inspection 
+
+- Correction Emission Inspection 
+
+3. End 
+
+
+17 
+
+
+CBS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By entering selection <1> and the 
+<Green Arrow> to the right, the 
+items are displayed in percent¬ 
+age. 
+
+By selecting the number < 3 > and 
+the <Green Arrow> to the right, 
+you can individually reset the ser¬ 
+vice and maintenance item (front 
+brakes) after the service was per¬ 
+formed. 
+
+The reset example shown on the 
+rig ht d is p lays that the fro nt b ra kes 
+have just been replaced (100) [% ]. 
+
+In addition, the number of times 
+the item was reset is also dis¬ 
+played / (3), indicating three 
+times. 
+
+
+
+By entering selection < 2 > and the 
+<Green Arrow> to the right, the 
+items are displayed in percent¬ 
+age. 
+
+By selecting the <number> and 
+the <Green Arrow> to the right, 
+you can individually reset the ser¬ 
+vice and maintenance item after 
+the service was performed. 
+
+In addition, the Vehicle State/ 
+Emissions Inspections can be 
+verified and corrected. 
+
+
+: :: u: 
+
+
+fi¬ 
+
+ll 
+
+
+£4 ■ ■ VIM H 
+
+
+¥ -LI I 
+
+
+
+
+srcpfe ,-, J n]niri - I +.F“In r 
+
+[iwnn 
+
+iwirori) 
+
+' El IJU 
+
+3 5 [outfunn nipicKr: 1 IIKA 
+I 1 F!Ir ■■ Ktm OH 
+
+
+Notes: 
+
+
+18 
+
+CBS 
+
+
+
+
+
+
+After verifying/correcting the data, 
+this screen is displayed to confirm 
+the correct date and time is set in 
+the DIS plus/GTl. 
+
+To properly complete the CBS 
+Reset, the date and time of ser¬ 
+vice/maintenance will be trans¬ 
+ferred to the vehicle. This includes 
+setting the day counter and the 
+date. 
+
+The transfer is completed by: 
+selecting OKAY (in setting status). 
+
+
+CBS Correction Vehicle Data 
+
+The CBS correction vehicle data allows "quick access" to correct (if improperly input) or 
+change the basic data (stored in the vehicle) for the CBS reset. This includes decreasing 
+the use percentage and number of resets when a reset was mistakenly performed. When 
+the CBS reset is carried out, the changed data in the tester is automatically transferred to 
+the vehicle. The procedure is found under: Service Functions - Maintenance - CBS correc¬ 
+tion, vehicle data. 
+
+1. CBS correction vehicle data selection 1 
+
+- Correction engine oil 
+
+- Correction microfilter 
+
+- Correction front brakes 
+
+- Correction rear brakes 
+
+- Correction vehicle check 
+
+2. CBS correction vehicle data selection 2 
+
+- Correction spark plugs 
+
+- Correction brake fluid 
+
+- Correction coolant 
+
+- Correction Vehicle State Inspection 
+
+- Correction Emission Inspection 
+
+3. CBS correction vehicle data selection 3 
+
+- Write telephone numbers 
+
+- Correction date of first registration 
+
+
+
+
+19 
+
+CBS 
+
+
+4. End 
+
+
+
+
+
+
+Review Questions 
+
+1. List the internally calculated service and maintenance items 
+
+
+2. What are the service indicators 7 
+
+
+3. How is the Condition Based Service information extracted from the Control Display 7 
+
+
+4. How many steps are required to properly program the Emission Inspection dates using 
+
+the DISplus/GTl?_ 
+
+5. When performing a CBS Reset after replacing the rear brake pads using the D IS plus/ 
+
+GT1, what information is displayed next to that item (line 4.) 7 _ 
+
+
+20 
+
+CBS 
+
+
+
